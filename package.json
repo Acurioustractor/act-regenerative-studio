@@ -11,6 +11,7 @@
   },
   "dependencies": {
     "@notionhq/client": "^5.6.0",
+    "@octokit/rest": "^22.0.1",
     "@supabase/supabase-js": "^2.89.0",
     "clsx": "^2.1.1",
     "dotenv": "^17.2.3",

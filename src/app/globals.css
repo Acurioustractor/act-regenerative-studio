@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+.rich-text {
+  line-height: 1.8;
+}
+
+.rich-text h2,
+.rich-text h3 {
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  font-family: var(--font-display);
+  color: #2f3e2e;
+}
+
+.rich-text p,
+.rich-text ul,
+.rich-text ol {
+  margin: 1rem 0;
+}
+
+.rich-text ul {
+  list-style: disc;
+  padding-left: 1.5rem;
+}
+
+.rich-text ol {
+  list-style: decimal;
+  padding-left: 1.5rem;
+}
+
+.rich-text a {
+  color: #4caf50;
+  text-decoration: underline;
+}

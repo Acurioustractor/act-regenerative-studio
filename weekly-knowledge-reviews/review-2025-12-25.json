@@ -1,0 +1,21 @@
+{
+  "date": "2025-12-25",
+  "contentQuality": {
+    "total": 0
+  },
+  "knowledgeVersions": {
+    "total": 1
+  },
+  "pmppSchedule": {
+    "overdue": 0,
+    "dueSoon": 0,
+    "current": 3
+  },
+  "elderQueue": {
+    "pending": 0,
+    "inReview": 0
+  },
+  "communityFeedback": {
+    "total": 0
+  }
+}

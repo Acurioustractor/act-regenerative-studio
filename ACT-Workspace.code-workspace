@@ -1,0 +1,115 @@
+{
+  "folders": [
+    {
+      "name": "🏠 ACT Farm",
+      "path": "../ACT Farm/act-farm"
+    },
+    {
+      "name": "⚖️ JusticeHub",
+      "path": "../JusticeHub"
+    },
+    {
+      "name": "💚 Empathy Ledger",
+      "path": "../Empathy Ledger v.02"
+    },
+    {
+      "name": "🌾 The Harvest",
+      "path": "../The Harvest"
+    },
+    {
+      "name": "🎛️ Dev Hub",
+      "path": "."
+    }
+  ],
+  "settings": {
+    "terminal.integrated.env.osx": {
+      "REDIS_URL": "redis://192.168.0.34:6379",
+      "CHROMADB_URL": "http://192.168.0.34:8000"
+    },
+    "files.exclude": {
+      "**/.next": true,
+      "**/node_modules": true
+    }
+  },
+  "launch": {
+    "version": "0.2.0",
+    "configurations": [
+      {
+        "name": "▶️ ACT Farm (3001)",
+        "type": "node",
+        "request": "launch",
+        "runtimeExecutable": "npm",
+        "runtimeArgs": ["run", "dev"],
+        "cwd": "${workspaceFolder:🏠 ACT Farm}",
+        "env": {
+          "PORT": "3001",
+          "REDIS_URL": "redis://192.168.0.34:6379",
+          "CHROMADB_URL": "http://192.168.0.34:8000"
+        },
+        "console": "integratedTerminal"
+      },
+      {
+        "name": "▶️ JusticeHub (3002)",
+        "type": "node",
+        "request": "launch",
+        "runtimeExecutable": "npm",
+        "runtimeArgs": ["run", "dev"],
+        "cwd": "${workspaceFolder:⚖️ JusticeHub}",
+        "env": {
+          "PORT": "3002",
+          "REDIS_URL": "redis://192.168.0.34:6379",
+          "CHROMADB_URL": "http://192.168.0.34:8000"
+        },
+        "console": "integratedTerminal"
+      },
+      {
+        "name": "▶️ Empathy Ledger (3005)",
+        "type": "node",
+        "request": "launch",
+        "runtimeExecutable": "npm",
+        "runtimeArgs": ["run", "dev"],
+        "cwd": "${workspaceFolder:💚 Empathy Ledger}",
+        "env": {
+          "REDIS_URL": "redis://192.168.0.34:6379",
+          "CHROMADB_URL": "http://192.168.0.34:8000"
+        },
+        "console": "integratedTerminal"
+      },
+      {
+        "name": "▶️ The Harvest (3004)",
+        "type": "node",
+        "request": "launch",
+        "runtimeExecutable": "npm",
+        "runtimeArgs": ["run", "dev"],
+        "cwd": "${workspaceFolder:🌾 The Harvest}",
+        "env": {
+          "PORT": "3004",
+          "REDIS_URL": "redis://192.168.0.34:6379",
+          "CHROMADB_URL": "http://192.168.0.34:8000"
+        },
+        "console": "integratedTerminal"
+      },
+      {
+        "name": "🚀 All Projects (Orchestrator)",
+        "type": "node",
+        "request": "launch",
+        "runtimeExecutable": "npm",
+        "runtimeArgs": ["start"],
+        "cwd": "${workspaceFolder:🎛️ Dev Hub}",
+        "console": "integratedTerminal"
+      }
+    ],
+    "compounds": [
+      {
+        "name": "🎯 Start All Projects",
+        "configurations": [
+          "▶️ ACT Farm (3001)",
+          "▶️ JusticeHub (3002)",
+          "▶️ Empathy Ledger (3005)",
+          "▶️ The Harvest (3004)"
+        ],
+        "stopAll": true
+      }
+    ]
+  }
+}

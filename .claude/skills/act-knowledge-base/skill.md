@@ -83,15 +83,20 @@ Invoke this skill when you need to:
 
 ## Reference Documents
 
-The skill has access to comprehensive knowledge compiled from:
+**Core Knowledge Files (in this skill):**
+- [ACT_COMPLETE_KNOWLEDGE_BASE.md](./ACT_COMPLETE_KNOWLEDGE_BASE.md) - Comprehensive ACT knowledge
+- [ACT_COMPLETE_KNOWLEDGE_BASE_PART_2.md](./ACT_COMPLETE_KNOWLEDGE_BASE_PART_2.md) - Extended knowledge
+- [ACT_LIVING_WIKI_ARCHITECTURE.md](./ACT_LIVING_WIKI_ARCHITECTURE.md) - Living Wiki system design
+- [LLM_TRAINING_STRATEGY.md](./LLM_TRAINING_STRATEGY.md) - AI training approach
 
-- Strategic planning documents
-- Brand guidelines and voice references
-- Project documentation (all 6+ active projects)
-- Blog articles (57 imported from Webflow)
-- Technical infrastructure details
-- Community engagement frameworks
-- Impact metrics and goals
+**Organized Documentation (in main codebase):**
+- Architecture: `../../docs/architecture/` - System design, ecosystem architecture
+- Features: `../../docs/features/` - Knowledge base, dashboard, media, project enrichment
+- Projects: `../../docs/projects/` - All 6+ active ACT projects
+- Integrations: `../../docs/integrations/` - GHL, Notion, Gmail, OpenAI, Supabase, Empathy Ledger
+- Strategy: `../../docs/strategy/` - Roadmaps, master plan, visual strategy
+- Brand: `../../docs/brand/` - Voice, tone, messaging, content drafts
+- Quick Starts: `../../docs/quick-starts/` - Getting started guides
 
 ## Example Invocations
 

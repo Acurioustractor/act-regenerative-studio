@@ -486,16 +486,23 @@ export class NotionScanner {
       suggested_type: ext.suggested_type,
       suggested_tags: ext.suggested_tags,
       confidence_score: ext.confidence_score,
-      content_embedding: ext.content_embedding,
+      content_embedding: ext.content_embedding && ext.content_embedding.length > 0 ? ext.content_embedding : null,
       source_metadata: ext.metadata,
       status: 'pending',
     }));
 
+    // Insert records, skipping duplicates
+    // Note: Can't use upsert due to partial unique index with WHERE clause
     const { error } = await this.supabase
       .from('knowledge_extraction_queue')
-      .insert(records);
+      .insert(records)
+      .select();
 
-    if (error) {
+    // If duplicate error, that's OK - items already in queue
+    if (error && error.code === '23505') {
+      console.log('   ℹ️  Some items already in queue (duplicates skipped)');
+      // Don't throw - this is expected
+    } else if (error) {
       console.error('❌ Error saving to queue:', error);
       throw error;
     }

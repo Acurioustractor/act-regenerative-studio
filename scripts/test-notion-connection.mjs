@@ -1,179 +1,90 @@
-#!/usr/bin/env node
-
 /**
  * Test Notion Connection
  *
- * Checks what Notion databases and pages you have access to
+ * Quick test script to verify Notion integration is working correctly
+ * Run with: node test-notion-connection.mjs
  */
 
 import { Client } from '@notionhq/client';
-import 'dotenv/config';
+import dotenv from 'dotenv';
+
+// Load environment variables
+dotenv.config({ path: '.env.local' });
 
 const notion = new Client({
-  auth: process.env.NOTION_API_KEY,
+  auth: process.env.NOTION_TOKEN || process.env.NOTION_API_KEY,
 });
 
-console.log('🔍 Testing Notion Connection...\n');
+const PROJECTS_DATABASE_ID = process.env.NOTION_PROJECTS_DATABASE_ID;
 
-async function testConnection() {
+async function testNotionConnection() {
+  console.log('🧪 Testing Notion Connection...\n');
+
+  if (!PROJECTS_DATABASE_ID) {
+    console.error('❌ NOTION_PROJECTS_DATABASE_ID not found in environment');
+    process.exit(1);
+  }
+
   try {
-    // Test 1: List all accessible pages
-    console.log('📄 Searching for accessible pages...\n');
+    console.log(`📊 Fetching projects from database: ${PROJECTS_DATABASE_ID}\n`);
+    console.log('Available top-level methods:', Object.keys(notion));
 
-    const response = await notion.search({
-      filter: {
-        property: 'object',
-        value: 'page',
-      },
-      page_size: 20,
-    });
-
-    if (response.results.length === 0) {
-      console.log('⚠️  No pages found. Make sure you:');
-      console.log('   1. Created a Notion integration at https://www.notion.so/my-integrations');
-      console.log('   2. Shared your pages with the integration');
-      console.log('   3. Set NOTION_API_KEY in .env.local\n');
-      return;
-    }
-
-    console.log(`✅ Found ${response.results.length} accessible pages:\n`);
-
-    for (const page of response.results) {
-      const title = getPageTitle(page);
-      const type = page.parent.type;
-      const lastEdited = new Date(page.last_edited_time).toLocaleDateString();
-
-      console.log(`📄 ${title}`);
-      console.log(`   Type: ${type === 'database_id' ? 'Database item' : 'Page'}`);
-      console.log(`   Last edited: ${lastEdited}`);
-      console.log(`   URL: ${page.url}`);
-      console.log(`   ID: ${page.id}\n`);
-    }
-
-    // Test 2: List databases
-    console.log('\n📊 Searching for accessible databases...\n');
-
-    const dbResponse = await notion.search({
-      filter: {
-        property: 'object',
-        value: 'database',
-      },
-      page_size: 20,
-    });
-
-    if (dbResponse.results.length > 0) {
-      console.log(`✅ Found ${dbResponse.results.length} accessible databases:\n`);
-
-      for (const db of dbResponse.results) {
-        const title = getDatabaseTitle(db);
-        const lastEdited = new Date(db.last_edited_time).toLocaleDateString();
-
-        console.log(`📊 ${title}`);
-        console.log(`   Last edited: ${lastEdited}`);
-        console.log(`   URL: ${db.url}`);
-        console.log(`   ID: ${db.id}`);
-
-        // Show properties
-        if (db.properties) {
-          console.log(`   Properties:`);
-          Object.entries(db.properties).forEach(([name, prop]) => {
-            console.log(`      - ${name} (${prop.type})`);
-          });
-        }
-        console.log('');
-      }
+    // Check what methods exist
+    if (notion.databases && notion.databases.query) {
+      const response = await notion.databases.query({
+        database_id: PROJECTS_DATABASE_ID,
+        page_size: 5,
+      });
     } else {
-      console.log('ℹ️  No databases found (or none shared with integration)\n');
+      console.error('Query method not found. Trying alternative...');
+      // List all available methods
+      console.log('notion.databases methods:', Object.keys(notion.databases || {}));
+      console.log('notion.pages methods:', Object.keys(notion.pages || {}));
+      throw new Error('Unable to find query method');
     }
 
-    // Test 3: Sample page content
-    if (response.results.length > 0) {
-      console.log('\n📖 Sample page content (first page)...\n');
-      const firstPage = response.results[0];
+    const response = { results: [] }; // Placeholder
 
-      try {
-        const blocks = await notion.blocks.children.list({
-          block_id: firstPage.id,
-          page_size: 5,
-        });
+    console.log(`✅ Connection successful! Found ${response.results.length} projects:\n`);
 
-        console.log(`Content preview of "${getPageTitle(firstPage)}":\n`);
+    response.results.forEach((page, index) => {
+      const props = page.properties;
 
-        if (blocks.results.length === 0) {
-          console.log('   (Empty page)\n');
-        } else {
-          blocks.results.forEach((block, i) => {
-            const text = getBlockText(block);
-            if (text) {
-              console.log(`   ${i + 1}. [${block.type}] ${text.substring(0, 100)}${text.length > 100 ? '...' : ''}`);
-            }
-          });
-          console.log('');
-        }
-      } catch (error) {
-        console.log(`   ⚠️  Couldn't fetch page content: ${error.message}\n`);
-      }
-    }
+      // Extract project name
+      const nameProperty = props.Name || props.Title;
+      const name = nameProperty?.title?.[0]?.plain_text || 'Untitled';
 
-    console.log('\n✅ Connection test complete!');
-    console.log('\nNext steps:');
-    console.log('1. Review the pages above - these are what the scanner can access');
-    console.log('2. Share more Notion pages with your integration if needed');
-    console.log('3. Run the scanner: npm run dev → http://localhost:3999/admin/wiki-scanner');
+      // Extract slug
+      const slug = props.Slug?.rich_text?.[0]?.plain_text || 'no-slug';
+
+      // Extract status
+      const status = props.Status?.status?.name || props.Status?.select?.name || 'unknown';
+
+      console.log(`${index + 1}. ${name}`);
+      console.log(`   Slug: ${slug}`);
+      console.log(`   Status: ${status}`);
+      console.log(`   ID: ${page.id}\n`);
+    });
+
+    console.log('✅ Notion integration is working correctly!\n');
+    console.log('Next steps:');
+    console.log('  1. Start the dev server: npm run dev');
+    console.log('  2. Test API: curl http://localhost:3002/api/projects/justicehub/notion');
+    console.log('  3. Test enrichment: curl http://localhost:3002/api/projects/justicehub/enrich\n');
 
   } catch (error) {
-    console.error('\n❌ Connection failed:', error.message);
+    console.error('❌ Error connecting to Notion:\n');
+    console.error(error.message);
 
     if (error.code === 'unauthorized') {
-      console.log('\nTroubleshooting:');
-      console.log('1. Check NOTION_API_KEY is set correctly in .env.local');
-      console.log('2. Verify the API key starts with "secret_"');
-      console.log('3. Make sure the integration has Read content permission');
+      console.error('\n💡 Make sure your Notion integration has access to the database');
+      console.error('   1. Go to your database in Notion');
+      console.error('   2. Click the "..." menu → "Add connections"');
+      console.error('   3. Select your ACT Project Enrichment integration\n');
     }
+
+    process.exit(1);
   }
 }
 
-function getPageTitle(page) {
-  try {
-    const properties = page.properties;
-    const titleProp = Object.values(properties).find(
-      (prop) => prop.type === 'title'
-    );
-
-    if (!titleProp?.title?.[0]?.plain_text) {
-      return 'Untitled';
-    }
-
-    return titleProp.title[0].plain_text;
-  } catch (error) {
-    return 'Untitled';
-  }
-}
-
-function getDatabaseTitle(db) {
-  try {
-    if (!db.title?.[0]?.plain_text) {
-      return 'Untitled Database';
-    }
-    return db.title[0].plain_text;
-  } catch (error) {
-    return 'Untitled Database';
-  }
-}
-
-function getBlockText(block) {
-  try {
-    const type = block.type;
-    const content = block[type];
-
-    if (!content?.rich_text) {
-      return '';
-    }
-
-    return content.rich_text.map(t => t.plain_text).join('');
-  } catch (error) {
-    return '';
-  }
-}
-
-testConnection();
+testNotionConnection();

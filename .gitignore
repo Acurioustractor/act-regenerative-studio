@@ -25,6 +25,9 @@ yarn-error.log*
 .env.test.local
 .env.production.local
 
+# Environment vault (contains .env.local files for multi-repo setup)
+.env-vault/
+
 # IDE
 .vscode/
 .idea/

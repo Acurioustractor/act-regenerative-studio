@@ -5,9 +5,12 @@
 
 import { google } from 'googleapis';
 import { OAuth2Client } from 'google-auth-library';
-import { createClient } from '@/lib/supabase/server';
+import { getSupabaseServerClient } from '@/lib/supabase/server';
 
-const SCOPES = ['https://www.googleapis.com/auth/gmail.readonly'];
+const SCOPES = [
+  'https://www.googleapis.com/auth/gmail.readonly',
+  'https://www.googleapis.com/auth/userinfo.email'
+];
 
 /**
  * Create OAuth2 client with credentials from environment
@@ -58,7 +61,12 @@ export async function getUserInfo(oauth2Client: OAuth2Client) {
  * Get authenticated Gmail client for a user
  */
 export async function getAuthenticatedClient(userEmail: string): Promise<OAuth2Client> {
-  const supabase = await createClient();
+  const supabase = getSupabaseServerClient();
+
+  if (!supabase) {
+    throw new Error('Supabase client not configured');
+  }
+
   const oauth2Client = getOAuth2Client();
 
   // Load tokens from database
@@ -119,7 +127,11 @@ export function isGmailConfigured(): boolean {
  * Save tokens to database
  */
 export async function saveTokens(userEmail: string, tokens: any, userId?: string) {
-  const supabase = await createClient();
+  const supabase = getSupabaseServerClient();
+
+  if (!supabase) {
+    throw new Error('Supabase client not configured');
+  }
 
   const { data, error } = await supabase
     .from('gmail_auth_tokens')

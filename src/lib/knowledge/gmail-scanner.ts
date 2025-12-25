@@ -5,7 +5,7 @@
 
 import { google } from 'googleapis';
 import { getAuthenticatedClient } from '../gmail/auth';
-import { createClient } from '@/lib/supabase/server';
+import { getSupabaseServerClient } from '@/lib/supabase/server';
 import pLimit from 'p-limit';
 
 // Rate limiting: Gmail API allows ~250 quota units/second
@@ -41,7 +41,11 @@ export class GmailScanner {
   private supabase: any;
 
   constructor() {
-    this.supabase = createClient();
+    const client = getSupabaseServerClient();
+    if (!client) {
+      throw new Error('Supabase client not configured');
+    }
+    this.supabase = client;
   }
 
   /**
@@ -600,7 +604,11 @@ export async function runGmailScan(userEmail: string): Promise<{
   const extractions = await scanner.scanInbox(userEmail);
 
   // Get account ID for saving
-  const supabase = await createClient();
+  const supabase = getSupabaseServerClient();
+
+  if (!supabase) {
+    throw new Error('Supabase client not configured');
+  }
   const { data: account } = await supabase
     .from('gmail_auth_tokens')
     .select('id')

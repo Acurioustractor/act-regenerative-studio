@@ -22,29 +22,29 @@ This means your GitHub token doesn't have permission to access the GitHub Projec
 
 ### Step 2: Select Required Scopes
 
-**IMPORTANT**: Check these exact scopes:
+**IMPORTANT**: On the "Select scopes" page, check these exact boxes:
 
-- ✅ **`repo`** (Full control of private repositories)
-  - Includes: repo:status, repo_deployment, public_repo, repo:invite
-- ✅ **`read:project`** (Read access to projects)
-  - This is CRITICAL for reading GitHub Projects (v2)
-- ✅ **`read:org`** (Read org and team membership, read org projects)
+✅ **`repo`** - Full control of private repositories
+   - This gives access to repository data
 
-**Visual checklist:**
-```
-[✓] repo
-    [✓] repo:status
-    [✓] repo_deployment
-    [✓] public_repo
-    [✓] repo:invite
-    [✓] security_events
-[ ] workflow
-[ ] write:packages
-[ ] delete:packages
-[✓] read:project  ← MUST HAVE THIS!
-[ ] admin:org
-[✓] read:org      ← MUST HAVE THIS!
-```
+✅ **`project`** - Full access to user and organization projects
+   - **This is CRITICAL** - enables reading/writing GitHub Projects v2
+   - Alternative: Use `read:project` for read-only access (also works)
+
+✅ **`read:org`** - Read org and team membership, read org projects
+   - Needed for organization-level project access
+
+**What you'll see on GitHub:**
+
+When you scroll down the token creation page, you'll see sections like:
+- **repo** (check the main checkbox)
+- **admin:org** (skip this)
+- **admin:public_key** (skip this)
+- **admin:repo_hook** (skip this)
+- Look for **`project`** - check this box ← **CRITICAL!**
+- **read:org** - check this box
+
+**Note**: If you only see `read:project` and `write:project` instead of just `project`, check `read:project` (that's the newer format and works fine).
 
 ### Step 3: Generate and Copy Token
 
@@ -93,17 +93,22 @@ Run this to check your token scopes:
 curl -H "Authorization: token YOUR_TOKEN_HERE" https://api.github.com/user -I | grep x-oauth-scopes
 ```
 
-Should return:
+Should return something like:
 ```
-x-oauth-scopes: repo, read:org, read:project
+x-oauth-scopes: repo, project, read:org
+```
+
+Or with read-only project access:
+```
+x-oauth-scopes: repo, read:project, read:org
 ```
 
 ---
 
 ## 🎯 Quick Summary
 
-**Problem**: Token doesn't have `read:project` scope
-**Solution**: Generate new token with `repo`, `read:project`, `read:org`
+**Problem**: Token doesn't have `project` or `read:project` scope
+**Solution**: Generate new token with `repo`, `project` (or `read:project`), `read:org`
 **Update**: Replace `GH_PROJECT_TOKEN` secret in GitHub
 **Test**: Re-run workflow
 

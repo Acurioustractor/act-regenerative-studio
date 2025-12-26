@@ -218,7 +218,17 @@ function buildNotionProperties(item) {
   const sprint = getFieldValue(item, 'Sprint');
 
   const labels = content.labels?.nodes.map(l => l.name) || [];
-  const type = labels.find(l => ['feature', 'bug', 'task', 'epic'].includes(l.toLowerCase())) || 'task';
+
+  // Auto-detect type from labels
+  const typeLabel = labels.find(l => ['feature', 'bug', 'task', 'epic'].includes(l.toLowerCase()));
+  let type = 'Task'; // Default
+  if (typeLabel) {
+    type = typeLabel.charAt(0).toUpperCase() + typeLabel.slice(1);
+  } else if (labels.some(l => l.toLowerCase().includes('enhancement'))) {
+    type = 'Feature';
+  } else if (labels.some(l => l.toLowerCase().includes('documentation'))) {
+    type = 'Task';
+  }
 
   const properties = {
     'Title': {

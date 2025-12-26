@@ -1,0 +1,48 @@
+name: Sync GitHub Issues to Notion
+
+on:
+  # Run every 30 minutes
+  schedule:
+    - cron: '*/30 * * * *'
+
+  # Allow manual trigger
+  workflow_dispatch:
+
+  # Run when issues are updated
+  issues:
+    types: [opened, edited, closed, reopened, assigned, labeled]
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '18'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm install @notionhq/client @octokit/rest
+
+      - name: Sync GitHub → Notion
+        env:
+          NOTION_TOKEN: ${{ secrets.NOTION_TOKEN }}
+          NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
+          GITHUB_TOKEN: ${{ secrets.GH_PROJECT_TOKEN }}
+        run: |
+          node scripts/sync-github-to-notion.js
+
+      - name: Report sync status
+        if: always()
+        run: |
+          if [ $? -eq 0 ]; then
+            echo "✅ Sync completed successfully"
+          else
+            echo "❌ Sync failed - check logs above"
+            exit 1
+          fi

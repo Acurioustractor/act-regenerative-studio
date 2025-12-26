@@ -1,0 +1,68 @@
+# GitHub Labeler Configuration
+# Automatically labels PRs based on changed files
+
+# Type labels
+'type: feature':
+  - 'src/app/**/*/page.tsx'
+  - 'src/app/**/*/route.ts'
+  - 'src/components/**/*'
+  - 'src/lib/**/*'
+
+'type: chore':
+  - 'scripts/**/*'
+  - '*.config.*'
+  - 'package.json'
+  - 'package-lock.json'
+  - '.github/**/*'
+
+'type: documentation':
+  - 'docs/**/*'
+  - '*.md'
+  - 'CLAUDE.md'
+  - 'README.md'
+
+'type: refactor':
+  - 'src/lib/utils/**/*'
+
+'type: security':
+  - '.github/workflows/security-scan.yml'
+  - 'src/middleware.ts'
+
+# Project labels
+'project: empathy-ledger':
+  - 'src/lib/empathy-ledger/**/*'
+  - 'src/app/api/empathy-ledger/**/*'
+
+'project: justicehub':
+  - 'src/lib/justicehub/**/*'
+
+'project: harvest':
+  - 'src/lib/harvest/**/*'
+
+'project: goods':
+  - 'src/lib/goods/**/*'
+
+# Feature area labels
+'area: api':
+  - 'src/app/api/**/*'
+
+'area: dashboard':
+  - 'src/app/page.tsx'
+  - 'src/components/dashboard/**/*'
+
+'area: wiki':
+  - 'src/app/admin/wiki/**/*'
+  - 'src/lib/knowledge/**/*'
+
+'area: database':
+  - 'supabase/**/*'
+  - 'database.types.ts'
+
+# LCAA labels
+'lcaa: action':
+  - 'src/app/api/**/*'
+  - 'src/lib/services/**/*'
+
+'lcaa: art':
+  - 'src/components/**/*'
+  - 'src/app/**/*/page.tsx'

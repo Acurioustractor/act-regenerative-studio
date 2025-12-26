@@ -1,0 +1,26 @@
+# CODEOWNERS - Automatic reviewer assignment
+# https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/customizing-your-repository/about-code-owners
+
+# Default owner for everything
+* @Acurioustractor
+
+# GitHub Infrastructure
+/.github/ @Acurioustractor
+/scripts/ @Acurioustractor
+
+# Database & Types
+/supabase/ @Acurioustractor
+database.types.ts @Acurioustractor
+
+# Documentation
+/docs/ @Acurioustractor
+*.md @Acurioustractor
+
+# API Routes
+/src/app/api/ @Acurioustractor
+
+# Core Libraries
+/src/lib/ @Acurioustractor
+
+# Components
+/src/components/ @Acurioustractor

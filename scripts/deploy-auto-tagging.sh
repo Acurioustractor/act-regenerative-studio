@@ -14,10 +14,10 @@ echo ""
 repos=(
   "/Users/benknight/Code/empathy-ledger-v2"
   "/Users/benknight/Code/JusticeHub"
-  "/Users/benknight/Code/The Harvest"
+  "/Users/benknight/Code/The Harvest Website"
   "/Users/benknight/Code/ACT Farm/act-farm"
   "/Users/benknight/Code/ACT Placemat"
-  "/Users/benknight/Code/Goods"
+  "/Users/benknight/Code/Goods Asset Register"
   "/Users/benknight/Code/act-project-template"
 )
 

@@ -75,9 +75,10 @@
 - **Status:** ⚠️ 65% complete, many TODOs
 
 ### 4. **The Harvest**
-- **Path:** `/Users/benknight/Code/The Harvest`
+- **Path:** `/Users/benknight/Code/The Harvest Website`
+- **GitHub:** `harvest-community-hub`
 - **Role:** Community hub, therapeutic programs, events
-- **Stack:** Next.js 14.0.4, TypeScript
+- **Stack:** Next.js 14.0.4, TypeScript, Supabase
 - **Port:** `:3004`
 - **Status:** ✅ 90% complete, almost production-ready
 

@@ -284,11 +284,12 @@ Frame all solutions through this lens:
 
 This project is part of a larger ACT ecosystem with multiple codebases:
 
-- **ACT Farm** (`/Users/benknight/Code/ACT Farm/act-farm/`)
-- **JusticeHub** (`/Users/benknight/Code/JusticeHub/`)
-- **Empathy Ledger** (`/Users/benknight/Code/Empathy Ledger v.02/`)
-- **The Harvest** (`/Users/benknight/Code/The Harvest/`)
-- **This Studio** (`/Users/benknight/Code/ACT Farm and Regenerative Innovation Studio/`)
+- **ACT Studio** (`/Users/benknight/Code/ACT Farm and Regenerative Innovation Studio/`) - This repo
+- **Empathy Ledger** (`/Users/benknight/Code/Empathy Ledger v.02/`) - GitHub: `empathy-ledger-v2`
+- **JusticeHub** (`/Users/benknight/Code/JusticeHub/`) - GitHub: `justicehub-platform`
+- **The Harvest** (`/Users/benknight/Code/The Harvest Website/`) - GitHub: `harvest-community-hub`
+- **Goods** (`/Users/benknight/Code/Goods Asset Register/`) - GitHub: `goods-asset-tracker`
+- **ACT Farm** (`/Users/benknight/Code/ACT Farm/act-farm/`) - GitHub: `act-farm`
 
 **Multi-Codebase Skills Architecture**: [docs/architecture/multi-codebase-skills.md](./docs/architecture/multi-codebase-skills.md)
 

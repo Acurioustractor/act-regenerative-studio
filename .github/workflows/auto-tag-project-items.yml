@@ -29,7 +29,7 @@ jobs:
             const REPO_TO_PROJECT = {
               'empathy-ledger-v2': 'Empathy Ledger',
               'justicehub-platform': 'JusticeHub',
-              'theharvest': 'The Harvest',
+              'harvest-community-hub': 'The Harvest',
               'act-farm': 'ACT Farm',
               'act-placemat': 'ACT Placemat',
               'goods-asset-tracker': 'Goods',  // Emphasized
@@ -41,7 +41,7 @@ jobs:
             const REPO_TO_LABELS = {
               'empathy-ledger-v2': ['empathy-ledger', 'storytelling'],
               'justicehub-platform': ['justicehub', 'justice'],
-              'theharvest': ['harvest', 'community'],
+              'harvest-community-hub': ['harvest', 'community'],
               'act-farm': ['act-farm', 'website'],
               'act-placemat': ['placemat', 'mapping'],
               'goods-asset-tracker': ['goods', 'asset-tracking', 'circular-economy'],  // Emphasized
@@ -224,7 +224,306 @@ jobs:
               console.error(`Failed to update ACT Project field: ${error.message}`);
             }
 
-            // Step 4: Auto-add repository-specific labels
+            // Step 4: Set LCAA Phase to "Action" by default (for new issues)
+            try {
+              const lcaaPhaseFieldQuery = `
+                query($user: String!, $projectNumber: Int!) {
+                  user(login: $user) {
+                    projectV2(number: $projectNumber) {
+                      field(name: "LCAA Phase") {
+                        ... on ProjectV2SingleSelectField {
+                          id
+                          options {
+                            id
+                            name
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              `;
+
+              const lcaaResult = await github.graphql(lcaaPhaseFieldQuery, {
+                user: ORG_NAME,
+                projectNumber: PROJECT_NUMBER
+              });
+
+              const lcaaField = lcaaResult.user.projectV2.field;
+              const actionOption = lcaaField.options.find(opt => opt.name === 'Action');
+
+              if (actionOption) {
+                await github.graphql(updateFieldMutation, {
+                  projectId: PROJECT_ID,
+                  itemId: projectItemId,
+                  fieldId: lcaaField.id,
+                  optionId: actionOption.id
+                });
+
+                console.log(`✅ Set LCAA Phase to: Action`);
+              }
+            } catch (error) {
+              console.log(`Could not set LCAA Phase: ${error.message}`);
+            }
+
+            // Step 5: Set default Priority to "Low" for new issues
+            try {
+              const priorityFieldQuery = `
+                query($user: String!, $projectNumber: Int!) {
+                  user(login: $user) {
+                    projectV2(number: $projectNumber) {
+                      field(name: "Priority") {
+                        ... on ProjectV2SingleSelectField {
+                          id
+                          options {
+                            id
+                            name
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              `;
+
+              const priorityResult = await github.graphql(priorityFieldQuery, {
+                user: ORG_NAME,
+                projectNumber: PROJECT_NUMBER
+              });
+
+              const priorityField = priorityResult.user.projectV2.field;
+              const lowOption = priorityField.options.find(opt => opt.name === 'Low');
+
+              if (lowOption) {
+                await github.graphql(updateFieldMutation, {
+                  projectId: PROJECT_ID,
+                  itemId: projectItemId,
+                  fieldId: priorityField.id,
+                  optionId: lowOption.id
+                });
+
+                console.log(`✅ Set Priority to: Low`);
+              }
+            } catch (error) {
+              console.log(`Could not set Priority: ${error.message}`);
+            }
+
+            // Step 6: Set default Effort to "1h" for new issues
+            try {
+              const effortFieldQuery = `
+                query($user: String!, $projectNumber: Int!) {
+                  user(login: $user) {
+                    projectV2(number: $projectNumber) {
+                      field(name: "Effort") {
+                        ... on ProjectV2SingleSelectField {
+                          id
+                          options {
+                            id
+                            name
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              `;
+
+              const effortResult = await github.graphql(effortFieldQuery, {
+                user: ORG_NAME,
+                projectNumber: PROJECT_NUMBER
+              });
+
+              const effortField = effortResult.user.projectV2.field;
+              const oneHourOption = effortField.options.find(opt => opt.name === '1h');
+
+              if (oneHourOption) {
+                await github.graphql(updateFieldMutation, {
+                  projectId: PROJECT_ID,
+                  itemId: projectItemId,
+                  fieldId: effortField.id,
+                  optionId: oneHourOption.id
+                });
+
+                console.log(`✅ Set Effort to: 1h`);
+              }
+            } catch (error) {
+              console.log(`Could not set Effort: ${error.message}`);
+            }
+
+            // Step 7: Set Sprint to "Backlog" by default for new issues
+            try {
+              const sprintFieldQuery = `
+                query($user: String!, $projectNumber: Int!) {
+                  user(login: $user) {
+                    projectV2(number: $projectNumber) {
+                      field(name: "Sprint") {
+                        ... on ProjectV2Field {
+                          id
+                          dataType
+                        }
+                      }
+                    }
+                  }
+                }
+              `;
+
+              const sprintResult = await github.graphql(sprintFieldQuery, {
+                user: ORG_NAME,
+                projectNumber: PROJECT_NUMBER
+              });
+
+              const sprintField = sprintResult.user.projectV2.field;
+
+              if (sprintField && sprintField.dataType === 'TEXT') {
+                const setSprintMutation = `
+                  mutation($projectId: ID!, $itemId: ID!, $fieldId: ID!, $value: String!) {
+                    updateProjectV2ItemFieldValue(input: {
+                      projectId: $projectId
+                      itemId: $itemId
+                      fieldId: $fieldId
+                      value: { text: $value }
+                    }) {
+                      projectV2Item {
+                        id
+                      }
+                    }
+                  }
+                `;
+
+                await github.graphql(setSprintMutation, {
+                  projectId: PROJECT_ID,
+                  itemId: projectItemId,
+                  fieldId: sprintField.id,
+                  value: 'Backlog'
+                });
+
+                console.log(`✅ Set Sprint to: Backlog`);
+              }
+            } catch (error) {
+              console.log(`Could not set Sprint: ${error.message}`);
+            }
+
+            // Step 8: Set Type to "Enhancement" by default for new issues
+            try {
+              const typeFieldQuery = `
+                query($user: String!, $projectNumber: Int!) {
+                  user(login: $user) {
+                    projectV2(number: $projectNumber) {
+                      field(name: "Type") {
+                        ... on ProjectV2SingleSelectField {
+                          id
+                          options {
+                            id
+                            name
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              `;
+
+              const typeResult = await github.graphql(typeFieldQuery, {
+                user: ORG_NAME,
+                projectNumber: PROJECT_NUMBER
+              });
+
+              const typeField = typeResult.user.projectV2.field;
+              const enhancementOption = typeField.options.find(opt => opt.name === 'Enhancement');
+
+              if (enhancementOption) {
+                await github.graphql(updateFieldMutation, {
+                  projectId: PROJECT_ID,
+                  itemId: projectItemId,
+                  fieldId: typeField.id,
+                  optionId: enhancementOption.id
+                });
+
+                console.log(`✅ Set Type to: Enhancement`);
+              }
+            } catch (error) {
+              console.log(`Could not set Type: ${error.message}`);
+            }
+
+            // Step 9: Auto-assign Milestone based on Type and ACT Project
+            if (isIssue) {
+              try {
+                // Milestone assignment rules
+                const MILESTONE_RULES = {
+                  'Security Hardening': {
+                    condition: (type, actProject) => type === 'Security' || false, // Security type → Security milestone
+                    repos: ['empathy-ledger-v2', 'act-regenerative-studio', 'justicehub-platform']
+                  },
+                  'Data Architecture Complete': {
+                    condition: (type, actProject) => type === 'Data',
+                    repos: ['empathy-ledger-v2', 'act-regenerative-studio']
+                  },
+                  'Empathy Ledger Core': {
+                    condition: (type, actProject) => type === 'Enhancement' && actProject === 'Empathy Ledger',
+                    repos: ['empathy-ledger-v2']
+                  },
+                  'Goods Asset Register MVP': {
+                    condition: (type, actProject) => actProject === 'Goods',
+                    repos: ['goods-asset-tracker']
+                  },
+                  'Integration Platform': {
+                    condition: (type, actProject) => type === 'Integration',
+                    repos: ['act-regenerative-studio', 'empathy-ledger-v2']
+                  },
+                  'JusticeHub Alpha': {
+                    condition: (type, actProject) => actProject === 'JusticeHub',
+                    repos: ['justicehub-platform']
+                  },
+                  'Testing & Quality': {
+                    condition: (type, actProject) => type === 'Testing',
+                    repos: ['goods-asset-tracker', 'empathy-ledger-v2']
+                  },
+                  'The Harvest Website': {
+                    condition: (type, actProject) => actProject === 'The Harvest',
+                    repos: ['harvest-community-hub']
+                  }
+                };
+
+                // Determine which milestone to assign (Type defaults to "Enhancement" from Step 8)
+                const issueType = 'Enhancement'; // This was set in Step 8
+                let milestoneName = null;
+
+                for (const [name, rule] of Object.entries(MILESTONE_RULES)) {
+                  if (rule.repos.includes(repoName) && rule.condition(issueType, actProjectValue)) {
+                    milestoneName = name;
+                    break;
+                  }
+                }
+
+                if (milestoneName) {
+                  // Get milestone number from repo
+                  const { data: milestones } = await github.rest.issues.listMilestones({
+                    owner: context.repo.owner,
+                    repo: context.repo.repo,
+                    state: 'open'
+                  });
+
+                  const milestone = milestones.find(m => m.title === milestoneName);
+
+                  if (milestone) {
+                    await github.rest.issues.update({
+                      owner: context.repo.owner,
+                      repo: context.repo.repo,
+                      issue_number: issueNumber,
+                      milestone: milestone.number
+                    });
+
+                    console.log(`✅ Set Milestone to: ${milestoneName}`);
+                  } else {
+                    console.log(`⚠️  Milestone "${milestoneName}" not found in repo`);
+                  }
+                }
+              } catch (error) {
+                console.log(`Could not set Milestone: ${error.message}`);
+              }
+            }
+
+            // Step 10: Auto-add repository-specific labels
             const labelsToAdd = REPO_TO_LABELS[repoName] || [];
 
             if (labelsToAdd.length > 0 && isIssue) {

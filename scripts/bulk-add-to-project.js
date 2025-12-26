@@ -26,7 +26,7 @@ const REPO_TO_PROJECT = {
   'goods-asset-tracker': 'Goods',
   'empathy-ledger-v2': 'Empathy Ledger',
   'justicehub-platform': 'JusticeHub',
-  'the-harvest-website': 'The Harvest',
+  'harvest-community-hub': 'The Harvest',
   'act-farm': 'ACT Farm',
   'act-placemat': 'ACT Placemat',
   'act-regenerative-studio': 'ACT Main',

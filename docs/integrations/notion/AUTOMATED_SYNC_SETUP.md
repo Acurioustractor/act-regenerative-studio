@@ -31,16 +31,22 @@ Add these 3 secrets:
 | `GH_PROJECT_TOKEN` | GitHub Personal Access Token | From .env.local or create new |
 
 **To create new GitHub token (if needed):**
-1. Go to https://github.com/settings/tokens
-2. Click "Generate new token (classic)"
-3. **IMPORTANT**: Select these exact scopes (checkboxes):
-   - ✅ `repo` - Full control of private repositories
-   - ✅ `project` - Full access to projects (CRITICAL for Projects v2!)
-     - Alternative: `read:project` for read-only (also works)
-   - ✅ `read:org` - Read organization membership
-4. Copy token and save as `GH_PROJECT_TOKEN` secret
 
-**Having issues finding these scopes?** See [GITHUB_TOKEN_SETUP.md](./GITHUB_TOKEN_SETUP.md) for screenshots and detailed guide.
+**CRITICAL**: You MUST create a **"Tokens (classic)"**, NOT a "Fine-grained token". Fine-grained tokens cannot access user-level Projects!
+
+1. Go to https://github.com/settings/tokens
+2. **Click the "Tokens (classic)" tab** (not "Fine-grained tokens")
+3. Click "Generate new token (classic)" button
+4. **Check these 3 checkboxes** on the scopes page:
+   - ✅ `repo` - Full control of private repositories (near the top)
+   - ✅ `project` - Full access to projects (scroll down to find this) ← CRITICAL!
+   - ✅ `read:org` - Read org membership (under "admin:org" section, check ONLY "read:org")
+5. Click "Generate token" at bottom
+6. Copy token immediately and save as `GH_PROJECT_TOKEN` secret
+
+**If you see "Repository access" and "Permissions" sections**: You're on the wrong page (fine-grained tokens). Go back and click "Tokens (classic)" tab.
+
+**Need help finding the checkboxes?** See [GITHUB_TOKEN_SETUP.md](./GITHUB_TOKEN_SETUP.md) for exact visual guide showing what the classic token page looks like.
 
 ### Step 2: Push the Workflow File
 

@@ -13,38 +13,91 @@ This means your GitHub token doesn't have permission to access the GitHub Projec
 
 ## ✅ Fix: Create New Token with Correct Scopes
 
-### Step 1: Generate New Personal Access Token
+### Step 1: Generate New Personal Access Token (CLASSIC)
+
+**CRITICAL**: You MUST use a **classic token**, NOT a fine-grained token. Fine-grained tokens cannot access user-level Projects.
 
 1. **Go to**: https://github.com/settings/tokens
-2. **Click**: "Generate new token" → "Generate new token (classic)"
-3. **Name**: `ACT Notion Sync`
-4. **Expiration**: Choose expiration (90 days recommended)
+2. **Look for two tabs**: "Fine-grained tokens" and "Tokens (classic)"
+3. **Click the "Tokens (classic)" tab** ← Make sure you're on this tab!
+4. **Click**: "Generate new token (classic)" button
+5. **Name**: `ACT Notion Sync`
+6. **Expiration**: Choose expiration (90 days recommended)
 
-### Step 2: Select Required Scopes
+**If you see**: "Repository access", "Permissions", "User permissions" → You're on the WRONG page (fine-grained tokens). Go back and click "Tokens (classic)".
 
-**IMPORTANT**: On the "Select scopes" page, check these exact boxes:
+### Step 2: Select Required Scopes (Classic Token Page)
 
-✅ **`repo`** - Full control of private repositories
-   - This gives access to repository data
+**On the classic token page**, you'll see a list of checkboxes. Scroll down and check these **exact three boxes**:
 
-✅ **`project`** - Full access to user and organization projects
-   - **This is CRITICAL** - enables reading/writing GitHub Projects v2
-   - Alternative: Use `read:project` for read-only access (also works)
+1. ✅ **`repo`** - Full control of private repositories
+   - You'll see this near the top
+   - Check the main "repo" checkbox (this checks all sub-items)
 
-✅ **`read:org`** - Read org and team membership, read org projects
-   - Needed for organization-level project access
+2. ✅ **`project`** - Full access to user and organization projects
+   - **THIS IS CRITICAL** - scroll down to find this
+   - It's a standalone checkbox (not nested under anything)
 
-**What you'll see on GitHub:**
+3. ✅ **`read:org`** - Read org and team membership, read org projects
+   - Further down the page
+   - Under the "admin:org" section, check ONLY "read:org"
 
-When you scroll down the token creation page, you'll see sections like:
-- **repo** (check the main checkbox)
-- **admin:org** (skip this)
-- **admin:public_key** (skip this)
-- **admin:repo_hook** (skip this)
-- Look for **`project`** - check this box ← **CRITICAL!**
-- **read:org** - check this box
+**What the page looks like:**
+```
+Note
+[Description field]
 
-**Note**: If you only see `read:project` and `write:project` instead of just `project`, check `read:project` (that's the newer format and works fine).
+Select scopes
+Scopes define the access for personal tokens. Read more about OAuth scopes.
+
+☑ repo                     Full control of private repositories
+  ☑ repo:status           Access commit status
+  ☑ repo_deployment       Access deployment status
+  ☑ public_repo           Access public repositories
+  ☑ repo:invite           Access repository invitations
+  ☑ security_events       Read and write security events
+
+☐ workflow                 Update GitHub Action workflows
+
+☐ write:packages           Upload packages to GitHub Package Registry
+☐ read:packages            Download packages from GitHub Package Registry
+
+☐ delete:packages          Delete packages from GitHub Package Registry
+
+☐ admin:org                Full control of orgs and teams, read and write org projects
+  ☑ read:org              Read org and team membership, read org projects  ← CHECK THIS
+
+☐ admin:public_key         Full control of user public keys
+
+☐ admin:repo_hook          Full control of repository hooks
+
+☐ admin:org_hook           Full control of organization hooks
+
+☐ gist                     Create gists
+
+☐ notifications            Access notifications
+
+☐ user                     Update ALL user data
+
+☐ delete_repo              Delete repositories
+
+☐ write:discussion         Read and write team discussions
+
+☐ read:discussion          Read team discussions
+
+☐ write:packages           Upload packages
+
+☐ read:packages            Download packages
+
+☐ delete:packages          Delete packages
+
+☑ project                  Full access to user and organization projects  ← CHECK THIS
+☐ read:project             Read access to user and organization projects
+
+☐ admin:gpg_key            Full control of user gpg keys
+```
+
+**Important**: If you see "read:project" instead of "project", that's fine - check "read:project".
 
 ### Step 3: Generate and Copy Token
 

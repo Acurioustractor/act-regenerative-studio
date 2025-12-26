@@ -11,8 +11,14 @@ export default function AdminHomePage() {
       </p>
       <div className="mt-6 flex flex-wrap gap-3">
         <Link
-          href="/admin/content"
+          href="/admin/ecosystem"
           className="rounded-full bg-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white"
+        >
+          Ecosystem Dashboard
+        </Link>
+        <Link
+          href="/admin/content"
+          className="rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#2F3E2E]"
         >
           Manage content
         </Link>

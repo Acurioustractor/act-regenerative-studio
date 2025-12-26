@@ -4,6 +4,9 @@ import { RegistryStatus } from "@/components/dashboard/RegistryStatus";
 import { DeploymentHistory } from "@/components/dashboard/DeploymentHistory";
 import { GHLFormActivity } from "@/components/dashboard/GHLFormActivity";
 import SprintProgress from "@/components/dashboard/SprintProgress";
+import VelocityChart from "@/components/dashboard/VelocityChart";
+import BurndownChart from "@/components/dashboard/BurndownChart";
+import HealthMatrix from "@/components/dashboard/HealthMatrix";
 
 export const metadata = {
   title: "ACT Ecosystem Dashboard | Admin",
@@ -27,6 +30,25 @@ export default function DashboardPage() {
 
       {/* Sprint progress */}
       <SprintProgress />
+
+      {/* Sprint Analytics */}
+      <section>
+        <h2 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)] mb-4">
+          Sprint Analytics
+        </h2>
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+          <VelocityChart />
+          <BurndownChart />
+        </div>
+      </section>
+
+      {/* System Health Matrix */}
+      <section>
+        <h2 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)] mb-4">
+          System Health
+        </h2>
+        <HealthMatrix />
+      </section>
 
       {/* Project health cards */}
       <section>

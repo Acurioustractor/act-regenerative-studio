@@ -17,6 +17,22 @@
       "path": "../The Harvest"
     },
     {
+      "name": "📍 ACT Placemat - Backend",
+      "path": "../ACT Placemat/apps/backend"
+    },
+    {
+      "name": "📊 ACT Dashboard",
+      "path": "../ACT Placemat/apps/frontend"
+    },
+    {
+      "name": "📅 Year in Review",
+      "path": "../ACT Placemat/apps/webflow-portfolio"
+    },
+    {
+      "name": "📦 Shared Types",
+      "path": "../ACT Placemat/packages/shared-types"
+    },
+    {
       "name": "🎛️ Dev Hub",
       "path": "."
     }
@@ -90,6 +106,46 @@
         "console": "integratedTerminal"
       },
       {
+        "name": "▶️ ACT Placemat Backend (4000)",
+        "type": "node",
+        "request": "launch",
+        "runtimeExecutable": "npm",
+        "runtimeArgs": ["start"],
+        "cwd": "${workspaceFolder:📍 ACT Placemat - Backend}",
+        "env": {
+          "PORT": "4000",
+          "REDIS_URL": "redis://192.168.0.34:6379",
+          "CHROMADB_URL": "http://192.168.0.34:8000"
+        },
+        "console": "integratedTerminal"
+      },
+      {
+        "name": "▶️ ACT Dashboard (3006)",
+        "type": "node",
+        "request": "launch",
+        "runtimeExecutable": "npm",
+        "runtimeArgs": ["run", "dev"],
+        "cwd": "${workspaceFolder:📊 ACT Dashboard}",
+        "env": {
+          "PORT": "3006",
+          "VITE_API_URL": "http://localhost:4000"
+        },
+        "console": "integratedTerminal"
+      },
+      {
+        "name": "▶️ Year in Review (3007)",
+        "type": "node",
+        "request": "launch",
+        "runtimeExecutable": "npm",
+        "runtimeArgs": ["run", "dev"],
+        "cwd": "${workspaceFolder:📅 Year in Review}",
+        "env": {
+          "PORT": "3007",
+          "NEXT_PUBLIC_API_URL": "http://localhost:4000"
+        },
+        "console": "integratedTerminal"
+      },
+      {
         "name": "🚀 All Projects (Orchestrator)",
         "type": "node",
         "request": "launch",
@@ -106,7 +162,19 @@
           "▶️ ACT Farm (3001)",
           "▶️ JusticeHub (3002)",
           "▶️ Empathy Ledger (3005)",
-          "▶️ The Harvest (3004)"
+          "▶️ The Harvest (3004)",
+          "▶️ ACT Placemat Backend (4000)",
+          "▶️ ACT Dashboard (3006)",
+          "▶️ Year in Review (3007)"
+        ],
+        "stopAll": true
+      },
+      {
+        "name": "📍 ACT Placemat Stack",
+        "configurations": [
+          "▶️ ACT Placemat Backend (4000)",
+          "▶️ ACT Dashboard (3006)",
+          "▶️ Year in Review (3007)"
         ],
         "stopAll": true
       }

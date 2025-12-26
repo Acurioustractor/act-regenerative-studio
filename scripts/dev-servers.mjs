@@ -64,6 +64,31 @@ const PROJECTS = [
     color: '\x1b[33m', // Yellow
     enabled: true,
   },
+  // ACT Placemat (Monorepo - 3 apps)
+  {
+    name: 'ACT Placemat - Backend',
+    dir: path.join(CODE_DIR, 'ACT Placemat/apps/backend'),
+    port: 4000,
+    color: '\x1b[95m', // Bright Magenta
+    enabled: true,
+    tier: 'shared-services',
+    command: 'npm',
+    args: ['start'],
+  },
+  {
+    name: 'ACT Dashboard',
+    dir: path.join(CODE_DIR, 'ACT Placemat/apps/frontend'),
+    port: 3006,
+    color: '\x1b[96m', // Bright Cyan
+    enabled: true,
+  },
+  {
+    name: 'Year in Review',
+    dir: path.join(CODE_DIR, 'ACT Placemat/apps/webflow-portfolio'),
+    port: 3007,
+    color: '\x1b[93m', // Bright Yellow
+    enabled: true,
+  },
 ];
 
 const RESET = '\x1b[0m';
@@ -253,7 +278,11 @@ function startProject(project) {
     CHROMADB_URL: 'http://192.168.0.34:8000',
   };
 
-  const child = spawn('npm', ['run', 'dev', '--', '-p', project.port.toString()], {
+  // Support custom commands (e.g., backend using 'npm start' instead of 'npm run dev')
+  const command = project.command || 'npm';
+  const args = project.args || ['run', 'dev', '--', '-p', project.port.toString()];
+
+  const child = spawn(command, args, {
     cwd: project.dir,
     env,
     stdio: 'pipe',

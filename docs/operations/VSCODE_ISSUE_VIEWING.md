@@ -2,9 +2,47 @@
 
 > **How to see GitHub issues directly in VS Code workspace**
 
+**For complete agile workflow**, see: [AGILE_WORKFLOW_VSCODE.md](./AGILE_WORKFLOW_VSCODE.md)
+
 ---
 
-## 🎯 Method 1: VS Code Tasks (Simplest - Already Set Up!)
+## 🎯 Method 1: GitHub Pull Requests & Issues Extension (BEST FOR AGILE)
+
+**This is the proper way to work through issues in VS Code with automatic GitHub sync.**
+
+### Setup (One-Time)
+
+1. Extension is already installed: `GitHub.vscode-pull-request-github`
+2. Reload VS Code: `Cmd+Shift+P` → "Developer: Reload Window"
+3. Look for **GitHub icon** in Activity Bar (left sidebar)
+
+### Using It Daily
+
+1. **Click GitHub icon** in sidebar
+2. **See your sprint**:
+   ```
+   📌 MY ISSUES
+     ├─ My Current Sprint (assignee:@me)
+     ├─ Urgent This Week (critical/high priority)
+     ├─ Security & Bugs
+     └─ All Open Issues
+   ```
+
+3. **Right-click any issue**:
+   - "Start Working on Issue" → Auto-creates branch
+   - "Copy Issue URL" → Share with team
+   - "Copy Issue Number" → Use in commits
+
+4. **Work → Commit → Push**:
+   - Use `Fixes #34` in commit message
+   - GitHub auto-closes issue
+   - Project board auto-updates
+
+**This is the complete agile flow.** See [AGILE_WORKFLOW_VSCODE.md](./AGILE_WORKFLOW_VSCODE.md) for full details.
+
+---
+
+## 🎯 Method 2: VS Code Tasks (Quick Terminal View)
 
 The workspace has custom tasks pre-configured. Just run them:
 
@@ -26,84 +64,33 @@ The workspace has custom tasks pre-configured. Just run them:
 
 **That's it!** No extension needed.
 
----
-
-## 🎯 Method 2: GitHub Pull Requests & Issues Extension (Advanced)
-
-For more features like creating branches from issues.
-
-### Step 1: Install Extension
-
-The extension is already installed! If you don't see the GitHub icon in your sidebar:
-
-1. Press `Cmd+Shift+P`
-2. Type "Developer: Reload Window"
-3. Look for GitHub icon in Activity Bar (left sidebar)
-
-**Can't find it?** Run this command:
-```bash
-code --install-extension GitHub.vscode-pull-request-github
-```
-
-### Step 2: View Issues
-
-Once loaded, you'll see a new **GitHub icon** in your Activity Bar (left sidebar).
-
-Click it to see:
-
-```
-📌 MY ISSUES
-  ├─ My Current Sprint (assignee:@me)
-  ├─ Urgent This Week (critical/high priority)
-  ├─ Security & Bugs
-  └─ All Open Issues
-
-🔍 CREATE ISSUE
-📝 CREATE PULL REQUEST
-```
-
-### Step 3: Working with Issues
-
-**View issue details:**
-- Click any issue to see full description, comments, labels, milestone
-- See which repo it belongs to
-- See Due Date and Sprint assignment
-
-**Start working on issue:**
-1. Right-click issue → "Start Working on Issue"
-2. Creates branch automatically: `issue42` (configurable)
-3. Opens relevant files
-4. When done: "Create Pull Request"
-
-**Close issue from commit:**
-- Just include `Fixes #42` in your commit message
-- GitHub auto-closes when pushed
+**Use these for quick checks**, but use Method 1 (GitHub Extension) for daily workflow.
 
 ---
 
-## 📋 Custom Queries Configured
+## 📋 Configured Issue Queries
 
-The workspace includes these pre-configured queries:
+Your workspace has custom queries for the GitHub extension:
 
 ### 1. My Current Sprint
-**Query**: `assignee:@me state:open`
-**Shows**: All your assigned open issues across all 6 repos
-**Use**: Daily workflow - see your work for today
+- **Query**: `assignee:@me state:open`
+- **Shows**: Your assigned issues across all 6 ACT repos
+- **Use**: See what you're working on today
 
 ### 2. Urgent This Week
-**Query**: `state:open label:priority:critical,priority:high`
-**Shows**: Critical and High priority issues
-**Use**: Triage - what needs immediate attention
+- **Query**: `state:open label:priority:critical,priority:high`
+- **Shows**: Critical and High priority issues
+- **Use**: What needs immediate attention
 
 ### 3. Security & Bugs
-**Query**: `state:open label:type:security,type:bug`
-**Shows**: All security issues and bugs
-**Use**: Quality focus - always check these first
+- **Query**: `state:open label:type:security,type:bug`
+- **Shows**: Security issues and bugs
+- **Use**: Quality-critical work
 
 ### 4. All Open Issues
-**Query**: `state:open sort:updated-desc`
-**Shows**: Everything, newest first
-**Use**: Full project overview
+- **Query**: `state:open sort:updated-desc`
+- **Shows**: Everything, newest first
+- **Use**: Full project overview
 
 ---
 

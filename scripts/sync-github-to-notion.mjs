@@ -263,7 +263,7 @@ function buildNotionProperties(item) {
 
   // Add optional fields only if they have values
   if (status) {
-    properties['Status'] = { status: { name: STATUS_MAPPING[status] || status } };
+    properties['Status'] = { select: { name: STATUS_MAPPING[status] || status } };
   }
 
   if (actProject) {
@@ -283,7 +283,7 @@ function buildNotionProperties(item) {
   }
 
   if (sprint) {
-    properties['Sprint'] = { rich_text: [{ text: { content: sprint } }] };
+    properties['Sprint'] = { select: { name: sprint } };
   }
 
   if (type) {

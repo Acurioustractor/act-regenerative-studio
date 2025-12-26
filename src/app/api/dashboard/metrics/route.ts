@@ -13,7 +13,7 @@ export async function GET() {
 
     const activeCount = syncResults.filter((r) => r.status === "success").length;
 
-    // TODO: Fetch real deployment and form submission data
+    // TODO: See issue #29 in act-regenerative-studio: Fetch real deployment and form submission data
     // For now, returning placeholder metrics
     const metrics = {
       totalProjects: 6, // Empathy Ledger, JusticeHub, Harvest, ACT Farm, Goods, BCV

@@ -95,7 +95,7 @@ function analyzeThemes(stories: any[]): {
     primaryThemes,
     emergingThemes,
     storyCountByTheme: themeCount,
-    commonPatterns: [], // TODO: AI analysis for patterns
+    commonPatterns: [], // TODO: See issue #4 in act-regenerative-studio: AI analysis for patterns
   };
 }
 
@@ -154,7 +154,7 @@ async function getRelatedProjectsData(projectSlug: string, projectMetadata: Noti
  * Get media galleries for a project
  */
 async function getProjectMedia(projectSlug: string) {
-  // TODO: Implement media gallery retrieval
+  // TODO: See issue #5 in act-regenerative-studio: Implement media gallery retrieval
   // Sources:
   // - Supabase storage
   // - Year-in-review media

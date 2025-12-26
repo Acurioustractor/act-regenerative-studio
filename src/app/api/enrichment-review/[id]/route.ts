@@ -73,7 +73,7 @@ export async function PATCH(
       updates.status = body.status;
       if (body.status === 'approved' || body.status === 'rejected') {
         updates.reviewed_at = new Date().toISOString();
-        // TODO: Get actual user ID from auth
+        // TODO: See issue #26 in act-regenerative-studio: Get actual user ID from auth
         // updates.reviewed_by = user.id;
       }
     }

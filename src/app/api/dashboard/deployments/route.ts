@@ -4,7 +4,7 @@ export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
-    // TODO: Integrate with Vercel API to fetch real deployment data
+    // TODO: See issue #32 in act-regenerative-studio: Integrate with Vercel API to fetch real deployment data
     // Requires VERCEL_ACCESS_TOKEN environment variable
 
     const deployments: any[] = [];

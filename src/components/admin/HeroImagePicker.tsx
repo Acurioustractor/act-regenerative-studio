@@ -150,7 +150,7 @@ export default function HeroImagePicker({
           <div className="flex items-center gap-3">
             <button
               onClick={() => {
-                // TODO: Open media upload modal
+                // TODO: See issue #6 in act-regenerative-studio: Open media upload modal
                 alert('Media upload functionality coming soon!');
               }}
               className="flex items-center gap-2 px-4 py-2 border border-gray-300 hover:bg-gray-50 rounded-lg transition-colors"

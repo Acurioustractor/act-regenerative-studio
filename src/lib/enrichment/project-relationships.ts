@@ -113,7 +113,7 @@ function calculateGeographicOverlap(
   score: number;
   reason: string;
 } {
-  // TODO: Extract location data from project metadata
+  // TODO: See issue #3 in act-regenerative-studio: Extract location data from project metadata
   // For now, check if projects mention same locations in description/notes
 
   const locationsA = extractLocations(projectA.description + ' ' + projectA.notes);

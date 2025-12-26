@@ -15,8 +15,8 @@ interface Project {
 
 export async function GET() {
   try {
-    // TODO: Fetch real deployment status from Vercel API
-    // TODO: Check actual site health with HEAD requests
+    // TODO: See issue #27 in act-regenerative-studio: Fetch real deployment status from Vercel API
+    // TODO: See issue #28 in act-regenerative-studio: Check actual site health with HEAD requests
     // For now, returning static project list
 
     const projects: Project[] = [

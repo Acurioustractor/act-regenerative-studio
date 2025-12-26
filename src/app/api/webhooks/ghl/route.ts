@@ -39,7 +39,7 @@ export async function POST(request: NextRequest) {
     const webhookSecret = process.env.GOHIGHLEVEL_WEBHOOK_SECRET;
     if (webhookSecret) {
       const signature = request.headers.get("x-ghl-signature");
-      // TODO: Implement signature verification
+      // TODO: See issue #7 in act-regenerative-studio: Implement signature verification
       // if (!verifySignature(payload, signature, webhookSecret)) {
       //   return NextResponse.json({ error: "Invalid signature" }, { status: 401 });
       // }
@@ -74,10 +74,10 @@ export async function POST(request: NextRequest) {
         console.warn("Unknown form type:", payload.formId);
     }
 
-    // TODO: Store submission in Supabase
+    // TODO: See issue #8 in act-regenerative-studio: Store submission in Supabase
     // await storeSubmission(payload, formType);
 
-    // TODO: Sync to Notion
+    // TODO: See issue #9 in act-regenerative-studio: Sync to Notion
     // await syncToNotion(payload, formType);
 
     return NextResponse.json({
@@ -102,7 +102,7 @@ function determineFormType(
   formName: string
 ): "contact" | "farm_stay" | "csa" | "art_residency" | "newsletter" | "unknown" {
   // Map form IDs or names to types
-  // TODO: Update these with actual GHL form IDs
+  // TODO: See issue #10 in act-regenerative-studio: Update these with actual GHL form IDs
   const formMappings: Record<string, any> = {
     [process.env.CONTACT_FORM_ID || ""]: "contact",
     [process.env.FARM_STAY_BOOKING || ""]: "farm_stay",
@@ -127,34 +127,34 @@ function determineFormType(
 
 async function handleContactForm(payload: GHLWebhookPayload) {
   console.log("Processing contact form submission:", payload.contact.email);
-  // TODO: Send notification email
-  // TODO: Create Notion entry in "Partnerships" database
-  // TODO: Add to CRM workflow
+  // TODO: See issue #11 in act-regenerative-studio: Send notification email
+  // TODO: See issue #12 in act-regenerative-studio: Create Notion entry in "Partnerships" database
+  // TODO: See issue #13 in act-regenerative-studio: Add to CRM workflow
 }
 
 async function handleFarmStayBooking(payload: GHLWebhookPayload) {
   console.log("Processing farm stay booking:", payload.contact.email);
-  // TODO: Create Notion entry in "Bookings" database
-  // TODO: Send confirmation email
-  // TODO: Add to calendar
+  // TODO: See issue #14 in act-regenerative-studio: Create Notion entry in "Bookings" database
+  // TODO: See issue #15 in act-regenerative-studio: Send confirmation email
+  // TODO: See issue #16 in act-regenerative-studio: Add to calendar
 }
 
 async function handleCSAInterest(payload: GHLWebhookPayload) {
   console.log("Processing CSA interest:", payload.contact.email);
-  // TODO: Create Notion entry in "CSA Members" database
-  // TODO: Add to Harvest mailing list
-  // TODO: Send welcome email with next steps
+  // TODO: See issue #17 in act-regenerative-studio: Create Notion entry in "CSA Members" database
+  // TODO: See issue #18 in act-regenerative-studio: Add to Harvest mailing list
+  // TODO: See issue #19 in act-regenerative-studio: Send welcome email with next steps
 }
 
 async function handleArtResidency(payload: GHLWebhookPayload) {
   console.log("Processing art residency application:", payload.contact.email);
-  // TODO: Create Notion entry in "Residency Applications" database
-  // TODO: Send acknowledgment email
-  // TODO: Notify residency coordinator
+  // TODO: See issue #20 in act-regenerative-studio: Create Notion entry in "Residency Applications" database
+  // TODO: See issue #21 in act-regenerative-studio: Send acknowledgment email
+  // TODO: See issue #22 in act-regenerative-studio: Notify residency coordinator
 }
 
 async function handleNewsletterSignup(payload: GHLWebhookPayload) {
   console.log("Processing newsletter signup:", payload.contact.email);
-  // TODO: Add to newsletter list
-  // TODO: Send welcome email
+  // TODO: See issue #23 in act-regenerative-studio: Add to newsletter list
+  // TODO: See issue #24 in act-regenerative-studio: Send welcome email
 }

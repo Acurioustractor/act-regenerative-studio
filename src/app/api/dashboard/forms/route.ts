@@ -4,8 +4,8 @@ export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
-    // TODO: Query Supabase for GHL webhook submissions
-    // TODO: Calculate stats from stored webhook data
+    // TODO: See issue #30 in act-regenerative-studio: Query Supabase for GHL webhook submissions
+    // TODO: See issue #31 in act-regenerative-studio: Calculate stats from stored webhook data
 
     const response = {
       submissions: [],

@@ -320,7 +320,7 @@ Scope: All 7 core repositories
 **4.1 Migrate 32 In-Code TODOs**
 
 Create `scripts/migrate-todos-to-github.mjs`:
-- Scan all 7 codebases for `// TODO:` and `// FIXME:`
+- Scan all 7 codebases for `// TODO:See issue #2 in act-regenerative-studio: ` and `// FIXME:`
 - Create GitHub issue for each
 - Replace in code with: `// See issue #123 in repo-name: original text`
 - Link to unified Projects board

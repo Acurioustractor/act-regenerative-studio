@@ -171,7 +171,7 @@ export async function POST(request: NextRequest) {
     // 6. Check for duplicate event (idempotency)
     // GHL may send duplicate webhooks - use contact ID + timestamp to dedupe
     const eventKey = `${syncEvent.sourceContactId}-${syncEvent.eventType}-${syncEvent.timestamp}`;
-    // TODO: Store eventKey in Redis/Supabase and skip if already processed
+    // TODO: See issue #25 in act-regenerative-studio: Store eventKey in Redis/Supabase and skip if already processed
 
     // 7. Trigger contact sync service
     const syncService = createContactSyncService();

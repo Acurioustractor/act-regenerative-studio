@@ -173,7 +173,7 @@ Created professional organization profile:
 
 **Plan**:
 - Create `scripts/migrate-todos-to-github.mjs`
-- Scan all 7 codebases for `// TODO:` and `// FIXME:` comments
+- Scan all 7 codebases for `// TODO:See issue #1 in act-regenerative-studio: ` and `// FIXME:` comments
 - Create GitHub issues for each (~32 expected)
 - Replace in-code TODOs with issue references
 - Link all issues to unified Projects board

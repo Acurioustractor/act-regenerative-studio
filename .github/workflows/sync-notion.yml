@@ -27,7 +27,7 @@ jobs:
           cache: 'npm'
 
       - name: Install dependencies
-        run: npm install @notionhq/client @octokit/rest
+        run: npm install @notionhq/client @octokit/graphql @octokit/rest
 
       - name: Sync GitHub → Notion
         env:

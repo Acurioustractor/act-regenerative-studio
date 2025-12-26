@@ -1,5 +1,6 @@
 import { ProjectHealthCard } from '@/components/dashboard/ProjectHealthCard';
 import { EcosystemOverview } from '@/components/dashboard/EcosystemOverview';
+import { ActivityFeed } from '@/components/dashboard/ActivityFeed';
 
 // ACT Ecosystem projects
 const ACT_PROJECTS = [
@@ -63,11 +64,19 @@ export default async function EcosystemPage() {
       {/* Overview Stats */}
       <EcosystemOverview projects={ACT_PROJECTS} />
 
-      {/* Project Health Cards */}
-      <div className="grid grid-cols-1 gap-4 lg:grid-cols-2 xl:grid-cols-3">
-        {ACT_PROJECTS.map((project) => (
-          <ProjectHealthCard key={project.repo} project={project} />
-        ))}
+      {/* Two Column Layout: Project Cards + Activity Feed */}
+      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+        {/* Project Health Cards - 2 columns */}
+        <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
+          {ACT_PROJECTS.map((project) => (
+            <ProjectHealthCard key={project.repo} project={project} />
+          ))}
+        </div>
+
+        {/* Activity Feed - 1 column */}
+        <div className="lg:col-span-1">
+          <ActivityFeed />
+        </div>
       </div>
 
       {/* Quick Links */}

@@ -33,8 +33,13 @@ Add these 3 secrets:
 **To create new GitHub token (if needed):**
 1. Go to https://github.com/settings/tokens
 2. Click "Generate new token (classic)"
-3. Select scopes: `repo`, `project`, `read:org`
+3. **IMPORTANT**: Select these exact scopes:
+   - ✅ `repo` (full repository access)
+   - ✅ `read:project` (read GitHub Projects v2) ← CRITICAL!
+   - ✅ `read:org` (read organization)
 4. Copy token and save as `GH_PROJECT_TOKEN` secret
+
+**Having issues?** See [GITHUB_TOKEN_SETUP.md](./GITHUB_TOKEN_SETUP.md) for detailed troubleshooting.
 
 ### Step 2: Push the Workflow File
 

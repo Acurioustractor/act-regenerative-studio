@@ -132,6 +132,25 @@ async function fetchGitHubProjectItems() {
                       }
                     }
                   }
+                  ... on ProjectV2ItemFieldDateValue {
+                    date
+                    field {
+                      ... on ProjectV2FieldCommon {
+                        name
+                      }
+                    }
+                  }
+                  ... on ProjectV2ItemFieldMilestoneValue {
+                    milestone {
+                      title
+                      dueOn
+                    }
+                    field {
+                      ... on ProjectV2FieldCommon {
+                        name
+                      }
+                    }
+                  }
                 }
               }
             }
@@ -172,7 +191,13 @@ function getFieldValue(item, fieldName) {
 
   if (!field) return null;
 
-  return field.name || field.text || null;
+  // Handle different field types
+  if (field.name) return field.name; // Single select
+  if (field.text) return field.text; // Text
+  if (field.date) return field.date; // Date
+  if (field.milestone) return field.milestone; // Milestone object
+
+  return null;
 }
 
 /**
@@ -220,6 +245,8 @@ function buildNotionProperties(item) {
   const priority = getFieldValue(item, 'Priority');
   const effort = getFieldValue(item, 'Effort');
   const sprint = getFieldValue(item, 'Sprint');
+  const dueDate = getFieldValue(item, 'Due Date');
+  const milestone = getFieldValue(item, 'Milestone');
 
   const labels = content.labels?.nodes.map(l => l.name) || [];
 
@@ -284,6 +311,14 @@ function buildNotionProperties(item) {
 
   if (sprint) {
     properties['Sprint'] = { select: { name: sprint } };
+  }
+
+  if (dueDate) {
+    properties['Due Date'] = { date: { start: dueDate } };
+  }
+
+  if (milestone) {
+    properties['Milestone'] = { select: { name: milestone.title } };
   }
 
   if (type) {

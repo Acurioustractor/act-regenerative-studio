@@ -146,6 +146,12 @@ export function ProjectHealthCard({ project }: { project: Project }) {
               <span className="font-medium">{health.lastCommit}</span>
             </div>
           )}
+          {project.url && (
+            <div className="flex justify-between">
+              <span>Deployment:</span>
+              <span className="font-medium text-[#4CAF50]">Live</span>
+            </div>
+          )}
           <div className="flex justify-between">
             <span>Status:</span>
             <span className="font-medium">{statusText[health.status]}</span>

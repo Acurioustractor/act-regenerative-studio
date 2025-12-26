@@ -35,7 +35,7 @@ jobs:
           NOTION_DATABASE_ID: ${{ secrets.NOTION_DATABASE_ID }}
           GITHUB_TOKEN: ${{ secrets.GH_PROJECT_TOKEN }}
         run: |
-          node scripts/sync-github-to-notion.js
+          node scripts/sync-github-to-notion.mjs
 
       - name: Report sync status
         if: always()

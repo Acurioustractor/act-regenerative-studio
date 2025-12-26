@@ -39,7 +39,7 @@ echo "📦 Notion Database: $NOTION_DATABASE_ID"
 echo ""
 
 # Run sync
-node scripts/sync-github-to-notion.js
+node scripts/sync-github-to-notion.mjs
 
 # Check result
 if [ $? -eq 0 ]; then

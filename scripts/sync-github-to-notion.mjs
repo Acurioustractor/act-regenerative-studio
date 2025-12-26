@@ -7,8 +7,8 @@
  * and syncs them to Notion database with bidirectional mapping.
  */
 
-const { Client } = require('@notionhq/client');
-const { Octokit } = require('@octokit/rest');
+import { Client } from '@notionhq/client';
+import { graphql } from '@octokit/graphql';
 
 // Configuration
 const GITHUB_TOKEN = process.env.GITHUB_TOKEN;
@@ -19,7 +19,11 @@ const GITHUB_ORG = 'Acurioustractor';
 
 // Initialize clients
 const notion = new Client({ auth: NOTION_TOKEN });
-const octokit = new Octokit({ auth: GITHUB_TOKEN });
+const graphqlWithAuth = graphql.defaults({
+  headers: {
+    authorization: `token ${GITHUB_TOKEN}`,
+  },
+});
 
 // Status mapping
 const STATUS_MAPPING = {
@@ -142,7 +146,7 @@ async function fetchGitHubProjectItems() {
   let after = null;
 
   while (hasNextPage) {
-    const response = await octokit.graphql(query, {
+    const response = await graphqlWithAuth(query, {
       projectId: GITHUB_PROJECT_ID,
       after
     });

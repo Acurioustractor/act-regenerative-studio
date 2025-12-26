@@ -25,7 +25,7 @@ export NOTION_DATABASE_ID="2d5ebcf9-81cf-8042-9f40-ef7b39b39ca1"
 source .env.local
 
 # Run sync
-node scripts/sync-github-to-notion.js
+node scripts/sync-github-to-notion.mjs
 ```
 
 ## ✅ What Happens

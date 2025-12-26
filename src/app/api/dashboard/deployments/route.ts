@@ -4,18 +4,13 @@ export const dynamic = "force-dynamic";
 
 export async function GET() {
   try {
-    // TODO: See issue #32 in act-regenerative-studio: Integrate with Vercel API to fetch real deployment data
-    // Requires VERCEL_ACCESS_TOKEN environment variable
-
-    const deployments: any[] = [];
-
-    /* Example Vercel API integration:
     const VERCEL_TOKEN = process.env.VERCEL_ACCESS_TOKEN;
-    const VERCEL_TEAM_ID = process.env.VERCEL_TEAM_ID;
+    let deployments: any[] = [];
 
     if (VERCEL_TOKEN) {
+      // Personal account - no teamId needed
       const response = await fetch(
-        `https://api.vercel.com/v6/deployments?teamId=${VERCEL_TEAM_ID}&limit=20`,
+        `https://api.vercel.com/v6/deployments?limit=20`,
         {
           headers: {
             Authorization: `Bearer ${VERCEL_TOKEN}`,
@@ -36,9 +31,12 @@ export async function GET() {
           branch: d.meta?.githubCommitRef || "",
           duration: d.buildingAt ? Date.now() - d.buildingAt : undefined,
         }));
+      } else {
+        console.error("Vercel API error:", response.status, await response.text());
       }
+    } else {
+      console.warn("VERCEL_ACCESS_TOKEN not set - returning empty deployments");
     }
-    */
 
     return NextResponse.json(deployments);
   } catch (error) {

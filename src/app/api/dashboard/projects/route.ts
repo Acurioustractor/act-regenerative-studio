@@ -13,13 +13,63 @@ interface Project {
   vercelProject: string;
 }
 
+/**
+ * Check site health with HEAD request
+ */
+async function checkSiteHealth(url: string): Promise<"healthy" | "degraded" | "down"> {
+  try {
+    const controller = new AbortController();
+    const timeout = setTimeout(() => controller.abort(), 5000); // 5 second timeout
+
+    const response = await fetch(url, {
+      method: 'HEAD',
+      signal: controller.signal,
+    });
+
+    clearTimeout(timeout);
+
+    if (response.ok) return "healthy";
+    if (response.status >= 500) return "down";
+    return "degraded";
+  } catch (error) {
+    return "down";
+  }
+}
+
+/**
+ * Get latest deployment for a project from Vercel
+ */
+async function getLatestDeployment(projectSlug: string): Promise<string | null> {
+  const VERCEL_TOKEN = process.env.VERCEL_ACCESS_TOKEN;
+
+  if (!VERCEL_TOKEN) return null;
+
+  try {
+    const response = await fetch(
+      `https://api.vercel.com/v6/deployments?limit=1&projectId=${projectSlug}&state=READY`,
+      {
+        headers: {
+          Authorization: `Bearer ${VERCEL_TOKEN}`,
+        },
+      }
+    );
+
+    if (response.ok) {
+      const data = await response.json();
+      if (data.deployments && data.deployments.length > 0) {
+        return new Date(data.deployments[0].created).toISOString();
+      }
+    }
+  } catch (error) {
+    console.error(`Failed to fetch deployment for ${projectSlug}:`, error);
+  }
+
+  return null;
+}
+
 export async function GET() {
   try {
-    // TODO: See issue #27 in act-regenerative-studio: Fetch real deployment status from Vercel API
-    // TODO: See issue #28 in act-regenerative-studio: Check actual site health with HEAD requests
-    // For now, returning static project list
-
-    const projects: Project[] = [
+    const projectsConfig: Project[] = [
       {
         name: "Empathy Ledger",
         slug: "empathy-ledger",
@@ -81,6 +131,22 @@ export async function GET() {
         vercelProject: "acurioustractor/act-hub",
       },
     ];
+
+    // Check health and get deployment times in parallel for all projects
+    const projects = await Promise.all(
+      projectsConfig.map(async (project) => {
+        const [status, lastDeployed] = await Promise.all([
+          checkSiteHealth(project.url),
+          project.vercelProject ? getLatestDeployment(project.vercelProject) : Promise.resolve(null),
+        ]);
+
+        return {
+          ...project,
+          status,
+          lastDeployed: lastDeployed || new Date().toISOString(),
+        };
+      })
+    );
 
     return NextResponse.json(projects);
   } catch (error) {

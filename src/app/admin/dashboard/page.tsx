@@ -3,6 +3,7 @@ import { ProjectHealthCards } from "@/components/dashboard/ProjectHealthCards";
 import { RegistryStatus } from "@/components/dashboard/RegistryStatus";
 import { DeploymentHistory } from "@/components/dashboard/DeploymentHistory";
 import { GHLFormActivity } from "@/components/dashboard/GHLFormActivity";
+import SprintProgress from "@/components/dashboard/SprintProgress";
 
 export const metadata = {
   title: "ACT Ecosystem Dashboard | Admin",
@@ -23,6 +24,9 @@ export default function DashboardPage() {
 
       {/* Top-level metrics */}
       <DashboardMetrics />
+
+      {/* Sprint progress */}
+      <SprintProgress />
 
       {/* Project health cards */}
       <section>

@@ -318,7 +318,9 @@ function buildNotionProperties(item) {
   }
 
   if (milestone) {
-    properties['Milestone'] = { select: { name: milestone.title } };
+    // Milestone is a text value from GitHub Projects, not an object
+    const milestoneName = typeof milestone === 'string' ? milestone : (milestone.title || String(milestone));
+    properties['Milestone'] = { select: { name: milestoneName } };
   }
 
   if (type) {

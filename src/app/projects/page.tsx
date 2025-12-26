@@ -1,4 +1,5 @@
 import { ProjectShowcaseCard } from '@/components/showcase/ProjectShowcaseCard';
+import { RoadmapTimeline } from '@/components/showcase/RoadmapTimeline';
 
 const ACT_PROJECTS = [
   {
@@ -243,6 +244,22 @@ export default function ProjectsPage() {
                 Good First Issues
               </a>
             </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Roadmap */}
+      <section className="px-4 py-16 bg-[#F5F1E8]">
+        <div className="mx-auto max-w-4xl">
+          <h2 className="text-center text-3xl font-bold text-[#2F3E2E] font-[var(--font-display)]">
+            Roadmap
+          </h2>
+          <p className="mt-4 text-center text-[#4D3F33]">
+            Our journey toward a post-extractive economy
+          </p>
+
+          <div className="mt-12">
+            <RoadmapTimeline />
           </div>
         </div>
       </section>

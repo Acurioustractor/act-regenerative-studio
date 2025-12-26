@@ -1,4 +1,5 @@
 import { NextRequest, NextResponse } from "next/server";
+import { createClient } from "@supabase/supabase-js";
 
 export const dynamic = "force-dynamic";
 
@@ -74,8 +75,8 @@ export async function POST(request: NextRequest) {
         console.warn("Unknown form type:", payload.formId);
     }
 
-    // TODO: See issue #8 in act-regenerative-studio: Store submission in Supabase
-    // await storeSubmission(payload, formType);
+    // Store submission in Supabase (fixes issue #8)
+    const submissionId = await storeSubmission(payload, formType);
 
     // TODO: See issue #9 in act-regenerative-studio: Sync to Notion
     // await syncToNotion(payload, formType);
@@ -84,6 +85,7 @@ export async function POST(request: NextRequest) {
       success: true,
       message: "Webhook processed successfully",
       formType,
+      submissionId,
     });
   } catch (error) {
     console.error("GHL webhook error:", error);
@@ -157,4 +159,53 @@ async function handleNewsletterSignup(payload: GHLWebhookPayload) {
   console.log("Processing newsletter signup:", payload.contact.email);
   // TODO: See issue #23 in act-regenerative-studio: Add to newsletter list
   // TODO: See issue #24 in act-regenerative-studio: Send welcome email
+}
+
+/**
+ * Store form submission in Supabase
+ * Fixes issue #8
+ */
+async function storeSubmission(
+  payload: GHLWebhookPayload,
+  formType: string
+): Promise<string | null> {
+  try {
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY!
+    );
+
+    const submissionData = {
+      form_id: payload.formId,
+      form_name: payload.formName,
+      form_type: formType,
+      submission_id: payload.submissionId,
+      contact_id: payload.contactId,
+      email: payload.contact.email,
+      name: payload.contact.name,
+      phone: payload.contact.phone,
+      custom_fields: payload.customFields || {},
+      submitted_at: payload.submittedAt || new Date().toISOString(),
+      webhook_payload: payload,
+      synced_to_notion: false,
+    };
+
+    const { data, error } = await supabase
+      .from('ghl_submissions')
+      .insert([submissionData])
+      .select('id')
+      .single();
+
+    if (error) {
+      console.error("Failed to store GHL submission:", error);
+      return null;
+    }
+
+    console.log("GHL submission stored with ID:", data?.id);
+    return data?.id || null;
+
+  } catch (error) {
+    console.error("Error storing submission:", error);
+    return null;
+  }
 }

@@ -30,12 +30,22 @@ export async function GET(request: NextRequest) {
     // Organization-level project: ACT Ecosystem Development
     const GITHUB_PROJECT_ID = process.env.GITHUB_PROJECT_ID || 'PVT_kwHOCOopjs4BLVik';
 
-    const query = `
-      query($projectId: ID!) {
-        node(id: $projectId) {
-          ... on ProjectV2 {
-            items(first: 100) {
-              nodes {
+    // Fetch all items with pagination (GitHub limits to 100 per page)
+    let allItems: any[] = [];
+    let hasNextPage = true;
+    let cursor: string | null = null;
+
+    while (hasNextPage) {
+      const query = `
+        query($projectId: ID!, $cursor: String) {
+          node(id: $projectId) {
+            ... on ProjectV2 {
+              items(first: 100, after: $cursor) {
+                pageInfo {
+                  hasNextPage
+                  endCursor
+                }
+                nodes {
                 id
                 fieldValues(first: 20) {
                   nodes {
@@ -72,34 +82,40 @@ export async function GET(request: NextRequest) {
           }
         }
       }
-    `;
+      `;
 
-    const response = await fetch("https://api.github.com/graphql", {
-      method: "POST",
-      headers: {
-        Authorization: `Bearer ${GITHUB_TOKEN}`,
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        query,
-        variables: { projectId: GITHUB_PROJECT_ID },
-      }),
-    });
+      const response = await fetch("https://api.github.com/graphql", {
+        method: "POST",
+        headers: {
+          Authorization: `Bearer ${GITHUB_TOKEN}`,
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          query,
+          variables: { projectId: GITHUB_PROJECT_ID, cursor },
+        }),
+      });
 
-    if (!response.ok) {
-      const errorText = await response.text();
-      console.error("GitHub API error:", response.status, errorText);
-      throw new Error(`GitHub API returned ${response.status}`);
+      if (!response.ok) {
+        const errorText = await response.text();
+        console.error("GitHub API error:", response.status, errorText);
+        throw new Error(`GitHub API returned ${response.status}`);
+      }
+
+      const data = await response.json();
+
+      if (data.errors) {
+        console.error("GraphQL errors:", data.errors);
+        throw new Error(`GraphQL errors: ${JSON.stringify(data.errors)}`);
+      }
+
+      const itemsData = data.data?.node?.items;
+      const items = itemsData?.nodes || [];
+
+      allItems.push(...items);
+      hasNextPage = itemsData?.pageInfo?.hasNextPage || false;
+      cursor = itemsData?.pageInfo?.endCursor;
     }
-
-    const data = await response.json();
-
-    if (data.errors) {
-      console.error("GraphQL errors:", data.errors);
-      throw new Error(`GraphQL errors: ${JSON.stringify(data.errors)}`);
-    }
-
-    const items = data.data?.node?.items?.nodes || [];
 
     // Get query params
     const { searchParams } = new URL(request.url);
@@ -108,8 +124,8 @@ export async function GET(request: NextRequest) {
 
     // Filter items by sprint (unless showing all)
     const sprintItems = showAll
-      ? items
-      : items.filter((item: any) => {
+      ? allItems
+      : allItems.filter((item: any) => {
           const sprintField = item.fieldValues?.nodes?.find(
             (fv: any) => fv.field?.name === "Sprint"
           );

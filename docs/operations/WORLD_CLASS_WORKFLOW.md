@@ -1,7 +1,7 @@
 # 🌟 ACT Ecosystem - World-Class Development Workflow
 
-**Updated**: 2025-12-26
-**Status**: Production System Design
+**Updated**: 2025-12-27
+**Status**: Production System + Sprint Workflow Integration
 
 ---
 
@@ -83,13 +83,38 @@ code ~/Code/ACT-Workspace.code-workspace
 
 ### Working with Claude Code
 
-**1. Check What to Work On**:
+**1. Check What to Work On** (Sprint Workflow System):
 ```bash
-# Claude knows your GitHub Project
+# Daily standup report
+/sprint-workflow today
+```
+
+**You see**:
+```
+☀️ Daily Standup - December 27, 2025
+
+🎯 Sprint 4 Progress: 67% (10/15 issues done)
+
+✅ Yesterday (Dec 26):
+  - Fixed #33: Add velocity chart component
+  - Committed 4 times across act-regenerative-studio
+
+📝 Today's Focus (3 issues assigned):
+  #42 [In Progress] - Health matrix component
+  #45 [Todo] - Webhook signature verification 🔴 Critical
+
+📦 Recent Deployments (24h):
+  ✅ act-regenerative-studio - 2 hours ago
+
+⚠️  Blockers: None
+```
+
+**Or ask Claude directly**:
+```bash
 claude "What should I work on today?"
 ```
 
-**Claude sees**:
+**Claude sees your GitHub Project**:
 ```
 🔴 URGENT (Due in 5 days):
   Security Hardening: 5 issues
@@ -207,9 +232,44 @@ Security Hardening (Due: Jan 31, 2025)
 
 ## 📅 Part 3: Planning & Coordination
 
-### Monday Morning: Team Planning Session
+### Monday Morning: Sprint Planning Session
 
-**1. Review Milestones**:
+**🚀 NEW: Sprint Workflow System**
+
+**1. Review Velocity & Plan Sprint**:
+```bash
+# Data-driven sprint planning
+/sprint-workflow plan
+```
+
+**You see**:
+```
+📊 Sprint Planning for Sprint 5
+
+Historical Velocity:
+  Sprint 2: 12 issues
+  Sprint 3: 10 issues
+  Sprint 4: 11 issues
+  → Average: 11 issues/sprint
+
+📋 Backlog Analysis:
+  Total: 47 issues
+  Critical: 2
+  High: 12
+
+🎯 Recommended for Sprint 5 (11 issues):
+  [Shows top priority issues that fit capacity]
+
+Assign these 11 issues to Sprint 5? (y/n)
+```
+
+**2. Check Dashboard**:
+- Open: http://localhost:3001/admin/dashboard
+- Review velocity chart (last 5 sprints)
+- Review burndown (current sprint projection)
+- Check system health (all 6 projects)
+
+**3. Review Milestones** (traditional approach):
 ```bash
 # See what's due this week across ALL projects
 claude "Show me all milestones due this week"
@@ -266,6 +326,28 @@ Create **Sprint Board** view:
 
 ### Daily Standup (5 minutes)
 
+**🚀 NEW: Async Standup with Sprint Workflow**
+
+**Solo Developer**:
+```bash
+# Morning routine
+/sprint-workflow today
+```
+
+Shows:
+- ✅ Yesterday's commits and closed issues
+- 📝 Today's assigned tasks
+- 📊 Sprint progress percentage
+- 📦 Recent deployments
+- ⚠️  Blockers
+
+**Team Version** (each developer):
+1. Run `/sprint-workflow today`
+2. Post output to Slack/Discord
+3. Team has full visibility without meeting
+
+**Traditional Approach**:
+
 **Everyone opens**:
 https://github.com/users/Acurioustractor/projects/1
 
@@ -313,6 +395,35 @@ Integration Platform (Due: Mar 31, 2025)
 
 ## 🚀 Part 5: Deployment & Production
 
+### Pre-Deployment Health Check
+
+**🚀 NEW: Always Check Health Before Deploying**
+
+```bash
+# Before ANY production deploy
+/sprint-workflow health
+```
+
+**Expected Output**:
+```
+🏥 System Health Check - All ACT Projects
+
+┌─────────────────┬────────────┬──────┬──────────┬──────────┐
+│ Project         │ Deployment │ HTTP │ Database │ Registry │
+├─────────────────┼────────────┼──────┼──────────┼──────────┤
+│ Empathy Ledger  │ ✅ 2h      │ ✅   │ ✅       │ ⚠️       │
+│ JusticeHub      │ ✅ 4h      │ ✅   │ ✅       │ N/A      │
+│ The Harvest     │ ✅ 1h      │ ✅   │ ✅       │ N/A      │
+│ ACT Farm        │ ⚠️  18h    │ ✅   │ ✅       │ N/A      │
+│ Goods           │ ✅ 3h      │ ✅   │ ✅       │ N/A      │
+│ ACT Studio      │ ✅ 30min   │ ✅   │ ✅       │ N/A      │
+└─────────────────┴────────────┴──────┴──────────┴──────────┘
+
+🏆 Overall: 6/6 systems healthy (100%)
+```
+
+**Only deploy if all green** ✅
+
 ### Automatic Deployments
 
 **Every repo connected to Vercel**:
@@ -336,7 +447,19 @@ Comments on issue: "Deployed to https://..."
 
 ### Production Monitoring
 
-**Track live sites**:
+**🚀 NEW: Real-Time Dashboard**
+
+**Check dashboard**: http://localhost:3001/admin/dashboard
+
+**See**:
+- 📊 Sprint progress (current sprint completion %)
+- 📈 Velocity chart (last 5 sprints performance)
+- 📉 Burndown chart (sprint projection: on-track/ahead/behind)
+- 🏥 Health matrix (all 6 projects, 4 indicators each)
+- 📦 Recent deployments (last 24 hours)
+- 📝 Form submissions (GHL tracking)
+
+**Track live sites** (traditional):
 ```
 ✅ empathy-ledger-v2.vercel.app
 ✅ justicehub.vercel.app
@@ -882,6 +1005,16 @@ After setting this up, you should have:
 - [ ] Commit message guide shared
 - [ ] PR template in each repo
 
+### 🚀 NEW: Sprint Workflow System
+- [ ] Dashboard accessible (http://localhost:3001/admin/dashboard)
+- [ ] Daily sprint snapshot running (5 PM UTC)
+- [ ] GitHub Action secrets configured
+- [ ] Claude Code skill installed
+- [ ] Velocity chart showing data (after 3-5 days)
+- [ ] Burndown chart tracking current sprint
+- [ ] Health matrix monitoring all 6 projects
+- [ ] Team trained on sprint workflow commands
+
 ---
 
 ## 🚀 You Now Have
@@ -895,10 +1028,42 @@ After setting this up, you should have:
 ✅ **User feedback loop** via Sentry/issues
 ✅ **Complete traceability** from idea to production
 
+### 🎉 NEW: Sprint Workflow System
+
+✅ **Real-time dashboard** with sprint analytics
+✅ **Velocity tracking** over last 5 sprints
+✅ **Burndown charts** for sprint projection
+✅ **Health monitoring** for all 6 projects (24/7)
+✅ **Daily standup automation** via Claude Code skill
+✅ **Data-driven sprint planning** with capacity recommendations
+✅ **Pre-deployment health checks** to prevent outages
+✅ **Historical sprint data** in Supabase for trend analysis
+
 **This is world-class development workflow** used by the best engineering teams. You have it fully set up for the entire ACT ecosystem! 🎉
 
 ---
 
+## 📚 Sprint Workflow Documentation
+
+**Complete System Overview**:
+- [SPRINT_WORKFLOW_SYSTEM.md](./SPRINT_WORKFLOW_SYSTEM.md) - Full system architecture and capabilities
+
+**Getting Started**:
+- [SPRINT_SNAPSHOT_GUIDE.md](./SPRINT_SNAPSHOT_GUIDE.md) - How to run and automate sprint snapshots
+- [GITHUB_SECRETS_SETUP.md](./GITHUB_SECRETS_SETUP.md) - Configure GitHub Action secrets
+- [QUICK_START_TEAM_WORKFLOW.md](./QUICK_START_TEAM_WORKFLOW.md) - 10-minute quick start
+
+**Operations**:
+- [TESTING_VERIFICATION_GUIDE.md](./TESTING_VERIFICATION_GUIDE.md) - Test all components
+- [TEAM_ROLLOUT_GUIDE.md](./TEAM_ROLLOUT_GUIDE.md) - Onboarding and training
+
+**Claude Code Skill**:
+- `.claude/skills/act-sprint-workflow/SKILL.md` - Full skill definition
+- `.claude/skills/act-sprint-workflow/README.md` - Skill quick start
+- `.claude/skills/act-sprint-workflow/QUICK-REFERENCE.md` - Command cheat sheet
+
+---
+
 **Maintained By**: ACT Ecosystem Team
-**Last Updated**: 2025-12-26
+**Last Updated**: 2025-12-27
 **Next Review**: When team grows or process needs adjustment

@@ -239,7 +239,7 @@ async function storeInSupabase(metrics) {
     .select();
 
   if (error) {
-    console.error('❌ Supabase error:', error.message);
+    console.error('❌ Supabase error:', error.message || JSON.stringify(error, null, 2));
     return null;
   }
 

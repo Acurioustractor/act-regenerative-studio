@@ -38,17 +38,29 @@ console.log(`📅 Target Sprint: ${CURRENT_SPRINT}`);
 console.log(`📊 GitHub Project: ${GITHUB_PROJECT_ID}`);
 
 /**
- * Fetch all issues from GitHub Project
+ * Fetch all issues from GitHub Project with pagination
  */
 async function fetchGitHubProjectItems() {
   console.log('\n📥 Fetching GitHub Project items...');
 
-  const query = `
-    query($projectId: ID!) {
-      node(id: $projectId) {
-        ... on ProjectV2 {
-          items(first: 100) {
-            nodes {
+  let allItems = [];
+  let hasNextPage = true;
+  let cursor = null;
+  let pageCount = 0;
+
+  while (hasNextPage) {
+    pageCount++;
+    const query = `
+      query($projectId: ID!, $cursor: String) {
+        node(id: $projectId) {
+          ... on ProjectV2 {
+            items(first: 100, after: $cursor) {
+              pageInfo {
+                hasNextPage
+                endCursor
+              }
+              totalCount
+              nodes {
               id
               content {
                 ... on Issue {
@@ -89,21 +101,32 @@ async function fetchGitHubProjectItems() {
                   }
                 }
               }
+              }
             }
           }
         }
       }
-    }
-  `;
+    `;
 
-  const response = await graphqlWithAuth({
-    query,
-    projectId: GITHUB_PROJECT_ID,
-  });
+    const response = await graphqlWithAuth({
+      query,
+      projectId: GITHUB_PROJECT_ID,
+      cursor,
+    });
 
-  const items = response.node?.items?.nodes || [];
-  console.log(`✅ Fetched ${items.length} total items`);
-  return items;
+    const itemsData = response.node?.items;
+    const items = itemsData?.nodes || [];
+    const totalCount = itemsData?.totalCount || 0;
+
+    allItems.push(...items);
+    hasNextPage = itemsData?.pageInfo?.hasNextPage || false;
+    cursor = itemsData?.pageInfo?.endCursor;
+
+    console.log(`  Page ${pageCount}: Fetched ${items.length} items (${allItems.length}/${totalCount} total)`);
+  }
+
+  console.log(`✅ Fetched ${allItems.length} total items across ${pageCount} page(s)`);
+  return allItems;
 }
 
 /**

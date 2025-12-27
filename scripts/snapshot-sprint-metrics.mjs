@@ -26,7 +26,7 @@ const CURRENT_SPRINT = process.env.CURRENT_SPRINT || 'Sprint 4';
 // Initialize clients
 const graphqlWithAuth = graphql.defaults({
   headers: {
-    authorization: `token ${GITHUB_TOKEN}`,
+    authorization: `bearer ${GITHUB_TOKEN}`,
   },
 });
 const supabase = SUPABASE_URL && SUPABASE_SERVICE_ROLE_KEY

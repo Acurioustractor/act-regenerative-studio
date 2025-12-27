@@ -104,7 +104,7 @@ export async function GET(request: NextRequest) {
     // Get query params
     const { searchParams } = new URL(request.url);
     const showAll = searchParams.get("all") === "true";
-    const currentSprintName = searchParams.get("sprint") || "Sprint 4";
+    const currentSprintName = searchParams.get("sprint") || process.env.CURRENT_SPRINT || "Sprint 4";
 
     // Filter items by sprint (unless showing all)
     const sprintItems = showAll
@@ -113,7 +113,9 @@ export async function GET(request: NextRequest) {
           const sprintField = item.fieldValues?.nodes?.find(
             (fv: any) => fv.field?.name === "Sprint"
           );
-          return sprintField?.name === currentSprintName;
+          // Handle both text field and single-select field
+          const sprintValue = sprintField?.name || sprintField?.text;
+          return sprintValue === currentSprintName;
         });
 
     // Count by Status field

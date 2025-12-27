@@ -29,7 +29,7 @@ jobs:
           GITHUB_PROJECT_ID: ${{ secrets.GITHUB_PROJECT_ID }}
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
           SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
-          CURRENT_SPRINT: 'Sprint 4'
+          CURRENT_SPRINT: 'Backlog'
         run: node scripts/snapshot-sprint-metrics.mjs
 
       - name: Report Status

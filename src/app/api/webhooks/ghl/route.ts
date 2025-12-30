@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
 import crypto from "crypto";
+import { syncToNotion } from "@/lib/notion-sync";
 
 export const dynamic = "force-dynamic";
 
@@ -121,14 +122,22 @@ export async function POST(request: NextRequest) {
     // Store submission in Supabase (fixes issue #8)
     const submissionId = await storeSubmission(payload, formType);
 
-    // TODO: See issue #9 in act-regenerative-studio: Sync to Notion
-    // await syncToNotion(payload, formType);
+    // Sync to Notion (fixes issue #9)
+    const notionResult = await syncToNotion(payload, formType);
+    if (!notionResult.success) {
+      console.error('❌ Failed to sync to Notion:', notionResult.error);
+      // Don't fail the webhook - log the error and continue
+      // The data is already in Supabase, so we can retry Notion sync manually if needed
+    } else {
+      console.log('✅ Synced to Notion page:', notionResult.pageId);
+    }
 
     return NextResponse.json({
       success: true,
       message: "Webhook processed successfully",
       formType,
       submissionId,
+      notionPageId: notionResult.pageId,
     });
   } catch (error) {
     console.error("GHL webhook error:", error);

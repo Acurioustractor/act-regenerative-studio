@@ -11,11 +11,12 @@ interface GHLWebhookPayload {
   contactId: string;
   contact: {
     name?: string;
+    firstName?: string;
     email?: string;
     phone?: string;
     [key: string]: any;
   };
-  customFields: Record<string, any>;
+  customFields?: Record<string, any>;
   submittedAt: string;
   location?: string;
 }
@@ -136,29 +137,88 @@ async function handleContactForm(payload: GHLWebhookPayload) {
 
 async function handleFarmStayBooking(payload: GHLWebhookPayload) {
   console.log("Processing farm stay booking:", payload.contact.email);
+
+  // Send confirmation email (fixes issue #15)
+  if (payload.contact.email && payload.contact.name) {
+    try {
+      const { sendBookingConfirmation } = await import('@/lib/email');
+      await sendBookingConfirmation(
+        payload.contact.email,
+        payload.contact.name,
+        {
+          dates: payload.customFields?.dates || 'TBD',
+          guests: payload.customFields?.guests || 1,
+        }
+      );
+      console.log("✅ Booking confirmation sent to:", payload.contact.email);
+    } catch (error) {
+      console.error("❌ Failed to send booking confirmation:", error);
+    }
+  }
+
   // TODO: See issue #14 in act-regenerative-studio: Create Notion entry in "Bookings" database
-  // TODO: See issue #15 in act-regenerative-studio: Send confirmation email
   // TODO: See issue #16 in act-regenerative-studio: Add to calendar
 }
 
 async function handleCSAInterest(payload: GHLWebhookPayload) {
   console.log("Processing CSA interest:", payload.contact.email);
+
+  // Send welcome email (fixes issue #19)
+  if (payload.contact.email) {
+    try {
+      const { sendCSAWelcome } = await import('@/lib/email');
+      await sendCSAWelcome(
+        payload.contact.email,
+        payload.contact.name
+      );
+      console.log("✅ CSA welcome email sent to:", payload.contact.email);
+    } catch (error) {
+      console.error("❌ Failed to send CSA welcome email:", error);
+    }
+  }
+
   // TODO: See issue #17 in act-regenerative-studio: Create Notion entry in "CSA Members" database
   // TODO: See issue #18 in act-regenerative-studio: Add to Harvest mailing list
-  // TODO: See issue #19 in act-regenerative-studio: Send welcome email with next steps
 }
 
 async function handleArtResidency(payload: GHLWebhookPayload) {
   console.log("Processing art residency application:", payload.contact.email);
+
+  // Send acknowledgment email (fixes issue #21)
+  if (payload.contact.email && payload.contact.name) {
+    try {
+      const { sendResidencyAcknowledgment } = await import('@/lib/email');
+      await sendResidencyAcknowledgment(
+        payload.contact.email,
+        payload.contact.name
+      );
+      console.log("✅ Residency acknowledgment sent to:", payload.contact.email);
+    } catch (error) {
+      console.error("❌ Failed to send residency acknowledgment:", error);
+    }
+  }
+
   // TODO: See issue #20 in act-regenerative-studio: Create Notion entry in "Residency Applications" database
-  // TODO: See issue #21 in act-regenerative-studio: Send acknowledgment email
-  // TODO: See issue #22 in act-regenerative-studio: Notify residency coordinator
+  // TODO: See issue #22 in act-regenerative-studio: Notify residency coordinator (requires coordinator email setup)
 }
 
 async function handleNewsletterSignup(payload: GHLWebhookPayload) {
   console.log("Processing newsletter signup:", payload.contact.email);
-  // TODO: See issue #23 in act-regenerative-studio: Add to newsletter list
-  // TODO: See issue #24 in act-regenerative-studio: Send welcome email
+
+  // Send welcome email (fixes issue #24)
+  try {
+    const { sendNewsletterWelcome } = await import('@/lib/email');
+    await sendNewsletterWelcome(
+      payload.contact.email!,
+      payload.contact.name
+    );
+    console.log("✅ Newsletter welcome email sent to:", payload.contact.email);
+  } catch (error) {
+    console.error("❌ Failed to send newsletter welcome email:", error);
+    // Don't fail the webhook if email fails
+  }
+
+  // TODO: See issue #23 in act-regenerative-studio: Add to newsletter list (requires email service provider integration)
 }
 
 /**

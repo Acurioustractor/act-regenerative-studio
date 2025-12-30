@@ -207,6 +207,21 @@ function determineFormType(
 async function handleContactForm(payload: GHLWebhookPayload) {
   console.log("Processing contact form submission:", payload.contact.email);
 
+  // Send notification email to ACT team (fixes issue #11)
+  try {
+    const { sendPartnershipNotification } = await import('@/lib/email');
+    await sendPartnershipNotification({
+      name: payload.contact.name || payload.contact.email || 'Unknown',
+      email: payload.contact.email || '',
+      phone: payload.contact.phone,
+      company: payload.contact.companyName || payload.customFields?.company,
+      message: payload.customFields?.message || payload.customFields?.notes,
+    });
+    console.log("✅ Partnership notification sent to ACT team");
+  } catch (error) {
+    console.error("❌ Failed to send partnership notification:", error);
+  }
+
   // Add partnership tags in GHL
   try {
     const { addTagsToContact } = await import('@/lib/ghl');
@@ -310,6 +325,24 @@ async function handleArtResidency(payload: GHLWebhookPayload) {
       console.log("✅ Residency acknowledgment sent to:", payload.contact.email);
     } catch (error) {
       console.error("❌ Failed to send residency acknowledgment:", error);
+    }
+  }
+
+  // Notify residency coordinator (fixes issue #22)
+  if (payload.contact.email && payload.contact.name) {
+    try {
+      const { sendResidencyCoordinatorNotification } = await import('@/lib/email');
+      await sendResidencyCoordinatorNotification({
+        name: payload.contact.name,
+        email: payload.contact.email,
+        phone: payload.contact.phone,
+        practice: payload.customFields?.practice || payload.customFields?.medium,
+        dates: payload.customFields?.dates,
+        project: payload.customFields?.project || payload.customFields?.description,
+      });
+      console.log("✅ Residency coordinator notified");
+    } catch (error) {
+      console.error("❌ Failed to notify residency coordinator:", error);
     }
   }
 

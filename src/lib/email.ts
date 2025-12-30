@@ -231,3 +231,91 @@ export async function sendResidencyAcknowledgment(email: string, name: string) {
     `,
   });
 }
+
+/**
+ * Send partnership inquiry notification to ACT team
+ * Resolves issue #11
+ */
+export async function sendPartnershipNotification(contactDetails: {
+  name: string;
+  email: string;
+  phone?: string;
+  company?: string;
+  message?: string;
+}) {
+  const teamEmail = process.env.ACT_TEAM_EMAIL || 'team@act.farm';
+
+  return sendEmail({
+    to: teamEmail,
+    subject: `🤝 New Partnership Inquiry from ${contactDetails.name}`,
+    html: `
+      <div style="font-family: system-ui, sans-serif; max-width: 600px; margin: 0 auto;">
+        <h1 style="color: #2d5016;">New Partnership Inquiry</h1>
+
+        <div style="background: #f9fafb; padding: 20px; border-radius: 8px; margin: 24px 0;">
+          <h3 style="margin-top: 0;">Contact Details</h3>
+          <p><strong>Name:</strong> ${contactDetails.name}</p>
+          <p><strong>Email:</strong> <a href="mailto:${contactDetails.email}">${contactDetails.email}</a></p>
+          ${contactDetails.phone ? `<p><strong>Phone:</strong> ${contactDetails.phone}</p>` : ''}
+          ${contactDetails.company ? `<p><strong>Company:</strong> ${contactDetails.company}</p>` : ''}
+        </div>
+
+        ${contactDetails.message ? `
+          <div style="background: #f9fafb; padding: 20px; border-radius: 8px; margin: 24px 0;">
+            <h3 style="margin-top: 0;">Message</h3>
+            <p style="white-space: pre-wrap;">${contactDetails.message}</p>
+          </div>
+        ` : ''}
+
+        <p style="font-size: 14px; color: #6b7280;">
+          This inquiry was submitted via the ACT website contact form.
+        </p>
+      </div>
+    `,
+  });
+}
+
+/**
+ * Send residency coordinator notification
+ * Resolves issue #22
+ */
+export async function sendResidencyCoordinatorNotification(applicantDetails: {
+  name: string;
+  email: string;
+  phone?: string;
+  practice?: string;
+  dates?: string;
+  project?: string;
+}) {
+  const coordinatorEmail = process.env.RESIDENCY_COORDINATOR_EMAIL || 'residency@act.farm';
+
+  return sendEmail({
+    to: coordinatorEmail,
+    subject: `🎨 New Art Residency Application from ${applicantDetails.name}`,
+    html: `
+      <div style="font-family: system-ui, sans-serif; max-width: 600px; margin: 0 auto;">
+        <h1 style="color: #2d5016;">New Residency Application</h1>
+
+        <div style="background: #f9fafb; padding: 20px; border-radius: 8px; margin: 24px 0;">
+          <h3 style="margin-top: 0;">Artist Details</h3>
+          <p><strong>Name:</strong> ${applicantDetails.name}</p>
+          <p><strong>Email:</strong> <a href="mailto:${applicantDetails.email}">${applicantDetails.email}</a></p>
+          ${applicantDetails.phone ? `<p><strong>Phone:</strong> ${applicantDetails.phone}</p>` : ''}
+          ${applicantDetails.practice ? `<p><strong>Art Practice:</strong> ${applicantDetails.practice}</p>` : ''}
+          ${applicantDetails.dates ? `<p><strong>Proposed Dates:</strong> ${applicantDetails.dates}</p>` : ''}
+        </div>
+
+        ${applicantDetails.project ? `
+          <div style="background: #f9fafb; padding: 20px; border-radius: 8px; margin: 24px 0;">
+            <h3 style="margin-top: 0;">Project Description</h3>
+            <p style="white-space: pre-wrap;">${applicantDetails.project}</p>
+          </div>
+        ` : ''}
+
+        <p style="font-size: 14px; color: #6b7280;">
+          This application was submitted via the ACT Farm website. The applicant has been sent an acknowledgment email.
+        </p>
+      </div>
+    `,
+  });
+}

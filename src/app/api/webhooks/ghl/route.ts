@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import { createClient } from "@supabase/supabase-js";
+import crypto from "crypto";
 
 export const dynamic = "force-dynamic";
 
@@ -22,6 +23,36 @@ interface GHLWebhookPayload {
 }
 
 /**
+ * Verify webhook signature from GoHighLevel
+ * Uses HMAC SHA-256 to validate the webhook is from GHL
+ */
+function verifyWebhookSignature(
+  payload: string,
+  signature: string | null,
+  secret: string
+): boolean {
+  if (!signature) {
+    console.warn("⚠️ No signature provided in webhook");
+    return false;
+  }
+
+  try {
+    const hmac = crypto.createHmac("sha256", secret);
+    hmac.update(payload);
+    const expectedSignature = hmac.digest("hex");
+
+    // Constant-time comparison to prevent timing attacks
+    return crypto.timingSafeEqual(
+      Buffer.from(signature),
+      Buffer.from(expectedSignature)
+    );
+  } catch (error) {
+    console.error("❌ Signature verification error:", error);
+    return false;
+  }
+}
+
+/**
  * GoHighLevel Webhook Handler
  *
  * This endpoint receives form submission webhooks from GoHighLevel
@@ -32,19 +63,30 @@ interface GHLWebhookPayload {
  * 2. Create webhook pointing to: https://your-domain.com/api/webhooks/ghl
  * 3. Set webhook secret in GOHIGHLEVEL_WEBHOOK_SECRET env var
  * 4. Select "Form Submission" as trigger event
+ * 5. Copy the webhook secret from GHL and add to your .env.local
  */
 export async function POST(request: NextRequest) {
   try {
-    const payload: GHLWebhookPayload = await request.json();
+    // Get raw body for signature verification
+    const rawBody = await request.text();
+    const payload: GHLWebhookPayload = JSON.parse(rawBody);
 
-    // Verify webhook signature (optional but recommended)
+    // Verify webhook signature (fixes issue #7)
     const webhookSecret = process.env.GOHIGHLEVEL_WEBHOOK_SECRET;
     if (webhookSecret) {
       const signature = request.headers.get("x-ghl-signature");
-      // TODO: See issue #7 in act-regenerative-studio: Implement signature verification
-      // if (!verifySignature(payload, signature, webhookSecret)) {
-      //   return NextResponse.json({ error: "Invalid signature" }, { status: 401 });
-      // }
+
+      if (!verifyWebhookSignature(rawBody, signature, webhookSecret)) {
+        console.error("❌ Invalid webhook signature - possible unauthorized request");
+        return NextResponse.json(
+          { error: "Invalid webhook signature" },
+          { status: 401 }
+        );
+      }
+
+      console.log("✅ Webhook signature verified");
+    } else {
+      console.warn("⚠️ GOHIGHLEVEL_WEBHOOK_SECRET not set - signature verification skipped");
     }
 
     console.log("Received GHL webhook:", {
@@ -100,32 +142,57 @@ export async function POST(request: NextRequest) {
   }
 }
 
+/**
+ * Determine form type from GHL webhook payload
+ * Fixes issue #10 - Uses form ID mapping with name-based fallback
+ *
+ * Setup: Add these to your .env.local:
+ * - GHL_FORM_CONTACT=<form-id-from-ghl>
+ * - GHL_FORM_FARM_STAY=<form-id-from-ghl>
+ * - GHL_FORM_CSA=<form-id-from-ghl>
+ * - GHL_FORM_ART_RESIDENCY=<form-id-from-ghl>
+ * - GHL_FORM_NEWSLETTER=<form-id-from-ghl>
+ *
+ * To get form IDs: GHL → Settings → Forms → Copy form ID
+ */
 function determineFormType(
   formId: string,
   formName: string
 ): "contact" | "farm_stay" | "csa" | "art_residency" | "newsletter" | "unknown" {
-  // Map form IDs or names to types
-  // TODO: See issue #10 in act-regenerative-studio: Update these with actual GHL form IDs
-  const formMappings: Record<string, any> = {
-    [process.env.CONTACT_FORM_ID || ""]: "contact",
-    [process.env.FARM_STAY_BOOKING || ""]: "farm_stay",
-    [process.env.CSA_INTEREST || ""]: "csa",
-    [process.env.ART_RESIDENCY || ""]: "art_residency",
-    [process.env.NEWSLETTER_FORM_ID || ""]: "newsletter",
+  // Primary: Map by form ID (most reliable)
+  const formMappings: Record<string, string> = {
+    [process.env.GHL_FORM_CONTACT || ""]: "contact",
+    [process.env.GHL_FORM_FARM_STAY || ""]: "farm_stay",
+    [process.env.GHL_FORM_CSA || ""]: "csa",
+    [process.env.GHL_FORM_ART_RESIDENCY || ""]: "art_residency",
+    [process.env.GHL_FORM_NEWSLETTER || ""]: "newsletter",
   };
 
-  const mappedType = formMappings[formId];
-  if (mappedType) return mappedType;
+  // Check if we have a direct form ID match
+  if (formId && formMappings[formId]) {
+    const mappedType = formMappings[formId] as "contact" | "farm_stay" | "csa" | "art_residency" | "newsletter";
+    console.log(`✅ Form matched by ID: ${formId} → ${mappedType}`);
+    return mappedType;
+  }
 
-  // Fallback: match by form name
+  // Fallback: Match by form name (less reliable but works without config)
   const nameLower = formName.toLowerCase();
-  if (nameLower.includes("contact")) return "contact";
-  if (nameLower.includes("farm") || nameLower.includes("stay")) return "farm_stay";
-  if (nameLower.includes("csa") || nameLower.includes("harvest")) return "csa";
-  if (nameLower.includes("art") || nameLower.includes("residency")) return "art_residency";
-  if (nameLower.includes("newsletter")) return "newsletter";
+  let detectedType: "contact" | "farm_stay" | "csa" | "art_residency" | "newsletter" | "unknown" = "unknown";
 
-  return "unknown";
+  if (nameLower.includes("contact")) detectedType = "contact";
+  else if (nameLower.includes("farm") || nameLower.includes("stay") || nameLower.includes("booking")) detectedType = "farm_stay";
+  else if (nameLower.includes("csa") || nameLower.includes("harvest")) detectedType = "csa";
+  else if (nameLower.includes("art") || nameLower.includes("residency")) detectedType = "art_residency";
+  else if (nameLower.includes("newsletter") || nameLower.includes("subscribe")) detectedType = "newsletter";
+
+  if (detectedType !== "unknown") {
+    console.log(`⚠️ Form matched by name fallback: "${formName}" → ${detectedType}`);
+    console.log(`💡 Tip: Set GHL_FORM_${detectedType.toUpperCase()}=${formId} in .env.local for more reliable matching`);
+  } else {
+    console.warn(`❌ Unknown form type: ID="${formId}", Name="${formName}"`);
+  }
+
+  return detectedType;
 }
 
 async function handleContactForm(payload: GHLWebhookPayload) {

@@ -48,3 +48,10 @@ yarn-error.log*
 # Misc
 .turbo
 .cache/
+
+# IDE and Editor Files
+.cursor/
+.cursorrules
+*.cursor
+.vscode/settings.json
+.vscode/launch.json

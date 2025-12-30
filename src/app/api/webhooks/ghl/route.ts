@@ -241,7 +241,22 @@ async function handleFarmStayBooking(payload: GHLWebhookPayload) {
     console.error("❌ Failed to add farm stay tags in GHL:", error);
   }
 
-  // TODO: See issue #16 in act-regenerative-studio: Add to calendar
+  // Add to Google Calendar (fixes issue #16)
+  try {
+    const { addBookingToCalendar } = await import('@/lib/calendar');
+    await addBookingToCalendar({
+      guestName: payload.contact.name || 'Guest',
+      guestEmail: payload.contact.email || '',
+      dates: payload.customFields?.dates || 'TBD',
+      guests: payload.customFields?.guests || 1,
+      phone: payload.contact.phone,
+      notes: payload.customFields?.notes || payload.customFields?.message,
+    });
+    console.log("✅ Added booking to Google Calendar");
+  } catch (error) {
+    console.error("❌ Failed to add booking to Google Calendar:", error);
+    // Don't fail the webhook if calendar fails
+  }
 }
 
 async function handleCSAInterest(payload: GHLWebhookPayload) {

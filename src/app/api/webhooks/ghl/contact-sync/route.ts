@@ -24,6 +24,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import crypto from 'crypto';
 import { createContactSyncService } from '@/lib/ghl/contact-sync';
 import { ACTProject, ContactSyncEvent, GHLWebhookEvent } from '@/lib/ghl/types';
+import { createClient } from '@supabase/supabase-js';
 
 /**
  * Verify GHL webhook signature
@@ -169,9 +170,38 @@ export async function POST(request: NextRequest) {
     console.log(`[GHL Webhook] Processing contact ${syncEvent.eventType} for ${syncEvent.sourceProject}`);
 
     // 6. Check for duplicate event (idempotency)
-    // GHL may send duplicate webhooks - use contact ID + timestamp to dedupe
+    // GHL may send duplicate webhooks - use contact ID + event type + timestamp to dedupe
     const eventKey = `${syncEvent.sourceContactId}-${syncEvent.eventType}-${syncEvent.timestamp}`;
-    // TODO: See issue #25 in act-regenerative-studio: Store eventKey in Redis/Supabase and skip if already processed
+
+    // Check if this event has already been processed
+    const supabase = createClient(
+      process.env.NEXT_PUBLIC_SUPABASE_URL!,
+      process.env.SUPABASE_SERVICE_ROLE_KEY!
+    );
+
+    const { data: existingEvent } = await supabase
+      .from('webhook_event_log')
+      .select('id')
+      .eq('event_key', eventKey)
+      .single();
+
+    if (existingEvent) {
+      console.log(`[GHL Webhook] Duplicate event detected (${eventKey}) - skipping`);
+      return NextResponse.json({
+        success: true,
+        message: 'Duplicate event - already processed',
+        eventKey,
+      });
+    }
+
+    // Log the event before processing
+    await supabase.from('webhook_event_log').insert({
+      event_key: eventKey,
+      event_type: syncEvent.eventType,
+      source_project: syncEvent.sourceProject,
+      source_contact_id: syncEvent.sourceContactId,
+      payload: webhookEvent,
+    });
 
     // 7. Trigger contact sync service
     const syncService = createContactSyncService();

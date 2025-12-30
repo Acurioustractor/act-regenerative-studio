@@ -77,13 +77,50 @@ Or add them in the Vercel dashboard:
 - Automated emails (4 types)
 - Supabase storage
 
-🚧 **Phase 2: GHL Automation (NEXT)**
-- Add newsletter subscribers to GHL contact list
-- Add CSA signups to GHL "Harvest" tag/segment
-- Trigger GHL workflows from webhook
+✅ **Phase 2: GHL Automation (COMPLETE)**
+- Add newsletter subscribers to GHL with "Newsletter" tag
+- Add CSA signups with "Harvest" and "CSA Interest" tags
+- Add partnership inquiries with "Partnership Inquiry" tag
+- Add farm stay bookings with "Farm Stay Booking" tag
+- Add art residency applicants with "Art Residency" tag
+- All contacts get "Website Signup" tag for tracking source
 
-🚧 **Phase 3: Calendar Integration (LATER)**
+🚧 **Phase 3: Calendar Integration (NEXT)**
 - Auto-add farm stay bookings to Google Calendar
+
+## How Tags Work in GHL
+
+When a contact is tagged in GHL, you can:
+
+1. **Create Workflows** that trigger automatically:
+   - Tag "Newsletter" → Add to newsletter email sequence
+   - Tag "Harvest" → Add to CSA nurture campaign
+   - Tag "Art Residency" → Notify coordinator, add to review pipeline
+   - Tag "Farm Stay Booking" → Add to booking management workflow
+
+2. **Segment Your Contacts**:
+   - View all "Harvest" tagged contacts
+   - Filter by "Website Signup" to see web leads
+   - Create smart lists combining tags
+
+3. **Run Automations**:
+   - Send targeted campaigns to specific tags
+   - Apply different nurture sequences
+   - Assign to team members based on tags
+
+## Getting Your GHL API Key (for Phase 2)
+
+1. Log into GoHighLevel
+2. Go to **Settings** → **Integrations** → **API Key**
+3. Click "Create API Key" or "Private Integration"
+4. Set permissions: **contacts.write** (required for adding tags)
+5. Copy the API key
+6. Copy your Location ID (found in Settings → Business Profile → Location ID)
+7. Add both to `.env.local`:
+   ```bash
+   GOHIGHLEVEL_API_KEY=your_api_key_here
+   GOHIGHLEVEL_LOCATION_ID=your_location_id_here
+   ```
 
 ## Troubleshooting
 

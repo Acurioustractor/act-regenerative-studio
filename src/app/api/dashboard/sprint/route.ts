@@ -84,7 +84,7 @@ export async function GET(request: NextRequest) {
       }
       `;
 
-      const response = await fetch("https://api.github.com/graphql", {
+      const response: Response = await fetch("https://api.github.com/graphql", {
         method: "POST",
         headers: {
           Authorization: `Bearer ${GITHUB_TOKEN}`,

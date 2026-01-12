@@ -33,7 +33,7 @@ export function AskACT() {
     setError(null);
 
     try {
-      const res = await fetch('/api/v1/intelligence/ask', {
+      const res = await fetch('/api/v1/ask', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -41,8 +41,9 @@ export function AskACT() {
         body: JSON.stringify({
           query,
           tier,
-          topK: 10,
-          minSimilarity: 0.7,
+          topK: tier === 'quick' ? 5 : 10,
+          minSimilarity: tier === 'quick' ? 0.6 : 0.7,
+          includeSources: showSources,
         }),
       });
 
@@ -71,7 +72,7 @@ export function AskACT() {
       <div className="space-y-4">
         <h2 className="text-2xl font-semibold text-stone-900">Ask ACT</h2>
         <p className="text-stone-600">
-          Query the comprehensive ACT knowledge base (6,300+ lines across finance, legal, operations, and content templates)
+          Query the comprehensive ACT knowledge base (6,400+ lines across LCAA, partners, grants, workflows, projects, and operations)
         </p>
 
         {/* Query Input */}
@@ -210,12 +211,12 @@ export function AskACT() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             {[
               "What's the LCAA methodology?",
+              "Who are our active partners?",
+              "What grants are due this month?",
               "How do I create an invoice?",
-              "What's our 40% profit-sharing policy?",
               "Dual-entity structure explained",
-              "Daily operations checklist",
+              "What projects is ACT working on?",
               "Homepage hero copy template",
-              "Grant application budget template",
               "Meeting agenda template",
             ].map((example) => (
               <button

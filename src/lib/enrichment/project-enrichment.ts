@@ -184,7 +184,12 @@ export async function enrichProject(projectSlug: string): Promise<ProjectEnrichm
 
   let storytellers: any[] = [];
   let stories: any[] = [];
-  let thematicInsights = {
+  let thematicInsights: {
+    primaryThemes: string[];
+    emergingThemes: string[];
+    storyCountByTheme: Record<string, number>;
+    commonPatterns: string[];
+  } = {
     primaryThemes: [],
     emergingThemes: [],
     storyCountByTheme: {},

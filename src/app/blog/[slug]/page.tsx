@@ -1,13 +1,22 @@
 import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getBlogPostBySlug, getBlogPosts } from "../../../lib/webflow";
+import ReactMarkdown from "react-markdown";
+import {
+  fetchContentHubArticleBySlug,
+  fetchContentHubArticles,
+} from "../../../lib/empathy-ledger-articles";
 
 export const revalidate = 60;
 
 export async function generateStaticParams() {
-  const posts = await getBlogPosts();
-  return posts.map((post) => ({ slug: post.slug }));
+  try {
+    const posts = await fetchContentHubArticles({ project: "act-main", limit: 200 });
+    return posts.map((post) => ({ slug: post.slug }));
+  } catch (error) {
+    console.error('Failed to generate static params for blog posts:', error);
+    return [];
+  }
 }
 
 export default async function BlogPostPage({
@@ -16,11 +25,14 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = await getBlogPostBySlug(slug);
+  const post = await fetchContentHubArticleBySlug(slug);
 
   if (!post) {
     notFound();
   }
+
+  const content = post.content || '';
+  const looksLikeHtml = /<\/?[a-z][\s\S]*>/i.test(content);
 
   return (
     <div className="space-y-12">
@@ -34,44 +46,40 @@ export default async function BlogPostPage({
         <h1 className="mt-4 text-3xl font-semibold text-[#2F3E2E] md:text-5xl font-[var(--font-display)]">
           {post.title}
         </h1>
-        {(post.theme || post.readTime) && (
+        {post.tags && post.tags.length > 0 && (
           <div className="mt-4 flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-[#6B5A45]">
-            {post.theme ? (
-              <span className="rounded-full border border-[#E3D4BA] px-3 py-1">
-                {post.theme}
+            {post.tags.map((tag) => (
+              <span
+                key={tag}
+                className="rounded-full border border-[#E3D4BA] px-3 py-1"
+              >
+                {tag}
               </span>
-            ) : null}
-            {post.readTime ? <span>{post.readTime}</span> : null}
+            ))}
           </div>
         )}
-        {post.summary ? (
+        {post.excerpt ? (
           <p className="mt-4 max-w-2xl text-sm text-[#4D3F33] md:text-base">
-            {post.summary}
+            {post.excerpt}
           </p>
         ) : null}
-        {post.author ? (
+        {post.authorName ? (
           <div className="mt-5 flex items-center gap-3 text-xs text-[#6B5A45]">
-            {post.authorAvatar?.url ? (
-              <Image
-                src={post.authorAvatar.url}
-                alt={post.authorAvatar.alt ?? post.author}
-                width={36}
-                height={36}
-                className="rounded-full border border-[#E3D4BA] object-cover"
-              />
-            ) : null}
-            <span>{post.author}</span>
+            <span>{post.authorName}</span>
           </div>
         ) : null}
       </section>
 
       <section className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
         <article className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6 text-sm text-[#4D3F33]">
-          {post.body ? (
-            <div
-              className="rich-text"
-              dangerouslySetInnerHTML={{ __html: post.body }}
-            />
+          {content ? (
+            <div className="rich-text prose prose-sm max-w-none">
+              {looksLikeHtml ? (
+                <div dangerouslySetInnerHTML={{ __html: content }} />
+              ) : (
+                <ReactMarkdown>{content}</ReactMarkdown>
+              )}
+            </div>
           ) : (
             <p>No body content available.</p>
           )}
@@ -82,10 +90,10 @@ export default async function BlogPostPage({
               Featured image
             </p>
             <div className="relative mt-4 aspect-[4/3] w-full overflow-hidden rounded-2xl bg-[#F7F2E8]">
-              {post.image?.url ? (
+              {post.featuredImageUrl ? (
                 <Image
-                  src={post.image.url}
-                  alt={post.image.alt ?? post.title}
+                  src={post.featuredImageUrl}
+                  alt={post.featuredImageAlt ?? post.title}
                   fill
                   sizes="(min-width: 1024px) 40vw, 100vw"
                   className="object-cover"

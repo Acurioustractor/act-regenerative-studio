@@ -1,0 +1,168 @@
+{
+  "description": "Mapping between Descript videos, Empathy Ledger stories, and Compendium vignettes",
+  "created": "2026-01-12",
+  "mappings": [
+    {
+      "descript_video_id": "2gxa5x40r9N",
+      "descript_title": "Cliff speaks about beds and community",
+      "el_story_id": "a81e3ee5-274d-403a-ad66-44484d1d8993",
+      "vignette_file": "palm-island/05-community-innovation-beds.md",
+      "vignette_number": 5,
+      "status": "linked"
+    },
+    {
+      "descript_video_id": "yP3pzzo4JLU",
+      "descript_title": "Life on Palm Island: A Timeless Adventure",
+      "el_story_id": "d349a5ac-9ef5-469e-92f9-b197511da4f0",
+      "vignette_file": "palm-island/07-uncle-alan-palm-island.md",
+      "vignette_number": 7,
+      "status": "linked"
+    },
+    {
+      "descript_video_id": "FJZqnFWOM8U",
+      "descript_title": "The Power of Knowing Your Neighbor",
+      "el_story_id": "1a07fa32-19e7-43b5-8c53-185590147d17",
+      "vignette_file": "platform-methodology/02-orange-sky-origins.md",
+      "vignette_number": 2,
+      "status": "linked"
+    },
+    {
+      "descript_video_id": "86vzBJSADxH",
+      "descript_title": "The Future of Oonchiumpa",
+      "el_story_id": "692e93fa-e581-4721-9b6e-4965799af0bb",
+      "vignette_file": "oonchiumpa/16-community-recognition-referrals.md",
+      "vignette_number": 16,
+      "status": "linked"
+    },
+    {
+      "descript_video_id": "S1ny8zWmmOU",
+      "descript_title": "The Heart of Tenant Creek: A Community Where Everyone Knows Everyone",
+      "el_story_id": "5eb76939-e414-43f5-bf6a-57c8af736fd2",
+      "vignette_file": "oonchiumpa/17-school-partnership-success.md",
+      "vignette_number": 17,
+      "status": "linked"
+    },
+    {
+      "descript_video_id": "IB4aXUaQygc",
+      "descript_title": "Beyond Laundry: The Power of Listening and Community Support",
+      "el_story_id": "7fe69429-8874-41e2-939a-ed6250720b5c",
+      "vignette_file": "platform-methodology/01-building-empathy-ledger.md",
+      "vignette_number": 1,
+      "status": "linked"
+    },
+    {
+      "descript_video_id": "7IJdp8r9FgE",
+      "descript_title": "Life in Tennant Creek: A Family's Story",
+      "el_story_id": "88d60807-c513-4879-8a3b-3e89fc9f67f9",
+      "vignette_file": null,
+      "suggested_vignette": "oonchiumpa/18-girls-day-out-standley.md",
+      "status": "unmapped"
+    },
+    {
+      "descript_video_id": "WOHo3Db941r",
+      "descript_title": "Freddy on Orange Sky",
+      "el_story_id": "6fe258a4-3701-4837-8e62-1ae91291f17a",
+      "vignette_file": null,
+      "suggested_vignette": "platform-methodology/02-orange-sky-origins.md",
+      "status": "unmapped",
+      "notes": "Additional Orange Sky story - could create new vignette"
+    },
+    {
+      "descript_video_id": "ATRzTxx116G",
+      "descript_title": "David loves Orange Sky",
+      "el_story_id": "b94b4c5d-3a19-4284-a30d-cdc4d9d2bfc7",
+      "vignette_file": null,
+      "suggested_vignette": "platform-methodology/02-orange-sky-origins.md",
+      "status": "unmapped"
+    },
+    {
+      "descript_video_id": "YP2YzYWGgzO",
+      "descript_title": "Making Friends While Doing Laundry",
+      "el_story_id": "83ebbbdb-b94e-4522-8b0d-4138a6c3b96c",
+      "vignette_file": null,
+      "suggested_vignette": "platform-methodology/02-orange-sky-origins.md",
+      "status": "unmapped"
+    },
+    {
+      "descript_video_id": "aU14Gmm56Sl",
+      "descript_title": "Community Responsibility and Respect",
+      "el_story_id": "733c8719-0bba-42cb-93b7-d7b78895881c",
+      "vignette_file": null,
+      "suggested_vignette": "palm-island/03-storytelling-data-sovereignty.md",
+      "status": "unmapped"
+    },
+    {
+      "descript_video_id": "oaRpFZmFnIZ",
+      "descript_title": "The Importance of Education and Hope",
+      "el_story_id": "c6a9b240-4213-41f4-93f7-9b5940380e3b",
+      "vignette_file": null,
+      "suggested_vignette": "system-outcomes/23-educational-transformation.md",
+      "status": "unmapped"
+    },
+    {
+      "descript_video_id": "R9Qh8YbZHqJ",
+      "descript_title": "Coping with grief",
+      "el_story_id": "b345b12b-b2be-43e5-b58b-5f61f72fe42a",
+      "vignette_file": null,
+      "suggested_vignette": null,
+      "status": "unmapped",
+      "notes": "Sensitive content - may need new vignette with appropriate consent"
+    },
+    {
+      "descript_video_id": "xLBy9gx1Ktk",
+      "descript_title": "Snow Fellowship Final Video BK",
+      "el_story_id": "4152530a-735b-4fad-bed1-d3622a3ff336",
+      "vignette_file": null,
+      "suggested_vignette": null,
+      "status": "unmapped",
+      "notes": "Fellowship content - review for appropriate placement"
+    },
+    {
+      "descript_video_id": "WLVraYUDiyH",
+      "descript_title": "MMEIC building launch",
+      "el_story_id": "4f558000-c944-4e6a-a423-28cbf492a58a",
+      "vignette_file": null,
+      "suggested_vignette": null,
+      "status": "unmapped",
+      "notes": "Event documentation - may need new vignette"
+    },
+    {
+      "descript_video_id": "bCbC9zXYSLU",
+      "descript_title": "The Foundation of a Healthy Home",
+      "el_story_id": "2d720157-64b1-45ef-8ae1-58b7f7931475",
+      "vignette_file": null,
+      "suggested_vignette": "palm-island/05-community-innovation-beds.md",
+      "status": "unmapped"
+    },
+    {
+      "descript_video_id": "bKvs2IB0sLy",
+      "descript_title": "The Sudden Reality of Homelessness",
+      "el_story_id": "055f4d4a-7348-4bad-ab7b-8859eadde841",
+      "vignette_file": null,
+      "suggested_vignette": "oonchiumpa/15-m-homelessness-independent.md",
+      "status": "unmapped",
+      "notes": "Sensitive content - needs consent review before linking"
+    },
+    {
+      "descript_video_id": "uBUrFk7NOOE",
+      "descript_title": "Richard Cassidy's Story",
+      "el_story_id": "1533f071-cb69-4519-b2ef-07124bf91be1",
+      "vignette_file": null,
+      "suggested_vignette": null,
+      "status": "unmapped",
+      "notes": "Individual story - needs consent verification"
+    }
+  ],
+  "summary": {
+    "total_descript_videos": 41,
+    "linked_to_vignettes": 6,
+    "unmapped": 12,
+    "remaining": 23
+  },
+  "next_steps": [
+    "Update remaining vignette frontmatter with empathy_ledger_id fields",
+    "Create new vignettes for orphan videos with strong ALMA signals",
+    "Set up transcription workflow for all 41 Descript videos",
+    "Build sync script to validate EL story IDs match vignette references"
+  ]
+}

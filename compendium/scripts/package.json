@@ -1,0 +1,16 @@
+{
+  "name": "compendium-scripts",
+  "version": "1.0.0",
+  "description": "Scripts for syncing ACT Compendium with Empathy Ledger",
+  "type": "module",
+  "scripts": {
+    "sync": "node sync-from-el.mjs",
+    "sync:dry-run": "node sync-from-el.mjs --dry-run",
+    "validate": "node validate-vignettes.mjs"
+  },
+  "dependencies": {
+    "@supabase/supabase-js": "^2.39.0",
+    "dotenv": "^16.3.1",
+    "yaml": "^2.8.2"
+  }
+}

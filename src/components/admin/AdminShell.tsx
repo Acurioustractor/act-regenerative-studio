@@ -17,6 +17,7 @@ const navItems = [
   { label: "Dashboard", href: "/admin/dashboard" },
   { label: "Content", href: "/admin/content" },
   { label: "Media", href: "/admin/media" },
+  { label: "Media Lab", href: "/media-lab" },
   { label: "Settings", href: "/admin/settings" },
 ];
 

@@ -1,7 +1,22 @@
 import { ProjectShowcaseCard } from '@/components/showcase/ProjectShowcaseCard';
 import { RoadmapTimeline } from '@/components/showcase/RoadmapTimeline';
 
-const ACT_PROJECTS = [
+type ProjectStatus = 'active' | 'planning' | 'development';
+type LCAAPhase = 'listen' | 'curiosity' | 'action' | 'art';
+
+interface Project {
+  name: string;
+  tagline: string;
+  description: string;
+  repo: string | null;
+  url: string | null;
+  status: ProjectStatus;
+  lcaaPhase: LCAAPhase;
+  tags: string[];
+  contributionAreas: string[];
+}
+
+const ACT_PROJECTS: Project[] = [
   {
     name: 'Empathy Ledger',
     tagline: 'Ethical storytelling, consent-first, community-driven',

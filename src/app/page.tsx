@@ -3,7 +3,7 @@ import Link from "next/link";
 const projects = [
   {
     name: "ACT Farm",
-    href: "http://localhost:3001",
+    href: "/farm",
     tagline: "Regenerative residencies on Jinibara Country",
     description:
       "Low-impact eco-residencies and R&D prototyping at Black Cockatoo Valley. Conservation-first experiences for artists, researchers, and curious minds.",
@@ -13,7 +13,7 @@ const projects = [
   },
   {
     name: "The Harvest",
-    href: "http://localhost:3004",
+    href: "/harvest",
     tagline: "Community hub and CSA programs",
     description:
       "Witta's gathering space for events, workshops, and food programs rooted in shared stewardship and local abundance.",
@@ -23,7 +23,7 @@ const projects = [
   },
   {
     name: "Empathy Ledger",
-    href: "http://localhost:3003",
+    href: "https://empathyledger.com",
     tagline: "Stories that preserve cultural wisdom",
     description:
       "A living archive of community voices, Indigenous knowledge, and stories that carry care, accountability, and shared memory forward.",
@@ -33,7 +33,7 @@ const projects = [
   },
   {
     name: "JusticeHub",
-    href: "http://localhost:3002",
+    href: "https://justicehub.org.au",
     tagline: "Youth justice and community support",
     description:
       "Service directory, advocacy campaigns, and infrastructure for justice innovation—connecting families to support and amplifying youth voices.",
@@ -50,6 +50,16 @@ const projects = [
     color: "from-stone-50 to-neutral-50",
     borderColor: "border-stone-200",
     hoverColor: "hover:border-stone-500",
+  },
+  {
+    name: "ACT Placemat",
+    href: "/projects",
+    tagline: "AI business agent and backend services",
+    description:
+      "Intelligent automation and backend services that power the ACT ecosystem—from relationship management to knowledge synthesis.",
+    color: "from-purple-50 to-violet-50",
+    borderColor: "border-purple-200",
+    hoverColor: "hover:border-purple-500",
   },
 ];
 
@@ -92,7 +102,7 @@ export default function HomePage() {
             The ACT Ecosystem
           </p>
           <h2 className="font-[var(--font-display)] text-3xl font-semibold text-[#2F3E2E] md:text-4xl">
-            Five interconnected projects
+            Six interconnected projects
           </h2>
           <p className="max-w-2xl text-base text-[#5A4A3A]">
             Each project addresses a different need while contributing to the whole.
@@ -209,13 +219,13 @@ export default function HomePage() {
               Artist residencies, R&D programs, and conservation-focused
               accommodation
             </p>
-            <a
-              href="http://localhost:3001"
+            <Link
+              href="/farm"
               className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#4CAF50] hover:gap-3"
             >
               <span>ACT Farm</span>
               <span aria-hidden="true">→</span>
-            </a>
+            </Link>
           </div>
 
           <div className="rounded-2xl border border-[#E3D4BA] bg-white p-6">
@@ -226,13 +236,13 @@ export default function HomePage() {
               Events, workshops, and CSA shares connecting you to land and
               neighbors
             </p>
-            <a
-              href="http://localhost:3004"
+            <Link
+              href="/harvest"
               className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#4CAF50] hover:gap-3"
             >
               <span>The Harvest</span>
               <span aria-hidden="true">→</span>
-            </a>
+            </Link>
           </div>
 
           <div className="rounded-2xl border border-[#E3D4BA] bg-white p-6">

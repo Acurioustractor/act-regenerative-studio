@@ -8,7 +8,11 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "ask": "node scripts/ask-act.mjs"
+    "media:audit": "node scripts/media-audit.mjs",
+    "ask": "node scripts/ask-act.mjs",
+    "dev:all": "node scripts/dev-servers.mjs",
+    "start:ecosystem": "node scripts/dev-servers.mjs",
+    "db:seed:alma": "npx ts-node scripts/seed_alma_real_initiatives.ts && npx ts-node scripts/seed_alma_contexts.ts && npx ts-node scripts/seed_alma_evidence.ts"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.2",

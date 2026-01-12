@@ -2,11 +2,14 @@
  * Project Articles API - Fetch blog articles related to a project
  *
  * GET /api/projects/[slug]/articles
- * Returns approved blog articles from enrichment_reviews table
+ * Returns published blog articles from Empathy Ledger content hub
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-import { getSupabaseServerClient } from '@/lib/supabase/server';
+const EMPATHY_LEDGER_URL =
+  process.env.EMPATHY_LEDGER_URL ||
+  process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL ||
+  'http://localhost:3030';
 
 export async function GET(
   request: NextRequest,
@@ -17,44 +20,32 @@ export async function GET(
     const { searchParams } = new URL(request.url);
     const limit = parseInt(searchParams.get('limit') || '10', 10);
 
-    const supabase = getSupabaseServerClient();
-    if (!supabase) {
-      throw new Error('Supabase client not configured');
-    }
-
-    // Fetch approved blog_links enrichments for this project
-    const { data, error } = await supabase
-      .from('enrichment_reviews')
-      .select('ai_generated, created_at')
-      .eq('project_slug', slug)
-      .eq('enrichment_type', 'blog_links')
-      .eq('status', 'approved')
-      .order('created_at', { ascending: false })
-      .limit(limit);
-
-    if (error) {
-      console.error('[Project Articles API] Database error:', error);
-      return NextResponse.json(
-        {
-          success: false,
-          error: 'Failed to fetch articles',
-          details: error.message,
+    const response = await fetch(
+      `${EMPATHY_LEDGER_URL}/api/v1/content-hub/articles?project=${slug}&limit=${limit}`,
+      {
+        headers: {
+          ...(process.env.EMPATHY_LEDGER_API_KEY
+            ? { 'X-API-Key': process.env.EMPATHY_LEDGER_API_KEY }
+            : {}),
         },
-        { status: 500 }
-      );
+      }
+    );
+
+    if (!response.ok) {
+      throw new Error(`Empathy Ledger API error: ${response.status}`);
     }
 
-    // Transform enrichment data into article format
-    const articles = (data || []).map((item: any) => ({
-      title: item.ai_generated.title,
-      slug: item.ai_generated.slug,
-      excerpt: item.ai_generated.excerpt || '',
-      url: item.ai_generated.url,
-      featuredImage: item.ai_generated.featuredImage || null,
-      author: item.ai_generated.author || 'ACT Team',
-      publishedDate: item.ai_generated.publishedDate || item.created_at,
-      tags: item.ai_generated.tags || [],
-      source: item.ai_generated.source || 'webflow',
+    const payload = await response.json();
+    const articles = (payload.articles || []).map((item: any) => ({
+      title: item.title,
+      slug: item.slug,
+      excerpt: item.excerpt || '',
+      url: `${EMPATHY_LEDGER_URL}/articles/${item.slug}`,
+      featuredImage: item.featuredImageUrl || null,
+      author: item.authorName || 'ACT Team',
+      publishedDate: item.publishedAt || null,
+      tags: item.tags || [],
+      source: 'empathy-ledger',
     }));
 
     return NextResponse.json({

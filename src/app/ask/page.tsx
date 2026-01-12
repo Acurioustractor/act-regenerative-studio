@@ -2,7 +2,7 @@ import { AskACT } from '@/components/AskACT';
 
 export const metadata = {
   title: 'Ask ACT | A Curious Tractor',
-  description: 'Query the comprehensive ACT knowledge base covering finance, legal, operations, and content templates.',
+  description: 'Query the comprehensive ACT Intelligence Hub: LCAA methodology, partners, grants, workflows, projects, operations, and more.',
 };
 
 export default function AskPage() {

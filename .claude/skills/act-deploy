@@ -1,0 +1,6 @@
+#!/bin/bash
+# ACT Ecosystem Deployment Skill
+# Usage: /act-deploy [start|stop|restart|status|logs|monitor]
+
+SCRIPT_DIR="/Users/benknight/Code/act-regenerative-studio/scripts"
+"$SCRIPT_DIR/deploy-act-ecosystem.sh" "$@"

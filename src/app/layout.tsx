@@ -16,12 +16,12 @@ const bodyFont = Work_Sans({
 
 const navItems = [
   { label: "Home", href: "/" },
+  { label: "Studio", href: "/studio" },
   { label: "Projects", href: "/projects" },
   { label: "Farm", href: "/farm" },
-  { label: "Harvest", href: "/harvest" },
-  { label: "Goods", href: "/goods" },
-  { label: "Art", href: "/art" },
-  { label: "Blog", href: "/blog" },
+  { label: "Principles", href: "/principles" },
+  { label: "LCAA", href: "/lcaa" },
+  { label: "Partners", href: "/partners" },
   { label: "About", href: "/about" },
   { label: "Contact", href: "/contact" },
 ];
@@ -68,8 +68,11 @@ export default function RootLayout({
             showProjects={true}
             customLinks={[
               { label: "About", href: "/about" },
+              { label: "Studio", href: "/studio" },
               { label: "Projects", href: "/projects" },
-              { label: "Blog", href: "/blog" },
+              { label: "Principles", href: "/principles" },
+              { label: "How We Work", href: "/how-we-work" },
+              { label: "Partners", href: "/partners" },
               { label: "Contact", href: "/contact" },
             ]}
             contactEmail="hi@act.place"

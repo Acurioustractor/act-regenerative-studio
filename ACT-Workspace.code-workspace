@@ -9,10 +9,6 @@
       "path": "../JusticeHub"
     },
     {
-      "name": "💚 Empathy Ledger",
-      "path": "../Empathy Ledger v.02"
-    },
-    {
       "name": "🌾 The Harvest",
       "path": "../The Harvest"
     },
@@ -35,6 +31,21 @@
     {
       "name": "🎛️ Dev Hub",
       "path": "."
+    },
+    {
+      "path": "../../act-personal-ai"
+    },
+    {
+      "path": "../../act-global-skills"
+    },
+    {
+      "path": "../../act-global-infrastructure"
+    },
+    {
+      "path": "../Goods Asset Register"
+    },
+    {
+      "path": "../empathy-ledger-v2"
     }
   ],
   "settings": {
@@ -55,7 +66,10 @@
         "type": "node",
         "request": "launch",
         "runtimeExecutable": "npm",
-        "runtimeArgs": ["run", "dev"],
+        "runtimeArgs": [
+          "run",
+          "dev"
+        ],
         "cwd": "${workspaceFolder:🏠 ACT Farm}",
         "env": {
           "PORT": "3001",
@@ -69,7 +83,10 @@
         "type": "node",
         "request": "launch",
         "runtimeExecutable": "npm",
-        "runtimeArgs": ["run", "dev"],
+        "runtimeArgs": [
+          "run",
+          "dev"
+        ],
         "cwd": "${workspaceFolder:⚖️ JusticeHub}",
         "env": {
           "PORT": "3002",
@@ -83,7 +100,10 @@
         "type": "node",
         "request": "launch",
         "runtimeExecutable": "npm",
-        "runtimeArgs": ["run", "dev"],
+        "runtimeArgs": [
+          "run",
+          "dev"
+        ],
         "cwd": "${workspaceFolder:💚 Empathy Ledger}",
         "env": {
           "REDIS_URL": "redis://192.168.0.34:6379",
@@ -96,7 +116,10 @@
         "type": "node",
         "request": "launch",
         "runtimeExecutable": "npm",
-        "runtimeArgs": ["run", "dev"],
+        "runtimeArgs": [
+          "run",
+          "dev"
+        ],
         "cwd": "${workspaceFolder:🌾 The Harvest}",
         "env": {
           "PORT": "3004",
@@ -110,7 +133,9 @@
         "type": "node",
         "request": "launch",
         "runtimeExecutable": "npm",
-        "runtimeArgs": ["start"],
+        "runtimeArgs": [
+          "start"
+        ],
         "cwd": "${workspaceFolder:📍 ACT Placemat - Backend}",
         "env": {
           "PORT": "4000",
@@ -124,7 +149,10 @@
         "type": "node",
         "request": "launch",
         "runtimeExecutable": "npm",
-        "runtimeArgs": ["run", "dev"],
+        "runtimeArgs": [
+          "run",
+          "dev"
+        ],
         "cwd": "${workspaceFolder:📊 ACT Dashboard}",
         "env": {
           "PORT": "3006",
@@ -137,7 +165,10 @@
         "type": "node",
         "request": "launch",
         "runtimeExecutable": "npm",
-        "runtimeArgs": ["run", "dev"],
+        "runtimeArgs": [
+          "run",
+          "dev"
+        ],
         "cwd": "${workspaceFolder:📅 Year in Review}",
         "env": {
           "PORT": "3007",
@@ -150,7 +181,9 @@
         "type": "node",
         "request": "launch",
         "runtimeExecutable": "npm",
-        "runtimeArgs": ["start"],
+        "runtimeArgs": [
+          "start"
+        ],
         "cwd": "${workspaceFolder:🎛️ Dev Hub}",
         "console": "integratedTerminal"
       }

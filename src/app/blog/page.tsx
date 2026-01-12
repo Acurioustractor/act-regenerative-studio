@@ -1,11 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import { getBlogPosts } from "../../lib/webflow";
+import { fetchContentHubArticles } from "../../lib/empathy-ledger-articles";
 
 export const revalidate = 60;
 
 export default async function BlogPage() {
-  const posts = await getBlogPosts();
+  let posts: Awaited<ReturnType<typeof fetchContentHubArticles>> = [];
+  try {
+    posts = await fetchContentHubArticles({ project: "act-main", limit: 60 });
+  } catch (error) {
+    console.error('Failed to fetch blog posts:', error);
+  }
 
   return (
     <div className="space-y-16">
@@ -29,10 +34,10 @@ export default async function BlogPage() {
             className="group flex h-full flex-col overflow-hidden rounded-3xl border border-[#E1D3BA] bg-white/70 transition hover:-translate-y-1 hover:border-[#4CAF50] hover:shadow-[0_18px_45px_rgba(50,42,31,0.12)]"
           >
             <div className="relative aspect-[4/3] w-full bg-[#F7F2E8]">
-              {post.image?.url ? (
+              {post.featuredImageUrl ? (
                 <Image
-                  src={post.image.url}
-                  alt={post.image.alt ?? post.title}
+                  src={post.featuredImageUrl}
+                  alt={post.featuredImageAlt ?? post.title}
                   fill
                   sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
                   className="object-cover"
@@ -47,34 +52,27 @@ export default async function BlogPage() {
               <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
                 Journal
               </p>
-              {(post.theme || post.readTime) && (
+              {post.tags && post.tags.length > 0 && (
                 <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-[#6B5A45]">
-                  {post.theme ? (
-                    <span className="rounded-full border border-[#E3D4BA] px-3 py-1">
-                      {post.theme}
+                  {post.tags.slice(0, 2).map((tag) => (
+                    <span
+                      key={tag}
+                      className="rounded-full border border-[#E3D4BA] px-3 py-1"
+                    >
+                      {tag}
                     </span>
-                  ) : null}
-                  {post.readTime ? <span>{post.readTime}</span> : null}
+                  ))}
                 </div>
               )}
               <h2 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
                 {post.title}
               </h2>
               <p className="text-sm text-[#4D3F33]">
-                {post.summary || "A story from the ACT Farm."}
+                {post.excerpt || "A story from the ACT Farm."}
               </p>
-              {post.author ? (
+              {post.authorName ? (
                 <div className="flex items-center gap-2 text-xs text-[#6B5A45]">
-                  {post.authorAvatar?.url ? (
-                    <Image
-                      src={post.authorAvatar.url}
-                      alt={post.authorAvatar.alt ?? post.author}
-                      width={28}
-                      height={28}
-                      className="rounded-full border border-[#E3D4BA] object-cover"
-                    />
-                  ) : null}
-                  <span>{post.author}</span>
+                  <span>{post.authorName}</span>
                 </div>
               ) : null}
               <span className="mt-auto inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#4CAF50]">
@@ -86,7 +84,7 @@ export default async function BlogPage() {
         ))}
         {posts.length === 0 ? (
           <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-6 text-sm text-[#4D3F33]">
-            No posts yet. Publish your first story in Webflow to see it here.
+            No posts yet. Publish your first story in Empathy Ledger to see it here.
           </div>
         ) : null}
       </section>

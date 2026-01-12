@@ -28,10 +28,10 @@ tmux split-window -v -t act-ecosystem:0.0
 tmux select-pane -t act-ecosystem:0.2
 tmux split-window -v -t act-ecosystem:0.2
 
-# Pane 0: ACT Main Website (port 3002)
-tmux send-keys -t act-ecosystem:0.0 "cd '/Users/benknight/Code/ACT Farm and Regenerative Innovation Studio'" C-m
-tmux send-keys -t act-ecosystem:0.0 "echo '🌐 ACT Main Website - http://localhost:3002'" C-m
-tmux send-keys -t act-ecosystem:0.0 "npm run dev" C-m
+# Pane 0: ACT Regenerative Studio (port 3002)
+tmux send-keys -t act-ecosystem:0.0 "cd '/Users/benknight/Code/act-regenerative-studio'" C-m
+tmux send-keys -t act-ecosystem:0.0 "echo '🌐 ACT Regenerative Studio - http://localhost:3002'" C-m
+tmux send-keys -t act-ecosystem:0.0 "PORT=3002 npm run dev" C-m
 
 # Pane 1: Empathy Ledger (port 3001)
 tmux send-keys -t act-ecosystem:0.1 "cd '/Users/benknight/Code/empathy-ledger-v2'" C-m
@@ -43,13 +43,13 @@ tmux send-keys -t act-ecosystem:0.2 "cd '/Users/benknight/Code/JusticeHub'" C-m
 tmux send-keys -t act-ecosystem:0.2 "echo '⚖️  JusticeHub - http://localhost:3003'" C-m
 tmux send-keys -t act-ecosystem:0.2 "PORT=3003 npm run dev" C-m
 
-# Pane 3: The Harvest (port 3004)
-tmux send-keys -t act-ecosystem:0.3 "cd '/Users/benknight/Code/The Harvest'" C-m
+# Pane 3: The Harvest Website (port 3004)
+tmux send-keys -t act-ecosystem:0.3 "cd '/Users/benknight/Code/The Harvest Website'" C-m
 tmux send-keys -t act-ecosystem:0.3 "echo '🌾 The Harvest - http://localhost:3004'" C-m
 tmux send-keys -t act-ecosystem:0.3 "PORT=3004 npm run dev" C-m
 
 # Pane 4: ACT Farm (port 3005)
-tmux send-keys -t act-ecosystem:0.4 "cd '/Users/benknight/Code/ACT Farm/act-farm'" C-m
+tmux send-keys -t act-ecosystem:0.4 "cd '/Users/benknight/Code/act-farm'" C-m
 tmux send-keys -t act-ecosystem:0.4 "echo '🚜 ACT Farm - http://localhost:3005'" C-m
 tmux send-keys -t act-ecosystem:0.4 "PORT=3005 npm run dev" C-m
 
@@ -61,12 +61,12 @@ tmux send-keys -t act-ecosystem:0.5 "npm run dev" C-m
 echo "✅ All platforms starting in tmux session 'act-ecosystem'"
 echo ""
 echo "📋 Platforms:"
-echo "   🌐 ACT Main Website:  http://localhost:3002"
-echo "   📖 Empathy Ledger:    http://localhost:3001"
-echo "   ⚖️  JusticeHub:        http://localhost:3003"
-echo "   🌾 The Harvest:       http://localhost:3004"
-echo "   🚜 ACT Farm:          http://localhost:3005"
-echo "   🗂️  ACT Placemat:      http://localhost:3999"
+echo "   🌐 ACT Regenerative Studio:  http://localhost:3002"
+echo "   📖 Empathy Ledger:           http://localhost:3001"
+echo "   ⚖️  JusticeHub:               http://localhost:3003"
+echo "   🌾 The Harvest Website:      http://localhost:3004"
+echo "   🚜 ACT Farm:                 http://localhost:3005"
+echo "   🗂️  ACT Placemat:             http://localhost:3999"
 echo ""
 echo "🎯 Commands:"
 echo "   Attach to session:  tmux attach -t act-ecosystem"

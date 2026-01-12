@@ -276,17 +276,17 @@ function startProject(project) {
     // Shared NAS services
     REDIS_URL: 'redis://192.168.0.34:6379',
     CHROMADB_URL: 'http://192.168.0.34:8000',
+    PATH: process.env.PATH,
   };
 
   // Support custom commands (e.g., backend using 'npm start' instead of 'npm run dev')
-  const command = project.command || 'npm';
+  const command = project.command || '/Users/benknight/.nvm/versions/node/v20.19.3/bin/npm';
   const args = project.args || ['run', 'dev', '--', '-p', project.port.toString()];
 
   const child = spawn(command, args, {
     cwd: project.dir,
     env,
     stdio: 'pipe',
-    shell: true,
   });
 
   servers.set(project.name, {

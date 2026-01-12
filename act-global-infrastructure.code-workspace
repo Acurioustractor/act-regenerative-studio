@@ -1,0 +1,78 @@
+{
+  "folders": [
+	{
+		"name": "act-global-infrastructure",
+		"path": "../../act-global-infrastructure"
+	},
+	{
+		"name": "ACT Placemat",
+		"path": "../ACT Placemat"
+	},
+	{
+		"name": "Goods Asset Register",
+		"path": "../Goods Asset Register"
+	},
+	{
+		"name": "The Harvest Website",
+		"path": "../The Harvest Website"
+	},
+	{
+		"name": "empathy-ledger-v2",
+		"path": "../empathy-ledger-v2"
+	},
+	{
+		"name": "JusticeHub",
+		"path": "../JusticeHub"
+	},
+	{
+		"name": "act-farm",
+		"path": "../act-farm"
+	},
+	{
+		"name": "🌾 ACT Farmhand",
+		"path": "../../act-global-infrastructure/act-personal-ai"
+	},
+	{
+		"path": "."
+	},
+	{
+		"path": "../../act-personal-ai"
+	}
+],
+  "settings": {
+    "files.exclude": {
+      "**/node_modules": true,
+      "**/.next": true,
+      "**/.git": false,
+      "**/dist": true,
+      "**/.turbo": true,
+      "**/.cursor": true,
+      "**/__pycache__": true,
+      "**/.pytest_cache": true,
+      "**/venv": true,
+      "**/*.pyc": true
+    },
+    "search.exclude": {
+      "**/node_modules": true,
+      "**/.next": true,
+      "**/dist": true,
+      "**/__pycache__": true,
+      "**/.pytest_cache": true,
+      "**/venv": true
+    },
+    "editor.formatOnSave": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.codeActionsOnSave": {
+      "source.fixAll.eslint": "explicit"
+    },
+    "git.enableSmartCommit": true,
+    "git.confirmSync": false,
+    "files.associations": {
+      "*.css": "tailwindcss"
+    },
+    "tailwindCSS.experimental.classRegex": [
+      ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+      ["cn\\(([^)]*)\\)", "(?:'|\"|`)([^'\"`]*)(?:'|\"|`)"]
+    ]
+  }
+}

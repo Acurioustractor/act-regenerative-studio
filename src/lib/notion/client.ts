@@ -54,8 +54,8 @@ export interface NotionProjectMetadata {
  */
 export async function getNotionProject(slug: string): Promise<NotionProjectMetadata | null> {
   try {
-    const response = await notion.databases.query({
-      database_id: PROJECTS_DATABASE_ID,
+    const response = await notion.dataSources.query({
+      data_source_id: PROJECTS_DATABASE_ID,
       filter: {
         property: 'Slug',
         rich_text: {
@@ -83,8 +83,8 @@ export async function getNotionProject(slug: string): Promise<NotionProjectMetad
  */
 export async function getAllNotionProjects(): Promise<NotionProjectMetadata[]> {
   try {
-    const response = await notion.databases.query({
-      database_id: PROJECTS_DATABASE_ID,
+    const response = await notion.dataSources.query({
+      data_source_id: PROJECTS_DATABASE_ID,
       filter: {
         property: 'Status',
         status: {

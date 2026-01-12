@@ -55,3 +55,6 @@ yarn-error.log*
 *.cursor
 .vscode/settings.json
 .vscode/launch.json
+
+# Obsidian
+.obsidian/

@@ -116,7 +116,7 @@ export async function POST(request: NextRequest) {
     // Create media item in database
     const mediaItem = await createMediaItem({
       file_url: publicUrl,
-      file_type: category === 'image' ? 'photo' : category,
+      file_type: category === 'image' ? 'photo' : category as 'photo' | 'video' | 'document' | 'video_link' | 'audio',
       mime_type: file.type,
       file_size_bytes: file.size,
       width,

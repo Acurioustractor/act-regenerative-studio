@@ -4,7 +4,7 @@ type Card = {
   title: string;
   description?: string;
   eyebrow?: string;
-  meta?: string;
+  meta?: React.ReactNode;
   href?: string;
   ctaLabel?: string;
   image?: string;
@@ -83,7 +83,7 @@ export default function CardGrid({
                 <p className="text-sm text-[#4D3F33]">{card.description}</p>
               )}
               {card.meta && (
-                <p className="text-xs text-[#6B5A45]">{card.meta}</p>
+                <div className="text-xs text-[#6B5A45]">{card.meta}</div>
               )}
             </div>
             {card.href && (

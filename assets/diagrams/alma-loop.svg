@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" font-family="system-ui, -apple-system, sans-serif">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#5D4E37"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect width="800" height="600" fill="#FDFBF7"/>
+
+  <!-- Title -->
+  <text x="400" y="40" text-anchor="middle" font-size="24" font-weight="600" fill="#2D2A26">
+    ALMA
+  </text>
+  <text x="400" y="65" text-anchor="middle" font-size="14" fill="#5D4E37">
+    Authentic Learning for Meaningful Accountability
+  </text>
+
+  <!-- Guiding Question -->
+  <rect x="200" y="85" width="400" height="40" rx="8" fill="#E8E4DC" stroke="#C4BEB2" stroke-width="1"/>
+  <text x="400" y="110" text-anchor="middle" font-size="13" font-style="italic" fill="#4A453D">
+    "What did we learn, and what will we change?"
+  </text>
+
+  <!-- Three Stages -->
+  <!-- Stage 1: Stories Enter -->
+  <rect x="60" y="160" width="180" height="80" rx="8" fill="#7B9E87" stroke="#5D7A66" stroke-width="2"/>
+  <text x="150" y="195" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">1. STORIES</text>
+  <text x="150" y="215" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">ENTER</text>
+  <text x="150" y="260" text-anchor="middle" font-size="11" fill="#5D4E37">Empathy Ledger holds</text>
+  <text x="150" y="275" text-anchor="middle" font-size="11" fill="#5D4E37">with consent</text>
+
+  <!-- Arrow 1→2 -->
+  <line x1="250" y1="200" x2="295" y2="200" stroke="#5D4E37" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Stage 2: Patterns Emerge -->
+  <rect x="310" y="160" width="180" height="80" rx="8" fill="#8B7355" stroke="#6B5A45" stroke-width="2"/>
+  <text x="400" y="195" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">2. PATTERNS</text>
+  <text x="400" y="215" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">EMERGE</text>
+  <text x="400" y="260" text-anchor="middle" font-size="11" fill="#5D4E37">ALMA identifies</text>
+  <text x="400" y="275" text-anchor="middle" font-size="11" fill="#5D4E37">system signals</text>
+
+  <!-- Arrow 2→3 -->
+  <line x1="500" y1="200" x2="545" y2="200" stroke="#5D4E37" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Stage 3: Practice Adapts -->
+  <rect x="560" y="160" width="180" height="80" rx="8" fill="#6B8E9F" stroke="#4A6B7A" stroke-width="2"/>
+  <text x="650" y="195" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">3. PRACTICE</text>
+  <text x="650" y="215" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">ADAPTS</text>
+  <text x="650" y="260" text-anchor="middle" font-size="11" fill="#5D4E37">Insights return</text>
+  <text x="650" y="275" text-anchor="middle" font-size="11" fill="#5D4E37">to projects</text>
+
+  <!-- Five Signals Box -->
+  <rect x="280" y="310" width="240" height="170" rx="8" fill="#FFFFFF" stroke="#C4BEB2" stroke-width="2"/>
+  <text x="400" y="340" text-anchor="middle" font-size="14" font-weight="600" fill="#2D2A26">FIVE CORE SIGNALS</text>
+  <line x1="300" y1="355" x2="500" y2="355" stroke="#E8E4DC" stroke-width="1"/>
+
+  <circle cx="310" cy="380" r="4" fill="#7B9E87"/>
+  <text x="325" y="385" font-size="12" fill="#4A453D">Coverage — consented evidence?</text>
+
+  <circle cx="310" cy="405" r="4" fill="#8B7355"/>
+  <text x="325" y="410" font-size="12" fill="#4A453D">Gaps — voice missing?</text>
+
+  <circle cx="310" cy="430" r="4" fill="#6B8E9F"/>
+  <text x="325" y="435" font-size="12" fill="#4A453D">Patterns — themes recurring?</text>
+
+  <circle cx="310" cy="455" r="4" fill="#B85C5C"/>
+  <text x="325" y="460" font-size="12" fill="#4A453D">Harm risk — damage possible?</text>
+
+  <circle cx="310" cy="480" r="4" fill="#9B8EC2"/>
+  <text x="325" y="485" font-size="12" fill="#4A453D">Learning velocity — changing?</text>
+
+  <!-- Arrow from Stage 2 to Signals -->
+  <line x1="400" y1="245" x2="400" y2="300" stroke="#5D4E37" stroke-width="2" marker-end="url(#arrowhead)"/>
+
+  <!-- Accountability Flow -->
+  <text x="400" y="515" text-anchor="middle" font-size="12" fill="#5D4E37">
+    Accountability flows: Community first → then funders
+  </text>
+
+  <!-- What ALMA Is Not -->
+  <rect x="60" y="540" width="320" height="50" rx="6" fill="#F5F0E8" stroke="#DDD5C8" stroke-width="1"/>
+  <text x="80" y="560" font-size="11" font-weight="600" fill="#4A453D">ALMA is NOT:</text>
+  <text x="80" y="578" font-size="10" fill="#6B6560">a dashboard • surveillance • funder-first metrics • automated judgment</text>
+
+  <!-- Footer Principle -->
+  <rect x="420" y="540" width="320" height="50" rx="6" fill="#2D2A26"/>
+  <text x="580" y="570" text-anchor="middle" font-size="13" font-weight="500" fill="#FDFBF7">
+    "We measure systems, not people."
+  </text>
+</svg>

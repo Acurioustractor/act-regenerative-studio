@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450" font-family="system-ui, -apple-system, sans-serif">
+  <!-- Background -->
+  <rect width="800" height="450" fill="#FDFBF7"/>
+
+  <!-- Title -->
+  <text x="400" y="35" text-anchor="middle" font-size="20" font-weight="600" fill="#2D2A26">
+    Why ALMA is Different
+  </text>
+
+  <!-- Left Column: Traditional -->
+  <rect x="40" y="60" width="350" height="320" rx="8" fill="#F0E8E8" stroke="#D4C4C4" stroke-width="2"/>
+  <text x="215" y="95" text-anchor="middle" font-size="16" font-weight="600" fill="#6B4A4A">
+    Traditional Accountability
+  </text>
+  <line x1="70" y1="110" x2="360" y2="110" stroke="#D4C4C4" stroke-width="1"/>
+
+  <text x="215" y="145" text-anchor="middle" font-size="13" font-style="italic" fill="#5D4E4E">"What did they do?"</text>
+  <text x="215" y="170" text-anchor="middle" font-size="13" font-style="italic" fill="#5D4E4E">"Did they comply?"</text>
+
+  <text x="70" y="210" font-size="12" fill="#4A3D3D">• Tracks individuals</text>
+  <text x="70" y="235" font-size="12" fill="#4A3D3D">• Scores &amp; dashboards</text>
+  <text x="70" y="260" font-size="12" fill="#4A3D3D">• Funder-first reporting</text>
+  <text x="70" y="285" font-size="12" fill="#4A3D3D">• Judgment automated</text>
+  <text x="70" y="310" font-size="12" fill="#4A3D3D">• Compliance focus</text>
+  <text x="70" y="335" font-size="12" fill="#4A3D3D">• Data extracted</text>
+
+  <!-- Left Label -->
+  <rect x="120" y="355" width="190" height="30" rx="4" fill="#8B5A5A"/>
+  <text x="215" y="376" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">EXTRACTION</text>
+
+  <!-- Right Column: ALMA -->
+  <rect x="410" y="60" width="350" height="320" rx="8" fill="#E8F0E8" stroke="#C4D4C4" stroke-width="2"/>
+  <text x="585" y="95" text-anchor="middle" font-size="16" font-weight="600" fill="#4A6B4A">
+    ALMA
+  </text>
+  <line x1="440" y1="110" x2="730" y2="110" stroke="#C4D4C4" stroke-width="1"/>
+
+  <text x="585" y="145" text-anchor="middle" font-size="13" font-style="italic" fill="#4E5D4E">"What patterns emerged?"</text>
+  <text x="585" y="170" text-anchor="middle" font-size="13" font-style="italic" fill="#4E5D4E">"What will we change?"</text>
+
+  <text x="440" y="210" font-size="12" fill="#3D4A3D">• Observes systems</text>
+  <text x="440" y="235" font-size="12" fill="#3D4A3D">• Signals &amp; stories</text>
+  <text x="440" y="260" font-size="12" fill="#3D4A3D">• Community-first learning</text>
+  <text x="440" y="285" font-size="12" fill="#3D4A3D">• Humans decide</text>
+  <text x="440" y="310" font-size="12" fill="#3D4A3D">• Adaptation focus</text>
+  <text x="440" y="335" font-size="12" fill="#3D4A3D">• Consent retained</text>
+
+  <!-- Right Label -->
+  <rect x="490" y="355" width="190" height="30" rx="4" fill="#5A8B5A"/>
+  <text x="585" y="376" text-anchor="middle" font-size="14" font-weight="600" fill="#FFFFFF">LEARNING</text>
+
+  <!-- Center Arrow -->
+  <text x="400" y="220" text-anchor="middle" font-size="28" fill="#5D4E37">→</text>
+
+  <!-- Footer -->
+  <rect x="200" y="405" width="400" height="35" rx="6" fill="#2D2A26"/>
+  <text x="400" y="428" text-anchor="middle" font-size="13" fill="#FDFBF7">
+    "We measure systems, not people."
+  </text>
+</svg>

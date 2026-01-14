@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>ALMA Diagrams</title>
+  <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+  <style>
+    body { font-family: system-ui; max-width: 900px; margin: 40px auto; padding: 20px; }
+    h1 { color: #2D2A26; }
+    h2 { color: #5D4E37; margin-top: 40px; }
+    .mermaid { background: #FDFBF7; padding: 20px; border-radius: 8px; }
+  </style>
+</head>
+<body>
+  <h1>ALMA Diagrams</h1>
+  <p><em>Authentic Learning for Meaningful Accountability</em></p>
+
+  <h2>ALMA Loop</h2>
+  <div class="mermaid">
+flowchart LR
+    subgraph ENTRY["1. STORIES ENTER"]
+        A[Empathy Ledger<br/>holds with consent]
+    end
+
+    subgraph PATTERNS["2. PATTERNS EMERGE"]
+        B[ALMA identifies<br/>system signals]
+    end
+
+    subgraph ADAPT["3. PRACTICE ADAPTS"]
+        C[Insights return<br/>to projects]
+    end
+
+    ENTRY --> PATTERNS --> ADAPT
+
+    B --> SIGNALS
+
+    subgraph SIGNALS["Five Core Signals"]
+        S1[Coverage]
+        S2[Gaps]
+        S3[Patterns]
+        S4[Harm risk]
+        S5[Learning velocity]
+    end
+
+    ADAPT -.->|Community first,<br/>then funders| ENTRY
+  </div>
+
+  <h2>ALMA vs Traditional Accountability</h2>
+  <div class="mermaid">
+flowchart LR
+    subgraph TRAD["❌ Traditional Accountability"]
+        direction TB
+        T1["What did they do?"]
+        T2["Did they comply?"]
+        T3[Tracks individuals]
+        T4[Scores & dashboards]
+        T5[Funder-first]
+        T6[Judgment automated]
+    end
+
+    subgraph ALMA["✓ ALMA"]
+        direction TB
+        A1["What patterns emerged?"]
+        A2["What will we change?"]
+        A3[Observes systems]
+        A4[Signals & stories]
+        A5[Community-first]
+        A6[Humans decide]
+    end
+
+    TRAD -->|EXTRACTION → LEARNING| ALMA
+  </div>
+
+  <hr>
+  <p><strong>Guiding principle:</strong> "We measure systems, not people."</p>
+</body>
+</html>

@@ -5,7 +5,11 @@
  */
 
 const EMPATHY_LEDGER_URL =
-  process.env.EMPATHY_LEDGER_URL || 'http://localhost:3001';
+  process.env.EMPATHY_LEDGER_URL || process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL || '';
+
+function getEmpathyLedgerUrl() {
+  return EMPATHY_LEDGER_URL.replace(/\/$/, '');
+}
 
 export interface FeaturedStoryteller {
   storyteller_id: string;
@@ -76,6 +80,11 @@ export async function getFeaturedContentForProject(
   } = {}
 ): Promise<FeaturedContentResponse | null> {
   const { type = 'all', limit = 10 } = options;
+  const baseUrl = getEmpathyLedgerUrl();
+
+  if (!baseUrl) {
+    return null;
+  }
 
   try {
     const params = new URLSearchParams({
@@ -84,7 +93,7 @@ export async function getFeaturedContentForProject(
     });
 
     const response = await fetch(
-      `${EMPATHY_LEDGER_URL}/api/v1/act-projects/${projectSlug}/featured?${params}`,
+      `${baseUrl}/api/v1/act-projects/${projectSlug}/featured?${params}`,
       {
         next: { revalidate: 300 }, // Cache for 5 minutes
       }

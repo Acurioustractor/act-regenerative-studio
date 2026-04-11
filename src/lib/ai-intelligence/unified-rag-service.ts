@@ -95,10 +95,27 @@ export interface RAGResponse {
 // SUPABASE CLIENT
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-const supabase = createClient(
-  process.env.NEXT_PUBLIC_SUPABASE_URL!,
-  process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!
-);
+let _supabase: any = null;
+
+function getSupabase() {
+  if (!_supabase) {
+    const url =
+      process.env.NEXT_PUBLIC_SUPABASE_URL ?? process.env.SUPABASE_URL;
+    const key =
+      process.env.SUPABASE_SERVICE_ROLE_KEY ??
+      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+
+    if (!url || !key) {
+      throw new Error(
+        'Supabase credentials not configured. Set NEXT_PUBLIC_SUPABASE_URL or SUPABASE_URL and a Supabase key.'
+      );
+    }
+
+    _supabase = createClient(url, key);
+  }
+
+  return _supabase;
+}
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 // ACT SYSTEM PROMPT (LCAA + Cultural Protocols)
@@ -215,7 +232,7 @@ export class UnifiedRAGService {
 
     if (useHybridSearch) {
       // Hybrid search (70% semantic + 30% full-text)
-      const { data, error } = await supabase.rpc('search_knowledge_hybrid', {
+      const { data, error } = await getSupabase().rpc('search_knowledge_hybrid', {
         query_text: query,
         query_embedding: queryEmbedding,
         match_count: topK
@@ -226,7 +243,7 @@ export class UnifiedRAGService {
 
     } else {
       // Pure semantic search (research-backed approach)
-      const { data, error } = await supabase.rpc('search_knowledge', {
+      const { data, error } = await getSupabase().rpc('search_knowledge', {
         query_embedding: queryEmbedding,
         match_threshold: minSimilarity,
         match_count: topK,
@@ -326,7 +343,7 @@ export class UnifiedRAGService {
     // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
     for (const source of sources) {
-      await supabase.rpc('increment_knowledge_view', {
+      await getSupabase().rpc('increment_knowledge_view', {
         knowledge_id: source.id
       });
     }
@@ -384,7 +401,7 @@ export class UnifiedRAGService {
     const queryEmbedding = await embeddingService.generateEmbedding(query);
 
     // Search
-    const { data, error } = await supabase.rpc('search_knowledge', {
+    const { data, error } = await getSupabase().rpc('search_knowledge', {
       query_embedding: queryEmbedding,
       match_threshold: minSimilarity,
       match_count: topK,
@@ -435,7 +452,7 @@ export class UnifiedRAGService {
 
     // Check database
     try {
-      const { error } = await supabase.from('act_unified_knowledge').select('id').limit(1);
+      const { error } = await getSupabase().from('act_unified_knowledge').select('id').limit(1);
       components.database = { healthy: !error, error: error?.message };
     } catch (err) {
       components.database = {

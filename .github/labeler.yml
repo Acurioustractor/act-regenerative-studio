@@ -3,66 +3,96 @@
 
 # Type labels
 'type: feature':
-  - 'src/app/**/*/page.tsx'
-  - 'src/app/**/*/route.ts'
-  - 'src/components/**/*'
-  - 'src/lib/**/*'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/app/**/*/page.tsx'
+          - 'src/app/**/*/route.ts'
+          - 'src/components/**/*'
+          - 'src/lib/**/*'
 
 'type: chore':
-  - 'scripts/**/*'
-  - '*.config.*'
-  - 'package.json'
-  - 'package-lock.json'
-  - '.github/**/*'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'scripts/**/*'
+          - '*.config.*'
+          - 'package.json'
+          - 'package-lock.json'
+          - '.github/**/*'
 
 'type: documentation':
-  - 'docs/**/*'
-  - '*.md'
-  - 'CLAUDE.md'
-  - 'README.md'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'docs/**/*'
+          - '*.md'
+          - 'CLAUDE.md'
+          - 'README.md'
 
 'type: refactor':
-  - 'src/lib/utils/**/*'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/lib/utils/**/*'
 
 'type: security':
-  - '.github/workflows/security-scan.yml'
-  - 'src/middleware.ts'
+  - changed-files:
+      - any-glob-to-any-file:
+          - '.github/workflows/security-scan.yml'
+          - 'src/middleware.ts'
 
 # Project labels
 'project: empathy-ledger':
-  - 'src/lib/empathy-ledger/**/*'
-  - 'src/app/api/empathy-ledger/**/*'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/lib/empathy-ledger/**/*'
+          - 'src/app/api/empathy-ledger/**/*'
 
 'project: justicehub':
-  - 'src/lib/justicehub/**/*'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/lib/justicehub/**/*'
 
 'project: harvest':
-  - 'src/lib/harvest/**/*'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/lib/harvest/**/*'
 
 'project: goods':
-  - 'src/lib/goods/**/*'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/lib/goods/**/*'
 
 # Feature area labels
 'area: api':
-  - 'src/app/api/**/*'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/app/api/**/*'
 
 'area: dashboard':
-  - 'src/app/page.tsx'
-  - 'src/components/dashboard/**/*'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/app/page.tsx'
+          - 'src/components/dashboard/**/*'
 
 'area: wiki':
-  - 'src/app/admin/wiki/**/*'
-  - 'src/lib/knowledge/**/*'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/app/admin/wiki/**/*'
+          - 'src/lib/knowledge/**/*'
 
 'area: database':
-  - 'supabase/**/*'
-  - 'database.types.ts'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'supabase/**/*'
+          - 'database.types.ts'
 
 # LCAA labels
 'lcaa: action':
-  - 'src/app/api/**/*'
-  - 'src/lib/services/**/*'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/app/api/**/*'
+          - 'src/lib/services/**/*'
 
 'lcaa: art':
-  - 'src/components/**/*'
-  - 'src/app/**/*/page.tsx'
+  - changed-files:
+      - any-glob-to-any-file:
+          - 'src/components/**/*'
+          - 'src/app/**/*/page.tsx'

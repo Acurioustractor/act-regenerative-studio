@@ -95,7 +95,6 @@ export interface RAGResponse {
 // SUPABASE CLIENT
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let _supabase: any = null;
 
 function getSupabase() {

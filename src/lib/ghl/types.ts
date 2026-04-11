@@ -378,3 +378,32 @@ export class ContactSyncError extends Error {
     this.name = 'ContactSyncError';
   }
 }
+
+/**
+ * GHL Webhook Payload
+ * Represents the data received from GHL form submissions and webhooks.
+ */
+export interface GHLWebhookPayload {
+  type?: string;
+  locationId?: string;
+  contactId?: string;
+  contact?: GHLContact;
+  formId?: string;
+  formName?: string;
+  formSubmissionId?: string;
+  timestamp?: string;
+  first_name?: string;
+  last_name?: string;
+  full_name?: string;
+  email?: string;
+  phone?: string;
+  message?: string;
+  organization?: string;
+  interest_area?: string;
+  project_type?: string;
+  preferred_dates?: string;
+  number_of_guests?: string;
+  dietary_requirements?: string;
+  customFields?: Record<string, any>;
+  [key: string]: any;
+}

@@ -11,7 +11,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { unifiedRAG } from '@/lib/ai-intelligence/unified-rag-service';
-import type { AnalysisTier } from '@/lib/ai-intelligence/types';
+import type { AnalysisTier } from '@/lib/ai-intelligence/multi-provider-ai';
 
 // CORS headers for cross-origin requests (if needed)
 const corsHeaders = {
@@ -48,7 +48,7 @@ export async function POST(req: NextRequest) {
     }
 
     // Validate tier
-    const validTiers: AnalysisTier[] = ['quick', 'deep', 'comprehensive'];
+    const validTiers: AnalysisTier[] = ['quick', 'deep', 'strategic', 'expert'];
     if (tier && !validTiers.includes(tier)) {
       return NextResponse.json(
         { error: `Invalid tier. Must be one of: ${validTiers.join(', ')}` },

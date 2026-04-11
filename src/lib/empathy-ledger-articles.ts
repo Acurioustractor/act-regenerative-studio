@@ -26,7 +26,11 @@ type ContentHubArticleDetail = ContentHubArticle & {
 const EMPATHY_LEDGER_URL =
   process.env.EMPATHY_LEDGER_URL ||
   process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL ||
-  'http://localhost:3030';
+  '';
+
+function getEmpathyLedgerUrl() {
+  return EMPATHY_LEDGER_URL.replace(/\/$/, '');
+}
 
 function buildHeaders() {
   const headers: Record<string, string> = {};
@@ -40,12 +44,17 @@ export async function fetchContentHubArticles(params: {
   project?: string;
   limit?: number;
 }): Promise<ContentHubArticle[]> {
+  const baseUrl = getEmpathyLedgerUrl();
+  if (!baseUrl) {
+    return [];
+  }
+
   const searchParams = new URLSearchParams();
   if (params.project) searchParams.set('project', params.project);
   if (params.limit) searchParams.set('limit', String(params.limit));
 
   const response = await fetch(
-    `${EMPATHY_LEDGER_URL}/api/v1/content-hub/articles?${searchParams.toString()}`,
+    `${baseUrl}/api/v1/content-hub/articles?${searchParams.toString()}`,
     {
       headers: buildHeaders(),
       next: { revalidate: 60 },
@@ -63,8 +72,13 @@ export async function fetchContentHubArticles(params: {
 export async function fetchContentHubArticleBySlug(
   slug: string
 ): Promise<ContentHubArticleDetail | null> {
+  const baseUrl = getEmpathyLedgerUrl();
+  if (!baseUrl) {
+    return null;
+  }
+
   const response = await fetch(
-    `${EMPATHY_LEDGER_URL}/api/v1/content-hub/articles/${slug}`,
+    `${baseUrl}/api/v1/content-hub/articles/${slug}`,
     {
       headers: buildHeaders(),
       next: { revalidate: 60 },

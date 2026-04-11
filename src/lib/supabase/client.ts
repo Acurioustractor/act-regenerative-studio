@@ -1,23 +1,49 @@
-import { createClient as createSupabaseClient } from "@supabase/supabase-js";
+import {
+  createClient as createSupabaseClient,
+  type SupabaseClient,
+} from "@supabase/supabase-js";
 
-const supabaseUrl = process.env.NEXT_PUBLIC_SUPABASE_URL ?? "";
-const supabaseAnonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "";
+let browserClient: SupabaseClient | null = null;
 
-export const supabase = createSupabaseClient(supabaseUrl, supabaseAnonKey, {
-  auth: {
-    persistSession: true,
-    autoRefreshToken: true,
-    detectSessionInUrl: true,
-  },
-});
+function getClientConfig() {
+  return {
+    url: process.env.NEXT_PUBLIC_SUPABASE_URL ?? "",
+    anonKey: process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? "",
+  };
+}
 
-// Export a function to create new client instances (for client components)
-export function createClient() {
-  return createSupabaseClient(supabaseUrl, supabaseAnonKey, {
+function getBrowserClient(): SupabaseClient {
+  if (browserClient) {
+    return browserClient;
+  }
+
+  const { url, anonKey } = getClientConfig();
+
+  if (!url || !anonKey) {
+    throw new Error(
+      "Supabase browser client env is not configured. Set NEXT_PUBLIC_SUPABASE_URL and NEXT_PUBLIC_SUPABASE_ANON_KEY."
+    );
+  }
+
+  browserClient = createSupabaseClient(url, anonKey, {
     auth: {
       persistSession: true,
       autoRefreshToken: true,
       detectSessionInUrl: true,
     },
   });
+
+  return browserClient;
+}
+
+export const supabase = new Proxy({} as SupabaseClient, {
+  get(_target, property) {
+    const client = getBrowserClient() as unknown as Record<PropertyKey, unknown>;
+    const value = client[property];
+    return typeof value === "function" ? value.bind(getBrowserClient()) : value;
+  },
+});
+
+export function createClient() {
+  return getBrowserClient();
 }

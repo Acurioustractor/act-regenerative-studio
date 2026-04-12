@@ -38,7 +38,7 @@ jobs:
         run: |
           node scripts/sync-canonical-wiki-pages.mjs
           node scripts/sync-canonical-wiki-projects.mjs
-          node scripts/sync-canonical-wiki-flagship-packs.mjs || echo "Flagship packs sync skipped (requires sibling repo import)"
+          node scripts/sync-canonical-wiki-flagship-packs.mjs
         env:
           ACT_CANONICAL_WIKI_ROOT: ${{ github.workspace }}/_canonical-wiki/wiki
 

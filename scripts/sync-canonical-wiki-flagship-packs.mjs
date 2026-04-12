@@ -4,7 +4,7 @@ import path from 'node:path';
 import {
   resolveCanonicalWikiRoot,
   buildFlagshipProjectPackSnapshot,
-} from '../../act-global-infrastructure/scripts/lib/wiki-flagship-project-packs.mjs';
+} from './lib/wiki-flagship-project-packs.mjs';
 
 const OUTPUT_PATH = path.resolve(
   process.cwd(),

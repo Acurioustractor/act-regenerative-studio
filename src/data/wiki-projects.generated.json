@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-12T20:51:50.711Z",
+  "generatedAt": "2026-04-12T21:00:33.973Z",
   "sourceRoot": "/home/runner/work/act-regenerative-studio/act-regenerative-studio/_canonical-wiki/wiki",
   "projectCount": 55,
   "projects": [
@@ -27,7 +27,7 @@
       "canonicalUrl": "https://act-farm.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/act-farm",
       "deployUrl": "https://act-farm-benjamin-knights-projects.vercel.app/",
-      "modifiedAt": "2026-04-12T20:51:35.458Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     },
     {
       "slug": "act-public-voice",
@@ -53,7 +53,7 @@
       "canonicalUrl": "https://act.place/",
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.458Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     },
     {
       "slug": "act-studio",
@@ -79,7 +79,7 @@
       "canonicalUrl": null,
       "repoUrl": "https://github.com/Acurioustractor/act-regenerative-studio",
       "deployUrl": "https://act-regenerative-studio-benjamin-knights-projects.vercel.app/",
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     },
     {
       "slug": "barkly-backbone",
@@ -105,7 +105,7 @@
       "canonicalUrl": null,
       "repoUrl": "https://github.com/Acurioustractor/barkly-research-platform",
       "deployUrl": "https://barkly-research-platform-benjamin-knights-projects.vercel.app/",
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     },
     {
       "slug": "bg-fit",
@@ -131,7 +131,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     },
     {
       "slug": "black-cockatoo-valley",
@@ -157,7 +157,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.458Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     },
     {
       "slug": "campfire",
@@ -183,7 +183,7 @@
       "canonicalUrl": "https://campfire-website-amber.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/Campfire-Website",
       "deployUrl": "https://campfire-website-amber.vercel.app/",
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     },
     {
       "slug": "caring-for-those-who-care",
@@ -209,7 +209,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     },
     {
       "slug": "cars-and-microcontrollers",
@@ -235,7 +235,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     },
     {
       "slug": "civicgraph",
@@ -261,7 +261,7 @@
       "canonicalUrl": "https://civicgraph.app/",
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     },
     {
       "slug": "community-capital",
@@ -287,7 +287,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     },
     {
       "slug": "confit-pathways",
@@ -313,7 +313,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     },
     {
       "slug": "contained",
@@ -339,7 +339,7 @@
       "canonicalUrl": null,
       "repoUrl": "https://github.com/Acurioustractor/contained-campaign-site",
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     },
     {
       "slug": "dad-lab-25",
@@ -365,7 +365,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     },
     {
       "slug": "deadlylabs",
@@ -391,7 +391,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     },
     {
       "slug": "designing-for-obsolescence",
@@ -417,7 +417,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     },
     {
       "slug": "diagrama",
@@ -443,7 +443,7 @@
       "canonicalUrl": null,
       "repoUrl": "https://github.com/Acurioustractor/diagrama-australia",
       "deployUrl": "https://diagramaaustralia.org/",
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     },
     {
       "slug": "empathy-ledger",
@@ -469,7 +469,7 @@
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/empathy-ledger-v2",
       "deployUrl": "https://www.empathyledger.com/",
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     },
     {
       "slug": "annual-field-service",
@@ -495,7 +495,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.847Z"
     },
     {
       "slug": "feel-good-project",
@@ -521,7 +521,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.847Z"
     },
     {
       "slug": "fishers-oysters",
@@ -547,7 +547,7 @@
       "canonicalUrl": "https://fishers-oysters.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/fishers-oysters",
       "deployUrl": "https://www.fishersoysters.com/",
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.847Z"
     },
     {
       "slug": "global-laundry-alliance",
@@ -573,7 +573,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.847Z"
     },
     {
       "slug": "gold-phone",
@@ -599,7 +599,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     },
     {
       "slug": "goods-on-country",
@@ -625,7 +625,7 @@
       "canonicalUrl": "https://v2-rho-ochre.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/goods-asset-tracker",
       "deployUrl": "https://www.goodsoncountry.com/",
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.847Z"
     },
     {
       "slug": "grantscope",
@@ -651,7 +651,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.847Z"
     },
     {
       "slug": "green-harvest-witta",
@@ -677,7 +677,7 @@
       "canonicalUrl": "https://witta-swot-analysis.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/theharvest",
       "deployUrl": "https://www.theharvestwitta.com.au/",
-      "modifiedAt": "2026-04-12T20:51:35.463Z"
+      "modifiedAt": "2026-04-12T21:00:18.850Z"
     },
     {
       "slug": "junes-patch",
@@ -703,7 +703,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.847Z"
     },
     {
       "slug": "justicehub",
@@ -729,7 +729,7 @@
       "canonicalUrl": "https://www.justicehub.com.au/",
       "repoUrl": "https://github.com/Acurioustractor/justicehub-platform",
       "deployUrl": "https://www.justicehub.com.au/",
-      "modifiedAt": "2026-04-12T20:51:35.461Z"
+      "modifiedAt": "2026-04-12T21:00:18.848Z"
     },
     {
       "slug": "minderoo-pitch-package",
@@ -755,7 +755,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.461Z"
+      "modifiedAt": "2026-04-12T21:00:18.848Z"
     },
     {
       "slug": "mounty-yarns",
@@ -781,7 +781,7 @@
       "canonicalUrl": "https://mounty-yarns.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/mounty-yarns",
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.461Z"
+      "modifiedAt": "2026-04-12T21:00:18.848Z"
     },
     {
       "slug": "oonchiumpa",
@@ -807,7 +807,7 @@
       "canonicalUrl": "https://oonchiumpa.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/Oonchiumpa",
       "deployUrl": "https://oonchiumpa-app.vercel.app/",
-      "modifiedAt": "2026-04-12T20:51:35.461Z"
+      "modifiedAt": "2026-04-12T21:00:18.848Z"
     },
     {
       "slug": "picc",
@@ -833,7 +833,7 @@
       "canonicalUrl": "https://palm-island-repository.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/palm-island-repository",
       "deployUrl": "https://picc.studio/",
-      "modifiedAt": "2026-04-12T20:51:35.462Z"
+      "modifiedAt": "2026-04-12T21:00:18.849Z"
     },
     {
       "slug": "picc-annual-report",
@@ -859,7 +859,7 @@
       "canonicalUrl": "https://palm-island-repository.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/palm-island-repository",
       "deployUrl": "https://picc.studio/",
-      "modifiedAt": "2026-04-12T20:51:35.462Z"
+      "modifiedAt": "2026-04-12T21:00:18.849Z"
     },
     {
       "slug": "picc-centre-precinct",
@@ -885,7 +885,7 @@
       "canonicalUrl": "https://picc-station-map.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/picc-station-site-plan",
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.462Z"
+      "modifiedAt": "2026-04-12T21:00:18.849Z"
     },
     {
       "slug": "picc-elders-hull-river",
@@ -911,7 +911,7 @@
       "canonicalUrl": "https://palm-island-repository.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/palm-island-repository",
       "deployUrl": "https://picc.studio/",
-      "modifiedAt": "2026-04-12T20:51:35.462Z"
+      "modifiedAt": "2026-04-12T21:00:18.849Z"
     },
     {
       "slug": "picc-photo-kiosk",
@@ -937,7 +937,7 @@
       "canonicalUrl": "https://palm-island-repository.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/palm-island-repository",
       "deployUrl": "https://picc.studio/",
-      "modifiedAt": "2026-04-12T20:51:35.462Z"
+      "modifiedAt": "2026-04-12T21:00:18.849Z"
     },
     {
       "slug": "place-based-policy-lab",
@@ -963,7 +963,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.462Z"
+      "modifiedAt": "2026-04-12T21:00:18.849Z"
     },
     {
       "slug": "quandamooka-justice-strategy",
@@ -989,7 +989,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.462Z"
+      "modifiedAt": "2026-04-12T21:00:18.849Z"
     },
     {
       "slug": "redtape",
@@ -1015,7 +1015,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     },
     {
       "slug": "regional-arts-fellowship",
@@ -1041,7 +1041,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     },
     {
       "slug": "resoleution",
@@ -1067,7 +1067,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.462Z"
+      "modifiedAt": "2026-04-12T21:00:18.849Z"
     },
     {
       "slug": "smart-connect",
@@ -1093,7 +1093,7 @@
       "canonicalUrl": null,
       "repoUrl": "https://github.com/Acurioustractor/SMART-Connect",
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.462Z"
+      "modifiedAt": "2026-04-12T21:00:18.850Z"
     },
     {
       "slug": "smart-hcp-gp-uplift",
@@ -1119,7 +1119,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.462Z"
+      "modifiedAt": "2026-04-12T21:00:18.850Z"
     },
     {
       "slug": "smart-recovery-gp-kits",
@@ -1145,7 +1145,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.462Z"
+      "modifiedAt": "2026-04-12T21:00:18.850Z"
     },
     {
       "slug": "staying",
@@ -1171,7 +1171,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.461Z"
+      "modifiedAt": "2026-04-12T21:00:18.848Z"
     },
     {
       "slug": "the-brave-ones",
@@ -1197,7 +1197,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.461Z"
+      "modifiedAt": "2026-04-12T21:00:18.848Z"
     },
     {
       "slug": "the-caravan",
@@ -1223,7 +1223,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     },
     {
       "slug": "the-confessional",
@@ -1249,7 +1249,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     },
     {
       "slug": "the-full-idea",
@@ -1275,7 +1275,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.461Z"
+      "modifiedAt": "2026-04-12T21:00:18.848Z"
     },
     {
       "slug": "the-harvest",
@@ -1301,7 +1301,7 @@
       "canonicalUrl": "https://witta-swot-analysis.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/theharvest",
       "deployUrl": "https://www.theharvestwitta.com.au/",
-      "modifiedAt": "2026-04-12T20:51:35.463Z"
+      "modifiedAt": "2026-04-12T21:00:18.850Z"
     },
     {
       "slug": "three-circles",
@@ -1327,7 +1327,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.461Z"
+      "modifiedAt": "2026-04-12T21:00:18.848Z"
     },
     {
       "slug": "the-vagina",
@@ -1353,7 +1353,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     },
     {
       "slug": "tomnet",
@@ -1379,7 +1379,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.463Z"
+      "modifiedAt": "2026-04-12T21:00:18.850Z"
     },
     {
       "slug": "treacher",
@@ -1405,7 +1405,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     },
     {
       "slug": "uncle-allan-palm-island-art",
@@ -1431,7 +1431,7 @@
       "canonicalUrl": "https://palm-island-repository.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/palm-island-repository",
       "deployUrl": "https://picc.studio/",
-      "modifiedAt": "2026-04-12T20:51:35.459Z"
+      "modifiedAt": "2026-04-12T21:00:18.846Z"
     }
   ]
 }

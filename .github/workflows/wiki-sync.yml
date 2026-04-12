@@ -16,11 +16,11 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Checkout canonical wiki into sibling directory
+      - name: Checkout canonical wiki
         uses: actions/checkout@v4
         with:
           repository: Acurioustractor/act-global-infrastructure
-          path: ../act-global-infrastructure
+          path: _canonical-wiki
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -36,6 +36,8 @@ jobs:
           node scripts/sync-canonical-wiki-pages.mjs
           node scripts/sync-canonical-wiki-projects.mjs
           node scripts/sync-canonical-wiki-flagship-packs.mjs
+        env:
+          ACT_CANONICAL_WIKI_ROOT: ${{ github.workspace }}/_canonical-wiki/wiki
 
       - name: Commit updated wiki data
         run: |

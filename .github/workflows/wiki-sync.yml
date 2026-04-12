@@ -5,6 +5,9 @@ on:
     types: [wiki-content-updated]
   workflow_dispatch:
 
+permissions:
+  contents: write
+
 jobs:
   sync:
     name: Sync Wiki from Canonical Source

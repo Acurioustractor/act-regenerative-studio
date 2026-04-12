@@ -1,0 +1,61 @@
+name: Wiki Content Sync
+
+on:
+  repository_dispatch:
+    types: [wiki-content-updated]
+  workflow_dispatch:
+
+jobs:
+  sync:
+    name: Sync Wiki from Canonical Source
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout act-regenerative-studio
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Checkout canonical wiki
+        uses: actions/checkout@v4
+        with:
+          repository: Acurioustractor/act-global-infrastructure
+          path: act-global-infrastructure
+          sparse-checkout: wiki
+          sparse-checkout-cone-mode: false
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Sync wiki pages
+        run: node scripts/sync-canonical-wiki-pages.mjs
+        env:
+          ACT_CANONICAL_WIKI_ROOT: ${{ github.workspace }}/act-global-infrastructure/wiki
+
+      - name: Sync wiki projects
+        run: node scripts/sync-canonical-wiki-projects.mjs
+        env:
+          ACT_CANONICAL_WIKI_ROOT: ${{ github.workspace }}/act-global-infrastructure/wiki
+
+      - name: Sync flagship packs
+        run: node scripts/sync-canonical-wiki-flagship-packs.mjs
+        env:
+          ACT_CANONICAL_WIKI_ROOT: ${{ github.workspace }}/act-global-infrastructure/wiki
+
+      - name: Commit updated wiki data
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
+          git add src/data/wiki-pages.generated.json src/data/wiki-projects.generated.json src/data/wiki-flagship-project-packs.generated.json
+          if git diff --cached --quiet; then
+            echo "No wiki changes to commit"
+          else
+            git commit -m "chore: sync wiki content from canonical source [skip ci]"
+            git push
+          fi

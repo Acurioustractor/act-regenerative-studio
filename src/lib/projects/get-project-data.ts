@@ -274,13 +274,28 @@ function getSourcePacketCover(
 export const getProjectData = cache(async function getProjectData(
   slug: string
 ): Promise<EnrichedProject | null> {
-  // 1. Get base static data
+  // 1. Get base static data (optional — wiki data fills the gap)
   const staticProject = projects.find((p) => p.slug === slug);
-  if (!staticProject) {
+
+  // 2. Pre-fetch wiki data to resolve fallback title
+  const wikiDataPreFetch = await getCanonicalWikiProject(slug, staticProject?.title).catch(() => null);
+
+  // If no static project AND no wiki data, this project doesn't exist
+  if (!staticProject && !wikiDataPreFetch) {
     return null;
   }
 
-  // 2. Fetch all enrichment data in parallel
+  // Build a synthetic static project from wiki data when static is missing
+  const baseProject: Project = staticProject || {
+    slug,
+    title: wikiDataPreFetch?.title || slug,
+    theme: 'earth' as ProjectTheme,
+    tagline: wikiDataPreFetch?.summary || '',
+    description: wikiDataPreFetch?.overview || '',
+    focus: wikiDataPreFetch?.tier ? [wikiDataPreFetch.tier] : [],
+  };
+
+  // 3. Fetch all enrichment data in parallel
   const [
     wikiData,
     flagshipPack,
@@ -292,8 +307,8 @@ export const getProjectData = cache(async function getProjectData(
     mediaGallery,
     ecosystemData,
   ] = await Promise.all([
-    // Canonical ACT wiki enrichment
-    getCanonicalWikiProject(slug, staticProject.title).catch(() => null),
+    // Canonical ACT wiki enrichment (reuse pre-fetch)
+    Promise.resolve(wikiDataPreFetch),
 
     // Canonical flagship pack enrichment
     getFlagshipProjectPack(slug).catch(() => null),
@@ -307,7 +322,7 @@ export const getProjectData = cache(async function getProjectData(
     getProjectVignettes(slug, { limit: 3, sortBy: 'alma_score' }).catch(() => []),
 
     // Cover image with fallback chain
-    getCoverImage(slug, staticProject.title, staticProject.heroImage).catch(() => null),
+    getCoverImage(slug, baseProject.title, baseProject.heroImage).catch(() => null),
 
     // Empathy Ledger featured content
     getFeaturedContentForProject(slug, { type: 'all', limit: 10 }).catch(() => null),
@@ -331,9 +346,9 @@ export const getProjectData = cache(async function getProjectData(
   );
   const empathyLedgerCover = getEmpathyLedgerCover(
     empathyLedgerContent,
-    staticProject.title
+    baseProject.title
   );
-  const sourcePacketCover = getSourcePacketCover(sourcePacket, staticProject.title);
+  const sourcePacketCover = getSourcePacketCover(sourcePacket, baseProject.title);
   const localCoverOverride = LOCAL_COVER_IMAGE_OVERRIDES[slug];
   const localCoverVideoOverride = LOCAL_COVER_VIDEO_OVERRIDES[slug] || null;
   const resolvedWebsiteUrl = resolveProjectWebsiteUrl(
@@ -349,18 +364,18 @@ export const getProjectData = cache(async function getProjectData(
       : null);
 
   return {
-    ...staticProject,
+    ...baseProject,
     tagline:
-      firstNonEmpty(flagshipPack?.summary, wikiData?.summary, staticProject.tagline) ||
-      staticProject.tagline,
+      firstNonEmpty(flagshipPack?.summary, wikiData?.summary, baseProject.tagline) ||
+      baseProject.tagline,
     description:
       firstNonEmpty(
         flagshipPack?.overview,
         flagshipPack?.whatItIs,
         flagshipPack?.systemPosition,
         wikiData?.overview,
-        staticProject.description
-      ) || staticProject.description,
+        baseProject.description
+      ) || baseProject.description,
     coverImage: localCoverOverride
       ? {
           url: localCoverOverride.url,
@@ -381,11 +396,11 @@ export const getProjectData = cache(async function getProjectData(
     empathyLedgerContent,
     mediaGallery: mergedMediaGallery,
     // Computed fields
-    hasLCAAContent: !!(staticProject.listen || staticProject.curiosity || staticProject.action || staticProject.art),
-    hasStats: !!(staticProject.stats && staticProject.stats.length > 0),
-    hasQuote: !!staticProject.quote,
+    hasLCAAContent: !!(baseProject.listen || baseProject.curiosity || baseProject.action || baseProject.art),
+    hasStats: !!(baseProject.stats && baseProject.stats.length > 0),
+    hasQuote: !!baseProject.quote,
     hasVideo:
-      !!staticProject.videoUrl ||
+      !!baseProject.videoUrl ||
       mergedMediaGallery.some((item) => item.type.startsWith('video') || item.type === 'video'),
   };
 });
@@ -398,10 +413,26 @@ export function getProjectBasicData(slug: string): Project | null {
 }
 
 /**
- * Get all project slugs for static generation
+ * Get all project slugs for static generation.
+ * Merges static projects + canonical wiki projects so wiki-only
+ * projects also get pages generated.
  */
 export function getAllProjectSlugs(): string[] {
-  return projects.map((p) => p.slug);
+  const staticSlugs = new Set(projects.map((p) => p.slug));
+
+  // Add wiki project slugs that aren't already in static data
+  try {
+    const snapshot = require('@/data/wiki-projects.generated.json') as {
+      projects: Array<{ slug: string }>;
+    };
+    for (const wp of snapshot.projects) {
+      staticSlugs.add(wp.slug);
+    }
+  } catch {
+    // Snapshot not available — fall back to static only
+  }
+
+  return [...staticSlugs];
 }
 
 /**

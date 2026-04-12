@@ -107,6 +107,7 @@ export default function RootLayout({
               { label: "Works", href: "/art" },
               { label: "Method", href: "/method" },
               { label: "Wiki", href: "/wiki" },
+              { label: "People", href: "/people" },
               { label: "About", href: "/about" },
               { label: "Partners", href: "/partners" },
               { label: "Contact", href: "/contact" },

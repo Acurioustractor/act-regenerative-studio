@@ -1,0 +1,3181 @@
+{
+  "generatedAt": "2026-04-12T01:26:57.173Z",
+  "sourceConfigPath": "/Users/benknight/Code/act-global-infrastructure/config/project-codes.json",
+  "projectCount": 74,
+  "unresolvedWikiProjectSlugs": [
+    "act-public-voice",
+    "deadlylabs",
+    "grantscope",
+    "green-harvest-witta",
+    "minderoo-pitch-package",
+    "picc-annual-report",
+    "picc-centre-precinct",
+    "picc-photo-kiosk",
+    "place-based-policy-lab",
+    "quandamooka-justice-strategy",
+    "resoleution",
+    "smart-connect",
+    "smart-hcp-gp-uplift",
+    "staying",
+    "the-brave-ones",
+    "the-caravan",
+    "the-full-idea",
+    "the-vagina",
+    "three-circles"
+  ],
+  "projects": [
+    {
+      "code": "ACT-10",
+      "name": "10x10 Retreat",
+      "status": "archived",
+      "tier": null,
+      "category": "events",
+      "canonicalSlug": "10x10-retreat",
+      "wikiSlug": null,
+      "staticSlug": "10x10-retreat",
+      "aliases": [
+        "10x10-retreat",
+        "ACT-10",
+        "10x10 Retreat",
+        "10x10",
+        "retreat",
+        "10x10 Community Capital Leadership Retreat",
+        "Community Capital Retreat",
+        "ACT-10 — 10x10 Retreat"
+      ],
+      "queryAliases": [
+        "10x10-retreat",
+        "ACT-10",
+        "10x10 Retreat",
+        "10x10",
+        "retreat"
+      ],
+      "lookupKeys": [
+        "10x10-retreat",
+        "act-10",
+        "10x10",
+        "retreat",
+        "10x10-community-capital-leadership-retreat",
+        "community-capital-retreat",
+        "act-10-10x10-retreat"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "10x10 Community Capital Leadership Retreat"
+      ],
+      "ghlTags": [
+        "10x10",
+        "retreat"
+      ],
+      "xeroTracking": "ACT-10 — 10x10 Retreat",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-BR",
+      "name": "ACT Bali Retreat",
+      "status": "archived",
+      "tier": null,
+      "category": "events",
+      "canonicalSlug": "act-bali-retreat",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "act-bali-retreat",
+        "ACT-BR",
+        "ACT Bali Retreat",
+        "bali",
+        "retreat",
+        "ACT stop, revive, thrive in Bali",
+        "Bali Retreat",
+        "ACT-BR — ACT Bali Retreat"
+      ],
+      "queryAliases": [
+        "act-bali-retreat",
+        "ACT-BR",
+        "ACT Bali Retreat",
+        "bali",
+        "retreat"
+      ],
+      "lookupKeys": [
+        "act-bali-retreat",
+        "act-br",
+        "bali",
+        "retreat",
+        "act-stop-revive-thrive-in-bali",
+        "bali-retreat",
+        "act-br-act-bali-retreat"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "ACT stop, revive, thrive in Bali"
+      ],
+      "ghlTags": [
+        "bali",
+        "retreat"
+      ],
+      "xeroTracking": "ACT-BR — ACT Bali Retreat",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-CC",
+      "name": "ACT Conservation Collective",
+      "status": "archived",
+      "tier": null,
+      "category": "regenerative",
+      "canonicalSlug": "act-conservation-collective",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "act-conservation-collective",
+        "ACT-CC",
+        "ACT Conservation Collective",
+        "conservation-collective",
+        "A Curious Tractor Conservation Collective (ACT-CC)",
+        "ACT-CC — Conservation Collective",
+        "Conservation Collective"
+      ],
+      "queryAliases": [
+        "act-conservation-collective",
+        "ACT-CC",
+        "ACT Conservation Collective",
+        "conservation-collective",
+        "A Curious Tractor Conservation Collective (ACT-CC)"
+      ],
+      "lookupKeys": [
+        "act-conservation-collective",
+        "act-cc",
+        "conservation-collective",
+        "a-curious-tractor-conservation-collective-act-cc",
+        "act-cc-conservation-collective"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "A Curious Tractor Conservation Collective (ACT-CC)"
+      ],
+      "ghlTags": [
+        "conservation-collective"
+      ],
+      "xeroTracking": "ACT-CC — Conservation Collective",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-IN",
+      "name": "ACT Infrastructure",
+      "status": "active",
+      "tier": "ecosystem",
+      "category": "tech",
+      "canonicalSlug": "act-infrastructure",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "act-infrastructure",
+        "ACT-IN",
+        "ACT Infrastructure",
+        "infrastructure",
+        "operations",
+        "ACT business set up",
+        "ACT Notion / Tool Audit {Farm Plan}",
+        "Operations",
+        "ACT-IN — ACT Infrastructure"
+      ],
+      "queryAliases": [
+        "act-infrastructure",
+        "ACT-IN",
+        "ACT Infrastructure",
+        "infrastructure",
+        "operations"
+      ],
+      "lookupKeys": [
+        "act-infrastructure",
+        "act-in",
+        "infrastructure",
+        "operations",
+        "act-business-set-up",
+        "act-notion-tool-audit-farm-plan",
+        "act-in-act-infrastructure"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "ACT business set up",
+        "ACT Notion / Tool Audit {Farm Plan}"
+      ],
+      "ghlTags": [
+        "infrastructure",
+        "operations"
+      ],
+      "xeroTracking": "ACT-IN — ACT Infrastructure",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-MD",
+      "name": "ACT Monthly Dinners",
+      "status": "active",
+      "tier": "satellite",
+      "category": "community",
+      "canonicalSlug": "act-monthly-dinners",
+      "wikiSlug": null,
+      "staticSlug": "act-monthly-dinners",
+      "aliases": [
+        "act-monthly-dinners",
+        "ACT-MD",
+        "ACT Monthly Dinners",
+        "act-monthly",
+        "dinners",
+        "Monthly Dinners",
+        "ACT-MD — ACT Monthly Dinners"
+      ],
+      "queryAliases": [
+        "act-monthly-dinners",
+        "ACT-MD",
+        "ACT Monthly Dinners",
+        "act-monthly",
+        "dinners"
+      ],
+      "lookupKeys": [
+        "act-monthly-dinners",
+        "act-md",
+        "act-monthly",
+        "dinners",
+        "monthly-dinners",
+        "act-md-act-monthly-dinners"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "ACT Monthly Dinners"
+      ],
+      "ghlTags": [
+        "act-monthly",
+        "dinners"
+      ],
+      "xeroTracking": "ACT-MD — ACT Monthly Dinners",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-CORE",
+      "name": "ACT Regenerative Studio",
+      "status": "active",
+      "tier": "ecosystem",
+      "category": "ecosystem",
+      "canonicalSlug": "act-studio",
+      "wikiSlug": "act-studio",
+      "staticSlug": null,
+      "aliases": [
+        "act-studio",
+        "ACT-CORE",
+        "ACT Regenerative Studio",
+        "act-regenerative-studio",
+        "act-place",
+        "act.place",
+        "act",
+        "studio",
+        "ACT",
+        "ACT Studio",
+        "ACT Core",
+        "act-core",
+        "ACT-CORE — ACT Regenerative Studio"
+      ],
+      "queryAliases": [
+        "act-studio",
+        "ACT-CORE",
+        "act-regenerative-studio",
+        "act-place"
+      ],
+      "lookupKeys": [
+        "act-studio",
+        "act-core",
+        "act-regenerative-studio",
+        "act-place",
+        "act",
+        "studio",
+        "act-core-act-regenerative-studio"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "ACT Regenerative Studio"
+      ],
+      "ghlTags": [
+        "act",
+        "studio",
+        "act-studio"
+      ],
+      "xeroTracking": "ACT-CORE — ACT Regenerative Studio",
+      "productionUrl": "https://act.place",
+      "syndicationSlug": "act_core"
+    },
+    {
+      "code": "ACT-APO",
+      "name": "Active Projects Overview",
+      "status": "archived",
+      "tier": null,
+      "category": "tech",
+      "canonicalSlug": "active-projects-overview",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "active-projects-overview",
+        "ACT-APO",
+        "Active Projects Overview"
+      ],
+      "queryAliases": [
+        "active-projects-overview",
+        "ACT-APO",
+        "Active Projects Overview"
+      ],
+      "lookupKeys": [
+        "active-projects-overview",
+        "act-apo"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Active Projects Overview"
+      ],
+      "ghlTags": [],
+      "xeroTracking": null,
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-AI",
+      "name": "AIME",
+      "status": "archived",
+      "tier": null,
+      "category": "indigenous",
+      "canonicalSlug": "aime",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "aime",
+        "ACT-AI",
+        "AIME",
+        "ACT-AI — AIME"
+      ],
+      "queryAliases": [
+        "aime",
+        "ACT-AI",
+        "AIME"
+      ],
+      "lookupKeys": [
+        "aime",
+        "act-ai",
+        "act-ai-aime"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "AIME"
+      ],
+      "ghlTags": [
+        "aime"
+      ],
+      "xeroTracking": "ACT-AI — AIME",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-AMT",
+      "name": "API Migration Test",
+      "status": "archived",
+      "tier": null,
+      "category": "tech",
+      "canonicalSlug": "api-migration-test",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "api-migration-test",
+        "ACT-AMT",
+        "API Migration Test",
+        "API Migration Test Project"
+      ],
+      "queryAliases": [
+        "api-migration-test",
+        "ACT-AMT",
+        "API Migration Test",
+        "API Migration Test Project"
+      ],
+      "lookupKeys": [
+        "api-migration-test",
+        "act-amt",
+        "api-migration-test-project"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "API Migration Test Project"
+      ],
+      "ghlTags": [],
+      "xeroTracking": null,
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-AS",
+      "name": "Art for Social Change",
+      "status": "archived",
+      "tier": null,
+      "category": "arts",
+      "canonicalSlug": "art-for-social-change",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "art-for-social-change",
+        "ACT-AS",
+        "Art for Social Change",
+        "art-social-change",
+        "Art Social Change",
+        "ACT-AS — Art for Social Change"
+      ],
+      "queryAliases": [
+        "art-for-social-change",
+        "ACT-AS",
+        "Art for Social Change",
+        "art-social-change"
+      ],
+      "lookupKeys": [
+        "art-for-social-change",
+        "act-as",
+        "art-social-change",
+        "act-as-art-for-social-change"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Art for Social Change"
+      ],
+      "ghlTags": [
+        "art-social-change"
+      ],
+      "xeroTracking": "ACT-AS — Art for Social Change",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-BB",
+      "name": "Barkly Backbone",
+      "status": "ideation",
+      "tier": "satellite",
+      "category": "indigenous",
+      "canonicalSlug": "barkly-backbone",
+      "wikiSlug": "barkly-backbone",
+      "staticSlug": null,
+      "aliases": [
+        "barkly-backbone",
+        "ACT-BB",
+        "Barkly Backbone",
+        "barkly",
+        "Barkly",
+        "ACT-BB — Barkly Backbone"
+      ],
+      "queryAliases": [
+        "barkly-backbone",
+        "ACT-BB",
+        "Barkly Backbone",
+        "barkly"
+      ],
+      "lookupKeys": [
+        "barkly-backbone",
+        "act-bb",
+        "barkly",
+        "act-bb-barkly-backbone"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Barkly Backbone"
+      ],
+      "ghlTags": [
+        "barkly"
+      ],
+      "xeroTracking": "ACT-BB — Barkly Backbone",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-BG",
+      "name": "BG Fit",
+      "status": "active",
+      "tier": "satellite",
+      "category": "health",
+      "canonicalSlug": "bg-fit",
+      "wikiSlug": "bg-fit",
+      "staticSlug": null,
+      "aliases": [
+        "bg-fit",
+        "ACT-BG",
+        "BG Fit",
+        "bgfit",
+        "act-bg",
+        "ACT-BG — BG Fit"
+      ],
+      "queryAliases": [
+        "bg-fit",
+        "ACT-BG",
+        "BG Fit",
+        "bgfit"
+      ],
+      "lookupKeys": [
+        "bg-fit",
+        "act-bg",
+        "bgfit",
+        "act-bg-bg-fit"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "BG Fit"
+      ],
+      "ghlTags": [
+        "bg-fit",
+        "bgfit"
+      ],
+      "xeroTracking": "ACT-BG — BG Fit",
+      "productionUrl": "https://campfire-website-amber.vercel.app",
+      "syndicationSlug": "act_bg"
+    },
+    {
+      "code": "ACT-BM",
+      "name": "Bimberi",
+      "status": "archived",
+      "tier": null,
+      "category": "justice",
+      "canonicalSlug": "bimberi",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "bimberi",
+        "ACT-BM",
+        "Bimberi",
+        "Bimberi - Holiday Programs",
+        "ACT-BM — Bimberi"
+      ],
+      "queryAliases": [
+        "bimberi",
+        "ACT-BM",
+        "Bimberi",
+        "Bimberi - Holiday Programs"
+      ],
+      "lookupKeys": [
+        "bimberi",
+        "act-bm",
+        "bimberi-holiday-programs",
+        "act-bm-bimberi"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Bimberi - Holiday Programs"
+      ],
+      "ghlTags": [
+        "bimberi"
+      ],
+      "xeroTracking": "ACT-BM — Bimberi",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-BV",
+      "name": "Black Cockatoo Valley",
+      "status": "active",
+      "tier": "satellite",
+      "category": "regenerative",
+      "canonicalSlug": "black-cockatoo-valley",
+      "wikiSlug": "black-cockatoo-valley",
+      "staticSlug": "black-cockatoo-valley",
+      "aliases": [
+        "black-cockatoo-valley",
+        "ACT-BV",
+        "Black Cockatoo Valley",
+        "act-farm",
+        "bcv",
+        "the-farm",
+        "ACT-BCV",
+        "black-cockatoo",
+        "BCV Reforest",
+        "BCV: Regenerative Conservation",
+        "BCV",
+        "ACT-BV — Black Cockatoo Valley"
+      ],
+      "queryAliases": [
+        "black-cockatoo-valley",
+        "ACT-BV",
+        "ACT-BCV",
+        "act-farm"
+      ],
+      "lookupKeys": [
+        "black-cockatoo-valley",
+        "act-bv",
+        "act-farm",
+        "bcv",
+        "the-farm",
+        "act-bcv",
+        "black-cockatoo",
+        "bcv-reforest",
+        "bcv-regenerative-conservation",
+        "act-bv-black-cockatoo-valley"
+      ],
+      "legacyCodes": [
+        "ACT-BCV"
+      ],
+      "notionPages": [
+        "BCV Reforest",
+        "BCV: Regenerative Conservation"
+      ],
+      "ghlTags": [
+        "bcv",
+        "black-cockatoo"
+      ],
+      "xeroTracking": "ACT-BV — Black Cockatoo Valley",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-CM",
+      "name": "CAMPFIRE",
+      "status": "active",
+      "tier": "satellite",
+      "category": "justice",
+      "canonicalSlug": "campfire",
+      "wikiSlug": "campfire",
+      "staticSlug": null,
+      "aliases": [
+        "campfire",
+        "ACT-CM",
+        "CAMPFIRE",
+        "mount-isa",
+        "Campfire",
+        "ACT-CM — CAMPFIRE"
+      ],
+      "queryAliases": [
+        "campfire",
+        "ACT-CM",
+        "CAMPFIRE",
+        "mount-isa"
+      ],
+      "lookupKeys": [
+        "campfire",
+        "act-cm",
+        "mount-isa",
+        "act-cm-campfire"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "CAMPFIRE"
+      ],
+      "ghlTags": [
+        "campfire",
+        "mount-isa"
+      ],
+      "xeroTracking": "ACT-CM — CAMPFIRE",
+      "productionUrl": "https://campfire-website-amber.vercel.app",
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-CA",
+      "name": "Caring for those who care",
+      "status": "active",
+      "tier": "studio",
+      "category": "arts",
+      "canonicalSlug": "caring-for-those-who-care",
+      "wikiSlug": "caring-for-those-who-care",
+      "staticSlug": "caring-for-those-who-care",
+      "aliases": [
+        "caring-for-those-who-care",
+        "ACT-CA",
+        "Caring for those who care",
+        "caring",
+        "Caring",
+        "ACT-CA — Caring for those who care"
+      ],
+      "queryAliases": [
+        "caring-for-those-who-care",
+        "ACT-CA",
+        "Caring for those who care",
+        "caring"
+      ],
+      "lookupKeys": [
+        "caring-for-those-who-care",
+        "act-ca",
+        "caring",
+        "act-ca-caring-for-those-who-care"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Caring for those who care"
+      ],
+      "ghlTags": [
+        "caring"
+      ],
+      "xeroTracking": "ACT-CA — Caring for those who care",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-MC",
+      "name": "Cars and Microcontrollers",
+      "status": "active",
+      "tier": "studio",
+      "category": "arts",
+      "canonicalSlug": "cars-and-microcontrollers",
+      "wikiSlug": "cars-and-microcontrollers",
+      "staticSlug": "cars-and-microcontrollers",
+      "aliases": [
+        "cars-and-microcontrollers",
+        "ACT-MC",
+        "Cars and Microcontrollers",
+        "cars-microcontrollers",
+        "Cars and microcontrollers",
+        "Cars Micro",
+        "ACT-MC — Cars and Microcontrollers"
+      ],
+      "queryAliases": [
+        "cars-and-microcontrollers",
+        "ACT-MC",
+        "Cars and Microcontrollers",
+        "cars-microcontrollers",
+        "Cars and microcontrollers"
+      ],
+      "lookupKeys": [
+        "cars-and-microcontrollers",
+        "act-mc",
+        "cars-microcontrollers",
+        "cars-micro",
+        "act-mc-cars-and-microcontrollers"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Cars and microcontrollers"
+      ],
+      "ghlTags": [
+        "cars-microcontrollers"
+      ],
+      "xeroTracking": "ACT-MC — Cars and Microcontrollers",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-CS",
+      "name": "Civic Scope",
+      "status": "active",
+      "tier": "satellite",
+      "category": "enterprise",
+      "canonicalSlug": "civicgraph",
+      "wikiSlug": "civicgraph",
+      "staticSlug": null,
+      "aliases": [
+        "civicgraph",
+        "ACT-CS",
+        "Civic Scope",
+        "civic-scope",
+        "grantscope",
+        "ACT-CG",
+        "CivicGraph",
+        "GrantScope",
+        "act-cs",
+        "ACT-CS — Civic Scope"
+      ],
+      "queryAliases": [
+        "civicgraph",
+        "ACT-CS",
+        "ACT-CG",
+        "civic-scope"
+      ],
+      "lookupKeys": [
+        "civicgraph",
+        "act-cs",
+        "civic-scope",
+        "grantscope",
+        "act-cg",
+        "act-cs-civic-scope"
+      ],
+      "legacyCodes": [
+        "ACT-CG"
+      ],
+      "notionPages": [
+        "Civic Scope"
+      ],
+      "ghlTags": [
+        "civic-scope",
+        "grantscope"
+      ],
+      "xeroTracking": "ACT-CS — Civic Scope",
+      "productionUrl": "https://civicgraph.app",
+      "syndicationSlug": "act_cs"
+    },
+    {
+      "code": "ACT-CP",
+      "name": "Community Capital",
+      "status": "active",
+      "tier": "satellite",
+      "category": "funding",
+      "canonicalSlug": "community-capital",
+      "wikiSlug": "community-capital",
+      "staticSlug": "10x10-retreat",
+      "aliases": [
+        "community-capital",
+        "10x10-retreat",
+        "ACT-CP",
+        "Community Capital",
+        "10x10-community-capital",
+        "community-capital-retreat",
+        "10x10",
+        "community capital",
+        "10x10 Community Capital Leadership Retreat",
+        "10x10 Retreat",
+        "Community Capital Retreat",
+        "ACT-CP — Community Capital"
+      ],
+      "queryAliases": [
+        "community-capital",
+        "10x10-retreat",
+        "ACT-CP",
+        "10x10-community-capital",
+        "community-capital-retreat"
+      ],
+      "lookupKeys": [
+        "community-capital",
+        "10x10-retreat",
+        "act-cp",
+        "10x10-community-capital",
+        "community-capital-retreat",
+        "10x10",
+        "10x10-community-capital-leadership-retreat",
+        "act-cp-community-capital"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Community Capital",
+        "10x10 Community Capital Leadership Retreat"
+      ],
+      "ghlTags": [
+        "community-capital",
+        "10x10",
+        "community capital"
+      ],
+      "xeroTracking": "ACT-CP — Community Capital",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-CT",
+      "name": "ConFit Pathways",
+      "status": "active",
+      "tier": "satellite",
+      "category": "justice",
+      "canonicalSlug": "confit-pathways",
+      "wikiSlug": "confit-pathways",
+      "staticSlug": null,
+      "aliases": [
+        "confit-pathways",
+        "ACT-CT",
+        "ConFit Pathways",
+        "confit",
+        "joe-kwon",
+        "ConFit",
+        "ACT-CT — ConFit Pathways"
+      ],
+      "queryAliases": [
+        "confit-pathways",
+        "ACT-CT",
+        "confit",
+        "ConFit Pathways"
+      ],
+      "lookupKeys": [
+        "confit-pathways",
+        "act-ct",
+        "confit",
+        "joe-kwon",
+        "act-ct-confit-pathways"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "ConFit Pathways"
+      ],
+      "ghlTags": [
+        "confit",
+        "confit-pathways",
+        "joe-kwon"
+      ],
+      "xeroTracking": "ACT-CT — ConFit Pathways",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-CN",
+      "name": "Contained",
+      "status": "active",
+      "tier": "satellite",
+      "category": "enterprise",
+      "canonicalSlug": "contained",
+      "wikiSlug": "contained",
+      "staticSlug": "contained",
+      "aliases": [
+        "contained",
+        "ACT-CN",
+        "Contained",
+        "ACT-CN — Contained"
+      ],
+      "queryAliases": [
+        "contained",
+        "ACT-CN",
+        "Contained"
+      ],
+      "lookupKeys": [
+        "contained",
+        "act-cn",
+        "act-cn-contained"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Contained"
+      ],
+      "ghlTags": [
+        "contained"
+      ],
+      "xeroTracking": "ACT-CN — Contained",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-CE",
+      "name": "Custodian Economy",
+      "status": "active",
+      "tier": "satellite",
+      "category": "enterprise",
+      "canonicalSlug": "custodian-economy",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "custodian-economy",
+        "ACT-CE",
+        "Custodian Economy",
+        "ACT-CE — Custodian Economy"
+      ],
+      "queryAliases": [
+        "custodian-economy",
+        "ACT-CE",
+        "Custodian Economy"
+      ],
+      "lookupKeys": [
+        "custodian-economy",
+        "act-ce",
+        "act-ce-custodian-economy"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Custodian Economy"
+      ],
+      "ghlTags": [
+        "custodian-economy"
+      ],
+      "xeroTracking": "ACT-CE — Custodian Economy",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-DL",
+      "name": "DadLab",
+      "status": "active",
+      "tier": "satellite",
+      "category": "community",
+      "canonicalSlug": "dad-lab-25",
+      "wikiSlug": "dad-lab-25",
+      "staticSlug": "dad-lab-25",
+      "aliases": [
+        "dad-lab-25",
+        "ACT-DL",
+        "DadLab",
+        "dad-lab",
+        "dadlab",
+        "Dad.Lab.25",
+        "ACT-DL — DadLab"
+      ],
+      "queryAliases": [
+        "dad-lab-25",
+        "ACT-DL",
+        "dad-lab",
+        "dadlab"
+      ],
+      "lookupKeys": [
+        "dad-lab-25",
+        "act-dl",
+        "dadlab",
+        "dad-lab",
+        "act-dl-dadlab"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Dad.Lab.25"
+      ],
+      "ghlTags": [
+        "dadlab"
+      ],
+      "xeroTracking": "ACT-DL — DadLab",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-DH",
+      "name": "Deadly Homes and Gardens",
+      "status": "archived",
+      "tier": null,
+      "category": "indigenous",
+      "canonicalSlug": "deadly-homes-and-gardens",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "deadly-homes-and-gardens",
+        "ACT-DH",
+        "Deadly Homes and Gardens",
+        "deadly-homes",
+        "Deadly Homes",
+        "ACT-DH — Deadly Homes and Gardens"
+      ],
+      "queryAliases": [
+        "deadly-homes-and-gardens",
+        "ACT-DH",
+        "Deadly Homes and Gardens",
+        "deadly-homes"
+      ],
+      "lookupKeys": [
+        "deadly-homes-and-gardens",
+        "act-dh",
+        "deadly-homes",
+        "act-dh-deadly-homes-and-gardens"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Deadly Homes and Gardens"
+      ],
+      "ghlTags": [
+        "deadly-homes"
+      ],
+      "xeroTracking": "ACT-DH — Deadly Homes and Gardens",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-DO",
+      "name": "Designing for Obsolescence",
+      "status": "sunsetting",
+      "tier": "satellite",
+      "category": "tech",
+      "canonicalSlug": "designing-for-obsolescence",
+      "wikiSlug": "designing-for-obsolescence",
+      "staticSlug": "designing-for-obsolescence",
+      "aliases": [
+        "designing-for-obsolescence",
+        "ACT-DO",
+        "Designing for Obsolescence",
+        "obsolescence",
+        "Design Obs",
+        "ACT-DO — Designing for Obsolescence"
+      ],
+      "queryAliases": [
+        "designing-for-obsolescence",
+        "ACT-DO",
+        "Designing for Obsolescence",
+        "obsolescence"
+      ],
+      "lookupKeys": [
+        "designing-for-obsolescence",
+        "act-do",
+        "obsolescence",
+        "design-obs",
+        "act-do-designing-for-obsolescence"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Designing for Obsolescence"
+      ],
+      "ghlTags": [
+        "obsolescence"
+      ],
+      "xeroTracking": "ACT-DO — Designing for Obsolescence",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-DG",
+      "name": "Diagrama",
+      "status": "active",
+      "tier": null,
+      "category": "justice",
+      "canonicalSlug": "diagrama",
+      "wikiSlug": "diagrama",
+      "staticSlug": null,
+      "aliases": [
+        "diagrama",
+        "ACT-DG",
+        "Diagrama",
+        "ACT-DG — Diagrama"
+      ],
+      "queryAliases": [
+        "diagrama",
+        "ACT-DG",
+        "Diagrama"
+      ],
+      "lookupKeys": [
+        "diagrama",
+        "act-dg",
+        "act-dg-diagrama"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Diagrama"
+      ],
+      "ghlTags": [
+        "diagrama"
+      ],
+      "xeroTracking": "ACT-DG — Diagrama",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-DD",
+      "name": "Double Disadvantage",
+      "status": "archived",
+      "tier": null,
+      "category": "justice",
+      "canonicalSlug": "double-disadvantage",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "double-disadvantage",
+        "ACT-DD",
+        "Double Disadvantage",
+        "The Double Disadvantage",
+        "ACT-DD — Double Disadvantage"
+      ],
+      "queryAliases": [
+        "double-disadvantage",
+        "ACT-DD",
+        "Double Disadvantage",
+        "The Double Disadvantage"
+      ],
+      "lookupKeys": [
+        "double-disadvantage",
+        "act-dd",
+        "the-double-disadvantage",
+        "act-dd-double-disadvantage"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "The Double Disadvantage"
+      ],
+      "ghlTags": [
+        "double-disadvantage"
+      ],
+      "xeroTracking": "ACT-DD — Double Disadvantage",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-EFI",
+      "name": "Economic Freedom Initiative",
+      "status": "archived",
+      "tier": null,
+      "category": "enterprise",
+      "canonicalSlug": "economic-freedom-initiative",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "economic-freedom-initiative",
+        "ACT-EFI",
+        "Economic Freedom Initiative"
+      ],
+      "queryAliases": [
+        "economic-freedom-initiative",
+        "ACT-EFI",
+        "Economic Freedom Initiative"
+      ],
+      "lookupKeys": [
+        "economic-freedom-initiative",
+        "act-efi"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Economic Freedom Initiative"
+      ],
+      "ghlTags": [],
+      "xeroTracking": null,
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-EL",
+      "name": "Empathy Ledger",
+      "status": "active",
+      "tier": "ecosystem",
+      "category": "stories",
+      "canonicalSlug": "empathy-ledger",
+      "wikiSlug": "empathy-ledger",
+      "staticSlug": "empathy-ledger",
+      "aliases": [
+        "empathy-ledger",
+        "ACT-EL",
+        "Empathy Ledger",
+        "empathy ledger",
+        "empathy",
+        "storytelling",
+        "storyteller",
+        "Empathy Ledger Platform",
+        "act-el",
+        "ACT-EL — Empathy Ledger"
+      ],
+      "queryAliases": [
+        "empathy-ledger",
+        "ACT-EL",
+        "Empathy Ledger",
+        "empathy ledger"
+      ],
+      "lookupKeys": [
+        "empathy-ledger",
+        "act-el",
+        "empathy",
+        "storytelling",
+        "storyteller",
+        "empathy-ledger-platform",
+        "act-el-empathy-ledger"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Empathy Ledger",
+        "Empathy Ledger Platform"
+      ],
+      "ghlTags": [
+        "empathy-ledger",
+        "empathy ledger",
+        "empathy",
+        "storytelling",
+        "storyteller"
+      ],
+      "xeroTracking": "ACT-EL — Empathy Ledger",
+      "productionUrl": "https://www.empathyledger.com",
+      "syndicationSlug": "act_el"
+    },
+    {
+      "code": "ACT-FP",
+      "name": "Fairfax PLACE Tech",
+      "status": "archived",
+      "tier": null,
+      "category": "tech",
+      "canonicalSlug": "fairfax-place-tech",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "fairfax-place-tech",
+        "ACT-FP",
+        "Fairfax PLACE Tech",
+        "fairfax",
+        "place-tech",
+        "Fairfax & PLACE tech",
+        "Fairfax PLACE",
+        "ACT-FP — Fairfax PLACE Tech"
+      ],
+      "queryAliases": [
+        "fairfax-place-tech",
+        "ACT-FP",
+        "Fairfax PLACE Tech",
+        "fairfax",
+        "place-tech"
+      ],
+      "lookupKeys": [
+        "fairfax-place-tech",
+        "act-fp",
+        "fairfax",
+        "place-tech",
+        "fairfax-and-place-tech",
+        "fairfax-place",
+        "act-fp-fairfax-place-tech"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Fairfax & PLACE tech"
+      ],
+      "ghlTags": [
+        "fairfax",
+        "place-tech"
+      ],
+      "xeroTracking": "ACT-FP — Fairfax PLACE Tech",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-FG",
+      "name": "Feel Good Project",
+      "status": "active",
+      "tier": "satellite",
+      "category": "community",
+      "canonicalSlug": "feel-good-project",
+      "wikiSlug": "feel-good-project",
+      "staticSlug": null,
+      "aliases": [
+        "feel-good-project",
+        "ACT-FG",
+        "Feel Good Project",
+        "ACT-FG — Feel Good Project"
+      ],
+      "queryAliases": [
+        "feel-good-project",
+        "ACT-FG",
+        "Feel Good Project"
+      ],
+      "lookupKeys": [
+        "feel-good-project",
+        "act-fg",
+        "act-fg-feel-good-project"
+      ],
+      "legacyCodes": [],
+      "notionPages": [],
+      "ghlTags": [],
+      "xeroTracking": "ACT-FG — Feel Good Project",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-FA",
+      "name": "Festival Activations",
+      "status": "archived",
+      "tier": null,
+      "category": "events",
+      "canonicalSlug": "festival-activations",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "festival-activations",
+        "ACT-FA",
+        "Festival Activations",
+        "festivals",
+        "activations",
+        "ACT-FA — Festival Activations"
+      ],
+      "queryAliases": [
+        "festival-activations",
+        "ACT-FA",
+        "Festival Activations",
+        "festivals",
+        "activations"
+      ],
+      "lookupKeys": [
+        "festival-activations",
+        "act-fa",
+        "festivals",
+        "activations",
+        "act-fa-festival-activations"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Festival Activations"
+      ],
+      "ghlTags": [
+        "festivals",
+        "activations"
+      ],
+      "xeroTracking": "ACT-FA — Festival Activations",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-FN",
+      "name": "First Nations Youth Advocacy",
+      "status": "archived",
+      "tier": null,
+      "category": "justice",
+      "canonicalSlug": "first-nations-youth-advocacy",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "first-nations-youth-advocacy",
+        "ACT-FN",
+        "First Nations Youth Advocacy",
+        "first-nations",
+        "youth-advocacy",
+        "FN Youth Advocacy",
+        "ACT-FN — First Nations Youth Advocacy"
+      ],
+      "queryAliases": [
+        "first-nations-youth-advocacy",
+        "ACT-FN",
+        "First Nations Youth Advocacy",
+        "first-nations",
+        "youth-advocacy"
+      ],
+      "lookupKeys": [
+        "first-nations-youth-advocacy",
+        "act-fn",
+        "first-nations",
+        "youth-advocacy",
+        "fn-youth-advocacy",
+        "act-fn-first-nations-youth-advocacy"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "First Nations Youth Advocacy"
+      ],
+      "ghlTags": [
+        "first-nations",
+        "youth-advocacy"
+      ],
+      "xeroTracking": "ACT-FN — First Nations Youth Advocacy",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-FO",
+      "name": "Fishers Oysters",
+      "status": "transferred",
+      "tier": "satellite",
+      "category": "regenerative",
+      "canonicalSlug": "fishers-oysters",
+      "wikiSlug": "fishers-oysters",
+      "staticSlug": "fishers-oysters",
+      "aliases": [
+        "fishers-oysters",
+        "ACT-FO",
+        "Fishers Oysters",
+        "fishers",
+        "act-fo",
+        "ACT-FO — Fishers Oysters"
+      ],
+      "queryAliases": [
+        "fishers-oysters",
+        "ACT-FO",
+        "Fishers Oysters",
+        "fishers"
+      ],
+      "lookupKeys": [
+        "fishers-oysters",
+        "act-fo",
+        "fishers",
+        "act-fo-fishers-oysters"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Fishers Oysters"
+      ],
+      "ghlTags": [
+        "fishers-oysters",
+        "fishers"
+      ],
+      "xeroTracking": "ACT-FO — Fishers Oysters",
+      "productionUrl": "https://www.fishersoysters.com",
+      "syndicationSlug": "act_fo"
+    },
+    {
+      "code": "ACT-GCC",
+      "name": "Global Community Connections",
+      "status": "archived",
+      "tier": null,
+      "category": "community",
+      "canonicalSlug": "global-community-connections",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "global-community-connections",
+        "ACT-GCC",
+        "Global Community Connections"
+      ],
+      "queryAliases": [
+        "global-community-connections",
+        "ACT-GCC",
+        "Global Community Connections"
+      ],
+      "lookupKeys": [
+        "global-community-connections",
+        "act-gcc"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Global Community Connections"
+      ],
+      "ghlTags": [],
+      "xeroTracking": null,
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-GL",
+      "name": "Global Laundry Alliance",
+      "status": "transferred",
+      "tier": "satellite",
+      "category": "enterprise",
+      "canonicalSlug": "global-laundry-alliance",
+      "wikiSlug": "global-laundry-alliance",
+      "staticSlug": "global-laundry-alliance",
+      "aliases": [
+        "global-laundry-alliance",
+        "ACT-GL",
+        "Global Laundry Alliance",
+        "gla",
+        "global-laundry",
+        "Global Laundry Alliance (GLA)",
+        "GLA",
+        "ACT-GL — Global Laundry Alliance"
+      ],
+      "queryAliases": [
+        "global-laundry-alliance",
+        "ACT-GL",
+        "Global Laundry Alliance",
+        "gla",
+        "global-laundry"
+      ],
+      "lookupKeys": [
+        "global-laundry-alliance",
+        "act-gl",
+        "gla",
+        "global-laundry",
+        "global-laundry-alliance-gla",
+        "act-gl-global-laundry-alliance"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Global Laundry Alliance (GLA)"
+      ],
+      "ghlTags": [
+        "gla",
+        "global-laundry"
+      ],
+      "xeroTracking": "ACT-GL — Global Laundry Alliance",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-GP",
+      "name": "Gold Phone",
+      "status": "active",
+      "tier": "studio",
+      "category": "stories",
+      "canonicalSlug": "gold-phone",
+      "wikiSlug": "gold-phone",
+      "staticSlug": "gold-phone",
+      "aliases": [
+        "gold-phone",
+        "ACT-GP",
+        "Gold Phone",
+        "goldphone",
+        "gold.phone",
+        "Gold.Phone",
+        "ACT-GP — Gold Phone"
+      ],
+      "queryAliases": [
+        "gold-phone",
+        "ACT-GP",
+        "goldphone",
+        "gold.phone"
+      ],
+      "lookupKeys": [
+        "gold-phone",
+        "act-gp",
+        "goldphone",
+        "act-gp-gold-phone"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Gold.Phone"
+      ],
+      "ghlTags": [
+        "gold-phone",
+        "goldphone"
+      ],
+      "xeroTracking": "ACT-GP — Gold Phone",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-GD",
+      "name": "Goods",
+      "status": "active",
+      "tier": "ecosystem",
+      "category": "enterprise",
+      "canonicalSlug": "goods-on-country",
+      "wikiSlug": "goods-on-country",
+      "staticSlug": "goods-on-country",
+      "aliases": [
+        "goods-on-country",
+        "ACT-GD",
+        "Goods",
+        "goods",
+        "Goods.",
+        "act-gd",
+        "ACT-GD — Goods"
+      ],
+      "queryAliases": [
+        "goods-on-country",
+        "ACT-GD",
+        "goods",
+        "Goods"
+      ],
+      "lookupKeys": [
+        "goods-on-country",
+        "act-gd",
+        "goods",
+        "act-gd-goods"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Goods."
+      ],
+      "ghlTags": [
+        "goods"
+      ],
+      "xeroTracking": "ACT-GD — Goods",
+      "productionUrl": "https://www.goodsoncountry.com",
+      "syndicationSlug": "act_gd"
+    },
+    {
+      "code": "ACT-JP",
+      "name": "June's Patch",
+      "status": "active",
+      "tier": "satellite",
+      "category": "regenerative",
+      "canonicalSlug": "junes-patch",
+      "wikiSlug": "junes-patch",
+      "staticSlug": "junes-patch",
+      "aliases": [
+        "junes-patch",
+        "ACT-JP",
+        "June's Patch",
+        "junes-patch-garden",
+        "patch",
+        "Junes Patch",
+        "ACT-JP — June's Patch"
+      ],
+      "queryAliases": [
+        "junes-patch",
+        "ACT-JP",
+        "junes-patch-garden",
+        "June's Patch"
+      ],
+      "lookupKeys": [
+        "junes-patch",
+        "act-jp",
+        "june-s-patch",
+        "junes-patch-garden",
+        "patch",
+        "act-jp-june-s-patch"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "June's Patch"
+      ],
+      "ghlTags": [
+        "junes-patch",
+        "patch"
+      ],
+      "xeroTracking": "ACT-JP — June's Patch",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-JH",
+      "name": "JusticeHub",
+      "status": "active",
+      "tier": "ecosystem",
+      "category": "justice",
+      "canonicalSlug": "justicehub",
+      "wikiSlug": "justicehub",
+      "staticSlug": "justicehub",
+      "aliases": [
+        "justicehub",
+        "ACT-JH",
+        "JusticeHub",
+        "justice",
+        "youth justice",
+        "youth-justice",
+        "Justice Hub Network",
+        "JusticeHub - Centre of Excellence",
+        "Confit",
+        "act-jh",
+        "ACT-JH — JusticeHub"
+      ],
+      "queryAliases": [
+        "justicehub",
+        "ACT-JH",
+        "JusticeHub",
+        "justice"
+      ],
+      "lookupKeys": [
+        "justicehub",
+        "act-jh",
+        "justice",
+        "youth-justice",
+        "justice-hub-network",
+        "justicehub-centre-of-excellence",
+        "confit",
+        "act-jh-justicehub"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "JusticeHub",
+        "Justice Hub Network",
+        "JusticeHub - Centre of Excellence"
+      ],
+      "ghlTags": [
+        "justicehub",
+        "justice",
+        "youth justice",
+        "youth-justice"
+      ],
+      "xeroTracking": "ACT-JH — JusticeHub",
+      "productionUrl": "https://www.justicehub.com.au",
+      "syndicationSlug": "act_jh"
+    },
+    {
+      "code": "ACT-JC",
+      "name": "JusticeHub Centre of Excellence",
+      "status": "ideation",
+      "tier": "satellite",
+      "category": "justice",
+      "canonicalSlug": "justicehub",
+      "wikiSlug": "justicehub",
+      "staticSlug": "justicehub",
+      "aliases": [
+        "justicehub",
+        "ACT-JC",
+        "JusticeHub Centre of Excellence",
+        "coe",
+        "JusticeHub - Centre of Excellence",
+        "ACT-JC — JusticeHub Centre of Excellence",
+        "ACT-JH"
+      ],
+      "queryAliases": [
+        "justicehub",
+        "ACT-JC",
+        "JusticeHub Centre of Excellence",
+        "coe",
+        "ACT-JH"
+      ],
+      "lookupKeys": [
+        "justicehub",
+        "act-jc",
+        "justicehub-centre-of-excellence",
+        "coe",
+        "act-jc-justicehub-centre-of-excellence",
+        "act-jh"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "JusticeHub - Centre of Excellence"
+      ],
+      "ghlTags": [
+        "justicehub",
+        "coe"
+      ],
+      "xeroTracking": "ACT-JC — JusticeHub Centre of Excellence",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-MN",
+      "name": "Maningrida",
+      "status": "archived",
+      "tier": null,
+      "category": "justice",
+      "canonicalSlug": "maningrida",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "maningrida",
+        "ACT-MN",
+        "Maningrida",
+        "Maningrida - Justice Reinvestment",
+        "ACT-MN — Maningrida"
+      ],
+      "queryAliases": [
+        "maningrida",
+        "ACT-MN",
+        "Maningrida",
+        "Maningrida - Justice Reinvestment"
+      ],
+      "lookupKeys": [
+        "maningrida",
+        "act-mn",
+        "maningrida-justice-reinvestment",
+        "act-mn-maningrida"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Maningrida - Justice Reinvestment"
+      ],
+      "ghlTags": [
+        "maningrida"
+      ],
+      "xeroTracking": "ACT-MN — Maningrida",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-CB",
+      "name": "Marriage Celebrant",
+      "status": "active",
+      "tier": "satellite",
+      "category": "community",
+      "canonicalSlug": "marriage-celebrant",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "marriage-celebrant",
+        "ACT-CB",
+        "Marriage Celebrant",
+        "ACT-CB — Marriage Celebrant"
+      ],
+      "queryAliases": [
+        "marriage-celebrant",
+        "ACT-CB",
+        "Marriage Celebrant"
+      ],
+      "lookupKeys": [
+        "marriage-celebrant",
+        "act-cb",
+        "act-cb-marriage-celebrant"
+      ],
+      "legacyCodes": [],
+      "notionPages": [],
+      "ghlTags": [],
+      "xeroTracking": "ACT-CB — Marriage Celebrant",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-MR",
+      "name": "MingaMinga Rangers",
+      "status": "archived",
+      "tier": null,
+      "category": "indigenous",
+      "canonicalSlug": "mingaminga-rangers",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "mingaminga-rangers",
+        "ACT-MR",
+        "MingaMinga Rangers",
+        "mingaminga",
+        "rangers",
+        "MingaMinga",
+        "ACT-MR — MingaMinga Rangers"
+      ],
+      "queryAliases": [
+        "mingaminga-rangers",
+        "ACT-MR",
+        "MingaMinga Rangers",
+        "mingaminga",
+        "rangers"
+      ],
+      "lookupKeys": [
+        "mingaminga-rangers",
+        "act-mr",
+        "mingaminga",
+        "rangers",
+        "act-mr-mingaminga-rangers"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "MingaMinga Rangers"
+      ],
+      "ghlTags": [
+        "mingaminga",
+        "rangers"
+      ],
+      "xeroTracking": "ACT-MR — MingaMinga Rangers",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-MM",
+      "name": "MMEIC Justice",
+      "status": "archived",
+      "tier": null,
+      "category": "justice",
+      "canonicalSlug": "mmeic-justice",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "mmeic-justice",
+        "ACT-MM",
+        "MMEIC Justice",
+        "mmeic",
+        "MMEIC - Justice Projects",
+        "MMEIC",
+        "ACT-MM — MMEIC Justice"
+      ],
+      "queryAliases": [
+        "mmeic-justice",
+        "ACT-MM",
+        "MMEIC Justice",
+        "mmeic",
+        "MMEIC - Justice Projects"
+      ],
+      "lookupKeys": [
+        "mmeic-justice",
+        "act-mm",
+        "mmeic",
+        "mmeic-justice-projects",
+        "act-mm-mmeic-justice"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "MMEIC - Justice Projects"
+      ],
+      "ghlTags": [
+        "mmeic"
+      ],
+      "xeroTracking": "ACT-MM — MMEIC Justice",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-MY",
+      "name": "Mounty Yarns",
+      "status": "active",
+      "tier": "studio",
+      "category": "stories",
+      "canonicalSlug": "mounty-yarns",
+      "wikiSlug": "mounty-yarns",
+      "staticSlug": "mounty-yarns",
+      "aliases": [
+        "mounty-yarns",
+        "ACT-MY",
+        "Mounty Yarns",
+        "Mounty",
+        "ACT-MY — Mounty Yarns"
+      ],
+      "queryAliases": [
+        "mounty-yarns",
+        "ACT-MY",
+        "Mounty Yarns"
+      ],
+      "lookupKeys": [
+        "mounty-yarns",
+        "act-my",
+        "mounty",
+        "act-my-mounty-yarns"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Mounty Yarns"
+      ],
+      "ghlTags": [
+        "mounty-yarns"
+      ],
+      "xeroTracking": "ACT-MY — Mounty Yarns",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-MU",
+      "name": "Murrup + ACT",
+      "status": "archived",
+      "tier": null,
+      "category": "indigenous",
+      "canonicalSlug": "murrup-act",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "murrup-act",
+        "ACT-MU",
+        "Murrup + ACT",
+        "murrup",
+        "Murrup",
+        "ACT-MU — Murrup + ACT"
+      ],
+      "queryAliases": [
+        "murrup-act",
+        "ACT-MU",
+        "Murrup + ACT",
+        "murrup"
+      ],
+      "lookupKeys": [
+        "murrup-act",
+        "act-mu",
+        "murrup",
+        "act-mu-murrup-act"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Murrup + ACT"
+      ],
+      "ghlTags": [
+        "murrup"
+      ],
+      "xeroTracking": "ACT-MU — Murrup + ACT",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-OE",
+      "name": "Olive Express",
+      "status": "archived",
+      "tier": null,
+      "category": "regenerative",
+      "canonicalSlug": "olive-express",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "olive-express",
+        "ACT-OE",
+        "Olive Express",
+        "ACT-OE — Olive Express"
+      ],
+      "queryAliases": [
+        "olive-express",
+        "ACT-OE",
+        "Olive Express"
+      ],
+      "lookupKeys": [
+        "olive-express",
+        "act-oe",
+        "act-oe-olive-express"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Olive Express"
+      ],
+      "ghlTags": [
+        "olive-express"
+      ],
+      "xeroTracking": "ACT-OE — Olive Express",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-OO",
+      "name": "Oonchiumpa",
+      "status": "active",
+      "tier": "satellite",
+      "category": "indigenous",
+      "canonicalSlug": "oonchiumpa",
+      "wikiSlug": "oonchiumpa",
+      "staticSlug": "oonchiumpa",
+      "aliases": [
+        "oonchiumpa",
+        "ACT-OO",
+        "Oonchiumpa",
+        "act-oo",
+        "ACT-OO — Oonchiumpa"
+      ],
+      "queryAliases": [
+        "oonchiumpa",
+        "ACT-OO",
+        "Oonchiumpa",
+        "act-oo"
+      ],
+      "lookupKeys": [
+        "oonchiumpa",
+        "act-oo",
+        "act-oo-oonchiumpa"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Oonchiumpa"
+      ],
+      "ghlTags": [
+        "oonchiumpa"
+      ],
+      "xeroTracking": "ACT-OO — Oonchiumpa",
+      "productionUrl": "https://oonchiumpa-app.vercel.app",
+      "syndicationSlug": "act_oo"
+    },
+    {
+      "code": "ACT-OS",
+      "name": "Orange Sky EL",
+      "status": "archived",
+      "tier": null,
+      "category": "stories",
+      "canonicalSlug": "orange-sky-el",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "orange-sky-el",
+        "ACT-OS",
+        "Orange Sky EL",
+        "orange-sky",
+        "Orange Sky Empathy Ledger Project Repository - review",
+        "Orange Sky",
+        "ACT-OS — Orange Sky EL"
+      ],
+      "queryAliases": [
+        "orange-sky-el",
+        "ACT-OS",
+        "Orange Sky EL",
+        "orange-sky",
+        "Orange Sky Empathy Ledger Project Repository - review"
+      ],
+      "lookupKeys": [
+        "orange-sky-el",
+        "act-os",
+        "orange-sky",
+        "orange-sky-empathy-ledger-project-repository-review",
+        "act-os-orange-sky-el"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Orange Sky Empathy Ledger Project Repository - review"
+      ],
+      "ghlTags": [
+        "orange-sky"
+      ],
+      "xeroTracking": "ACT-OS — Orange Sky EL",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-PI",
+      "name": "PICC",
+      "status": "active",
+      "tier": "studio",
+      "category": "indigenous",
+      "canonicalSlug": "picc",
+      "wikiSlug": "picc",
+      "staticSlug": "picc-centre-precinct",
+      "aliases": [
+        "picc",
+        "picc-centre-precinct",
+        "ACT-PI",
+        "PICC",
+        "ACT-PC",
+        "palm-island",
+        "PICC Centre Precinct",
+        "PICC Photo Kiosk / Server",
+        "PICC Centre",
+        "PICC Annual Report",
+        "act-pi",
+        "ACT-PI — PICC"
+      ],
+      "queryAliases": [
+        "picc",
+        "picc-centre-precinct",
+        "ACT-PI",
+        "ACT-PC",
+        "PICC"
+      ],
+      "lookupKeys": [
+        "picc",
+        "picc-centre-precinct",
+        "act-pi",
+        "act-pc",
+        "palm-island",
+        "picc-photo-kiosk-server",
+        "picc-centre",
+        "picc-annual-report",
+        "act-pi-picc"
+      ],
+      "legacyCodes": [
+        "ACT-PC"
+      ],
+      "notionPages": [
+        "PICC Centre Precinct",
+        "PICC Photo Kiosk / Server"
+      ],
+      "ghlTags": [
+        "picc",
+        "palm-island"
+      ],
+      "xeroTracking": "ACT-PI — PICC",
+      "productionUrl": "https://picc.studio",
+      "syndicationSlug": "act_pi"
+    },
+    {
+      "code": "ACT-ER",
+      "name": "PICC Elders Room",
+      "status": "archived",
+      "tier": null,
+      "category": "indigenous",
+      "canonicalSlug": "picc-elders-hull-river",
+      "wikiSlug": "picc-elders-hull-river",
+      "staticSlug": "picc-annual-report",
+      "aliases": [
+        "picc-elders-hull-river",
+        "picc-annual-report",
+        "ACT-ER",
+        "PICC Elders Room",
+        "picc",
+        "palm-island",
+        "elders-room",
+        "hull-river",
+        "annual-report",
+        "PICC Elders' trip to Hull River in October",
+        "PICC Annual Report",
+        "PICC",
+        "ACT-ER — PICC Elders Room"
+      ],
+      "queryAliases": [
+        "picc-elders-hull-river",
+        "picc-annual-report",
+        "ACT-ER",
+        "PICC Elders Room",
+        "picc",
+        "palm-island"
+      ],
+      "lookupKeys": [
+        "picc-elders-hull-river",
+        "picc-annual-report",
+        "act-er",
+        "picc-elders-room",
+        "picc",
+        "palm-island",
+        "elders-room",
+        "hull-river",
+        "annual-report",
+        "picc-elders-trip-to-hull-river-in-october",
+        "act-er-picc-elders-room"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "PICC Elders' trip to Hull River in October",
+        "PICC Annual Report"
+      ],
+      "ghlTags": [
+        "picc",
+        "palm-island",
+        "elders-room",
+        "hull-river",
+        "annual-report"
+      ],
+      "xeroTracking": "ACT-ER — PICC Elders Room",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-PS",
+      "name": "PICC On Country Photo Studio",
+      "status": "active",
+      "tier": "studio",
+      "category": "indigenous",
+      "canonicalSlug": "picc",
+      "wikiSlug": "picc",
+      "staticSlug": null,
+      "aliases": [
+        "picc",
+        "ACT-PS",
+        "PICC On Country Photo Studio",
+        "palm-island",
+        "photo-studio",
+        "PICC Photo Studio",
+        "ACT-PS — PICC Photo Studio",
+        "ACT-PI"
+      ],
+      "queryAliases": [
+        "picc",
+        "ACT-PS",
+        "PICC On Country Photo Studio",
+        "palm-island",
+        "ACT-PI"
+      ],
+      "lookupKeys": [
+        "picc",
+        "act-ps",
+        "picc-on-country-photo-studio",
+        "palm-island",
+        "photo-studio",
+        "picc-photo-studio",
+        "act-ps-picc-photo-studio",
+        "act-pi"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "PICC On Country Photo Studio"
+      ],
+      "ghlTags": [
+        "picc",
+        "palm-island",
+        "photo-studio"
+      ],
+      "xeroTracking": "ACT-PS — PICC Photo Studio",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-HS",
+      "name": "Project Her-Self",
+      "status": "archived",
+      "tier": null,
+      "category": "community",
+      "canonicalSlug": "project-her-self",
+      "wikiSlug": null,
+      "staticSlug": "project-her-self",
+      "aliases": [
+        "project-her-self",
+        "ACT-HS",
+        "Project Her-Self",
+        "project-herself",
+        "Project Her Self design",
+        "Project HerSelf",
+        "ACT-HS — Project Her-Self"
+      ],
+      "queryAliases": [
+        "project-her-self",
+        "ACT-HS",
+        "Project Her-Self",
+        "project-herself",
+        "Project Her Self design"
+      ],
+      "lookupKeys": [
+        "project-her-self",
+        "act-hs",
+        "project-herself",
+        "project-her-self-design",
+        "act-hs-project-her-self"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Project Her Self design"
+      ],
+      "ghlTags": [
+        "project-herself"
+      ],
+      "xeroTracking": "ACT-HS — Project Her-Self",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-QF",
+      "name": "QFCC Empathy Ledger",
+      "status": "archived",
+      "tier": null,
+      "category": "stories",
+      "canonicalSlug": "qfcc-empathy-ledger",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "qfcc-empathy-ledger",
+        "ACT-QF",
+        "QFCC Empathy Ledger",
+        "qfcc",
+        "QFCC",
+        "ACT-QF — QFCC Empathy Ledger"
+      ],
+      "queryAliases": [
+        "qfcc-empathy-ledger",
+        "ACT-QF",
+        "QFCC Empathy Ledger",
+        "qfcc"
+      ],
+      "lookupKeys": [
+        "qfcc-empathy-ledger",
+        "act-qf",
+        "qfcc",
+        "act-qf-qfcc-empathy-ledger"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "QFCC Empathy Ledger"
+      ],
+      "ghlTags": [
+        "qfcc"
+      ],
+      "xeroTracking": "ACT-QF — QFCC Empathy Ledger",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-RT",
+      "name": "Redtape",
+      "status": "active",
+      "tier": "studio",
+      "category": "arts",
+      "canonicalSlug": "redtape",
+      "wikiSlug": "redtape",
+      "staticSlug": null,
+      "aliases": [
+        "redtape",
+        "ACT-RT",
+        "Redtape",
+        "red-tape",
+        "Red Tape",
+        "ACT-RT — Redtape"
+      ],
+      "queryAliases": [
+        "redtape",
+        "ACT-RT",
+        "red-tape",
+        "Redtape"
+      ],
+      "lookupKeys": [
+        "redtape",
+        "act-rt",
+        "red-tape",
+        "act-rt-redtape"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Redtape"
+      ],
+      "ghlTags": [
+        "redtape",
+        "red-tape"
+      ],
+      "xeroTracking": "ACT-RT — Redtape",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-RA",
+      "name": "Regional Arts Fellowship",
+      "status": "active",
+      "tier": "studio",
+      "category": "arts",
+      "canonicalSlug": "regional-arts-fellowship",
+      "wikiSlug": "regional-arts-fellowship",
+      "staticSlug": "regional-arts-fellowship",
+      "aliases": [
+        "regional-arts-fellowship",
+        "ACT-RA",
+        "Regional Arts Fellowship",
+        "regional-arts",
+        "Regional Arts",
+        "Radical Scoops",
+        "ACT-RA — Regional Arts Fellowship"
+      ],
+      "queryAliases": [
+        "regional-arts-fellowship",
+        "ACT-RA",
+        "Regional Arts Fellowship",
+        "regional-arts"
+      ],
+      "lookupKeys": [
+        "regional-arts-fellowship",
+        "act-ra",
+        "regional-arts",
+        "radical-scoops",
+        "act-ra-regional-arts-fellowship"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Regional Arts Fellowship"
+      ],
+      "ghlTags": [
+        "regional-arts"
+      ],
+      "xeroTracking": "ACT-RA — Regional Arts Fellowship",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-RP",
+      "name": "RPPP Stream Two",
+      "status": "archived",
+      "tier": null,
+      "category": "indigenous",
+      "canonicalSlug": "rppp-stream-two",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "rppp-stream-two",
+        "ACT-RP",
+        "RPPP Stream Two",
+        "rppp",
+        "precinct",
+        "RPPP Stream Two: Precinct delivery",
+        "RPPP",
+        "ACT-RP — RPPP Stream Two"
+      ],
+      "queryAliases": [
+        "rppp-stream-two",
+        "ACT-RP",
+        "RPPP Stream Two",
+        "rppp",
+        "precinct"
+      ],
+      "lookupKeys": [
+        "rppp-stream-two",
+        "act-rp",
+        "rppp",
+        "precinct",
+        "rppp-stream-two-precinct-delivery",
+        "act-rp-rppp-stream-two"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "RPPP Stream Two: Precinct delivery"
+      ],
+      "ghlTags": [
+        "rppp",
+        "precinct"
+      ],
+      "xeroTracking": "ACT-RP — RPPP Stream Two",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-SF",
+      "name": "SAF Foundation",
+      "status": "archived",
+      "tier": null,
+      "category": "funding",
+      "canonicalSlug": "saf-foundation",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "saf-foundation",
+        "ACT-SF",
+        "SAF Foundation",
+        "SAF Foundation Master",
+        "ACT-SF — SAF Foundation"
+      ],
+      "queryAliases": [
+        "saf-foundation",
+        "ACT-SF",
+        "SAF Foundation",
+        "SAF Foundation Master"
+      ],
+      "lookupKeys": [
+        "saf-foundation",
+        "act-sf",
+        "saf-foundation-master",
+        "act-sf-saf-foundation"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "SAF Foundation Master"
+      ],
+      "ghlTags": [
+        "saf-foundation"
+      ],
+      "xeroTracking": "ACT-SF — SAF Foundation",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-SE",
+      "name": "SEFA Partnership",
+      "status": "archived",
+      "tier": "satellite",
+      "category": "funding",
+      "canonicalSlug": "sefa-partnership",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "sefa-partnership",
+        "ACT-SE",
+        "SEFA Partnership",
+        "sefa",
+        "SEFA",
+        "ACT-SE — SEFA Partnership"
+      ],
+      "queryAliases": [
+        "sefa-partnership",
+        "ACT-SE",
+        "SEFA Partnership",
+        "sefa"
+      ],
+      "lookupKeys": [
+        "sefa-partnership",
+        "act-se",
+        "sefa",
+        "act-se-sefa-partnership"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "SEFA Partnership"
+      ],
+      "ghlTags": [
+        "sefa"
+      ],
+      "xeroTracking": "ACT-SE — SEFA Partnership",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-SM",
+      "name": "SMART",
+      "status": "active",
+      "tier": "satellite",
+      "category": "health",
+      "canonicalSlug": "smart-recovery-gp-kits",
+      "wikiSlug": "smart-recovery-gp-kits",
+      "staticSlug": "smart-connect",
+      "aliases": [
+        "smart-recovery-gp-kits",
+        "smart-connect",
+        "ACT-SM",
+        "SMART",
+        "smart",
+        "SMART Connect",
+        "SMART Recovery",
+        "SMART HCP GP Uplift Project",
+        "Smart Stories",
+        "ACT-SM — SMART"
+      ],
+      "queryAliases": [
+        "smart-recovery-gp-kits",
+        "smart-connect",
+        "ACT-SM",
+        "SMART",
+        "smart"
+      ],
+      "lookupKeys": [
+        "smart-recovery-gp-kits",
+        "smart-connect",
+        "act-sm",
+        "smart",
+        "smart-recovery",
+        "smart-hcp-gp-uplift-project",
+        "smart-stories",
+        "act-sm-smart"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "SMART Connect",
+        "SMART Recovery",
+        "SMART HCP GP Uplift Project"
+      ],
+      "ghlTags": [
+        "smart",
+        "smart-connect"
+      ],
+      "xeroTracking": "ACT-SM — SMART",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-SS",
+      "name": "Storm Stories",
+      "status": "archived",
+      "tier": null,
+      "category": "indigenous",
+      "canonicalSlug": "picc",
+      "wikiSlug": "picc",
+      "staticSlug": null,
+      "aliases": [
+        "picc",
+        "ACT-SS",
+        "Storm Stories",
+        "palm-island",
+        "storm-stories",
+        "PICC - Storm Stories",
+        "PICC Storm Stories",
+        "PICC",
+        "ACT-SS — Storm Stories",
+        "ACT-PI"
+      ],
+      "queryAliases": [
+        "picc",
+        "ACT-SS",
+        "Storm Stories",
+        "palm-island",
+        "ACT-PI"
+      ],
+      "lookupKeys": [
+        "picc",
+        "act-ss",
+        "storm-stories",
+        "palm-island",
+        "picc-storm-stories",
+        "act-ss-storm-stories",
+        "act-pi"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "PICC - Storm Stories",
+        "PICC Storm Stories"
+      ],
+      "ghlTags": [
+        "picc",
+        "palm-island",
+        "storm-stories"
+      ],
+      "xeroTracking": "ACT-SS — Storm Stories",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-SX",
+      "name": "SXSW 2025",
+      "status": "archived",
+      "tier": null,
+      "category": "events",
+      "canonicalSlug": "sxsw-2025",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "sxsw-2025",
+        "ACT-SX",
+        "SXSW 2025",
+        "sxsw",
+        "SXSW",
+        "ACT-SX — SXSW 2025"
+      ],
+      "queryAliases": [
+        "sxsw-2025",
+        "ACT-SX",
+        "SXSW 2025",
+        "sxsw"
+      ],
+      "lookupKeys": [
+        "sxsw-2025",
+        "act-sx",
+        "sxsw",
+        "act-sx-sxsw-2025"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "SXSW 2025"
+      ],
+      "ghlTags": [
+        "sxsw",
+        "sxsw-2025"
+      ],
+      "xeroTracking": "ACT-SX — SXSW 2025",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-CF",
+      "name": "The Confessional",
+      "status": "active",
+      "tier": "studio",
+      "category": "stories",
+      "canonicalSlug": "the-confessional",
+      "wikiSlug": "the-confessional",
+      "staticSlug": "the-confessional",
+      "aliases": [
+        "the-confessional",
+        "ACT-CF",
+        "The Confessional",
+        "confessional",
+        "Confessional",
+        "ACT-CF — The Confessional"
+      ],
+      "queryAliases": [
+        "the-confessional",
+        "ACT-CF",
+        "confessional",
+        "The Confessional"
+      ],
+      "lookupKeys": [
+        "the-confessional",
+        "act-cf",
+        "confessional",
+        "act-cf-the-confessional"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "The Confessional"
+      ],
+      "ghlTags": [
+        "confessional"
+      ],
+      "xeroTracking": "ACT-CF — The Confessional",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-FM",
+      "name": "The Farm",
+      "status": "active",
+      "tier": "ecosystem",
+      "category": "regenerative",
+      "canonicalSlug": "act-farm",
+      "wikiSlug": "act-farm",
+      "staticSlug": null,
+      "aliases": [
+        "act-farm",
+        "ACT-FM",
+        "The Farm",
+        "farm",
+        "the-farm",
+        "ACT Farm",
+        "ACT-FM — The Farm"
+      ],
+      "queryAliases": [
+        "act-farm",
+        "ACT-FM",
+        "farm",
+        "the-farm"
+      ],
+      "lookupKeys": [
+        "act-farm",
+        "act-fm",
+        "the-farm",
+        "farm",
+        "act-fm-the-farm"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "The Farm",
+        "ACT Farm"
+      ],
+      "ghlTags": [
+        "farm",
+        "the-farm"
+      ],
+      "xeroTracking": "ACT-FM — The Farm",
+      "productionUrl": "https://act-farm.vercel.app",
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-HV",
+      "name": "The Harvest Witta",
+      "status": "active",
+      "tier": "ecosystem",
+      "category": "regenerative",
+      "canonicalSlug": "the-harvest",
+      "wikiSlug": "the-harvest",
+      "staticSlug": "the-harvest",
+      "aliases": [
+        "the-harvest",
+        "ACT-HV",
+        "The Harvest Witta",
+        "harvest",
+        "theharvest",
+        "witta",
+        "grant",
+        "Witta Harvest HQ",
+        "The Harvest",
+        "act-hv",
+        "ACT-HV — The Harvest Witta"
+      ],
+      "queryAliases": [
+        "the-harvest",
+        "ACT-HV",
+        "harvest",
+        "theharvest"
+      ],
+      "lookupKeys": [
+        "the-harvest",
+        "act-hv",
+        "the-harvest-witta",
+        "harvest",
+        "theharvest",
+        "witta",
+        "grant",
+        "witta-harvest-hq",
+        "act-hv-the-harvest-witta"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "The Harvest Witta",
+        "Witta Harvest HQ"
+      ],
+      "ghlTags": [
+        "harvest",
+        "the-harvest",
+        "witta",
+        "grant"
+      ],
+      "xeroTracking": "ACT-HV — The Harvest Witta",
+      "productionUrl": "https://www.theharvestwitta.com.au",
+      "syndicationSlug": "act_hv"
+    },
+    {
+      "code": "ACT-SH",
+      "name": "The Shed",
+      "status": "archived",
+      "tier": null,
+      "category": "tech",
+      "canonicalSlug": "the-shed",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "the-shed",
+        "ACT-SH",
+        "The Shed",
+        "shed",
+        "ACT-SH — The Shed"
+      ],
+      "queryAliases": [
+        "the-shed",
+        "ACT-SH",
+        "The Shed",
+        "shed"
+      ],
+      "lookupKeys": [
+        "the-shed",
+        "act-sh",
+        "shed",
+        "act-sh-the-shed"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "The Shed"
+      ],
+      "ghlTags": [
+        "shed"
+      ],
+      "xeroTracking": "ACT-SH — The Shed",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-TN",
+      "name": "TOMNET",
+      "status": "archived",
+      "tier": null,
+      "category": "community",
+      "canonicalSlug": "tomnet",
+      "wikiSlug": "tomnet",
+      "staticSlug": "tomnet",
+      "aliases": [
+        "tomnet",
+        "ACT-TN",
+        "TOMNET",
+        "ACT-TN — TOMNET"
+      ],
+      "queryAliases": [
+        "tomnet",
+        "ACT-TN",
+        "TOMNET"
+      ],
+      "lookupKeys": [
+        "tomnet",
+        "act-tn",
+        "act-tn-tomnet"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "TOMNET"
+      ],
+      "ghlTags": [
+        "tomnet"
+      ],
+      "xeroTracking": "ACT-TN — TOMNET",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-TW",
+      "name": "Travelling Women's Car",
+      "status": "archived",
+      "tier": null,
+      "category": "indigenous",
+      "canonicalSlug": "travelling-womens-car",
+      "wikiSlug": null,
+      "staticSlug": "travelling-womens-car",
+      "aliases": [
+        "travelling-womens-car",
+        "ACT-TW",
+        "Travelling Women's Car",
+        "Travelling women's car",
+        "Travelling Womens Car",
+        "ACT-TW — Travelling Women's Car"
+      ],
+      "queryAliases": [
+        "travelling-womens-car",
+        "ACT-TW",
+        "Travelling Women's Car",
+        "Travelling women's car"
+      ],
+      "lookupKeys": [
+        "travelling-womens-car",
+        "act-tw",
+        "travelling-women-s-car",
+        "act-tw-travelling-women-s-car"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Travelling women's car"
+      ],
+      "ghlTags": [
+        "travelling-womens-car"
+      ],
+      "xeroTracking": "ACT-TW — Travelling Women's Car",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-TR",
+      "name": "Treacher",
+      "status": "ideation",
+      "tier": "studio",
+      "category": "arts",
+      "canonicalSlug": "treacher",
+      "wikiSlug": "treacher",
+      "staticSlug": null,
+      "aliases": [
+        "treacher",
+        "ACT-TR",
+        "Treacher",
+        "ACT-TR — Treacher"
+      ],
+      "queryAliases": [
+        "treacher",
+        "ACT-TR",
+        "Treacher"
+      ],
+      "lookupKeys": [
+        "treacher",
+        "act-tr",
+        "act-tr-treacher"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Treacher"
+      ],
+      "ghlTags": [
+        "treacher"
+      ],
+      "xeroTracking": "ACT-TR — Treacher",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-UA",
+      "name": "Uncle Allan Palm Island Art",
+      "status": "active",
+      "tier": "studio",
+      "category": "indigenous",
+      "canonicalSlug": "uncle-allan-palm-island-art",
+      "wikiSlug": "uncle-allan-palm-island-art",
+      "staticSlug": "uncle-allan-palm-island-art",
+      "aliases": [
+        "uncle-allan-palm-island-art",
+        "ACT-UA",
+        "Uncle Allan Palm Island Art",
+        "uncle-allan",
+        "palm-island-art",
+        "Uncle Allan Art",
+        "ACT-UA — Uncle Allan Palm Island Art"
+      ],
+      "queryAliases": [
+        "uncle-allan-palm-island-art",
+        "ACT-UA",
+        "Uncle Allan Palm Island Art",
+        "uncle-allan",
+        "palm-island-art"
+      ],
+      "lookupKeys": [
+        "uncle-allan-palm-island-art",
+        "act-ua",
+        "uncle-allan",
+        "palm-island-art",
+        "uncle-allan-art",
+        "act-ua-uncle-allan-palm-island-art"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Uncle Allan Palm Island Art"
+      ],
+      "ghlTags": [
+        "uncle-allan",
+        "palm-island-art"
+      ],
+      "xeroTracking": "ACT-UA — Uncle Allan Palm Island Art",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-WE",
+      "name": "Westpac Summit 2025",
+      "status": "archived",
+      "tier": null,
+      "category": "events",
+      "canonicalSlug": "westpac-summit-2025",
+      "wikiSlug": null,
+      "staticSlug": "westpac-summit-2025",
+      "aliases": [
+        "westpac-summit-2025",
+        "ACT-WE",
+        "Westpac Summit 2025",
+        "westpac",
+        "summit",
+        "Westpac Summit",
+        "ACT-WE — Westpac Summit 2025"
+      ],
+      "queryAliases": [
+        "westpac-summit-2025",
+        "ACT-WE",
+        "Westpac Summit 2025",
+        "westpac",
+        "summit"
+      ],
+      "lookupKeys": [
+        "westpac-summit-2025",
+        "act-we",
+        "westpac",
+        "summit",
+        "westpac-summit",
+        "act-we-westpac-summit-2025"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Westpac Summit 2025"
+      ],
+      "ghlTags": [
+        "westpac",
+        "summit"
+      ],
+      "xeroTracking": "ACT-WE — Westpac Summit 2025",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-WJ",
+      "name": "Wilya Janta",
+      "status": "archived",
+      "tier": null,
+      "category": "indigenous",
+      "canonicalSlug": "wilya-janta",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "wilya-janta",
+        "ACT-WJ",
+        "Wilya Janta",
+        "Wilya Janta Communications",
+        "ACT-WJ — Wilya Janta"
+      ],
+      "queryAliases": [
+        "wilya-janta",
+        "ACT-WJ",
+        "Wilya Janta",
+        "Wilya Janta Communications"
+      ],
+      "lookupKeys": [
+        "wilya-janta",
+        "act-wj",
+        "wilya-janta-communications",
+        "act-wj-wilya-janta"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "Wilya Janta Communications"
+      ],
+      "ghlTags": [
+        "wilya-janta"
+      ],
+      "xeroTracking": "ACT-WJ — Wilya Janta",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-YC",
+      "name": "YAC Story and Action",
+      "status": "archived",
+      "tier": null,
+      "category": "justice",
+      "canonicalSlug": "yac-story-and-action",
+      "wikiSlug": null,
+      "staticSlug": null,
+      "aliases": [
+        "yac-story-and-action",
+        "ACT-YC",
+        "YAC Story and Action",
+        "yac",
+        "YAC story and action",
+        "YAC",
+        "ACT-YC — YAC Story and Action"
+      ],
+      "queryAliases": [
+        "yac-story-and-action",
+        "ACT-YC",
+        "YAC Story and Action",
+        "yac",
+        "YAC story and action"
+      ],
+      "lookupKeys": [
+        "yac-story-and-action",
+        "act-yc",
+        "yac",
+        "act-yc-yac-story-and-action"
+      ],
+      "legacyCodes": [],
+      "notionPages": [
+        "YAC story and action"
+      ],
+      "ghlTags": [
+        "yac"
+      ],
+      "xeroTracking": "ACT-YC — YAC Story and Action",
+      "productionUrl": null,
+      "syndicationSlug": null
+    }
+  ]
+}

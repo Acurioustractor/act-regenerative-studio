@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-12T21:00:34.016Z",
-  "sourceRoot": "/home/runner/work/act-regenerative-studio/act-regenerative-studio/_canonical-wiki/wiki",
+  "generatedAt": "2026-04-12T20:58:35.219Z",
+  "sourceRoot": "/Users/benknight/Code/act-global-infrastructure/wiki",
   "packCount": 5,
   "packs": [
     {
@@ -23,7 +23,7 @@
       "sourcePage": {
         "relativePath": "projects/justicehub/justicehub.md",
         "wikiPath": "projects/justicehub",
-        "modifiedAt": "2026-04-12T21:00:18.848Z"
+        "modifiedAt": "2026-04-12T20:50:21.795Z"
       },
       "downstream": {
         "website": {
@@ -45,7 +45,18 @@
           "deployment": "Vercel",
           "role": "Primary public product surface and evidence platform codebase."
         },
-        "supportingRepos": []
+        "supportingRepos": [
+          {
+            "name": "GrantScope",
+            "localPath": "/Users/benknight/Code/grantscope",
+            "github": "Acurioustractor/grantscope",
+            "githubUrl": "https://github.com/Acurioustractor/grantscope",
+            "description": "CivicGraph, grants intelligence, and procurement discovery substrate",
+            "stack": "Next.js, Supabase, MCP, Tailwind",
+            "deployment": "Vercel",
+            "role": "CivicGraph, procurement, and capital-intelligence substrate feeding JusticeHub discovery and scoring."
+          }
+        ]
       },
       "keyPeople": [
         {
@@ -163,7 +174,7 @@
       "sourcePage": {
         "relativePath": "projects/goods-on-country.md",
         "wikiPath": "projects/goods-on-country",
-        "modifiedAt": "2026-04-12T21:00:18.847Z"
+        "modifiedAt": "2026-04-12T20:50:21.794Z"
       },
       "downstream": {
         "website": {
@@ -185,7 +196,28 @@
           "deployment": "Vercel",
           "role": "Asset register, delivery workflow, and operational product infrastructure."
         },
-        "supportingRepos": []
+        "supportingRepos": [
+          {
+            "name": "GrantScope",
+            "localPath": "/Users/benknight/Code/grantscope",
+            "github": "Acurioustractor/grantscope",
+            "githubUrl": "https://github.com/Acurioustractor/grantscope",
+            "description": "CivicGraph, grants intelligence, and procurement discovery substrate",
+            "stack": "Next.js, Supabase, MCP, Tailwind",
+            "deployment": "Vercel",
+            "role": "Goods Workspace procurement and capital discovery layer."
+          },
+          {
+            "name": "Palm Island Repository",
+            "localPath": "/Users/benknight/Code/Palm Island Reposistory",
+            "github": "Acurioustractor/palm-island-repository",
+            "githubUrl": "https://github.com/Acurioustractor/palm-island-repository",
+            "description": "PICC-linked community archive, reporting, and web-platform workspace",
+            "stack": "Mixed repo (web-platform, templates, research, scripts)",
+            "deployment": "Vercel",
+            "role": "Community deployment, reporting, and media archive connected to Palm Island delivery proof."
+          }
+        ]
       },
       "keyPeople": [
         {
@@ -292,7 +324,7 @@
       "sourcePage": {
         "relativePath": "projects/the-harvest/the-harvest.md",
         "wikiPath": "projects/the-harvest",
-        "modifiedAt": "2026-04-12T21:00:18.850Z"
+        "modifiedAt": "2026-04-12T20:50:21.802Z"
       },
       "downstream": {
         "website": {
@@ -307,8 +339,8 @@
         "primaryRepo": {
           "name": "The Harvest",
           "localPath": "/Users/benknight/Code/The Harvest Website",
-          "github": "Acurioustractor/harvest-community-hub",
-          "githubUrl": "https://github.com/Acurioustractor/harvest-community-hub",
+          "github": "Acurioustractor/theharvest",
+          "githubUrl": "https://github.com/Acurioustractor/theharvest",
           "description": "Community hub and CSA programs",
           "stack": "Next.js, Supabase, Tailwind",
           "deployment": "Vercel",
@@ -433,7 +465,7 @@
       "sourcePage": {
         "relativePath": "projects/empathy-ledger.md",
         "wikiPath": "projects/empathy-ledger",
-        "modifiedAt": "2026-04-12T21:00:18.846Z"
+        "modifiedAt": "2026-04-12T20:50:21.792Z"
       },
       "downstream": {
         "website": {
@@ -577,7 +609,7 @@
       "sourcePage": {
         "relativePath": "projects/act-farm/black-cockatoo-valley.md",
         "wikiPath": "projects/act-farm/black-cockatoo-valley",
-        "modifiedAt": "2026-04-12T21:00:18.846Z"
+        "modifiedAt": "2026-04-12T20:50:21.785Z"
       },
       "downstream": {
         "website": {

@@ -1,0 +1,915 @@
+{
+  "generatedAt": "2026-04-12T01:33:44.673Z",
+  "sourceUrl": "http://localhost:3030",
+  "siteSlug": "act-regenerative-studio",
+  "destination": "act_el",
+  "packetCount": 5,
+  "packets": {
+    "justicehub": {
+      "packet_id": "pkt_justicehub_act-regenerative-studio",
+      "schema_version": "1.0.0",
+      "packet_type": "project",
+      "status": "review",
+      "canonical_entity": {
+        "entity_type": "project",
+        "canonical_slug": "justicehub",
+        "canonical_note_path": "wiki/projects/justicehub.md",
+        "project_code": "ACT-JH",
+        "public_copy_owner": "act-regenerative-studio"
+      },
+      "source_refs": [
+        {
+          "source_id": "justicehub-flagship-pack",
+          "source_system": "empathy-ledger-v2",
+          "source_kind": "flagship_project_pack",
+          "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
+          "captured_at": "2026-04-12T01:33:35.127Z",
+          "verification_status": "verified",
+          "notes": "Flagship pack exists for this project slug."
+        },
+        {
+          "source_id": "justicehub-act-regenerative-studio-manifest",
+          "source_system": "empathy-ledger-v2",
+          "source_kind": "site_editorial_manifest",
+          "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
+          "captured_at": "2026-04-12T01:33:35.127Z",
+          "verification_status": "verified",
+          "notes": "Editorial manifest found for act-regenerative-studio."
+        }
+      ],
+      "narrative": {
+        "headline": "JusticeHub",
+        "summary": "JusticeHub is one of ACT's flagship public fields, but it is not supposed to carry the whole system alone: - the wiki holds the durable platform framing, reform logic, cluster structure, and argument spine - Empathy Ledger should carry the live story, portrait, and documentation layer - the JusticeHub website should stay the spoke surface for evidence, proof, and entry points without becoming the only place where the truth lives This is why JusticeHub needs to stay attached to Living Website Operating System and to the Studio's wider economic and cultural logic in Studio Business Model. CONTAINED, the proof wall, and the reform surface are all part of one field.",
+        "body_markdown": "JusticeHub is one of ACT's flagship public fields, but it is not supposed to carry the whole system alone: - the wiki holds the durable platform framing, reform logic, cluster structure, and argument spine - Empathy Ledger should carry the live story, portrait, and documentation layer - the JusticeHub website should stay the spoke surface for evidence, proof, and entry points without becoming the only place where the truth lives This is why JusticeHub needs to stay attached to Living Website Operating System and to the Studio's wider economic and cultural logic in Studio Business Model. CONTAINED, the proof wall, and the reform surface are all part of one field.",
+        "themes": [
+          "justicehub"
+        ],
+        "approved_quotes": []
+      },
+      "media_assets": [
+        {
+          "asset_id": "d759752d-8162-4041-b59c-601e72bdec4c",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/galleries/c9445b2a-375d-436b-a1e7-b96de3b2a0eb/1769459504514-6m1kr-IMG_5114.jpg",
+          "caption": null,
+          "alt_text": "IMG_5114",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "f0f98f23-d5a5-48cd-9b6b-e187fe2cb70a",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072641384-1E5A2159.jpg",
+          "caption": null,
+          "alt_text": "Image: 1E5A2159.jpg",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "7c23b3dc-0f88-4ec9-8ade-3342f8d23e3d",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072640325-1E5A2170.jpg",
+          "caption": null,
+          "alt_text": "Image: 1E5A2170.jpg",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "49b59525-dce7-4067-b655-8f157934c7a0",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072639291-1E5A2172.jpg",
+          "caption": null,
+          "alt_text": "Image: 1E5A2172.jpg",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "d32130c0-43d9-42cd-bfad-b88a5a0ae1d2",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072638266-1E5A2183.jpg",
+          "caption": null,
+          "alt_text": "Image: 1E5A2183.jpg",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "ad9ef95c-1997-4f95-abe4-646a1ac67b27",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072636943-1E5A2190.jpg",
+          "caption": null,
+          "alt_text": "Image: 1E5A2190.jpg",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "e9b0d1e6-ba3f-4435-854b-8dcec9d7b874",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072635078-1E5A2194.jpg",
+          "caption": null,
+          "alt_text": "Image: 1E5A2194.jpg",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "0c45b7f4-457b-4337-9642-b851ff16dd85",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072632636-Nigel.mp3",
+          "caption": null,
+          "alt_text": "Audio: Nigel.mp3",
+          "usage_rights": "approved"
+        }
+      ],
+      "review": {
+        "editorial": {
+          "status": "approved",
+          "owner": "act-regenerative-studio-editorial-manifest",
+          "decided_at": null,
+          "notes": "Packet assembled from curated EL editorial and flagship data."
+        },
+        "cultural": {
+          "status": "not-required",
+          "owner": null,
+          "decided_at": null,
+          "notes": "Packet only includes public-facing content-hub surfaces."
+        },
+        "consent": {
+          "status": "approved",
+          "owner": "content-hub",
+          "decided_at": null,
+          "notes": "Packet assembled from EL content-hub surfaces already filtered for public/community delivery."
+        },
+        "release": {
+          "status": "pending",
+          "owner": "release-captain",
+          "decided_at": null,
+          "notes": "Downstream publish still needs preview verification in the destination site."
+        }
+      },
+      "outputs": [
+        {
+          "target_surface": "act-regenerative-studio",
+          "output_type": "homepage-feature",
+          "status": "review",
+          "destination": "/api/v1/content-hub/editorial?site=act-regenerative-studio",
+          "notes": "Native site-facing packet for editorial/homepage composition."
+        },
+        {
+          "target_surface": "act-regenerative-studio",
+          "output_type": "project-card",
+          "status": "review",
+          "destination": "sync-el-source-packets.mjs",
+          "notes": "Hub-facing packet snapshot for project and portfolio composition."
+        },
+        {
+          "target_surface": "social",
+          "output_type": "explainer-image-brief",
+          "status": "review",
+          "destination": null,
+          "notes": "Packet has media and narrative context for image brief generation."
+        },
+        {
+          "target_surface": "video",
+          "output_type": "explainer-video-brief",
+          "status": "queued",
+          "destination": null,
+          "notes": "Packet can drive explainer/video generation once release gate is approved."
+        }
+      ],
+      "provenance": {
+        "generated_at": "2026-04-12T01:33:35.127Z",
+        "generated_by": "content-hub-source-packet-builder",
+        "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
+        "notes": "storyIds=0, storytellerIds=4, mediaIds=8"
+      },
+      "packet_context": {
+        "site_slug": "act-regenerative-studio",
+        "destination": "act_el",
+        "project_name": "JusticeHub",
+        "story_ids": [],
+        "storyteller_ids": [
+          "dcbdaa70-1871-46e5-b77b-9dad0d0a8894",
+          "13742d49-901e-4c08-94b2-a864d1a9a8e9",
+          "7a0cd28a-ad12-4f70-b900-d869b42c9f88",
+          "8dab91aa-3a1f-4128-b41d-b89e532be1fa"
+        ],
+        "media_asset_ids": [
+          "d759752d-8162-4041-b59c-601e72bdec4c",
+          "f0f98f23-d5a5-48cd-9b6b-e187fe2cb70a",
+          "7c23b3dc-0f88-4ec9-8ade-3342f8d23e3d",
+          "49b59525-dce7-4067-b655-8f157934c7a0",
+          "d32130c0-43d9-42cd-bfad-b88a5a0ae1d2",
+          "ad9ef95c-1997-4f95-abe4-646a1ac67b27",
+          "e9b0d1e6-ba3f-4435-854b-8dcec9d7b874",
+          "0c45b7f4-457b-4337-9642-b851ff16dd85"
+        ],
+        "featured_article_slugs": [
+          "justicehub-a-platform-for-community-led-justice-solutions",
+          "spain-diagrama-trip-reflection",
+          "contained-where-policy-meets-flesh",
+          "beyond-bars-joe-kwons-journey-to-reshape-society",
+          "the-kids-are-not-alright-how-queensland-is-failing-its-most-vulnerable-young-people-and-what-we-can-do-about-it",
+          "a-story-of-resilience-and-advocacy",
+          "the-reintegration-puzzle-story-portal",
+          "oonchiumpa-what-happens-when-community-leads",
+          "building-the-act-ecosystem-a-vision-for-community-centered-technology"
+        ]
+      }
+    },
+    "goods-on-country": {
+      "packet_id": "pkt_goods-on-country_act-regenerative-studio",
+      "schema_version": "1.0.0",
+      "packet_type": "project",
+      "status": "review",
+      "canonical_entity": {
+        "entity_type": "project",
+        "canonical_slug": "goods-on-country",
+        "canonical_note_path": "wiki/projects/goods-on-country.md",
+        "project_code": null,
+        "public_copy_owner": "act-regenerative-studio"
+      },
+      "source_refs": [
+        {
+          "source_id": "goods-on-country-flagship-pack",
+          "source_system": "empathy-ledger-v2",
+          "source_kind": "flagship_project_pack",
+          "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
+          "captured_at": "2026-04-12T01:33:29.214Z",
+          "verification_status": "verified",
+          "notes": "Flagship pack exists for this project slug."
+        },
+        {
+          "source_id": "goods-on-country-act-regenerative-studio-manifest",
+          "source_system": "empathy-ledger-v2",
+          "source_kind": "site_editorial_manifest",
+          "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
+          "captured_at": "2026-04-12T01:33:29.214Z",
+          "verification_status": "verified",
+          "notes": "Editorial manifest found for act-regenerative-studio."
+        }
+      ],
+      "narrative": {
+        "headline": "Goods on Country",
+        "summary": "Goods on Country is one of ACT's flagship public fields, but its truth is distributed across layers: - the wiki holds the durable product logic, partnership model, capital stack, and handover arc - Empathy Ledger should hold the live community voice, photos, video, and consented deployment stories - the Goods Asset Register, GrantScope Goods Workspace, and related project codebases hold the operational implementation truth - the public websites should compose those layers without becoming a second place where product or partnership truth gets rewritten by hand That is why Goods on Country needs to stay linked to Living Website Operating System, Designing for Obsolescence, and the partner ecology around Oonchiumpa and PICC.",
+        "body_markdown": "Goods on Country is one of ACT's flagship public fields, but its truth is distributed across layers: - the wiki holds the durable product logic, partnership model, capital stack, and handover arc - Empathy Ledger should hold the live community voice, photos, video, and consented deployment stories - the Goods Asset Register, GrantScope Goods Workspace, and related project codebases hold the operational implementation truth - the public websites should compose those layers without becoming a second place where product or partnership truth gets rewritten by hand That is why Goods on Country needs to stay linked to Living Website Operating System, Designing for Obsolescence, and the partner ecology around Oonchiumpa and PICC.",
+        "themes": [
+          "goods-on-country"
+        ],
+        "approved_quotes": []
+      },
+      "media_assets": [],
+      "review": {
+        "editorial": {
+          "status": "approved",
+          "owner": "act-regenerative-studio-editorial-manifest",
+          "decided_at": null,
+          "notes": "Packet assembled from curated EL editorial and flagship data."
+        },
+        "cultural": {
+          "status": "not-required",
+          "owner": null,
+          "decided_at": null,
+          "notes": "Packet only includes public-facing content-hub surfaces."
+        },
+        "consent": {
+          "status": "approved",
+          "owner": "content-hub",
+          "decided_at": null,
+          "notes": "Packet assembled from EL content-hub surfaces already filtered for public/community delivery."
+        },
+        "release": {
+          "status": "pending",
+          "owner": "release-captain",
+          "decided_at": null,
+          "notes": "Downstream publish still needs preview verification in the destination site."
+        }
+      },
+      "outputs": [
+        {
+          "target_surface": "act-regenerative-studio",
+          "output_type": "homepage-feature",
+          "status": "review",
+          "destination": "/api/v1/content-hub/editorial?site=act-regenerative-studio",
+          "notes": "Native site-facing packet for editorial/homepage composition."
+        },
+        {
+          "target_surface": "act-regenerative-studio",
+          "output_type": "project-card",
+          "status": "review",
+          "destination": "sync-el-source-packets.mjs",
+          "notes": "Hub-facing packet snapshot for project and portfolio composition."
+        },
+        {
+          "target_surface": "social",
+          "output_type": "explainer-image-brief",
+          "status": "queued",
+          "destination": null,
+          "notes": "No hero media found yet."
+        },
+        {
+          "target_surface": "video",
+          "output_type": "explainer-video-brief",
+          "status": "queued",
+          "destination": null,
+          "notes": "Packet can drive explainer/video generation once release gate is approved."
+        }
+      ],
+      "provenance": {
+        "generated_at": "2026-04-12T01:33:29.214Z",
+        "generated_by": "content-hub-source-packet-builder",
+        "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
+        "notes": "storyIds=0, storytellerIds=0, mediaIds=0"
+      },
+      "packet_context": {
+        "site_slug": "act-regenerative-studio",
+        "destination": "act_el",
+        "project_name": "Goods on Country",
+        "story_ids": [],
+        "storyteller_ids": [],
+        "media_asset_ids": [],
+        "featured_article_slugs": [
+          "wilya-janta-a-paradigm-shift-in-housing-for-remote-aboriginal-communities",
+          "at-the-speed-of-ceremony-learning-partnership-on-palm-island",
+          "historys-wounds-and-tomorrows-possibilities",
+          "the-tapestry-of-dignity-witnessing-the-birth-of-the-global-laundry-alliance",
+          "building-the-act-ecosystem-a-vision-for-community-centered-technology"
+        ]
+      }
+    },
+    "the-harvest": {
+      "packet_id": "pkt_the-harvest_act-regenerative-studio",
+      "schema_version": "1.0.0",
+      "packet_type": "project",
+      "status": "review",
+      "canonical_entity": {
+        "entity_type": "project",
+        "canonical_slug": "the-harvest",
+        "canonical_note_path": "wiki/projects/the-harvest.md",
+        "project_code": "ACT-HV",
+        "public_copy_owner": "act-regenerative-studio"
+      },
+      "source_refs": [
+        {
+          "source_id": "the-harvest-flagship-pack",
+          "source_system": "empathy-ledger-v2",
+          "source_kind": "flagship_project_pack",
+          "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
+          "captured_at": "2026-04-12T01:33:40.857Z",
+          "verification_status": "verified",
+          "notes": "Flagship pack exists for this project slug."
+        },
+        {
+          "source_id": "the-harvest-act-regenerative-studio-manifest",
+          "source_system": "empathy-ledger-v2",
+          "source_kind": "site_editorial_manifest",
+          "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
+          "captured_at": "2026-04-12T01:33:40.857Z",
+          "verification_status": "verified",
+          "notes": "Editorial manifest found for act-regenerative-studio."
+        }
+      ],
+      "narrative": {
+        "headline": "The Harvest / Witta Harvest HQ",
+        "summary": "The Harvest is not only a venue or cafe concept. It is one of the public fronts where ACT's place, enterprise, and story systems meet: - the wiki holds the durable place logic, operating frame, and relationship to ACT Farm - Empathy Ledger should carry the live seasonal stories, photos, and community voice - the Harvest website should stay a focused spoke surface, not a second place where strategic truth gets rewritten by hand That is why The Harvest needs to stay linked to Living Website Operating System and to the Studio's wider economic logic in Studio Business Model.",
+        "body_markdown": "The Harvest is not only a venue or cafe concept. It is one of the public fronts where ACT's place, enterprise, and story systems meet: - the wiki holds the durable place logic, operating frame, and relationship to ACT Farm - Empathy Ledger should carry the live seasonal stories, photos, and community voice - the Harvest website should stay a focused spoke surface, not a second place where strategic truth gets rewritten by hand That is why The Harvest needs to stay linked to Living Website Operating System and to the Studio's wider economic logic in Studio Business Model.",
+        "themes": [
+          "the-harvest"
+        ],
+        "approved_quotes": []
+      },
+      "media_assets": [
+        {
+          "asset_id": "40d0f978-af44-41d8-a646-2f63da2723ae",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508704229-20260307-1E5A2151.jpg",
+          "caption": null,
+          "alt_text": "Image: 20260307-1E5A2151.jpg",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "9184efce-1134-4ea4-9fdd-05e3ba66617d",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508703061-20260307-1E5A2150.jpg",
+          "caption": null,
+          "alt_text": "Image: 20260307-1E5A2150.jpg",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "5c5b290b-27f4-4552-8bcb-28da9efec27c",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508701906-20260307-1E5A2146.jpg",
+          "caption": null,
+          "alt_text": "Image: 20260307-1E5A2146.jpg",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "a1f2818f-256b-4aa2-9871-dd7bde6f4f72",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508700747-20260307-1E5A2145.jpg",
+          "caption": null,
+          "alt_text": "Image: 20260307-1E5A2145.jpg",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "2248ba28-1d71-4f36-b707-67c21e0f5672",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508699486-20260307-1E5A2142.jpg",
+          "caption": null,
+          "alt_text": "Image: 20260307-1E5A2142.jpg",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "f9649ec3-3aba-405f-9e56-ca7e6c90f688",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508698287-20260307-1E5A2141.jpg",
+          "caption": null,
+          "alt_text": "Image: 20260307-1E5A2141.jpg",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "0ddd542a-0e7e-4473-bdef-e53e20a04005",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508697123-20260307-1E5A2140.jpg",
+          "caption": null,
+          "alt_text": "Image: 20260307-1E5A2140.jpg",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "be5b2592-9574-43c9-b249-65c2936d53aa",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508696030-20260307-1E5A2139.jpg",
+          "caption": null,
+          "alt_text": "Image: 20260307-1E5A2139.jpg",
+          "usage_rights": "approved"
+        }
+      ],
+      "review": {
+        "editorial": {
+          "status": "approved",
+          "owner": "act-regenerative-studio-editorial-manifest",
+          "decided_at": null,
+          "notes": "Packet assembled from curated EL editorial and flagship data."
+        },
+        "cultural": {
+          "status": "not-required",
+          "owner": null,
+          "decided_at": null,
+          "notes": "Packet only includes public-facing content-hub surfaces."
+        },
+        "consent": {
+          "status": "approved",
+          "owner": "content-hub",
+          "decided_at": null,
+          "notes": "Packet assembled from EL content-hub surfaces already filtered for public/community delivery."
+        },
+        "release": {
+          "status": "pending",
+          "owner": "release-captain",
+          "decided_at": null,
+          "notes": "Downstream publish still needs preview verification in the destination site."
+        }
+      },
+      "outputs": [
+        {
+          "target_surface": "act-regenerative-studio",
+          "output_type": "homepage-feature",
+          "status": "review",
+          "destination": "/api/v1/content-hub/editorial?site=act-regenerative-studio",
+          "notes": "Native site-facing packet for editorial/homepage composition."
+        },
+        {
+          "target_surface": "act-regenerative-studio",
+          "output_type": "project-card",
+          "status": "review",
+          "destination": "sync-el-source-packets.mjs",
+          "notes": "Hub-facing packet snapshot for project and portfolio composition."
+        },
+        {
+          "target_surface": "social",
+          "output_type": "explainer-image-brief",
+          "status": "review",
+          "destination": null,
+          "notes": "Packet has media and narrative context for image brief generation."
+        },
+        {
+          "target_surface": "video",
+          "output_type": "explainer-video-brief",
+          "status": "queued",
+          "destination": null,
+          "notes": "Packet can drive explainer/video generation once release gate is approved."
+        }
+      ],
+      "provenance": {
+        "generated_at": "2026-04-12T01:33:40.857Z",
+        "generated_by": "content-hub-source-packet-builder",
+        "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
+        "notes": "storyIds=0, storytellerIds=1, mediaIds=8"
+      },
+      "packet_context": {
+        "site_slug": "act-regenerative-studio",
+        "destination": "act_el",
+        "project_name": "The Harvest",
+        "story_ids": [],
+        "storyteller_ids": [
+          "99e753e0-07d6-439a-ab2a-f203bb657efa"
+        ],
+        "media_asset_ids": [
+          "40d0f978-af44-41d8-a646-2f63da2723ae",
+          "9184efce-1134-4ea4-9fdd-05e3ba66617d",
+          "5c5b290b-27f4-4552-8bcb-28da9efec27c",
+          "a1f2818f-256b-4aa2-9871-dd7bde6f4f72",
+          "2248ba28-1d71-4f36-b707-67c21e0f5672",
+          "f9649ec3-3aba-405f-9e56-ca7e6c90f688",
+          "0ddd542a-0e7e-4473-bdef-e53e20a04005",
+          "be5b2592-9574-43c9-b249-65c2936d53aa"
+        ],
+        "featured_article_slugs": [
+          "edition-1-sowing-seeds-of-connection-2",
+          "building-the-act-ecosystem-a-vision-for-community-centered-technology",
+          "powering-change-a-curious-tractors-journey"
+        ]
+      }
+    },
+    "empathy-ledger": {
+      "packet_id": "pkt_empathy-ledger_act-regenerative-studio",
+      "schema_version": "1.0.0",
+      "packet_type": "project",
+      "status": "review",
+      "canonical_entity": {
+        "entity_type": "project",
+        "canonical_slug": "empathy-ledger",
+        "canonical_note_path": "wiki/projects/empathy-ledger.md",
+        "project_code": "ACT-EL",
+        "public_copy_owner": "act-regenerative-studio"
+      },
+      "source_refs": [
+        {
+          "source_id": "empathy-ledger-flagship-pack",
+          "source_system": "empathy-ledger-v2",
+          "source_kind": "flagship_project_pack",
+          "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
+          "captured_at": "2026-04-12T01:33:44.015Z",
+          "verification_status": "verified",
+          "notes": "Flagship pack exists for this project slug."
+        },
+        {
+          "source_id": "empathy-ledger-act-regenerative-studio-manifest",
+          "source_system": "empathy-ledger-v2",
+          "source_kind": "site_editorial_manifest",
+          "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
+          "captured_at": "2026-04-12T01:33:44.015Z",
+          "verification_status": "verified",
+          "notes": "Editorial manifest found for act-regenerative-studio."
+        }
+      ],
+      "narrative": {
+        "headline": "Empathy Ledger",
+        "summary": "Empathy Ledger is not only a product. It is one of ACT's load-bearing stack layers: - the wiki holds the durable framing for story sovereignty, consent, and identity - Empathy Ledger holds the live story, photo, video, and editorial layer - the websites compose EL material into project pages, journals, and partner surfaces That architecture is the point, not an implementation detail. See Living Website Operating System for the full operating model and Studio Business Model for how EL strengthens ACT's public surface, media quality, and ecosystem earning power.",
+        "body_markdown": "Empathy Ledger is not only a product. It is one of ACT's load-bearing stack layers: - the wiki holds the durable framing for story sovereignty, consent, and identity - Empathy Ledger holds the live story, photo, video, and editorial layer - the websites compose EL material into project pages, journals, and partner surfaces That architecture is the point, not an implementation detail. See Living Website Operating System for the full operating model and Studio Business Model for how EL strengthens ACT's public surface, media quality, and ecosystem earning power.",
+        "themes": [
+          "empathy-ledger"
+        ],
+        "approved_quotes": []
+      },
+      "media_assets": [
+        {
+          "asset_id": "f72c1ea4-13e9-45b9-a25d-41648f396847",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/compendium-2026/project-activated-global-laundry-alliance-gla-bf5913c4.jpeg",
+          "caption": null,
+          "alt_text": "Project Activated:  Global Laundry Alliance (GLA)",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "27628d4b-6400-4c37-af5f-a1a2bc3fbccd",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/compendium-2026/time-in-mount-isa-with-bg-fit-267d22ec.jpeg",
+          "caption": null,
+          "alt_text": "Time in Mount Isa with BG Fit",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "7325bf26-eb57-44ab-89ef-2951045d7ba2",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/compendium-2026/project-active-empathy-ledger-374170a9.jpeg",
+          "caption": null,
+          "alt_text": "Project Active: Empathy Ledger",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "f87d3cda-e960-4263-a50b-65af1c71acf8",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/compendium-2026/bupa-tfn-healthy-people-healthy-planet-pitch-night-for-goods-0a758122.gif",
+          "caption": null,
+          "alt_text": "Bupa TFN Healthy People, Healthy Planet pitch night for Goods.",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "b526a40a-64fd-4d46-a847-1608992c61e3",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/compendium-2026/designing-the-weave-bed-in-tennant-creek-5b0ad988.jpeg",
+          "caption": null,
+          "alt_text": "Designing the weave bed in Tennant Creek",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "d3c4ace8-04f6-4f51-acde-20ed1915ed00",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/compendium-2026/project-love-confit-pathways-82f25863.jpeg",
+          "caption": null,
+          "alt_text": "Project Love: Confit Pathways",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "5998b8d6-3832-453d-9e6a-dcdb08f6ad61",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/compendium-2026/gpce-general-practice-conference-exhibition-confernce-1107298d.png",
+          "caption": null,
+          "alt_text": "GPCE (General Practice Conference & Exhibition) Confernce",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "3efefb68-e839-4b46-ab50-1f2c61f74550",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/compendium-2026/launching-the-pakkinjalki-kari-washing-machine-9805f097.jpeg",
+          "caption": null,
+          "alt_text": "Launching the \"Pakkinjalki kari\" (Washing Machine)",
+          "usage_rights": "approved"
+        }
+      ],
+      "review": {
+        "editorial": {
+          "status": "approved",
+          "owner": "act-regenerative-studio-editorial-manifest",
+          "decided_at": null,
+          "notes": "Packet assembled from curated EL editorial and flagship data."
+        },
+        "cultural": {
+          "status": "not-required",
+          "owner": null,
+          "decided_at": null,
+          "notes": "Packet only includes public-facing content-hub surfaces."
+        },
+        "consent": {
+          "status": "approved",
+          "owner": "content-hub",
+          "decided_at": null,
+          "notes": "Packet assembled from EL content-hub surfaces already filtered for public/community delivery."
+        },
+        "release": {
+          "status": "pending",
+          "owner": "release-captain",
+          "decided_at": null,
+          "notes": "Downstream publish still needs preview verification in the destination site."
+        }
+      },
+      "outputs": [
+        {
+          "target_surface": "act-regenerative-studio",
+          "output_type": "homepage-feature",
+          "status": "review",
+          "destination": "/api/v1/content-hub/editorial?site=act-regenerative-studio",
+          "notes": "Native site-facing packet for editorial/homepage composition."
+        },
+        {
+          "target_surface": "act-regenerative-studio",
+          "output_type": "project-card",
+          "status": "review",
+          "destination": "sync-el-source-packets.mjs",
+          "notes": "Hub-facing packet snapshot for project and portfolio composition."
+        },
+        {
+          "target_surface": "social",
+          "output_type": "explainer-image-brief",
+          "status": "review",
+          "destination": null,
+          "notes": "Packet has media and narrative context for image brief generation."
+        },
+        {
+          "target_surface": "video",
+          "output_type": "explainer-video-brief",
+          "status": "queued",
+          "destination": null,
+          "notes": "Packet can drive explainer/video generation once release gate is approved."
+        }
+      ],
+      "provenance": {
+        "generated_at": "2026-04-12T01:33:44.015Z",
+        "generated_by": "content-hub-source-packet-builder",
+        "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
+        "notes": "storyIds=0, storytellerIds=1, mediaIds=8"
+      },
+      "packet_context": {
+        "site_slug": "act-regenerative-studio",
+        "destination": "act_el",
+        "project_name": "Empathy Ledger",
+        "story_ids": [],
+        "storyteller_ids": [
+          "8b5f3aa0-5955-43ac-8442-37e48e7fc810"
+        ],
+        "media_asset_ids": [
+          "f72c1ea4-13e9-45b9-a25d-41648f396847",
+          "27628d4b-6400-4c37-af5f-a1a2bc3fbccd",
+          "7325bf26-eb57-44ab-89ef-2951045d7ba2",
+          "f87d3cda-e960-4263-a50b-65af1c71acf8",
+          "b526a40a-64fd-4d46-a847-1608992c61e3",
+          "d3c4ace8-04f6-4f51-acde-20ed1915ed00",
+          "5998b8d6-3832-453d-9e6a-dcdb08f6ad61",
+          "3efefb68-e839-4b46-ab50-1f2c61f74550"
+        ],
+        "featured_article_slugs": [
+          "the-power-of-indigenous-storytelling-a-community-perspective",
+          "building-the-act-ecosystem-a-vision-for-community-centered-technology",
+          "oonchiumpa-what-happens-when-community-leads",
+          "powering-change-a-curious-tractors-journey"
+        ]
+      }
+    },
+    "black-cockatoo-valley": {
+      "packet_id": "pkt_black-cockatoo-valley_act-regenerative-studio",
+      "schema_version": "1.0.0",
+      "packet_type": "project",
+      "status": "review",
+      "canonical_entity": {
+        "entity_type": "project",
+        "canonical_slug": "black-cockatoo-valley",
+        "canonical_note_path": "wiki/projects/act-farm/black-cockatoo-valley.md",
+        "project_code": "ACT-BCV",
+        "public_copy_owner": "act-regenerative-studio"
+      },
+      "source_refs": [
+        {
+          "source_id": "black-cockatoo-valley-flagship-pack",
+          "source_system": "empathy-ledger-v2",
+          "source_kind": "flagship_project_pack",
+          "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
+          "captured_at": "2026-04-12T01:33:44.666Z",
+          "verification_status": "verified",
+          "notes": "Flagship pack exists for this project slug."
+        },
+        {
+          "source_id": "black-cockatoo-valley-act-regenerative-studio-manifest",
+          "source_system": "empathy-ledger-v2",
+          "source_kind": "site_editorial_manifest",
+          "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
+          "captured_at": "2026-04-12T01:33:44.666Z",
+          "verification_status": "verified",
+          "notes": "Editorial manifest found for act-regenerative-studio."
+        }
+      ],
+      "narrative": {
+        "headline": "Black Cockatoo Valley",
+        "summary": "Black Cockatoo Valley is the place anchor for the whole ACT field: - the wiki holds the durable land practice, stewardship logic, and conservation boundaries - Empathy Ledger should hold the live field photos, video, and place stories - the websites should compose that into the ACT hub and farm-facing public surfaces without turning either one into the canonical memory This matters because the land layer is not backdrop. It is part of the same operating system described in Living Website Operating System, and it is part of the same Studio business logic described in Studio Business Model.",
+        "body_markdown": "Black Cockatoo Valley is the place anchor for the whole ACT field: - the wiki holds the durable land practice, stewardship logic, and conservation boundaries - Empathy Ledger should hold the live field photos, video, and place stories - the websites should compose that into the ACT hub and farm-facing public surfaces without turning either one into the canonical memory This matters because the land layer is not backdrop. It is part of the same operating system described in Living Website Operating System, and it is part of the same Studio business logic described in Studio Business Model.",
+        "themes": [
+          "act-farm",
+          "black-cockatoo-valley"
+        ],
+        "approved_quotes": []
+      },
+      "media_assets": [
+        {
+          "asset_id": "5069f707-3634-4d0c-99f9-d206492e7ec5",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508333946-June_s_patch-56.jpg",
+          "caption": null,
+          "alt_text": "Image: June_s patch-56.jpg",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "8ca9c231-725f-4553-a965-dea18f3acc2e",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508332661-June_s_patch-36.jpg",
+          "caption": null,
+          "alt_text": "Image: June_s patch-36.jpg",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "bac1a511-c71d-4e37-8f03-a4872d1fba97",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508331557-June_C_Board_Meeting-73.jpg",
+          "caption": null,
+          "alt_text": "Image: June C Board Meeting-73.jpg",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "3ba5c625-da9d-4089-a943-38101e3156be",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508330427-June_C_Board_Meeting-68.jpg",
+          "caption": null,
+          "alt_text": "Image: June C Board Meeting-68.jpg",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "878c22ad-7e1a-4922-91fb-a84992e6882d",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508329362-June_C_Board_Meeting-65.jpg",
+          "caption": null,
+          "alt_text": "Image: June C Board Meeting-65.jpg",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "4b4a9665-8c6c-4450-a65e-47af26f7c507",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508328286-June_C_Board_Meeting-60.jpg",
+          "caption": null,
+          "alt_text": "Image: June C Board Meeting-60.jpg",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "9fe0a7f0-e7b3-4c29-a914-2f6a93c9046e",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508327143-June_C_Board_Meeting-16.jpg",
+          "caption": null,
+          "alt_text": "Image: June C Board Meeting-16.jpg",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "45d24cbc-be54-41b8-a177-f84f66d7dd48",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508326080-IMG_9801-Edit.jpg",
+          "caption": null,
+          "alt_text": "Image: IMG_9801-Edit.jpg",
+          "usage_rights": "approved"
+        }
+      ],
+      "review": {
+        "editorial": {
+          "status": "approved",
+          "owner": "act-regenerative-studio-editorial-manifest",
+          "decided_at": null,
+          "notes": "Packet assembled from curated EL editorial and flagship data."
+        },
+        "cultural": {
+          "status": "not-required",
+          "owner": null,
+          "decided_at": null,
+          "notes": "Packet only includes public-facing content-hub surfaces."
+        },
+        "consent": {
+          "status": "approved",
+          "owner": "content-hub",
+          "decided_at": null,
+          "notes": "Packet assembled from EL content-hub surfaces already filtered for public/community delivery."
+        },
+        "release": {
+          "status": "pending",
+          "owner": "release-captain",
+          "decided_at": null,
+          "notes": "Downstream publish still needs preview verification in the destination site."
+        }
+      },
+      "outputs": [
+        {
+          "target_surface": "act-regenerative-studio",
+          "output_type": "homepage-feature",
+          "status": "review",
+          "destination": "/api/v1/content-hub/editorial?site=act-regenerative-studio",
+          "notes": "Native site-facing packet for editorial/homepage composition."
+        },
+        {
+          "target_surface": "act-regenerative-studio",
+          "output_type": "project-card",
+          "status": "review",
+          "destination": "sync-el-source-packets.mjs",
+          "notes": "Hub-facing packet snapshot for project and portfolio composition."
+        },
+        {
+          "target_surface": "social",
+          "output_type": "explainer-image-brief",
+          "status": "review",
+          "destination": null,
+          "notes": "Packet has media and narrative context for image brief generation."
+        },
+        {
+          "target_surface": "video",
+          "output_type": "explainer-video-brief",
+          "status": "queued",
+          "destination": null,
+          "notes": "Packet can drive explainer/video generation once release gate is approved."
+        }
+      ],
+      "provenance": {
+        "generated_at": "2026-04-12T01:33:44.666Z",
+        "generated_by": "content-hub-source-packet-builder",
+        "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
+        "notes": "storyIds=0, storytellerIds=0, mediaIds=8"
+      },
+      "packet_context": {
+        "site_slug": "act-regenerative-studio",
+        "destination": "act_el",
+        "project_name": "Black Cockatoo Valley",
+        "story_ids": [],
+        "storyteller_ids": [],
+        "media_asset_ids": [
+          "5069f707-3634-4d0c-99f9-d206492e7ec5",
+          "8ca9c231-725f-4553-a965-dea18f3acc2e",
+          "bac1a511-c71d-4e37-8f03-a4872d1fba97",
+          "3ba5c625-da9d-4089-a943-38101e3156be",
+          "878c22ad-7e1a-4922-91fb-a84992e6882d",
+          "4b4a9665-8c6c-4450-a65e-47af26f7c507",
+          "9fe0a7f0-e7b3-4c29-a914-2f6a93c9046e",
+          "45d24cbc-be54-41b8-a177-f84f66d7dd48"
+        ],
+        "featured_article_slugs": [
+          "edition-1-sowing-seeds-of-connection-2",
+          "conversation-camp",
+          "building-the-act-ecosystem-a-vision-for-community-centered-technology",
+          "powering-change-a-curious-tractors-journey"
+        ]
+      }
+    }
+  }
+}

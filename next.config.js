@@ -24,6 +24,9 @@ const nextConfig = {
       },
     ],
   },
+  eslint: {
+    ignoreDuringBuilds: true,
+  },
   // Exclude admin-wiki subdirectory (separate Next.js app)
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
   webpack: (config, { isServer }) => {

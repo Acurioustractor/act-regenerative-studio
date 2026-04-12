@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-04-12T20:40:23.189Z",
+  "generatedAt": "2026-04-12T23:47:52.494Z",
   "sourceRoot": "/Users/benknight/Code/act-global-infrastructure/wiki",
-  "pageCount": 326,
+  "pageCount": 329,
   "pages": [
     {
       "title": "2026 Roadmap",
@@ -12,7 +12,7 @@
       "stem": "roadmap-2026",
       "path": "decisions/roadmap-2026",
       "relativePath": "decisions/roadmap-2026.md",
-      "modifiedAt": "2026-04-10T01:37:22.245Z"
+      "modifiedAt": "2026-04-12T20:50:21.747Z"
     },
     {
       "title": "A Curious Tractor (ACT)",
@@ -45,7 +45,7 @@
       "stem": "acco-sector-analysis",
       "path": "research/acco-sector-analysis",
       "relativePath": "research/acco-sector-analysis.md",
-      "modifiedAt": "2026-04-10T00:12:44.324Z"
+      "modifiedAt": "2026-04-12T20:50:21.803Z"
     },
     {
       "title": "ACT Art Projects",
@@ -56,7 +56,7 @@
       "stem": "art-projects",
       "path": "art/art-projects",
       "relativePath": "art/art-projects.md",
-      "modifiedAt": "2026-04-10T23:18:49.142Z"
+      "modifiedAt": "2026-04-12T20:50:21.736Z"
     },
     {
       "title": "ACT Ecosystem",
@@ -78,7 +78,7 @@
       "stem": "act-farm",
       "path": "projects/act-farm",
       "relativePath": "projects/act-farm/act-farm.md",
-      "modifiedAt": "2026-04-11T01:42:48.797Z"
+      "modifiedAt": "2026-04-12T20:50:21.785Z"
     },
     {
       "title": "ACT Knowledge Ops Loop",
@@ -89,7 +89,18 @@
       "stem": "act-knowledge-ops-loop",
       "path": "technical/act-knowledge-ops-loop",
       "relativePath": "technical/act-knowledge-ops-loop.md",
-      "modifiedAt": "2026-04-11T01:17:26.154Z"
+      "modifiedAt": "2026-04-12T20:50:21.840Z"
+    },
+    {
+      "title": "ACT Monthly Dinners",
+      "excerpt": "Regular community gatherings that bring the ACT network together over shared meals, conversation, and connection.",
+      "content": "> Regular community gatherings that bring the ACT network together over shared meals, conversation, and connection.\n\n**Status:** Active | **Code:** ACT-MD | **Tier:** Satellite\n\n## Overview\n\nACT Monthly Dinners are recurring community gatherings that serve as the connective tissue of the ACT ecosystem. Held roughly monthly, they bring together the extended network of collaborators, community partners, artists, and friends for shared meals and open conversation.\n\nThe dinners are deliberately informal. There is no agenda, no pitch deck, no networking protocol. The format trusts that when you put interesting people in a room with good food and genuine hospitality, the right conversations emerge. Many of ACT's most productive collaborations and project ideas have started at these tables.\n\n## Key Details\n\n- **Category:** Community\n- **Frequency:** Monthly (approximately)\n- **Format:** Shared meal, open conversation\n- **LCAA theme:** Connect\n- **Xero tracking:** ACT-MD\n\n## Philosophy\n\nThe monthly dinners embody the Listen, Curiosity, Action, Art method at its most elemental. They create conditions for listening (unhurried time, no devices, good food), reward curiosity (diverse guests, unexpected combinations), and regularly lead to action (collaborations sparked over dinner). The art is in the hosting itself, in creating a space where people feel welcome enough to say what they actually think.\n\n## Connection to ACT\n\nThe dinners function as a low-friction entry point to the ACT ecosystem. For many partners, the first contact with ACT's work happens over a meal rather than in a meeting room. This is intentional. ACT's model of relational trust, where partnerships are built through genuine human connection before any formal arrangement, requires spaces where that trust can form.\n\n## See Also\n\n- [[act-identity|A Curious Tractor]] — the ecosystem these dinners serve\n- [[marriage-celebrant|Marriage Celebrant]] — another community gathering format\n- [[the-confessional|The Confessional]] — intimate storytelling in a different setting",
+      "sectionId": "projects",
+      "sectionTitle": "Projects",
+      "stem": "act-monthly-dinners",
+      "path": "projects/act-monthly-dinners",
+      "relativePath": "projects/act-monthly-dinners.md",
+      "modifiedAt": "2026-04-12T23:15:29.577Z"
     },
     {
       "title": "ACT Public Voice",
@@ -100,7 +111,7 @@
       "stem": "act-public-voice",
       "path": "projects/act-public-voice",
       "relativePath": "projects/act-public-voice.md",
-      "modifiedAt": "2026-04-11T01:54:22.689Z"
+      "modifiedAt": "2026-04-12T20:50:21.786Z"
     },
     {
       "title": "ACT Regenerative Studio",
@@ -111,7 +122,7 @@
       "stem": "act-studio",
       "path": "projects/act-studio",
       "relativePath": "projects/act-studio/act-studio.md",
-      "modifiedAt": "2026-04-11T02:03:22.729Z"
+      "modifiedAt": "2026-04-12T20:50:21.786Z"
     },
     {
       "title": "ACT Technical Architecture",
@@ -122,7 +133,7 @@
       "stem": "act-architecture",
       "path": "technical/act-architecture",
       "relativePath": "technical/act-architecture.md",
-      "modifiedAt": "2026-04-10T01:29:09.138Z"
+      "modifiedAt": "2026-04-12T20:50:21.840Z"
     },
     {
       "title": "ACT Visual System",
@@ -133,7 +144,7 @@
       "stem": "visual-system",
       "path": "concepts/visual-system",
       "relativePath": "concepts/visual-system.md",
-      "modifiedAt": "2026-04-09T23:43:00.674Z"
+      "modifiedAt": "2026-04-12T20:50:21.744Z"
     },
     {
       "title": "ACT Voice Guide",
@@ -144,7 +155,7 @@
       "stem": "voice-guide",
       "path": "concepts/voice-guide",
       "relativePath": "concepts/voice-guide.md",
-      "modifiedAt": "2026-04-11T01:54:22.690Z"
+      "modifiedAt": "2026-04-12T20:50:21.744Z"
     },
     {
       "title": "ACT Wikipedia",
@@ -177,7 +188,7 @@
       "stem": "ai-community-engagement",
       "path": "concepts/ai-community-engagement",
       "relativePath": "concepts/ai-community-engagement.md",
-      "modifiedAt": "2026-04-10T00:09:05.597Z"
+      "modifiedAt": "2026-04-12T20:50:21.738Z"
     },
     {
       "title": "AI Ethics & Agent Strategy",
@@ -188,7 +199,7 @@
       "stem": "ai-ethics",
       "path": "concepts/ai-ethics",
       "relativePath": "concepts/ai-ethics.md",
-      "modifiedAt": "2026-04-10T01:29:09.136Z"
+      "modifiedAt": "2026-04-12T20:50:21.739Z"
     },
     {
       "title": "Allan Palm Island",
@@ -199,7 +210,7 @@
       "stem": "allan-palm-island",
       "path": "people/allan-palm-island",
       "relativePath": "people/allan-palm-island.md",
-      "modifiedAt": "2026-04-10T01:52:41.007Z"
+      "modifiedAt": "2026-04-12T20:50:21.779Z"
     },
     {
       "title": "ALMA — Authentic Learning for Meaningful Accountability",
@@ -210,7 +221,7 @@
       "stem": "alma",
       "path": "concepts/alma",
       "relativePath": "concepts/alma.md",
-      "modifiedAt": "2026-04-10T01:37:22.243Z"
+      "modifiedAt": "2026-04-12T20:50:21.739Z"
     },
     {
       "title": "ALMA Intervention Portfolio",
@@ -232,7 +243,7 @@
       "stem": "art-as-infrastructure",
       "path": "art/philosophy/art-as-infrastructure",
       "relativePath": "art/philosophy/art-as-infrastructure.md",
-      "modifiedAt": "2026-04-10T23:18:49.142Z"
+      "modifiedAt": "2026-04-12T20:50:21.737Z"
     },
     {
       "title": "Atnarpa Homestead Cultural Exchange - Girls Trip",
@@ -265,7 +276,7 @@
       "stem": "aunty-ethel-robertson",
       "path": "people/aunty-ethel-robertson",
       "relativePath": "people/aunty-ethel-robertson.md",
-      "modifiedAt": "2026-04-10T01:52:41.008Z"
+      "modifiedAt": "2026-04-12T20:50:21.779Z"
     },
     {
       "title": "Aunty Iris May Whitey",
@@ -276,7 +287,7 @@
       "stem": "aunty-iris-may-whitey",
       "path": "people/aunty-iris-may-whitey",
       "relativePath": "people/aunty-iris-may-whitey.md",
-      "modifiedAt": "2026-04-10T01:56:19.178Z"
+      "modifiedAt": "2026-04-12T20:50:21.779Z"
     },
     {
       "title": "Barkly Backbone",
@@ -287,7 +298,7 @@
       "stem": "barkly-backbone",
       "path": "projects/barkly-backbone",
       "relativePath": "projects/barkly-backbone.md",
-      "modifiedAt": "2026-04-11T02:45:54.588Z"
+      "modifiedAt": "2026-04-12T20:50:21.789Z"
     },
     {
       "title": "Barry Rodgerig",
@@ -298,7 +309,7 @@
       "stem": "barry-rodgerig",
       "path": "people/barry-rodgerig",
       "relativePath": "people/barry-rodgerig.md",
-      "modifiedAt": "2026-04-11T01:46:28.526Z"
+      "modifiedAt": "2026-04-12T20:50:21.780Z"
     },
     {
       "title": "Beautiful Obsolescence",
@@ -309,7 +320,7 @@
       "stem": "beautiful-obsolescence",
       "path": "concepts/beautiful-obsolescence",
       "relativePath": "concepts/beautiful-obsolescence.md",
-      "modifiedAt": "2026-04-11T01:49:46.781Z"
+      "modifiedAt": "2026-04-12T20:50:21.740Z"
     },
     {
       "title": "Benjamin Knight",
@@ -320,7 +331,7 @@
       "stem": "benjamin-knight",
       "path": "people/benjamin-knight",
       "relativePath": "people/benjamin-knight.md",
-      "modifiedAt": "2026-04-11T02:03:22.729Z"
+      "modifiedAt": "2026-04-12T20:50:21.780Z"
     },
     {
       "title": "BG Fit",
@@ -331,7 +342,7 @@
       "stem": "bg-fit",
       "path": "projects/bg-fit",
       "relativePath": "projects/bg-fit.md",
-      "modifiedAt": "2026-04-11T02:45:54.587Z"
+      "modifiedAt": "2026-04-12T20:50:21.789Z"
     },
     {
       "title": "Black Cockatoo Valley",
@@ -342,7 +353,7 @@
       "stem": "black-cockatoo-valley",
       "path": "projects/act-farm/black-cockatoo-valley",
       "relativePath": "projects/act-farm/black-cockatoo-valley.md",
-      "modifiedAt": "2026-04-11T01:32:18.027Z"
+      "modifiedAt": "2026-04-12T20:50:21.785Z"
     },
     {
       "title": "Brodie Germaine",
@@ -353,7 +364,7 @@
       "stem": "brodie-germaine",
       "path": "people/brodie-germaine",
       "relativePath": "people/brodie-germaine.md",
-      "modifiedAt": "2026-04-11T01:45:06.306Z"
+      "modifiedAt": "2026-04-12T20:50:21.780Z"
     },
     {
       "title": "Building a Healing Path: Uncle Dale's Vision for Youth Justice Reform",
@@ -386,7 +397,7 @@
       "stem": "campfire",
       "path": "projects/campfire",
       "relativePath": "projects/campfire.md",
-      "modifiedAt": "2026-04-11T02:45:54.588Z"
+      "modifiedAt": "2026-04-12T20:50:21.789Z"
     },
     {
       "title": "Caring for Those Who Care",
@@ -397,7 +408,7 @@
       "stem": "caring-for-those-who-care",
       "path": "projects/caring-for-those-who-care",
       "relativePath": "projects/caring-for-those-who-care.md",
-      "modifiedAt": "2026-04-11T02:48:42.277Z"
+      "modifiedAt": "2026-04-12T20:50:21.790Z"
     },
     {
       "title": "Cars and Microcontrollers",
@@ -408,7 +419,7 @@
       "stem": "cars-and-microcontrollers",
       "path": "projects/act-studio/cars-and-microcontrollers",
       "relativePath": "projects/act-studio/cars-and-microcontrollers.md",
-      "modifiedAt": "2026-04-11T01:54:22.692Z"
+      "modifiedAt": "2026-04-12T20:50:21.786Z"
     },
     {
       "title": "CB: Understanding Cultural Responsibility and Leadership",
@@ -441,7 +452,7 @@
       "stem": "civic-world-model",
       "path": "concepts/civic-world-model",
       "relativePath": "concepts/civic-world-model.md",
-      "modifiedAt": "2026-04-10T00:12:44.325Z"
+      "modifiedAt": "2026-04-12T20:50:21.740Z"
     },
     {
       "title": "CivicGraph",
@@ -452,7 +463,7 @@
       "stem": "civicgraph",
       "path": "projects/civicgraph",
       "relativePath": "projects/civicgraph.md",
-      "modifiedAt": "2026-04-11T02:53:24.787Z"
+      "modifiedAt": "2026-04-12T20:50:21.790Z"
     },
     {
       "title": "CivicGraph UK Market Entry — Deep Research",
@@ -474,7 +485,7 @@
       "stem": "community-capital",
       "path": "projects/community-capital",
       "relativePath": "projects/community-capital.md",
-      "modifiedAt": "2026-04-11T02:45:54.589Z"
+      "modifiedAt": "2026-04-12T20:50:21.790Z"
     },
     {
       "title": "Community Innovation: Beds, Washing Machines, and Orange Sky",
@@ -507,7 +518,7 @@
       "stem": "confit-pathways",
       "path": "projects/confit-pathways",
       "relativePath": "projects/confit-pathways.md",
-      "modifiedAt": "2026-04-10T20:28:58.125Z"
+      "modifiedAt": "2026-04-12T20:50:21.791Z"
     },
     {
       "title": "Consent as Infrastructure",
@@ -518,7 +529,7 @@
       "stem": "consent-as-infrastructure",
       "path": "concepts/consent-as-infrastructure",
       "relativePath": "concepts/consent-as-infrastructure.md",
-      "modifiedAt": "2026-04-10T01:29:09.136Z"
+      "modifiedAt": "2026-04-12T20:50:21.740Z"
     },
     {
       "title": "CONTAINED",
@@ -529,7 +540,7 @@
       "stem": "contained",
       "path": "projects/contained",
       "relativePath": "projects/contained.md",
-      "modifiedAt": "2026-04-10T23:23:06.295Z"
+      "modifiedAt": "2026-04-12T20:50:21.791Z"
     },
     {
       "title": "Continuous Pipeline Architecture",
@@ -540,7 +551,18 @@
       "stem": "continuous-pipeline",
       "path": "decisions/continuous-pipeline",
       "relativePath": "decisions/continuous-pipeline.md",
-      "modifiedAt": "2026-04-11T20:56:48.272Z"
+      "modifiedAt": "2026-04-12T20:50:21.747Z"
+    },
+    {
+      "title": "Custodian Economy",
+      "excerpt": "An economic model exploring what it means to be custodians rather than owners, applied to land, knowledge, and enterprise.",
+      "content": "> An economic model exploring what it means to be custodians rather than owners, applied to land, knowledge, and enterprise.\n\n**Status:** Active | **Code:** ACT-CE | **Tier:** Satellite\n\n## Overview\n\nCustodian Economy is ACT's exploration of economic models grounded in custodianship rather than ownership. The project asks a fundamental question: what does an economy look like when its participants see themselves as temporary stewards of resources, land, and knowledge rather than extractive owners?\n\nThis work draws on First Nations concepts of custodianship of Country, blended with contemporary thinking about [[community-capital|community capital]], regenerative economics, and mission-locked enterprise structures. It informs the dual-entity architecture that ACT itself uses (Foundation for charitable work, Ventures for mission-locked trading) and the broader ecosystem's approach to value creation that doesn't require value extraction.\n\n## Key Details\n\n- **Category:** Enterprise\n- **Related program:** Economic models (ALMA)\n- **Xero tracking:** ACT-CE\n\n## Themes\n\n### Beyond Ownership\n\nThe dominant economic paradigm assumes ownership as the foundation of value. Custodian Economy challenges this by modelling alternatives where:\n\n- Land is held in trust for future generations rather than speculated upon\n- Knowledge is shared as commons rather than locked behind intellectual property\n- Enterprise generates surplus for community benefit rather than shareholder extraction\n- Success is measured by what you leave behind, not what you accumulate\n\n### First Nations Foundations\n\nAboriginal and Torres Strait Islander peoples have practised custodial economics for tens of thousands of years. The project doesn't appropriate these practices but learns from them, always in partnership and with proper protocols. The concept of caring for Country, where humans are embedded in reciprocal relationships with land, water, and other species, offers a living counter-model to extractive capitalism.\n\n## Connection to ACT\n\nCustodian Economy provides the theoretical underpinning for several ACT initiatives:\n\n- [[black-cockatoo-valley|Black Cockatoo Valley]] — regenerative conservation as custodianship in practice\n- [[goods-on-country|Goods on Country]] — ethical supply chains grounded in place-based stewardship\n- [[community-capital|Community Capital]] — alternative capital structures for community-led enterprise\n- [[designing-for-obsolescence|Designing for Obsolescence]] — building organisations that hand over power rather than accumulate it\n\n## See Also\n\n- [[act-identity|A Curious Tractor]] — the ecosystem this thinking shapes\n- [[glossary|Glossary]] — definitions of key ACT concepts",
+      "sectionId": "projects",
+      "sectionTitle": "Projects",
+      "stem": "custodian-economy",
+      "path": "projects/custodian-economy",
+      "relativePath": "projects/custodian-economy.md",
+      "modifiedAt": "2026-04-12T23:15:18.406Z"
     },
     {
       "title": "Cyndel Louise Pryor",
@@ -551,7 +573,7 @@
       "stem": "cyndel-louise-pryor",
       "path": "people/cyndel-louise-pryor",
       "relativePath": "people/cyndel-louise-pryor.md",
-      "modifiedAt": "2026-04-10T01:56:19.178Z"
+      "modifiedAt": "2026-04-12T20:50:21.780Z"
     },
     {
       "title": "Dad.Lab.25",
@@ -562,7 +584,7 @@
       "stem": "dad-lab-25",
       "path": "projects/dad-lab-25",
       "relativePath": "projects/dad-lab-25.md",
-      "modifiedAt": "2026-04-11T02:48:42.277Z"
+      "modifiedAt": "2026-04-12T20:50:21.791Z"
     },
     {
       "title": "DeadlyLabs",
@@ -573,7 +595,7 @@
       "stem": "deadlylabs",
       "path": "projects/deadlylabs",
       "relativePath": "projects/deadlylabs.md",
-      "modifiedAt": "2026-04-08T09:11:25.324Z"
+      "modifiedAt": "2026-04-12T23:29:24.864Z"
     },
     {
       "title": "Descript Transcription & ALMA Workflow",
@@ -584,7 +606,7 @@
       "stem": "transcription-workflow",
       "path": "technical/transcription-workflow",
       "relativePath": "technical/transcription-workflow.md",
-      "modifiedAt": "2026-04-10T01:29:09.139Z"
+      "modifiedAt": "2026-04-12T20:50:21.841Z"
     },
     {
       "title": "Designing for Obsolescence",
@@ -595,7 +617,7 @@
       "stem": "designing-for-obsolescence",
       "path": "projects/designing-for-obsolescence",
       "relativePath": "projects/designing-for-obsolescence.md",
-      "modifiedAt": "2026-04-11T02:48:42.278Z"
+      "modifiedAt": "2026-04-12T20:50:21.792Z"
     },
     {
       "title": "Diagrama",
@@ -606,7 +628,7 @@
       "stem": "diagrama",
       "path": "projects/diagrama",
       "relativePath": "projects/diagrama.md",
-      "modifiedAt": "2026-04-11T02:48:42.278Z"
+      "modifiedAt": "2026-04-12T20:50:21.792Z"
     },
     {
       "title": "Diagrama Spain: The Meetings Behind ACT's Engagement",
@@ -628,7 +650,7 @@
       "stem": "dianne-stokes",
       "path": "people/dianne-stokes",
       "relativePath": "people/dianne-stokes.md",
-      "modifiedAt": "2026-04-10T01:53:14.160Z"
+      "modifiedAt": "2026-04-12T20:50:21.781Z"
     },
     {
       "title": "Educational Transformation: 72% Return to School",
@@ -672,7 +694,7 @@
       "stem": "elsa-mortoa",
       "path": "people/elsa-mortoa",
       "relativePath": "people/elsa-mortoa.md",
-      "modifiedAt": "2026-04-10T01:56:19.178Z"
+      "modifiedAt": "2026-04-12T20:50:21.781Z"
     },
     {
       "title": "Empathy Ledger",
@@ -683,7 +705,7 @@
       "stem": "empathy-ledger",
       "path": "projects/empathy-ledger",
       "relativePath": "projects/empathy-ledger.md",
-      "modifiedAt": "2026-04-11T02:58:29.663Z"
+      "modifiedAt": "2026-04-12T20:50:21.792Z"
     },
     {
       "title": "Empathy Ledger Annual Field Service",
@@ -716,7 +738,7 @@
       "stem": "feel-good-project",
       "path": "projects/feel-good-project",
       "relativePath": "projects/feel-good-project.md",
-      "modifiedAt": "2026-04-11T02:52:09.619Z"
+      "modifiedAt": "2026-04-12T20:50:21.793Z"
     },
     {
       "title": "Finke Desert Race Country Experience",
@@ -738,7 +760,7 @@
       "stem": "fishers-oysters",
       "path": "projects/fishers-oysters",
       "relativePath": "projects/fishers-oysters.md",
-      "modifiedAt": "2026-04-10T02:07:52.917Z"
+      "modifiedAt": "2026-04-12T20:50:21.793Z"
     },
     {
       "title": "Five-Year Cashflow Model",
@@ -771,7 +793,7 @@
       "stem": "2026-04-founder-lanes-and-top-two-bets",
       "path": "decisions/2026-04-founder-lanes-and-top-two-bets",
       "relativePath": "decisions/2026-04-founder-lanes-and-top-two-bets.md",
-      "modifiedAt": "2026-04-09T22:56:00.779Z"
+      "modifiedAt": "2026-04-12T20:50:21.746Z"
     },
     {
       "title": "Funding Transparency",
@@ -782,7 +804,7 @@
       "stem": "funding-transparency",
       "path": "concepts/funding-transparency",
       "relativePath": "concepts/funding-transparency.md",
-      "modifiedAt": "2026-04-11T02:46:06.312Z"
+      "modifiedAt": "2026-04-12T20:50:21.741Z"
     },
     {
       "title": "Girls Day Out: Cultural Empowerment at Standley Chasm",
@@ -804,7 +826,7 @@
       "stem": "global-laundry-alliance",
       "path": "projects/global-laundry-alliance",
       "relativePath": "projects/global-laundry-alliance.md",
-      "modifiedAt": "2026-04-11T02:52:09.619Z"
+      "modifiedAt": "2026-04-12T20:50:21.793Z"
     },
     {
       "title": "Global Precedents",
@@ -837,7 +859,7 @@
       "stem": "gold-phone",
       "path": "projects/act-studio/gold-phone",
       "relativePath": "projects/act-studio/gold-phone.md",
-      "modifiedAt": "2026-04-11T01:54:22.692Z"
+      "modifiedAt": "2026-04-12T20:50:21.787Z"
     },
     {
       "title": "Goods on Country",
@@ -848,7 +870,7 @@
       "stem": "goods-on-country",
       "path": "projects/goods-on-country",
       "relativePath": "projects/goods-on-country.md",
-      "modifiedAt": "2026-04-11T03:15:29.642Z"
+      "modifiedAt": "2026-04-12T20:50:21.794Z"
     },
     {
       "title": "Governance & Consent (Operational)",
@@ -859,7 +881,7 @@
       "stem": "governance-consent",
       "path": "concepts/governance-consent",
       "relativePath": "concepts/governance-consent.md",
-      "modifiedAt": "2026-04-10T01:29:09.137Z"
+      "modifiedAt": "2026-04-12T20:50:21.741Z"
     },
     {
       "title": "GrantScope (CivicGraph)",
@@ -870,7 +892,7 @@
       "stem": "grantscope",
       "path": "projects/grantscope",
       "relativePath": "projects/grantscope.md",
-      "modifiedAt": "2026-04-11T02:58:29.663Z"
+      "modifiedAt": "2026-04-12T20:50:21.794Z"
     },
     {
       "title": "Green Harvest Witta",
@@ -881,7 +903,7 @@
       "stem": "green-harvest-witta",
       "path": "projects/the-harvest/green-harvest-witta",
       "relativePath": "projects/the-harvest/green-harvest-witta.md",
-      "modifiedAt": "2026-04-10T23:53:03.490Z"
+      "modifiedAt": "2026-04-12T20:50:21.801Z"
     },
     {
       "title": "Gurtrude Grace Richardson",
@@ -892,7 +914,7 @@
       "stem": "gurtrude-grace-richardson",
       "path": "people/gurtrude-grace-richardson",
       "relativePath": "people/gurtrude-grace-richardson.md",
-      "modifiedAt": "2026-04-10T01:56:19.178Z"
+      "modifiedAt": "2026-04-12T20:50:21.781Z"
     },
     {
       "title": "Healing Journey to Country: Young Men Find Connection at Atnarpa Station",
@@ -925,7 +947,7 @@
       "stem": "indigenous-data-sovereignty",
       "path": "concepts/indigenous-data-sovereignty",
       "relativePath": "concepts/indigenous-data-sovereignty.md",
-      "modifiedAt": "2026-04-10T01:29:09.137Z"
+      "modifiedAt": "2026-04-12T20:50:21.741Z"
     },
     {
       "title": "Irene Nleallajar",
@@ -936,7 +958,7 @@
       "stem": "irene-nleallajar",
       "path": "people/irene-nleallajar",
       "relativePath": "people/irene-nleallajar.md",
-      "modifiedAt": "2026-04-10T02:08:54.648Z"
+      "modifiedAt": "2026-04-12T20:50:21.782Z"
     },
     {
       "title": "Jesús Teruel — Diagrama Key Story",
@@ -958,7 +980,7 @@
       "stem": "junes-patch",
       "path": "projects/junes-patch",
       "relativePath": "projects/junes-patch.md",
-      "modifiedAt": "2026-04-10T19:45:14.437Z"
+      "modifiedAt": "2026-04-12T20:50:21.794Z"
     },
     {
       "title": "Justice & Community Funding Landscape",
@@ -980,7 +1002,7 @@
       "stem": "justicehub",
       "path": "projects/justicehub",
       "relativePath": "projects/justicehub/justicehub.md",
-      "modifiedAt": "2026-04-11T02:58:29.662Z"
+      "modifiedAt": "2026-04-12T20:50:21.795Z"
     },
     {
       "title": "JusticeHub: Origin and Evolution Through Meeting Records",
@@ -1002,7 +1024,7 @@
       "stem": "kristy-bloomfield",
       "path": "people/kristy-bloomfield",
       "relativePath": "people/kristy-bloomfield.md",
-      "modifiedAt": "2026-04-11T02:58:29.663Z"
+      "modifiedAt": "2026-04-12T20:50:21.782Z"
     },
     {
       "title": "LCAA Method",
@@ -1013,7 +1035,7 @@
       "stem": "lcaa-method",
       "path": "concepts/lcaa-method",
       "relativePath": "concepts/lcaa-method.md",
-      "modifiedAt": "2026-04-11T02:53:24.787Z"
+      "modifiedAt": "2026-04-12T20:50:21.742Z"
     },
     {
       "title": "Lesotho — open data needs",
@@ -1024,7 +1046,7 @@
       "stem": "2026-04-09-lesotho-data-needs",
       "path": "decisions/2026-04-09-lesotho-data-needs",
       "relativePath": "decisions/2026-04-09-lesotho-data-needs.md",
-      "modifiedAt": "2026-04-08T23:03:12.453Z"
+      "modifiedAt": "2026-04-12T20:50:21.746Z"
     },
     {
       "title": "Living Website Operating System",
@@ -1035,7 +1057,7 @@
       "stem": "living-website-operating-system",
       "path": "concepts/living-website-operating-system",
       "relativePath": "concepts/living-website-operating-system.md",
-      "modifiedAt": "2026-04-11T01:37:35.634Z"
+      "modifiedAt": "2026-04-12T20:50:21.742Z"
     },
     {
       "title": "LLM Knowledge Base",
@@ -1046,7 +1068,7 @@
       "stem": "llm-knowledge-base",
       "path": "concepts/llm-knowledge-base",
       "relativePath": "concepts/llm-knowledge-base.md",
-      "modifiedAt": "2026-04-11T01:31:24.214Z"
+      "modifiedAt": "2026-04-12T20:50:21.742Z"
     },
     {
       "title": "Local AI Architecture",
@@ -1057,7 +1079,7 @@
       "stem": "local-ai-architecture",
       "path": "technical/local-ai-architecture",
       "relativePath": "technical/local-ai-architecture.md",
-      "modifiedAt": "2026-04-10T01:21:55.216Z"
+      "modifiedAt": "2026-04-12T20:50:21.840Z"
     },
     {
       "title": "M: From Homelessness to Independent Living",
@@ -1079,7 +1101,18 @@
       "stem": "marjoyie-burns",
       "path": "people/marjoyie-burns",
       "relativePath": "people/marjoyie-burns.md",
-      "modifiedAt": "2026-04-10T01:56:19.178Z"
+      "modifiedAt": "2026-04-12T20:50:21.782Z"
+    },
+    {
+      "title": "Marriage Celebrant",
+      "excerpt": "Ben Knight's civil marriage celebrant practice, connecting ceremony with community.",
+      "content": "> Ben Knight's civil marriage celebrant practice, connecting ceremony with community.\n\n**Status:** Active | **Code:** ACT-CB | **Tier:** Satellite\n\n## Overview\n\nMarriage Celebrant is Ben Knight's registered civil marriage celebrant practice. Operating as a satellite project within the [[act-ecosystem|ACT ecosystem]], it brings the same care for storytelling and human connection that runs through ACT's other work into the ceremony space.\n\nThe practice reflects ACT's broader philosophy that meaningful rituals and community gathering are acts of social infrastructure. Each ceremony is approached as a story worth telling well, with attention to the couple's own language, culture, and context rather than templated scripts.\n\n## Key Details\n\n- **Category:** Community\n- **Celebrant:** [[benjamin-knight|Benjamin Knight]]\n- **Xero tracking:** ACT-CB\n\n## Connection to ACT\n\nWhile a standalone professional service, the celebrant practice shares DNA with ACT's storytelling and community-building work. The skills of deep listening, narrative craft, and creating space for people to be seen are the same ones that power [[empathy-ledger|Empathy Ledger]] and [[the-confessional|The Confessional]].\n\n## See Also\n\n- [[act-monthly-dinners|ACT Monthly Dinners]] — another community gathering format\n- [[act-identity|A Curious Tractor]]",
+      "sectionId": "projects",
+      "sectionTitle": "Projects",
+      "stem": "marriage-celebrant",
+      "path": "projects/marriage-celebrant",
+      "relativePath": "projects/marriage-celebrant.md",
+      "modifiedAt": "2026-04-12T23:15:05.132Z"
     },
     {
       "title": "Meeting Intelligence Synthesis: ACT's Strategic Posture 2023–2026",
@@ -1101,7 +1134,7 @@
       "stem": "minderoo-pitch-package",
       "path": "projects/justicehub/minderoo-pitch-package",
       "relativePath": "projects/justicehub/minderoo-pitch-package.md",
-      "modifiedAt": "2026-04-08T23:30:24.881Z"
+      "modifiedAt": "2026-04-12T20:50:21.795Z"
     },
     {
       "title": "Mount Isa (Kalkadoon Country)",
@@ -1112,7 +1145,7 @@
       "stem": "mount-isa",
       "path": "communities/mount-isa",
       "relativePath": "communities/mount-isa.md",
-      "modifiedAt": "2026-04-10T01:51:39.962Z"
+      "modifiedAt": "2026-04-12T20:50:21.737Z"
     },
     {
       "title": "Mounty Yarns",
@@ -1123,7 +1156,7 @@
       "stem": "mounty-yarns",
       "path": "projects/mounty-yarns",
       "relativePath": "projects/mounty-yarns.md",
-      "modifiedAt": "2026-04-11T02:58:29.662Z"
+      "modifiedAt": "2026-04-12T20:50:21.798Z"
     },
     {
       "title": "MS: From Disconnected Youth to Future Tourism Entrepreneur",
@@ -1145,7 +1178,7 @@
       "stem": "nicholas-marchesi",
       "path": "people/nicholas-marchesi",
       "relativePath": "people/nicholas-marchesi.md",
-      "modifiedAt": "2026-04-11T02:52:09.619Z"
+      "modifiedAt": "2026-04-12T20:50:21.782Z"
     },
     {
       "title": "OCAP Principles",
@@ -1167,7 +1200,7 @@
       "stem": "oonchiumpa",
       "path": "projects/oonchiumpa",
       "relativePath": "projects/oonchiumpa.md",
-      "modifiedAt": "2026-04-11T01:37:35.636Z"
+      "modifiedAt": "2026-04-12T20:50:21.799Z"
     },
     {
       "title": "Open Questions — Empathy Ledger World Tour — RESOLVED 2026-04-09",
@@ -1178,7 +1211,7 @@
       "stem": "2026-04-09-empathy-ledger-tour-questions",
       "path": "decisions/2026-04-09-empathy-ledger-tour-questions",
       "relativePath": "decisions/2026-04-09-empathy-ledger-tour-questions.md",
-      "modifiedAt": "2026-04-08T21:36:32.359Z"
+      "modifiedAt": "2026-04-12T20:50:21.746Z"
     },
     {
       "title": "Operation Luna Success: Dramatic Reduction in Youth Offending",
@@ -1200,7 +1233,7 @@
       "stem": "palm-island",
       "path": "communities/palm-island",
       "relativePath": "communities/palm-island.md",
-      "modifiedAt": "2026-04-11T02:03:22.729Z"
+      "modifiedAt": "2026-04-12T20:50:21.738Z"
     },
     {
       "title": "Palm Island Community Company (PICC)",
@@ -1211,7 +1244,7 @@
       "stem": "picc",
       "path": "projects/picc",
       "relativePath": "projects/picc/picc.md",
-      "modifiedAt": "2026-04-11T02:58:29.663Z"
+      "modifiedAt": "2026-04-12T20:50:21.800Z"
     },
     {
       "title": "Peggy Palm Island's Story",
@@ -1233,7 +1266,7 @@
       "stem": "picc-annual-report",
       "path": "projects/picc/picc-annual-report",
       "relativePath": "projects/picc/picc-annual-report.md",
-      "modifiedAt": "2026-04-10T02:07:52.916Z"
+      "modifiedAt": "2026-04-12T20:50:21.799Z"
     },
     {
       "title": "PICC Centre Precinct",
@@ -1244,7 +1277,7 @@
       "stem": "picc-centre-precinct",
       "path": "projects/picc/picc-centre-precinct",
       "relativePath": "projects/picc/picc-centre-precinct.md",
-      "modifiedAt": "2026-04-11T01:48:28.966Z"
+      "modifiedAt": "2026-04-12T20:50:21.799Z"
     },
     {
       "title": "PICC Elders Hull River Trip",
@@ -1255,7 +1288,7 @@
       "stem": "picc-elders-hull-river",
       "path": "projects/picc/picc-elders-hull-river",
       "relativePath": "projects/picc/picc-elders-hull-river.md",
-      "modifiedAt": "2026-04-10T23:53:03.491Z"
+      "modifiedAt": "2026-04-12T20:50:21.800Z"
     },
     {
       "title": "PICC Photo Kiosk",
@@ -1266,7 +1299,7 @@
       "stem": "picc-photo-kiosk",
       "path": "projects/picc/picc-photo-kiosk",
       "relativePath": "projects/picc/picc-photo-kiosk.md",
-      "modifiedAt": "2026-04-10T23:53:03.491Z"
+      "modifiedAt": "2026-04-12T20:50:21.800Z"
     },
     {
       "title": "Place & Land Practice",
@@ -1321,7 +1354,7 @@
       "stem": "project-identity-and-tagging-system",
       "path": "concepts/project-identity-and-tagging-system",
       "relativePath": "concepts/project-identity-and-tagging-system.md",
-      "modifiedAt": "2026-04-10T23:08:16.937Z"
+      "modifiedAt": "2026-04-12T20:50:21.743Z"
     },
     {
       "title": "Proud Pita Pita Wayaka Man: My Roots",
@@ -1337,13 +1370,13 @@
     {
       "title": "Quandamooka Justice and Healing Strategy",
       "excerpt": "A justice reinvestment and community healing initiative grounded in Quandamooka Country — led by the Quandamooka people, focused on self-determination, and built on the understanding that healing and justice are inseparable.",
-      "content": "> A justice reinvestment and community healing initiative grounded in Quandamooka Country — led by the Quandamooka people, focused on self-determination, and built on the understanding that healing and justice are inseparable.\n\n## Overview\n\nThe Quandamooka Justice and Healing Strategy is a place-specific, Indigenous-led response to the justice and wellbeing challenges facing the Quandamooka people of Moreton Bay and North Stradbroke Island (Minjerribah). It operates within the justice reinvestment framework — the evidence-based approach that redirects resources from incarceration toward early intervention, community support, and healing — but grounds that framework in Quandamooka knowledge, relationships, and self-determined priorities.\n\nACT's role is supportive and facilitative. The strategy belongs to the Quandamooka community, and long-term success is defined by the community's own capacity to own and direct the work without external intermediaries.\n\n## The Place: Quandamooka Country\n\nQuandamooka Country encompasses Moreton Bay and the islands of Minjerribah (North Stradbroke Island) and Mulgumpin (Moreton Island). The Quandamooka Yoolooburrabee Aboriginal Corporation (QYAC) is the recognised traditional owner body. The country is one of ecological richness and cultural depth — and, like much of Aboriginal Australia, carries the compounding legacies of dispossession, removal, and structural disadvantage that intersect with justice system involvement.\n\n## Approach\n\n### Justice Reinvestment\nRedirecting resources from downstream responses (incarceration, child removal, crisis intervention) toward upstream investment in community wellbeing, cultural connection, economic participation, and early support. Justice reinvestment is most effective when it is community-led — and the Quandamooka strategy is built on this.\n\n### Indigenous Leadership\nEvery element of the strategy is led by Quandamooka community members and organisations. ACT does not design the strategy — it supports the community to design, resource, and implement it. This is consistent with ACT's [[designing-for-obsolescence|Designing for Obsolescence]] philosophy.\n\n### Community Healing\nThe strategy recognises that justice and healing cannot be separated. Addressing justice system involvement without addressing the underlying trauma, grief, and disconnection that drives it produces temporary statistics, not lasting change. Healing — cultural, relational, and psychological — is a strategic priority, not an afterthought.\n\n### Self-Determination\nThe measure of success is increasing Quandamooka self-determination over justice and wellbeing outcomes on Country — not reduced dependence on a particular program, but reduced dependence on external systems altogether.\n\n## LCAA Phase\n\n**Listen + Action** — The strategy begins with deep listening to Quandamooka community priorities, knowledge, and experiences of the justice system. Action follows from that listening: strategy development, investment in community-led programs, and advocacy for the policy and resource shifts that make self-determination viable.\n\n## Backlinks\n\n- [[index|ACT Wikipedia]]\n- [[lcaa-method|LCAA Method]]\n- [[justicehub|JusticeHub]]\n- [[designing-for-obsolescence|Designing for Obsolescence]]\n- [[place-based-policy-lab|Place-Based Policy Lab]]",
+      "content": "> A justice reinvestment and community healing initiative grounded in Quandamooka Country — led by the Quandamooka people, focused on self-determination, and built on the understanding that healing and justice are inseparable.\n\n**Status:** Active | **Code:** ACT-QD | **Tier:** Satellite\n\n## Overview\n\nThe Quandamooka Justice and Healing Strategy is a place-specific, Indigenous-led response to the justice and wellbeing challenges facing the Quandamooka people of Moreton Bay and North Stradbroke Island (Minjerribah). It operates within the justice reinvestment framework — the evidence-based approach that redirects resources from incarceration toward early intervention, community support, and healing — but grounds that framework in Quandamooka knowledge, relationships, and self-determined priorities.\n\nACT's role is supportive and facilitative. The strategy belongs to the Quandamooka community, and long-term success is defined by the community's own capacity to own and direct the work without external intermediaries.\n\n## The Place: Quandamooka Country\n\nQuandamooka Country encompasses Moreton Bay and the islands of Minjerribah (North Stradbroke Island) and Mulgumpin (Moreton Island). The Quandamooka Yoolooburrabee Aboriginal Corporation (QYAC) is the recognised traditional owner body. The country is one of ecological richness and cultural depth — and, like much of Aboriginal Australia, carries the compounding legacies of dispossession, removal, and structural disadvantage that intersect with justice system involvement.\n\n## Approach\n\n### Justice Reinvestment\nRedirecting resources from downstream responses (incarceration, child removal, crisis intervention) toward upstream investment in community wellbeing, cultural connection, economic participation, and early support. Justice reinvestment is most effective when it is community-led — and the Quandamooka strategy is built on this.\n\n### Indigenous Leadership\nEvery element of the strategy is led by Quandamooka community members and organisations. ACT does not design the strategy — it supports the community to design, resource, and implement it. This is consistent with ACT's [[designing-for-obsolescence|Designing for Obsolescence]] philosophy.\n\n### Community Healing\nThe strategy recognises that justice and healing cannot be separated. Addressing justice system involvement without addressing the underlying trauma, grief, and disconnection that drives it produces temporary statistics, not lasting change. Healing — cultural, relational, and psychological — is a strategic priority, not an afterthought.\n\n### Self-Determination\nThe measure of success is increasing Quandamooka self-determination over justice and wellbeing outcomes on Country — not reduced dependence on a particular program, but reduced dependence on external systems altogether.\n\n## LCAA Phase\n\n**Listen + Action** — The strategy begins with deep listening to Quandamooka community priorities, knowledge, and experiences of the justice system. Action follows from that listening: strategy development, investment in community-led programs, and advocacy for the policy and resource shifts that make self-determination viable.\n\n## Backlinks\n\n- [[index|ACT Wikipedia]]\n- [[lcaa-method|LCAA Method]]\n- [[justicehub|JusticeHub]]\n- [[designing-for-obsolescence|Designing for Obsolescence]]\n- [[place-based-policy-lab|Place-Based Policy Lab]]",
       "sectionId": "projects",
       "sectionTitle": "Projects",
       "stem": "quandamooka-justice-strategy",
       "path": "projects/quandamooka-justice-strategy",
       "relativePath": "projects/quandamooka-justice-strategy.md",
-      "modifiedAt": "2026-04-08T09:11:25.365Z"
+      "modifiedAt": "2026-04-12T23:28:20.712Z"
     },
     {
       "title": "R&D Tax Incentive Claim Strategy — FY26",
@@ -1365,7 +1398,7 @@
       "stem": "rachel-atkinson",
       "path": "people/rachel-atkinson",
       "relativePath": "people/rachel-atkinson.md",
-      "modifiedAt": "2026-04-10T02:06:47.620Z"
+      "modifiedAt": "2026-04-12T20:50:21.783Z"
     },
     {
       "title": "Redtape",
@@ -1376,7 +1409,7 @@
       "stem": "redtape",
       "path": "projects/act-studio/redtape",
       "relativePath": "projects/act-studio/redtape.md",
-      "modifiedAt": "2026-04-10T23:30:31.552Z"
+      "modifiedAt": "2026-04-12T20:50:21.787Z"
     },
     {
       "title": "Regional Arts Fellowship",
@@ -1387,7 +1420,7 @@
       "stem": "regional-arts-fellowship",
       "path": "projects/act-studio/regional-arts-fellowship",
       "relativePath": "projects/act-studio/regional-arts-fellowship.md",
-      "modifiedAt": "2026-04-11T01:59:13.012Z"
+      "modifiedAt": "2026-04-12T20:50:21.787Z"
     },
     {
       "title": "ReSOLEution",
@@ -1420,7 +1453,7 @@
       "stem": "richard-cassidy",
       "path": "people/richard-cassidy",
       "relativePath": "people/richard-cassidy.md",
-      "modifiedAt": "2026-04-11T01:46:28.526Z"
+      "modifiedAt": "2026-04-12T20:50:21.783Z"
     },
     {
       "title": "Ruby Sibley",
@@ -1431,7 +1464,7 @@
       "stem": "ruby-sibley",
       "path": "people/ruby-sibley",
       "relativePath": "people/ruby-sibley.md",
-      "modifiedAt": "2026-04-10T02:08:54.648Z"
+      "modifiedAt": "2026-04-12T20:50:21.783Z"
     },
     {
       "title": "School Partnership Success Stories",
@@ -1453,7 +1486,7 @@
       "stem": "shaun-fisher",
       "path": "people/shaun-fisher",
       "relativePath": "people/shaun-fisher.md",
-      "modifiedAt": "2026-04-10T02:06:47.620Z"
+      "modifiedAt": "2026-04-12T20:50:21.783Z"
     },
     {
       "title": "SMART Connect",
@@ -1464,7 +1497,7 @@
       "stem": "smart-connect",
       "path": "projects/smart-recovery/smart-connect",
       "relativePath": "projects/smart-recovery/smart-connect.md",
-      "modifiedAt": "2026-04-08T09:11:25.374Z"
+      "modifiedAt": "2026-04-12T20:50:21.801Z"
     },
     {
       "title": "SMART HCP GP Uplift",
@@ -1475,7 +1508,7 @@
       "stem": "smart-hcp-gp-uplift",
       "path": "projects/smart-recovery/smart-hcp-gp-uplift",
       "relativePath": "projects/smart-recovery/smart-hcp-gp-uplift.md",
-      "modifiedAt": "2026-04-08T09:11:25.377Z"
+      "modifiedAt": "2026-04-12T20:50:21.801Z"
     },
     {
       "title": "SMART Recovery GP Kits",
@@ -1486,7 +1519,7 @@
       "stem": "smart-recovery-gp-kits",
       "path": "projects/smart-recovery/smart-recovery-gp-kits",
       "relativePath": "projects/smart-recovery/smart-recovery-gp-kits.md",
-      "modifiedAt": "2026-04-08T09:11:25.381Z"
+      "modifiedAt": "2026-04-12T20:50:21.801Z"
     },
     {
       "title": "SMART Recovery: The Meetings Behind SMART Connect",
@@ -1508,7 +1541,7 @@
       "stem": "social-soil-canvas",
       "path": "concepts/social-soil-canvas",
       "relativePath": "concepts/social-soil-canvas.md",
-      "modifiedAt": "2026-04-11T01:49:46.782Z"
+      "modifiedAt": "2026-04-12T20:50:21.743Z"
     },
     {
       "title": "Source Summary — 2026 Roadmap",
@@ -1519,7 +1552,7 @@
       "stem": "2026-04-07-cc-act-appendices-roadmap-2026",
       "path": "sources/2026-04-07-cc-act-appendices-roadmap-2026",
       "relativePath": "sources/2026-04-07-cc-act-appendices-roadmap-2026.md",
-      "modifiedAt": "2026-04-11T01:24:35.538Z"
+      "modifiedAt": "2026-04-12T20:50:21.817Z"
     },
     {
       "title": "Source Summary — A Curious Tractor (ACT)",
@@ -1530,7 +1563,7 @@
       "stem": "2026-04-07-cc-act-index",
       "path": "sources/2026-04-07-cc-act-index",
       "relativePath": "sources/2026-04-07-cc-act-index.md",
-      "modifiedAt": "2026-04-11T01:28:08.585Z"
+      "modifiedAt": "2026-04-12T20:50:21.820Z"
     },
     {
       "title": "Source Summary — A Curious Tractor & Beautiful Obsolescence",
@@ -1541,7 +1574,7 @@
       "stem": "2026-04-07-cc-act-beautiful-obsolescence",
       "path": "sources/2026-04-07-cc-act-beautiful-obsolescence",
       "relativePath": "sources/2026-04-07-cc-act-beautiful-obsolescence.md",
-      "modifiedAt": "2026-04-11T01:24:35.541Z"
+      "modifiedAt": "2026-04-12T20:50:21.818Z"
     },
     {
       "title": "Source Summary — A: From Guarded and Disengaged to Articulate Self-Advocate",
@@ -1552,7 +1585,7 @@
       "stem": "2026-04-07-cc-stories-a-guarded-to-self-advocate",
       "path": "sources/2026-04-07-cc-stories-a-guarded-to-self-advocate",
       "relativePath": "sources/2026-04-07-cc-stories-a-guarded-to-self-advocate.md",
-      "modifiedAt": "2026-04-11T01:28:08.586Z"
+      "modifiedAt": "2026-04-12T20:50:21.821Z"
     },
     {
       "title": "Source Summary — About New | A Curious Tractor (Current About Page)",
@@ -1563,7 +1596,7 @@
       "stem": "2026-04-07-scrape-act-place-about-new",
       "path": "sources/2026-04-07-scrape-act-place-about-new",
       "relativePath": "sources/2026-04-07-scrape-act-place-about-new.md",
-      "modifiedAt": "2026-04-11T01:18:45.314Z"
+      "modifiedAt": "2026-04-12T20:50:21.834Z"
     },
     {
       "title": "Source Summary — ACT 2024 In Review",
@@ -1574,7 +1607,7 @@
       "stem": "2026-04-07-scrape-act-place-2024-review",
       "path": "sources/2026-04-07-scrape-act-place-2024-review",
       "relativePath": "sources/2026-04-07-scrape-act-place-2024-review.md",
-      "modifiedAt": "2026-04-11T00:31:13.084Z"
+      "modifiedAt": "2026-04-12T20:50:21.833Z"
     },
     {
       "title": "Source Summary — ACT About / Farm Ecosystem",
@@ -1585,7 +1618,7 @@
       "stem": "2026-04-07-scrape-act-place-about",
       "path": "sources/2026-04-07-scrape-act-place-about",
       "relativePath": "sources/2026-04-07-scrape-act-place-about.md",
-      "modifiedAt": "2026-04-11T00:31:13.080Z"
+      "modifiedAt": "2026-04-12T20:50:21.834Z"
     },
     {
       "title": "Source Summary — ACT Farm Index Page",
@@ -1596,7 +1629,7 @@
       "stem": "2026-04-07-cc-the-farm-index",
       "path": "sources/2026-04-07-cc-the-farm-index",
       "relativePath": "sources/2026-04-07-cc-the-farm-index.md",
-      "modifiedAt": "2026-04-11T00:31:13.084Z"
+      "modifiedAt": "2026-04-12T20:50:21.829Z"
     },
     {
       "title": "Source Summary — ACT Project Page / Empathy Ledger",
@@ -1607,7 +1640,7 @@
       "stem": "2026-04-07-scrape-act-place-empathy-ledger",
       "path": "sources/2026-04-07-scrape-act-place-empathy-ledger",
       "relativePath": "sources/2026-04-07-scrape-act-place-empathy-ledger.md",
-      "modifiedAt": "2026-04-11T00:31:13.084Z"
+      "modifiedAt": "2026-04-12T20:50:21.834Z"
     },
     {
       "title": "Source Summary — ACT Regenerative Studio",
@@ -1618,7 +1651,7 @@
       "stem": "2026-04-07-cc-the-studio-index",
       "path": "sources/2026-04-07-cc-the-studio-index",
       "relativePath": "sources/2026-04-07-cc-the-studio-index.md",
-      "modifiedAt": "2026-04-11T01:28:08.594Z"
+      "modifiedAt": "2026-04-12T20:50:21.830Z"
     },
     {
       "title": "Source Summary — ACT Voice Guide",
@@ -1629,7 +1662,7 @@
       "stem": "2026-04-07-cc-act-identity-voice-guide",
       "path": "sources/2026-04-07-cc-act-identity-voice-guide",
       "relativePath": "sources/2026-04-07-cc-act-identity-voice-guide.md",
-      "modifiedAt": "2026-04-11T01:28:08.584Z"
+      "modifiedAt": "2026-04-12T20:50:21.819Z"
     },
     {
       "title": "Source Summary — Action | A Curious Tractor — Core Projects & Seeds",
@@ -1640,7 +1673,7 @@
       "stem": "2026-04-07-scrape-act-place-action",
       "path": "sources/2026-04-07-scrape-act-place-action",
       "relativePath": "sources/2026-04-07-scrape-act-place-action.md",
-      "modifiedAt": "2026-04-11T01:18:45.318Z"
+      "modifiedAt": "2026-04-12T20:50:21.834Z"
     },
     {
       "title": "Source Summary — AI Agent Strategy",
@@ -1651,7 +1684,7 @@
       "stem": "2026-04-07-cc-act-ai-ethics",
       "path": "sources/2026-04-07-cc-act-ai-ethics",
       "relativePath": "sources/2026-04-07-cc-act-ai-ethics.md",
-      "modifiedAt": "2026-04-11T01:24:35.536Z"
+      "modifiedAt": "2026-04-12T20:50:21.816Z"
     },
     {
       "title": "Source Summary — AI Enhancement System Implementation Plan",
@@ -1662,7 +1695,7 @@
       "stem": "2026-04-07-el-ai-enhancement-plan",
       "path": "sources/2026-04-07-el-ai-enhancement-plan",
       "relativePath": "sources/2026-04-07-el-ai-enhancement-plan.md",
-      "modifiedAt": "2026-04-11T01:28:08.596Z"
+      "modifiedAt": "2026-04-12T20:50:21.830Z"
     },
     {
       "title": "Source Summary — ALMA Intervention Portfolio — 2026-04-07 Snapshot",
@@ -1673,7 +1706,7 @@
       "stem": "2026-04-07-supabase-alma-portfolio-snapshot",
       "path": "sources/2026-04-07-supabase-alma-portfolio-snapshot",
       "relativePath": "sources/2026-04-07-supabase-alma-portfolio-snapshot.md",
-      "modifiedAt": "2026-04-11T01:17:47.445Z"
+      "modifiedAt": "2026-04-12T20:50:21.836Z"
     },
     {
       "title": "Source Summary — ALMA Reporting Template",
@@ -1684,7 +1717,7 @@
       "stem": "2026-04-07-cc-act-appendices-alma-template",
       "path": "sources/2026-04-07-cc-act-appendices-alma-template",
       "relativePath": "sources/2026-04-07-cc-act-appendices-alma-template.md",
-      "modifiedAt": "2026-04-11T01:24:35.537Z"
+      "modifiedAt": "2026-04-12T20:50:21.817Z"
     },
     {
       "title": "Source Summary — ALMA: Impact & Learning Model",
@@ -1695,7 +1728,7 @@
       "stem": "2026-04-07-cc-act-alma",
       "path": "sources/2026-04-07-cc-act-alma",
       "relativePath": "sources/2026-04-07-cc-act-alma.md",
-      "modifiedAt": "2026-04-11T01:24:35.537Z"
+      "modifiedAt": "2026-04-12T20:50:21.816Z"
     },
     {
       "title": "Source Summary — Article / A Comparative Analysis of Youth Justice Systems in Spain and Australia",
@@ -1706,7 +1739,7 @@
       "stem": "2025-10-11-article-a-comparative-analysis-of-youth-justice-systems-in-spain-and-australia",
       "path": "sources/2025-10-11-article-a-comparative-analysis-of-youth-justice-systems-in-spain-and-australia",
       "relativePath": "sources/2025-10-11-article-a-comparative-analysis-of-youth-justice-systems-in-spain-and-australia.md",
-      "modifiedAt": "2026-04-11T01:06:10.293Z"
+      "modifiedAt": "2026-04-12T20:50:21.804Z"
     },
     {
       "title": "Source Summary — Article / A Hero's Journey from Addiction to Inspiration: The Life of Vic",
@@ -1717,7 +1750,7 @@
       "stem": "2025-10-11-article-a-heros-journey-from-addiction-to-inspiration-the-life-of-vic",
       "path": "sources/2025-10-11-article-a-heros-journey-from-addiction-to-inspiration-the-life-of-vic",
       "relativePath": "sources/2025-10-11-article-a-heros-journey-from-addiction-to-inspiration-the-life-of-vic.md",
-      "modifiedAt": "2026-04-11T01:06:10.297Z"
+      "modifiedAt": "2026-04-12T20:50:21.804Z"
     },
     {
       "title": "Source Summary — Article / Achieving Gold-Standard Youth Crime Prevention: Designing Programs That Transform Lives",
@@ -1728,7 +1761,7 @@
       "stem": "2025-10-11-article-achieving-gold-standard-youth-crime-prevention-designing-programs-that-transform-lives",
       "path": "sources/2025-10-11-article-achieving-gold-standard-youth-crime-prevention-designing-programs-that-transform-lives",
       "relativePath": "sources/2025-10-11-article-achieving-gold-standard-youth-crime-prevention-designing-programs-that-transform-lives.md",
-      "modifiedAt": "2026-04-11T01:06:10.299Z"
+      "modifiedAt": "2026-04-12T20:50:21.804Z"
     },
     {
       "title": "Source Summary — Article / Atnarpa Homestead Cultural Exchange — Girls Trip",
@@ -1739,7 +1772,7 @@
       "stem": "2026-03-03-article-atnarpa-cultural-exchange-girls-trip",
       "path": "sources/2026-03-03-article-atnarpa-cultural-exchange-girls-trip",
       "relativePath": "sources/2026-03-03-article-atnarpa-cultural-exchange-girls-trip.md",
-      "modifiedAt": "2026-04-11T01:11:17.820Z"
+      "modifiedAt": "2026-04-12T20:50:21.812Z"
     },
     {
       "title": "Source Summary — Article / Beyond Cases and Problems: Relationship-Based Justice in Central Australia",
@@ -1750,7 +1783,7 @@
       "stem": "2025-10-11-article-beyond-cases-and-problems-relationship-based-justice-in-central-australia",
       "path": "sources/2025-10-11-article-beyond-cases-and-problems-relationship-based-justice-in-central-australia",
       "relativePath": "sources/2025-10-11-article-beyond-cases-and-problems-relationship-based-justice-in-central-australia.md",
-      "modifiedAt": "2026-04-11T01:06:10.300Z"
+      "modifiedAt": "2026-04-12T20:50:21.804Z"
     },
     {
       "title": "Source Summary — Article / Beyond Shadows: Plato's Cave and the Reimagining of Youth Justice in Australia",
@@ -1761,7 +1794,7 @@
       "stem": "2025-10-11-article-beyond-shadows-platos-cave-and-the-reimagining-of-youth-justice-in-australia",
       "path": "sources/2025-10-11-article-beyond-shadows-platos-cave-and-the-reimagining-of-youth-justice-in-australia",
       "relativePath": "sources/2025-10-11-article-beyond-shadows-platos-cave-and-the-reimagining-of-youth-justice-in-australia.md",
-      "modifiedAt": "2026-04-11T01:06:10.300Z"
+      "modifiedAt": "2026-04-12T20:50:21.805Z"
     },
     {
       "title": "Source Summary — Article / Beyond Systems: A Day with Jackqwann in the Heart of Australia",
@@ -1772,7 +1805,7 @@
       "stem": "2025-10-11-article-beyond-systems-a-day-with-jackqwann-in-the-heart-of-australia",
       "path": "sources/2025-10-11-article-beyond-systems-a-day-with-jackqwann-in-the-heart-of-australia",
       "relativePath": "sources/2025-10-11-article-beyond-systems-a-day-with-jackqwann-in-the-heart-of-australia.md",
-      "modifiedAt": "2026-04-11T01:10:51.914Z"
+      "modifiedAt": "2026-04-12T20:50:21.805Z"
     },
     {
       "title": "Source Summary — Article / Beyond Walls: What Spanish Youth Detention Centers Taught Me About Seeing Humanity First",
@@ -1783,7 +1816,7 @@
       "stem": "2025-10-11-article-beyond-walls-what-spanish-youth-detention-centers-taught-me-about-seeing-humanity-first",
       "path": "sources/2025-10-11-article-beyond-walls-what-spanish-youth-detention-centers-taught-me-about-seeing-humanity-first",
       "relativePath": "sources/2025-10-11-article-beyond-walls-what-spanish-youth-detention-centers-taught-me-about-seeing-humanity-first.md",
-      "modifiedAt": "2026-04-11T01:10:51.919Z"
+      "modifiedAt": "2026-04-12T20:50:21.805Z"
     },
     {
       "title": "Source Summary — Article / Breaking Bread, Breaking Chains: When Two Worlds Collide",
@@ -1794,7 +1827,7 @@
       "stem": "2025-10-11-article-breaking-bread-breaking-chains-when-two-worlds-collide",
       "path": "sources/2025-10-11-article-breaking-bread-breaking-chains-when-two-worlds-collide",
       "relativePath": "sources/2025-10-11-article-breaking-bread-breaking-chains-when-two-worlds-collide.md",
-      "modifiedAt": "2026-04-11T01:10:51.919Z"
+      "modifiedAt": "2026-04-12T20:50:21.805Z"
     },
     {
       "title": "Source Summary — Article / Building Revolution in Shipping Containers: The Story of CONTAINED",
@@ -1805,7 +1838,7 @@
       "stem": "2025-10-24-article-building-revolution-in-shipping-containers",
       "path": "sources/2025-10-24-article-building-revolution-in-shipping-containers",
       "relativePath": "sources/2025-10-24-article-building-revolution-in-shipping-containers.md",
-      "modifiedAt": "2026-04-11T01:11:17.818Z"
+      "modifiedAt": "2026-04-12T20:50:21.811Z"
     },
     {
       "title": "Source Summary — Article / Community at the Core: Empowering Local Solutions in Youth Justice",
@@ -1816,7 +1849,7 @@
       "stem": "2025-10-11-article-community-at-the-core-empowering-local-solutions-in-youth-justice",
       "path": "sources/2025-10-11-article-community-at-the-core-empowering-local-solutions-in-youth-justice",
       "relativePath": "sources/2025-10-11-article-community-at-the-core-empowering-local-solutions-in-youth-justice.md",
-      "modifiedAt": "2026-04-11T01:10:51.920Z"
+      "modifiedAt": "2026-04-12T20:50:21.805Z"
     },
     {
       "title": "Source Summary — Article / Confit Pathways",
@@ -1827,7 +1860,7 @@
       "stem": "2025-10-11-article-confit-pathways",
       "path": "sources/2025-10-11-article-confit-pathways",
       "relativePath": "sources/2025-10-11-article-confit-pathways.md",
-      "modifiedAt": "2026-04-11T01:10:51.920Z"
+      "modifiedAt": "2026-04-12T20:50:21.805Z"
     },
     {
       "title": "Source Summary — Article / Connecting Communities: A Network for Justice Reinvestment",
@@ -1838,7 +1871,7 @@
       "stem": "2025-10-11-article-connecting-communities-a-network-for-justice-reinvestment",
       "path": "sources/2025-10-11-article-connecting-communities-a-network-for-justice-reinvestment",
       "relativePath": "sources/2025-10-11-article-connecting-communities-a-network-for-justice-reinvestment.md",
-      "modifiedAt": "2026-04-11T01:10:51.921Z"
+      "modifiedAt": "2026-04-12T20:50:21.806Z"
     },
     {
       "title": "Source Summary — Article / Creating Spaces for Growth: The Physical and Emotional Environment of Transformation",
@@ -1849,7 +1882,7 @@
       "stem": "2025-10-11-article-creating-spaces-for-growth-the-physical-and-emotional-environment-of-transformation",
       "path": "sources/2025-10-11-article-creating-spaces-for-growth-the-physical-and-emotional-environment-of-transformation",
       "relativePath": "sources/2025-10-11-article-creating-spaces-for-growth-the-physical-and-emotional-environment-of-transformation.md",
-      "modifiedAt": "2026-04-11T01:10:51.921Z"
+      "modifiedAt": "2026-04-12T20:50:21.806Z"
     },
     {
       "title": "Source Summary — Article / Cultural Cooking Exchange with Miss Dan",
@@ -1860,7 +1893,7 @@
       "stem": "2026-03-03-article-cultural-cooking-exchange-miss-dan",
       "path": "sources/2026-03-03-article-cultural-cooking-exchange-miss-dan",
       "relativePath": "sources/2026-03-03-article-cultural-cooking-exchange-miss-dan.md",
-      "modifiedAt": "2026-04-11T01:11:17.820Z"
+      "modifiedAt": "2026-04-12T20:50:21.812Z"
     },
     {
       "title": "Source Summary — Article / Diagrama - Youth Justice Spain",
@@ -1871,7 +1904,7 @@
       "stem": "2025-10-11-article-diagrama-youth-justice-spain",
       "path": "sources/2025-10-11-article-diagrama-youth-justice-spain",
       "relativePath": "sources/2025-10-11-article-diagrama-youth-justice-spain.md",
-      "modifiedAt": "2026-04-11T01:10:51.922Z"
+      "modifiedAt": "2026-04-12T20:50:21.806Z"
     },
     {
       "title": "Source Summary — Article / Diagrama Foundation's Impact on Spain's Youth Detention System",
@@ -1882,7 +1915,7 @@
       "stem": "2025-10-11-article-diagrama-foundations-impact-on-spains-youth-detention-system",
       "path": "sources/2025-10-11-article-diagrama-foundations-impact-on-spains-youth-detention-system",
       "relativePath": "sources/2025-10-11-article-diagrama-foundations-impact-on-spains-youth-detention-system.md",
-      "modifiedAt": "2026-04-11T01:10:51.922Z"
+      "modifiedAt": "2026-04-12T20:50:21.806Z"
     },
     {
       "title": "Source Summary — Article / Eating the Paperwork: How AI Creates a Renaissance of Community Engagement",
@@ -1893,7 +1926,7 @@
       "stem": "2026-02-18-article-eating-the-paperwork-ai-community-engagement-renaissance",
       "path": "sources/2026-02-18-article-eating-the-paperwork-ai-community-engagement-renaissance",
       "relativePath": "sources/2026-02-18-article-eating-the-paperwork-ai-community-engagement-renaissance.md",
-      "modifiedAt": "2026-04-11T01:11:17.820Z"
+      "modifiedAt": "2026-04-12T20:50:21.812Z"
     },
     {
       "title": "Source Summary — Article / From Control to Care: Reimagining Staff Roles in Youth Justice",
@@ -1904,7 +1937,7 @@
       "stem": "2025-10-11-article-from-control-to-care-reimagining-staff-roles-in-youth-justice",
       "path": "sources/2025-10-11-article-from-control-to-care-reimagining-staff-roles-in-youth-justice",
       "relativePath": "sources/2025-10-11-article-from-control-to-care-reimagining-staff-roles-in-youth-justice.md",
-      "modifiedAt": "2026-04-11T01:10:51.923Z"
+      "modifiedAt": "2026-04-12T20:50:21.806Z"
     },
     {
       "title": "Source Summary — Article / From Disconnected Youth to Future Tourism Entrepreneur",
@@ -1915,7 +1948,7 @@
       "stem": "2026-03-03-article-ms-disconnected-youth-to-tourism-entrepreneur",
       "path": "sources/2026-03-03-article-ms-disconnected-youth-to-tourism-entrepreneur",
       "relativePath": "sources/2026-03-03-article-ms-disconnected-youth-to-tourism-entrepreneur.md",
-      "modifiedAt": "2026-04-11T01:11:17.821Z"
+      "modifiedAt": "2026-04-12T20:50:21.813Z"
     },
     {
       "title": "Source Summary — Article / From Guarded and Disengaged to Articulate Self-Advocate",
@@ -1926,7 +1959,7 @@
       "stem": "2026-03-03-article-a-guarded-to-articulate-self-advocate",
       "path": "sources/2026-03-03-article-a-guarded-to-articulate-self-advocate",
       "relativePath": "sources/2026-03-03-article-a-guarded-to-articulate-self-advocate.md",
-      "modifiedAt": "2026-04-11T01:11:17.820Z"
+      "modifiedAt": "2026-04-12T20:50:21.812Z"
     },
     {
       "title": "Source Summary — Article / From Homelessness to Independent Living",
@@ -1937,7 +1970,7 @@
       "stem": "2026-03-03-article-m-homelessness-to-independent-living",
       "path": "sources/2026-03-03-article-m-homelessness-to-independent-living",
       "relativePath": "sources/2026-03-03-article-m-homelessness-to-independent-living.md",
-      "modifiedAt": "2026-04-11T01:11:17.821Z"
+      "modifiedAt": "2026-04-12T20:50:21.813Z"
     },
     {
       "title": "Source Summary — Article / From Punishment to Potential: Lessons from Spain's Innovative Youth Justice Model - Day 1 with Diagrama",
@@ -1948,7 +1981,7 @@
       "stem": "2025-10-11-article-from-punishment-to-potential-lessons-from-spains-innovative-youth-justice-model---day-1-with-diagrama",
       "path": "sources/2025-10-11-article-from-punishment-to-potential-lessons-from-spains-innovative-youth-justice-model---day-1-with-diagrama",
       "relativePath": "sources/2025-10-11-article-from-punishment-to-potential-lessons-from-spains-innovative-youth-justice-model---day-1-with-diagrama.md",
-      "modifiedAt": "2026-04-11T01:10:51.924Z"
+      "modifiedAt": "2026-04-12T20:50:21.807Z"
     },
     {
       "title": "Source Summary — Article / From Shadows to Spotlight: Joe Kwon's Redemption and the Rise of ConFit",
@@ -1959,7 +1992,7 @@
       "stem": "2025-10-11-article-from-shadows-to-spotlight-joe-kwons-redemption-and-the-rise-of-confit",
       "path": "sources/2025-10-11-article-from-shadows-to-spotlight-joe-kwons-redemption-and-the-rise-of-confit",
       "relativePath": "sources/2025-10-11-article-from-shadows-to-spotlight-joe-kwons-redemption-and-the-rise-of-confit.md",
-      "modifiedAt": "2026-04-11T01:10:51.928Z"
+      "modifiedAt": "2026-04-12T20:50:21.807Z"
     },
     {
       "title": "Source Summary — Article / From Trouble to Transformation: The CAMPFIRE Journey",
@@ -1970,7 +2003,7 @@
       "stem": "2025-10-11-article-from-trouble-to-transformation-the-campfire-journey",
       "path": "sources/2025-10-11-article-from-trouble-to-transformation-the-campfire-journey",
       "relativePath": "sources/2025-10-11-article-from-trouble-to-transformation-the-campfire-journey.md",
-      "modifiedAt": "2026-04-11T01:10:51.932Z"
+      "modifiedAt": "2026-04-12T20:50:21.807Z"
     },
     {
       "title": "Source Summary — Article / Hamilton's Odyssey: Igniting Transformation Through ConFit Pathways",
@@ -1981,7 +2014,7 @@
       "stem": "2025-10-11-article-hamiltons-odyssey-igniting-transformation-through-confit-pathways",
       "path": "sources/2025-10-11-article-hamiltons-odyssey-igniting-transformation-through-confit-pathways",
       "relativePath": "sources/2025-10-11-article-hamiltons-odyssey-igniting-transformation-through-confit-pathways.md",
-      "modifiedAt": "2026-04-11T01:10:51.936Z"
+      "modifiedAt": "2026-04-12T20:50:21.807Z"
     },
     {
       "title": "Source Summary — Article / Inquiry into the Making Queensland Safer Bill 2024 - Submission",
@@ -1992,7 +2025,7 @@
       "stem": "2025-10-11-article-inquiry-into-the-making-queensland-safer-bill-2024---submission",
       "path": "sources/2025-10-11-article-inquiry-into-the-making-queensland-safer-bill-2024---submission",
       "relativePath": "sources/2025-10-11-article-inquiry-into-the-making-queensland-safer-bill-2024---submission.md",
-      "modifiedAt": "2026-04-11T01:10:51.940Z"
+      "modifiedAt": "2026-04-12T20:50:21.808Z"
     },
     {
       "title": "Source Summary — Article / Kickin It with DeadlyLabs: Igniting STEM Passions in Youth Detention",
@@ -2003,7 +2036,7 @@
       "stem": "2025-10-11-article-kickin-it-with-deadlylabs-igniting-stem-passions-in-youth-detention",
       "path": "sources/2025-10-11-article-kickin-it-with-deadlylabs-igniting-stem-passions-in-youth-detention",
       "relativePath": "sources/2025-10-11-article-kickin-it-with-deadlylabs-igniting-stem-passions-in-youth-detention.md",
-      "modifiedAt": "2026-04-11T01:10:51.941Z"
+      "modifiedAt": "2026-04-12T20:50:21.808Z"
     },
     {
       "title": "Source Summary — Article / Navigating Two Worlds: Cultural Authority and Youth Empowerment in Mparntwe",
@@ -2014,7 +2047,7 @@
       "stem": "2025-10-11-article-navigating-two-worlds-cultural-authority-and-youth-empowerment-in-mparntwe",
       "path": "sources/2025-10-11-article-navigating-two-worlds-cultural-authority-and-youth-empowerment-in-mparntwe",
       "relativePath": "sources/2025-10-11-article-navigating-two-worlds-cultural-authority-and-youth-empowerment-in-mparntwe.md",
-      "modifiedAt": "2026-04-11T01:10:51.941Z"
+      "modifiedAt": "2026-04-12T20:50:21.808Z"
     },
     {
       "title": "Source Summary — Article / Oonchiumpa: What Happens When Community Leads",
@@ -2025,7 +2058,7 @@
       "stem": "2026-03-25-article-oonchiumpa-what-happens-when-community-leads",
       "path": "sources/2026-03-25-article-oonchiumpa-what-happens-when-community-leads",
       "relativePath": "sources/2026-03-25-article-oonchiumpa-what-happens-when-community-leads.md",
-      "modifiedAt": "2026-04-11T01:11:17.823Z"
+      "modifiedAt": "2026-04-12T20:50:21.814Z"
     },
     {
       "title": "Source Summary — Article / Queensland Government Spending on Youth Justice and Community Safety",
@@ -2036,7 +2069,7 @@
       "stem": "2025-10-11-article-queensland-government-spending-on-youth-justice-and-community-safety",
       "path": "sources/2025-10-11-article-queensland-government-spending-on-youth-justice-and-community-safety",
       "relativePath": "sources/2025-10-11-article-queensland-government-spending-on-youth-justice-and-community-safety.md",
-      "modifiedAt": "2026-04-11T01:10:51.941Z"
+      "modifiedAt": "2026-04-12T20:50:21.808Z"
     },
     {
       "title": "Source Summary — Article / ReSOLEution",
@@ -2047,7 +2080,7 @@
       "stem": "2025-10-11-article-resoleution",
       "path": "sources/2025-10-11-article-resoleution",
       "relativePath": "sources/2025-10-11-article-resoleution.md",
-      "modifiedAt": "2026-04-11T01:10:51.942Z"
+      "modifiedAt": "2026-04-12T20:50:21.809Z"
     },
     {
       "title": "Source Summary — Article / ReSOLEution at Bimberi Youth Justice Centre",
@@ -2058,7 +2091,7 @@
       "stem": "2025-10-11-article-resoleution-at-bimberi-youth-justice-centre",
       "path": "sources/2025-10-11-article-resoleution-at-bimberi-youth-justice-centre",
       "relativePath": "sources/2025-10-11-article-resoleution-at-bimberi-youth-justice-centre.md",
-      "modifiedAt": "2026-04-11T01:10:51.942Z"
+      "modifiedAt": "2026-04-12T20:50:21.808Z"
     },
     {
       "title": "Source Summary — Article / Rethinking Youth Justice Funding in Queensland: Prioritising Grassroots Solutions Over Bureaucracy",
@@ -2069,7 +2102,7 @@
       "stem": "2025-10-11-article-rethinking-youth-justice-funding-in-queensland-prioritising-grassroots-solutions-over-bureaucracy",
       "path": "sources/2025-10-11-article-rethinking-youth-justice-funding-in-queensland-prioritising-grassroots-solutions-over-bureaucracy",
       "relativePath": "sources/2025-10-11-article-rethinking-youth-justice-funding-in-queensland-prioritising-grassroots-solutions-over-bureaucracy.md",
-      "modifiedAt": "2026-04-11T01:11:17.808Z"
+      "modifiedAt": "2026-04-12T20:50:21.809Z"
     },
     {
       "title": "Source Summary — Article / Richard Cassidy - Our Story",
@@ -2080,7 +2113,7 @@
       "stem": "2025-10-11-article-richard-cassidy---our-story",
       "path": "sources/2025-10-11-article-richard-cassidy---our-story",
       "relativePath": "sources/2025-10-11-article-richard-cassidy---our-story.md",
-      "modifiedAt": "2026-04-11T01:11:17.813Z"
+      "modifiedAt": "2026-04-12T20:50:21.809Z"
     },
     {
       "title": "Source Summary — Article / Spain Diagrama Trip Reflection",
@@ -2091,7 +2124,7 @@
       "stem": "2026-03-23-article-spain-diagrama-trip-reflection",
       "path": "sources/2026-03-23-article-spain-diagrama-trip-reflection",
       "relativePath": "sources/2026-03-23-article-spain-diagrama-trip-reflection.md",
-      "modifiedAt": "2026-04-11T01:11:17.823Z"
+      "modifiedAt": "2026-04-12T20:50:21.814Z"
     },
     {
       "title": "Source Summary — Article / Spotlight on Changemaker: Brodie Germaine",
@@ -2102,7 +2135,7 @@
       "stem": "2025-10-11-article-spotlight-on-changemaker-brodie-germaine",
       "path": "sources/2025-10-11-article-spotlight-on-changemaker-brodie-germaine",
       "relativePath": "sources/2025-10-11-article-spotlight-on-changemaker-brodie-germaine.md",
-      "modifiedAt": "2026-04-11T01:11:17.813Z"
+      "modifiedAt": "2026-04-12T20:50:21.809Z"
     },
     {
       "title": "Source Summary — Article / The Courage to Connect: How Authentic Relationships Transform Youth in Detention",
@@ -2113,7 +2146,7 @@
       "stem": "2025-10-11-article-the-courage-to-connect-how-authentic-relationships-transform-youth-in-detention",
       "path": "sources/2025-10-11-article-the-courage-to-connect-how-authentic-relationships-transform-youth-in-detention",
       "relativePath": "sources/2025-10-11-article-the-courage-to-connect-how-authentic-relationships-transform-youth-in-detention.md",
-      "modifiedAt": "2026-04-11T01:11:17.814Z"
+      "modifiedAt": "2026-04-12T20:50:21.809Z"
     },
     {
       "title": "Source Summary — Article / The Cure Already Exists",
@@ -2124,7 +2157,7 @@
       "stem": "2026-03-12-article-the-cure-already-exists",
       "path": "sources/2026-03-12-article-the-cure-already-exists",
       "relativePath": "sources/2026-03-12-article-the-cure-already-exists.md",
-      "modifiedAt": "2026-04-11T01:11:17.822Z"
+      "modifiedAt": "2026-04-12T20:50:21.813Z"
     },
     {
       "title": "Source Summary — Article / The Diagrama Model: A Transformative Approach to Youth Justice",
@@ -2135,7 +2168,7 @@
       "stem": "2025-10-11-article-the-diagrama-model-a-transformative-approach-to-youth-justice",
       "path": "sources/2025-10-11-article-the-diagrama-model-a-transformative-approach-to-youth-justice",
       "relativePath": "sources/2025-10-11-article-the-diagrama-model-a-transformative-approach-to-youth-justice.md",
-      "modifiedAt": "2026-04-11T01:11:17.814Z"
+      "modifiedAt": "2026-04-12T20:50:21.809Z"
     },
     {
       "title": "Source Summary — Article / The Nature of Power: How Control Shapes Youth Justice",
@@ -2146,7 +2179,7 @@
       "stem": "2025-10-11-article-the-nature-of-power-how-control-shapes-youth-justice",
       "path": "sources/2025-10-11-article-the-nature-of-power-how-control-shapes-youth-justice",
       "relativePath": "sources/2025-10-11-article-the-nature-of-power-how-control-shapes-youth-justice.md",
-      "modifiedAt": "2026-04-11T01:11:17.815Z"
+      "modifiedAt": "2026-04-12T20:50:21.810Z"
     },
     {
       "title": "Source Summary — Article / The Necessity of State Government in Australia: A Queensland Perspective",
@@ -2157,7 +2190,7 @@
       "stem": "2025-10-11-article-the-necessity-of-state-government-in-australia-a-queensland-perspective",
       "path": "sources/2025-10-11-article-the-necessity-of-state-government-in-australia-a-queensland-perspective",
       "relativePath": "sources/2025-10-11-article-the-necessity-of-state-government-in-australia-a-queensland-perspective.md",
-      "modifiedAt": "2026-04-11T01:11:17.815Z"
+      "modifiedAt": "2026-04-12T20:50:21.810Z"
     },
     {
       "title": "Source Summary — Article / The Paradox of Youth Justice and Entropy: Navigating the Chaos Towards Hope",
@@ -2168,7 +2201,7 @@
       "stem": "2025-10-11-article-the-paradox-of-youth-justice-and-entropy-navigating-the-chaos-towards-hope",
       "path": "sources/2025-10-11-article-the-paradox-of-youth-justice-and-entropy-navigating-the-chaos-towards-hope",
       "relativePath": "sources/2025-10-11-article-the-paradox-of-youth-justice-and-entropy-navigating-the-chaos-towards-hope.md",
-      "modifiedAt": "2026-04-11T01:11:17.816Z"
+      "modifiedAt": "2026-04-12T20:50:21.810Z"
     },
     {
       "title": "Source Summary — Article / The Road to Hell: When Youth Justice Efforts Backfire",
@@ -2179,7 +2212,7 @@
       "stem": "2025-10-11-article-the-road-to-hell-when-youth-justice-efforts-backfire",
       "path": "sources/2025-10-11-article-the-road-to-hell-when-youth-justice-efforts-backfire",
       "relativePath": "sources/2025-10-11-article-the-road-to-hell-when-youth-justice-efforts-backfire.md",
-      "modifiedAt": "2026-04-11T01:11:17.816Z"
+      "modifiedAt": "2026-04-12T20:50:21.810Z"
     },
     {
       "title": "Source Summary — Article / Understanding Cultural Responsibility and Leadership",
@@ -2190,7 +2223,7 @@
       "stem": "2026-03-03-article-cb-cultural-responsibility-and-leadership",
       "path": "sources/2026-03-03-article-cb-cultural-responsibility-and-leadership",
       "relativePath": "sources/2026-03-03-article-cb-cultural-responsibility-and-leadership.md",
-      "modifiedAt": "2026-04-11T01:11:17.820Z"
+      "modifiedAt": "2026-04-12T20:50:21.812Z"
     },
     {
       "title": "Source Summary — Article / Walking New Paths: Reflections from Bimberi",
@@ -2201,7 +2234,7 @@
       "stem": "2025-10-11-article-walking-new-paths-reflections-from-bimberi",
       "path": "sources/2025-10-11-article-walking-new-paths-reflections-from-bimberi",
       "relativePath": "sources/2025-10-11-article-walking-new-paths-reflections-from-bimberi.md",
-      "modifiedAt": "2026-04-11T01:11:17.816Z"
+      "modifiedAt": "2026-04-12T20:50:21.810Z"
     },
     {
       "title": "Source Summary — Article / Walking Toward Justice: A Personal Journey",
@@ -2212,7 +2245,7 @@
       "stem": "2025-11-05-article-walking-toward-justice-a-personal-journey-267823",
       "path": "sources/2025-11-05-article-walking-toward-justice-a-personal-journey-267823",
       "relativePath": "sources/2025-11-05-article-walking-toward-justice-a-personal-journey-267823.md",
-      "modifiedAt": "2026-04-11T01:11:17.819Z"
+      "modifiedAt": "2026-04-12T20:50:21.811Z"
     },
     {
       "title": "Source Summary — Article / Where Fire Meets Country: A Journey Through Mount Isa's NAIDOC week",
@@ -2223,7 +2256,7 @@
       "stem": "2025-10-11-article-where-fire-meets-country-a-journey-through-mount-isas-naidoc-week",
       "path": "sources/2025-10-11-article-where-fire-meets-country-a-journey-through-mount-isas-naidoc-week",
       "relativePath": "sources/2025-10-11-article-where-fire-meets-country-a-journey-through-mount-isas-naidoc-week.md",
-      "modifiedAt": "2026-04-11T01:11:17.817Z"
+      "modifiedAt": "2026-04-12T20:50:21.811Z"
     },
     {
       "title": "Source Summary — Article / Youth Detention and Youth Justice Models in Europe: A Comparative Overview",
@@ -2234,7 +2267,7 @@
       "stem": "2025-10-11-article-youth-detention-and-youth-justice-models-in-europe-a-comparative-overview",
       "path": "sources/2025-10-11-article-youth-detention-and-youth-justice-models-in-europe-a-comparative-overview",
       "relativePath": "sources/2025-10-11-article-youth-detention-and-youth-justice-models-in-europe-a-comparative-overview.md",
-      "modifiedAt": "2026-04-11T01:11:17.818Z"
+      "modifiedAt": "2026-04-12T20:50:21.811Z"
     },
     {
       "title": "Source Summary — Atnarpa Homestead Cultural Exchange - Girls Trip",
@@ -2245,7 +2278,7 @@
       "stem": "2026-04-07-cc-stories-atnarpa-girls-trip",
       "path": "sources/2026-04-07-cc-stories-atnarpa-girls-trip",
       "relativePath": "sources/2026-04-07-cc-stories-atnarpa-girls-trip.md",
-      "modifiedAt": "2026-04-11T01:28:08.586Z"
+      "modifiedAt": "2026-04-12T20:50:21.822Z"
     },
     {
       "title": "Source Summary — Atnarpa Station Cultural Learning - Boys Trip",
@@ -2256,7 +2289,7 @@
       "stem": "2026-04-07-cc-stories-atnarpa-boys-trip",
       "path": "sources/2026-04-07-cc-stories-atnarpa-boys-trip",
       "relativePath": "sources/2026-04-07-cc-stories-atnarpa-boys-trip.md",
-      "modifiedAt": "2026-04-11T01:28:08.586Z"
+      "modifiedAt": "2026-04-12T20:50:21.822Z"
     },
     {
       "title": "Source Summary — Black Cockatoo Valley",
@@ -2267,7 +2300,7 @@
       "stem": "2026-04-07-cc-place-black-cockatoo-valley",
       "path": "sources/2026-04-07-cc-place-black-cockatoo-valley",
       "relativePath": "sources/2026-04-07-cc-place-black-cockatoo-valley.md",
-      "modifiedAt": "2026-04-11T01:17:47.444Z"
+      "modifiedAt": "2026-04-12T20:50:21.821Z"
     },
     {
       "title": "Source Summary — Building a Healing Path: Uncle Dale's Vision for Youth Justice Reform",
@@ -2278,7 +2311,7 @@
       "stem": "2026-04-07-cc-stories-uncle-dale-healing-path",
       "path": "sources/2026-04-07-cc-stories-uncle-dale-healing-path",
       "relativePath": "sources/2026-04-07-cc-stories-uncle-dale-healing-path.md",
-      "modifiedAt": "2026-04-11T01:28:08.593Z"
+      "modifiedAt": "2026-04-12T20:50:21.828Z"
     },
     {
       "title": "Source Summary — Building Empathy Ledger: A Journey of Connection",
@@ -2289,7 +2322,7 @@
       "stem": "2026-04-07-cc-stories-building-empathy-ledger",
       "path": "sources/2026-04-07-cc-stories-building-empathy-ledger",
       "relativePath": "sources/2026-04-07-cc-stories-building-empathy-ledger.md",
-      "modifiedAt": "2026-04-11T01:17:47.444Z"
+      "modifiedAt": "2026-04-12T20:50:21.822Z"
     },
     {
       "title": "Source Summary — CB: Understanding Cultural Responsibility and Leadership",
@@ -2300,7 +2333,7 @@
       "stem": "2026-04-07-cc-stories-cb-cultural-leadership",
       "path": "sources/2026-04-07-cc-stories-cb-cultural-leadership",
       "relativePath": "sources/2026-04-07-cc-stories-cb-cultural-leadership.md",
-      "modifiedAt": "2026-04-11T01:28:08.587Z"
+      "modifiedAt": "2026-04-12T20:50:21.823Z"
     },
     {
       "title": "Source Summary — CivicGraph — Home",
@@ -2311,7 +2344,7 @@
       "stem": "2026-04-07-scrape-civicgraph-home",
       "path": "sources/2026-04-07-scrape-civicgraph-home",
       "relativePath": "sources/2026-04-07-scrape-civicgraph-home.md",
-      "modifiedAt": "2026-04-11T01:18:45.321Z"
+      "modifiedAt": "2026-04-12T20:50:21.835Z"
     },
     {
       "title": "Source Summary — CivicGraph — Mission & Focus",
@@ -2322,7 +2355,7 @@
       "stem": "2026-04-07-gs-mission",
       "path": "sources/2026-04-07-gs-mission",
       "relativePath": "sources/2026-04-07-gs-mission.md",
-      "modifiedAt": "2026-04-11T01:28:08.601Z"
+      "modifiedAt": "2026-04-12T20:50:21.832Z"
     },
     {
       "title": "Source Summary — CivicGraph: Australia's Community Capital Ledger",
@@ -2333,7 +2366,7 @@
       "stem": "2026-04-07-gs-strategy",
       "path": "sources/2026-04-07-gs-strategy",
       "relativePath": "sources/2026-04-07-gs-strategy.md",
-      "modifiedAt": "2026-04-11T01:28:08.604Z"
+      "modifiedAt": "2026-04-12T20:50:21.832Z"
     },
     {
       "title": "Source Summary — CivicGraph: State of Australian Power Dynamics",
@@ -2344,7 +2377,7 @@
       "stem": "2026-04-07-gs-power-dynamics",
       "path": "sources/2026-04-07-gs-power-dynamics",
       "relativePath": "sources/2026-04-07-gs-power-dynamics.md",
-      "modifiedAt": "2026-04-11T01:28:08.602Z"
+      "modifiedAt": "2026-04-12T20:50:21.832Z"
     },
     {
       "title": "Source Summary — Community Innovation: Beds, Washing Machines, and Orange Sky",
@@ -2355,7 +2388,7 @@
       "stem": "2026-04-07-cc-stories-community-innovation-goods",
       "path": "sources/2026-04-07-cc-stories-community-innovation-goods",
       "relativePath": "sources/2026-04-07-cc-stories-community-innovation-goods.md",
-      "modifiedAt": "2026-04-11T01:17:47.444Z"
+      "modifiedAt": "2026-04-12T20:50:21.823Z"
     },
     {
       "title": "Source Summary — Community Recognition and External Referral Requests",
@@ -2366,7 +2399,7 @@
       "stem": "2026-04-07-cc-stories-community-recognition-referrals",
       "path": "sources/2026-04-07-cc-stories-community-recognition-referrals",
       "relativePath": "sources/2026-04-07-cc-stories-community-recognition-referrals.md",
-      "modifiedAt": "2026-04-11T01:28:08.587Z"
+      "modifiedAt": "2026-04-12T20:50:21.823Z"
     },
     {
       "title": "Source Summary — Consent as Infrastructure: Why 'Yes' Isn't a Boolean",
@@ -2377,7 +2410,7 @@
       "stem": "2026-04-07-el-consent-as-infrastructure",
       "path": "sources/2026-04-07-el-consent-as-infrastructure",
       "relativePath": "sources/2026-04-07-el-consent-as-infrastructure.md",
-      "modifiedAt": "2026-04-11T01:28:08.597Z"
+      "modifiedAt": "2026-04-12T20:50:21.830Z"
     },
     {
       "title": "Source Summary — CONTAINED — Engagement & Communications Plan",
@@ -2388,7 +2421,7 @@
       "stem": "2026-04-07-jh-engagement-comms-plan",
       "path": "sources/2026-04-07-jh-engagement-comms-plan",
       "relativePath": "sources/2026-04-07-jh-engagement-comms-plan.md",
-      "modifiedAt": "2026-04-11T01:28:08.606Z"
+      "modifiedAt": "2026-04-12T20:50:21.832Z"
     },
     {
       "title": "Source Summary — CONTAINED Tour Intelligence Model",
@@ -2399,7 +2432,7 @@
       "stem": "2026-04-07-jh-contained-tour-intelligence",
       "path": "sources/2026-04-07-jh-contained-tour-intelligence",
       "relativePath": "sources/2026-04-07-jh-contained-tour-intelligence.md",
-      "modifiedAt": "2026-04-11T00:31:13.084Z"
+      "modifiedAt": "2026-04-12T20:50:21.832Z"
     },
     {
       "title": "Source Summary — Descript Transcription & ALMA Workflow",
@@ -2410,7 +2443,7 @@
       "stem": "2026-04-07-cc-act-appendices-transcription-workflow",
       "path": "sources/2026-04-07-cc-act-appendices-transcription-workflow",
       "relativePath": "sources/2026-04-07-cc-act-appendices-transcription-workflow.md",
-      "modifiedAt": "2026-04-11T01:24:35.533Z"
+      "modifiedAt": "2026-04-12T20:50:21.818Z"
     },
     {
       "title": "Source Summary — Educational Transformation: 72% Return to School",
@@ -2421,7 +2454,7 @@
       "stem": "2026-04-07-cc-stories-educational-transformation",
       "path": "sources/2026-04-07-cc-stories-educational-transformation",
       "relativePath": "sources/2026-04-07-cc-stories-educational-transformation.md",
-      "modifiedAt": "2026-04-11T01:28:08.587Z"
+      "modifiedAt": "2026-04-12T20:50:21.823Z"
     },
     {
       "title": "Source Summary — Elders Speak: We Should Have Been Consulted",
@@ -2432,7 +2465,7 @@
       "stem": "2026-04-07-cc-stories-elders-speak-consulted",
       "path": "sources/2026-04-07-cc-stories-elders-speak-consulted",
       "relativePath": "sources/2026-04-07-cc-stories-elders-speak-consulted.md",
-      "modifiedAt": "2026-04-11T01:28:08.588Z"
+      "modifiedAt": "2026-04-12T20:50:21.824Z"
     },
     {
       "title": "Source Summary — Ellen Friday: Still Waiting for a Fridge",
@@ -2443,7 +2476,7 @@
       "stem": "2026-04-07-cc-stories-ellen-friday-fridge",
       "path": "sources/2026-04-07-cc-stories-ellen-friday-fridge",
       "relativePath": "sources/2026-04-07-cc-stories-ellen-friday-fridge.md",
-      "modifiedAt": "2026-04-11T01:28:08.588Z"
+      "modifiedAt": "2026-04-12T20:50:21.824Z"
     },
     {
       "title": "Source Summary — Empathy Ledger",
@@ -2454,7 +2487,7 @@
       "stem": "2026-04-07-cc-empathy-ledger-index",
       "path": "sources/2026-04-07-cc-empathy-ledger-index",
       "relativePath": "sources/2026-04-07-cc-empathy-ledger-index.md",
-      "modifiedAt": "2026-04-11T01:17:47.441Z"
+      "modifiedAt": "2026-04-12T20:50:21.820Z"
     },
     {
       "title": "Source Summary — Empathy Ledger Strategy Synthesis — World Tour, Ecosystem, Money",
@@ -2465,7 +2498,7 @@
       "stem": "2026-04-09-empathy-ledger-strategy-synthesis",
       "path": "sources/2026-04-09-empathy-ledger-strategy-synthesis",
       "relativePath": "sources/2026-04-09-empathy-ledger-strategy-synthesis.md",
-      "modifiedAt": "2026-04-11T01:24:35.528Z"
+      "modifiedAt": "2026-04-12T20:50:21.837Z"
     },
     {
       "title": "Source Summary — Empathy Ledger v2 — Project & Media Audit",
@@ -2476,7 +2509,7 @@
       "stem": "2026-04-06-empathy-ledger-audit",
       "path": "sources/2026-04-06-empathy-ledger-audit",
       "relativePath": "sources/2026-04-06-empathy-ledger-audit.md",
-      "modifiedAt": "2026-04-11T01:17:47.440Z"
+      "modifiedAt": "2026-04-12T20:50:21.815Z"
     },
     {
       "title": "Source Summary — Empathy Ledger: Complete Platform Prospectus",
@@ -2487,7 +2520,7 @@
       "stem": "2026-04-07-el-platform-prospectus",
       "path": "sources/2026-04-07-el-platform-prospectus",
       "relativePath": "sources/2026-04-07-el-platform-prospectus.md",
-      "modifiedAt": "2026-04-11T01:28:08.599Z"
+      "modifiedAt": "2026-04-12T20:50:21.831Z"
     },
     {
       "title": "Source Summary — Finke Desert Race Country Experience",
@@ -2498,7 +2531,7 @@
       "stem": "2026-04-07-cc-stories-finke-desert-race",
       "path": "sources/2026-04-07-cc-stories-finke-desert-race",
       "relativePath": "sources/2026-04-07-cc-stories-finke-desert-race.md",
-      "modifiedAt": "2026-04-11T01:28:08.588Z"
+      "modifiedAt": "2026-04-12T20:50:21.824Z"
     },
     {
       "title": "Source Summary — For Government | CivicGraph Australia",
@@ -2509,7 +2542,7 @@
       "stem": "2026-04-07-scrape-civicgraph-for-government",
       "path": "sources/2026-04-07-scrape-civicgraph-for-government",
       "relativePath": "sources/2026-04-07-scrape-civicgraph-for-government.md",
-      "modifiedAt": "2026-04-11T01:18:45.320Z"
+      "modifiedAt": "2026-04-12T20:50:21.835Z"
     },
     {
       "title": "Source Summary — Gemini Deep Research: CivicScope, Third Reality, and Sovereign AI",
@@ -2520,7 +2553,7 @@
       "stem": "2026-04-06-gemini-civicscope-third-reality",
       "path": "sources/2026-04-06-gemini-civicscope-third-reality",
       "relativePath": "sources/2026-04-06-gemini-civicscope-third-reality.md",
-      "modifiedAt": "2026-04-11T01:24:35.534Z"
+      "modifiedAt": "2026-04-12T20:50:21.815Z"
     },
     {
       "title": "Source Summary — Girls Day Out: Cultural Empowerment at Standley Chasm",
@@ -2531,7 +2564,7 @@
       "stem": "2026-04-07-cc-stories-girls-day-out-standley-chasm",
       "path": "sources/2026-04-07-cc-stories-girls-day-out-standley-chasm",
       "relativePath": "sources/2026-04-07-cc-stories-girls-day-out-standley-chasm.md",
-      "modifiedAt": "2026-04-11T01:28:08.589Z"
+      "modifiedAt": "2026-04-12T20:50:21.824Z"
     },
     {
       "title": "Source Summary — Glossary",
@@ -2542,7 +2575,7 @@
       "stem": "2026-04-07-cc-act-appendices-glossary",
       "path": "sources/2026-04-07-cc-act-appendices-glossary",
       "relativePath": "sources/2026-04-07-cc-act-appendices-glossary.md",
-      "modifiedAt": "2026-04-11T01:24:35.538Z"
+      "modifiedAt": "2026-04-12T20:50:21.817Z"
     },
     {
       "title": "Source Summary — Goods on Country",
@@ -2553,7 +2586,7 @@
       "stem": "2026-04-07-cc-goods-index",
       "path": "sources/2026-04-07-cc-goods-index",
       "relativePath": "sources/2026-04-07-cc-goods-index.md",
-      "modifiedAt": "2026-04-11T01:17:47.442Z"
+      "modifiedAt": "2026-04-12T20:50:21.821Z"
     },
     {
       "title": "Source Summary — Governance & Consent",
@@ -2564,7 +2597,7 @@
       "stem": "2026-04-07-cc-act-governance",
       "path": "sources/2026-04-07-cc-act-governance",
       "relativePath": "sources/2026-04-07-cc-act-governance.md",
-      "modifiedAt": "2026-04-11T01:24:35.541Z"
+      "modifiedAt": "2026-04-12T20:50:21.818Z"
     },
     {
       "title": "Source Summary — Healing Journey to Country: Young Men Find Connection at Atnarpa Station",
@@ -2575,7 +2608,7 @@
       "stem": "2026-04-07-cc-stories-healing-journey-country",
       "path": "sources/2026-04-07-cc-stories-healing-journey-country",
       "relativePath": "sources/2026-04-07-cc-stories-healing-journey-country.md",
-      "modifiedAt": "2026-04-11T01:28:08.589Z"
+      "modifiedAt": "2026-04-12T20:50:21.825Z"
     },
     {
       "title": "Source Summary — Home | A Curious Tractor",
@@ -2586,7 +2619,7 @@
       "stem": "2026-04-07-scrape-act-place-home",
       "path": "sources/2026-04-07-scrape-act-place-home",
       "relativePath": "sources/2026-04-07-scrape-act-place-home.md",
-      "modifiedAt": "2026-04-11T01:18:45.319Z"
+      "modifiedAt": "2026-04-12T20:50:21.835Z"
     },
     {
       "title": "Source Summary — Image Prompt Library — Minderoo \"Three Circles\" Proposal",
@@ -2597,7 +2630,7 @@
       "stem": "2026-04-07-jh-minderoo-image-prompts",
       "path": "sources/2026-04-07-jh-minderoo-image-prompts",
       "relativePath": "sources/2026-04-07-jh-minderoo-image-prompts.md",
-      "modifiedAt": "2026-04-11T01:28:08.609Z"
+      "modifiedAt": "2026-04-12T20:50:21.833Z"
     },
     {
       "title": "Source Summary — Individual Transcript Analysis System - Complete Implementation Plan",
@@ -2608,7 +2641,7 @@
       "stem": "2026-04-07-el-transcript-analysis-plan",
       "path": "sources/2026-04-07-el-transcript-analysis-plan",
       "relativePath": "sources/2026-04-07-el-transcript-analysis-plan.md",
-      "modifiedAt": "2026-04-11T01:24:35.534Z"
+      "modifiedAt": "2026-04-12T20:50:21.831Z"
     },
     {
       "title": "Source Summary — Jesús Teruel — Diagrama Key Story",
@@ -2619,7 +2652,7 @@
       "stem": "2026-04-07-cc-stories-jesus-teruel-diagrama",
       "path": "sources/2026-04-07-cc-stories-jesus-teruel-diagrama",
       "relativePath": "sources/2026-04-07-cc-stories-jesus-teruel-diagrama.md",
-      "modifiedAt": "2026-04-11T01:28:08.590Z"
+      "modifiedAt": "2026-04-12T20:50:21.825Z"
     },
     {
       "title": "Source Summary — Jh Lucy Minderoo 3year Pitch",
@@ -2630,7 +2663,7 @@
       "stem": "2026-04-07-jh-lucy-minderoo-3year-pitch",
       "path": "sources/2026-04-07-jh-lucy-minderoo-3year-pitch",
       "relativePath": "sources/2026-04-07-jh-lucy-minderoo-3year-pitch.md",
-      "modifiedAt": "2026-04-11T01:28:08.607Z"
+      "modifiedAt": "2026-04-12T20:50:21.833Z"
     },
     {
       "title": "Source Summary — Justice & Community Funding Landscape — 2026-04-07 Snapshot",
@@ -2641,7 +2674,7 @@
       "stem": "2026-04-07-supabase-justice-funding-snapshot",
       "path": "sources/2026-04-07-supabase-justice-funding-snapshot",
       "relativePath": "sources/2026-04-07-supabase-justice-funding-snapshot.md",
-      "modifiedAt": "2026-04-11T01:17:47.446Z"
+      "modifiedAt": "2026-04-12T20:50:21.836Z"
     },
     {
       "title": "Source Summary — JusticeHub",
@@ -2652,7 +2685,7 @@
       "stem": "2026-04-07-cc-justicehub-index",
       "path": "sources/2026-04-07-cc-justicehub-index",
       "relativePath": "sources/2026-04-07-cc-justicehub-index.md",
-      "modifiedAt": "2026-04-11T01:17:47.443Z"
+      "modifiedAt": "2026-04-12T20:50:21.821Z"
     },
     {
       "title": "Source Summary — JusticeHub — Home",
@@ -2663,7 +2696,7 @@
       "stem": "2026-04-07-scrape-justicehub-home",
       "path": "sources/2026-04-07-scrape-justicehub-home",
       "relativePath": "sources/2026-04-07-scrape-justicehub-home.md",
-      "modifiedAt": "2026-04-11T01:18:45.320Z"
+      "modifiedAt": "2026-04-12T20:50:21.836Z"
     },
     {
       "title": "Source Summary — JusticeHub — Identity",
@@ -2674,7 +2707,7 @@
       "stem": "2026-04-07-jh-identity",
       "path": "sources/2026-04-07-jh-identity",
       "relativePath": "sources/2026-04-07-jh-identity.md",
-      "modifiedAt": "2026-04-11T01:28:08.606Z"
+      "modifiedAt": "2026-04-12T20:50:21.833Z"
     },
     {
       "title": "Source Summary — JusticeHub | A Curious Tractor Project Page",
@@ -2685,7 +2718,7 @@
       "stem": "2026-04-07-scrape-act-place-justicehub",
       "path": "sources/2026-04-07-scrape-act-place-justicehub",
       "relativePath": "sources/2026-04-07-scrape-act-place-justicehub.md",
-      "modifiedAt": "2026-04-11T01:18:45.319Z"
+      "modifiedAt": "2026-04-12T20:50:21.835Z"
     },
     {
       "title": "Source Summary — JusticeHub Proof Wall",
@@ -2696,7 +2729,7 @@
       "stem": "2026-04-07-scrape-justicehub-proof",
       "path": "sources/2026-04-07-scrape-justicehub-proof",
       "relativePath": "sources/2026-04-07-scrape-justicehub-proof.md",
-      "modifiedAt": "2026-04-11T00:31:13.084Z"
+      "modifiedAt": "2026-04-12T20:50:21.836Z"
     },
     {
       "title": "Source Summary — LCAA Methodology",
@@ -2707,7 +2740,7 @@
       "stem": "2026-04-07-cc-act-lcaa",
       "path": "sources/2026-04-07-cc-act-lcaa",
       "relativePath": "sources/2026-04-07-cc-act-lcaa.md",
-      "modifiedAt": "2026-04-11T01:28:08.585Z"
+      "modifiedAt": "2026-04-12T20:50:21.820Z"
     },
     {
       "title": "Source Summary — LCAA Methodology",
@@ -2718,7 +2751,7 @@
       "stem": "2026-04-07-cc-act-identity-lcaa-methodology",
       "path": "sources/2026-04-07-cc-act-identity-lcaa-methodology",
       "relativePath": "sources/2026-04-07-cc-act-identity-lcaa-methodology.md",
-      "modifiedAt": "2026-04-11T01:24:35.541Z"
+      "modifiedAt": "2026-04-12T20:50:21.819Z"
     },
     {
       "title": "Source Summary — M: From Homelessness to Independent Living",
@@ -2729,7 +2762,7 @@
       "stem": "2026-04-07-cc-stories-m-homelessness-independent",
       "path": "sources/2026-04-07-cc-stories-m-homelessness-independent",
       "relativePath": "sources/2026-04-07-cc-stories-m-homelessness-independent.md",
-      "modifiedAt": "2026-04-11T01:28:08.590Z"
+      "modifiedAt": "2026-04-12T20:50:21.826Z"
     },
     {
       "title": "Source Summary — Methods: Frameworks and Approaches",
@@ -2740,7 +2773,7 @@
       "stem": "2026-04-07-el-methods-readme",
       "path": "sources/2026-04-07-el-methods-readme",
       "relativePath": "sources/2026-04-07-el-methods-readme.md",
-      "modifiedAt": "2026-04-11T01:28:08.597Z"
+      "modifiedAt": "2026-04-12T20:50:21.831Z"
     },
     {
       "title": "Source Summary — Mission & Identity",
@@ -2751,7 +2784,7 @@
       "stem": "2026-04-07-cc-act-identity-mission",
       "path": "sources/2026-04-07-cc-act-identity-mission",
       "relativePath": "sources/2026-04-07-cc-act-identity-mission.md",
-      "modifiedAt": "2026-04-11T01:24:35.542Z"
+      "modifiedAt": "2026-04-12T20:50:21.819Z"
     },
     {
       "title": "Source Summary — MS: From Disconnected Youth to Future Tourism Entrepreneur",
@@ -2762,7 +2795,7 @@
       "stem": "2026-04-07-cc-stories-ms-future-entrepreneur",
       "path": "sources/2026-04-07-cc-stories-ms-future-entrepreneur",
       "relativePath": "sources/2026-04-07-cc-stories-ms-future-entrepreneur.md",
-      "modifiedAt": "2026-04-11T01:28:08.590Z"
+      "modifiedAt": "2026-04-12T20:50:21.826Z"
     },
     {
       "title": "Source Summary — NM & BK Sync Space",
@@ -2773,7 +2806,7 @@
       "stem": "2026-03-27-meeting-nm-bk-sync-space",
       "path": "sources/2026-03-27-meeting-nm-bk-sync-space",
       "relativePath": "sources/2026-03-27-meeting-nm-bk-sync-space.md",
-      "modifiedAt": "2026-04-11T01:17:47.435Z"
+      "modifiedAt": "2026-04-12T20:50:21.814Z"
     },
     {
       "title": "Source Summary — Notion Active Projects Overview",
@@ -2784,7 +2817,7 @@
       "stem": "2026-04-06-notion-active-projects",
       "path": "sources/2026-04-06-notion-active-projects",
       "relativePath": "sources/2026-04-06-notion-active-projects.md",
-      "modifiedAt": "2026-04-11T01:24:35.535Z"
+      "modifiedAt": "2026-04-12T20:50:21.815Z"
     },
     {
       "title": "Source Summary — Operation Luna Success: Dramatic Reduction in Youth Offending",
@@ -2795,7 +2828,7 @@
       "stem": "2026-04-07-cc-stories-operation-luna-success",
       "path": "sources/2026-04-07-cc-stories-operation-luna-success",
       "relativePath": "sources/2026-04-07-cc-stories-operation-luna-success.md",
-      "modifiedAt": "2026-04-11T01:28:08.591Z"
+      "modifiedAt": "2026-04-12T20:50:21.826Z"
     },
     {
       "title": "Source Summary — Peggy Palm Island's Story",
@@ -2806,7 +2839,7 @@
       "stem": "2026-04-07-cc-stories-peggy-palm-island",
       "path": "sources/2026-04-07-cc-stories-peggy-palm-island",
       "relativePath": "sources/2026-04-07-cc-stories-peggy-palm-island.md",
-      "modifiedAt": "2026-04-11T01:28:08.591Z"
+      "modifiedAt": "2026-04-12T20:50:21.827Z"
     },
     {
       "title": "Source Summary — Place & Land Practice",
@@ -2817,7 +2850,7 @@
       "stem": "2026-04-07-cc-place-index",
       "path": "sources/2026-04-07-cc-place-index",
       "relativePath": "sources/2026-04-07-cc-place-index.md",
-      "modifiedAt": "2026-04-11T01:28:08.586Z"
+      "modifiedAt": "2026-04-12T20:50:21.821Z"
     },
     {
       "title": "Source Summary — Political Donor Entity Matches — 2026-04-07 Snapshot",
@@ -2828,7 +2861,7 @@
       "stem": "2026-04-07-supabase-donor-matches-snapshot",
       "path": "sources/2026-04-07-supabase-donor-matches-snapshot",
       "relativePath": "sources/2026-04-07-supabase-donor-matches-snapshot.md",
-      "modifiedAt": "2026-04-11T01:28:08.610Z"
+      "modifiedAt": "2026-04-12T20:50:21.836Z"
     },
     {
       "title": "Source Summary — Principles of Practice",
@@ -2839,7 +2872,7 @@
       "stem": "2026-04-07-cc-act-identity-principles",
       "path": "sources/2026-04-07-cc-act-identity-principles",
       "relativePath": "sources/2026-04-07-cc-act-identity-principles.md",
-      "modifiedAt": "2026-04-11T01:28:08.580Z"
+      "modifiedAt": "2026-04-12T20:50:21.819Z"
     },
     {
       "title": "Source Summary — Project Alignment Audit — 2026-04-06",
@@ -2850,7 +2883,7 @@
       "stem": "2026-04-06-project-alignment-audit",
       "path": "sources/2026-04-06-project-alignment-audit",
       "relativePath": "sources/2026-04-06-project-alignment-audit.md",
-      "modifiedAt": "2026-04-11T01:24:35.536Z"
+      "modifiedAt": "2026-04-12T20:50:21.816Z"
     },
     {
       "title": "Source Summary — Proud Pita Pita Wayaka Man: My Roots",
@@ -2861,7 +2894,7 @@
       "stem": "2026-04-07-cc-stories-proud-pita-pita-wayaka-man",
       "path": "sources/2026-04-07-cc-stories-proud-pita-pita-wayaka-man",
       "relativePath": "sources/2026-04-07-cc-stories-proud-pita-pita-wayaka-man.md",
-      "modifiedAt": "2026-04-11T01:28:08.591Z"
+      "modifiedAt": "2026-04-12T20:50:21.827Z"
     },
     {
       "title": "Source Summary — Returning Home to Atnarpa: The Bloomfield Family's Journey",
@@ -2872,7 +2905,7 @@
       "stem": "2026-04-07-cc-stories-returning-home-atnarpa",
       "path": "sources/2026-04-07-cc-stories-returning-home-atnarpa",
       "relativePath": "sources/2026-04-07-cc-stories-returning-home-atnarpa.md",
-      "modifiedAt": "2026-04-11T01:28:08.591Z"
+      "modifiedAt": "2026-04-12T20:50:21.827Z"
     },
     {
       "title": "Source Summary — School Partnership Success Stories",
@@ -2883,7 +2916,7 @@
       "stem": "2026-04-07-cc-stories-school-partnership-success",
       "path": "sources/2026-04-07-cc-stories-school-partnership-success",
       "relativePath": "sources/2026-04-07-cc-stories-school-partnership-success.md",
-      "modifiedAt": "2026-04-11T01:28:08.592Z"
+      "modifiedAt": "2026-04-12T20:50:21.827Z"
     },
     {
       "title": "Source Summary — Story Vignettes",
@@ -2894,7 +2927,7 @@
       "stem": "2026-04-07-cc-stories-index",
       "path": "sources/2026-04-07-cc-stories-index",
       "relativePath": "sources/2026-04-07-cc-stories-index.md",
-      "modifiedAt": "2026-04-11T01:28:08.589Z"
+      "modifiedAt": "2026-04-12T20:50:21.825Z"
     },
     {
       "title": "Source Summary — Storytelling, Data Sovereignty, and Community Recovery",
@@ -2905,7 +2938,7 @@
       "stem": "2026-04-07-cc-stories-storytelling-data-sovereignty",
       "path": "sources/2026-04-07-cc-stories-storytelling-data-sovereignty",
       "relativePath": "sources/2026-04-07-cc-stories-storytelling-data-sovereignty.md",
-      "modifiedAt": "2026-04-11T01:28:08.592Z"
+      "modifiedAt": "2026-04-12T20:50:21.828Z"
     },
     {
       "title": "Source Summary — Strategic Decisions — 2026-04-07 Snapshot",
@@ -2916,7 +2949,7 @@
       "stem": "2026-04-07-supabase-strategic-decisions-snapshot",
       "path": "sources/2026-04-07-supabase-strategic-decisions-snapshot",
       "relativePath": "sources/2026-04-07-supabase-strategic-decisions-snapshot.md",
-      "modifiedAt": "2026-04-11T01:24:08.479Z"
+      "modifiedAt": "2026-04-12T20:50:21.837Z"
     },
     {
       "title": "Source Summary — Supabase Projects Snapshot — 2026-04-11",
@@ -2927,7 +2960,7 @@
       "stem": "2026-04-11-supabase-projects-snapshot",
       "path": "sources/2026-04-11-supabase-projects-snapshot",
       "relativePath": "sources/2026-04-11-supabase-projects-snapshot.md",
-      "modifiedAt": "2026-04-11T00:15:52.497Z"
+      "modifiedAt": "2026-04-12T20:50:21.838Z"
     },
     {
       "title": "Source Summary — Technical Architecture",
@@ -2938,7 +2971,7 @@
       "stem": "2026-04-07-cc-act-appendices-tech-architecture",
       "path": "sources/2026-04-07-cc-act-appendices-tech-architecture",
       "relativePath": "sources/2026-04-07-cc-act-appendices-tech-architecture.md",
-      "modifiedAt": "2026-04-11T01:24:35.539Z"
+      "modifiedAt": "2026-04-12T20:50:21.818Z"
     },
     {
       "title": "Source Summary — THE CONTAINED: Australian Tour 2026 | JusticeHub",
@@ -2949,7 +2982,7 @@
       "stem": "2026-04-07-scrape-justicehub-contained",
       "path": "sources/2026-04-07-scrape-justicehub-contained",
       "relativePath": "sources/2026-04-07-scrape-justicehub-contained.md",
-      "modifiedAt": "2026-04-11T01:18:45.319Z"
+      "modifiedAt": "2026-04-12T20:50:21.835Z"
     },
     {
       "title": "Source Summary — The Cure Already Exists",
@@ -2960,7 +2993,7 @@
       "stem": "2026-04-07-jh-first-nations-oped",
       "path": "sources/2026-04-07-jh-first-nations-oped",
       "relativePath": "sources/2026-04-07-jh-first-nations-oped.md",
-      "modifiedAt": "2026-04-11T00:31:13.085Z"
+      "modifiedAt": "2026-04-12T20:50:21.832Z"
     },
     {
       "title": "Source Summary — The Harvest",
@@ -2971,7 +3004,7 @@
       "stem": "2026-04-07-cc-the-harvest-index",
       "path": "sources/2026-04-07-cc-the-harvest-index",
       "relativePath": "sources/2026-04-07-cc-the-harvest-index.md",
-      "modifiedAt": "2026-04-11T01:17:47.445Z"
+      "modifiedAt": "2026-04-12T20:50:21.829Z"
     },
     {
       "title": "Source Summary — The Origin of A Curious Tractor",
@@ -2982,7 +3015,7 @@
       "stem": "2026-04-07-cc-stories-origin-curious-tractor",
       "path": "sources/2026-04-07-cc-stories-origin-curious-tractor",
       "relativePath": "sources/2026-04-07-cc-stories-origin-curious-tractor.md",
-      "modifiedAt": "2026-04-11T01:28:08.591Z"
+      "modifiedAt": "2026-04-12T20:50:21.826Z"
     },
     {
       "title": "Source Summary — The Three Circles",
@@ -2993,7 +3026,7 @@
       "stem": "2026-04-07-jh-three-circles-proposal",
       "path": "sources/2026-04-07-jh-three-circles-proposal",
       "relativePath": "sources/2026-04-07-jh-three-circles-proposal.md",
-      "modifiedAt": "2026-04-11T01:28:08.610Z"
+      "modifiedAt": "2026-04-12T20:50:21.833Z"
     },
     {
       "title": "Source Summary — The Three Circles — Executive Summary",
@@ -3004,7 +3037,7 @@
       "stem": "2026-04-07-jh-minderoo-executive-summary",
       "path": "sources/2026-04-07-jh-minderoo-executive-summary",
       "relativePath": "sources/2026-04-07-jh-minderoo-executive-summary.md",
-      "modifiedAt": "2026-04-11T01:28:08.608Z"
+      "modifiedAt": "2026-04-12T20:50:21.833Z"
     },
     {
       "title": "Source Summary — Uncle Alan Palm Island — Key Story",
@@ -3015,7 +3048,7 @@
       "stem": "2026-04-07-cc-stories-uncle-alan-palm-island",
       "path": "sources/2026-04-07-cc-stories-uncle-alan-palm-island",
       "relativePath": "sources/2026-04-07-cc-stories-uncle-alan-palm-island.md",
-      "modifiedAt": "2026-04-11T01:28:08.592Z"
+      "modifiedAt": "2026-04-12T20:50:21.828Z"
     },
     {
       "title": "Source Summary — Unified Storyteller Analysis System",
@@ -3026,7 +3059,7 @@
       "stem": "2026-04-07-el-unified-storyteller-analysis",
       "path": "sources/2026-04-07-el-unified-storyteller-analysis",
       "relativePath": "sources/2026-04-07-el-unified-storyteller-analysis.md",
-      "modifiedAt": "2026-04-11T01:28:08.600Z"
+      "modifiedAt": "2026-04-12T20:50:21.831Z"
     },
     {
       "title": "Source Summary — Vignette & Media Workflows",
@@ -3037,7 +3070,7 @@
       "stem": "2026-04-07-cc-act-appendices-vignette-workflows",
       "path": "sources/2026-04-07-cc-act-appendices-vignette-workflows",
       "relativePath": "sources/2026-04-07-cc-act-appendices-vignette-workflows.md",
-      "modifiedAt": "2026-04-11T01:24:35.539Z"
+      "modifiedAt": "2026-04-12T20:50:21.818Z"
     },
     {
       "title": "Source Summary — Vignette Template",
@@ -3048,7 +3081,7 @@
       "stem": "2026-04-07-cc-stories-vignette-template",
       "path": "sources/2026-04-07-cc-stories-vignette-template",
       "relativePath": "sources/2026-04-07-cc-stories-vignette-template.md",
-      "modifiedAt": "2026-04-11T01:28:08.593Z"
+      "modifiedAt": "2026-04-12T20:50:21.828Z"
     },
     {
       "title": "Source Summary — Visual System",
@@ -3059,7 +3092,7 @@
       "stem": "2026-04-07-cc-act-appendices-visual-system",
       "path": "sources/2026-04-07-cc-act-appendices-visual-system",
       "relativePath": "sources/2026-04-07-cc-act-appendices-visual-system.md",
-      "modifiedAt": "2026-04-11T01:24:35.540Z"
+      "modifiedAt": "2026-04-12T20:50:21.818Z"
     },
     {
       "title": "Source Summary — Ways of Working",
@@ -3070,7 +3103,7 @@
       "stem": "2026-04-07-cc-act-ways-of-working",
       "path": "sources/2026-04-07-cc-act-ways-of-working",
       "relativePath": "sources/2026-04-07-cc-act-ways-of-working.md",
-      "modifiedAt": "2026-04-11T00:31:13.084Z"
+      "modifiedAt": "2026-04-12T20:50:21.820Z"
     },
     {
       "title": "Source Summary — Website Scrapes — ACT Ecosystem Projects",
@@ -3081,7 +3114,7 @@
       "stem": "2026-04-06-website-scrapes",
       "path": "sources/2026-04-06-website-scrapes",
       "relativePath": "sources/2026-04-06-website-scrapes.md",
-      "modifiedAt": "2026-04-11T01:24:35.536Z"
+      "modifiedAt": "2026-04-12T20:50:21.816Z"
     },
     {
       "title": "Source Summary — Week of 2026-03-16",
@@ -3092,7 +3125,7 @@
       "stem": "2026-03-20-meeting-week-of-2026-03-16",
       "path": "sources/2026-03-20-meeting-week-of-2026-03-16",
       "relativePath": "sources/2026-03-20-meeting-week-of-2026-03-16.md",
-      "modifiedAt": "2026-04-11T01:17:47.433Z"
+      "modifiedAt": "2026-04-12T20:50:21.814Z"
     },
     {
       "title": "Source Summary — Why CivicGraph Exists",
@@ -3103,7 +3136,7 @@
       "stem": "2026-04-07-gs-why",
       "path": "sources/2026-04-07-gs-why",
       "relativePath": "sources/2026-04-07-gs-why.md",
-      "modifiedAt": "2026-04-11T01:28:08.605Z"
+      "modifiedAt": "2026-04-12T20:50:21.832Z"
     },
     {
       "title": "Source Summary — Wiki Health Report — 2026-04-06",
@@ -3114,7 +3147,7 @@
       "stem": "2026-04-06-lint-report",
       "path": "sources/2026-04-06-lint-report",
       "relativePath": "sources/2026-04-06-lint-report.md",
-      "modifiedAt": "2026-04-11T01:24:35.535Z"
+      "modifiedAt": "2026-04-12T20:50:21.815Z"
     },
     {
       "title": "Source Summary — Young Fellas Experience Cultural Connection at Standley Chasm",
@@ -3125,7 +3158,7 @@
       "stem": "2026-04-07-cc-stories-young-fellas-standley-chasm",
       "path": "sources/2026-04-07-cc-stories-young-fellas-standley-chasm",
       "relativePath": "sources/2026-04-07-cc-stories-young-fellas-standley-chasm.md",
-      "modifiedAt": "2026-04-11T01:28:08.593Z"
+      "modifiedAt": "2026-04-12T20:50:21.829Z"
     },
     {
       "title": "Source Summary — Young People Murcia — Key Story",
@@ -3136,7 +3169,7 @@
       "stem": "2026-04-07-cc-stories-young-people-murcia",
       "path": "sources/2026-04-07-cc-stories-young-people-murcia",
       "relativePath": "sources/2026-04-07-cc-stories-young-people-murcia.md",
-      "modifiedAt": "2026-04-11T01:28:08.593Z"
+      "modifiedAt": "2026-04-12T20:50:21.829Z"
     },
     {
       "title": "Source Summary — Young Person Returns to School After Cultural Healing",
@@ -3147,7 +3180,7 @@
       "stem": "2026-04-07-cc-stories-young-person-returns-school",
       "path": "sources/2026-04-07-cc-stories-young-person-returns-school",
       "relativePath": "sources/2026-04-07-cc-stories-young-person-returns-school.md",
-      "modifiedAt": "2026-04-11T01:28:08.594Z"
+      "modifiedAt": "2026-04-12T20:50:21.829Z"
     },
     {
       "title": "Staying — Country & Council",
@@ -3158,7 +3191,7 @@
       "stem": "staying",
       "path": "projects/justicehub/staying",
       "relativePath": "projects/justicehub/staying.md",
-      "modifiedAt": "2026-04-10T23:53:03.489Z"
+      "modifiedAt": "2026-04-12T20:50:21.796Z"
     },
     {
       "title": "Storytelling, Data Sovereignty, and Community Recovery",
@@ -3180,7 +3213,7 @@
       "stem": "strategic-decisions-log",
       "path": "decisions/strategic-decisions-log",
       "relativePath": "decisions/strategic-decisions-log.md",
-      "modifiedAt": "2026-04-09T22:56:00.781Z"
+      "modifiedAt": "2026-04-12T20:50:21.747Z"
     },
     {
       "title": "Studio Business Model",
@@ -3191,7 +3224,7 @@
       "stem": "studio-business-model",
       "path": "art/business/studio-business-model",
       "relativePath": "art/business/studio-business-model.md",
-      "modifiedAt": "2026-04-11T02:00:19.319Z"
+      "modifiedAt": "2026-04-12T20:50:21.737Z"
     },
     {
       "title": "Studio Innovation Flow",
@@ -3202,7 +3235,7 @@
       "stem": "studio-innovation-flow",
       "path": "art/innovation/studio-innovation-flow",
       "relativePath": "art/innovation/studio-innovation-flow.md",
-      "modifiedAt": "2026-04-11T02:00:19.319Z"
+      "modifiedAt": "2026-04-12T20:50:21.737Z"
     },
     {
       "title": "test",
@@ -3213,7 +3246,7 @@
       "stem": "2026-04-07-supabase-meetings-snapshot",
       "path": "sources/2026-04-07-supabase-meetings-snapshot",
       "relativePath": "sources/2026-04-07-supabase-meetings-snapshot.md",
-      "modifiedAt": "2026-04-11T01:22:25.128Z"
+      "modifiedAt": "2026-04-12T20:50:21.837Z"
     },
     {
       "title": "The Brave Ones",
@@ -3224,7 +3257,7 @@
       "stem": "the-brave-ones",
       "path": "projects/justicehub/the-brave-ones",
       "relativePath": "projects/justicehub/the-brave-ones.md",
-      "modifiedAt": "2026-04-10T23:53:03.490Z"
+      "modifiedAt": "2026-04-12T20:50:21.796Z"
     },
     {
       "title": "The Caravan",
@@ -3235,7 +3268,7 @@
       "stem": "the-caravan",
       "path": "projects/act-studio/the-caravan",
       "relativePath": "projects/act-studio/the-caravan.md",
-      "modifiedAt": "2026-04-10T23:31:14.016Z"
+      "modifiedAt": "2026-04-12T20:50:21.787Z"
     },
     {
       "title": "The Confessional",
@@ -3246,7 +3279,7 @@
       "stem": "the-confessional",
       "path": "projects/act-studio/the-confessional",
       "relativePath": "projects/act-studio/the-confessional.md",
-      "modifiedAt": "2026-04-11T02:52:09.619Z"
+      "modifiedAt": "2026-04-12T20:50:21.788Z"
     },
     {
       "title": "The Cure Already Exists",
@@ -3268,7 +3301,7 @@
       "stem": "the-edge-is-where-the-healing-is-justicehub-as-the-world-model-for-community-led",
       "path": "synthesis/the-edge-is-where-the-healing-is-justicehub-as-the-world-model-for-community-led",
       "relativePath": "synthesis/the-edge-is-where-the-healing-is-justicehub-as-the-world-model-for-community-led.md",
-      "modifiedAt": "2026-04-08T21:49:53.720Z"
+      "modifiedAt": "2026-04-12T20:50:21.839Z"
     },
     {
       "title": "The Full Idea",
@@ -3279,7 +3312,7 @@
       "stem": "the-full-idea",
       "path": "projects/justicehub/the-full-idea",
       "relativePath": "projects/justicehub/the-full-idea.md",
-      "modifiedAt": "2026-04-08T09:11:25.392Z"
+      "modifiedAt": "2026-04-12T20:50:21.796Z"
     },
     {
       "title": "The Harvest / Witta Harvest HQ",
@@ -3290,7 +3323,7 @@
       "stem": "the-harvest",
       "path": "projects/the-harvest",
       "relativePath": "projects/the-harvest/the-harvest.md",
-      "modifiedAt": "2026-04-11T01:42:48.796Z"
+      "modifiedAt": "2026-04-12T20:50:21.802Z"
     },
     {
       "title": "The Harvest: Property Arc and Founding Vision",
@@ -3301,7 +3334,7 @@
       "stem": "harvest-property-arc",
       "path": "research/harvest-property-arc",
       "relativePath": "research/harvest-property-arc.md",
-      "modifiedAt": "2026-04-10T02:07:52.917Z"
+      "modifiedAt": "2026-04-12T20:50:21.803Z"
     },
     {
       "title": "The Kettle",
@@ -3312,7 +3345,7 @@
       "stem": "the-kettle",
       "path": "synthesis/the-kettle",
       "relativePath": "synthesis/the-kettle.md",
-      "modifiedAt": "2026-04-09T06:44:28.360Z"
+      "modifiedAt": "2026-04-12T20:50:21.839Z"
     },
     {
       "title": "The Origin of A Curious Tractor",
@@ -3334,7 +3367,7 @@
       "stem": "third-reality",
       "path": "concepts/third-reality",
       "relativePath": "concepts/third-reality.md",
-      "modifiedAt": "2026-04-11T02:53:24.787Z"
+      "modifiedAt": "2026-04-12T20:50:21.743Z"
     },
     {
       "title": "The Three Circles",
@@ -3345,7 +3378,7 @@
       "stem": "three-circles",
       "path": "projects/justicehub/three-circles",
       "relativePath": "projects/justicehub/three-circles.md",
-      "modifiedAt": "2026-04-11T02:58:29.662Z"
+      "modifiedAt": "2026-04-12T20:50:21.798Z"
     },
     {
       "title": "The Vagina",
@@ -3356,7 +3389,7 @@
       "stem": "the-vagina",
       "path": "projects/act-studio/the-vagina",
       "relativePath": "projects/act-studio/the-vagina.md",
-      "modifiedAt": "2026-04-10T23:31:14.016Z"
+      "modifiedAt": "2026-04-12T20:50:21.788Z"
     },
     {
       "title": "The Work",
@@ -3367,7 +3400,7 @@
       "stem": "2026-04-the-work",
       "path": "decisions/2026-04-the-work",
       "relativePath": "decisions/2026-04-the-work.md",
-      "modifiedAt": "2026-04-12T02:28:11.922Z"
+      "modifiedAt": "2026-04-12T20:50:21.747Z"
     },
     {
       "title": "TOMNET",
@@ -3378,7 +3411,7 @@
       "stem": "tomnet",
       "path": "projects/tomnet",
       "relativePath": "projects/tomnet.md",
-      "modifiedAt": "2026-04-10T20:09:27.544Z"
+      "modifiedAt": "2026-04-12T20:50:21.802Z"
     },
     {
       "title": "Tractorpedia",
@@ -3389,7 +3422,7 @@
       "stem": "tractorpedia",
       "path": "concepts/tractorpedia",
       "relativePath": "concepts/tractorpedia.md",
-      "modifiedAt": "2026-04-10T20:09:27.545Z"
+      "modifiedAt": "2026-04-12T20:50:21.744Z"
     },
     {
       "title": "Transcript Analysis Method",
@@ -3411,7 +3444,7 @@
       "stem": "treacher",
       "path": "projects/act-studio/treacher",
       "relativePath": "projects/act-studio/treacher.md",
-      "modifiedAt": "2026-04-11T01:59:13.013Z"
+      "modifiedAt": "2026-04-12T20:50:21.788Z"
     },
     {
       "title": "Uncle Alan Palm Island — Key Story",
@@ -3433,7 +3466,7 @@
       "stem": "uncle-allan-palm-island-art",
       "path": "projects/act-studio/uncle-allan-palm-island-art",
       "relativePath": "projects/act-studio/uncle-allan-palm-island-art.md",
-      "modifiedAt": "2026-04-11T02:03:22.729Z"
+      "modifiedAt": "2026-04-12T20:50:21.788Z"
     },
     {
       "title": "Uncle Frank Daniel Landers",
@@ -3444,7 +3477,7 @@
       "stem": "uncle-frank-daniel-landers",
       "path": "people/uncle-frank-daniel-landers",
       "relativePath": "people/uncle-frank-daniel-landers.md",
-      "modifiedAt": "2026-04-10T01:52:41.008Z"
+      "modifiedAt": "2026-04-12T20:50:21.784Z"
     },
     {
       "title": "Uncle George",
@@ -3455,7 +3488,7 @@
       "stem": "uncle-george",
       "path": "people/uncle-george",
       "relativePath": "people/uncle-george.md",
-      "modifiedAt": "2026-04-10T01:53:25.560Z"
+      "modifiedAt": "2026-04-12T20:50:21.784Z"
     },
     {
       "title": "URL Audit — 2026-04-07",
@@ -3477,7 +3510,7 @@
       "stem": "vic",
       "path": "people/vic",
       "relativePath": "people/vic.md",
-      "modifiedAt": "2026-04-11T01:48:28.966Z"
+      "modifiedAt": "2026-04-12T20:50:21.784Z"
     },
     {
       "title": "Vignette & Media Workflows",
@@ -3499,7 +3532,7 @@
       "stem": "ways-of-working",
       "path": "concepts/ways-of-working",
       "relativePath": "concepts/ways-of-working.md",
-      "modifiedAt": "2026-04-11T01:54:22.690Z"
+      "modifiedAt": "2026-04-12T20:50:21.745Z"
     },
     {
       "title": "Wiki Health Report — 2026-04-07",
@@ -3521,7 +3554,7 @@
       "stem": "wiki-project-and-work-sync-contract",
       "path": "technical/wiki-project-and-work-sync-contract",
       "relativePath": "technical/wiki-project-and-work-sync-contract.md",
-      "modifiedAt": "2026-04-11T03:08:30.660Z"
+      "modifiedAt": "2026-04-12T20:50:21.841Z"
     },
     {
       "title": "Winifred Obah",
@@ -3532,7 +3565,7 @@
       "stem": "winifred-obah",
       "path": "people/winifred-obah",
       "relativePath": "people/winifred-obah.md",
-      "modifiedAt": "2026-04-10T01:56:19.178Z"
+      "modifiedAt": "2026-04-12T20:50:21.784Z"
     },
     {
       "title": "Y1 Art Release Program — 2026/27",

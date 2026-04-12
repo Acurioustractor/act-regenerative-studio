@@ -27,13 +27,13 @@ export function CommunityVoicesSection({
   return (
     <section className="space-y-12">
       <div className="text-center">
-        <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+        <p className="text-xs uppercase tracking-[0.3em] text-[#4A4035]">
           Community Voices
         </p>
         <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E] md:text-3xl">
           Stories from this work
         </h2>
-        <p className="mt-4 text-[#5A6B4D]">
+        <p className="mt-4 text-[#3A4A3D]">
           Real stories from people connected to {projectTitle}, shared through
           Empathy Ledger
         </p>
@@ -66,7 +66,7 @@ export function CommunityVoicesSection({
                   {storyteller.display_name || storyteller.full_name}
                 </h4>
                 {storyteller.current_role && storyteller.current_organization && (
-                  <p className="mt-1 text-sm text-[#6B5A45]">
+                  <p className="mt-1 text-sm text-[#4A4035]">
                     {storyteller.current_role} at{' '}
                     {storyteller.current_organization}
                   </p>
@@ -76,11 +76,11 @@ export function CommunityVoicesSection({
                     {storyteller.custom_tagline}
                   </p>
                 )}
-                <p className="mt-3 text-sm text-[#5A6B4D]">
+                <p className="mt-3 text-sm text-[#3A4A3D]">
                   {storyteller.featured_bio}
                 </p>
                 {storyteller.featured_story_count > 0 && (
-                  <p className="mt-3 text-xs text-[#6B5A45]">
+                  <p className="mt-3 text-xs text-[#4A4035]">
                     {storyteller.featured_story_count}{' '}
                     {storyteller.featured_story_count === 1 ? 'story' : 'stories'}
                   </p>
@@ -101,7 +101,7 @@ export function CommunityVoicesSection({
             {stories.map((story) => (
               <a
                 key={story.story_id}
-                href={`${process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL}/stories/${story.story_id}`}
+                href={story.story_url || `${process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL}/stories/${story.story_id}`}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="group rounded-[24px] border border-[#E3D4BA] bg-white overflow-hidden transition-all hover:shadow-lg hover:border-[#7A9B76]"
@@ -124,11 +124,11 @@ export function CommunityVoicesSection({
                   <h4 className="font-[var(--font-display)] text-lg font-semibold text-[#2F3E2E] group-hover:text-[#7A9B76]">
                     {story.story_title}
                   </h4>
-                  <p className="mt-1 text-sm text-[#6B5A45]">
+                  <p className="mt-1 text-sm text-[#4A4035]">
                     by {story.storyteller_display_name || story.storyteller_name}
                   </p>
                   {story.excerpt && (
-                    <p className="mt-3 text-sm text-[#5A6B4D] line-clamp-3">
+                    <p className="mt-3 text-sm text-[#3A4A3D] line-clamp-3">
                       {story.excerpt}
                     </p>
                   )}
@@ -137,7 +137,7 @@ export function CommunityVoicesSection({
                       {story.themes.slice(0, 3).map((theme) => (
                         <span
                           key={theme}
-                          className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs text-[#6B5A45]"
+                          className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs text-[#4A4035]"
                         >
                           {theme}
                         </span>
@@ -156,7 +156,7 @@ export function CommunityVoicesSection({
 
       {/* Link to Empathy Ledger */}
       <div className="text-center rounded-[24px] border border-[#E3D4BA] bg-gradient-to-br from-[#F6F1E7] to-[#E7DDC7] p-8">
-        <p className="text-sm text-[#6B5A45]">
+        <p className="text-sm text-[#4A4035]">
           These stories are powered by{' '}
           <a
             href={process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL}

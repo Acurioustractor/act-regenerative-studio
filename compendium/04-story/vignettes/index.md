@@ -2,9 +2,9 @@
 title: Story Vignettes
 slug: vignettes
 website_path: null
-excerpt: "28 consented stories anchoring the compendium in lived experience"
+excerpt: "31 consented stories anchoring the compendium in lived experience"
 status: published
-last_updated: 2026-01-12
+last_updated: 2026-01-17
 shareability: INTERNAL
 ---
 
@@ -82,6 +82,16 @@ See [_templates/vignette-template.md](_templates/vignette-template.md) for the f
 | 24 | [Operation Luna Success: Dramatic Reduction in Youth Offending](system-outcomes/24-operation-luna-success.md) | EXTERNAL-LITE | Pending |
 | 25 | [Young Fellas Experience Cultural Connection at Standley Chasm](system-outcomes/25-young-fellas-standley.md) | EXTERNAL-LITE | Pending |
 | 26 | [Collective Impact: Additional Outcome Stories](system-outcomes/26-additional-outcomes.md) | EXTERNAL-LITE | Pending |
+
+### Community Voice (5 stories)
+
+| # | Story | Consent | Status |
+|---|-------|---------|--------|
+| 27 | [Ivy's Story: Community Connection](community-voice/27-ivy-key-story.md) | EXTERNAL-LITE | Draft |
+| 28 | [Aunty Evie's Story: Elder Wisdom](community-voice/28-aunty-evie-key-story.md) | EXTERNAL-LITE | Elder Review |
+| 29 | [Aunty Maureen's Story: Elder Voice](community-voice/29-aunty-maureen-key-story.md) | EXTERNAL-LITE | Elder Review |
+| 30 | [Michael Young (Bear)'s Story: Community Voice](community-voice/30-michael-young-bear-key-story.md) | EXTERNAL-LITE | Draft |
+| 31 | [Darrell Pierpoint's Story: Community Connection](community-voice/31-darrell-pierpoint-key-story.md) | EXTERNAL-LITE | Draft |
 
 ---
 
@@ -200,11 +210,17 @@ vignettes/
 │   ├── 20-atnarpa-boys-trip.md
 │   ├── 21-finke-desert-race.md
 │   └── 22-ms-tourism-entrepreneur.md
-└── system-outcomes/
-    ├── 23-educational-transformation.md
-    ├── 24-operation-luna-success.md
-    ├── 25-young-fellas-standley.md
-    └── 26-additional-outcomes.md
+├── system-outcomes/
+│   ├── 23-educational-transformation.md
+│   ├── 24-operation-luna-success.md
+│   ├── 25-young-fellas-standley.md
+│   └── 26-additional-outcomes.md
+└── community-voice/
+    ├── 27-ivy-key-story.md
+    ├── 28-aunty-evie-key-story.md
+    ├── 29-aunty-maureen-key-story.md
+    ├── 30-michael-young-bear-key-story.md
+    └── 31-darrell-pierpoint-key-story.md
 ```
 
 ---

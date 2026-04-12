@@ -92,28 +92,23 @@ export interface RAGResponse {
 }
 
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
-// SUPABASE CLIENT
+// SUPABASE CLIENT (lazy initialization to avoid build-time errors)
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 let _supabase: any = null;
 
 function getSupabase() {
   if (!_supabase) {
-    const url =
-      process.env.NEXT_PUBLIC_SUPABASE_URL ?? process.env.SUPABASE_URL;
-    const key =
-      process.env.SUPABASE_SERVICE_ROLE_KEY ??
-      process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+    const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
+    const key = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
 
     if (!url || !key) {
-      throw new Error(
-        'Supabase credentials not configured. Set NEXT_PUBLIC_SUPABASE_URL or SUPABASE_URL and a Supabase key.'
-      );
+      throw new Error('Supabase credentials not configured. Set NEXT_PUBLIC_SUPABASE_URL and SUPABASE_SERVICE_ROLE_KEY or NEXT_PUBLIC_SUPABASE_ANON_KEY.');
     }
 
     _supabase = createClient(url, key);
   }
-
   return _supabase;
 }
 

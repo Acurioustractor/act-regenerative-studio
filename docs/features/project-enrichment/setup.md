@@ -4,7 +4,7 @@
 
 The ACT Project Enrichment system automatically combines data from multiple sources to create rich, connected project pages:
 
-1. **Notion Database** - Project metadata, timelines, outcomes, metrics
+1. **Canonical ACT wiki metadata** - Project framing, timelines, outcomes, metrics
 2. **Empathy Ledger** - Storytellers, stories, thematic insights
 3. **Blog Posts** - Related reading and context (coming soon)
 4. **Project Analysis** - Related project discovery (coming soon)
@@ -12,13 +12,13 @@ The ACT Project Enrichment system automatically combines data from multiple sour
 
 ## What's Been Implemented
 
-### ✅ Phase 1: Notion Integration & Empathy Ledger Sync
-- **Library**: `/src/lib/notion/client.ts` - Notion API client
-- **Types**: `/src/lib/notion/types.ts` - TypeScript interfaces
+### ✅ Phase 1: Canonical Metadata & Empathy Ledger Sync
+- **Library**: `/src/lib/project-metadata/public.ts` - Wiki-derived project metadata
+- **Types**: `/src/lib/project-metadata/types.ts` - TypeScript interfaces
 - **Functions**:
-  - `getNotionProject(slug)` - Fetch single project by slug
-  - `getAllNotionProjects()` - Fetch all active projects
-  - `getNotionPageContent(pageId)` - Fetch page content blocks
+  - `getPublicProjectMetadata(slug)` - Fetch single project by slug
+  - `getAllPublicProjectMetadata()` - Fetch all active projects
+  - `getPublicProjectPageContent(slug)` - Fetch page content blocks
 
 ### ✅ Phase 2: Blog Linking & Related Projects Discovery
 
@@ -34,7 +34,7 @@ The ACT Project Enrichment system automatically combines data from multiple sour
 #### Related Projects Discovery
 - **Service**: `/src/lib/enrichment/project-relationships.ts`
 - **Connection Types**:
-  - **Direct**: Same organization or explicit Notion relation
+  - **Direct**: Same organization or explicit metadata relation
   - **Thematic**: Shared focus areas and themes
   - **Community**: Shared storytellers from Empathy Ledger
   - **Geographic**: Same location mentions
@@ -48,7 +48,7 @@ The ACT Project Enrichment system automatically combines data from multiple sour
 - **Service**: `/src/lib/enrichment/project-enrichment.ts`
 - **Main Function**: `enrichProject(slug)` - Combines all data sources
 - **Features**:
-  - Fetches Notion project metadata
+  - Fetches wiki-derived project metadata
   - Fetches Empathy Ledger storytellers and stories
   - Analyzes themes from stories (primary/emerging themes)
   - Finds related blog posts (semantic matching)
@@ -58,8 +58,10 @@ The ACT Project Enrichment system automatically combines data from multiple sour
 ### ✅ API Endpoints
 
 #### Core Enrichment
-- **Notion Data**: `GET /api/projects/[slug]/notion`
-  - Returns raw Notion project data + page content
+- **Metadata**: `GET /api/projects/[slug]/metadata`
+  - Returns wiki-derived project metadata + page content
+- **Legacy alias**: `GET /api/projects/[slug]/notion`
+  - Compatibility alias to the canonical metadata route
 
 - **Enriched Data**: `GET /api/projects/[slug]/enrich`
   - Returns combined data from all sources
@@ -81,40 +83,29 @@ The ACT Project Enrichment system automatically combines data from multiple sour
 
 ## Setup Instructions
 
-### 1. Create Notion Integration
+### 1. Canonical metadata source
 
-1. Go to [https://www.notion.so/my-integrations](https://www.notion.so/my-integrations)
-2. Click "+ New integration"
-3. Name it "ACT Project Enrichment"
-4. Select your workspace
-5. Copy the **Internal Integration Token** (starts with `secret_`)
+The public project metadata layer is now derived from the canonical ACT wiki and static project registry. The website build runs `sync:wiki` before `next build`, so project truth should be updated in the wiki first.
 
-### 2. Share Notion Database with Integration
+Optional legacy Notion tooling still exists for older enrichment paths, but it is no longer part of the main public build contract.
 
-1. Open your ACT Projects database in Notion
-2. Click the `···` menu in the top right
-3. Click "Add connections"
-4. Search for "ACT Project Enrichment" and select it
-5. Copy the **Database ID** from the URL:
-   ```
-   https://www.notion.so/177ebcf981cf80dd9514f1ec32f3314c?v=...
-                        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
-                        This is your database ID
-   ```
-
-### 3. Configure Environment Variables
+### 2. Configure Environment Variables
 
 Add these to your `.env.local` file:
 
 ```bash
-# Notion Integration
-NOTION_API_KEY=secret_your_actual_token_here
-NOTION_PROJECTS_DATABASE_ID=177ebcf981cf80dd9514f1ec32f3314c
+# Canonical website build
+EMPATHY_LEDGER_URL=http://localhost:3030
 ```
 
-### 4. Expected Notion Database Structure
+Optional legacy Notion env vars are only needed if you are explicitly using the old snapshot tooling or admin scanners.
 
-Your Notion ACT Projects database should have these properties:
+### 3. Expected canonical metadata structure
+
+The canonical metadata layer is assembled from:
+- `wiki/projects/`
+- the static project registry in `/src/data/projects.ts`
+- generated snapshots in `/src/data/wiki-projects.generated.json`
 
 **Required Fields:**
 - **Slug** (Text) - URL-friendly project identifier (e.g., "justicehub")
@@ -141,8 +132,8 @@ Your Notion ACT Projects database should have these properties:
 ### Phase 1: Test Notion Connection
 
 ```bash
-# Fetch JusticeHub project from Notion
-curl http://localhost:3002/api/projects/justicehub/notion
+# Fetch JusticeHub project metadata
+curl http://localhost:3002/api/projects/justicehub/metadata
 ```
 
 Expected response:
@@ -150,7 +141,7 @@ Expected response:
 {
   "success": true,
   "project": {
-    "id": "notion-page-id",
+    "id": "justicehub",
     "slug": "justicehub",
     "title": "JusticeHub",
     "description": "Digital platform connecting system-impacted youth...",
@@ -158,7 +149,8 @@ Expected response:
     "focusAreas": ["Justice", "Youth"],
     "themes": ["Systems Change", "Community Healing"],
     "partners": ["Mount Isa Aunties Network"],
-    "pageContent": "Additional notes from the Notion page..."
+    "pageContent": "Additional notes from the canonical project page...",
+    "source": "wiki-derived"
   }
 }
 ```
@@ -166,7 +158,7 @@ Expected response:
 ### Phase 1: Test Full Enrichment
 
 ```bash
-# Get enriched project data combining Notion + Empathy Ledger
+# Get enriched project data combining metadata + Empathy Ledger
 curl http://localhost:3002/api/projects/justicehub/enrich
 ```
 
@@ -175,7 +167,7 @@ Expected response:
 {
   "success": true,
   "data": {
-    "notion": { /* Notion metadata */ },
+    "metadata": { /* Wiki-derived project metadata */ },
     "storytellers": [
       {
         "id": "storyteller-uuid",
@@ -219,7 +211,7 @@ Expected response:
       }
     ],
     "sources": {
-      "notion": {
+      "metadata": {
         "page_id": "...",
         "last_synced": "2025-12-24T..."
       },
@@ -380,7 +372,7 @@ Expected response:
 
 | Data Source | Status | Endpoint |
 |------------|--------|----------|
-| Notion Projects | ✅ Implemented | `/api/projects/[slug]/notion` |
+| Project Metadata | ✅ Implemented | `/api/projects/[slug]/metadata` |
 | Empathy Ledger Stories | ✅ Implemented | `/api/projects/[slug]/enrich` |
 | Thematic Analysis | ✅ Implemented | `/api/projects/[slug]/enrich` |
 | Blog Post Linking | ✅ Implemented | `/api/projects/[slug]/blog-links` |
@@ -394,10 +386,9 @@ Expected response:
 ```
 src/
 ├── lib/
-│   ├── notion/
-│   │   ├── client.ts                    # Notion API client
-│   │   ├── types.ts                     # TypeScript interfaces
-│   │   └── index.ts                     # Exports
+│   ├── project-metadata/
+│   │   ├── public.ts                    # Wiki-derived project metadata
+│   │   └── types.ts                     # TypeScript interfaces
 │   └── enrichment/
 │       ├── project-enrichment.ts        # Main enrichment service
 │       ├── blog-linking.ts              # Blog post discovery
@@ -406,8 +397,10 @@ src/
 │   └── api/
 │       └── projects/
 │           └── [slug]/
+│               ├── metadata/
+│               │   └── route.ts         # Canonical metadata endpoint
 │               ├── notion/
-│               │   └── route.ts         # Notion data endpoint
+│               │   └── route.ts         # Legacy compatibility alias
 │               ├── enrich/
 │               │   └── route.ts         # Full enrichment endpoint
 │               ├── related/
@@ -420,10 +413,10 @@ src/
 
 ## Troubleshooting
 
-**"Project not found in Notion database"**
-- Check that the project slug exists in your Notion database
-- Verify the Slug property matches exactly (case-sensitive)
-- Ensure the Notion integration has access to the database
+**"Project not found in metadata registry"**
+- Check that the project slug exists in the canonical wiki project set
+- Verify the slug matches exactly
+- Run `npm run sync:wiki` to refresh the generated snapshot
 
 **"Failed to fetch Empathy Ledger data"**
 - Verify `EMPATHY_LEDGER_URL` is set correctly (http://localhost:3000)

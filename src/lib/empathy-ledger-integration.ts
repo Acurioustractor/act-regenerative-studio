@@ -1,10 +1,15 @@
 /**
  * Empathy Ledger Integration
- * Queries storytellers and stories from Empathy Ledger Supabase database
+ * Legacy search helpers for storyteller/story discovery.
+ * These now share the same runtime contract as the site-scoped live feed:
+ * fast timeout, single disable switch, and graceful fallback when EL is offline.
  */
 
-const EMPATHY_LEDGER_URL =
-  process.env.EMPATHY_LEDGER_URL || 'http://localhost:3001';
+import { cache } from 'react';
+import {
+  fetchEmpathyLedgerJson,
+  requestEmpathyLedgerJson,
+} from '@/lib/empathy-ledger-runtime';
 
 export interface Storyteller {
   id: string;
@@ -40,9 +45,40 @@ export interface StorySearchResult {
   totalCount: number;
 }
 
+async function fetchJson<T>(path: string, revalidate: number = 600): Promise<T | null> {
+  return fetchEmpathyLedgerJson<T>(path, { revalidate });
+}
+
 /**
  * Search storytellers by organization
  */
+const searchStorytellersByOrganizationCached = cache(
+  async (
+    organizationName: string,
+    serializedOptions: string
+  ): Promise<StorytellerSearchResult> => {
+    const options = JSON.parse(serializedOptions) as {
+      limit?: number;
+      hasStories?: boolean;
+    };
+    const params = new URLSearchParams();
+    if (organizationName) params.append('organization', organizationName);
+    if (options.limit) params.append('limit', options.limit.toString());
+    if (options.hasStories !== undefined)
+      params.append('has_stories', options.hasStories.toString());
+
+    const data = await fetchJson<{
+      storytellers?: Storyteller[];
+      totalCount?: number;
+    }>(`/api/search/storytellers?${params.toString()}`, 600);
+
+    return {
+      storytellers: data?.storytellers || [],
+      totalCount: data?.totalCount || 0,
+    };
+  }
+);
+
 export async function searchStorytellersByOrganization(
   organizationName: string,
   options: {
@@ -51,29 +87,13 @@ export async function searchStorytellersByOrganization(
   } = {}
 ): Promise<StorytellerSearchResult> {
   try {
-    const params = new URLSearchParams();
-    if (organizationName) params.append('organization', organizationName);
-    if (options.limit) params.append('limit', options.limit.toString());
-    if (options.hasStories !== undefined)
-      params.append('has_stories', options.hasStories.toString());
-
-    const response = await fetch(
-      `${EMPATHY_LEDGER_URL}/api/search/storytellers?${params}`,
-      {
-        next: { revalidate: 600 }, // Cache for 10 minutes
-      }
+    return await searchStorytellersByOrganizationCached(
+      organizationName,
+      JSON.stringify({
+        limit: options.limit ?? null,
+        hasStories: options.hasStories ?? null,
+      })
     );
-
-    if (!response.ok) {
-      console.error('Failed to fetch storytellers:', response.statusText);
-      return { storytellers: [], totalCount: 0 };
-    }
-
-    const data = await response.json();
-    return {
-      storytellers: data.storytellers || [],
-      totalCount: data.totalCount || 0,
-    };
   } catch (error) {
     console.error('Error searching storytellers:', error);
     return { storytellers: [], totalCount: 0 };
@@ -83,6 +103,31 @@ export async function searchStorytellersByOrganization(
 /**
  * Search storytellers by themes
  */
+const searchStorytellersByThemesCached = cache(
+  async (
+    serializedThemes: string,
+    serializedOptions: string
+  ): Promise<StorytellerSearchResult> => {
+    const themes = JSON.parse(serializedThemes) as string[];
+    const options = JSON.parse(serializedOptions) as {
+      limit?: number;
+    };
+    const params = new URLSearchParams();
+    params.append('themes', themes.join(','));
+    if (options.limit) params.append('limit', options.limit.toString());
+
+    const data = await fetchJson<{
+      storytellers?: Storyteller[];
+      totalCount?: number;
+    }>(`/api/search/storytellers?${params.toString()}`, 600);
+
+    return {
+      storytellers: data?.storytellers || [],
+      totalCount: data?.totalCount || 0,
+    };
+  }
+);
+
 export async function searchStorytellersByThemes(
   themes: string[],
   options: {
@@ -90,26 +135,12 @@ export async function searchStorytellersByThemes(
   } = {}
 ): Promise<StorytellerSearchResult> {
   try {
-    const params = new URLSearchParams();
-    params.append('themes', themes.join(','));
-    if (options.limit) params.append('limit', options.limit.toString());
-
-    const response = await fetch(
-      `${EMPATHY_LEDGER_URL}/api/search/storytellers?${params}`,
-      {
-        next: { revalidate: 600 },
-      }
+    return await searchStorytellersByThemesCached(
+      JSON.stringify([...themes].sort()),
+      JSON.stringify({
+        limit: options.limit ?? null,
+      })
     );
-
-    if (!response.ok) {
-      return { storytellers: [], totalCount: 0 };
-    }
-
-    const data = await response.json();
-    return {
-      storytellers: data.storytellers || [],
-      totalCount: data.totalCount || 0,
-    };
   } catch (error) {
     console.error('Error searching storytellers by themes:', error);
     return { storytellers: [], totalCount: 0 };
@@ -119,6 +150,32 @@ export async function searchStorytellersByThemes(
 /**
  * Get storyteller's stories
  */
+const getStorytellerStoriesCached = cache(
+  async (
+    storytellerId: string,
+    serializedOptions: string
+  ): Promise<StorySearchResult> => {
+    const options = JSON.parse(serializedOptions) as {
+      limit?: number;
+      privacyLevel?: 'public' | 'community';
+    };
+    const params = new URLSearchParams();
+    if (options.limit) params.append('limit', options.limit.toString());
+    if (options.privacyLevel)
+      params.append('privacy_level', options.privacyLevel);
+
+    const data = await fetchJson<{
+      stories?: Story[];
+      total_count?: number;
+    }>(`/api/v1/profiles/${storytellerId}/stories?${params.toString()}`, 600);
+
+    return {
+      stories: data?.stories || [],
+      totalCount: data?.total_count || 0,
+    };
+  }
+);
+
 export async function getStorytellerStories(
   storytellerId: string,
   options: {
@@ -127,27 +184,13 @@ export async function getStorytellerStories(
   } = {}
 ): Promise<StorySearchResult> {
   try {
-    const params = new URLSearchParams();
-    if (options.limit) params.append('limit', options.limit.toString());
-    if (options.privacyLevel)
-      params.append('privacy_level', options.privacyLevel);
-
-    const response = await fetch(
-      `${EMPATHY_LEDGER_URL}/api/v1/profiles/${storytellerId}/stories?${params}`,
-      {
-        next: { revalidate: 600 },
-      }
+    return await getStorytellerStoriesCached(
+      storytellerId,
+      JSON.stringify({
+        limit: options.limit ?? null,
+        privacyLevel: options.privacyLevel ?? null,
+      })
     );
-
-    if (!response.ok) {
-      return { stories: [], totalCount: 0 };
-    }
-
-    const data = await response.json();
-    return {
-      stories: data.stories || [],
-      totalCount: data.total_count || 0,
-    };
   } catch (error) {
     console.error('Error fetching storyteller stories:', error);
     return { stories: [], totalCount: 0 };
@@ -157,6 +200,33 @@ export async function getStorytellerStories(
 /**
  * Search stories by themes
  */
+const searchStoriesByThemesCached = cache(
+  async (
+    serializedThemes: string,
+    serializedOptions: string
+  ): Promise<StorySearchResult> => {
+    const themes = JSON.parse(serializedThemes) as string[];
+    const options = JSON.parse(serializedOptions) as {
+      limit?: number;
+      project?: string;
+    };
+    const params = new URLSearchParams();
+    params.append('themes', themes.join(','));
+    if (options.limit) params.append('limit', options.limit.toString());
+    if (options.project) params.append('project', options.project);
+
+    const data = await fetchJson<{
+      stories?: Story[];
+      totalCount?: number;
+    }>(`/api/stories/search?${params.toString()}`, 600);
+
+    return {
+      stories: data?.stories || [],
+      totalCount: data?.totalCount || 0,
+    };
+  }
+);
+
 export async function searchStoriesByThemes(
   themes: string[],
   options: {
@@ -165,27 +235,13 @@ export async function searchStoriesByThemes(
   } = {}
 ): Promise<StorySearchResult> {
   try {
-    const params = new URLSearchParams();
-    params.append('themes', themes.join(','));
-    if (options.limit) params.append('limit', options.limit.toString());
-    if (options.project) params.append('project', options.project);
-
-    const response = await fetch(
-      `${EMPATHY_LEDGER_URL}/api/stories/search?${params}`,
-      {
-        next: { revalidate: 600 },
-      }
+    return await searchStoriesByThemesCached(
+      JSON.stringify([...themes].sort()),
+      JSON.stringify({
+        limit: options.limit ?? null,
+        project: options.project ?? null,
+      })
     );
-
-    if (!response.ok) {
-      return { stories: [], totalCount: 0 };
-    }
-
-    const data = await response.json();
-    return {
-      stories: data.stories || [],
-      totalCount: data.totalCount || 0,
-    };
   } catch (error) {
     console.error('Error searching stories:', error);
     return { stories: [], totalCount: 0 };
@@ -203,8 +259,8 @@ export async function getThematicAnalysis(
   } = {}
 ): Promise<any> {
   try {
-    const response = await fetch(
-      `${EMPATHY_LEDGER_URL}/api/analytics/thematic-analysis`,
+    return await requestEmpathyLedgerJson<any>(
+      '/api/analytics/thematic-analysis',
       {
         method: 'POST',
         headers: {
@@ -218,15 +274,9 @@ export async function getThematicAnalysis(
           includeMediaKit: true,
           includeRelatedContent: true,
         }),
-        next: { revalidate: 3600 }, // Cache for 1 hour
+        revalidate: 3600,
       }
     );
-
-    if (!response.ok) {
-      return null;
-    }
-
-    return await response.json();
   } catch (error) {
     console.error('Error fetching thematic analysis:', error);
     return null;

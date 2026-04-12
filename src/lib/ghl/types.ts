@@ -381,7 +381,7 @@ export class ContactSyncError extends Error {
 
 /**
  * GHL Webhook Payload
- * Represents the data received from GHL form submissions and webhooks.
+ * Represents the data received from GHL form submissions and webhooks
  */
 export interface GHLWebhookPayload {
   type?: string;
@@ -392,18 +392,21 @@ export interface GHLWebhookPayload {
   formName?: string;
   formSubmissionId?: string;
   timestamp?: string;
+  // Form field data
   first_name?: string;
   last_name?: string;
   full_name?: string;
   email?: string;
   phone?: string;
   message?: string;
+  // Common form fields
   organization?: string;
   interest_area?: string;
   project_type?: string;
   preferred_dates?: string;
   number_of_guests?: string;
   dietary_requirements?: string;
+  // Custom fields as key-value
   customFields?: Record<string, any>;
-  [key: string]: any;
+  [key: string]: any; // Allow additional dynamic fields
 }

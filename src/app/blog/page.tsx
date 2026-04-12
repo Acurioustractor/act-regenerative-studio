@@ -1,13 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
-import { fetchContentHubArticles } from "../../lib/empathy-ledger-articles";
+import { getSiteEditorialArticles } from "../../lib/empathy-ledger-editorial";
 
 export const revalidate = 60;
 
 export default async function BlogPage() {
-  let posts: Awaited<ReturnType<typeof fetchContentHubArticles>> = [];
+  let posts: Awaited<ReturnType<typeof getSiteEditorialArticles>> = [];
   try {
-    posts = await fetchContentHubArticles({ project: "act-main", limit: 60 });
+    posts = await getSiteEditorialArticles(60);
   } catch (error) {
     console.error('Failed to fetch blog posts:', error);
   }
@@ -61,6 +61,19 @@ export default async function BlogPage() {
                     >
                       {tag}
                     </span>
+                  ))}
+                </div>
+              )}
+              {post.relatedProjectSlugs.length > 0 && (
+                <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.24em] text-[#4CAF50]">
+                  {post.relatedProjectSlugs.slice(0, 2).map((slug) => (
+                    <Link
+                      key={slug}
+                      href={`/projects/${slug}`}
+                      className="rounded-full bg-[#E8F3E6] px-3 py-1 text-[#2F3E2E]"
+                    >
+                      {slug.replace(/-/g, " ")}
+                    </Link>
                   ))}
                 </div>
               )}

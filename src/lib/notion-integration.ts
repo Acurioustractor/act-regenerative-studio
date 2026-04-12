@@ -1,12 +1,16 @@
 /**
- * Notion Project Integration
- * Fetches project data from the ACT Placemat backend Notion integration
+ * Legacy Notion snapshot compatibility layer.
+ *
+ * Reads project enrichment from a generated snapshot when older tooling still
+ * expects the ACT Placemat/Notion shape. The public website no longer depends
+ * on this module for its main build path.
  */
 
-const BACKEND_URL = process.env.NOTION_BACKEND_URL || 'http://localhost:4000';
+import snapshot from '@/data/notion-projects.generated.json';
 
 export interface NotionProject {
   id: string;
+  slug?: string | null;
   name: string;
   description?: string;
   aiSummary?: string;
@@ -34,46 +38,38 @@ export interface NotionProject {
 
 export interface NotionProjectsResponse {
   projects: NotionProject[];
-  lastUpdated: string;
+  lastUpdated: string | null;
   totalCount: number;
 }
 
+interface NotionProjectsSnapshot extends NotionProjectsResponse {
+  generatedAt: string;
+  sourceUrl: string | null;
+}
+
+const SNAPSHOT = snapshot as NotionProjectsSnapshot;
+
 /**
- * Fetch all projects from Notion backend
+ * Fetch all projects from the generated legacy Notion snapshot.
+ *
+ * @deprecated Prefer the wiki-derived public metadata layer.
  */
 export async function fetchNotionProjects(): Promise<NotionProjectsResponse> {
-  try {
-    const response = await fetch(`${BACKEND_URL}/api/real/projects`, {
-      next: { revalidate: 300 }, // Cache for 5 minutes
-    });
-
-    if (!response.ok) {
-      throw new Error(`HTTP ${response.status}: ${response.statusText}`);
-    }
-
-    const data = await response.json();
-
-    if (!data.projects || !Array.isArray(data.projects)) {
-      throw new Error('Invalid data format received from Notion backend');
-    }
-
-    return {
-      projects: data.projects,
-      lastUpdated: new Date().toISOString(),
-      totalCount: data.projects.length,
-    };
-  } catch (error) {
-    console.error('Error fetching Notion projects:', error);
-    return {
-      projects: [],
-      lastUpdated: new Date().toISOString(),
-      totalCount: 0,
-    };
-  }
+  return {
+    projects: Array.isArray(SNAPSHOT.projects) ? SNAPSHOT.projects : [],
+    lastUpdated: SNAPSHOT.lastUpdated || SNAPSHOT.generatedAt || null,
+    totalCount: Number.isFinite(SNAPSHOT.totalCount)
+      ? SNAPSHOT.totalCount
+      : Array.isArray(SNAPSHOT.projects)
+        ? SNAPSHOT.projects.length
+        : 0,
+  };
 }
 
 /**
- * Find Notion project by name (fuzzy matching)
+ * Find a project by name in the legacy Notion snapshot.
+ *
+ * @deprecated Prefer the wiki-derived public metadata layer.
  */
 export async function findNotionProjectByName(
   projectName: string
@@ -97,7 +93,9 @@ export async function findNotionProjectByName(
 }
 
 /**
- * Get enrichment data for a project from Notion
+ * Get enrichment data for a project from the legacy Notion snapshot.
+ *
+ * @deprecated Prefer the wiki-derived public metadata layer.
  */
 export async function enrichProjectFromNotion(
   projectName: string
@@ -108,7 +106,7 @@ export async function enrichProjectFromNotion(
     return {};
   }
 
-  // Extract relevant enrichment data
+  // Extract relevant enrichment data for older compatibility paths.
   return {
     aiSummary: notionProject.aiSummary,
     themes: notionProject.themes,

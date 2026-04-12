@@ -9,8 +9,8 @@
  * 5. Temporal relationships (concurrent or sequential projects)
  */
 
-import { getAllNotionProjects } from '../notion';
-import type { NotionProjectMetadata } from '../notion/types';
+import { getAllPublicProjectMetadata } from '../project-metadata/public';
+import type { ProjectMetadata } from '../project-metadata/types';
 
 export type ConnectionType = 'direct' | 'thematic' | 'community' | 'geographic' | 'temporal';
 
@@ -58,8 +58,8 @@ async function getProjectStorytellers(projectSlug: string): Promise<string[]> {
  * Calculate thematic similarity between two projects
  */
 function calculateThematicSimilarity(
-  projectA: NotionProjectMetadata,
-  projectB: NotionProjectMetadata
+  projectA: ProjectMetadata,
+  projectB: ProjectMetadata
 ): {
   score: number;
   sharedElements: string[];
@@ -107,8 +107,8 @@ function calculateThematicSimilarity(
  * Calculate geographic overlap
  */
 function calculateGeographicOverlap(
-  projectA: NotionProjectMetadata,
-  projectB: NotionProjectMetadata
+  projectA: ProjectMetadata,
+  projectB: ProjectMetadata
 ): {
   score: number;
   reason: string;
@@ -161,8 +161,8 @@ function extractLocations(text: string): string[] {
  * Calculate temporal relationship
  */
 function calculateTemporalRelationship(
-  projectA: NotionProjectMetadata,
-  projectB: NotionProjectMetadata
+  projectA: ProjectMetadata,
+  projectB: ProjectMetadata
 ): {
   score: number;
   reason: string;
@@ -206,7 +206,7 @@ function calculateTemporalRelationship(
  * Find all related projects for a given project
  */
 export async function findRelatedProjects(
-  project: NotionProjectMetadata,
+  project: ProjectMetadata,
   options: {
     minRelevanceScore?: number;
     maxResults?: number;
@@ -219,8 +219,8 @@ export async function findRelatedProjects(
     includeStorytellers = true,
   } = options;
 
-  // Get all projects from Notion
-  const allProjects = await getAllNotionProjects();
+  // Get all projects from the canonical public metadata layer.
+  const allProjects = await getAllPublicProjectMetadata();
 
   // Get storytellers for current project (if needed)
   let currentProjectStorytellers: string[] = [];
@@ -281,7 +281,7 @@ export async function findRelatedProjects(
           }
         }
 
-        // 5. Direct connection (same organization or explicit Notion relation)
+        // 5. Direct connection (same organization or explicit canonical relation)
         if (project.organizationName === otherProject.organizationName && project.organizationName) {
           totalScore += 0.3;
           primaryConnectionType = 'direct';
@@ -291,7 +291,7 @@ export async function findRelatedProjects(
         if (project.connections.includes(otherProject.id)) {
           totalScore += 0.5;
           primaryConnectionType = 'direct';
-          reasons.push('Explicitly linked in Notion');
+          reasons.push('Explicitly linked in project metadata');
         }
 
         return {
@@ -322,12 +322,12 @@ export async function findRelatedProjects(
 export async function generateProjectConstellation(
   projectSlug: string
 ): Promise<{
-  centerProject: NotionProjectMetadata;
+  centerProject: ProjectMetadata;
   relatedProjects: RelatedProject[];
   connectionTypes: Record<ConnectionType, number>;
   totalConnections: number;
 }> {
-  const allProjects = await getAllNotionProjects();
+  const allProjects = await getAllPublicProjectMetadata();
   const centerProject = allProjects.find(p => p.slug === projectSlug);
 
   if (!centerProject) {

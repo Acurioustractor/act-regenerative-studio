@@ -1,6 +1,10 @@
 import CardGrid from "../../../components/CardGrid";
 import PageHero from "../../../components/PageHero";
 import SectionHeading from "../../../components/SectionHeading";
+import { ProjectEntryBridgeSection } from "@/components/projects";
+import { getProjectData } from "@/lib/projects/get-project-data";
+import { getRelatedFeaturedWorks } from "@/lib/works/live-featured-works";
+import { notFound } from "next/navigation";
 
 const seasonalRhythms = [
   {
@@ -34,13 +38,21 @@ const practices = [
   },
 ];
 
-export default function HarvestProducePage() {
+export default async function HarvestProducePage() {
+  const project = await getProjectData("the-harvest");
+
+  if (!project) {
+    notFound();
+  }
+
+  const relatedWorks = await getRelatedFeaturedWorks("the-harvest", project.title, 3);
+
   return (
     <div className="space-y-20">
       <PageHero
         eyebrow="Produce"
         title="Seasonal rhythms"
-        description="A snapshot of what grows across the year and how we share it with community."
+        description="A seasonal view into what grows across the year and how we share it with community. This page sits inside the wider Harvest field, so the details change with season, weather, soil, and what the land is ready to offer."
         actions={[
           { label: "Back to harvest", href: "/harvest" },
           { label: "Join the CSA", href: "/harvest/csa", variant: "outline" },
@@ -58,11 +70,13 @@ export default function HarvestProducePage() {
         </div>
       </PageHero>
 
+      <ProjectEntryBridgeSection project={project} relatedWorks={relatedWorks} />
+
       <section className="space-y-10">
         <SectionHeading
           eyebrow="Calendar"
           title="What grows when"
-          description="A placeholder seasonal calendar for upcoming harvests."
+          description="A working seasonal frame for the kinds of crops and rhythms we tend across the year. Actual harvest windows shift with weather, soil conditions, and community demand."
         />
         <CardGrid cards={seasonalRhythms} className="grid gap-6 md:grid-cols-2" />
       </section>

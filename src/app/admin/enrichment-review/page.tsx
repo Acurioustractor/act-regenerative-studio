@@ -12,7 +12,7 @@ interface EnrichmentItem {
   id: string;
   projectSlug: string;
   projectTitle: string;
-  type: 'notion' | 'blog_links' | 'related_projects' | 'description';
+  type: 'metadata' | 'notion' | 'blog_links' | 'related_projects' | 'description';
   status: 'pending' | 'approved' | 'rejected';
   aiGenerated: any;
   originalData: any;

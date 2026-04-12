@@ -1,5 +1,70 @@
+import Link from "next/link";
+import LivingSystemStrip from "@/components/LivingSystemStrip";
 import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
+
+const operationalPrinciples = [
+  {
+    number: 1,
+    title: "Country Sets the Pace",
+    description:
+      "The land is the teacher and the limiter. We do not scale beyond land capacity or community readiness. Conservation-first is the baseline.",
+  },
+  {
+    number: 2,
+    title: "Community Authority Comes First",
+    description:
+      "Consent, cultural protocols, and local authority are non-negotiable. OCAP is enforced in code and practice. Elder review is required where culture demands it.",
+  },
+  {
+    number: 3,
+    title: "Identity Before Product",
+    description:
+      "We start with belonging, not features. Events are culture, not marketing. We build slower with the right people than fast with the wrong assumptions.",
+  },
+  {
+    number: 4,
+    title: "Build for Handover",
+    description:
+      "We design for transfer from day one. A Curious Tractor means tools can be repaired locally, adapted by communities, and left behind.",
+  },
+  {
+    number: 5,
+    title: "Make with Lived Experience",
+    description:
+      "Lived experience is not advisory; it is core capability. We build pathways for people rich in lived knowledge, not just formal credentials.",
+  },
+  {
+    number: 6,
+    title: "Enterprise Funds the Commons",
+    description:
+      "Goods, Harvest, and related enterprise fund land care and community value, not extraction. 40% profit-sharing is built into all financial models.",
+  },
+  {
+    number: 7,
+    title: "Evidence is Story, Not Surveillance",
+    description:
+      "We track system-level signals, learn from consented stories, and change practice in response. We do not profile people.",
+  },
+  {
+    number: 8,
+    title: "Tools Should Create Space",
+    description:
+      "Infrastructure should be quiet. The system is the tractor, the humans are the farmers, the community is the harvest.",
+  },
+  {
+    number: 9,
+    title: "Share with Care",
+    description:
+      "We share what is safe and keep what is sensitive. If a story cannot be told without harm, we do not tell it.",
+  },
+  {
+    number: 10,
+    title: "Art Returns Us to Listen",
+    description:
+      "Art is not a layer on top. It is how we make change felt and understood. The LCAA loop only completes when Art returns us to Listen.",
+  },
+];
 
 const coreValues = [
   {
@@ -50,11 +115,39 @@ export default function PrinciplesPage() {
     <div className="space-y-20">
       <PageHero
         eyebrow="Principles"
-        title="How we work and why"
-        description="The values and commitments that guide ACT's approach to regenerative innovation. These aren't aspirational—they're accountable."
+        title="The commitments that keep the work accountable"
+        description="These principles are not aspiration language. They are the constraints and promises ACT returns to when the work gets noisy, pressured, or unclear."
         actions={[
-          { label: "Our Method", href: "/lcaa" },
-          { label: "About ACT", href: "/about", variant: "outline" },
+          { label: "See the method", href: "/method" },
+          { label: "How we work", href: "/how-we-work", variant: "outline" },
+        ]}
+      >
+        <div className="space-y-3">
+          <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+            Why this page exists
+          </p>
+          <p>
+            When a decision is difficult, these principles should make the next move smaller, clearer, and more accountable.
+          </p>
+        </div>
+      </PageHero>
+
+      <LivingSystemStrip
+        eyebrow="Principled system"
+        title="The principles stay public, while the practice keeps learning"
+        description="The public site expresses ACT’s values, but the deeper memory sits in the wiki and the field signal keeps arriving through live stories, media, and project evidence. Principles matter most when they change what gets built and shared."
+        wiki={{
+          href: "/wiki/act-identity",
+          label: "Open ACT identity in the wiki",
+        }}
+        live={{
+          sourceLabel: "Principles expressed through live projects and story layers",
+          href: `${process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL || "https://empathyledger.com"}/projects`,
+        }}
+        stats={[
+          { label: "Operational principles", value: operationalPrinciples.length },
+          { label: "Core values", value: coreValues.length },
+          { label: "Promises", value: promises.length },
         ]}
       />
 
@@ -93,6 +186,33 @@ export default function PrinciplesPage() {
             >
               <h3 className="font-semibold text-[#2F3E2E]">{promise.title}</h3>
               <p className="text-sm text-[#4D3F33]">{promise.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* 10 Operational Principles */}
+      <section className="space-y-10">
+        <SectionHeading
+          eyebrow="Practice"
+          title="10 Principles of Practice"
+          description="The operational backbone of how we work. When we are unclear, we return here."
+        />
+        <div className="grid gap-4 md:grid-cols-2">
+          {operationalPrinciples.map((principle) => (
+            <div
+              key={principle.number}
+              className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-6 space-y-3"
+            >
+              <div className="flex items-center gap-3">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#4CAF50] text-sm font-bold text-white">
+                  {principle.number}
+                </span>
+                <h3 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+                  {principle.title}
+                </h3>
+              </div>
+              <p className="text-sm text-[#4D3F33]">{principle.description}</p>
             </div>
           ))}
         </div>

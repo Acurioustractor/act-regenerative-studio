@@ -1,64 +1,332 @@
-import Link from "next/link";
-import { notFound } from "next/navigation";
-import { projects } from "../../../data/projects";
-import { CommunityVoicesSection } from "@/components/projects/CommunityVoicesSection";
-import { getFeaturedContentForProject } from "@/lib/empathy-ledger-featured";
+import Link from 'next/link';
+import { notFound } from 'next/navigation';
+import { Suspense } from 'react';
+import LivingSystemStrip from '@/components/LivingSystemStrip';
+// Server-only imports (use fs, supabase, etc.)
+import {
+  getProjectData,
+  getAllProjectSlugs,
+  themeStyles,
+  getRelatedProjects,
+} from '@/lib/projects/get-project-data';
+import {
+  getProjectEditorialArticles,
+  getProjectEditorialFeature,
+} from '@/lib/empathy-ledger-editorial';
+import { getProjectFieldMedia } from '@/lib/projects/get-project-field-media';
+import {
+  getFeaturedWorkConfigBySlug,
+  getRelatedFeaturedWorks,
+} from '@/lib/works/live-featured-works';
+import type { ACTFlagshipPackSourceBridge } from '@/types/shared/act-flagship-project-pack';
+// Components
+import {
+  ProjectHero,
+  ImpactDashboard,
+  LCAAJourney,
+  StoryVignettesSection,
+  CommunityVoicesSection,
+  CaseStudySection,
+  ALMAInsightsSection,
+  KnowledgeLinksSection,
+  ProjectFieldMediaSection,
+  StudioWorkSection,
+  GoldPhoneVoicesSection,
+} from '@/components/projects';
 
-const themeStyles = {
-  earth: {
-    hero: "from-[#F6F1E7] via-[#E6DCC4] to-[#D4C09F]",
-    text: "text-[#2F3E2E]",
-    accent: "text-[#4CAF50]",
-    badge: "bg-[#4CAF50] text-white",
-    border: "border-[#E1D3BA]",
-    panel: "bg-white/70",
-    button: "bg-[#4CAF50] text-white hover:bg-[#3D9143]",
-    sub: "text-[#4D3F33]",
-  },
-  justice: {
-    hero: "from-[#0B1F2A] via-[#132F3C] to-[#1F3D4B]",
-    text: "text-white",
-    accent: "text-[#F4D04F]",
-    badge: "bg-[#F4D04F] text-[#0B1F2A]",
-    border: "border-[#315060]",
-    panel: "bg-white/10",
-    button: "bg-[#F4D04F] text-[#0B1F2A] hover:bg-[#F7DE72]",
-    sub: "text-[#D6E2EA]",
-  },
-  goods: {
-    hero: "from-[#F2E8DB] via-[#E6D2BD] to-[#D2B49A]",
-    text: "text-[#3B2F28]",
-    accent: "text-[#A24A2E]",
-    badge: "bg-[#A24A2E] text-white",
-    border: "border-[#D7C4AF]",
-    panel: "bg-white/70",
-    button: "bg-[#A24A2E] text-white hover:bg-[#8B3F28]",
-    sub: "text-[#4D3F33]",
-  },
-  valley: {
-    hero: "from-[#EDF3E4] via-[#D6E2C5] to-[#B8CEA7]",
-    text: "text-[#2F3E2E]",
-    accent: "text-[#3D7A4D]",
-    badge: "bg-[#3D7A4D] text-white",
-    border: "border-[#C8D8B7]",
-    panel: "bg-white/70",
-    button: "bg-[#3D7A4D] text-white hover:bg-[#32623E]",
-    sub: "text-[#4D3F33]",
-  },
-  harvest: {
-    hero: "from-[#FFF2D6] via-[#F5D8A9] to-[#E9BC7D]",
-    text: "text-[#3C2E24]",
-    accent: "text-[#B15B20]",
-    badge: "bg-[#B15B20] text-white",
-    border: "border-[#E6C7A2]",
-    panel: "bg-white/70",
-    button: "bg-[#B15B20] text-white hover:bg-[#964D1B]",
-    sub: "text-[#4D3F33]",
-  },
-};
+interface EngagementAction {
+  label: string;
+  description: string;
+  href: string;
+  variant?: 'primary' | 'secondary';
+}
+
+interface EngagementConfig {
+  title: string;
+  description: string;
+  actions: EngagementAction[];
+}
 
 export function generateStaticParams() {
-  return projects.map((project) => ({ slug: project.slug }));
+  return getAllProjectSlugs().map((slug) => ({ slug }));
+}
+
+// Loading skeleton for sections
+function SectionSkeleton() {
+  return (
+    <div className="animate-pulse space-y-4">
+      <div className="h-8 w-48 mx-auto bg-[#E3D4BA]/50 rounded-lg" />
+      <div className="h-4 w-64 mx-auto bg-[#E3D4BA]/30 rounded-lg" />
+      <div className="grid gap-4 md:grid-cols-3 mt-8">
+        {[1, 2, 3].map((i) => (
+          <div key={i} className="h-48 bg-[#E3D4BA]/20 rounded-3xl" />
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function getEngagementConfig(
+  slug: string,
+  projectTitle: string,
+  projectWebsiteUrl: string | null
+): EngagementConfig {
+  if (slug === 'black-cockatoo-valley') {
+    return {
+      title: 'Ways to engage with Black Cockatoo Valley',
+      description:
+        'Black Cockatoo Valley is a conservation-first field site on Jinibara Country. The strongest entry points are slower ones: visits, residencies, and conversations about stewardship, learning, and reciprocal care.',
+      actions: [
+        {
+          label: 'Plan a visit or residency',
+          description:
+            'Start with the land, the timing, and why the visit matters for the work you want to do.',
+          href: '/contact?type=residency-visit&source=project-page&context=black-cockatoo-valley',
+          variant: 'primary',
+        },
+        {
+          label: 'See stays and visits',
+          description:
+            'Explore the quieter entry path onto Country through farm stays, workshops, and field-based visits.',
+          href: '/farm/stay',
+          variant: 'secondary',
+        },
+        {
+          label: 'Explore residencies',
+          description:
+            'For artists, researchers, and collaborators wanting to work with land, time, and slower forms of practice.',
+          href: '/art/residencies',
+          variant: 'secondary',
+        },
+      ],
+    };
+  }
+
+  if (slug === 'justicehub') {
+    return {
+      title: 'Ways to engage with JusticeHub',
+      description:
+        'JusticeHub works best through partnerships with communities, organisers, and institutions that are ready to redirect resources toward what already works on the ground.',
+      actions: [
+        {
+          label: 'Start a justice partnership',
+          description:
+            'Bring a live justice question, policy challenge, or community pathway into a more grounded conversation.',
+          href: '/contact?type=project-partnership&source=project-page&context=justicehub',
+          variant: 'primary',
+        },
+        {
+          label: 'Open the JusticeHub site',
+          description:
+            'Step into the dedicated JusticeHub public surface for the wider justice network and program story.',
+          href: projectWebsiteUrl || '/justicehub',
+          variant: 'secondary',
+        },
+      ],
+    };
+  }
+
+  if (slug === 'goods-on-country') {
+    return {
+      title: 'Ways to engage with Goods on Country',
+      description:
+        'Goods on Country is about useful objects, circular manufacturing, and community deployment. The right conversations usually begin with a real place, procurement challenge, or delivery pathway.',
+      actions: [
+        {
+          label: 'Talk about a deployment',
+          description:
+            'Bring a community need, goods pathway, or partnership question into the conversation.',
+          href: '/contact?type=project-partnership&source=project-page&context=goods-on-country',
+          variant: 'primary',
+        },
+        {
+          label: 'See the Goods field page',
+          description:
+            'Read the ACT-facing overview of the Goods work, its context, and how it links back into the broader ecosystem.',
+          href: '/goods',
+          variant: 'secondary',
+        },
+      ],
+    };
+  }
+
+  if (slug === 'the-harvest') {
+    return {
+      title: 'Ways to engage with The Harvest',
+      description:
+        'The Harvest is the community-facing edge of the land practice: shares, gatherings, meals, and local stewardship. The best next step depends on whether you want food, collaboration, or a seasonal gathering.',
+      actions: [
+        {
+          label: 'Ask about harvest shares',
+          description:
+            'Start with the local rhythm of produce, participation, and whether a share or offering is the right fit.',
+          href: '/harvest/csa',
+          variant: 'primary',
+        },
+        {
+          label: 'Bring a gathering or collaboration',
+          description:
+            'Talk through a meal, event, or community collaboration that belongs in the Harvest field rather than a generic venue hire model.',
+          href: '/contact?type=project-partnership&source=project-page&context=the-harvest',
+          variant: 'secondary',
+        },
+      ],
+    };
+  }
+
+  if (slug === 'empathy-ledger') {
+    return {
+      title: 'Ways to engage with Empathy Ledger',
+      description:
+        'Empathy Ledger is where story, consent, and durable memory meet. The strongest entry points are archive, storytelling, and governance conversations grounded in real communities and real custodianship questions.',
+      actions: [
+        {
+          label: 'Start a story or archive conversation',
+          description:
+            'Talk through the people, permissions, and narrative responsibility involved in the story system you are trying to build.',
+          href: '/contact?type=project-partnership&source=project-page&context=empathy-ledger',
+          variant: 'primary',
+        },
+        {
+          label: 'Open Empathy Ledger',
+          description:
+            'Visit the dedicated platform surface for the public storytelling layer and broader product context.',
+          href: projectWebsiteUrl || '/empathy-ledger',
+          variant: 'secondary',
+        },
+      ],
+    };
+  }
+
+  if (slug === 'contained') {
+    return {
+      title: 'Ways to engage with CONTAINED',
+      description:
+        'CONTAINED works best as an encounter: installation, campaign, and conversation held in the same frame. The next step is usually a host, commissioner, or justice partner ready to let the work do public pressure.',
+      actions: [
+        {
+          label: 'Bring CONTAINED into a space',
+          description:
+            'Start a commissioning or hosting conversation grounded in audience, venue, and what public pressure the work needs to carry.',
+          href: '/contact?type=commission&source=project-page&context=contained',
+          variant: 'primary',
+        },
+        {
+          label: 'Open the works layer',
+          description:
+            'See how CONTAINED sits alongside the wider ACT studio line rather than as a standalone campaign object.',
+          href: '/art',
+          variant: 'secondary',
+        },
+      ],
+    };
+  }
+
+  if (slug === 'gold-phone') {
+    return {
+      title: 'Ways to engage with Gold.Phone',
+      description:
+        'Gold.Phone belongs in public, participatory contexts where voice, memory, and technology can meet slowly. The best next step is usually a host, curator, or collaborator with a real site in mind.',
+      actions: [
+        {
+          label: 'Talk about hosting Gold.Phone',
+          description:
+            'Bring a site, event, or collaboration idea that suits an interactive voice work rather than a generic product demo.',
+          href: '/contact?type=commission&source=project-page&context=gold-phone',
+          variant: 'primary',
+        },
+        {
+          label: 'Open the works layer',
+          description:
+            'Move through the wider ACT works surface and see how Gold.Phone sits in the studio line.',
+          href: '/art',
+          variant: 'secondary',
+        },
+      ],
+    };
+  }
+
+  if (slug === 'uncle-allan-palm-island-art') {
+    return {
+      title: 'Ways to engage with Uncle Allan Palm Island Art',
+      description:
+        'This work is about cultural authority, commissions, and sharing on Uncle Allan’s terms. The right entry point is careful, relational, and grounded in where the work is going to land.',
+      actions: [
+        {
+          label: 'Talk about a commission or collaboration',
+          description:
+            'Start with the commission context, collaborators, and how the work will be held respectfully.',
+          href: '/contact?type=commission&source=project-page&context=uncle-allan-palm-island-art',
+          variant: 'primary',
+        },
+        {
+          label: 'Visit the dedicated artwork site',
+          description:
+            'Open the project’s own public surface when you need the direct portfolio and contact pathway.',
+          href: projectWebsiteUrl || '/art',
+          variant: 'secondary',
+        },
+      ],
+    };
+  }
+
+  if (slug === 'the-confessional') {
+    return {
+      title: 'Ways to engage with The Confessional',
+      description:
+        'The Confessional is a facilitation and installation format. It works when the host understands intimacy, anonymity, and the difference between spectacle and safety.',
+      actions: [
+        {
+          label: 'Talk about hosting The Confessional',
+          description:
+            'Bring the audience, venue, and care conditions into the conversation from the start.',
+          href: '/contact?type=commission&source=project-page&context=the-confessional',
+          variant: 'primary',
+        },
+        {
+          label: 'Open the works layer',
+          description:
+            'See the wider studio context around this work and how it connects back into ACT’s other public forms.',
+          href: '/art',
+          variant: 'secondary',
+        },
+      ],
+    };
+  }
+
+  const defaultActions: EngagementAction[] = [
+    {
+      label: `Start a conversation about ${projectTitle}`,
+      description:
+        'Bring the field, people, timing, and pressure around the work into a real conversation rather than a generic enquiry.',
+      href: `/contact?type=project-partnership&source=project-page&context=${slug}`,
+      variant: 'primary',
+    },
+    {
+      label: 'Explore the wider ecosystem',
+      description:
+        'See how this project sits alongside the other ACT fields of work, practice, and public pathways.',
+      href: '/projects',
+      variant: 'secondary',
+    },
+  ];
+
+  if (projectWebsiteUrl) {
+    defaultActions.splice(1, 0, {
+      label: 'Visit the dedicated project site',
+      description:
+        'Go deeper into the project’s own public surface while keeping the ACT hub as the shared ecosystem frame.',
+      href: projectWebsiteUrl,
+      variant: 'secondary',
+    });
+  }
+
+  return {
+    title: 'Ways to engage',
+    description:
+      'Different projects need different kinds of conversations. Use the path that fits the stage, place, and people involved.',
+    actions: defaultActions,
+  };
 }
 
 export default async function ProjectPage({
@@ -67,239 +335,609 @@ export default async function ProjectPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const project = projects.find((item) => item.slug === slug);
+
+  // Fetch enriched project data
+  const project = await getProjectData(slug);
 
   if (!project) {
     notFound();
   }
 
   const theme = themeStyles[project.theme] ?? themeStyles.earth;
+  const relatedProjects = getRelatedProjects(slug, 3);
+  const relatedWorks = await getRelatedFeaturedWorks(slug, project.title, 3);
+  const [relatedArticles, projectEditorial] = await Promise.all([
+    getProjectEditorialArticles(slug, 4),
+    getProjectEditorialFeature(slug),
+  ]);
+  const workConfig = getFeaturedWorkConfigBySlug(slug);
+  const fieldMedia = getProjectFieldMedia(project);
+  const engagementConfig = getEngagementConfig(
+    slug,
+    project.title,
+    project.projectWebsiteUrl
+  );
+  const flagshipKnowledgeLinks =
+    project.flagshipPack?.sourceBridges
+      .slice(0, 3)
+      .map((bridge: ACTFlagshipPackSourceBridge) => ({
+      title: bridge.title,
+      description:
+        'Canonical source bridge feeding this flagship page from the ACT wiki.',
+      href: `/wiki/${bridge.stem}`,
+      icon: '🧭',
+    })) || [];
+  const liveContentAvailable =
+    !!project.empathyLedgerContent &&
+    (project.empathyLedgerContent.meta.story_count > 0 ||
+      project.empathyLedgerContent.meta.storyteller_count > 0 ||
+      project.empathyLedgerContent.meta.media_count > 0);
 
-  // Fetch featured content from Empathy Ledger
-  const featuredContent = await getFeaturedContentForProject(project.slug, {
-    type: 'all',
-    limit: 10,
-  });
+  const liveMeta = project.empathyLedgerContent?.meta;
+  const featuredStory =
+    project.empathyLedgerContent?.featured.stories.find((story) => story.featured_as_hero) ||
+    project.empathyLedgerContent?.featured.stories[0] ||
+    null;
+  const studioWorkQuote = workConfig
+    ? featuredStory?.excerpt ||
+      projectEditorial.leadArticle?.excerpt ||
+      project.quote?.text ||
+      workConfig.fallbackQuote
+    : null;
 
   return (
     <div className="space-y-16 pb-24">
-      {/* Hero Image (if available) */}
-      {project.heroImage && (
-        <div className="relative h-96 w-full overflow-hidden rounded-[32px]">
-          <img
-            src={project.heroImage}
-            alt={project.title}
-            className="h-full w-full object-cover"
+      {/* Hero Section with Cover Image */}
+      <ProjectHero
+        title={project.title}
+        tagline={project.tagline}
+        description={project.description}
+        theme={project.theme}
+        coverImage={project.coverImage}
+        coverVideo={project.coverVideo}
+        focus={project.focus}
+      />
+
+      {workConfig && studioWorkQuote ? (
+        <StudioWorkSection
+          title={project.title}
+          description={project.description}
+          quote={studioWorkQuote}
+          medium={workConfig.medium}
+          place={workConfig.place}
+          collaborators={workConfig.collaborators}
+          connectedTo={workConfig.connectedTo}
+          connectedHref={workConfig.connectedHref}
+          supportImages={fieldMedia.images.slice(0, 2)}
+          leadArticle={projectEditorial.leadArticle}
+          live={{
+            storyCount: liveMeta?.story_count || 0,
+            storytellerCount: liveMeta?.storyteller_count || 0,
+            mediaCount: liveMeta?.media_count || 0,
+          }}
+        />
+      ) : null}
+
+      {slug === 'gold-phone' ? <GoldPhoneVoicesSection /> : null}
+
+      <ProjectFieldMediaSection
+        projectTitle={project.title}
+        media={fieldMedia}
+        projectWebsiteUrl={project.projectWebsiteUrl}
+      />
+
+      {(project.wikiData || liveContentAvailable) && (
+        <LivingSystemStrip
+          eyebrow={workConfig ? 'Living studio work system' : 'Living project system'}
+          title={
+            workConfig
+              ? 'Grounded in shared lineage. Kept alive through field material, voice, and writing.'
+              : 'Grounded in shared memory. Refreshed by live field material.'
+          }
+          description={
+            workConfig
+              ? 'The ACT wiki holds the durable lineage of this work: what it is, where it came from, and how it connects to the wider studio line. Empathy Ledger carries the live layer: portraits, stories, clips, and editorial fragments that let the work stay public without duplicating the memory system.'
+              : 'The ACT wiki carries the durable memory of this work: purpose, framing, and lineage. Empathy Ledger carries the consented live layer: stories, portraits, clips, and field material that can keep the page growing without turning the site into a second content system.'
+          }
+          wiki={
+            project.wikiData
+              ? {
+                  href: `/wiki/${project.slug}`,
+                  label: "Open wiki entry",
+                  status: project.wikiData.status,
+                  code: project.wikiData.code,
+                  tier: project.wikiData.tier,
+                }
+              : null
+          }
+          site={
+            project.projectWebsiteUrl
+              ? {
+                  href: project.projectWebsiteUrl,
+                  label: 'Visit project website',
+                }
+              : null
+          }
+          live={
+            liveContentAvailable
+              ? {
+                  sourceLabel:
+                    liveMeta?.source === 'site-syndication'
+                      ? 'Site-scoped syndication'
+                      : liveMeta?.source === 'content-hub'
+                        ? 'Content Hub fallback'
+                        : null,
+                  siteLabel: liveMeta?.site_slug ? `Site: ${liveMeta.site_slug}` : null,
+                  storyCount: liveMeta?.story_count || 0,
+                  storytellerCount: liveMeta?.storyteller_count || 0,
+                  mediaCount: liveMeta?.media_count || 0,
+                  fetchedAt: liveMeta?.fetched_at || null,
+                  href: `${process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL || 'https://empathyledger.com'}/projects/${project.slug}`,
+                }
+              : null
+          }
+        />
+      )}
+
+      {/* Impact Dashboard (stats + quote) */}
+      <Suspense fallback={<SectionSkeleton />}>
+        <ImpactDashboard
+          stats={project.stats}
+          quote={project.quote}
+          storytellerCount={project.empathyLedgerContent?.meta.storyteller_count}
+          storyCount={project.empathyLedgerContent?.meta.story_count}
+          mediaCount={project.empathyLedgerContent?.meta.media_count}
+          galleryCount={project.empathyLedgerContent?.meta.gallery_count}
+          theme={project.theme}
+        />
+      </Suspense>
+
+      {/* LCAA Journey (how we work) */}
+      {project.hasLCAAContent && (
+        <LCAAJourney
+          listen={project.listen}
+          curiosity={project.curiosity}
+          action={project.action}
+          art={project.art}
+          theme={project.theme}
+        />
+      )}
+
+      {/* Case Study - Featured Story from Empathy Ledger */}
+      {project.empathyLedgerContent &&
+        project.empathyLedgerContent.featured.stories.length > 0 &&
+        project.empathyLedgerContent.featured.stories[0].featured_as_hero && (
+          <CaseStudySection
+            story={project.empathyLedgerContent.featured.stories[0]}
+            projectTitle={project.title}
+            theme={project.theme}
           />
-        </div>
+        )}
+
+      {/* ALMA Insights - Core Learnings & Outcomes */}
+      {project.vignettes.length > 0 && (
+        <ALMAInsightsSection
+          vignettes={project.vignettes}
+          projectTitle={project.title}
+          theme={project.theme}
+        />
       )}
 
-      {/* Hero Section */}
-      <section
-        className={`relative overflow-hidden rounded-[32px] border ${theme.border} bg-gradient-to-br ${theme.hero} p-8 md:p-12`}
-      >
-        <div className="flex flex-wrap items-center justify-between gap-4">
-          <Link
-            href="/projects"
-            className={`text-xs uppercase tracking-[0.3em] ${theme.accent}`}
-          >
-            ← Back to projects
-          </Link>
-          <span
-            className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] ${theme.badge}`}
-          >
-            Active seed
-          </span>
-        </div>
-        <div className="mt-8 grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-          <div className="space-y-4">
-            <h1
-              className={`font-[var(--font-display)] text-3xl font-semibold leading-tight md:text-5xl ${theme.text}`}
-            >
-              {project.title}
-            </h1>
-            <p className={`text-base md:text-lg ${theme.sub}`}>
-              {project.tagline}
-            </p>
-            <p className={`text-sm ${theme.sub}`}>{project.description}</p>
-          </div>
-          <div
-            className={`rounded-3xl border ${theme.border} ${theme.panel} p-5 text-sm`}
-          >
-            <p className={`text-xs uppercase tracking-[0.3em] ${theme.accent}`}>
-              Focus areas
-            </p>
-            <ul className={`mt-4 space-y-2 ${theme.text}`}>
-              {project.focus.map((focus) => (
-                <li key={focus} className="rounded-2xl bg-white/30 p-3">
-                  {focus}
-                </li>
-              ))}
-            </ul>
-          </div>
-        </div>
-      </section>
-
-      {/* Video (if available) */}
-      {project.videoUrl && (
-        <section className="rounded-[32px] overflow-hidden">
-          <div className="relative" style={{ paddingBottom: "56.25%" }}>
-            <iframe
-              src={project.videoUrl.replace("/view/", "/embed/")}
-              className="absolute top-0 left-0 w-full h-full"
-              frameBorder="0"
-              allow="autoplay; fullscreen; picture-in-picture"
-              allowFullScreen
-            />
-          </div>
-        </section>
+      {/* Story Vignettes Section */}
+      {project.vignettes.length > 0 && (
+        <StoryVignettesSection
+          vignettes={project.vignettes}
+          projectTitle={project.title}
+          theme={project.theme}
+        />
       )}
-
-      {/* Stats (if available) */}
-      {project.stats && project.stats.length > 0 && (
-        <section className="grid gap-4 md:grid-cols-4">
-          {project.stats.map((stat, idx) => (
-            <div
-              key={idx}
-              className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6 text-center"
-            >
-              <div className={`text-3xl font-bold ${theme.accent} font-[var(--font-display)]`}>
-                {stat.value}
-              </div>
-              <div className="mt-2 text-sm text-[#5A4A3A]">{stat.label}</div>
-            </div>
-          ))}
-        </section>
-      )}
-
-      {/* LCAA Method Sections */}
-      <section className="space-y-8">
-        <div className="text-center">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
-            Our Process
-          </p>
-          <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E] md:text-3xl">
-            How we work: The LCAA Method
-          </h2>
-        </div>
-
-        <div className="grid gap-6 lg:grid-cols-2">
-          {/* Listen */}
-          {project.listen && (
-            <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
-              <div className="mb-4 flex items-center gap-3">
-                <span className={`text-3xl ${theme.accent}`}>👂</span>
-                <h3 className="font-[var(--font-display)] text-xl font-semibold text-[#2F3E2E]">
-                  Listen
-                </h3>
-              </div>
-              <p className="text-sm leading-relaxed text-[#4D3F33]">
-                {project.listen}
-              </p>
-            </div>
-          )}
-
-          {/* Curiosity */}
-          {project.curiosity && (
-            <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
-              <div className="mb-4 flex items-center gap-3">
-                <span className={`text-3xl ${theme.accent}`}>🔍</span>
-                <h3 className="font-[var(--font-display)] text-xl font-semibold text-[#2F3E2E]">
-                  Curiosity
-                </h3>
-              </div>
-              <p className="text-sm leading-relaxed text-[#4D3F33]">
-                {project.curiosity}
-              </p>
-            </div>
-          )}
-
-          {/* Action */}
-          {project.action && (
-            <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
-              <div className="mb-4 flex items-center gap-3">
-                <span className={`text-3xl ${theme.accent}`}>⚡</span>
-                <h3 className="font-[var(--font-display)] text-xl font-semibold text-[#2F3E2E]">
-                  Action
-                </h3>
-              </div>
-              <p className="text-sm leading-relaxed text-[#4D3F33]">
-                {project.action}
-              </p>
-            </div>
-          )}
-
-          {/* Art */}
-          {project.art && (
-            <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
-              <div className="mb-4 flex items-center gap-3">
-                <span className={`text-3xl ${theme.accent}`}>🎨</span>
-                <h3 className="font-[var(--font-display)] text-xl font-semibold text-[#2F3E2E]">
-                  Art
-                </h3>
-              </div>
-              <p className="text-sm leading-relaxed text-[#4D3F33]">
-                {project.art}
-              </p>
-            </div>
-          )}
-        </div>
-      </section>
 
       {/* Community Voices from Empathy Ledger */}
-      {featuredContent && (
+      {project.empathyLedgerContent && (
         <CommunityVoicesSection
-          storytellers={featuredContent.featured.storytellers}
-          stories={featuredContent.featured.stories}
+          storytellers={project.empathyLedgerContent.featured.storytellers}
+          stories={project.empathyLedgerContent.featured.stories}
           projectTitle={project.title}
         />
       )}
 
-      {/* Quote (if available) */}
-      {project.quote && (
-        <section className="rounded-3xl border border-[#E3D4BA] bg-gradient-to-br from-[#F4E8DD] via-[#E6CBB7] to-[#D1A788] p-8 md:p-12">
-          <div className="mx-auto max-w-3xl text-center">
-            <svg
-              className="mx-auto mb-6 h-8 w-8 text-[#A24A2E]/30"
-              fill="currentColor"
-              viewBox="0 0 24 24"
-            >
-              <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.995 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z" />
-            </svg>
-            <blockquote className="font-[var(--font-display)] text-xl font-medium leading-relaxed text-[#2F3E2E] md:text-2xl">
-              {project.quote.text}
-            </blockquote>
-            <div className="mt-6 text-sm text-[#5A4A3A]">
-              <p className="font-semibold">{project.quote.author}</p>
-              <p className="text-xs">{project.quote.role}</p>
+      {relatedArticles.length > 0 && (
+        <section className="space-y-6">
+          <div className="text-center">
+            <p className="text-xs uppercase tracking-[0.3em] text-[#4A4035]">
+              {projectEditorial.manifest?.sectionEyebrow || 'Field writing'}
+            </p>
+            <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+              {projectEditorial.manifest?.sectionTitle || 'Writing connected to this project'}
+            </h2>
+            <p className="mt-3 text-sm text-[#3A4A3D]">
+              {projectEditorial.manifest?.sectionDescription ||
+                'These articles live in the ACT editorial layer. They can be surfaced here, syndicated to spoke sites, and still stay connected to the project’s shared memory in the wiki.'}
+            </p>
+          </div>
+          <div
+            className={
+              projectEditorial.leadArticle
+                ? 'grid gap-6 lg:grid-cols-[1.12fr_0.88fr]'
+                : 'grid gap-6 md:grid-cols-3'
+            }
+          >
+            {projectEditorial.leadArticle ? (
+              <Link
+                href={projectEditorial.leadArticle.localPath}
+                className="group overflow-hidden rounded-[28px] border border-[#D8C6A7] bg-[#11110F] text-[#F4ECDE] transition-all hover:border-[#CFA16B] hover:shadow-[0_18px_45px_rgba(39,30,20,0.22)]"
+              >
+                {projectEditorial.leadArticle.featuredImageUrl ? (
+                  <div className="relative h-72 overflow-hidden">
+                    <img
+                      src={projectEditorial.leadArticle.featuredImageUrl}
+                      alt={
+                        projectEditorial.leadArticle.featuredImageAlt ||
+                        projectEditorial.leadArticle.title
+                      }
+                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/25 to-transparent" />
+                  </div>
+                ) : (
+                  <div className="flex h-72 items-end bg-gradient-to-br from-[#2A231C] via-[#201B17] to-[#151310] p-6">
+                    <p className="text-xs uppercase tracking-[0.24em] text-[#D9B786]">
+                      Editorial lead
+                    </p>
+                  </div>
+                )}
+                <div className="space-y-4 p-6">
+                  <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.24em] text-[#D9B786]">
+                    {projectEditorial.leadArticle.articleType ? (
+                      <span className="rounded-full border border-[#6B5A45] bg-white/5 px-3 py-1 text-[#F4ECDE]">
+                        {projectEditorial.leadArticle.articleType.replace(/_/g, ' ')}
+                      </span>
+                    ) : null}
+                    {projectEditorial.leadArticle.publishedAt ? (
+                      <span>
+                        {new Date(projectEditorial.leadArticle.publishedAt).toLocaleDateString(
+                          'en-AU',
+                          {
+                            year: 'numeric',
+                            month: 'short',
+                            day: 'numeric',
+                          }
+                        )}
+                      </span>
+                    ) : null}
+                  </div>
+                  <h3 className="font-[var(--font-display)] text-2xl font-semibold text-white group-hover:text-[#F7DE72]">
+                    {projectEditorial.leadArticle.title}
+                  </h3>
+                  <p className="max-w-2xl text-sm leading-7 text-[#E7D9C5]">
+                    {projectEditorial.leadArticle.excerpt ||
+                      'Open this field note in the ACT journal.'}
+                  </p>
+                  <div className="flex items-center justify-between pt-2 text-xs uppercase tracking-[0.22em] text-[#D7C8B2]">
+                    <span>{projectEditorial.leadArticle.authorName}</span>
+                    <span>Read note</span>
+                  </div>
+                </div>
+              </Link>
+            ) : null}
+
+            <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-1">
+              {(projectEditorial.supportingArticles.length > 0
+                ? projectEditorial.supportingArticles
+                : projectEditorial.leadArticle
+                  ? relatedArticles.filter(
+                      (article) => article.slug !== projectEditorial.leadArticle?.slug
+                    )
+                  : relatedArticles
+              ).map((article) => (
+                <Link
+                  key={article.slug}
+                  href={article.localPath}
+                  className="group overflow-hidden rounded-[24px] border border-[#E3D4BA] bg-white transition-all hover:border-[#7A9B76] hover:shadow-lg"
+                >
+                  {article.featuredImageUrl ? (
+                    <div className="relative h-40 overflow-hidden">
+                      <img
+                        src={article.featuredImageUrl}
+                        alt={article.featuredImageAlt || article.title}
+                        className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                      />
+                    </div>
+                  ) : (
+                    <div className="flex h-40 items-end bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-5">
+                      <p className="text-xs uppercase tracking-[0.24em] text-[#6B5A45]">
+                        Editorial note
+                      </p>
+                    </div>
+                  )}
+                  <div className="space-y-3 p-5">
+                    <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.24em] text-[#4CAF50]">
+                      {article.articleType ? (
+                        <span className="rounded-full bg-[#E8F3E6] px-3 py-1 text-[#2F3E2E]">
+                          {article.articleType.replace(/_/g, ' ')}
+                        </span>
+                      ) : null}
+                      {article.publishedAt ? (
+                        <span className="text-[#6B5A45]">
+                          {new Date(article.publishedAt).toLocaleDateString('en-AU', {
+                            year: 'numeric',
+                            month: 'short',
+                            day: 'numeric',
+                          })}
+                        </span>
+                      ) : null}
+                    </div>
+                    <h3 className="font-[var(--font-display)] text-lg font-semibold text-[#2F3E2E] group-hover:text-[#7A9B76]">
+                      {article.title}
+                    </h3>
+                    <p className="text-sm text-[#3A4A3D] line-clamp-3">
+                      {article.excerpt || 'Open this field note in the ACT journal.'}
+                    </p>
+                    <div className="flex items-center justify-between pt-2 text-xs uppercase tracking-[0.22em] text-[#6B5A45]">
+                      <span>{article.authorName}</span>
+                      <span>Read note</span>
+                    </div>
+                  </div>
+                </Link>
+              ))}
             </div>
+          </div>
+        </section>
+      )}
+
+      {/* Knowledge Base Links */}
+      <KnowledgeLinksSection
+        projectSlug={project.slug}
+        projectTitle={project.title}
+        theme={project.theme}
+        ecosystemData={project.ecosystemData}
+        projectWebsiteUrl={project.projectWebsiteUrl}
+        projectRepoUrl={project.projectRepoUrl}
+        hasEmpathyLedgerContent={!!project.empathyLedgerContent}
+        hasWikiArticles={!!project.wikiData}
+        customLinks={flagshipKnowledgeLinks}
+      />
+
+      {/* Media Gallery (if has items beyond hero) */}
+      {project.mediaGallery.length > 0 && (
+        <section className="space-y-6">
+          <div className="text-center">
+            <p className="text-xs uppercase tracking-[0.3em] text-[#4A4035]">
+              Gallery
+            </p>
+            <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E] md:text-3xl">
+              From the field
+            </h2>
+          </div>
+          <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-4">
+            {project.mediaGallery.slice(0, 8).map((item) => (
+              <a
+                key={item.id}
+                href={item.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group relative aspect-square overflow-hidden rounded-2xl"
+              >
+                {item.type.startsWith('video') || item.type === 'video' ? (
+                  <>
+                    {item.thumbnailUrl ? (
+                      <img
+                        src={item.thumbnailUrl}
+                        alt={item.alt || item.title || 'Project video'}
+                        className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                      />
+                    ) : (
+                      <video
+                        src={item.url}
+                        className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                        muted
+                        playsInline
+                        preload="metadata"
+                      />
+                    )}
+                    <div className="absolute left-3 top-3 rounded-full bg-black/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white">
+                      Video
+                    </div>
+                  </>
+                ) : item.type.startsWith('audio') || item.type === 'audio' ? (
+                  <div className="flex h-full w-full flex-col justify-between bg-gradient-to-br from-[#2F3E2E] via-[#4A4035] to-[#7A9B76] p-4 text-white">
+                    <div className="rounded-full bg-white/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90">
+                      Audio
+                    </div>
+                    <div>
+                      <p className="text-base font-semibold">
+                        {item.title || item.caption || 'Audio story'}
+                      </p>
+                      <p className="mt-2 text-sm text-white/80">
+                        Open in Empathy Ledger
+                      </p>
+                    </div>
+                  </div>
+                ) : (
+                  <img
+                    src={item.thumbnailUrl || item.url}
+                    alt={item.alt || item.title || 'Project media'}
+                    className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                  />
+                )}
+                {item.isFeatured && item.type !== 'video' && item.type !== 'audio' && (
+                  <div className="absolute left-3 top-3 rounded-full bg-black/70 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white">
+                    Featured
+                  </div>
+                )}
+                {item.caption && (
+                  <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4">
+                    <p className="text-sm text-white">{item.caption}</p>
+                  </div>
+                )}
+              </a>
+            ))}
           </div>
         </section>
       )}
 
       {/* Ways to Engage */}
       <section className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-8 md:p-12">
-        <h2 className="mb-6 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
-          Ways to engage
-        </h2>
-        <p className="mb-6 text-sm text-[#4D3F33]">
-          Partner with ACT, join a residency, support a harvest share, or simply reach out to learn more about how this work unfolds.
-        </p>
-        <div className="flex flex-wrap gap-4">
-          <Link
-            href="/contact"
-            className={`inline-flex items-center justify-center rounded-full px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] ${theme.button}`}
-          >
-            Get Involved
-          </Link>
-          <Link
-            href="/projects"
-            className="inline-flex items-center justify-center rounded-full border border-[#4CAF50] px-6 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#2F3E2E] transition hover:bg-[#E5F4E4]"
-          >
-            Explore All Projects
-          </Link>
+        <div className="max-w-3xl">
+          <h2 className="mb-4 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+            {engagementConfig.title}
+          </h2>
+          <p className="text-sm leading-7 text-[#4D3F33]">
+            {engagementConfig.description}
+          </p>
+        </div>
+        <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {engagementConfig.actions.map((action) => {
+            const buttonClass =
+              action.variant === 'primary'
+                ? `inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] ${theme.button}`
+                : 'inline-flex items-center justify-center rounded-full border border-[#4CAF50] px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#2F3E2E] transition hover:bg-[#E5F4E4]';
+            const isExternal = action.href.startsWith('http');
+
+            return (
+              <div
+                key={`${action.label}-${action.href}`}
+                className="rounded-2xl border border-[#E3D4BA] bg-[#FDFBF7] p-5"
+              >
+                <h3 className="text-base font-semibold text-[#2F3E2E]">
+                  {action.label}
+                </h3>
+                <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
+                  {action.description}
+                </p>
+                {isExternal ? (
+                  <a
+                    href={action.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${buttonClass} mt-5`}
+                  >
+                    Open path
+                  </a>
+                ) : (
+                  <Link href={action.href} className={`${buttonClass} mt-5`}>
+                    Open path
+                  </Link>
+                )}
+              </div>
+            );
+          })}
         </div>
       </section>
+
+      {/* Related Projects */}
+      {relatedProjects.length > 0 && (
+        <section className="space-y-6">
+          <div className="text-center">
+            <p className="text-xs uppercase tracking-[0.3em] text-[#4A4035]">
+              Explore More
+            </p>
+            <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+              Related Projects
+            </h2>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {relatedProjects.map((related) => {
+              const relatedTheme = themeStyles[related.theme];
+              return (
+                <Link
+                  key={related.slug}
+                  href={`/projects/${related.slug}`}
+                  className="group rounded-[24px] border border-[#E3D4BA] bg-white overflow-hidden transition-all hover:shadow-lg hover:border-[#7A9B76]"
+                >
+                  {related.heroImage && (
+                    <div className="relative h-40 overflow-hidden">
+                      <img
+                        src={related.heroImage}
+                        alt={related.title}
+                        className="h-full w-full object-cover transition-transform group-hover:scale-105"
+                      />
+                    </div>
+                  )}
+                  <div className="p-5">
+                    <span
+                      className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${relatedTheme.badge} mb-2`}
+                    >
+                      {related.theme}
+                    </span>
+                    <h3 className="font-[var(--font-display)] text-lg font-semibold text-[#2F3E2E] group-hover:text-[#7A9B76]">
+                      {related.title}
+                    </h3>
+                    <p className="mt-2 text-sm text-[#3A4A3D] line-clamp-2">
+                      {related.tagline}
+                    </p>
+                  </div>
+                </Link>
+              );
+            })}
+          </div>
+        </section>
+      )}
+
+      {relatedWorks.length > 0 && (
+        <section className="space-y-6">
+          <div className="text-center">
+            <p className="text-xs uppercase tracking-[0.3em] text-[#4A4035]">
+              Studio Line
+            </p>
+            <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+              Related Works
+            </h2>
+            <p className="mt-3 text-sm text-[#3A4A3D]">
+              Some ACT projects also belong to a broader line of studio works. These pieces share
+              methods, materials, or public questions with this project.
+            </p>
+          </div>
+          <div className="grid gap-6 md:grid-cols-3">
+            {relatedWorks.map((work) => (
+              <Link
+                key={work.slug}
+                href={work.href}
+                className="group overflow-hidden rounded-[24px] border border-[#2F2A25] bg-[#171612] transition-all hover:border-[#CFA16B] hover:shadow-lg"
+              >
+                {work.previewMedia ? (
+                  work.previewMedia.kind === 'image' ? (
+                    <img
+                      src={work.previewMedia.thumbnailUrl || work.previewMedia.url}
+                      alt={work.previewMedia.alt || work.title}
+                      className="h-40 w-full object-cover transition-transform group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="relative h-40 overflow-hidden bg-[#11110F]">
+                      {work.previewMedia.thumbnailUrl ? (
+                        <img
+                          src={work.previewMedia.thumbnailUrl}
+                          alt={work.previewMedia.alt || work.title}
+                          className="h-full w-full object-cover opacity-70 transition-transform group-hover:scale-105"
+                        />
+                      ) : null}
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                      <div className="absolute bottom-4 left-4 rounded-full bg-black/60 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white">
+                        {work.previewMedia.kind}
+                      </div>
+                    </div>
+                  )
+                ) : null}
+                <div className="space-y-3 p-5">
+                  <div className="flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-[#CFA16B]">
+                    <span>{work.medium}</span>
+                    <span className="text-[#6E6257]">•</span>
+                    <span>{work.connectedTo}</span>
+                  </div>
+                  <h3 className="font-[var(--font-display)] text-lg font-semibold text-[#F3EBDD] group-hover:text-white">
+                    {work.title}
+                  </h3>
+                  <p className="text-sm text-[#D7C8B2] line-clamp-3">{work.description}</p>
+                  <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#F3EBDD] transition group-hover:gap-3">
+                    <span>View work</span>
+                    <span aria-hidden="true">→</span>
+                  </div>
+                </div>
+              </Link>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Year-in-Review Link */}
       <section className="rounded-3xl border border-[#E3D4BA] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 text-center md:p-12">
@@ -307,7 +945,8 @@ export default async function ProjectPage({
           See this project in our 2025 Year in Review
         </h3>
         <p className="mx-auto mb-6 max-w-2xl text-sm text-[#5A4A3A]">
-          Explore the full story of our work in 2025—photos, videos, impact metrics, and the journey across all our projects.
+          Explore the full story of our work in 2025—photos, videos, impact
+          metrics, and the journey across all our projects.
         </p>
         <a
           href="https://act.place/2025-review"

@@ -1,38 +1,7 @@
+import Image from "next/image";
 import Link from "next/link";
-
-interface Project {
-  name: string;
-  href: string;
-  tagline: string;
-}
-
-const projects: Project[] = [
-  {
-    name: "ACT Farm",
-    href: "http://localhost:3001",
-    tagline: "Regenerative tourism & residencies",
-  },
-  {
-    name: "The Harvest",
-    href: "http://localhost:3004",
-    tagline: "Community hub & CSA programs",
-  },
-  {
-    name: "Empathy Ledger",
-    href: "http://localhost:3003",
-    tagline: "Storytelling & cultural wisdom",
-  },
-  {
-    name: "JusticeHub",
-    href: "http://localhost:3002",
-    tagline: "Youth justice & community services",
-  },
-  {
-    name: "Goods on Country",
-    href: "https://goodsoncountry.netlify.app",
-    tagline: "Funding the commons through goods",
-  },
-];
+import { NewsletterForm } from "./forms/NewsletterForm";
+import { studioProjectConfigs } from "@/lib/projects/studio-project-configs";
 
 interface UnifiedFooterProps {
   currentProject?: string;
@@ -47,20 +16,38 @@ export default function UnifiedFooter({
   customLinks = [],
   contactEmail = "hi@act.place",
 }: UnifiedFooterProps) {
-  const filteredProjects = currentProject
-    ? projects.filter((p) => p.name !== currentProject)
-    : projects;
+  const fieldLinks = studioProjectConfigs
+    .map((project) => ({
+      name: project.fallbackTitle,
+      href: project.href,
+      tagline: project.fallbackTagline,
+    }))
+    .filter((project) => !currentProject || project.name !== currentProject);
 
   return (
-    <footer className="-mx-6 border-t border-[#E4D7BF] bg-[#F6F1E7] px-6 py-12">
-      <div className="mx-auto max-w-[1200px]">
+    <footer className="mt-8 pb-2">
+      <div className="site-surface mx-auto rounded-[34px] bg-[#1a1612] px-6 py-12 text-[#f2e8d9] md:px-8">
         <div className="grid gap-12 lg:grid-cols-3">
           {/* Column 1: About */}
           <div className="space-y-4">
-            <h3 className="font-[var(--font-display)] text-lg font-semibold uppercase tracking-[0.2em] text-[#2F3E2E]">
+            <p className="site-eyebrow text-[#bda68a] before:bg-[#6a5846]">
               A Curious Tractor
-            </h3>
-            <p className="text-sm text-[#5A4A3A]">
+            </p>
+            <div className="flex items-center gap-3">
+              <span className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-[#4a3c2f] bg-white/8">
+                <Image
+                  src="/branding/act-logo-square.png"
+                  alt="A Curious Tractor logo"
+                  width={56}
+                  height={56}
+                  className="h-12 w-12 object-contain"
+                />
+              </span>
+              <h3 className="font-[var(--font-display)] text-2xl font-semibold tracking-[0.05em] text-[#fff6ea]">
+                A Curious Tractor
+              </h3>
+            </div>
+            <p className="max-w-sm text-sm leading-7 text-[#d6c7b4]">
               A regenerative innovation studio stewarding a working farm on
               Jinibara Country. We cultivate seeds of impact through listening,
               curiosity, action, and art.
@@ -73,7 +60,7 @@ export default function UnifiedFooter({
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="block text-sm text-[#5A4A3A] transition hover:text-[#2F3E2E]"
+                    className="site-glow-link block text-sm text-[#d8c9b5] transition hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -82,26 +69,38 @@ export default function UnifiedFooter({
             )}
           </div>
 
-          {/* Column 2: ACT Ecosystem */}
+          {/* Column 2: Public fields */}
           {showProjects && (
             <div className="space-y-4">
-              <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#2F3E2E]">
-                ACT Ecosystem
+              <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-[#c8ae8d]">
+                Fields of practice
               </h3>
               <nav className="space-y-3">
-                {filteredProjects.map((project) => (
-                  <a
-                    key={project.name}
-                    href={project.href}
-                    className="group block"
-                  >
-                    <div className="text-sm font-medium text-[#2F3E2E] transition group-hover:text-[#4CAF50]">
+                {fieldLinks.map((project) => (
+                  <Link key={project.href} href={project.href} className="group block">
+                    <div className="flex items-center gap-1.5 text-sm font-medium text-[#f2e8d9] transition group-hover:text-[#9cd09e]">
                       {project.name}
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="12"
+                        height="12"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="opacity-0 transition group-hover:opacity-100"
+                      >
+                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                        <polyline points="15 3 21 3 21 9" />
+                        <line x1="10" y1="14" x2="21" y2="3" />
+                      </svg>
                     </div>
-                    <div className="text-xs text-[#7A6A55]">
+                    <div className="text-xs text-[#ae9d88]">
                       {project.tagline}
                     </div>
-                  </a>
+                  </Link>
                 ))}
               </nav>
             </div>
@@ -109,45 +108,33 @@ export default function UnifiedFooter({
 
           {/* Column 3: Connect */}
           <div className="space-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-[0.2em] text-[#2F3E2E]">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-[#c8ae8d]">
               Connect
             </h3>
 
             <div className="space-y-3">
               <a
                 href={`mailto:${contactEmail}`}
-                className="block text-sm text-[#5A4A3A] transition hover:text-[#2F3E2E]"
+                className="site-glow-link block text-sm text-[#f2e8d9] transition hover:text-white"
               >
                 {contactEmail}
               </a>
 
               <div className="pt-4">
-                <h4 className="mb-2 text-sm font-medium text-[#2F3E2E]">
+                <h4 className="mb-2 text-sm font-medium text-[#fff6ea]">
                   Stay Connected
                 </h4>
-                <p className="mb-3 text-xs text-[#7A6A55]">
+                <p className="mb-3 text-xs text-[#ae9d88]">
                   Get updates about our ecosystem
                 </p>
-                <form className="flex gap-2">
-                  <input
-                    type="email"
-                    placeholder="Your email"
-                    className="flex-1 rounded border border-[#E4D7BF] bg-white px-3 py-2 text-sm text-[#2F3E2E] placeholder:text-[#B8A88A] focus:border-[#4CAF50] focus:outline-none"
-                  />
-                  <button
-                    type="submit"
-                    className="rounded bg-[#4CAF50] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#3D9143]"
-                  >
-                    Subscribe
-                  </button>
-                </form>
+                <NewsletterForm />
               </div>
             </div>
           </div>
         </div>
 
         {/* Footer Bottom */}
-        <div className="mt-12 flex flex-col gap-4 border-t border-[#E4D7BF] pt-8 text-xs text-[#7A6A55] md:flex-row md:items-center md:justify-between">
+        <div className="mt-12 flex flex-col gap-4 border-t border-[#45382d] pt-8 text-xs text-[#a99680] md:flex-row md:items-center md:justify-between">
           <div className="max-w-2xl">
             <p>
               We acknowledge the Jinibara people as the Traditional Custodians
@@ -158,10 +145,10 @@ export default function UnifiedFooter({
           </div>
 
           <div className="flex gap-4">
-            <Link href="/privacy" className="hover:text-[#2F3E2E]">
+            <Link href="/privacy" className="hover:text-white">
               Privacy
             </Link>
-            <Link href="/terms" className="hover:text-[#2F3E2E]">
+            <Link href="/terms" className="hover:text-white">
               Terms
             </Link>
             <span>© {new Date().getFullYear()} A Curious Tractor</span>

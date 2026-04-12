@@ -1,6 +1,10 @@
 import CardGrid from "../../components/CardGrid";
 import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
+import { ProjectEntryBridgeSection } from "@/components/projects";
+import { getProjectData } from "@/lib/projects/get-project-data";
+import { getRelatedFeaturedWorks } from "@/lib/works/live-featured-works";
+import { notFound } from "next/navigation";
 
 const harvestPaths = [
   {
@@ -23,16 +27,28 @@ const harvestPaths = [
   },
 ];
 
-export default function HarvestPage() {
+export default async function HarvestPage() {
+  const project = await getProjectData("the-harvest");
+
+  if (!project) {
+    notFound();
+  }
+
+  const relatedWorks = await getRelatedFeaturedWorks("the-harvest", project.title, 3);
+
   return (
     <div className="space-y-20">
       <PageHero
         eyebrow="Harvest"
         title="Food, community, and shared care"
-        description="Harvest is how the farm returns value to people and place. We grow seasonal produce, share meals, and host community gatherings."
+        description={project.description}
+        coverImage={project.coverImage}
+        coverVideo={project.coverVideo}
         actions={[
-          { label: "Join the CSA", href: "/harvest/csa" },
-          { label: "See produce", href: "/harvest/produce", variant: "outline" },
+          ...(project.projectWebsiteUrl
+            ? [{ label: "Visit The Harvest", href: project.projectWebsiteUrl, external: true as const }]
+            : []),
+          { label: "Join the CSA", href: "/harvest/csa", variant: "outline" },
         ]}
         gradientClass="from-[#FFF2D6] via-[#F5D8A9] to-[#E9BC7D]"
       >
@@ -47,6 +63,8 @@ export default function HarvestPage() {
           </ul>
         </div>
       </PageHero>
+
+      <ProjectEntryBridgeSection project={project} relatedWorks={relatedWorks} />
 
       <section className="space-y-10">
         <SectionHeading

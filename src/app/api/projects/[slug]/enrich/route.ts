@@ -4,7 +4,7 @@
  * GET /api/projects/[slug]/enrich
  *
  * Combines data from:
- * - Notion (project metadata, timeline, outcomes)
+ * - Wiki-derived project metadata (timeline, outcomes, framing)
  * - Empathy Ledger (storytellers, stories, themes)
  * - Blog posts (related reading)
  * - Project relationships (related projects)
@@ -27,7 +27,7 @@ export async function GET(
     const enrichmentData = await enrichProject(slug);
 
     console.log(`[Enrich API] Enrichment complete for ${slug}:`, {
-      hasNotion: !!enrichmentData.notion,
+      hasMetadata: !!enrichmentData.metadata,
       storytellerCount: enrichmentData.storytellers.length,
       storyCount: enrichmentData.stories.length,
       primaryThemes: enrichmentData.thematicInsights.primaryThemes,

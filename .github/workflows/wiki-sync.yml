@@ -16,13 +16,11 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
 
-      - name: Checkout canonical wiki
+      - name: Checkout canonical wiki into sibling directory
         uses: actions/checkout@v4
         with:
           repository: Acurioustractor/act-global-infrastructure
-          path: act-global-infrastructure
-          sparse-checkout: wiki
-          sparse-checkout-cone-mode: false
+          path: ../act-global-infrastructure
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -33,20 +31,11 @@ jobs:
       - name: Install dependencies
         run: npm ci
 
-      - name: Sync wiki pages
-        run: node scripts/sync-canonical-wiki-pages.mjs
-        env:
-          ACT_CANONICAL_WIKI_ROOT: ${{ github.workspace }}/act-global-infrastructure/wiki
-
-      - name: Sync wiki projects
-        run: node scripts/sync-canonical-wiki-projects.mjs
-        env:
-          ACT_CANONICAL_WIKI_ROOT: ${{ github.workspace }}/act-global-infrastructure/wiki
-
-      - name: Sync flagship packs
-        run: node scripts/sync-canonical-wiki-flagship-packs.mjs
-        env:
-          ACT_CANONICAL_WIKI_ROOT: ${{ github.workspace }}/act-global-infrastructure/wiki
+      - name: Sync wiki content
+        run: |
+          node scripts/sync-canonical-wiki-pages.mjs
+          node scripts/sync-canonical-wiki-projects.mjs
+          node scripts/sync-canonical-wiki-flagship-packs.mjs
 
       - name: Commit updated wiki data
         run: |

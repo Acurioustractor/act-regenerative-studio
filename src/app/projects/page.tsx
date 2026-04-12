@@ -1,13 +1,19 @@
+import Link from 'next/link';
+
+import SectionHeading from '@/components/SectionHeading';
 import { ProjectShowcaseCard } from '@/components/showcase/ProjectShowcaseCard';
 import { RoadmapTimeline } from '@/components/showcase/RoadmapTimeline';
+import { getHomeEditorialFeature } from '@/lib/empathy-ledger-editorial';
+import { buildCuratedProjectCards } from '@/lib/projects/build-curated-project-cards';
+import { getCanonicalWikiProjectRecords } from '@/lib/wiki/canonical-project-wiki';
+import { getFlagshipProjectPacks } from '@/lib/wiki/flagship-project-packs';
+import { buildProjectIndexSignals } from '@/lib/projects/build-project-index-signals';
 
 type ProjectStatus = 'active' | 'planning' | 'development';
 type LCAAPhase = 'listen' | 'curiosity' | 'action' | 'art';
 
-interface Project {
-  name: string;
-  tagline: string;
-  description: string;
+interface FeaturedProjectConfig {
+  slug: string;
   repo: string | null;
   url: string | null;
   status: ProjectStatus;
@@ -16,337 +22,664 @@ interface Project {
   contributionAreas: string[];
 }
 
-const ACT_PROJECTS: Project[] = [
+interface ShowcaseProject {
+  slug: string;
+  name: string;
+  tagline: string;
+  description: string;
+  hubHref: string;
+  repo: string | null;
+  url: string | null;
+  status: ProjectStatus;
+  lcaaPhase: LCAAPhase;
+  tags: string[];
+  contributionAreas: string[];
+  previewMedia?: {
+    kind: 'image' | 'video';
+    url: string;
+    posterUrl?: string | null;
+    alt: string;
+  };
+  supportingMedia?: Array<{
+    url: string;
+    alt: string;
+    eyebrow?: string;
+  }>;
+  mediaEmphasis?: boolean;
+  liveSignals?: {
+    serviceConnectionCount: number;
+    totalWorkCount: number;
+    storyCount: number;
+    mediaCount: number;
+  };
+}
+
+const FEATURED_OUTPUTS: FeaturedProjectConfig[] = [
   {
-    name: 'Empathy Ledger',
-    tagline: 'Ethical storytelling, consent-first, community-driven',
-    description:
-      'A revolutionary platform for ethical storytelling that centers consent, community voice, and OCAP® principles. Stories are owned by storytellers, not extracted by institutions.',
-    repo: 'Acurioustractor/empathy-ledger-v2',
-    url: 'https://empathy-ledger.vercel.app',
-    status: 'active',
-    lcaaPhase: 'action',
-    tags: ['Storytelling', 'Ethics', 'Community', 'OCAP®'],
-    contributionAreas: ['Frontend', 'Design', 'Documentation'],
-  },
-  {
-    name: 'JusticeHub',
-    tagline: 'Open-source justice programs, forkable for any community',
-    description:
-      'A platform for sharing and forking justice program models. Built on principles of transparency, community ownership, and adaptive justice. Programs designed with communities, not for them.',
+    slug: 'justicehub',
     repo: 'Acurioustractor/justicehub-platform',
-    url: null,
+    url: 'https://justicehub.com.au',
     status: 'development',
     lcaaPhase: 'curiosity',
-    tags: ['Justice', 'Open Source', 'Community', 'Programs'],
+    tags: ['Justice', 'Evidence', 'Community authority', 'Policy'],
     contributionAreas: ['Backend', 'Frontend', 'Research'],
   },
   {
-    name: 'The Harvest',
-    tagline: 'Therapeutic horticulture, heritage preservation, community healing',
-    description:
-      'A community hub in Kyneton connecting therapeutic horticulture, heritage preservation, and regenerative practices. Gardens as sites of healing, culture-making, and belonging.',
-    repo: 'Acurioustractor/theharvest',
-    url: null,
-    status: 'planning',
-    lcaaPhase: 'listen',
-    tags: ['Horticulture', 'Heritage', 'Community', 'Healing'],
-    contributionAreas: ['Design', 'Content', 'Documentation'],
-  },
-  {
-    name: 'Black Cockatoo Valley',
-    tagline: '150-acre regeneration estate, conservation-first development',
-    description:
-      'A long-term regeneration project on 150 acres in Central Victoria. Conservation-first development that centers ecological restoration, indigenous knowledge, and community access.',
-    repo: null,
-    url: null,
-    status: 'planning',
-    lcaaPhase: 'listen',
-    tags: ['Conservation', 'Regeneration', 'Ecology', 'Development'],
-    contributionAreas: ['Research', 'Design', 'Documentation'],
-  },
-  {
-    name: 'Goods on Country',
-    tagline: 'Circular economy, waste-to-wealth manufacturing',
-    description:
-      'Transforming waste streams into wealth through circular economy principles. Manufacturing as a site of regeneration, skills-building, and community economic development.',
+    slug: 'goods-on-country',
     repo: 'Acurioustractor/goods-asset-tracker',
     url: null,
-    status: 'planning',
-    lcaaPhase: 'curiosity',
-    tags: ['Circular Economy', 'Manufacturing', 'Waste', 'Skills'],
+    status: 'active',
+    lcaaPhase: 'action',
+    tags: ['Circular economy', 'Manufacturing', 'Health', 'Procurement'],
     contributionAreas: ['Frontend', 'Backend', 'Research'],
   },
   {
-    name: 'ACT Art Program',
-    tagline: 'Revolution through creativity, installations and residencies',
-    description:
-      'Art as a tool for systems change. Residencies, installations, and creative interventions that challenge extractive narratives and imagine post-extractive futures.',
-    repo: null,
+    slug: 'the-harvest',
+    repo: 'Acurioustractor/theharvest',
     url: null,
-    status: 'planning',
-    lcaaPhase: 'art',
-    tags: ['Art', 'Residencies', 'Culture', 'Revolution'],
-    contributionAreas: ['Design', 'Content', 'Curation'],
-  },
-  {
-    name: 'ACT Regenerative Studio',
-    tagline: 'Operations hub and living wiki for the ecosystem',
-    description:
-      'The operational backbone of ACT. Living wiki, knowledge extraction, multi-project dashboard, and unified operations hub. Infrastructure for a post-extractive economy.',
-    repo: 'Acurioustractor/act-regenerative-studio',
-    url: 'https://act-studio.vercel.app',
     status: 'active',
     lcaaPhase: 'action',
-    tags: ['Operations', 'Knowledge', 'Infrastructure', 'Wiki'],
-    contributionAreas: ['Frontend', 'Backend', 'Documentation'],
+    tags: ['Enterprise', 'Makers', 'Markets', 'Community'],
+    contributionAreas: ['Design', 'Content', 'Documentation'],
+  },
+  {
+    slug: 'empathy-ledger',
+    repo: 'Acurioustractor/empathy-ledger-v2',
+    url: 'https://empathyledger.com',
+    status: 'development',
+    lcaaPhase: 'action',
+    tags: ['Narrative sovereignty', 'Consent', 'Stories', 'OCAP'],
+    contributionAreas: ['Frontend', 'Design', 'Documentation'],
+  },
+  {
+    slug: 'black-cockatoo-valley',
+    repo: null,
+    url: null,
+    status: 'active',
+    lcaaPhase: 'listen',
+    tags: ['Country', 'Conservation', 'Residencies', 'Stewardship'],
+    contributionAreas: ['Research', 'Design', 'Documentation'],
   },
 ];
 
-export default function ProjectsPage() {
-  const activeProjects = ACT_PROJECTS.filter((p) => p.status === 'active');
-  const developmentProjects = ACT_PROJECTS.filter((p) => p.status === 'development');
-  const planningProjects = ACT_PROJECTS.filter((p) => p.status === 'planning');
+const HIDDEN_PROJECT_SLUGS = new Set(['act-public-voice']);
+
+const DOMAIN_BADGE_STYLES: Record<string, string> = {
+  Active: 'border-[#8CB58B] bg-[#E5F4E4] text-[#2F5233]',
+  Ideation: 'border-[#D7C4A2] bg-[#FFF7E9] text-[#8B6914]',
+  Ecosystem: 'border-[#D9C9A9] bg-[#F5F1E8] text-[#5A4A3A]',
+  Place: 'border-[#A2C5A2] bg-[#EEF7EE] text-[#2F5233]',
+  Satellite: 'border-[#C7D3E8] bg-[#EFF4FB] text-[#385780]',
+  Studio: 'border-[#E1C8E8] bg-[#F7EFFA] text-[#6B4D6B]',
+};
+
+function excerptToTagline(value: string | null, fallback: string): string {
+  if (!value) return fallback;
+
+  return value.length > 110 ? `${value.slice(0, 107).trimEnd()}...` : value;
+}
+
+function descriptionFromOverview(value: string | null, fallback: string): string {
+  if (!value) return fallback;
+  return value.length > 280 ? `${value.slice(0, 277).trimEnd()}...` : value;
+}
+
+function signalWeight(signals?: {
+  serviceConnectionCount: number;
+  totalWorkCount: number;
+  storyCount: number;
+  mediaCount: number;
+}) {
+  if (!signals) return 0;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#F5F1E8] to-white">
-      {/* Hero Section */}
-      <section className="px-4 py-16 md:py-24">
-        <div className="mx-auto max-w-6xl text-center">
-          <h1 className="text-4xl font-bold text-[#2F3E2E] md:text-6xl font-[var(--font-display)]">
-            ACT Ecosystem
-          </h1>
-          <p className="mt-6 text-lg text-[#4D3F33] md:text-xl max-w-3xl mx-auto">
-            Building infrastructure for a post-extractive economy through regenerative
-            innovation, community ownership, and the LCAA method: Listen, Curiosity, Action, Art.
-          </p>
+    signals.serviceConnectionCount * 4 +
+    signals.totalWorkCount * 3 +
+    signals.storyCount * 2 +
+    signals.mediaCount
+  );
+}
 
-          {/* Stats */}
-          <div className="mt-12 grid grid-cols-2 gap-6 md:grid-cols-4 max-w-4xl mx-auto">
-            <div className="rounded-2xl border border-[#E3D4BA] bg-white/80 p-6">
-              <div className="text-3xl font-bold text-[#4CAF50]">{ACT_PROJECTS.length}</div>
-              <div className="mt-2 text-sm text-[#4D3F33]">Projects</div>
+export default async function ProjectsPage() {
+  const [canonicalProjects, flagshipPacks, signalPayload, homeEditorialFeature, featuredProjectMediaCards] = await Promise.all([
+    getCanonicalWikiProjectRecords(),
+    getFlagshipProjectPacks(),
+    buildProjectIndexSignals(),
+    getHomeEditorialFeature(),
+    buildCuratedProjectCards(
+      FEATURED_OUTPUTS.map((config) => ({
+        slug: config.slug,
+        href: `/projects/${config.slug}`,
+        eyebrow: 'Public field',
+        fallbackTitle: config.slug,
+        fallbackTagline: 'Canonical ACT project',
+        fallbackDescription:
+          'This featured ACT output will inherit more context as the wiki keeps growing.',
+      })),
+      { includeMedia: true }
+    ),
+  ]);
+  const flagshipPackBySlug = new Map(flagshipPacks.map((pack) => [pack.slug, pack]));
+  const featuredMediaBySlug = new Map(
+    featuredProjectMediaCards.map((card) => [card.slug, card])
+  );
+  const featuredProjectOrder =
+    homeEditorialFeature.featuredProjectSlugs.length > 0
+      ? homeEditorialFeature.featuredProjectSlugs
+      : FEATURED_OUTPUTS.map((item) => item.slug);
+
+  const liveGraphCards = [
+    {
+      label: 'Ways in',
+      value:
+        signalPayload.summary.activeServiceCount > 0
+          ? String(signalPayload.summary.activeServiceCount)
+          : 'Not yet',
+      hint:
+        signalPayload.summary.activeServiceCount > 0
+          ? 'Places to enter, join, or work with the portfolio are already visible.'
+          : 'Entry points are still being surfaced across the public portfolio.',
+    },
+    {
+      label: 'Works in public',
+      value: String(signalPayload.summary.featuredWorkCount),
+      hint: 'Studio works already sitting alongside the project fields.',
+    },
+    {
+      label: 'Stories in public',
+      value: String(signalPayload.summary.totalStorySignals),
+      hint: 'Approved story traces arriving through Empathy Ledger.',
+    },
+    {
+      label: 'Images & clips',
+      value:
+        signalPayload.summary.totalMediaSignals > 0
+          ? String(signalPayload.summary.totalMediaSignals)
+          : 'Growing',
+      hint:
+        signalPayload.summary.totalMediaSignals > 0
+          ? 'Photos, clips, and media previews already touching the graph.'
+          : 'Media is still arriving unevenly across the public project layer.',
+    },
+  ];
+
+  const featuredProjects: ShowcaseProject[] = FEATURED_OUTPUTS.map((config) => {
+    const wikiRecord = canonicalProjects.find((record) => record.slug === config.slug);
+    const flagshipPack = flagshipPackBySlug.get(config.slug);
+    const liveSignals = signalPayload.bySlug[config.slug];
+    const mediaCard = featuredMediaBySlug.get(config.slug);
+    const mediaOverride =
+      homeEditorialFeature.featuredProjectMediaOverrides[config.slug];
+    const repoUrl =
+      flagshipPack?.implementation.primaryRepo?.githubUrl || wikiRecord?.repoUrl || null;
+
+    return {
+      slug: config.slug,
+      name: flagshipPack?.title || wikiRecord?.title || config.slug,
+      hubHref: `/projects/${config.slug}`,
+      tagline: excerptToTagline(
+        flagshipPack?.summary || wikiRecord?.summary || null,
+        'Canonical ACT project'
+      ),
+      description: descriptionFromOverview(
+        flagshipPack?.overview ||
+          flagshipPack?.whatItIs ||
+          flagshipPack?.systemPosition ||
+          wikiRecord?.overview ||
+          null,
+        'This featured ACT output will inherit more context as the wiki keeps growing.'
+      ),
+      repo: repoUrl
+        ? repoUrl.replace('https://github.com/', '')
+        : flagshipPack?.implementation.primaryRepo?.github || config.repo,
+      url: wikiRecord?.publicSiteUrl || config.url,
+      liveSignals: liveSignals
+        ? {
+            serviceConnectionCount: liveSignals.serviceConnectionCount,
+            totalWorkCount: liveSignals.totalWorkCount,
+            storyCount: liveSignals.storyCount,
+            mediaCount: liveSignals.mediaCount,
+          }
+        : undefined,
+      status: config.status,
+      lcaaPhase: config.lcaaPhase,
+      tags: config.tags,
+      contributionAreas: config.contributionAreas,
+      previewMedia: mediaOverride
+        ? {
+            kind: mediaOverride.kind,
+            url: mediaOverride.url,
+            posterUrl: mediaOverride.posterUrl || null,
+            alt:
+              mediaOverride.alt ||
+              mediaCard?.previewMedia?.alt ||
+              wikiRecord?.title ||
+              config.slug,
+          }
+        : mediaCard?.previewMedia,
+      supportingMedia: mediaCard?.supportingMedia,
+      mediaEmphasis: homeEditorialFeature.featuredMediaProjectSlugs.includes(config.slug),
+    };
+  }).sort(
+    (left, right) =>
+      featuredProjectOrder.indexOf(left.slug) - featuredProjectOrder.indexOf(right.slug)
+  );
+
+  const featuredSlugs = new Set(FEATURED_OUTPUTS.map((item) => item.slug));
+  const projectIndex = canonicalProjects
+    .filter(
+    (record) => !featuredSlugs.has(record.slug) && !HIDDEN_PROJECT_SLUGS.has(record.slug)
+    )
+    .sort((a, b) => {
+      const signalDelta =
+        signalWeight(signalPayload.bySlug[b.slug]) - signalWeight(signalPayload.bySlug[a.slug]);
+      if (signalDelta !== 0) return signalDelta;
+
+      const publicSiteDelta = Number(Boolean(b.publicSiteUrl)) - Number(Boolean(a.publicSiteUrl));
+      if (publicSiteDelta !== 0) return publicSiteDelta;
+
+      const repoDelta = Number(Boolean(b.repoUrl)) - Number(Boolean(a.repoUrl));
+      if (repoDelta !== 0) return repoDelta;
+
+      const modifiedDelta =
+        (Date.parse(b.modifiedAt || '') || 0) - (Date.parse(a.modifiedAt || '') || 0);
+      if (modifiedDelta !== 0) return modifiedDelta;
+
+      return a.title.localeCompare(b.title);
+    });
+  const archivePreview = projectIndex.slice(0, 12);
+  const hiddenArchiveCount = Math.max(projectIndex.length - archivePreview.length, 0);
+  const archiveProjectsWithSites = projectIndex.filter((project) => project.publicSiteUrl).length;
+  const archiveProjectsWithRepos = projectIndex.filter((project) => project.repoUrl).length;
+
+  return (
+    <div className="space-y-16">
+      <section className="site-surface relative overflow-hidden rounded-[38px] bg-gradient-to-br from-[#f7f1e8] via-[#e9ddca] to-[#d5c09f] p-8 md:p-12">
+        <div className="absolute -left-10 top-8 h-36 w-36 rounded-full bg-[#d9ead7] blur-3xl" />
+        <div className="absolute right-0 top-0 h-44 w-44 translate-x-10 -translate-y-8 rounded-full bg-[#d3a24f]/18 blur-3xl" />
+        <div className="relative grid gap-8 lg:grid-cols-[1.16fr_0.84fr]">
+          <div className="space-y-6">
+            <p className="site-eyebrow">Projects</p>
+            <div className="flex flex-wrap gap-2">
+              {[
+                `${FEATURED_OUTPUTS.length} flagship fields`,
+                `${signalPayload.summary.connectedProjectCount} fields in motion`,
+                'Public proof and pathways',
+              ].map((item) => (
+                <span
+                  key={item}
+                  className="rounded-full border border-[#d7c4aa] bg-white/50 px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-[#5f4f41]"
+                >
+                  {item}
+                </span>
+              ))}
             </div>
-            <div className="rounded-2xl border border-[#E3D4BA] bg-white/80 p-6">
-              <div className="text-3xl font-bold text-[#4CAF50]">{activeProjects.length}</div>
-              <div className="mt-2 text-sm text-[#4D3F33]">Active</div>
+            <h1 className="max-w-[10ch] font-[var(--font-display)] text-[2.8rem] font-semibold leading-[0.92] text-[#221b15] md:text-[4.45rem]">
+              What ACT does in public.
+            </h1>
+            <p className="max-w-3xl text-lg leading-8 text-[#56483b] md:text-[1.12rem]">
+              This is the public portfolio of ACT work: the strongest fields up
+              front, visible proof where it exists, and the wider body of work
+              behind them. Start here if you want to feel the work before you
+              study the system.
+            </p>
+            <div className="flex flex-wrap gap-4">
+              <Link
+                href="#flagship-fields"
+                className="site-glow-link rounded-full bg-[#245c43] px-7 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-white shadow-[0_16px_36px_rgba(36,92,67,0.2)] transition hover:bg-[#1c4935]"
+              >
+                See flagship fields
+              </Link>
+              <Link
+                href="/blog"
+                className="site-glow-link rounded-full border border-[#245c43] bg-white/45 px-7 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#1f2b21] transition hover:bg-[#e5f4e4]"
+              >
+                Read field notes
+              </Link>
             </div>
-            <div className="rounded-2xl border border-[#E3D4BA] bg-white/80 p-6">
-              <div className="text-3xl font-bold text-[#4CAF50]">42</div>
-              <div className="mt-2 text-sm text-[#4D3F33]">Contributors</div>
+          </div>
+
+          <div className="grid gap-4 sm:grid-cols-2">
+            <div className="rounded-[28px] border border-[#244c39] bg-[#15261d] p-6 text-[#f5ecde] shadow-[0_24px_60px_rgba(43,31,18,0.2)] sm:col-span-2">
+              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-[#cfa16b]">
+                Start here
+              </p>
+              <p className="mt-4 font-[var(--font-display)] text-[2rem] font-semibold leading-tight">
+                The strongest public fields first.
+              </p>
+              <p className="mt-3 text-sm leading-7 text-[#d7c8b2]">
+                JusticeHub, Goods on Country, The Harvest, Empathy Ledger, and
+                Black Cockatoo Valley are the clearest places to see ACT in
+                action right now. The rest remain visible as a wider seed set,
+                not hidden behind the flagship layer.
+              </p>
             </div>
-            <div className="rounded-2xl border border-[#E3D4BA] bg-white/80 p-6">
-              <div className="text-3xl font-bold text-[#4CAF50]">140+</div>
-              <div className="mt-2 text-sm text-[#4D3F33]">Open Issues</div>
+            <div className="rounded-[24px] border border-[#d7c4aa] bg-white/55 p-5">
+              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[#6f5c49]">
+                Flagship set
+              </p>
+              <p className="mt-3 text-3xl font-semibold text-[#245c43]">
+                {FEATURED_OUTPUTS.length}
+              </p>
+              <p className="mt-2 text-sm leading-6 text-[#514235]">
+                The clearest public fields with their own stronger route and identity.
+              </p>
+            </div>
+            <div className="rounded-[24px] border border-[#d7c4aa] bg-white/55 p-5">
+              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[#6f5c49]">
+                Wider set
+              </p>
+              <p className="mt-3 text-3xl font-semibold text-[#245c43]">
+                {projectIndex.length}
+              </p>
+              <p className="mt-2 text-sm leading-6 text-[#514235]">
+                More proofs, experiments, satellites, and earlier strands behind the flagship layer.
+              </p>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Active Projects */}
-      {activeProjects.length > 0 && (
-        <section className="px-4 py-12">
-          <div className="mx-auto max-w-6xl">
-            <h2 className="text-3xl font-bold text-[#2F3E2E] font-[var(--font-display)]">
-              Active Projects
-            </h2>
-            <p className="mt-2 text-sm text-[#4D3F33]">
-              Live and building. Join us in creating change.
-            </p>
-            <div className="mt-8 grid gap-6 md:grid-cols-2">
-              {activeProjects.map((project) => (
-                <ProjectShowcaseCard key={project.name} project={project} />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* In Development */}
-      {developmentProjects.length > 0 && (
-        <section className="px-4 py-12">
-          <div className="mx-auto max-w-6xl">
-            <h2 className="text-3xl font-bold text-[#2F3E2E] font-[var(--font-display)]">
-              In Development
-            </h2>
-            <p className="mt-2 text-sm text-[#4D3F33]">
-              Being built. Your contributions can help shape these projects.
-            </p>
-            <div className="mt-8 grid gap-6 md:grid-cols-2">
-              {developmentProjects.map((project) => (
-                <ProjectShowcaseCard key={project.name} project={project} />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* Planning */}
-      {planningProjects.length > 0 && (
-        <section className="px-4 py-12">
-          <div className="mx-auto max-w-6xl">
-            <h2 className="text-3xl font-bold text-[#2F3E2E] font-[var(--font-display)]">
-              In Planning
-            </h2>
-            <p className="mt-2 text-sm text-[#4D3F33]">
-              Listening, learning, designing. Early-stage projects where your voice matters most.
-            </p>
-            <div className="mt-8 grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {planningProjects.map((project) => (
-                <ProjectShowcaseCard key={project.name} project={project} />
-              ))}
-            </div>
-          </div>
-        </section>
-      )}
-
-      {/* How to Contribute */}
-      <section className="px-4 py-16 bg-[#F5F1E8]">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold text-[#2F3E2E] font-[var(--font-display)]">
-            How You Can Contribute
+      <section className="grid gap-6 lg:grid-cols-[0.92fr_1.08fr]">
+        <div className="site-surface rounded-[34px] bg-[rgba(255,251,245,0.78)] p-7">
+          <p className="site-eyebrow">Use this page to</p>
+          <h2 className="mt-4 font-[var(--font-display)] text-[2.2rem] font-semibold leading-tight text-[#241c15]">
+            Find the right field, proof, or invitation path.
           </h2>
-          <p className="mt-4 text-[#4D3F33]">
-            ACT is built on collaboration, community knowledge, and regenerative practices.
-            There are many ways to get involved.
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-[#4D3F33]">
+            Each project page now pulls together public framing, live stories
+            and media where they exist, and direct ways to enter the work. You
+            do not need to understand the whole ACT system before you can find
+            the right project, partner path, or public proof.
           </p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link
+              href="#flagship-fields"
+              className="site-glow-link rounded-full bg-[#245c43] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#1c4935]"
+            >
+              Open flagship set
+            </Link>
+            <Link
+              href="/blog"
+              className="site-glow-link rounded-full border border-[#245c43] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#1f2b21] transition hover:bg-[#E5F4E4]"
+            >
+              Follow field writing
+            </Link>
+          </div>
+        </div>
 
-          <div className="mt-12 grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-[#E3D4BA] bg-white p-6">
-              <div className="text-2xl font-bold text-[#4CAF50]">💻</div>
-              <h3 className="mt-4 font-semibold text-[#2F3E2E]">Development</h3>
-              <p className="mt-2 text-sm text-[#4D3F33]">
-                Frontend, backend, design. Help build the infrastructure.
-              </p>
-              <a
-                href="https://github.com/Acurioustractor"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-block rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#2F3E2E] hover:bg-[#4CAF50]/10"
+        <div className="rounded-[34px] border border-[#2F2A25] bg-[#11110F] p-7 text-[#F3EBDD] shadow-[0_24px_60px_rgba(0,0,0,0.18)]">
+          <p className="site-eyebrow text-[#cfa16b] before:bg-[#71553b]">Proof already moving</p>
+          <h2 className="mt-4 font-[var(--font-display)] text-[2.2rem] font-semibold leading-tight">
+            Visible signs that the work is already in motion.
+          </h2>
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-[#D7C8B2]">
+            Stories, services, works, and media are already attached to parts of
+            the portfolio. That gives this page real texture instead of leaving
+            it as a flat project directory.
+          </p>
+          <div className="mt-6 grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            {liveGraphCards.map((card) => (
+              <div
+                key={card.label}
+                className="rounded-[22px] border border-[#4A3B2E] bg-[#171612] px-5 py-4"
               >
-                View on GitHub
-              </a>
-            </div>
-
-            <div className="rounded-2xl border border-[#E3D4BA] bg-white p-6">
-              <div className="text-2xl font-bold text-[#4CAF50]">📝</div>
-              <h3 className="mt-4 font-semibold text-[#2F3E2E]">Documentation</h3>
-              <p className="mt-2 text-sm text-[#4D3F33]">
-                Write guides, improve docs, share knowledge.
-              </p>
-              <a
-                href="https://github.com/users/Acurioustractor/projects/1"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-block rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#2F3E2E] hover:bg-[#4CAF50]/10"
-              >
-                View Projects Board
-              </a>
-            </div>
-
-            <div className="rounded-2xl border border-[#E3D4BA] bg-white p-6">
-              <div className="text-2xl font-bold text-[#4CAF50]">🎨</div>
-              <h3 className="mt-4 font-semibold text-[#2F3E2E]">Design & Research</h3>
-              <p className="mt-2 text-sm text-[#4D3F33]">
-                UI/UX design, research, community engagement.
-              </p>
-              <a
-                href="https://github.com/Acurioustractor/act-regenerative-studio/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-4 inline-block rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#2F3E2E] hover:bg-[#4CAF50]/10"
-              >
-                Good First Issues
-              </a>
-            </div>
+                <p className="text-2xl font-semibold text-[#F3EBDD]">
+                  {card.value}
+                </p>
+                <p className="mt-1 text-xs uppercase tracking-[0.2em] text-[#BDAE98]">
+                  {card.label}
+                </p>
+                <p className="mt-3 text-xs leading-6 text-[#9F927F]">
+                  {card.hint}
+                </p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* Roadmap */}
-      <section className="px-4 py-16 bg-[#F5F1E8]">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="text-center text-3xl font-bold text-[#2F3E2E] font-[var(--font-display)]">
-            Roadmap
-          </h2>
-          <p className="mt-4 text-center text-[#4D3F33]">
-            Our journey toward a post-extractive economy
-          </p>
+      <section id="flagship-fields" className="space-y-8">
+        <SectionHeading
+          eyebrow="Flagship fields"
+          title="Five fields where ACT is already most visible"
+          description="Start here for the clearest public examples of ACT’s justice, story, place, and cultural work. Each one carries proof, pathways, and media where they exist."
+        />
+        <div className="grid gap-6 xl:grid-cols-2">
+          {featuredProjects.map((project) => (
+            <ProjectShowcaseCard key={project.slug} project={project} />
+          ))}
+        </div>
+      </section>
 
-          <div className="mt-12">
+      <section className="grid gap-6 lg:grid-cols-[1.06fr_0.94fr]">
+        <div className="site-surface rounded-[34px] bg-[rgba(255,251,245,0.78)] p-7">
+          <p className="site-eyebrow">Seed archive</p>
+          <h2 className="mt-4 font-[var(--font-display)] text-[2.2rem] font-semibold leading-tight text-[#241c15]">
+            More projects, pilots, and live strands sit behind the flagship layer.
+          </h2>
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-[#4D3F33]">
+            Not everything needs equal visual weight on the public site. This
+            layer keeps the strongest public proofs in front while still giving
+            the wider project set a visible place to live.
+          </p>
+          <div className="mt-6 grid gap-3 sm:grid-cols-3">
+            <div className="rounded-[22px] border border-[#E3D4BA] bg-[#FDFBF7] px-4 py-4">
+              <p className="text-2xl font-semibold text-[#2d6a4f]">
+                {archivePreview.length}
+              </p>
+              <p className="mt-1 text-[11px] uppercase tracking-[0.22em] text-[#6f5c49]">
+                Seed set shown
+              </p>
+            </div>
+            <div className="rounded-[22px] border border-[#E3D4BA] bg-[#FDFBF7] px-4 py-4">
+              <p className="text-2xl font-semibold text-[#2d6a4f]">
+                {archiveProjectsWithSites}
+              </p>
+              <p className="mt-1 text-[11px] uppercase tracking-[0.22em] text-[#6f5c49]">
+                With public sites
+              </p>
+            </div>
+            <div className="rounded-[22px] border border-[#E3D4BA] bg-[#FDFBF7] px-4 py-4">
+              <p className="text-2xl font-semibold text-[#2d6a4f]">
+                {archiveProjectsWithRepos}
+              </p>
+              <p className="mt-1 text-[11px] uppercase tracking-[0.22em] text-[#6f5c49]">
+                With code trails
+              </p>
+            </div>
+          </div>
+          <div className="mt-6 grid gap-4 xl:grid-cols-2">
+            {archivePreview.map((project) => {
+              const statusStyle =
+                DOMAIN_BADGE_STYLES[project.status || ''] ||
+                DOMAIN_BADGE_STYLES[project.tier || ''] ||
+                'border-[#E3D4BA] bg-[#FDFBF7] text-[#5A4A3A]';
+              const liveSignals = signalPayload.bySlug[project.slug];
+
+              return (
+                <article
+                  key={project.relativePath}
+                  className="rounded-[24px] border border-[#E3D4BA] bg-[#FDFBF7] p-5 transition-all hover:border-[#2d6a4f] hover:shadow-[0_18px_45px_rgba(50,42,31,0.08)]"
+                >
+                  <Link href={`/projects/${project.slug}`} className="group block">
+                    <div className="mb-3 flex items-start justify-between gap-3">
+                      <h3 className="text-base font-semibold leading-tight text-[#2F3E2E] group-hover:text-[#2d6a4f]">
+                        {project.title}
+                      </h3>
+                      {(project.status || project.tier) && (
+                        <span
+                          className={`whitespace-nowrap rounded-full border px-2.5 py-1 text-[10px] font-medium ${statusStyle}`}
+                        >
+                          {project.status || project.tier}
+                        </span>
+                      )}
+                    </div>
+                    <p className="text-sm leading-7 text-[#5A4A3A]">
+                      {project.summary ||
+                        project.overview ||
+                        'Open the project page to read the ACT wiki framing.'}
+                    </p>
+                    {liveSignals &&
+                    (liveSignals.totalWorkCount > 0 ||
+                      liveSignals.serviceConnectionCount > 0 ||
+                      liveSignals.storyCount > 0 ||
+                      liveSignals.mediaCount > 0) ? (
+                      <div className="mt-4 flex flex-wrap gap-2">
+                        {liveSignals.serviceConnectionCount > 0 ? (
+                          <span className="rounded-full bg-[#EDF6EC] px-2.5 py-1 text-[10px] font-medium text-[#2F3E2E]">
+                            {liveSignals.serviceConnectionCount} service
+                            {liveSignals.serviceConnectionCount === 1 ? '' : 's'}
+                          </span>
+                        ) : null}
+                        {liveSignals.totalWorkCount > 0 ? (
+                          <span className="rounded-full bg-[#F7EFFA] px-2.5 py-1 text-[10px] font-medium text-[#6B4D6B]">
+                            {liveSignals.totalWorkCount} work
+                            {liveSignals.totalWorkCount === 1 ? '' : 's'}
+                          </span>
+                        ) : null}
+                        {liveSignals.storyCount > 0 ? (
+                          <span className="rounded-full bg-[#F6F1E7] px-2.5 py-1 text-[10px] font-medium text-[#4A4035]">
+                            {liveSignals.storyCount} stories
+                          </span>
+                        ) : null}
+                        {liveSignals.mediaCount > 0 ? (
+                          <span className="rounded-full bg-[#F6F1E7] px-2.5 py-1 text-[10px] font-medium text-[#4A4035]">
+                            {liveSignals.mediaCount} media
+                          </span>
+                        ) : null}
+                      </div>
+                    ) : null}
+                    <p className="mt-4 text-xs font-medium text-[#2d6a4f] opacity-0 transition-opacity group-hover:opacity-100">
+                      Open ACT hub page →
+                    </p>
+                  </Link>
+                  <div className="mt-4 flex flex-wrap gap-2">
+                    <Link
+                      href={`/projects/${project.slug}`}
+                      className="site-glow-link rounded-full bg-[#2F3E2E] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#263425]"
+                    >
+                      Hub page
+                    </Link>
+                    {project.publicSiteUrl ? (
+                      <a
+                        href={project.publicSiteUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="site-glow-link rounded-full border border-[#4CAF50] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2F3E2E] transition hover:bg-[#E5F4E4]"
+                      >
+                        Project website
+                      </a>
+                    ) : null}
+                    {project.repoUrl ? (
+                      <a
+                        href={project.repoUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="site-glow-link rounded-full border border-[#D9C9A9] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#5A4A3A] transition hover:bg-[#F5F1E8]"
+                      >
+                        GitHub
+                      </a>
+                    ) : null}
+                  </div>
+                </article>
+              );
+            })}
+          </div>
+          <div className="mt-6 flex flex-wrap items-center justify-between gap-4 rounded-[24px] border border-dashed border-[#D6C19A] bg-[#f8f0e3] px-5 py-4">
+            <div className="space-y-1">
+              <p className="text-sm font-semibold text-[#2F3E2E]">
+                {hiddenArchiveCount > 0
+                  ? `${hiddenArchiveCount} more projects remain in the living archive.`
+                  : 'This view is currently showing the full non-flagship archive.'}
+              </p>
+              <p className="text-xs leading-6 text-[#5A4A3A]">
+                Go deeper when you want the wider graph, older proofs, and related strands beyond this front-facing seed set.
+              </p>
+            </div>
+            <div className="flex flex-wrap gap-3">
+              <Link
+                href="/wiki"
+                className="site-glow-link rounded-full bg-[#2F3E2E] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#263425]"
+              >
+                Read the deeper archive
+              </Link>
+              <Link
+                href="/contact"
+                className="site-glow-link rounded-full border border-[#245c43] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#1f2b21] transition hover:bg-[#E5F4E4]"
+              >
+                Bring a strand in
+              </Link>
+            </div>
+          </div>
+        </div>
+
+        <div className="space-y-6">
+          <div className="site-surface rounded-[34px] bg-[rgba(255,251,245,0.78)] p-7">
+            <p className="site-eyebrow">Roadmap & rhythm</p>
+            <h2 className="mt-4 font-[var(--font-display)] text-[2.2rem] font-semibold leading-tight text-[#241c15]">
+              Seasons of listening, making, testing, and handover.
+            </h2>
+            <p className="mt-4 text-sm leading-7 text-[#4D3F33]">
+              The flagship fields are the clearest doors in, but the wider work
+              keeps moving through seasons of listening, making, testing, and
+              handover.
+            </p>
+          </div>
+
+          <div className="rounded-[34px] border border-[#E3D4BA] bg-[#fbf7f0] p-6 shadow-[0_18px_45px_rgba(50,42,31,0.08)]">
             <RoadmapTimeline />
           </div>
         </div>
       </section>
 
-      {/* LCAA Method */}
-      <section className="px-4 py-16">
-        <div className="mx-auto max-w-4xl">
-          <h2 className="text-center text-3xl font-bold text-[#2F3E2E] font-[var(--font-display)]">
-            The LCAA Method
-          </h2>
-          <p className="mt-4 text-center text-[#4D3F33]">
-            All ACT projects follow this regenerative innovation framework
-          </p>
-
-          <div className="mt-12 grid gap-6 md:grid-cols-2">
-            <div className="rounded-2xl border-2 border-[#4CAF50] bg-white/80 p-6">
-              <h3 className="text-xl font-bold text-[#2F3E2E]">Listen</h3>
-              <p className="mt-2 text-sm text-[#4D3F33]">
-                Deep listening to place, people, history, and community voice before designing solutions.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border-2 border-[#4CAF50] bg-white/80 p-6">
-              <h3 className="text-xl font-bold text-[#2F3E2E]">Curiosity</h3>
-              <p className="mt-2 text-sm text-[#4D3F33]">
-                Think deeply, prototype boldly, test rigorously. Research and experimentation.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border-2 border-[#4CAF50] bg-white/80 p-6">
-              <h3 className="text-xl font-bold text-[#2F3E2E]">Action</h3>
-              <p className="mt-2 text-sm text-[#4D3F33]">
-                Build tangible solutions alongside communities. Infrastructure for change.
-              </p>
-            </div>
-
-            <div className="rounded-2xl border-2 border-[#4CAF50] bg-white/80 p-6">
-              <h3 className="text-xl font-bold text-[#2F3E2E]">Art</h3>
-              <p className="mt-2 text-sm text-[#4D3F33]">
-                Translate change into culture. Challenge status quo through creative expression.
-              </p>
-            </div>
+      <section className="site-surface rounded-[36px] bg-gradient-to-br from-[#f5efe5] via-[#e6dcc9] to-[#d4c2a2] p-8 md:p-10">
+        <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-end">
+          <div className="space-y-4">
+            <p className="site-eyebrow">Contribution paths</p>
+            <h2 className="font-[var(--font-display)] text-[2.2rem] font-semibold leading-tight text-[#241c15]">
+              If you want to enter the work, start here.
+            </h2>
+            <p className="max-w-2xl text-sm leading-7 text-[#4D3F33]">
+              ACT grows through collaboration, community memory, and practical
+              contribution. Different people come in through different doors:
+              building, growing, or partnering around a live need.
+            </p>
+          </div>
+          <div className="flex flex-wrap gap-3 lg:justify-end">
+            <Link
+              href="/contact"
+              className="site-glow-link rounded-full bg-[#245c43] px-7 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#1c4935]"
+            >
+              Get in touch
+            </Link>
+            <Link
+              href="/wiki"
+              className="site-glow-link rounded-full border border-[#245c43] px-7 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#1f2b21] transition hover:bg-white/75"
+            >
+              Browse the wiki
+            </Link>
           </div>
         </div>
-      </section>
 
-      {/* Footer CTA */}
-      <section className="px-4 py-16 bg-[#2F3E2E] text-white">
-        <div className="mx-auto max-w-4xl text-center">
-          <h2 className="text-3xl font-bold font-[var(--font-display)]">
-            Join the Ecosystem
-          </h2>
-          <p className="mt-4 text-white/80">
-            Building infrastructure for a post-extractive economy. One project, one commit, one story at a time.
-          </p>
-          <div className="mt-8 flex flex-wrap justify-center gap-4">
-            <a
-              href="https://github.com/Acurioustractor"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-[#4CAF50] px-6 py-3 text-sm font-semibold uppercase tracking-wider text-white hover:bg-[#45a049]"
-            >
-              View on GitHub
-            </a>
-            <a
-              href="https://github.com/users/Acurioustractor/projects/1"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full border-2 border-white px-6 py-3 text-sm font-semibold uppercase tracking-wider text-white hover:bg-white/10"
-            >
-              See Roadmap
-            </a>
+        <div className="mt-8 grid gap-5 md:grid-cols-3">
+          <div className="rounded-[24px] border border-[#E3D4BA] bg-white/70 p-6">
+            <div className="text-2xl font-bold text-[#2d6a4f]">Build</div>
+            <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
+              Frontend, backend, design systems, automation, and platform infrastructure.
+            </p>
+          </div>
+          <div className="rounded-[24px] border border-[#244c39] bg-[#183125] p-6 text-[#f4ecde]">
+            <div className="text-2xl font-bold text-[#bfe0c7]">Grow</div>
+            <p className="mt-3 text-sm leading-7 text-[#d7c8b2]">
+              Help shape place-based work, documentation, operations, and ecosystem coherence.
+            </p>
+          </div>
+          <div className="rounded-[24px] border border-[#E3D4BA] bg-white/70 p-6">
+            <div className="text-2xl font-bold text-[#2d6a4f]">Partner</div>
+            <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
+              Bring a community, institution, residency, commission, or field question into the ecosystem.
+            </p>
           </div>
         </div>
       </section>

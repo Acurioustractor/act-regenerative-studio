@@ -12,7 +12,7 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-import { getNotionProject } from '@/lib/notion';
+import { getPublicProjectMetadata } from '@/lib/project-metadata/public';
 import { findRelatedProjects } from '@/lib/enrichment/project-relationships';
 
 export async function GET(
@@ -30,7 +30,7 @@ export async function GET(
     console.log(`[Related API] Finding related projects for: ${slug}`);
 
     // Fetch project metadata
-    const project = await getNotionProject(slug);
+    const project = await getPublicProjectMetadata(slug);
 
     if (!project) {
       return NextResponse.json(

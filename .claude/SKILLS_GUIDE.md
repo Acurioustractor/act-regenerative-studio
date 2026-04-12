@@ -90,25 +90,6 @@ Task: Review homepage copy for brand alignment
 
 ---
 
-### 3. **act-knowledge-base** (In Development)
-**Status**: Partially built, needs consolidation
-**Purpose**: Living Wiki, knowledge extraction, multi-source integration
-
-**Current Components**:
-- Gmail knowledge scanner
-- Notion knowledge scanner
-- Calendar integration (designed, not built)
-- Review queue system
-- Auto-approval workflows
-
-**Planned Skills**:
-- Knowledge extraction guidance
-- Source prioritization
-- Review workflow optimization
-- Timeline management
-
----
-
 ## 🗂️ Skill Organization System
 
 ### Directory Structure
@@ -131,12 +112,7 @@ Task: Review homepage copy for brand alignment
 │   │   ├── QUICK-REFERENCE.md
 │   │   └── README.md
 │   │
-│   ├── act-knowledge-base/
-│   │   ├── skill.md
-│   │   ├── START_HERE.md
-│   │   ├── QUICK_START.md
-│   │   └── [implementation docs...]
-│   │
+│
 │   ├── dist/ (packaged skills)
 │   │   └── *.skill (ZIP archives)
 │   │
@@ -172,10 +148,9 @@ Task: Review homepage copy for brand alignment
 - Email sequences, automation
 - Lead management, reporting
 
-**Knowledge Management** → `act-knowledge-base` (when ready)
-- Extracting knowledge from sources
-- Review workflows
-- Timeline planning
+**Knowledge Management** → See Living Wiki feature in `docs/architecture/`
+- Knowledge extraction handled by Living Wiki system
+- Review workflows in admin UI
 
 **Technical Development** → No specific skill yet
 - Consider creating: `act-technical-stack` skill
@@ -332,7 +307,7 @@ mv .claude/skills/old-skill .claude/skills/archive/
 
 **Example: Knowledge-informed content**
 ```
-1. Use act-knowledge-base to extract decisions from emails
+1. Use Living Wiki system to extract decisions from emails
 2. Use act-brand-alignment to write up as wiki page
 3. Use ghl-crm-advisor to notify team via workflow
 ```
@@ -350,7 +325,7 @@ Chain:
 1. act-brand-alignment → Define project voice, messaging, positioning
 2. ghl-crm-advisor → Design launch pipeline, automation, sequences
 3. act-brand-alignment → Review all sequences for voice consistency
-4. act-knowledge-base → Document decisions and setup in wiki
+4. Living Wiki → Document decisions and setup in wiki
 ```
 
 ---
@@ -535,7 +510,7 @@ cat .claude/settings.local.json
 ### Current Focus (Q1 2026)
 - ✅ act-brand-alignment (complete)
 - ✅ ghl-crm-advisor (complete)
-- 🚧 act-knowledge-base (in progress - Phase 2 complete)
+- ✅ act-sprint-workflow (complete)
 
 ### Next Quarter (Q2 2026)
 - ⏳ act-technical-stack (planned)
@@ -566,9 +541,9 @@ cat .claude/settings.local.json
 ║  → /ghl-crm-advisor                                        ║
 ║     Pipelines, workflows, automation, reporting            ║
 ║                                                            ║
-║  KNOWLEDGE MANAGEMENT                                      ║
-║  → act-knowledge-base (in development)                     ║
-║     Extraction, review, timeline, multi-source             ║
+║  SPRINT WORKFLOW                                           ║
+║  → /act-sprint-workflow                                    ║
+║     Sprint planning, execution, tracking                   ║
 ║                                                            ║
 ╠════════════════════════════════════════════════════════════╣
 ║  QUICK TIPS                                                ║

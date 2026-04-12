@@ -1,5 +1,7 @@
 import Link from "next/link";
 import type { CSSProperties } from "react";
+import LivingSystemStrip from "@/components/LivingSystemStrip";
+import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import MediaGallery from "@/components/media/MediaGallery";
 import { projects, type Project } from "@/data/projects";
@@ -121,18 +123,43 @@ export default function MediaLabPage({
 
   return (
     <div className="space-y-16">
-      <header className="rounded-3xl border border-[#E3D4BA] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12">
-        <p className="text-xs uppercase tracking-[0.4em] text-[#6B5A45]">
-          Media Lab
-        </p>
-        <h1 className="mt-4 text-3xl font-semibold text-[#2F3E2E] md:text-5xl font-[var(--font-display)]">
-          Test images, video, and explainers
-        </h1>
-        <p className="mt-4 max-w-3xl text-sm text-[#4D3F33] md:text-base">
-          Use this page to stress-test media across common layouts, spot gaps,
-          and prototype explainer patterns for the ACT ecosystem.
-        </p>
-      </header>
+      <PageHero
+        eyebrow="Media Lab"
+        title="A review surface for media, coverage, and explainer patterns"
+        description="This page is a working lab, not a public narrative page. It helps ACT check image coverage, video readiness, and explainer structures before those assets land in projects, works, or partnership surfaces."
+        actions={[
+          { label: "Open works", href: "/art" },
+          { label: "Open projects", href: "/projects", variant: "outline" },
+        ]}
+      >
+        <div className="space-y-3">
+          <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+            Use
+          </p>
+          <p>
+            Treat this as a review bench for media and narrative assets. The finished public story should still live in the project, works, and wiki surfaces.
+          </p>
+        </div>
+      </PageHero>
+
+      <LivingSystemStrip
+        eyebrow="Review layer"
+        title="This page exists to support the living system, not compete with it"
+        description="Media review should help the public shell stay strong, not become a second narrative surface. Use this lab to spot gaps, test assets, and move stronger material back into the projects, works, and story layers."
+        wiki={{
+          href: "/wiki",
+          label: "Open ACT wiki",
+        }}
+        live={{
+          sourceLabel: "Media and story assets should resolve back into project surfaces",
+          href: `${process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL || "https://empathyledger.com"}/projects`,
+        }}
+        stats={[
+          { label: "Projects", value: stats.total },
+          { label: "With hero", value: stats.withHero },
+          { label: "With video", value: stats.withVideo },
+        ]}
+      />
 
       <section className="space-y-6">
         <SectionHeading

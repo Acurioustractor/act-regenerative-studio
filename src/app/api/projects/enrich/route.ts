@@ -13,7 +13,10 @@ export async function GET(request: NextRequest) {
   try {
     const { searchParams } = new URL(request.url);
     const slug = searchParams.get('slug');
-    const includeNotion = searchParams.get('notion') !== 'false';
+    // `notion=false` remains supported as a legacy alias for `metadata=false`.
+    const includeMetadata =
+      searchParams.get('metadata') !== 'false' &&
+      searchParams.get('notion') !== 'false';
     const includeStorytellers =
       searchParams.get('storytellers') !== 'false';
     const includeStories = searchParams.get('stories') !== 'false';
@@ -22,7 +25,7 @@ export async function GET(request: NextRequest) {
     if (!slug) {
       // Enrich all projects
       const enrichedProjects = await batchEnrichProjects(projects, {
-        includeNotion,
+        includeMetadata,
         includeStorytellers,
         includeStories,
         generateLCAA,
@@ -47,7 +50,7 @@ export async function GET(request: NextRequest) {
     }
 
     const enrichedProject = await enrichProject(project, {
-      includeNotion,
+      includeMetadata,
       includeStorytellers,
       includeStories,
       generateLCAA,
@@ -96,9 +99,20 @@ export async function POST(request: NextRequest) {
       );
     }
 
+    const normalizedOptions = options
+      ? {
+          ...options,
+          includeMetadata: options.includeMetadata ?? options.includeNotion,
+        }
+      : {};
+
+    if ('includeNotion' in normalizedOptions) {
+      delete normalizedOptions.includeNotion;
+    }
+
     const enrichedProjects = await batchEnrichProjects(
       projectsToEnrich,
-      options || {}
+      normalizedOptions
     );
 
     return NextResponse.json({

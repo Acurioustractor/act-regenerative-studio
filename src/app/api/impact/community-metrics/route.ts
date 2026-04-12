@@ -8,7 +8,10 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 
-const EMPATHY_LEDGER_URL = process.env.EMPATHY_LEDGER_URL || 'http://localhost:3000';
+const EMPATHY_LEDGER_URL =
+  process.env.EMPATHY_LEDGER_URL ||
+  process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL ||
+  'http://localhost:3030';
 
 export async function GET(request: NextRequest) {
   try {

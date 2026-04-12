@@ -50,6 +50,8 @@ npm run db:types   # Regenerate TypeScript types from Supabase
 ├── scripts/               # Build, deployment, and utility scripts
 ├── supabase/             # Database migrations and config
 ├── .claude/              # Claude Code skills and configuration
+├── opc/                   # Continuous Claude Python scripts
+├── thoughts/              # Continuity ledgers and handoffs
 └── public/               # Static assets
 ```
 
@@ -335,6 +337,52 @@ This project is part of a larger ACT ecosystem with multiple codebases:
 
 ---
 
+## 🧠 Continuous Claude Integration
+
+This project uses [Continuous Claude v3](https://github.com/parcadei/Continuous-Claude-v3) for persistent context and learning.
+
+### Memory System
+
+**Recall learnings** before implementation:
+```bash
+cd opc && PYTHONPATH=. uv run python scripts/core/recall_learnings.py --query "your search" --k 5
+```
+
+**Store learnings** after discovery:
+```bash
+cd opc && PYTHONPATH=. uv run python scripts/core/store_learning.py \
+  --type WORKING_SOLUTION \
+  --content "what you learned" \
+  --context "what it relates to" \
+  --tags "tag1,tag2" \
+  --confidence high
+```
+
+### Continuity Ledger
+
+Track project state in `thoughts/ledgers/CONTINUITY_LEDGER.md`:
+- Current goals
+- Key patterns discovered
+- Blocked items
+- Session completion notes
+
+### Database Tables (cc_*)
+
+- `cc_sessions` - Active Claude Code sessions
+- `cc_file_claims` - Prevent concurrent edit conflicts
+- `cc_archival_memory` - Persistent learnings with semantic search
+- `cc_handoffs` - Session state transfer documents
+
+### Setup
+
+```bash
+cd opc && uv run python -m scripts.setup.wizard
+```
+
+See full documentation: [opc/README.md](./opc/README.md)
+
+---
+
 ## 💡 Tips for AI-Assisted Development
 
 1. **Always check docs first** - Documentation is organized by category in `docs/`
@@ -344,9 +392,11 @@ This project is part of a larger ACT ecosystem with multiple codebases:
 5. **Update types after schema changes** - Run `npm run db:types`
 6. **Test knowledge extractors carefully** - Gmail and Notion scanners affect real data
 7. **Document as you go** - Add to appropriate `docs/` category
+8. **Check memory first** - Recall learnings before implementing new features
+9. **Store learnings** - After solving problems, save them for future sessions
 
 ---
 
-**Last Updated**: 2024-12-26
+**Last Updated**: 2025-01-18
 **Maintained By**: Ben Knight + Claude AI
 **Questions?** Check `.claude/SKILLS_GUIDE.md` or ask for help!

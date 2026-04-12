@@ -8,7 +8,7 @@
  * 4. Temporal relevance (recent posts weighted higher)
  */
 
-import type { NotionProjectMetadata } from '../notion/types';
+import type { ProjectMetadata } from '../project-metadata/types';
 
 export interface RelatedBlogPost {
   slug: string;
@@ -25,7 +25,7 @@ export interface RelatedBlogPost {
  * Calculate semantic similarity between project and blog post
  */
 function calculateSemanticSimilarity(
-  project: NotionProjectMetadata,
+  project: ProjectMetadata,
   blogPost: {
     title: string;
     content: string;
@@ -189,7 +189,7 @@ async function fetchBlogPosts(): Promise<Array<{
  * Find related blog posts for a project
  */
 export async function findRelatedBlogPosts(
-  project: NotionProjectMetadata,
+  project: ProjectMetadata,
   options: {
     minRelevanceScore?: number;
     maxResults?: number;
@@ -233,7 +233,7 @@ export async function findRelatedBlogPosts(
 /**
  * Generate blog post linking report
  */
-export async function generateBlogLinkingReport(project: NotionProjectMetadata): Promise<{
+export async function generateBlogLinkingReport(project: ProjectMetadata): Promise<{
   totalPostsScanned: number;
   relevantPostsFound: number;
   topPosts: RelatedBlogPost[];

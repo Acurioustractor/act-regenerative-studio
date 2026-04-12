@@ -32,6 +32,15 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    slug: "black-cockatoo-valley",
+    title: "Black Cockatoo Valley",
+    theme: "valley",
+    tagline: "Land practice, residencies, and conservation on Jinibara Country",
+    description:
+      "Black Cockatoo Valley is the land-based heart of ACT: a place for stewardship, residencies, restoration, and the slower forms of work that let new governance, hospitality, and cultural practice take root. It is not a backdrop for projects. It is one of the conditions that makes the wider ecosystem possible.",
+    focus: ["Stewardship", "Residencies", "Jinibara Country"],
+  },
+  {
     slug: "global-laundry-alliance",
     title: "Global Laundry Alliance",
     theme: "justice",
@@ -111,6 +120,24 @@ export const projects: Project[] = [
     description:
       "Fishers Oysters is an Indigenous-led aquaculture project to reclaim and restore Moreton Bay's oyster reefs, blending cultural knowledge with regenerative practice to rebuild ecosystems and create long-term economic sovereignty for Quandamooka communities.",
     focus: ["Indigenous-led", "Regenerative practice", "Economic sovereignty"],
+    listen:
+      "Australia's oyster reefs were 99% destroyed in the 200 years since colonisation. For coastal Indigenous communities, this wasn't just environmental loss—it was loss of food source, cultural practice, and economic independence. We listened to Elders who remembered the reefs, to marine scientists documenting the damage, and to young people seeking pathways to sustainable livelihoods on Country.",
+    curiosity:
+      "What if reef restoration could rebuild both ecosystem and community self-determination? We explored how oyster aquaculture could become a vehicle for economic sovereignty while healing the waters. Each oyster filters 200 litres of water per day—what if Indigenous enterprise could scale this healing?",
+    action:
+      "Working with Quandamooka Traditional Owners, we've established oyster growing operations in Moreton Bay. The enterprise combines traditional knowledge of tides, seasons, and sustainable harvest with modern aquaculture techniques. Young people are training in marine enterprise, creating pathways from unemployment to ownership.",
+    art:
+      "The story of Fishers Oysters is told through the waters themselves—clearer, healthier, teeming with life. We document this transformation through underwater photography, time-lapse of reef regeneration, and community storytelling that connects ancient practice to contemporary enterprise.",
+    stats: [
+      { value: "99%", label: "Reefs Lost Since Colonisation" },
+      { value: "200L", label: "Water Filtered Per Oyster/Day" },
+      { value: "100%", label: "Indigenous Owned" },
+    ],
+    quote: {
+      text: "When we restore the reefs, we restore ourselves. The oysters remember what these waters should be.",
+      author: "Quandamooka Elder",
+      role: "Fishers Oysters Advisor",
+    },
     heroImage:
       "https://tednluwflfhxyucgwigh.supabase.co/storage/v1/object/public/photos/community/1cb29099-2df6-4089-ace0-3d65ea7c4ada.jpeg",
     videoUrl: "https://share.descript.com/view/VBn8Z3U9pV4",
@@ -172,6 +199,8 @@ export const projects: Project[] = [
       author: "Mark",
       role: "Community Member",
     },
+    heroImage:
+      "https://tednluwflfhxyucgwigh.supabase.co/storage/v1/object/public/photos/community/49a62fee-d7a8-4f54-8f41-b89f48e9536b.jpeg",
   },
   {
     slug: "bg-fit-mount-isa",
@@ -291,6 +320,8 @@ export const projects: Project[] = [
     description:
       "The Harvest is a living space where people come together to grow food, share stories, and build meaningful connections. Through seasonal harvests, community meals, and therapeutic programs, we create pathways for belonging and wellbeing rooted in the land.",
     focus: ["Community meals", "Therapeutic programs", "Seasonal harvests"],
+    heroImage:
+      "https://tednluwflfhxyucgwigh.supabase.co/storage/v1/object/public/photos/community/37eb9379-c39d-4eee-b5ad-d279f920c578.jpeg",
   },
   {
     slug: "tomnet",
@@ -435,5 +466,124 @@ export const projects: Project[] = [
     description:
       "Exploring Dad.Lab.25 in Australia. This project creates space for fathers to gather, share experiences, and explore what it means to show up for their kids and communities.",
     focus: ["Fatherhood", "Community support", "Gender equity"],
+  },
+  {
+    slug: "10x10-retreat",
+    title: "10x10 Community Capital Leadership Retreat",
+    theme: "harvest",
+    tagline: "Ten leaders, ten days, growing community capital together",
+    description:
+      "The 10x10 Retreat brings together ten community leaders for an intensive period of learning, connection, and practice development around community capital and shared enterprise. Deep learning, peer connection, and shared tools for community-owned business.",
+    focus: ["Leadership development", "Community capital", "Shared enterprise"],
+    listen:
+      "We listened to community leaders who said they needed extended time together - not a conference, but a genuine period of learning and relationship building.",
+    curiosity:
+      "What happens when you bring diverse leaders together for enough time that real relationships form? How do we grow community capital intentionally?",
+    action:
+      "Ten participants from diverse community leadership contexts spend ten days at The Harvest in immersive learning and practice development.",
+    art:
+      "The retreat produces action plans, deep connections, and shared tools that participants take back to their communities.",
+  },
+  {
+    slug: "act-monthly-dinners",
+    title: "ACT Monthly Dinners",
+    theme: "harvest",
+    tagline: "Breaking bread, building connection, crafting shared story",
+    description:
+      "Regular gatherings at The Harvest where people come together to eat, listen, and contribute to ACT's evolving story. Not a meeting. Not a presentation. A meal where conversation shapes what we become.",
+    focus: ["Community gathering", "Shared meals", "Collective voice"],
+    listen:
+      "The best insights don't come from reports. They come from dinner conversation - the kind that happens when people are fed, comfortable, and given permission to speak honestly.",
+    curiosity:
+      "What emerges when we create regular space for community to gather, eat, and speak? How do dinner conversations shape direction?",
+    action:
+      "Monthly dinners with food from the farm, structured conversation on themes that matter, and space for everyone's voice.",
+    art:
+      "Relationships and insights that continue beyond each evening, shaping ACT's evolving story through collective voice.",
+  },
+  {
+    slug: "anat-spectra-2025",
+    title: "ANAT SPECTRA 2025",
+    theme: "earth",
+    tagline: "Art, technology, and community storytelling",
+    description:
+      "A collaboration with the Australian Network for Art and Technology (ANAT), exploring how creative practice and emerging technology can serve community storytelling. Technology for community voice, art as evidence, and ethical tools that respect rather than extract.",
+    focus: ["Art & technology", "Community storytelling", "Ethical tech"],
+    listen:
+      "ANAT and ACT came together recognizing that technology often extracts from communities rather than serving them. We listened for ways creative practice could change this.",
+    curiosity:
+      "How can emerging technology serve storytelling rather than surveillance? What does ethical technology look like when built with communities?",
+    action:
+      "Cross-disciplinary learning bringing artists, technologists, and communities together to build tools that respect community voice.",
+    art:
+      "Creative outputs that demonstrate a different relationship between technology and community - tools that serve rather than extract.",
+  },
+  {
+    slug: "cars-and-microcontrollers",
+    title: "Cars and Microcontrollers",
+    theme: "goods",
+    tagline: "Learning by making - hands-on skills that build confidence",
+    description:
+      "A hands-on learning program using practical making - working on vehicles and electronics - as a pathway to skills, confidence, and connection. Not everyone learns from books. Some people need to build.",
+    focus: ["Practical skills", "Hands-on learning", "Employment pathways"],
+    listen:
+      "We heard from young people who didn't fit traditional education but came alive when they could work with their hands on real things.",
+    curiosity:
+      "What happens when learning is physical rather than theoretical? How do mechanical and electronic skills build confidence?",
+    action:
+      "Practical workshops working on vehicles and microcontrollers, building skills through making and fixing real things.",
+    art:
+      "The moment someone makes something work and realizes they can solve problems - that's the transformation this program creates.",
+  },
+  {
+    slug: "travelling-womens-car",
+    title: "Travelling Women's Car",
+    theme: "earth",
+    tagline: "A mobile space for women's stories and cultural preservation",
+    description:
+      "A mobile storytelling and cultural preservation project - a vehicle that travels to communities, creating safe space for women to share stories and preserve cultural knowledge that might otherwise be lost.",
+    focus: ["Women's voices", "Cultural preservation", "Mobile storytelling"],
+    listen:
+      "We listened to women in remote communities who said they needed storytelling to come to them, not the other way around.",
+    curiosity:
+      "What happens when we take storytelling infrastructure to where women are? How does a mobile space change what's possible?",
+    action:
+      "A vehicle equipped for story capture that travels to communities, creating women-only space for sharing and preserving knowledge.",
+    art:
+      "Stories preserved that would otherwise be lost - cultural knowledge captured and returned to community on their terms.",
+  },
+  {
+    slug: "nfp-leaders-interviews",
+    title: "NFP Leaders Interview Project",
+    theme: "justice",
+    tagline: "Capturing sector wisdom through conversations with leaders",
+    description:
+      "A research initiative capturing insights from leaders across Australia's not-for-profit sector - documenting what works, what doesn't, and what the sector needs to evolve. Wisdom that often stays locked in individuals' heads, made available to all.",
+    focus: ["Sector research", "Knowledge capture", "Leadership wisdom"],
+    listen:
+      "We heard from NFP leaders nearing retirement who worried their hard-won knowledge would disappear when they left.",
+    curiosity:
+      "What patterns emerge when you interview dozens of experienced sector leaders? What wisdom is the sector losing as leaders retire?",
+    action:
+      "Structured interviews with NFP leaders across Australia, capturing and analysing insights about community work, systems change, and impact.",
+    art:
+      "A shared resource of sector wisdom - patterns, warnings, and insights made available to the next generation of leaders.",
+  },
+  {
+    slug: "project-her-self",
+    title: "Project Her Self",
+    theme: "earth",
+    tagline: "Design and storytelling centering women's voices",
+    description:
+      "A design and storytelling initiative focused on women's empowerment - creating spaces, tools, and narratives that centre women's experiences and agency. Design often fails to consider women's needs; this project responds.",
+    focus: ["Women's empowerment", "Inclusive design", "Storytelling"],
+    listen:
+      "We listened to women who said design rarely considers their needs, experiences, and perspectives - from public spaces to digital tools.",
+    curiosity:
+      "What does design look like when led by women's input? How do we capture and amplify women's narratives authentically?",
+    action:
+      "Design processes led by women's voices, storytelling that captures diverse women's experiences, and outcomes focused on increasing agency.",
+    art:
+      "Spaces, tools, and narratives that truly reflect and serve women - demonstrating what inclusive design can achieve.",
   },
 ];

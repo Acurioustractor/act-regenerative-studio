@@ -1,18 +1,14 @@
 /**
  * Unified Project Enrichment Service
- * Orchestrates data from Notion, Empathy Ledger, and AI matching
+ * Orchestrates data from project metadata, Empathy Ledger, and AI matching
  * to create comprehensive, living project pages
  */
 
 import type { Project } from '@/data/projects';
-import {
-  enrichProjectFromNotion,
-  findNotionProjectByName,
-} from './notion-integration';
+import { getPublicProjectMetadata } from './project-metadata/public';
 import {
   searchStorytellersByOrganization,
   searchStorytellersByThemes,
-  getStorytellerStories,
   searchStoriesByThemes,
 } from './empathy-ledger-integration';
 import {
@@ -24,8 +20,8 @@ import {
 } from './ai-project-matcher';
 
 export interface EnrichedProject extends Project {
-  // From Notion
-  notionData?: {
+  // Canonical metadata-derived enrichment for the public site.
+  projectMetadata?: {
     aiSummary?: string;
     themes?: string[];
     relatedPlaces?: Array<{ displayName: string }>;
@@ -34,7 +30,6 @@ export interface EnrichedProject extends Project {
     autonomyScore?: number;
     supporters?: number;
     partnerCount?: number;
-    notionUrl?: string;
     projectLead?: any;
     funding?: string;
   };
@@ -81,13 +76,45 @@ const PROJECT_TO_ORGANIZATION_MAP: Record<string, string> = {
   'Mounty Yarns': 'Mounty Yarns',
 };
 
+async function enrichProjectFromMetadata(project: Project) {
+  const metadata = await getPublicProjectMetadata(project.slug);
+
+  if (!metadata) {
+    return {};
+  }
+
+  return {
+    aiSummary: metadata.outcomes || metadata.description,
+    themes: metadata.themes,
+    relatedPlaces: [],
+    relatedOrganisations: metadata.partners,
+    relatedPeople: [],
+    autonomyScore:
+      typeof metadata.metrics?.autonomyScore === 'number'
+        ? metadata.metrics.autonomyScore
+        : undefined,
+    supporters:
+      typeof metadata.metrics?.supporters === 'number'
+        ? metadata.metrics.supporters
+        : undefined,
+    partnerCount:
+      typeof metadata.metrics?.partnerCount === 'number'
+        ? metadata.metrics.partnerCount
+        : Array.isArray(metadata.partners)
+          ? metadata.partners.length
+          : undefined,
+    projectLead: undefined,
+    funding: metadata.notes || undefined,
+  };
+}
+
 /**
  * Main enrichment function - orchestrates all data sources
  */
 export async function enrichProject(
   project: Project,
   options: {
-    includeNotion?: boolean;
+    includeMetadata?: boolean;
     includeStorytellers?: boolean;
     includeStories?: boolean;
     generateLCAA?: boolean;
@@ -96,7 +123,7 @@ export async function enrichProject(
   } = {}
 ): Promise<EnrichedProject> {
   const {
-    includeNotion = true,
+    includeMetadata = true,
     includeStorytellers = true,
     includeStories = true,
     generateLCAA = false,
@@ -114,16 +141,16 @@ export async function enrichProject(
     },
   };
 
-  // 1. Enrich from Notion
-  if (includeNotion) {
+  // 1. Enrich from the public project metadata layer
+  if (includeMetadata) {
     try {
-      const notionData = await enrichProjectFromNotion(project.title);
-      if (Object.keys(notionData).length > 0) {
-        enrichedProject.notionData = notionData;
-        sources.push('notion');
+      const projectMetadata = await enrichProjectFromMetadata(project);
+      if (Object.keys(projectMetadata).length > 0) {
+        enrichedProject.projectMetadata = projectMetadata;
+        sources.push('project-metadata');
       }
     } catch (error) {
-      console.error('Error enriching from Notion:', error);
+      console.error('Error enriching from project metadata:', error);
     }
   }
 
@@ -262,10 +289,10 @@ function calculateConfidenceScore(enrichedProject: EnrichedProject): number {
   if (enrichedProject.action) score += 5;
   if (enrichedProject.art) score += 5;
 
-  // Notion data
-  if (enrichedProject.notionData?.aiSummary) score += 10;
-  if (enrichedProject.notionData?.themes) score += 5;
-  if (enrichedProject.notionData?.relatedOrganisations) score += 5;
+  // Metadata-derived enrichment
+  if (enrichedProject.projectMetadata?.aiSummary) score += 10;
+  if (enrichedProject.projectMetadata?.themes) score += 5;
+  if (enrichedProject.projectMetadata?.relatedOrganisations) score += 5;
 
   // Storytellers
   if (enrichedProject.featuredStorytellers) {

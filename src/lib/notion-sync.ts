@@ -88,22 +88,22 @@ async function syncToPartnerships(payload: GHLWebhookPayload) {
         title: [
           {
             text: {
-              content: payload.contact?.name || payload.contact?.email || 'Unknown',
+              content: payload.contact?.name || payload.contact?.email || payload.full_name || payload.email || 'Unknown',
             },
           },
         ],
       },
       Email: {
-        email: payload.contact?.email || null,
+        email: payload.contact?.email || payload.email || null,
       },
       Phone: {
-        phone_number: payload.contact?.phone || null,
+        phone_number: payload.contact?.phone || payload.phone || null,
       },
       Company: {
         rich_text: [
           {
             text: {
-              content: payload.contact?.companyName || payload.customFields?.company || '',
+              content: payload.contact?.companyName || payload.organization || payload.customFields?.company || '',
             },
           },
         ],
@@ -154,16 +154,16 @@ async function syncToBookings(payload: GHLWebhookPayload) {
         title: [
           {
             text: {
-              content: payload.contact?.name || 'Unknown',
+              content: payload.contact?.name || payload.full_name || 'Unknown',
             },
           },
         ],
       },
       Email: {
-        email: payload.contact?.email || null,
+        email: payload.contact?.email || payload.email || null,
       },
       Phone: {
-        phone_number: payload.contact?.phone || null,
+        phone_number: payload.contact?.phone || payload.phone || null,
       },
       'Requested Dates': {
         rich_text: [
@@ -223,16 +223,16 @@ async function syncToCSAMembers(payload: GHLWebhookPayload) {
         title: [
           {
             text: {
-              content: payload.contact?.name || 'Unknown',
+              content: payload.contact?.name || payload.full_name || 'Unknown',
             },
           },
         ],
       },
       Email: {
-        email: payload.contact?.email || null,
+        email: payload.contact?.email || payload.email || null,
       },
       Phone: {
-        phone_number: payload.contact?.phone || null,
+        phone_number: payload.contact?.phone || payload.phone || null,
       },
       'Dietary Preferences': {
         rich_text: [
@@ -285,16 +285,16 @@ async function syncToResidencyApplications(payload: GHLWebhookPayload) {
         title: [
           {
             text: {
-              content: payload.contact?.name || 'Unknown',
+              content: payload.contact?.name || payload.full_name || 'Unknown',
             },
           },
         ],
       },
       Email: {
-        email: payload.contact?.email || null,
+        email: payload.contact?.email || payload.email || null,
       },
       Phone: {
-        phone_number: payload.contact?.phone || null,
+        phone_number: payload.contact?.phone || payload.phone || null,
       },
       'Art Practice': {
         rich_text: [
@@ -357,7 +357,7 @@ async function syncToNewsletter(payload: GHLWebhookPayload) {
         title: [
           {
             text: {
-              content: payload.contact?.email || 'Unknown',
+              content: payload.contact?.email || payload.email || 'Unknown',
             },
           },
         ],
@@ -366,7 +366,7 @@ async function syncToNewsletter(payload: GHLWebhookPayload) {
         rich_text: [
           {
             text: {
-              content: payload.contact?.name || '',
+              content: payload.contact?.name || payload.full_name || '',
             },
           },
         ],

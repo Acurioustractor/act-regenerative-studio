@@ -1,6 +1,10 @@
 import CardGrid from "../../../components/CardGrid";
 import PageHero from "../../../components/PageHero";
 import SectionHeading from "../../../components/SectionHeading";
+import { ProjectEntryBridgeSection } from "@/components/projects";
+import { getProjectData } from "@/lib/projects/get-project-data";
+import { getRelatedFeaturedWorks } from "@/lib/works/live-featured-works";
+import { notFound } from "next/navigation";
 
 const retreatFormats = [
   {
@@ -27,13 +31,25 @@ const retreatFlow = [
   "Collective reflection and art translation",
 ];
 
-export default function FarmRetreatsPage() {
+export default async function FarmRetreatsPage() {
+  const project = await getProjectData("black-cockatoo-valley");
+
+  if (!project) {
+    notFound();
+  }
+
+  const relatedWorks = await getRelatedFeaturedWorks(
+    "black-cockatoo-valley",
+    project.title,
+    3
+  );
+
   return (
     <div className="space-y-20">
       <PageHero
         eyebrow="Retreats"
         title="Gatherings for regeneration"
-        description="Retreats at Black Cockatoo Valley are built around learning, rest, and shared governance practice."
+        description="Retreats at Black Cockatoo Valley are built around learning, rest, and shared governance practice. They are co-designed against the actual capacities of the place, not sold as generic retreat packages."
         actions={[
           { label: "Plan a retreat", href: "/contact" },
           { label: "Back to farm", href: "/farm", variant: "outline" },
@@ -52,11 +68,13 @@ export default function FarmRetreatsPage() {
         </div>
       </PageHero>
 
+      <ProjectEntryBridgeSection project={project} relatedWorks={relatedWorks} />
+
       <section className="space-y-10">
         <SectionHeading
           eyebrow="Formats"
           title="Retreat options"
-          description="Choose a structure and we will co-design the rest with you."
+          description="Choose a starting structure and we will shape the rest with you around place, season, and the people involved."
         />
         <CardGrid cards={retreatFormats} className="grid gap-6 md:grid-cols-3" />
       </section>
@@ -65,7 +83,7 @@ export default function FarmRetreatsPage() {
         <SectionHeading
           eyebrow="Flow"
           title="Sample retreat rhythm"
-          description="A gentle cadence that keeps listening and action in balance."
+          description="A sample cadence that keeps listening, making, and collective reflection in balance."
         />
         <CardGrid
           cards={retreatFlow.map((step) => ({

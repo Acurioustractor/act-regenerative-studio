@@ -26,11 +26,11 @@ export function VisionSearch() {
                     <div className="border-t border-stone-100 mt-1 pt-1">
                         <a href="/vision" className="block p-3 hover:bg-emerald-50 rounded-lg group">
                             <p className="font-semibold text-emerald-900 group-hover:text-emerald-700">ACT 2026: The Harvest Year</p>
-                            <p className="text-sm text-stone-500">Vision Book</p>
+                            <p className="text-sm text-stone-500">Seasonal vision</p>
                         </a>
                         <a href="/engine" className="block p-3 hover:bg-emerald-50 rounded-lg group">
-                            <p className="font-semibold text-emerald-900 group-hover:text-emerald-700">Ecosystem Setup Workflow</p>
-                            <p className="text-sm text-stone-500">The Engine</p>
+                            <p className="font-semibold text-emerald-900 group-hover:text-emerald-700">Project setup workflow</p>
+                            <p className="text-sm text-stone-500">Engine notes</p>
                         </a>
                     </div>
                 </div>

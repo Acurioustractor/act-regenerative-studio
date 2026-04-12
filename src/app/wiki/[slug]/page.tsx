@@ -1,363 +1,120 @@
-'use client';
-
-/**
- * ACT Living Wiki - Page Viewer
- *
- * View individual wiki pages with:
- * - Full content rendering (markdown)
- * - Related pages
- * - Version history
- * - Edit capability
- */
-
-import { useState, useEffect } from 'react';
-import { useParams, useRouter } from 'next/navigation';
-import { supabase } from '@/lib/supabase/client';
 import Link from 'next/link';
-import {
-  ArrowLeft,
-  Edit,
-  History,
-  Eye,
-  Calendar,
-  Tag,
-  AlertCircle,
-  CheckCircle,
-  Share2
-} from 'lucide-react';
+import { notFound } from 'next/navigation';
+import { ArrowLeft, BookOpen } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
-interface WikiPage {
-  id: string;
-  title: string;
-  slug: string;
-  content: string;
-  excerpt: string;
-  page_type: string;
-  tags: string[];
-  projects: string[];
-  domains: string[];
-  status: string;
-  last_reviewed_at: string;
-  next_review_due: string;
-  view_count: number;
-  version: number;
-  created_at: string;
-  updated_at: string;
-}
+import {
+  getCanonicalWikiPage,
+  renderCanonicalWikiMarkdown,
+} from '@/lib/wiki/canonical-site-wiki';
 
-interface RelatedPage {
-  id: string;
-  title: string;
-  slug: string;
-  page_type: string;
-}
+export default async function WikiPageViewer({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}) {
+  const { slug } = await params;
+  const page = await getCanonicalWikiPage(slug);
 
-export default function WikiPageViewer() {
-  const params = useParams();
-  const router = useRouter();
-  const slug = params.slug as string;
-
-  const [page, setPage] = useState<WikiPage | null>(null);
-  const [relatedPages, setRelatedPages] = useState<RelatedPage[]>([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState<string | null>(null);
-
-  useEffect(() => {
-    if (slug) {
-      loadPage();
-    }
-  }, [slug]);
-
-  async function loadPage() {
-    setLoading(true);
-    setError(null);
-
-    try {
-      // Load page
-      const { data: pageData, error: pageError } = await supabase
-        .from('wiki_pages')
-        .select('*')
-        .eq('slug', slug)
-        .eq('status', 'active')
-        .single();
-
-      if (pageError) {
-        if (pageError.code === 'PGRST116') {
-          setError('Page not found');
-        } else {
-          throw pageError;
-        }
-        return;
-      }
-
-      setPage(pageData);
-
-      // Increment view count
-      await supabase
-        .from('wiki_pages')
-        .update({
-          view_count: (pageData.view_count || 0) + 1,
-          last_viewed_at: new Date().toISOString(),
-        })
-        .eq('id', pageData.id);
-
-      // Load related pages (same tags or projects)
-      if (pageData.tags && pageData.tags.length > 0) {
-        const { data: related } = await supabase
-          .from('wiki_pages')
-          .select('id, title, slug, page_type')
-          .eq('status', 'active')
-          .neq('id', pageData.id)
-          .overlaps('tags', pageData.tags)
-          .limit(5);
-
-        if (related) {
-          setRelatedPages(related);
-        }
-      }
-    } catch (err) {
-      console.error('Error loading page:', err);
-      setError('Failed to load page');
-    } finally {
-      setLoading(false);
-    }
+  if (!page) {
+    notFound();
   }
 
-  if (loading) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center">
-          <div className="inline-block animate-spin rounded-full h-12 w-12 border-b-2 border-green-600 mb-4"></div>
-          <p className="text-gray-600">Loading page...</p>
-        </div>
-      </div>
-    );
-  }
-
-  if (error || !page) {
-    return (
-      <div className="min-h-screen bg-gray-50 flex items-center justify-center">
-        <div className="text-center max-w-md">
-          <AlertCircle className="w-16 h-16 text-red-500 mx-auto mb-4" />
-          <h1 className="text-2xl font-bold mb-2">{error || 'Page Not Found'}</h1>
-          <p className="text-gray-600 mb-6">
-            The wiki page you're looking for doesn't exist or has been archived.
-          </p>
-          <Link
-            href="/wiki"
-            className="inline-flex items-center gap-2 px-6 py-3 bg-green-600 text-white rounded-lg hover:bg-green-700"
-          >
-            <ArrowLeft className="w-5 h-5" />
-            Back to Wiki
-          </Link>
-        </div>
-      </div>
-    );
-  }
-
-  const pageTypeIcons = {
-    principle: '📚',
-    method: '🛠️',
-    practice: '⚙️',
-    procedure: '📋',
-    guide: '📖',
-    template: '📄',
-  };
-
-  const isReviewDue = page.next_review_due && new Date(page.next_review_due) < new Date();
+  const renderedContent = await renderCanonicalWikiMarkdown(page.content);
 
   return (
-    <div className="min-h-screen bg-gray-50">
-      {/* Header */}
-      <div className="bg-white border-b">
-        <div className="max-w-4xl mx-auto px-4 py-6">
+    <div className="min-h-screen bg-gradient-to-b from-[#F6F1E7] via-[#F5F1E8] to-white">
+      <section className="border-b border-[#E3D4BA] bg-white/90">
+        <div className="mx-auto max-w-5xl px-4 py-10">
           <Link
             href="/wiki"
-            className="inline-flex items-center gap-2 text-gray-600 hover:text-black mb-4"
+            className="inline-flex items-center gap-2 text-sm text-[#5A4A3A] transition hover:text-[#2F3E2E]"
           >
-            <ArrowLeft className="w-4 h-4" />
-            Back to Wiki
+            <ArrowLeft className="h-4 w-4" />
+            Back to the ACT wiki
           </Link>
 
-          <div className="flex items-start justify-between">
-            <div className="flex-1">
-              <div className="flex items-center gap-3 mb-2">
-                <span className="text-4xl">{pageTypeIcons[page.page_type as keyof typeof pageTypeIcons]}</span>
-                <div>
-                  <h1 className="text-4xl font-bold">{page.title}</h1>
-                  <p className="text-gray-600 mt-1">{page.page_type}</p>
-                </div>
-              </div>
-
-              {page.excerpt && (
-                <p className="text-lg text-gray-700 mt-4">{page.excerpt}</p>
-              )}
-            </div>
-
-            <div className="flex gap-2">
-              <button
-                onClick={() => router.push(`/wiki/${slug}/edit`)}
-                className="px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-700 flex items-center gap-2"
-              >
-                <Edit className="w-4 h-4" />
-                Edit
-              </button>
-              <button
-                onClick={() => {
-                  navigator.clipboard.writeText(window.location.href);
-                  alert('Link copied!');
-                }}
-                className="px-4 py-2 bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 flex items-center gap-2"
-              >
-                <Share2 className="w-4 h-4" />
-              </button>
-            </div>
-          </div>
-
-          {/* Metadata */}
-          <div className="mt-6 flex flex-wrap gap-4 text-sm text-gray-600">
-            <div className="flex items-center gap-1">
-              <Eye className="w-4 h-4" />
-              {page.view_count || 0} views
-            </div>
-            <div className="flex items-center gap-1">
-              <Calendar className="w-4 h-4" />
-              Updated {new Date(page.updated_at).toLocaleDateString()}
-            </div>
-            <div className="flex items-center gap-1">
-              <History className="w-4 h-4" />
-              Version {page.version}
-            </div>
-            {isReviewDue && (
-              <div className="flex items-center gap-1 text-orange-600">
-                <AlertCircle className="w-4 h-4" />
-                Review Due
-              </div>
+          <div className="mt-6 flex flex-wrap items-center gap-3">
+            <span className="rounded-full bg-[#F5F1E8] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#5A4A3A]">
+              {page.sectionTitle}
+            </span>
+            <span className="rounded-full border border-[#D7C4A2] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-[#7A6A55]">
+              {page.source === 'live-wiki' ? 'Live canonical wiki' : 'Snapshot fallback'}
+            </span>
+            {page.modifiedAt && (
+              <span className="text-xs text-[#8A7A65]">
+                Updated {new Date(page.modifiedAt).toLocaleDateString('en-AU')}
+              </span>
             )}
           </div>
 
-          {/* Tags */}
-          {page.tags && page.tags.length > 0 && (
-            <div className="mt-4 flex flex-wrap gap-2">
-              {page.tags.map((tag) => (
-                <Link
-                  key={tag}
-                  href={`/wiki?q=${tag}`}
-                  className="px-3 py-1 bg-gray-100 text-gray-700 text-sm rounded-full hover:bg-gray-200 flex items-center gap-1"
-                >
-                  <Tag className="w-3 h-3" />
-                  {tag}
-                </Link>
-              ))}
-            </div>
+          <h1 className="mt-5 max-w-4xl font-[var(--font-display)] text-4xl font-semibold text-[#2F3E2E] md:text-6xl">
+            {page.title}
+          </h1>
+
+          {page.excerpt && (
+            <p className="mt-6 max-w-3xl text-base leading-8 text-[#4D3F33] md:text-lg">
+              {page.excerpt}
+            </p>
           )}
 
-          {/* Projects */}
-          {page.projects && page.projects.length > 0 && (
-            <div className="mt-3 flex flex-wrap gap-2 text-sm">
-              <span className="text-gray-500">Projects:</span>
-              {page.projects.map((project) => (
+          <div className="mt-6 rounded-2xl border border-[#E3D4BA] bg-[#FDFBF7] px-4 py-3 text-sm text-[#5A4A3A]">
+            Canonical source: {page.relativePath}
+          </div>
+        </div>
+      </section>
+
+      <section className="mx-auto max-w-5xl px-4 py-12">
+        <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_260px]">
+          <article className="rounded-[32px] border border-[#E3D4BA] bg-white/90 px-6 py-8 shadow-sm md:px-10 md:py-10">
+            <div className="prose prose-lg max-w-none prose-headings:font-[var(--font-display)] prose-headings:text-[#2F3E2E] prose-p:text-[#4D3F33] prose-li:text-[#4D3F33] prose-strong:text-[#2F3E2E] prose-a:text-[#4CAF50]">
+              <ReactMarkdown>{renderedContent}</ReactMarkdown>
+            </div>
+          </article>
+
+          <aside className="space-y-5">
+            <div className="rounded-[28px] border border-[#E3D4BA] bg-white/90 p-6 shadow-sm">
+              <div className="flex items-center gap-3">
+                <BookOpen className="h-5 w-5 text-[#4CAF50]" />
+                <h2 className="font-[var(--font-display)] text-xl font-semibold text-[#2F3E2E]">
+                  Living page
+                </h2>
+              </div>
+              <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
+                This page is rendered from the canonical ACT markdown wiki, not a separate CMS
+                entry. As the wiki evolves, this public knowledge surface can evolve with it.
+              </p>
+            </div>
+
+            <div className="rounded-[28px] border border-[#E3D4BA] bg-[#2F3E2E] p-6 text-white shadow-sm">
+              <p className="text-xs uppercase tracking-[0.3em] text-[#D7E7D4]">
+                Next move
+              </p>
+              <h2 className="mt-3 font-[var(--font-display)] text-2xl font-semibold">
+                Follow the ecosystem
+              </h2>
+              <p className="mt-3 text-sm leading-7 text-[#E8E1D0]">
+                Jump from this knowledge page into the public project layer, then back into the
+                wiki when you need the method, the context, or the proof behind it.
+              </p>
+              <div className="mt-5 flex flex-col gap-3">
                 <Link
-                  key={project}
-                  href={`/wiki?project=${project}`}
-                  className="text-green-600 hover:underline"
+                  href="/projects"
+                  className="rounded-full bg-[#4CAF50] px-4 py-2 text-center text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#3E9845]"
                 >
-                  {project}
+                  Explore projects
                 </Link>
-              ))}
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Content */}
-      <div className="max-w-4xl mx-auto px-4 py-8">
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-          {/* Main Content */}
-          <div className="lg:col-span-2">
-            <article className="bg-white rounded-lg border-2 border-gray-200 p-8 prose prose-lg max-w-none">
-              <ReactMarkdown>{page.content}</ReactMarkdown>
-            </article>
-          </div>
-
-          {/* Sidebar */}
-          <div className="lg:col-span-1">
-            {/* Review Status */}
-            <div className={`p-4 rounded-lg border-2 mb-6 ${
-              isReviewDue
-                ? 'bg-orange-50 border-orange-300'
-                : 'bg-green-50 border-green-300'
-            }`}>
-              {isReviewDue ? (
-                <>
-                  <div className="flex items-center gap-2 text-orange-800 font-medium mb-2">
-                    <AlertCircle className="w-5 h-5" />
-                    Review Due
-                  </div>
-                  <p className="text-sm text-orange-700">
-                    This page needs review. Last reviewed{' '}
-                    {new Date(page.last_reviewed_at).toLocaleDateString()}
-                  </p>
-                </>
-              ) : (
-                <>
-                  <div className="flex items-center gap-2 text-green-800 font-medium mb-2">
-                    <CheckCircle className="w-5 h-5" />
-                    Up to Date
-                  </div>
-                  <p className="text-sm text-green-700">
-                    Last reviewed {new Date(page.last_reviewed_at).toLocaleDateString()}
-                  </p>
-                </>
-              )}
-            </div>
-
-            {/* Related Pages */}
-            {relatedPages.length > 0 && (
-              <div className="bg-white rounded-lg border-2 border-gray-200 p-6">
-                <h3 className="font-bold text-lg mb-4">Related Pages</h3>
-                <div className="space-y-3">
-                  {relatedPages.map((related) => (
-                    <Link
-                      key={related.id}
-                      href={`/wiki/${related.slug}`}
-                      className="block p-3 bg-gray-50 rounded hover:bg-gray-100 transition-colors"
-                    >
-                      <div className="flex items-center gap-2">
-                        <span>{pageTypeIcons[related.page_type as keyof typeof pageTypeIcons]}</span>
-                        <span className="font-medium text-sm">{related.title}</span>
-                      </div>
-                      <span className="text-xs text-gray-500 ml-7">{related.page_type}</span>
-                    </Link>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {/* Quick Actions */}
-            <div className="mt-6 bg-white rounded-lg border-2 border-gray-200 p-6">
-              <h3 className="font-bold text-lg mb-4">Quick Actions</h3>
-              <div className="space-y-2">
-                <button
-                  onClick={() => router.push(`/wiki/${slug}/edit`)}
-                  className="w-full text-left px-3 py-2 text-sm text-blue-600 hover:bg-blue-50 rounded flex items-center gap-2"
+                <Link
+                  href="/method"
+                  className="rounded-full border border-white/20 px-4 py-2 text-center text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-white/10"
                 >
-                  <Edit className="w-4 h-4" />
-                  Edit this page
-                </button>
-                <button
-                  onClick={() => router.push(`/wiki/${slug}/history`)}
-                  className="w-full text-left px-3 py-2 text-sm text-gray-700 hover:bg-gray-50 rounded flex items-center gap-2"
-                >
-                  <History className="w-4 h-4" />
-                  View history
-                </button>
+                  See the method
+                </Link>
               </div>
             </div>
-          </div>
+          </aside>
         </div>
-      </div>
+      </section>
     </div>
   );
 }

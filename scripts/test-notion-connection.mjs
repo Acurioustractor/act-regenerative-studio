@@ -69,7 +69,7 @@ async function testNotionConnection() {
     console.log('✅ Notion integration is working correctly!\n');
     console.log('Next steps:');
     console.log('  1. Start the dev server: npm run dev');
-    console.log('  2. Test API: curl http://localhost:3002/api/projects/justicehub/notion');
+    console.log('  2. Test API: curl http://localhost:3002/api/projects/justicehub/metadata');
     console.log('  3. Test enrichment: curl http://localhost:3002/api/projects/justicehub/enrich\n');
 
   } catch (error) {

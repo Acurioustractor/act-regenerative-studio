@@ -1,6 +1,10 @@
 import CardGrid from "../../../components/CardGrid";
 import PageHero from "../../../components/PageHero";
 import SectionHeading from "../../../components/SectionHeading";
+import { ProjectEntryBridgeSection } from "@/components/projects";
+import { getProjectData } from "@/lib/projects/get-project-data";
+import { getRelatedFeaturedWorks } from "@/lib/works/live-featured-works";
+import { notFound } from "next/navigation";
 
 const workshopThemes = [
   {
@@ -25,13 +29,25 @@ const workshopThemes = [
   },
 ];
 
-export default function FarmWorkshopsPage() {
+export default async function FarmWorkshopsPage() {
+  const project = await getProjectData("black-cockatoo-valley");
+
+  if (!project) {
+    notFound();
+  }
+
+  const relatedWorks = await getRelatedFeaturedWorks(
+    "black-cockatoo-valley",
+    project.title,
+    3
+  );
+
   return (
     <div className="space-y-20">
       <PageHero
         eyebrow="Workshops"
         title="Learning on Country"
-        description="Workshops at the farm blend land care, justice practice, and creative inquiry."
+        description="Workshops at the farm blend land care, justice practice, and creative inquiry. They sit inside the wider Black Cockatoo Valley project rather than as standalone training products."
         actions={[
           { label: "Host a workshop", href: "/contact" },
           { label: "Back to farm", href: "/farm", variant: "outline" },
@@ -49,11 +65,13 @@ export default function FarmWorkshopsPage() {
         </div>
       </PageHero>
 
+      <ProjectEntryBridgeSection project={project} relatedWorks={relatedWorks} />
+
       <section className="space-y-10">
         <SectionHeading
           eyebrow="Themes"
           title="Workshop streams"
-          description="Sample topics that we adapt to each season and group."
+          description="Sample themes we adapt to each season, host group, and field question."
         />
         <CardGrid cards={workshopThemes} className="grid gap-6 md:grid-cols-2" />
       </section>

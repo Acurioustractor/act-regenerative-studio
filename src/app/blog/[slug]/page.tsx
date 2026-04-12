@@ -3,16 +3,15 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import {
-  fetchContentHubArticleBySlug,
-  fetchContentHubArticles,
-} from "../../../lib/empathy-ledger-articles";
+  getEditorialArticleBySlug,
+  getEditorialArticleStaticSlugs,
+} from "../../../lib/empathy-ledger-editorial";
 
 export const revalidate = 60;
 
 export async function generateStaticParams() {
   try {
-    const posts = await fetchContentHubArticles({ project: "act-main", limit: 200 });
-    return posts.map((post) => ({ slug: post.slug }));
+    return getEditorialArticleStaticSlugs().map((slug) => ({ slug }));
   } catch (error) {
     console.error('Failed to generate static params for blog posts:', error);
     return [];
@@ -25,7 +24,7 @@ export default async function BlogPostPage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const post = await fetchContentHubArticleBySlug(slug);
+  const post = await getEditorialArticleBySlug(slug);
 
   if (!post) {
     notFound();
@@ -62,6 +61,19 @@ export default async function BlogPostPage({
           <p className="mt-4 max-w-2xl text-sm text-[#4D3F33] md:text-base">
             {post.excerpt}
           </p>
+        ) : null}
+        {post.relatedProjectSlugs.length > 0 ? (
+          <div className="mt-5 flex flex-wrap gap-2 text-[10px] uppercase tracking-[0.24em] text-[#4CAF50]">
+            {post.relatedProjectSlugs.map((projectSlug) => (
+              <Link
+                key={projectSlug}
+                href={`/projects/${projectSlug}`}
+                className="rounded-full bg-[#E8F3E6] px-3 py-1 text-[#2F3E2E]"
+              >
+                {projectSlug.replace(/-/g, " ")}
+              </Link>
+            ))}
+          </div>
         ) : null}
         {post.authorName ? (
           <div className="mt-5 flex items-center gap-3 text-xs text-[#6B5A45]">
@@ -112,9 +124,17 @@ export default async function BlogPostPage({
             <p className="mt-3">
               Invite collaborators to read and respond to this field note.
             </p>
+            <a
+              href={post.canonicalUrl}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="mt-4 inline-flex rounded-full border border-[#CFA16B] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#2F3E2E]"
+            >
+              Open in Empathy Ledger
+            </a>
             <Link
               href="/contact"
-              className="mt-4 inline-flex rounded-full bg-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white"
+              className="mt-3 inline-flex rounded-full bg-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white"
             >
               Start a conversation
             </Link>

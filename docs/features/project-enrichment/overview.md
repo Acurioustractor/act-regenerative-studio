@@ -1,6 +1,6 @@
 # ACT Project Enrichment System
 
-An AI-powered system that automatically enriches ACT project pages with data from multiple sources: Notion, Empathy Ledger storytellers/stories, and intelligent thematic matching using Claude AI.
+An AI-powered system that automatically enriches ACT project pages with data from multiple sources: canonical ACT wiki metadata, Empathy Ledger storytellers/stories, and intelligent thematic matching using Claude AI.
 
 ## Overview
 
@@ -23,25 +23,25 @@ The enrichment system uses the **LCAA method** (Listen, Curiosity, Action, Art) 
             │                  │                  │
             ▼                  ▼                  ▼
 ┌──────────────────┐  ┌──────────────────┐  ┌──────────────────┐
-│  Notion API      │  │ Empathy Ledger   │  │  Claude AI       │
-│  Integration     │  │   Integration    │  │   Matcher        │
+│ Canonical Wiki   │  │ Empathy Ledger   │  │  Claude AI       │
+│ Metadata Layer   │  │   Integration    │  │   Matcher        │
 │                  │  │                  │  │                  │
-│ Fetches project  │  │ Queries stories  │  │ Intelligently    │
-│ data from ACT    │  │ and storytellers │  │ matches stories  │
-│ Placemat backend │  │ from Supabase DB │  │ to projects      │
+│ Fetches project  │  │ Queries stories  │  │ matches stories  │
+│ data from wiki   │  │ and storytellers │  │ to projects      │
+│ snapshots        │  │ from Supabase DB │  │                  │
 └──────────────────┘  └──────────────────┘  └──────────────────┘
 ```
 
 ## Key Components
 
-### 1. Notion Integration (`/src/lib/notion-integration.ts`)
+### 1. Canonical Metadata Layer (`/src/lib/project-metadata/public.ts`)
 
-Fetches project data from the ACT Placemat backend Notion database.
+Fetches project data from the ACT wiki-derived public metadata layer.
 
 **Key Functions:**
-- `fetchNotionProjects()` - Get all projects from Notion
-- `findNotionProjectByName(name)` - Fuzzy match project by name
-- `enrichProjectFromNotion(name)` - Extract enrichment data
+- `getPublicProjectMetadata(slug)` - Get a single project
+- `getAllPublicProjectMetadata()` - Get all projects
+- `getPublicProjectPageContent(slug)` - Get project page content
 
 **Data Retrieved:**
 - AI-generated project summaries
@@ -50,7 +50,7 @@ Fetches project data from the ACT Placemat backend Notion database.
 - Autonomy scores
 - Cover images
 - Funding information
-- Notion URLs
+- Canonical project IDs and slugs
 
 ### 2. Empathy Ledger Integration (`/src/lib/empathy-ledger-integration.ts`)
 
@@ -103,7 +103,7 @@ enrichProject(project, options): Promise<EnrichedProject>
 ```
 
 **Options:**
-- `includeNotion` - Fetch Notion data (default: true)
+- `includeMetadata` - Fetch canonical metadata (default: true)
 - `includeStorytellers` - Find related storytellers (default: true)
 - `includeStories` - Find related stories (default: true)
 - `generateLCAA` - AI-generate LCAA content if missing (default: false)
@@ -116,11 +116,11 @@ interface EnrichedProject {
   // Original project data
   ...project
 
-  // From Notion
-  notionData?: {
+  // From canonical metadata
+  projectMetadata?: {
     aiSummary, themes, relatedPlaces, relatedOrganisations,
     relatedPeople, autonomyScore, supporters, partnerCount,
-    notionUrl, projectLead, funding
+    projectLead, funding
   }
 
   // From Empathy Ledger + AI matching
@@ -153,7 +153,7 @@ Enrich one or all projects.
 
 **Query Parameters:**
 - `slug` - Specific project slug (omit to enrich all)
-- `notion` - Include Notion data (default: true)
+- `metadata` - Include canonical metadata (default: true)
 - `storytellers` - Include storytellers (default: true)
 - `stories` - Include stories (default: true)
 - `generate_lcaa` - Generate LCAA content (default: false)
@@ -167,7 +167,7 @@ GET /api/projects/enrich?slug=justicehub
 GET /api/projects/enrich?slug=goods-on-country&generate_lcaa=true
 
 # Enrich all projects (lightweight)
-GET /api/projects/enrich?notion=true&storytellers=false&stories=false
+GET /api/projects/enrich?metadata=true&storytellers=false&stories=false
 ```
 
 ### POST /api/projects/enrich
@@ -179,7 +179,7 @@ Batch enrich specific projects.
 {
   "slugs": ["justicehub", "empathy-ledger", "goods-on-country"],
   "options": {
-    "includeNotion": true,
+    "includeMetadata": true,
     "includeStorytellers": true,
     "includeStories": true,
     "generateLCAA": false,
@@ -219,9 +219,6 @@ Copy `.env.example` to `.env.local` and configure:
 # Required for AI matching
 ANTHROPIC_API_KEY=sk-ant-api03-xxx
 
-# Required for Notion integration
-NOTION_BACKEND_URL=http://localhost:4000
-
 # Required for Empathy Ledger integration
 EMPATHY_LEDGER_URL=http://localhost:3001
 
@@ -249,7 +246,7 @@ import { projects } from '@/data/projects';
 
 const project = projects.find(p => p.slug === 'justicehub');
 const enriched = await enrichProject(project, {
-  includeNotion: true,
+  includeMetadata: true,
   includeStorytellers: true,
   includeStories: true,
   maxStorytellers: 5,
@@ -293,7 +290,7 @@ Each enrichment includes a confidence score (0-100) based on:
 
 - **Base content** (20 points): Description, hero image, video
 - **LCAA content** (20 points): Listen, Curiosity, Action, Art sections
-- **Notion data** (20 points): AI summary, themes, organizations
+- **Metadata** (20 points): AI summary, themes, organizations
 - **Storytellers** (15 points): Number and quality of matches
 - **Stories** (10 points): Number and relevance of stories
 - **Other** (15 points): Stats, quotes, additional media
@@ -318,7 +315,7 @@ The system respects Indigenous data sovereignty principles:
 ## Future Enhancements
 
 - [ ] Admin UI for reviewing AI suggestions before publishing
-- [ ] Webhook triggers for auto-enrichment when Notion/Empathy Ledger updates
+- [ ] Webhook triggers for auto-enrichment when wiki metadata or Empathy Ledger updates
 - [ ] Vector similarity search using ChromaDB for better matching
 - [ ] Multi-language support for AI-generated content
 - [ ] Automated LCAA content generation for all projects
@@ -339,7 +336,7 @@ The system respects Indigenous data sovereignty principles:
 
 ### "Low confidence scores"
 - Add more LCAA content to base project data
-- Enrich Notion project with more metadata
+- Enrich the canonical wiki project article with more metadata
 - Increase `maxStorytellers` and `maxStories` options
 
 ## License

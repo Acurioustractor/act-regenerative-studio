@@ -1,116 +1,394 @@
-import { ProjectHealthCard } from '@/components/dashboard/ProjectHealthCard';
-import { EcosystemOverview } from '@/components/dashboard/EcosystemOverview';
-import { ActivityFeed } from '@/components/dashboard/ActivityFeed';
+import Link from "next/link";
 
-// ACT Ecosystem projects
-const ACT_PROJECTS = [
-  {
-    name: 'ACT Regenerative Studio',
-    repo: 'Acurioustractor/act-regenerative-studio',
-    description: 'Unified platform and operations hub',
-    url: 'https://act-studio.vercel.app',
-  },
-  {
-    name: 'Empathy Ledger',
-    repo: 'Acurioustractor/empathy-ledger-v2',
-    description: 'Ethical storytelling platform',
-    url: 'https://empathy-ledger.vercel.app',
-  },
-  {
-    name: 'JusticeHub',
-    repo: 'Acurioustractor/justicehub-platform',
-    description: 'Open-source justice programs',
-    url: null,
-  },
-  {
-    name: 'The Harvest',
-    repo: 'Acurioustractor/theharvest',
-    description: 'Community hub and therapeutic horticulture',
-    url: null,
-  },
-  {
-    name: 'ACT Farm',
-    repo: 'Acurioustractor/act-farm',
-    description: 'Regenerative farming operations',
-    url: null,
-  },
-  {
-    name: 'ACT Placemat',
-    repo: 'Acurioustractor/act-placemat',
-    description: 'Visual ecosystem guide',
-    url: null,
-  },
-  {
-    name: 'Goods Asset Tracker',
-    repo: 'Acurioustractor/goods-asset-tracker',
-    description: 'Circular economy tracking',
-    url: null,
-  },
-];
+import LivingSystemStrip from "@/components/LivingSystemStrip";
+import PageHero from "@/components/PageHero";
+import SectionHeading from "@/components/SectionHeading";
+import {
+  getLivingEcosystemOpenDecisions,
+  getLivingEcosystemSummary,
+  getLivingEcosystemSurfaces,
+} from "@/lib/living-ecosystem-canon";
+import { buildProjectIndexSignals } from "@/lib/projects/build-project-index-signals";
+import { buildCuratedProjectCards } from "@/lib/projects/build-curated-project-cards";
+import { studioProjectConfigs } from "@/lib/projects/studio-project-configs";
 
 export default async function EcosystemPage() {
+  const [signalPayload, curatedProjects, ecosystemSummary, surfaceNodes, openDecisions] = await Promise.all([
+    buildProjectIndexSignals(),
+    buildCuratedProjectCards(studioProjectConfigs),
+    getLivingEcosystemSummary(),
+    getLivingEcosystemSurfaces(),
+    getLivingEcosystemOpenDecisions(),
+  ]);
+  const sortedSurfaces = [...surfaceNodes].sort((left, right) => {
+    const rank = (value: string) => {
+      switch (value) {
+        case "primary":
+          return 0;
+        case "spoke":
+          return 1;
+        case "supporting":
+          return 2;
+        case "legacy":
+          return 3;
+        case "sandbox":
+          return 4;
+        default:
+          return 5;
+      }
+    };
+
+    return rank(left.classification) - rank(right.classification);
+  });
+
   return (
-    <div className="space-y-6">
-      {/* Header */}
-      <div>
-        <h1 className="text-3xl font-bold text-[#2F3E2E] font-[var(--font-display)]">
-          ACT Ecosystem Operations
-        </h1>
-        <p className="mt-2 text-sm text-[#4D3F33]">
-          Unified view of all ACT projects, deployments, and progress
-        </p>
-      </div>
+    <div className="space-y-20">
+      <PageHero
+        eyebrow="Ecosystem"
+        title="One ecosystem, held together by place, method, and living memory"
+        description="ACT is not a stack of disconnected brands. The projects share land, stories, governance questions, cultural work, and the same commitment to hand over the keys when community ownership is ready."
+        actions={[
+          { label: "Explore projects", href: "/projects" },
+          { label: "Open the works", href: "/art", variant: "outline" },
+        ]}
+      >
+        <div className="space-y-4">
+          <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+            What makes it one ecosystem
+          </p>
+          <ul className="space-y-2 text-sm leading-6 text-[#4D3F33]">
+            <li>Shared place: Jinibara Country and the places where communities lead.</li>
+            <li>Shared method: LCAA shapes how listening becomes action and art.</li>
+            <li>Shared memory: the ACT wiki keeps durable knowledge in one place.</li>
+            <li>Shared live layer: Empathy Ledger keeps stories, voices, and media moving across the graph.</li>
+          </ul>
+        </div>
+      </PageHero>
 
-      {/* Overview Stats */}
-      <EcosystemOverview projects={ACT_PROJECTS} />
+      <LivingSystemStrip
+        eyebrow="Living ecosystem"
+        title="The public ecosystem map now reads from the same memory and live layer as the rest of the site"
+        description="This page is no longer a separate dashboard surface. It uses the ACT wiki for project framing and the live story layer for current signals, so the public ecosystem can keep learning without being rebuilt by hand."
+        wiki={{
+          href: "/wiki",
+          label: "Open ACT wiki",
+        }}
+        live={{
+          sourceLabel:
+            signalPayload.summary.connectedProjectCount > 0
+              ? "Live signals connected through Empathy Ledger"
+              : null,
+          storyCount: signalPayload.summary.totalStorySignals,
+          mediaCount: signalPayload.summary.totalMediaSignals,
+          href: `${process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL || "https://empathyledger.com"}/projects`,
+        }}
+        stats={[
+          { label: "Connected projects", value: signalPayload.summary.connectedProjectCount },
+          { label: "Live services", value: signalPayload.summary.activeServiceCount },
+          { label: "Featured works", value: signalPayload.summary.featuredWorkCount },
+        ]}
+      />
 
-      {/* Two Column Layout: Project Cards + Activity Feed */}
-      <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
-        {/* Project Health Cards - 2 columns */}
-        <div className="lg:col-span-2 grid grid-cols-1 md:grid-cols-2 gap-4">
-          {ACT_PROJECTS.map((project) => (
-            <ProjectHealthCard key={project.repo} project={project} />
+      <section className="space-y-10">
+        <SectionHeading
+          eyebrow="Fields"
+          title="The main fields of practice"
+          description="These are the current public fields through which ACT moves resources, relationships, and knowledge. Each one feeds the others."
+        />
+        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {curatedProjects.map((project) => (
+            <Link
+              key={project.slug}
+              href={project.href}
+              className="group rounded-2xl border border-[#E1D3BA] bg-white/80 p-6 transition hover:-translate-y-1 hover:border-[#4CAF50] hover:shadow-lg"
+            >
+              <p className="text-[11px] uppercase tracking-[0.2em] text-[#6B5A45]">
+                {project.eyebrow}
+              </p>
+              <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+                {project.title}
+              </h2>
+              <p className="mt-1 text-sm font-medium text-[#4CAF50]">{project.tagline}</p>
+              <p className="mt-3 text-sm leading-6 text-[#4D3F33]">
+                {project.description}
+              </p>
+
+              {project.liveSignals &&
+              (project.liveSignals.serviceConnectionCount > 0 ||
+                project.liveSignals.totalWorkCount > 0 ||
+                project.liveSignals.storyCount > 0 ||
+                project.liveSignals.mediaCount > 0) ? (
+                <div className="mt-4 flex flex-wrap gap-2">
+                  {project.liveSignals.serviceConnectionCount > 0 ? (
+                    <span className="rounded-full bg-[#EDF6EC] px-2.5 py-1 text-[10px] font-medium text-[#2F3E2E]">
+                      {project.liveSignals.serviceConnectionCount} service
+                      {project.liveSignals.serviceConnectionCount === 1 ? "" : "s"}
+                    </span>
+                  ) : null}
+                  {project.liveSignals.totalWorkCount > 0 ? (
+                    <span className="rounded-full bg-[#F7EFFA] px-2.5 py-1 text-[10px] font-medium text-[#6B4D6B]">
+                      {project.liveSignals.totalWorkCount} work
+                      {project.liveSignals.totalWorkCount === 1 ? "" : "s"}
+                    </span>
+                  ) : null}
+                  {project.liveSignals.storyCount > 0 ? (
+                    <span className="rounded-full bg-[#F6F1E7] px-2.5 py-1 text-[10px] font-medium text-[#4A4035]">
+                      {project.liveSignals.storyCount} stories
+                    </span>
+                  ) : null}
+                  {project.liveSignals.mediaCount > 0 ? (
+                    <span className="rounded-full bg-[#F6F1E7] px-2.5 py-1 text-[10px] font-medium text-[#4A4035]">
+                      {project.liveSignals.mediaCount} media
+                    </span>
+                  ) : null}
+                </div>
+              ) : null}
+
+              <span className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-[#4CAF50] transition group-hover:gap-3">
+                <span>Explore field</span>
+                <span aria-hidden="true">→</span>
+              </span>
+            </Link>
           ))}
         </div>
+      </section>
 
-        {/* Activity Feed - 1 column */}
-        <div className="lg:col-span-1">
-          <ActivityFeed />
+      <section className="rounded-3xl border border-[#2F2A25] bg-[#11110F] p-8 text-[#F3EBDD] md:p-12">
+        <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
+          <div className="space-y-4">
+            <p className="text-xs uppercase tracking-[0.3em] text-[#CFA16B]">
+              Live graph
+            </p>
+            <h2 className="font-[var(--font-display)] text-2xl font-semibold md:text-3xl">
+              Shared signals across the ecosystem
+            </h2>
+            <p className="max-w-2xl text-sm leading-7 text-[#D7C8B2]">
+              The ecosystem now exposes where services, works, stories, and media are already touching the graph. Durable framing still comes from the wiki. The live layer shows where activity is already gathering.
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+            <div className="rounded-2xl border border-[#4A3B2E] bg-[#171612] px-5 py-4">
+              <p className="text-2xl font-semibold text-[#F3EBDD]">
+                {signalPayload.summary.activeServiceCount}
+              </p>
+              <p className="mt-1 text-xs uppercase tracking-[0.2em] text-[#BDAE98]">
+                Live services
+              </p>
+            </div>
+            <div className="rounded-2xl border border-[#4A3B2E] bg-[#171612] px-5 py-4">
+              <p className="text-2xl font-semibold text-[#F3EBDD]">
+                {signalPayload.summary.featuredWorkCount}
+              </p>
+              <p className="mt-1 text-xs uppercase tracking-[0.2em] text-[#BDAE98]">
+                Featured works
+              </p>
+            </div>
+            <div className="rounded-2xl border border-[#4A3B2E] bg-[#171612] px-5 py-4">
+              <p className="text-2xl font-semibold text-[#F3EBDD]">
+                {signalPayload.summary.totalStorySignals}
+              </p>
+              <p className="mt-1 text-xs uppercase tracking-[0.2em] text-[#BDAE98]">
+                Story signals
+              </p>
+            </div>
+            <div className="rounded-2xl border border-[#4A3B2E] bg-[#171612] px-5 py-4">
+              <p className="text-2xl font-semibold text-[#F3EBDD]">
+                {signalPayload.summary.totalMediaSignals}
+              </p>
+              <p className="mt-1 text-xs uppercase tracking-[0.2em] text-[#BDAE98]">
+                Media signals
+              </p>
+            </div>
+          </div>
         </div>
-      </div>
+      </section>
 
-      {/* Quick Links */}
-      <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
-        <h2 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
-          Quick Links
-        </h2>
-        <div className="mt-4 flex flex-wrap gap-3">
-          <a
-            href="https://github.com/users/Acurioustractor/projects/1"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full bg-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white hover:bg-[#45a049]"
-          >
-            GitHub Projects Board
-          </a>
-          <a
-            href="https://github.com/Acurioustractor"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#2F3E2E] hover:bg-[#4CAF50]/10"
-          >
-            GitHub Organization
-          </a>
-          <a
-            href="https://vercel.com/acurioustractor"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#2F3E2E] hover:bg-[#4CAF50]/10"
-          >
-            Vercel Dashboard
-          </a>
+      <section className="space-y-10">
+        <SectionHeading
+          eyebrow="Assembly"
+          title="How this map stays alive"
+          description="The ecosystem map is now a composed public surface, not a static diagram. The wiki holds durable meaning. Source packets move approved narrative and media. Source bridges keep the site attached to its canonical trail."
+        />
+        <div className="grid gap-4 md:grid-cols-3">
+          {[
+            {
+              title: "Canonical wiki",
+              description:
+                "The durable memory layer where ACT authors meaning, not just display copy.",
+              href: "/wiki",
+              cta: "Open wiki memory",
+              meta: `${ecosystemSummary.verifiedCount} verified nodes across the living system`,
+            },
+            {
+              title: "Source packets",
+              description:
+                "Governed packet outputs from Empathy Ledger that the hub can compose without duplicating the story system.",
+              href: "/wiki/source-packets",
+              cta: "Open source packets",
+              meta: `${signalPayload.summary.featuredWorkCount} featured works already visible downstream`,
+            },
+            {
+              title: "Source bridges",
+              description:
+                "The trail from canonical note to source summary to implementation repo to public surface.",
+              href: "/wiki/source-bridges",
+              cta: "Open source bridges",
+              meta: `${ecosystemSummary.openDecisionCount} human decisions still open in the public system`,
+            },
+          ].map((item) => (
+            <Link
+              key={item.title}
+              href={item.href}
+              className="rounded-[28px] border border-[#E1D3BA] bg-white/85 p-6 transition hover:-translate-y-1 hover:border-[#4CAF50] hover:shadow-lg"
+            >
+              <p className="text-xs uppercase tracking-[0.22em] text-[#6B5A45]">{item.meta}</p>
+              <h2 className="mt-3 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+                {item.title}
+              </h2>
+              <p className="mt-3 text-sm leading-7 text-[#4D3F33]">{item.description}</p>
+              <span className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#4CAF50]">
+                <span>{item.cta}</span>
+                <span aria-hidden="true">→</span>
+              </span>
+            </Link>
+          ))}
         </div>
-      </div>
+      </section>
+
+      <section className="space-y-10">
+        <SectionHeading
+          eyebrow="Public system"
+          title="The current public surfaces and their roles"
+          description="Not every site in the ecosystem plays the same role. The hub, content spoke, and project spokes now have an explicit public-system map instead of an implicit one."
+        />
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+          {sortedSurfaces.map((surface) => (
+            <article
+              key={surface.id}
+              className="rounded-[28px] border border-[#E1D3BA] bg-white/85 p-6 shadow-sm"
+            >
+              <div className="flex flex-wrap gap-2">
+                <span className="rounded-full bg-[#F5F1E8] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#5A4A3A]">
+                  {surface.classification}
+                </span>
+                <span className="rounded-full bg-[#EDF6EC] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2F5233]">
+                  {surface.surface_role}
+                </span>
+                <span className="rounded-full bg-[#EEF2F7] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#3F546B]">
+                  {surface.verification_status}
+                </span>
+              </div>
+              <h2 className="mt-4 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+                {surface.display_name}
+              </h2>
+              <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
+                {surface.notes || "Public ecosystem surface."}
+              </p>
+              <div className="mt-4 space-y-2 text-sm leading-6 text-[#4D3F33]">
+                <p>Kind: {surface.kind}</p>
+                {surface.canonical_note_path ? (
+                  <p>Canonical note: {surface.canonical_note_path}</p>
+                ) : null}
+                {surface.public_copy_owner_for?.length ? (
+                  <p>Owns: {surface.public_copy_owner_for.join(", ")}</p>
+                ) : null}
+              </div>
+              {surface.site_url ? (
+                <a
+                  href={surface.site_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="mt-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#4CAF50]"
+                >
+                  <span>Visit surface</span>
+                  <span aria-hidden="true">→</span>
+                </a>
+              ) : null}
+            </article>
+          ))}
+        </div>
+      </section>
+
+      {openDecisions.length > 0 ? (
+        <section className="space-y-10">
+          <SectionHeading
+            eyebrow="Open decisions"
+            title="What still needs human confirmation"
+            description="The system is already live enough to design and integrate against. These are the remaining classification decisions that still need a human owner rather than an inferred default."
+          />
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
+            {openDecisions.map((decision) => (
+              <article
+                key={`${decision.scope}-${decision.id}`}
+                className="rounded-[28px] border border-dashed border-[#D8C6A7] bg-[#FFFCF7] p-6"
+              >
+                <p className="text-xs uppercase tracking-[0.22em] text-[#6B5A45]">
+                  {decision.scope}
+                </p>
+                <h2 className="mt-3 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+                  {decision.display_name}
+                </h2>
+                <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
+                  {decision.notes || "Human confirmation still required."}
+                </p>
+              </article>
+            ))}
+          </div>
+        </section>
+      ) : null}
+
+      <section className="space-y-10">
+        <SectionHeading
+          eyebrow="Pathways"
+          title="Different ways into the ecosystem"
+          description="People do not all arrive through the same door. Some come through projects. Some through cultural work. Some through the method or the knowledge base."
+        />
+        <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          {[
+            {
+              title: "Projects",
+              description: "Explore the main public fields, initiatives, and proof projects.",
+              href: "/projects",
+              cta: "Open projects",
+            },
+            {
+              title: "Works",
+              description: "See the art, installations, commissions, and voice-led public work.",
+              href: "/art",
+              cta: "Enter works",
+            },
+            {
+              title: "Method",
+              description: "Read the LCAA method and the handover logic underneath the ecosystem.",
+              href: "/method",
+              cta: "See the method",
+            },
+            {
+              title: "Wiki",
+              description: "Browse the durable memory layer that keeps the public site grounded.",
+              href: "/wiki",
+              cta: "Open the wiki",
+            },
+          ].map((pathway) => (
+            <Link
+              key={pathway.title}
+              href={pathway.href}
+              className="rounded-2xl border border-[#E1D3BA] bg-white/75 p-6 transition hover:-translate-y-1 hover:border-[#4CAF50] hover:shadow-md"
+            >
+              <h3 className="font-[var(--font-display)] text-xl font-semibold text-[#2F3E2E]">
+                {pathway.title}
+              </h3>
+              <p className="mt-3 text-sm leading-6 text-[#4D3F33]">
+                {pathway.description}
+              </p>
+              <span className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#4CAF50]">
+                <span>{pathway.cta}</span>
+                <span aria-hidden="true">→</span>
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
     </div>
   );
 }

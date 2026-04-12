@@ -70,9 +70,11 @@ export function AskACT() {
   return (
     <div className="w-full max-w-4xl mx-auto p-6 space-y-6">
       <div className="space-y-4">
-        <h2 className="text-2xl font-semibold text-stone-900">Ask ACT</h2>
+        <h2 className="text-2xl font-semibold text-stone-900 font-[var(--font-display)]">
+          Ask ACT
+        </h2>
         <p className="text-stone-600">
-          Query the comprehensive ACT knowledge base (6,400+ lines across LCAA, partners, grants, workflows, projects, and operations)
+          Query the public ACT knowledge layer across methods, projects, places, partnerships, and shared language.
         </p>
 
         {/* Query Input */}
@@ -82,7 +84,7 @@ export function AskACT() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onKeyPress={handleKeyPress}
-            placeholder="Ask anything about ACT... (e.g., 'What's our invoice workflow?')"
+            placeholder="Ask anything about ACT... (e.g., 'What is LCAA?' or 'How does Goods on Country fit the ecosystem?')"
             className="flex-1 px-4 py-3 border border-stone-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:border-transparent"
             disabled={loading}
           />
@@ -185,19 +187,14 @@ export function AskACT() {
 
           {/* Metadata */}
           <div className="flex gap-6 text-sm text-stone-500">
-            {response.cost?.total !== undefined && (
-              <div>
-                💰 Cost: <span className="font-mono">${response.cost.total.toFixed(4)}</span>
-              </div>
-            )}
             {response.latencyMs?.total !== undefined && (
               <div>
-                ⏱️ Time: <span className="font-mono">{response.latencyMs.total}ms</span>
+                Time: <span className="font-mono">{response.latencyMs.total}ms</span>
               </div>
             )}
             {response.overallConfidence !== undefined && (
               <div>
-                🎯 Confidence: <span className="font-mono">{(response.overallConfidence * 100).toFixed(1)}%</span>
+                Confidence: <span className="font-mono">{(response.overallConfidence * 100).toFixed(1)}%</span>
               </div>
             )}
           </div>
@@ -211,13 +208,13 @@ export function AskACT() {
           <div className="grid grid-cols-1 md:grid-cols-2 gap-2">
             {[
               "What's the LCAA methodology?",
-              "Who are our active partners?",
-              "What grants are due this month?",
-              "How do I create an invoice?",
+              "How does Empathy Ledger connect to the wiki?",
+              "What is Goods on Country?",
+              "How does ACT describe beautiful obsolescence?",
               "Dual-entity structure explained",
               "What projects is ACT working on?",
-              "Homepage hero copy template",
-              "Meeting agenda template",
+              "What does the studio do?",
+              "How does JusticeHub fit the ecosystem?",
             ].map((example) => (
               <button
                 key={example}

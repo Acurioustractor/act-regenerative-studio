@@ -1,6 +1,10 @@
 import CardGrid from "../../components/CardGrid";
 import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
+import { ProjectEntryBridgeSection } from "@/components/projects";
+import { getProjectData } from "@/lib/projects/get-project-data";
+import { getRelatedFeaturedWorks } from "@/lib/works/live-featured-works";
+import { notFound } from "next/navigation";
 
 const farmOffers = [
   {
@@ -41,16 +45,32 @@ const stewardshipCards = [
   },
 ];
 
-export default function FarmPage() {
+export default async function FarmPage() {
+  const project = await getProjectData("black-cockatoo-valley");
+
+  if (!project) {
+    notFound();
+  }
+
+  const relatedWorks = await getRelatedFeaturedWorks(
+    "black-cockatoo-valley",
+    project.title,
+    3
+  );
+
   return (
     <div className="space-y-20">
       <PageHero
         eyebrow="Black Cockatoo Valley"
         title="The farm as a living lab"
-        description="ACT stewards a working farm on Jinibara Country. It is a site for regenerative agriculture, research residencies, and gatherings that grow shared governance."
+        description={project.description}
+        coverImage={project.coverImage}
+        coverVideo={project.coverVideo}
         actions={[
-          { label: "Plan a stay", href: "/farm/stay" },
-          { label: "Talk with us", href: "/contact", variant: "outline" },
+          ...(project.projectWebsiteUrl
+            ? [{ label: "Visit ACT Farm", href: project.projectWebsiteUrl, external: true as const }]
+            : []),
+          { label: "Plan a stay", href: "/farm/stay", variant: "outline" },
         ]}
         gradientClass="from-[#EDF3E4] via-[#D6E2C5] to-[#B8CEA7]"
       >
@@ -65,6 +85,8 @@ export default function FarmPage() {
           </ul>
         </div>
       </PageHero>
+
+      <ProjectEntryBridgeSection project={project} relatedWorks={relatedWorks} />
 
       <section className="space-y-10">
         <SectionHeading

@@ -2,15 +2,18 @@
  * ACT Project Enrichment Service
  *
  * Combines data from multiple sources to create rich project pages:
- * 1. Notion database - project metadata, timeline, outcomes
+ * 1. Public project metadata - wiki-derived framing, timeline, outcomes
  * 2. Empathy Ledger - storytellers, stories, thematic insights
  * 3. Blog posts - related reading and context
  * 4. Project analysis - related projects discovery
  * 5. Media storage - photo and video galleries
  */
 
-import { getNotionProject, getNotionPageContent } from '../notion';
-import type { ProjectEnrichmentData, NotionProjectMetadata } from '../notion/types';
+import { getPublicProjectMetadata } from '../project-metadata/public';
+import type {
+  ProjectMetadata,
+  ProjectMetadataEnrichmentData as ProjectEnrichmentData,
+} from '../project-metadata/types';
 import { findRelatedBlogPosts } from './blog-linking';
 import { findRelatedProjects } from './project-relationships';
 
@@ -102,7 +105,7 @@ function analyzeThemes(stories: any[]): {
 /**
  * Find related blog posts (semantic search)
  */
-async function getRelatedBlogPosts(projectSlug: string, projectMetadata: NotionProjectMetadata) {
+async function getRelatedBlogPosts(projectSlug: string, projectMetadata: ProjectMetadata) {
   try {
     const blogPosts = await findRelatedBlogPosts(projectMetadata, {
       minRelevanceScore: 0.3,
@@ -128,7 +131,7 @@ async function getRelatedBlogPosts(projectSlug: string, projectMetadata: NotionP
 /**
  * Find related projects based on themes, partners, geography
  */
-async function getRelatedProjectsData(projectSlug: string, projectMetadata: NotionProjectMetadata) {
+async function getRelatedProjectsData(projectSlug: string, projectMetadata: ProjectMetadata) {
   try {
     const relatedProjects = await findRelatedProjects(projectMetadata, {
       minRelevanceScore: 0.3,
@@ -172,11 +175,11 @@ async function getProjectMedia(projectSlug: string) {
 export async function enrichProject(projectSlug: string): Promise<ProjectEnrichmentData> {
   console.log(`Enriching project: ${projectSlug}`);
 
-  // 1. Fetch Notion metadata
-  const notionData = await getNotionProject(projectSlug);
+  // 1. Fetch project metadata from the derived public metadata layer
+  const metadata = await getPublicProjectMetadata(projectSlug);
 
-  if (!notionData) {
-    throw new Error(`Project not found in Notion: ${projectSlug}`);
+  if (!metadata) {
+    throw new Error(`Project not found in public metadata layer: ${projectSlug}`);
   }
 
   // 2. Fetch Empathy Ledger data
@@ -203,17 +206,17 @@ export async function enrichProject(projectSlug: string): Promise<ProjectEnrichm
   }
 
   // 3. Fetch related blog posts
-  const relatedBlogPosts = await getRelatedBlogPosts(projectSlug, notionData);
+  const relatedBlogPosts = await getRelatedBlogPosts(projectSlug, metadata);
 
   // 4. Find related projects
-  const relatedProjects = await getRelatedProjectsData(projectSlug, notionData);
+  const relatedProjects = await getRelatedProjectsData(projectSlug, metadata);
 
   // 5. Get media galleries
   const media = await getProjectMedia(projectSlug);
 
   // Combine all data
   const enrichmentData: ProjectEnrichmentData = {
-    notion: notionData,
+    metadata,
     storytellers: storytellers.map((s: any) => ({
       id: s.id,
       name: s.name,
@@ -242,9 +245,9 @@ export async function enrichProject(projectSlug: string): Promise<ProjectEnrichm
       mediaGalleries: 'draft',
     },
     sources: {
-      notion: {
-        database_id: process.env.NOTION_PROJECTS_DATABASE_ID || '',
-        page_id: notionData.id,
+      metadata: {
+        source: 'wiki-derived',
+        page_id: metadata.id,
         last_synced: new Date().toISOString(),
       },
       empathyLedger: empathyLedgerData ? {

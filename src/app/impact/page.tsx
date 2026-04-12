@@ -1,12 +1,15 @@
 import { Metadata } from 'next';
 import CardGrid from '@/components/CardGrid';
+import LivingSystemStrip from "@/components/LivingSystemStrip";
+import PageHero from "@/components/PageHero";
+import SectionHeading from '@/components/SectionHeading';
 import SignalBars from '@/components/impact/SignalBars';
 import ImpactSankey from '@/components/impact/ImpactSankey';
 import { REAL_INITIATIVES, REAL_CONTEXTS, REAL_EVIDENCE } from '@/data/alma-seeds';
 
 export const metadata: Metadata = {
-    title: 'Impact & Evaluation | A Curious Tractor',
-    description: 'Tracking the ecological, social, and economic impact of the ACT Ecosystem.',
+    title: 'Impact & Learning | A Curious Tractor',
+    description: 'A working ACT impact surface using ALMA signal sets, evidence patterns, and contextual learning.',
 };
 
 export default function ImpactPage() {
@@ -14,54 +17,89 @@ export default function ImpactPage() {
     const totalInitiatives = REAL_INITIATIVES.length;
     const totalContexts = REAL_CONTEXTS.length;
     const communityLedCount = REAL_INITIATIVES.filter(i => i.community_authority === 'High').length;
+    const highEvidenceCount = REAL_INITIATIVES.filter(i => i.evidence_strength === 'High').length;
 
     return (
         <div className="space-y-16">
-            {/* Header Section */}
-            <section className="space-y-8">
-                <h1 className="text-4xl md:text-6xl font-[var(--font-display)] text-[#2F3E2E]">
-                    Ecosystem Impact
-                </h1>
-                <p className="max-w-2xl text-lg text-[#4D3F33] leading-relaxed">
-                    The ALMA (Adaptive Learning & Measurement Architecture) system visualizes the
-                    regenerative outcomes of our work across Land, Studio, and Harvest contexts.
-                </p>
+            <PageHero
+                eyebrow="Impact & learning"
+                title="A working view of ACT’s ALMA signals"
+                description="This page is a learning surface, not a polished impact report. It uses the current ALMA seed set to show how initiatives, contexts, authority, and evidence are being interpreted across the ecosystem."
+                actions={[
+                    { label: "Open the wiki", href: "/wiki" },
+                    { label: "Explore projects", href: "/projects", variant: "outline" },
+                ]}
+            >
+                <div className="space-y-3">
+                    <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+                        What this page is for
+                    </p>
+                    <p>
+                        Use it to understand how ACT is thinking about impact, authority, and evidence. Do not treat it as a final audited dashboard or a real-time data feed.
+                    </p>
+                </div>
+            </PageHero>
 
-                {/* Impact Placemat (Sankey) */}
+            <LivingSystemStrip
+                eyebrow="Impact layer"
+                title="Impact should stay legible without becoming surveillance"
+                description="ACT uses ALMA to hold learning and evidence without flattening people into metrics. The durable method lives in the wiki, and the wider public story continues through projects, works, and consented story layers."
+                wiki={{
+                    href: "/wiki/alma",
+                    label: "Open ALMA in the wiki",
+                }}
+                live={{
+                    sourceLabel: "Public impact framing with live project/story context around it",
+                    href: `${process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL || "https://empathyledger.com"}/projects`,
+                }}
+                stats={[
+                    { label: "Initiatives", value: totalInitiatives },
+                    { label: "Contexts", value: totalContexts },
+                    { label: "Evidence records", value: REAL_EVIDENCE.length },
+                ]}
+            />
+
+            <section className="space-y-8">
+                <SectionHeading
+                    eyebrow="Working model"
+                    title="How initiatives move through the current ALMA signal set"
+                    description="This diagram reflects the current seeded initiative set in the public codebase. It is useful for pattern-reading and discussion, not as a claim of real-time completeness."
+                />
                 <div className="w-full h-[500px] bg-[#F6F1E7] border border-[#E1D3BA] rounded-3xl overflow-hidden p-8 shadow-sm">
                     <div className="flex justify-between items-center mb-6 border-b border-[#E1D3BA]/50 pb-2">
-                        <h3 className="text-sm font-bold uppercase tracking-widest text-[#6B5A45]">Impact Flow</h3>
-                        <span className="text-xs text-[#8B4513] bg-[#F0EAE0] px-2 py-1 rounded-full">Live Data</span>
+                        <h3 className="text-sm font-bold uppercase tracking-widest text-[#6B5A45]">ALMA signal flow</h3>
+                        <span className="text-xs text-[#8B4513] bg-[#F0EAE0] px-2 py-1 rounded-full">Working seed set</span>
                     </div>
                     <ImpactSankey />
                 </div>
 
-                {/* High-level Counters */}
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="p-6 bg-white/60 rounded-2xl border border-[#E1D3BA] text-center">
                         <div className="text-4xl font-[var(--font-display)] text-[#D87D4A]">{totalInitiatives}</div>
-                        <div className="text-xs uppercase tracking-widest mt-2 text-[#6B5A45]">Active Initiatives</div>
+                        <div className="text-xs uppercase tracking-widest mt-2 text-[#6B5A45]">Current initiatives</div>
                     </div>
                     <div className="p-6 bg-white/60 rounded-2xl border border-[#E1D3BA] text-center">
                         <div className="text-4xl font-[var(--font-display)] text-[#6B5A45]">{totalContexts}</div>
-                        <div className="text-xs uppercase tracking-widest mt-2 text-[#6B5A45]">Bioregional Contexts</div>
+                        <div className="text-xs uppercase tracking-widest mt-2 text-[#6B5A45]">Contexts in view</div>
                     </div>
                     <div className="p-6 bg-white/60 rounded-2xl border border-[#E1D3BA] text-center">
                         <div className="text-4xl font-[var(--font-display)] text-[#4CAF50]">{communityLedCount}</div>
-                        <div className="text-xs uppercase tracking-widest mt-2 text-[#6B5A45]">Community Led</div>
+                        <div className="text-xs uppercase tracking-widest mt-2 text-[#6B5A45]">High authority</div>
                     </div>
                     <div className="p-6 bg-white/60 rounded-2xl border border-[#E1D3BA] flex items-center justify-center">
-                        <div className="text-xs text-[#6B5A45] italic">"Regeneration moves at the speed of trust."</div>
+                        <div className="text-center">
+                            <div className="text-4xl font-[var(--font-display)] text-[#2F3E2E]">{highEvidenceCount}</div>
+                            <div className="text-xs uppercase tracking-widest mt-2 text-[#6B5A45]">High evidence</div>
+                        </div>
                     </div>
                 </div>
             </section>
 
-            {/* Initiatives Feed */}
             <section className="space-y-8">
                 <div className="flex items-end justify-between border-b border-[#E1D3BA] pb-4">
-                    <h2 className="text-2xl font-[var(--font-display)]">Live Initiatives</h2>
+                    <h2 className="text-2xl font-[var(--font-display)]">Current initiative set</h2>
                     <span className="text-xs uppercase tracking-widest text-[#6B5A45]">
-                        Real-time Portfolio
+                        Working ALMA slice
                     </span>
                 </div>
 
@@ -84,7 +122,7 @@ export default function ImpactPage() {
             {/* Contexts Map (List for now) */}
             <section className="space-y-8">
                 <div className="flex items-end justify-between border-b border-[#E1D3BA] pb-4">
-                    <h2 className="text-2xl font-[var(--font-display)]">Bioregional Contexts</h2>
+                    <h2 className="text-2xl font-[var(--font-display)]">Contexts in view</h2>
                 </div>
                 <div className="grid md:grid-cols-2 gap-6">
                     {REAL_CONTEXTS.map(ctx => (
@@ -100,7 +138,7 @@ export default function ImpactPage() {
             {/* Evidence Library */}
             <section className="space-y-8">
                 <div className="flex items-end justify-between border-b border-[#E1D3BA] pb-4">
-                    <h2 className="text-2xl font-[var(--font-display)]">Evidence Library</h2>
+                    <h2 className="text-2xl font-[var(--font-display)]">Evidence references</h2>
                 </div>
                 <div className="space-y-4">
                     {REAL_EVIDENCE.map((ev, i) => (
@@ -117,6 +155,20 @@ export default function ImpactPage() {
                             </div>
                         </div>
                     ))}
+                </div>
+            </section>
+
+            <section className="rounded-3xl border border-[#2F2A25] bg-[#11110F] p-8 text-[#F3EBDD] md:p-12">
+                <div className="space-y-4">
+                    <p className="text-xs uppercase tracking-[0.3em] text-[#CFA16B]">
+                        Interpretation note
+                    </p>
+                    <h2 className="font-[var(--font-display)] text-2xl font-semibold md:text-3xl">
+                        Impact is for learning and accountability, not performance theatre
+                    </h2>
+                    <p className="max-w-3xl text-sm leading-7 text-[#D7C8B2]">
+                        The strongest next version of this page will connect ALMA more directly to canonical wiki pages, project-level live story signals, and clearer provenance. For now, this surface is deliberately framed as a working model rather than overstated as a live dashboard.
+                    </p>
                 </div>
             </section>
         </div>

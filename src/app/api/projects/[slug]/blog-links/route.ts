@@ -11,7 +11,7 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-import { getNotionProject } from '@/lib/notion';
+import { getPublicProjectMetadata } from '@/lib/project-metadata/public';
 import { findRelatedBlogPosts, generateBlogLinkingReport } from '@/lib/enrichment/blog-linking';
 
 export async function GET(
@@ -29,7 +29,7 @@ export async function GET(
     console.log(`[Blog Links API] Finding related blog posts for: ${slug}`);
 
     // Fetch project metadata
-    const project = await getNotionProject(slug);
+    const project = await getPublicProjectMetadata(slug);
 
     if (!project) {
       return NextResponse.json(

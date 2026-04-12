@@ -1,6 +1,9 @@
 import Link from "next/link";
+import LivingSystemStrip from "@/components/LivingSystemStrip";
 import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
+import { getLiveServicesForSite } from "@/lib/empathy-ledger-services";
+import { resolveServiceProjectLinks } from "@/lib/projects/resolve-service-project-links";
 
 const workStyles = [
   {
@@ -11,7 +14,7 @@ const workStyles = [
   {
     title: "Prototype Quickly",
     description:
-      "We build rough versions fast, test with real users, learn, iterate. Perfection is the enemy of progress.",
+      "We prototype early enough to learn from reality, but not so fast that urgency crushes listening, trust, or cultural protocol.",
   },
   {
     title: "Open by Default",
@@ -83,24 +86,63 @@ const collaborationTypes = [
     href: "/projects",
   },
   {
-    title: "Consulting & Training",
+    title: "Learning and capability transfer",
     description:
-      "Workshops and advisory services sharing our methodology, evaluation frameworks, and approaches to regenerative innovation.",
-    cta: "Get in touch",
+      "Workshops, accompaniment, and practical handover support that help others adapt ACT approaches without becoming dependent on ACT.",
+    cta: "Talk with us",
     href: "/contact",
   },
 ];
 
-export default function HowWeWorkPage() {
+export default async function HowWeWorkPage() {
+  const liveServices = await getLiveServicesForSite({
+    limit: 3,
+    status: "active",
+  }).catch(() => []);
+  const serviceProjectLinks = await resolveServiceProjectLinks(liveServices);
+
   return (
     <div className="space-y-20">
       <PageHero
         eyebrow="How We Work"
-        title="Processes and rhythms"
-        description="How ACT approaches collaboration, project delivery, and organizational practice. We try to embody the values we're building toward."
+        title="How the work moves from listening into public form"
+        description="This page is about operating rhythms, collaboration pathways, and the practical habits that stop ACT from becoming just another service brand."
         actions={[
-          { label: "Our Principles", href: "/principles" },
-          { label: "Contact Us", href: "/contact", variant: "outline" },
+          { label: "Read the principles", href: "/principles" },
+          { label: "Open the method", href: "/method", variant: "outline" },
+        ]}
+      >
+        <div className="space-y-3">
+          <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+            Working stance
+          </p>
+          <p>
+            We try to move at the speed of relationship, use tools to create space, and treat documentation and handover as part of delivery rather than cleanup.
+          </p>
+        </div>
+      </PageHero>
+
+      <LivingSystemStrip
+        eyebrow="Living practice"
+        title="Practice is documented in the wiki and tested in the field"
+        description="ACT’s operating habits are not just internal process notes. The durable layer lives in the wiki, while approved service proof, stories, and media can keep updating through Empathy Ledger as collaborations deepen."
+        wiki={{
+          href: "/wiki/ways-of-working",
+          label: "Open ways of working",
+        }}
+        live={{
+          sourceLabel: liveServices.length > 0 ? "Live capabilities connected through Empathy Ledger" : null,
+          storyCount: liveServices.reduce((sum, service) => sum + service.linkedStoryCount, 0),
+          storytellerCount: liveServices.reduce((sum, service) => sum + service.storytellerCount, 0),
+          mediaCount: liveServices.reduce(
+            (sum, service) => sum + service.media.photoCount + service.media.videoCount,
+            0
+          ),
+          href: `${process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL || "https://empathyledger.com"}/projects`,
+        }}
+        stats={[
+          { label: "Live capabilities", value: liveServices.length },
+          { label: "Collaboration paths", value: collaborationTypes.length },
         ]}
       />
 
@@ -179,39 +221,167 @@ export default function HowWeWorkPage() {
         </div>
       </section>
 
+      {liveServices.length > 0 ? (
+        <section className="space-y-10">
+          <SectionHeading
+            eyebrow="Live capabilities"
+            title="Services that keep learning as the work grows"
+            description="This section is syndicated from Empathy Ledger. As new stories, photos, videos, and service notes are approved, the public studio shell can keep evolving without becoming a second CMS."
+          />
+          <div className="grid gap-6 lg:grid-cols-3">
+            {liveServices.map((service) => {
+              const ctaLabel =
+                service.detail.cta.label ||
+                service.detail.cta.text ||
+                "Start a conversation";
+              const ctaHref = service.detail.cta.url || "/contact";
+              const ctaExternal =
+                ctaHref.startsWith("http://") || ctaHref.startsWith("https://");
+              const preview =
+                service.media.photoPreviews[0] || service.media.videoPreviews[0] || null;
+              const relatedProjectLinks = serviceProjectLinks[service.id] || [];
+
+              return (
+                <div
+                  key={service.id}
+                  className="overflow-hidden rounded-3xl border border-[#E1D3BA] bg-white/80"
+                >
+                  {preview?.kind === "image" && (preview.previewUrl || preview.thumbnailUrl || preview.url) ? (
+                    <img
+                      src={preview.previewUrl || preview.thumbnailUrl || preview.url || undefined}
+                      alt={preview.altText || preview.title || service.name}
+                      className="h-44 w-full object-cover"
+                    />
+                  ) : preview ? (
+                    <div className="flex h-44 items-end bg-gradient-to-br from-[#2F3E2E] via-[#4A4035] to-[#7A9B76] p-5 text-white">
+                      <div>
+                        <p className="rounded-full bg-white/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90">
+                          {preview.kind}
+                        </p>
+                        <p className="mt-3 text-xl font-semibold">
+                          {preview.title || service.name}
+                        </p>
+                      </div>
+                    </div>
+                  ) : null}
+
+                  <div className="space-y-4 p-7">
+                    <div className="flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-[#6B5A45]">
+                      <span>{service.serviceType?.replaceAll("_", " ") || "capability"}</span>
+                      <span>•</span>
+                      <span>{service.storytellerCount} voices</span>
+                      <span>•</span>
+                      <span>{service.linkedStoryCount} stories</span>
+                    </div>
+
+                    <div>
+                      <h3 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+                        {service.name}
+                      </h3>
+                      <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
+                        {service.detail.overview || service.description}
+                      </p>
+                    </div>
+
+                    <div className="flex flex-wrap gap-2">
+                      {service.detail.serviceTags.slice(0, 3).map((tag) => (
+                        <span
+                          key={tag}
+                          className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs font-medium text-[#4A4035]"
+                        >
+                          {tag}
+                        </span>
+                      ))}
+                    </div>
+
+                    {relatedProjectLinks.length > 0 ? (
+                      <div className="space-y-2">
+                        <p className="text-[11px] uppercase tracking-[0.2em] text-[#6B5A45]">
+                          Project pathways
+                        </p>
+                        <div className="flex flex-wrap gap-2">
+                          {relatedProjectLinks.slice(0, 3).map((projectLink) =>
+                            projectLink.href ? (
+                              <Link
+                                key={projectLink.key}
+                                href={projectLink.href}
+                                className="rounded-full bg-[#EDF6EC] px-3 py-1 text-xs font-medium text-[#2F3E2E] transition hover:bg-[#DCEED8]"
+                              >
+                                {projectLink.label}
+                              </Link>
+                            ) : (
+                              <span
+                                key={projectLink.key}
+                                className="rounded-full bg-[#EDF6EC] px-3 py-1 text-xs font-medium text-[#2F3E2E]"
+                              >
+                                {projectLink.label}
+                              </span>
+                            )
+                          )}
+                        </div>
+                      </div>
+                    ) : null}
+
+                    {ctaExternal ? (
+                      <a
+                        href={ctaHref}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-[#4CAF50] hover:gap-3 transition"
+                      >
+                        <span>{ctaLabel}</span>
+                        <span aria-hidden="true">→</span>
+                      </a>
+                    ) : (
+                      <Link
+                        href={ctaHref}
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-[#4CAF50] hover:gap-3 transition"
+                      >
+                        <span>{ctaLabel}</span>
+                        <span aria-hidden="true">→</span>
+                      </Link>
+                    )}
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+      ) : null}
+
       <section className="space-y-10">
         <SectionHeading
-          eyebrow="Technology"
-          title="Our technical stack"
-          description="The infrastructure that powers ACT projects."
+          eyebrow="Shared infrastructure"
+          title="What the system is designed to hold"
+          description="The public shell should not read like a stack diagram. What matters here is the kind of infrastructure ACT keeps building so projects can stay grounded, consentful, and transferable."
         />
         <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8">
           <div className="grid gap-8 lg:grid-cols-3">
             <div className="space-y-4">
-              <h3 className="font-semibold text-[#2F3E2E]">Frontend</h3>
+              <h3 className="font-semibold text-[#2F3E2E]">Living memory</h3>
               <ul className="space-y-2 text-sm text-[#4D3F33]">
-                <li>• Next.js 15 with App Router</li>
-                <li>• React 19</li>
-                <li>• Tailwind CSS</li>
-                <li>• TypeScript</li>
+                <li>• Canonical ACT wiki as durable source of truth</li>
+                <li>• Project framing synced into the public site</li>
+                <li>• Knowledge designed to compound, not duplicate</li>
+                <li>• Public pages that can stay aligned as the wiki grows</li>
               </ul>
             </div>
             <div className="space-y-4">
-              <h3 className="font-semibold text-[#2F3E2E]">Backend & Data</h3>
+              <h3 className="font-semibold text-[#2F3E2E]">Consent-first story layer</h3>
               <ul className="space-y-2 text-sm text-[#4D3F33]">
-                <li>• Supabase (PostgreSQL + Auth)</li>
-                <li>• Vector embeddings for RAG</li>
-                <li>• Notion for knowledge management</li>
-                <li>• GoHighLevel for CRM</li>
+                <li>• Empathy Ledger for approved stories, voices, photos, and media</li>
+                <li>• Story remains linked to project and place</li>
+                <li>• Public proof can update without rebuilding the site by hand</li>
+                <li>• Consent and authority shape what can be shown</li>
               </ul>
             </div>
             <div className="space-y-4">
-              <h3 className="font-semibold text-[#2F3E2E]">Intelligence</h3>
+              <h3 className="font-semibold text-[#2F3E2E]">Handover-oriented tooling</h3>
               <ul className="space-y-2 text-sm text-[#4D3F33]">
-                <li>• Claude AI for reasoning</li>
-                <li>• OpenAI for embeddings</li>
-                <li>• Custom agents and automation</li>
-                <li>• Relationship health scoring</li>
+                <li>• Tools should create space, not lock people in</li>
+                <li>• Systems are designed to be explained, adapted, and transferred</li>
+                <li>• Documentation is part of delivery, not a leftover task</li>
+                <li>• Infrastructure should support community ownership, not platform dependence</li>
               </ul>
             </div>
           </div>

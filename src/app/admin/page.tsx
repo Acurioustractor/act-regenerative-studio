@@ -26,7 +26,7 @@ export default function AdminHomePage() {
           href="/engine"
           className="rounded-full bg-[#1e1e1e] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white border border-gray-700"
         >
-          Neural Engine
+          Engine Notes
         </Link>
         <Link
           href="/admin/content"

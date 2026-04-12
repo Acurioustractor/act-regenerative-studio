@@ -2,50 +2,32 @@
  * Project Articles API - Fetch blog articles related to a project
  *
  * GET /api/projects/[slug]/articles
- * Returns published blog articles from Empathy Ledger content hub
+ * Returns site-syndicated editorial articles mapped to the project.
  */
 
 import { NextRequest, NextResponse } from 'next/server';
-const EMPATHY_LEDGER_URL =
-  process.env.EMPATHY_LEDGER_URL ||
-  process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL ||
-  'http://localhost:3030';
+import { getProjectEditorialArticles } from '@/lib/empathy-ledger-editorial';
 
 export async function GET(
   request: NextRequest,
-  { params }: { params: { slug: string } }
+  { params }: { params: Promise<{ slug: string }> }
 ) {
   try {
-    const { slug } = params;
+    const { slug } = await params;
     const { searchParams } = new URL(request.url);
     const limit = parseInt(searchParams.get('limit') || '10', 10);
-
-    const response = await fetch(
-      `${EMPATHY_LEDGER_URL}/api/v1/content-hub/articles?project=${slug}&limit=${limit}`,
-      {
-        headers: {
-          ...(process.env.EMPATHY_LEDGER_API_KEY
-            ? { 'X-API-Key': process.env.EMPATHY_LEDGER_API_KEY }
-            : {}),
-        },
-      }
-    );
-
-    if (!response.ok) {
-      throw new Error(`Empathy Ledger API error: ${response.status}`);
-    }
-
-    const payload = await response.json();
-    const articles = (payload.articles || []).map((item: any) => ({
+    const articles = (await getProjectEditorialArticles(slug, limit)).map((item) => ({
       title: item.title,
       slug: item.slug,
       excerpt: item.excerpt || '',
-      url: `${EMPATHY_LEDGER_URL}/articles/${item.slug}`,
+      url: item.localPath,
+      canonicalUrl: item.canonicalUrl,
       featuredImage: item.featuredImageUrl || null,
       author: item.authorName || 'ACT Team',
       publishedDate: item.publishedAt || null,
       tags: item.tags || [],
-      source: 'empathy-ledger',
+      relatedProjects: item.relatedProjectSlugs,
+      source: 'empathy-ledger-editorial',
     }));
 
     return NextResponse.json({

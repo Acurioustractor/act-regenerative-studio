@@ -1,0 +1,356 @@
+import 'server-only';
+
+import fs from 'node:fs/promises';
+import path from 'node:path';
+
+import { glob } from 'glob';
+import matter from 'gray-matter';
+
+import snapshot from '@/data/wiki-pages.generated.json';
+
+export type CanonicalWikiPageSource = 'live-wiki' | 'snapshot';
+
+export interface CanonicalWikiPageRecord {
+  title: string;
+  excerpt: string | null;
+  content: string;
+  sectionId: string;
+  sectionTitle: string;
+  stem: string;
+  path: string;
+  relativePath: string;
+  modifiedAt: string | null;
+}
+
+export interface CanonicalWikiPageMatch extends CanonicalWikiPageRecord {
+  source: CanonicalWikiPageSource;
+}
+
+interface CanonicalWikiPagesSnapshot {
+  generatedAt: string | null;
+  sourceRoot: string | null;
+  pageCount: number;
+  pages: CanonicalWikiPageRecord[];
+}
+
+const SNAPSHOT = snapshot as CanonicalWikiPagesSnapshot;
+
+const CANONICAL_SECTION_ORDER = [
+  'concepts',
+  'projects',
+  'sources',
+  'communities',
+  'people',
+  'stories',
+  'art',
+  'research',
+  'technical',
+  'finance',
+  'decisions',
+  'synthesis',
+] as const;
+
+const CANONICAL_SECTION_TITLES: Record<string, string> = {
+  concepts: 'Concepts',
+  projects: 'Projects',
+  sources: 'Sources',
+  communities: 'Communities',
+  people: 'People',
+  stories: 'Stories',
+  art: 'Art',
+  research: 'Research',
+  technical: 'Technical',
+  finance: 'Finance',
+  decisions: 'Decisions',
+  synthesis: 'Synthesis',
+};
+
+const LEGACY_ALIASES: Record<string, string> = {
+  act: 'concepts/act-identity',
+  'the-farm': 'projects/act-farm',
+  'the-studio': 'projects/act-studio',
+  'the-harvest': 'projects/the-harvest',
+  goods: 'projects/goods-on-country',
+  justicehub: 'projects/justicehub',
+  'empathy-ledger': 'projects/empathy-ledger',
+  contained: 'projects/contained',
+  picc: 'projects/picc',
+};
+
+let livePagePromise: Promise<CanonicalWikiPageRecord[] | null> | null = null;
+
+function normalizeValue(value: string): string {
+  return value
+    .toLowerCase()
+    .replace(/&/g, ' and ')
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+function relativePathToPagePath(relativePath: string): string {
+  const normalized = relativePath.replaceAll('\\', '/').replace(/\.md$/, '');
+  const parts = normalized.split('/');
+  const stem = parts[parts.length - 1];
+  const parent = parts[parts.length - 2];
+
+  if (parent && stem === parent) {
+    return parts.slice(0, -1).join('/');
+  }
+
+  return normalized;
+}
+
+function stripMarkdown(value: string | null): string | null {
+  if (!value) return null;
+
+  return value
+    .replace(/\[\[([^\]|]+)\|([^\]]+)\]\]/g, '$2')
+    .replace(/\[\[([^\]]+)\]\]/g, '$1')
+    .replace(/\[([^\]]+)\]\([^)]+\)/g, '$1')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/\*\*([^*]+)\*\*/g, '$1')
+    .replace(/\*([^*]+)\*/g, '$1')
+    .replace(/^>\s*/gm, '')
+    .replace(/\n+/g, ' ')
+    .replace(/\s{2,}/g, ' ')
+    .trim();
+}
+
+function parseExcerpt(content: string): string | null {
+  const summaryMatch = content.match(/^>\s+(.+)$/m);
+  if (summaryMatch?.[1]) {
+    return stripMarkdown(summaryMatch[1]);
+  }
+
+  const firstParagraph = content
+    .split('\n\n')
+    .map((chunk) => chunk.trim())
+    .find((chunk) => chunk && !chunk.startsWith('#') && !chunk.startsWith('**'));
+
+  return stripMarkdown(firstParagraph || null);
+}
+
+function removeLeadingTitle(content: string): string {
+  return content
+    .replace(/^#\s+.+\n+/m, '')
+    .trim();
+}
+
+async function resolveCanonicalWikiRoot(): Promise<string | null> {
+  const candidates = [
+    process.env.ACT_CANONICAL_WIKI_ROOT,
+    path.resolve(process.cwd(), '../act-global-infrastructure/wiki'),
+  ].filter(Boolean) as string[];
+
+  for (const candidate of candidates) {
+    try {
+      const stats = await fs.stat(candidate);
+      if (stats.isDirectory()) {
+        return candidate;
+      }
+    } catch {
+      // Try next candidate.
+    }
+  }
+
+  return null;
+}
+
+async function buildLiveCanonicalWikiPages(): Promise<CanonicalWikiPageRecord[] | null> {
+  const wikiRoot = await resolveCanonicalWikiRoot();
+
+  if (!wikiRoot) {
+    return null;
+  }
+
+  const pageFiles = await glob('*.md', {
+    cwd: wikiRoot,
+    nodir: true,
+  });
+
+  const sectionFiles = await glob('{concepts,projects,sources,communities,people,stories,art,research,technical,finance,decisions,synthesis}/**/*.md', {
+    cwd: wikiRoot,
+    ignore: ['**/README.md', '**/index.md'],
+    nodir: true,
+  });
+
+  const targets = [...pageFiles.filter((file) => file === 'index.md'), ...sectionFiles];
+
+  const records = await Promise.all(
+    targets.map(async (relativePath) => {
+      const absolutePath = path.join(wikiRoot, relativePath);
+      const [rawContent, stats] = await Promise.all([
+        fs.readFile(absolutePath, 'utf8'),
+        fs.stat(absolutePath),
+      ]);
+
+      const { content } = matter(rawContent);
+      const titleMatch = content.match(/^#\s+(.+)$/m);
+      const cleanedContent = removeLeadingTitle(content);
+      const pathKey = relativePath === 'index.md' ? 'index' : relativePathToPagePath(relativePath);
+      const stem = pathKey.split('/').pop() || pathKey;
+      const sectionId = relativePath === 'index.md' ? 'overview' : relativePath.split('/')[0];
+
+      return {
+        title: titleMatch?.[1]?.trim() || stem,
+        excerpt: parseExcerpt(content),
+        content: cleanedContent,
+        sectionId,
+        sectionTitle: CANONICAL_SECTION_TITLES[sectionId] || 'Overview',
+        stem,
+        path: pathKey,
+        relativePath,
+        modifiedAt: stats.mtime.toISOString(),
+      } satisfies CanonicalWikiPageRecord;
+    })
+  );
+
+  return records.sort((left, right) => left.title.localeCompare(right.title));
+}
+
+async function getLiveCanonicalWikiPages(): Promise<CanonicalWikiPageRecord[] | null> {
+  if (!livePagePromise) {
+    livePagePromise = buildLiveCanonicalWikiPages().catch(() => null);
+  }
+
+  return livePagePromise;
+}
+
+function getSnapshotPages(): CanonicalWikiPageRecord[] {
+  return Array.isArray(SNAPSHOT.pages) ? SNAPSHOT.pages : [];
+}
+
+function matchPageRecord(
+  records: CanonicalWikiPageRecord[],
+  slugOrPath: string
+): CanonicalWikiPageRecord | null {
+  const normalizedInput = slugOrPath.trim().replace(/^\/+|\/+$/g, '').replace(/\.md$/i, '');
+  const aliased = LEGACY_ALIASES[normalizedInput] || normalizedInput;
+  const normalizedAliased = normalizeValue(aliased);
+
+  const exactPath =
+    records.find((record) => normalizeValue(record.path) === normalizedAliased) ||
+    records.find((record) => normalizeValue(record.relativePath.replace(/\.md$/, '')) === normalizedAliased);
+
+  if (exactPath) {
+    return exactPath;
+  }
+
+  const stem = aliased.split('/').pop() || aliased;
+  const stemMatches = records.filter((record) => normalizeValue(record.stem) === normalizeValue(stem));
+
+  if (stemMatches.length === 1) {
+    return stemMatches[0];
+  }
+
+  return null;
+}
+
+export async function getCanonicalWikiPages(): Promise<CanonicalWikiPageRecord[]> {
+  const livePages = await getLiveCanonicalWikiPages();
+  return livePages && livePages.length > 0 ? livePages : getSnapshotPages();
+}
+
+export async function getCanonicalWikiPage(slugOrPath: string): Promise<CanonicalWikiPageMatch | null> {
+  const livePages = await getLiveCanonicalWikiPages();
+
+  if (livePages?.length) {
+    const liveMatch = matchPageRecord(livePages, slugOrPath);
+    if (liveMatch) {
+      return {
+        ...liveMatch,
+        source: 'live-wiki',
+      };
+    }
+  }
+
+  const snapshotMatch = matchPageRecord(getSnapshotPages(), slugOrPath);
+  if (!snapshotMatch) {
+    return null;
+  }
+
+  return {
+    ...snapshotMatch,
+    source: 'snapshot',
+  };
+}
+
+export async function filterCanonicalWikiPages(options?: {
+  query?: string;
+  section?: string;
+  project?: string;
+}): Promise<CanonicalWikiPageRecord[]> {
+  const pages = await getCanonicalWikiPages();
+  let filtered = [...pages];
+
+  if (options?.section && options.section !== 'all') {
+    filtered = filtered.filter((page) => page.sectionId === options.section);
+  }
+
+  if (options?.project && options.project !== 'all') {
+    const token = normalizeValue(options.project);
+    const aliases = new Set([
+      token,
+      normalizeValue(LEGACY_ALIASES[options.project] || ''),
+      normalizeValue(options.project.replace(/^the-/, '')),
+    ]);
+
+    filtered = filtered.filter((page) => {
+      const haystack = normalizeValue(`${page.path} ${page.title} ${page.content}`);
+      return [...aliases].some((alias) => alias && haystack.includes(alias));
+    });
+  }
+
+  if (options?.query) {
+    const query = normalizeValue(options.query).replace(/-/g, ' ');
+    filtered = filtered.filter((page) => {
+      const haystack = `${page.title} ${page.excerpt || ''} ${page.content}`.toLowerCase();
+      return haystack.includes(query);
+    });
+  }
+
+  return filtered;
+}
+
+export function getCanonicalWikiSections(pages: CanonicalWikiPageRecord[]) {
+  const groups = new Map<string, { id: string; title: string; count: number }>();
+
+  for (const page of pages) {
+    if (!groups.has(page.sectionId)) {
+      groups.set(page.sectionId, {
+        id: page.sectionId,
+        title: page.sectionTitle,
+        count: 0,
+      });
+    }
+
+    const group = groups.get(page.sectionId);
+    if (group) {
+      group.count += 1;
+    }
+  }
+
+  return [...groups.values()].sort((left, right) => {
+    const leftIndex = CANONICAL_SECTION_ORDER.indexOf(left.id as (typeof CANONICAL_SECTION_ORDER)[number]);
+    const rightIndex = CANONICAL_SECTION_ORDER.indexOf(right.id as (typeof CANONICAL_SECTION_ORDER)[number]);
+    const leftRank = leftIndex === -1 ? Number.MAX_SAFE_INTEGER : leftIndex;
+    const rightRank = rightIndex === -1 ? Number.MAX_SAFE_INTEGER : rightIndex;
+    return leftRank - rightRank;
+  });
+}
+
+export async function renderCanonicalWikiMarkdown(content: string): Promise<string> {
+  const pages = await getCanonicalWikiPages();
+
+  return content.replace(/\[\[([^\]]+)\]\]/g, (_match, inner) => {
+    const [target, label] = inner.split('|');
+    const resolved = matchPageRecord(pages, target.trim());
+    const displayText = (label || target).trim();
+
+    if (!resolved) {
+      return displayText;
+    }
+
+    return `[${displayText}](/wiki/${resolved.stem})`;
+  });
+}

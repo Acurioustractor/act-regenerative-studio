@@ -1,0 +1,62 @@
+{
+  "justicehub": {
+    "sectionEyebrow": "Field writing",
+    "sectionTitle": "Writing connected to this project",
+    "sectionDescription": "JusticeHub writing should surface the strongest public argument, the clearest proof points, and the pieces that move from policy language into lived consequence.",
+    "featuredArticleSlugs": [
+      "justicehub-a-platform-for-community-led-justice-solutions",
+      "spain-diagrama-trip-reflection",
+      "contained-where-policy-meets-flesh",
+      "beyond-bars-joe-kwons-journey-to-reshape-society",
+      "the-kids-are-not-alright-how-queensland-is-failing-its-most-vulnerable-young-people-and-what-we-can-do-about-it",
+      "a-story-of-resilience-and-advocacy",
+      "the-reintegration-puzzle-story-portal",
+      "oonchiumpa-what-happens-when-community-leads",
+      "building-the-act-ecosystem-a-vision-for-community-centered-technology"
+    ]
+  },
+  "goods-on-country": {
+    "sectionEyebrow": "Field writing",
+    "sectionTitle": "Writing connected to this project",
+    "sectionDescription": "Goods writing should stay close to practical utility, local making, and the communities shaping what these products are actually for.",
+    "featuredArticleSlugs": [
+      "wilya-janta-a-paradigm-shift-in-housing-for-remote-aboriginal-communities",
+      "at-the-speed-of-ceremony-learning-partnership-on-palm-island",
+      "historys-wounds-and-tomorrows-possibilities",
+      "the-tapestry-of-dignity-witnessing-the-birth-of-the-global-laundry-alliance",
+      "building-the-act-ecosystem-a-vision-for-community-centered-technology"
+    ]
+  },
+  "the-harvest": {
+    "sectionEyebrow": "Field writing",
+    "sectionTitle": "Writing connected to this project",
+    "sectionDescription": "Harvest writing should feel seasonal, local, and close to the social life of the place rather than like generic food or venue marketing.",
+    "featuredArticleSlugs": [
+      "edition-1-sowing-seeds-of-connection-2",
+      "building-the-act-ecosystem-a-vision-for-community-centered-technology",
+      "powering-change-a-curious-tractors-journey"
+    ]
+  },
+  "empathy-ledger": {
+    "sectionEyebrow": "Field writing",
+    "sectionTitle": "Writing connected to this project",
+    "sectionDescription": "Empathy Ledger writing should foreground consent, narrative sovereignty, and the deeper question of who gets to hold and move a story.",
+    "featuredArticleSlugs": [
+      "the-power-of-indigenous-storytelling-a-community-perspective",
+      "building-the-act-ecosystem-a-vision-for-community-centered-technology",
+      "oonchiumpa-what-happens-when-community-leads",
+      "powering-change-a-curious-tractors-journey"
+    ]
+  },
+  "black-cockatoo-valley": {
+    "sectionEyebrow": "Field writing",
+    "sectionTitle": "Writing connected to this project",
+    "sectionDescription": "Black Cockatoo Valley writing should stay grounded in place, slower practice, and the wider field this land base makes possible.",
+    "featuredArticleSlugs": [
+      "edition-1-sowing-seeds-of-connection-2",
+      "conversation-camp",
+      "building-the-act-ecosystem-a-vision-for-community-centered-technology",
+      "powering-change-a-curious-tractors-journey"
+    ]
+  }
+}

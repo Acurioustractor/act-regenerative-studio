@@ -57,7 +57,7 @@ export function ProjectFieldMediaSection({
               </div>
               <div className="max-w-2xl">
                 <h2 className="font-[var(--font-display)] text-[2rem] font-semibold leading-tight text-white md:text-[2.5rem]">
-                  Real field material should carry this page.
+                  {projectTitle}
                 </h2>
                 <p className="mt-3 text-sm leading-7 text-white/80 md:text-base">
                   {leadImage.caption ||

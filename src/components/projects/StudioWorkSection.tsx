@@ -202,20 +202,11 @@ export function StudioWorkSection({
               </div>
               <div className="p-4">
                 <p className="text-sm leading-6 text-[#4D3F33]">
-                  The supporting frames should feel like part of one authored sequence, not a loose gallery dropped underneath a hero.
+                  {secondStill.alt || 'Field documentation'}
                 </p>
               </div>
             </div>
-          ) : (
-            <div className="rounded-[28px] border border-[#E3D4BA] bg-[#F8F1E5] p-5">
-              <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#7A9B76]">
-                Editorial layer
-              </p>
-              <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
-                Studio works should pull together wiki lineage, live story fragments, and authored visual sequences instead of reading like generic project summaries.
-              </p>
-            </div>
-          )}
+          ) : null}
         </div>
       </div>
     </section>

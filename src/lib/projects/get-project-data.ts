@@ -53,19 +53,19 @@ const LOCAL_COVER_VIDEO_OVERRIDES: Record<
   }
 > = {
   justicehub: {
-    url: '/media/field-videos/justicehub-community.mp4',
-    posterUrl: '/media/field-stills/justicehub-community.jpg',
-    title: 'JusticeHub community field footage',
+    url: '/media/field-videos/justicehub-container.mp4',
+    posterUrl: '/media/field-stills/justicehub-container.jpg',
+    title: 'CONTAINED installation open and close',
   },
   'goods-on-country': {
-    url: '/media/field-videos/goods-remote-aerial.mp4',
-    posterUrl: '/media/field-stills/goods-remote-aerial-video.jpg',
-    title: 'Goods on Country remote field aerial',
+    url: '/media/field-videos/goods-community-build.mp4',
+    posterUrl: '/media/field-stills/goods-community-build.jpg',
+    title: 'Community stretch bed build in remote Australia',
   },
   'black-cockatoo-valley': {
-    url: '/media/field-videos/black-cockatoo-valley-farm-aerial.mp4',
-    posterUrl: '/media/field-stills/black-cockatoo-valley-farm-aerial.jpg',
-    title: 'Black Cockatoo Valley canopy aerial',
+    url: '/media/field-videos/hero-farm-aerial.mp4',
+    posterUrl: '/media/field-stills/hero-farm-aerial.jpg',
+    title: 'Black Cockatoo Valley aerial through morning fog',
   },
   'the-harvest': {
     url: '/media/field-videos/harvest-witta-aerial.mp4',
@@ -73,9 +73,9 @@ const LOCAL_COVER_VIDEO_OVERRIDES: Record<
     title: 'The Harvest aerial over Witta',
   },
   'empathy-ledger': {
-    url: '/media/field-videos/empathy-ledger-community-story.mp4',
-    posterUrl: '/media/field-stills/empathy-ledger-community-story.jpg',
-    title: 'Community storytelling conversation',
+    url: '/media/field-videos/empathy-ledger-elder-trip.mp4',
+    posterUrl: '/media/field-stills/empathy-ledger-elder-trip.jpg',
+    title: 'Elders walking to boat for Hull River trip',
   },
 };
 

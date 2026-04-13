@@ -26,11 +26,11 @@ export default function UnifiedFooter({
 
   return (
     <footer className="mt-8 pb-2">
-      <div className="site-surface mx-auto rounded-lg bg-[#1a1612] px-6 py-12 text-[#f2e8d9] md:px-8">
+      <div className="mx-auto rounded-lg bg-[#1a1612] px-6 py-12 text-[#f2e8d9] md:px-8">
         <div className="grid gap-12 lg:grid-cols-3">
           {/* Column 1: About */}
           <div className="space-y-4">
-            <p className="site-eyebrow text-[#bda68a] before:bg-[#6a5846]">
+            <p className="site-eyebrow text-[#dbc5a6] before:bg-[#8a7560]">
               A Curious Tractor
             </p>
             <div className="flex items-center gap-3">
@@ -47,7 +47,7 @@ export default function UnifiedFooter({
                 A Curious Tractor
               </h3>
             </div>
-            <p className="max-w-sm text-sm leading-7 text-[#d6c7b4]">
+            <p className="max-w-sm text-sm leading-7 text-[#e0d4c4]">
               A regenerative innovation studio stewarding a working farm on
               Jinibara Country. We cultivate seeds of impact through listening,
               curiosity, action, and art.
@@ -60,7 +60,7 @@ export default function UnifiedFooter({
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="site-glow-link block text-sm text-[#d8c9b5] transition hover:text-white"
+                    className="site-glow-link block text-sm text-[#e8ddd0] transition hover:text-white"
                   >
                     {link.label}
                   </Link>
@@ -72,7 +72,7 @@ export default function UnifiedFooter({
           {/* Column 2: Public fields */}
           {showProjects && (
             <div className="space-y-4">
-              <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-[#c8ae8d]">
+              <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-[#dbc5a6]">
                 Fields of practice
               </h3>
               <nav className="space-y-3">
@@ -97,7 +97,7 @@ export default function UnifiedFooter({
                         <line x1="10" y1="14" x2="21" y2="3" />
                       </svg>
                     </div>
-                    <div className="text-xs text-[#ae9d88]">
+                    <div className="text-xs text-[#c8b8a4]">
                       {project.tagline}
                     </div>
                   </Link>
@@ -108,7 +108,7 @@ export default function UnifiedFooter({
 
           {/* Column 3: Connect */}
           <div className="space-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-[#c8ae8d]">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-[#dbc5a6]">
               Connect
             </h3>
 
@@ -124,7 +124,7 @@ export default function UnifiedFooter({
                 <h4 className="mb-2 text-sm font-medium text-[#fff6ea]">
                   Stay Connected
                 </h4>
-                <p className="mb-3 text-xs text-[#ae9d88]">
+                <p className="mb-3 text-xs text-[#c8b8a4]">
                   Get updates about our ecosystem
                 </p>
                 <NewsletterForm />
@@ -134,7 +134,7 @@ export default function UnifiedFooter({
         </div>
 
         {/* Footer Bottom */}
-        <div className="mt-12 flex flex-col gap-4 border-t border-[#45382d] pt-8 text-xs text-[#a99680] md:flex-row md:items-center md:justify-between">
+        <div className="mt-12 flex flex-col gap-4 border-t border-[#45382d] pt-8 text-xs text-[#c8b8a4] md:flex-row md:items-center md:justify-between">
           <div className="max-w-2xl">
             <p>
               We acknowledge the Jinibara people as the Traditional Custodians

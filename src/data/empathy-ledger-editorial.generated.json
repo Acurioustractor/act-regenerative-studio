@@ -25,33 +25,33 @@
   "featuredHomeProjectMediaOverrides": {
     "justicehub": {
       "kind": "video",
-      "url": "/media/field-videos/justicehub-community.mp4",
-      "posterUrl": "/media/field-stills/justicehub-community.jpg",
-      "alt": "JusticeHub community gathering footage"
+      "url": "/media/field-videos/justicehub-container.mp4",
+      "posterUrl": "/media/field-stills/justicehub-container.jpg",
+      "alt": "CONTAINED installation open and close"
     },
     "goods-on-country": {
       "kind": "video",
-      "url": "/media/field-videos/goods-remote-aerial.mp4",
-      "posterUrl": "/media/field-stills/goods-remote-aerial-video.jpg",
-      "alt": "Remote aerial footage connected to Goods on Country"
+      "url": "/media/field-videos/goods-community-build.mp4",
+      "posterUrl": "/media/field-stills/goods-community-build.jpg",
+      "alt": "Community stretch bed build in remote Australia"
     },
     "the-harvest": {
       "kind": "video",
       "url": "/media/field-videos/harvest-witta-aerial.mp4",
       "posterUrl": "/media/field-stills/harvest-witta-aerial.jpg",
-      "alt": "The Harvest aerial over the Witta site and surrounding fields"
+      "alt": "The Harvest aerial over Witta"
     },
     "empathy-ledger": {
       "kind": "video",
-      "url": "/media/field-videos/empathy-ledger-community-story.mp4",
-      "posterUrl": "/media/field-stills/empathy-ledger-community-story.jpg",
-      "alt": "Community storytelling conversation connected to Empathy Ledger"
+      "url": "/media/field-videos/empathy-ledger-elder-trip.mp4",
+      "posterUrl": "/media/field-stills/empathy-ledger-elder-trip.jpg",
+      "alt": "Elders walking to boat for Hull River trip"
     },
     "black-cockatoo-valley": {
       "kind": "video",
-      "url": "/media/field-videos/black-cockatoo-valley-farm-aerial.mp4",
-      "posterUrl": "/media/field-stills/black-cockatoo-valley-farm-aerial.jpg",
-      "alt": "Black Cockatoo Valley aerial moving through fog above the canopy"
+      "url": "/media/field-videos/hero-farm-aerial.mp4",
+      "posterUrl": "/media/field-stills/hero-farm-aerial.jpg",
+      "alt": "Black Cockatoo Valley aerial through morning fog"
     }
   },
   "articleCount": 29,

@@ -116,8 +116,8 @@ export default async function StudioPage() {
         }}
         stats={[
           { label: "Public fields", value: curatedProjects.length },
-          { label: "Live capabilities", value: liveServices.length },
-          { label: "Connected works", value: studioWorkCount },
+          ...(liveServices.length > 0 ? [{ label: "Live capabilities", value: liveServices.length }] : []),
+          ...(studioWorkCount > 0 ? [{ label: "Connected works", value: studioWorkCount }] : []),
         ]}
       />
 

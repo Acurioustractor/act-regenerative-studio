@@ -242,7 +242,7 @@ export default async function HomePage() {
 
   return (
     <div className="space-y-24">
-      <section className="site-surface relative overflow-hidden rounded-[40px] bg-gradient-to-br from-[#f6efe5] via-[#e7dcc8] to-[#d9c09c] p-8 md:p-12 lg:p-14">
+      <section className="site-surface relative overflow-hidden rounded-lg bg-gradient-to-br from-[#f6efe5] via-[#e7dcc8] to-[#d9c09c] p-8 md:p-12 lg:p-14">
         <div className="absolute -left-12 top-10 h-40 w-40 rounded-full bg-[#d8ead8] blur-3xl" />
         <div className="absolute right-0 top-0 h-52 w-52 translate-x-12 -translate-y-10 rounded-full bg-[#d3a24f]/20 blur-3xl" />
         <div className="absolute bottom-0 left-[18%] h-40 w-40 rounded-full bg-[#c98958]/12 blur-3xl" />
@@ -287,7 +287,7 @@ export default async function HomePage() {
             </div>
 
             <div className="grid gap-3 pt-3 sm:grid-cols-3">
-              <div className="rounded-[24px] border border-[#d8c4a9] bg-white/58 p-4">
+              <div className="rounded-lg border border-[#d8c4a9] bg-white/58 p-4">
                 <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[#6f5c49]">
                   Proof
                 </p>
@@ -295,7 +295,7 @@ export default async function HomePage() {
                   Flagship fields already carry live story, work, service, and media signals.
                 </p>
               </div>
-              <div className="rounded-[24px] border border-[#d8c4a9] bg-white/58 p-4">
+              <div className="rounded-lg border border-[#d8c4a9] bg-white/58 p-4">
                 <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[#6f5c49]">
                   Invitation
                 </p>
@@ -303,7 +303,7 @@ export default async function HomePage() {
                   People can enter through projects, works, stays, commissions, and partnerships.
                 </p>
               </div>
-              <div className="rounded-[24px] border border-[#d8c4a9] bg-white/58 p-4">
+              <div className="rounded-lg border border-[#d8c4a9] bg-white/58 p-4">
                 <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[#6f5c49]">
                   Handover
                 </p>
@@ -318,7 +318,7 @@ export default async function HomePage() {
             {heroLeadProject ? (
               <Link
                 href={heroLeadProject.href}
-                className="group relative overflow-hidden rounded-[30px] border border-[#253a2f] bg-[#171612] text-[#f4ecde] shadow-[0_24px_60px_rgba(43,31,18,0.2)]"
+                className="group relative overflow-hidden rounded-lg border border-[#253a2f] bg-[#171612] text-[#f4ecde] shadow-[0_24px_60px_rgba(43,31,18,0.2)]"
               >
                 <div className="absolute inset-0">
                   {heroLeadProject.previewMedia?.kind === "video" ? (
@@ -375,7 +375,7 @@ export default async function HomePage() {
                 </div>
               </Link>
             ) : (
-              <div className="overflow-hidden rounded-[30px] border border-[#253a2f] bg-[#171612] p-6 text-[#f4ecde] shadow-[0_24px_60px_rgba(43,31,18,0.2)]">
+              <div className="overflow-hidden rounded-lg border border-[#253a2f] bg-[#171612] p-6 text-[#f4ecde] shadow-[0_24px_60px_rgba(43,31,18,0.2)]">
                 <p className="text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-[#cfa16b]">
                   Current field
                 </p>
@@ -395,7 +395,7 @@ export default async function HomePage() {
             )}
 
             <div className="grid gap-4 sm:grid-cols-3">
-              <div className="rounded-[26px] border border-[#d8c4a9] bg-white/65 p-5 sm:col-span-1">
+              <div className="rounded-lg border border-[#d8c4a9] bg-white/65 p-5 sm:col-span-1">
                 <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[#6f5c49]">
                   What people come for
                 </p>
@@ -415,7 +415,7 @@ export default async function HomePage() {
                 <Link
                   key={project.slug}
                   href={project.href}
-                  className="group relative overflow-hidden rounded-[26px] border border-[#d8c4a9] bg-black/15 shadow-[0_18px_40px_rgba(50,42,31,0.11)]"
+                  className="group relative overflow-hidden rounded-lg border border-[#d8c4a9] bg-black/15 shadow-[0_18px_40px_rgba(50,42,31,0.11)]"
                 >
                   {supportStill ? (
                     <>
@@ -469,7 +469,7 @@ export default async function HomePage() {
           {practiceFields.map((field, index) => (
             <div
               key={field.title}
-              className={`site-glow-link rounded-[30px] border border-[#e1d3ba] bg-gradient-to-br ${practiceFieldTones[index]} p-7 transition hover:-translate-y-1 hover:border-[#2d6a4f] hover:shadow-[0_22px_50px_rgba(50,42,31,0.11)] ${
+              className={`site-glow-link rounded-lg border border-[#e1d3ba] bg-gradient-to-br ${practiceFieldTones[index]} p-7 transition hover:-translate-y-1 hover:border-[#2d6a4f] hover:shadow-[0_22px_50px_rgba(50,42,31,0.11)] ${
                 field.title === "Works" ? "text-[#f4ecde]" : ""
               }`}
             >
@@ -514,7 +514,7 @@ export default async function HomePage() {
       </section>
 
       <section className="grid gap-6 lg:grid-cols-[0.95fr_1.05fr]">
-        <div className="site-surface rounded-[34px] bg-[rgba(255,251,245,0.78)] p-7">
+        <div className="site-surface rounded-lg bg-[rgba(255,251,245,0.78)] p-7">
           <p className="site-eyebrow">Proof in motion</p>
           <h2 className="mt-4 font-[var(--font-display)] text-[2.2rem] font-semibold leading-tight text-[#241c15]">
             The work is already visible across the flagship set.
@@ -540,7 +540,7 @@ export default async function HomePage() {
           </div>
         </div>
 
-        <div className="rounded-[34px] border border-[#2F2A25] bg-[#11110F] p-7 text-[#F3EBDD] shadow-[0_24px_60px_rgba(0,0,0,0.18)]">
+        <div className="rounded-lg border border-[#2F2A25] bg-[#11110F] p-7 text-[#F3EBDD] shadow-[0_24px_60px_rgba(0,0,0,0.18)]">
           <p className="site-eyebrow text-[#cfa16b] before:bg-[#71553b]">Current signals</p>
           <h2 className="mt-4 font-[var(--font-display)] text-[2.2rem] font-semibold leading-tight">
             Not theory. Current public proof.
@@ -576,7 +576,7 @@ export default async function HomePage() {
             ].map((card) => (
               <div
                 key={card.label}
-                className="rounded-[22px] border border-[#4A3B2E] bg-[#171612] px-5 py-4"
+                className="rounded-lg border border-[#4A3B2E] bg-[#171612] px-5 py-4"
               >
                 <p className="text-2xl font-semibold text-[#F3EBDD]">{card.value}</p>
                 <p className="mt-1 text-xs uppercase tracking-[0.2em] text-[#BDAE98]">
@@ -600,12 +600,12 @@ export default async function HomePage() {
             <Link
               key={project.slug}
               href={project.href}
-              className={`group site-glow-link ${featuredProjectLayouts[index]} overflow-hidden rounded-[32px] border bg-gradient-to-br p-8 transition hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(50,42,31,0.14)] ${featuredProjectTones[index]}`}
+              className={`group site-glow-link ${featuredProjectLayouts[index]} overflow-hidden rounded-lg border bg-gradient-to-br p-8 transition hover:-translate-y-1 hover:shadow-[0_24px_60px_rgba(50,42,31,0.14)] ${featuredProjectTones[index]}`}
             >
               {project.previewMedia ? (
                 <div className="mb-6 space-y-3">
                   <div
-                    className={`relative overflow-hidden rounded-[24px] border ${
+                    className={`relative overflow-hidden rounded-lg border ${
                       index === 0 || index === 3
                         ? "border-white/10 bg-black/25"
                         : "border-[#d5bf9e] bg-white/35"
@@ -649,7 +649,7 @@ export default async function HomePage() {
                       {project.supportingMedia.map((item) => (
                         <div
                           key={item.url}
-                          className={`group/image overflow-hidden rounded-[18px] border ${
+                          className={`group/image overflow-hidden rounded-md border ${
                             index === 0 || index === 3
                               ? "border-white/10 bg-black/25"
                               : "border-[#d5bf9e] bg-white/45"
@@ -792,7 +792,7 @@ export default async function HomePage() {
           <div className="grid gap-6 lg:grid-cols-[1.2fr_0.8fr]">
             <Link
               href={leadArticle.localPath}
-              className="group site-glow-link overflow-hidden rounded-[34px] border border-[#e1d3ba] bg-gradient-to-br from-[#f7f1e8] via-[#efe3d2] to-[#dfc9a8] transition hover:-translate-y-1 hover:border-[#2d6a4f] hover:shadow-[0_24px_60px_rgba(50,42,31,0.14)]"
+              className="group site-glow-link overflow-hidden rounded-lg border border-[#e1d3ba] bg-gradient-to-br from-[#f7f1e8] via-[#efe3d2] to-[#dfc9a8] transition hover:-translate-y-1 hover:border-[#2d6a4f] hover:shadow-[0_24px_60px_rgba(50,42,31,0.14)]"
             >
               <div className="grid gap-0 lg:grid-cols-[1.05fr_0.95fr]">
                 <div className="relative min-h-[320px] overflow-hidden bg-[#e6d6bf]">
@@ -865,7 +865,7 @@ export default async function HomePage() {
                 <Link
                   key={article.slug}
                   href={article.localPath}
-                  className="group site-glow-link overflow-hidden rounded-[28px] border border-[#e1d3ba] bg-white/78 p-6 transition hover:-translate-y-1 hover:border-[#2d6a4f] hover:shadow-[0_20px_50px_rgba(50,42,31,0.12)]"
+                  className="group site-glow-link overflow-hidden rounded-lg border border-[#e1d3ba] bg-white/78 p-6 transition hover:-translate-y-1 hover:border-[#2d6a4f] hover:shadow-[0_20px_50px_rgba(50,42,31,0.12)]"
                 >
                   <p className="text-[0.64rem] font-semibold uppercase tracking-[0.28em] text-[#6b5a45]">
                     Supporting note
@@ -896,7 +896,7 @@ export default async function HomePage() {
               ))}
               <Link
                 href="/blog"
-                className="site-glow-link rounded-[28px] border border-[#304532] bg-[#161713] p-6 text-[#f3ebdd] transition hover:border-[#cfa16b] hover:bg-[#1c1e18]"
+                className="site-glow-link rounded-lg border border-[#304532] bg-[#161713] p-6 text-[#f3ebdd] transition hover:border-[#cfa16b] hover:bg-[#1c1e18]"
               >
                 <p className="text-[0.64rem] font-semibold uppercase tracking-[0.28em] text-[#cfa16b]">
                   Editorial layer
@@ -919,7 +919,7 @@ export default async function HomePage() {
         </section>
       ) : null}
 
-      <section className="rounded-[36px] border border-[#2F2A25] bg-[#11110F] px-8 py-10 text-[#F3EBDD] md:px-12 md:py-14">
+      <section className="rounded-lg border border-[#2F2A25] bg-[#11110F] px-8 py-10 text-[#F3EBDD] md:px-12 md:py-14">
         <div className="grid gap-10 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="space-y-5">
             <p className="site-eyebrow text-[#cfa16b] before:bg-[#71553b]">
@@ -933,7 +933,7 @@ export default async function HomePage() {
               installations, encounters, objects, and fragments that let people
               feel what systems usually hide.
             </p>
-            <div className="rounded-[30px] border border-[#5B4634] bg-[#191815] p-6 shadow-[0_24px_60px_rgba(0,0,0,0.22)]">
+            <div className="rounded-lg border border-[#5B4634] bg-[#191815] p-6 shadow-[0_24px_60px_rgba(0,0,0,0.22)]">
               <p className="text-xs uppercase tracking-[0.3em] text-[#CFA16B]">
                 Voice fragment
               </p>
@@ -962,7 +962,7 @@ export default async function HomePage() {
               <Link
                 key={work.slug}
                 href={work.href}
-                className="group site-glow-link overflow-hidden rounded-[30px] border border-[#4A3B2E] bg-[#171612] transition hover:border-[#CFA16B] hover:bg-[#1B1A16]"
+                className="group site-glow-link overflow-hidden rounded-lg border border-[#4A3B2E] bg-[#171612] transition hover:border-[#CFA16B] hover:bg-[#1B1A16]"
               >
                 {work.previewMedia ? (
                   work.previewMedia.kind === "image" ? (
@@ -1020,7 +1020,7 @@ export default async function HomePage() {
         </div>
       </section>
 
-      <section className="site-surface rounded-[36px] bg-gradient-to-br from-[#f5efe5] via-[#e6dcc9] to-[#d2be9a] p-8 md:p-12">
+      <section className="site-surface rounded-lg bg-gradient-to-br from-[#f5efe5] via-[#e6dcc9] to-[#d2be9a] p-8 md:p-12">
         <div className="grid gap-10 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-5">
             <SectionHeading
@@ -1032,7 +1032,7 @@ export default async function HomePage() {
               {lcaaSteps.map((step, index) => (
                 <div
                   key={step.title}
-                  className={`rounded-[24px] border p-5 ${
+                  className={`rounded-lg border p-5 ${
                     index === 3
                       ? "border-[#4a3b2e] bg-[#171612] text-[#f5ecde]"
                       : "border-[#E5D6BE] bg-white/70 text-[#2F3E2E]"
@@ -1051,7 +1051,7 @@ export default async function HomePage() {
             </div>
           </div>
 
-          <div className="rounded-[30px] border border-[#d8c7a5] bg-[rgba(255,251,245,0.68)] p-6 shadow-[0_18px_50px_rgba(58,42,28,0.08)]">
+          <div className="rounded-lg border border-[#d8c7a5] bg-[rgba(255,251,245,0.68)] p-6 shadow-[0_18px_50px_rgba(58,42,28,0.08)]">
             <p className="site-eyebrow">Method in practice</p>
             <div className="mt-4 space-y-4 text-sm leading-7 text-[#4D3F33]">
               <p>
@@ -1090,7 +1090,7 @@ export default async function HomePage() {
             {ecosystemPreview.map((item, index) => (
               <div
                 key={item.title}
-                className={`rounded-[28px] border p-6 ${
+                className={`rounded-lg border p-6 ${
                   index === 1
                     ? "border-[#244c39] bg-[#e3efe7]"
                     : "border-[#E1D3BA] bg-white/75"
@@ -1105,7 +1105,7 @@ export default async function HomePage() {
               </div>
             ))}
           </div>
-          <div className="rounded-[30px] border border-[#E3D4BA] bg-[rgba(255,252,246,0.8)] p-8 shadow-[0_20px_50px_rgba(58,42,28,0.08)]">
+          <div className="rounded-lg border border-[#E3D4BA] bg-[rgba(255,252,246,0.8)] p-8 shadow-[0_20px_50px_rgba(58,42,28,0.08)]">
             <p className="site-eyebrow">Live pathways</p>
             <p className="mt-4 max-w-2xl text-sm leading-7 text-[#4D3F33]">
               The live platforms are only one layer of the ecosystem. They sit
@@ -1137,7 +1137,7 @@ export default async function HomePage() {
             <Link
               key={path.title}
               href={path.href}
-              className={`group site-glow-link rounded-[30px] border p-7 transition hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(50,42,31,0.1)] ${
+              className={`group site-glow-link rounded-lg border p-7 transition hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(50,42,31,0.1)] ${
                 index === 1
                   ? "border-[#244c39] bg-[#1d3527] text-[#f4ecde]"
                   : "border-[#E1D3BA] bg-white/75 text-[#2F3E2E]"

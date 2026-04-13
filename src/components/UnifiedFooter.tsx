@@ -26,7 +26,7 @@ export default function UnifiedFooter({
 
   return (
     <footer className="mt-8 pb-2">
-      <div className="site-surface mx-auto rounded-[34px] bg-[#1a1612] px-6 py-12 text-[#f2e8d9] md:px-8">
+      <div className="site-surface mx-auto rounded-lg bg-[#1a1612] px-6 py-12 text-[#f2e8d9] md:px-8">
         <div className="grid gap-12 lg:grid-cols-3">
           {/* Column 1: About */}
           <div className="space-y-4">

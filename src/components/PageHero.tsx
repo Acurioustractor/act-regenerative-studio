@@ -31,9 +31,9 @@ type PageHeroProps = {
 
 const actionVariants = {
   solid:
-    "site-glow-link rounded-full bg-[#2D6A4F] px-6 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-white shadow-[0_16px_40px_rgba(45,106,79,0.22)] transition hover:bg-[#245741]",
+    "site-glow-link rounded-lg bg-[var(--site-green)] px-6 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-white shadow-[0_4px_16px_rgba(45,90,61,0.18)] transition hover:brightness-110",
   outline:
-    "site-glow-link rounded-full border border-[#2D6A4F] bg-white/45 px-6 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-[#1F2B21] transition hover:bg-[#E5F4E4]",
+    "site-glow-link rounded-lg border-[1.5px] border-[var(--site-ink)] px-6 py-3 text-xs font-semibold uppercase tracking-[0.22em] text-[var(--site-ink)] transition hover:bg-[var(--site-ink)] hover:text-white",
 };
 
 export default function PageHero({
@@ -54,7 +54,7 @@ export default function PageHero({
   return (
     <section className={`space-y-0 ${className ?? ""}`}>
       {hasHeroMedia ? (
-        <div className="relative h-[42vh] min-h-[320px] max-h-[560px] overflow-hidden rounded-t-[36px] border border-b-0 border-[#D9C9A9] bg-[#11110F]">
+        <div className="relative h-[42vh] min-h-[320px] max-h-[560px] overflow-hidden rounded-t-lg border border-b-0 border-[var(--site-line)] bg-[var(--site-dark)]">
           {coverVideo ? (
             <SiteLoopVideo
               src={coverVideo.url}
@@ -78,8 +78,8 @@ export default function PageHero({
       ) : null}
 
       <div
-        className={`site-surface relative overflow-hidden ${hasHeroMedia ? "rounded-b-[36px]" : "rounded-[36px]"} bg-gradient-to-br ${
-          gradientClass ?? "from-[#F7F1E7] via-[#E6D9C6] to-[#D1C1A1]"
+        className={`site-surface relative overflow-hidden ${hasHeroMedia ? "rounded-b-lg" : "rounded-lg"} bg-gradient-to-br ${
+          gradientClass ?? "from-[var(--site-bg)] via-[var(--site-surface)] to-[#E4DDD2]"
         } p-8 md:p-12`}
       >
         <div className="absolute -left-16 top-8 h-40 w-40 rounded-full bg-[#d9ead7]/60 blur-3xl" />
@@ -90,11 +90,11 @@ export default function PageHero({
         >
           <div className="space-y-6">
             {eyebrow ? <p className="site-eyebrow">{eyebrow}</p> : null}
-            <h1 className="text-4xl font-semibold leading-[1.02] text-[#241c15] md:text-6xl font-[var(--font-display)]">
+            <h1 className="text-4xl font-semibold leading-[1.02] text-[var(--site-ink)] md:text-6xl font-[var(--font-display)]">
               {title}
             </h1>
             {description ? (
-              <p className="max-w-2xl text-base leading-8 text-[#5a4b3e] md:text-[1.08rem]">
+              <p className="max-w-2xl text-base leading-8 text-[var(--site-muted)] md:text-[1.08rem]">
                 {description}
               </p>
             ) : null}
@@ -151,7 +151,7 @@ export default function PageHero({
             <div
               className={
                 panelClassName ??
-                "rounded-[28px] border border-[#d8c7a5] bg-[rgba(255,251,245,0.72)] p-6 text-sm leading-7 text-[#4D3F33] shadow-[0_20px_45px_rgba(58,42,28,0.09)]"
+                "rounded-lg border border-[var(--site-line)] bg-white/80 p-6 text-sm leading-7 text-[var(--site-ink)] shadow-[var(--site-shadow)]"
               }
             >
               {children}

@@ -40,7 +40,7 @@ const WIKI_PROJECTS_PATH = path.resolve(
 const LIMITS = {
   storyLimit: 10,
   storytellerLimit: 10,
-  mediaLimit: 16,
+  mediaLimit: 24,
 };
 
 function createEmptySnapshot() {
@@ -274,7 +274,7 @@ async function fetchProjectContent(projectSlug, wikiRecord, projectCodeRegistry)
         `${EMPATHY_LEDGER_URL}/api/v1/content-hub/storytellers?project=${queryCandidate}&limit=${LIMITS.storytellerLimit}`
       ).catch(() => ({ storytellers: [] })),
       fetchJson(
-        `${EMPATHY_LEDGER_URL}/api/v1/content-hub/media?project=${queryCandidate}&organization_id=${orgId}&limit=${LIMITS.mediaLimit}`
+        `${EMPATHY_LEDGER_URL}/api/v1/content-hub/media?project=${queryCandidate}&limit=${LIMITS.mediaLimit}`
       ).catch(() => ({ media: [] })),
     ]);
 
@@ -305,11 +305,14 @@ async function fetchProjectContent(projectSlug, wikiRecord, projectCodeRegistry)
 
 async function main() {
   try {
-    const [projectSlugs, wikiProjectMap, projectCodeRegistry] = await Promise.all([
+    const [staticSlugs, wikiProjectMap, projectCodeRegistry] = await Promise.all([
       loadProjectSlugs(),
       loadWikiProjectMap(),
       loadProjectCodeRegistrySnapshot(),
     ]);
+
+    // Merge static + wiki slugs so wiki-only projects also get synced
+    const projectSlugs = [...new Set([...staticSlugs, ...wikiProjectMap.keys()])];
 
     const limit = pLimit(8);
     const entries = await Promise.all(

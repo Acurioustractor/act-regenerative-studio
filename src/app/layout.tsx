@@ -47,37 +47,37 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${displayFont.variable} ${serifBody.variable} ${sansFont.variable}`}>
-      <body className="min-h-screen font-[var(--font-body)] text-[var(--site-ink)] antialiased">
-        <div className="site-shell mx-auto flex min-h-screen max-w-[1320px] flex-col px-4 pb-4 md:px-6">
-          {/* subtle top fade */}
-          <header className="sticky top-0 z-40 pt-4 md:pt-5">
-            <div className="relative overflow-hidden rounded-lg border border-[var(--site-line)] bg-[var(--site-panel)] px-5 py-4 shadow-[var(--site-shadow)] backdrop-blur-xl md:px-6">
-              <div className="flex flex-wrap items-center justify-between gap-5">
+      <body className="min-h-screen antialiased">
+        {/* Floating nav — sits on top of full-bleed content */}
+        <header className="fixed left-0 right-0 top-0 z-50 px-6 pt-4 md:px-8 md:pt-5">
+          <div className="mx-auto max-w-[1200px]">
+            <div className="relative overflow-hidden rounded-[var(--site-radius)] border border-[var(--site-line)] bg-[var(--site-panel)] px-5 py-3 shadow-[var(--site-shadow)] backdrop-blur-xl md:px-6">
+              <div className="flex items-center justify-between gap-5">
                 <Link
                   href="/"
-                  className="site-glow-link flex items-center gap-3"
+                  className="flex items-center gap-3"
                 >
-                  <span className="flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg border border-[var(--site-line)] bg-white/80">
+                  <span className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-md">
                     <Image
                       src="/branding/act-logo-square.png"
                       alt="A Curious Tractor logo"
-                      width={40}
-                      height={40}
-                      className="h-8 w-8 object-contain"
+                      width={32}
+                      height={32}
+                      className="h-7 w-7 object-contain"
                       priority
                     />
                   </span>
-                  <span className="font-[var(--font-display)] text-xl font-bold text-[var(--site-ink)]">
+                  <span className="font-[var(--font-display)] text-lg font-bold text-[var(--site-ink)]">
                     A Curious Tractor
                   </span>
                 </Link>
 
-                <nav className="flex flex-wrap items-center gap-1 md:gap-2">
+                <nav className="hidden items-center gap-6 md:flex">
                   {navItems.map((item) => (
                     <Link
                       key={item.label}
                       href={item.href}
-                      className="site-glow-link px-3 py-2 text-[0.7rem] font-semibold uppercase tracking-[0.2em] text-[var(--site-muted)] hover:text-[var(--site-ink)]"
+                      className="text-[12px] font-semibold uppercase tracking-[0.2em] text-[var(--site-muted)] transition-colors hover:text-[var(--site-ink)]"
                     >
                       {item.label}
                     </Link>
@@ -85,9 +85,12 @@ export default function RootLayout({
                 </nav>
               </div>
             </div>
-          </header>
-          <main className="relative z-10 flex-1 py-8 md:py-12">{children}</main>
-          <UnifiedFooter
+          </div>
+        </header>
+
+        {/* Full-bleed main — no max-width constraint */}
+        <main className="relative z-10 min-h-screen">{children}</main>
+        <UnifiedFooter
             currentProject="A Curious Tractor"
             showProjects={true}
             customLinks={[
@@ -105,7 +108,6 @@ export default function RootLayout({
             ]}
             contactEmail="hi@act.place"
           />
-        </div>
       </body>
     </html>
   );

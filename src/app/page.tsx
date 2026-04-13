@@ -241,221 +241,137 @@ export default async function HomePage() {
   const editorialCount = (leadArticle ? 1 : 0) + supportingArticles.length;
 
   return (
-    <div className="space-y-24">
-      <section className="site-surface relative overflow-hidden rounded-lg bg-gradient-to-br from-[#f6efe5] via-[#e7dcc8] to-[#d9c09c] p-8 md:p-12 lg:p-14">
-        <div className="absolute -left-12 top-10 h-40 w-40 rounded-full bg-[#d8ead8] blur-3xl" />
-        <div className="absolute right-0 top-0 h-52 w-52 translate-x-12 -translate-y-10 rounded-full bg-[#d3a24f]/20 blur-3xl" />
-        <div className="absolute bottom-0 left-[18%] h-40 w-40 rounded-full bg-[#c98958]/12 blur-3xl" />
+    <div className="space-y-0">
+      {/* ====== HERO — Full viewport, dark, bold ====== */}
+      <section className="full-bleed relative flex min-h-[92vh] flex-col justify-end overflow-hidden bg-[var(--site-dark)]">
+        {/* Background: lead project video/image with Ken Burns */}
+        <div className="absolute inset-0">
+          {heroLeadProject?.previewMedia?.kind === "video" ? (
+            <SiteLoopVideo
+              src={heroLeadProject.previewMedia.url}
+              poster={heroLeadProject.previewMedia.posterUrl || undefined}
+              title={heroLeadProject.previewMedia.alt}
+              preload="metadata"
+              className="h-full w-full object-cover animate-[slowZoom_30s_ease-in-out_infinite_alternate]"
+            />
+          ) : heroLeadProject?.previewMedia ? (
+            <Image
+              src={heroLeadProject.previewMedia.url}
+              alt={heroLeadProject.previewMedia.alt}
+              fill
+              sizes="100vw"
+              className="object-cover"
+              priority
+            />
+          ) : null}
+          <div className="absolute inset-0 bg-gradient-to-t from-[var(--site-dark)] via-[var(--site-dark)]/60 to-transparent" />
+        </div>
 
-        <div className="relative grid gap-10 lg:grid-cols-[1.16fr_0.84fr] lg:items-end">
-          <div className="space-y-6">
-            <p className="site-eyebrow">A Curious Tractor</p>
-            <div className="flex flex-wrap gap-2">
-              {["Jinibara Country", "Justice & civic tools", "Story systems & public works"].map(
-                (item) => (
-                  <span
-                    key={item}
-                    className="rounded-full border border-[#d8c4a9] bg-white/55 px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-[#5f4f41]"
-                  >
-                    {item}
-                  </span>
-                )
-              )}
-            </div>
-            <h1 className="max-w-[11ch] font-[var(--font-display)] text-[2.85rem] font-semibold leading-[0.92] text-[#1f1913] md:text-[4.55rem]">
-              We build places, story systems, civic tools, and public works you can step into.
-            </h1>
-            <p className="max-w-3xl text-lg leading-8 text-[#5A4A3A] md:text-[1.18rem]">
-              From Jinibara Country, ACT works with communities to make justice
-              platforms, living archives, regenerative places, and cultural
-              works that people can enter, feel, and eventually hold for
-              themselves.
-            </p>
-            <div className="flex flex-wrap gap-4">
-              <Link
-                href="/projects"
-                className="site-glow-link rounded-full bg-[#245c43] px-8 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-white shadow-[0_18px_40px_rgba(36,92,67,0.22)] transition hover:bg-[#1c4935]"
-              >
-                Explore the work
-              </Link>
-              <Link
-                href="/contact"
-                className="site-glow-link rounded-full border border-[#245c43] bg-white/45 px-8 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#1f2b21] transition hover:bg-[#e5f4e4]"
-              >
-                Partner with us
-              </Link>
-            </div>
-
-            <div className="grid gap-3 pt-3 sm:grid-cols-3">
-              <div className="rounded-lg border border-[#d8c4a9] bg-white/58 p-4">
-                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[#6f5c49]">
-                  Proof
-                </p>
-                <p className="mt-2 text-sm leading-6 text-[#4f4135]">
-                  Flagship fields already carry live story, work, service, and media signals.
-                </p>
-              </div>
-              <div className="rounded-lg border border-[#d8c4a9] bg-white/58 p-4">
-                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[#6f5c49]">
-                  Invitation
-                </p>
-                <p className="mt-2 text-sm leading-6 text-[#4f4135]">
-                  People can enter through projects, works, stays, commissions, and partnerships.
-                </p>
-              </div>
-              <div className="rounded-lg border border-[#d8c4a9] bg-white/58 p-4">
-                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[#6f5c49]">
-                  Handover
-                </p>
-                <p className="mt-2 text-sm leading-6 text-[#4f4135]">
-                  The point is community ownership, not institutional gravity.
-                </p>
-              </div>
-            </div>
+        <div className="relative z-10 mx-auto w-full max-w-[1200px] px-8 pb-16 pt-32 md:pb-24">
+          <p className="mb-6 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-[#FAFAF7]/50">
+            A Curious Tractor &middot; Jinibara Country
+          </p>
+          <h1 className="max-w-[14ch] font-[var(--font-display)] text-[clamp(2.8rem,7vw,5.5rem)] font-light leading-[1.05] tracking-[-0.02em] text-[#FAFAF7]">
+            We build places, story systems, and public works you can step into.
+          </h1>
+          <p className="mt-8 max-w-xl text-lg leading-[1.7] text-[#FAFAF7]/65">
+            Regenerative innovation from a working farm. Justice platforms,
+            ethical storytelling, community art, and land care. {featuredProjects.length} flagship
+            fields. One ecosystem.
+          </p>
+          <div className="mt-10 flex flex-wrap gap-4">
+            <Link
+              href="/projects"
+              className="rounded-[var(--site-radius)] bg-[#FAFAF7] px-8 py-4 font-[var(--font-sans)] text-[13px] font-semibold uppercase tracking-[0.14em] text-[var(--site-dark)] transition hover:-translate-y-0.5 hover:shadow-[0_8px_40px_rgba(250,250,247,0.15)]"
+            >
+              Enter the work
+            </Link>
+            <Link
+              href="/art"
+              className="rounded-[var(--site-radius)] border border-[#FAFAF7]/25 px-8 py-4 font-[var(--font-sans)] text-[13px] font-semibold uppercase tracking-[0.14em] text-[#FAFAF7]/80 transition hover:border-[#FAFAF7]/50 hover:text-[#FAFAF7]"
+            >
+              See the art &rarr;
+            </Link>
           </div>
 
-          <div className="grid gap-4">
-            {heroLeadProject ? (
-              <Link
-                href={heroLeadProject.href}
-                className="group relative overflow-hidden rounded-lg border border-[#253a2f] bg-[#171612] text-[#f4ecde] shadow-[0_24px_60px_rgba(43,31,18,0.2)]"
-              >
-                <div className="absolute inset-0">
-                  {heroLeadProject.previewMedia?.kind === "video" ? (
-                    <SiteLoopVideo
-                      src={heroLeadProject.previewMedia.url}
-                      poster={heroLeadProject.previewMedia.posterUrl || undefined}
-                      title={heroLeadProject.previewMedia.alt}
-                      preload="metadata"
-                      className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                    />
-                  ) : heroLeadProject.previewMedia ? (
-                    <Image
-                      src={heroLeadProject.previewMedia.url}
-                      alt={heroLeadProject.previewMedia.alt}
-                      fill
-                      sizes="(min-width: 1024px) 42vw, 100vw"
-                      className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                    />
-                  ) : null}
-                  <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,8,0.14)_0%,rgba(10,10,8,0.3)_34%,rgba(10,10,8,0.82)_100%)]" />
-                </div>
-                <div className="relative flex min-h-[420px] flex-col justify-between p-6 md:min-h-[480px] md:p-7">
-                  <div className="flex flex-wrap gap-2">
-                    <span className="rounded-full border border-white/15 bg-black/35 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.24em] text-[#f3ebdd]">
-                      Featured now
-                    </span>
-                    <span className="rounded-full border border-white/15 bg-black/35 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.24em] text-[#f3ebdd]">
-                      {heroLeadProject.eyebrow}
-                    </span>
-                    {heroLeadProject.previewMedia?.kind === "video" ? (
-                      <span className="rounded-full border border-white/15 bg-black/35 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.24em] text-[#f3ebdd]">
-                        Video
-                      </span>
-                    ) : null}
-                  </div>
-                  <div className="max-w-xl">
-                    <p className="text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-[#cfa16b]">
-                      Current field
-                    </p>
-                    <h2 className="mt-4 font-[var(--font-display)] text-[2.2rem] font-semibold leading-[1.02] text-[#fff8ef] md:text-[2.9rem]">
-                      {heroLeadProject.title}
-                    </h2>
-                    <p className="mt-3 text-sm font-semibold text-[#9dd0a0]">
-                      {heroLeadProject.tagline}
-                    </p>
-                    <p className="mt-4 max-w-lg text-sm leading-7 text-[#d8c8b4]">
-                      {heroLeadProject.description}
-                    </p>
-                    <span className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#fff6ea] transition group-hover:gap-3">
-                      Open flagship field
-                      <span aria-hidden="true">→</span>
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            ) : (
-              <div className="overflow-hidden rounded-lg border border-[#253a2f] bg-[#171612] p-6 text-[#f4ecde] shadow-[0_24px_60px_rgba(43,31,18,0.2)]">
-                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.3em] text-[#cfa16b]">
-                  Current field
-                </p>
-                <p className="mt-4 font-[var(--font-display)] text-3xl font-semibold leading-tight">
-                  One studio.
-                  <br />
-                  Five flagship public fields.
-                </p>
-                <div className="mt-6 space-y-3 text-sm leading-7 text-[#d8c8b4]">
-                  <p>JusticeHub</p>
-                  <p>Goods on Country</p>
-                  <p>The Harvest</p>
-                  <p>Empathy Ledger</p>
-                  <p>Black Cockatoo Valley</p>
-                </div>
+          {/* Stats strip */}
+          <div className="mt-16 flex flex-wrap gap-12 border-t border-[#FAFAF7]/10 pt-8">
+            {[
+              { n: "58", l: "Projects" },
+              { n: "319", l: "Storytellers" },
+              { n: "10", l: "Artworks" },
+              { n: "191", l: "Wiki articles" },
+            ].map(({ n, l }) => (
+              <div key={l}>
+                <p className="font-[var(--font-display)] text-3xl font-bold text-[#FAFAF7]">{n}</p>
+                <p className="mt-1 font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.3em] text-[#FAFAF7]/40">{l}</p>
               </div>
-            )}
-
-            <div className="grid gap-4 sm:grid-cols-3">
-              <div className="rounded-lg border border-[#d8c4a9] bg-white/65 p-5 sm:col-span-1">
-                <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[#6f5c49]">
-                  What people come for
-                </p>
-                <p className="mt-3 text-sm leading-7 text-[#4d3f33]">
-                  A place to gather, tools that communities can use, stories
-                  that stay in relationship, and works that make pressure felt.
-                </p>
-                <p className="mt-4 text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[#45614d]">
-                  What holds the line
-                </p>
-                <p className="mt-2 text-sm leading-7 text-[#355242]">
-                  Country sets the pace and community ownership sets the test.
-                  If it cannot be handed over, it is not finished.
-                </p>
-              </div>
-              {heroSupportCards.map(({ project, supportStill }) => (
-                <Link
-                  key={project.slug}
-                  href={project.href}
-                  className="group relative overflow-hidden rounded-lg border border-[#d8c4a9] bg-black/15 shadow-[0_18px_40px_rgba(50,42,31,0.11)]"
-                >
-                  {supportStill ? (
-                    <>
-                      <div className="absolute inset-0">
-                        <img
-                          src={supportStill.url}
-                          alt={supportStill.alt}
-                          className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                        />
-                        <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(10,10,8,0.08)_0%,rgba(10,10,8,0.22)_30%,rgba(10,10,8,0.82)_100%)]" />
-                      </div>
-                      <div className="relative flex min-h-[220px] flex-col justify-end p-5">
-                        <p className="text-[0.62rem] font-semibold uppercase tracking-[0.24em] text-[#cfa16b]">
-                          {project.eyebrow}
-                        </p>
-                        <h3 className="mt-3 font-[var(--font-display)] text-[1.5rem] font-semibold leading-[1.02] text-[#fff7ed]">
-                          {project.title}
-                        </h3>
-                        <p className="mt-2 line-clamp-2 text-sm leading-6 text-[#eadfce]">
-                          {project.tagline}
-                        </p>
-                      </div>
-                    </>
-                  ) : (
-                    <div className="flex min-h-[220px] flex-col justify-end bg-[linear-gradient(145deg,rgba(214,234,215,0.85),rgba(255,255,255,0.68))] p-5">
-                      <p className="text-[0.62rem] font-semibold uppercase tracking-[0.24em] text-[#45614d]">
-                        {project.eyebrow}
-                      </p>
-                      <h3 className="mt-3 font-[var(--font-display)] text-[1.5rem] font-semibold leading-[1.02] text-[#1f2b21]">
-                        {project.title}
-                      </h3>
-                      <p className="mt-2 line-clamp-2 text-sm leading-6 text-[#355242]">
-                        {project.tagline}
-                      </p>
-                    </div>
-                  )}
-                </Link>
-              ))}
-            </div>
+            ))}
           </div>
+        </div>
+      </section>
+
+      {/* ====== FLAGSHIP FIELDS ====== */}
+      <section className="bg-[var(--site-bg)] px-8 py-24">
+        <div className="mx-auto max-w-[1200px]">
+          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--site-muted)]">Five flagship fields</p>
+          <h2 className="mt-4 max-w-[18ch] font-[var(--font-display)] text-[clamp(2rem,4vw,3.5rem)] font-light leading-[1.1] tracking-[-0.01em] text-[var(--site-ink)]">
+            How the work meets the ground
+          </h2>
+          <p className="mt-4 max-w-xl text-[var(--site-muted)]">
+            Each field is a live platform, place, or system that communities can enter, test, and eventually hold for themselves.
+          </p>
+        </div>
+
+        {/* Flagship project cards */}
+        <div className="mx-auto mt-16 grid max-w-[1200px] gap-6 md:grid-cols-2 lg:grid-cols-3">
+          {featuredProjects.map((project) => (
+            <Link
+              key={project.slug}
+              href={project.href}
+              className="group relative overflow-hidden rounded-[var(--site-radius)] border border-[var(--site-line)] bg-white transition-all duration-300 hover:-translate-y-1.5 hover:shadow-[var(--site-shadow-hover)]"
+            >
+              {/* Card image */}
+              <div className="relative aspect-[16/10] overflow-hidden">
+                {project.previewMedia?.kind === "video" ? (
+                  <SiteLoopVideo
+                    src={project.previewMedia.url}
+                    poster={project.previewMedia.posterUrl || undefined}
+                    title={project.previewMedia.alt}
+                    preload="metadata"
+                    className="h-full w-full object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                ) : project.previewMedia ? (
+                  <Image
+                    src={project.previewMedia.url}
+                    alt={project.previewMedia.alt}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-105"
+                  />
+                ) : (
+                  <div className="flex h-full items-center justify-center bg-[var(--site-surface)]">
+                    <span className="font-[var(--font-display)] text-2xl font-bold text-[var(--site-muted)]/30">{project.title}</span>
+                  </div>
+                )}
+              </div>
+              {/* Card body */}
+              <div className="p-6">
+                <p className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.3em] text-[var(--site-green)]">
+                  {project.eyebrow}
+                </p>
+                <h3 className="mt-2 font-[var(--font-display)] text-xl font-semibold leading-tight text-[var(--site-ink)]">
+                  {project.title}
+                </h3>
+                <p className="mt-2 line-clamp-2 text-sm leading-relaxed text-[var(--site-muted)]">
+                  {project.tagline}
+                </p>
+                <span className="mt-4 inline-flex items-center gap-2 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--site-ink)] transition-all group-hover:gap-3">
+                  Enter field <span aria-hidden="true">&rarr;</span>
+                </span>
+              </div>
+            </Link>
+          ))}
         </div>
       </section>
 

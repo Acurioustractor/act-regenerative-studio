@@ -105,6 +105,7 @@ export default function RootLayout({
               { label: "Ecosystem", href: "/ecosystem" },
               { label: "Projects", href: "/projects" },
               { label: "Works", href: "/art" },
+              { label: "Media", href: "/media" },
               { label: "Method", href: "/method" },
               { label: "Wiki", href: "/wiki" },
               { label: "People", href: "/people" },

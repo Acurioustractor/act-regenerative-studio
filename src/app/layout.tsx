@@ -21,11 +21,11 @@ const sansFont = Work_Sans({
 });
 
 const navItems = [
-  { label: "Studio", href: "/studio" },
-  { label: "Ecosystem", href: "/ecosystem" },
   { label: "Projects", href: "/projects" },
-  { label: "Works", href: "/art" },
+  { label: "Art", href: "/art" },
+  { label: "Farm", href: "/farm" },
   { label: "Method", href: "/method" },
+  { label: "Wiki", href: "/wiki" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -94,16 +94,13 @@ export default function RootLayout({
             currentProject="A Curious Tractor"
             showProjects={true}
             customLinks={[
-              { label: "Studio", href: "/studio" },
-              { label: "Ecosystem", href: "/ecosystem" },
               { label: "Projects", href: "/projects" },
-              { label: "Works", href: "/art" },
-              { label: "Media", href: "/media" },
+              { label: "Art", href: "/art" },
+              { label: "Farm", href: "/farm" },
               { label: "Method", href: "/method" },
-              { label: "Wiki", href: "/wiki" },
-              { label: "People", href: "/people" },
               { label: "About", href: "/about" },
               { label: "Partners", href: "/partners" },
+              { label: "Wiki", href: "/wiki" },
               { label: "Contact", href: "/contact" },
             ]}
             contactEmail="hi@act.place"

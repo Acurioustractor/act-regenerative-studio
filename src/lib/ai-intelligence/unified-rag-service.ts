@@ -95,8 +95,7 @@ export interface RAGResponse {
 // SUPABASE CLIENT (lazy initialization to avoid build-time errors)
 // ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
-// eslint-disable-next-line @typescript-eslint/no-explicit-any
-let _supabase: any = null;
+let _supabase: any = null; // eslint-disable-line -- untyped RPC calls need any
 
 function getSupabase() {
   if (!_supabase) {

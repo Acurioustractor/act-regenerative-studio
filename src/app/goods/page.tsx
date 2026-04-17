@@ -1,340 +1,403 @@
+import Image from "next/image";
 import Link from "next/link";
-import PageHero from "../../components/PageHero";
-import SectionHeading from "../../components/SectionHeading";
-import { ProjectEntryBridgeSection } from "@/components/projects";
+
+import { ImageLightbox } from "@/components/flagship/ImageLightbox";
+import { FullscreenVideo } from "@/components/flagship/FullscreenVideo";
+import { QuickInquiryForm } from "@/components/flagship/QuickInquiryForm";
+import { AnimatedStat } from "@/components/flagship/AnimatedStat";
+import { ScrollReveal } from "@/components/flagship/ScrollReveal";
+import { RelatedFields } from "@/components/flagship/RelatedFields";
+import { EditableImage } from "@/components/flagship/EditableImage";
+import { PhotoStrip } from "@/components/flagship/PhotoStrip";
+import {
+  DocHero,
+  SectionHeader,
+  HairlineGrid,
+  HairlineCell,
+  LeadVoice,
+  DarkCTA,
+} from "@/components/design-system";
 import { getProjectData } from "@/lib/projects/get-project-data";
-import { getRelatedFeaturedWorks } from "@/lib/works/live-featured-works";
 import { notFound } from "next/navigation";
 
 export const metadata = {
   title: "Goods on Country | A Curious Tractor",
   description:
-    "Circular manufacturing shaped with remote communities so waste, utility, and local value can be reorganised on more community-led terms.",
+    "Indestructible beds and washing machines from 100% recycled plastic, co-designed with remote Aboriginal communities across Australia.",
 };
-
-const products = [
-  {
-    name: "Beds",
-    description: "Community-shaped beds made to respond to actual local conditions and use.",
-    status: "Field-tested",
-  },
-  {
-    name: "Mattresses",
-    description: "Durable mattress designs suited to hygiene, climate, and long use cycles.",
-    status: "Current line",
-  },
-  {
-    name: "Washing Machines",
-    description: "Laundry capability emerging from identified community need and practical service gaps.",
-    status: "Prototype stage",
-  },
-  {
-    name: "Fridges",
-    description: "Essential goods being explored as the product line and manufacturing model mature.",
-    status: "Exploration",
-  },
-];
-
-const deploymentCommunities = [
-  "Kalgoorlie",
-  "Mt Isa (Kalkadoon Country)",
-  "Tennant Creek",
-  "Palm Island",
-];
-
-const impactGoals = [
-  { metric: "Waste", label: "Less material leaving community as dead cost" },
-  { metric: "Jobs", label: "More local work, skills, and manufacturing capacity" },
-  { metric: "Choice", label: "Goods shaped by local need rather than generic supply chains" },
-  { metric: "Value", label: "More value retained closer to the community that generates it" },
-];
 
 export default async function GoodsPage() {
   const project = await getProjectData("goods-on-country");
+  if (!project) notFound();
 
-  if (!project) {
-    notFound();
-  }
+  const galleryImages = project.mediaGallery
+    .filter((m) => m.type === "image" || m.type.startsWith("image"))
+    .slice(0, 16);
 
-  const relatedWorks = await getRelatedFeaturedWorks(
-    "goods-on-country",
-    project.title,
-    3
-  );
+  const storytellers = project.empathyLedgerContent?.featured.storytellers || [];
+  const stories = project.empathyLedgerContent?.featured.stories || [];
+
+  const portraitPeople = storytellers
+    .filter(
+      (t) =>
+        t.profile_image_url &&
+        t.bio &&
+        !(t.display_name || t.full_name || "").includes("ACT") &&
+        !(t.display_name || t.full_name || "").includes("Team") &&
+        !(t.display_name || t.full_name || "").includes("Accounts"),
+    )
+    .slice(0, 3);
+
+  const leadStory = stories[0];
+  const leadStoryteller = leadStory
+    ? storytellers.find(
+        (s) => (s.display_name || s.full_name) === leadStory.storyteller_display_name,
+      )
+    : null;
 
   return (
-    <div className="space-y-16">
-      <PageHero
-        eyebrow="Circular goods"
-        title="Manufacturing that keeps value closer to community"
-        description={project.description}
-        coverImage={project.coverImage}
+    <>
+      <DocHero
+        eyebrow="Goods"
+        title="Beds that change lives"
+        titleMaxChars={14}
+        subhead="389 products. 8 communities. 9,225kg of plastic diverted from landfill."
         coverVideo={project.coverVideo}
-        actions={[
-          ...(project.projectWebsiteUrl
-            ? [{ label: "Visit Goods on Country", href: project.projectWebsiteUrl, external: true as const }]
-            : []),
-          { label: "Partner With Us", href: "/contact", variant: "outline" },
-        ]}
-      >
-        <div className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
-            The problem we address
-          </p>
-          <p>
-            Remote communities face dual extraction: premium prices for essential goods
-            AND waste they cannot process. We flip this model.
-          </p>
-        </div>
-      </PageHero>
+        coverImage={project.coverImage}
+        primaryCta={{ label: "Shop at goodsoncountry.com", href: "https://goodsoncountry.com", external: true }}
+        secondaryCta={{ label: "The full story →", href: "#story" }}
+      />
 
-      <ProjectEntryBridgeSection project={project} relatedWorks={relatedWorks} />
-
-      {/* The Problem */}
-      <section className="rounded-3xl border border-[#E3D4BA] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12">
-        <div className="space-y-6">
-          <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E] md:text-3xl">
-            Why this work matters
-          </h2>
-
-          <div className="grid gap-6 md:grid-cols-2">
-            <div className="space-y-3">
-              <h3 className="text-lg font-semibold text-[#2F3E2E]">Economic extraction</h3>
-              <ul className="space-y-2 text-sm text-[#4D3F33]">
-                <li className="flex items-start gap-2">
-                  <span className="text-[#A24A2E]">•</span>
-                  <span>Premium prices for essential goods</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#A24A2E]">•</span>
-                  <span>Products often culturally inappropriate or low quality</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#A24A2E]">•</span>
-                  <span>Value extracted through expensive products</span>
-                </li>
-              </ul>
-            </div>
-
-            <div className="space-y-3">
-              <h3 className="text-lg font-semibold text-[#2F3E2E]">Environmental burden</h3>
-              <ul className="space-y-2 text-sm text-[#4D3F33]">
-                <li className="flex items-start gap-2">
-                  <span className="text-[#A24A2E]">•</span>
-                  <span>Plastic waste accumulates with no local recycling</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#A24A2E]">•</span>
-                  <span>Unsafe/dirty mattresses affecting sleep and hygiene</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#A24A2E]">•</span>
-                  <span>Dignity compromised by poor-quality goods</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* How It Works */}
-      <section className="space-y-8">
-        <SectionHeading
-          eyebrow="Process"
-          title="How it works"
-          description="A circular model that starts with local need, local waste, and a longer path toward community ownership."
-        />
-        <div className="grid gap-4 md:grid-cols-3 lg:grid-cols-6">
-          {[
-            { step: "1", title: "Co-Design", description: "Communities identify needed products and design specifications" },
-            { step: "2", title: "Waste Collection", description: "Plastic waste gathered from communities as input material" },
-            { step: "3", title: "Manufacturing", description: "Products made from recycled plastic + other inputs" },
-            { step: "4", title: "Distribution", description: "Sold back to communities at fair prices" },
-            { step: "5", title: "Profit-Sharing", description: "40% of profits to source communities" },
-            { step: "6", title: "Capacity Transfer", description: "Communities learn manufacturing, eventually operate independently" },
-          ].map((item) => (
-            <div
-              key={item.step}
-              className="rounded-2xl border border-[#E3D4BA] bg-white p-4 text-center"
-            >
-              <div className="mx-auto mb-2 flex h-8 w-8 items-center justify-center rounded-full bg-[#4CAF50] text-sm font-bold text-white">
-                {item.step}
-              </div>
-              <h3 className="font-semibold text-[#2F3E2E] text-sm">{item.title}</h3>
-              <p className="mt-1 text-xs text-[#5A4A3A]">{item.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Products */}
-      <section className="space-y-8">
-        <SectionHeading
-          eyebrow="Products"
-          title="What we make"
-          description="Essential products co-designed with communities, manufactured using local waste."
-        />
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {products.map((product) => (
-            <div
-              key={product.name}
-              className="rounded-2xl border border-[#E3D4BA] bg-white p-6"
-            >
-              <div className="flex items-center justify-between mb-2">
-                <h3 className="font-semibold text-[#2F3E2E]">{product.name}</h3>
-                <span className="rounded-full bg-[#E5F4E4] px-2 py-1 text-xs text-[#2F3E2E]">
-                  {product.status}
-                </span>
-              </div>
-              <p className="text-sm text-[#5A4A3A]">{product.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Impact Goals */}
-      <section className="rounded-3xl border border-[#E3D4BA] bg-gradient-to-br from-[#2F3E2E] to-[#1a2a1a] p-8 md:p-12">
-        <div className="text-center mb-8">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#9AA396]">Direction of travel</p>
-          <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-white md:text-3xl">
-            What the model is aiming toward
-          </h2>
-        </div>
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {impactGoals.map((goal) => (
-            <div
-              key={goal.label}
-              className="rounded-2xl border border-[#4a5a4a] bg-[#3a4a3a]/50 p-6 text-center"
-            >
-              <div className="text-3xl font-bold text-[#4CAF50]">{goal.metric}</div>
-              <p className="mt-2 text-sm text-[#B8C4B8]">{goal.label}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Deployment Communities */}
-      <section className="space-y-8">
-        <SectionHeading
-          eyebrow="Communities"
-          title="Where we work"
-          description="Current community relationships and field contexts connected to the Goods on Country line of work."
-        />
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {deploymentCommunities.map((community) => (
-            <div
-              key={community}
-              className="rounded-2xl border border-[#E3D4BA] bg-white/70 p-6 text-center"
-            >
-              <span className="text-2xl">📍</span>
-              <h3 className="mt-2 font-semibold text-[#2F3E2E]">{community}</h3>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* Orange Sky Connection */}
-      <section className="rounded-3xl border border-[#E3D4BA] bg-gradient-to-br from-[#F4E8DD] via-[#E6CBB7] to-[#D1A788] p-8 md:p-12">
-        <div className="grid gap-8 lg:grid-cols-2 items-center">
-          <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">Connection</p>
-            <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E] md:text-3xl">
-              From Orange Sky to Remote Communities
-            </h2>
-            <p className="mt-4 text-sm text-[#5A4A3A]">
-              Nicholas Marchesi also co-founded Orange Sky. That practical history of
-              laundry access and dignity still informs parts of Goods on Country,
-              especially where communities identify washing capability as a critical gap.
+      {/* ——— THE WHY ——— */}
+      <ScrollReveal>
+        <section id="story" className="px-8 py-32 md:py-44">
+          <div className="mx-auto max-w-[640px]">
+            <p className="font-[var(--font-body)] text-[clamp(1.3rem,2.5vw,1.75rem)] leading-[1.6] text-[var(--site-ink)]">
+              In remote communities, families sleep on floors. Standard goods
+              break in weeks. Nobody comes to fix them. The replacement cycle
+              drains resources and dignity at the same time.
             </p>
           </div>
-          <div className="text-center">
-            <div className="inline-block rounded-2xl bg-white/70 p-6">
-              <p className="text-sm text-[#4D3F33] italic">
-                "What if useful goods, local dignity, and circular manufacturing could
-                be designed together instead of arriving as separate problems?"
+        </section>
+      </ScrollReveal>
+
+      {/* ——— FULL-BLEED PHOTO ——— */}
+      <section className="full-bleed mt-8 md:mt-16">
+        <div className="relative h-[50vh] md:h-[60vh] w-full overflow-hidden">
+          <EditableImage
+            src="/media/field-stills/goods-community-build.jpg"
+            alt="Community stretch bed build in remote Australia"
+            slot="goods-bleed-1"
+            projectSlug="goods-on-country"
+            fill sizes="100vw" className="object-cover object-top" priority
+          />
+        </div>
+      </section>
+
+      {leadStory?.excerpt ? (
+        <ScrollReveal>
+          <LeadVoice
+            quote={leadStory.excerpt}
+            authorName={leadStory.storyteller_display_name || ""}
+            authorImageUrl={leadStoryteller?.profile_image_url}
+            authorTagline={leadStoryteller?.custom_tagline}
+          />
+        </ScrollReveal>
+      ) : null}
+
+      {/* ——— THE STRETCH BED — Product story ——— */}
+      <ScrollReveal>
+        <section className="px-8 py-32 md:py-44">
+          <div className="mx-auto max-w-[1200px] grid gap-20 lg:grid-cols-2 lg:items-center">
+            <div>
+              <SectionHeader
+                eyebrow="The stretch bed"
+                title="Three materials. No tools. Five minutes."
+                lede="100% recycled HDPE plastic frame. Galvanised steel poles. Heavy-duty canvas. 26kg flat-packed, supports 200kg, assembles tool-free in five minutes, washes with a garden hose, and every component is individually replaceable. Built to last 10+ years."
+              />
+              <p className="mt-6 font-[var(--font-body)] text-[15px] leading-[1.8] text-[var(--site-muted)]">
+                Not designed in an office. Co-designed with Elders in Tennant Creek,
+                tested in Alice Springs, refined on Palm Island. Fred Campbell,
+                a Western Arrernte man from Oonchiumpa, consults on every product
+                for cultural appropriateness.
+              </p>
+            </div>
+            {project.coverVideo ? (
+              <FullscreenVideo
+                src={project.coverVideo.url}
+                poster={project.coverVideo.posterUrl}
+                title="Stretch bed community build"
+              />
+            ) : galleryImages[1] ? (
+              <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--site-radius)]">
+                <Image src={galleryImages[1].url} alt="The Stretch Bed" fill sizes="50vw" className="object-cover" />
+              </div>
+            ) : null}
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ——— PAKKIMJALKI KARI — The washing machine ——— */}
+      <ScrollReveal>
+        <section className="full-bleed bg-[var(--site-surface)] px-8 py-32 md:py-44">
+          <div className="mx-auto max-w-[1200px] grid gap-20 lg:grid-cols-2 lg:items-center">
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--site-radius)]">
+              <EditableImage src="/media/field-stills/goods-delivery-2.jpg" alt="Goods on Country community deployment" slot="goods-washing" projectSlug="goods-on-country" fill sizes="50vw" className="object-cover" />
+            </div>
+            <div>
+              <SectionHeader
+                eyebrow="Pakkimjalki Kari"
+                title="The washing machine named in language"
+                lede={
+                  <>
+                    Elder Dianne Stokes, a Warumungu woman from Tennant Creek, named
+                    the industrial washing machine in language. 20 machines deployed
+                    across communities. Each one is IoT-instrumented, sending
+                    telemetry data back to ACT&apos;s R&D program for remote fleet
+                    management and anomaly detection.
+                  </>
+                }
+              />
+              <p className="mt-6 font-[var(--font-body)] text-[15px] leading-[1.8] text-[var(--site-muted)]">
+                The washing machine fleet serves a dual purpose: providing clean
+                laundry infrastructure to communities, and generating data that
+                makes the next generation of community-deployed goods smarter.
               </p>
             </div>
           </div>
-        </div>
-      </section>
+        </section>
+      </ScrollReveal>
 
-      {/* Visit Registry */}
-      <section className="rounded-3xl border border-[#E3D4BA] bg-white p-8 text-center md:p-12">
-        <div className="space-y-6">
-          <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E] md:text-3xl">
-            View the Goods Registry
-          </h2>
-          <p className="mx-auto max-w-xl text-sm text-[#5A4A3A]">
-            Browse the current product line and follow how the work is being shaped
-            through community need, fabrication, and field learning.
+      {/* ——— FROM RUBBISH TO BED — Manufacturing ——— */}
+      <ScrollReveal>
+        <section className="px-8 py-32 md:py-44">
+          <div className="mx-auto max-w-[1200px]">
+            <SectionHeader
+              eyebrow="How it's made"
+              eyebrowColor="muted"
+              title="From rubbish to bed"
+            />
+            <HairlineGrid columns={5} className="mt-16">
+              {[
+                { step: "01", title: "Collect", desc: "Recycled HDPE plastic sourced from community waste and Envirobank" },
+                { step: "02", title: "Shred", desc: "Plastic shredded into consistent feedstock at containerised facility" },
+                { step: "03", title: "Press", desc: "High-pressure moulding into UV-stabilised frames and components" },
+                { step: "04", title: "Cut + assemble", desc: "Canvas cut, steel galvanised, components flat-packed" },
+                { step: "05", title: "Deploy", desc: "Shipped to communities. Every unit gets a QR code for lifetime tracking" },
+              ].map((item) => (
+                <HairlineCell key={item.step}>
+                  <p className="font-[var(--font-display)] text-3xl font-light text-[var(--site-green)]">{item.step}</p>
+                  <h3 className="mt-3 font-[var(--font-display)] text-lg font-semibold text-[var(--site-ink)]">{item.title}</h3>
+                  <p className="mt-2 font-[var(--font-body)] text-[14px] leading-[1.7] text-[var(--site-muted)]">{item.desc}</p>
+                </HairlineCell>
+              ))}
+            </HairlineGrid>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ——— PHOTO STRIP ——— */}
+      {galleryImages.length >= 6 && (
+        <section className="px-8 py-8">
+          <div className="mx-auto max-w-[1200px]">
+            <PhotoStrip images={galleryImages.slice(0, 3)} columns={3} />
+          </div>
+        </section>
+      )}
+
+      {/* ——— THE VISION — Containerised factories ——— */}
+      <ScrollReveal>
+        <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
+          <div className="mx-auto max-w-[800px]">
+            <SectionHeader
+              eyebrow="The vision"
+              title="Containerised factories on Country"
+              onDark
+              lede="The scale vision is not a central factory that ships to communities. It is containerised manufacturing infrastructure that communities own and operate. Each facility is self-contained in shipping containers, produces 1,000 to 1,500 goods annually, and employs 4 to 6 local workers processing locally-sourced recycled plastic."
+            />
+            <div className="mt-16 grid gap-8 md:grid-cols-3">
+              {[
+                { year: "2026", label: "First facility", desc: "Jinibara Country, QLD. 1,500 beds, 6 workers." },
+                { year: "2027", label: "Second facility", desc: "Oonchiumpa partnership, Alice Springs. Combined 3,500 units." },
+                { year: "2028", label: "Third facility", desc: "Top End or Torres Strait. 5,000+ units/year, 18 workers." },
+              ].map((item) => (
+                <div key={item.year} className="border-l-2 border-[var(--site-clay)]/30 pl-6">
+                  <p className="font-[var(--font-display)] text-3xl font-bold text-[#FAFAF7]">{item.year}</p>
+                  <p className="mt-2 font-[var(--font-sans)] text-[12px] font-semibold uppercase tracking-[0.1em] text-[var(--site-clay)]">{item.label}</p>
+                  <p className="mt-2 font-[var(--font-body)] text-[14px] leading-[1.7] text-[#FAFAF7]/50">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ——— WHERE WE WORK — Locations ——— */}
+      <ScrollReveal>
+        <section className="px-8 py-32 md:py-44">
+          <div className="mx-auto max-w-[1200px]">
+            <SectionHeader
+              eyebrow="Communities"
+              eyebrowColor="muted"
+              title="Where the work is"
+            />
+            <div className="mt-16 grid gap-6 md:grid-cols-2 lg:grid-cols-4">
+              {[
+                { place: "Palm Island", detail: "141 beds deployed. PICC partnership. Housing expansion in progress." },
+                { place: "Tennant Creek", detail: "200+ beds across multiple orgs. Anyinginyi Health washing fleet. Centrecorp pipeline for Utopia Homelands." },
+                { place: "Alice Springs", detail: "Oonchiumpa manufacturing partner. Fred Campbell cultural consultation. Containerised facility planned." },
+                { place: "East Arnhem", detail: "Miwatj Health exploring fleet across 8 clinics. 500+ mattress requests from Groote Eylandt." },
+              ].map((item) => (
+                <div key={item.place} className="rounded-[var(--site-radius)] border border-[var(--site-line)] p-8">
+                  <h3 className="font-[var(--font-display)] text-xl font-semibold text-[var(--site-ink)]">{item.place}</h3>
+                  <p className="mt-3 font-[var(--font-body)] text-[14px] leading-[1.7] text-[var(--site-muted)]">{item.detail}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ——— PEOPLE ——— */}
+      {portraitPeople.length >= 2 && (
+        <ScrollReveal>
+          <section className="px-8 py-32 md:py-44">
+            <div className="mx-auto max-w-[1200px]">
+              <SectionHeader
+                eyebrow="33 storytellers across 8 communities"
+                eyebrowColor="muted"
+                title="The people"
+              />
+              <div className="mt-16 grid gap-10 md:grid-cols-3">
+                {portraitPeople.map((person) => {
+                  const name = person.display_name || person.full_name || "Community voice";
+                  const bio = person.bio || "";
+                  const shortBio = bio.length > 140 ? bio.substring(0, 140).replace(/\s\S*$/, "") + "..." : bio;
+                  return (
+                    <div key={name}>
+                      <div className="relative aspect-[3/4] overflow-hidden rounded-[var(--site-radius)]">
+                        <Image src={person.profile_image_url!} alt={name} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                        <div className="absolute bottom-0 left-0 right-0 p-8">
+                          <p className="font-[var(--font-display)] text-xl font-semibold text-[#FAFAF7]">{name}</p>
+                          {person.custom_tagline && (
+                            <p className="mt-1 font-[var(--font-sans)] text-[11px] uppercase tracking-[0.15em] text-[#FAFAF7]/60">{person.custom_tagline}</p>
+                          )}
+                        </div>
+                      </div>
+                      <p className="mt-5 font-[var(--font-body)] text-[15px] leading-[1.7] text-[var(--site-muted)]">{shortBio}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {/* ——— PHOTO STRIP ——— */}
+      {galleryImages.length >= 9 && (
+        <section className="px-8 py-8">
+          <div className="mx-auto max-w-[1200px]">
+            <PhotoStrip images={galleryImages.slice(3, 7)} columns={4} aspectRatio="square" />
+          </div>
+        </section>
+      )}
+
+      {/* ——— STATS ——— */}
+      <ScrollReveal>
+        <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
+          <div className="mx-auto max-w-[1200px]">
+            <div className="grid grid-cols-2 gap-12 md:grid-cols-4 md:gap-16 text-center">
+              {[
+                { n: "389", l: "Products deployed" },
+                { n: "9,225", l: "kg plastic diverted" },
+                { n: "1,000+", l: "Lives impacted" },
+                { n: "33", l: "Community storytellers" },
+              ].map(({ n, l }) => (
+                <AnimatedStat key={l} value={n} label={l} />
+              ))}
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ——— GALLERY ——— */}
+      {galleryImages.length > 4 && (
+        <ScrollReveal>
+          <section className="px-8 py-32 md:py-44">
+            <div className="mx-auto max-w-[1200px]">
+              <SectionHeader
+                eyebrow="From the field"
+                eyebrowColor="muted"
+                title="The work in place"
+              />
+              <div className="mt-14">
+                <ImageLightbox images={galleryImages.slice(4)} />
+              </div>
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {/* ——— BIG CTA ——— */}
+      <ScrollReveal>
+        <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
+          <div className="mx-auto max-w-[800px] text-center">
+            <h2 className="font-[var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-light leading-[1.1] text-[#FAFAF7]">
+              A good bed can prevent heart disease.
+            </h2>
+            <p className="mx-auto mt-8 max-w-lg font-[var(--font-body)] text-lg leading-[1.8] text-[#FAFAF7]/60">
+              Buy a bed, sponsor a bed, or partner with us on the next community deployment.
+            </p>
+            <div className="mt-12 flex flex-wrap justify-center gap-5">
+              <DarkCTA variant="primary" href="https://goodsoncountry.com" external>
+                Buy or sponsor a bed
+              </DarkCTA>
+              <DarkCTA variant="ghost" href="#inquiry">Partner with us →</DarkCTA>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ——— INQUIRY ——— */}
+      <ScrollReveal>
+        <section id="inquiry" className="px-8 py-32 md:py-44">
+          <div className="mx-auto grid max-w-[1100px] gap-20 lg:grid-cols-[1fr_1.2fr] lg:items-start">
+            <div>
+              <SectionHeader
+                eyebrow="Get in touch"
+                eyebrowColor="muted"
+                title="Work with us"
+                lede="Communities, organisations, health services, and funders who want to see essential goods designed with dignity."
+              />
+              <p className="mt-6 font-[var(--font-body)] text-[15px] text-[var(--site-muted)]">
+                Or email{" "}
+                <a href="mailto:hi@act.place" className="text-[var(--site-green)] underline">hi@act.place</a>
+              </p>
+            </div>
+            <QuickInquiryForm projectName="Goods on Country" projectSlug="goods-on-country" projectCode="ACT-GD" />
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ——— RELATED ——— */}
+      <RelatedFields currentSlug="goods-on-country" />
+
+      {/* ——— PROJECT PAGE ——— */}
+      <section className="full-bleed bg-[var(--site-surface)] px-8 py-16">
+        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-6">
+          <p className="font-[var(--font-body)] text-[15px] text-[var(--site-muted)]">
+            See the full project page with stories, media, and storytellers
           </p>
-
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="https://goodsoncountry.netlify.app"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="rounded-full bg-[#4CAF50] px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-[#3D9143]"
-            >
-              View Registry
-            </a>
-            <Link
-              href="/contact"
-              className="rounded-full border border-[#4CAF50] px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#2F3E2E] transition hover:bg-[#E5F4E4]"
-            >
-              Partner With Us
-            </Link>
-          </div>
+          <Link
+            href="/projects/goods-on-country"
+            className="inline-flex items-center gap-3 rounded-[var(--site-radius)] border-2 border-[var(--site-green)] px-8 py-4 font-[var(--font-sans)] text-[13px] font-semibold uppercase tracking-[0.12em] text-[var(--site-green)] transition hover:bg-[var(--site-green)] hover:text-white"
+          >
+            Full project page <span aria-hidden="true">→</span>
+          </Link>
         </div>
       </section>
-
-      {/* LCAA Application */}
-      <section className="space-y-8">
-        <SectionHeading
-          eyebrow="Method"
-          title="LCAA in action"
-          description="How ACT's shared method becomes circular goods practice."
-        />
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-6 space-y-3">
-            <h3 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
-              Listen
-            </h3>
-            <p className="text-sm text-[#4D3F33]">
-              Communities identified practical goods needs, waste burdens, and the
-              importance of local control over both design and value.
-            </p>
-          </div>
-          <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-6 space-y-3">
-            <h3 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
-              Curiosity
-            </h3>
-            <p className="text-sm text-[#4D3F33]">
-              Can waste become community value? What would manufacturing look like if
-              it followed local need and cultural fit instead of distant supply logic?
-            </p>
-          </div>
-          <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-6 space-y-3">
-            <h3 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
-              Action
-            </h3>
-            <p className="text-sm text-[#4D3F33]">
-              Prototypes, fabrication workflows, and ownership structures are being
-              tested so communities can move from supply recipients toward local makers.
-            </p>
-          </div>
-          <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-6 space-y-3">
-            <h3 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
-              Art
-            </h3>
-            <p className="text-sm text-[#4D3F33]">
-              Design, fabrication, and material transformation can all carry cultural
-              meaning. Goods are not neutral objects when they are tied to dignity,
-              care, and sovereignty.
-            </p>
-          </div>
-        </div>
-      </section>
-    </div>
+    </>
   );
 }

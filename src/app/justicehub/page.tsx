@@ -1,274 +1,470 @@
+import Image from "next/image";
 import Link from "next/link";
-import PageHero from "../../components/PageHero";
-import SectionHeading from "../../components/SectionHeading";
-import { ProjectEntryBridgeSection } from "@/components/projects";
+
+import { ImageLightbox } from "@/components/flagship/ImageLightbox";
+import { FullscreenVideo } from "@/components/flagship/FullscreenVideo";
+import { QuickInquiryForm } from "@/components/flagship/QuickInquiryForm";
+import { StorytellerStrip } from "@/components/flagship/StorytellerStrip";
+import { AnimatedStat } from "@/components/flagship/AnimatedStat";
+import { ScrollReveal } from "@/components/flagship/ScrollReveal";
+import { RelatedFields } from "@/components/flagship/RelatedFields";
+import { EditableImage } from "@/components/flagship/EditableImage";
+import { PhotoStrip } from "@/components/flagship/PhotoStrip";
+import {
+  DocHero,
+  SectionHeader,
+  HairlineGrid,
+  HairlineCell,
+  LeadVoice,
+  DarkCTA,
+} from "@/components/design-system";
 import { getProjectData } from "@/lib/projects/get-project-data";
-import { getRelatedFeaturedWorks } from "@/lib/works/live-featured-works";
 import { notFound } from "next/navigation";
 
 export const metadata = {
   title: "JusticeHub | A Curious Tractor",
   description:
-    "Justice infrastructure for community-led reform, forkable program models, and youth voice shaped around local ownership rather than system extraction.",
+    "Evidence-based justice alternatives. Proving what works, routing capital to what heals.",
 };
-
-const features = [
-  {
-    name: "Service pathways",
-    description:
-      "Help families and communities find relevant support, legal pathways, and grounded local options.",
-  },
-  {
-    name: "Advocacy pressure",
-    description:
-      "Campaign and communications infrastructure that can support reform without flattening lived experience.",
-  },
-  {
-    name: "Forkable models",
-    description:
-      "Program structures communities can adapt locally instead of importing one rigid service template.",
-  },
-  {
-    name: "Youth voice",
-    description:
-      "Pathways for young people to shape narrative, policy, and program design on their own terms.",
-  },
-];
-
-const workingLines = [
-  {
-    title: "MMEIC Justice",
-    description: "First Nations-led justice work grounded in local authority and place.",
-  },
-  {
-    title: "Youth Diversion",
-    description: "Alternatives to detention that address root causes and keep connection intact.",
-  },
-  {
-    title: "Family Support",
-    description: "Wraparound support for families navigating complex and often hostile systems.",
-  },
-  {
-    title: "Reintegration",
-    description: "Return pathways that support young people coming back into community life.",
-  },
-];
 
 export default async function JusticeHubPage() {
   const project = await getProjectData("justicehub");
+  if (!project) notFound();
 
-  if (!project) {
-    notFound();
-  }
+  const galleryImages = project.mediaGallery
+    .filter((m) => m.type === "image" || m.type.startsWith("image"))
+    .slice(0, 16);
 
-  const relatedWorks = await getRelatedFeaturedWorks("justicehub", project.title, 3);
+  const storytellers = project.empathyLedgerContent?.featured.storytellers || [];
+  const stories = project.empathyLedgerContent?.featured.stories || [];
+
+  const portraitPeople = storytellers
+    .filter(
+      (t) =>
+        t.profile_image_url &&
+        t.bio &&
+        !(t.display_name || t.full_name || "").includes("ACT") &&
+        !(t.display_name || t.full_name || "").includes("Team"),
+    )
+    .slice(0, 3);
+
+  const leadStory = stories[0];
+  const leadStoryteller = leadStory
+    ? storytellers.find(
+        (s) => (s.display_name || s.full_name) === leadStory.storyteller_display_name,
+      )
+    : null;
 
   return (
-    <div className="space-y-16">
-      <PageHero
+    <>
+      <DocHero
         eyebrow="Justice"
-        title="Justice infrastructure shaped for local ownership"
-        description={project.description}
-        coverImage={project.coverImage}
+        title="Proving what works. Funding what heals."
+        titleMaxChars={16}
+        subhead="1,000+ alternative models. $94.6B in funding tracked. 98,418 organisations mapped."
         coverVideo={project.coverVideo}
-        actions={[
-          ...(project.projectWebsiteUrl
-            ? [{ label: "Visit JusticeHub", href: project.projectWebsiteUrl, external: true as const }]
-            : []),
-          { label: "Partner With Us", href: "/contact", variant: "outline" },
-        ]}
-        gradientClass="from-[#E8EEF4] via-[#D0DEE8] to-[#A8C8D8]"
-      >
-        <div className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#4A5A6B]">
-            Our focus
+        coverImage={project.coverImage}
+        primaryCta={{ label: "Visit justicehub.com.au", href: "https://justicehub.com.au", external: true }}
+        secondaryCta={{ label: "The full story →", href: "#story" }}
+      />
+
+      {/* ——— THE WHY ——— */}
+      <ScrollReveal>
+        <section id="story" className="px-8 py-32 md:py-44">
+          <div className="mx-auto max-w-[640px]">
+            <p className="font-[var(--font-body)] text-[clamp(1.3rem,2.5vw,1.75rem)] leading-[1.6] text-[var(--site-ink)]">
+              Youth detention costs $1.3 million per child per year and has an
+              85% recidivism rate. Indigenous young people face 24 times higher
+              incarceration. The system does not work. Communities have always
+              had the solutions. JusticeHub makes them visible, connected, and
+              impossible to ignore.
+            </p>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ——— FULL-BLEED PHOTO ——— */}
+      <section className="full-bleed mt-8 md:mt-16">
+        <div className="relative h-[50vh] md:h-[60vh] w-full overflow-hidden">
+          <EditableImage
+            src="/media/field-stills/justicehub-community.jpg"
+            alt="Community justice program in action"
+            slot="jh-bleed-1"
+            projectSlug="justicehub"
+            fill sizes="100vw" className="object-cover object-top" priority
+          />
+        </div>
+      </section>
+
+      {leadStory?.excerpt ? (
+        <ScrollReveal>
+          <LeadVoice
+            quote={leadStory.excerpt}
+            authorName={leadStory.storyteller_display_name || ""}
+            authorImageUrl={leadStoryteller?.profile_image_url}
+            authorTagline={leadStoryteller?.custom_tagline}
+          />
+        </ScrollReveal>
+      ) : null}
+
+      {/* ——— THE ECONOMIC CASE ——— */}
+      <ScrollReveal>
+        <section className="px-8 py-32 md:py-44">
+          <div className="mx-auto max-w-[1200px] grid gap-20 lg:grid-cols-2 lg:items-center">
+            <div>
+              <SectionHeader
+                eyebrow="The economic case"
+                title="97 times cheaper than detention"
+                lede="Youth detention costs $3,634.90 per day, per child. That is $1.3 million per year with an 85% failure rate. Community-led alternatives cost around $14,000 per year and actually work. Every dollar diverted from detention to community creates compounding savings across health, education, and justice systems."
+              />
+              <p className="mt-6 font-[var(--font-body)] text-[15px] leading-[1.8] text-[var(--site-muted)]">
+                This is not a moral argument. It is arithmetic. JusticeHub
+                provides the evidence dashboards, cost calculators, and system
+                maps that make the economic case undeniable for policymakers
+                and treasuries.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-6">
+              <div className="rounded-[var(--site-radius)] border border-[var(--site-line)] p-8">
+                <p className="font-[var(--font-display)] text-4xl font-bold text-[var(--site-ink)]">$1.3M</p>
+                <p className="mt-2 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.15em] text-[var(--site-muted)]">Detention per child/year</p>
+                <p className="mt-3 font-[var(--font-body)] text-[14px] text-red-600/70">85% recidivism</p>
+              </div>
+              <div className="rounded-[var(--site-radius)] border-2 border-[var(--site-green)] p-8">
+                <p className="font-[var(--font-display)] text-4xl font-bold text-[var(--site-green)]">$14K</p>
+                <p className="mt-2 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.15em] text-[var(--site-muted)]">Community alternative/year</p>
+                <p className="mt-3 font-[var(--font-body)] text-[14px] text-[var(--site-green)]">97x cheaper</p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ——— VIDEO ——— */}
+      {project.coverVideo && (
+        <ScrollReveal>
+          <section className="px-8 pb-16">
+            <div className="mx-auto max-w-[1200px]">
+              <FullscreenVideo
+                src={project.coverVideo.url}
+                poster={project.coverVideo.posterUrl}
+                title={project.coverVideo.title}
+              />
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {/* ——— STATS ——— */}
+      <ScrollReveal>
+        <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
+          <div className="mx-auto max-w-[1200px]">
+            <div className="grid grid-cols-2 gap-12 md:grid-cols-4 md:gap-16 text-center">
+              {[
+                { n: "1,000+", l: "Alternative models mapped" },
+                { n: "$94.6B", l: "Funding tracked" },
+                { n: "98,418", l: "Organisations" },
+                { n: "97x", l: "Cheaper than detention" },
+              ].map(({ n, l }) => (
+                <AnimatedStat key={l} value={n} label={l} />
+              ))}
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ——— THREE PATHWAYS ——— */}
+      <ScrollReveal>
+        <section className="px-8 py-32 md:py-44">
+          <div className="mx-auto max-w-[1200px]">
+            <SectionHeader
+              eyebrow="Pathways"
+              eyebrowColor="muted"
+              title="Three ways in"
+            />
+            <HairlineGrid columns={3} className="mt-16">
+              {[
+                { title: "For young people", body: "Direct pathways to local support, legal help, and community programs. The Youth Scout finds what is available near you.", icon: "I need help" },
+                { title: "For organisations", body: "A directory of 1,000+ verified alternatives with evidence data and forkable program designs. The Australian Living Map of Alternatives.", icon: "ALMA Network" },
+                { title: "For policymakers", body: "Evidence dashboards, cost calculators, and system maps that make the economic case for diversion from detention to community.", icon: "Evidence tools" },
+              ].map((item) => (
+                <HairlineCell key={item.title} padding="breathing">
+                  <p className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--site-clay)]">{item.icon}</p>
+                  <h3 className="mt-3 font-[var(--font-display)] text-xl font-semibold text-[var(--site-ink)]">{item.title}</h3>
+                  <p className="mt-4 font-[var(--font-body)] text-[15px] leading-[1.8] text-[var(--site-muted)]">{item.body}</p>
+                </HairlineCell>
+              ))}
+            </HairlineGrid>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ——— PHOTO BREAK ——— */}
+      <section className="full-bleed mt-8 md:mt-16">
+        <div className="relative h-[50vh] md:h-[60vh] w-full overflow-hidden">
+          <EditableImage
+            src="/media/field-stills/justicehub-field.jpg"
+            alt="Justice program field work"
+            slot="jh-bleed-2"
+            projectSlug="justicehub"
+            fill sizes="100vw" className="object-cover object-top"
+          />
+        </div>
+      </section>
+
+      {/* ——— ALMA ——— */}
+      <ScrollReveal>
+        <section className="full-bleed bg-[var(--site-surface)] px-8 py-32 md:py-44">
+          <div className="mx-auto max-w-[1200px] grid gap-20 lg:grid-cols-2 lg:items-center">
+            <div>
+              <SectionHeader
+                eyebrow="Australian Living Map of Alternatives"
+                title="What works, mapped by evidence"
+                lede={
+                  <>
+                    The Australian Living Map of Alternatives sits on top of JusticeHub&apos;s funding
+                    data layer. Evidence-based interventions mapped by topic and geography
+                    across nine domains: child protection, community-led programs, diversion,
+                    family services, Indigenous-led, legal services, NDIS, prevention, and
+                    youth justice.
+                  </>
+                }
+              />
+              <p className="mt-6 font-[var(--font-body)] text-[15px] leading-[1.8] text-[var(--site-muted)]">
+                Every model in the directory is forkable. Communities can take a
+                program design that works in Mount Isa, adapt it for their context,
+                and launch with evidence already behind them. Not starting from scratch.
+                Starting from proof.
+              </p>
+            </div>
+            <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--site-radius)]">
+              <EditableImage
+                src="/media/field-stills/justicehub-alma.jpg"
+                alt="Australian Living Map of Alternatives"
+                slot="jh-alma"
+                projectSlug="justicehub"
+                fill sizes="50vw" className="object-cover"
+              />
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ——— LOCAL PROOF POINTS ——— */}
+      <ScrollReveal>
+        <section className="px-8 py-32 md:py-44">
+          <div className="mx-auto max-w-[1200px]">
+            <SectionHeader
+              eyebrow="Proof points"
+              eyebrowColor="muted"
+              title="What the evidence says"
+            />
+            <div className="mt-16 grid gap-6 md:grid-cols-3">
+              {[
+                { place: "BG Fit, Mount Isa", stat: "5 → <1", label: "police contacts per young person", desc: "Community-led physical activity and mentoring program. Reduced youth police contact from an average of 5 incidents to less than 1." },
+                { place: "Oonchiumpa, Alice Springs", stat: "95%", label: "reduction in anti-social behaviour", desc: "Place-based, Indigenous-led program. Cultural immersion, on-Country camps, and mentorship as a justice alternative." },
+                { place: "Confit Pathways, Sydney", stat: "60%", label: "reduction in recidivism", desc: "Diversionary program with wraparound support. Demonstrating that community models scale across urban and regional contexts." },
+              ].map((item) => (
+                <div key={item.place} className="rounded-[var(--site-radius)] border border-[var(--site-line)] p-8">
+                  <p className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--site-clay)]">{item.place}</p>
+                  <p className="mt-4 font-[var(--font-display)] text-3xl font-bold text-[var(--site-ink)]">{item.stat}</p>
+                  <p className="mt-1 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--site-muted)]">{item.label}</p>
+                  <p className="mt-4 font-[var(--font-body)] text-[14px] leading-[1.7] text-[var(--site-muted)]">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ——— PHOTO STRIP ——— */}
+      {galleryImages.length >= 6 && (
+        <section className="px-8 py-8">
+          <div className="mx-auto max-w-[1200px]">
+            <PhotoStrip images={galleryImages.slice(0, 3)} columns={3} />
+          </div>
+        </section>
+      )}
+
+      {/* ——— THE VISION — Capital routing ——— */}
+      <ScrollReveal>
+        <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
+          <div className="mx-auto max-w-[800px]">
+            <SectionHeader
+              eyebrow="The vision"
+              title="Capital follows evidence, not politics"
+              onDark
+              lede={
+                <>
+                  JusticeHub&apos;s end state is programmable capital allocation.
+                  Impact-weighted quadratic funding routes resources to programs
+                  based on verified community outcomes, not popularity or political
+                  connections. The AI scores programs, the evidence dashboard makes
+                  the case, and capital follows truth.
+                </>
+              }
+            />
+            <p className="mt-6 font-[var(--font-body)] text-[15px] leading-[1.8] text-[#FAFAF7]/50">
+              Built on open-source infrastructure. Every model is forkable.
+              Every dataset is auditable. Communities do not need permission
+              to use what works. They need evidence, and JusticeHub provides it.
+            </p>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ——— PHOTO BREAK ——— */}
+      <section className="full-bleed mt-8 md:mt-16">
+        <div className="relative h-[50vh] md:h-[60vh] w-full overflow-hidden">
+          <EditableImage
+            src="/media/field-stills/justicehub-community-2.jpg"
+            alt="Community justice gathering"
+            slot="jh-bleed-3"
+            projectSlug="justicehub"
+            fill sizes="100vw" className="object-cover object-top"
+          />
+        </div>
+      </section>
+
+      {/* ——— PEOPLE ——— */}
+      {portraitPeople.length >= 2 && (
+        <ScrollReveal>
+          <section className="px-8 py-32 md:py-44">
+            <div className="mx-auto max-w-[1200px]">
+              <SectionHeader
+                eyebrow="Voices from the field"
+                eyebrowColor="muted"
+                title="The people"
+              />
+              <div className="mt-16 grid gap-10 md:grid-cols-3">
+                {portraitPeople.map((person) => {
+                  const name = person.display_name || person.full_name || "Community voice";
+                  const bio = person.bio || "";
+                  const shortBio = bio.length > 140 ? bio.substring(0, 140).replace(/\s\S*$/, "") + "..." : bio;
+                  return (
+                    <div key={name}>
+                      <div className="relative aspect-[3/4] overflow-hidden rounded-[var(--site-radius)]">
+                        <Image src={person.profile_image_url!} alt={name} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
+                        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
+                        <div className="absolute bottom-0 left-0 right-0 p-8">
+                          <p className="font-[var(--font-display)] text-xl font-semibold text-[#FAFAF7]">{name}</p>
+                          {person.custom_tagline && (
+                            <p className="mt-1 font-[var(--font-sans)] text-[11px] uppercase tracking-[0.15em] text-[#FAFAF7]/60">{person.custom_tagline}</p>
+                          )}
+                        </div>
+                      </div>
+                      <p className="mt-5 font-[var(--font-body)] text-[15px] leading-[1.7] text-[var(--site-muted)]">{shortBio}</p>
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {/* ——— STORYTELLERS (fallback) ——— */}
+      {portraitPeople.length < 2 && (storytellers.length + stories.length >= 2) && (
+        <ScrollReveal>
+          <section className="full-bleed bg-[var(--site-surface)] px-8 py-32 md:py-44">
+            <div className="mx-auto max-w-[1200px]">
+              <SectionHeader
+                eyebrow="Voices"
+                eyebrowColor="muted"
+                title="People in the work"
+              />
+              <div className="mt-16">
+                <StorytellerStrip
+                  storytellers={storytellers}
+                  stories={stories}
+                  fallbackQuotes={[
+                    { text: "Communities have always had the solutions. JusticeHub makes them visible, connected, and impossible to ignore.", author: "JusticeHub", role: "Mission" },
+                  ]}
+                  projectName="JusticeHub"
+                />
+              </div>
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {/* ——— GALLERY ——— */}
+      {galleryImages.length > 4 && (
+        <ScrollReveal>
+          <section className="px-8 py-32 md:py-44">
+            <div className="mx-auto max-w-[1200px]">
+              <SectionHeader
+                eyebrow="From the field"
+                eyebrowColor="muted"
+                title="Justice in practice"
+              />
+              <div className="mt-14">
+                <ImageLightbox images={galleryImages.slice(4)} />
+              </div>
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {/* ——— BIG CTA ——— */}
+      <ScrollReveal>
+        <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
+          <div className="mx-auto max-w-[800px] text-center">
+            <h2 className="font-[var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-light leading-[1.1] text-[#FAFAF7]">
+              JusticeHub needs $500K to scale nationally.
+            </h2>
+            <p className="mx-auto mt-8 max-w-lg font-[var(--font-body)] text-lg leading-[1.8] text-[#FAFAF7]/60">
+              Partner with us to build the evidence infrastructure that diverts
+              capital from detention to community healing.
+            </p>
+            <div className="mt-12 flex flex-wrap justify-center gap-5">
+              <DarkCTA variant="primary" href="https://justicehub.com.au" external>
+                Explore the platform
+              </DarkCTA>
+              <DarkCTA variant="ghost" href="#inquiry">Partner with us →</DarkCTA>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ——— INQUIRY ——— */}
+      <ScrollReveal>
+        <section id="inquiry" className="px-8 py-32 md:py-44">
+          <div className="mx-auto grid max-w-[1100px] gap-20 lg:grid-cols-[1fr_1.2fr] lg:items-start">
+            <div>
+              <SectionHeader
+                eyebrow="Get in touch"
+                eyebrowColor="muted"
+                title="Work with us on justice reform"
+                lede="Communities, legal services, government, and funders building evidence-based alternatives to detention."
+              />
+              <p className="mt-6 font-[var(--font-body)] text-[15px] text-[var(--site-muted)]">
+                Or email{" "}
+                <a href="mailto:hi@act.place" className="text-[var(--site-green)] underline">hi@act.place</a>
+              </p>
+            </div>
+            <QuickInquiryForm projectName="JusticeHub" projectSlug="justicehub" projectCode="ACT-JH" />
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ——— RELATED ——— */}
+      <RelatedFields currentSlug="justicehub" />
+
+      {/* ——— PROJECT PAGE ——— */}
+      <section className="full-bleed bg-[var(--site-surface)] px-8 py-16">
+        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-6">
+          <p className="font-[var(--font-body)] text-[15px] text-[var(--site-muted)]">
+            See the full project page with stories, media, and storytellers
           </p>
-          <ul className="space-y-2 text-sm">
-            <li>Youth justice reform</li>
-            <li>First Nations-led programs</li>
-            <li>Community-based alternatives</li>
-          </ul>
-        </div>
-      </PageHero>
-
-      <ProjectEntryBridgeSection project={project} relatedWorks={relatedWorks} />
-
-      {/* Features */}
-      <section className="space-y-8">
-        <SectionHeading
-          eyebrow="Field lines"
-          title="What JusticeHub is built to hold"
-          description="JusticeHub is not a standalone service brand. It is one part of ACT's broader effort to move power, support, and narrative closer to community control."
-        />
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature) => (
-            <div
-              key={feature.name}
-              className="rounded-2xl border border-[#E3D4BA] bg-white p-6"
-            >
-              <h3 className="font-semibold text-[#2F3E2E]">{feature.name}</h3>
-              <p className="mt-2 text-sm text-[#5A4A3A]">{feature.description}</p>
-            </div>
-          ))}
+          <Link
+            href="/projects/justicehub"
+            className="inline-flex items-center gap-3 rounded-[var(--site-radius)] border-2 border-[var(--site-green)] px-8 py-4 font-[var(--font-sans)] text-[13px] font-semibold uppercase tracking-[0.12em] text-[var(--site-green)] transition hover:bg-[var(--site-green)] hover:text-white"
+          >
+            Full project page <span aria-hidden="true">→</span>
+          </Link>
         </div>
       </section>
-
-      {/* Working lines */}
-      <section className="rounded-3xl border border-[#E3D4BA] bg-gradient-to-br from-[#0B1F2A] to-[#1a3040] p-8 md:p-12">
-        <div className="text-center mb-8">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#7A9AAA]">Current work</p>
-          <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-white md:text-3xl">
-            Working lines in the justice field
-          </h2>
-        </div>
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {workingLines.map((program) => (
-            <div
-              key={program.title}
-              className="rounded-2xl border border-[#2a4a5a] bg-[#1a3a4a]/50 p-6"
-            >
-              <h3 className="font-semibold text-white">{program.title}</h3>
-              <p className="text-sm text-[#A8C4D4]">{program.description}</p>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      {/* The Problem */}
-      <section className="rounded-3xl border border-[#E3D4BA] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12">
-        <div className="space-y-6">
-          <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E] md:text-3xl">
-            The challenge we address
-          </h2>
-          <div className="grid gap-6 md:grid-cols-2">
-            <div className="space-y-3">
-              <h3 className="text-lg font-semibold text-[#2F3E2E]">System failure</h3>
-              <ul className="space-y-2 text-sm text-[#4D3F33]">
-                <li className="flex items-start gap-2">
-                  <span className="text-[#A24A2E]">•</span>
-                  <span>Youth detention doesn't reduce reoffending</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#A24A2E]">•</span>
-                  <span>First Nations young people vastly over-represented</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#A24A2E]">•</span>
-                  <span>Families struggle to navigate complex systems</span>
-                </li>
-              </ul>
-            </div>
-            <div className="space-y-3">
-              <h3 className="text-lg font-semibold text-[#2F3E2E]">Community solutions</h3>
-              <ul className="space-y-2 text-sm text-[#4D3F33]">
-                <li className="flex items-start gap-2">
-                  <span className="text-[#4CAF50]">•</span>
-                  <span>Community-led programs that address root causes</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#4CAF50]">•</span>
-                  <span>Cultural connection and Elder mentorship</span>
-                </li>
-                <li className="flex items-start gap-2">
-                  <span className="text-[#4CAF50]">•</span>
-                  <span>Open-source models others can adapt</span>
-                </li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* LCAA Application */}
-      <section className="space-y-8">
-        <SectionHeading
-          eyebrow="Method"
-          title="LCAA in action"
-          description="How ACT's shared method moves from listening to forkable justice practice."
-        />
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-6 space-y-3">
-            <h3 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
-              Listen
-            </h3>
-            <p className="text-sm text-[#4D3F33]">
-              Young people, families, and Elders told us the system wasn't working.
-              They wanted alternatives that kept kids connected to community, family, and culture.
-            </p>
-          </div>
-          <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-6 space-y-3">
-            <h3 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
-              Curiosity
-            </h3>
-            <p className="text-sm text-[#4D3F33]">
-              What if justice programs were designed by those most affected?
-              What if successful models stayed adaptable so communities could shape their own version?
-            </p>
-          </div>
-          <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-6 space-y-3">
-            <h3 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
-              Action
-            </h3>
-            <p className="text-sm text-[#4D3F33]">
-              Built service pathways, community partnerships, and shared infrastructure
-              that can support local programs without forcing one template on every place.
-            </p>
-          </div>
-          <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-6 space-y-3">
-            <h3 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
-              Art
-            </h3>
-            <p className="text-sm text-[#4D3F33]">
-              Youth voice campaigns, storytelling through Empathy Ledger, and
-              public narrative work that resists reducing young people to case files.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* CTA */}
-      <section className="rounded-3xl border border-[#E3D4BA] bg-white p-8 text-center md:p-12">
-        <div className="space-y-6">
-          <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E] md:text-3xl">
-            Explore JusticeHub
-          </h2>
-          <p className="mx-auto max-w-xl text-sm text-[#5A4A3A]">
-            Find services, learn about our programs, or get in touch about partnering
-            on justice innovation in your community.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            <a
-              href="https://justicehub.com.au"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-[#4CAF50] px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-[#3D9143]"
-            >
-              Visit JusticeHub
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                <polyline points="15 3 21 3 21 9" />
-                <line x1="10" y1="14" x2="21" y2="3" />
-              </svg>
-            </a>
-            <Link
-              href="/contact"
-              className="rounded-full border border-[#4CAF50] px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#2F3E2E] transition hover:bg-[#E5F4E4]"
-            >
-              Partner With Us
-            </Link>
-          </div>
-        </div>
-      </section>
-    </div>
+    </>
   );
 }

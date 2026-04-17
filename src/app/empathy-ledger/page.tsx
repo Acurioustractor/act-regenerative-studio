@@ -1,231 +1,378 @@
-import Link from "next/link";
-import PageHero from "../../components/PageHero";
-import SectionHeading from "../../components/SectionHeading";
-import { ProjectEntryBridgeSection } from "@/components/projects";
+import { ImageLightbox } from "@/components/flagship/ImageLightbox";
+import { FullscreenVideo } from "@/components/flagship/FullscreenVideo";
+import { QuickInquiryForm } from "@/components/flagship/QuickInquiryForm";
+import { AnimatedStat } from "@/components/flagship/AnimatedStat";
+import { ScrollReveal } from "@/components/flagship/ScrollReveal";
+import { RelatedFields } from "@/components/flagship/RelatedFields";
+import { EditableImage } from "@/components/flagship/EditableImage";
+import { PhotoStrip } from "@/components/flagship/PhotoStrip";
+import {
+  DocHero,
+  SectionHeader,
+  HairlineGrid,
+  HairlineCell,
+  LeadVoice,
+  PrinciplesList,
+  DarkCTA,
+} from "@/components/design-system";
 import { getProjectData } from "@/lib/projects/get-project-data";
-import { getRelatedFeaturedWorks } from "@/lib/works/live-featured-works";
 import { notFound } from "next/navigation";
 
 export const metadata = {
   title: "Empathy Ledger | A Curious Tractor",
   description:
-    "Consent-first story infrastructure built around Indigenous data sovereignty, community control, and live syndication into ACT project surfaces.",
+    "Consent-first storytelling. Community-owned narratives with sovereignty, live syndication, and revocable permission.",
 };
-
-const features = [
-  {
-    name: "Consent-first storytelling",
-    description:
-      "Stories should only travel where explicit permission allows, and permissions can change over time.",
-  },
-  {
-    name: "Data sovereignty",
-    description:
-      "The system is shaped by Indigenous data sovereignty principles and by community control over how narrative material is used.",
-  },
-  {
-    name: "Community voice",
-    description:
-      "Lived experience is surfaced without treating people as raw content inputs for institutional storytelling.",
-  },
-  {
-    name: "ALMA learning loop",
-    description:
-      "Adaptive Listening and Meaning Analysis helps story work stay useful, legible, and accountable.",
-  },
-];
-
-const useCases = [
-  {
-    title: "Justice Programs",
-    description: "Capturing participant journeys and program outcomes through their own words",
-  },
-  {
-    title: "Cultural Preservation",
-    description: "Archiving community knowledge, traditions, and oral histories",
-  },
-  {
-    title: "Impact Reporting",
-    description: "Evidence and storytelling that respects dignity while demonstrating outcomes",
-  },
-];
 
 export default async function EmpathyLedgerPage() {
   const project = await getProjectData("empathy-ledger");
+  if (!project) notFound();
 
-  if (!project) {
-    notFound();
-  }
+  const galleryImages = project.mediaGallery
+    .filter((m) => m.type === "image" || m.type.startsWith("image"))
+    .slice(0, 16);
 
-  const relatedWorks = await getRelatedFeaturedWorks(
-    "empathy-ledger",
-    project.title,
-    3
-  );
+  const storytellers = project.empathyLedgerContent?.featured.storytellers || [];
+  const stories = project.empathyLedgerContent?.featured.stories || [];
+  const leadStory = stories[0];
+  const leadStoryteller = leadStory
+    ? storytellers.find(
+        (s) => (s.display_name || s.full_name) === leadStory.storyteller_display_name,
+      )
+    : null;
 
   return (
-    <div className="space-y-16">
-      <PageHero
-        eyebrow="Stories + consent"
-        title="Story infrastructure with consent at the centre"
-        description={project.description}
-        coverImage={project.coverImage}
+    <>
+      <DocHero
+        eyebrow="Stories"
+        title="Consent-first storytelling"
+        titleMaxChars={16}
+        subhead="Not your story. Not my story. But a third reality we can only discover together."
         coverVideo={project.coverVideo}
-        actions={[
-          ...(project.projectWebsiteUrl
-            ? [{ label: "Visit Empathy Ledger", href: project.projectWebsiteUrl, external: true as const }]
-            : []),
-          { label: "Partner With Us", href: "/contact", variant: "outline" },
-        ]}
-        gradientClass="from-[#E8F4F4] via-[#D0E8E8] to-[#A8D8D8]"
-      >
-        <div className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#4A6B6B]">
-            Core principles
-          </p>
-          <ul className="space-y-2 text-sm">
-            <li>Consent is ongoing and revocable</li>
-            <li>Community owns their narratives</li>
-            <li>No story without permission</li>
-          </ul>
+        coverImage={project.coverImage}
+        primaryCta={{ label: "Visit empathyledger.com", href: "https://empathyledger.com", external: true }}
+        secondaryCta={{ label: "The full story →", href: "#story" }}
+      />
+
+      {/* ——— THE WHY ——— */}
+      <ScrollReveal>
+        <section id="story" className="px-8 py-32 md:py-44">
+          <div className="mx-auto max-w-[640px]">
+            <p className="font-[var(--font-body)] text-[clamp(1.3rem,2.5vw,1.75rem)] leading-[1.6] text-[var(--site-ink)]">
+              Communities told us their stories were being extracted without
+              consent. Researchers, NGOs, and media take narratives from
+              marginalised people and use them to raise funds, write reports,
+              and build careers. The storyteller gets nothing. Not even control
+              over how they are represented.
+            </p>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ——— FULL-BLEED PHOTO ——— */}
+      <section className="full-bleed mt-8 md:mt-16">
+        <div className="relative h-[50vh] md:h-[60vh] w-full overflow-hidden">
+          <EditableImage
+            src="/media/field-stills/el-storytelling.jpg"
+            alt="Empathy Ledger storytelling session"
+            slot="el-bleed-1"
+            projectSlug="empathy-ledger"
+            fill sizes="100vw" className="object-cover object-top" priority
+          />
         </div>
-      </PageHero>
+      </section>
 
-      <ProjectEntryBridgeSection project={project} relatedWorks={relatedWorks} />
+      {leadStory?.excerpt ? (
+        <ScrollReveal>
+          <LeadVoice
+            quote={leadStory.excerpt}
+            authorName={leadStory.storyteller_display_name || ""}
+            authorImageUrl={leadStoryteller?.profile_image_url}
+            authorTagline={leadStoryteller?.custom_tagline}
+          />
+        </ScrollReveal>
+      ) : null}
 
-      {/* Features */}
-      <section className="space-y-8">
-        <SectionHeading
-          eyebrow="Commitments"
-          title="What Empathy Ledger is built to protect"
-          description="Empathy Ledger is the live story and media layer that can feed ACT projects without separating impact evidence from permission."
-        />
-        <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          {features.map((feature) => (
-            <div
-              key={feature.name}
-              className="rounded-2xl border border-[#E3D4BA] bg-white p-6"
-            >
-              <h3 className="font-semibold text-[#2F3E2E]">{feature.name}</h3>
-              <p className="mt-2 text-sm text-[#5A4A3A]">{feature.description}</p>
+      {/* ——— FIVE CONSENT TYPES ——— */}
+      <ScrollReveal>
+        <section className="px-8 py-32 md:py-44">
+          <div className="mx-auto max-w-[1200px]">
+            <SectionHeader
+              eyebrow="Consent architecture"
+              title="Five consent relationships, not one checkbox"
+              lede="Informed by two years of work with Aboriginal communities in Central Australia and Queensland. The consent model reflects OCAP principles: Ownership, Control, Access, Possession."
+              ledeMaxWidth="640px"
+            />
+            <HairlineGrid columns={5} className="mt-16">
+              {[
+                { type: "Collection", question: "Can we record your story?", detail: "Separate from account creation. Covers recording method." },
+                { type: "Processing", question: "Can AI analyse your story?", detail: "Model-specific permissions. Training data excluded by default." },
+                { type: "Sharing", question: "Who can see your story?", detail: "Four tiers: public, community, restricted, sacred." },
+                { type: "Attribution", question: "How do you want to be named?", detail: "Legal name, preferred name, community attribution, or anonymity." },
+                { type: "Revocation", question: "Can you take it back?", detail: "Always. Consent is ongoing and revocable at any time." },
+              ].map((item) => (
+                <HairlineCell key={item.type}>
+                  <p className="font-[var(--font-display)] text-lg font-semibold text-[var(--site-ink)]">{item.type}</p>
+                  <p className="mt-3 font-[var(--font-body)] text-[14px] italic leading-[1.6] text-[var(--site-clay)]">&ldquo;{item.question}&rdquo;</p>
+                  <p className="mt-3 font-[var(--font-body)] text-[13px] leading-[1.7] text-[var(--site-muted)]">{item.detail}</p>
+                </HairlineCell>
+              ))}
+            </HairlineGrid>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ——— VIDEO ——— */}
+      {project.coverVideo && (
+        <ScrollReveal>
+          <section className="px-8 pb-16">
+            <div className="mx-auto max-w-[1200px]">
+              <FullscreenVideo
+                src={project.coverVideo.url}
+                poster={project.coverVideo.posterUrl}
+                title={project.coverVideo.title}
+              />
             </div>
-          ))}
-        </div>
-      </section>
+          </section>
+        </ScrollReveal>
+      )}
 
-      {/* Use Cases */}
-      <section className="rounded-3xl border border-[#E3D4BA] bg-gradient-to-br from-[#2F3E2E] to-[#1a2a1a] p-8 md:p-12">
-        <div className="text-center mb-8">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#9AA396]">Where it serves</p>
-          <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-white md:text-3xl">
-            Contexts where story stewardship matters
-          </h2>
-        </div>
-        <div className="grid gap-4 md:grid-cols-3">
-          {useCases.map((useCase) => (
-            <div
-              key={useCase.title}
-              className="rounded-2xl border border-[#4a5a4a] bg-[#3a4a3a]/50 p-6"
-            >
-              <h3 className="font-semibold text-white">{useCase.title}</h3>
-              <p className="mt-2 text-sm text-[#B8C4B8]">{useCase.description}</p>
+      {/* ——— STATS ——— */}
+      <ScrollReveal>
+        <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
+          <div className="mx-auto max-w-[1200px]">
+            <div className="grid grid-cols-2 gap-12 md:grid-cols-4 md:gap-16 text-center">
+              {[
+                { n: "412", l: "Storytellers" },
+                { n: "251", l: "Interviews recorded" },
+                { n: "588K", l: "Words transcribed" },
+                { n: "20", l: "Organisations" },
+              ].map(({ n, l }) => (
+                <AnimatedStat key={l} value={n} label={l} />
+              ))}
             </div>
-          ))}
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ——— COMMUNITY IMPLEMENTATIONS ——— */}
+      <ScrollReveal>
+        <section className="px-8 py-32 md:py-44">
+          <div className="mx-auto max-w-[1200px]">
+            <SectionHeader
+              eyebrow="Where it lives"
+              eyebrowColor="muted"
+              title="Community-controlled implementations"
+            />
+            <div className="mt-16 grid gap-10 md:grid-cols-2">
+              <div className="rounded-[var(--site-radius)] border border-[var(--site-line)] p-10">
+                <p className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--site-clay)]">Palm Island</p>
+                <h3 className="mt-3 font-[var(--font-display)] text-2xl font-semibold text-[var(--site-ink)]">PICC</h3>
+                <p className="mt-4 font-[var(--font-body)] text-[15px] leading-[1.8] text-[var(--site-muted)]">
+                  Palm Island Community Company runs community-controlled service
+                  delivery, governance, and storytelling infrastructure. Their
+                  &ldquo;Our Story&rdquo; framing directly informs ACT&apos;s
+                  story-sovereignty practice. Richard Cassidy&apos;s governance
+                  work makes this the clearest example of community authority
+                  over narrative.
+                </p>
+              </div>
+              <div className="rounded-[var(--site-radius)] border border-[var(--site-line)] p-10">
+                <p className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--site-clay)]">Alice Springs</p>
+                <h3 className="mt-3 font-[var(--font-display)] text-2xl font-semibold text-[var(--site-ink)]">Oonchiumpa</h3>
+                <p className="mt-4 font-[var(--font-body)] text-[15px] leading-[1.8] text-[var(--site-muted)]">
+                  Community-led youth, culture, and justice storytelling on
+                  Country in Mparntwe. Oonchiumpa demonstrates how Empathy
+                  Ledger works in a place-based Indigenous-led context, with
+                  cultural authority held by community Elders and young people
+                  telling their own stories of transformation.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ——— PHOTO BREAK ——— */}
+      <section className="full-bleed mt-8 md:mt-16">
+        <div className="relative h-[50vh] md:h-[60vh] w-full overflow-hidden">
+          <EditableImage
+            src="/media/field-stills/el-community.jpg"
+            alt="Community storytelling on Country"
+            slot="el-bleed-2"
+            projectSlug="empathy-ledger"
+            fill sizes="100vw" className="object-cover object-top"
+          />
         </div>
       </section>
 
-      {/* LCAA Application */}
-      <section className="space-y-8">
-        <SectionHeading
-          eyebrow="Method"
-          title="LCAA in action"
-          description="How ACT's shared method becomes consent-based story practice."
-        />
-        <div className="grid gap-6 md:grid-cols-2">
-          <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-6 space-y-3">
-            <h3 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
-              Listen
-            </h3>
-            <p className="text-sm text-[#4D3F33]">
-              Communities told us their stories were being extracted without consent.
-              They wanted to share on their own terms, with control over how narratives travel and where they stop.
-            </p>
+      {/* ——— THE CONNECTIVE TISSUE ——— */}
+      <ScrollReveal>
+        <section className="full-bleed bg-[var(--site-surface)] px-8 py-32 md:py-44">
+          <div className="mx-auto max-w-[1200px] grid gap-20 lg:grid-cols-2 lg:items-center">
+            <div>
+              <SectionHeader
+                eyebrow="The Third Reality"
+                title="The connective tissue of the ecosystem"
+                lede="Without Empathy Ledger, the ACT ecosystem has data. With it, there is a third reality. JusticeHub provides evidence. Goods on Country provides design outcomes. The Harvest provides community rhythm. Empathy Ledger provides the human faces behind all of it."
+              />
+              <p className="mt-6 font-[var(--font-body)] text-[15px] leading-[1.8] text-[var(--site-muted)]">
+                When individual narratives intersect with systemic data, AI-powered
+                thematic analysis safely pulls themes, trends, and quotes. Funding
+                applications carry the undeniable weight of real-life impact.
+                Policy shifts are advocated using verified lived experience.
+                Identity is always protected.
+              </p>
+            </div>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                { platform: "JusticeHub", adds: "Stories of transformation" },
+                { platform: "Goods on Country", adds: "Community voice in design" },
+                { platform: "PICC", adds: "Lived experience of services" },
+                { platform: "The Harvest", adds: "Seasonal community stories" },
+              ].map((item) => (
+                <div key={item.platform} className="rounded-[var(--site-radius)] border border-[var(--site-line)] p-6">
+                  <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--site-clay)]">{item.platform}</p>
+                  <p className="mt-2 font-[var(--font-body)] text-[14px] leading-[1.6] text-[var(--site-muted)]">{item.adds}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-6 space-y-3">
-            <h3 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
-              Curiosity
-            </h3>
-            <p className="text-sm text-[#4D3F33]">
-              What if consent was built into the architecture? What if communities
-              could change their mind later? How might data sovereignty principles actually shape software?
-            </p>
+        </section>
+      </ScrollReveal>
+
+      {/* ——— WHERE IT SERVES ——— */}
+      <ScrollReveal>
+        <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
+          <div className="mx-auto max-w-[1200px]">
+            <SectionHeader
+              eyebrow="Where it serves"
+              title="Contexts where story stewardship matters"
+              onDark
+            />
+            <div className="mt-16 grid gap-12 md:grid-cols-3">
+              {[
+                { title: "Justice programs", body: "Participant journeys and outcomes through their own words, not case files written about them." },
+                { title: "Cultural preservation", body: "Community knowledge, traditions, and oral histories with sovereignty over access and attribution." },
+                { title: "Impact reporting", body: "Evidence that respects dignity while demonstrating outcomes to funders and policymakers." },
+              ].map((item) => (
+                <div key={item.title}>
+                  <h3 className="font-[var(--font-display)] text-xl font-semibold text-[#FAFAF7]">{item.title}</h3>
+                  <p className="mt-3 font-[var(--font-body)] text-[15px] leading-[1.8] text-[#FAFAF7]/60">{item.body}</p>
+                </div>
+              ))}
+            </div>
           </div>
-          <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-6 space-y-3">
-            <h3 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
-              Action
-            </h3>
-            <p className="text-sm text-[#4D3F33]">
-              Built a system where consent, syndication, and public storytelling can
-              stay connected instead of being managed in separate silos.
-            </p>
-          </div>
-          <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-6 space-y-3">
-            <h3 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
-              Art
-            </h3>
-            <p className="text-sm text-[#4D3F33]">
-              Stories can become exhibitions, reports, and cultural archives, but
-              only through approved pathways that keep attribution and permission visible.
-            </p>
-          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ——— PHOTO BREAK ——— */}
+      <section className="full-bleed mt-8 md:mt-16">
+        <div className="relative h-[50vh] md:h-[60vh] w-full overflow-hidden">
+          <EditableImage
+            src="/media/field-stills/el-field.jpg"
+            alt="Empathy Ledger field work"
+            slot="el-bleed-3"
+            projectSlug="empathy-ledger"
+            fill sizes="100vw" className="object-cover object-top"
+          />
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="rounded-3xl border border-[#E3D4BA] bg-white p-8 text-center md:p-12">
-        <div className="space-y-6">
-          <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E] md:text-3xl">
-            Explore the live story layer
-          </h2>
-          <p className="mx-auto max-w-xl text-sm text-[#5A4A3A]">
-            See how approved voices, media, and field material can flow into ACT
-            projects without losing context, attribution, or consent.
-          </p>
-          <div className="flex flex-wrap justify-center gap-4">
-            {project.projectWebsiteUrl ? (
-              <a
-                href={project.projectWebsiteUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-[#4CAF50] px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-[#3D9143]"
-              >
-                Visit Platform
-                <svg
-                  xmlns="http://www.w3.org/2000/svg"
-                  width="14"
-                  height="14"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                >
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                  <polyline points="15 3 21 3 21 9" />
-                  <line x1="10" y1="14" x2="21" y2="3" />
-                </svg>
-              </a>
-            ) : null}
-            <Link
-              href="/contact"
-              className="rounded-full border border-[#4CAF50] px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#2F3E2E] transition hover:bg-[#E5F4E4]"
-            >
-              Partner With Us
-            </Link>
+      {/* ——— PHOTO STRIP ——— */}
+      {galleryImages.length >= 6 && (
+        <section className="px-8 py-8">
+          <div className="mx-auto max-w-[1200px]">
+            <PhotoStrip images={galleryImages.slice(0, 3)} columns={3} />
           </div>
-        </div>
-      </section>
-    </div>
+        </section>
+      )}
+
+      {/* ——— FOUR COMMITMENTS ——— */}
+      <ScrollReveal>
+        <section className="px-8 py-32 md:py-44">
+          <div className="mx-auto max-w-[800px]">
+            <SectionHeader
+              eyebrow="Principles"
+              eyebrowColor="muted"
+              title="Four commitments"
+            />
+            <div className="mt-12">
+              <PrinciplesList
+                items={[
+                  { title: "Storyteller as sovereign", body: "Absolute control over how narrative is used. Stories travel only where explicit permission allows." },
+                  { title: "Consent in the architecture", body: "Not a checkbox. Consent is structural, ongoing, and revocable. The platform enforces it." },
+                  { title: "Community voice, not content", body: "Lived experience surfaced without treating people as raw inputs for institutional storytelling." },
+                  { title: "Data sovereignty", body: "Shaped by Indigenous data sovereignty principles. Community control over storage, sharing, and syndication." },
+                ]}
+              />
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ——— GALLERY ——— */}
+      {galleryImages.length > 4 && (
+        <ScrollReveal>
+          <section className="px-8 py-32 md:py-44">
+            <div className="mx-auto max-w-[1200px]">
+              <SectionHeader
+                eyebrow="From the field"
+                eyebrowColor="muted"
+                title="Stories in practice"
+              />
+              <div className="mt-14">
+                <ImageLightbox images={galleryImages.slice(4)} />
+              </div>
+            </div>
+          </section>
+        </ScrollReveal>
+      )}
+
+      {/* ——— BIG CTA ——— */}
+      <ScrollReveal>
+        <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
+          <div className="mx-auto max-w-[800px] text-center">
+            <h2 className="font-[var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-light leading-[1.1] text-[#FAFAF7]">
+              Every story matters. When we preserve our voices, we preserve our culture.
+            </h2>
+            <p className="mx-auto mt-8 max-w-lg font-[var(--font-body)] text-lg leading-[1.8] text-[#FAFAF7]/60">
+              Partner with us to build story infrastructure grounded in consent
+              and sovereignty.
+            </p>
+            <div className="mt-12 flex flex-wrap justify-center gap-5">
+              <DarkCTA variant="primary" href="https://empathyledger.com" external>
+                Explore the platform
+              </DarkCTA>
+              <DarkCTA variant="ghost" href="#inquiry">Partner with us →</DarkCTA>
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ——— INQUIRY ——— */}
+      <ScrollReveal>
+        <section id="inquiry" className="px-8 py-32 md:py-44">
+          <div className="mx-auto grid max-w-[1100px] gap-20 lg:grid-cols-[1fr_1.2fr] lg:items-start">
+            <div>
+              <SectionHeader
+                eyebrow="Get in touch"
+                eyebrowColor="muted"
+                title="Interested in Empathy Ledger?"
+                lede="We work with communities and organisations building story processes grounded in consent and sovereignty."
+              />
+              <p className="mt-6 font-[var(--font-body)] text-[15px] text-[var(--site-muted)]">
+                Or email{" "}
+                <a href="mailto:hi@act.place" className="text-[var(--site-green)] underline">hi@act.place</a>
+              </p>
+            </div>
+            <QuickInquiryForm projectName="Empathy Ledger" projectSlug="empathy-ledger" projectCode="ACT-EL" />
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* ——— RELATED ——— */}
+      <RelatedFields currentSlug="empathy-ledger" />
+    </>
   );
 }

@@ -30,7 +30,7 @@ The quiet informational treatment. Rounded sand-colored cards, tan/brown/olive p
 
 **Currently applied to:** 33 pages including about, method, principles, vision, impact, how-we-work, studio, governance, ecosystem, engine, contact, people, partners, events, media, media-lab, ask, projects index, terms, privacy, wiki/*, art/*, and flagship sub-pages (farm/stay, farm/retreats, farm/workshops, harvest/csa, harvest/produce).
 
-**Components:** `src/components/PageHero.tsx`, `src/components/SectionHeading.tsx`, `src/components/CardGrid.tsx`, `src/components/LivingSystemStrip.tsx` (17 pages)
+**Components:** `src/components/PageHero.tsx`, `src/components/SectionHeading.tsx`, `src/components/CardGrid.tsx`, `src/components/LivingSystemStrip.tsx`, and `src/components/warm-editorial/WarmCard.tsx`
 
 ### Decision rule
 | Question | Answer | Language |
@@ -391,24 +391,28 @@ The informational-content language. Soft, warm, quiet. Prioritizes scannability 
 Same fonts as Bold Documentary (Fraunces display, Source Serif 4 body, Work Sans UI) — the site has one type system, two color/shape systems.
 
 ### Color (Warm Editorial palette)
-These are currently hardcoded in components. Consider extracting to CSS vars (`--we-*`) if the language grows.
+Core palette lives as CSS vars in `src/app/globals.css:22-28`. Always reference vars, never raw hex, for these six tokens. Secondary decorative tones stay literal (they're scoped to individual surfaces).
 
-- **Olive ink — `#2F3E2E`** — primary headings
-- **Deep brown body — `#4D3F33`** — body copy
-- **Warm brown eyebrow — `#6B5A45`** — eyebrows, muted UI labels
-- **Sand border — `#E3D4BA`** — card/panel borders (also `#E1D3BA` in CardGrid)
+**Core tokens (use the var):**
+- **`--we-olive` — `#2F3E2E`** — primary headings, dual-entity accents
+- **`--we-olive-deep` — `#3A4A3D`** — contrast-adjusted olive for small text on white
+- **`--we-brown` — `#4D3F33`** — body copy
+- **`--we-brown-deep` — `#4A4035`** — contrast-adjusted brown for small body text
+- **`--we-warm-brown` — `#6B5A45`** — eyebrows, muted supporting text on sand
+- **`--we-sand` — `#E3D4BA`** — card/panel borders (also `#E1D3BA` in legacy CardGrid)
+
+**Page-scoped decorative tones (keep literal):**
 - **Sand surface — `#F6F1E7`** — warm backgrounds and gradient start
 - **Mid-tan — `#E7DDC7`** — gradient mid stop
 - **Deep tan — `#D7C4A2`** — gradient end stop
 - **Sage blob — `#d9ead7`** — decorative hero blob (30% opacity, blurred)
 - **Amber blob — `#d3a24f`** — decorative hero blob (15% opacity, blurred)
-- **Meta text — `#4A4035`** — small pill/label text
 - **Hover green — `#4CAF50`** — card hover border accent
 
 ### Shape
 - **Card radius:** `rounded-3xl` (24px) — soft, generous
 - **Small elements:** `rounded-full` for pills
-- **Card pattern:** `rounded-3xl border border-[#E3D4BA] bg-white/70 p-8` with `text-sm leading-7 text-[#4D3F33]`
+- **Card pattern:** Use `<WarmCard title="…">` from `@/components/warm-editorial`. Raw form is `rounded-3xl border border-[var(--we-sand)] bg-white/80 p-8 text-sm leading-7 text-[var(--we-brown)]` with an olive `<h2>` heading.
 
 ### Spacing
 - **Page container:** `space-y-16` to `space-y-20` between sections
@@ -441,6 +445,12 @@ Located in `src/components/` (NOT `src/components/design-system/`).
 - Shared infrastructure on 17 meta pages. Shows "this page connects to the living ecosystem" with wiki link + live data pill + stats
 - `eyebrow`, `title`, `description`, `wiki: {href, label}`, `live: {sourceLabel, href}`, `stats: [{label, value}]`
 - Appears after the hero on most Warm Editorial pages
+
+**`WarmCard`** — `src/components/warm-editorial/WarmCard.tsx`
+- The canonical "sand-bordered white card with olive heading" primitive. Replaces the repeated `rounded-3xl border border-[var(--we-sand)] bg-white/80 p-8…` block.
+- `title?: string` (renders as olive `<h2>` or `<h3>` per `headingLevel`), `as: 'div' | 'section' | 'article'`, `className?`
+- Children render below title with `space-y-4` when a title is present
+- Use for any informational card on Warm Editorial pages (terms, privacy, etc.)
 
 ### Button patterns
 - **Solid (primary):** `bg-[var(--site-green)] px-6 py-3 text-xs uppercase tracking-[0.22em] text-white` — Warm Editorial still uses the forest green primary, just at a lighter weight than Bold Documentary
@@ -484,3 +494,6 @@ If you only have (1) or (2), stay in Warm Editorial.
 | 2026-04-20 | Two design languages declared: Bold Documentary + Warm Editorial | Audit of the 33 non-flagship pages revealed they use a fundamentally different aesthetic (warm tan/olive palette, rounded-3xl, LivingSystemStrip) — not just different components. Rather than forcing a site-wide redesign, recognized this as intentional visual hierarchy: flagship projects get cinematic treatment, supporting content gets quiet editorial treatment. Both are valid; picking the right one is the key design decision per page. |
 | 2026-04-20 | Warm Editorial palette codified | Previously hardcoded across 33 pages with no central reference. Documented the palette (#2F3E2E olive, #4D3F33 brown, #6B5A45 warm-brown, #E3D4BA sand, #F6F1E7 / #E7DDC7 / #D7C4A2 gradient, #4CAF50 hover) and the three core shared components (PageHero, SectionHeading, CardGrid, LivingSystemStrip) so future additions don't drift. |
 | 2026-04-20 | Routing rule added: which language per page | Encoded decision rule as a table. Prevents future confusion about which hero/header to reach for. Flagship project narratives get Bold Documentary; everything else (meta, legal, directories, sub-pages) gets Warm Editorial. Don't mix them on one page — that's a signal the page is doing too much. |
+| 2026-04-20 | Homepage migrated to Bold Documentary components | `src/app/page.tsx` was 100% hand-rolled after the 4ce63c6 rebuild. Now uses `DocHero` (extended with `fullHeight` + `statsAfter` slot + `gradientStrength="strong"` for bright-video heroes) + `SectionHeader` (extended with `align="center"` for LCAA-style centered blocks) + `EditorialSplit` + `DarkCTA`. Bespoke patterns (flagship field image-overlay cards, 3-up art grid, invitation path cards) retained — no reuse precedent. |
+| 2026-04-20 | Warm Editorial palette extracted to CSS vars | Six core tokens (`--we-olive`, `--we-olive-deep`, `--we-brown`, `--we-brown-deep`, `--we-warm-brown`, `--we-sand`) now live in `globals.css`. 85 files swept hex → var (pure token swap, zero visual change). Future palette adjustments happen in one place. Decorative page-scoped tones (gradient stops, blob tints) stay literal. |
+| 2026-04-20 | `<WarmCard>` primitive introduced | Replaces the identical `rounded-3xl + sand border + olive heading` pattern duplicated across terms (4×), privacy (4×), and scattered elsewhere. Lives in `src/components/warm-editorial/`. `<WarmSection>` and `<WarmDualPanel>` were considered but rejected — the former is a 1-class wrapper, the latter has a single caller (about page). |

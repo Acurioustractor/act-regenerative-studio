@@ -14,6 +14,8 @@ import {
   LeadVoice,
   PrinciplesList,
   DarkCTA,
+  ReadingLede,
+  EditorialSplit,
 } from "@/components/design-system";
 import { getProjectData } from "@/lib/projects/get-project-data";
 import { notFound } from "next/navigation";
@@ -50,17 +52,13 @@ export default async function FarmPage() {
 
       {/* ——— THE WHY ——— */}
       <ScrollReveal>
-        <section id="story" className="px-8 py-32 md:py-44">
-          <div className="mx-auto max-w-[640px]">
-            <p className="font-[var(--font-body)] text-[clamp(1.3rem,2.5vw,1.75rem)] leading-[1.6] text-[var(--site-ink)]">
-              The land holding that grounds ACT&apos;s entire physical practice.
-              Residencies, R&amp;D, habitat restoration, and community programs on
-              a working valley near Witta, Queensland. When the creek is low or
-              the grass is tired, we slow down. Capacity is a land decision
-              before it is a calendar decision.
-            </p>
-          </div>
-        </section>
+        <ReadingLede id="story">
+          The land holding that grounds ACT&apos;s entire physical practice.
+          Residencies, R&amp;D, habitat restoration, and community programs on
+          a working valley near Witta, Queensland. When the creek is low or
+          the grass is tired, we slow down. Capacity is a land decision
+          before it is a calendar decision.
+        </ReadingLede>
       </ScrollReveal>
 
       {leadStory?.excerpt ? (
@@ -74,24 +72,24 @@ export default async function FarmPage() {
 
       {/* ——— THE SITE ——— */}
       <ScrollReveal>
-        <section className="px-8 py-32 md:py-44">
-          <div className="mx-auto max-w-[1200px] grid gap-20 lg:grid-cols-2 lg:items-center">
-            <div>
-              <SectionHeader
-                eyebrow="The site"
-                title="What the valley holds"
-                lede={
-                  <>
-                    150 acres of pasture under regenerative grazing, food forest
-                    and orchard, native corridor restoration zones, water catchment
-                    systems, and studio and gathering buildings. Together with
-                    The Harvest in Witta town, Black Cockatoo Valley forms ACT&apos;s
-                    &ldquo;Place&rdquo; cluster, the land base that makes all the
-                    digital and social enterprise work legible.
-                  </>
-                }
-              />
-            </div>
+        <EditorialSplit
+          left={
+            <SectionHeader
+              eyebrow="The site"
+              title="What the valley holds"
+              lede={
+                <>
+                  150 acres of pasture under regenerative grazing, food forest
+                  and orchard, native corridor restoration zones, water catchment
+                  systems, and studio and gathering buildings. Together with
+                  The Harvest in Witta town, Black Cockatoo Valley forms ACT&apos;s
+                  &ldquo;Place&rdquo; cluster, the land base that makes all the
+                  digital and social enterprise work legible.
+                </>
+              }
+            />
+          }
+          right={
             <div className="grid grid-cols-2 gap-4">
               {[
                 { label: "Pasture", detail: "Regenerative grazing practice" },
@@ -107,8 +105,8 @@ export default async function FarmPage() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
+          }
+        />
       </ScrollReveal>
 
       {/* ——— ACTIVITIES ——— */}

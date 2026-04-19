@@ -16,6 +16,9 @@ import {
   HairlineCell,
   LeadVoice,
   DarkCTA,
+  ReadingLede,
+  PhotoBreak,
+  EditorialSplit,
 } from "@/components/design-system";
 import { getProjectData } from "@/lib/projects/get-project-data";
 import { notFound } from "next/navigation";
@@ -70,29 +73,23 @@ export default async function GoodsPage() {
 
       {/* ——— THE WHY ——— */}
       <ScrollReveal>
-        <section id="story" className="px-8 py-32 md:py-44">
-          <div className="mx-auto max-w-[640px]">
-            <p className="font-[var(--font-body)] text-[clamp(1.3rem,2.5vw,1.75rem)] leading-[1.6] text-[var(--site-ink)]">
-              In remote communities, families sleep on floors. Standard goods
-              break in weeks. Nobody comes to fix them. The replacement cycle
-              drains resources and dignity at the same time.
-            </p>
-          </div>
-        </section>
+        <ReadingLede id="story">
+          In remote communities, families sleep on floors. Standard goods
+          break in weeks. Nobody comes to fix them. The replacement cycle
+          drains resources and dignity at the same time.
+        </ReadingLede>
       </ScrollReveal>
 
       {/* ——— FULL-BLEED PHOTO ——— */}
-      <section className="full-bleed mt-8 md:mt-16">
-        <div className="relative h-[50vh] md:h-[60vh] w-full overflow-hidden">
-          <EditableImage
-            src="/media/field-stills/goods-community-build.jpg"
-            alt="Community stretch bed build in remote Australia"
-            slot="goods-bleed-1"
-            projectSlug="goods-on-country"
-            fill sizes="100vw" className="object-cover object-top" priority
-          />
-        </div>
-      </section>
+      <PhotoBreak>
+        <EditableImage
+          src="/media/field-stills/goods-community-build.jpg"
+          alt="Community stretch bed build in remote Australia"
+          slot="goods-bleed-1"
+          projectSlug="goods-on-country"
+          fill sizes="100vw" className="object-cover object-top" priority
+        />
+      </PhotoBreak>
 
       {leadStory?.excerpt ? (
         <ScrollReveal>
@@ -107,9 +104,9 @@ export default async function GoodsPage() {
 
       {/* ——— THE STRETCH BED — Product story ——— */}
       <ScrollReveal>
-        <section className="px-8 py-32 md:py-44">
-          <div className="mx-auto max-w-[1200px] grid gap-20 lg:grid-cols-2 lg:items-center">
-            <div>
+        <EditorialSplit
+          left={
+            <>
               <SectionHeader
                 eyebrow="The stretch bed"
                 title="Three materials. No tools. Five minutes."
@@ -121,8 +118,10 @@ export default async function GoodsPage() {
                 a Western Arrernte man from Oonchiumpa, consults on every product
                 for cultural appropriateness.
               </p>
-            </div>
-            {project.coverVideo ? (
+            </>
+          }
+          right={
+            project.coverVideo ? (
               <FullscreenVideo
                 src={project.coverVideo.url}
                 poster={project.coverVideo.posterUrl}
@@ -132,19 +131,22 @@ export default async function GoodsPage() {
               <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--site-radius)]">
                 <Image src={galleryImages[1].url} alt="The Stretch Bed" fill sizes="50vw" className="object-cover" />
               </div>
-            ) : null}
-          </div>
-        </section>
+            ) : null
+          }
+        />
       </ScrollReveal>
 
       {/* ——— PAKKIMJALKI KARI — The washing machine ——— */}
       <ScrollReveal>
-        <section className="full-bleed bg-[var(--site-surface)] px-8 py-32 md:py-44">
-          <div className="mx-auto max-w-[1200px] grid gap-20 lg:grid-cols-2 lg:items-center">
+        <EditorialSplit
+          bg="surface"
+          left={
             <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--site-radius)]">
               <EditableImage src="/media/field-stills/goods-delivery-2.jpg" alt="Goods on Country community deployment" slot="goods-washing" projectSlug="goods-on-country" fill sizes="50vw" className="object-cover" />
             </div>
-            <div>
+          }
+          right={
+            <>
               <SectionHeader
                 eyebrow="Pakkimjalki Kari"
                 title="The washing machine named in language"
@@ -163,9 +165,9 @@ export default async function GoodsPage() {
                 laundry infrastructure to communities, and generating data that
                 makes the next generation of community-deployed goods smarter.
               </p>
-            </div>
-          </div>
-        </section>
+            </>
+          }
+        />
       </ScrollReveal>
 
       {/* ——— FROM RUBBISH TO BED — Manufacturing ——— */}

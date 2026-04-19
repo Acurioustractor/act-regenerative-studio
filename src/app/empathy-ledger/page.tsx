@@ -14,6 +14,9 @@ import {
   LeadVoice,
   PrinciplesList,
   DarkCTA,
+  ReadingLede,
+  PhotoBreak,
+  EditorialSplit,
 } from "@/components/design-system";
 import { getProjectData } from "@/lib/projects/get-project-data";
 import { notFound } from "next/navigation";
@@ -56,31 +59,25 @@ export default async function EmpathyLedgerPage() {
 
       {/* ——— THE WHY ——— */}
       <ScrollReveal>
-        <section id="story" className="px-8 py-32 md:py-44">
-          <div className="mx-auto max-w-[640px]">
-            <p className="font-[var(--font-body)] text-[clamp(1.3rem,2.5vw,1.75rem)] leading-[1.6] text-[var(--site-ink)]">
-              Communities told us their stories were being extracted without
-              consent. Researchers, NGOs, and media take narratives from
-              marginalised people and use them to raise funds, write reports,
-              and build careers. The storyteller gets nothing. Not even control
-              over how they are represented.
-            </p>
-          </div>
-        </section>
+        <ReadingLede id="story">
+          Communities told us their stories were being extracted without
+          consent. Researchers, NGOs, and media take narratives from
+          marginalised people and use them to raise funds, write reports,
+          and build careers. The storyteller gets nothing. Not even control
+          over how they are represented.
+        </ReadingLede>
       </ScrollReveal>
 
       {/* ——— FULL-BLEED PHOTO ——— */}
-      <section className="full-bleed mt-8 md:mt-16">
-        <div className="relative h-[50vh] md:h-[60vh] w-full overflow-hidden">
-          <EditableImage
-            src="/media/field-stills/el-storytelling.jpg"
-            alt="Empathy Ledger storytelling session"
-            slot="el-bleed-1"
-            projectSlug="empathy-ledger"
-            fill sizes="100vw" className="object-cover object-top" priority
-          />
-        </div>
-      </section>
+      <PhotoBreak>
+        <EditableImage
+          src="/media/field-stills/el-storytelling.jpg"
+          alt="Empathy Ledger storytelling session"
+          slot="el-bleed-1"
+          projectSlug="empathy-ledger"
+          fill sizes="100vw" className="object-cover object-top" priority
+        />
+      </PhotoBreak>
 
       {leadStory?.excerpt ? (
         <ScrollReveal>
@@ -194,23 +191,22 @@ export default async function EmpathyLedgerPage() {
       </ScrollReveal>
 
       {/* ——— PHOTO BREAK ——— */}
-      <section className="full-bleed mt-8 md:mt-16">
-        <div className="relative h-[50vh] md:h-[60vh] w-full overflow-hidden">
-          <EditableImage
-            src="/media/field-stills/el-community.jpg"
-            alt="Community storytelling on Country"
-            slot="el-bleed-2"
-            projectSlug="empathy-ledger"
-            fill sizes="100vw" className="object-cover object-top"
-          />
-        </div>
-      </section>
+      <PhotoBreak>
+        <EditableImage
+          src="/media/field-stills/el-community.jpg"
+          alt="Community storytelling on Country"
+          slot="el-bleed-2"
+          projectSlug="empathy-ledger"
+          fill sizes="100vw" className="object-cover object-top"
+        />
+      </PhotoBreak>
 
       {/* ——— THE CONNECTIVE TISSUE ——— */}
       <ScrollReveal>
-        <section className="full-bleed bg-[var(--site-surface)] px-8 py-32 md:py-44">
-          <div className="mx-auto max-w-[1200px] grid gap-20 lg:grid-cols-2 lg:items-center">
-            <div>
+        <EditorialSplit
+          bg="surface"
+          left={
+            <>
               <SectionHeader
                 eyebrow="The Third Reality"
                 title="The connective tissue of the ecosystem"
@@ -223,7 +219,9 @@ export default async function EmpathyLedgerPage() {
                 Policy shifts are advocated using verified lived experience.
                 Identity is always protected.
               </p>
-            </div>
+            </>
+          }
+          right={
             <div className="grid grid-cols-2 gap-4">
               {[
                 { platform: "JusticeHub", adds: "Stories of transformation" },
@@ -237,8 +235,8 @@ export default async function EmpathyLedgerPage() {
                 </div>
               ))}
             </div>
-          </div>
-        </section>
+          }
+        />
       </ScrollReveal>
 
       {/* ——— WHERE IT SERVES ——— */}
@@ -267,17 +265,15 @@ export default async function EmpathyLedgerPage() {
       </ScrollReveal>
 
       {/* ——— PHOTO BREAK ——— */}
-      <section className="full-bleed mt-8 md:mt-16">
-        <div className="relative h-[50vh] md:h-[60vh] w-full overflow-hidden">
-          <EditableImage
-            src="/media/field-stills/el-field.jpg"
-            alt="Empathy Ledger field work"
-            slot="el-bleed-3"
-            projectSlug="empathy-ledger"
-            fill sizes="100vw" className="object-cover object-top"
-          />
-        </div>
-      </section>
+      <PhotoBreak>
+        <EditableImage
+          src="/media/field-stills/el-field.jpg"
+          alt="Empathy Ledger field work"
+          slot="el-bleed-3"
+          projectSlug="empathy-ledger"
+          fill sizes="100vw" className="object-cover object-top"
+        />
+      </PhotoBreak>
 
       {/* ——— PHOTO STRIP ——— */}
       {galleryImages.length >= 6 && (

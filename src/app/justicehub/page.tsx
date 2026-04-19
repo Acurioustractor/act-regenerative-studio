@@ -17,6 +17,10 @@ import {
   HairlineCell,
   LeadVoice,
   DarkCTA,
+  ReadingLede,
+  PhotoBreak,
+  EditorialSplit,
+  ComparisonStatPair,
 } from "@/components/design-system";
 import { getProjectData } from "@/lib/projects/get-project-data";
 import { notFound } from "next/navigation";
@@ -70,31 +74,25 @@ export default async function JusticeHubPage() {
 
       {/* ——— THE WHY ——— */}
       <ScrollReveal>
-        <section id="story" className="px-8 py-32 md:py-44">
-          <div className="mx-auto max-w-[640px]">
-            <p className="font-[var(--font-body)] text-[clamp(1.3rem,2.5vw,1.75rem)] leading-[1.6] text-[var(--site-ink)]">
-              Youth detention costs $1.3 million per child per year and has an
-              85% recidivism rate. Indigenous young people face 24 times higher
-              incarceration. The system does not work. Communities have always
-              had the solutions. JusticeHub makes them visible, connected, and
-              impossible to ignore.
-            </p>
-          </div>
-        </section>
+        <ReadingLede id="story">
+          Youth detention costs $1.3 million per child per year and has an
+          85% recidivism rate. Indigenous young people face 24 times higher
+          incarceration. The system does not work. Communities have always
+          had the solutions. JusticeHub makes them visible, connected, and
+          impossible to ignore.
+        </ReadingLede>
       </ScrollReveal>
 
       {/* ——— FULL-BLEED PHOTO ——— */}
-      <section className="full-bleed mt-8 md:mt-16">
-        <div className="relative h-[50vh] md:h-[60vh] w-full overflow-hidden">
-          <EditableImage
-            src="/media/field-stills/justicehub-community.jpg"
-            alt="Community justice program in action"
-            slot="jh-bleed-1"
-            projectSlug="justicehub"
-            fill sizes="100vw" className="object-cover object-top" priority
-          />
-        </div>
-      </section>
+      <PhotoBreak>
+        <EditableImage
+          src="/media/field-stills/justicehub-community.jpg"
+          alt="Community justice program in action"
+          slot="jh-bleed-1"
+          projectSlug="justicehub"
+          fill sizes="100vw" className="object-cover object-top" priority
+        />
+      </PhotoBreak>
 
       {leadStory?.excerpt ? (
         <ScrollReveal>
@@ -109,9 +107,9 @@ export default async function JusticeHubPage() {
 
       {/* ——— THE ECONOMIC CASE ——— */}
       <ScrollReveal>
-        <section className="px-8 py-32 md:py-44">
-          <div className="mx-auto max-w-[1200px] grid gap-20 lg:grid-cols-2 lg:items-center">
-            <div>
+        <EditorialSplit
+          left={
+            <>
               <SectionHeader
                 eyebrow="The economic case"
                 title="97 times cheaper than detention"
@@ -123,21 +121,15 @@ export default async function JusticeHubPage() {
                 maps that make the economic case undeniable for policymakers
                 and treasuries.
               </p>
-            </div>
-            <div className="grid grid-cols-2 gap-6">
-              <div className="rounded-[var(--site-radius)] border border-[var(--site-line)] p-8">
-                <p className="font-[var(--font-display)] text-4xl font-bold text-[var(--site-ink)]">$1.3M</p>
-                <p className="mt-2 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.15em] text-[var(--site-muted)]">Detention per child/year</p>
-                <p className="mt-3 font-[var(--font-body)] text-[14px] text-red-600/70">85% recidivism</p>
-              </div>
-              <div className="rounded-[var(--site-radius)] border-2 border-[var(--site-green)] p-8">
-                <p className="font-[var(--font-display)] text-4xl font-bold text-[var(--site-green)]">$14K</p>
-                <p className="mt-2 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.15em] text-[var(--site-muted)]">Community alternative/year</p>
-                <p className="mt-3 font-[var(--font-body)] text-[14px] text-[var(--site-green)]">97x cheaper</p>
-              </div>
-            </div>
-          </div>
-        </section>
+            </>
+          }
+          right={
+            <ComparisonStatPair
+              lossy={{ value: "$1.3M", label: "Detention per child/year", meta: "85% recidivism" }}
+              win={{ value: "$14K", label: "Community alternative/year", meta: "97x cheaper" }}
+            />
+          }
+        />
       </ScrollReveal>
 
       {/* ——— VIDEO ——— */}
@@ -200,23 +192,22 @@ export default async function JusticeHubPage() {
       </ScrollReveal>
 
       {/* ——— PHOTO BREAK ——— */}
-      <section className="full-bleed mt-8 md:mt-16">
-        <div className="relative h-[50vh] md:h-[60vh] w-full overflow-hidden">
-          <EditableImage
-            src="/media/field-stills/justicehub-field.jpg"
-            alt="Justice program field work"
-            slot="jh-bleed-2"
-            projectSlug="justicehub"
-            fill sizes="100vw" className="object-cover object-top"
-          />
-        </div>
-      </section>
+      <PhotoBreak>
+        <EditableImage
+          src="/media/field-stills/justicehub-field.jpg"
+          alt="Justice program field work"
+          slot="jh-bleed-2"
+          projectSlug="justicehub"
+          fill sizes="100vw" className="object-cover object-top"
+        />
+      </PhotoBreak>
 
       {/* ——— ALMA ——— */}
       <ScrollReveal>
-        <section className="full-bleed bg-[var(--site-surface)] px-8 py-32 md:py-44">
-          <div className="mx-auto max-w-[1200px] grid gap-20 lg:grid-cols-2 lg:items-center">
-            <div>
+        <EditorialSplit
+          bg="surface"
+          left={
+            <>
               <SectionHeader
                 eyebrow="Australian Living Map of Alternatives"
                 title="What works, mapped by evidence"
@@ -236,7 +227,9 @@ export default async function JusticeHubPage() {
                 and launch with evidence already behind them. Not starting from scratch.
                 Starting from proof.
               </p>
-            </div>
+            </>
+          }
+          right={
             <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--site-radius)]">
               <EditableImage
                 src="/media/field-stills/justicehub-alma.jpg"
@@ -246,8 +239,8 @@ export default async function JusticeHubPage() {
                 fill sizes="50vw" className="object-cover"
               />
             </div>
-          </div>
-        </section>
+          }
+        />
       </ScrollReveal>
 
       {/* ——— LOCAL PROOF POINTS ——— */}
@@ -314,17 +307,15 @@ export default async function JusticeHubPage() {
       </ScrollReveal>
 
       {/* ——— PHOTO BREAK ——— */}
-      <section className="full-bleed mt-8 md:mt-16">
-        <div className="relative h-[50vh] md:h-[60vh] w-full overflow-hidden">
-          <EditableImage
-            src="/media/field-stills/justicehub-community-2.jpg"
-            alt="Community justice gathering"
-            slot="jh-bleed-3"
-            projectSlug="justicehub"
-            fill sizes="100vw" className="object-cover object-top"
-          />
-        </div>
-      </section>
+      <PhotoBreak>
+        <EditableImage
+          src="/media/field-stills/justicehub-community-2.jpg"
+          alt="Community justice gathering"
+          slot="jh-bleed-3"
+          projectSlug="justicehub"
+          fill sizes="100vw" className="object-cover object-top"
+        />
+      </PhotoBreak>
 
       {/* ——— PEOPLE ——— */}
       {portraitPeople.length >= 2 && (

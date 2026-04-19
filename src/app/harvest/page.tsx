@@ -14,6 +14,8 @@ import {
   HairlineCell,
   LeadVoice,
   DarkCTA,
+  ReadingLede,
+  EditorialSplit,
 } from "@/components/design-system";
 import { getProjectData } from "@/lib/projects/get-project-data";
 import { notFound } from "next/navigation";
@@ -56,17 +58,13 @@ export default async function HarvestPage() {
 
       {/* ——— THE WHY ——— */}
       <ScrollReveal>
-        <section id="story" className="px-8 py-32 md:py-44">
-          <div className="mx-auto max-w-[640px]">
-            <p className="font-[var(--font-body)] text-[clamp(1.3rem,2.5vw,1.75rem)] leading-[1.6] text-[var(--site-ink)]">
-              The Harvest grew from a site that already knew how to grow.
-              Green Harvest sold organic seeds and gardening supplies from this
-              land for decades. When that chapter closed, the soil, the
-              infrastructure, and the community memory stayed. We inherited
-              all of it.
-            </p>
-          </div>
-        </section>
+        <ReadingLede id="story">
+          The Harvest grew from a site that already knew how to grow.
+          Green Harvest sold organic seeds and gardening supplies from this
+          land for decades. When that chapter closed, the soil, the
+          infrastructure, and the community memory stayed. We inherited
+          all of it.
+        </ReadingLede>
       </ScrollReveal>
 
       {leadStory?.excerpt ? (
@@ -82,9 +80,9 @@ export default async function HarvestPage() {
 
       {/* ——— THE SEASONAL KITCHEN ——— */}
       <ScrollReveal>
-        <section className="px-8 py-32 md:py-44">
-          <div className="mx-auto max-w-[1200px] grid gap-20 lg:grid-cols-2 lg:items-center">
-            <div>
+        <EditorialSplit
+          left={
+            <>
               <SectionHeader
                 eyebrow="The kitchen"
                 title="Cook what the land gives"
@@ -94,7 +92,9 @@ export default async function HarvestPage() {
                 The kitchen is not a restaurant. It is a community table where
                 the harvest shows up as food, and food shows up as connection.
               </p>
-            </div>
+            </>
+          }
+          right={
             <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--site-radius)]">
               <EditableImage
                 src="/media/field-stills/harvest-kitchen.jpg"
@@ -104,14 +104,15 @@ export default async function HarvestPage() {
                 fill sizes="50vw" className="object-cover"
               />
             </div>
-          </div>
-        </section>
+          }
+        />
       </ScrollReveal>
 
       {/* ——— THE GARDEN CENTRE ——— */}
       <ScrollReveal>
-        <section className="full-bleed bg-[var(--site-surface)] px-8 py-32 md:py-44">
-          <div className="mx-auto max-w-[1200px] grid gap-20 lg:grid-cols-2 lg:items-center">
+        <EditorialSplit
+          bg="surface"
+          left={
             <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--site-radius)]">
               <EditableImage
                 src="/media/field-stills/harvest-garden.jpg"
@@ -121,23 +122,23 @@ export default async function HarvestPage() {
                 fill sizes="50vw" className="object-cover"
               />
             </div>
-            <div>
-              <SectionHeader
-                eyebrow="The garden centre"
-                title="Native and productive plants for the Coast"
-                lede={
-                  <>
-                    Plants suited to the Sunshine Coast region, sourced and curated
-                    for home growers, community gardens, and regenerative
-                    smallholders. This is Green Harvest&apos;s inheritance, evolved.
-                    The original organic seed business that operated from this site
-                    for decades laid the foundation. We are growing what they started.
-                  </>
-                }
-              />
-            </div>
-          </div>
-        </section>
+          }
+          right={
+            <SectionHeader
+              eyebrow="The garden centre"
+              title="Native and productive plants for the Coast"
+              lede={
+                <>
+                  Plants suited to the Sunshine Coast region, sourced and curated
+                  for home growers, community gardens, and regenerative
+                  smallholders. This is Green Harvest&apos;s inheritance, evolved.
+                  The original organic seed business that operated from this site
+                  for decades laid the foundation. We are growing what they started.
+                </>
+              }
+            />
+          }
+        />
       </ScrollReveal>
 
       {/* ——— PHOTO STRIP ——— */}
@@ -214,9 +215,9 @@ export default async function HarvestPage() {
 
       {/* ——— CSA ——— */}
       <ScrollReveal>
-        <section className="px-8 py-32 md:py-44">
-          <div className="mx-auto max-w-[1200px] grid gap-20 lg:grid-cols-2 lg:items-center">
-            <div>
+        <EditorialSplit
+          left={
+            <>
               <SectionHeader
                 eyebrow="Community Supported Agriculture"
                 title="Join the harvest cycle"
@@ -233,7 +234,9 @@ export default async function HarvestPage() {
               >
                 Learn about CSA membership
               </a>
-            </div>
+            </>
+          }
+          right={
             <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--site-radius)]">
               <EditableImage
                 src="/media/field-stills/harvest-produce.jpg"
@@ -243,8 +246,8 @@ export default async function HarvestPage() {
                 fill sizes="50vw" className="object-cover"
               />
             </div>
-          </div>
-        </section>
+          }
+        />
       </ScrollReveal>
 
       {/* ——— VIDEO ——— */}

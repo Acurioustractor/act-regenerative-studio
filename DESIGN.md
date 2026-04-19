@@ -6,7 +6,49 @@
 - **Space/industry:** Social practice art, regenerative agriculture, community-led innovation
 - **Project type:** Editorial/portfolio hybrid with living data (58 projects, 319 storytellers, 5,039 media)
 
-## Aesthetic Direction
+---
+
+## Two Design Languages
+
+This site intentionally uses **two visual languages** for two kinds of content. Pick the right one before building a new page.
+
+### 🎥 Bold Documentary — for flagship project narratives
+The big cinematic treatment. Full-bleed dark video heroes, Fraunces light display type, forest green + clay accents on warm white, 8px sharp corners, editorial rhythm. Feels like a field journal.
+
+**Use when:** The page tells a single project's story with hero media, stats, lead voices, and a clear CTA. This is the headline treatment — use it sparingly.
+
+**Currently applied to:**
+- Homepage (`/`)
+- Flagship project pages: `/empathy-ledger`, `/farm`, `/goods`, `/harvest`, `/justicehub`
+
+**Components:** `src/components/design-system/` — `DocHero`, `SectionHeader`, `HairlineGrid`, `LeadVoice`, `PrinciplesList`, `DarkCTA`
+
+### 📄 Warm Editorial — for meta, legal, and supporting content
+The quiet informational treatment. Rounded sand-colored cards, tan/brown/olive palette, rounded-3xl corners, softer hierarchy. Feels like reading a thoughtful printed booklet.
+
+**Use when:** The page is about ACT itself (not a single project), gives reference info, holds legal copy, lists things, or routes visitors across the ecosystem. No hero media required.
+
+**Currently applied to:** 33 pages including about, method, principles, vision, impact, how-we-work, studio, governance, ecosystem, engine, contact, people, partners, events, media, media-lab, ask, projects index, terms, privacy, wiki/*, art/*, and flagship sub-pages (farm/stay, farm/retreats, farm/workshops, harvest/csa, harvest/produce).
+
+**Components:** `src/components/PageHero.tsx`, `src/components/SectionHeading.tsx`, `src/components/CardGrid.tsx`, `src/components/LivingSystemStrip.tsx` (17 pages)
+
+### Decision rule
+| Question | Answer | Language |
+|---|---|---|
+| Is this one project's dedicated narrative page? | Yes | Bold Documentary |
+| Is this the site homepage? | Yes | Bold Documentary |
+| Does the page have a cover video or hero image? | Yes, and it's telling a story | Bold Documentary |
+| Is this about ACT, a method, legal, or a directory? | Yes | Warm Editorial |
+| Does the page list many things (projects, people, artists, events)? | Yes | Warm Editorial |
+| Is it a sub-page of a flagship (stays, workshops, produce)? | Yes | Warm Editorial |
+
+**Don't mix them on one page.** If a page wants both energies, that's a signal the page is doing too much — split it.
+
+---
+
+## Bold Documentary
+
+### Aesthetic Direction
 - **Direction:** Bold Documentary
 - **Decoration level:** Intentional (grain texture, editorial rules, pull-quote borders)
 - **Mood:** A field journal written at scale. Confident, curious, grounded. Not polished. Not precious. Alive. The first emotion should be curiosity.
@@ -335,6 +377,96 @@ Used for "Full project page →" terminal strips.
 
 ---
 
+## Warm Editorial
+
+The informational-content language. Soft, warm, quiet. Prioritizes scannability over drama. Lives on the meta/legal/directory pages where Bold Documentary would feel too heavy.
+
+### Aesthetic Direction
+- **Direction:** Warm Editorial
+- **Decoration level:** Intentional (soft sand borders, decorative blurred blobs on hero, warm gradients)
+- **Mood:** A thoughtful printed booklet. Calm, considered, grounded. The reader should feel invited to read without being performed at.
+- **Anti-patterns:** No dark video heroes (that's Bold Documentary). No forest green CTAs (Warm Editorial uses its own palette). No 8px sharp corners (reserved for Bold Documentary).
+
+### Typography
+Same fonts as Bold Documentary (Fraunces display, Source Serif 4 body, Work Sans UI) — the site has one type system, two color/shape systems.
+
+### Color (Warm Editorial palette)
+These are currently hardcoded in components. Consider extracting to CSS vars (`--we-*`) if the language grows.
+
+- **Olive ink — `#2F3E2E`** — primary headings
+- **Deep brown body — `#4D3F33`** — body copy
+- **Warm brown eyebrow — `#6B5A45`** — eyebrows, muted UI labels
+- **Sand border — `#E3D4BA`** — card/panel borders (also `#E1D3BA` in CardGrid)
+- **Sand surface — `#F6F1E7`** — warm backgrounds and gradient start
+- **Mid-tan — `#E7DDC7`** — gradient mid stop
+- **Deep tan — `#D7C4A2`** — gradient end stop
+- **Sage blob — `#d9ead7`** — decorative hero blob (30% opacity, blurred)
+- **Amber blob — `#d3a24f`** — decorative hero blob (15% opacity, blurred)
+- **Meta text — `#4A4035`** — small pill/label text
+- **Hover green — `#4CAF50`** — card hover border accent
+
+### Shape
+- **Card radius:** `rounded-3xl` (24px) — soft, generous
+- **Small elements:** `rounded-full` for pills
+- **Card pattern:** `rounded-3xl border border-[#E3D4BA] bg-white/70 p-8` with `text-sm leading-7 text-[#4D3F33]`
+
+### Spacing
+- **Page container:** `space-y-16` to `space-y-20` between sections
+- **Card padding:** `p-6` (compact) or `p-8` / `p-12` (breathing)
+- **Card grid gaps:** `gap-6`
+
+### Components
+
+Located in `src/components/` (NOT `src/components/design-system/`).
+
+**`PageHero` (legacy)** — `src/components/PageHero.tsx`
+- Rounded sand-colored panel with decorative blurred blobs
+- `eyebrow`, `title`, `description`, `actions: [{label, href, variant: 'solid' | 'outline'}]`
+- Optional `children` slot renders as a right-hand info panel
+- Optional `coverImage` / `coverVideo` renders above as `h-[42vh]` rounded top
+- Keep using this for every Warm Editorial page hero
+
+**`SectionHeading` (legacy)** — `src/components/SectionHeading.tsx`
+- `eyebrow`, `title`, `description`, `align: 'left' | 'center'`
+- Uses the `.site-eyebrow` class with dash prefix
+- Pair with `CardGrid` or a custom section body
+
+**`CardGrid`** — `src/components/CardGrid.tsx`
+- Pass `cards: [{title, description?, eyebrow?, href?, ctaLabel?}]`
+- Renders `rounded-3xl border border-[#E1D3BA] bg-white/70 p-6` cards
+- Green hover border `#4CAF50`
+- Use for lists of projects, method steps, identity cards, etc.
+
+**`LivingSystemStrip`** — `src/components/LivingSystemStrip.tsx`
+- Shared infrastructure on 17 meta pages. Shows "this page connects to the living ecosystem" with wiki link + live data pill + stats
+- `eyebrow`, `title`, `description`, `wiki: {href, label}`, `live: {sourceLabel, href}`, `stats: [{label, value}]`
+- Appears after the hero on most Warm Editorial pages
+
+### Button patterns
+- **Solid (primary):** `bg-[var(--site-green)] px-6 py-3 text-xs uppercase tracking-[0.22em] text-white` — Warm Editorial still uses the forest green primary, just at a lighter weight than Bold Documentary
+- **Outline (secondary):** `border-[1.5px] border-[var(--site-ink)] px-6 py-3 text-xs uppercase tracking-[0.22em] text-[var(--site-ink)] hover:bg-ink hover:text-white`
+
+### When to reach for Warm Editorial
+- About / method / principles / vision / governance / impact / how-we-work / studio
+- Contact / people / partners / events / ask
+- Ecosystem / engine / projects (index, not per-project narratives)
+- Legal: terms, privacy
+- Wiki surfaces (source-bridges, source-packets)
+- Art surfaces (index, artists, artworks, commissions, exhibitions, residencies)
+- Flagship sub-pages that list or inform rather than narrate: farm/stay, farm/retreats, farm/workshops, harvest/csa, harvest/produce
+- Media / media-lab
+
+### When to migrate a page from Warm Editorial → Bold Documentary
+Only when **all** of these are true:
+1. The page tells one coherent project story (not a list, not a directory)
+2. You have hero video or a strong hero image ready
+3. The project is important enough to warrant flagship treatment
+4. You're willing to maintain the narrative structure (lead voice, stats, principles, CTA)
+
+If you only have (1) or (2), stay in Warm Editorial.
+
+---
+
 ## Decisions Log
 | Date | Decision | Rationale |
 |------|----------|-----------|
@@ -349,3 +481,6 @@ Used for "Full project page →" terminal strips.
 | 2026-04-18 | Components spec'd: Page Hero, Section Header, Reading Lede, Editorial Split, Hairline Grid, Lead Voice, Principles List, Photo Break, Comparison Stat Pair, Dark CTAs | All recurring on 4–5 pages. Codified the recipes so future pages don't rediscover them. |
 | 2026-04-18 | Section padding rhythm: `py-32 md:py-44` standard | Universal across shipped pages. Named it. |
 | 2026-04-18 | Content-width tokens: 640/800/1100/1200 | Ratified what's shipping for prose, dark-prose, form grid, and standard section. |
+| 2026-04-20 | Two design languages declared: Bold Documentary + Warm Editorial | Audit of the 33 non-flagship pages revealed they use a fundamentally different aesthetic (warm tan/olive palette, rounded-3xl, LivingSystemStrip) — not just different components. Rather than forcing a site-wide redesign, recognized this as intentional visual hierarchy: flagship projects get cinematic treatment, supporting content gets quiet editorial treatment. Both are valid; picking the right one is the key design decision per page. |
+| 2026-04-20 | Warm Editorial palette codified | Previously hardcoded across 33 pages with no central reference. Documented the palette (#2F3E2E olive, #4D3F33 brown, #6B5A45 warm-brown, #E3D4BA sand, #F6F1E7 / #E7DDC7 / #D7C4A2 gradient, #4CAF50 hover) and the three core shared components (PageHero, SectionHeading, CardGrid, LivingSystemStrip) so future additions don't drift. |
+| 2026-04-20 | Routing rule added: which language per page | Encoded decision rule as a table. Prevents future confusion about which hero/header to reach for. Flagship project narratives get Bold Documentary; everything else (meta, legal, directories, sub-pages) gets Warm Editorial. Don't mix them on one page — that's a signal the page is doing too much. |

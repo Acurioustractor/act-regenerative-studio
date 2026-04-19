@@ -18,6 +18,14 @@
   --site-shadow: 0 2px 20px rgba(26, 26, 26, 0.06);
   --site-shadow-hover: 0 8px 40px rgba(26, 26, 26, 0.12);
   --site-radius: 8px;
+
+  /* Warm Editorial palette — meta, legal, directory pages. See DESIGN.md. */
+  --we-olive: #2F3E2E;        /* headings, dual-entity accents */
+  --we-olive-deep: #3A4A3D;   /* contrast-adjusted olive for text-on-white */
+  --we-brown: #4D3F33;        /* body text primary */
+  --we-brown-deep: #4A4035;   /* contrast-adjusted brown for small body text */
+  --we-warm-brown: #6B5A45;   /* muted supporting text on sand backgrounds */
+  --we-sand: #E3D4BA;         /* card borders, chip backgrounds */
 }
 
 * {
@@ -46,7 +54,16 @@ main > div {
 
 /* Full-bleed sections break out of container */
 main > .full-bleed,
-main > section.full-bleed {
+main > section.full-bleed,
+main > div > .full-bleed,
+main > div > section.full-bleed {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+/* ScrollReveal wrappers that contain full-bleed children must also break out */
+main > div:has(> .full-bleed) {
   max-width: none;
   padding-left: 0;
   padding-right: 0;

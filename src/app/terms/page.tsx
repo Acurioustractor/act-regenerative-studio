@@ -1,4 +1,5 @@
 import PageHero from "../../components/PageHero";
+import { WarmCard } from "@/components/warm-editorial";
 
 export const metadata = {
   title: "Terms + Cultural Protocols | A Curious Tractor",
@@ -16,7 +17,7 @@ export default function TermsPage() {
         actions={[{ label: "Contact us", href: "/contact" }]}
       >
         <div className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
             Working principles
           </p>
           <ul className="space-y-2">
@@ -28,23 +29,17 @@ export default function TermsPage() {
       </PageHero>
 
       <section className="grid gap-6 md:grid-cols-2">
-        <div className="rounded-3xl border border-[#E3D4BA] bg-white/80 p-8 text-sm leading-7 text-[#4D3F33]">
-          <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
-            Using the site
-          </h2>
-          <p className="mt-4">
+        <WarmCard title="Using the site">
+          <p>
             You may browse, read, and share links to ACT pages for personal,
             community, research, and partner use. Please do not interfere with the
             site, attempt to access restricted systems, or use automation in ways
             that damage service quality or ignore permission boundaries.
           </p>
-        </div>
+        </WarmCard>
 
-        <div className="rounded-3xl border border-[#E3D4BA] bg-white/80 p-8 text-sm leading-7 text-[#4D3F33]">
-          <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
-            Stories, images, and cultural material
-          </h2>
-          <p className="mt-4">
+        <WarmCard title="Stories, images, and cultural material">
+          <p>
             Some ACT pages include community stories, photographs, video, audio, or
             cultural material. Public visibility does not automatically mean open
             reuse. Attribution, cultural authority, and storyteller permission still
@@ -54,31 +49,25 @@ export default function TermsPage() {
             If you want to republish, adapt, archive, or use material beyond simple
             linking or brief quotation, ask first.
           </p>
-        </div>
+        </WarmCard>
 
-        <div className="rounded-3xl border border-[#E3D4BA] bg-white/80 p-8 text-sm leading-7 text-[#4D3F33]">
-          <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
-            Enquiries, bookings, and participation
-          </h2>
-          <p className="mt-4">
+        <WarmCard title="Enquiries, bookings, and participation">
+          <p>
             Sending an enquiry, joining a waitlist, or registering interest does not
             guarantee acceptance, availability, or a particular timeline. Farm stays,
             residencies, workshops, and partnerships are all subject to fit,
             capacity, and care obligations to place and people.
           </p>
-        </div>
+        </WarmCard>
 
-        <div className="rounded-3xl border border-[#E3D4BA] bg-white/80 p-8 text-sm leading-7 text-[#4D3F33]">
-          <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
-            Updates
-          </h2>
-          <p className="mt-4">
+        <WarmCard title="Updates">
+          <p>
             ACT is still building parts of its public infrastructure. These terms may
             be refined as the studio, project sites, and consent systems mature. The
             current version on this site is the public reference point until more
             specific terms replace or supplement it.
           </p>
-        </div>
+        </WarmCard>
       </section>
     </div>
   );

@@ -7,6 +7,7 @@ type SectionHeaderProps = {
   eyebrowColor?: "clay" | "muted";
   onDark?: boolean;
   ledeMaxWidth?: string;
+  align?: "left" | "center";
 };
 
 export function SectionHeader({
@@ -16,6 +17,7 @@ export function SectionHeader({
   eyebrowColor = "clay",
   onDark = false,
   ledeMaxWidth,
+  align = "left",
 }: SectionHeaderProps) {
   const titleColor = onDark ? "text-[#FAFAF7]" : "text-[var(--site-ink)]";
   const ledeColor = onDark ? "text-[#FAFAF7]/60" : "text-[var(--site-muted)]";
@@ -26,7 +28,17 @@ export function SectionHeader({
         ? "text-[#FAFAF7]/60"
         : "text-[var(--site-muted)]";
 
-  return (
+  const isCenter = align === "center";
+  const titleSize = isCenter
+    ? "text-[clamp(2.5rem,5vw,4.5rem)] tracking-[-0.02em] leading-[1.05]"
+    : "text-[clamp(2rem,4vw,3rem)] leading-[1.1]";
+  const ledeStyle: React.CSSProperties = ledeMaxWidth
+    ? { maxWidth: ledeMaxWidth }
+    : isCenter
+      ? { maxWidth: "42rem" }
+      : {};
+
+  const content = (
     <>
       {eyebrow ? (
         <p
@@ -36,18 +48,23 @@ export function SectionHeader({
         </p>
       ) : null}
       <h2
-        className={`mt-4 font-[var(--font-display)] text-[clamp(2rem,4vw,3rem)] font-light leading-[1.1] ${titleColor}`}
+        className={`mt-4 font-[var(--font-display)] font-light ${titleSize} ${titleColor}`}
       >
         {title}
       </h2>
       {lede ? (
         <p
-          className={`mt-8 font-[var(--font-body)] text-lg leading-[1.8] ${ledeColor}`}
-          style={ledeMaxWidth ? { maxWidth: ledeMaxWidth } : undefined}
+          className={`mt-8 font-[var(--font-body)] text-lg leading-[1.8] ${ledeColor} ${isCenter ? "mx-auto" : ""}`}
+          style={ledeStyle}
         >
           {lede}
         </p>
       ) : null}
     </>
   );
+
+  if (isCenter) {
+    return <div className="flex flex-col items-center text-center">{content}</div>;
+  }
+  return <>{content}</>;
 }

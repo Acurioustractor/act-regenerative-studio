@@ -23,6 +23,9 @@ type DocHeroProps = {
   primaryCta?: HeroCta;
   secondaryCta?: HeroCta;
   children?: ReactNode;
+  fullHeight?: boolean;
+  statsAfter?: ReactNode;
+  gradientStrength?: "default" | "strong";
 };
 
 function CtaButton({ cta, variant }: { cta: HeroCta; variant: "primary" | "ghost" }) {
@@ -58,9 +61,17 @@ export function DocHero({
   primaryCta,
   secondaryCta,
   children,
+  fullHeight = false,
+  statsAfter,
+  gradientStrength = "default",
 }: DocHeroProps) {
+  const minHeight = fullHeight ? "min-h-[100vh]" : "min-h-[90vh]";
+  const gradientClass =
+    gradientStrength === "strong"
+      ? "bg-gradient-to-t from-[var(--site-dark)] via-[var(--site-dark)]/55 to-[var(--site-dark)]/15"
+      : "bg-gradient-to-t from-[var(--site-dark)] via-[var(--site-dark)]/25 to-transparent";
   return (
-    <section className="full-bleed relative flex min-h-[90vh] flex-col justify-end overflow-hidden bg-[var(--site-dark)]">
+    <section className={`full-bleed relative flex ${minHeight} flex-col justify-end overflow-hidden bg-[var(--site-dark)]`}>
       <div className="absolute inset-0">
         {coverVideo ? (
           <SiteLoopVideo
@@ -79,11 +90,14 @@ export function DocHero({
             className="object-cover"
           />
         ) : null}
-        <div className="absolute inset-0 bg-gradient-to-t from-[var(--site-dark)] via-[var(--site-dark)]/25 to-transparent" />
+        <div className={`absolute inset-0 ${gradientClass}`} />
       </div>
       <div className="relative z-10 mx-auto w-full max-w-[1200px] px-8 pb-24 pt-40 md:pb-32">
         {eyebrow ? (
-          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-[var(--site-clay)]">
+          <p
+            className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-[var(--site-clay)]"
+            style={{ textShadow: "0 1px 12px rgba(0,0,0,0.6)" }}
+          >
             {eyebrow}
           </p>
         ) : null}
@@ -94,7 +108,10 @@ export function DocHero({
           {title}
         </h1>
         {subhead ? (
-          <p className="mt-6 max-w-md font-[var(--font-body)] text-lg leading-[1.7] text-[#FAFAF7]/60">
+          <p
+            className={`mt-6 max-w-md font-[var(--font-body)] text-lg leading-[1.7] ${gradientStrength === "strong" ? "text-[#FAFAF7]/80" : "text-[#FAFAF7]/60"}`}
+            style={gradientStrength === "strong" ? { textShadow: "0 1px 12px rgba(0,0,0,0.6)" } : undefined}
+          >
             {subhead}
           </p>
         ) : null}
@@ -105,6 +122,7 @@ export function DocHero({
             {children}
           </div>
         ) : null}
+        {statsAfter ? <div className="mt-20">{statsAfter}</div> : null}
       </div>
     </section>
   );

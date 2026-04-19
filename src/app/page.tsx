@@ -2,6 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { SiteLoopVideo } from "@/components/media/SiteLoopVideo";
+import {
+  DarkCTA,
+  DocHero,
+  EditorialSplit,
+  SectionHeader,
+} from "@/components/design-system";
 import { buildCuratedProjectCards } from "@/lib/projects/build-curated-project-cards";
 import { getAllArtProjects, splitFeaturedAndEmerging } from "@/lib/art/art-portfolio";
 import { getHomeEditorialFeature } from "@/lib/empathy-ledger-editorial";
@@ -87,46 +93,21 @@ export default async function HomePage() {
   return (
     <>
       {/* ——— 1. HERO — Full-screen dark, farm drone video ——— */}
-      <section className="full-bleed relative flex min-h-[100vh] flex-col justify-end overflow-hidden bg-[var(--site-dark)]">
-        <div className="absolute inset-0">
-          <SiteLoopVideo
-            src="/media/field-videos/hero-farm-aerial.mp4"
-            poster="/media/field-stills/hero-farm-aerial.jpg"
-            title="Black Cockatoo Valley aerial through morning fog"
-            preload="metadata"
-            className="h-full w-full object-cover animate-[slowZoom_30s_ease-in-out_infinite_alternate]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-[var(--site-dark)] via-[var(--site-dark)]/60 to-transparent" />
-        </div>
-
-        <div className="relative z-10 mx-auto w-full max-w-[1200px] px-8 pb-20 pt-40 md:pb-28">
-          <p className="mb-6 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-[#FAFAF7]/50">
-            A Curious Tractor &middot; Jinibara Country
-          </p>
-          <h1 className="max-w-[14ch] font-[var(--font-display)] text-[clamp(2.8rem,7vw,5.5rem)] font-light leading-[1.05] tracking-[-0.02em] text-[#FAFAF7]">
-            Places, story systems, and public works you can step into.
-          </h1>
-          <p className="mt-8 max-w-xl font-[var(--font-body)] text-lg leading-[1.7] text-[#FAFAF7]/65">
-            Regenerative innovation from a working farm on Jinibara Country.
-            Justice platforms, ethical storytelling, community art, and land care.
-          </p>
-          <div className="mt-10 flex flex-wrap gap-4">
-            <Link
-              href="/projects"
-              className="rounded-[var(--site-radius)] bg-[#FAFAF7] px-8 py-4 font-[var(--font-sans)] text-[13px] font-semibold uppercase tracking-[0.14em] text-[var(--site-dark)] transition hover:-translate-y-0.5 hover:shadow-[0_8px_40px_rgba(250,250,247,0.15)]"
-            >
-              Enter the work
-            </Link>
-            <Link
-              href="/art"
-              className="rounded-[var(--site-radius)] border border-[#FAFAF7]/25 px-8 py-4 font-[var(--font-sans)] text-[13px] font-semibold uppercase tracking-[0.14em] text-[#FAFAF7]/80 transition hover:border-[#FAFAF7]/50 hover:text-[#FAFAF7]"
-            >
-              See the art &rarr;
-            </Link>
-          </div>
-
-          {/* Stats strip */}
-          <div className="mt-20 flex flex-wrap gap-12 border-t border-[#FAFAF7]/10 pt-8">
+      <DocHero
+        fullHeight
+        gradientStrength="strong"
+        eyebrow="A Curious Tractor · Jinibara Country"
+        title="Places, story systems, and public works you can step into."
+        subhead="Regenerative innovation from a working farm on Jinibara Country. Justice platforms, ethical storytelling, community art, and land care."
+        coverVideo={{
+          url: "/media/field-videos/hero-farm-aerial.mp4",
+          posterUrl: "/media/field-stills/hero-farm-aerial.jpg",
+          title: "Black Cockatoo Valley aerial through morning fog",
+        }}
+        primaryCta={{ label: "Enter the work", href: "/projects" }}
+        secondaryCta={{ label: "See the art →", href: "/art" }}
+        statsAfter={
+          <div className="flex flex-wrap gap-12 border-t border-[#FAFAF7]/10 pt-8">
             {[
               { n: "58", l: "Projects" },
               { n: "319", l: "Storytellers" },
@@ -143,18 +124,17 @@ export default async function HomePage() {
               </div>
             ))}
           </div>
-        </div>
-      </section>
+        }
+      />
 
       {/* ——— 2. FLAGSHIP FIELDS — Editorial, no borders ——— */}
       <section className="px-8 py-28 md:py-36">
         <div className="mx-auto max-w-[1200px]">
-          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--site-muted)]">
-            Five flagship fields
-          </p>
-          <h2 className="mt-4 max-w-[18ch] font-[var(--font-display)] text-[clamp(2rem,4vw,3.5rem)] font-light leading-[1.1] tracking-[-0.01em] text-[var(--site-ink)]">
-            How the work meets the ground
-          </h2>
+          <SectionHeader
+            eyebrow="Five flagship fields"
+            title="How the work meets the ground"
+            eyebrowColor="muted"
+          />
         </div>
 
         {/* Lead project — full-bleed image */}
@@ -256,96 +236,92 @@ export default async function HomePage() {
       </section>
 
       {/* ——— 3. ART CALLOUT — Full-bleed dark ——— */}
-      <section className="full-bleed bg-[var(--site-dark)] px-8 py-28 md:py-36">
-        <div className="mx-auto max-w-[1200px]">
-          <div className="grid gap-12 lg:grid-cols-[1fr_1fr] lg:items-center">
-            <div>
-              <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--site-clay)]">
-                Art portfolio
-              </p>
-              <h2 className="mt-4 font-[var(--font-display)] text-[clamp(2rem,4vw,3.5rem)] font-light leading-[1.1] text-[#FAFAF7]">
-                If art isn&apos;t being made and stories aren&apos;t being told,
-                the whole system dies.
-              </h2>
-              <p className="mt-6 max-w-lg font-[var(--font-body)] text-[15px] leading-[1.8] text-[#FAFAF7]/60">
-                Installation, photography, film, sculpture, performance — art as
-                the final act of listening. {allArtProjects.length} works documented
-                and growing.
-              </p>
-              <Link
-                href="/art"
-                className="mt-8 inline-flex items-center gap-3 rounded-[var(--site-radius)] border border-[#FAFAF7]/20 px-8 py-4 font-[var(--font-sans)] text-[13px] font-semibold uppercase tracking-[0.14em] text-[#FAFAF7]/80 transition hover:border-[#FAFAF7]/50 hover:text-[#FAFAF7]"
-              >
-                Enter the art <span aria-hidden="true">&rarr;</span>
-              </Link>
+      <EditorialSplit
+        bg="dark"
+        left={
+          <>
+            <SectionHeader
+              onDark
+              eyebrowColor="clay"
+              eyebrow="Art portfolio"
+              title="If art isn't being made and stories aren't being told, the whole system dies."
+              lede={
+                <>
+                  Installation, photography, film, sculpture, performance — art as
+                  the final act of listening. {allArtProjects.length} works documented
+                  and growing.
+                </>
+              }
+              ledeMaxWidth="32rem"
+            />
+            <div className="mt-8">
+              <DarkCTA variant="ghost" href="/art">
+                Enter the art →
+              </DarkCTA>
             </div>
-
-            {/* Featured artwork images from art portfolio */}
-            <div className="grid grid-cols-2 gap-3">
-              {artForHomepage.map((art, index) => {
-                const imgUrl = art.heroImage?.url || art.heroImage?.thumbnail_url;
-                return (
-                  <Link
-                    key={art.slug}
-                    href={`/art/${art.slug}`}
-                    className={`group relative overflow-hidden rounded-[var(--site-radius)] ${
-                      index === 0 ? "col-span-2 aspect-[16/9]" : "aspect-square"
-                    }`}
-                  >
-                    {imgUrl ? (
-                      <Image
-                        src={imgUrl}
-                        alt={art.heroImage?.alt || art.title}
-                        fill
-                        sizes={
-                          index === 0
-                            ? "(min-width: 1024px) 50vw, 100vw"
-                            : "(min-width: 1024px) 25vw, 50vw"
-                        }
-                        className="object-cover transition-transform duration-[8s] group-hover:scale-105"
-                      />
-                    ) : (
-                      <div className="flex h-full items-center justify-center bg-[#2A2F2A]">
-                        <span className="font-[var(--font-display)] text-lg text-[#FAFAF7]/20">
-                          {art.title}
-                        </span>
-                      </div>
-                    )}
-                    <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
-                    <div className="absolute bottom-0 left-0 right-0 translate-y-4 p-4 opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
-                      <p className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--site-clay)]">
-                        {art.mediums[0]}
-                      </p>
-                      <p className="mt-1 font-[var(--font-display)] text-lg font-semibold text-[#FAFAF7]">
+          </>
+        }
+        right={
+          <div className="grid grid-cols-2 gap-3">
+            {artForHomepage.map((art, index) => {
+              const imgUrl = art.heroImage?.url || art.heroImage?.thumbnail_url;
+              return (
+                <Link
+                  key={art.slug}
+                  href={`/art/${art.slug}`}
+                  className={`group relative overflow-hidden rounded-[var(--site-radius)] ${
+                    index === 0 ? "col-span-2 aspect-[16/9]" : "aspect-square"
+                  }`}
+                >
+                  {imgUrl ? (
+                    <Image
+                      src={imgUrl}
+                      alt={art.heroImage?.alt || art.title}
+                      fill
+                      sizes={
+                        index === 0
+                          ? "(min-width: 1024px) 50vw, 100vw"
+                          : "(min-width: 1024px) 25vw, 50vw"
+                      }
+                      className="object-cover transition-transform duration-[8s] group-hover:scale-105"
+                    />
+                  ) : (
+                    <div className="flex h-full items-center justify-center bg-[#2A2F2A]">
+                      <span className="font-[var(--font-display)] text-lg text-[#FAFAF7]/20">
                         {art.title}
-                      </p>
+                      </span>
                     </div>
-                  </Link>
-                );
-              })}
-            </div>
+                  )}
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent opacity-0 transition-opacity group-hover:opacity-100" />
+                  <div className="absolute bottom-0 left-0 right-0 translate-y-4 p-4 opacity-0 transition-all group-hover:translate-y-0 group-hover:opacity-100">
+                    <p className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--site-clay)]">
+                      {art.mediums[0]}
+                    </p>
+                    <p className="mt-1 font-[var(--font-display)] text-lg font-semibold text-[#FAFAF7]">
+                      {art.title}
+                    </p>
+                  </div>
+                </Link>
+              );
+            })}
           </div>
-        </div>
-      </section>
+        }
+      />
 
       {/* ——— 4. LCAA METHOD — Typographic, no boxes ——— */}
       <section className="px-8 py-28 md:py-36">
         <div className="mx-auto max-w-[1200px]">
-          <div className="flex flex-col items-center text-center">
-            <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--site-muted)]">
-              Method
-            </p>
-            <h2 className="mt-6 font-[var(--font-display)] text-[clamp(2.5rem,5vw,4.5rem)] font-light leading-[1.05] tracking-[-0.02em] text-[var(--site-ink)]">
-              Listen. Curiosity. Action. Art.
-            </h2>
-            <p className="mt-6 max-w-2xl font-[var(--font-body)] text-lg leading-[1.8] text-[var(--site-muted)]">
-              Every project follows the same path. We start by listening to place
-              and people. Curiosity shapes the question. Action builds something
-              real. Art carries it into public life.
-            </p>
+          <SectionHeader
+            align="center"
+            eyebrowColor="muted"
+            eyebrow="Method"
+            title="Listen. Curiosity. Action. Art."
+            lede="Every project follows the same path. We start by listening to place and people. Curiosity shapes the question. Action builds something real. Art carries it into public life."
+          />
+          <div className="mt-8 flex justify-center">
             <Link
               href="/method"
-              className="mt-8 inline-flex items-center gap-2 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--site-green)] transition-all hover:gap-3"
+              className="inline-flex items-center gap-2 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--site-green)] transition-all hover:gap-3"
             >
               Read the full method <span aria-hidden="true">&rarr;</span>
             </Link>
@@ -356,12 +332,11 @@ export default async function HomePage() {
       {/* ——— 5. INVITATION — Three paths ——— */}
       <section className="full-bleed bg-[var(--site-surface)] px-8 py-28 md:py-36">
         <div className="mx-auto max-w-[1200px]">
-          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--site-muted)]">
-            Invitation
-          </p>
-          <h2 className="mt-4 font-[var(--font-display)] text-[clamp(2rem,4vw,3.5rem)] font-light leading-[1.1] text-[var(--site-ink)]">
-            Ways into the work
-          </h2>
+          <SectionHeader
+            eyebrow="Invitation"
+            title="Ways into the work"
+            eyebrowColor="muted"
+          />
           <div className="mt-16 grid gap-8 md:grid-cols-3">
             {[
               {

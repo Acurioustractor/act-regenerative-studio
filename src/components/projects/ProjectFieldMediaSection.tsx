@@ -138,7 +138,7 @@ export function ProjectFieldMediaSection({
                 href={item.href}
                 target={item.href.startsWith('http') ? '_blank' : undefined}
                 rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="group overflow-hidden rounded-[26px] border border-[#E3D4BA] bg-[#FDFBF7]"
+                className="group overflow-hidden rounded-[26px] border border-[var(--we-sand)] bg-[#FDFBF7]"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img
@@ -157,7 +157,7 @@ export function ProjectFieldMediaSection({
                       {item.sourceTitle}
                     </p>
                   ) : null}
-                  <p className="line-clamp-3 text-sm leading-6 text-[#4D3F33]">
+                  <p className="line-clamp-3 text-sm leading-6 text-[var(--we-brown)]">
                     {item.caption || projectTitle}
                   </p>
                 </div>
@@ -171,13 +171,13 @@ export function ProjectFieldMediaSection({
             href={projectWebsiteUrl}
             target="_blank"
             rel="noopener noreferrer"
-            className="site-glow-link flex items-center justify-between rounded-[24px] border border-[#D6C19A] bg-[#F8F1E5] px-5 py-4 text-[#2F3E2E] transition hover:bg-white"
+            className="site-glow-link flex items-center justify-between rounded-[24px] border border-[#D6C19A] bg-[#F8F1E5] px-5 py-4 text-[var(--we-olive)] transition hover:bg-white"
           >
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#7A9B76]">
                 Dedicated project surface
               </p>
-              <p className="mt-1 text-sm leading-6 text-[#4D3F33]">
+              <p className="mt-1 text-sm leading-6 text-[var(--we-brown)]">
                 Jump to the project’s own public site when you need the deeper spoke, not just the ACT hub framing.
               </p>
             </div>

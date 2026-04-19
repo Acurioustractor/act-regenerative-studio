@@ -34,7 +34,7 @@ interface Link {
 }
 
 const COLORS = {
-    context: '#6B5A45',
+    context: 'var(--we-warm-brown)',
     type: '#D87D4A',
     evidence: '#4CAF50'
 };
@@ -204,7 +204,7 @@ export default function ImpactSankey() {
                         x={NODE_WIDTH / 2}
                         y={-10}
                         textAnchor="middle"
-                        className="text-[10px] font-semibold fill-[#6B5A45]"
+                        className="text-[10px] font-semibold fill-[var(--we-warm-brown)]"
                     >
                         {node.label.split(':')[0]} {/* Simplify label */}
                     </text>
@@ -212,9 +212,9 @@ export default function ImpactSankey() {
             ))}
 
             {/* Column Headers */}
-            <text x={NODE_WIDTH / 2} y={15} textAnchor="middle" className="text-xs font-bold uppercase fill-[#2F3E2E]">Initiative Type</text>
-            <text x={NODE_WIDTH / 2 + NODE_WIDTH + COL_GAP} y={15} textAnchor="middle" className="text-xs font-bold uppercase fill-[#2F3E2E]">Evidence Level</text>
-            <text x={NODE_WIDTH / 2 + (NODE_WIDTH + COL_GAP) * 2} y={15} textAnchor="middle" className="text-xs font-bold uppercase fill-[#2F3E2E]">Community Authority</text>
+            <text x={NODE_WIDTH / 2} y={15} textAnchor="middle" className="text-xs font-bold uppercase fill-[var(--we-olive)]">Initiative Type</text>
+            <text x={NODE_WIDTH / 2 + NODE_WIDTH + COL_GAP} y={15} textAnchor="middle" className="text-xs font-bold uppercase fill-[var(--we-olive)]">Evidence Level</text>
+            <text x={NODE_WIDTH / 2 + (NODE_WIDTH + COL_GAP) * 2} y={15} textAnchor="middle" className="text-xs font-bold uppercase fill-[var(--we-olive)]">Community Authority</text>
         </svg>
     );
 }

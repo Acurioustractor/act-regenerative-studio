@@ -94,10 +94,10 @@ export function GoldPhoneVoicesSection() {
             <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#7A9B76]">
               Transcript rail
             </p>
-            <h3 className="mt-3 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+            <h3 className="mt-3 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
               Reciprocity held in multiple voices at once.
             </h3>
-            <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
+            <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">
               The strongest thing Gold.Phone has is not a screenshot. It is the transcript field:
               generosity, time, care, awkwardness, and humor all speaking beside each other.
             </p>
@@ -133,10 +133,10 @@ export function GoldPhoneVoicesSection() {
           <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#7A9B76]">
             Work behaviour
           </p>
-          <p className="mt-3 font-[var(--font-display)] text-xl font-semibold text-[#2F3E2E]">
+          <p className="mt-3 font-[var(--font-display)] text-xl font-semibold text-[var(--we-olive)]">
             Encounter first. Transcript second.
           </p>
-          <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
+          <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">
             Gold.Phone does not begin with author biography or platform explanation. It begins with
             listening, uncertainty, and response.
           </p>
@@ -166,10 +166,10 @@ export function GoldPhoneVoicesSection() {
           <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#7A9B76]">
             Next pathway
           </p>
-          <p className="mt-3 font-[var(--font-display)] text-xl font-semibold text-[#2F3E2E]">
+          <p className="mt-3 font-[var(--font-display)] text-xl font-semibold text-[var(--we-olive)]">
             Host it in a real public context.
           </p>
-          <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
+          <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">
             Gold.Phone is strongest when it sits in a site, gathering, or public program that can
             hold curiosity without rushing to resolution.
           </p>

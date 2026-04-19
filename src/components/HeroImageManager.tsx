@@ -96,10 +96,10 @@ export default function HeroImageManager({
 
   if (loading) {
     return (
-      <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
+      <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6">
         <div className="flex items-center justify-center py-8">
           <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#4CAF50]"></div>
-          <p className="ml-3 text-[#6B5A45]">Loading hero image...</p>
+          <p className="ml-3 text-[var(--we-warm-brown)]">Loading hero image...</p>
         </div>
       </div>
     );
@@ -108,8 +108,8 @@ export default function HeroImageManager({
   return (
     <div className="space-y-6">
       {/* Current Hero Image Display */}
-      <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
-        <h3 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)] mb-4">
+      <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6">
+        <h3 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)] mb-4">
           Hero Image
         </h3>
 
@@ -127,7 +127,7 @@ export default function HeroImageManager({
 
         {currentHero ? (
           <div className="space-y-4">
-            <div className="relative aspect-[21/9] rounded-2xl overflow-hidden border border-[#E3D4BA]">
+            <div className="relative aspect-[21/9] rounded-2xl overflow-hidden border border-[var(--we-sand)]">
               <Image
                 src={currentHero.file_url}
                 alt={currentHero.alt_text || currentHero.title || 'Hero image'}
@@ -139,21 +139,21 @@ export default function HeroImageManager({
             <div className="space-y-2">
               {currentHero.title && (
                 <p className="text-sm">
-                  <strong className="text-[#6B5A45] uppercase tracking-[0.2em]">Title:</strong>
-                  <span className="ml-2 text-[#2F3E2E]">{currentHero.title}</span>
+                  <strong className="text-[var(--we-warm-brown)] uppercase tracking-[0.2em]">Title:</strong>
+                  <span className="ml-2 text-[var(--we-olive)]">{currentHero.title}</span>
                 </p>
               )}
               {currentHero.credit && (
                 <p className="text-sm">
-                  <strong className="text-[#6B5A45] uppercase tracking-[0.2em]">Credit:</strong>
-                  <span className="ml-2 text-[#2F3E2E]">{currentHero.credit}</span>
+                  <strong className="text-[var(--we-warm-brown)] uppercase tracking-[0.2em]">Credit:</strong>
+                  <span className="ml-2 text-[var(--we-olive)]">{currentHero.credit}</span>
                 </p>
               )}
             </div>
           </div>
         ) : (
-          <div className="aspect-[21/9] rounded-2xl border-2 border-dashed border-[#E3D4BA] bg-[#F7F2E8] flex items-center justify-center">
-            <p className="text-[#6B5A45] text-sm uppercase tracking-[0.3em]">
+          <div className="aspect-[21/9] rounded-2xl border-2 border-dashed border-[var(--we-sand)] bg-[#F7F2E8] flex items-center justify-center">
+            <p className="text-[var(--we-warm-brown)] text-sm uppercase tracking-[0.3em]">
               No hero image set
             </p>
           </div>
@@ -172,7 +172,7 @@ export default function HeroImageManager({
               href={currentHero.file_url}
               target="_blank"
               rel="noopener noreferrer"
-              className="rounded-full border border-[#E3D4BA] px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#2F3E2E] hover:bg-white/50 transition-colors"
+              className="rounded-full border border-[var(--we-sand)] px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)] hover:bg-white/50 transition-colors"
             >
               View Full Size
             </a>
@@ -182,11 +182,11 @@ export default function HeroImageManager({
 
       {/* Media Picker Modal */}
       {showPicker && (
-        <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
-          <h3 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)] mb-4">
+        <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6">
+          <h3 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)] mb-4">
             Select Hero Image
           </h3>
-          <p className="text-sm text-[#6B5A45] mb-4">
+          <p className="text-sm text-[var(--we-warm-brown)] mb-4">
             Choose an image from your media library to set as the hero image for {projectSlug}.
           </p>
 
@@ -206,11 +206,11 @@ export default function HeroImageManager({
       )}
 
       {/* Usage Instructions */}
-      <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
-        <h4 className="text-sm font-semibold text-[#2F3E2E] uppercase tracking-[0.2em] mb-2">
+      <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6">
+        <h4 className="text-sm font-semibold text-[var(--we-olive)] uppercase tracking-[0.2em] mb-2">
           How It Works
         </h4>
-        <ul className="space-y-2 text-sm text-[#4D3F33]">
+        <ul className="space-y-2 text-sm text-[var(--we-brown)]">
           <li className="flex items-start">
             <span className="text-[#4CAF50] mr-2">→</span>
             The hero image appears at the top of the project page

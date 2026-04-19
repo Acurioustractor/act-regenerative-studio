@@ -95,10 +95,10 @@ export default function EnrichmentReviewPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-[#2F3E2E] font-[var(--font-display)]">
+          <h1 className="text-3xl font-bold text-[var(--we-olive)] font-[var(--font-display)]">
             Enrichment Review
           </h1>
-          <p className="mt-2 text-[#4D3F33]">
+          <p className="mt-2 text-[var(--we-brown)]">
             Review and approve AI-generated content before it goes live
           </p>
         </div>
@@ -112,7 +112,7 @@ export default function EnrichmentReviewPage() {
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 filter === status
                   ? 'bg-[#4CAF50] text-white'
-                  : 'bg-white border border-[#E3D4BA] text-[#2F3E2E] hover:bg-[#F7F2E8]'
+                  : 'bg-white border border-[var(--we-sand)] text-[var(--we-olive)] hover:bg-[#F7F2E8]'
               }`}
             >
               {status.charAt(0).toUpperCase() + status.slice(1)}
@@ -122,17 +122,17 @@ export default function EnrichmentReviewPage() {
 
         {/* Loading State */}
         {loading && (
-          <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-12 text-center">
+          <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-12 text-center">
             <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#4CAF50]"></div>
-            <p className="mt-3 text-[#6B5A45]">Loading enrichment items...</p>
+            <p className="mt-3 text-[var(--we-warm-brown)]">Loading enrichment items...</p>
           </div>
         )}
 
         {/* Empty State */}
         {!loading && filteredItems.length === 0 && (
-          <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-12 text-center">
+          <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-12 text-center">
             <svg
-              className="mx-auto h-12 w-12 text-[#6B5A45]"
+              className="mx-auto h-12 w-12 text-[var(--we-warm-brown)]"
               fill="none"
               stroke="currentColor"
               viewBox="0 0 24 24"
@@ -144,10 +144,10 @@ export default function EnrichmentReviewPage() {
                 d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"
               />
             </svg>
-            <h3 className="mt-4 text-lg font-semibold text-[#2F3E2E]">
+            <h3 className="mt-4 text-lg font-semibold text-[var(--we-olive)]">
               No items to review
             </h3>
-            <p className="mt-2 text-sm text-[#6B5A45]">
+            <p className="mt-2 text-sm text-[var(--we-warm-brown)]">
               {filter === 'pending'
                 ? 'All enrichment content has been reviewed!'
                 : `No ${filter} items found.`}
@@ -161,16 +161,16 @@ export default function EnrichmentReviewPage() {
             {filteredItems.map((item) => (
               <div
                 key={item.id}
-                className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6 hover:shadow-lg transition-shadow cursor-pointer"
+                className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6 hover:shadow-lg transition-shadow cursor-pointer"
                 onClick={() => setSelectedItem(item)}
               >
                 {/* Item Header */}
                 <div className="flex items-start justify-between mb-4">
                   <div>
-                    <h3 className="font-semibold text-[#2F3E2E]">
+                    <h3 className="font-semibold text-[var(--we-olive)]">
                       {item.projectTitle}
                     </h3>
-                    <p className="text-sm text-[#6B5A45] mt-1">
+                    <p className="text-sm text-[var(--we-warm-brown)] mt-1">
                       {item.type.replace('_', ' ').toUpperCase()}
                     </p>
                   </div>
@@ -190,8 +190,8 @@ export default function EnrichmentReviewPage() {
                 {/* Confidence Score */}
                 <div className="mb-4">
                   <div className="flex items-center justify-between text-sm mb-1">
-                    <span className="text-[#6B5A45]">Confidence</span>
-                    <span className="font-medium text-[#2F3E2E]">
+                    <span className="text-[var(--we-warm-brown)]">Confidence</span>
+                    <span className="font-medium text-[var(--we-olive)]">
                       {Math.round(item.confidence * 100)}%
                     </span>
                   </div>
@@ -210,7 +210,7 @@ export default function EnrichmentReviewPage() {
                 </div>
 
                 {/* Preview */}
-                <div className="text-sm text-[#4D3F33] mb-4">
+                <div className="text-sm text-[var(--we-brown)] mb-4">
                   {JSON.stringify(item.aiGenerated).substring(0, 100)}...
                 </div>
 
@@ -255,16 +255,16 @@ export default function EnrichmentReviewPage() {
               {/* Modal Header */}
               <div className="flex items-start justify-between mb-6">
                 <div>
-                  <h2 className="text-2xl font-bold text-[#2F3E2E] font-[var(--font-display)]">
+                  <h2 className="text-2xl font-bold text-[var(--we-olive)] font-[var(--font-display)]">
                     {selectedItem.projectTitle}
                   </h2>
-                  <p className="text-[#6B5A45] mt-1">
+                  <p className="text-[var(--we-warm-brown)] mt-1">
                     {selectedItem.type.replace('_', ' ').toUpperCase()}
                   </p>
                 </div>
                 <button
                   onClick={() => setSelectedItem(null)}
-                  className="text-[#6B5A45] hover:text-[#2F3E2E]"
+                  className="text-[var(--we-warm-brown)] hover:text-[var(--we-olive)]"
                 >
                   <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
@@ -275,7 +275,7 @@ export default function EnrichmentReviewPage() {
               {/* Side-by-side Comparison */}
               <div className="grid grid-cols-2 gap-6 mb-6">
                 <div>
-                  <h3 className="text-sm font-semibold text-[#6B5A45] uppercase tracking-[0.2em] mb-3">
+                  <h3 className="text-sm font-semibold text-[var(--we-warm-brown)] uppercase tracking-[0.2em] mb-3">
                     Original Data
                   </h3>
                   <pre className="bg-[#F7F2E8] rounded-2xl p-4 text-sm overflow-auto max-h-96">
@@ -283,7 +283,7 @@ export default function EnrichmentReviewPage() {
                   </pre>
                 </div>
                 <div>
-                  <h3 className="text-sm font-semibold text-[#6B5A45] uppercase tracking-[0.2em] mb-3">
+                  <h3 className="text-sm font-semibold text-[var(--we-warm-brown)] uppercase tracking-[0.2em] mb-3">
                     AI Generated
                   </h3>
                   <pre className="bg-[#F7F2E8] rounded-2xl p-4 text-sm overflow-auto max-h-96">

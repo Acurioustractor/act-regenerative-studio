@@ -54,11 +54,11 @@ function DetailRow({
 }) {
   if (!value) return null;
   return (
-    <div className="flex items-start gap-4 border-b border-[#E3D4BA] py-3 last:border-0">
-      <span className="w-28 shrink-0 text-[11px] font-semibold uppercase tracking-[0.2em] text-[#6B5A45]">
+    <div className="flex items-start gap-4 border-b border-[var(--we-sand)] py-3 last:border-0">
+      <span className="w-28 shrink-0 text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--we-warm-brown)]">
         {label}
       </span>
-      <span className="text-sm leading-6 text-[#4D3F33]">{value}</span>
+      <span className="text-sm leading-6 text-[var(--we-brown)]">{value}</span>
     </div>
   );
 }
@@ -70,7 +70,7 @@ function RelatedWorkCard({ project }: { project: HydratedArtProject }) {
   return (
     <Link
       href={`/art/${project.slug}`}
-      className="group overflow-hidden rounded-[24px] border border-[#E3D4BA] bg-[#FDFBF7] transition-all hover:border-[#CFA16B] hover:shadow-[0_16px_40px_rgba(50,42,31,0.08)]"
+      className="group overflow-hidden rounded-[24px] border border-[var(--we-sand)] bg-[#FDFBF7] transition-all hover:border-[#CFA16B] hover:shadow-[0_16px_40px_rgba(50,42,31,0.08)]"
     >
       {heroUrl ? (
         <div className="relative aspect-[16/10] overflow-hidden">
@@ -103,7 +103,7 @@ function RelatedWorkCard({ project }: { project: HydratedArtProject }) {
           {project.mediums.map((medium) => (
             <span
               key={medium}
-              className="rounded-full border border-[#D7C4A2] bg-[#F6F1E7] px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#6B5A45]"
+              className="rounded-full border border-[#D7C4A2] bg-[#F6F1E7] px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--we-warm-brown)]"
             >
               {formatMedium(medium)}
             </span>
@@ -176,7 +176,7 @@ export default async function ArtWorkPage({
             {project.mediums.map((medium) => (
               <span
                 key={medium}
-                className="rounded-full border border-[#D7C4A2] bg-white/50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#6B5A45]"
+                className="rounded-full border border-[#D7C4A2] bg-white/50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)]"
               >
                 {formatMedium(medium)}
               </span>
@@ -186,7 +186,7 @@ export default async function ArtWorkPage({
             {project.title}
           </h1>
           {project.location && (
-            <p className="mt-4 text-sm uppercase tracking-[0.2em] text-[#6B5A45]">
+            <p className="mt-4 text-sm uppercase tracking-[0.2em] text-[var(--we-warm-brown)]">
               {project.location}
             </p>
           )}
@@ -195,20 +195,20 @@ export default async function ArtWorkPage({
 
       {/* Quote + Philosophy */}
       <section className="mx-auto max-w-3xl space-y-8">
-        <blockquote className="border-l-2 border-[#CFA16B] pl-6 text-xl italic leading-8 text-[#4D3F33] md:text-2xl md:leading-10">
+        <blockquote className="border-l-2 border-[#CFA16B] pl-6 text-xl italic leading-8 text-[var(--we-brown)] md:text-2xl md:leading-10">
           &ldquo;{project.quote}&rdquo;
         </blockquote>
 
-        <p className="text-[1.05rem] leading-8 text-[#4D3F33]">
+        <p className="text-[1.05rem] leading-8 text-[var(--we-brown)]">
           {project.description}
         </p>
 
         {project.philosophy && (
-          <div className="rounded-[24px] border border-[#E3D4BA] bg-[#FDFBF7] p-6 md:p-8">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#6B5A45] mb-3">
+          <div className="rounded-[24px] border border-[var(--we-sand)] bg-[#FDFBF7] p-6 md:p-8">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)] mb-3">
               Philosophy
             </p>
-            <p className="text-[0.95rem] leading-7 text-[#4D3F33]">
+            <p className="text-[0.95rem] leading-7 text-[var(--we-brown)]">
               {project.philosophy}
             </p>
           </div>
@@ -246,7 +246,7 @@ export default async function ArtWorkPage({
               return (
                 <div
                   key={item.id}
-                  className="mb-3 break-inside-avoid overflow-hidden rounded-[20px] border border-[#E3D4BA]"
+                  className="mb-3 break-inside-avoid overflow-hidden rounded-[20px] border border-[var(--we-sand)]"
                 >
                   <div className={`relative ${aspectClass}`}>
                     <Image
@@ -274,8 +274,8 @@ export default async function ArtWorkPage({
       {/* Details */}
       <section className="mx-auto max-w-3xl">
         <div className="grid gap-8 md:grid-cols-[1fr_1fr]">
-          <div className="rounded-[24px] border border-[#E3D4BA] bg-[#FDFBF7] p-6">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#6B5A45] mb-4">
+          <div className="rounded-[24px] border border-[var(--we-sand)] bg-[#FDFBF7] p-6">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)] mb-4">
               Details
             </p>
             <DetailRow
@@ -322,8 +322,8 @@ export default async function ArtWorkPage({
 
           <div className="space-y-6">
             {project.tags.length > 0 && (
-              <div className="rounded-[24px] border border-[#E3D4BA] bg-[#FDFBF7] p-6">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#6B5A45] mb-4">
+              <div className="rounded-[24px] border border-[var(--we-sand)] bg-[#FDFBF7] p-6">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)] mb-4">
                   Art tags
                 </p>
                 <div className="flex flex-wrap gap-2">
@@ -340,8 +340,8 @@ export default async function ArtWorkPage({
             )}
 
             {project.connectedProject && (
-              <div className="rounded-[24px] border border-[#E3D4BA] bg-[#FDFBF7] p-6">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#6B5A45] mb-3">
+              <div className="rounded-[24px] border border-[var(--we-sand)] bg-[#FDFBF7] p-6">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)] mb-3">
                   Connected to
                 </p>
                 <Link
@@ -356,8 +356,8 @@ export default async function ArtWorkPage({
 
             {/* Storytellers */}
             {project.storytellers.length > 0 && (
-              <div className="rounded-[24px] border border-[#E3D4BA] bg-[#FDFBF7] p-6">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#6B5A45] mb-4">
+              <div className="rounded-[24px] border border-[var(--we-sand)] bg-[#FDFBF7] p-6">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)] mb-4">
                   Storytellers
                 </p>
                 <div className="space-y-3">
@@ -379,11 +379,11 @@ export default async function ArtWorkPage({
                         </div>
                       )}
                       <div>
-                        <p className="text-sm font-medium text-[#2F3E2E]">
+                        <p className="text-sm font-medium text-[var(--we-olive)]">
                           {storyteller.display_name || storyteller.full_name || 'Anonymous'}
                         </p>
                         {storyteller.custom_tagline && (
-                          <p className="text-xs text-[#6B5A45]">
+                          <p className="text-xs text-[var(--we-warm-brown)]">
                             {storyteller.custom_tagline}
                           </p>
                         )}
@@ -432,7 +432,7 @@ export default async function ArtWorkPage({
       <div className="flex justify-center">
         <Link
           href="/art"
-          className="rounded-full border border-[#E3D4BA] px-8 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#2F3E2E] transition hover:border-[#245c43] hover:bg-[#E5F4E4]"
+          className="rounded-full border border-[var(--we-sand)] px-8 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:border-[#245c43] hover:bg-[#E5F4E4]"
         >
           Back to art portfolio
         </Link>

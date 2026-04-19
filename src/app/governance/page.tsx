@@ -53,7 +53,7 @@ export default function GovernancePage() {
         gradientClass="from-[#EDEBE4] via-[#E3D8C7] to-[#D2C0A3]"
       >
         <div className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
             Governance intent
           </p>
           <p>

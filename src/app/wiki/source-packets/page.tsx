@@ -79,10 +79,10 @@ export default async function SourcePacketsPage() {
         ]}
       >
         <div className="space-y-4">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
             Why this matters
           </p>
-          <p className="text-sm leading-7 text-[#4D3F33]">
+          <p className="text-sm leading-7 text-[var(--we-brown)]">
             The packet is the reusable publishing object. That means another organisation could
             use Empathy Ledger as the governed story, media, consent, and review engine while
             their own site consumes the same packet model for impact, communications, strategy,
@@ -152,10 +152,10 @@ export default async function SourcePacketsPage() {
               key={item.title}
               className="rounded-[28px] border border-[#E1D3BA] bg-white/85 p-6 shadow-sm"
             >
-              <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+              <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
                 {item.title}
               </h2>
-              <p className="mt-3 text-sm leading-7 text-[#4D3F33]">{item.description}</p>
+              <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">{item.description}</p>
             </div>
           ))}
         </div>
@@ -216,34 +216,34 @@ export default async function SourcePacketsPage() {
                         <span>Updated {formatDate(packet.provenance?.generated_at)}</span>
                       ) : null}
                     </div>
-                    <h2 className="font-[var(--font-display)] text-3xl font-semibold text-[#2F3E2E]">
+                    <h2 className="font-[var(--font-display)] text-3xl font-semibold text-[var(--we-olive)]">
                       {projectTitle}
                     </h2>
-                    <p className="text-sm leading-7 text-[#4D3F33]">{getPacketSummary(packet)}</p>
+                    <p className="text-sm leading-7 text-[var(--we-brown)]">{getPacketSummary(packet)}</p>
                   </div>
 
                   <div className="grid gap-4 md:grid-cols-2">
                     <div className="rounded-[24px] bg-[#F7F1E7] p-5">
-                      <p className="text-xs uppercase tracking-[0.24em] text-[#6B5A45]">
+                      <p className="text-xs uppercase tracking-[0.24em] text-[var(--we-warm-brown)]">
                         Where it lives
                       </p>
-                      <p className="mt-3 text-sm font-semibold text-[#2F3E2E]">
+                      <p className="mt-3 text-sm font-semibold text-[var(--we-olive)]">
                         {packet.canonical_entity?.canonical_slug || slug}
                       </p>
                       {packet.canonical_entity?.canonical_note_path ? (
-                        <p className="mt-2 text-sm leading-6 text-[#4D3F33]">
+                        <p className="mt-2 text-sm leading-6 text-[var(--we-brown)]">
                           Canonical note: {packet.canonical_entity.canonical_note_path}
                         </p>
                       ) : null}
                       {packet.canonical_entity?.public_copy_owner ? (
-                        <p className="mt-2 text-sm leading-6 text-[#4D3F33]">
+                        <p className="mt-2 text-sm leading-6 text-[var(--we-brown)]">
                           Public copy owner: {packet.canonical_entity.public_copy_owner}
                         </p>
                       ) : null}
                     </div>
 
                     <div className="rounded-[24px] bg-[#F7F1E7] p-5">
-                      <p className="text-xs uppercase tracking-[0.24em] text-[#6B5A45]">
+                      <p className="text-xs uppercase tracking-[0.24em] text-[var(--we-warm-brown)]">
                         What happens next
                       </p>
                       <div className="mt-3 flex flex-wrap gap-2">
@@ -258,7 +258,7 @@ export default async function SourcePacketsPage() {
                           </span>
                         ))}
                       </div>
-                      <p className="mt-3 text-sm leading-6 text-[#4D3F33]">
+                      <p className="mt-3 text-sm leading-6 text-[var(--we-brown)]">
                         {packet.outputs?.length || 0} output
                         {(packet.outputs?.length || 0) === 1 ? '' : 's'} currently attached to
                         this packet.
@@ -267,7 +267,7 @@ export default async function SourcePacketsPage() {
                   </div>
 
                   <div className="space-y-3">
-                    <p className="text-xs uppercase tracking-[0.24em] text-[#6B5A45]">
+                    <p className="text-xs uppercase tracking-[0.24em] text-[var(--we-warm-brown)]">
                       Review gates
                     </p>
                     <div className="flex flex-wrap gap-2">
@@ -286,7 +286,7 @@ export default async function SourcePacketsPage() {
                         );
                       })}
                     </div>
-                    <p className="text-sm leading-6 text-[#4D3F33]">
+                    <p className="text-sm leading-6 text-[var(--we-brown)]">
                       {packet.source_refs?.length || 0} source reference
                       {(packet.source_refs?.length || 0) === 1 ? '' : 's'} from{' '}
                       {Array.from(
@@ -304,7 +304,7 @@ export default async function SourcePacketsPage() {
                     </Link>
                     <Link
                       href="/wiki/source-bridges"
-                      className="rounded-full border border-[#4CAF50] px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-[#2F3E2E] transition hover:bg-[#E5F4E4]"
+                      className="rounded-full border border-[#4CAF50] px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:bg-[#E5F4E4]"
                     >
                       Open bridge layer
                     </Link>

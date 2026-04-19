@@ -37,11 +37,11 @@ export default function LoginPanel() {
   };
 
   return (
-    <div className="rounded-3xl border border-[#E3D4BA] bg-white/80 p-8 shadow-[0_20px_45px_rgba(50,42,31,0.12)]">
-      <h1 className="text-2xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+    <div className="rounded-3xl border border-[var(--we-sand)] bg-white/80 p-8 shadow-[0_20px_45px_rgba(50,42,31,0.12)]">
+      <h1 className="text-2xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
         Admin access
       </h1>
-      <p className="mt-2 text-sm text-[#4D3F33]">
+      <p className="mt-2 text-sm text-[var(--we-brown)]">
         Enter your email to receive a secure magic link.
       </p>
       <form className="mt-6 space-y-4" onSubmit={handleSubmit}>
@@ -51,7 +51,7 @@ export default function LoginPanel() {
           placeholder="you@act.place"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
-          className="w-full rounded-2xl border border-[#E3D4BA] bg-white px-4 py-3 text-sm text-[#2F3E2E] focus:outline-none focus:ring-2 focus:ring-[#4CAF50]"
+          className="w-full rounded-2xl border border-[var(--we-sand)] bg-white px-4 py-3 text-sm text-[var(--we-olive)] focus:outline-none focus:ring-2 focus:ring-[#4CAF50]"
           autoComplete="email"
           required
         />
@@ -64,7 +64,7 @@ export default function LoginPanel() {
         </button>
       </form>
       {message ? (
-        <p className="mt-4 text-sm text-[#2F3E2E]">{message}</p>
+        <p className="mt-4 text-sm text-[var(--we-olive)]">{message}</p>
       ) : null}
       {error ? (
         <p className="mt-4 text-sm text-[#B4321E]">{error}</p>

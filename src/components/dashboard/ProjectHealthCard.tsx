@@ -98,14 +98,14 @@ export function ProjectHealthCard({ project }: { project: Project }) {
   };
 
   return (
-    <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6 hover:shadow-lg transition-shadow">
+    <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6 hover:shadow-lg transition-shadow">
       {/* Header */}
       <div className="flex items-start justify-between">
         <div>
-          <h3 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+          <h3 className="text-lg font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
             {project.name}
           </h3>
-          <p className="mt-1 text-xs text-[#4D3F33]">{project.description}</p>
+          <p className="mt-1 text-xs text-[var(--we-brown)]">{project.description}</p>
         </div>
         <div
           className={`h-3 w-3 rounded-full ${statusColors[health.status]}`}
@@ -116,13 +116,13 @@ export function ProjectHealthCard({ project }: { project: Project }) {
       {/* Stats */}
       {health.status !== 'loading' && (
         <div className="mt-4 grid grid-cols-2 gap-3">
-          <div className="rounded-xl bg-white p-3 border border-[#E3D4BA]">
-            <div className="text-xl font-bold text-[#2F3E2E]">{health.openIssues}</div>
-            <div className="text-xs text-[#4D3F33] uppercase tracking-wider">Issues</div>
+          <div className="rounded-xl bg-white p-3 border border-[var(--we-sand)]">
+            <div className="text-xl font-bold text-[var(--we-olive)]">{health.openIssues}</div>
+            <div className="text-xs text-[var(--we-brown)] uppercase tracking-wider">Issues</div>
           </div>
-          <div className="rounded-xl bg-white p-3 border border-[#E3D4BA]">
-            <div className="text-xl font-bold text-[#2F3E2E]">{health.openPRs}</div>
-            <div className="text-xs text-[#4D3F33] uppercase tracking-wider">PRs</div>
+          <div className="rounded-xl bg-white p-3 border border-[var(--we-sand)]">
+            <div className="text-xl font-bold text-[var(--we-olive)]">{health.openPRs}</div>
+            <div className="text-xs text-[var(--we-brown)] uppercase tracking-wider">PRs</div>
           </div>
         </div>
       )}
@@ -131,15 +131,15 @@ export function ProjectHealthCard({ project }: { project: Project }) {
       {health.status === 'loading' && (
         <div className="mt-4 animate-pulse">
           <div className="grid grid-cols-2 gap-3">
-            <div className="h-16 bg-[#E3D4BA] rounded-xl"></div>
-            <div className="h-16 bg-[#E3D4BA] rounded-xl"></div>
+            <div className="h-16 bg-[var(--we-sand)] rounded-xl"></div>
+            <div className="h-16 bg-[var(--we-sand)] rounded-xl"></div>
           </div>
         </div>
       )}
 
       {/* Metadata */}
       {health.status !== 'loading' && (
-        <div className="mt-4 space-y-2 text-xs text-[#4D3F33]">
+        <div className="mt-4 space-y-2 text-xs text-[var(--we-brown)]">
           {health.lastCommit && (
             <div className="flex justify-between">
               <span>Last commit:</span>
@@ -165,7 +165,7 @@ export function ProjectHealthCard({ project }: { project: Project }) {
           href={`https://github.com/${project.repo}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full border border-[#4CAF50] px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#2F3E2E] hover:bg-[#4CAF50]/10"
+          className="rounded-full border border-[#4CAF50] px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-[var(--we-olive)] hover:bg-[#4CAF50]/10"
         >
           GitHub
         </a>
@@ -174,7 +174,7 @@ export function ProjectHealthCard({ project }: { project: Project }) {
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border border-[#4CAF50] px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#2F3E2E] hover:bg-[#4CAF50]/10"
+            className="rounded-full border border-[#4CAF50] px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-[var(--we-olive)] hover:bg-[#4CAF50]/10"
           >
             Site
           </a>
@@ -183,7 +183,7 @@ export function ProjectHealthCard({ project }: { project: Project }) {
           href={`https://github.com/${project.repo}/issues`}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full border border-[#4CAF50] px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-[#2F3E2E] hover:bg-[#4CAF50]/10"
+          className="rounded-full border border-[#4CAF50] px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-[var(--we-olive)] hover:bg-[#4CAF50]/10"
         >
           Issues
         </a>

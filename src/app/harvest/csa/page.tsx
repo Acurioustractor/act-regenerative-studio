@@ -48,7 +48,7 @@ export default async function HarvestCsaPage() {
         gradientClass="from-[#FFF2D6] via-[#F0D4A3] to-[#E2B47A]"
       >
         <div className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
             Current pilot
           </p>
           <p>

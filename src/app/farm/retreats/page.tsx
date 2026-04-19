@@ -57,7 +57,7 @@ export default async function FarmRetreatsPage() {
         gradientClass="from-[#F0E6DA] via-[#E4D2C2] to-[#D4B79B]"
       >
         <div className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
             Designed for
           </p>
           <ul className="space-y-2">

@@ -95,14 +95,14 @@ export function ContactForm({
     }
   };
 
-  const inputClass = "w-full rounded border border-[#E4D7BF] bg-white px-4 py-3 text-[#2F3E2E] placeholder:text-[#B8A88A] focus:border-[#4CAF50] focus:outline-none disabled:opacity-50";
-  const labelClass = "block text-sm font-medium text-[#4A4035] mb-1";
+  const inputClass = "w-full rounded border border-[#E4D7BF] bg-white px-4 py-3 text-[var(--we-olive)] placeholder:text-[#B8A88A] focus:border-[#4CAF50] focus:outline-none disabled:opacity-50";
+  const labelClass = "block text-sm font-medium text-[var(--we-brown-deep)] mb-1";
 
   return (
     <form onSubmit={handleSubmit} className={`space-y-6 ${className}`}>
       {(presetSource || presetContext) && (
-        <div className="rounded-2xl border border-[#D9C9A9] bg-[#F6F1E7]/80 p-4 text-sm text-[#4D3F33]">
-          <p className="font-medium text-[#2F3E2E]">
+        <div className="rounded-2xl border border-[#D9C9A9] bg-[#F6F1E7]/80 p-4 text-sm text-[var(--we-brown)]">
+          <p className="font-medium text-[var(--we-olive)]">
             This enquiry is already carrying page context.
           </p>
           <p className="mt-2 leading-7">

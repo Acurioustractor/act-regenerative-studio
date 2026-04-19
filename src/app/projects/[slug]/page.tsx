@@ -55,11 +55,11 @@ export function generateStaticParams() {
 function SectionSkeleton() {
   return (
     <div className="animate-pulse space-y-4">
-      <div className="h-8 w-48 mx-auto bg-[#E3D4BA]/50 rounded-lg" />
-      <div className="h-4 w-64 mx-auto bg-[#E3D4BA]/30 rounded-lg" />
+      <div className="h-8 w-48 mx-auto bg-[var(--we-sand)]/50 rounded-lg" />
+      <div className="h-4 w-64 mx-auto bg-[var(--we-sand)]/30 rounded-lg" />
       <div className="grid gap-4 md:grid-cols-3 mt-8">
         {[1, 2, 3].map((i) => (
-          <div key={i} className="h-48 bg-[#E3D4BA]/20 rounded-3xl" />
+          <div key={i} className="h-48 bg-[var(--we-sand)]/20 rounded-3xl" />
         ))}
       </div>
     </div>
@@ -544,13 +544,13 @@ export default async function ProjectPage({
       {relatedArticles.length > 0 && (
         <section className="space-y-6">
           <div className="text-center">
-            <p className="text-xs uppercase tracking-[0.3em] text-[#4A4035]">
+            <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-brown-deep)]">
               {projectEditorial.manifest?.sectionEyebrow || 'Field writing'}
             </p>
-            <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+            <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
               {projectEditorial.manifest?.sectionTitle || 'Writing connected to this project'}
             </h2>
-            <p className="mt-3 text-sm text-[#3A4A3D]">
+            <p className="mt-3 text-sm text-[var(--we-olive-deep)]">
               {projectEditorial.manifest?.sectionDescription ||
                 'These articles live in the ACT editorial layer. They can be surfaced here, syndicated to spoke sites, and still stay connected to the project’s shared memory in the wiki.'}
             </p>
@@ -589,7 +589,7 @@ export default async function ProjectPage({
                 <div className="space-y-4 p-6">
                   <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.24em] text-[#D9B786]">
                     {projectEditorial.leadArticle.articleType ? (
-                      <span className="rounded-full border border-[#6B5A45] bg-white/5 px-3 py-1 text-[#F4ECDE]">
+                      <span className="rounded-full border border-[var(--we-warm-brown)] bg-white/5 px-3 py-1 text-[#F4ECDE]">
                         {projectEditorial.leadArticle.articleType.replace(/_/g, ' ')}
                       </span>
                     ) : null}
@@ -633,7 +633,7 @@ export default async function ProjectPage({
                 <Link
                   key={article.slug}
                   href={article.localPath}
-                  className="group overflow-hidden rounded-[24px] border border-[#E3D4BA] bg-white transition-all hover:border-[#7A9B76] hover:shadow-lg"
+                  className="group overflow-hidden rounded-[24px] border border-[var(--we-sand)] bg-white transition-all hover:border-[#7A9B76] hover:shadow-lg"
                 >
                   {article.featuredImageUrl ? (
                     <div className="relative h-40 overflow-hidden">
@@ -645,7 +645,7 @@ export default async function ProjectPage({
                     </div>
                   ) : (
                     <div className="flex h-40 items-end bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-5">
-                      <p className="text-xs uppercase tracking-[0.24em] text-[#6B5A45]">
+                      <p className="text-xs uppercase tracking-[0.24em] text-[var(--we-warm-brown)]">
                         Editorial note
                       </p>
                     </div>
@@ -653,12 +653,12 @@ export default async function ProjectPage({
                   <div className="space-y-3 p-5">
                     <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.24em] text-[#4CAF50]">
                       {article.articleType ? (
-                        <span className="rounded-full bg-[#E8F3E6] px-3 py-1 text-[#2F3E2E]">
+                        <span className="rounded-full bg-[#E8F3E6] px-3 py-1 text-[var(--we-olive)]">
                           {article.articleType.replace(/_/g, ' ')}
                         </span>
                       ) : null}
                       {article.publishedAt ? (
-                        <span className="text-[#6B5A45]">
+                        <span className="text-[var(--we-warm-brown)]">
                           {new Date(article.publishedAt).toLocaleDateString('en-AU', {
                             year: 'numeric',
                             month: 'short',
@@ -667,13 +667,13 @@ export default async function ProjectPage({
                         </span>
                       ) : null}
                     </div>
-                    <h3 className="font-[var(--font-display)] text-lg font-semibold text-[#2F3E2E] group-hover:text-[#7A9B76]">
+                    <h3 className="font-[var(--font-display)] text-lg font-semibold text-[var(--we-olive)] group-hover:text-[#7A9B76]">
                       {article.title}
                     </h3>
-                    <p className="text-sm text-[#3A4A3D] line-clamp-3">
+                    <p className="text-sm text-[var(--we-olive-deep)] line-clamp-3">
                       {article.excerpt || 'Open this field note in the ACT journal.'}
                     </p>
-                    <div className="flex items-center justify-between pt-2 text-xs uppercase tracking-[0.22em] text-[#6B5A45]">
+                    <div className="flex items-center justify-between pt-2 text-xs uppercase tracking-[0.22em] text-[var(--we-warm-brown)]">
                       <span>{article.authorName}</span>
                       <span>Read note</span>
                     </div>
@@ -702,10 +702,10 @@ export default async function ProjectPage({
       {project.mediaGallery.length > 0 && (
         <section className="space-y-6">
           <div className="text-center">
-            <p className="text-xs uppercase tracking-[0.3em] text-[#4A4035]">
+            <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-brown-deep)]">
               Gallery
             </p>
-            <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E] md:text-3xl">
+            <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)] md:text-3xl">
               From the field
             </h2>
           </div>
@@ -740,7 +740,7 @@ export default async function ProjectPage({
                     </div>
                   </>
                 ) : item.type.startsWith('audio') || item.type === 'audio' ? (
-                  <div className="flex h-full w-full flex-col justify-between bg-gradient-to-br from-[#2F3E2E] via-[#4A4035] to-[#7A9B76] p-4 text-white">
+                  <div className="flex h-full w-full flex-col justify-between bg-gradient-to-br from-[var(--we-olive)] via-[var(--we-brown-deep)] to-[#7A9B76] p-4 text-white">
                     <div className="rounded-full bg-white/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90">
                       Audio
                     </div>
@@ -777,12 +777,12 @@ export default async function ProjectPage({
       )}
 
       {/* Ways to Engage */}
-      <section className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-8 md:p-12">
+      <section className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-8 md:p-12">
         <div className="max-w-3xl">
-          <h2 className="mb-4 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+          <h2 className="mb-4 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
             {engagementConfig.title}
           </h2>
-          <p className="text-sm leading-7 text-[#4D3F33]">
+          <p className="text-sm leading-7 text-[var(--we-brown)]">
             {engagementConfig.description}
           </p>
         </div>
@@ -791,18 +791,18 @@ export default async function ProjectPage({
             const buttonClass =
               action.variant === 'primary'
                 ? `inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] ${theme.button}`
-                : 'inline-flex items-center justify-center rounded-full border border-[#4CAF50] px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#2F3E2E] transition hover:bg-[#E5F4E4]';
+                : 'inline-flex items-center justify-center rounded-full border border-[#4CAF50] px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--we-olive)] transition hover:bg-[#E5F4E4]';
             const isExternal = action.href.startsWith('http');
 
             return (
               <div
                 key={`${action.label}-${action.href}`}
-                className="rounded-2xl border border-[#E3D4BA] bg-[#FDFBF7] p-5"
+                className="rounded-2xl border border-[var(--we-sand)] bg-[#FDFBF7] p-5"
               >
-                <h3 className="text-base font-semibold text-[#2F3E2E]">
+                <h3 className="text-base font-semibold text-[var(--we-olive)]">
                   {action.label}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
+                <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">
                   {action.description}
                 </p>
                 {isExternal ? (
@@ -829,10 +829,10 @@ export default async function ProjectPage({
       {relatedProjects.length > 0 && (
         <section className="space-y-6">
           <div className="text-center">
-            <p className="text-xs uppercase tracking-[0.3em] text-[#4A4035]">
+            <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-brown-deep)]">
               Explore More
             </p>
-            <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+            <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
               Related Projects
             </h2>
           </div>
@@ -843,7 +843,7 @@ export default async function ProjectPage({
                 <Link
                   key={related.slug}
                   href={`/projects/${related.slug}`}
-                  className="group rounded-[24px] border border-[#E3D4BA] bg-white overflow-hidden transition-all hover:shadow-lg hover:border-[#7A9B76]"
+                  className="group rounded-[24px] border border-[var(--we-sand)] bg-white overflow-hidden transition-all hover:shadow-lg hover:border-[#7A9B76]"
                 >
                   {related.heroImage && (
                     <div className="relative h-40 overflow-hidden">
@@ -860,10 +860,10 @@ export default async function ProjectPage({
                     >
                       {related.theme}
                     </span>
-                    <h3 className="font-[var(--font-display)] text-lg font-semibold text-[#2F3E2E] group-hover:text-[#7A9B76]">
+                    <h3 className="font-[var(--font-display)] text-lg font-semibold text-[var(--we-olive)] group-hover:text-[#7A9B76]">
                       {related.title}
                     </h3>
-                    <p className="mt-2 text-sm text-[#3A4A3D] line-clamp-2">
+                    <p className="mt-2 text-sm text-[var(--we-olive-deep)] line-clamp-2">
                       {related.tagline}
                     </p>
                   </div>
@@ -877,13 +877,13 @@ export default async function ProjectPage({
       {relatedWorks.length > 0 && (
         <section className="space-y-6">
           <div className="text-center">
-            <p className="text-xs uppercase tracking-[0.3em] text-[#4A4035]">
+            <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-brown-deep)]">
               Studio Line
             </p>
-            <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+            <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
               Related Works
             </h2>
-            <p className="mt-3 text-sm text-[#3A4A3D]">
+            <p className="mt-3 text-sm text-[var(--we-olive-deep)]">
               Some ACT projects also belong to a broader line of studio works. These pieces share
               methods, materials, or public questions with this project.
             </p>
@@ -940,8 +940,8 @@ export default async function ProjectPage({
       )}
 
       {/* Year-in-Review Link */}
-      <section className="rounded-3xl border border-[#E3D4BA] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 text-center md:p-12">
-        <h3 className="mb-3 font-[var(--font-display)] text-xl font-semibold text-[#2F3E2E] md:text-2xl">
+      <section className="rounded-3xl border border-[var(--we-sand)] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 text-center md:p-12">
+        <h3 className="mb-3 font-[var(--font-display)] text-xl font-semibold text-[var(--we-olive)] md:text-2xl">
           See this project in our 2025 Year in Review
         </h3>
         <p className="mx-auto mb-6 max-w-2xl text-sm text-[#5A4A3A]">

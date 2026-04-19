@@ -85,7 +85,7 @@ export default function PartnersPage() {
         ]}
       >
         <div className="space-y-4">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
             Our approach
           </p>
           <p>
@@ -125,11 +125,11 @@ export default function PartnersPage() {
               key={type.title}
               className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-4"
             >
-              <h3 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+              <h3 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
                 {type.title}
               </h3>
-              <p className="text-sm text-[#4D3F33]">{type.description}</p>
-              <p className="text-xs text-[#6B5A45]">
+              <p className="text-sm text-[var(--we-brown)]">{type.description}</p>
+              <p className="text-xs text-[var(--we-warm-brown)]">
                 <span className="font-medium">Examples:</span> {type.examples}
               </p>
             </div>
@@ -137,7 +137,7 @@ export default function PartnersPage() {
         </div>
       </section>
 
-      <section className="rounded-3xl border border-[#E3D4BA] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12 space-y-8">
+      <section className="rounded-3xl border border-[var(--we-sand)] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12 space-y-8">
         <SectionHeading
           eyebrow="Principles"
           title="How we partner"
@@ -149,8 +149,8 @@ export default function PartnersPage() {
               key={principle.title}
               className="rounded-2xl border border-[#D8C7A5] bg-white/70 p-6 space-y-2"
             >
-              <h3 className="font-semibold text-[#2F3E2E]">{principle.title}</h3>
-              <p className="text-sm text-[#4D3F33]">{principle.description}</p>
+              <h3 className="font-semibold text-[var(--we-olive)]">{principle.title}</h3>
+              <p className="text-sm text-[var(--we-brown)]">{principle.description}</p>
             </div>
           ))}
         </div>
@@ -168,13 +168,13 @@ export default function PartnersPage() {
               key={partnership.name}
               className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-4"
             >
-              <div className="inline-block rounded-full bg-[#E5F4E4] px-3 py-1 text-xs font-medium text-[#2F3E2E]">
+              <div className="inline-block rounded-full bg-[#E5F4E4] px-3 py-1 text-xs font-medium text-[var(--we-olive)]">
                 {partnership.type}
               </div>
-              <h3 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+              <h3 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
                 {partnership.name}
               </h3>
-              <p className="text-sm text-[#4D3F33]">{partnership.description}</p>
+              <p className="text-sm text-[var(--we-brown)]">{partnership.description}</p>
             </div>
           ))}
         </div>
@@ -205,8 +205,8 @@ export default function PartnersPage() {
         <div className="grid gap-6 lg:grid-cols-3">
           <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-4">
             <div className="text-3xl">1</div>
-            <h3 className="font-semibold text-[#2F3E2E]">Reach out</h3>
-            <p className="text-sm text-[#4D3F33]">
+            <h3 className="font-semibold text-[var(--we-olive)]">Reach out</h3>
+            <p className="text-sm text-[var(--we-brown)]">
               Contact us with your idea, challenge, or interest. We respond to
               every inquiry and prioritize community-led initiatives.
             </p>
@@ -214,8 +214,8 @@ export default function PartnersPage() {
 
           <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-4">
             <div className="text-3xl">2</div>
-            <h3 className="font-semibold text-[#2F3E2E]">Explore fit</h3>
-            <p className="text-sm text-[#4D3F33]">
+            <h3 className="font-semibold text-[var(--we-olive)]">Explore fit</h3>
+            <p className="text-sm text-[var(--we-brown)]">
               We'll have an initial conversation to understand alignment,
               capacity, and what partnership might look like.
             </p>
@@ -223,8 +223,8 @@ export default function PartnersPage() {
 
           <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-4">
             <div className="text-3xl">3</div>
-            <h3 className="font-semibold text-[#2F3E2E]">Design together</h3>
-            <p className="text-sm text-[#4D3F33]">
+            <h3 className="font-semibold text-[var(--we-olive)]">Design together</h3>
+            <p className="text-sm text-[var(--we-brown)]">
               If there's a fit, we co-design the partnership structure, ensuring
               community benefit and mutual accountability.
             </p>
@@ -243,10 +243,10 @@ export default function PartnersPage() {
 
       <section className="rounded-3xl border border-dashed border-[#BFA883] bg-[#F7F0E2]/70 p-8 md:p-12">
         <div className="max-w-2xl mx-auto text-center space-y-4">
-          <h2 className="text-2xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+          <h2 className="text-2xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
             Looking to back place-based regenerative work?
           </h2>
-          <p className="text-sm text-[#4D3F33]">
+          <p className="text-sm text-[var(--we-brown)]">
             ACT welcomes relationships with philanthropic foundations, government programs, and aligned capital partners who care about handover, community authority, and evidence that does not become surveillance.
           </p>
           <Link

@@ -9,7 +9,7 @@ import type { ProjectTheme } from '@/data/projects';
 export const themeStyles = {
   earth: {
     hero: 'from-[#F6F1E7] via-[#E6DCC4] to-[#D4C09F]',
-    text: 'text-[#2F3E2E]',
+    text: 'text-[var(--we-olive)]',
     accent: 'text-[#4CAF50]',
     accentBg: 'bg-[#4CAF50]',
     badge: 'bg-[#4CAF50] text-white',
@@ -45,7 +45,7 @@ export const themeStyles = {
   },
   valley: {
     hero: 'from-[#EDF3E4] via-[#D6E2C5] to-[#B8CEA7]',
-    text: 'text-[#2F3E2E]',
+    text: 'text-[var(--we-olive)]',
     accent: 'text-[#3D7A4D]',
     accentBg: 'bg-[#3D7A4D]',
     badge: 'bg-[#3D7A4D] text-white',

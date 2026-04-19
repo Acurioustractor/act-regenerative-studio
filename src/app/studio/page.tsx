@@ -90,8 +90,8 @@ export default async function StudioPage() {
         ]}
       >
         <div className="space-y-4">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">What holds it together</p>
-          <ul className="space-y-2 text-sm leading-6 text-[#4D3F33]">
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">What holds it together</p>
+          <ul className="space-y-2 text-sm leading-6 text-[var(--we-brown)]">
             <li>Shared method: Listen, Curiosity, Action, Art.</li>
             <li>Shared memory: the ACT wiki remains the durable source of truth.</li>
             <li>Shared live layer: Empathy Ledger keeps voice, photos, video, and field material moving.</li>
@@ -151,7 +151,7 @@ export default async function StudioPage() {
                         className="h-52 w-full object-cover"
                       />
                     ) : (
-                      <div className="relative h-52 overflow-hidden bg-[#2F3E2E]">
+                      <div className="relative h-52 overflow-hidden bg-[var(--we-olive)]">
                         {preview.thumbnailUrl || preview.previewUrl ? (
                           <img
                             src={preview.thumbnailUrl || preview.previewUrl || undefined}
@@ -172,7 +172,7 @@ export default async function StudioPage() {
                   ) : null}
 
                   <div className="space-y-4 p-8">
-                    <div className="flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-[#6B5A45]">
+                    <div className="flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-[var(--we-warm-brown)]">
                       <span>{formatServiceType(service.serviceType)}</span>
                       {service.media.photoCount + service.media.videoCount > 0 ? (
                         <>
@@ -185,10 +185,10 @@ export default async function StudioPage() {
                     </div>
 
                     <div className="space-y-3">
-                      <h3 className="text-2xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+                      <h3 className="text-2xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
                         {service.name}
                       </h3>
-                      <p className="text-sm leading-7 text-[#4D3F33]">
+                      <p className="text-sm leading-7 text-[var(--we-brown)]">
                         {service.detail.overview || service.description}
                       </p>
                     </div>
@@ -197,7 +197,7 @@ export default async function StudioPage() {
                       {service.detail.serviceTags.slice(0, 4).map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs font-medium text-[#4A4035]"
+                          className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]"
                         >
                           {tag}
                         </span>
@@ -206,7 +206,7 @@ export default async function StudioPage() {
 
                     {relatedProjectLinks.length > 0 ? (
                       <div className="space-y-2">
-                        <p className="text-[11px] uppercase tracking-[0.2em] text-[#6B5A45]">
+                        <p className="text-[11px] uppercase tracking-[0.2em] text-[var(--we-warm-brown)]">
                           Connected projects
                         </p>
                         <div className="flex flex-wrap gap-2">
@@ -215,14 +215,14 @@ export default async function StudioPage() {
                               <Link
                                 key={projectLink.key}
                                 href={projectLink.href}
-                                className="rounded-full bg-[#EDF6EC] px-3 py-1 text-xs font-medium text-[#2F3E2E] transition hover:bg-[#DCEED8]"
+                                className="rounded-full bg-[#EDF6EC] px-3 py-1 text-xs font-medium text-[var(--we-olive)] transition hover:bg-[#DCEED8]"
                               >
                                 {projectLink.label}
                               </Link>
                             ) : (
                               <span
                                 key={projectLink.key}
-                                className="rounded-full bg-[#EDF6EC] px-3 py-1 text-xs font-medium text-[#2F3E2E]"
+                                className="rounded-full bg-[#EDF6EC] px-3 py-1 text-xs font-medium text-[var(--we-olive)]"
                               >
                                 {projectLink.label}
                               </span>
@@ -234,26 +234,26 @@ export default async function StudioPage() {
 
                     <div className="grid gap-3 sm:grid-cols-3">
                       <div className="rounded-2xl bg-[#F6F1E7] px-4 py-3">
-                        <p className="text-lg font-semibold text-[#2F3E2E]">
+                        <p className="text-lg font-semibold text-[var(--we-olive)]">
                           {service.storytellerCount}
                         </p>
-                        <p className="text-xs uppercase tracking-[0.18em] text-[#6B5A45]">
+                        <p className="text-xs uppercase tracking-[0.18em] text-[var(--we-warm-brown)]">
                           Voices
                         </p>
                       </div>
                       <div className="rounded-2xl bg-[#F6F1E7] px-4 py-3">
-                        <p className="text-lg font-semibold text-[#2F3E2E]">
+                        <p className="text-lg font-semibold text-[var(--we-olive)]">
                           {service.linkedStoryCount}
                         </p>
-                        <p className="text-xs uppercase tracking-[0.18em] text-[#6B5A45]">
+                        <p className="text-xs uppercase tracking-[0.18em] text-[var(--we-warm-brown)]">
                           Stories
                         </p>
                       </div>
                       <div className="rounded-2xl bg-[#F6F1E7] px-4 py-3">
-                        <p className="text-lg font-semibold text-[#2F3E2E]">
+                        <p className="text-lg font-semibold text-[var(--we-olive)]">
                           {service.relatedProjects.length}
                         </p>
-                        <p className="text-xs uppercase tracking-[0.18em] text-[#6B5A45]">
+                        <p className="text-xs uppercase tracking-[0.18em] text-[var(--we-warm-brown)]">
                           Related projects
                         </p>
                       </div>
@@ -300,17 +300,17 @@ export default async function StudioPage() {
                 key={capability.title}
                 className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-3"
               >
-                <h3 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+                <h3 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
                   {capability.title}
                 </h3>
-                <p className="text-sm text-[#4D3F33]">{capability.description}</p>
+                <p className="text-sm text-[var(--we-brown)]">{capability.description}</p>
               </div>
             ))}
           </div>
         )}
       </section>
 
-      <section className="rounded-3xl border border-[#E3D4BA] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12 space-y-8">
+      <section className="rounded-3xl border border-[var(--we-sand)] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12 space-y-8">
         <SectionHeading
           eyebrow="Fields of practice"
           title="Where the work is already taking root"
@@ -323,12 +323,12 @@ export default async function StudioPage() {
               href={project.href}
               className="group rounded-2xl border border-[#D8C7A5] bg-gradient-to-br from-white/80 via-[#F8F2E8] to-[#E6D6BA] p-6 transition hover:-translate-y-1 hover:border-[#4CAF50] hover:shadow-lg"
             >
-              <p className="text-[11px] uppercase tracking-[0.2em] text-[#6B5A45]">
+              <p className="text-[11px] uppercase tracking-[0.2em] text-[var(--we-warm-brown)]">
                 {project.eyebrow}
               </p>
-              <h3 className="mt-2 font-semibold text-[#2F3E2E]">{project.title}</h3>
+              <h3 className="mt-2 font-semibold text-[var(--we-olive)]">{project.title}</h3>
               <p className="mt-1 text-sm font-medium text-[#4CAF50]">{project.tagline}</p>
-              <p className="mt-3 text-sm leading-6 text-[#4D3F33]">
+              <p className="mt-3 text-sm leading-6 text-[var(--we-brown)]">
                 {project.description}
               </p>
               {project.liveSignals &&
@@ -338,7 +338,7 @@ export default async function StudioPage() {
                 project.liveSignals.mediaCount > 0) ? (
                 <div className="mt-4 flex flex-wrap gap-2">
                   {project.liveSignals.serviceConnectionCount > 0 ? (
-                    <span className="rounded-full bg-[#EDF6EC] px-2.5 py-1 text-[10px] font-medium text-[#2F3E2E]">
+                    <span className="rounded-full bg-[#EDF6EC] px-2.5 py-1 text-[10px] font-medium text-[var(--we-olive)]">
                       {project.liveSignals.serviceConnectionCount} service
                       {project.liveSignals.serviceConnectionCount === 1 ? "" : "s"}
                     </span>
@@ -350,12 +350,12 @@ export default async function StudioPage() {
                     </span>
                   ) : null}
                   {project.liveSignals.storyCount > 0 ? (
-                    <span className="rounded-full bg-[#F6F1E7] px-2.5 py-1 text-[10px] font-medium text-[#4A4035]">
+                    <span className="rounded-full bg-[#F6F1E7] px-2.5 py-1 text-[10px] font-medium text-[var(--we-brown-deep)]">
                       {project.liveSignals.storyCount} stories
                     </span>
                   ) : null}
                   {project.liveSignals.mediaCount > 0 ? (
-                    <span className="rounded-full bg-[#F6F1E7] px-2.5 py-1 text-[10px] font-medium text-[#4A4035]">
+                    <span className="rounded-full bg-[#F6F1E7] px-2.5 py-1 text-[10px] font-medium text-[var(--we-brown-deep)]">
                       {project.liveSignals.mediaCount} media
                     </span>
                   ) : null}
@@ -378,13 +378,13 @@ export default async function StudioPage() {
         />
         <div className="grid gap-8 lg:grid-cols-2">
           <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-4">
-            <div className="inline-block rounded-full bg-[#E5F4E4] px-4 py-1 text-xs font-medium text-[#2F3E2E]">
+            <div className="inline-block rounded-full bg-[#E5F4E4] px-4 py-1 text-xs font-medium text-[var(--we-olive)]">
               Not-for-profit
             </div>
-            <h3 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+            <h3 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
               ACT Foundation (CLG)
             </h3>
-            <ul className="space-y-2 text-sm text-[#4D3F33]">
+            <ul className="space-y-2 text-sm text-[var(--we-brown)]">
               <li>• Charitable status for grants and donations</li>
               <li>• Mission-locked governance</li>
               <li>• Owns majority of ventures</li>
@@ -396,10 +396,10 @@ export default async function StudioPage() {
             <div className="inline-block rounded-full bg-[#FEF3C7] px-4 py-1 text-xs font-medium text-[#92400E]">
               Social Enterprise
             </div>
-            <h3 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+            <h3 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
               ACT Ventures (Trading)
             </h3>
-            <ul className="space-y-2 text-sm text-[#4D3F33]">
+            <ul className="space-y-2 text-sm text-[var(--we-brown)]">
               <li>• Generates sustainable revenue</li>
               <li>• 40% profit-sharing to communities</li>
               <li>• Attracts impact investment</li>
@@ -418,25 +418,25 @@ export default async function StudioPage() {
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <div className="text-center space-y-2">
             <p className="text-4xl font-bold text-[#4CAF50]">3+</p>
-            <p className="text-sm text-[#4D3F33]">
+            <p className="text-sm text-[var(--we-brown)]">
               Communities independently replicating ACT models
             </p>
           </div>
           <div className="text-center space-y-2">
             <p className="text-4xl font-bold text-[#4CAF50]">117</p>
-            <p className="text-sm text-[#4D3F33]">
+            <p className="text-sm text-[var(--we-brown)]">
               Hectares of land under conservation
             </p>
           </div>
           <div className="text-center space-y-2">
             <p className="text-4xl font-bold text-[#4CAF50]">50+</p>
-            <p className="text-sm text-[#4D3F33]">
+            <p className="text-sm text-[var(--we-brown)]">
               Jobs created in marginalised communities
             </p>
           </div>
           <div className="text-center space-y-2">
             <p className="text-4xl font-bold text-[#4CAF50]">1000+</p>
-            <p className="text-sm text-[#4D3F33]">
+            <p className="text-sm text-[var(--we-brown)]">
               Stories protected through Empathy Ledger
             </p>
           </div>

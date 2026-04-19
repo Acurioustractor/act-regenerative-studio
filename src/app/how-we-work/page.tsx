@@ -113,7 +113,7 @@ export default async function HowWeWorkPage() {
         ]}
       >
         <div className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
             Working stance
           </p>
           <p>
@@ -158,16 +158,16 @@ export default async function HowWeWorkPage() {
               key={style.title}
               className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-3"
             >
-              <h3 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+              <h3 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
                 {style.title}
               </h3>
-              <p className="text-sm text-[#4D3F33]">{style.description}</p>
+              <p className="text-sm text-[var(--we-brown)]">{style.description}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="rounded-3xl border border-[#E3D4BA] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12 space-y-8">
+      <section className="rounded-3xl border border-[var(--we-sand)] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12 space-y-8">
         <SectionHeading
           eyebrow="Rhythms"
           title="How we stay accountable"
@@ -179,10 +179,10 @@ export default async function HowWeWorkPage() {
               key={rhythm.title}
               className="rounded-2xl border border-[#D8C7A5] bg-white/70 p-6 space-y-4"
             >
-              <h3 className="font-semibold text-[#2F3E2E]">{rhythm.title}</h3>
+              <h3 className="font-semibold text-[var(--we-olive)]">{rhythm.title}</h3>
               <ul className="space-y-2">
                 {rhythm.items.map((item) => (
-                  <li key={item} className="text-sm text-[#4D3F33] flex gap-2">
+                  <li key={item} className="text-sm text-[var(--we-brown)] flex gap-2">
                     <span className="text-[#4CAF50]">•</span>
                     {item}
                   </li>
@@ -205,10 +205,10 @@ export default async function HowWeWorkPage() {
               key={collab.title}
               className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-4"
             >
-              <h3 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+              <h3 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
                 {collab.title}
               </h3>
-              <p className="text-sm text-[#4D3F33]">{collab.description}</p>
+              <p className="text-sm text-[var(--we-brown)]">{collab.description}</p>
               <Link
                 href={collab.href}
                 className="inline-flex items-center gap-2 text-sm font-semibold text-[#4CAF50] hover:gap-3 transition"
@@ -253,7 +253,7 @@ export default async function HowWeWorkPage() {
                       className="h-44 w-full object-cover"
                     />
                   ) : preview ? (
-                    <div className="flex h-44 items-end bg-gradient-to-br from-[#2F3E2E] via-[#4A4035] to-[#7A9B76] p-5 text-white">
+                    <div className="flex h-44 items-end bg-gradient-to-br from-[var(--we-olive)] via-[var(--we-brown-deep)] to-[#7A9B76] p-5 text-white">
                       <div>
                         <p className="rounded-full bg-white/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90">
                           {preview.kind}
@@ -266,7 +266,7 @@ export default async function HowWeWorkPage() {
                   ) : null}
 
                   <div className="space-y-4 p-7">
-                    <div className="flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-[#6B5A45]">
+                    <div className="flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.2em] text-[var(--we-warm-brown)]">
                       <span>{service.serviceType?.replaceAll("_", " ") || "capability"}</span>
                       <span>•</span>
                       <span>{service.storytellerCount} voices</span>
@@ -275,10 +275,10 @@ export default async function HowWeWorkPage() {
                     </div>
 
                     <div>
-                      <h3 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+                      <h3 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
                         {service.name}
                       </h3>
-                      <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
+                      <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">
                         {service.detail.overview || service.description}
                       </p>
                     </div>
@@ -287,7 +287,7 @@ export default async function HowWeWorkPage() {
                       {service.detail.serviceTags.slice(0, 3).map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs font-medium text-[#4A4035]"
+                          className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]"
                         >
                           {tag}
                         </span>
@@ -296,7 +296,7 @@ export default async function HowWeWorkPage() {
 
                     {relatedProjectLinks.length > 0 ? (
                       <div className="space-y-2">
-                        <p className="text-[11px] uppercase tracking-[0.2em] text-[#6B5A45]">
+                        <p className="text-[11px] uppercase tracking-[0.2em] text-[var(--we-warm-brown)]">
                           Project pathways
                         </p>
                         <div className="flex flex-wrap gap-2">
@@ -305,14 +305,14 @@ export default async function HowWeWorkPage() {
                               <Link
                                 key={projectLink.key}
                                 href={projectLink.href}
-                                className="rounded-full bg-[#EDF6EC] px-3 py-1 text-xs font-medium text-[#2F3E2E] transition hover:bg-[#DCEED8]"
+                                className="rounded-full bg-[#EDF6EC] px-3 py-1 text-xs font-medium text-[var(--we-olive)] transition hover:bg-[#DCEED8]"
                               >
                                 {projectLink.label}
                               </Link>
                             ) : (
                               <span
                                 key={projectLink.key}
-                                className="rounded-full bg-[#EDF6EC] px-3 py-1 text-xs font-medium text-[#2F3E2E]"
+                                className="rounded-full bg-[#EDF6EC] px-3 py-1 text-xs font-medium text-[var(--we-olive)]"
                               >
                                 {projectLink.label}
                               </span>
@@ -358,8 +358,8 @@ export default async function HowWeWorkPage() {
         <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8">
           <div className="grid gap-8 lg:grid-cols-3">
             <div className="space-y-4">
-              <h3 className="font-semibold text-[#2F3E2E]">Living memory</h3>
-              <ul className="space-y-2 text-sm text-[#4D3F33]">
+              <h3 className="font-semibold text-[var(--we-olive)]">Living memory</h3>
+              <ul className="space-y-2 text-sm text-[var(--we-brown)]">
                 <li>• Canonical ACT wiki as durable source of truth</li>
                 <li>• Project framing synced into the public site</li>
                 <li>• Knowledge designed to compound, not duplicate</li>
@@ -367,8 +367,8 @@ export default async function HowWeWorkPage() {
               </ul>
             </div>
             <div className="space-y-4">
-              <h3 className="font-semibold text-[#2F3E2E]">Consent-first story layer</h3>
-              <ul className="space-y-2 text-sm text-[#4D3F33]">
+              <h3 className="font-semibold text-[var(--we-olive)]">Consent-first story layer</h3>
+              <ul className="space-y-2 text-sm text-[var(--we-brown)]">
                 <li>• Empathy Ledger for approved stories, voices, photos, and media</li>
                 <li>• Story remains linked to project and place</li>
                 <li>• Public proof can update without rebuilding the site by hand</li>
@@ -376,8 +376,8 @@ export default async function HowWeWorkPage() {
               </ul>
             </div>
             <div className="space-y-4">
-              <h3 className="font-semibold text-[#2F3E2E]">Handover-oriented tooling</h3>
-              <ul className="space-y-2 text-sm text-[#4D3F33]">
+              <h3 className="font-semibold text-[var(--we-olive)]">Handover-oriented tooling</h3>
+              <ul className="space-y-2 text-sm text-[var(--we-brown)]">
                 <li>• Tools should create space, not lock people in</li>
                 <li>• Systems are designed to be explained, adapted, and transferred</li>
                 <li>• Documentation is part of delivery, not a leftover task</li>
@@ -396,38 +396,38 @@ export default async function HowWeWorkPage() {
         />
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           <div className="rounded-2xl border border-[#E1D3BA] bg-white/70 p-6 space-y-2">
-            <h4 className="font-semibold text-[#2F3E2E]">Seeds</h4>
-            <p className="text-sm text-[#4D3F33]">
+            <h4 className="font-semibold text-[var(--we-olive)]">Seeds</h4>
+            <p className="text-sm text-[var(--we-brown)]">
               Active projects that need time, water, and attention
             </p>
           </div>
           <div className="rounded-2xl border border-[#E1D3BA] bg-white/70 p-6 space-y-2">
-            <h4 className="font-semibold text-[#2F3E2E]">Soil</h4>
-            <p className="text-sm text-[#4D3F33]">
+            <h4 className="font-semibold text-[var(--we-olive)]">Soil</h4>
+            <p className="text-sm text-[var(--we-brown)]">
               Our knowledge network and community wisdom
             </p>
           </div>
           <div className="rounded-2xl border border-[#E1D3BA] bg-white/70 p-6 space-y-2">
-            <h4 className="font-semibold text-[#2F3E2E]">Seasons</h4>
-            <p className="text-sm text-[#4D3F33]">
+            <h4 className="font-semibold text-[var(--we-olive)]">Seasons</h4>
+            <p className="text-sm text-[var(--we-brown)]">
               Natural cycles of growth, harvest, and rest
             </p>
           </div>
           <div className="rounded-2xl border border-[#E1D3BA] bg-white/70 p-6 space-y-2">
-            <h4 className="font-semibold text-[#2F3E2E]">Harvest</h4>
-            <p className="text-sm text-[#4D3F33]">
+            <h4 className="font-semibold text-[var(--we-olive)]">Harvest</h4>
+            <p className="text-sm text-[var(--we-brown)]">
               Shared value that feeds the community
             </p>
           </div>
           <div className="rounded-2xl border border-[#E1D3BA] bg-white/70 p-6 space-y-2">
-            <h4 className="font-semibold text-[#2F3E2E]">Fields</h4>
-            <p className="text-sm text-[#4D3F33]">
+            <h4 className="font-semibold text-[var(--we-olive)]">Fields</h4>
+            <p className="text-sm text-[var(--we-brown)]">
               Domains where we cultivate change
             </p>
           </div>
           <div className="rounded-2xl border border-[#E1D3BA] bg-white/70 p-6 space-y-2">
-            <h4 className="font-semibold text-[#2F3E2E]">Tractor/PTO</h4>
-            <p className="text-sm text-[#4D3F33]">
+            <h4 className="font-semibold text-[var(--we-olive)]">Tractor/PTO</h4>
+            <p className="text-sm text-[var(--we-brown)]">
               We provide capacity, then communities drive forward
             </p>
           </div>

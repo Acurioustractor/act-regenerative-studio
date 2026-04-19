@@ -52,7 +52,7 @@ export default async function ArtResidenciesPage() {
         gradientClass="from-[#F4E8DD] via-[#E3C8B2] to-[#CFA486]"
       >
         <div className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
             Residency focus
           </p>
           <p>

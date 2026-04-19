@@ -88,7 +88,7 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
 
   if (loading) {
     return (
-      <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-8 text-sm text-[#4D3F33]">
+      <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-8 text-sm text-[var(--we-brown)]">
         Loading admin...
       </div>
     );
@@ -100,15 +100,15 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
 
   if (authError) {
     return (
-      <div className="rounded-3xl border border-[#E3D4BA] bg-white/80 p-8">
-        <h1 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+      <div className="rounded-3xl border border-[var(--we-sand)] bg-white/80 p-8">
+        <h1 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
           Access required
         </h1>
-        <p className="mt-2 text-sm text-[#4D3F33]">{authError}</p>
+        <p className="mt-2 text-sm text-[var(--we-brown)]">{authError}</p>
         <button
           type="button"
           onClick={handleSignOut}
-          className="mt-6 rounded-full border border-[#4CAF50] px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#2F3E2E]"
+          className="mt-6 rounded-full border border-[#4CAF50] px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)]"
         >
           Sign out
         </button>
@@ -120,22 +120,22 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
     <>
       <NotificationBanner />
       <div className="space-y-8">
-        <div className="flex flex-wrap items-center justify-between gap-4 rounded-3xl border border-[#E3D4BA] bg-white/80 p-6">
+        <div className="flex flex-wrap items-center justify-between gap-4 rounded-3xl border border-[var(--we-sand)] bg-white/80 p-6">
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+            <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
               ACT Admin
             </p>
-            <h1 className="text-2xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+            <h1 className="text-2xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
               Content Studio
             </h1>
-            <p className="mt-1 text-sm text-[#4D3F33]">
+            <p className="mt-1 text-sm text-[var(--we-brown)]">
               Signed in as {profile?.display_name ?? session.user.email}
             </p>
           </div>
         <div className="flex flex-wrap items-center gap-3">
           <Link
             href="/"
-            className="rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#2F3E2E]"
+            className="rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)]"
           >
             View site
           </Link>
@@ -157,8 +157,8 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
               href={item.href}
               className={`rounded-full px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] transition ${
                 active
-                  ? "bg-[#2F3E2E] text-white"
-                  : "border border-[#E3D4BA] text-[#2F3E2E] hover:bg-[#F1E9DA]"
+                  ? "bg-[var(--we-olive)] text-white"
+                  : "border border-[var(--we-sand)] text-[var(--we-olive)] hover:bg-[#F1E9DA]"
               }`}
             >
               {item.label}

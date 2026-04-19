@@ -121,8 +121,8 @@ export default function ContentListPage() {
 
   return (
     <div className="space-y-8">
-      <section className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
-        <h2 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+      <section className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6">
+        <h2 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
           Create new content
         </h2>
         <div className="mt-4 grid gap-4 md:grid-cols-[2fr_1fr_1fr_auto]">
@@ -131,19 +131,19 @@ export default function ContentListPage() {
             placeholder="Title"
             value={newTitle}
             onChange={(event) => setNewTitle(event.target.value)}
-            className="rounded-2xl border border-[#E3D4BA] bg-white px-4 py-3 text-sm"
+            className="rounded-2xl border border-[var(--we-sand)] bg-white px-4 py-3 text-sm"
           />
           <input
             type="text"
             placeholder="slug"
             value={newSlug}
             onChange={(event) => setNewSlug(event.target.value)}
-            className="rounded-2xl border border-[#E3D4BA] bg-white px-4 py-3 text-sm"
+            className="rounded-2xl border border-[var(--we-sand)] bg-white px-4 py-3 text-sm"
           />
           <select
             value={newType}
             onChange={(event) => setNewType(event.target.value)}
-            className="rounded-2xl border border-[#E3D4BA] bg-white px-4 py-3 text-sm"
+            className="rounded-2xl border border-[var(--we-sand)] bg-white px-4 py-3 text-sm"
           >
             {typeOptions.map((option) => (
               <option key={option} value={option}>
@@ -165,16 +165,16 @@ export default function ContentListPage() {
         ) : null}
       </section>
 
-      <section className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
+      <section className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6">
         <div className="flex flex-wrap items-center justify-between gap-4">
-          <h2 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+          <h2 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
             Content library
           </h2>
           <div className="flex flex-wrap gap-3">
             <select
               value={filterType}
               onChange={(event) => setFilterType(event.target.value)}
-              className="rounded-full border border-[#E3D4BA] bg-white px-4 py-2 text-xs uppercase tracking-[0.3em] text-[#2F3E2E]"
+              className="rounded-full border border-[var(--we-sand)] bg-white px-4 py-2 text-xs uppercase tracking-[0.3em] text-[var(--we-olive)]"
             >
               <option value="all">All types</option>
               {typeOptions.map((option) => (
@@ -186,7 +186,7 @@ export default function ContentListPage() {
             <select
               value={filterStatus}
               onChange={(event) => setFilterStatus(event.target.value)}
-              className="rounded-full border border-[#E3D4BA] bg-white px-4 py-2 text-xs uppercase tracking-[0.3em] text-[#2F3E2E]"
+              className="rounded-full border border-[var(--we-sand)] bg-white px-4 py-2 text-xs uppercase tracking-[0.3em] text-[var(--we-olive)]"
             >
               <option value="all">All statuses</option>
               {statusOptions.map((option) => (
@@ -199,32 +199,32 @@ export default function ContentListPage() {
         </div>
 
         {loading ? (
-          <p className="mt-6 text-sm text-[#4D3F33]">Loading...</p>
+          <p className="mt-6 text-sm text-[var(--we-brown)]">Loading...</p>
         ) : (
           <div className="mt-6 space-y-3">
             {list.map((item) => (
               <Link
                 key={item.id}
                 href={`/admin/content/${item.id}`}
-                className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-[#E3D4BA] bg-white/70 p-4 transition hover:border-[#4CAF50]"
+                className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-[var(--we-sand)] bg-white/70 p-4 transition hover:border-[#4CAF50]"
               >
                 <div>
-                  <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+                  <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
                     {item.type}
                   </p>
-                  <h3 className="text-lg font-semibold text-[#2F3E2E]">
+                  <h3 className="text-lg font-semibold text-[var(--we-olive)]">
                     {item.title}
                   </h3>
-                  <p className="text-xs text-[#6B5A45]">/{item.slug}</p>
+                  <p className="text-xs text-[var(--we-warm-brown)]">/{item.slug}</p>
                 </div>
-                <div className="text-right text-xs text-[#6B5A45]">
+                <div className="text-right text-xs text-[var(--we-warm-brown)]">
                   <p className="uppercase tracking-[0.3em]">{item.status}</p>
                   <p>{new Date(item.updated_at).toLocaleDateString()}</p>
                 </div>
               </Link>
             ))}
             {list.length === 0 ? (
-              <p className="text-sm text-[#4D3F33]">No content yet.</p>
+              <p className="text-sm text-[var(--we-brown)]">No content yet.</p>
             ) : null}
           </div>
         )}

@@ -71,20 +71,20 @@ export default function SettingsPage() {
   };
 
   return (
-    <section className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
-      <h2 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+    <section className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6">
+      <h2 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
         Site settings
       </h2>
-      <p className="mt-2 text-sm text-[#4D3F33]">
+      <p className="mt-2 text-sm text-[var(--we-brown)]">
         Edit global configuration as JSON.
       </p>
       {loading ? (
-        <p className="mt-4 text-sm text-[#4D3F33]">Loading...</p>
+        <p className="mt-4 text-sm text-[var(--we-brown)]">Loading...</p>
       ) : (
         <textarea
           value={jsonText}
           onChange={(event) => setJsonText(event.target.value)}
-          className="mt-4 min-h-[260px] w-full rounded-2xl border border-[#E3D4BA] bg-[#F7F2E8] px-4 py-3 text-xs text-[#2F3E2E]"
+          className="mt-4 min-h-[260px] w-full rounded-2xl border border-[var(--we-sand)] bg-[#F7F2E8] px-4 py-3 text-xs text-[var(--we-olive)]"
         />
       )}
       <div className="mt-4 flex flex-wrap items-center gap-3">
@@ -97,7 +97,7 @@ export default function SettingsPage() {
           {saving ? "Saving..." : "Save settings"}
         </button>
         {notice ? (
-          <span className="text-sm text-[#2F3E2E]">{notice}</span>
+          <span className="text-sm text-[var(--we-olive)]">{notice}</span>
         ) : null}
         {error ? (
           <span className="text-sm text-[#B4321E]">{error}</span>

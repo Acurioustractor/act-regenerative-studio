@@ -144,12 +144,12 @@ export function StudioWorkSection({
         ].map((item) => (
           <div
             key={item.eyebrow}
-            className={`rounded-[26px] border border-[#E3D4BA] ${item.tone} p-5`}
+            className={`rounded-[26px] border border-[var(--we-sand)] ${item.tone} p-5`}
           >
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#7A9B76]">
               {item.eyebrow}
             </p>
-            <p className="mt-3 font-[var(--font-display)] text-lg font-semibold leading-snug text-[#2F3E2E]">
+            <p className="mt-3 font-[var(--font-display)] text-lg font-semibold leading-snug text-[var(--we-olive)]">
               {item.value}
             </p>
           </div>
@@ -174,21 +174,21 @@ export function StudioWorkSection({
         </div>
 
         <div className="sm:col-span-2 grid gap-4 md:grid-cols-[0.95fr_1.05fr]">
-          <div className="rounded-[28px] border border-[#E3D4BA] bg-white p-5">
+          <div className="rounded-[28px] border border-[var(--we-sand)] bg-white p-5">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#7A9B76]">
               Live trace
             </p>
-            <p className="mt-3 font-[var(--font-display)] text-3xl font-semibold text-[#2F3E2E]">
+            <p className="mt-3 font-[var(--font-display)] text-3xl font-semibold text-[var(--we-olive)]">
               {liveSignalCount}
             </p>
-            <p className="mt-2 text-sm leading-6 text-[#4D3F33]">
+            <p className="mt-2 text-sm leading-6 text-[var(--we-brown)]">
               {live.storyCount} stories, {live.storytellerCount} storytellers, {live.mediaCount} media
               assets currently shaping how this work is seen in public.
             </p>
           </div>
 
           {secondStill ? (
-            <div className="overflow-hidden rounded-[28px] border border-[#E3D4BA] bg-[#F8F1E5]">
+            <div className="overflow-hidden rounded-[28px] border border-[var(--we-sand)] bg-[#F8F1E5]">
               <div className="relative aspect-[16/10] overflow-hidden">
                 <img
                   src={secondStill.url}
@@ -201,7 +201,7 @@ export function StudioWorkSection({
                 </div>
               </div>
               <div className="p-4">
-                <p className="text-sm leading-6 text-[#4D3F33]">
+                <p className="text-sm leading-6 text-[var(--we-brown)]">
                   {secondStill.alt || 'Field documentation'}
                 </p>
               </div>

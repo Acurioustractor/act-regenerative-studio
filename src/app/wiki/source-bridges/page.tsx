@@ -51,10 +51,10 @@ export default async function SourceBridgesPage() {
         ]}
       >
         <div className="space-y-4">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
             Why bridges matter
           </p>
-          <p className="text-sm leading-7 text-[#4D3F33]">
+          <p className="text-sm leading-7 text-[var(--we-brown)]">
             Bridge notes let ACT keep one canonical knowledge system while still operating public
             sites, implementation repos, and story/media engines in parallel. Without bridges, the
             hub drifts into decorative copy. With them, each page can point back to its source,
@@ -97,15 +97,15 @@ export default async function SourceBridgesPage() {
               key={ruleId}
               className="rounded-[28px] border border-[#E1D3BA] bg-white/85 p-6 shadow-sm"
             >
-              <p className="text-xs uppercase tracking-[0.24em] text-[#6B5A45]">
+              <p className="text-xs uppercase tracking-[0.24em] text-[var(--we-warm-brown)]">
                 {ruleId.replace(/_/g, ' ')}
               </p>
-              <h2 className="mt-3 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+              <h2 className="mt-3 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
                 {rule.owner_id}
               </h2>
-              <p className="mt-3 text-sm leading-7 text-[#4D3F33]">{rule.rule}</p>
+              <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">{rule.rule}</p>
               {rule.mirror_targets?.length ? (
-                <p className="mt-3 text-sm leading-6 text-[#4D3F33]">
+                <p className="mt-3 text-sm leading-6 text-[var(--we-brown)]">
                   Mirrors into: {rule.mirror_targets.join(', ')}
                 </p>
               ) : null}
@@ -138,34 +138,34 @@ export default async function SourceBridgesPage() {
                   ) : null}
                 </div>
 
-                <h2 className="mt-3 font-[var(--font-display)] text-3xl font-semibold text-[#2F3E2E]">
+                <h2 className="mt-3 font-[var(--font-display)] text-3xl font-semibold text-[var(--we-olive)]">
                   {pack.title}
                 </h2>
-                <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
+                <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">
                   {pack.summary ||
                     'This flagship project is wired into the ACT knowledge system through canonical source notes and downstream public paths.'}
                 </p>
 
                 <div className="mt-6 grid gap-4 md:grid-cols-2">
                   <div className="rounded-[24px] bg-[#F7F1E7] p-5">
-                    <p className="text-xs uppercase tracking-[0.24em] text-[#6B5A45]">
+                    <p className="text-xs uppercase tracking-[0.24em] text-[var(--we-warm-brown)]">
                       Canonical source
                     </p>
-                    <p className="mt-3 text-sm font-semibold text-[#2F3E2E]">
+                    <p className="mt-3 text-sm font-semibold text-[var(--we-olive)]">
                       {pack.sourcePage.wikiPath}
                     </p>
-                    <p className="mt-2 text-sm leading-6 text-[#4D3F33]">
+                    <p className="mt-2 text-sm leading-6 text-[var(--we-brown)]">
                       Primary public path: {pack.downstream.website.projectPath || 'Not set'}
                     </p>
                     {pack.downstream.website.primaryPath ? (
-                      <p className="mt-2 text-sm leading-6 text-[#4D3F33]">
+                      <p className="mt-2 text-sm leading-6 text-[var(--we-brown)]">
                         Dedicated spoke path: {pack.downstream.website.primaryPath}
                       </p>
                     ) : null}
                   </div>
 
                   <div className="rounded-[24px] bg-[#F7F1E7] p-5">
-                    <p className="text-xs uppercase tracking-[0.24em] text-[#6B5A45]">
+                    <p className="text-xs uppercase tracking-[0.24em] text-[var(--we-warm-brown)]">
                       Runtime bridge
                     </p>
                     <div className="mt-3 flex flex-wrap gap-2">
@@ -178,12 +178,12 @@ export default async function SourceBridgesPage() {
                       </span>
                     </div>
                     {packet?.review?.release?.status ? (
-                      <p className="mt-3 text-sm leading-6 text-[#4D3F33]">
+                      <p className="mt-3 text-sm leading-6 text-[var(--we-brown)]">
                         Release gate: {packet.review.release.status}
                       </p>
                     ) : null}
                     {packet?.outputs?.length ? (
-                      <p className="mt-2 text-sm leading-6 text-[#4D3F33]">
+                      <p className="mt-2 text-sm leading-6 text-[var(--we-brown)]">
                         Outputs: {packet.outputs.map((output) => output.output_type).filter(Boolean).join(', ')}
                       </p>
                     ) : null}
@@ -191,7 +191,7 @@ export default async function SourceBridgesPage() {
                 </div>
 
                 <div className="mt-6 space-y-3">
-                  <p className="text-xs uppercase tracking-[0.24em] text-[#6B5A45]">
+                  <p className="text-xs uppercase tracking-[0.24em] text-[var(--we-warm-brown)]">
                     Source bridge trail
                   </p>
                   <div className="flex flex-wrap gap-2">
@@ -199,7 +199,7 @@ export default async function SourceBridgesPage() {
                       <Link
                         key={bridge.stem}
                         href={`/wiki/${bridge.stem}`}
-                        className="rounded-full border border-[#D8C6A7] bg-[#FBF7F0] px-3 py-2 text-xs font-semibold text-[#4D3F33] transition hover:border-[#4CAF50] hover:bg-[#E5F4E4] hover:text-[#2F3E2E]"
+                        className="rounded-full border border-[#D8C6A7] bg-[#FBF7F0] px-3 py-2 text-xs font-semibold text-[var(--we-brown)] transition hover:border-[#4CAF50] hover:bg-[#E5F4E4] hover:text-[var(--we-olive)]"
                       >
                         {bridge.title}
                       </Link>
@@ -210,13 +210,13 @@ export default async function SourceBridgesPage() {
                 <div className="mt-6 grid gap-3 md:grid-cols-2">
                   {pack.implementation.primaryRepo ? (
                     <div className="rounded-[24px] border border-[#E7DAC4] bg-[#FFFCF7] p-5">
-                      <p className="text-xs uppercase tracking-[0.24em] text-[#6B5A45]">
+                      <p className="text-xs uppercase tracking-[0.24em] text-[var(--we-warm-brown)]">
                         Primary repo
                       </p>
-                      <p className="mt-3 text-sm font-semibold text-[#2F3E2E]">
+                      <p className="mt-3 text-sm font-semibold text-[var(--we-olive)]">
                         {pack.implementation.primaryRepo.name || 'Primary implementation repo'}
                       </p>
-                      <p className="mt-2 text-sm leading-6 text-[#4D3F33]">
+                      <p className="mt-2 text-sm leading-6 text-[var(--we-brown)]">
                         {pack.implementation.primaryRepo.role ||
                           'Primary public product surface for this field.'}
                       </p>
@@ -235,10 +235,10 @@ export default async function SourceBridgesPage() {
 
                   {pack.implementation.supportingRepos?.length ? (
                     <div className="rounded-[24px] border border-[#E7DAC4] bg-[#FFFCF7] p-5">
-                      <p className="text-xs uppercase tracking-[0.24em] text-[#6B5A45]">
+                      <p className="text-xs uppercase tracking-[0.24em] text-[var(--we-warm-brown)]">
                         Supporting repos
                       </p>
-                      <p className="mt-3 text-sm leading-6 text-[#4D3F33]">
+                      <p className="mt-3 text-sm leading-6 text-[var(--we-brown)]">
                         {pack.implementation.supportingRepos.length} supporting codebase
                         {pack.implementation.supportingRepos.length === 1 ? '' : 's'} attached to
                         this field.

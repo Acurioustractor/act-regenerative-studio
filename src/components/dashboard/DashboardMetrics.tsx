@@ -74,12 +74,12 @@ export function DashboardMetrics() {
         return (
           <div
             key={card.label}
-            className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6"
+            className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6"
           >
             <div className="flex items-center justify-between">
               <div>
-                <p className="text-sm text-[#4D3F33]">{card.label}</p>
-                <p className="mt-2 text-3xl font-bold text-[#2F3E2E]">
+                <p className="text-sm text-[var(--we-brown)]">{card.label}</p>
+                <p className="mt-2 text-3xl font-bold text-[var(--we-olive)]">
                   {loading ? "—" : card.value}
                 </p>
               </div>

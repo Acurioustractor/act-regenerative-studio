@@ -123,7 +123,7 @@ export default function PrinciplesPage() {
         ]}
       >
         <div className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
             Why this page exists
           </p>
           <p>
@@ -163,16 +163,16 @@ export default function PrinciplesPage() {
               key={value.title}
               className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-3"
             >
-              <h3 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+              <h3 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
                 {value.title}
               </h3>
-              <p className="text-sm text-[#4D3F33]">{value.description}</p>
+              <p className="text-sm text-[var(--we-brown)]">{value.description}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="rounded-3xl border border-[#E3D4BA] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12 space-y-8">
+      <section className="rounded-3xl border border-[var(--we-sand)] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12 space-y-8">
         <SectionHeading
           eyebrow="Commitments"
           title="Our promise"
@@ -184,8 +184,8 @@ export default function PrinciplesPage() {
               key={promise.title}
               className="rounded-2xl border border-[#D8C7A5] bg-white/70 p-6 space-y-2"
             >
-              <h3 className="font-semibold text-[#2F3E2E]">{promise.title}</h3>
-              <p className="text-sm text-[#4D3F33]">{promise.description}</p>
+              <h3 className="font-semibold text-[var(--we-olive)]">{promise.title}</h3>
+              <p className="text-sm text-[var(--we-brown)]">{promise.description}</p>
             </div>
           ))}
         </div>
@@ -208,11 +208,11 @@ export default function PrinciplesPage() {
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#4CAF50] text-sm font-bold text-white">
                   {principle.number}
                 </span>
-                <h3 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+                <h3 className="text-lg font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
                   {principle.title}
                 </h3>
               </div>
-              <p className="text-sm text-[#4D3F33]">{principle.description}</p>
+              <p className="text-sm text-[var(--we-brown)]">{principle.description}</p>
             </div>
           ))}
         </div>
@@ -228,10 +228,10 @@ export default function PrinciplesPage() {
           <div className="grid gap-8 lg:grid-cols-2">
             <div className="space-y-6">
               <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-4">
-                <h3 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+                <h3 className="text-lg font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
                   The Power Take-Off Metaphor
                 </h3>
-                <p className="text-sm text-[#4D3F33]">
+                <p className="text-sm text-[var(--we-brown)]">
                   Like a tractor's power take-off (PTO), ACT transfers resources,
                   knowledge, and capacity to community-led initiatives. We hand over
                   the keys. The goal isn't to build our own empire—it's to build
@@ -240,10 +240,10 @@ export default function PrinciplesPage() {
               </div>
 
               <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-4">
-                <h3 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+                <h3 className="text-lg font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
                   Beautiful Obsolescence
                 </h3>
-                <p className="text-sm text-[#4D3F33]">
+                <p className="text-sm text-[var(--we-brown)]">
                   Our north star is communities owning their narratives, land, and
                   economic futures. We design for our own obsolescence—success means
                   communities no longer need us. Every project includes a sunset
@@ -254,10 +254,10 @@ export default function PrinciplesPage() {
 
             <div className="space-y-6">
               <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-4">
-                <h3 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+                <h3 className="text-lg font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
                   Conservation First
                 </h3>
-                <p className="text-sm text-[#4D3F33]">
+                <p className="text-sm text-[var(--we-brown)]">
                   At Black Cockatoo Valley, conservation comes first. We practice
                   low-impact, limited-volume activity—no extractive tourism. Revenue
                   is reinvested into habitat care, weed management, and monitoring.
@@ -266,10 +266,10 @@ export default function PrinciplesPage() {
               </div>
 
               <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-4">
-                <h3 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+                <h3 className="text-lg font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
                   Dual-Entity Structure
                 </h3>
-                <p className="text-sm text-[#4D3F33]">
+                <p className="text-sm text-[var(--we-brown)]">
                   ACT operates as a dual-entity: a charitable CLG for grant
                   eligibility and community protection, plus a mission-locked trading
                   arm for equitable profit-sharing. This structure ensures we can
@@ -289,26 +289,26 @@ export default function PrinciplesPage() {
         />
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
           <div className="rounded-2xl border border-[#E1D3BA] bg-white/70 p-6 space-y-2">
-            <h4 className="font-semibold text-[#2F3E2E]">Grounded yet Visionary</h4>
-            <p className="text-xs text-[#4D3F33]">
+            <h4 className="font-semibold text-[var(--we-olive)]">Grounded yet Visionary</h4>
+            <p className="text-xs text-[var(--we-brown)]">
               Plant seeds today for forests tomorrow
             </p>
           </div>
           <div className="rounded-2xl border border-[#E1D3BA] bg-white/70 p-6 space-y-2">
-            <h4 className="font-semibold text-[#2F3E2E]">Humble yet Confident</h4>
-            <p className="text-xs text-[#4D3F33]">
+            <h4 className="font-semibold text-[var(--we-olive)]">Humble yet Confident</h4>
+            <p className="text-xs text-[var(--we-brown)]">
               We don't have all the answers, but we're cultivating solutions
             </p>
           </div>
           <div className="rounded-2xl border border-[#E1D3BA] bg-white/70 p-6 space-y-2">
-            <h4 className="font-semibold text-[#2F3E2E]">Warm yet Challenging</h4>
-            <p className="text-xs text-[#4D3F33]">
+            <h4 className="font-semibold text-[var(--we-olive)]">Warm yet Challenging</h4>
+            <p className="text-xs text-[var(--we-brown)]">
               Let's get our hands dirty with hard truths
             </p>
           </div>
           <div className="rounded-2xl border border-[#E1D3BA] bg-white/70 p-6 space-y-2">
-            <h4 className="font-semibold text-[#2F3E2E]">Poetic yet Clear</h4>
-            <p className="text-xs text-[#4D3F33]">
+            <h4 className="font-semibold text-[var(--we-olive)]">Poetic yet Clear</h4>
+            <p className="text-xs text-[var(--we-brown)]">
               Every story is a seed that can grow into change
             </p>
           </div>

@@ -260,7 +260,7 @@ export default function ContentEditorPage({
 
   if (loading) {
     return (
-      <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6 text-sm text-[#4D3F33]">
+      <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6 text-sm text-[var(--we-brown)]">
         Loading content...
       </div>
     );
@@ -268,11 +268,11 @@ export default function ContentEditorPage({
 
   if (!item) {
     return (
-      <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
-        <p className="text-sm text-[#4D3F33]">Content not found.</p>
+      <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6">
+        <p className="text-sm text-[var(--we-brown)]">Content not found.</p>
         <Link
           href="/admin/content"
-          className="mt-4 inline-flex rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#2F3E2E]"
+          className="mt-4 inline-flex rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)]"
         >
           Back to content
         </Link>
@@ -282,25 +282,25 @@ export default function ContentEditorPage({
 
   return (
     <div className="space-y-8">
-      <section className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
+      <section className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
-            <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+            <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
               {item.type}
             </p>
-            <h2 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+            <h2 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
               Edit content
             </h2>
           </div>
           <Link
             href="/admin/content"
-            className="rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#2F3E2E]"
+            className="rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)]"
           >
             Back to library
           </Link>
         </div>
         <div className="mt-6 grid gap-4 md:grid-cols-2">
-          <label className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+          <label className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
             Title
             <input
               type="text"
@@ -310,10 +310,10 @@ export default function ContentEditorPage({
                   prev ? { ...prev, title: event.target.value } : prev
                 )
               }
-              className="mt-2 w-full rounded-2xl border border-[#E3D4BA] bg-white px-4 py-3 text-sm text-[#2F3E2E]"
+              className="mt-2 w-full rounded-2xl border border-[var(--we-sand)] bg-white px-4 py-3 text-sm text-[var(--we-olive)]"
             />
           </label>
-          <label className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+          <label className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
             Slug
             <input
               type="text"
@@ -323,10 +323,10 @@ export default function ContentEditorPage({
                   prev ? { ...prev, slug: event.target.value } : prev
                 )
               }
-              className="mt-2 w-full rounded-2xl border border-[#E3D4BA] bg-white px-4 py-3 text-sm text-[#2F3E2E]"
+              className="mt-2 w-full rounded-2xl border border-[var(--we-sand)] bg-white px-4 py-3 text-sm text-[var(--we-olive)]"
             />
           </label>
-          <label className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+          <label className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
             Status
             <select
               value={item.status}
@@ -335,7 +335,7 @@ export default function ContentEditorPage({
                   prev ? { ...prev, status: event.target.value } : prev
                 )
               }
-              className="mt-2 w-full rounded-2xl border border-[#E3D4BA] bg-white px-4 py-3 text-sm text-[#2F3E2E]"
+              className="mt-2 w-full rounded-2xl border border-[var(--we-sand)] bg-white px-4 py-3 text-sm text-[var(--we-olive)]"
             >
               {statusOptions.map((option) => (
                 <option key={option} value={option}>
@@ -344,16 +344,16 @@ export default function ContentEditorPage({
               ))}
             </select>
           </label>
-          <label className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+          <label className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
             Publish date
             <input
               type="datetime-local"
               value={publishedAt}
               onChange={(event) => setPublishedAt(event.target.value)}
-              className="mt-2 w-full rounded-2xl border border-[#E3D4BA] bg-white px-4 py-3 text-sm text-[#2F3E2E]"
+              className="mt-2 w-full rounded-2xl border border-[var(--we-sand)] bg-white px-4 py-3 text-sm text-[var(--we-olive)]"
             />
           </label>
-          <label className="md:col-span-2 text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+          <label className="md:col-span-2 text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
             Summary
             <textarea
               value={item.summary ?? ""}
@@ -362,7 +362,7 @@ export default function ContentEditorPage({
                   prev ? { ...prev, summary: event.target.value } : prev
                 )
               }
-              className="mt-2 min-h-[120px] w-full rounded-2xl border border-[#E3D4BA] bg-white px-4 py-3 text-sm text-[#2F3E2E]"
+              className="mt-2 min-h-[120px] w-full rounded-2xl border border-[var(--we-sand)] bg-white px-4 py-3 text-sm text-[var(--we-olive)]"
             />
           </label>
         </div>
@@ -376,7 +376,7 @@ export default function ContentEditorPage({
             {saving ? "Saving..." : "Save content"}
           </button>
           {notice ? (
-            <span className="text-sm text-[#2F3E2E]">{notice}</span>
+            <span className="text-sm text-[var(--we-olive)]">{notice}</span>
           ) : null}
           {error ? (
             <span className="text-sm text-[#B4321E]">{error}</span>
@@ -384,13 +384,13 @@ export default function ContentEditorPage({
         </div>
       </section>
 
-      <section className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
+      <section className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6">
         <div className="flex flex-wrap items-center justify-between gap-4">
           <div>
-            <h3 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+            <h3 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
               Blocks ({blockCount})
             </h3>
-            <p className="mt-1 text-sm text-[#4D3F33]">
+            <p className="mt-1 text-sm text-[var(--we-brown)]">
               Add, reorder, and edit layout blocks.
             </p>
           </div>
@@ -400,7 +400,7 @@ export default function ContentEditorPage({
               onChange={(event) =>
                 setNewBlockType(event.target.value as BlockType)
               }
-              className="rounded-full border border-[#E3D4BA] bg-white px-4 py-2 text-xs uppercase tracking-[0.3em] text-[#2F3E2E]"
+              className="rounded-full border border-[var(--we-sand)] bg-white px-4 py-2 text-xs uppercase tracking-[0.3em] text-[var(--we-olive)]"
             >
               {blockTypeOptions.map((option) => (
                 <option key={option.value} value={option.value}>
@@ -411,7 +411,7 @@ export default function ContentEditorPage({
             <button
               type="button"
               onClick={handleAddBlock}
-              className="rounded-full bg-[#2F3E2E] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white"
+              className="rounded-full bg-[var(--we-olive)] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white"
             >
               Add block
             </button>
@@ -422,7 +422,7 @@ export default function ContentEditorPage({
           {blocks.map((block, index) => (
             <div
               key={block.id}
-              className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-5"
+              className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-5"
             >
               <div className="flex flex-wrap items-center justify-between gap-3">
                 <div className="flex flex-wrap items-center gap-3">
@@ -440,7 +440,7 @@ export default function ContentEditorPage({
                         )
                       )
                     }
-                    className="rounded-full border border-[#E3D4BA] bg-white px-3 py-2 text-xs uppercase tracking-[0.3em] text-[#2F3E2E]"
+                    className="rounded-full border border-[var(--we-sand)] bg-white px-3 py-2 text-xs uppercase tracking-[0.3em] text-[var(--we-olive)]"
                   >
                     {blockTypeOptions.map((option) => (
                       <option key={option.value} value={option.value}>
@@ -448,7 +448,7 @@ export default function ContentEditorPage({
                       </option>
                     ))}
                   </select>
-                  <span className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+                  <span className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
                     Position {block.position + 1}
                   </span>
                 </div>
@@ -456,21 +456,21 @@ export default function ContentEditorPage({
                   <button
                     type="button"
                     onClick={() => handleMoveBlock(index, -1)}
-                    className="rounded-full border border-[#E3D4BA] px-3 py-2 text-xs uppercase tracking-[0.3em]"
+                    className="rounded-full border border-[var(--we-sand)] px-3 py-2 text-xs uppercase tracking-[0.3em]"
                   >
                     Up
                   </button>
                   <button
                     type="button"
                     onClick={() => handleMoveBlock(index, 1)}
-                    className="rounded-full border border-[#E3D4BA] px-3 py-2 text-xs uppercase tracking-[0.3em]"
+                    className="rounded-full border border-[var(--we-sand)] px-3 py-2 text-xs uppercase tracking-[0.3em]"
                   >
                     Down
                   </button>
                   <button
                     type="button"
                     onClick={() => handleResetBlock(block.id, block.type)}
-                    className="rounded-full border border-[#E3D4BA] px-3 py-2 text-xs uppercase tracking-[0.3em]"
+                    className="rounded-full border border-[var(--we-sand)] px-3 py-2 text-xs uppercase tracking-[0.3em]"
                   >
                     Reset
                   </button>
@@ -494,7 +494,7 @@ export default function ContentEditorPage({
                     )
                   )
                 }
-                className="mt-4 min-h-[180px] w-full rounded-2xl border border-[#E3D4BA] bg-[#F7F2E8] px-4 py-3 text-xs text-[#2F3E2E]"
+                className="mt-4 min-h-[180px] w-full rounded-2xl border border-[var(--we-sand)] bg-[#F7F2E8] px-4 py-3 text-xs text-[var(--we-olive)]"
               />
               <div className="mt-4 flex flex-wrap items-center gap-3">
                 <button
@@ -508,22 +508,22 @@ export default function ContentEditorPage({
             </div>
           ))}
           {blocks.length === 0 ? (
-            <p className="text-sm text-[#4D3F33]">
+            <p className="text-sm text-[var(--we-brown)]">
               No blocks yet. Add your first block to start building this page.
             </p>
           ) : null}
         </div>
       </section>
 
-      <section className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
-        <h3 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+      <section className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6">
+        <h3 className="text-lg font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
           Content settings
         </h3>
         <div className="mt-4 flex flex-wrap gap-3">
           <button
             type="button"
             onClick={() => router.push(publicPath)}
-            className="rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#2F3E2E]"
+            className="rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)]"
           >
             View public page
           </button>

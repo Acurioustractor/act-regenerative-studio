@@ -161,7 +161,7 @@ export default async function MediaPage() {
             <h2 className="font-[var(--font-display)] text-[2.2rem] font-semibold leading-tight text-[#241c15]">
               Every image here is real, consented, and connected.
             </h2>
-            <p className="max-w-2xl text-sm leading-7 text-[#4D3F33]">
+            <p className="max-w-2xl text-sm leading-7 text-[var(--we-brown)]">
               ACT does not use stock photography. All media on this site comes
               from real field work, real communities, and real collaborators.
               Media featuring individuals is published with their consent

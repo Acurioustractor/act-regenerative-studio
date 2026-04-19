@@ -110,13 +110,13 @@ export function KnowledgeLinksSection({
   return (
     <section className="space-y-6">
       <div className="text-center">
-        <p className="text-xs uppercase tracking-[0.3em] text-[#4A4035]">
+        <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-brown-deep)]">
           Learn More
         </p>
-        <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E] md:text-3xl">
+        <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)] md:text-3xl">
           Explore the Knowledge Base
         </h2>
-        <p className="mt-3 text-sm text-[#3A4A3D] max-w-xl mx-auto">
+        <p className="mt-3 text-sm text-[var(--we-olive-deep)] max-w-xl mx-auto">
           Dive deeper into the research, stories, and impact data behind {projectTitle}.
         </p>
       </div>
@@ -132,11 +132,11 @@ export function KnowledgeLinksSection({
             <LinkComponent
               key={link.href}
               {...linkProps}
-              className="group flex items-start gap-4 rounded-2xl border border-[#E3D4BA] bg-white p-5 transition-all hover:border-[#7A9B76] hover:shadow-md"
+              className="group flex items-start gap-4 rounded-2xl border border-[var(--we-sand)] bg-white p-5 transition-all hover:border-[#7A9B76] hover:shadow-md"
             >
               <span className="text-2xl">{link.icon}</span>
               <div className="flex-1">
-                <h3 className="font-semibold text-[#2F3E2E] group-hover:text-[#7A9B76]">
+                <h3 className="font-semibold text-[var(--we-olive)] group-hover:text-[#7A9B76]">
                   {link.title}
                   {link.external && (
                     <svg
@@ -154,7 +154,7 @@ export function KnowledgeLinksSection({
                     </svg>
                   )}
                 </h3>
-                <p className="mt-1 text-sm text-[#4A4035]">{link.description}</p>
+                <p className="mt-1 text-sm text-[var(--we-brown-deep)]">{link.description}</p>
               </div>
             </LinkComponent>
           );
@@ -163,9 +163,9 @@ export function KnowledgeLinksSection({
 
       {/* Ecosystem Metadata Badge */}
       {ecosystemData && (
-        <div className="flex flex-wrap items-center justify-center gap-3 py-4 border-t border-[#E3D4BA]">
+        <div className="flex flex-wrap items-center justify-center gap-3 py-4 border-t border-[var(--we-sand)]">
           {ecosystemData.code && (
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#F6F1E7] px-3 py-1.5 text-xs font-medium text-[#4A4035]">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#F6F1E7] px-3 py-1.5 text-xs font-medium text-[var(--we-brown-deep)]">
               <span className="opacity-60">Code:</span>
               <span className="font-semibold">{ecosystemData.code}</span>
             </span>
@@ -185,7 +185,7 @@ export function KnowledgeLinksSection({
             </span>
           )}
           {ecosystemData.location && (
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#F6F1E7] px-3 py-1.5 text-xs text-[#4A4035]">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#F6F1E7] px-3 py-1.5 text-xs text-[var(--we-brown-deep)]">
               📍 {ecosystemData.location}
             </span>
           )}
@@ -204,21 +204,21 @@ export function KnowledgeLinksSection({
 
       {/* ACT studio connection */}
       <div className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-4">
-        <div className="flex items-center gap-3 text-sm text-[#4A4035]">
+        <div className="flex items-center gap-3 text-sm text-[var(--we-brown-deep)]">
           <span>Part of the</span>
           <Link
             href="/"
-            className="font-semibold text-[#2F3E2E] hover:text-[#7A9B76] transition"
+            className="font-semibold text-[var(--we-olive)] hover:text-[#7A9B76] transition"
           >
             ACT studio field
           </Link>
         </div>
-        <span className="hidden sm:inline text-[#E3D4BA]">|</span>
+        <span className="hidden sm:inline text-[var(--we-sand)]">|</span>
         <a
           href={EMPATHY_LEDGER_URL}
           target="_blank"
           rel="noopener noreferrer"
-          className="flex items-center gap-2 text-sm text-[#4A4035] hover:text-[#B85C38] transition"
+          className="flex items-center gap-2 text-sm text-[var(--we-brown-deep)] hover:text-[#B85C38] transition"
         >
           <span>Stories powered by</span>
           <span className="font-semibold">Empathy Ledger</span>

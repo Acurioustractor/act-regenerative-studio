@@ -14,7 +14,7 @@ export default function GHLEmbed({
   return (
     <div className="rounded-2xl border border-[#D8C7A5] bg-white/80 p-5 shadow-[0_18px_45px_rgba(50,42,31,0.12)]">
       <div className="mb-4">
-        <h3 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+        <h3 className="text-lg font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
           {title}
         </h3>
         {description ? (

@@ -43,14 +43,14 @@ export default function ContactPage() {
         ]}
       >
         <div className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
             Studio contact
           </p>
           <p>
             Email: <span className="font-semibold">hi@act.place</span>
           </p>
           <p>Location: Jinibara Country, Black Cockatoo Valley.</p>
-          <p className="text-sm leading-6 text-[#4D3F33]">
+          <p className="text-sm leading-6 text-[var(--we-brown)]">
             The more specific you can be about the field, the people, and the timing, the better the conversation will be.
           </p>
         </div>
@@ -87,15 +87,15 @@ export default function ContactPage() {
               key={path.title}
               className="rounded-3xl border border-[#E1D3BA] bg-white/75 p-7"
             >
-              <h3 className="font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+              <h3 className="font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
                 {path.title}
               </h3>
-              <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
+              <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">
                 {path.description}
               </p>
               <Link
                 href={path.href}
-                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[#2F3E2E] transition hover:gap-3"
+                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[var(--we-olive)] transition hover:gap-3"
               >
                 <span>{path.cta}</span>
                 <span aria-hidden="true">→</span>
@@ -126,7 +126,7 @@ export default function ContactPage() {
           ]}
         />
         <div className="mx-auto max-w-2xl">
-          <Suspense fallback={<div className="rounded-3xl border border-[#E3D4BA] bg-white/80 p-8 text-sm text-[#4D3F33]">Loading contact form…</div>}>
+          <Suspense fallback={<div className="rounded-3xl border border-[var(--we-sand)] bg-white/80 p-8 text-sm text-[var(--we-brown)]">Loading contact form…</div>}>
             <ContactForm
               projectCode="ACT-IN"
               formType="contact"

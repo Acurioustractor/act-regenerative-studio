@@ -106,7 +106,7 @@ export function RoadmapTimeline() {
   return (
     <div className="relative">
       {/* Timeline Line */}
-      <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-[#E3D4BA] hidden md:block" />
+      <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-[var(--we-sand)] hidden md:block" />
 
       <div className="space-y-8">
         {ROADMAP.map((milestone, index) => (
@@ -123,21 +123,21 @@ export function RoadmapTimeline() {
                 <div className="flex items-start justify-between flex-wrap gap-2">
                   <div>
                     <div className="flex items-center gap-3">
-                      <span className="text-lg font-bold text-[#2F3E2E]">
+                      <span className="text-lg font-bold text-[var(--we-olive)]">
                         {milestone.quarter} {milestone.year}
                       </span>
                       <span className={`rounded-full px-3 py-1 text-xs font-semibold uppercase tracking-wider text-white ${statusColors[milestone.status]}`}>
                         {statusLabels[milestone.status]}
                       </span>
                     </div>
-                    <h3 className="mt-2 text-xl font-bold text-[#2F3E2E] font-[var(--font-display)]">
+                    <h3 className="mt-2 text-xl font-bold text-[var(--we-olive)] font-[var(--font-display)]">
                       {milestone.title}
                     </h3>
                   </div>
                 </div>
 
                 {/* Description */}
-                <p className="mt-3 text-sm text-[#4D3F33] leading-relaxed">
+                <p className="mt-3 text-sm text-[var(--we-brown)] leading-relaxed">
                   {milestone.description}
                 </p>
 
@@ -146,7 +146,7 @@ export function RoadmapTimeline() {
                   {milestone.projects.map((project) => (
                     <span
                       key={project}
-                      className="rounded-full bg-[#F5F1E8] px-3 py-1 text-xs text-[#2F3E2E] font-medium"
+                      className="rounded-full bg-[#F5F1E8] px-3 py-1 text-xs text-[var(--we-olive)] font-medium"
                     >
                       {project}
                     </span>
@@ -155,10 +155,10 @@ export function RoadmapTimeline() {
 
                 {/* LCAA Phase */}
                 <div className="mt-4 flex items-center gap-2">
-                  <span className="text-xs text-[#4D3F33] uppercase tracking-wider">
+                  <span className="text-xs text-[var(--we-brown)] uppercase tracking-wider">
                     LCAA:
                   </span>
-                  <span className={`rounded-full border-2 ${lcaaColors[milestone.lcaaPhase]} bg-white px-3 py-0.5 text-xs font-semibold uppercase tracking-wider text-[#2F3E2E]`}>
+                  <span className={`rounded-full border-2 ${lcaaColors[milestone.lcaaPhase]} bg-white px-3 py-0.5 text-xs font-semibold uppercase tracking-wider text-[var(--we-olive)]`}>
                     {milestone.lcaaPhase}
                   </span>
                 </div>

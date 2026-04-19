@@ -21,7 +21,7 @@ export default async function EnginePage() {
                 ]}
             >
                 <div className="space-y-3">
-                    <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+                    <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
                         What this is
                     </p>
                     <p>

@@ -53,10 +53,10 @@ export default async function ArtCommissionsPage() {
               key={mode.title}
               className="rounded-3xl border border-[#E1D3BA] bg-white/75 p-8"
             >
-              <h3 className="font-[var(--font-display)] text-xl font-semibold text-[#2F3E2E]">
+              <h3 className="font-[var(--font-display)] text-xl font-semibold text-[var(--we-olive)]">
                 {mode.title}
               </h3>
-              <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
+              <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">
                 {mode.description}
               </p>
             </div>
@@ -91,30 +91,30 @@ export default async function ArtCommissionsPage() {
                 </div>
               )}
               <div className="space-y-4 p-6">
-                <div className="flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.2em] text-[#6B5A45]">
+                <div className="flex flex-wrap gap-2 text-[11px] uppercase tracking-[0.2em] text-[var(--we-warm-brown)]">
                   <span>{work.medium}</span>
                   <span>•</span>
                   <span>{work.connectedTo}</span>
                 </div>
-                <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+                <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
                   {work.title}
                 </h2>
-                <p className="text-sm leading-7 text-[#4D3F33]">
+                <p className="text-sm leading-7 text-[var(--we-brown)]">
                   {work.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {work.live.storyCount > 0 ? (
-                    <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs font-medium text-[#4A4035]">
+                    <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]">
                       {work.live.storyCount} stories
                     </span>
                   ) : null}
                   {work.live.mediaCount > 0 ? (
-                    <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs font-medium text-[#4A4035]">
+                    <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]">
                       {work.live.mediaCount} media
                     </span>
                   ) : null}
                 </div>
-                <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#2F3E2E] transition group-hover:gap-3">
+                <div className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--we-olive)] transition group-hover:gap-3">
                   <span>Open work</span>
                   <span aria-hidden="true">→</span>
                 </div>

@@ -53,10 +53,10 @@ export default async function EcosystemPage() {
     <div className="space-y-6">
       {/* Header */}
       <div>
-        <h1 className="text-3xl font-bold text-[#2F3E2E] font-[var(--font-display)]">
+        <h1 className="text-3xl font-bold text-[var(--we-olive)] font-[var(--font-display)]">
           ACT Ecosystem Operations
         </h1>
-        <p className="mt-2 text-sm text-[#4D3F33]">
+        <p className="mt-2 text-sm text-[var(--we-brown)]">
           Unified view of all ACT projects, deployments, and progress
         </p>
       </div>
@@ -80,8 +80,8 @@ export default async function EcosystemPage() {
       </div>
 
       {/* Quick Links */}
-      <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
-        <h2 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+      <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6">
+        <h2 className="text-lg font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
           Quick Links
         </h2>
         <div className="mt-4 flex flex-wrap gap-3">
@@ -97,7 +97,7 @@ export default async function EcosystemPage() {
             href="https://github.com/Acurioustractor"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#2F3E2E] hover:bg-[#4CAF50]/10"
+            className="rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)] hover:bg-[#4CAF50]/10"
           >
             GitHub Organization
           </a>
@@ -105,7 +105,7 @@ export default async function EcosystemPage() {
             href="https://vercel.com/acurioustractor"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#2F3E2E] hover:bg-[#4CAF50]/10"
+            className="rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)] hover:bg-[#4CAF50]/10"
           >
             Vercel Dashboard
           </a>

@@ -38,12 +38,12 @@ export default async function ArtistsPage() {
             >
               <div className="flex min-h-[120px] items-end bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-6">
                 <div className="space-y-1">
-                  <p className="text-xs uppercase tracking-[0.22em] text-[#6B5A45]">
+                  <p className="text-xs uppercase tracking-[0.22em] text-[var(--we-warm-brown)]">
                     {collaborator.source === "storyteller"
                       ? "Live storyteller signal"
                       : "Project collaborator"}
                   </p>
-                  <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+                  <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
                     {collaborator.name}
                   </h2>
                 </div>
@@ -52,20 +52,20 @@ export default async function ArtistsPage() {
                 <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#4CAF50]">
                   {collaborator.role}
                 </p>
-                <p className="text-sm leading-7 text-[#4D3F33]">
+                <p className="text-sm leading-7 text-[var(--we-brown)]">
                   {collaborator.description}
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {collaborator.relatedWorks.map((work) => (
                     <span
                       key={`${collaborator.key}-${work}`}
-                      className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs font-medium text-[#4A4035]"
+                      className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]"
                     >
                       {work}
                     </span>
                   ))}
                 </div>
-                <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#2F3E2E] transition group-hover:gap-3">
+                <div className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--we-olive)] transition group-hover:gap-3">
                   <span>Open related work</span>
                   <span aria-hidden="true">→</span>
                 </div>
@@ -75,23 +75,23 @@ export default async function ArtistsPage() {
         </div>
       </section>
 
-      <section className="rounded-3xl border border-[#E3D4BA] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12">
+      <section className="rounded-3xl border border-[var(--we-sand)] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12">
         <div className="grid gap-6 md:grid-cols-3">
           <div className="rounded-2xl border border-[#D8C7A5] bg-white/75 p-6">
-            <h3 className="font-semibold text-[#2F3E2E]">Residency collaborators</h3>
-            <p className="mt-3 text-sm text-[#4D3F33]">
+            <h3 className="font-semibold text-[var(--we-olive)]">Residency collaborators</h3>
+            <p className="mt-3 text-sm text-[var(--we-brown)]">
               Artists, researchers, and cultural practitioners working through Black Cockatoo Valley and other ACT places.
             </p>
           </div>
           <div className="rounded-2xl border border-[#D8C7A5] bg-white/75 p-6">
-            <h3 className="font-semibold text-[#2F3E2E]">Community authorities</h3>
-            <p className="mt-3 text-sm text-[#4D3F33]">
+            <h3 className="font-semibold text-[var(--we-olive)]">Community authorities</h3>
+            <p className="mt-3 text-sm text-[var(--we-brown)]">
               Elders, storytellers, and local cultural authorities who shape the ethics, permission, and direction of the work.
             </p>
           </div>
           <div className="rounded-2xl border border-[#D8C7A5] bg-white/75 p-6">
-            <h3 className="font-semibold text-[#2F3E2E]">Commission partners</h3>
-            <p className="mt-3 text-sm text-[#4D3F33]">
+            <h3 className="font-semibold text-[var(--we-olive)]">Commission partners</h3>
+            <p className="mt-3 text-sm text-[var(--we-brown)]">
               Institutions, campaigns, and community groups that invite ACT to turn a social question into a public work.
             </p>
           </div>

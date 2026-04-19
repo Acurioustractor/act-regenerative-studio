@@ -25,7 +25,7 @@ export default function SignalBars({ label, level, color = '#4CAF50', showLabel 
     return (
         <div className="flex flex-col gap-1 min-w-[120px]">
             {showLabel && (
-                <div className="flex justify-between text-xs uppercase tracking-wider text-[#6B5A45]">
+                <div className="flex justify-between text-xs uppercase tracking-wider text-[var(--we-warm-brown)]">
                     <span>{label}</span>
                     <span className="font-semibold">{level}</span>
                 </div>

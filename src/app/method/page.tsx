@@ -78,7 +78,7 @@ export default function MethodPage() {
         ]}
       >
         <div className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
             Why it matters
           </p>
           <p>
@@ -100,25 +100,25 @@ export default function MethodPage() {
               key={step.title}
               className="rounded-3xl border border-[#E1D3BA] bg-white/75 p-7"
             >
-              <h3 className="font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+              <h3 className="font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
                 {step.title}
               </h3>
-              <p className="mt-3 text-sm text-[#4D3F33]">{step.description}</p>
+              <p className="mt-3 text-sm text-[var(--we-brown)]">{step.description}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="rounded-3xl border border-[#E3D4BA] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12">
+      <section className="rounded-3xl border border-[var(--we-sand)] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="space-y-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+            <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
               Practice commitments
             </p>
-            <h2 className="font-[var(--font-display)] text-3xl font-semibold text-[#2F3E2E] md:text-4xl">
+            <h2 className="font-[var(--font-display)] text-3xl font-semibold text-[var(--we-olive)] md:text-4xl">
               Method only matters if it changes behavior
             </h2>
-            <p className="text-sm text-[#4D3F33]">
+            <p className="text-sm text-[var(--we-brown)]">
               These are some of the commitments that keep ACT's method grounded in
               place, reciprocity, and handover rather than generic innovation
               language.
@@ -130,8 +130,8 @@ export default function MethodPage() {
                 key={item.title}
                 className="rounded-3xl border border-[#D8C7A5] bg-white/75 p-6"
               >
-                <h3 className="font-semibold text-[#2F3E2E]">{item.title}</h3>
-                <p className="mt-2 text-sm text-[#4D3F33]">{item.description}</p>
+                <h3 className="font-semibold text-[var(--we-olive)]">{item.title}</h3>
+                <p className="mt-2 text-sm text-[var(--we-brown)]">{item.description}</p>
               </div>
             ))}
           </div>
@@ -151,11 +151,11 @@ export default function MethodPage() {
               href={page.href}
               className="group rounded-3xl border border-[#E1D3BA] bg-white/75 p-7 transition hover:-translate-y-1 hover:border-[#4CAF50] hover:shadow-[0_18px_45px_rgba(50,42,31,0.1)]"
             >
-              <h3 className="font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+              <h3 className="font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
                 {page.title}
               </h3>
-              <p className="mt-3 text-sm text-[#4D3F33]">{page.description}</p>
-              <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#2F3E2E] transition group-hover:gap-3">
+              <p className="mt-3 text-sm text-[var(--we-brown)]">{page.description}</p>
+              <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--we-olive)] transition group-hover:gap-3">
                 <span>{page.cta}</span>
                 <span aria-hidden="true">→</span>
               </div>

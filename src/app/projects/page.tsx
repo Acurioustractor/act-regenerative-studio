@@ -386,7 +386,7 @@ export default async function ProjectsPage() {
           <h2 className="mt-4 font-[var(--font-display)] text-[2.2rem] font-semibold leading-tight text-[#241c15]">
             Find the right field, proof, or invitation path.
           </h2>
-          <p className="mt-4 max-w-2xl text-sm leading-7 text-[#4D3F33]">
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--we-brown)]">
             Each project page now pulls together public framing, live stories
             and media where they exist, and direct ways to enter the work. You
             do not need to understand the whole ACT system before you can find
@@ -458,13 +458,13 @@ export default async function ProjectsPage() {
           <h2 className="mt-4 font-[var(--font-display)] text-[2.2rem] font-semibold leading-tight text-[#241c15]">
             More projects, pilots, and live strands sit behind the flagship layer.
           </h2>
-          <p className="mt-4 max-w-2xl text-sm leading-7 text-[#4D3F33]">
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--we-brown)]">
             Not everything needs equal visual weight on the public site. This
             layer keeps the strongest public proofs in front while still giving
             the wider project set a visible place to live.
           </p>
           <div className="mt-6 grid gap-3 sm:grid-cols-3">
-            <div className="rounded-[22px] border border-[#E3D4BA] bg-[#FDFBF7] px-4 py-4">
+            <div className="rounded-[22px] border border-[var(--we-sand)] bg-[#FDFBF7] px-4 py-4">
               <p className="text-2xl font-semibold text-[#2d6a4f]">
                 {archivePreview.length}
               </p>
@@ -472,7 +472,7 @@ export default async function ProjectsPage() {
                 Seed set shown
               </p>
             </div>
-            <div className="rounded-[22px] border border-[#E3D4BA] bg-[#FDFBF7] px-4 py-4">
+            <div className="rounded-[22px] border border-[var(--we-sand)] bg-[#FDFBF7] px-4 py-4">
               <p className="text-2xl font-semibold text-[#2d6a4f]">
                 {archiveProjectsWithSites}
               </p>
@@ -480,7 +480,7 @@ export default async function ProjectsPage() {
                 With public sites
               </p>
             </div>
-            <div className="rounded-[22px] border border-[#E3D4BA] bg-[#FDFBF7] px-4 py-4">
+            <div className="rounded-[22px] border border-[var(--we-sand)] bg-[#FDFBF7] px-4 py-4">
               <p className="text-2xl font-semibold text-[#2d6a4f]">
                 {archiveProjectsWithRepos}
               </p>
@@ -494,17 +494,17 @@ export default async function ProjectsPage() {
               const statusStyle =
                 DOMAIN_BADGE_STYLES[project.status || ''] ||
                 DOMAIN_BADGE_STYLES[project.tier || ''] ||
-                'border-[#E3D4BA] bg-[#FDFBF7] text-[#5A4A3A]';
+                'border-[var(--we-sand)] bg-[#FDFBF7] text-[#5A4A3A]';
               const liveSignals = signalPayload.bySlug[project.slug];
 
               return (
                 <article
                   key={project.relativePath}
-                  className="rounded-[24px] border border-[#E3D4BA] bg-[#FDFBF7] p-5 transition-all hover:border-[#2d6a4f] hover:shadow-[0_18px_45px_rgba(50,42,31,0.08)]"
+                  className="rounded-[24px] border border-[var(--we-sand)] bg-[#FDFBF7] p-5 transition-all hover:border-[#2d6a4f] hover:shadow-[0_18px_45px_rgba(50,42,31,0.08)]"
                 >
                   <Link href={`/projects/${project.slug}`} className="group block">
                     <div className="mb-3 flex items-start justify-between gap-3">
-                      <h3 className="text-base font-semibold leading-tight text-[#2F3E2E] group-hover:text-[#2d6a4f]">
+                      <h3 className="text-base font-semibold leading-tight text-[var(--we-olive)] group-hover:text-[#2d6a4f]">
                         {project.title}
                       </h3>
                       {(project.status || project.tier) && (
@@ -527,7 +527,7 @@ export default async function ProjectsPage() {
                       liveSignals.mediaCount > 0) ? (
                       <div className="mt-4 flex flex-wrap gap-2">
                         {liveSignals.serviceConnectionCount > 0 ? (
-                          <span className="rounded-full bg-[#EDF6EC] px-2.5 py-1 text-[10px] font-medium text-[#2F3E2E]">
+                          <span className="rounded-full bg-[#EDF6EC] px-2.5 py-1 text-[10px] font-medium text-[var(--we-olive)]">
                             {liveSignals.serviceConnectionCount} service
                             {liveSignals.serviceConnectionCount === 1 ? '' : 's'}
                           </span>
@@ -539,12 +539,12 @@ export default async function ProjectsPage() {
                           </span>
                         ) : null}
                         {liveSignals.storyCount > 0 ? (
-                          <span className="rounded-full bg-[#F6F1E7] px-2.5 py-1 text-[10px] font-medium text-[#4A4035]">
+                          <span className="rounded-full bg-[#F6F1E7] px-2.5 py-1 text-[10px] font-medium text-[var(--we-brown-deep)]">
                             {liveSignals.storyCount} stories
                           </span>
                         ) : null}
                         {liveSignals.mediaCount > 0 ? (
-                          <span className="rounded-full bg-[#F6F1E7] px-2.5 py-1 text-[10px] font-medium text-[#4A4035]">
+                          <span className="rounded-full bg-[#F6F1E7] px-2.5 py-1 text-[10px] font-medium text-[var(--we-brown-deep)]">
                             {liveSignals.mediaCount} media
                           </span>
                         ) : null}
@@ -557,7 +557,7 @@ export default async function ProjectsPage() {
                   <div className="mt-4 flex flex-wrap gap-2">
                     <Link
                       href={`/projects/${project.slug}`}
-                      className="site-glow-link rounded-full bg-[#2F3E2E] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#263425]"
+                      className="site-glow-link rounded-full bg-[var(--we-olive)] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#263425]"
                     >
                       Hub page
                     </Link>
@@ -566,7 +566,7 @@ export default async function ProjectsPage() {
                         href={project.publicSiteUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="site-glow-link rounded-full border border-[#4CAF50] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#2F3E2E] transition hover:bg-[#E5F4E4]"
+                        className="site-glow-link rounded-full border border-[#4CAF50] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:bg-[#E5F4E4]"
                       >
                         Project website
                       </a>
@@ -588,7 +588,7 @@ export default async function ProjectsPage() {
           </div>
           <div className="mt-6 flex flex-wrap items-center justify-between gap-4 rounded-[24px] border border-dashed border-[#D6C19A] bg-[#f8f0e3] px-5 py-4">
             <div className="space-y-1">
-              <p className="text-sm font-semibold text-[#2F3E2E]">
+              <p className="text-sm font-semibold text-[var(--we-olive)]">
                 {hiddenArchiveCount > 0
                   ? `${hiddenArchiveCount} more projects remain in the living archive.`
                   : 'This view is currently showing the full non-flagship archive.'}
@@ -600,7 +600,7 @@ export default async function ProjectsPage() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/wiki"
-                className="site-glow-link rounded-full bg-[#2F3E2E] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#263425]"
+                className="site-glow-link rounded-full bg-[var(--we-olive)] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#263425]"
               >
                 Read the deeper archive
               </Link>
@@ -620,14 +620,14 @@ export default async function ProjectsPage() {
             <h2 className="mt-4 font-[var(--font-display)] text-[2.2rem] font-semibold leading-tight text-[#241c15]">
               Seasons of listening, making, testing, and handover.
             </h2>
-            <p className="mt-4 text-sm leading-7 text-[#4D3F33]">
+            <p className="mt-4 text-sm leading-7 text-[var(--we-brown)]">
               The flagship fields are the clearest doors in, but the wider work
               keeps moving through seasons of listening, making, testing, and
               handover.
             </p>
           </div>
 
-          <div className="rounded-[34px] border border-[#E3D4BA] bg-[#fbf7f0] p-6 shadow-[0_18px_45px_rgba(50,42,31,0.08)]">
+          <div className="rounded-[34px] border border-[var(--we-sand)] bg-[#fbf7f0] p-6 shadow-[0_18px_45px_rgba(50,42,31,0.08)]">
             <RoadmapTimeline />
           </div>
         </div>
@@ -640,7 +640,7 @@ export default async function ProjectsPage() {
             <h2 className="font-[var(--font-display)] text-[2.2rem] font-semibold leading-tight text-[#241c15]">
               If you want to enter the work, start here.
             </h2>
-            <p className="max-w-2xl text-sm leading-7 text-[#4D3F33]">
+            <p className="max-w-2xl text-sm leading-7 text-[var(--we-brown)]">
               ACT grows through collaboration, community memory, and practical
               contribution. Different people come in through different doors:
               building, growing, or partnering around a live need.
@@ -663,9 +663,9 @@ export default async function ProjectsPage() {
         </div>
 
         <div className="mt-8 grid gap-5 md:grid-cols-3">
-          <div className="rounded-[24px] border border-[#E3D4BA] bg-white/70 p-6">
+          <div className="rounded-[24px] border border-[var(--we-sand)] bg-white/70 p-6">
             <div className="text-2xl font-bold text-[#2d6a4f]">Build</div>
-            <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
+            <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">
               Frontend, backend, design systems, automation, and platform infrastructure.
             </p>
           </div>
@@ -675,9 +675,9 @@ export default async function ProjectsPage() {
               Help shape place-based work, documentation, operations, and ecosystem coherence.
             </p>
           </div>
-          <div className="rounded-[24px] border border-[#E3D4BA] bg-white/70 p-6">
+          <div className="rounded-[24px] border border-[var(--we-sand)] bg-white/70 p-6">
             <div className="text-2xl font-bold text-[#2d6a4f]">Partner</div>
-            <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
+            <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">
               Bring a community, institution, residency, commission, or field question into the ecosystem.
             </p>
           </div>

@@ -165,11 +165,11 @@ export default function MediaPage() {
 
   return (
     <div className="space-y-8">
-      <section className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
-        <h2 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+      <section className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6">
+        <h2 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
           Media uploads
         </h2>
-        <p className="mt-2 text-sm text-[#4D3F33]">
+        <p className="mt-2 text-sm text-[var(--we-brown)]">
           Upload images, video, or documents to the public media bucket.
         </p>
         <div className="mt-4 flex flex-wrap items-center gap-4">
@@ -183,7 +183,7 @@ export default function MediaPage() {
             {uploading ? "Uploading..." : "Upload files"}
           </label>
           {notice ? (
-            <span className="text-sm text-[#2F3E2E]">{notice}</span>
+            <span className="text-sm text-[var(--we-olive)]">{notice}</span>
           ) : null}
           {error ? (
             <span className="text-sm text-[#B4321E]">{error}</span>
@@ -191,20 +191,20 @@ export default function MediaPage() {
         </div>
       </section>
 
-      <section className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
-        <h3 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+      <section className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6">
+        <h3 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
           Recent media
         </h3>
         {loading ? (
-          <p className="mt-4 text-sm text-[#4D3F33]">Loading...</p>
+          <p className="mt-4 text-sm text-[var(--we-brown)]">Loading...</p>
         ) : (
           <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
             {list.map((item) => (
               <div
                 key={item.id}
-                className="rounded-3xl border border-[#E3D4BA] bg-white/80 p-4"
+                className="rounded-3xl border border-[var(--we-sand)] bg-white/80 p-4"
               >
-                <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-[#E3D4BA] bg-[#F7F2E8]">
+                <div className="aspect-[4/3] overflow-hidden rounded-2xl border border-[var(--we-sand)] bg-[#F7F2E8]">
                   {item.kind === "image" ? (
                     <img
                       src={item.publicUrl}
@@ -218,12 +218,12 @@ export default function MediaPage() {
                       controls
                     />
                   ) : (
-                    <div className="flex h-full w-full items-center justify-center text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+                    <div className="flex h-full w-full items-center justify-center text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
                       {item.kind}
                     </div>
                   )}
                 </div>
-                <div className="mt-3 space-y-1 text-xs text-[#6B5A45]">
+                <div className="mt-3 space-y-1 text-xs text-[var(--we-warm-brown)]">
                   <p className="uppercase tracking-[0.3em]">{item.kind}</p>
                   <p>{item.path}</p>
                   <p>
@@ -239,14 +239,14 @@ export default function MediaPage() {
                   <button
                     type="button"
                     onClick={() => navigator.clipboard.writeText(item.id)}
-                    className="rounded-full border border-[#E3D4BA] px-3 py-1 text-[10px] uppercase tracking-[0.3em]"
+                    className="rounded-full border border-[var(--we-sand)] px-3 py-1 text-[10px] uppercase tracking-[0.3em]"
                   >
                     Copy ID
                   </button>
                   <button
                     type="button"
                     onClick={() => navigator.clipboard.writeText(item.publicUrl)}
-                    className="rounded-full border border-[#E3D4BA] px-3 py-1 text-[10px] uppercase tracking-[0.3em]"
+                    className="rounded-full border border-[var(--we-sand)] px-3 py-1 text-[10px] uppercase tracking-[0.3em]"
                   >
                     Copy URL
                   </button>
@@ -254,7 +254,7 @@ export default function MediaPage() {
               </div>
             ))}
             {list.length === 0 ? (
-              <p className="text-sm text-[#4D3F33]">No media yet.</p>
+              <p className="text-sm text-[var(--we-brown)]">No media yet.</p>
             ) : null}
           </div>
         )}

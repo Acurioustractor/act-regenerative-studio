@@ -31,7 +31,7 @@ export default function ImpactPage() {
                 ]}
             >
                 <div className="space-y-3">
-                    <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+                    <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
                         What this page is for
                     </p>
                     <p>
@@ -67,7 +67,7 @@ export default function ImpactPage() {
                 />
                 <div className="w-full h-[500px] bg-[#F6F1E7] border border-[#E1D3BA] rounded-3xl overflow-hidden p-8 shadow-sm">
                     <div className="flex justify-between items-center mb-6 border-b border-[#E1D3BA]/50 pb-2">
-                        <h3 className="text-sm font-bold uppercase tracking-widest text-[#6B5A45]">ALMA signal flow</h3>
+                        <h3 className="text-sm font-bold uppercase tracking-widest text-[var(--we-warm-brown)]">ALMA signal flow</h3>
                         <span className="text-xs text-[#8B4513] bg-[#F0EAE0] px-2 py-1 rounded-full">Working seed set</span>
                     </div>
                     <ImpactSankey />
@@ -76,20 +76,20 @@ export default function ImpactPage() {
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="p-6 bg-white/60 rounded-2xl border border-[#E1D3BA] text-center">
                         <div className="text-4xl font-[var(--font-display)] text-[#D87D4A]">{totalInitiatives}</div>
-                        <div className="text-xs uppercase tracking-widest mt-2 text-[#6B5A45]">Current initiatives</div>
+                        <div className="text-xs uppercase tracking-widest mt-2 text-[var(--we-warm-brown)]">Current initiatives</div>
                     </div>
                     <div className="p-6 bg-white/60 rounded-2xl border border-[#E1D3BA] text-center">
-                        <div className="text-4xl font-[var(--font-display)] text-[#6B5A45]">{totalContexts}</div>
-                        <div className="text-xs uppercase tracking-widest mt-2 text-[#6B5A45]">Contexts in view</div>
+                        <div className="text-4xl font-[var(--font-display)] text-[var(--we-warm-brown)]">{totalContexts}</div>
+                        <div className="text-xs uppercase tracking-widest mt-2 text-[var(--we-warm-brown)]">Contexts in view</div>
                     </div>
                     <div className="p-6 bg-white/60 rounded-2xl border border-[#E1D3BA] text-center">
                         <div className="text-4xl font-[var(--font-display)] text-[#4CAF50]">{communityLedCount}</div>
-                        <div className="text-xs uppercase tracking-widest mt-2 text-[#6B5A45]">High authority</div>
+                        <div className="text-xs uppercase tracking-widest mt-2 text-[var(--we-warm-brown)]">High authority</div>
                     </div>
                     <div className="p-6 bg-white/60 rounded-2xl border border-[#E1D3BA] flex items-center justify-center">
                         <div className="text-center">
-                            <div className="text-4xl font-[var(--font-display)] text-[#2F3E2E]">{highEvidenceCount}</div>
-                            <div className="text-xs uppercase tracking-widest mt-2 text-[#6B5A45]">High evidence</div>
+                            <div className="text-4xl font-[var(--font-display)] text-[var(--we-olive)]">{highEvidenceCount}</div>
+                            <div className="text-xs uppercase tracking-widest mt-2 text-[var(--we-warm-brown)]">High evidence</div>
                         </div>
                     </div>
                 </div>
@@ -98,7 +98,7 @@ export default function ImpactPage() {
             <section className="space-y-8">
                 <div className="flex items-end justify-between border-b border-[#E1D3BA] pb-4">
                     <h2 className="text-2xl font-[var(--font-display)]">Current initiative set</h2>
-                    <span className="text-xs uppercase tracking-widest text-[#6B5A45]">
+                    <span className="text-xs uppercase tracking-widest text-[var(--we-warm-brown)]">
                         Working ALMA slice
                     </span>
                 </div>
@@ -128,8 +128,8 @@ export default function ImpactPage() {
                     {REAL_CONTEXTS.map(ctx => (
                         <div key={ctx.name} className="p-6 bg-[#F0EAE0] rounded-2xl border border-transparent hover:border-[#D87D4A] transition">
                             <h3 className="text-xl font-[var(--font-display)] mb-2">{ctx.name}</h3>
-                            <p className="text-sm text-[#6B5A45] mb-4 uppercase tracking-widest">{ctx.bioregion} • {ctx.cultural_authority}</p>
-                            <p className="text-[#4D3F33]">{ctx.description}</p>
+                            <p className="text-sm text-[var(--we-warm-brown)] mb-4 uppercase tracking-widest">{ctx.bioregion} • {ctx.cultural_authority}</p>
+                            <p className="text-[var(--we-brown)]">{ctx.description}</p>
                         </div>
                     ))}
                 </div>
@@ -150,8 +150,8 @@ export default function ImpactPage() {
                                 <h4 className="font-semibold text-lg">{ev.title}</h4>
                             </div>
                             <div className="md:w-3/4">
-                                <p className="text-[#4D3F33] italic mb-2">"{ev.findings}"</p>
-                                <p className="text-xs text-[#6B5A45] uppercase tracking-wider">{ev.consent_level}</p>
+                                <p className="text-[var(--we-brown)] italic mb-2">"{ev.findings}"</p>
+                                <p className="text-xs text-[var(--we-warm-brown)] uppercase tracking-wider">{ev.consent_level}</p>
                             </div>
                         </div>
                     ))}

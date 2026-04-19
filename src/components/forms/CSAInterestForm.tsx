@@ -80,8 +80,8 @@ export function CSAInterestForm({
     }
   };
 
-  const inputClass = "w-full rounded border border-[#E4D7BF] bg-white px-4 py-3 text-[#2F3E2E] placeholder:text-[#B8A88A] focus:border-[#4CAF50] focus:outline-none disabled:opacity-50";
-  const labelClass = "block text-sm font-medium text-[#4A4035] mb-1";
+  const inputClass = "w-full rounded border border-[#E4D7BF] bg-white px-4 py-3 text-[var(--we-olive)] placeholder:text-[#B8A88A] focus:border-[#4CAF50] focus:outline-none disabled:opacity-50";
+  const labelClass = "block text-sm font-medium text-[var(--we-brown-deep)] mb-1";
 
   return (
     <form onSubmit={handleSubmit} className={`space-y-6 ${className}`}>

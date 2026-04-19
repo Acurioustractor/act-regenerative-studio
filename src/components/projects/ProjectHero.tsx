@@ -177,7 +177,7 @@ export function ProjectHero({
               📸 Media Gallery
             </div>
           ) : containCoverImage ? (
-            <div className="absolute bottom-4 right-4 z-10 rounded-full border border-[#D9C9A9] bg-white/80 px-3 py-1 text-xs text-[#4A4035] shadow-sm">
+            <div className="absolute bottom-4 right-4 z-10 rounded-full border border-[#D9C9A9] bg-white/80 px-3 py-1 text-xs text-[var(--we-brown-deep)] shadow-sm">
               Interface snapshot
             </div>
           ) : null}
@@ -259,7 +259,7 @@ export function ProjectHero({
                 <li key={f} className={`rounded-2xl p-3 ${
                   theme === 'justice'
                     ? 'bg-[#0B1F2A] text-white border border-[#315060]'
-                    : 'bg-white text-[#2F3E2E] shadow-sm'
+                    : 'bg-white text-[var(--we-olive)] shadow-sm'
                 }`}>
                   {f}
                 </li>

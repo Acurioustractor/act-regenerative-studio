@@ -46,15 +46,15 @@ export default function CardGrid({
             <div className="flex flex-col justify-between p-6 flex-1">
               <div className="space-y-2">
                 {card.theme && (
-                  <span className="inline-block rounded-full bg-[#F6F1E7] px-3 py-1 text-xs font-medium text-[#6B5A45]">
+                  <span className="inline-block rounded-full bg-[#F6F1E7] px-3 py-1 text-xs font-medium text-[var(--we-warm-brown)]">
                     {card.theme}
                   </span>
                 )}
-                <h3 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+                <h3 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
                   {card.title}
                 </h3>
                 {card.description && (
-                  <p className="text-sm text-[#4D3F33] line-clamp-2">
+                  <p className="text-sm text-[var(--we-brown)] line-clamp-2">
                     {card.description}
                   </p>
                 )}
@@ -72,18 +72,18 @@ export default function CardGrid({
           <>
             <div className="space-y-3">
               {card.eyebrow && (
-                <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+                <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
                   {card.eyebrow}
                 </p>
               )}
-              <h3 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+              <h3 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
                 {card.title}
               </h3>
               {card.description && (
-                <p className="text-sm text-[#4D3F33]">{card.description}</p>
+                <p className="text-sm text-[var(--we-brown)]">{card.description}</p>
               )}
               {card.meta && (
-                <div className="text-xs text-[#6B5A45]">{card.meta}</div>
+                <div className="text-xs text-[var(--we-warm-brown)]">{card.meta}</div>
               )}
             </div>
             {card.href && (

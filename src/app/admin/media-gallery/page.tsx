@@ -101,10 +101,10 @@ export default function MediaGalleryPage() {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         {/* Header */}
         <div className="mb-8">
-          <h1 className="text-3xl font-bold text-[#2F3E2E] font-[var(--font-display)]">
+          <h1 className="text-3xl font-bold text-[var(--we-olive)] font-[var(--font-display)]">
             Media Gallery
           </h1>
-          <p className="mt-2 text-[#4D3F33]">
+          <p className="mt-2 text-[var(--we-brown)]">
             Manage photos, videos, and documents for all ACT projects with smart tagging and organization
           </p>
         </div>
@@ -121,8 +121,8 @@ export default function MediaGalleryPage() {
 
         {/* Upload Form */}
         {showUploadForm && (
-          <div className="mb-8 rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
-            <h2 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)] mb-4">
+          <div className="mb-8 rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6">
+            <h2 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)] mb-4">
               Upload New Media
             </h2>
 
@@ -141,7 +141,7 @@ export default function MediaGalleryPage() {
             <form onSubmit={handleUpload} className="space-y-4">
               {/* File Input */}
               <div>
-                <label className="block text-sm font-medium text-[#2F3E2E] mb-2">
+                <label className="block text-sm font-medium text-[var(--we-olive)] mb-2">
                   File *
                 </label>
                 <input
@@ -149,100 +149,100 @@ export default function MediaGalleryPage() {
                   name="file"
                   required
                   accept="image/*,video/*,audio/*,.pdf,.doc,.docx"
-                  className="w-full px-3 py-2 border border-[#E3D4BA] rounded-lg bg-white focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-[var(--we-sand)] rounded-lg bg-white focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
                 />
-                <p className="mt-1 text-sm text-[#6B5A45]">
+                <p className="mt-1 text-sm text-[var(--we-warm-brown)]">
                   Supported: Images, Videos, Audio, PDF, DOC (Max 50MB)
                 </p>
               </div>
 
               {/* Title */}
               <div>
-                <label className="block text-sm font-medium text-[#2F3E2E] mb-2">
+                <label className="block text-sm font-medium text-[var(--we-olive)] mb-2">
                   Title
                 </label>
                 <input
                   type="text"
                   name="title"
-                  className="w-full px-3 py-2 border border-[#E3D4BA] rounded-lg bg-white focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-[var(--we-sand)] rounded-lg bg-white focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
                   placeholder="Enter a descriptive title"
                 />
               </div>
 
               {/* Description */}
               <div>
-                <label className="block text-sm font-medium text-[#2F3E2E] mb-2">
+                <label className="block text-sm font-medium text-[var(--we-olive)] mb-2">
                   Description
                 </label>
                 <textarea
                   name="description"
                   rows={3}
-                  className="w-full px-3 py-2 border border-[#E3D4BA] rounded-lg bg-white focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-[var(--we-sand)] rounded-lg bg-white focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
                   placeholder="Describe this media item"
                 />
               </div>
 
               {/* Alt Text */}
               <div>
-                <label className="block text-sm font-medium text-[#2F3E2E] mb-2">
+                <label className="block text-sm font-medium text-[var(--we-olive)] mb-2">
                   Alt Text (for accessibility)
                 </label>
                 <input
                   type="text"
                   name="alt_text"
-                  className="w-full px-3 py-2 border border-[#E3D4BA] rounded-lg bg-white focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-[var(--we-sand)] rounded-lg bg-white focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
                   placeholder="Describe the image for screen readers"
                 />
               </div>
 
               {/* Credit */}
               <div>
-                <label className="block text-sm font-medium text-[#2F3E2E] mb-2">
+                <label className="block text-sm font-medium text-[var(--we-olive)] mb-2">
                   Credit (Photographer/Creator)
                 </label>
                 <input
                   type="text"
                   name="credit"
-                  className="w-full px-3 py-2 border border-[#E3D4BA] rounded-lg bg-white focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-[var(--we-sand)] rounded-lg bg-white focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
                   placeholder="Photo by..."
                 />
               </div>
 
               {/* Tags */}
               <div>
-                <label className="block text-sm font-medium text-[#2F3E2E] mb-2">
+                <label className="block text-sm font-medium text-[var(--we-olive)] mb-2">
                   Tags (comma-separated)
                 </label>
                 <input
                   type="text"
                   name="manual_tags"
-                  className="w-full px-3 py-2 border border-[#E3D4BA] rounded-lg bg-white focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-[var(--we-sand)] rounded-lg bg-white focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
                   placeholder="farming, community, workshop"
                 />
               </div>
 
               {/* Impact Themes */}
               <div>
-                <label className="block text-sm font-medium text-[#2F3E2E] mb-2">
+                <label className="block text-sm font-medium text-[var(--we-olive)] mb-2">
                   Impact Themes (comma-separated)
                 </label>
                 <input
                   type="text"
                   name="impact_themes"
-                  className="w-full px-3 py-2 border border-[#E3D4BA] rounded-lg bg-white focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-[var(--we-sand)] rounded-lg bg-white focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
                   placeholder="environmental, social, economic"
                 />
               </div>
 
               {/* Project Slugs */}
               <div>
-                <label className="block text-sm font-medium text-[#2F3E2E] mb-2">
+                <label className="block text-sm font-medium text-[var(--we-olive)] mb-2">
                   Project Associations (comma-separated slugs)
                 </label>
                 <input
                   type="text"
                   name="project_slugs"
-                  className="w-full px-3 py-2 border border-[#E3D4BA] rounded-lg bg-white focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-[var(--we-sand)] rounded-lg bg-white focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
                   placeholder="justicehub, the-harvest, empathy-ledger"
                 />
               </div>
@@ -253,9 +253,9 @@ export default function MediaGalleryPage() {
                   type="checkbox"
                   name="is_hero_image"
                   id="is_hero_image"
-                  className="h-4 w-4 text-[#4CAF50] focus:ring-[#4CAF50] border-[#E3D4BA] rounded"
+                  className="h-4 w-4 text-[#4CAF50] focus:ring-[#4CAF50] border-[var(--we-sand)] rounded"
                 />
-                <label htmlFor="is_hero_image" className="ml-2 block text-sm text-[#2F3E2E]">
+                <label htmlFor="is_hero_image" className="ml-2 block text-sm text-[var(--we-olive)]">
                   Mark as hero image
                 </label>
               </div>
@@ -272,7 +272,7 @@ export default function MediaGalleryPage() {
                 <button
                   type="button"
                   onClick={() => setShowUploadForm(false)}
-                  className="rounded-full border border-[#E3D4BA] px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-[#2F3E2E] hover:bg-white/50 transition-colors"
+                  className="rounded-full border border-[var(--we-sand)] px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)] hover:bg-white/50 transition-colors"
                 >
                   Cancel
                 </button>
@@ -282,8 +282,8 @@ export default function MediaGalleryPage() {
         )}
 
         {/* Media Browser */}
-        <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
-          <h2 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)] mb-4">
+        <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6">
+          <h2 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)] mb-4">
             Media Library
           </h2>
           <MediaPicker
@@ -294,8 +294,8 @@ export default function MediaGalleryPage() {
 
         {/* Selected Media Details */}
         {selectedMedia && (
-          <div className="mt-6 rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
-            <h2 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)] mb-4">
+          <div className="mt-6 rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6">
+            <h2 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)] mb-4">
               Media Details
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -303,34 +303,34 @@ export default function MediaGalleryPage() {
                 <img
                   src={selectedMedia.file_url}
                   alt={selectedMedia.alt_text || selectedMedia.title}
-                  className="w-full rounded-2xl border border-[#E3D4BA]"
+                  className="w-full rounded-2xl border border-[var(--we-sand)]"
                 />
               </div>
               <div className="space-y-3">
                 <div>
-                  <strong className="text-sm text-[#6B5A45] uppercase tracking-[0.2em]">Title:</strong>
-                  <p className="text-[#2F3E2E]">{selectedMedia.title || 'Untitled'}</p>
+                  <strong className="text-sm text-[var(--we-warm-brown)] uppercase tracking-[0.2em]">Title:</strong>
+                  <p className="text-[var(--we-olive)]">{selectedMedia.title || 'Untitled'}</p>
                 </div>
                 {selectedMedia.description && (
                   <div>
-                    <strong className="text-sm text-[#6B5A45] uppercase tracking-[0.2em]">Description:</strong>
-                    <p className="text-[#2F3E2E]">{selectedMedia.description}</p>
+                    <strong className="text-sm text-[var(--we-warm-brown)] uppercase tracking-[0.2em]">Description:</strong>
+                    <p className="text-[var(--we-olive)]">{selectedMedia.description}</p>
                   </div>
                 )}
                 {selectedMedia.credit && (
                   <div>
-                    <strong className="text-sm text-[#6B5A45] uppercase tracking-[0.2em]">Credit:</strong>
-                    <p className="text-[#2F3E2E]">{selectedMedia.credit}</p>
+                    <strong className="text-sm text-[var(--we-warm-brown)] uppercase tracking-[0.2em]">Credit:</strong>
+                    <p className="text-[var(--we-olive)]">{selectedMedia.credit}</p>
                   </div>
                 )}
                 {selectedMedia.manual_tags?.length > 0 && (
                   <div>
-                    <strong className="text-sm text-[#6B5A45] uppercase tracking-[0.2em]">Tags:</strong>
+                    <strong className="text-sm text-[var(--we-warm-brown)] uppercase tracking-[0.2em]">Tags:</strong>
                     <div className="flex flex-wrap gap-2 mt-1">
                       {selectedMedia.manual_tags.map((tag: string) => (
                         <span
                           key={tag}
-                          className="px-3 py-1 rounded-full border border-[#E3D4BA] text-sm text-[#2F3E2E]"
+                          className="px-3 py-1 rounded-full border border-[var(--we-sand)] text-sm text-[var(--we-olive)]"
                         >
                           {tag}
                         </span>
@@ -340,12 +340,12 @@ export default function MediaGalleryPage() {
                 )}
                 {selectedMedia.project_slugs?.length > 0 && (
                   <div>
-                    <strong className="text-sm text-[#6B5A45] uppercase tracking-[0.2em]">Projects:</strong>
+                    <strong className="text-sm text-[var(--we-warm-brown)] uppercase tracking-[0.2em]">Projects:</strong>
                     <div className="flex flex-wrap gap-2 mt-1">
                       {selectedMedia.project_slugs.map((slug: string) => (
                         <span
                           key={slug}
-                          className="px-3 py-1 rounded-full bg-[#4CAF50]/10 text-sm text-[#2F3E2E] border border-[#4CAF50]/20"
+                          className="px-3 py-1 rounded-full bg-[#4CAF50]/10 text-sm text-[var(--we-olive)] border border-[#4CAF50]/20"
                         >
                           {slug}
                         </span>
@@ -354,7 +354,7 @@ export default function MediaGalleryPage() {
                   </div>
                 )}
                 <div>
-                  <strong className="text-sm text-[#6B5A45] uppercase tracking-[0.2em]">File URL:</strong>
+                  <strong className="text-sm text-[var(--we-warm-brown)] uppercase tracking-[0.2em]">File URL:</strong>
                   <a
                     href={selectedMedia.file_url}
                     target="_blank"

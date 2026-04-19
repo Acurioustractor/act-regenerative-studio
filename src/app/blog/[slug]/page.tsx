@@ -35,22 +35,22 @@ export default async function BlogPostPage({
 
   return (
     <div className="space-y-12">
-      <section className="rounded-[32px] border border-[#E3D4BA] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12">
+      <section className="rounded-[32px] border border-[var(--we-sand)] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12">
         <Link
           href="/blog"
           className="text-xs uppercase tracking-[0.3em] text-[#4CAF50]"
         >
           Back to journal
         </Link>
-        <h1 className="mt-4 text-3xl font-semibold text-[#2F3E2E] md:text-5xl font-[var(--font-display)]">
+        <h1 className="mt-4 text-3xl font-semibold text-[var(--we-olive)] md:text-5xl font-[var(--font-display)]">
           {post.title}
         </h1>
         {post.tags && post.tags.length > 0 && (
-          <div className="mt-4 flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-[#6B5A45]">
+          <div className="mt-4 flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
             {post.tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-full border border-[#E3D4BA] px-3 py-1"
+                className="rounded-full border border-[var(--we-sand)] px-3 py-1"
               >
                 {tag}
               </span>
@@ -58,7 +58,7 @@ export default async function BlogPostPage({
           </div>
         )}
         {post.excerpt ? (
-          <p className="mt-4 max-w-2xl text-sm text-[#4D3F33] md:text-base">
+          <p className="mt-4 max-w-2xl text-sm text-[var(--we-brown)] md:text-base">
             {post.excerpt}
           </p>
         ) : null}
@@ -68,7 +68,7 @@ export default async function BlogPostPage({
               <Link
                 key={projectSlug}
                 href={`/projects/${projectSlug}`}
-                className="rounded-full bg-[#E8F3E6] px-3 py-1 text-[#2F3E2E]"
+                className="rounded-full bg-[#E8F3E6] px-3 py-1 text-[var(--we-olive)]"
               >
                 {projectSlug.replace(/-/g, " ")}
               </Link>
@@ -76,14 +76,14 @@ export default async function BlogPostPage({
           </div>
         ) : null}
         {post.authorName ? (
-          <div className="mt-5 flex items-center gap-3 text-xs text-[#6B5A45]">
+          <div className="mt-5 flex items-center gap-3 text-xs text-[var(--we-warm-brown)]">
             <span>{post.authorName}</span>
           </div>
         ) : null}
       </section>
 
       <section className="grid gap-8 lg:grid-cols-[1.2fr_0.8fr]">
-        <article className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6 text-sm text-[#4D3F33]">
+        <article className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6 text-sm text-[var(--we-brown)]">
           {content ? (
             <div className="rich-text prose prose-sm max-w-none">
               {looksLikeHtml ? (
@@ -97,8 +97,8 @@ export default async function BlogPostPage({
           )}
         </article>
         <aside className="space-y-6">
-          <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-5">
-            <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+          <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-5">
+            <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
               Featured image
             </p>
             <div className="relative mt-4 aspect-[4/3] w-full overflow-hidden rounded-2xl bg-[#F7F2E8]">
@@ -117,8 +117,8 @@ export default async function BlogPostPage({
               )}
             </div>
           </div>
-          <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-5 text-sm text-[#4D3F33]">
-            <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+          <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-5 text-sm text-[var(--we-brown)]">
+            <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
               Share
             </p>
             <p className="mt-3">
@@ -128,7 +128,7 @@ export default async function BlogPostPage({
               href={post.canonicalUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-4 inline-flex rounded-full border border-[#CFA16B] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#2F3E2E]"
+              className="mt-4 inline-flex rounded-full border border-[#CFA16B] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)]"
             >
               Open in Empathy Ledger
             </a>

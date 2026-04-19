@@ -108,15 +108,15 @@ const toneBySlug: Record<
 export function ProjectShowcaseCard({ project }: { project: Project }) {
   const tone =
     toneBySlug[project.slug] ?? {
-      card: 'border-[#E3D4BA] bg-white/90 text-[#2F3E2E]',
-      title: 'text-[#2F3E2E]',
+      card: 'border-[var(--we-sand)] bg-white/90 text-[var(--we-olive)]',
+      title: 'text-[var(--we-olive)]',
       tagline: 'text-[#2d6a4f]',
-      body: 'text-[#4D3F33]',
+      body: 'text-[var(--we-brown)]',
       muted: 'text-[#6b5a45]',
-      softPill: 'bg-[#F5F1E8] text-[#4D3F33]',
-      strongAction: 'bg-[#2F3E2E] text-white hover:bg-[#263425]',
-      outlineAction: 'border-[#4CAF50] text-[#2F3E2E] hover:bg-[#4CAF50]/10',
-      status: 'bg-[#2F3E2E] text-white',
+      softPill: 'bg-[#F5F1E8] text-[var(--we-brown)]',
+      strongAction: 'bg-[var(--we-olive)] text-white hover:bg-[#263425]',
+      outlineAction: 'border-[#4CAF50] text-[var(--we-olive)] hover:bg-[#4CAF50]/10',
+      status: 'bg-[var(--we-olive)] text-white',
     };
 
   const leadTheme = project.tags[0] || 'Flagship field';

@@ -24,11 +24,11 @@ export default async function WikiPageViewer({
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#F6F1E7] via-[#F5F1E8] to-white">
-      <section className="border-b border-[#E3D4BA] bg-white/90">
+      <section className="border-b border-[var(--we-sand)] bg-white/90">
         <div className="mx-auto max-w-5xl px-4 py-10">
           <Link
             href="/wiki"
-            className="inline-flex items-center gap-2 text-sm text-[#5A4A3A] transition hover:text-[#2F3E2E]"
+            className="inline-flex items-center gap-2 text-sm text-[#5A4A3A] transition hover:text-[var(--we-olive)]"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to the ACT wiki
@@ -48,17 +48,17 @@ export default async function WikiPageViewer({
             )}
           </div>
 
-          <h1 className="mt-5 max-w-4xl font-[var(--font-display)] text-4xl font-semibold text-[#2F3E2E] md:text-6xl">
+          <h1 className="mt-5 max-w-4xl font-[var(--font-display)] text-4xl font-semibold text-[var(--we-olive)] md:text-6xl">
             {page.title}
           </h1>
 
           {page.excerpt && (
-            <p className="mt-6 max-w-3xl text-base leading-8 text-[#4D3F33] md:text-lg">
+            <p className="mt-6 max-w-3xl text-base leading-8 text-[var(--we-brown)] md:text-lg">
               {page.excerpt}
             </p>
           )}
 
-          <div className="mt-6 rounded-2xl border border-[#E3D4BA] bg-[#FDFBF7] px-4 py-3 text-sm text-[#5A4A3A]">
+          <div className="mt-6 rounded-2xl border border-[var(--we-sand)] bg-[#FDFBF7] px-4 py-3 text-sm text-[#5A4A3A]">
             Canonical source: {page.relativePath}
           </div>
         </div>
@@ -66,27 +66,27 @@ export default async function WikiPageViewer({
 
       <section className="mx-auto max-w-5xl px-4 py-12">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_260px]">
-          <article className="rounded-[32px] border border-[#E3D4BA] bg-white/90 px-6 py-8 shadow-sm md:px-10 md:py-10">
-            <div className="prose prose-lg max-w-none prose-headings:font-[var(--font-display)] prose-headings:text-[#2F3E2E] prose-p:text-[#4D3F33] prose-li:text-[#4D3F33] prose-strong:text-[#2F3E2E] prose-a:text-[#4CAF50]">
+          <article className="rounded-[32px] border border-[var(--we-sand)] bg-white/90 px-6 py-8 shadow-sm md:px-10 md:py-10">
+            <div className="prose prose-lg max-w-none prose-headings:font-[var(--font-display)] prose-headings:text-[var(--we-olive)] prose-p:text-[var(--we-brown)] prose-li:text-[var(--we-brown)] prose-strong:text-[var(--we-olive)] prose-a:text-[#4CAF50]">
               <ReactMarkdown>{renderedContent}</ReactMarkdown>
             </div>
           </article>
 
           <aside className="space-y-5">
-            <div className="rounded-[28px] border border-[#E3D4BA] bg-white/90 p-6 shadow-sm">
+            <div className="rounded-[28px] border border-[var(--we-sand)] bg-white/90 p-6 shadow-sm">
               <div className="flex items-center gap-3">
                 <BookOpen className="h-5 w-5 text-[#4CAF50]" />
-                <h2 className="font-[var(--font-display)] text-xl font-semibold text-[#2F3E2E]">
+                <h2 className="font-[var(--font-display)] text-xl font-semibold text-[var(--we-olive)]">
                   Living page
                 </h2>
               </div>
-              <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
+              <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">
                 This page is rendered from the canonical ACT markdown wiki, not a separate CMS
                 entry. As the wiki evolves, this public knowledge surface can evolve with it.
               </p>
             </div>
 
-            <div className="rounded-[28px] border border-[#E3D4BA] bg-[#2F3E2E] p-6 text-white shadow-sm">
+            <div className="rounded-[28px] border border-[var(--we-sand)] bg-[var(--we-olive)] p-6 text-white shadow-sm">
               <p className="text-xs uppercase tracking-[0.3em] text-[#D7E7D4]">
                 Next move
               </p>

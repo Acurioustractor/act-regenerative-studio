@@ -62,7 +62,7 @@ function PhaseCard({
       {index < 3 && (
         <div className="absolute -right-6 top-1/2 hidden w-12 lg:block">
           <svg
-            className="h-6 w-full text-[#E3D4BA]"
+            className="h-6 w-full text-[var(--we-sand)]"
             viewBox="0 0 48 24"
             fill="none"
             stroke="currentColor"
@@ -77,8 +77,8 @@ function PhaseCard({
       <div
         className={`rounded-3xl border p-6 transition-all duration-300 ${
           hasContent
-            ? `border-[#E3D4BA] bg-white/70 shadow-sm hover:shadow-md`
-            : 'border-dashed border-[#E3D4BA]/50 bg-white/30'
+            ? `border-[var(--we-sand)] bg-white/70 shadow-sm hover:shadow-md`
+            : 'border-dashed border-[var(--we-sand)]/50 bg-white/30'
         }`}
         style={{ transitionDelay: `${index * 60}ms` }}
       >
@@ -158,13 +158,13 @@ export function LCAAJourney({
   return (
     <section className="space-y-8">
       <div className="text-center">
-        <p className="text-xs uppercase tracking-[0.3em] text-[#4A4035]">
+        <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-brown-deep)]">
           Our Process
         </p>
-        <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E] md:text-3xl">
+        <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)] md:text-3xl">
           How we work: The LCAA Method
         </h2>
-        <p className="mt-4 max-w-2xl mx-auto text-[#3A4A3D]">
+        <p className="mt-4 max-w-2xl mx-auto text-[var(--we-olive-deep)]">
           Every project follows our methodology of Listen, Curiosity, Action, and Art—
           transforming community challenges into lasting solutions.
         </p>
@@ -207,7 +207,7 @@ export function LCAAJourney({
               className={`h-2 rounded-full transition-all ${
                 contentMap[phase.key]
                   ? 'w-8 bg-[#4CAF50]'
-                  : 'w-2 bg-[#E3D4BA]'
+                  : 'w-2 bg-[var(--we-sand)]'
               }`}
             />
           ))}

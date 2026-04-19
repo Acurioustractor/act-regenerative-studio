@@ -26,10 +26,10 @@ export function CaseStudySection({
   return (
     <section className="space-y-6">
       <div className="text-center">
-        <p className="text-xs uppercase tracking-[0.3em] text-[#4A4035]">
+        <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-brown-deep)]">
           Case Study
         </p>
-        <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E] md:text-3xl">
+        <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)] md:text-3xl">
           A story from this work
         </h2>
       </div>
@@ -65,7 +65,7 @@ export function CaseStudySection({
               <div className={`absolute -left-4 top-0 text-6xl font-serif ${style.accent} opacity-30`}>
                 "
               </div>
-              <p className="pl-8 text-xl leading-relaxed text-[#2F3E2E] md:text-2xl font-[var(--font-display)]">
+              <p className="pl-8 text-xl leading-relaxed text-[var(--we-olive)] md:text-2xl font-[var(--font-display)]">
                 {story.excerpt.length > 300
                   ? story.excerpt.slice(0, 300) + '...'
                   : story.excerpt}
@@ -77,7 +77,7 @@ export function CaseStudySection({
           )}
 
           {/* Attribution */}
-          <div className="flex items-center gap-4 pt-4 border-t border-[#E3D4BA]">
+          <div className="flex items-center gap-4 pt-4 border-t border-[var(--we-sand)]">
             {story.storyteller_image && (
               <img
                 src={story.storyteller_image}
@@ -86,11 +86,11 @@ export function CaseStudySection({
               />
             )}
             <div>
-              <p className="font-semibold text-[#2F3E2E]">
+              <p className="font-semibold text-[var(--we-olive)]">
                 {story.storyteller_display_name || story.storyteller_name}
               </p>
               {story.themes && story.themes.length > 0 && (
-                <p className="text-sm text-[#4A4035]">
+                <p className="text-sm text-[var(--we-brown-deep)]">
                   {story.themes.slice(0, 2).join(' · ')}
                 </p>
               )}
@@ -98,11 +98,11 @@ export function CaseStudySection({
           </div>
 
           {/* Story Title & Link */}
-          <div className="rounded-2xl border border-[#E3D4BA] bg-white p-6">
-            <h3 className="font-[var(--font-display)] text-lg font-semibold text-[#2F3E2E]">
+          <div className="rounded-2xl border border-[var(--we-sand)] bg-white p-6">
+            <h3 className="font-[var(--font-display)] text-lg font-semibold text-[var(--we-olive)]">
               {story.story_title}
             </h3>
-            <p className="mt-2 text-sm text-[#3A4A3D]">
+            <p className="mt-2 text-sm text-[var(--we-olive-deep)]">
               Part of the {projectTitle} project, shared through Empathy Ledger.
             </p>
             <a
@@ -118,8 +118,8 @@ export function CaseStudySection({
             </a>
           </div>
 
-          <div className="rounded-2xl border border-[#E3D4BA] bg-[#F6F1E7] px-5 py-4 text-sm text-[#4A4035]">
-            <p className="text-xs uppercase tracking-[0.2em] text-[#6B5A45]">
+          <div className="rounded-2xl border border-[var(--we-sand)] bg-[#F6F1E7] px-5 py-4 text-sm text-[var(--we-brown-deep)]">
+            <p className="text-xs uppercase tracking-[0.2em] text-[var(--we-warm-brown)]">
               Live story layer
             </p>
             <p className="mt-2 leading-7">

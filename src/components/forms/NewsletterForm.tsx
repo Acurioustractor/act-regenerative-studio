@@ -61,7 +61,7 @@ export function NewsletterForm({ projectCode, className = '' }: NewsletterFormPr
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Your email"
           disabled={status === 'loading'}
-          className="flex-1 rounded border border-[#E4D7BF] bg-white px-3 py-2 text-sm text-[#2F3E2E] placeholder:text-[#B8A88A] focus:border-[#4CAF50] focus:outline-none disabled:opacity-50"
+          className="flex-1 rounded border border-[#E4D7BF] bg-white px-3 py-2 text-sm text-[var(--we-olive)] placeholder:text-[#B8A88A] focus:border-[#4CAF50] focus:outline-none disabled:opacity-50"
         />
         <button
           type="submit"

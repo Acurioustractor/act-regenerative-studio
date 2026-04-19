@@ -53,10 +53,10 @@ export default async function EcosystemPage() {
         ]}
       >
         <div className="space-y-4">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
             What makes it one ecosystem
           </p>
-          <ul className="space-y-2 text-sm leading-6 text-[#4D3F33]">
+          <ul className="space-y-2 text-sm leading-6 text-[var(--we-brown)]">
             <li>Shared place: Jinibara Country and the places where communities lead.</li>
             <li>Shared method: LCAA shapes how listening becomes action and art.</li>
             <li>Shared memory: the ACT wiki keeps durable knowledge in one place.</li>
@@ -102,14 +102,14 @@ export default async function EcosystemPage() {
               href={project.href}
               className="group rounded-2xl border border-[#E1D3BA] bg-white/80 p-6 transition hover:-translate-y-1 hover:border-[#4CAF50] hover:shadow-lg"
             >
-              <p className="text-[11px] uppercase tracking-[0.2em] text-[#6B5A45]">
+              <p className="text-[11px] uppercase tracking-[0.2em] text-[var(--we-warm-brown)]">
                 {project.eyebrow}
               </p>
-              <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+              <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
                 {project.title}
               </h2>
               <p className="mt-1 text-sm font-medium text-[#4CAF50]">{project.tagline}</p>
-              <p className="mt-3 text-sm leading-6 text-[#4D3F33]">
+              <p className="mt-3 text-sm leading-6 text-[var(--we-brown)]">
                 {project.description}
               </p>
 
@@ -120,7 +120,7 @@ export default async function EcosystemPage() {
                 project.liveSignals.mediaCount > 0) ? (
                 <div className="mt-4 flex flex-wrap gap-2">
                   {project.liveSignals.serviceConnectionCount > 0 ? (
-                    <span className="rounded-full bg-[#EDF6EC] px-2.5 py-1 text-[10px] font-medium text-[#2F3E2E]">
+                    <span className="rounded-full bg-[#EDF6EC] px-2.5 py-1 text-[10px] font-medium text-[var(--we-olive)]">
                       {project.liveSignals.serviceConnectionCount} service
                       {project.liveSignals.serviceConnectionCount === 1 ? "" : "s"}
                     </span>
@@ -132,12 +132,12 @@ export default async function EcosystemPage() {
                     </span>
                   ) : null}
                   {project.liveSignals.storyCount > 0 ? (
-                    <span className="rounded-full bg-[#F6F1E7] px-2.5 py-1 text-[10px] font-medium text-[#4A4035]">
+                    <span className="rounded-full bg-[#F6F1E7] px-2.5 py-1 text-[10px] font-medium text-[var(--we-brown-deep)]">
                       {project.liveSignals.storyCount} stories
                     </span>
                   ) : null}
                   {project.liveSignals.mediaCount > 0 ? (
-                    <span className="rounded-full bg-[#F6F1E7] px-2.5 py-1 text-[10px] font-medium text-[#4A4035]">
+                    <span className="rounded-full bg-[#F6F1E7] px-2.5 py-1 text-[10px] font-medium text-[var(--we-brown-deep)]">
                       {project.liveSignals.mediaCount} media
                     </span>
                   ) : null}
@@ -241,11 +241,11 @@ export default async function EcosystemPage() {
               href={item.href}
               className="rounded-[28px] border border-[#E1D3BA] bg-white/85 p-6 transition hover:-translate-y-1 hover:border-[#4CAF50] hover:shadow-lg"
             >
-              <p className="text-xs uppercase tracking-[0.22em] text-[#6B5A45]">{item.meta}</p>
-              <h2 className="mt-3 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+              <p className="text-xs uppercase tracking-[0.22em] text-[var(--we-warm-brown)]">{item.meta}</p>
+              <h2 className="mt-3 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
                 {item.title}
               </h2>
-              <p className="mt-3 text-sm leading-7 text-[#4D3F33]">{item.description}</p>
+              <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">{item.description}</p>
               <span className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#4CAF50]">
                 <span>{item.cta}</span>
                 <span aria-hidden="true">→</span>
@@ -278,13 +278,13 @@ export default async function EcosystemPage() {
                   {surface.verification_status}
                 </span>
               </div>
-              <h2 className="mt-4 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+              <h2 className="mt-4 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
                 {surface.display_name}
               </h2>
-              <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
+              <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">
                 {surface.notes || "Public ecosystem surface."}
               </p>
-              <div className="mt-4 space-y-2 text-sm leading-6 text-[#4D3F33]">
+              <div className="mt-4 space-y-2 text-sm leading-6 text-[var(--we-brown)]">
                 <p>Kind: {surface.kind}</p>
                 {surface.canonical_note_path ? (
                   <p>Canonical note: {surface.canonical_note_path}</p>
@@ -322,13 +322,13 @@ export default async function EcosystemPage() {
                 key={`${decision.scope}-${decision.id}`}
                 className="rounded-[28px] border border-dashed border-[#D8C6A7] bg-[#FFFCF7] p-6"
               >
-                <p className="text-xs uppercase tracking-[0.22em] text-[#6B5A45]">
+                <p className="text-xs uppercase tracking-[0.22em] text-[var(--we-warm-brown)]">
                   {decision.scope}
                 </p>
-                <h2 className="mt-3 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+                <h2 className="mt-3 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
                   {decision.display_name}
                 </h2>
-                <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
+                <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">
                   {decision.notes || "Human confirmation still required."}
                 </p>
               </article>
@@ -375,10 +375,10 @@ export default async function EcosystemPage() {
               href={pathway.href}
               className="rounded-2xl border border-[#E1D3BA] bg-white/75 p-6 transition hover:-translate-y-1 hover:border-[#4CAF50] hover:shadow-md"
             >
-              <h3 className="font-[var(--font-display)] text-xl font-semibold text-[#2F3E2E]">
+              <h3 className="font-[var(--font-display)] text-xl font-semibold text-[var(--we-olive)]">
                 {pathway.title}
               </h3>
-              <p className="mt-3 text-sm leading-6 text-[#4D3F33]">
+              <p className="mt-3 text-sm leading-6 text-[var(--we-brown)]">
                 {pathway.description}
               </p>
               <span className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#4CAF50]">

@@ -64,16 +64,16 @@ export function RegistryStatus() {
 
   if (loading) {
     return (
-      <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6 animate-pulse">
-        <div className="h-40 bg-[#E3D4BA]/30 rounded"></div>
+      <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6 animate-pulse">
+        <div className="h-40 bg-[var(--we-sand)]/30 rounded"></div>
       </div>
     );
   }
 
   return (
-    <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
+    <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6">
       <div className="flex items-center justify-between mb-4">
-        <h3 className="font-semibold text-[#2F3E2E]">Registry Connections</h3>
+        <h3 className="font-semibold text-[var(--we-olive)]">Registry Connections</h3>
         <button
           onClick={triggerSync}
           disabled={syncing}
@@ -88,20 +88,20 @@ export function RegistryStatus() {
         {registries.map((registry) => (
           <div
             key={registry.name}
-            className="flex items-center justify-between p-4 rounded-2xl border border-[#E3D4BA] bg-white/50"
+            className="flex items-center justify-between p-4 rounded-2xl border border-[var(--we-sand)] bg-white/50"
           >
             <div className="flex items-center gap-3">
               {getStatusIcon(registry.status)}
               <div>
-                <p className="font-medium text-[#2F3E2E]">{registry.name}</p>
-                <p className="text-xs text-[#4D3F33]">{registry.url}</p>
+                <p className="font-medium text-[var(--we-olive)]">{registry.name}</p>
+                <p className="text-xs text-[var(--we-brown)]">{registry.url}</p>
               </div>
             </div>
             <div className="text-right">
-              <p className="text-sm font-semibold text-[#2F3E2E]">
+              <p className="text-sm font-semibold text-[var(--we-olive)]">
                 {registry.itemCount} items
               </p>
-              <p className="text-xs text-[#4D3F33]">
+              <p className="text-xs text-[var(--we-brown)]">
                 {new Date(registry.lastSync).toLocaleTimeString()}
               </p>
             </div>

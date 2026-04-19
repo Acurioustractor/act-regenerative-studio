@@ -20,7 +20,7 @@ export default function AskPage() {
         ]}
       >
         <div className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
             How to use it
           </p>
           <p>

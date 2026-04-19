@@ -55,7 +55,7 @@ export default async function FarmWorkshopsPage() {
         gradientClass="from-[#EEF4EA] via-[#D8E7CF] to-[#BED4B2]"
       >
         <div className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
             Community-led
           </p>
           <p>

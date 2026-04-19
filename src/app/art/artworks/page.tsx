@@ -71,14 +71,14 @@ export default async function ArtworksPage() {
                 )
               ) : (
                 <div className="flex h-64 items-end bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-6">
-                  <p className="text-sm uppercase tracking-[0.24em] text-[#6B5A45]">
+                  <p className="text-sm uppercase tracking-[0.24em] text-[var(--we-warm-brown)]">
                     Awaiting approved media
                   </p>
                 </div>
               )}
 
               <div className="space-y-5 p-8">
-                <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-[#6B5A45]">
+                <div className="flex flex-wrap items-center gap-3 text-xs uppercase tracking-[0.2em] text-[var(--we-warm-brown)]">
                   <span>{work.medium}</span>
                   <span>•</span>
                   <span>{work.place}</span>
@@ -87,25 +87,25 @@ export default async function ArtworksPage() {
                 </div>
 
                 <div>
-                  <h2 className="font-[var(--font-display)] text-3xl font-semibold text-[#2F3E2E]">
+                  <h2 className="font-[var(--font-display)] text-3xl font-semibold text-[var(--we-olive)]">
                     {work.title}
                   </h2>
-                  <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
+                  <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">
                     {work.description}
                   </p>
                 </div>
 
                 <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs font-medium text-[#4A4035]">
+                  <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]">
                     {work.collaborators}
                   </span>
                   {work.live.storyCount > 0 ? (
-                    <span className="rounded-full bg-[#EDF6EC] px-3 py-1 text-xs font-medium text-[#2F3E2E]">
+                    <span className="rounded-full bg-[#EDF6EC] px-3 py-1 text-xs font-medium text-[var(--we-olive)]">
                       {work.live.storyCount} approved stories
                     </span>
                   ) : null}
                   {work.live.mediaCount > 0 ? (
-                    <span className="rounded-full bg-[#EDF6EC] px-3 py-1 text-xs font-medium text-[#2F3E2E]">
+                    <span className="rounded-full bg-[#EDF6EC] px-3 py-1 text-xs font-medium text-[var(--we-olive)]">
                       {work.live.mediaCount} media items
                     </span>
                   ) : null}
@@ -120,7 +120,7 @@ export default async function ArtworksPage() {
                     {work.supportingMedia.map((item) => (
                       <div
                         key={item.url}
-                        className="overflow-hidden rounded-[18px] border border-[#E3D4BA] bg-[#FDFBF7]"
+                        className="overflow-hidden rounded-[18px] border border-[var(--we-sand)] bg-[#FDFBF7]"
                       >
                         <div className="relative aspect-[4/3] overflow-hidden">
                           <img
@@ -140,7 +140,7 @@ export default async function ArtworksPage() {
                   </div>
                 ) : null}
 
-                <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#2F3E2E] transition group-hover:gap-3">
+                <div className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--we-olive)] transition group-hover:gap-3">
                   <span>Open work page</span>
                   <span aria-hidden="true">→</span>
                 </div>

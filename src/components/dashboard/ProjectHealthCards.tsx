@@ -67,9 +67,9 @@ export function ProjectHealthCards() {
         {[1, 2, 3, 4, 5, 6].map((i) => (
           <div
             key={i}
-            className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6 animate-pulse"
+            className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6 animate-pulse"
           >
-            <div className="h-20 bg-[#E3D4BA]/30 rounded"></div>
+            <div className="h-20 bg-[var(--we-sand)]/30 rounded"></div>
           </div>
         ))}
       </div>
@@ -81,19 +81,19 @@ export function ProjectHealthCards() {
       {projects.map((project) => (
         <div
           key={project.slug}
-          className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6 hover:shadow-lg transition-shadow"
+          className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6 hover:shadow-lg transition-shadow"
         >
           <div className="flex items-start justify-between">
             <div className="flex-1">
               <div className="flex items-center gap-2">
                 {getStatusIcon(project.status)}
-                <h3 className="font-semibold text-[#2F3E2E]">{project.name}</h3>
+                <h3 className="font-semibold text-[var(--we-olive)]">{project.name}</h3>
               </div>
               <a
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-xs text-[#4D3F33] hover:underline flex items-center gap-1 mt-1"
+                className="text-xs text-[var(--we-brown)] hover:underline flex items-center gap-1 mt-1"
               >
                 {project.url.replace(/^https?:\/\//, "")}
                 <ExternalLink className="w-3 h-3" />
@@ -103,13 +103,13 @@ export function ProjectHealthCards() {
 
           <div className="mt-4 space-y-2">
             <div className="flex items-center justify-between text-xs">
-              <span className="text-[#4D3F33]">Last deployed:</span>
-              <span className="text-[#2F3E2E] font-medium">
+              <span className="text-[var(--we-brown)]">Last deployed:</span>
+              <span className="text-[var(--we-olive)] font-medium">
                 {new Date(project.lastDeployed).toLocaleDateString()}
               </span>
             </div>
             <div className="flex items-center justify-between text-xs">
-              <span className="text-[#4D3F33]">Registry:</span>
+              <span className="text-[var(--we-brown)]">Registry:</span>
               <span
                 className={`px-2 py-1 rounded-full text-xs font-semibold ${getRegistryBadge(
                   project.registryStatus
@@ -120,12 +120,12 @@ export function ProjectHealthCards() {
             </div>
           </div>
 
-          <div className="mt-4 pt-4 border-t border-[#E3D4BA] flex gap-2">
+          <div className="mt-4 pt-4 border-t border-[var(--we-sand)] flex gap-2">
             <a
               href={`https://github.com/${project.githubRepo}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs text-[#4D3F33] hover:text-[#2F3E2E] underline"
+              className="text-xs text-[var(--we-brown)] hover:text-[var(--we-olive)] underline"
             >
               GitHub
             </a>
@@ -133,7 +133,7 @@ export function ProjectHealthCards() {
               href={`https://vercel.com/${project.vercelProject}`}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-xs text-[#4D3F33] hover:text-[#2F3E2E] underline"
+              className="text-xs text-[var(--we-brown)] hover:text-[var(--we-olive)] underline"
             >
               Vercel
             </a>

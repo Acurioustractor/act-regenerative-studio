@@ -23,7 +23,7 @@ export default async function VisionPage() {
                 ]}
             >
                 <div className="space-y-3">
-                    <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+                    <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
                         Seasonal note
                     </p>
                     <p>
@@ -68,7 +68,7 @@ export default async function VisionPage() {
                     title="ACT 2026: The Harvest Year"
                     description="A working directional document retained inside the public shell so it can stay readable without becoming a second design language."
                 />
-                <main className="rounded-[32px] border border-[#E3D4BA] bg-white/85 p-8 md:p-12">
+                <main className="rounded-[32px] border border-[var(--we-sand)] bg-white/85 p-8 md:p-12">
                     <MarkdownViewer content={content} />
                 </main>
             </section>

@@ -52,7 +52,7 @@ export default async function PeoplePage() {
           {storytellers.map((person) => (
             <article
               key={person.id}
-              className="group rounded-[24px] border border-[#E3D4BA] bg-[#FDFBF7] p-5 transition-all hover:border-[#2d6a4f] hover:shadow-[0_18px_45px_rgba(50,42,31,0.08)]"
+              className="group rounded-[24px] border border-[var(--we-sand)] bg-[#FDFBF7] p-5 transition-all hover:border-[#2d6a4f] hover:shadow-[0_18px_45px_rgba(50,42,31,0.08)]"
             >
               <div className="flex items-start gap-4">
                 {person.imageUrl ? (
@@ -73,7 +73,7 @@ export default async function PeoplePage() {
                   </div>
                 )}
                 <div className="min-w-0 flex-1">
-                  <h3 className="text-sm font-semibold leading-tight text-[#2F3E2E]">
+                  <h3 className="text-sm font-semibold leading-tight text-[var(--we-olive)]">
                     {person.name}
                   </h3>
                   {person.role && (
@@ -94,7 +94,7 @@ export default async function PeoplePage() {
                   <Link
                     key={projectSlug}
                     href={`/projects/${projectSlug}`}
-                    className="rounded-full bg-[#EDF6EC] px-2.5 py-1 text-[10px] font-medium text-[#2F3E2E] transition hover:bg-[#d9ead7]"
+                    className="rounded-full bg-[#EDF6EC] px-2.5 py-1 text-[10px] font-medium text-[var(--we-olive)] transition hover:bg-[#d9ead7]"
                   >
                     {projectNames[projectSlug] || projectSlug}
                   </Link>
@@ -117,7 +117,7 @@ export default async function PeoplePage() {
             <h2 className="font-[var(--font-display)] text-[2.2rem] font-semibold leading-tight text-[#241c15]">
               Every person here controls their own story.
             </h2>
-            <p className="max-w-2xl text-sm leading-7 text-[#4D3F33]">
+            <p className="max-w-2xl text-sm leading-7 text-[var(--we-brown)]">
               Empathy Ledger is built on narrative sovereignty: the principle
               that the person whose story it is decides how, where, and whether
               it appears. Everyone on this page has actively opted in to public

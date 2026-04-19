@@ -63,10 +63,10 @@ export function DeploymentHistory() {
 
   if (loading) {
     return (
-      <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6 animate-pulse">
+      <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6 animate-pulse">
         <div className="space-y-3">
           {[1, 2, 3, 4, 5].map((i) => (
-            <div key={i} className="h-16 bg-[#E3D4BA]/30 rounded"></div>
+            <div key={i} className="h-16 bg-[var(--we-sand)]/30 rounded"></div>
           ))}
         </div>
       </div>
@@ -74,17 +74,17 @@ export function DeploymentHistory() {
   }
 
   return (
-    <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
+    <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6">
       <div className="space-y-3 max-h-96 overflow-y-auto">
         {deployments.length === 0 ? (
-          <p className="text-center text-[#4D3F33] py-8">
+          <p className="text-center text-[var(--we-brown)] py-8">
             No recent deployments found
           </p>
         ) : (
           deployments.map((deployment) => (
             <div
               key={deployment.id}
-              className="flex items-start gap-4 p-4 rounded-2xl border border-[#E3D4BA] bg-white/50 hover:shadow-md transition-shadow"
+              className="flex items-start gap-4 p-4 rounded-2xl border border-[var(--we-sand)] bg-white/50 hover:shadow-md transition-shadow"
             >
               <div className="flex-shrink-0 mt-1">
                 {getStatusIcon(deployment.status)}
@@ -92,7 +92,7 @@ export function DeploymentHistory() {
 
               <div className="flex-1 min-w-0">
                 <div className="flex items-center gap-2 mb-1">
-                  <p className="font-semibold text-[#2F3E2E]">
+                  <p className="font-semibold text-[var(--we-olive)]">
                     {deployment.project}
                   </p>
                   <span
@@ -102,12 +102,12 @@ export function DeploymentHistory() {
                   >
                     {deployment.status}
                   </span>
-                  <span className="text-xs text-[#4D3F33] bg-[#E3D4BA]/30 px-2 py-0.5 rounded-full">
+                  <span className="text-xs text-[var(--we-brown)] bg-[var(--we-sand)]/30 px-2 py-0.5 rounded-full">
                     {deployment.branch}
                   </span>
                 </div>
 
-                <div className="flex items-center gap-2 text-sm text-[#4D3F33] mb-2">
+                <div className="flex items-center gap-2 text-sm text-[var(--we-brown)] mb-2">
                   <GitCommit className="w-4 h-4" />
                   <code className="font-mono text-xs">
                     {deployment.commitSha.slice(0, 7)}
@@ -115,7 +115,7 @@ export function DeploymentHistory() {
                   <span className="truncate">{deployment.commitMessage}</span>
                 </div>
 
-                <div className="flex items-center gap-4 text-xs text-[#4D3F33]">
+                <div className="flex items-center gap-4 text-xs text-[var(--we-brown)]">
                   <span>
                     {new Date(deployment.createdAt).toLocaleString()}
                   </span>
@@ -126,7 +126,7 @@ export function DeploymentHistory() {
                     href={deployment.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex items-center gap-1 hover:text-[#2F3E2E] hover:underline"
+                    className="flex items-center gap-1 hover:text-[var(--we-olive)] hover:underline"
                   >
                     View deployment
                     <ExternalLink className="w-3 h-3" />

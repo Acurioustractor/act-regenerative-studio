@@ -82,12 +82,12 @@ export function EcosystemOverview({ projects }: { projects: Project[] }) {
 
   if (loading) {
     return (
-      <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
+      <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6">
         <div className="animate-pulse">
-          <div className="h-6 w-48 bg-[#E3D4BA] rounded"></div>
+          <div className="h-6 w-48 bg-[var(--we-sand)] rounded"></div>
           <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-4">
             {[1, 2, 3, 4].map((i) => (
-              <div key={i} className="h-16 bg-[#E3D4BA] rounded"></div>
+              <div key={i} className="h-16 bg-[var(--we-sand)] rounded"></div>
             ))}
           </div>
         </div>
@@ -96,43 +96,43 @@ export function EcosystemOverview({ projects }: { projects: Project[] }) {
   }
 
   return (
-    <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
-      <h2 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+    <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6">
+      <h2 className="text-lg font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
         Ecosystem Overview
       </h2>
 
       <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-4">
         {/* Total Projects */}
-        <div className="rounded-2xl border border-[#E3D4BA] bg-white p-4">
+        <div className="rounded-2xl border border-[var(--we-sand)] bg-white p-4">
           <div className="text-2xl font-bold text-[#4CAF50]">{stats.totalProjects}</div>
-          <div className="mt-1 text-xs text-[#4D3F33] uppercase tracking-wider">
+          <div className="mt-1 text-xs text-[var(--we-brown)] uppercase tracking-wider">
             Projects
           </div>
         </div>
 
         {/* Healthy Projects */}
-        <div className="rounded-2xl border border-[#E3D4BA] bg-white p-4">
+        <div className="rounded-2xl border border-[var(--we-sand)] bg-white p-4">
           <div className="text-2xl font-bold text-[#4CAF50]">
             {stats.healthyProjects}
-            <span className="text-sm text-[#4D3F33]"> / {stats.totalProjects}</span>
+            <span className="text-sm text-[var(--we-brown)]"> / {stats.totalProjects}</span>
           </div>
-          <div className="mt-1 text-xs text-[#4D3F33] uppercase tracking-wider">
+          <div className="mt-1 text-xs text-[var(--we-brown)] uppercase tracking-wider">
             Healthy
           </div>
         </div>
 
         {/* Total Issues */}
-        <div className="rounded-2xl border border-[#E3D4BA] bg-white p-4">
-          <div className="text-2xl font-bold text-[#2F3E2E]">{stats.totalIssues}</div>
-          <div className="mt-1 text-xs text-[#4D3F33] uppercase tracking-wider">
+        <div className="rounded-2xl border border-[var(--we-sand)] bg-white p-4">
+          <div className="text-2xl font-bold text-[var(--we-olive)]">{stats.totalIssues}</div>
+          <div className="mt-1 text-xs text-[var(--we-brown)] uppercase tracking-wider">
             Open Issues
           </div>
         </div>
 
         {/* Total PRs */}
-        <div className="rounded-2xl border border-[#E3D4BA] bg-white p-4">
-          <div className="text-2xl font-bold text-[#2F3E2E]">{stats.totalPRs}</div>
-          <div className="mt-1 text-xs text-[#4D3F33] uppercase tracking-wider">
+        <div className="rounded-2xl border border-[var(--we-sand)] bg-white p-4">
+          <div className="text-2xl font-bold text-[var(--we-olive)]">{stats.totalPRs}</div>
+          <div className="mt-1 text-xs text-[var(--we-brown)] uppercase tracking-wider">
             Open PRs
           </div>
         </div>

@@ -14,14 +14,14 @@ export default async function BlogPage() {
 
   return (
     <div className="space-y-16">
-      <section className="rounded-[32px] border border-[#E3D4BA] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12">
-        <p className="text-xs uppercase tracking-[0.4em] text-[#6B5A45]">
+      <section className="rounded-[32px] border border-[var(--we-sand)] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12">
+        <p className="text-xs uppercase tracking-[0.4em] text-[var(--we-warm-brown)]">
           ACT Journal
         </p>
-        <h1 className="mt-4 text-3xl font-semibold text-[#2F3E2E] md:text-5xl font-[var(--font-display)]">
+        <h1 className="mt-4 text-3xl font-semibold text-[var(--we-olive)] md:text-5xl font-[var(--font-display)]">
           Stories from the farm and studio
         </h1>
-        <p className="mt-4 max-w-2xl text-sm text-[#4D3F33] md:text-base">
+        <p className="mt-4 max-w-2xl text-sm text-[var(--we-brown)] md:text-base">
           Field notes, project updates, and reflections on regenerative practice.
         </p>
       </section>
@@ -49,15 +49,15 @@ export default async function BlogPage() {
               )}
             </div>
             <div className="flex flex-1 flex-col gap-3 p-6">
-              <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+              <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
                 Journal
               </p>
               {post.tags && post.tags.length > 0 && (
-                <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-[#6B5A45]">
+                <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
                   {post.tags.slice(0, 2).map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full border border-[#E3D4BA] px-3 py-1"
+                      className="rounded-full border border-[var(--we-sand)] px-3 py-1"
                     >
                       {tag}
                     </span>
@@ -70,21 +70,21 @@ export default async function BlogPage() {
                     <Link
                       key={slug}
                       href={`/projects/${slug}`}
-                      className="rounded-full bg-[#E8F3E6] px-3 py-1 text-[#2F3E2E]"
+                      className="rounded-full bg-[#E8F3E6] px-3 py-1 text-[var(--we-olive)]"
                     >
                       {slug.replace(/-/g, " ")}
                     </Link>
                   ))}
                 </div>
               )}
-              <h2 className="text-xl font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+              <h2 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
                 {post.title}
               </h2>
-              <p className="text-sm text-[#4D3F33]">
+              <p className="text-sm text-[var(--we-brown)]">
                 {post.excerpt || "A story from the ACT Farm."}
               </p>
               {post.authorName ? (
-                <div className="flex items-center gap-2 text-xs text-[#6B5A45]">
+                <div className="flex items-center gap-2 text-xs text-[var(--we-warm-brown)]">
                   <span>{post.authorName}</span>
                 </div>
               ) : null}
@@ -96,7 +96,7 @@ export default async function BlogPage() {
           </Link>
         ))}
         {posts.length === 0 ? (
-          <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-6 text-sm text-[#4D3F33]">
+          <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-6 text-sm text-[var(--we-brown)]">
             No posts yet. Publish your first story in Empathy Ledger to see it here.
           </div>
         ) : null}

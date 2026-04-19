@@ -52,7 +52,7 @@ export default async function FarmStayPage() {
         gradientClass="from-[#F7F2E8] via-[#EADFCB] to-[#D7C4A2]"
       >
         <div className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
             Residency focus
           </p>
           <ul className="space-y-2">

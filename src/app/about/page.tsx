@@ -58,10 +58,10 @@ export default function AboutPage() {
         ]}
       >
         <div className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
             Our promise
           </p>
-          <ul className="space-y-2 text-sm leading-6 text-[#4D3F33]">
+          <ul className="space-y-2 text-sm leading-6 text-[var(--we-brown)]">
             <li>We build with communities, not for them.</li>
             <li>We treat story as infrastructure, not as marketing.</li>
             <li>We design for handover, not dependence.</li>
@@ -106,35 +106,35 @@ export default function AboutPage() {
         <CardGrid cards={methodSteps} className="grid gap-6 md:grid-cols-2 lg:grid-cols-4" />
       </section>
 
-      <section className="rounded-3xl border border-[#E3D4BA] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12">
+      <section className="rounded-3xl border border-[var(--we-sand)] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12">
         <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="space-y-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+            <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
               Structure
             </p>
-            <h2 className="font-[var(--font-display)] text-3xl font-semibold text-[#2F3E2E] md:text-4xl">
+            <h2 className="font-[var(--font-display)] text-3xl font-semibold text-[var(--we-olive)] md:text-4xl">
               Built to protect community value and keep the work moving
             </h2>
-            <p className="text-sm leading-7 text-[#4D3F33]">
+            <p className="text-sm leading-7 text-[var(--we-brown)]">
               ACT uses a dual-entity structure so grant-funded, place-based, and community-protective work can sit alongside trading activity without collapsing into the logic of extraction.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2">
             <div className="rounded-3xl border border-[#D8C7A5] bg-white/75 p-6">
-              <p className="text-xs uppercase tracking-[0.22em] text-[#6B5A45]">
+              <p className="text-xs uppercase tracking-[0.22em] text-[var(--we-warm-brown)]">
                 Foundation
               </p>
-              <h3 className="mt-2 font-semibold text-[#2F3E2E]">Community protection</h3>
-              <p className="mt-2 text-sm text-[#4D3F33]">
+              <h3 className="mt-2 font-semibold text-[var(--we-olive)]">Community protection</h3>
+              <p className="mt-2 text-sm text-[var(--we-brown)]">
                 Holds charitable, relationship-based, and public-good work in ways that protect local value and authority.
               </p>
             </div>
             <div className="rounded-3xl border border-[#D8C7A5] bg-white/75 p-6">
-              <p className="text-xs uppercase tracking-[0.22em] text-[#6B5A45]">
+              <p className="text-xs uppercase tracking-[0.22em] text-[var(--we-warm-brown)]">
                 Ventures
               </p>
-              <h3 className="mt-2 font-semibold text-[#2F3E2E]">Trading with purpose</h3>
-              <p className="mt-2 text-sm text-[#4D3F33]">
+              <h3 className="mt-2 font-semibold text-[var(--we-olive)]">Trading with purpose</h3>
+              <p className="mt-2 text-sm text-[var(--we-brown)]">
                 Generates revenue, supports the commons, and keeps 40% profit-sharing in view as a structural commitment.
               </p>
             </div>

@@ -56,12 +56,12 @@ function ArtProjectBlock({ project, index }: { project: HydratedArtProject; inde
             </div>
 
             {/* Text panel */}
-            <div className={`flex flex-col justify-center ${isEven ? 'lg:rounded-r-[32px] lg:pl-12 lg:pr-10' : 'lg:rounded-l-[32px] lg:pl-10 lg:pr-12 lg:order-1'} rounded-b-[32px] lg:rounded-none border border-[#E3D4BA] lg:border-0 bg-[#FDFBF7] p-8 lg:py-12`}>
+            <div className={`flex flex-col justify-center ${isEven ? 'lg:rounded-r-[32px] lg:pl-12 lg:pr-10' : 'lg:rounded-l-[32px] lg:pl-10 lg:pr-12 lg:order-1'} rounded-b-[32px] lg:rounded-none border border-[var(--we-sand)] lg:border-0 bg-[#FDFBF7] p-8 lg:py-12`}>
               <div className="flex flex-wrap gap-2 mb-5">
                 {project.mediums.map((medium) => (
                   <span
                     key={medium}
-                    className="rounded-full border border-[#D7C4A2] bg-[#F6F1E7] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#6B5A45]"
+                    className="rounded-full border border-[#D7C4A2] bg-[#F6F1E7] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)]"
                   >
                     {formatMedium(medium)}
                   </span>
@@ -81,7 +81,7 @@ function ArtProjectBlock({ project, index }: { project: HydratedArtProject; inde
                 {project.quote}
               </blockquote>
 
-              <p className="mt-5 text-[0.92rem] leading-7 text-[#4D3F33]">
+              <p className="mt-5 text-[0.92rem] leading-7 text-[var(--we-brown)]">
                 {project.description.length > 200
                   ? `${project.description.slice(0, 197).trimEnd()}...`
                   : project.description}
@@ -99,13 +99,13 @@ function ArtProjectBlock({ project, index }: { project: HydratedArtProject; inde
               </div>
 
               <div className="mt-6 flex items-center justify-between">
-                <div className="flex flex-wrap gap-3 text-[11px] uppercase tracking-[0.18em] text-[#6B5A45]">
+                <div className="flex flex-wrap gap-3 text-[11px] uppercase tracking-[0.18em] text-[var(--we-warm-brown)]">
                   {project.storytellerCount > 0 && (
                     <span>{project.storytellerCount} storyteller{project.storytellerCount === 1 ? '' : 's'}</span>
                   )}
                   {project.location && <span>{project.location}</span>}
                 </div>
-                <span className="inline-flex items-center gap-2 text-sm font-semibold text-[#2F3E2E] transition-all group-hover:gap-3">
+                <span className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--we-olive)] transition-all group-hover:gap-3">
                   Enter the work <span aria-hidden="true">&rarr;</span>
                 </span>
               </div>
@@ -113,13 +113,13 @@ function ArtProjectBlock({ project, index }: { project: HydratedArtProject; inde
           </div>
         ) : (
           /* Text-only card for projects without media */
-          <div className="rounded-[32px] border border-[#E3D4BA] bg-[#FDFBF7] p-8 md:p-12 transition-all group-hover:border-[#CFA16B] group-hover:shadow-[0_20px_50px_rgba(50,42,31,0.08)]">
+          <div className="rounded-[32px] border border-[var(--we-sand)] bg-[#FDFBF7] p-8 md:p-12 transition-all group-hover:border-[#CFA16B] group-hover:shadow-[0_20px_50px_rgba(50,42,31,0.08)]">
             <div className="max-w-3xl">
               <div className="flex flex-wrap gap-2 mb-5">
                 {project.mediums.map((medium) => (
                   <span
                     key={medium}
-                    className="rounded-full border border-[#D7C4A2] bg-[#F6F1E7] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[#6B5A45]"
+                    className="rounded-full border border-[#D7C4A2] bg-[#F6F1E7] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)]"
                   >
                     {formatMedium(medium)}
                   </span>
@@ -134,11 +134,11 @@ function ArtProjectBlock({ project, index }: { project: HydratedArtProject; inde
                 {project.quote}
               </blockquote>
 
-              <p className="mt-5 text-[0.92rem] leading-7 text-[#4D3F33]">
+              <p className="mt-5 text-[0.92rem] leading-7 text-[var(--we-brown)]">
                 {project.description}
               </p>
 
-              <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[#2F3E2E] transition-all group-hover:gap-3">
+              <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--we-olive)] transition-all group-hover:gap-3">
                 Enter the work <span aria-hidden="true">&rarr;</span>
               </div>
             </div>
@@ -155,7 +155,7 @@ function ArtProjectBlock({ project, index }: { project: HydratedArtProject; inde
             .map((item) => (
               <div
                 key={item.id}
-                className="relative aspect-square overflow-hidden rounded-[16px] border border-[#E3D4BA]"
+                className="relative aspect-square overflow-hidden rounded-[16px] border border-[var(--we-sand)]"
               >
                 <Image
                   src={item.thumbnail_url || item.url}
@@ -182,7 +182,7 @@ function EmergingWorkCard({ project }: { project: HydratedArtProject }) {
         {project.mediums.map((medium) => (
           <span
             key={medium}
-            className="rounded-full border border-[#D7C4A2] bg-white/60 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-[#6B5A45]"
+            className="rounded-full border border-[#D7C4A2] bg-white/60 px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--we-warm-brown)]"
           >
             {formatMedium(medium)}
           </span>
@@ -200,13 +200,13 @@ function EmergingWorkCard({ project }: { project: HydratedArtProject }) {
         &ldquo;{project.quote}&rdquo;
       </blockquote>
 
-      <p className="mt-3 text-sm leading-6 text-[#4D3F33]">
+      <p className="mt-3 text-sm leading-6 text-[var(--we-brown)]">
         {project.description.length > 140
           ? `${project.description.slice(0, 137).trimEnd()}...`
           : project.description}
       </p>
 
-      <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[#2F3E2E] opacity-0 transition-opacity group-hover:opacity-100">
+      <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[var(--we-olive)] opacity-0 transition-opacity group-hover:opacity-100">
         Read more <span aria-hidden="true">&rarr;</span>
       </div>
     </Link>
@@ -304,7 +304,7 @@ export default async function ArtPage() {
           <h2 className="font-[var(--font-display)] text-[2rem] font-semibold leading-tight text-[#241c15] md:text-[2.6rem]">
             Listen &middot; Curiosity &middot; Action &middot; Art
           </h2>
-          <p className="text-[0.97rem] leading-8 text-[#4D3F33]">
+          <p className="text-[0.97rem] leading-8 text-[var(--we-brown)]">
             Art is not where ACT starts. It is where the process arrives after listening has earned trust, curiosity has surfaced what matters, and action has built something real. The art carries the story of what was learned, heard, and tested &mdash; not as illustration, but as a form that can move through public life on its own terms.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-4">
@@ -316,12 +316,12 @@ export default async function ArtPage() {
             ].map((item) => (
               <div
                 key={item.stage}
-                className="rounded-[20px] border border-[#E3D4BA] bg-white/60 p-5"
+                className="rounded-[20px] border border-[var(--we-sand)] bg-white/60 p-5"
               >
                 <p className="font-[var(--font-display)] text-lg font-semibold text-[#245c43]">
                   {item.stage}
                 </p>
-                <p className="mt-2 text-sm leading-6 text-[#4D3F33]">
+                <p className="mt-2 text-sm leading-6 text-[var(--we-brown)]">
                   {item.description}
                 </p>
               </div>

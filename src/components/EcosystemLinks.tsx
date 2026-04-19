@@ -180,7 +180,7 @@ export async function EcosystemLinks({
     return (
       <div className={className}>
         {title && (
-          <h3 className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-[#2F3E2E]">
+          <h3 className="mb-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--we-olive)]">
             {title}
           </h3>
         )}
@@ -194,10 +194,10 @@ export async function EcosystemLinks({
               className="group flex items-center justify-between rounded-lg px-3 py-2 transition hover:bg-[#4CAF50]/10"
             >
               <div>
-                <div className="text-sm font-medium text-[#2F3E2E] group-hover:text-[#4CAF50]">
+                <div className="text-sm font-medium text-[var(--we-olive)] group-hover:text-[#4CAF50]">
                   {project.name}
                 </div>
-                <div className="text-xs text-[#6B5A45]">{project.tagline}</div>
+                <div className="text-xs text-[var(--we-warm-brown)]">{project.tagline}</div>
               </div>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
@@ -209,7 +209,7 @@ export async function EcosystemLinks({
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="text-[#6B5A45] group-hover:text-[#4CAF50]"
+                className="text-[var(--we-warm-brown)] group-hover:text-[#4CAF50]"
               >
                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                 <polyline points="15 3 21 3 21 9" />
@@ -226,7 +226,7 @@ export async function EcosystemLinks({
   return (
     <div className={className}>
       {title && (
-        <h2 className="mb-6 text-lg font-semibold uppercase tracking-[0.2em] text-[#2F3E2E]">
+        <h2 className="mb-6 text-lg font-semibold uppercase tracking-[0.2em] text-[var(--we-olive)]">
           {title}
         </h2>
       )}
@@ -237,10 +237,10 @@ export async function EcosystemLinks({
             className="rounded-2xl border border-[#E4D7BF] bg-white p-6 transition hover:shadow-lg"
           >
             <div className="mb-4">
-              <h3 className="text-lg font-semibold text-[#2F3E2E]">{project.name}</h3>
-              <p className="mt-1 text-sm text-[#6B5A45]">{project.tagline}</p>
+              <h3 className="text-lg font-semibold text-[var(--we-olive)]">{project.name}</h3>
+              <p className="mt-1 text-sm text-[var(--we-warm-brown)]">{project.tagline}</p>
             </div>
-            <p className="mb-4 text-sm text-[#4A4035] line-clamp-2">{project.description}</p>
+            <p className="mb-4 text-sm text-[var(--we-brown-deep)] line-clamp-2">{project.description}</p>
             <div className="flex flex-wrap gap-2">
               <a
                 href={project.url}
@@ -269,7 +269,7 @@ export async function EcosystemLinks({
                 href={`https://github.com/${project.repo}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[#2F3E2E] transition hover:bg-[#4CAF50]/10"
+                className="inline-flex items-center gap-1.5 rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[var(--we-olive)] transition hover:bg-[#4CAF50]/10"
               >
                 GitHub
               </a>

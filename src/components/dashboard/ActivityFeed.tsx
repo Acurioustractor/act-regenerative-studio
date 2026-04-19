@@ -175,13 +175,13 @@ export function ActivityFeed() {
 
   if (loading) {
     return (
-      <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
-        <h2 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+      <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6">
+        <h2 className="text-lg font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
           Recent Activity
         </h2>
         <div className="mt-4 space-y-3 animate-pulse">
           {[1, 2, 3, 4, 5].map((i) => (
-            <div key={i} className="h-16 bg-[#E3D4BA] rounded-xl"></div>
+            <div key={i} className="h-16 bg-[var(--we-sand)] rounded-xl"></div>
           ))}
         </div>
       </div>
@@ -189,17 +189,17 @@ export function ActivityFeed() {
   }
 
   return (
-    <div className="rounded-3xl border border-[#E3D4BA] bg-white/70 p-6">
-      <h2 className="text-lg font-semibold text-[#2F3E2E] font-[var(--font-display)]">
+    <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6">
+      <h2 className="text-lg font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
         Recent Activity
       </h2>
-      <p className="mt-1 text-xs text-[#4D3F33]">
+      <p className="mt-1 text-xs text-[var(--we-brown)]">
         Latest updates across the ACT ecosystem
       </p>
 
       <div className="mt-4 space-y-2 max-h-96 overflow-y-auto">
         {activities.length === 0 ? (
-          <p className="text-sm text-[#4D3F33] text-center py-8">
+          <p className="text-sm text-[var(--we-brown)] text-center py-8">
             No recent activity
           </p>
         ) : (
@@ -209,23 +209,23 @@ export function ActivityFeed() {
               href={activity.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="block rounded-2xl border border-[#E3D4BA] bg-white p-3 hover:bg-[#F5F1E8] transition-colors"
+              className="block rounded-2xl border border-[var(--we-sand)] bg-white p-3 hover:bg-[#F5F1E8] transition-colors"
             >
               <div className="flex items-start gap-3">
                 <span className="text-xl">{getActivityIcon(activity.type)}</span>
                 <div className="flex-1 min-w-0">
                   <div className="flex items-center gap-2 flex-wrap">
-                    <span className="text-xs font-semibold text-[#2F3E2E] bg-[#F5F1E8] px-2 py-0.5 rounded-full">
+                    <span className="text-xs font-semibold text-[var(--we-olive)] bg-[#F5F1E8] px-2 py-0.5 rounded-full">
                       {activity.project}
                     </span>
                     <span className={`text-xs font-medium ${getActivityColor(activity.type)}`}>
                       {activity.type}
                     </span>
                   </div>
-                  <p className="mt-1 text-sm text-[#2F3E2E] line-clamp-1">
+                  <p className="mt-1 text-sm text-[var(--we-olive)] line-clamp-1">
                     {activity.title}
                   </p>
-                  <div className="mt-1 flex items-center gap-2 text-xs text-[#4D3F33]">
+                  <div className="mt-1 flex items-center gap-2 text-xs text-[var(--we-brown)]">
                     <span>{activity.user}</span>
                     <span>•</span>
                     <span>{formatTimestamp(activity.timestamp)}</span>

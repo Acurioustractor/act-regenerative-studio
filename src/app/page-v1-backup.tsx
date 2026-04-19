@@ -392,7 +392,7 @@ export default async function HomePage() {
               <div className="flex items-center justify-between gap-4">
                 <p
                   className={`text-xs uppercase tracking-[0.3em] ${
-                    field.title === "Make public works" ? "text-[#cfa16b]" : "text-[#6B5A45]"
+                    field.title === "Make public works" ? "text-[#cfa16b]" : "text-[var(--we-warm-brown)]"
                   }`}
                 >
                   Mode
@@ -407,14 +407,14 @@ export default async function HomePage() {
               </div>
               <h3
                 className={`mt-6 font-[var(--font-display)] text-[2rem] font-semibold ${
-                  field.title === "Make public works" ? "text-[#fff6ea]" : "text-[#2F3E2E]"
+                  field.title === "Make public works" ? "text-[#fff6ea]" : "text-[var(--we-olive)]"
                 }`}
               >
                 {field.title}
               </h3>
               <p
                 className={`mt-4 text-sm leading-7 ${
-                  field.title === "Make public works" ? "text-[#d7c8b2]" : "text-[#4D3F33]"
+                  field.title === "Make public works" ? "text-[#d7c8b2]" : "text-[var(--we-brown)]"
                 }`}
               >
                 {field.description}
@@ -435,7 +435,7 @@ export default async function HomePage() {
           <h2 className="mt-4 font-[var(--font-display)] text-[2.2rem] font-semibold leading-tight text-[#241c15]">
             The work is already visible across the flagship set.
           </h2>
-          <p className="mt-4 max-w-2xl text-sm leading-7 text-[#4D3F33]">
+          <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--we-brown)]">
             This is the fastest way to understand ACT: look at the current
             public fields, the stories moving through them, the works connected
             to them, and the invitations they create.
@@ -594,14 +594,14 @@ export default async function HomePage() {
                 <div>
                   <p
                     className={`text-xs uppercase tracking-[0.3em] ${
-                      index === 0 || index === 3 ? "text-[#cfa16b]" : "text-[#6B5A45]"
+                      index === 0 || index === 3 ? "text-[#cfa16b]" : "text-[var(--we-warm-brown)]"
                     }`}
                   >
                     {project.eyebrow}
                   </p>
                   <h3
                     className={`mt-4 font-[var(--font-display)] text-[2.1rem] font-semibold leading-[1.02] ${
-                      index === 0 || index === 3 ? "text-[#fdf6ea]" : "text-[#2F3E2E]"
+                      index === 0 || index === 3 ? "text-[#fdf6ea]" : "text-[var(--we-olive)]"
                     }`}
                   >
                     {project.title}
@@ -626,7 +626,7 @@ export default async function HomePage() {
               </p>
               <p
                 className={`mt-4 text-sm leading-7 ${
-                  index === 0 || index === 3 ? "text-[#d7c8b2]" : "text-[#4D3F33]"
+                  index === 0 || index === 3 ? "text-[#d7c8b2]" : "text-[var(--we-brown)]"
                 }`}
               >
                 {project.description}
@@ -642,7 +642,7 @@ export default async function HomePage() {
                       className={`rounded-full px-3 py-1 text-xs font-medium ${
                         index === 0 || index === 3
                           ? "bg-[#284131] text-[#dff0e2]"
-                          : "bg-[#edf6ec] text-[#2F3E2E]"
+                          : "bg-[#edf6ec] text-[var(--we-olive)]"
                       }`}
                     >
                       {project.liveSignals.serviceConnectionCount} service
@@ -666,7 +666,7 @@ export default async function HomePage() {
                       className={`rounded-full px-3 py-1 text-xs font-medium ${
                         index === 0 || index === 3
                           ? "bg-[#30271f] text-[#f3e5cf]"
-                          : "bg-[#F6F1E7] text-[#4A4035]"
+                          : "bg-[#F6F1E7] text-[var(--we-brown-deep)]"
                       }`}
                     >
                       {project.liveSignals.storyCount} stories
@@ -677,7 +677,7 @@ export default async function HomePage() {
                       className={`rounded-full px-3 py-1 text-xs font-medium ${
                         index === 0 || index === 3
                           ? "bg-[#30271f] text-[#f3e5cf]"
-                          : "bg-[#F6F1E7] text-[#4A4035]"
+                          : "bg-[#F6F1E7] text-[var(--we-brown-deep)]"
                       }`}
                     >
                       {project.liveSignals.mediaCount} media
@@ -687,7 +687,7 @@ export default async function HomePage() {
               ) : null}
               <div
                 className={`mt-8 inline-flex items-center gap-2 text-sm font-semibold transition group-hover:gap-3 ${
-                  index === 0 || index === 3 ? "text-[#fff6ea]" : "text-[#2F3E2E]"
+                  index === 0 || index === 3 ? "text-[#fff6ea]" : "text-[var(--we-olive)]"
                 }`}
               >
                 <span>Explore project</span>
@@ -951,13 +951,13 @@ export default async function HomePage() {
                   className={`rounded-lg border p-5 ${
                     index === 3
                       ? "border-[#4a3b2e] bg-[#171612] text-[#f5ecde]"
-                      : "border-[#E5D6BE] bg-white/70 text-[#2F3E2E]"
+                      : "border-[#E5D6BE] bg-white/70 text-[var(--we-olive)]"
                   }`}
                 >
                   <h3 className="font-semibold">{step.title}</h3>
                   <p
                     className={`mt-2 text-sm leading-7 ${
-                      index === 3 ? "text-[#d8c8b4]" : "text-[#4D3F33]"
+                      index === 3 ? "text-[#d8c8b4]" : "text-[var(--we-brown)]"
                     }`}
                   >
                     {step.description}
@@ -969,7 +969,7 @@ export default async function HomePage() {
 
           <div className="rounded-lg border border-[#d8c7a5] bg-[rgba(255,251,245,0.68)] p-6 shadow-[0_18px_50px_rgba(58,42,28,0.08)]">
             <p className="site-eyebrow">Method in practice</p>
-            <div className="mt-4 space-y-4 text-sm leading-7 text-[#4D3F33]">
+            <div className="mt-4 space-y-4 text-sm leading-7 text-[var(--we-brown)]">
               <p>
                 We start with listening and local authority. We stay long enough
                 to understand context. We prototype with people, not on them.
@@ -1012,18 +1012,18 @@ export default async function HomePage() {
                     : "border-[#E1D3BA] bg-white/75"
                 }`}
               >
-                <h3 className="font-[var(--font-display)] text-xl font-semibold text-[#2F3E2E]">
+                <h3 className="font-[var(--font-display)] text-xl font-semibold text-[var(--we-olive)]">
                   {item.title}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
+                <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">
                   {item.description}
                 </p>
               </div>
             ))}
           </div>
-          <div className="rounded-lg border border-[#E3D4BA] bg-[rgba(255,252,246,0.8)] p-8 shadow-[0_20px_50px_rgba(58,42,28,0.08)]">
+          <div className="rounded-lg border border-[var(--we-sand)] bg-[rgba(255,252,246,0.8)] p-8 shadow-[0_20px_50px_rgba(58,42,28,0.08)]">
             <p className="site-eyebrow">Live pathways</p>
-            <p className="mt-4 max-w-2xl text-sm leading-7 text-[#4D3F33]">
+            <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--we-brown)]">
               The live platforms are only one layer of the ecosystem. They sit
               alongside residencies, community programs, works, goods, and
               place-based infrastructure.
@@ -1056,26 +1056,26 @@ export default async function HomePage() {
               className={`group site-glow-link rounded-lg border p-7 transition hover:-translate-y-1 hover:shadow-[0_18px_45px_rgba(50,42,31,0.1)] ${
                 index === 1
                   ? "border-[#244c39] bg-[#1d3527] text-[#f4ecde]"
-                  : "border-[#E1D3BA] bg-white/75 text-[#2F3E2E]"
+                  : "border-[#E1D3BA] bg-white/75 text-[var(--we-olive)]"
               }`}
             >
               <h3
                 className={`font-[var(--font-display)] text-xl font-semibold ${
-                  index === 1 ? "text-[#fff6ea]" : "text-[#2F3E2E]"
+                  index === 1 ? "text-[#fff6ea]" : "text-[var(--we-olive)]"
                 }`}
               >
                 {path.title}
               </h3>
               <p
                 className={`mt-3 text-sm leading-7 ${
-                  index === 1 ? "text-[#d7c8b2]" : "text-[#4D3F33]"
+                  index === 1 ? "text-[#d7c8b2]" : "text-[var(--we-brown)]"
                 }`}
               >
                 {path.description}
               </p>
               <div
                 className={`mt-6 inline-flex items-center gap-2 text-sm font-semibold transition group-hover:gap-3 ${
-                  index === 1 ? "text-[#bfe0c7]" : "text-[#2F3E2E]"
+                  index === 1 ? "text-[#bfe0c7]" : "text-[var(--we-olive)]"
                 }`}
               >
                 <span>{path.cta}</span>

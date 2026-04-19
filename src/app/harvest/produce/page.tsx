@@ -60,7 +60,7 @@ export default async function HarvestProducePage() {
         gradientClass="from-[#FFF4DE] via-[#F0D9B7] to-[#DCC29A]"
       >
         <div className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
             Crop planning
           </p>
           <p>

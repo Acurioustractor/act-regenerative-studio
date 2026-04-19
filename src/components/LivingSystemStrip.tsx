@@ -33,7 +33,7 @@ interface LivingSystemStripProps {
 
 function renderPill(value: string) {
   return (
-    <span className="inline-flex rounded-full bg-white px-3 py-1 text-xs font-medium text-[#4A4035]">
+    <span className="inline-flex rounded-full bg-white px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]">
       {value}
     </span>
   );
@@ -61,14 +61,14 @@ export default function LivingSystemStrip({
     <section className="rounded-3xl border border-[#D9C9A9] bg-[#F6F1E7]/85 p-6 md:p-8">
       <div className="grid gap-6 lg:grid-cols-[1.15fr_0.85fr]">
         <div className="space-y-4">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#4A4035]">
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-brown-deep)]">
             {eyebrow}
           </p>
           <div className="space-y-3">
-            <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+            <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
               {title}
             </h2>
-            <p className="max-w-2xl text-sm leading-7 text-[#4D3F33]">
+            <p className="max-w-2xl text-sm leading-7 text-[var(--we-brown)]">
               {description}
             </p>
           </div>
@@ -86,7 +86,7 @@ export default function LivingSystemStrip({
                 href={live.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-[#4CAF50] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#2F3E2E] transition hover:bg-[#E5F4E4]"
+                className="rounded-full border border-[#4CAF50] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:bg-[#E5F4E4]"
               >
                 Open live story layer
               </a>
@@ -96,7 +96,7 @@ export default function LivingSystemStrip({
                 href={site.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-[#CFA16B] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#2F3E2E] transition hover:bg-[#F8E8D6]"
+                className="rounded-full border border-[#CFA16B] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:bg-[#F8E8D6]"
               >
                 {site.label || "Visit project website"}
               </a>
@@ -122,30 +122,30 @@ export default function LivingSystemStrip({
             <div className="grid gap-3 sm:grid-cols-2">
               {hasLive && (live?.storytellerCount || 0) > 0 ? (
                 <div className="rounded-2xl bg-white/70 px-4 py-4">
-                  <p className="text-lg font-semibold text-[#2F3E2E]">
+                  <p className="text-lg font-semibold text-[var(--we-olive)]">
                     {live?.storytellerCount || 0}
                   </p>
-                  <p className="text-xs uppercase tracking-[0.18em] text-[#6B5A45]">
+                  <p className="text-xs uppercase tracking-[0.18em] text-[var(--we-warm-brown)]">
                     Voices
                   </p>
                 </div>
               ) : null}
               {hasLive && (live?.storyCount || 0) > 0 ? (
                 <div className="rounded-2xl bg-white/70 px-4 py-4">
-                  <p className="text-lg font-semibold text-[#2F3E2E]">
+                  <p className="text-lg font-semibold text-[var(--we-olive)]">
                     {live?.storyCount || 0}
                   </p>
-                  <p className="text-xs uppercase tracking-[0.18em] text-[#6B5A45]">
+                  <p className="text-xs uppercase tracking-[0.18em] text-[var(--we-warm-brown)]">
                     Stories
                   </p>
                 </div>
               ) : null}
               {hasLive && (live?.mediaCount || 0) > 0 ? (
                 <div className="rounded-2xl bg-white/70 px-4 py-4">
-                  <p className="text-lg font-semibold text-[#2F3E2E]">
+                  <p className="text-lg font-semibold text-[var(--we-olive)]">
                     {live?.mediaCount || 0}
                   </p>
-                  <p className="text-xs uppercase tracking-[0.18em] text-[#6B5A45]">
+                  <p className="text-xs uppercase tracking-[0.18em] text-[var(--we-warm-brown)]">
                     Media items
                   </p>
                 </div>
@@ -155,10 +155,10 @@ export default function LivingSystemStrip({
                   key={stat.label}
                   className="rounded-2xl bg-white/70 px-4 py-4"
                 >
-                  <p className="text-lg font-semibold text-[#2F3E2E]">
+                  <p className="text-lg font-semibold text-[var(--we-olive)]">
                     {stat.value}
                   </p>
-                  <p className="text-xs uppercase tracking-[0.18em] text-[#6B5A45]">
+                  <p className="text-xs uppercase tracking-[0.18em] text-[var(--we-warm-brown)]">
                     {stat.label}
                   </p>
                 </div>

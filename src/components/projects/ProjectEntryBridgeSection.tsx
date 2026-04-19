@@ -52,24 +52,24 @@ export function ProjectEntryBridgeSection({
       <div className="rounded-3xl border border-[#D9C9A9] bg-[#F6F1E7]/80 p-6 md:p-8">
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-[#4A4035]">
+            <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-brown-deep)]">
               Living project system
             </p>
-            <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+            <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
               This route is tied to the same flagship field, wiki, and story graph
             </h2>
-            <p className="text-sm leading-7 text-[#4D3F33]">
+            <p className="text-sm leading-7 text-[var(--we-brown)]">
               The durable memory of this project lives in the ACT wiki. Approved
               stories, media, and voices flow in through Empathy Ledger. This
               page is one entry point into that living system, not a separate
               brochure.
             </p>
             {flagshipSummary ? (
-              <div className="rounded-2xl border border-[#E3D4BA] bg-white/70 px-4 py-4">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#6B5A45]">
+              <div className="rounded-2xl border border-[var(--we-sand)] bg-white/70 px-4 py-4">
+                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)]">
                   Canonical field brief
                 </p>
-                <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
+                <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">
                   {flagshipSummary}
                 </p>
               </div>
@@ -83,7 +83,7 @@ export function ProjectEntryBridgeSection({
               </Link>
               <Link
                 href={`/wiki/${project.slug}`}
-                className="rounded-full border border-[#4CAF50] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#2F3E2E] transition hover:bg-[#E5F4E4]"
+                className="rounded-full border border-[#4CAF50] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:bg-[#E5F4E4]"
               >
                 Open wiki entry
               </Link>
@@ -92,7 +92,7 @@ export function ProjectEntryBridgeSection({
                   href={project.projectWebsiteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full border border-[#CFA16B] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#2F3E2E] transition hover:bg-[#F8E8D6]"
+                  className="rounded-full border border-[#CFA16B] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:bg-[#F8E8D6]"
                 >
                   Visit project website
                 </a>
@@ -102,7 +102,7 @@ export function ProjectEntryBridgeSection({
                   href={sourceCodeUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full border border-[#D9C9A9] bg-white/70 px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#2F3E2E] transition hover:bg-white"
+                  className="rounded-full border border-[#D9C9A9] bg-white/70 px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:bg-white"
                 >
                   Source code
                 </a>
@@ -113,22 +113,22 @@ export function ProjectEntryBridgeSection({
           <div className="space-y-4">
             <div className="flex flex-wrap gap-2">
               {flagshipPack?.status || project.wikiData?.status ? (
-                <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-[#4A4035]">
+                <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]">
                   Status: {flagshipPack?.status || project.wikiData?.status}
                 </span>
               ) : null}
               {project.wikiData?.tier ? (
-                <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-[#4A4035]">
+                <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]">
                   Tier: {project.wikiData.tier}
                 </span>
               ) : null}
               {flagshipPack?.canonicalCode || project.wikiData?.code ? (
-                <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-[#4A4035]">
+                <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]">
                   Code: {flagshipPack?.canonicalCode || project.wikiData?.code}
                 </span>
               ) : null}
               {liveMeta?.source ? (
-                <span className="rounded-full bg-[#EDF6EC] px-3 py-1 text-xs font-medium text-[#2F3E2E]">
+                <span className="rounded-full bg-[#EDF6EC] px-3 py-1 text-xs font-medium text-[var(--we-olive)]">
                   {liveMeta.source === "site-syndication"
                     ? "Site-scoped syndication"
                     : "Content Hub fallback"}
@@ -138,52 +138,52 @@ export function ProjectEntryBridgeSection({
 
             <div className="grid gap-3 sm:grid-cols-2">
               <div className="rounded-2xl bg-white/70 px-4 py-4">
-                <p className="text-lg font-semibold text-[#2F3E2E]">
+                <p className="text-lg font-semibold text-[var(--we-olive)]">
                   {liveMeta?.storyteller_count || 0}
                 </p>
-                <p className="text-xs uppercase tracking-[0.18em] text-[#6B5A45]">
+                <p className="text-xs uppercase tracking-[0.18em] text-[var(--we-warm-brown)]">
                   Voices
                 </p>
               </div>
               <div className="rounded-2xl bg-white/70 px-4 py-4">
-                <p className="text-lg font-semibold text-[#2F3E2E]">
+                <p className="text-lg font-semibold text-[var(--we-olive)]">
                   {liveMeta?.story_count || 0}
                 </p>
-                <p className="text-xs uppercase tracking-[0.18em] text-[#6B5A45]">
+                <p className="text-xs uppercase tracking-[0.18em] text-[var(--we-warm-brown)]">
                   Stories
                 </p>
               </div>
               <div className="rounded-2xl bg-white/70 px-4 py-4">
-                <p className="text-lg font-semibold text-[#2F3E2E]">
+                <p className="text-lg font-semibold text-[var(--we-olive)]">
                   {liveMeta?.media_count || 0}
                 </p>
-                <p className="text-xs uppercase tracking-[0.18em] text-[#6B5A45]">
+                <p className="text-xs uppercase tracking-[0.18em] text-[var(--we-warm-brown)]">
                   Media items
                 </p>
               </div>
               <div className="rounded-2xl bg-white/70 px-4 py-4">
-                <p className="text-lg font-semibold text-[#2F3E2E]">
+                <p className="text-lg font-semibold text-[var(--we-olive)]">
                   {relatedWorks.length}
                 </p>
-                <p className="text-xs uppercase tracking-[0.18em] text-[#6B5A45]">
+                <p className="text-xs uppercase tracking-[0.18em] text-[var(--we-warm-brown)]">
                   Related works
                 </p>
               </div>
             </div>
 
             {flagshipPack ? (
-              <div className="rounded-2xl border border-[#E3D4BA] bg-white/70 px-4 py-4">
+              <div className="rounded-2xl border border-[var(--we-sand)] bg-white/70 px-4 py-4">
                 <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-[11px] font-medium text-[#4A4035]">
+                  <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-[11px] font-medium text-[var(--we-brown-deep)]">
                     {flagshipPack.sourceBridges.length} source bridge
                     {flagshipPack.sourceBridges.length === 1 ? "" : "s"}
                   </span>
-                  <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-[11px] font-medium text-[#4A4035]">
+                  <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-[11px] font-medium text-[var(--we-brown-deep)]">
                     {flagshipPack.keyPeople.length} key people
                   </span>
                 </div>
                 {leadPeople.length > 0 ? (
-                  <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
+                  <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">
                     Key people: {leadPeople.join(", ")}
                   </p>
                 ) : null}
@@ -196,8 +196,8 @@ export function ProjectEntryBridgeSection({
       {(hasMediaPreview(project) || relatedWorks.length > 0 || hasLiveContent) && (
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           {fieldMedia.images.length > 0 || fieldMedia.video ? (
-            <div className="rounded-3xl border border-[#E3D4BA] bg-white/80 p-5">
-              <p className="text-xs uppercase tracking-[0.3em] text-[#6B5A45]">
+            <div className="rounded-3xl border border-[var(--we-sand)] bg-white/80 p-5">
+              <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
                 From the field
               </p>
               <p className="mt-2 max-w-2xl text-sm leading-7 text-[#5F4E3F]">
@@ -270,7 +270,7 @@ export function ProjectEntryBridgeSection({
                         href={item.href}
                         target={item.href.startsWith("http") ? "_blank" : undefined}
                         rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                        className="group overflow-hidden rounded-[24px] border border-[#E3D4BA] bg-[#FDFBF7]"
+                        className="group overflow-hidden rounded-[24px] border border-[var(--we-sand)] bg-[#FDFBF7]"
                       >
                         <div className="relative aspect-[4/3] overflow-hidden">
                           <img
@@ -289,7 +289,7 @@ export function ProjectEntryBridgeSection({
                               {item.sourceTitle}
                             </p>
                           ) : null}
-                          <p className="line-clamp-3 text-sm leading-6 text-[#4D3F33]">
+                          <p className="line-clamp-3 text-sm leading-6 text-[var(--we-brown)]">
                             {item.caption || project.title}
                           </p>
                         </div>

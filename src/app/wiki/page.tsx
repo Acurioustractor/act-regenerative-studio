@@ -63,7 +63,7 @@ export default async function WikiHomepage({
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#F6F1E7] via-[#F5F1E8] to-white">
-      <section className="border-b border-[#E3D4BA] bg-[#2F3E2E] text-white">
+      <section className="border-b border-[var(--we-sand)] bg-[var(--we-olive)] text-white">
         <div className="mx-auto max-w-6xl px-4 py-16">
           <div className="max-w-4xl">
             <p className="text-xs uppercase tracking-[0.35em] text-[#D7E7D4]">
@@ -125,13 +125,13 @@ export default async function WikiHomepage({
             <Link
               key={item.title}
               href={item.href}
-              className="rounded-[28px] border border-[#E3D4BA] bg-white/90 p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#7A9B76] hover:shadow-lg"
+              className="rounded-[28px] border border-[var(--we-sand)] bg-white/90 p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#7A9B76] hover:shadow-lg"
             >
               <p className="text-xs uppercase tracking-[0.24em] text-[#7A6A55]">{item.stat}</p>
-              <h2 className="mt-3 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+              <h2 className="mt-3 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
                 {item.title}
               </h2>
-              <p className="mt-3 text-sm leading-7 text-[#4D3F33]">{item.description}</p>
+              <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">{item.description}</p>
               <span className="mt-4 inline-flex text-xs font-semibold uppercase tracking-[0.18em] text-[#4CAF50]">
                 {item.cta} →
               </span>
@@ -141,7 +141,7 @@ export default async function WikiHomepage({
       </section>
 
       <section className="mx-auto max-w-6xl px-4 py-10">
-        <form className="rounded-[28px] border border-[#E3D4BA] bg-white/90 p-5 shadow-sm">
+        <form className="rounded-[28px] border border-[var(--we-sand)] bg-white/90 p-5 shadow-sm">
           <div className="grid gap-4 lg:grid-cols-[minmax(0,1.3fr)_220px_220px_auto]">
             <label className="relative block">
               <Search className="pointer-events-none absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-[#7A6A55]" />
@@ -150,14 +150,14 @@ export default async function WikiHomepage({
                 name="q"
                 defaultValue={query}
                 placeholder="Search the ACT wiki..."
-                className="w-full rounded-2xl border border-[#D7C4A2] bg-[#FDFBF7] py-3 pl-12 pr-4 text-sm text-[#2F3E2E] outline-none ring-0 transition focus:border-[#7A9B76]"
+                className="w-full rounded-2xl border border-[#D7C4A2] bg-[#FDFBF7] py-3 pl-12 pr-4 text-sm text-[var(--we-olive)] outline-none ring-0 transition focus:border-[#7A9B76]"
               />
             </label>
 
             <select
               name="section"
               defaultValue={section}
-              className="rounded-2xl border border-[#D7C4A2] bg-[#FDFBF7] px-4 py-3 text-sm text-[#2F3E2E] outline-none transition focus:border-[#7A9B76]"
+              className="rounded-2xl border border-[#D7C4A2] bg-[#FDFBF7] px-4 py-3 text-sm text-[var(--we-olive)] outline-none transition focus:border-[#7A9B76]"
             >
               <option value="all">All sections</option>
               {sections.map((item) => (
@@ -170,7 +170,7 @@ export default async function WikiHomepage({
             <select
               name="project"
               defaultValue={project}
-              className="rounded-2xl border border-[#D7C4A2] bg-[#FDFBF7] px-4 py-3 text-sm text-[#2F3E2E] outline-none transition focus:border-[#7A9B76]"
+              className="rounded-2xl border border-[#D7C4A2] bg-[#FDFBF7] px-4 py-3 text-sm text-[var(--we-olive)] outline-none transition focus:border-[#7A9B76]"
             >
               <option value="all">All projects</option>
               {projectOptions.map((option) => (
@@ -194,13 +194,13 @@ export default async function WikiHomepage({
         <div className="mb-6 flex flex-wrap gap-2">
           <Link
             href="/wiki/source-packets"
-            className="rounded-full border border-[#D8C6A7] bg-white px-3 py-1.5 text-xs font-medium text-[#4D3F33] transition hover:border-[#7A9B76]"
+            className="rounded-full border border-[#D8C6A7] bg-white px-3 py-1.5 text-xs font-medium text-[var(--we-brown)] transition hover:border-[#7A9B76]"
           >
             Source packets
           </Link>
           <Link
             href="/wiki/source-bridges"
-            className="rounded-full border border-[#D8C6A7] bg-white px-3 py-1.5 text-xs font-medium text-[#4D3F33] transition hover:border-[#7A9B76]"
+            className="rounded-full border border-[#D8C6A7] bg-white px-3 py-1.5 text-xs font-medium text-[var(--we-brown)] transition hover:border-[#7A9B76]"
           >
             Source bridges
           </Link>
@@ -213,7 +213,7 @@ export default async function WikiHomepage({
                 className={`rounded-full border px-3 py-1.5 text-xs font-medium transition ${
                   active
                     ? 'border-[#4CAF50] bg-[#E5F4E4] text-[#2F5233]'
-                    : 'border-[#E3D4BA] bg-white text-[#4D3F33] hover:border-[#7A9B76]'
+                    : 'border-[var(--we-sand)] bg-white text-[var(--we-brown)] hover:border-[#7A9B76]'
                 }`}
               >
                 {item.title} ({item.count})
@@ -227,17 +227,17 @@ export default async function WikiHomepage({
             <p className="text-xs uppercase tracking-[0.3em] text-[#7A6A55]">
               Canonical ACT wiki
             </p>
-            <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+            <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
               {filteredPages.length} page{filteredPages.length === 1 ? '' : 's'} available
             </h2>
-            <p className="mt-2 text-sm text-[#4D3F33]">
+            <p className="mt-2 text-sm text-[var(--we-brown)]">
               {ecosystemSummary.openDecisionCount} public-system decisions are still marked for
               human confirmation, but the knowledge layer is already strong enough to build on.
             </p>
           </div>
           <Link
             href="/projects"
-            className="rounded-full border border-[#4CAF50] px-4 py-2 text-sm font-medium text-[#2F3E2E] transition hover:bg-[#E5F4E4]"
+            className="rounded-full border border-[#4CAF50] px-4 py-2 text-sm font-medium text-[var(--we-olive)] transition hover:bg-[#E5F4E4]"
           >
             Back to projects
           </Link>
@@ -246,10 +246,10 @@ export default async function WikiHomepage({
         {filteredPages.length === 0 ? (
           <div className="rounded-[28px] border border-dashed border-[#D7C4A2] bg-white/80 px-6 py-14 text-center">
             <BookOpen className="mx-auto h-10 w-10 text-[#7A6A55]" />
-            <h3 className="mt-4 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E]">
+            <h3 className="mt-4 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
               No canonical pages matched this view
             </h3>
-            <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-[#4D3F33]">
+            <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-[var(--we-brown)]">
               Try a broader search, remove a filter, or go back to the full ACT wiki index. The
               source of truth stays in the markdown wiki even when this view is quiet.
             </p>
@@ -266,7 +266,7 @@ export default async function WikiHomepage({
               <Link
                 key={page.path}
                 href={`/wiki/${page.stem}`}
-                className="group rounded-[28px] border border-[#E3D4BA] bg-white/90 p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#7A9B76] hover:shadow-lg"
+                className="group rounded-[28px] border border-[var(--we-sand)] bg-white/90 p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#7A9B76] hover:shadow-lg"
               >
                 <div className="flex items-center justify-between gap-3">
                   <span className="rounded-full bg-[#F5F1E8] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#5A4A3A]">
@@ -276,10 +276,10 @@ export default async function WikiHomepage({
                     {page.stem}
                   </span>
                 </div>
-                <h3 className="mt-4 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E] group-hover:text-[#4E6A4F]">
+                <h3 className="mt-4 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)] group-hover:text-[#4E6A4F]">
                   {page.title}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-[#4D3F33]">
+                <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">
                   {page.excerpt || 'Open this page to read the full ACT wiki entry.'}
                 </p>
                 <div className="mt-5 flex items-center justify-between text-xs text-[#7A6A55]">

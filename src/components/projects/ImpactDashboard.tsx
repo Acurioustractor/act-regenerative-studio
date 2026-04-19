@@ -94,7 +94,7 @@ function AnimatedStat({
   return (
     <div
       ref={ref}
-      className={`rounded-3xl border border-[#E3D4BA] bg-white/70 p-6 text-center transition-all duration-500 ${
+      className={`rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6 text-center transition-all duration-500 ${
         isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-4'
       }`}
       style={{ transitionDelay: `${index * 100}ms` }}
@@ -128,10 +128,10 @@ export function ImpactDashboard({
   return (
     <section className="space-y-8">
       <div className="text-center">
-        <p className="text-xs uppercase tracking-[0.3em] text-[#4A4035]">
+        <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-brown-deep)]">
           Impact
         </p>
-        <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[#2F3E2E] md:text-3xl">
+        <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)] md:text-3xl">
           What we've achieved together
         </h2>
       </div>
@@ -164,7 +164,7 @@ export function ImpactDashboard({
       {/* Quote highlight */}
       {quote && (
         <div
-          className="rounded-3xl border border-[#C9B896] bg-[#2F3E2E] p-8 md:p-12"
+          className="rounded-3xl border border-[#C9B896] bg-[var(--we-olive)] p-8 md:p-12"
         >
           <div className="mx-auto max-w-3xl text-center">
             <svg
@@ -190,8 +190,8 @@ export function ImpactDashboard({
       {/* Empathy Ledger badge (if connected) */}
       {(storytellerCount || storyCount || mediaCount || galleryCount) && (
         <div className="flex justify-center">
-          <div className="inline-flex flex-wrap items-center justify-center gap-3 rounded-full border border-[#E3D4BA] bg-white/80 px-5 py-2.5">
-            <div className="flex items-center gap-2 text-sm text-[#4A4035]">
+          <div className="inline-flex flex-wrap items-center justify-center gap-3 rounded-full border border-[var(--we-sand)] bg-white/80 px-5 py-2.5">
+            <div className="flex items-center gap-2 text-sm text-[var(--we-brown-deep)]">
               <span className="text-lg">📖</span>
               <span>Powered by</span>
               <a
@@ -204,22 +204,22 @@ export function ImpactDashboard({
               </a>
             </div>
             {storytellerCount && (
-              <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs text-[#4A4035]">
+              <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs text-[var(--we-brown-deep)]">
                 {storytellerCount} storyteller{storytellerCount !== 1 ? 's' : ''}
               </span>
             )}
             {storyCount && (
-              <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs text-[#4A4035]">
+              <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs text-[var(--we-brown-deep)]">
                 {storyCount} {storyCount !== 1 ? 'stories' : 'story'}
               </span>
             )}
             {mediaCount && (
-              <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs text-[#4A4035]">
+              <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs text-[var(--we-brown-deep)]">
                 {mediaCount} media assets
               </span>
             )}
             {galleryCount && (
-              <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs text-[#4A4035]">
+              <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs text-[var(--we-brown-deep)]">
                 {galleryCount} {galleryCount !== 1 ? 'galleries' : 'gallery'}
               </span>
             )}

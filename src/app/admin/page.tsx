@@ -23,7 +23,7 @@ export default function AdminHomePage() {
           Vision Book
         </Link>
         <Link
-          href="/engine"
+          href="/admin/engine"
           className="rounded-full bg-[#1e1e1e] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white border border-gray-700"
         >
           Engine Notes
@@ -41,7 +41,7 @@ export default function AdminHomePage() {
           Media library
         </Link>
         <Link
-          href="/media-lab"
+          href="/admin/media-lab"
           className="rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)]"
         >
           Media lab

@@ -28,9 +28,9 @@ export function VisionSearch() {
                             <p className="font-semibold text-emerald-900 group-hover:text-emerald-700">ACT 2026: The Harvest Year</p>
                             <p className="text-sm text-stone-500">Seasonal vision</p>
                         </a>
-                        <a href="/engine" className="block p-3 hover:bg-emerald-50 rounded-lg group">
-                            <p className="font-semibold text-emerald-900 group-hover:text-emerald-700">Project setup workflow</p>
-                            <p className="text-sm text-stone-500">Engine notes</p>
+                        <a href="/method" className="block p-3 hover:bg-emerald-50 rounded-lg group">
+                            <p className="font-semibold text-emerald-900 group-hover:text-emerald-700">Listen, curiosity, action, art</p>
+                            <p className="text-sm text-stone-500">The method</p>
                         </a>
                     </div>
                 </div>

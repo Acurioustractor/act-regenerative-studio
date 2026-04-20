@@ -139,15 +139,15 @@ export default function PrinciplesPage() {
       </PageHero>
 
       <LivingSystemStrip
-        eyebrow="Principled system"
-        title="The principles stay public, while the practice keeps learning"
-        description="The public site expresses ACT’s values, but the deeper memory sits in the wiki and the field signal keeps arriving through live stories, media, and project evidence. Principles matter most when they change what gets built and shared."
+        eyebrow="Where principles live"
+        title="Principles stay in public view; the practice keeps learning"
+        description="These commitments sit in plain view on the site and in the wiki. The proof sits in the projects, stories, and media that keep arriving. Principles matter most when they change what gets built and shared."
         wiki={{
           href: "/wiki/act-identity",
           label: "Open ACT identity in the wiki",
         }}
         live={{
-          sourceLabel: "Principles expressed through live projects and story layers",
+          sourceLabel: "Lived out through the projects",
           href: `${process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL || "https://empathyledger.com"}/projects`,
         }}
         stats={[

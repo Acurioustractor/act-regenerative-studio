@@ -129,15 +129,15 @@ export default async function HowWeWorkPage() {
       </PageHero>
 
       <LivingSystemStrip
-        eyebrow="Living practice"
-        title="Practice is documented in the wiki and tested in the field"
-        description="ACT’s operating habits are not just internal process notes. The durable layer lives in the wiki, while approved service proof, stories, and media can keep updating through Empathy Ledger as collaborations deepen."
+        eyebrow="How the work gets described"
+        title="Practice written down in the wiki, tested in the field"
+        description="These are working habits, not internal process notes. The detail sits in the wiki; the proof shows up in services, stories, and media carried with consent."
         wiki={{
           href: "/wiki/ways-of-working",
           label: "Open ways of working",
         }}
         live={{
-          sourceLabel: liveServices.length > 0 ? "Live capabilities connected through Empathy Ledger" : null,
+          sourceLabel: liveServices.length > 0 ? "Services, stories, and media through Empathy Ledger" : null,
           storyCount: liveServices.reduce((sum, service) => sum + service.linkedStoryCount, 0),
           storytellerCount: liveServices.reduce((sum, service) => sum + service.storytellerCount, 0),
           mediaCount: liveServices.reduce(
@@ -232,7 +232,7 @@ export default async function HowWeWorkPage() {
           <SectionHeading
             eyebrow="Live capabilities"
             title="Services that keep learning as the work grows"
-            description="This section is syndicated from Empathy Ledger. As new stories, photos, videos, and service notes are approved, the public studio shell can keep evolving without becoming a second CMS."
+            description="These capabilities come through Empathy Ledger. As new stories, photos, videos, and service notes are approved, they arrive here without anyone rebuilding the page."
           />
           <div className="grid gap-6 lg:grid-cols-3">
             {liveServices.map((service) => {
@@ -359,17 +359,17 @@ export default async function HowWeWorkPage() {
         <SectionHeading
           eyebrow="Shared infrastructure"
           title="What the system is designed to hold"
-          description="The public shell should not read like a stack diagram. What matters here is the kind of infrastructure ACT keeps building so projects can stay grounded, consentful, and transferable."
+          description="Not a stack diagram. This is the kind of infrastructure ACT keeps building so projects can stay grounded, consentful, and transferable."
         />
         <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8">
           <div className="grid gap-8 lg:grid-cols-3">
             <div className="space-y-4">
-              <h3 className="font-semibold text-[var(--we-olive)]">Living memory</h3>
+              <h3 className="font-semibold text-[var(--we-olive)]">Knowledge that compounds</h3>
               <ul className="space-y-2 text-sm text-[var(--we-brown)]">
-                <li>• Canonical ACT wiki as durable source of truth</li>
-                <li>• Project framing synced into the public site</li>
+                <li>• A working wiki as source of truth</li>
+                <li>• Project framing flows into every page you read</li>
                 <li>• Knowledge designed to compound, not duplicate</li>
-                <li>• Public pages that can stay aligned as the wiki grows</li>
+                <li>• Site pages stay aligned with the wiki as it grows</li>
               </ul>
             </div>
             <div className="space-y-4">

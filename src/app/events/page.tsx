@@ -76,15 +76,15 @@ export default function EventsPage() {
       </PageHero>
 
       <LivingSystemStrip
-        eyebrow="Invitation layer"
+        eyebrow="How gatherings work"
         title="Gatherings connected to place, projects, and story"
-        description="ACT gatherings emerge through the farm, The Harvest, residencies, exhibitions, and project partnerships. Use this page to find the right entry point — the calendar follows the work, not the other way around."
+        description="ACT gatherings emerge through the farm, The Harvest, residencies, exhibitions, and project partnerships. This page is the invitation; the calendar follows the work, not the other way around."
         wiki={{
           href: "/wiki",
           label: "Open ACT wiki",
         }}
         live={{
-          sourceLabel: "Gatherings are carried through project and story surfaces",
+          sourceLabel: "Carried through project and story pages",
           href: `${process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL || "https://empathyledger.com"}/projects`,
         }}
         stats={[

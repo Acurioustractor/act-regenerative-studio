@@ -101,15 +101,15 @@ export default function PartnersPage() {
       </PageHero>
 
       <LivingSystemStrip
-        eyebrow="Partnership layer"
-        title="Partnerships sit on top of shared memory and live proof"
-        description="The public site can show what ACT is, but the deeper memory lives in the wiki and the proof keeps arriving through project stories, voices, and media. Good partnership conversations should not begin from a blank page."
+        eyebrow="Where partnerships start"
+        title="Partnerships that begin from shared ground, not a blank page"
+        description="The wiki holds what ACT is working on and why. Empathy Ledger carries the stories, voices, and media. Partner conversations land better when both are in view from the start."
         wiki={{
           href: "/wiki",
           label: "Open ACT wiki",
         }}
         live={{
-          sourceLabel: "Projects, stories, and media continue through Empathy Ledger",
+          sourceLabel: "Projects, stories, and media through Empathy Ledger",
           href: `${process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL || "https://empathyledger.com"}/projects`,
         }}
         stats={[

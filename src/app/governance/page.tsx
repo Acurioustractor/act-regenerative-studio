@@ -114,7 +114,7 @@ export default function GovernancePage() {
             Governance is where values either become structure or collapse into branding
           </h2>
           <p className="max-w-3xl text-sm leading-7 text-[#D7C8B2]">
-            ACT’s public governance language should always point back to shared authority, cultural protocol, and handover. If a governance surface cannot be connected to what communities can actually see, change, or refuse, it is probably just optics.
+            ACT’s governance language points back to shared authority, cultural protocol, and handover. If a governance claim can’t be connected to what communities can actually see, change, or refuse, it’s probably just optics.
           </p>
         </div>
       </section>

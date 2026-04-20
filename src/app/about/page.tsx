@@ -76,15 +76,15 @@ export default function AboutPage() {
       </PageHero>
 
       <LivingSystemStrip
-        eyebrow="ACT system"
-        title="The public site stays grounded in living memory"
-        description="ACT’s core framing now comes from the canonical wiki, while approved stories, voices, and media can keep arriving through Empathy Ledger. The site is the public surface of a learning system, not a static brochure."
+        eyebrow="How it stays current"
+        title="The work is written down where anyone can find it"
+        description="ACT’s method, projects, and commitments live in a working wiki. Stories and voices arrive through Empathy Ledger with consent. The site changes as those sources do — it is not a brochure."
         wiki={{
           href: "/wiki",
           label: "Open ACT wiki",
         }}
         live={{
-          sourceLabel: "Live story and media layer available through Empathy Ledger",
+          sourceLabel: "Stories and media through Empathy Ledger",
           href: `${process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL || "https://empathyledger.com"}/projects`,
         }}
         stats={[

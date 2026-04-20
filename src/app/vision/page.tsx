@@ -72,7 +72,7 @@ export default async function VisionPage() {
                 <SectionHeading
                     eyebrow="Document"
                     title="ACT 2026: The Harvest Year"
-                    description="A working directional document retained inside the public shell so it can stay readable without becoming a second design language."
+                    description="A working directional document kept in public so it stays readable and accountable."
                 />
                 <main className="rounded-[32px] border border-[var(--we-sand)] bg-white/85 p-8 md:p-12">
                     <MarkdownViewer content={content} />
@@ -89,7 +89,7 @@ export default async function VisionPage() {
                             Direction is only useful if it changes the next season of work
                         </h2>
                         <p className="max-w-2xl text-sm leading-7 text-[#D7C8B2]">
-                            The vision should feed the roadmap, the project pages, and the method pages. If it starts to drift away from those living surfaces, it should be revised rather than protected as doctrine.
+                            The vision feeds the roadmap, the project pages, and the method. If it drifts from the actual work, we revise it rather than protect it as doctrine.
                         </p>
                     </div>
                     <div className="flex flex-wrap gap-3">

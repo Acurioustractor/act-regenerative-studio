@@ -20,7 +20,7 @@ export default function ImpactPage() {
     const highEvidenceCount = REAL_INITIATIVES.filter(i => i.evidence_strength === 'High').length;
 
     return (
-        <div className="space-y-16">
+        <div className="space-y-20">
             <PageHero
                 eyebrow="Impact & learning"
                 title="What&rsquo;s working, what we&rsquo;re learning"
@@ -59,7 +59,7 @@ export default function ImpactPage() {
                 ]}
             />
 
-            <section className="space-y-8">
+            <section className="space-y-10">
                 <SectionHeading
                     eyebrow="How the work moves"
                     title="From listening to action, across the current set of initiatives"
@@ -95,13 +95,11 @@ export default function ImpactPage() {
                 </div>
             </section>
 
-            <section className="space-y-8">
-                <div className="flex items-end justify-between border-b border-[#E1D3BA] pb-4">
-                    <h2 className="text-2xl font-[var(--font-display)]">What we&rsquo;re working on right now</h2>
-                    <span className="text-xs uppercase tracking-widest text-[var(--we-warm-brown)]">
-                        Current set
-                    </span>
-                </div>
+            <section className="space-y-10">
+                <SectionHeading
+                    eyebrow="Current set"
+                    title="What we&rsquo;re working on right now"
+                />
 
                 <CardGrid
                     cards={REAL_INITIATIVES.map((init) => ({
@@ -119,11 +117,11 @@ export default function ImpactPage() {
                 />
             </section>
 
-            {/* Contexts Map (List for now) */}
-            <section className="space-y-8">
-                <div className="flex items-end justify-between border-b border-[#E1D3BA] pb-4">
-                    <h2 className="text-2xl font-[var(--font-display)]">Contexts in view</h2>
-                </div>
+            <section className="space-y-10">
+                <SectionHeading
+                    eyebrow="Contexts"
+                    title="Contexts in view"
+                />
                 <div className="grid md:grid-cols-2 gap-6">
                     {REAL_CONTEXTS.map(ctx => (
                         <div key={ctx.name} className="p-6 bg-[#F0EAE0] rounded-2xl border border-transparent hover:border-[#D87D4A] transition">
@@ -135,11 +133,11 @@ export default function ImpactPage() {
                 </div>
             </section>
 
-            {/* Evidence Library */}
-            <section className="space-y-8">
-                <div className="flex items-end justify-between border-b border-[#E1D3BA] pb-4">
-                    <h2 className="text-2xl font-[var(--font-display)]">Evidence references</h2>
-                </div>
+            <section className="space-y-10">
+                <SectionHeading
+                    eyebrow="Evidence"
+                    title="Evidence references"
+                />
                 <div className="space-y-4">
                     {REAL_EVIDENCE.map((ev, i) => (
                         <div key={i} className="flex flex-col md:flex-row gap-4 p-6 bg-white rounded-xl border border-[#E1D3BA]">

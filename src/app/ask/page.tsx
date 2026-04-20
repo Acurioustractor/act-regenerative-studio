@@ -9,7 +9,7 @@ export const metadata = {
 
 export default function AskPage() {
   return (
-    <div className="space-y-16">
+    <div className="space-y-20">
       <PageHero
         eyebrow="Ask ACT"
         title="Ask a question about the work"
@@ -47,9 +47,9 @@ export default function AskPage() {
         ]}
       />
 
-      <main className="min-h-screen bg-gradient-to-b from-stone-50 to-white py-4">
+      <section>
         <AskACT />
-      </main>
+      </section>
     </div>
   );
 }

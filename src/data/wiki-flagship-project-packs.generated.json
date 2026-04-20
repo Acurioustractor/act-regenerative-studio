@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-20T03:03:42.413Z",
+  "generatedAt": "2026-04-20T04:13:47.219Z",
   "sourceRoot": "/home/runner/work/act-regenerative-studio/act-regenerative-studio/_canonical-wiki/wiki",
   "packCount": 5,
   "packs": [
@@ -23,7 +23,7 @@
       "sourcePage": {
         "relativePath": "projects/justicehub/justicehub.md",
         "wikiPath": "projects/justicehub",
-        "modifiedAt": "2026-04-20T03:03:23.012Z"
+        "modifiedAt": "2026-04-20T04:13:28.808Z"
       },
       "downstream": {
         "website": {
@@ -151,6 +151,11 @@
           "id": "key-source-bridges",
           "title": "Key Source Bridges",
           "body": "- Source Summary — JusticeHub Proof Wall - Source Summary — The Cure Already Exists - Source Summary — CONTAINED Tour Intelligence Model - Source Summary — JusticeHub Three Circles Proposal - Source Summary — JusticeHub Minderoo Executive Summary"
+        },
+        {
+          "id": "lcaa-phase",
+          "title": "LCAA Phase",
+          "body": "In the LCAA Method, JusticeHub is the evidence layer of The Third Reality — the Curiosity infrastructure that catalogs what works, surfaces it for funders and policymakers, and connects young people, communities, and decision-makers to community-led alternatives to detention. LCAA arc for JusticeHub: - Listen — three doors named by role rather than urgency (\"I need help\", \"I do the work\", \"I fund or shape policy\"); ALMA AI chat surfacing community voice alongside policy evidence; service directory built from community knowledge - Curiosity — 1,387 verified models, 430 with evidence data, 98K orgs mapped, $94.6B funding tracked; international comparisons (Diagrama, Spain); the cost case (community-led ~$15K/year vs detention ~$1.3M/year, 86x cheaper) - Action — Cost Calculator, System Map, Impact Dashboard, Learning Trips; capital routing via Allo Protocol and Hypercerts; service directory connecting youth to support; on-the-ground proof from BG Fit, Oonchiumpa, and ConFit Pathways - Art — CONTAINED — the touring shipping container exhibition that brings justice reform into public consciousness and makes system change felt, not abstract; portraits from The Brave Ones live on its inside walls The platform is built for the communities the system impacts, not for the system itself."
         }
       ]
     },
@@ -174,7 +179,7 @@
       "sourcePage": {
         "relativePath": "projects/goods-on-country.md",
         "wikiPath": "projects/goods-on-country",
-        "modifiedAt": "2026-04-20T03:03:23.010Z"
+        "modifiedAt": "2026-04-20T04:13:28.807Z"
       },
       "downstream": {
         "website": {
@@ -324,7 +329,7 @@
       "sourcePage": {
         "relativePath": "projects/the-harvest/the-harvest.md",
         "wikiPath": "projects/the-harvest",
-        "modifiedAt": "2026-04-20T03:03:23.014Z"
+        "modifiedAt": "2026-04-20T04:13:28.811Z"
       },
       "downstream": {
         "website": {
@@ -465,7 +470,7 @@
       "sourcePage": {
         "relativePath": "projects/empathy-ledger.md",
         "wikiPath": "projects/empathy-ledger",
-        "modifiedAt": "2026-04-20T03:03:23.010Z"
+        "modifiedAt": "2026-04-20T04:13:28.807Z"
       },
       "downstream": {
         "website": {
@@ -586,6 +591,11 @@
           "id": "key-source-bridges",
           "title": "Key Source Bridges",
           "body": "These are the strongest current source-bridge notes for keeping the canonical page tied to real material rather than memory: - Source Summary — ACT Project Page / Empathy Ledger - Source Summary — Empathy Ledger Strategy Synthesis - Source Summary — EL Consent as Infrastructure - Source Summary — EL Platform Prospectus - Source Summary — EL Unified Storyteller Analysis"
+        },
+        {
+          "id": "lcaa-phase",
+          "title": "LCAA Phase",
+          "body": "In the LCAA Method, Empathy Ledger sits across Listen and Art — it is the platform that makes deep listening structural, and the layer that turns lived narrative into ecosystem-wide voice. It is not a single phase project; it is the consent-governed channel that the other phases run through. LCAA arc for Empathy Ledger: - Listen — five consent types as a listening protocol (Collection, Processing, Sharing, Attribution, Syndication); two years of community work in Central Australia and Queensland; 226 active storytellers and 550+ stories at Snow Foundation; story collection at PICC, Oonchiumpa, and partner communities under elder review - Curiosity — the Third Reality methodology; AI-powered theme extraction without collapsing storyteller voice (Transcript Analysis Method); federated learning experiments that share insights but never raw stories; TK Labels and Mukurtu integration for institutional cultural governance - Action — live multi-tenant platform at empathyledger.com (Vercel + Supabase + pgvector); 95% elder approval rate; 40% increase in grant success for partnered organisations; direct compensation flowing back to storytellers when their narrative drives funding - Art — the Atlas, World Tour, and Galleries surfaces; story material composed into project pages, journals, and partner sites; the public framing that lets policymakers feel what they could otherwise dismiss Empathy Ledger is also the re-entry point for the cycle: every consented narrative published becomes new material for the next round of Listen, sharpens the next Curiosity question, and grounds the next Action in real voice."
         }
       ]
     },
@@ -609,7 +619,7 @@
       "sourcePage": {
         "relativePath": "projects/act-farm/black-cockatoo-valley.md",
         "wikiPath": "projects/act-farm/black-cockatoo-valley",
-        "modifiedAt": "2026-04-20T03:03:23.008Z"
+        "modifiedAt": "2026-04-20T04:13:28.805Z"
       },
       "downstream": {
         "website": {
@@ -682,6 +692,11 @@
           "id": "key-source-bridges",
           "title": "Key Source Bridges",
           "body": "- Source Summary — Black Cockatoo Valley Place Page - Source Summary — ACT Farm Index - Source Summary — Ways of Working"
+        },
+        {
+          "id": "lcaa-phase",
+          "title": "LCAA Phase",
+          "body": "In the LCAA Method, Black Cockatoo Valley sits primarily in the Listen phase — the 150 acres on Jinibara Country are the land that grounds ACT's entire physical practice, and the conservation-first principle is the land sets the pace. Listening to Country is not metaphor here; capacity is a land decision before it is a calendar decision. LCAA arc for Black Cockatoo Valley: - Listen — \"The creek tells us more than the calendar.\" When the creek is low or the grass is tired, work slows; activities are scaled to land capacity and community readiness, not to demand - Curiosity — regenerative grazing, food forest, native corridor restoration, water catchment systems treated as continuous R&D in regenerative practice - Action — residencies, workshops, restoration, R&D, and community programs running through the seasons; revenue from residencies and workshops reinvested into restoration, weed management, and monitoring - Art — the visible artefacts of stewardship — studio and gathering buildings, the field, the corridor; the place-memory that other ACT projects (Goods, Empathy Ledger, JusticeHub stories) carry into their own work The long-term shape is community co-stewardship and beautiful obsolescence — preparing the governance to hand the land back when the relationships and capability are ready."
         }
       ]
     }

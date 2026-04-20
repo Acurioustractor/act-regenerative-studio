@@ -240,6 +240,55 @@ export default async function FarmPage() {
         </ScrollReveal>
       )}
 
+      {/* ——— WAYS ONTO THE VALLEY ——— */}
+      <ScrollReveal>
+        <section className="px-8 py-24">
+          <div className="mx-auto max-w-[1100px]">
+            <SectionHeader
+              eyebrow="Ways onto the valley"
+              eyebrowColor="muted"
+              title="What you can do here"
+              lede="Three ways to come onto the land. Each has its own rhythm and its own way of paying attention."
+            />
+            <div className="mt-12 grid gap-5 md:grid-cols-3">
+              {[
+                {
+                  label: 'Stay on the land',
+                  href: '/farm/stay',
+                  description: 'Short stays for rest, writing, or time with the place.',
+                },
+                {
+                  label: 'Residencies & retreats',
+                  href: '/farm/retreats',
+                  description: 'Longer-form visits for artists, researchers, and groups.',
+                },
+                {
+                  label: 'Workshops',
+                  href: '/farm/workshops',
+                  description: 'Hands-on days on regenerative practice, food, and place.',
+                },
+              ].map((item) => (
+                <Link
+                  key={item.href}
+                  href={item.href}
+                  className="group rounded-[24px] border border-[var(--we-sand)] bg-white/80 p-6 transition hover:-translate-y-0.5 hover:border-[#4CAF50] hover:shadow-[0_12px_32px_rgba(50,42,31,0.08)]"
+                >
+                  <p className="font-[var(--font-display)] text-xl font-semibold text-[var(--we-olive)]">
+                    {item.label}
+                  </p>
+                  <p className="mt-2 text-sm leading-6 text-[var(--we-brown)]">
+                    {item.description}
+                  </p>
+                  <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#4CAF50] transition group-hover:gap-2">
+                    Read more <span aria-hidden="true">&rarr;</span>
+                  </span>
+                </Link>
+              ))}
+            </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
       {/* ——— BIG CTA ——— */}
       <ScrollReveal>
         <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">

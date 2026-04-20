@@ -27,7 +27,7 @@ export default function UnifiedFooter({
   return (
     <footer className="mt-8 pb-2">
       <div className="mx-auto rounded-lg bg-[#1a1612] px-6 py-12 text-[#f2e8d9] md:px-8">
-        <div className="grid gap-12 lg:grid-cols-3">
+        <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           {/* Column 1: About */}
           <div className="space-y-4">
             <p className="site-eyebrow text-[#dbc5a6] before:bg-[#8a7560]">
@@ -106,7 +106,38 @@ export default function UnifiedFooter({
             </div>
           )}
 
-          {/* Column 3: Connect */}
+          {/* Column 3: Studio — identity, governance, partners */}
+          <div className="space-y-4">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-[#dbc5a6]">
+              Studio
+            </h3>
+            <nav className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-[#e0d4c4]">
+              {[
+                { label: 'About', href: '/about' },
+                { label: 'Vision', href: '/vision' },
+                { label: 'Method', href: '/method' },
+                { label: 'Principles', href: '/principles' },
+                { label: 'How we work', href: '/how-we-work' },
+                { label: 'Governance', href: '/governance' },
+                { label: 'Impact', href: '/impact' },
+                { label: 'Studio services', href: '/studio' },
+                { label: 'Partners', href: '/partners' },
+                { label: 'Events', href: '/events' },
+                { label: 'Ask ACT', href: '/ask' },
+                { label: 'Wiki', href: '/wiki' },
+              ].map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="site-glow-link transition hover:text-white"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
+          {/* Column 4: Connect */}
           <div className="space-y-4">
             <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-[#dbc5a6]">
               Connect

@@ -40,7 +40,13 @@ const nextConfig = {
     ignoreDuringBuilds: true,
   },
   async redirects() {
-    return [];
+    return [
+      { source: '/lcaa', destination: '/method', permanent: true },
+      { source: '/wiki/new', destination: '/wiki', permanent: true },
+      { source: '/engine', destination: '/admin/engine', permanent: true },
+      { source: '/image-picker', destination: '/admin/image-picker', permanent: true },
+      { source: '/media-lab', destination: '/admin/media-lab', permanent: true },
+    ];
   },
   // Exclude admin-wiki subdirectory (separate Next.js app)
   pageExtensions: ['tsx', 'ts', 'jsx', 'js'],

@@ -285,6 +285,36 @@ export default async function ArtPage() {
         </div>
       </section>
 
+      {/* Browse by slice */}
+      <section className="space-y-4">
+        <p className="text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
+          Browse by slice
+        </p>
+        <div className="grid gap-3 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5">
+          {[
+            { label: 'Artists', href: '/art/artists', sub: 'People behind the work' },
+            { label: 'Artworks', href: '/art/artworks', sub: 'The full catalogue' },
+            { label: 'Commissions', href: '/art/commissions', sub: 'Work with the studio' },
+            { label: 'Exhibitions', href: '/art/exhibitions', sub: 'Where the work has shown' },
+            { label: 'Residencies', href: '/art/residencies', sub: 'Come make something with us' },
+          ].map((slice) => (
+            <Link
+              key={slice.href}
+              href={slice.href}
+              className="group rounded-[18px] border border-[var(--we-sand)] bg-white/80 px-4 py-4 transition hover:-translate-y-0.5 hover:border-[#CFA16B] hover:shadow-[0_8px_24px_rgba(50,42,31,0.08)]"
+            >
+              <p className="font-[var(--font-display)] text-lg font-semibold text-[var(--we-olive)]">
+                {slice.label}
+              </p>
+              <p className="mt-1 text-xs leading-5 text-[var(--we-brown)]">{slice.sub}</p>
+              <span className="mt-3 inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#CFA16B] transition group-hover:gap-2">
+                Open <span aria-hidden="true">&rarr;</span>
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* Featured Works */}
       <section id="featured-works" className="space-y-16">
         <SectionHeading

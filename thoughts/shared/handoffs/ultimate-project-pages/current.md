@@ -8,16 +8,22 @@ status: active
 # Work Stream: ultimate-project-pages
 
 ## Ledger
-**Updated:** 2026-04-22T01:00:00Z
-**Goal:** Site-wide page review + SEO + identity-family visual sweep + identity-family voice pass complete
-**Branch:** main (10 commits shipped 0dba621…53246c0)
+**Updated:** 2026-04-22T02:00:00Z
+**Goal:** Site-wide voice pass complete across all user-facing pages (identity + flagships + shared)
+**Branch:** main (11 commits shipped 0dba621…8002eef)
 **Test:** npm run build && npm run dev (dev on :3300)
 
 ### Now
-[->] Identity-family visual AND voice passes both complete across all 10 pages (/about, /vision, /principles, /how-we-work, /governance, /impact, /partners, /events, /studio, /ask). Grep verifies zero matches for avoid-list terms in feedback_external_voice.md. Remaining judgement calls (stat-block color variance on /impact, closing-CTA variance across pages) still flagged for browser-eye review. Suggest `/clear`.
+[->] Voice pass complete site-wide. Grep sweep returns zero hits for avoid-list terms across every user-facing `.tsx` page. Remaining hits are scope-excluded: one JSX comment (/page.tsx:154), `/wiki/source-packets` (internal-tools page drifted to public URL — candidate for /admin demotion), and `/admin/*` pages (internal audience).
+
+### Followups surfaced but deferred
+- `/wiki/source-packets` still uses "Public surfaces", "canonical", "should"-note-to-author, and generally internal-systems framing. Should be demoted to `/admin/source-packets` alongside engine/image-picker/media-lab (Phase D pattern). ~10 min when picked up.
+- Stat-block color variance on `/impact` (4 different hex accents) — may be semantic vs Sankey, needs browser eyes.
+- Closing-CTA variance across identity-family (some have dark callouts, some don't) — likely intentional rhythm, needs browser eyes.
 
 ### Session commit roll-up (most recent first)
 
+- `8002eef` refactor(pages): Phase B.4 voice pass on flagships + shared pages. /governance + /events PageHero descriptions; /method LCAA blurb; /contact LivingSystemStrip; 3× /projects/[slug] handoff card copy; /projects list page; /harvest Barry-shed editorial. Zero avoid-list grep hits across all user-facing pages.
 - `53246c0` refactor(pages): Phase B.3 voice pass on 7 remaining identity pages (/about, /vision, /principles, /how-we-work, /governance, /partners, /events). Retired "public shell/surface/site/studio shell", "living memory/practice/system", "Partnership/Invitation/Principled layer", "field signal", "story layers", "governance surface", "canonical ACT wiki" → "working wiki", "second CMS/design language", and all "should"-note-to-author patterns from user-visible copy.
 - `c66cbad` refactor(pages): identity-family visual sweep — /impact + /ask. Outer `space-y-16` → `space-y-20` (now matches other 8 identity pages). /impact: 3 hand-rolled `<h2 class="text-2xl">` replaced with `SectionHeading` (fixes heading rhythm — family uses display `text-[2rem] md:text-[2.6rem]` with eyebrows); inner `space-y-8` → `space-y-10`. /ask: dropped nested `<main class="min-h-screen bg-gradient-to-b from-stone-50 to-white">` — the stone grey clashed with the sand palette, nested main was semantically wrong, AskACT self-contains its container.
 - `b33a45c` fix(links): stale hrefs → moved admin routes (/engine, /media-lab) cleaned up; VisionSearch mock repointed from /engine to /method.

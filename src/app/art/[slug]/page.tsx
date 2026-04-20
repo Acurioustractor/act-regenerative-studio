@@ -151,6 +151,14 @@ export default async function ArtWorkPage({
           </div>
           <div className="absolute inset-x-0 bottom-0 p-8 md:p-12">
             <div className="flex flex-wrap gap-2 mb-4">
+              {project.connectedProject && project.connectedProjectHref && (
+                <Link
+                  href={project.connectedProjectHref}
+                  className="rounded-full border border-white/40 bg-white/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-white backdrop-blur-sm transition hover:bg-white/25"
+                >
+                  Part of {project.connectedProject} &rarr;
+                </Link>
+              )}
               {project.mediums.map((medium) => (
                 <span
                   key={medium}
@@ -173,6 +181,14 @@ export default async function ArtWorkPage({
       ) : (
         <section className="rounded-[36px] bg-gradient-to-br from-[#f5efe5] via-[#e6dcc9] to-[#d4c2a2] p-8 md:p-14">
           <div className="flex flex-wrap gap-2 mb-4">
+            {project.connectedProject && project.connectedProjectHref && (
+              <Link
+                href={project.connectedProjectHref}
+                className="rounded-full border border-[#245c43] bg-[#245c43] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-[#1d4b37]"
+              >
+                Part of {project.connectedProject} &rarr;
+              </Link>
+            )}
             {project.mediums.map((medium) => (
               <span
                 key={medium}

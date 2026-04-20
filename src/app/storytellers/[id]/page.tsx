@@ -11,6 +11,7 @@ import {
   canDisplayTranscript,
   getTranscriptsForStoryteller,
 } from '@/lib/empathy-ledger-transcripts';
+import { getCanonicalWikiProjectRecords } from '@/lib/wiki/canonical-project-wiki';
 
 interface PageProps {
   params: Promise<{ id: string }>;
@@ -41,11 +42,20 @@ export default async function StorytellerPage({ params }: PageProps) {
   const transcripts = getTranscriptsForStoryteller(id);
   const displayableTranscripts = transcripts.filter(canDisplayTranscript);
 
-  const projectsByStoryteller = Array.from(
+  const projectSlugs = Array.from(
     new Set(
       storyteller.roles.flatMap((r) => r.projects).filter((p) => p.length > 0)
     )
   );
+
+  const projectRecords = await getCanonicalWikiProjectRecords();
+  const projectTitleBySlug = new Map(
+    projectRecords.map((record) => [record.websiteSlug || record.slug, record.title])
+  );
+  const projectsByStoryteller = projectSlugs.map((slug) => ({
+    slug,
+    title: projectTitleBySlug.get(slug) || slug,
+  }));
 
   return (
     <div className="space-y-16">
@@ -194,16 +204,16 @@ export default async function StorytellerPage({ params }: PageProps) {
       {projectsByStoryteller.length > 0 ? (
         <section className="space-y-4">
           <p className="text-xs uppercase tracking-[0.22em] text-[var(--we-brown-deep)]">
-            Projects
+            Projects they shape
           </p>
           <div className="flex flex-wrap gap-3">
-            {projectsByStoryteller.map((slug) => (
+            {projectsByStoryteller.map(({ slug, title }) => (
               <Link
                 key={slug}
                 href={`/projects/${slug}`}
                 className="rounded-full border border-[var(--we-sand)] bg-white px-4 py-2 text-sm text-[var(--we-olive)] transition hover:border-[#7A9B76]"
               >
-                {slug}
+                {title}
               </Link>
             ))}
           </div>
@@ -216,6 +226,34 @@ export default async function StorytellerPage({ params }: PageProps) {
           projectTitle={storyteller.displayName}
         />
       ) : null}
+
+      <section className="rounded-[28px] border border-[var(--we-sand)] bg-[var(--we-olive)] px-6 py-8 text-white md:px-10 md:py-10">
+        <p className="text-xs uppercase tracking-[0.3em] text-[#D7E7D4]">
+          Carry a story
+        </p>
+        <h2 className="mt-3 font-[var(--font-display)] text-2xl font-semibold md:text-3xl">
+          Want to share a story of your own?
+        </h2>
+        <p className="mt-3 max-w-2xl text-sm leading-7 text-[#E8E1D0]">
+          Empathy Ledger is built on consent. Stories stay with the person who
+          tells them. If you&rsquo;d like to carry a story into the work, let us
+          know how you&rsquo;d like to be met.
+        </p>
+        <div className="mt-5 flex flex-wrap gap-3">
+          <Link
+            href="/contact?type=share-your-story&source=storyteller-profile"
+            className="rounded-full bg-[#4CAF50] px-5 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#3E9845]"
+          >
+            Start the conversation
+          </Link>
+          <Link
+            href="/storytellers"
+            className="rounded-full border border-white/30 px-5 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-white/10"
+          >
+            Meet other storytellers
+          </Link>
+        </div>
+      </section>
     </div>
   );
 }

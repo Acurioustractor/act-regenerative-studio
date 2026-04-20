@@ -7,6 +7,10 @@ import {
   getCanonicalWikiPage,
   renderCanonicalWikiMarkdown,
 } from '@/lib/wiki/canonical-site-wiki';
+import {
+  getRelatedWikiPagesInSection,
+  getWikiBacklinksForSlug,
+} from '@/lib/wiki/backlinks';
 
 export default async function WikiPageViewer({
   params,
@@ -20,7 +24,15 @@ export default async function WikiPageViewer({
     notFound();
   }
 
-  const renderedContent = await renderCanonicalWikiMarkdown(page.content);
+  const [renderedContent, backlinks, related] = await Promise.all([
+    renderCanonicalWikiMarkdown(page.content),
+    getWikiBacklinksForSlug(page.stem),
+    getRelatedWikiPagesInSection(page.stem, 5),
+  ]);
+
+  const projectBacklinks = backlinks.fromProjects.slice(0, 6);
+  const wikiBacklinks = backlinks.fromWiki.slice(0, 6);
+  const nextMove = projectBacklinks[0] || null;
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#F6F1E7] via-[#F5F1E8] to-white">
@@ -31,19 +43,12 @@ export default async function WikiPageViewer({
             className="inline-flex items-center gap-2 text-sm text-[#5A4A3A] transition hover:text-[var(--we-olive)]"
           >
             <ArrowLeft className="h-4 w-4" />
-            Back to the ACT wiki
+            Back to the wiki
           </Link>
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <span className="rounded-full bg-[#F5F1E8] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#5A4A3A]">
               {page.sectionTitle}
-            </span>
-            <span className="rounded-full border border-[#D7C4A2] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-[#7A6A55]">
-              {page.source === 'supabase'
-                ? 'Live from Supabase'
-                : page.source === 'live-wiki'
-                  ? 'Live canonical wiki'
-                  : 'Snapshot fallback'}
             </span>
             {page.modifiedAt && (
               <span className="text-xs text-[#8A7A65]">
@@ -61,10 +66,6 @@ export default async function WikiPageViewer({
               {page.excerpt}
             </p>
           )}
-
-          <div className="mt-6 rounded-2xl border border-[var(--we-sand)] bg-[#FDFBF7] px-4 py-3 text-sm text-[#5A4A3A]">
-            Canonical source: {page.relativePath}
-          </div>
         </div>
       </section>
 
@@ -81,43 +82,115 @@ export default async function WikiPageViewer({
               <div className="flex items-center gap-3">
                 <BookOpen className="h-5 w-5 text-[#4CAF50]" />
                 <h2 className="font-[var(--font-display)] text-xl font-semibold text-[var(--we-olive)]">
-                  Living page
+                  About this page
                 </h2>
               </div>
               <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">
-                This page is rendered from the canonical ACT markdown wiki, not a separate CMS
-                entry. As the wiki evolves, this public knowledge surface can evolve with it.
+                Part of the ACT working wiki. We keep our methods, decisions
+                and context in public so you can check the thinking behind any
+                project.
               </p>
             </div>
 
-            <div className="rounded-[28px] border border-[var(--we-sand)] bg-[var(--we-olive)] p-6 text-white shadow-sm">
-              <p className="text-xs uppercase tracking-[0.3em] text-[#D7E7D4]">
-                Next move
-              </p>
-              <h2 className="mt-3 font-[var(--font-display)] text-2xl font-semibold">
-                Follow the ecosystem
-              </h2>
-              <p className="mt-3 text-sm leading-7 text-[#E8E1D0]">
-                Jump from this knowledge page into the public project layer, then back into the
-                wiki when you need the method, the context, or the proof behind it.
-              </p>
-              <div className="mt-5 flex flex-col gap-3">
+            {nextMove ? (
+              <div className="rounded-[28px] border border-[var(--we-sand)] bg-[var(--we-olive)] p-6 text-white shadow-sm">
+                <p className="text-xs uppercase tracking-[0.3em] text-[#D7E7D4]">
+                  See it in the field
+                </p>
+                <h2 className="mt-3 font-[var(--font-display)] text-2xl font-semibold">
+                  {nextMove.title}
+                </h2>
+                <p className="mt-3 text-sm leading-7 text-[#E8E1D0]">
+                  This page shows up directly in the work we&rsquo;re doing on
+                  {' '}
+                  {nextMove.title}.
+                </p>
+                <Link
+                  href={nextMove.href}
+                  className="mt-5 inline-flex rounded-full bg-[#4CAF50] px-4 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#3E9845]"
+                >
+                  Open the project
+                </Link>
+              </div>
+            ) : (
+              <div className="rounded-[28px] border border-[var(--we-sand)] bg-[var(--we-olive)] p-6 text-white shadow-sm">
+                <p className="text-xs uppercase tracking-[0.3em] text-[#D7E7D4]">
+                  Next move
+                </p>
+                <h2 className="mt-3 font-[var(--font-display)] text-2xl font-semibold">
+                  See what this looks like on the ground
+                </h2>
+                <p className="mt-3 text-sm leading-7 text-[#E8E1D0]">
+                  Browse the public works — each one is a place you can step
+                  into, visit, or partner on.
+                </p>
                 <Link
                   href="/projects"
-                  className="rounded-full bg-[#4CAF50] px-4 py-2 text-center text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#3E9845]"
+                  className="mt-5 inline-flex rounded-full bg-[#4CAF50] px-4 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#3E9845]"
                 >
                   Explore projects
                 </Link>
-                <Link
-                  href="/method"
-                  className="rounded-full border border-white/20 px-4 py-2 text-center text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-white/10"
-                >
-                  See the method
-                </Link>
               </div>
-            </div>
+            )}
           </aside>
         </div>
+
+        {(projectBacklinks.length > 0 || wikiBacklinks.length > 0 || related.length > 0) && (
+          <div className="mt-16 grid gap-10 border-t border-[var(--we-sand)] pt-12 md:grid-cols-2">
+            {projectBacklinks.length > 0 && (
+              <div>
+                <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-brown)]">
+                  Where this shows up
+                </p>
+                <h3 className="mt-2 font-[var(--font-display)] text-xl font-semibold text-[var(--we-olive)]">
+                  Projects that reference this page
+                </h3>
+                <ul className="mt-4 space-y-2">
+                  {projectBacklinks.map((entry) => (
+                    <li key={entry.path}>
+                      <Link
+                        href={entry.href}
+                        className="inline-flex items-center gap-2 text-sm text-[var(--we-olive)] transition hover:text-[#3E9845]"
+                      >
+                        <span aria-hidden="true">→</span> {entry.title}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            {(wikiBacklinks.length > 0 || related.length > 0) && (
+              <div>
+                <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-brown)]">
+                  Keep reading
+                </p>
+                <h3 className="mt-2 font-[var(--font-display)] text-xl font-semibold text-[var(--we-olive)]">
+                  {wikiBacklinks.length > 0
+                    ? 'Pages that pick up the same thread'
+                    : `More from ${page.sectionTitle}`}
+                </h3>
+                <ul className="mt-4 space-y-2">
+                  {(wikiBacklinks.length > 0 ? wikiBacklinks : related).map(
+                    (entry) => (
+                      <li key={entry.path}>
+                        <Link
+                          href={entry.href}
+                          className="inline-flex items-center gap-2 text-sm text-[var(--we-olive)] transition hover:text-[#3E9845]"
+                        >
+                          <span aria-hidden="true">→</span> {entry.title}
+                          <span className="text-[10px] uppercase tracking-[0.22em] text-[#8A7A65]">
+                            {entry.sectionTitle}
+                          </span>
+                        </Link>
+                      </li>
+                    )
+                  )}
+                </ul>
+              </div>
+            )}
+          </div>
+        )}
       </section>
     </div>
   );

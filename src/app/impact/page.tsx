@@ -9,7 +9,7 @@ import { REAL_INITIATIVES, REAL_CONTEXTS, REAL_EVIDENCE } from '@/data/alma-seed
 
 export const metadata: Metadata = {
     title: 'Impact & Learning | A Curious Tractor',
-    description: 'A working ACT impact surface using ALMA signal sets, evidence patterns, and contextual learning.',
+    description: 'What the work is actually doing — initiatives, contexts, community authority, and the evidence behind the claims.',
 };
 
 export default function ImpactPage() {
@@ -23,8 +23,8 @@ export default function ImpactPage() {
         <div className="space-y-16">
             <PageHero
                 eyebrow="Impact & learning"
-                title="A working view of ACT’s ALMA signals"
-                description="This page is a learning surface, not a polished impact report. It uses the current ALMA seed set to show how initiatives, contexts, authority, and evidence are being interpreted across the ecosystem."
+                title="What&rsquo;s working, what we&rsquo;re learning"
+                description="How we think about impact: the initiatives, the communities they sit with, who holds authority in each, and the evidence behind each claim. Honest about what&rsquo;s strong and what&rsquo;s still early."
                 actions={[
                     { label: "Open the wiki", href: "/wiki" },
                     { label: "Explore projects", href: "/projects", variant: "outline" },
@@ -35,21 +35,21 @@ export default function ImpactPage() {
                         What this page is for
                     </p>
                     <p>
-                        Use it to understand how ACT is thinking about impact, authority, and evidence. Do not treat it as a final audited dashboard or a real-time data feed.
+                        A working view, not a polished annual report. Read it to understand how ACT tracks what the work is doing &mdash; not as a real-time dashboard.
                     </p>
                 </div>
             </PageHero>
 
             <LivingSystemStrip
-                eyebrow="Impact layer"
-                title="Impact should stay legible without becoming surveillance"
-                description="ACT uses ALMA to hold learning and evidence without flattening people into metrics. The durable method lives in the wiki, and the wider public story continues through projects, works, and consented story layers."
+                eyebrow="How we hold impact"
+                title="Legible learning, not surveillance of people"
+                description="We track what the work is doing without flattening people into metrics. The detailed method sits in the wiki; the wider public story continues through projects, works, and stories carried with consent."
                 wiki={{
                     href: "/wiki/alma",
-                    label: "Open ALMA in the wiki",
+                    label: "Read the method",
                 }}
                 live={{
-                    sourceLabel: "Public impact framing with live project/story context around it",
+                    sourceLabel: "Framed here, lived out across projects and storyteller profiles",
                     href: `${process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL || "https://empathyledger.com"}/projects`,
                 }}
                 stats={[
@@ -61,14 +61,14 @@ export default function ImpactPage() {
 
             <section className="space-y-8">
                 <SectionHeading
-                    eyebrow="Working model"
-                    title="How initiatives move through the current ALMA signal set"
-                    description="This diagram reflects the current seeded initiative set in the public codebase. It is useful for pattern-reading and discussion, not as a claim of real-time completeness."
+                    eyebrow="How the work moves"
+                    title="From listening to action, across the current set of initiatives"
+                    description="A map of how our current work connects listening, communities, authority, and evidence. Useful for pattern-reading, not a real-time audit."
                 />
                 <div className="w-full h-[500px] bg-[#F6F1E7] border border-[#E1D3BA] rounded-3xl overflow-hidden p-8 shadow-sm">
                     <div className="flex justify-between items-center mb-6 border-b border-[#E1D3BA]/50 pb-2">
-                        <h3 className="text-sm font-bold uppercase tracking-widest text-[var(--we-warm-brown)]">ALMA signal flow</h3>
-                        <span className="text-xs text-[#8B4513] bg-[#F0EAE0] px-2 py-1 rounded-full">Working seed set</span>
+                        <h3 className="text-sm font-bold uppercase tracking-widest text-[var(--we-warm-brown)]">How the work flows</h3>
+                        <span className="text-xs text-[#8B4513] bg-[#F0EAE0] px-2 py-1 rounded-full">Current working set</span>
                     </div>
                     <ImpactSankey />
                 </div>
@@ -97,9 +97,9 @@ export default function ImpactPage() {
 
             <section className="space-y-8">
                 <div className="flex items-end justify-between border-b border-[#E1D3BA] pb-4">
-                    <h2 className="text-2xl font-[var(--font-display)]">Current initiative set</h2>
+                    <h2 className="text-2xl font-[var(--font-display)]">What we&rsquo;re working on right now</h2>
                     <span className="text-xs uppercase tracking-widest text-[var(--we-warm-brown)]">
-                        Working ALMA slice
+                        Current set
                     </span>
                 </div>
 

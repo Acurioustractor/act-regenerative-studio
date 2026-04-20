@@ -83,7 +83,7 @@ export default async function StudioPage() {
       <PageHero
         eyebrow="Studio"
         title="The studio that holds land, story, justice, and works together"
-        description="ACT Regenerative Innovation Studio is the public shell for a living ecosystem. It holds the shared method, the field memory, and the connective infrastructure that lets projects grow without becoming disconnected brands."
+        description="The studio is what keeps the projects connected. Shared land, shared method, shared memory &mdash; so the work can grow without the pieces drifting into unrelated brands."
         actions={[
           { label: "Explore projects", href: "/projects" },
           { label: "Open the wiki", href: "/wiki", variant: "outline" },
@@ -92,9 +92,9 @@ export default async function StudioPage() {
         <div className="space-y-4">
           <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">What holds it together</p>
           <ul className="space-y-2 text-sm leading-6 text-[var(--we-brown)]">
-            <li>Shared method: Listen, Curiosity, Action, Art.</li>
-            <li>Shared memory: the ACT wiki remains the durable source of truth.</li>
-            <li>Shared live layer: Empathy Ledger keeps voice, photos, video, and field material moving.</li>
+            <li>Shared method: listen, curiosity, action, art.</li>
+            <li>Shared memory: the wiki is where methods, decisions, and thinking live in public.</li>
+            <li>Shared stories: carried with consent, kept moving between the projects they belong to.</li>
             <li>Shared promise: we build with communities and design to hand over the keys.</li>
           </ul>
         </div>

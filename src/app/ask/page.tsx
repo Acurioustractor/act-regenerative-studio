@@ -12,8 +12,8 @@ export default function AskPage() {
     <div className="space-y-16">
       <PageHero
         eyebrow="Ask ACT"
-        title="Query the public ACT knowledge layer"
-        description="Use this surface to ask questions across the ACT wiki, project framing, methods, and public knowledge. It is a reading aid for the living system, not a replacement for shared judgment."
+        title="Ask a question about the work"
+        description="A direct way to find your way into ACT&rsquo;s projects, methods, and thinking. Answers come from the wiki and point you back to the source so you can read the full context yourself."
         actions={[
           { label: "Open the wiki", href: "/wiki" },
           { label: "Explore projects", href: "/projects", variant: "outline" },
@@ -21,10 +21,10 @@ export default function AskPage() {
       >
         <div className="space-y-3">
           <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
-            How to use it
+            What to ask
           </p>
           <p>
-            Ask practical questions about ACT’s projects, methods, places, and working language. For sensitive or internal matters, the public shell is not the right source.
+            Practical questions about projects, methods, places, and the language we use. For sensitive or internal matters, this isn&rsquo;t the right channel &mdash; reach out directly instead.
           </p>
         </div>
       </PageHero>

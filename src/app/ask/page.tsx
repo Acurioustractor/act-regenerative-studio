@@ -30,18 +30,18 @@ export default function AskPage() {
       </PageHero>
 
       <LivingSystemStrip
-        eyebrow="Knowledge query"
-        title="Answers should stay connected to the canonical wiki"
-        description="This tool sits on top of the same public knowledge system as the rest of the site. The durable memory is still the ACT wiki, and the right next step after a useful answer is often to open the underlying page."
+        eyebrow="Ask"
+        title="Ask anything about ACT's work"
+        description="A conversational way into the ACT wiki. Each answer points back to the source page so you can read the full context."
         wiki={{
           href: "/wiki",
-          label: "Open ACT wiki",
+          label: "Browse the wiki",
         }}
         live={{
-          sourceLabel: "Public knowledge query surface",
+          sourceLabel: null,
         }}
         stats={[
-          { label: "Source", value: "Canonical wiki" },
+          { label: "Source", value: "ACT Wiki" },
           { label: "Use", value: "Public query" },
           { label: "Scope", value: "ACT knowledge" },
         ]}

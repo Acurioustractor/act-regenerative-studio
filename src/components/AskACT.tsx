@@ -164,7 +164,7 @@ export function AskACT() {
           {showSources && response.sources && response.sources.length > 0 && (
             <details className="bg-stone-50 border border-stone-200 rounded-lg">
               <summary className="px-6 py-4 cursor-pointer font-medium text-stone-900 hover:bg-stone-100 transition-colors">
-                📚 Sources ({response.sources.length})
+                Sources ({response.sources.length})
               </summary>
               <div className="px-6 pb-4 space-y-3">
                 {response.sources.map((source, index) => (

@@ -79,20 +79,20 @@ export default async function WikiHomepage() {
               stat: `${ecosystemSummary.surfaceCount} public surfaces`,
             },
             {
-              title: 'Source packets',
+              title: 'Stories from the field',
               description:
-                'Read the governed packet layer that moves approved narrative and media from Empathy Ledger into the hub.',
+                'Voices, interviews, and field material collected with consent through Empathy Ledger.',
               href: '/wiki/source-packets',
-              cta: 'Open source packets',
-              stat: `${packetSnapshot.packetCount} synced packets`,
+              cta: 'Browse stories',
+              stat: `${packetSnapshot.packetCount} stories`,
             },
             {
-              title: 'Source bridges',
+              title: 'How this site stays current',
               description:
-                'Follow the path from canonical source note to implementation repo to public page.',
+                'Where each claim, number, and quote on this site originates — wiki, repo, or community story.',
               href: '/wiki/source-bridges',
-              cta: 'Open source bridges',
-              stat: `${bridgeCount} bridge notes`,
+              cta: 'See the trail',
+              stat: `${bridgeCount} sources`,
             },
           ].map((item) => (
             <Link

@@ -17,25 +17,21 @@ const phases = [
   {
     key: 'listen',
     title: 'Listen',
-    icon: '👂',
     description: 'Deep listening to place, people, history, community voice',
   },
   {
     key: 'curiosity',
     title: 'Curiosity',
-    icon: '🔍',
     description: 'Think deeply, prototype boldly, test rigorously',
   },
   {
     key: 'action',
     title: 'Action',
-    icon: '⚡',
     description: 'Build tangible solutions alongside communities',
   },
   {
     key: 'art',
     title: 'Art',
-    icon: '🎨',
     description: 'Translate change into culture, challenge status quo',
   },
 ] as const;
@@ -85,11 +81,13 @@ function PhaseCard({
         {/* Phase header */}
         <div className="mb-4 flex items-center gap-3">
           <span
-            className={`text-3xl ${
-              hasContent ? '' : 'grayscale opacity-50'
+            className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-xs font-semibold tracking-[0.18em] ${
+              hasContent
+                ? `${style.badge} border-transparent`
+                : 'border-[#D7C4A2] text-[#A0A0A0]'
             }`}
           >
-            {phase.icon}
+            {String(index + 1).padStart(2, '0')}
           </span>
           <div>
             <h3

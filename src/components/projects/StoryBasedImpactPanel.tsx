@@ -79,22 +79,18 @@ export default function StoryBasedImpactPanel({
         <MetricCard
           label="Contributing Storytellers"
           value={metrics.storytellerCount}
-          icon="👥"
         />
         <MetricCard
           label="Stories Shared"
           value={metrics.storyCount}
-          icon="📖"
         />
         <MetricCard
           label="Themes Identified"
           value={metrics.themeCount}
-          icon="🎯"
         />
         <MetricCard
           label="Community Insights"
           value={metrics.insightCount}
-          icon="💡"
         />
       </div>
 
@@ -146,13 +142,10 @@ export default function StoryBasedImpactPanel({
   );
 }
 
-function MetricCard({ label, value, icon }: { label: string; value: number; icon: string }) {
+function MetricCard({ label, value }: { label: string; value: number }) {
   return (
     <div className="bg-white rounded-lg border border-gray-200 p-4">
-      <div className="flex items-center justify-between mb-2">
-        <span className="text-2xl">{icon}</span>
-        <span className="text-3xl font-bold text-gray-900">{value}</span>
-      </div>
+      <div className="text-3xl font-bold text-gray-900 mb-2">{value}</div>
       <p className="text-sm text-gray-600">{label}</p>
     </div>
   );
@@ -176,37 +169,24 @@ function InsightCard({ insight }: { insight: CommunityInsight }) {
     wisdom: 'bg-amber-50 text-amber-700 border-amber-200',
   };
 
-  const typeIcons = {
-    pattern: '🔍',
-    trend: '📈',
-    recommendation: '💡',
-    innovation: '🚀',
-    wisdom: '🌟',
-  };
-
   return (
     <div className={`rounded-lg border p-4 ${typeColors[insight.type] || typeColors.pattern}`}>
-      <div className="flex items-start gap-3">
-        <span className="text-2xl">{typeIcons[insight.type]}</span>
-        <div className="flex-1">
-          <div className="flex items-center justify-between mb-2">
-            <span className="text-xs font-semibold uppercase tracking-wider">
-              {insight.type}
-            </span>
-            {insight.confidence && (
-              <span className="text-xs opacity-75">
-                {Math.round(insight.confidence * 100)}% confidence
-              </span>
-            )}
-          </div>
-          <p className="text-sm font-medium mb-2">{insight.insight}</p>
-          {insight.supportingStoryCount > 0 && (
-            <p className="text-xs opacity-75">
-              Based on {insight.supportingStoryCount} community {insight.supportingStoryCount === 1 ? 'story' : 'stories'}
-            </p>
-          )}
-        </div>
+      <div className="flex items-center justify-between mb-2">
+        <span className="text-xs font-semibold uppercase tracking-wider">
+          {insight.type}
+        </span>
+        {insight.confidence && (
+          <span className="text-xs opacity-75">
+            {Math.round(insight.confidence * 100)}% confidence
+          </span>
+        )}
       </div>
+      <p className="text-sm font-medium mb-2">{insight.insight}</p>
+      {insight.supportingStoryCount > 0 && (
+        <p className="text-xs opacity-75">
+          Based on {insight.supportingStoryCount} community {insight.supportingStoryCount === 1 ? 'story' : 'stories'}
+        </p>
+      )}
     </div>
   );
 }

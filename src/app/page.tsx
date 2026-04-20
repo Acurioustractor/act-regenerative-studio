@@ -131,7 +131,7 @@ export default async function HomePage() {
       <section className="px-8 py-28 md:py-36">
         <div className="mx-auto max-w-[1200px]">
           <SectionHeader
-            eyebrow="Five flagship fields"
+            eyebrow="Flagship projects"
             title="How the work meets the ground"
             eyebrowColor="muted"
           />

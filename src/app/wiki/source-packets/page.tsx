@@ -70,12 +70,12 @@ export default async function SourcePacketsPage() {
   return (
     <div className="space-y-20">
       <PageHero
-        eyebrow="Source packets"
-        title="A governed packet contract between living story work and the public hub"
-        description="These packets are the seam that keeps ACT from rebuilding public story, media, and proof surfaces by hand. The wiki holds durable meaning. Empathy Ledger assembles approved packet outputs. The hub composes them into public pages."
+        eyebrow="Stories from the field"
+        title="Voices, interviews, and field material"
+        description="Stories collected with consent through Empathy Ledger and composed into ACT's public pages. Each one carries who it's from, where, and how it can be used."
         actions={[
-          { label: 'Open ecosystem map', href: '/ecosystem' },
-          { label: 'Open source bridges', href: '/wiki/source-bridges', variant: 'outline' },
+          { label: 'Browse the ecosystem', href: '/ecosystem' },
+          { label: 'How this site stays current', href: '/wiki/source-bridges', variant: 'outline' },
         ]}
       >
         <div className="space-y-4">

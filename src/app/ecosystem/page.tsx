@@ -205,35 +205,35 @@ export default async function EcosystemPage() {
 
       <section className="space-y-10">
         <SectionHeading
-          eyebrow="Assembly"
-          title="How this map stays alive"
-          description="The ecosystem map is now a composed public surface, not a static diagram. The wiki holds durable meaning. Source packets move approved narrative and media. Source bridges keep the site attached to its canonical trail."
+          eyebrow="How this works"
+          title="A living map, not a static diagram"
+          description="ACT's projects, partners, and methods change as the work changes. This page is composed from the wiki and the live story platform — so what you see is current, not a snapshot from last quarter."
         />
         <div className="grid gap-4 md:grid-cols-3">
           {[
             {
-              title: "Canonical wiki",
+              title: "ACT Wiki",
               description:
-                "The durable memory layer where ACT authors meaning, not just display copy.",
+                "Background on every project, method, and partnership in the ACT ecosystem.",
               href: "/wiki",
-              cta: "Open wiki memory",
-              meta: `${ecosystemSummary.verifiedCount} verified nodes across the living system`,
+              cta: "Browse the wiki",
+              meta: `${ecosystemSummary.verifiedCount} active projects and methods`,
             },
             {
-              title: "Source packets",
+              title: "Stories from the field",
               description:
-                "Governed packet outputs from Empathy Ledger that the hub can compose without duplicating the story system.",
+                "Voices, interviews, and field material from communities ACT works with.",
               href: "/wiki/source-packets",
-              cta: "Open source packets",
-              meta: `${signalPayload.summary.featuredWorkCount} featured works already visible downstream`,
+              cta: "Browse stories",
+              meta: `${signalPayload.summary.featuredWorkCount} featured works`,
             },
             {
-              title: "Source bridges",
+              title: "Open decisions",
               description:
-                "The trail from canonical note to source summary to implementation repo to public surface.",
+                "Live questions ACT is working through — what's still unresolved, where input is welcome.",
               href: "/wiki/source-bridges",
-              cta: "Open source bridges",
-              meta: `${ecosystemSummary.openDecisionCount} human decisions still open in the public system`,
+              cta: "See open decisions",
+              meta: `${ecosystemSummary.openDecisionCount} open questions`,
             },
           ].map((item) => (
             <Link
@@ -365,7 +365,7 @@ export default async function EcosystemPage() {
             },
             {
               title: "Wiki",
-              description: "Browse the durable memory layer that keeps the public site grounded.",
+              description: "Browse background on every project, method, and partnership.",
               href: "/wiki",
               cta: "Open the wiki",
             },

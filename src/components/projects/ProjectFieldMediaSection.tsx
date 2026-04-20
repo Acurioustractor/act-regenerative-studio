@@ -59,10 +59,11 @@ export function ProjectFieldMediaSection({
                 <h2 className="font-[var(--font-display)] text-[2rem] font-semibold leading-tight text-white md:text-[2.5rem]">
                   {projectTitle}
                 </h2>
-                <p className="mt-3 text-sm leading-7 text-white/80 md:text-base">
-                  {leadImage.caption ||
-                    `${projectTitle} should feel grounded in the places, people, and material conditions it is working with.`}
-                </p>
+                {leadImage.caption ? (
+                  <p className="mt-3 text-sm leading-7 text-white/80 md:text-base">
+                    {leadImage.caption}
+                  </p>
+                ) : null}
               </div>
             </div>
           </div>
@@ -72,9 +73,9 @@ export function ProjectFieldMediaSection({
       <div className="space-y-6">
         {media.video ? (
           <a
-            href={media.video.url}
-            target="_blank"
-            rel="noopener noreferrer"
+            href={media.video.href || media.video.url}
+            target={(media.video.href || media.video.url).startsWith('http') ? '_blank' : undefined}
+            rel={(media.video.href || media.video.url).startsWith('http') ? 'noopener noreferrer' : undefined}
             className="group relative block overflow-hidden rounded-[30px] border border-[#2F2A25] bg-[#171612] text-[#F3EBDD]"
           >
             <div className="absolute inset-0">
@@ -117,13 +118,10 @@ export function ProjectFieldMediaSection({
                 <h3 className="font-[var(--font-display)] text-2xl font-semibold leading-tight">
                   {media.video.title}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-[#D7C8B2]">
-                  Open the footage and let the moving image carry some of the texture that a project page alone cannot.
-                </p>
                 <span
                   className={`mt-4 inline-flex items-center rounded-full px-4 py-2 text-[11px] font-semibold uppercase tracking-[0.22em] ${style.badge}`}
                 >
-                  Open footage
+                  Watch
                 </span>
               </div>
             </div>
@@ -175,14 +173,14 @@ export function ProjectFieldMediaSection({
           >
             <div>
               <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#7A9B76]">
-                Dedicated project surface
+                Project site
               </p>
               <p className="mt-1 text-sm leading-6 text-[var(--we-brown)]">
-                Jump to the project’s own public site when you need the deeper spoke, not just the ACT hub framing.
+                {projectTitle} runs its own site — visit it for the deeper story, current programs, and how to get involved.
               </p>
             </div>
             <span className="text-sm font-semibold uppercase tracking-[0.18em]">
-              Visit site
+              Visit
             </span>
           </a>
         ) : null}

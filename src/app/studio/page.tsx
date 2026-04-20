@@ -101,22 +101,22 @@ export default async function StudioPage() {
       </PageHero>
 
       <LivingSystemStrip
-        eyebrow="Studio system"
-        title="The studio is where durable memory meets live field material"
-        description="This site no longer needs separate project brochures to stay current. Core framing comes from the ACT wiki, while approved stories, voices, and media can continue arriving through Empathy Ledger as the ecosystem changes."
+        eyebrow="The studio"
+        title="Where the work gets made"
+        description="ACT Regenerative Studio is the workshop behind the projects — the place where ideas get prototyped, partnerships are designed, and field material from communities feeds back into the next round of work."
         wiki={{
           href: "/wiki",
-          label: "Open ACT wiki",
+          label: "Background & method",
         }}
         live={{
-          sourceLabel: liveServices.length > 0 ? "Live services and story layers connected" : null,
+          sourceLabel: null,
           storyCount: studioStoryCount,
           mediaCount: studioMediaCount,
           href: `${process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL || "https://empathyledger.com"}/projects`,
         }}
         stats={[
-          { label: "Public fields", value: curatedProjects.length },
-          ...(liveServices.length > 0 ? [{ label: "Live capabilities", value: liveServices.length }] : []),
+          { label: "Projects", value: curatedProjects.length },
+          ...(liveServices.length > 0 ? [{ label: "Services", value: liveServices.length }] : []),
           ...(studioWorkCount > 0 ? [{ label: "Connected works", value: studioWorkCount }] : []),
         ]}
       />

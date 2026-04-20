@@ -17,6 +17,7 @@
     "sync:canon": "node scripts/sync-living-ecosystem-canon.mjs",
     "start": "next start",
     "lint": "next lint",
+    "check:copy": "node scripts/check-public-copy.mjs",
     "sync:notion": "node scripts/sync-notion-projects.mjs",
     "sync:project-codes": "node scripts/sync-project-code-registry.mjs",
     "sync:el-media": "node scripts/sync-el-media.mjs",

@@ -53,50 +53,40 @@ export function ProjectEntryBridgeSection({
         <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
           <div className="space-y-4">
             <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-brown-deep)]">
-              Living project system
+              About this project
             </p>
             <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
-              This route is tied to the same flagship field, wiki, and story graph
+              {project.tagline || project.title}
             </h2>
-            <p className="text-sm leading-7 text-[var(--we-brown)]">
-              The durable memory of this project lives in the ACT wiki. Approved
-              stories, media, and voices flow in through Empathy Ledger. This
-              page is one entry point into that living system, not a separate
-              brochure.
-            </p>
             {flagshipSummary ? (
-              <div className="rounded-2xl border border-[var(--we-sand)] bg-white/70 px-4 py-4">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)]">
-                  Canonical field brief
-                </p>
-                <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">
-                  {flagshipSummary}
-                </p>
-              </div>
+              <p className="text-sm leading-7 text-[var(--we-brown)]">
+                {flagshipSummary}
+              </p>
             ) : null}
             <div className="flex flex-wrap gap-3">
-              <Link
-                href={canonicalFieldPath}
-                className="rounded-full bg-[#4CAF50] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#3E9845]"
-              >
-                Open flagship field
-              </Link>
-              <Link
-                href={`/wiki/${project.slug}`}
-                className="rounded-full border border-[#4CAF50] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:bg-[#E5F4E4]"
-              >
-                Open wiki entry
-              </Link>
               {project.projectWebsiteUrl ? (
                 <a
                   href={project.projectWebsiteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full border border-[#CFA16B] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:bg-[#F8E8D6]"
+                  className="rounded-full bg-[#4CAF50] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#3E9845]"
                 >
-                  Visit project website
+                  Visit {project.title}
                 </a>
-              ) : null}
+              ) : (
+                <Link
+                  href={canonicalFieldPath}
+                  className="rounded-full bg-[#4CAF50] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#3E9845]"
+                >
+                  Read more
+                </Link>
+              )}
+              <Link
+                href={`/wiki/${project.slug}`}
+                className="rounded-full border border-[#4CAF50] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:bg-[#E5F4E4]"
+              >
+                Background &amp; method
+              </Link>
               {sourceCodeUrl ? (
                 <a
                   href={sourceCodeUrl}
@@ -125,13 +115,6 @@ export function ProjectEntryBridgeSection({
               {flagshipPack?.canonicalCode || project.wikiData?.code ? (
                 <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]">
                   Code: {flagshipPack?.canonicalCode || project.wikiData?.code}
-                </span>
-              ) : null}
-              {liveMeta?.source ? (
-                <span className="rounded-full bg-[#EDF6EC] px-3 py-1 text-xs font-medium text-[var(--we-olive)]">
-                  {liveMeta.source === "site-syndication"
-                    ? "Site-scoped syndication"
-                    : "Content Hub fallback"}
                 </span>
               ) : null}
             </div>
@@ -171,22 +154,14 @@ export function ProjectEntryBridgeSection({
               </div>
             </div>
 
-            {flagshipPack ? (
+            {flagshipPack && leadPeople.length > 0 ? (
               <div className="rounded-2xl border border-[var(--we-sand)] bg-white/70 px-4 py-4">
-                <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-[11px] font-medium text-[var(--we-brown-deep)]">
-                    {flagshipPack.sourceBridges.length} source bridge
-                    {flagshipPack.sourceBridges.length === 1 ? "" : "s"}
-                  </span>
-                  <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-[11px] font-medium text-[var(--we-brown-deep)]">
-                    {flagshipPack.keyPeople.length} key people
-                  </span>
-                </div>
-                {leadPeople.length > 0 ? (
-                  <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">
-                    Key people: {leadPeople.join(", ")}
-                  </p>
-                ) : null}
+                <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--we-warm-brown)]">
+                  Led by
+                </p>
+                <p className="mt-2 text-sm leading-7 text-[var(--we-brown)]">
+                  {leadPeople.join(", ")}
+                </p>
               </div>
             ) : null}
           </div>
@@ -200,18 +175,12 @@ export function ProjectEntryBridgeSection({
               <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
                 From the field
               </p>
-              <p className="mt-2 max-w-2xl text-sm leading-7 text-[#5F4E3F]">
-                This preview now follows the same curated field sequence as the
-                full project page: real motion first where it exists, then
-                supporting stills that hold place, people, and material
-                conditions together.
-              </p>
               <div className="mt-4 space-y-4">
                 {fieldMedia.video ? (
                   <a
-                    href={fieldMedia.video.url}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={fieldMedia.video.href || fieldMedia.video.url}
+                    target={(fieldMedia.video.href || fieldMedia.video.url).startsWith('http') ? '_blank' : undefined}
+                    rel={(fieldMedia.video.href || fieldMedia.video.url).startsWith('http') ? 'noopener noreferrer' : undefined}
                     className="group relative block overflow-hidden rounded-[28px] border border-[#2F2A25] bg-[#171612] text-[#F3EBDD]"
                   >
                     <div className="absolute inset-0">
@@ -254,9 +223,6 @@ export function ProjectEntryBridgeSection({
                         <h3 className="font-[var(--font-display)] text-2xl font-semibold leading-tight text-white">
                           {fieldMedia.video.title}
                         </h3>
-                        <p className="mt-3 text-sm leading-7 text-[#D7C8B2]">
-                          Let the moving image do some of the narrative work before the page asks for interpretation.
-                        </p>
                       </div>
                     </div>
                   </a>
@@ -301,13 +267,13 @@ export function ProjectEntryBridgeSection({
             </div>
           ) : null}
 
-          {(relatedWorks.length > 0 || hasLiveContent) ? (
+          {relatedWorks.length > 0 ? (
             <div className="rounded-3xl border border-[#2F2A25] bg-[#171612] p-5 text-[#F3EBDD]">
               <p className="text-xs uppercase tracking-[0.3em] text-[#CFA16B]">
-                Studio line
+                Related work
               </p>
               <h3 className="mt-2 font-[var(--font-display)] text-xl font-semibold">
-                Related works and live signals
+                See also
               </h3>
               <div className="mt-4 space-y-3">
                 {relatedWorks.slice(0, 3).map((work) => (
@@ -327,13 +293,6 @@ export function ProjectEntryBridgeSection({
                     </p>
                   </Link>
                 ))}
-                {hasLiveContent ? (
-                  <p className="text-sm leading-7 text-[#D7C8B2]">
-                    Approved content from Empathy Ledger can keep this route
-                    fresh with new portraits, clips, interviews, and field
-                    material as the work grows.
-                  </p>
-                ) : null}
               </div>
             </div>
           ) : null}

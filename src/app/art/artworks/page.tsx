@@ -5,8 +5,8 @@ import SectionHeading from "../../../components/SectionHeading";
 import { getFeaturedWorks } from "@/lib/works/live-featured-works";
 
 function formatLiveSource(source: "site-syndication" | "content-hub" | null) {
-  if (source === "site-syndication") return "Site-scoped live feed";
-  if (source === "content-hub") return "Content Hub fallback";
+  if (source === "site-syndication") return "Live feed";
+  if (source === "content-hub") return "Live feed";
   return "Project record";
 }
 

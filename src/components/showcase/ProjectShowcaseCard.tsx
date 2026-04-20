@@ -119,7 +119,7 @@ export function ProjectShowcaseCard({ project }: { project: Project }) {
       status: 'bg-[var(--we-olive)] text-white',
     };
 
-  const leadTheme = project.tags[0] || 'Flagship field';
+  const leadTheme = project.tags[0] || 'Project';
   const visibleSignals = [
     project.liveSignals?.storyCount
       ? `${project.liveSignals.storyCount} stories`

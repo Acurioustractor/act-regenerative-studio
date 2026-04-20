@@ -78,25 +78,21 @@ export default function CommunityImpactPanel({
           <MetricCard
             label="Storytellers"
             value={metrics.activeStorytellers}
-            icon="👥"
             compact
           />
           <MetricCard
             label="Stories"
             value={metrics.totalStories}
-            icon="📖"
             compact
           />
           <MetricCard
             label="Themes"
             value={metrics.culturalThemes.length}
-            icon="🎯"
             compact
           />
           <MetricCard
             label="Resilience"
             value={`${metrics.communityResilience}%`}
-            icon="💪"
             compact
           />
         </div>
@@ -121,25 +117,21 @@ export default function CommunityImpactPanel({
         <MetricCard
           label="Active Storytellers"
           value={metrics.activeStorytellers}
-          icon="👥"
           description="Community voices contributing"
         />
         <MetricCard
           label="Stories Shared"
           value={metrics.totalStories}
-          icon="📖"
           description="Narratives preserved"
         />
         <MetricCard
           label="Cultural Themes"
           value={metrics.culturalThemes.length}
-          icon="🎯"
           description="Identified across stories"
         />
         <MetricCard
           label="Elder Wisdom"
           value={metrics.elderWisdomQuotes}
-          icon="🌟"
           description="Approved quotes shared"
         />
       </div>
@@ -149,19 +141,16 @@ export default function CommunityImpactPanel({
         <MetricCard
           label="Healing Journeys"
           value={metrics.healingJourneys}
-          icon="🌿"
           description="Stories of transformation"
         />
         <MetricCard
           label="Intergenerational Connections"
           value={metrics.intergenerationalConnections}
-          icon="🤝"
           description="Elder-youth bonds"
         />
         <MetricCard
           label="Transcripts"
           value={metrics.totalTranscripts}
-          icon="📝"
           description="Full story transcriptions"
         />
       </div>
@@ -220,23 +209,18 @@ export default function CommunityImpactPanel({
 function MetricCard({
   label,
   value,
-  icon,
   description,
   compact = false,
 }: {
   label: string;
   value: number | string;
-  icon: string;
   description?: string;
   compact?: boolean;
 }) {
   if (compact) {
     return (
       <div className="bg-white rounded-lg border border-gray-200 p-3">
-        <div className="flex items-center justify-between mb-1">
-          <span className="text-xl">{icon}</span>
-          <span className="text-2xl font-bold text-gray-900">{value}</span>
-        </div>
+        <div className="text-2xl font-bold text-gray-900 mb-1">{value}</div>
         <p className="text-xs text-gray-600">{label}</p>
       </div>
     );
@@ -244,10 +228,7 @@ function MetricCard({
 
   return (
     <div className="bg-white rounded-lg border border-gray-200 p-4">
-      <div className="flex items-center justify-between mb-2">
-        <span className="text-2xl">{icon}</span>
-        <span className="text-3xl font-bold text-gray-900">{value}</span>
-      </div>
+      <div className="text-3xl font-bold text-gray-900 mb-2">{value}</div>
       <p className="text-sm font-medium text-gray-700">{label}</p>
       {description && (
         <p className="text-xs text-gray-500 mt-1">{description}</p>

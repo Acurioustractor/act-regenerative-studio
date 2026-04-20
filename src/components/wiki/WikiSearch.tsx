@@ -187,7 +187,7 @@ export function WikiSearch({ pages, sections }: WikiSearchProps) {
                 {page.title}
               </h3>
               <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">
-                {page.excerpt || 'Open this page to read the full ACT wiki entry.'}
+                {page.excerpt || 'Read the full page for context, examples, and links.'}
               </p>
               <div className="mt-5 flex items-center justify-between text-xs text-[#7A6A55]">
                 <span className="truncate pr-2">{page.relativePath}</span>

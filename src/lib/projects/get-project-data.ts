@@ -196,6 +196,35 @@ function resolveProjectWebsiteUrl(
   return null;
 }
 
+// Captions that look like internal authoring logs, debugging notes, or
+// import provenance leaking through from the source platform. These should
+// never reach the public site as captions.
+const INTERNAL_CAPTION_PATTERNS = [
+  /^Imported from /i,
+  /curated-2025 for Compendium 2026/i,
+  /^Image:\s/i,
+  /\bplacemat\b/i,
+];
+
+function sanitizeCaption(caption: string | null | undefined): string | undefined {
+  if (!caption) return undefined;
+  const trimmed = caption.trim();
+  if (!trimmed) return undefined;
+  if (INTERNAL_CAPTION_PATTERNS.some((pattern) => pattern.test(trimmed))) {
+    return undefined;
+  }
+  return trimmed;
+}
+
+function sanitizeAlt(alt: string | null | undefined): string | undefined {
+  if (!alt) return undefined;
+  const trimmed = alt.trim();
+  if (!trimmed) return undefined;
+  // "Image: foo.jpg" style filenames are not useful alt text.
+  if (/^Image:\s/i.test(trimmed)) return undefined;
+  return trimmed;
+}
+
 function mapEmpathyLedgerMediaToGallery(
   content: FeaturedContentResponse | null
 ): EnrichedProject['mediaGallery'] {
@@ -207,8 +236,8 @@ function mapEmpathyLedgerMediaToGallery(
     thumbnailUrl: item.thumbnail_url || item.preview_url || undefined,
     type: item.kind,
     title: item.title || undefined,
-    alt: item.alt || item.title || undefined,
-    caption: item.caption || undefined,
+    alt: sanitizeAlt(item.alt) || sanitizeAlt(item.title),
+    caption: sanitizeCaption(item.caption),
     credit: item.credit || undefined,
     isHero: item.is_hero,
     isFeatured: item.is_featured,
@@ -243,8 +272,8 @@ function mapSourcePacketMediaToGallery(
       id: item.asset_id,
       url: item.uri_or_path,
       type: item.kind || 'image',
-      alt: item.alt_text || undefined,
-      caption: item.caption || undefined,
+      alt: sanitizeAlt(item.alt_text),
+      caption: sanitizeCaption(item.caption),
       isHero: false,
       isFeatured: true,
       source: 'empathy_ledger',

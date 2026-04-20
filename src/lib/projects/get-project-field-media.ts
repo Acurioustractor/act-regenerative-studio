@@ -20,6 +20,12 @@ export interface ProjectFieldMediaVideo {
   eyebrow: string;
   sourceTitle: string | null;
   autoplay?: boolean;
+  /**
+   * Where the video card should link to. Defaults to opening the raw asset
+   * (`url`) but should be set to a real destination (project site, storyteller
+   * page) where one is available.
+   */
+  href?: string;
 }
 
 export interface ProjectFieldMediaSet {
@@ -87,8 +93,7 @@ const LOCAL_FIELD_MEDIA_OVERRIDES: Record<
         id: 'justicehub-community-still-2',
         url: '/media/field-stills/justicehub-community-2.jpg',
         alt: 'People gathering in a JusticeHub community setting',
-        caption:
-          'The work should read through real social texture: conversation, bodies, and trust in the room.',
+        caption: 'A community gathering inside the JusticeHub network.',
         eyebrow: 'Community portrait',
         sourceTitle: 'JusticeHub',
         href: '/media/field-stills/justicehub-community-2.jpg',
@@ -173,8 +178,7 @@ const LOCAL_FIELD_MEDIA_OVERRIDES: Record<
         id: 'black-cockatoo-valley-farm-aerial-still',
         url: '/media/field-stills/black-cockatoo-valley-farm-aerial.jpg',
         alt: 'Fog lifting above Black Cockatoo Valley canopy',
-        caption:
-          'Black Cockatoo Valley should open with the pace and scale of the land itself, not a generic project card image.',
+        caption: 'Fog lifting over the valley canopy.',
         eyebrow: 'Farm aerial still',
         sourceTitle: 'Black Cockatoo Valley',
         href: '/media/field-stills/black-cockatoo-valley-farm-aerial.jpg',
@@ -183,8 +187,7 @@ const LOCAL_FIELD_MEDIA_OVERRIDES: Record<
         id: 'black-cockatoo-valley-farm-aerial-still-2',
         url: '/media/field-stills/black-cockatoo-valley-farm-aerial-2.jpg',
         alt: 'Morning light moving over Black Cockatoo Valley canopy',
-        caption:
-          'The secondary frames should hold the slower rhythm of the valley: tree line, light, and the feeling of moving through Country.',
+        caption: 'Morning light moving over the canopy.',
         eyebrow: 'Canopy still',
         sourceTitle: 'Black Cockatoo Valley',
         href: '/media/field-stills/black-cockatoo-valley-farm-aerial-2.jpg',
@@ -193,8 +196,7 @@ const LOCAL_FIELD_MEDIA_OVERRIDES: Record<
         id: 'black-cockatoo-valley-farm-aerial-still-3',
         url: '/media/field-stills/black-cockatoo-valley-farm-aerial-3.jpg',
         alt: 'Black Cockatoo Valley ridgeline and tree canopy',
-        caption:
-          'Place should stay legible as landscape, not just as infrastructure for activities happening on top of it.',
+        caption: 'Ridgeline and tree canopy at Black Cockatoo Valley.',
         eyebrow: 'Ridgeline still',
         sourceTitle: 'Black Cockatoo Valley',
         href: '/media/field-stills/black-cockatoo-valley-farm-aerial-3.jpg',
@@ -216,8 +218,7 @@ const LOCAL_FIELD_MEDIA_OVERRIDES: Record<
         id: 'harvest-witta-aerial-still',
         url: '/media/field-stills/harvest-witta-aerial.jpg',
         alt: 'The Harvest site and surrounding fields seen from above',
-        caption:
-          'The Harvest should open with place, scale, and the social life of the site rather than reading like a generic food or venue page.',
+        caption: 'The Harvest site at Witta from above.',
         eyebrow: 'Harvest aerial still',
         sourceTitle: 'The Harvest',
         href: '/media/field-stills/harvest-witta-aerial.jpg',
@@ -226,8 +227,7 @@ const LOCAL_FIELD_MEDIA_OVERRIDES: Record<
         id: 'harvest-witta-aerial-still-2',
         url: '/media/field-stills/harvest-witta-aerial-2.jpg',
         alt: 'The Harvest site and surrounding green fields from above',
-        caption:
-          'The Harvest should read as a lived site with edges, neighbours, growing space, and social infrastructure all visible together.',
+        caption: 'Growing space and surrounding fields at The Harvest.',
         eyebrow: 'Field still',
         sourceTitle: 'The Harvest',
         href: '/media/field-stills/harvest-witta-aerial-2.jpg',
@@ -253,49 +253,11 @@ const LOCAL_FIELD_MEDIA_OVERRIDES: Record<
       autoplay: true,
     },
   },
-  'empathy-ledger': {
-    images: [
-      {
-        id: 'empathy-ledger-community-story-still',
-        url: '/media/field-stills/empathy-ledger-community-story.jpg',
-        alt: 'Community storytelling conversation connected to Empathy Ledger',
-        caption:
-          'Empathy Ledger should open with real voice and consent-based story practice, not a purely abstract software frame.',
-        eyebrow: 'Story process still',
-        sourceTitle: 'Empathy Ledger',
-        href: '/media/field-stills/empathy-ledger-community-story.jpg',
-      },
-      {
-        id: 'empathy-ledger-community-story-still-2',
-        url: '/media/field-stills/empathy-ledger-community-story-2.jpg',
-        alt: 'Community conversation scene connected to Empathy Ledger',
-        caption:
-          'Empathy Ledger should show the room, the people, and the atmosphere of consent-based conversation rather than only the platform abstraction.',
-        eyebrow: 'Conversation still',
-        sourceTitle: 'Empathy Ledger',
-        href: '/media/field-stills/empathy-ledger-community-story-2.jpg',
-      },
-      {
-        id: 'empathy-ledger-community-story-still-3',
-        url: '/media/field-stills/empathy-ledger-community-story-3.jpg',
-        alt: 'Community storytelling moment connected to Empathy Ledger',
-        caption:
-          'A stronger EL page needs portraits of process: real people, real gathering, and visible trust in how the story is held.',
-        eyebrow: 'Story process still',
-        sourceTitle: 'Empathy Ledger',
-        href: '/media/field-stills/empathy-ledger-community-story-3.jpg',
-      },
-    ],
-    video: {
-      id: 'empathy-ledger-community-story-video',
-      url: '/media/field-videos/empathy-ledger-community-story.mp4',
-      posterUrl: '/media/field-stills/empathy-ledger-community-story.jpg',
-      title: 'Community storytelling conversation',
-      eyebrow: 'Story process footage',
-      sourceTitle: 'Empathy Ledger',
-      autoplay: true,
-    },
-  },
+  // 'empathy-ledger': intentionally omitted from local overrides.
+  // Live media is fetched from the Empathy Ledger platform via
+  // getEmpathyLedgerProjectMedia(); the section gracefully hides when
+  // no real content is available, instead of shipping placeholder
+  // captions tagged as Empathy Ledger material.
   'uncle-allan-palm-island-art': {
     images: [
       {
@@ -332,10 +294,28 @@ export function getProjectFieldMedia(project: EnrichedProject): ProjectFieldMedi
   const mediaMap = new Map<string, ProjectFieldMediaImage>();
   const localOverride = LOCAL_FIELD_MEDIA_OVERRIDES[project.slug];
 
+  // Where each image card should click through to.
+  // Priority: external project site (e.g. empathyledger.com/..., theharvest...)
+  //   → local storytellers index → fall back to opening the asset.
+  const cardClickThrough =
+    project.projectWebsiteUrl ||
+    (project.empathyLedgerContent?.meta?.storyteller_count
+      ? '/storytellers'
+      : null);
+
+  const isRawAssetPath = (href: string) =>
+    href.startsWith('/media/') || /\.(jpg|jpeg|png|webp|mp4|webm)(\?|$)/i.test(href);
+
   const pushImage = (image: ProjectFieldMediaImage | null) => {
     if (!image || !image.url) return;
     if (!mediaMap.has(image.url)) {
-      mediaMap.set(image.url, image);
+      // Cards that would otherwise click through to a raw asset get rerouted
+      // to a real destination (project site / storytellers).
+      const safeHref =
+        cardClickThrough && isRawAssetPath(image.href)
+          ? cardClickThrough
+          : image.href;
+      mediaMap.set(image.url, { ...image, href: safeHref });
     }
   };
 
@@ -350,11 +330,11 @@ export function getProjectFieldMedia(project: EnrichedProject): ProjectFieldMedi
     pushImage({
       id: item.id,
       url: item.thumbnailUrl || item.url,
-      alt: item.alt || item.title || `${project.title} field media`,
+      alt: item.alt || item.title || `${project.title} image`,
       caption: item.caption || item.title || null,
-      eyebrow: item.source === 'empathy_ledger' ? 'Live field image' : 'Project gallery',
-      sourceTitle: item.source === 'empathy_ledger' ? 'Empathy Ledger' : project.title,
-      href: item.url,
+      eyebrow: item.source === 'empathy_ledger' ? 'Story' : 'Project image',
+      sourceTitle: null,
+      href: cardClickThrough || item.url,
     });
   }
 
@@ -364,14 +344,9 @@ export function getProjectFieldMedia(project: EnrichedProject): ProjectFieldMedi
       url: project.coverImage.url,
       alt: project.coverImage.alt,
       caption: project.tagline,
-      eyebrow:
-        project.coverImage.source === 'empathy_ledger'
-          ? 'Live project cover'
-          : project.coverImage.source === 'media_gallery'
-            ? 'Project gallery'
-            : 'Project image',
-      sourceTitle: project.title,
-      href: project.coverImage.url,
+      eyebrow: 'Project image',
+      sourceTitle: null,
+      href: cardClickThrough || project.coverImage.url,
     });
   }
 
@@ -382,8 +357,8 @@ export function getProjectFieldMedia(project: EnrichedProject): ProjectFieldMedi
       alt: `${project.title} project image`,
       caption: project.tagline,
       eyebrow: 'Project image',
-      sourceTitle: project.title,
-      href: photoUrl,
+      sourceTitle: null,
+      href: cardClickThrough || photoUrl,
     });
   }
 
@@ -413,21 +388,26 @@ export function getProjectFieldMedia(project: EnrichedProject): ProjectFieldMedi
       id: liveVideo.id,
       url: liveVideo.url,
       posterUrl: liveVideo.thumbnailUrl || project.coverImage?.url || null,
-      title: liveVideo.title || liveVideo.caption || `${project.title} field footage`,
-      eyebrow: liveVideo.source === 'empathy_ledger' ? 'Live field footage' : 'Project footage',
-      sourceTitle: liveVideo.source === 'empathy_ledger' ? 'Empathy Ledger' : project.title,
+      title: liveVideo.title || liveVideo.caption || `${project.title} story`,
+      eyebrow: 'Story',
+      sourceTitle: null,
+      href: cardClickThrough || liveVideo.url,
     };
   } else if (project.videoUrl) {
     video = {
       id: `${project.slug}-video`,
       url: project.videoUrl,
       posterUrl: project.coverImage?.url || mediaMap.values().next().value?.url || null,
-      title: `${project.title} field footage`,
-      eyebrow: 'Project footage',
-      sourceTitle: project.title,
+      title: `${project.title} story`,
+      eyebrow: 'Story',
+      sourceTitle: null,
+      href: cardClickThrough || project.videoUrl,
     };
   } else if (localOverride?.video) {
-    video = localOverride.video;
+    video = {
+      ...localOverride.video,
+      href: cardClickThrough || localOverride.video.url,
+    };
   } else if (relatedConfig?.videoSlug) {
     const relatedVideo = projects.find((candidate) => candidate.slug === relatedConfig.videoSlug);
     if (relatedVideo?.videoUrl) {
@@ -435,9 +415,10 @@ export function getProjectFieldMedia(project: EnrichedProject): ProjectFieldMedi
         id: `${project.slug}-${relatedVideo.slug}-video`,
         url: relatedVideo.videoUrl,
         posterUrl: relatedVideo.heroImage || mediaMap.values().next().value?.url || null,
-        title: `${relatedVideo.title} field footage`,
-        eyebrow: 'Related field footage',
+        title: `${relatedVideo.title} story`,
+        eyebrow: 'Related',
         sourceTitle: relatedVideo.title,
+        href: `/projects/${relatedVideo.slug}`,
       };
     }
   }

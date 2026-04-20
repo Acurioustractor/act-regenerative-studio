@@ -19,27 +19,22 @@ const almaSignalInfo = {
   evidence_strength: {
     label: 'Evidence Strength',
     description: 'How well-documented and verified the insights are',
-    icon: '📊',
   },
   community_authority: {
     label: 'Community Authority',
     description: 'Validation from community members and leaders',
-    icon: '👥',
   },
   harm_risk_inverted: {
     label: 'Safety Score',
     description: 'Low risk of harm when sharing or acting on insights',
-    icon: '🛡️',
   },
   implementation_capability: {
     label: 'Actionability',
     description: 'Practical ability to implement the learnings',
-    icon: '⚙️',
   },
   community_value_return: {
     label: 'Community Value',
     description: 'Benefit returned to the community',
-    icon: '🌱',
   },
 };
 
@@ -156,8 +151,7 @@ export function ALMAInsightsSection({
                 return (
                   <div key={key} className="space-y-1">
                     <div className="flex items-center justify-between text-sm">
-                      <span className="flex items-center gap-2 text-[var(--we-olive)]">
-                        <span>{info.icon}</span>
+                      <span className="text-[var(--we-olive)]">
                         {info.label}
                       </span>
                       <span className="font-medium text-[var(--we-olive-deep)]">
@@ -190,11 +184,8 @@ export function ALMAInsightsSection({
                   className="rounded-[20px] border border-[var(--we-sand)] bg-white p-5"
                 >
                   <div className="flex items-start gap-4">
-                    <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full ${style.badge}`}>
-                      {learning.stage === 'Listen' && '👂'}
-                      {learning.stage === 'Curiosity' && '🔍'}
-                      {learning.stage === 'Action' && '⚡'}
-                      {learning.stage === 'Art' && '🎨'}
+                    <div className={`flex h-10 w-10 shrink-0 items-center justify-center rounded-full text-[10px] font-semibold uppercase tracking-[0.18em] ${style.badge}`}>
+                      {learning.stage.slice(0, 3)}
                     </div>
                     <div className="flex-1">
                       <div className="flex flex-wrap items-center gap-2 mb-2">

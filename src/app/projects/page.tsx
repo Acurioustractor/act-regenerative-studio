@@ -302,9 +302,9 @@ export default async function ProjectsPage() {
             <p className="site-eyebrow">Projects</p>
             <div className="flex flex-wrap gap-2">
               {[
-                `${FEATURED_OUTPUTS.length} flagship fields`,
-                `${signalPayload.summary.connectedProjectCount} fields in motion`,
-                'Public proof and pathways',
+                `${FEATURED_OUTPUTS.length} flagship projects`,
+                `${signalPayload.summary.connectedProjectCount} active projects`,
+                'Real outcomes, real partnerships',
               ].map((item) => (
                 <span
                   key={item}
@@ -325,10 +325,10 @@ export default async function ProjectsPage() {
             </p>
             <div className="flex flex-wrap gap-4">
               <Link
-                href="#flagship-fields"
+                href="#flagship-projects"
                 className="site-glow-link rounded-full bg-[#245c43] px-7 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-white shadow-[0_16px_36px_rgba(36,92,67,0.2)] transition hover:bg-[#1c4935]"
               >
-                See flagship fields
+                See flagship projects
               </Link>
               <Link
                 href="/blog"
@@ -394,10 +394,10 @@ export default async function ProjectsPage() {
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
-              href="#flagship-fields"
+              href="#flagship-projects"
               className="site-glow-link rounded-full bg-[#245c43] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#1c4935]"
             >
-              Open flagship set
+              Flagship projects
             </Link>
             <Link
               href="/blog"
@@ -439,11 +439,11 @@ export default async function ProjectsPage() {
         </div>
       </section>
 
-      <section id="flagship-fields" className="space-y-8">
+      <section id="flagship-projects" className="space-y-8">
         <SectionHeading
-          eyebrow="Flagship fields"
-          title="Five fields where ACT is already most visible"
-          description="Start here for the clearest public examples of ACT’s justice, story, place, and cultural work. Each one carries proof, pathways, and media where they exist."
+          eyebrow="Flagship projects"
+          title="Where ACT is most visible"
+          description="The clearest public examples of ACT's work in justice, story, place, and culture. Each carries real outcomes, partnerships, and media where they exist."
         />
         <div className="grid gap-6 xl:grid-cols-2">
           {featuredProjects.map((project) => (
@@ -621,8 +621,8 @@ export default async function ProjectsPage() {
               Seasons of listening, making, testing, and handover.
             </h2>
             <p className="mt-4 text-sm leading-7 text-[var(--we-brown)]">
-              The flagship fields are the clearest doors in, but the wider work
-              keeps moving through seasons of listening, making, testing, and
+              The flagship projects are the clearest entry points, but the wider
+              work moves through seasons of listening, making, testing, and
               handover.
             </p>
           </div>

@@ -42,23 +42,22 @@ export default async function SourceBridgesPage() {
   return (
     <div className="space-y-20">
       <PageHero
-        eyebrow="Source bridges"
-        title="Bridge notes keep public pages attached to the knowledge system that made them"
-        description="A source bridge is the connective tissue between durable wiki meaning, implementation repos, live packets, and downstream public surfaces. It stops the public site from becoming a disconnected copy of the real system."
+        eyebrow="How this site stays current"
+        title="Pages here point back to the work they came from"
+        description="Most pages on this site are composed from the ACT wiki, partner platforms, and the live story system. This page lists the trail — so you can see where a claim, a number, or a quote actually originates."
         actions={[
-          { label: 'Open ecosystem map', href: '/ecosystem' },
-          { label: 'Open source packets', href: '/wiki/source-packets', variant: 'outline' },
+          { label: 'Browse the ecosystem', href: '/ecosystem' },
+          { label: 'See stories', href: '/wiki/source-packets', variant: 'outline' },
         ]}
       >
         <div className="space-y-4">
           <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
-            Why bridges matter
+            Why this matters
           </p>
           <p className="text-sm leading-7 text-[var(--we-brown)]">
-            Bridge notes let ACT keep one canonical knowledge system while still operating public
-            sites, implementation repos, and story/media engines in parallel. Without bridges, the
-            hub drifts into decorative copy. With them, each page can point back to its source,
-            proof, and downstream consequences.
+            ACT works in the open. When the website makes a claim — about a project's outcomes,
+            a partnership, or a methodology — you should be able to follow it back to a wiki
+            entry, a community story, or an implementation repo. This page is that trail.
           </p>
         </div>
       </PageHero>
@@ -192,7 +191,7 @@ export default async function SourceBridgesPage() {
 
                 <div className="mt-6 space-y-3">
                   <p className="text-xs uppercase tracking-[0.24em] text-[var(--we-warm-brown)]">
-                    Source bridge trail
+                    Sources
                   </p>
                   <div className="flex flex-wrap gap-2">
                     {pack.sourceBridges.slice(0, 5).map((bridge) => (

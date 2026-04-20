@@ -63,15 +63,15 @@ export default function GovernancePage() {
       </PageHero>
 
       <LivingSystemStrip
-        eyebrow="Governance layer"
-        title="Shared stewardship needs durable memory and live accountability"
-        description="Governance on the public site should point toward the real sources of accountability: the ACT wiki for durable commitments, and the live project/story surfaces where people can see what is actually being held."
+        eyebrow="How we work"
+        title="Shared stewardship, with the receipts"
+        description="ACT's governance commitments live in the wiki. The proof shows up in the projects and stories — what was decided, by whom, and what changed."
         wiki={{
           href: "/wiki/governance-consent",
-          label: "Open governance notes",
+          label: "Read the governance notes",
         }}
         live={{
-          sourceLabel: "Governance shows up through projects, consent, and live evidence",
+          sourceLabel: null,
           href: `${process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL || "https://empathyledger.com"}/projects`,
         }}
         stats={[

@@ -33,15 +33,15 @@ export default async function VisionPage() {
             </PageHero>
 
             <LivingSystemStrip
-                eyebrow="Working direction"
-                title="Vision should stay connected to the wiki, not drift into a standalone manifesto"
-                description="This page holds a seasonal directional document, but the durable memory still lives in the ACT wiki and the public site still reflects live field material through the wider system. Vision is most useful when it stays tied to place, projects, and real signals."
+                eyebrow="Where we're heading"
+                title="A seasonal direction, not a fixed manifesto"
+                description="Vision changes as the work changes. This page holds the current season's direction; the underlying projects, partnerships, and field stories tell you whether it's actually landing."
                 wiki={{
                     href: "/wiki/roadmap-2026",
-                    label: "Open roadmap in the wiki",
+                    label: "See the 2026 roadmap",
                 }}
                 live={{
-                    sourceLabel: "Projects and public proof continue through the live story layer",
+                    sourceLabel: null,
                     href: `${process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL || "https://empathyledger.com"}/projects`,
                 }}
                 stats={[

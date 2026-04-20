@@ -196,9 +196,9 @@ function getEngagementConfig(
 
   if (slug === 'empathy-ledger') {
     return {
-      title: 'Ways to engage with Empathy Ledger',
+      title: 'Work with Empathy Ledger',
       description:
-        'Empathy Ledger is where story, consent, and durable memory meet. The strongest entry points are archive, storytelling, and governance conversations grounded in real communities and real custodianship questions.',
+        'Empathy Ledger gives communities cryptographic ownership of their stories — designed for partners who care about consent, attribution, and how narrative travels.',
       actions: [
         {
           label: 'Start a story or archive conversation',
@@ -388,10 +388,9 @@ export default async function ProjectPage({
       .slice(0, 3)
       .map((bridge: ACTFlagshipPackSourceBridge) => ({
       title: bridge.title,
-      description:
-        'Canonical source bridge feeding this flagship page from the ACT wiki.',
+      description: 'Read more about this work in the ACT wiki.',
       href: `/wiki/${bridge.stem}`,
-      icon: '🧭',
+      icon: '',
     })) || [];
   const liveContentAvailable =
     !!project.empathyLedgerContent &&
@@ -454,22 +453,22 @@ export default async function ProjectPage({
 
       {(project.wikiData || liveContentAvailable) && (
         <LivingSystemStrip
-          eyebrow={workConfig ? 'Living studio work system' : 'Living project system'}
+          eyebrow="Background"
           title={
             workConfig
-              ? 'Grounded in shared lineage. Kept alive through field material, voice, and writing.'
-              : 'Grounded in shared memory. Refreshed by live field material.'
+              ? `How ${project.title} works`
+              : `About ${project.title}`
           }
           description={
             workConfig
-              ? 'The ACT wiki holds the durable lineage of this work: what it is, where it came from, and how it connects to the wider studio line. Empathy Ledger carries the live layer: portraits, stories, clips, and editorial fragments that let the work stay public without duplicating the memory system.'
-              : 'The ACT wiki carries the durable memory of this work: purpose, framing, and lineage. Empathy Ledger carries the consented live layer: stories, portraits, clips, and field material that can keep the page growing without turning the site into a second content system.'
+              ? 'The story behind this work — where it came from, how it was made, and where it sits in the wider ACT studio.'
+              : 'The longer story behind this project — how it works in practice, the people leading it, and the communities it sits with.'
           }
           wiki={
             project.wikiData
               ? {
                   href: `/wiki/${project.slug}`,
-                  label: "Open wiki entry",
+                  label: "Background & method",
                   status: project.wikiData.status,
                   code: project.wikiData.code,
                   tier: project.wikiData.tier,
@@ -480,20 +479,15 @@ export default async function ProjectPage({
             project.projectWebsiteUrl
               ? {
                   href: project.projectWebsiteUrl,
-                  label: 'Visit project website',
+                  label: `Visit ${project.title}`,
                 }
               : null
           }
           live={
             liveContentAvailable
               ? {
-                  sourceLabel:
-                    liveMeta?.source === 'site-syndication'
-                      ? 'Site-scoped syndication'
-                      : liveMeta?.source === 'content-hub'
-                        ? 'Content Hub fallback'
-                        : null,
-                  siteLabel: liveMeta?.site_slug ? `Site: ${liveMeta.site_slug}` : null,
+                  sourceLabel: null,
+                  siteLabel: null,
                   storyCount: liveMeta?.story_count || 0,
                   storytellerCount: liveMeta?.storyteller_count || 0,
                   mediaCount: liveMeta?.media_count || 0,

@@ -71,8 +71,8 @@ export default function EventsPage() {
 
       <LivingSystemStrip
         eyebrow="Invitation layer"
-        title="Gatherings should be connected to place, projects, and story"
-        description="Events in ACT are not separate from the ecosystem. They usually emerge through the farm, Harvest, residencies, works, or project partnerships. This page should help people find the right entry point rather than pretend everything lives in one calendar."
+        title="Gatherings connected to place, projects, and story"
+        description="ACT gatherings emerge through the farm, The Harvest, residencies, exhibitions, and project partnerships. Use this page to find the right entry point — the calendar follows the work, not the other way around."
         wiki={{
           href: "/wiki",
           label: "Open ACT wiki",

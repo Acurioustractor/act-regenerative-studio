@@ -61,7 +61,7 @@ function buildInsights(
     insights.push({
       id: `${projectSlug}-syndication`,
       type: 'wisdom',
-      insight: 'This impact view is derived from consented stories and site-scoped syndication, not scraped or inferred content.',
+      insight: 'These insights are drawn from stories told with consent — not scraped, not inferred.',
       supportingStoryCount: storyCount,
       createdAt: new Date().toISOString(),
       confidence: 0.9,

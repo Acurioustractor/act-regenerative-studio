@@ -26,21 +26,13 @@ export default async function WikiPageViewer({
     <div className="min-h-screen bg-gradient-to-b from-[#F6F1E7] via-[#F5F1E8] to-white">
       <section className="border-b border-[var(--we-sand)] bg-white/90">
         <div className="mx-auto max-w-5xl px-4 py-10">
-          <div className="flex items-center justify-between gap-4">
-            <Link
-              href="/wiki"
-              className="inline-flex items-center gap-2 text-sm text-[#5A4A3A] transition hover:text-[var(--we-olive)]"
-            >
-              <ArrowLeft className="h-4 w-4" />
-              Back to the ACT wiki
-            </Link>
-            <Link
-              href={`/wiki/${slug}/edit`}
-              className="text-xs uppercase tracking-[0.22em] text-[var(--we-brown-deep)] underline decoration-[var(--we-sand)] underline-offset-4 hover:text-[var(--we-olive)]"
-            >
-              Edit →
-            </Link>
-          </div>
+          <Link
+            href="/wiki"
+            className="inline-flex items-center gap-2 text-sm text-[#5A4A3A] transition hover:text-[var(--we-olive)]"
+          >
+            <ArrowLeft className="h-4 w-4" />
+            Back to the ACT wiki
+          </Link>
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
             <span className="rounded-full bg-[#F5F1E8] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#5A4A3A]">

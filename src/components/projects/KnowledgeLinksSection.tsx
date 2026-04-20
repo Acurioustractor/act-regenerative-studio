@@ -51,26 +51,26 @@ export function KnowledgeLinksSection({
   // Build default links based on available content
   const defaultLinks: KnowledgeLink[] = [
     {
-      title: 'Living Knowledge Base',
-      description: 'Explore the ACT wiki, research, and evolving methodology connected to this work',
+      title: 'Background & method',
+      description: 'Wiki entries, research, and the methodology behind this work',
       href: `/wiki?project=${projectSlug}`,
-      icon: '📚',
+      icon: '',
     },
     {
-      title: 'Impact Data',
-      description: 'Metrics, outcomes, and evidence from this work',
+      title: 'Impact data',
+      description: 'Metrics, outcomes, and evidence',
       href: `/impact?project=${projectSlug}`,
-      icon: '📊',
+      icon: '',
     },
   ];
 
   // Add Empathy Ledger link if content exists
   if (hasEmpathyLedgerContent) {
     defaultLinks.push({
-      title: 'Community Stories',
+      title: 'Community stories',
       description: 'First-person stories from people connected to this work',
       href: `${EMPATHY_LEDGER_URL}/projects/${projectSlug}`,
-      icon: '💬',
+      icon: '',
       external: true,
     });
   }
@@ -78,29 +78,29 @@ export function KnowledgeLinksSection({
   // Add wiki link if articles exist
   if (hasWikiArticles) {
     defaultLinks.unshift({
-      title: 'Project Wiki',
-      description: 'In-depth documentation and how-to guides',
+      title: 'Project page in the wiki',
+      description: 'Background, history, and how this project connects to the wider ecosystem',
       href: `/wiki/${projectSlug}`,
-      icon: '📖',
+      icon: '',
     });
   }
 
   if (projectWebsiteUrl) {
     defaultLinks.push({
-      title: 'Project Website',
+      title: 'Project website',
       description: 'Visit the dedicated public site for this project',
       href: projectWebsiteUrl,
-      icon: '🌐',
+      icon: '',
       external: true,
     });
   }
 
   if (projectRepoUrl || ecosystemData?.github_repo) {
     defaultLinks.push({
-      title: 'Source Code',
+      title: 'Source code',
       description: 'Open source repository and technical documentation',
       href: projectRepoUrl || `https://github.com/${ecosystemData?.github_repo}`,
-      icon: '💻',
+      icon: '',
       external: true,
     });
   }
@@ -134,7 +134,6 @@ export function KnowledgeLinksSection({
               {...linkProps}
               className="group flex items-start gap-4 rounded-2xl border border-[var(--we-sand)] bg-white p-5 transition-all hover:border-[#7A9B76] hover:shadow-md"
             >
-              <span className="text-2xl">{link.icon}</span>
               <div className="flex-1">
                 <h3 className="font-semibold text-[var(--we-olive)] group-hover:text-[#7A9B76]">
                   {link.title}
@@ -186,12 +185,12 @@ export function KnowledgeLinksSection({
           )}
           {ecosystemData.location && (
             <span className="inline-flex items-center gap-1.5 rounded-full bg-[#F6F1E7] px-3 py-1.5 text-xs text-[var(--we-brown-deep)]">
-              📍 {ecosystemData.location}
+              {ecosystemData.location}
             </span>
           )}
           {ecosystemData.alma_program && (
             <span className="inline-flex items-center gap-1.5 rounded-full bg-[#E8F0E8] px-3 py-1.5 text-xs text-[#4D6B4D]">
-              🌱 {ecosystemData.alma_program}
+              ALMA · {ecosystemData.alma_program}
             </span>
           )}
           {ecosystemData.lcaa_themes && ecosystemData.lcaa_themes.length > 0 && (

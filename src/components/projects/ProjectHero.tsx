@@ -108,10 +108,10 @@ function AnimatedCounter({ value, label }: { value: string; label: string }) {
 }
 
 const lcaaStageColors = {
-  Listen: { bg: 'bg-blue-500/20', text: 'text-blue-600', icon: '👂' },
-  Curiosity: { bg: 'bg-purple-500/20', text: 'text-purple-600', icon: '🔍' },
-  Action: { bg: 'bg-orange-500/20', text: 'text-orange-600', icon: '⚡' },
-  Art: { bg: 'bg-pink-500/20', text: 'text-pink-600', icon: '🎨' },
+  Listen: { bg: 'bg-blue-500/20', text: 'text-blue-600' },
+  Curiosity: { bg: 'bg-purple-500/20', text: 'text-purple-600' },
+  Action: { bg: 'bg-orange-500/20', text: 'text-orange-600' },
+  Art: { bg: 'bg-pink-500/20', text: 'text-pink-600' },
 };
 
 export function ProjectHero({
@@ -205,9 +205,8 @@ export function ProjectHero({
           <div className="flex items-center gap-3">
             {lcaaStage && (
               <span
-                className={`flex items-center gap-2 rounded-full px-4 py-2 text-xs font-medium ${lcaaStageColors[lcaaStage].bg} ${lcaaStageColors[lcaaStage].text}`}
+                className={`rounded-full px-4 py-2 text-xs font-medium uppercase tracking-[0.18em] ${lcaaStageColors[lcaaStage].bg} ${lcaaStageColors[lcaaStage].text}`}
               >
-                <span>{lcaaStageColors[lcaaStage].icon}</span>
                 {lcaaStage} Phase
               </span>
             )}

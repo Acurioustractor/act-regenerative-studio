@@ -192,7 +192,6 @@ export function ImpactDashboard({
         <div className="flex justify-center">
           <div className="inline-flex flex-wrap items-center justify-center gap-3 rounded-full border border-[var(--we-sand)] bg-white/80 px-5 py-2.5">
             <div className="flex items-center gap-2 text-sm text-[var(--we-brown-deep)]">
-              <span className="text-lg">📖</span>
               <span>Powered by</span>
               <a
                 href={process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL}

@@ -330,33 +330,37 @@ export async function getCanonicalWikiPages(): Promise<CanonicalWikiPageRecord[]
     getSupabaseCanonicalWikiPages(),
     getLiveCanonicalWikiPages(),
   ]);
-  // Merge: Supabase wins on slug conflict, otherwise take live, otherwise snapshot.
+  // Merge: live filesystem (Obsidian) wins on slug conflict.
+  // Supabase fills in slugs not on disk; snapshot is final fallback when no live tier.
   const byPath = new Map<string, CanonicalWikiPageRecord>();
-  const fallback =
-    livePages && livePages.length > 0 ? livePages : getSnapshotPages();
-  for (const record of fallback) byPath.set(record.path, record);
   if (supabasePages) {
     for (const record of supabasePages) byPath.set(record.path, record);
   }
+  const primary =
+    livePages && livePages.length > 0 ? livePages : getSnapshotPages();
+  for (const record of primary) byPath.set(record.path, record);
   return Array.from(byPath.values());
 }
 
 export async function getCanonicalWikiPage(
   slugOrPath: string
 ): Promise<CanonicalWikiPageMatch | null> {
-  const supabasePages = await getSupabaseCanonicalWikiPages();
-  if (supabasePages?.length) {
-    const match = matchPageRecord(supabasePages, slugOrPath);
-    if (match) {
-      return { ...match, source: 'supabase' };
-    }
-  }
-
+  // Live filesystem (Obsidian) is source of truth — try it first.
   const livePages = await getLiveCanonicalWikiPages();
   if (livePages?.length) {
     const liveMatch = matchPageRecord(livePages, slugOrPath);
     if (liveMatch) {
       return { ...liveMatch, source: 'live-wiki' };
+    }
+  }
+
+  // Supabase is a warm mirror — covers slugs not on disk (deployed environments
+  // without the canonical wiki repo mounted, or pages authored elsewhere).
+  const supabasePages = await getSupabaseCanonicalWikiPages();
+  if (supabasePages?.length) {
+    const match = matchPageRecord(supabasePages, slugOrPath);
+    if (match) {
+      return { ...match, source: 'supabase' };
     }
   }
 

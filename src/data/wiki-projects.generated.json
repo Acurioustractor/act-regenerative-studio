@@ -1,8 +1,60 @@
 {
-  "generatedAt": "2026-04-12T23:47:43.116Z",
-  "sourceRoot": "/Users/benknight/Code/act-global-infrastructure/wiki",
-  "projectCount": 58,
+  "generatedAt": "2026-04-20T03:03:42.363Z",
+  "sourceRoot": "/home/runner/work/act-regenerative-studio/act-regenerative-studio/_canonical-wiki/wiki",
+  "projectCount": 82,
   "projects": [
+    {
+      "slug": "_template",
+      "title": "<Case Study Title>",
+      "summary": "One-sentence framing of what happened and why it mattered. Third-person, clear.",
+      "overview": null,
+      "status": "<Draft | Published | Evergreen>",
+      "code": "ACT-FM-CS-<slug>",
+      "tier": null,
+      "canonicalSlug": "_template",
+      "canonicalCode": "ACT-FM-CS-<slug>",
+      "entityType": "project",
+      "taggingMode": "own-code",
+      "cluster": "act-farm",
+      "parentProject": null,
+      "websiteSlug": "_template",
+      "relativePath": "projects/act-farm/case-studies/_template.md",
+      "websitePath": "/projects/_template",
+      "projectPagePath": "/projects/_template",
+      "publicSurface": "project",
+      "empathyLedgerKey": "_template",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-04-20T03:03:23.008Z"
+    },
+    {
+      "slug": "_template",
+      "title": "<Experience Name>",
+      "summary": "One-sentence promise in our voice. What changes for the person who comes here.",
+      "overview": null,
+      "status": "<Active | In design | Co-design phase | Paused>",
+      "code": "ACT-FM-EXP-<slug>",
+      "tier": null,
+      "canonicalSlug": "_template",
+      "canonicalCode": "ACT-FM-EXP-<slug>",
+      "entityType": "project",
+      "taggingMode": "own-code",
+      "cluster": "act-farm",
+      "parentProject": null,
+      "websiteSlug": "_template",
+      "relativePath": "projects/act-farm/experiences/_template.md",
+      "websitePath": "/projects/_template",
+      "projectPagePath": "/projects/_template",
+      "publicSurface": "project",
+      "empathyLedgerKey": "_template",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-04-20T03:03:23.009Z"
+    },
     {
       "slug": "act-farm",
       "title": "ACT Farm",
@@ -27,7 +79,7 @@
       "canonicalUrl": "https://act-farm.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/act-farm",
       "deployUrl": "https://act-farm-benjamin-knights-projects.vercel.app/",
-      "modifiedAt": "2026-04-12T20:50:21.785Z"
+      "modifiedAt": "2026-04-20T03:03:23.008Z"
     },
     {
       "slug": "act-monthly-dinners",
@@ -53,7 +105,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T23:15:29.577Z"
+      "modifiedAt": "2026-04-20T03:03:23.009Z"
     },
     {
       "slug": "act-public-voice",
@@ -79,7 +131,7 @@
       "canonicalUrl": "https://act.place/",
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.786Z"
+      "modifiedAt": "2026-04-20T03:03:23.009Z"
     },
     {
       "slug": "act-studio",
@@ -105,7 +157,33 @@
       "canonicalUrl": null,
       "repoUrl": "https://github.com/Acurioustractor/act-regenerative-studio",
       "deployUrl": "https://act-regenerative-studio-benjamin-knights-projects.vercel.app/",
-      "modifiedAt": "2026-04-12T20:50:21.786Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
+    },
+    {
+      "slug": "artist-residency",
+      "title": "Artist Residency at BCV",
+      "summary": "We place artists on Country at Black Cockatoo Valley to make work that couldn't be made anywhere else. The land is the commission. We are the host, not the curator-in-chief.",
+      "overview": null,
+      "status": "Active",
+      "code": "ACT-FM-EXP-artist-residency",
+      "tier": null,
+      "canonicalSlug": "artist-residency",
+      "canonicalCode": "ACT-FM-EXP-artist-residency",
+      "entityType": "project",
+      "taggingMode": "own-code",
+      "cluster": "act-farm",
+      "parentProject": null,
+      "websiteSlug": "artist-residency",
+      "relativePath": "projects/act-farm/experiences/artist-residency.md",
+      "websitePath": "/projects/artist-residency",
+      "projectPagePath": "/projects/artist-residency",
+      "publicSurface": "project",
+      "empathyLedgerKey": "artist-residency",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-04-20T03:03:23.009Z"
     },
     {
       "slug": "barkly-backbone",
@@ -131,7 +209,7 @@
       "canonicalUrl": null,
       "repoUrl": "https://github.com/Acurioustractor/barkly-research-platform",
       "deployUrl": "https://barkly-research-platform-benjamin-knights-projects.vercel.app/",
-      "modifiedAt": "2026-04-12T20:50:21.789Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
     },
     {
       "slug": "bg-fit",
@@ -157,7 +235,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.789Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
     },
     {
       "slug": "black-cockatoo-valley",
@@ -183,7 +261,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.785Z"
+      "modifiedAt": "2026-04-20T03:03:23.008Z"
     },
     {
       "slug": "campfire",
@@ -209,7 +287,7 @@
       "canonicalUrl": "https://campfire-website-amber.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/Campfire-Website",
       "deployUrl": "https://campfire-website-amber.vercel.app/",
-      "modifiedAt": "2026-04-12T20:50:21.789Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
     },
     {
       "slug": "caring-for-those-who-care",
@@ -235,7 +313,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.790Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
     },
     {
       "slug": "cars-and-microcontrollers",
@@ -261,7 +339,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.786Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
     },
     {
       "slug": "civicgraph",
@@ -287,13 +365,13 @@
       "canonicalUrl": "https://civicgraph.app/",
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.790Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
     },
     {
       "slug": "community-capital",
       "title": "Community Capital",
       "summary": "The gap between community organisations doing extraordinary work and the capital that could sustain them is not a knowledge gap. It's a relationship gap.",
-      "overview": "Community Capital is an ACT-facilitated leadership retreat — formally titled the 10x10 Community Capital Leadership Retreat (confirmed by Notion project sync, February 2026) — bringing together community leaders and social impact capital. It is funded via the Social Impact Hub Foundation, which distributes approximately $10 million in funds to not-for-profits annually. ACT's role is facilitation: creating and holding the space between people doing community-level work and people with access to capital, without imposing its own agenda on either.",
+      "overview": "Community Capital is an ACT-facilitated leadership retreat — formally titled the 10x10 Community Capital Leadership Retreat — bringing together community leaders and social impact capital. The inaugural Phase 1 retreat ran 23–25 February 2025 in Bowral, NSW (documented in the Bowral case study in the ACT Farm cluster). It is funded via the Social Impact Hub Foundation, which distributes approximately $10 million in funds to not-for-profits annually. ACT's role is facilitation: creating and holding the space between people doing community-level work and people with access to capital, without imposing its own agenda on either.",
       "status": "Active",
       "code": "ACT-CP",
       "tier": null,
@@ -313,7 +391,59 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.790Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
+    },
+    {
+      "slug": "community-capital-bowral-2025",
+      "title": "Community Capital — Bowral, 23–25 Feb 2025",
+      "summary": "Phase 1 of Community Capital: a 10x10 leadership retreat held over three days in Bowral, NSW. Community leaders and capital holders in one room, making candles while talking about money. INV-0289 is the ledger. Phase 2 — Catalysing Impact — was signed thirteen months later.",
+      "overview": null,
+      "status": "Published",
+      "code": "ACT-FM-CS-community-capital-bowral-2025",
+      "tier": null,
+      "canonicalSlug": "community-capital-bowral-2025",
+      "canonicalCode": "ACT-FM-CS-community-capital-bowral-2025",
+      "entityType": "project",
+      "taggingMode": "own-code",
+      "cluster": "act-farm",
+      "parentProject": null,
+      "websiteSlug": "community-capital-bowral-2025",
+      "relativePath": "projects/act-farm/case-studies/community-capital-bowral-2025.md",
+      "websitePath": "/projects/community-capital-bowral-2025",
+      "projectPagePath": "/projects/community-capital-bowral-2025",
+      "publicSurface": "project",
+      "empathyLedgerKey": "community-capital-bowral-2025",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-04-20T03:03:23.008Z"
+    },
+    {
+      "slug": "community-capital-at-bcv",
+      "title": "Community Capital at BCV — a year in the valley",
+      "summary": "Community Capital paid for a year of accommodation at Black Cockatoo Valley. The Caravan came here. The retreat came home. This is the case study for what a convening program looks like when it's no longer a single event in a rented venue — it's a year on Country.",
+      "overview": null,
+      "status": "Published",
+      "code": "ACT-FM-CS-community-capital-at-bcv",
+      "tier": null,
+      "canonicalSlug": "community-capital-at-bcv",
+      "canonicalCode": "ACT-FM-CS-community-capital-at-bcv",
+      "entityType": "project",
+      "taggingMode": "own-code",
+      "cluster": "act-farm",
+      "parentProject": null,
+      "websiteSlug": "community-capital-at-bcv",
+      "relativePath": "projects/act-farm/case-studies/community-capital-at-bcv.md",
+      "websitePath": "/projects/community-capital-at-bcv",
+      "projectPagePath": "/projects/community-capital-at-bcv",
+      "publicSurface": "project",
+      "empathyLedgerKey": "community-capital-at-bcv",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-04-20T03:03:23.008Z"
     },
     {
       "slug": "confit-pathways",
@@ -339,7 +469,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.791Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
     },
     {
       "slug": "contained",
@@ -365,7 +495,33 @@
       "canonicalUrl": null,
       "repoUrl": "https://github.com/Acurioustractor/contained-campaign-site",
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.791Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
+    },
+    {
+      "slug": "corporate-innovation-retreats",
+      "title": "Corporate Innovation Retreats at BCV",
+      "summary": "We host leadership teams at Black Cockatoo Valley for multi-day innovation retreats that don't look anything like a hotel offsite. Country is the facilitator. We hold the room.",
+      "overview": null,
+      "status": "Active",
+      "code": "ACT-FM-EXP-corporate-innovation-retreats",
+      "tier": null,
+      "canonicalSlug": "corporate-innovation-retreats",
+      "canonicalCode": "ACT-FM-EXP-corporate-innovation-retreats",
+      "entityType": "project",
+      "taggingMode": "own-code",
+      "cluster": "act-farm",
+      "parentProject": null,
+      "websiteSlug": "corporate-innovation-retreats",
+      "relativePath": "projects/act-farm/experiences/corporate-innovation-retreats.md",
+      "websitePath": "/projects/corporate-innovation-retreats",
+      "projectPagePath": "/projects/corporate-innovation-retreats",
+      "publicSurface": "project",
+      "empathyLedgerKey": "corporate-innovation-retreats",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-04-20T03:03:23.009Z"
     },
     {
       "slug": "custodian-economy",
@@ -391,7 +547,59 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T23:15:18.406Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
+    },
+    {
+      "slug": "dad-lab-bcv-2025",
+      "title": "DAD.LAB — the inaugural cohort at BCV, 2025",
+      "summary": "Twenty dads. One weekend at Black Cockatoo Valley. A silent walk, a pile of soil, a pizza oven, and a framework small enough to carry home — I have, I am, I can. This is the case study of what happens when you take fatherhood out of the living room and put it on Country.",
+      "overview": null,
+      "status": "Published",
+      "code": "ACT-FM-CS-dad-lab-bcv-2025",
+      "tier": null,
+      "canonicalSlug": "dad-lab-bcv-2025",
+      "canonicalCode": "ACT-FM-CS-dad-lab-bcv-2025",
+      "entityType": "project",
+      "taggingMode": "own-code",
+      "cluster": "act-farm",
+      "parentProject": null,
+      "websiteSlug": "dad-lab-bcv-2025",
+      "relativePath": "projects/act-farm/case-studies/dad-lab-bcv-2025.md",
+      "websitePath": "/projects/dad-lab-bcv-2025",
+      "projectPagePath": "/projects/dad-lab-bcv-2025",
+      "publicSurface": "project",
+      "empathyLedgerKey": "dad-lab-bcv-2025",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-04-20T03:03:23.008Z"
+    },
+    {
+      "slug": "dad-lab-at-bcv",
+      "title": "DAD.LAB at BCV",
+      "summary": "We host DAD.LAB intensives at Black Cockatoo Valley — residential time for fathers and men navigating health, identity, and connection, grounded in peer support and done in the bush. Not clinical. Not confessional. Just honest.",
+      "overview": null,
+      "status": "Active",
+      "code": "ACT-FM-EXP-dad-lab-at-bcv",
+      "tier": null,
+      "canonicalSlug": "dad-lab-at-bcv",
+      "canonicalCode": "ACT-FM-EXP-dad-lab-at-bcv",
+      "entityType": "project",
+      "taggingMode": "own-code",
+      "cluster": "act-farm",
+      "parentProject": null,
+      "websiteSlug": "dad-lab-at-bcv",
+      "relativePath": "projects/act-farm/experiences/dad-lab-at-bcv.md",
+      "websitePath": "/projects/dad-lab-at-bcv",
+      "projectPagePath": "/projects/dad-lab-at-bcv",
+      "publicSurface": "project",
+      "empathyLedgerKey": "dad-lab-at-bcv",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-04-20T03:03:23.009Z"
     },
     {
       "slug": "dad-lab-25",
@@ -417,7 +625,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.791Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
     },
     {
       "slug": "deadlylabs",
@@ -443,7 +651,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T23:29:24.864Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
     },
     {
       "slug": "designing-for-obsolescence",
@@ -469,7 +677,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.792Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
     },
     {
       "slug": "diagrama",
@@ -495,7 +703,7 @@
       "canonicalUrl": null,
       "repoUrl": "https://github.com/Acurioustractor/diagrama-australia",
       "deployUrl": "https://diagramaaustralia.org/",
-      "modifiedAt": "2026-04-12T20:50:21.792Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
     },
     {
       "slug": "empathy-ledger",
@@ -521,7 +729,7 @@
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/empathy-ledger-v2",
       "deployUrl": "https://www.empathyledger.com/",
-      "modifiedAt": "2026-04-12T20:50:21.792Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
     },
     {
       "slug": "annual-field-service",
@@ -547,7 +755,59 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T01:46:20.399Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
+    },
+    {
+      "slug": "empathy-ledger-storytelling-residency",
+      "title": "Empathy Ledger Storytelling Residency",
+      "summary": "We place storytellers on Country to practice the Empathy Ledger method at field scale — listening, consent, capture, and return. The residency produces stories that live in the Ledger, not content that feeds a marketing calendar.",
+      "overview": null,
+      "status": "Active",
+      "code": "ACT-FM-EXP-empathy-ledger-storytelling-residency",
+      "tier": null,
+      "canonicalSlug": "empathy-ledger-storytelling-residency",
+      "canonicalCode": "ACT-FM-EXP-empathy-ledger-storytelling-residency",
+      "entityType": "project",
+      "taggingMode": "own-code",
+      "cluster": "act-farm",
+      "parentProject": null,
+      "websiteSlug": "empathy-ledger-storytelling-residency",
+      "relativePath": "projects/act-farm/experiences/empathy-ledger-storytelling-residency.md",
+      "websitePath": "/projects/empathy-ledger-storytelling-residency",
+      "projectPagePath": "/projects/empathy-ledger-storytelling-residency",
+      "publicSurface": "project",
+      "empathyLedgerKey": "empathy-ledger-storytelling-residency",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-04-20T03:03:23.009Z"
+    },
+    {
+      "slug": "facilitation",
+      "title": "Facilitation for your team",
+      "summary": "We facilitate. That's the offer. Your meeting, your offsite, your strategy day — on our ground or yours, with ACT holding the room.",
+      "overview": null,
+      "status": "Active",
+      "code": "ACT-FM-EXP-facilitation",
+      "tier": null,
+      "canonicalSlug": "facilitation",
+      "canonicalCode": "ACT-FM-EXP-facilitation",
+      "entityType": "project",
+      "taggingMode": "own-code",
+      "cluster": "act-farm",
+      "parentProject": null,
+      "websiteSlug": "facilitation",
+      "relativePath": "projects/act-farm/experiences/facilitation.md",
+      "websitePath": "/projects/facilitation",
+      "projectPagePath": "/projects/facilitation",
+      "publicSurface": "project",
+      "empathyLedgerKey": "facilitation",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-04-20T03:03:23.009Z"
     },
     {
       "slug": "feel-good-project",
@@ -573,7 +833,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.793Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
     },
     {
       "slug": "fishers-oysters",
@@ -599,7 +859,7 @@
       "canonicalUrl": "https://fishers-oysters.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/fishers-oysters",
       "deployUrl": "https://www.fishersoysters.com/",
-      "modifiedAt": "2026-04-12T20:50:21.793Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
     },
     {
       "slug": "global-laundry-alliance",
@@ -625,7 +885,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.793Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
     },
     {
       "slug": "gold-phone",
@@ -651,7 +911,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.787Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
     },
     {
       "slug": "goods-on-country",
@@ -677,7 +937,33 @@
       "canonicalUrl": "https://v2-rho-ochre.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/goods-asset-tracker",
       "deployUrl": "https://www.goodsoncountry.com/",
-      "modifiedAt": "2026-04-12T20:50:21.794Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
+    },
+    {
+      "slug": "makers-weekend",
+      "title": "Goods on Country Makers' Weekend",
+      "summary": "A weekend of making on Country — material practice, shared meals, and honest conversation about how we build durable things for communities that need them. Run with Goods on Country.",
+      "overview": null,
+      "status": "Active",
+      "code": "ACT-FM-EXP-makers-weekend",
+      "tier": null,
+      "canonicalSlug": "makers-weekend",
+      "canonicalCode": "ACT-FM-EXP-makers-weekend",
+      "entityType": "project",
+      "taggingMode": "own-code",
+      "cluster": "act-farm",
+      "parentProject": null,
+      "websiteSlug": "makers-weekend",
+      "relativePath": "projects/act-farm/experiences/makers-weekend.md",
+      "websitePath": "/projects/makers-weekend",
+      "projectPagePath": "/projects/makers-weekend",
+      "publicSurface": "project",
+      "empathyLedgerKey": "makers-weekend",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-04-20T03:03:23.009Z"
     },
     {
       "slug": "grantscope",
@@ -703,7 +989,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.794Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
     },
     {
       "slug": "green-harvest-witta",
@@ -729,7 +1015,111 @@
       "canonicalUrl": "https://witta-swot-analysis.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/theharvest",
       "deployUrl": "https://www.theharvestwitta.com.au/",
-      "modifiedAt": "2026-04-12T20:50:21.801Z"
+      "modifiedAt": "2026-04-20T03:03:23.014Z"
+    },
+    {
+      "slug": "harvest-pairings",
+      "title": "Harvest Pairings",
+      "summary": "The Harvest in Witta and BCV up the hill are a pair, not two venues. Monthly dinners, paired workshops, shared CSA, and seasonal programs run across both sites.",
+      "overview": null,
+      "status": "Active",
+      "code": "ACT-FM-EXP-harvest-pairings",
+      "tier": null,
+      "canonicalSlug": "harvest-pairings",
+      "canonicalCode": "ACT-FM-EXP-harvest-pairings",
+      "entityType": "project",
+      "taggingMode": "own-code",
+      "cluster": "act-farm",
+      "parentProject": null,
+      "websiteSlug": "harvest-pairings",
+      "relativePath": "projects/act-farm/experiences/harvest-pairings.md",
+      "websitePath": "/projects/harvest-pairings",
+      "projectPagePath": "/projects/harvest-pairings",
+      "publicSurface": "project",
+      "empathyLedgerKey": "harvest-pairings",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-04-20T03:03:23.009Z"
+    },
+    {
+      "slug": "industry-residency-at-the-harvest",
+      "title": "Industry Residency at The Harvest",
+      "summary": "We host industry residencies at The Harvest — extended placements where artists, designers and ACT work alongside a regional industry and its people. Not an artist-in-residence at a company. A community treating its own industry, land and elders as the material, with us holding the studio.",
+      "overview": null,
+      "status": "Active",
+      "code": "ACT-FM-EXP-industry-residency-at-the-harvest",
+      "tier": null,
+      "canonicalSlug": "industry-residency-at-the-harvest",
+      "canonicalCode": "ACT-FM-EXP-industry-residency-at-the-harvest",
+      "entityType": "project",
+      "taggingMode": "own-code",
+      "cluster": "act-farm",
+      "parentProject": null,
+      "websiteSlug": "industry-residency-at-the-harvest",
+      "relativePath": "projects/act-farm/experiences/industry-residency-at-the-harvest.md",
+      "websitePath": "/projects/industry-residency-at-the-harvest",
+      "projectPagePath": "/projects/industry-residency-at-the-harvest",
+      "publicSurface": "project",
+      "empathyLedgerKey": "industry-residency-at-the-harvest",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-04-20T03:03:23.009Z"
+    },
+    {
+      "slug": "innovation-sessions",
+      "title": "Innovation Sessions",
+      "summary": "We run focused one- to two-day innovation sessions across four practice areas — youth justice, AI and systems, data and evidence, storytelling. Small rooms, real problems, no theatre.",
+      "overview": null,
+      "status": "Active",
+      "code": "ACT-FM-EXP-innovation-sessions",
+      "tier": null,
+      "canonicalSlug": "innovation-sessions",
+      "canonicalCode": "ACT-FM-EXP-innovation-sessions",
+      "entityType": "project",
+      "taggingMode": "own-code",
+      "cluster": "act-farm",
+      "parentProject": null,
+      "websiteSlug": "innovation-sessions",
+      "relativePath": "projects/act-farm/experiences/innovation-sessions.md",
+      "websitePath": "/projects/innovation-sessions",
+      "projectPagePath": "/projects/innovation-sessions",
+      "publicSurface": "project",
+      "empathyLedgerKey": "innovation-sessions",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-04-20T03:03:23.009Z"
+    },
+    {
+      "slug": "judges-on-country",
+      "title": "Judges on Country",
+      "summary": "\"Our young people don't experience your decisions as process. They experience them as consequences.\"",
+      "overview": "Judges on Country is not a workshop. Not training. Not a conference breakout session with takeaway slides. It is a controlled moment of moral uncertainty inside a judge's own professional role — 30 minutes that change the way 55 judges from across Australia understand what happens after they hand down a decision. The program brings judges to Mparntwe to learn from Traditional Owners about Indigenous history, youth justice, and what it means for young people who move through the system. It is led by Traditional Owners — Kristy Bloomfield and Tanya Turner from Oonchiumpa — and by Oonchiumpa itself as a program. The premise is simple and uncomfortable: the people sentencing these children have never met one outside the dock.",
+      "status": "active",
+      "code": null,
+      "tier": null,
+      "canonicalSlug": "judges-on-country",
+      "canonicalCode": null,
+      "entityType": null,
+      "taggingMode": null,
+      "cluster": "justicehub",
+      "parentProject": "justicehub",
+      "websiteSlug": "judges-on-country",
+      "relativePath": "projects/justicehub/judges-on-country.md",
+      "websitePath": "/projects/judges-on-country",
+      "projectPagePath": "/projects/judges-on-country",
+      "publicSurface": "project",
+      "empathyLedgerKey": "judges-on-country",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-04-20T03:03:23.012Z"
     },
     {
       "slug": "junes-patch",
@@ -755,7 +1145,59 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.794Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
+    },
+    {
+      "slug": "junes-patch-healthcare-retreat",
+      "title": "June's Patch Healthcare Retreat",
+      "summary": "We run healthcare-worker retreats at Black Cockatoo Valley as an extension of the June's Patch practice — nature prescription at residential scale, grounded in soil, quiet, and shared meals. No disclosure required. The work is the rest.",
+      "overview": null,
+      "status": "Active",
+      "code": "ACT-FM-EXP-junes-patch-healthcare-retreat",
+      "tier": null,
+      "canonicalSlug": "junes-patch-healthcare-retreat",
+      "canonicalCode": "ACT-FM-EXP-junes-patch-healthcare-retreat",
+      "entityType": "project",
+      "taggingMode": "own-code",
+      "cluster": "act-farm",
+      "parentProject": null,
+      "websiteSlug": "junes-patch-healthcare-retreat",
+      "relativePath": "projects/act-farm/experiences/junes-patch-healthcare-retreat.md",
+      "websitePath": "/projects/junes-patch-healthcare-retreat",
+      "projectPagePath": "/projects/junes-patch-healthcare-retreat",
+      "publicSurface": "project",
+      "empathyLedgerKey": "junes-patch-healthcare-retreat",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-04-20T03:03:23.009Z"
+    },
+    {
+      "slug": "junes-patch-year-one-2025",
+      "title": "June's Patch Year One — the JCF partnership, 2024–2025",
+      "summary": "A multi-year partnership between A Curious Tractor and the June Canavan Foundation, named for Dr June Canavan's belief in the health–nature intersection. Year One was supposed to be about nature prescriptions for healthcare workers. What it actually became was a community that runs as much online as on the land, and that is now pivoting into food production as the next form of therapy.",
+      "overview": null,
+      "status": "Published",
+      "code": "ACT-FM-CS-junes-patch-year-one-2025",
+      "tier": null,
+      "canonicalSlug": "junes-patch-year-one-2025",
+      "canonicalCode": "ACT-FM-CS-junes-patch-year-one-2025",
+      "entityType": "project",
+      "taggingMode": "own-code",
+      "cluster": "act-farm",
+      "parentProject": null,
+      "websiteSlug": "junes-patch-year-one-2025",
+      "relativePath": "projects/act-farm/case-studies/junes-patch-year-one-2025.md",
+      "websitePath": "/projects/junes-patch-year-one-2025",
+      "projectPagePath": "/projects/junes-patch-year-one-2025",
+      "publicSurface": "project",
+      "empathyLedgerKey": "junes-patch-year-one-2025",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-04-20T03:03:23.008Z"
     },
     {
       "slug": "justicehub",
@@ -781,13 +1223,39 @@
       "canonicalUrl": "https://www.justicehub.com.au/",
       "repoUrl": "https://github.com/Acurioustractor/justicehub-platform",
       "deployUrl": "https://www.justicehub.com.au/",
-      "modifiedAt": "2026-04-12T20:50:21.795Z"
+      "modifiedAt": "2026-04-20T03:03:23.012Z"
+    },
+    {
+      "slug": "justicehub-centre-of-excellence",
+      "title": "JusticeHub Centre of Excellence",
+      "summary": "Research, training, and knowledge-sharing hub supporting the JusticeHub network with evidence-based practice and lived-experience expertise.",
+      "overview": "The JusticeHub Centre of Excellence is a planned extension of the JusticeHub platform, designed to function as a dedicated hub for research, professional development, and knowledge exchange in youth justice reform. Where JusticeHub provides the digital infrastructure for community-led justice, the Centre of Excellence provides the knowledge infrastructure: translating lived experience, academic research, and practice wisdom into usable resources for practitioners, policymakers, and community organisations working with young people in the justice system.",
+      "status": "Ideation",
+      "code": "ACT-JC",
+      "tier": "Satellite",
+      "canonicalSlug": "justicehub-centre-of-excellence",
+      "canonicalCode": "ACT-JC",
+      "entityType": "work",
+      "taggingMode": "own-code",
+      "cluster": "projects",
+      "parentProject": null,
+      "websiteSlug": "justicehub-centre-of-excellence",
+      "relativePath": "projects/justicehub/justicehub-centre-of-excellence.md",
+      "websitePath": "/projects/justicehub-centre-of-excellence",
+      "projectPagePath": "/projects/justicehub-centre-of-excellence",
+      "publicSurface": "work",
+      "empathyLedgerKey": "justicehub-centre-of-excellence",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-04-20T03:03:23.012Z"
     },
     {
       "slug": "marriage-celebrant",
       "title": "Marriage Celebrant",
       "summary": "Ben Knight's civil marriage celebrant practice, connecting ceremony with community.",
-      "overview": "Marriage Celebrant is Ben Knight's registered civil marriage celebrant practice. Operating as a satellite project within the ACT ecosystem, it brings the same care for storytelling and human connection that runs through ACT's other work into the ceremony space. The practice reflects ACT's broader philosophy that meaningful rituals and community gathering are acts of social infrastructure. Each ceremony is approached as a story worth telling well, with attention to the couple's own language, culture, and context rather than templated scripts.",
+      "overview": "Marriage Celebrant is Benjamin Knight's registered civil marriage celebrant practice. Operating as a satellite project within the ACT ecosystem, it brings the same care for storytelling and human connection that runs through ACT's other work into the ceremony space. Ben is a Commonwealth-registered civil celebrant. The practice sits outside ACT's core project portfolio but draws on the same foundations: deep listening, narrative craft, and the belief that gathering people around a moment of commitment is itself an act of social infrastructure.",
       "status": "Active",
       "code": "ACT-CB",
       "tier": "Satellite",
@@ -807,7 +1275,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T23:15:05.132Z"
+      "modifiedAt": "2026-04-20T03:03:23.012Z"
     },
     {
       "slug": "minderoo-pitch-package",
@@ -833,7 +1301,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.795Z"
+      "modifiedAt": "2026-04-20T03:03:23.012Z"
     },
     {
       "slug": "mounty-yarns",
@@ -859,7 +1327,7 @@
       "canonicalUrl": "https://mounty-yarns.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/mounty-yarns",
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.798Z"
+      "modifiedAt": "2026-04-20T03:03:23.012Z"
     },
     {
       "slug": "oonchiumpa",
@@ -885,7 +1353,7 @@
       "canonicalUrl": "https://oonchiumpa.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/Oonchiumpa",
       "deployUrl": "https://oonchiumpa-app.vercel.app/",
-      "modifiedAt": "2026-04-12T20:50:21.799Z"
+      "modifiedAt": "2026-04-20T03:03:23.012Z"
     },
     {
       "slug": "picc",
@@ -911,7 +1379,7 @@
       "canonicalUrl": "https://palm-island-repository.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/palm-island-repository",
       "deployUrl": "https://picc.studio/",
-      "modifiedAt": "2026-04-12T20:50:21.800Z"
+      "modifiedAt": "2026-04-20T03:03:23.013Z"
     },
     {
       "slug": "picc-annual-report",
@@ -937,7 +1405,7 @@
       "canonicalUrl": "https://palm-island-repository.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/palm-island-repository",
       "deployUrl": "https://picc.studio/",
-      "modifiedAt": "2026-04-12T20:50:21.799Z"
+      "modifiedAt": "2026-04-20T03:03:23.013Z"
     },
     {
       "slug": "picc-centre-precinct",
@@ -963,7 +1431,7 @@
       "canonicalUrl": "https://picc-station-map.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/picc-station-site-plan",
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.799Z"
+      "modifiedAt": "2026-04-20T03:03:23.013Z"
     },
     {
       "slug": "picc-elders-hull-river",
@@ -989,7 +1457,7 @@
       "canonicalUrl": "https://palm-island-repository.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/palm-island-repository",
       "deployUrl": "https://picc.studio/",
-      "modifiedAt": "2026-04-12T20:50:21.800Z"
+      "modifiedAt": "2026-04-20T03:03:23.013Z"
     },
     {
       "slug": "picc-photo-kiosk",
@@ -1015,7 +1483,7 @@
       "canonicalUrl": "https://palm-island-repository.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/palm-island-repository",
       "deployUrl": "https://picc.studio/",
-      "modifiedAt": "2026-04-12T20:50:21.800Z"
+      "modifiedAt": "2026-04-20T03:03:23.013Z"
     },
     {
       "slug": "place-based-policy-lab",
@@ -1041,7 +1509,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-08T09:11:25.363Z"
+      "modifiedAt": "2026-04-20T03:03:23.013Z"
     },
     {
       "slug": "quandamooka-justice-strategy",
@@ -1067,7 +1535,33 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T23:28:20.712Z"
+      "modifiedAt": "2026-04-20T03:03:23.013Z"
+    },
+    {
+      "slug": "radical-scoops-at-the-harvest",
+      "title": "Radical Scoops at The Harvest — the RAA Industry Residency",
+      "summary": "A 2,000-square-metre former nursery in Witta, a 12-month lease, about a thousand milk crates, an elder with a saw blade and a story about red cedar, an oyster farmer from up the coast, and ice cream as the connective tissue. Radical Scoops is ACT's first large-scale industry residency — the case study for what an arts-and-industry fellowship looks like when you run it the way we'd build it ourselves.",
+      "overview": null,
+      "status": "Published",
+      "code": "ACT-FM-CS-radical-scoops-at-the-harvest",
+      "tier": null,
+      "canonicalSlug": "radical-scoops-at-the-harvest",
+      "canonicalCode": "ACT-FM-CS-radical-scoops-at-the-harvest",
+      "entityType": "project",
+      "taggingMode": "own-code",
+      "cluster": "act-farm",
+      "parentProject": null,
+      "websiteSlug": "radical-scoops-at-the-harvest",
+      "relativePath": "projects/act-farm/case-studies/radical-scoops-at-the-harvest.md",
+      "websitePath": "/projects/radical-scoops-at-the-harvest",
+      "projectPagePath": "/projects/radical-scoops-at-the-harvest",
+      "publicSurface": "project",
+      "empathyLedgerKey": "radical-scoops-at-the-harvest",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-04-20T03:03:23.008Z"
     },
     {
       "slug": "redtape",
@@ -1093,7 +1587,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.787Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
     },
     {
       "slug": "regional-arts-fellowship",
@@ -1119,7 +1613,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.787Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
     },
     {
       "slug": "resoleution",
@@ -1145,7 +1639,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-08T09:11:25.371Z"
+      "modifiedAt": "2026-04-20T03:03:23.013Z"
     },
     {
       "slug": "smart-connect",
@@ -1171,7 +1665,7 @@
       "canonicalUrl": null,
       "repoUrl": "https://github.com/Acurioustractor/SMART-Connect",
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.801Z"
+      "modifiedAt": "2026-04-20T03:03:23.013Z"
     },
     {
       "slug": "smart-hcp-gp-uplift",
@@ -1197,7 +1691,33 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.801Z"
+      "modifiedAt": "2026-04-20T03:03:23.013Z"
+    },
+    {
+      "slug": "smart-recovery",
+      "title": "SMART Recovery",
+      "summary": "Evidence-based addiction recovery support — science-grounded, secular, and self-empowerment focused. ACT's partnership brings storytelling, technology, and community design to peer support infrastructure.",
+      "overview": "SMART Recovery is an evidence-based addiction recovery program operating globally, offering an alternative to 12-step models. It is science-grounded, secular, and self-empowerment focused rather than reliant on spiritual or disease-based frameworks. ACT's involvement in SMART Recovery is not running the recovery program itself. ACT contributes what it knows: storytelling infrastructure, digital platform design, and community connection systems. The partnership applies ACT's ecosystem approach to a context where peer support, clinical integration, and stigma reduction intersect.",
+      "status": "Active",
+      "code": "ACT-SM",
+      "tier": "Satellite",
+      "canonicalSlug": "smart-recovery",
+      "canonicalCode": "ACT-SM",
+      "entityType": "work",
+      "taggingMode": "own-code",
+      "cluster": "projects",
+      "parentProject": null,
+      "websiteSlug": "smart-recovery",
+      "relativePath": "projects/smart-recovery/smart-recovery.md",
+      "websitePath": "/projects/smart-recovery",
+      "projectPagePath": "/projects/smart-recovery",
+      "publicSurface": "work",
+      "empathyLedgerKey": "smart-recovery",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-04-20T03:03:23.013Z"
     },
     {
       "slug": "smart-recovery-gp-kits",
@@ -1223,7 +1743,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.801Z"
+      "modifiedAt": "2026-04-20T03:03:23.013Z"
     },
     {
       "slug": "staying",
@@ -1249,7 +1769,33 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.796Z"
+      "modifiedAt": "2026-04-20T03:03:23.012Z"
+    },
+    {
+      "slug": "stays",
+      "title": "Stays at Black Cockatoo Valley",
+      "summary": "Two cabins, 150 acres of Jinibara Country, and room to be quiet. The Pink Cabin and the Train Carriage are bookable directly. This is the self-guided end of the farm — you're on the land, we're light-touch hosts.",
+      "overview": null,
+      "status": "Active",
+      "code": "ACT-FM-EXP-stays",
+      "tier": null,
+      "canonicalSlug": "stays",
+      "canonicalCode": "ACT-FM-EXP-stays",
+      "entityType": "project",
+      "taggingMode": "own-code",
+      "cluster": "act-farm",
+      "parentProject": null,
+      "websiteSlug": "stays",
+      "relativePath": "projects/act-farm/experiences/stays.md",
+      "websitePath": "/projects/stays",
+      "projectPagePath": "/projects/stays",
+      "publicSurface": "project",
+      "empathyLedgerKey": "stays",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-04-20T03:03:23.009Z"
     },
     {
       "slug": "the-brave-ones",
@@ -1275,7 +1821,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.796Z"
+      "modifiedAt": "2026-04-20T03:03:23.012Z"
     },
     {
       "slug": "the-caravan",
@@ -1301,7 +1847,33 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.787Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
+    },
+    {
+      "slug": "the-caravan-at-bcv",
+      "title": "The Caravan at BCV",
+      "summary": "The Caravan was built for the Community Capital retreat in Bowral. It now lives at Black Cockatoo Valley. A mobile dignity object, parked on Country, still working. This is the case study of what happens when a studio piece stops touring and takes up residence.",
+      "overview": null,
+      "status": "Published",
+      "code": "ACT-FM-CS-the-caravan-at-bcv",
+      "tier": null,
+      "canonicalSlug": "the-caravan-at-bcv",
+      "canonicalCode": "ACT-FM-CS-the-caravan-at-bcv",
+      "entityType": "project",
+      "taggingMode": "own-code",
+      "cluster": "act-farm",
+      "parentProject": null,
+      "websiteSlug": "the-caravan-at-bcv",
+      "relativePath": "projects/act-farm/case-studies/the-caravan-at-bcv.md",
+      "websitePath": "/projects/the-caravan-at-bcv",
+      "projectPagePath": "/projects/the-caravan-at-bcv",
+      "publicSurface": "project",
+      "empathyLedgerKey": "the-caravan-at-bcv",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-04-20T03:03:23.008Z"
     },
     {
       "slug": "the-confessional",
@@ -1327,7 +1899,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.788Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
     },
     {
       "slug": "the-full-idea",
@@ -1353,7 +1925,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.796Z"
+      "modifiedAt": "2026-04-20T03:03:23.012Z"
     },
     {
       "slug": "the-harvest",
@@ -1379,14 +1951,40 @@
       "canonicalUrl": "https://witta-swot-analysis.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/theharvest",
       "deployUrl": "https://www.theharvestwitta.com.au/",
-      "modifiedAt": "2026-04-12T20:50:21.802Z"
+      "modifiedAt": "2026-04-20T03:03:23.014Z"
+    },
+    {
+      "slug": "the-space-at-bcv",
+      "title": "The Space at BCV",
+      "summary": "We hold a convening space at Black Cockatoo Valley — the kind of room where serious conversations about community, capital, and country can actually happen. Community Capital has already taken a year here. Other groups can too.",
+      "overview": null,
+      "status": "Active",
+      "code": "ACT-FM-EXP-the-space-at-bcv",
+      "tier": null,
+      "canonicalSlug": "the-space-at-bcv",
+      "canonicalCode": "ACT-FM-EXP-the-space-at-bcv",
+      "entityType": "project",
+      "taggingMode": "own-code",
+      "cluster": "act-farm",
+      "parentProject": null,
+      "websiteSlug": "the-space-at-bcv",
+      "relativePath": "projects/act-farm/experiences/the-space-at-bcv.md",
+      "websitePath": "/projects/the-space-at-bcv",
+      "projectPagePath": "/projects/the-space-at-bcv",
+      "publicSurface": "project",
+      "empathyLedgerKey": "the-space-at-bcv",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-04-20T03:03:23.009Z"
     },
     {
       "slug": "three-circles",
       "title": "The Three Circles",
       "summary": "A community-led advocacy infrastructure for youth justice in Australia.",
       "overview": null,
-      "status": "Canonical pitch — Lucy-warm, refresh in progress (2026-04-08)",
+      "status": "Canonical pitch — refreshed 2026-04-20 with 50-to-7/8 workshopped selection reframe + 5 confirmed anchors",
       "code": null,
       "tier": "flagship",
       "canonicalSlug": "three-circles",
@@ -1405,7 +2003,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.798Z"
+      "modifiedAt": "2026-04-20T03:03:23.012Z"
     },
     {
       "slug": "the-vagina",
@@ -1431,7 +2029,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.788Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
     },
     {
       "slug": "tomnet",
@@ -1457,7 +2055,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.802Z"
+      "modifiedAt": "2026-04-20T03:03:23.014Z"
     },
     {
       "slug": "treacher",
@@ -1483,7 +2081,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.788Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
     },
     {
       "slug": "uncle-allan-palm-island-art",
@@ -1509,7 +2107,33 @@
       "canonicalUrl": "https://palm-island-repository.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/palm-island-repository",
       "deployUrl": "https://picc.studio/",
-      "modifiedAt": "2026-04-12T20:50:21.788Z"
+      "modifiedAt": "2026-04-20T03:03:23.010Z"
+    },
+    {
+      "slug": "workshops-at-bcv",
+      "title": "Workshops at BCV",
+      "summary": "A rolling program of short-form workshops on Country — land practice, making, writing, systems. Hands in the soil by morning, a real conversation by afternoon. Come for one, come for a series.",
+      "overview": null,
+      "status": "Active",
+      "code": "ACT-FM-EXP-workshops-at-bcv",
+      "tier": null,
+      "canonicalSlug": "workshops-at-bcv",
+      "canonicalCode": "ACT-FM-EXP-workshops-at-bcv",
+      "entityType": "project",
+      "taggingMode": "own-code",
+      "cluster": "act-farm",
+      "parentProject": null,
+      "websiteSlug": "workshops-at-bcv",
+      "relativePath": "projects/act-farm/experiences/workshops-at-bcv.md",
+      "websitePath": "/projects/workshops-at-bcv",
+      "projectPagePath": "/projects/workshops-at-bcv",
+      "publicSurface": "project",
+      "empathyLedgerKey": "workshops-at-bcv",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-04-20T03:03:23.009Z"
     }
   ]
 }

@@ -8,13 +8,30 @@ status: active
 # Work Stream: ultimate-project-pages
 
 ## Ledger
-**Updated:** 2026-04-21T18:00:00Z
-**Goal:** Site-wide page review complete — every page speaks to external audience, every reader has a next step
-**Branch:** main (4 phase commits shipped, working tree clean for reviewed files)
+**Updated:** 2026-04-21T21:00:00Z
+**Goal:** Site-wide page review complete + SEO groundwork shipped
+**Branch:** main (8 commits shipped 0dba621…b33a45c)
 **Test:** npm run build && npm run dev (dev on :3300)
 
 ### Now
-[->] Site-wide page review (plan: `~/.claude/plans/lets-review-all-page-snazzy-pumpkin.md`) shipped across Phases A–D. CTA vocabulary audited, already coherent, no bulk change needed.
+[->] Full site-wide review and SEO pass complete in one session. Suggest `/clear` before picking up next thread. All substantive unblocked work is done; remaining options either need external input (EL API key, Supabase migration, LCAA content authoring) or visual QA with human eyes.
+
+### Session commit roll-up (most recent first)
+
+- `b33a45c` fix(links): stale hrefs → moved admin routes (/engine, /media-lab) cleaned up; VisionSearch mock repointed from /engine to /method.
+- `0b549b5` feat(seo): root layout metadata enriched (metadataBase, title template, openGraph, twitter, canonical). New `src/app/sitemap.ts` (40 static routes + wiki/projects/storytellers/art/blog dynamic routes with per-route priority+changefreq). New `src/app/robots.ts` (allow-all, disallow /admin, /api, /image-picker). `export const metadata` added to 14 pages that were bare (/about, /art, /blog, /contact, /events, /governance, /how-we-work, /method, /partners, /principles, /projects, /studio, /vision, /wiki). Verified /robots.txt and /sitemap.xml both 200.
+- `dec9617` refactor(pages): Phase B.2 voice tightening on /impact, /studio, /ask. Dropped "ALMA signals/seed set/signal flow", "public shell", "connective infrastructure", "field memory", "knowledge layer", "reading aid", "living system".
+- `bf4d4f4` docs(ledger): captured Phases A–D in ledger.
+- `93d5eb2` feat(ia): Phase D orphan triage. 2 stubs deleted w/ 301s, 3 tools demoted to /admin, 10 sub-pages wired into parents, 12 identity pages surfaced via new footer "Studio" column.
+- `d79dc9f` feat(pages): Phase C audience pathing. Homepage "I'm here to…" chips, ExternalHandoffCard on 4 flagships, ContactForm dropdown expanded to 7 types.
+- `09afcdd` refactor(pages): Phase B voice rewrites. /ecosystem rebuilt (238 lines interior ops removed), /wiki hero reframed, project-detail labels cleaned.
+- `0dba621` feat(pages): Phase A dead-ends. Wiki backlinks resolver (`src/lib/wiki/backlinks.ts`), storyteller→project title + "Carry a story" CTA, art→parent-project chip.
+
+### Phase A–D + B.2 + SEO cumulative verification
+- `npm run build`: clean after every commit, ~90 routes compile.
+- Copy-guard pre-commit hook: passed on all 8 commits.
+- Dev smoke check (`:3300`): 11 live routes → 200, 5 redirects → 308 to correct targets, /robots.txt → 200, /sitemap.xml → 200 with full URL set.
+- Session memory updated: `feedback_external_voice.md` now lists `/farm` as the voice benchmark + all interior-ops terms stripped this session, so future sessions don't re-audit.
 
 ### Latest session (2026-04-21): Site-wide page review
 

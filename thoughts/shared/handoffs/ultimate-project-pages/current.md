@@ -8,16 +8,17 @@ status: active
 # Work Stream: ultimate-project-pages
 
 ## Ledger
-**Updated:** 2026-04-22T00:00:00Z
-**Goal:** Site-wide page review + SEO groundwork + identity-family visual sweep shipped
-**Branch:** main (9 commits shipped 0dba621…c66cbad)
+**Updated:** 2026-04-22T01:00:00Z
+**Goal:** Site-wide page review + SEO + identity-family visual sweep + identity-family voice pass complete
+**Branch:** main (10 commits shipped 0dba621…53246c0)
 **Test:** npm run build && npm run dev (dev on :3300)
 
 ### Now
-[->] Identity-family visual consistency pass complete (/impact, /ask). Remaining judgement calls (stat-block color variance on /impact, whether to add closing-CTA section to pages that lack one, whether LivingSystemStrip voice needs its own tightening pass) were flagged but left for browser-eye review. Suggest `/clear` before next thread.
+[->] Identity-family visual AND voice passes both complete across all 10 pages (/about, /vision, /principles, /how-we-work, /governance, /impact, /partners, /events, /studio, /ask). Grep verifies zero matches for avoid-list terms in feedback_external_voice.md. Remaining judgement calls (stat-block color variance on /impact, closing-CTA variance across pages) still flagged for browser-eye review. Suggest `/clear`.
 
 ### Session commit roll-up (most recent first)
 
+- `53246c0` refactor(pages): Phase B.3 voice pass on 7 remaining identity pages (/about, /vision, /principles, /how-we-work, /governance, /partners, /events). Retired "public shell/surface/site/studio shell", "living memory/practice/system", "Partnership/Invitation/Principled layer", "field signal", "story layers", "governance surface", "canonical ACT wiki" → "working wiki", "second CMS/design language", and all "should"-note-to-author patterns from user-visible copy.
 - `c66cbad` refactor(pages): identity-family visual sweep — /impact + /ask. Outer `space-y-16` → `space-y-20` (now matches other 8 identity pages). /impact: 3 hand-rolled `<h2 class="text-2xl">` replaced with `SectionHeading` (fixes heading rhythm — family uses display `text-[2rem] md:text-[2.6rem]` with eyebrows); inner `space-y-8` → `space-y-10`. /ask: dropped nested `<main class="min-h-screen bg-gradient-to-b from-stone-50 to-white">` — the stone grey clashed with the sand palette, nested main was semantically wrong, AskACT self-contains its container.
 - `b33a45c` fix(links): stale hrefs → moved admin routes (/engine, /media-lab) cleaned up; VisionSearch mock repointed from /engine to /method.
 - `0b549b5` feat(seo): root layout metadata enriched (metadataBase, title template, openGraph, twitter, canonical). New `src/app/sitemap.ts` (40 static routes + wiki/projects/storytellers/art/blog dynamic routes with per-route priority+changefreq). New `src/app/robots.ts` (allow-all, disallow /admin, /api, /image-picker). `export const metadata` added to 14 pages that were bare (/about, /art, /blog, /contact, /events, /governance, /how-we-work, /method, /partners, /principles, /projects, /studio, /vision, /wiki). Verified /robots.txt and /sitemap.xml both 200.
@@ -120,7 +121,7 @@ Four phases committed in sequence. Plan file: `~/.claude/plans/lets-review-all-p
 - [~] **Seed wiki_pages Supabase** — still BLOCKED: `wiki_pages` table doesn't exist in remote Supabase. Migration `supabase/migrations/20241225_living_wiki.sql` needs to be applied first.
 - [ ] **Wiki editing auth upgrade** — replace WIKI_EDIT_TOKEN env gate with proper session auth before exposing externally.
 - [ ] **More LCAA content authoring** — 15/89 wiki project docs have LCAA; rest will auto-light-up as `## LCAA Phase` sections get added.
-- [~] **Cover the identity-family pages with the voice pass** — `/impact`, `/studio`, `/ask` done in B.2 (commit `dec9617`). Remaining 7 (`/about`, `/vision`, `/principles`, `/how-we-work`, `/governance`, `/partners`, `/events`) still carry LivingSystemStrip copy with interior-ops residue ("public shell/surface", "live signal", "living memory", "second CMS") — not yet audited against /farm voice benchmark.
+- [x] **Cover the identity-family pages with the voice pass** — B.2 (commit `dec9617`) + B.3 (commit `53246c0`) covered all 10 identity pages. Avoid-list terms in feedback_external_voice.md now return zero grep hits across `src/app/{about,vision,principles,how-we-work,governance,impact,partners,events,studio,ask}/page.tsx`.
 - [~] **Identity-family visual sweep** — shipped 2026-04-22 (commit `c66cbad`). /impact + /ask normalized. Open: /impact top-stat colors (#D87D4A orange + warm-brown + green + olive) may be semantic if they map to Sankey node colors — needs browser eyes. No other visual inconsistencies found across the 10 pages.
 - [ ] **SEO/meta overhaul** — scoped out of this review. Per-route metadata consistency, OpenGraph cards, structured data.
 

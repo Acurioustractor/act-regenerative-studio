@@ -6,6 +6,7 @@
 
 import Link from 'next/link';
 
+import { findStorytellerByName } from '@/lib/empathy-ledger-storytellers';
 import type { ProjectWikiPerson } from '@/lib/wiki/project-lcaa';
 
 interface ProjectKeyPeopleSectionProps {
@@ -32,6 +33,8 @@ export function ProjectKeyPeopleSection({
 
       <ul className="grid gap-4 md:grid-cols-2">
         {people.map((person, i) => {
+          const storyteller = findStorytellerByName(person.name);
+
           const body = (
             <>
               <h3 className="font-[var(--font-display)] text-lg font-semibold text-[var(--we-olive)]">
@@ -50,7 +53,20 @@ export function ProjectKeyPeopleSection({
               key={`${person.name}-${i}`}
               className="rounded-[20px] border border-[var(--we-sand)] bg-white p-5 transition hover:border-[#7A9B76]"
             >
-              {person.wikiSlug ? (
+              {storyteller ? (
+                <Link
+                  href={`/storytellers/${storyteller.id}`}
+                  className="group block"
+                >
+                  {body}
+                  <span className="mt-3 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-[var(--we-brown-deep)] group-hover:text-[var(--we-olive)]">
+                    <span className="rounded-full border border-[var(--we-sand)] bg-[#F6F1E7] px-2 py-0.5 text-[10px] tracking-[0.18em] text-[var(--we-olive)]">
+                      Storyteller profile
+                    </span>
+                    <span>View story →</span>
+                  </span>
+                </Link>
+              ) : person.wikiSlug ? (
                 <Link
                   href={`/wiki/${person.wikiSlug}`}
                   className="group block"

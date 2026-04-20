@@ -210,6 +210,45 @@ export function canDisplayStoryteller(profile: StorytellerProfile): boolean {
   return true;
 }
 
+function normalizeName(value: string): string {
+  return value.trim().toLowerCase().replace(/\s+/g, ' ');
+}
+
+function slugifyName(value: string): string {
+  return value
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, '-')
+    .replace(/^-+|-+$/g, '');
+}
+
+/**
+ * Find a displayable storyteller profile by display name.
+ * - Exact case-insensitive match first
+ * - Slugified-name comparison as a secondary pass
+ * - Consent-gated: only returns profiles for which canDisplayStoryteller is true
+ */
+export const findStorytellerByName = cache(
+  (name: string): StorytellerProfile | null => {
+    if (!name || typeof name !== 'string') return null;
+    const all = getAllStorytellers();
+    if (all.length === 0) return null;
+
+    const target = normalizeName(name);
+    if (target.length === 0) return null;
+
+    const exact = all.find((s) => normalizeName(s.displayName) === target);
+    if (exact && canDisplayStoryteller(exact)) return exact;
+
+    const targetSlug = slugifyName(name);
+    if (targetSlug.length === 0) return null;
+    const bySlug = all.find((s) => slugifyName(s.displayName) === targetSlug);
+    if (bySlug && canDisplayStoryteller(bySlug)) return bySlug;
+
+    return null;
+  }
+);
+
 export function getStorytellerSnapshotMeta() {
   return {
     generatedAt: SNAPSHOT.generatedAt,

@@ -16,3 +16,4 @@ export { StudioWorkSection } from './StudioWorkSection';
 export { GoldPhoneVoicesSection } from './GoldPhoneVoicesSection';
 export { TranscriptsSection } from './TranscriptsSection';
 export { ProjectKeyPeopleSection } from './ProjectKeyPeopleSection';
+export { SisterProjectsSection } from './SisterProjectsSection';

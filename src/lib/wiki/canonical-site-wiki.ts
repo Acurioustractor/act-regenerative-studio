@@ -28,6 +28,17 @@ export interface CanonicalWikiPageMatch extends CanonicalWikiPageRecord {
   source: CanonicalWikiPageSource;
 }
 
+export interface CanonicalWikiPageListItem {
+  title: string;
+  excerpt: string | null;
+  sectionId: string;
+  sectionTitle: string;
+  stem: string;
+  path: string;
+  relativePath: string;
+  modifiedAt: string | null;
+}
+
 interface CanonicalWikiPagesSnapshot {
   generatedAt: string | null;
   sourceRoot: string | null;
@@ -418,6 +429,29 @@ export function getCanonicalWikiSections(pages: CanonicalWikiPageRecord[]) {
     const rightRank = rightIndex === -1 ? Number.MAX_SAFE_INTEGER : rightIndex;
     return leftRank - rightRank;
   });
+}
+
+/**
+ * Lightweight list of all wiki pages for index/search views.
+ * Strips the heavy `content` field so the payload stays small when passed to
+ * a client component. Falls through Supabase → live filesystem → snapshot.
+ * Pages are returned sorted by title (case-insensitive).
+ */
+export async function listAllWikiPages(): Promise<CanonicalWikiPageListItem[]> {
+  const pages = await getCanonicalWikiPages();
+  const items: CanonicalWikiPageListItem[] = pages.map((page) => ({
+    title: page.title,
+    excerpt: page.excerpt,
+    sectionId: page.sectionId,
+    sectionTitle: page.sectionTitle,
+    stem: page.stem,
+    path: page.path,
+    relativePath: page.relativePath,
+    modifiedAt: page.modifiedAt,
+  }));
+  return items.sort((left, right) =>
+    left.title.localeCompare(right.title, 'en', { sensitivity: 'base' })
+  );
 }
 
 export async function renderCanonicalWikiMarkdown(content: string): Promise<string> {

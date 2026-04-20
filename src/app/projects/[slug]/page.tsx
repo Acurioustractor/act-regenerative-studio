@@ -35,8 +35,10 @@ import {
   GoldPhoneVoicesSection,
   TranscriptsSection,
   ProjectKeyPeopleSection,
+  SisterProjectsSection,
 } from '@/components/projects';
 import { getTranscriptsForProject } from '@/lib/empathy-ledger-transcripts';
+import { getClusterCohort } from '@/lib/projects/cluster-cohort';
 
 interface EngagementAction {
   label: string;
@@ -368,6 +370,7 @@ export default async function ProjectPage({
     project.wikiBacklinks.map((b) => b.slug)
   );
   const relatedWorks = await getRelatedFeaturedWorks(slug, project.title, 3);
+  const sisterProjects = await getClusterCohort(slug, project.wikiData?.cluster);
   const [relatedArticles, projectEditorial] = await Promise.all([
     getProjectEditorialArticles(slug, 4),
     getProjectEditorialFeature(slug),
@@ -889,6 +892,12 @@ export default async function ProjectPage({
           })}
         </div>
       </section>
+
+      {/* Sister Projects — cluster-based editorial cohort (from wiki) */}
+      <SisterProjectsSection
+        cluster={project.wikiData?.cluster || ''}
+        projects={sisterProjects}
+      />
 
       {/* Related Projects */}
       {relatedProjects.length > 0 && (

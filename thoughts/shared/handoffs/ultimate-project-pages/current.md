@@ -8,21 +8,21 @@ status: active
 # Work Stream: ultimate-project-pages
 
 ## Ledger
-**Updated:** 2026-04-22T02:00:00Z
-**Goal:** Site-wide voice pass complete across all user-facing pages (identity + flagships + shared)
-**Branch:** main (11 commits shipped 0dba621…8002eef)
+**Updated:** 2026-04-22T03:00:00Z
+**Goal:** Site-wide voice pass + drifted-route demotion complete
+**Branch:** main (12 commits shipped 0dba621…1bfc843)
 **Test:** npm run build && npm run dev (dev on :3300)
 
 ### Now
-[->] Voice pass complete site-wide. Grep sweep returns zero hits for avoid-list terms across every user-facing `.tsx` page. Remaining hits are scope-excluded: one JSX comment (/page.tsx:154), `/wiki/source-packets` (internal-tools page drifted to public URL — candidate for /admin demotion), and `/admin/*` pages (internal audience).
+[->] Voice pass + drifted-route IA demotion complete. Zero interior-ops residue on user-facing pages. /wiki home collapsed 3→2 cards; "See the trail" promise retired rather than kept as a broken link.
 
 ### Followups surfaced but deferred
-- `/wiki/source-packets` still uses "Public surfaces", "canonical", "should"-note-to-author, and generally internal-systems framing. Should be demoted to `/admin/source-packets` alongside engine/image-picker/media-lab (Phase D pattern). ~10 min when picked up.
 - Stat-block color variance on `/impact` (4 different hex accents) — may be semantic vs Sankey, needs browser eyes.
 - Closing-CTA variance across identity-family (some have dark callouts, some don't) — likely intentional rhythm, needs browser eyes.
 
 ### Session commit roll-up (most recent first)
 
+- `1bfc843` feat(ia): demote drifted /wiki/source-{packets,bridges} to /admin. Both pages were ops dashboards (packet review gates, ownership_rules, implementation repos) surfaced from /wiki home with user-facing card copy. `git mv` both to /admin, 301 redirects added, /wiki home dropped from 3 to 2 cards (Ecosystem + Voices from the field → /storytellers). "See the trail" card retired.
 - `8002eef` refactor(pages): Phase B.4 voice pass on flagships + shared pages. /governance + /events PageHero descriptions; /method LCAA blurb; /contact LivingSystemStrip; 3× /projects/[slug] handoff card copy; /projects list page; /harvest Barry-shed editorial. Zero avoid-list grep hits across all user-facing pages.
 - `53246c0` refactor(pages): Phase B.3 voice pass on 7 remaining identity pages (/about, /vision, /principles, /how-we-work, /governance, /partners, /events). Retired "public shell/surface/site/studio shell", "living memory/practice/system", "Partnership/Invitation/Principled layer", "field signal", "story layers", "governance surface", "canonical ACT wiki" → "working wiki", "second CMS/design language", and all "should"-note-to-author patterns from user-visible copy.
 - `c66cbad` refactor(pages): identity-family visual sweep — /impact + /ask. Outer `space-y-16` → `space-y-20` (now matches other 8 identity pages). /impact: 3 hand-rolled `<h2 class="text-2xl">` replaced with `SectionHeading` (fixes heading rhythm — family uses display `text-[2rem] md:text-[2.6rem]` with eyebrows); inner `space-y-8` → `space-y-10`. /ask: dropped nested `<main class="min-h-screen bg-gradient-to-b from-stone-50 to-white">` — the stone grey clashed with the sand palette, nested main was semantically wrong, AskACT self-contains its container.

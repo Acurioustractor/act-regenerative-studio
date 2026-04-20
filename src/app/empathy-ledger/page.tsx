@@ -6,6 +6,7 @@ import { ScrollReveal } from "@/components/flagship/ScrollReveal";
 import { RelatedFields } from "@/components/flagship/RelatedFields";
 import { EditableImage } from "@/components/flagship/EditableImage";
 import { PhotoStrip } from "@/components/flagship/PhotoStrip";
+import { ExternalHandoffCard } from "@/components/ecosystem/ExternalHandoffCard";
 import {
   DocHero,
   SectionHeader,
@@ -55,6 +56,13 @@ export default async function EmpathyLedgerPage() {
         coverImage={project.coverImage}
         primaryCta={{ label: "Visit empathyledger.com", href: "https://empathyledger.com", external: true }}
         secondaryCta={{ label: "The full story →", href: "#story" }}
+      />
+
+      <ExternalHandoffCard
+        platformName="Empathy Ledger"
+        url="https://empathyledger.com"
+        whatHappensThere="storytellers publish, control, and revoke their own narratives — and communities read them with consent"
+        whyComeBack="the story of how the platform came to be, the principles underneath it, and the work it supports"
       />
 
       {/* ——— THE WHY ——— */}

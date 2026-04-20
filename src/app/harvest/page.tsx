@@ -7,6 +7,7 @@ import { ScrollReveal } from "@/components/flagship/ScrollReveal";
 import { RelatedFields } from "@/components/flagship/RelatedFields";
 import { EditableImage } from "@/components/flagship/EditableImage";
 import { PhotoStrip } from "@/components/flagship/PhotoStrip";
+import { ExternalHandoffCard } from "@/components/ecosystem/ExternalHandoffCard";
 import {
   DocHero,
   SectionHeader,
@@ -54,6 +55,13 @@ export default async function HarvestPage() {
         coverImage={project.coverImage}
         primaryCta={{ label: "Visit theharvestwitta.com.au", href: "https://theharvestwitta.com.au", external: true }}
         secondaryCta={{ label: "The full story →", href: "#story" }}
+      />
+
+      <ExternalHandoffCard
+        platformName="The Harvest"
+        url="https://theharvestwitta.com.au"
+        whatHappensThere="seasonal meals, workshops, and venue hire actually happen — menus, booking, events"
+        whyComeBack="the story of the land and how The Harvest fits the wider ACT ecosystem"
       />
 
       {/* ——— THE WHY ——— */}

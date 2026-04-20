@@ -127,6 +127,30 @@ export default async function HomePage() {
         }
       />
 
+      {/* ——— 1b. AUDIENCE CHIPS — slim row, tells the visitor where to go ——— */}
+      <section className="border-b border-[var(--we-sand)] bg-[#F6F1E7] px-8 py-8">
+        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center gap-3">
+          <p className="mr-2 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)]">
+            I&rsquo;m here to&hellip;
+          </p>
+          {[
+            { label: 'Partner', href: '/contact?type=project-partnership&source=home-audience' },
+            { label: 'Visit the farm', href: '/farm' },
+            { label: 'Support the work', href: '/contact?type=support&source=home-audience' },
+            { label: 'Research or write', href: '/wiki' },
+            { label: 'Share a story', href: '/contact?type=share-your-story&source=home-audience' },
+          ].map((chip) => (
+            <Link
+              key={chip.label}
+              href={chip.href}
+              className="rounded-full border border-[var(--we-sand)] bg-white/80 px-4 py-1.5 text-sm text-[var(--we-olive)] transition hover:border-[#4CAF50] hover:bg-white"
+            >
+              {chip.label}
+            </Link>
+          ))}
+        </div>
+      </section>
+
       {/* ——— 2. FLAGSHIP FIELDS — Editorial, no borders ——— */}
       <section className="px-8 py-28 md:py-36">
         <div className="mx-auto max-w-[1200px]">

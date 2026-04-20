@@ -9,6 +9,7 @@ import { ScrollReveal } from "@/components/flagship/ScrollReveal";
 import { RelatedFields } from "@/components/flagship/RelatedFields";
 import { EditableImage } from "@/components/flagship/EditableImage";
 import { PhotoStrip } from "@/components/flagship/PhotoStrip";
+import { ExternalHandoffCard } from "@/components/ecosystem/ExternalHandoffCard";
 import {
   DocHero,
   SectionHeader,
@@ -69,6 +70,14 @@ export default async function GoodsPage() {
         coverImage={project.coverImage}
         primaryCta={{ label: "Shop at goodsoncountry.com", href: "https://goodsoncountry.com", external: true }}
         secondaryCta={{ label: "The full story →", href: "#story" }}
+      />
+
+      <ExternalHandoffCard
+        platformName="Goods on Country"
+        url="https://goodsoncountry.com"
+        whatHappensThere="procurement teams and communities order durable, community-designed beds and washing machines"
+        whyComeBack="the story behind each product, the communities they come from, and the plastic they keep out of landfill"
+        linkLabel="Shop at Goods on Country"
       />
 
       {/* ——— THE WHY ——— */}

@@ -158,6 +158,9 @@ export function ContactForm({
             <option value="project-partnership">Project or partnership</option>
             <option value="residency-visit">Residency or visit</option>
             <option value="commission-cultural-work">Commission or cultural work</option>
+            <option value="share-your-story">Share a story</option>
+            <option value="support">Support the work</option>
+            <option value="research">Research or press</option>
             <option value="general">General enquiry</option>
           </select>
         </div>

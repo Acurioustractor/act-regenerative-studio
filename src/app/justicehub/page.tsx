@@ -10,6 +10,7 @@ import { ScrollReveal } from "@/components/flagship/ScrollReveal";
 import { RelatedFields } from "@/components/flagship/RelatedFields";
 import { EditableImage } from "@/components/flagship/EditableImage";
 import { PhotoStrip } from "@/components/flagship/PhotoStrip";
+import { ExternalHandoffCard } from "@/components/ecosystem/ExternalHandoffCard";
 import {
   DocHero,
   SectionHeader,
@@ -70,6 +71,13 @@ export default async function JusticeHubPage() {
         coverImage={project.coverImage}
         primaryCta={{ label: "Visit justicehub.com.au", href: "https://justicehub.com.au", external: true }}
         secondaryCta={{ label: "The full story →", href: "#story" }}
+      />
+
+      <ExternalHandoffCard
+        platformName="JusticeHub"
+        url="https://justicehub.com.au"
+        whatHappensThere="the evidence library, program directory, and justice network actually live — searchable, forkable, open"
+        whyComeBack="the story behind the data and why this work matters"
       />
 
       {/* ——— THE WHY ——— */}

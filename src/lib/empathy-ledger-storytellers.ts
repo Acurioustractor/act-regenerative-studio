@@ -3,6 +3,7 @@ import 'server-only';
 import { cache } from 'react';
 
 import storytellerSnapshot from '@/data/empathy-ledger-storytellers.generated.json';
+import transcriptSnapshot from '@/data/empathy-ledger-transcripts.generated.json';
 
 export interface StorytellerConsent {
   consentToShare: boolean | null;
@@ -187,13 +188,85 @@ function toProfile(record: StorytellerSnapshot['storytellers'][number]): Storyte
   };
 }
 
+/**
+ * Synthesize storyteller profiles from the transcript snapshot when the
+ * dedicated storytellers snapshot is empty. Each transcript carries an
+ * embedded storyteller object (name, avatar, location, cultural background)
+ * that's enough to render a usable profile and a transcript count.
+ *
+ * Used when no storyteller has `gallery_syndication_consent` for this site
+ * yet but transcripts are flowing through the content-hub fallback.
+ */
+function synthesizeStorytellersFromTranscripts(): StorytellerProfile[] {
+  const transcripts = (transcriptSnapshot as any)?.transcripts || [];
+  if (!Array.isArray(transcripts) || transcripts.length === 0) return [];
+
+  const byId = new Map<string, { profile: StorytellerProfile; count: number }>();
+
+  for (const t of transcripts) {
+    const s = t?.storyteller;
+    if (!s?.id || !s?.name) continue;
+
+    const existing = byId.get(s.id);
+    if (existing) {
+      existing.count += 1;
+      continue;
+    }
+
+    const culturalBackground = Array.isArray(s.culturalBackground)
+      ? s.culturalBackground.filter((v: unknown): v is string => typeof v === 'string')
+      : [];
+
+    byId.set(s.id, {
+      count: 1,
+      profile: {
+        id: s.id,
+        displayName: s.name,
+        bio: typeof s.bio === 'string' ? s.bio : null,
+        avatarUrl: typeof s.avatarUrl === 'string' ? s.avatarUrl : null,
+        culturalBackground,
+        location: typeof s.location === 'string' ? s.location : null,
+        isElder: false,
+        isFeatured: false,
+        authorRole: null,
+        roles: [],
+        galleries: [],
+        analysis: null,
+        consent: {
+          consentToShare: true,
+          processingConsent: null,
+          culturalSensitivity: null,
+          requiresElderReview: null,
+          elderReviewedAt: null,
+        },
+      },
+    });
+  }
+
+  return Array.from(byId.values()).map(({ profile, count }) => ({
+    ...profile,
+    analysis: {
+      themes: [],
+      quotes: [],
+      culturalMarkers: [],
+      transcriptCount: count,
+      mediaCount: 0,
+      analyzedAt: null,
+    },
+  }));
+}
+
 export const getAllStorytellers = cache((): StorytellerProfile[] => {
-  return SNAPSHOT.storytellers.map(toProfile);
+  if (SNAPSHOT.storytellers.length > 0) {
+    return SNAPSHOT.storytellers.map(toProfile);
+  }
+  return synthesizeStorytellersFromTranscripts();
 });
 
 export const getStorytellerById = cache((id: string): StorytellerProfile | null => {
   const record = SNAPSHOT.storytellers.find((r) => r.id === id);
-  return record ? toProfile(record) : null;
+  if (record) return toProfile(record);
+  return getAllStorytellers().find((s) => s.id === id) || null;
 });
 
 export const getStorytellersForProject = cache(
@@ -254,6 +327,8 @@ export function getStorytellerSnapshotMeta() {
     generatedAt: SNAPSHOT.generatedAt,
     sourceUrl: SNAPSHOT.sourceUrl,
     siteSlug: SNAPSHOT.siteSlug,
-    storytellerCount: SNAPSHOT.storytellerCount,
+    storytellerCount:
+      SNAPSHOT.storytellerCount ||
+      synthesizeStorytellersFromTranscripts().length,
   };
 }

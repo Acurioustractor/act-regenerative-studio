@@ -5,6 +5,12 @@ import SectionHeading from "../../components/SectionHeading";
 import { getLiveServicesForSite } from "@/lib/empathy-ledger-services";
 import { resolveServiceProjectLinks } from "@/lib/projects/resolve-service-project-links";
 
+export const metadata = {
+  title: "How we work",
+  description:
+    "Partnership first. Country sets the pace. Sunset clauses. The working rhythms behind every project.",
+};
+
 const workStyles = [
   {
     title: "Partnership First",

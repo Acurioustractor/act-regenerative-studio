@@ -3,6 +3,12 @@ import CardGrid from "../../components/CardGrid";
 import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
 
+export const metadata = {
+  title: "About",
+  description:
+    "A regenerative innovation studio on Jinibara Country. Land, story, method, and the commitment to hand over the keys when community leadership is ready.",
+};
+
 const identityCards = [
   {
     title: "A regenerative studio",

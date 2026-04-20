@@ -2,6 +2,12 @@ import Image from "next/image";
 import Link from "next/link";
 import { getSiteEditorialArticles } from "../../lib/empathy-ledger-editorial";
 
+export const metadata = {
+  title: "Field notes",
+  description:
+    "Editorial writing, community voices, and stories from the projects ACT is part of.",
+};
+
 export const revalidate = 60;
 
 export default async function BlogPage() {

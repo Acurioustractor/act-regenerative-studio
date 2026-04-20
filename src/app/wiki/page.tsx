@@ -9,6 +9,12 @@ import {
   listAllWikiPages,
 } from '@/lib/wiki/canonical-site-wiki';
 
+export const metadata = {
+  title: "Wiki",
+  description:
+    "Methods, decisions, and the people behind every project — kept in public so you can check our thinking.",
+};
+
 export default async function WikiHomepage() {
   const [allPages, packetSnapshot, ecosystemSummary, flagshipPacks] = await Promise.all([
     listAllWikiPages(),

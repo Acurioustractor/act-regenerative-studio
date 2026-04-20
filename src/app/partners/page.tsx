@@ -4,6 +4,12 @@ import { EnquiryExpectations } from "../../components/forms/EnquiryExpectations"
 import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
 
+export const metadata = {
+  title: "Partners",
+  description:
+    "Community partners, philanthropic collaborators, and research institutions working alongside ACT.",
+};
+
 const partnerTypes = [
   {
     title: "Community Partners",

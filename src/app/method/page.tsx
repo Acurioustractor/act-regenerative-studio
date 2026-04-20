@@ -2,6 +2,12 @@ import Link from "next/link";
 import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
 
+export const metadata = {
+  title: "Method",
+  description:
+    "Listen, curiosity, action, art. The sequence that shapes every project ACT takes on.",
+};
+
 const lcaaSteps = [
   {
     title: "Listen",

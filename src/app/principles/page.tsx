@@ -3,6 +3,12 @@ import LivingSystemStrip from "@/components/LivingSystemStrip";
 import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
 
+export const metadata = {
+  title: "Principles",
+  description:
+    "Country sets the pace. Community authority comes first. Build for handover. Nine operational principles behind ACT.",
+};
+
 const operationalPrinciples = [
   {
     number: 1,

@@ -4,6 +4,12 @@ import CardGrid from "../../components/CardGrid";
 import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
 
+export const metadata = {
+  title: "Events",
+  description:
+    "Community meals, workshops, residencies, and public gatherings — invitations to step onto the valley.",
+};
+
 const eventTypes = [
   {
     title: "Community meals",

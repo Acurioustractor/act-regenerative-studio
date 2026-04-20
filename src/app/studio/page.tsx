@@ -10,6 +10,12 @@ import { buildCuratedProjectCards } from "@/lib/projects/build-curated-project-c
 import { resolveServiceProjectLinks } from "@/lib/projects/resolve-service-project-links";
 import { studioProjectConfigs } from "@/lib/projects/studio-project-configs";
 
+export const metadata = {
+  title: "Studio",
+  description:
+    "The workshop behind the projects. Where ideas get prototyped, partnerships are designed, and field material feeds the next round of work.",
+};
+
 const fallbackStudioCapabilities = [
   {
     title: "Contracted Projects",

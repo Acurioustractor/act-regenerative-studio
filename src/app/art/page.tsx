@@ -9,6 +9,12 @@ import {
   type ArtMedium,
 } from '@/lib/art/art-portfolio';
 
+export const metadata = {
+  title: "Art",
+  description:
+    "Installations, photography, film, sculpture — art as the final act of listening. Works from across the ACT ecosystem.",
+};
+
 function formatMedium(medium: ArtMedium): string {
   const labels: Record<ArtMedium, string> = {
     photography: 'Photography',

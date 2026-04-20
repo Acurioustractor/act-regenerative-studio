@@ -6,6 +6,12 @@ import { EnquiryExpectations } from "../../components/forms/EnquiryExpectations"
 import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
 
+export const metadata = {
+  title: "Contact",
+  description:
+    "Reach out to explore a project, partnership, residency, commission, or a story you'd like to share.",
+};
+
 const contactPaths = [
   {
     title: "Project or partnership",

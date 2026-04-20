@@ -3,6 +3,12 @@ import CardGrid from "../../components/CardGrid";
 import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
 
+export const metadata = {
+  title: "Governance",
+  description:
+    "How decisions get made at ACT — shared responsibility, community authority, and the long timelines behind handover.",
+};
+
 const governancePrinciples = [
   {
     title: "Shared decision-making",

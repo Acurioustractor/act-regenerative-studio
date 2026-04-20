@@ -30,14 +30,52 @@ const navItems = [
   { label: "Contact", href: "/contact" },
 ];
 
+const siteUrl =
+  process.env.NEXT_PUBLIC_SITE_URL ||
+  "https://act-regenerative-studio.vercel.app";
+
 export const metadata: Metadata = {
-  title: "A Curious Tractor | Regenerative Innovation Studio",
+  metadataBase: new URL(siteUrl),
+  title: {
+    default: "A Curious Tractor | Regenerative Innovation Studio",
+    template: "%s | A Curious Tractor",
+  },
   description:
-    "A regenerative innovation studio stewarding a working farm on Jinibara Country.",
+    "A regenerative innovation studio stewarding a working farm on Jinibara Country. Places, story systems, and public works you can step into.",
   icons: {
     icon: "/branding/act-logo-square.png",
     apple: "/branding/act-logo-square.png",
     shortcut: "/branding/act-logo-square.png",
+  },
+  openGraph: {
+    type: "website",
+    siteName: "A Curious Tractor",
+    url: siteUrl,
+    title: "A Curious Tractor | Regenerative Innovation Studio",
+    description:
+      "Places, story systems, and public works you can step into. A regenerative studio on Jinibara Country.",
+    images: [
+      {
+        url: "/branding/act-logo-square.png",
+        width: 1200,
+        height: 630,
+        alt: "A Curious Tractor",
+      },
+    ],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "A Curious Tractor | Regenerative Innovation Studio",
+    description:
+      "Places, story systems, and public works you can step into.",
+    images: ["/branding/act-logo-square.png"],
+  },
+  robots: {
+    index: true,
+    follow: true,
+  },
+  alternates: {
+    canonical: "/",
   },
 };
 

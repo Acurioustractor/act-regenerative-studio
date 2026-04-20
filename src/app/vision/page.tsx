@@ -7,6 +7,12 @@ import SectionHeading from "@/components/SectionHeading";
 import { MarkdownViewer } from '@/components/ui/MarkdownViewer';
 import { VisionSearch } from '@/components/ui/VisionSearch';
 
+export const metadata = {
+  title: "Vision",
+  description:
+    "A seasonal map of where ACT is trying to go — the working direction, not a polished roadmap.",
+};
+
 export default async function VisionPage() {
     const filePath = path.join(process.cwd(), 'src/data/vision/vision.md');
     const content = fs.readFileSync(filePath, 'utf8');

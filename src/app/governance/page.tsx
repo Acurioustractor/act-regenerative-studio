@@ -51,7 +51,7 @@ export default function GovernancePage() {
       <PageHero
         eyebrow="Governance"
         title="Governance that moves toward shared stewardship"
-        description="ACT treats governance as a living practice rather than a policy appendix. The work is to move authority, accountability, and care closer to the people and places most affected."
+        description="ACT treats governance as ongoing practice, not a policy appendix. The work is to move authority, accountability, and care closer to the people and places most affected."
         actions={[
           { label: "Read the principles", href: "/principles" },
           { label: "Talk with us", href: "/contact", variant: "outline" },

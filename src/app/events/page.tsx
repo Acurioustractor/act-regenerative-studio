@@ -58,7 +58,7 @@ export default function EventsPage() {
       <PageHero
         eyebrow="Events"
         title="Gatherings, invitations, and public moments"
-        description="ACT gatherings do not all come through one event system. Some happen through the farm, some through The Harvest, some through residencies and works. This page is the public invitation layer rather than a fixed calendar."
+        description="ACT gatherings do not all come through one event system. Some happen through the farm, some through The Harvest, some through residencies and works. This page is the invitation rather than a fixed calendar."
         actions={[
           { label: "Start a conversation", href: "/contact" },
           { label: "Visit the farm", href: "/farm", variant: "outline" },
@@ -70,7 +70,7 @@ export default function EventsPage() {
             Gathering note
           </p>
           <p>
-            The right public surface here is not an empty event grid. It is a clearer sense of the kinds of invitations ACT makes and where to look next.
+            What belongs here is not an empty event grid. It is a clearer sense of the kinds of invitations ACT makes and where to look next.
           </p>
         </div>
       </PageHero>

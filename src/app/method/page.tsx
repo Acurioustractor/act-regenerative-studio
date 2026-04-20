@@ -98,7 +98,7 @@ export default function MethodPage() {
         <SectionHeading
           eyebrow="LCAA"
           title="Listen. Curiosity. Action. Art."
-          description="This loop is how ACT moves from field signal to practical response without losing meaning."
+          description="This loop is how ACT moves from listening to practical response without losing meaning."
         />
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-4">
           {lcaaSteps.map((step) => (

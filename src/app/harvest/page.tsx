@@ -197,7 +197,7 @@ export default async function HarvestPage() {
                   Barry Rodgerig&apos;s shed holds the memory of the hinterland as
                   working country. His decades of making, repairing, and sustaining
                   life on this land shaped how we understand the site. The shed is
-                  not heritage. It is a living practice.
+                  not heritage. It still carries the work.
                 </>
               }
             />

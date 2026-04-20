@@ -63,15 +63,15 @@ export default function ContactPage() {
       </PageHero>
 
       <LivingSystemStrip
-        eyebrow="Contact path"
-        title="The contact surface is part of the living system too"
-        description="Project framing on this site is grounded in the ACT wiki. Stories, media, and collaboration proof can keep arriving through Empathy Ledger. So when you reach out, the site already carries some real context instead of making every conversation start from zero."
+        eyebrow="Before you write"
+        title="The site already carries some of the context"
+        description="Project framing comes from the ACT wiki. Stories, media, and collaboration proof arrive through Empathy Ledger. When you reach out, the conversation can start partway in rather than from zero."
         wiki={{
           href: "/wiki",
           label: "Open ACT wiki",
         }}
         live={{
-          sourceLabel: "Live project and story layers connected through Empathy Ledger",
+          sourceLabel: "Project and story context through Empathy Ledger",
           href: `${process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL || "https://empathyledger.com"}/projects`,
         }}
         stats={[

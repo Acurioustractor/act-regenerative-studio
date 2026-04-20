@@ -138,7 +138,7 @@ function getEngagementConfig(
         {
           label: 'Open the JusticeHub site',
           description:
-            'Step into the dedicated JusticeHub public surface for the wider justice network and program story.',
+            'Step into the dedicated JusticeHub site for the wider justice network and program story.',
           href: projectWebsiteUrl || '/justicehub',
           variant: 'secondary',
         },
@@ -282,7 +282,7 @@ function getEngagementConfig(
         {
           label: 'Visit the dedicated artwork site',
           description:
-            'Open the project’s own public surface when you need the direct portfolio and contact pathway.',
+            'Open the project’s own site when you need the direct portfolio and contact pathway.',
           href: projectWebsiteUrl || '/art',
           variant: 'secondary',
         },
@@ -335,7 +335,7 @@ function getEngagementConfig(
     defaultActions.splice(1, 0, {
       label: 'Visit the dedicated project site',
       description:
-        'Go deeper into the project’s own public surface while keeping the ACT hub as the shared ecosystem frame.',
+        'Go deeper on the project’s own site while keeping ACT as the shared ecosystem frame.',
       href: projectWebsiteUrl,
       variant: 'secondary',
     });

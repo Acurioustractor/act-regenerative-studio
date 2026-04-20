@@ -395,8 +395,8 @@ export default async function ProjectsPage() {
           <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--we-brown)]">
             Each project page now pulls together public framing, live stories
             and media where they exist, and direct ways to enter the work. You
-            do not need to understand the whole ACT system before you can find
-            the right project, partner path, or public proof.
+            do not need to understand all of ACT before you can find the right
+            project, partner path, or proof.
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
             <Link

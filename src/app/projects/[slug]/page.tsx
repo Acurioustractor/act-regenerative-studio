@@ -1,3 +1,4 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
@@ -32,7 +33,10 @@ import {
   ProjectFieldMediaSection,
   StudioWorkSection,
   GoldPhoneVoicesSection,
+  TranscriptsSection,
+  ProjectKeyPeopleSection,
 } from '@/components/projects';
+import { getTranscriptsForProject } from '@/lib/empathy-ledger-transcripts';
 
 interface EngagementAction {
   label: string;
@@ -49,6 +53,20 @@ interface EngagementConfig {
 
 export function generateStaticParams() {
   return getAllProjectSlugs().map((slug) => ({ slug }));
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const project = await getProjectData(slug);
+  if (!project) return {};
+  return {
+    title: `${project.title} | A Curious Tractor`,
+    description: project.tagline || project.description,
+  };
 }
 
 // Loading skeleton for sections
@@ -344,7 +362,11 @@ export default async function ProjectPage({
   }
 
   const theme = themeStyles[project.theme] ?? themeStyles.earth;
-  const relatedProjects = getRelatedProjects(slug, 3);
+  const relatedProjects = getRelatedProjects(
+    slug,
+    3,
+    project.wikiBacklinks.map((b) => b.slug)
+  );
   const relatedWorks = await getRelatedFeaturedWorks(slug, project.title, 3);
   const [relatedArticles, projectEditorial] = await Promise.all([
     getProjectEditorialArticles(slug, 4),
@@ -352,6 +374,7 @@ export default async function ProjectPage({
   ]);
   const workConfig = getFeaturedWorkConfigBySlug(slug);
   const fieldMedia = getProjectFieldMedia(project);
+  const projectTranscripts = getTranscriptsForProject(slug);
   const engagementConfig = getEngagementConfig(
     slug,
     project.title,
@@ -539,6 +562,48 @@ export default async function ProjectPage({
           stories={project.empathyLedgerContent.featured.stories}
           projectTitle={project.title}
         />
+      )}
+
+      {/* Transcripts (consented, from EL) — silent if no transcripts for this project */}
+      <TranscriptsSection
+        transcripts={projectTranscripts}
+        projectTitle={project.title}
+      />
+
+      {/* Key people from wiki ## Key People section — silent if none */}
+      <ProjectKeyPeopleSection
+        people={project.keyPeople}
+        projectTitle={project.title}
+      />
+
+      {/* Connected in the wiki — editorially-curated backlinks */}
+      {project.wikiBacklinks.length > 0 && (
+        <section className="rounded-[28px] border border-[var(--we-sand)] bg-[#FDFBF7] p-6 md:p-10">
+          <div className="space-y-3">
+            <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-brown-deep)]">
+              Connected in the wiki
+            </p>
+            <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
+              How this thread links through ACT
+            </h2>
+            <p className="text-sm text-[var(--we-olive-deep)]">
+              The wiki curates these connections directly. Each link opens the
+              related page in the knowledge base.
+            </p>
+          </div>
+          <ul className="mt-6 flex flex-wrap gap-2">
+            {project.wikiBacklinks.map((link) => (
+              <li key={link.slug}>
+                <Link
+                  href={`/wiki/${link.slug}`}
+                  className="inline-flex items-center rounded-full border border-[var(--we-sand)] bg-white px-4 py-2 text-sm text-[var(--we-olive)] transition hover:border-[#7A9B76] hover:text-[#7A9B76]"
+                >
+                  {link.name}
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
       )}
 
       {relatedArticles.length > 0 && (

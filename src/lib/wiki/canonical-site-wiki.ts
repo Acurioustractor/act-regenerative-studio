@@ -1,5 +1,6 @@
 import 'server-only';
 
+import { cache } from 'react';
 import fs from 'node:fs/promises';
 import path from 'node:path';
 
@@ -7,8 +8,9 @@ import { glob } from 'glob';
 import matter from 'gray-matter';
 
 import snapshot from '@/data/wiki-pages.generated.json';
+import { getSupabaseServerClient } from '@/lib/supabase/server';
 
-export type CanonicalWikiPageSource = 'live-wiki' | 'snapshot';
+export type CanonicalWikiPageSource = 'supabase' | 'live-wiki' | 'snapshot';
 
 export interface CanonicalWikiPageRecord {
   title: string;
@@ -78,6 +80,72 @@ const LEGACY_ALIASES: Record<string, string> = {
 };
 
 let livePagePromise: Promise<CanonicalWikiPageRecord[] | null> | null = null;
+
+interface SupabaseWikiRow {
+  slug: string;
+  title: string;
+  content: string;
+  excerpt: string | null;
+  page_type: string | null;
+  updated_at: string | null;
+  status: string | null;
+}
+
+function supabasePageTypeToSection(pageType: string | null): string {
+  switch (pageType) {
+    case 'principle':
+    case 'method':
+    case 'practice':
+    case 'procedure':
+      return 'concepts';
+    case 'guide':
+      return 'research';
+    case 'template':
+      return 'technical';
+    default:
+      return 'concepts';
+  }
+}
+
+function supabaseRowToRecord(row: SupabaseWikiRow): CanonicalWikiPageRecord {
+  const slugClean = row.slug.replace(/^\/+|\/+$/g, '');
+  const hasSection = slugClean.includes('/');
+  const sectionId = hasSection
+    ? slugClean.split('/')[0]
+    : supabasePageTypeToSection(row.page_type);
+  const sectionTitle = CANONICAL_SECTION_TITLES[sectionId] || sectionId;
+  const stem = slugClean.split('/').pop() || slugClean;
+
+  return {
+    title: row.title,
+    excerpt: row.excerpt,
+    content: row.content,
+    sectionId,
+    sectionTitle,
+    stem,
+    path: slugClean,
+    relativePath: hasSection ? `${slugClean}.md` : `${sectionId}/${slugClean}.md`,
+    modifiedAt: row.updated_at,
+  };
+}
+
+const getSupabaseCanonicalWikiPages = cache(
+  async (): Promise<CanonicalWikiPageRecord[] | null> => {
+    const client = getSupabaseServerClient();
+    if (!client) return null;
+    try {
+      const { data, error } = await client
+        .from('wiki_pages')
+        .select('slug, title, content, excerpt, page_type, updated_at, status')
+        .eq('status', 'active');
+      if (error || !data) return null;
+      const rows = data as SupabaseWikiRow[];
+      return rows.map(supabaseRowToRecord);
+    } catch {
+      return null;
+    }
+  }
+);
 
 function normalizeValue(value: string): string {
   return value
@@ -247,20 +315,37 @@ function matchPageRecord(
 }
 
 export async function getCanonicalWikiPages(): Promise<CanonicalWikiPageRecord[]> {
-  const livePages = await getLiveCanonicalWikiPages();
-  return livePages && livePages.length > 0 ? livePages : getSnapshotPages();
+  const [supabasePages, livePages] = await Promise.all([
+    getSupabaseCanonicalWikiPages(),
+    getLiveCanonicalWikiPages(),
+  ]);
+  // Merge: Supabase wins on slug conflict, otherwise take live, otherwise snapshot.
+  const byPath = new Map<string, CanonicalWikiPageRecord>();
+  const fallback =
+    livePages && livePages.length > 0 ? livePages : getSnapshotPages();
+  for (const record of fallback) byPath.set(record.path, record);
+  if (supabasePages) {
+    for (const record of supabasePages) byPath.set(record.path, record);
+  }
+  return Array.from(byPath.values());
 }
 
-export async function getCanonicalWikiPage(slugOrPath: string): Promise<CanonicalWikiPageMatch | null> {
-  const livePages = await getLiveCanonicalWikiPages();
+export async function getCanonicalWikiPage(
+  slugOrPath: string
+): Promise<CanonicalWikiPageMatch | null> {
+  const supabasePages = await getSupabaseCanonicalWikiPages();
+  if (supabasePages?.length) {
+    const match = matchPageRecord(supabasePages, slugOrPath);
+    if (match) {
+      return { ...match, source: 'supabase' };
+    }
+  }
 
+  const livePages = await getLiveCanonicalWikiPages();
   if (livePages?.length) {
     const liveMatch = matchPageRecord(livePages, slugOrPath);
     if (liveMatch) {
-      return {
-        ...liveMatch,
-        source: 'live-wiki',
-      };
+      return { ...liveMatch, source: 'live-wiki' };
     }
   }
 
@@ -268,11 +353,7 @@ export async function getCanonicalWikiPage(slugOrPath: string): Promise<Canonica
   if (!snapshotMatch) {
     return null;
   }
-
-  return {
-    ...snapshotMatch,
-    source: 'snapshot',
-  };
+  return { ...snapshotMatch, source: 'snapshot' };
 }
 
 export async function filterCanonicalWikiPages(options?: {

@@ -4,10 +4,13 @@
  * Uses tag-based system where storytellers opt-in and ACT admins approve
  */
 
+import Link from 'next/link';
+
 import type {
   FeaturedStoryteller,
   FeaturedStory,
 } from '@/lib/empathy-ledger-featured';
+import { getStorytellerById } from '@/lib/empathy-ledger-storytellers';
 
 interface CommunityVoicesSectionProps {
   storytellers: FeaturedStoryteller[];
@@ -46,47 +49,70 @@ export function CommunityVoicesSection({
             Featured Storytellers
           </h3>
           <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {storytellers.map((storyteller) => (
-              <div
-                key={storyteller.storyteller_id}
-                className="rounded-[24px] border border-[var(--we-sand)] bg-white p-6 transition-shadow hover:shadow-lg"
-              >
-                {storyteller.profile_image_url && (
-                  <img
-                    src={storyteller.profile_image_url}
-                    alt={
-                      storyteller.display_name ||
-                      storyteller.full_name ||
-                      'Storyteller'
-                    }
-                    className="mb-4 h-24 w-24 rounded-full object-cover"
-                  />
-                )}
-                <h4 className="font-[var(--font-display)] text-lg font-semibold text-[var(--we-olive)]">
-                  {storyteller.display_name || storyteller.full_name}
-                </h4>
-                {storyteller.current_role && storyteller.current_organization && (
-                  <p className="mt-1 text-sm text-[var(--we-brown-deep)]">
-                    {storyteller.current_role} at{' '}
-                    {storyteller.current_organization}
+            {storytellers.map((storyteller) => {
+              const hasProfile = Boolean(getStorytellerById(storyteller.storyteller_id));
+              const cardClass =
+                'rounded-[24px] border border-[var(--we-sand)] bg-white p-6 transition-shadow hover:shadow-lg' +
+                (hasProfile ? ' hover:border-[#7A9B76]' : '');
+              const inner = (
+                <>
+                  {storyteller.profile_image_url && (
+                    <img
+                      src={storyteller.profile_image_url}
+                      alt={
+                        storyteller.display_name ||
+                        storyteller.full_name ||
+                        'Storyteller'
+                      }
+                      className="mb-4 h-24 w-24 rounded-full object-cover"
+                    />
+                  )}
+                  <h4 className="font-[var(--font-display)] text-lg font-semibold text-[var(--we-olive)]">
+                    {storyteller.display_name || storyteller.full_name}
+                  </h4>
+                  {storyteller.current_role && storyteller.current_organization && (
+                    <p className="mt-1 text-sm text-[var(--we-brown-deep)]">
+                      {storyteller.current_role} at{' '}
+                      {storyteller.current_organization}
+                    </p>
+                  )}
+                  {storyteller.custom_tagline && (
+                    <p className="mt-2 text-sm italic text-[#7A9B76]">
+                      {storyteller.custom_tagline}
+                    </p>
+                  )}
+                  <p className="mt-3 text-sm text-[var(--we-olive-deep)]">
+                    {storyteller.featured_bio}
                   </p>
-                )}
-                {storyteller.custom_tagline && (
-                  <p className="mt-2 text-sm italic text-[#7A9B76]">
-                    {storyteller.custom_tagline}
-                  </p>
-                )}
-                <p className="mt-3 text-sm text-[var(--we-olive-deep)]">
-                  {storyteller.featured_bio}
-                </p>
-                {storyteller.featured_story_count > 0 && (
-                  <p className="mt-3 text-xs text-[var(--we-brown-deep)]">
-                    {storyteller.featured_story_count}{' '}
-                    {storyteller.featured_story_count === 1 ? 'story' : 'stories'}
-                  </p>
-                )}
-              </div>
-            ))}
+                  <div className="mt-3 flex items-center justify-between text-xs text-[var(--we-brown-deep)]">
+                    {storyteller.featured_story_count > 0 ? (
+                      <span>
+                        {storyteller.featured_story_count}{' '}
+                        {storyteller.featured_story_count === 1 ? 'story' : 'stories'}
+                      </span>
+                    ) : (
+                      <span />
+                    )}
+                    {hasProfile ? (
+                      <span className="uppercase tracking-[0.22em]">View profile →</span>
+                    ) : null}
+                  </div>
+                </>
+              );
+              return hasProfile ? (
+                <Link
+                  key={storyteller.storyteller_id}
+                  href={`/storytellers/${encodeURIComponent(storyteller.storyteller_id)}`}
+                  className={cardClass}
+                >
+                  {inner}
+                </Link>
+              ) : (
+                <div key={storyteller.storyteller_id} className={cardClass}>
+                  {inner}
+                </div>
+              );
+            })}
           </div>
         </div>
       )}

@@ -213,11 +213,35 @@ async function fetchJson<T>(url: string): Promise<T | null> {
   return fetchEmpathyLedgerJson<T>(url, { revalidate: 300 });
 }
 
-function inferMediaKind(type: string | null | undefined): FeaturedMediaItem['kind'] {
+const VIDEO_EXT = new Set(['mp4', 'mov', 'webm', 'avi', 'mkv', 'm4v']);
+const AUDIO_EXT = new Set(['mp3', 'wav', 'm4a', 'aac', 'ogg', 'flac', 'opus']);
+const IMAGE_EXT = new Set([
+  'jpg', 'jpeg', 'png', 'gif', 'webp', 'avif', 'heic', 'heif', 'svg', 'bmp',
+]);
+
+function inferMediaKindFromUrl(url: string | null | undefined): FeaturedMediaItem['kind'] | null {
+  if (!url) return null;
+  const match = url.toLowerCase().match(/\.([a-z0-9]{2,5})(?:\?|#|$)/);
+  const ext = match?.[1];
+  if (!ext) return null;
+  if (VIDEO_EXT.has(ext)) return 'video';
+  if (AUDIO_EXT.has(ext)) return 'audio';
+  if (IMAGE_EXT.has(ext)) return 'image';
+  return null;
+}
+
+function inferMediaKind(
+  type: string | null | undefined,
+  url?: string | null
+): FeaturedMediaItem['kind'] {
   const normalized = (type || '').toLowerCase();
 
   if (normalized.startsWith('video')) return 'video';
   if (normalized.startsWith('audio')) return 'audio';
+
+  const fromUrl = inferMediaKindFromUrl(url);
+  if (fromUrl) return fromUrl;
+
   if (
     normalized.startsWith('image') ||
     normalized === 'photo' ||
@@ -279,6 +303,24 @@ function sliceFeaturedContentResponse(
   };
 }
 
+function repairSnapshotMediaKinds(
+  response: FeaturedContentResponse
+): FeaturedContentResponse {
+  const items = response.media?.items;
+  if (!items || items.length === 0) return response;
+  let changed = false;
+  const repaired = items.map((item) => {
+    const fromUrl = inferMediaKindFromUrl(item.url);
+    if (fromUrl && fromUrl !== item.kind) {
+      changed = true;
+      return { ...item, kind: fromUrl };
+    }
+    return item;
+  });
+  if (!changed) return response;
+  return { ...response, media: { ...response.media, items: repaired } };
+}
+
 function getSnapshotFeaturedContent(
   projectSlug: string,
   limits: { storyLimit: number; mediaLimit: number; storytellerLimit: number }
@@ -292,7 +334,7 @@ function getSnapshotFeaturedContent(
     return null;
   }
 
-  return sliceFeaturedContentResponse(response, limits);
+  return sliceFeaturedContentResponse(repairSnapshotMediaKinds(response), limits);
 }
 
 function dedupeStorytellers(
@@ -384,7 +426,7 @@ function mapSiteMediaToFeatured(media: SiteMediaRecord[]): FeaturedMediaItem[] {
   let heroAssigned = false;
 
   return media.map((item) => {
-    const kind = inferMediaKind(item.contentType);
+    const kind = inferMediaKind(item.contentType, item.url);
     const isHero =
       (explicitHeroId ? item.id === explicitHeroId : !heroAssigned && kind === 'image') &&
       kind === 'image';
@@ -653,7 +695,7 @@ async function fetchContentHubFallback(
   );
 
   const mediaItems = (mediaPayload?.media || []).map((item, index) => {
-    const kind = inferMediaKind(item.mediaType);
+    const kind = inferMediaKind(item.mediaType, item.url);
     const isHero = Boolean(item.isHero) || (item.sourceType === 'hero_asset' && kind === 'image');
     return {
       id: item.id,

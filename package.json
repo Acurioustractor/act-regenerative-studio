@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev": "next dev",
-    "build": "npm run sync:canon && npm run sync:wiki && npm run sync:project-codes && npm run sync:el-media && npm run sync:el-editorial && npm run sync:el-packets && next build",
+    "build": "npm run sync:canon && npm run sync:wiki && npm run sync:project-codes && npm run sync:el-media && npm run sync:el-editorial && npm run sync:el-packets && npm run sync:el-storytellers && npm run sync:el-transcripts && next build",
     "sync:canon": "node scripts/sync-living-ecosystem-canon.mjs",
     "start": "next start",
     "lint": "next lint",
@@ -22,6 +22,9 @@
     "sync:el-media": "node scripts/sync-el-media.mjs",
     "sync:el-editorial": "node scripts/sync-el-editorial.mjs",
     "sync:el-packets": "node scripts/sync-el-source-packets.mjs",
+    "sync:el-storytellers": "node scripts/sync-el-storytellers.mjs",
+    "sync:el-transcripts": "node scripts/sync-el-transcripts.mjs",
+    "seed:wiki-to-supabase": "node scripts/seed-wiki-to-supabase.mjs",
     "sync:wiki": "node scripts/sync-canonical-wiki-projects.mjs && node scripts/sync-canonical-wiki-pages.mjs && node scripts/sync-canonical-wiki-flagship-packs.mjs",
     "sync:wiki-projects": "node scripts/sync-canonical-wiki-projects.mjs",
     "sync:wiki-pages": "node scripts/sync-canonical-wiki-pages.mjs",

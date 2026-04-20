@@ -14,3 +14,5 @@ export { ProjectEntryBridgeSection } from './ProjectEntryBridgeSection';
 export { ProjectFieldMediaSection } from './ProjectFieldMediaSection';
 export { StudioWorkSection } from './StudioWorkSection';
 export { GoldPhoneVoicesSection } from './GoldPhoneVoicesSection';
+export { TranscriptsSection } from './TranscriptsSection';
+export { ProjectKeyPeopleSection } from './ProjectKeyPeopleSection';

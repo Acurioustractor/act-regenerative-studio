@@ -17,6 +17,15 @@ import {
 import { getProjectBySlug as getEcosystemProject, type EcosystemProject } from '@/lib/ecosystem';
 import { getCanonicalWikiProject, type CanonicalWikiProjectMatch } from '@/lib/wiki/canonical-project-wiki';
 import { getFlagshipProjectPack } from '@/lib/wiki/flagship-project-packs';
+import {
+  getProjectLCAA,
+  getProjectWikiQuote,
+  getProjectWikiStats,
+  getProjectKeyPeople,
+  getProjectBacklinks,
+  type ProjectWikiPerson,
+  type ProjectWikiBacklink,
+} from '@/lib/wiki/project-lcaa';
 import type { ACTFlagshipProjectPack } from '@/types/shared/act-flagship-project-pack';
 
 const PROJECT_WEBSITE_ALIASES: Record<string, string> = {
@@ -120,6 +129,12 @@ export interface EnrichedProject extends Project {
     isFeatured: boolean;
     source?: 'media_gallery' | 'empathy_ledger';
   }>;
+
+  // Key people from wiki ## Key People section
+  keyPeople: ProjectWikiPerson[];
+
+  // Editorially-curated backlinks from wiki ## Backlinks section
+  wikiBacklinks: ProjectWikiBacklink[];
 
   // Computed fields
   hasLCAAContent: boolean;
@@ -306,6 +321,11 @@ export const getProjectData = cache(async function getProjectData(
     sourcePacket,
     mediaGallery,
     ecosystemData,
+    wikiLCAA,
+    wikiQuote,
+    wikiStats,
+    wikiKeyPeople,
+    wikiBacklinks,
   ] = await Promise.all([
     // Canonical ACT wiki enrichment (reuse pre-fetch)
     Promise.resolve(wikiDataPreFetch),
@@ -335,6 +355,21 @@ export const getProjectData = cache(async function getProjectData(
 
     // Ecosystem data (from act-ecosystem repository)
     getEcosystemProject(slug).catch(() => null),
+
+    // LCAA content extracted from wiki project doc (source of truth).
+    // Research loop: canonical-site-wiki reads live — new wiki content appears
+    // on next request without a rebuild.
+    getProjectLCAA(slug).catch(() => null),
+
+    // Pull-quote (epigraph) + stats extracted from wiki project doc.
+    getProjectWikiQuote(slug).catch(() => null),
+    getProjectWikiStats(slug).catch(() => []),
+
+    // ## Key People section — people attached to the project in its wiki doc.
+    getProjectKeyPeople(slug).catch(() => [] as ProjectWikiPerson[]),
+
+    // ## Backlinks section — editorially-curated wiki cross-references.
+    getProjectBacklinks(slug).catch(() => [] as ProjectWikiBacklink[]),
   ]);
 
   // 3. Merge and return enriched project
@@ -363,8 +398,33 @@ export const getProjectData = cache(async function getProjectData(
       ? `https://github.com/${ecosystemData.github_repo}`
       : null);
 
+  // LCAA merge: wiki content wins when present; fall back to baseProject static.
+  const mergedListen = wikiLCAA?.listen ?? baseProject.listen ?? undefined;
+  const mergedCuriosity = wikiLCAA?.curiosity ?? baseProject.curiosity ?? undefined;
+  const mergedAction = wikiLCAA?.action ?? baseProject.action ?? undefined;
+  const mergedArt = wikiLCAA?.art ?? baseProject.art ?? undefined;
+
+  // Quote + stats merge: wiki wins when present; fall back to baseProject static.
+  const mergedQuote = wikiQuote
+    ? {
+        text: wikiQuote.text,
+        author: wikiQuote.author || baseProject.quote?.author || '',
+        role: wikiQuote.role || baseProject.quote?.role || '',
+      }
+    : baseProject.quote;
+  const mergedStats =
+    wikiStats && wikiStats.length > 0 ? wikiStats : baseProject.stats;
+
   return {
     ...baseProject,
+    listen: mergedListen,
+    curiosity: mergedCuriosity,
+    action: mergedAction,
+    art: mergedArt,
+    quote: mergedQuote,
+    stats: mergedStats,
+    keyPeople: wikiKeyPeople || [],
+    wikiBacklinks: wikiBacklinks || [],
     tagline:
       firstNonEmpty(flagshipPack?.summary, wikiData?.summary, baseProject.tagline) ||
       baseProject.tagline,
@@ -396,9 +456,9 @@ export const getProjectData = cache(async function getProjectData(
     empathyLedgerContent,
     mediaGallery: mergedMediaGallery,
     // Computed fields
-    hasLCAAContent: !!(baseProject.listen || baseProject.curiosity || baseProject.action || baseProject.art),
-    hasStats: !!(baseProject.stats && baseProject.stats.length > 0),
-    hasQuote: !!baseProject.quote,
+    hasLCAAContent: !!(mergedListen || mergedCuriosity || mergedAction || mergedArt),
+    hasStats: !!(mergedStats && mergedStats.length > 0),
+    hasQuote: !!mergedQuote,
     hasVideo:
       !!baseProject.videoUrl ||
       mergedMediaGallery.some((item) => item.type.startsWith('video') || item.type === 'video'),
@@ -455,27 +515,53 @@ export function getProjectsByTheme(): Record<ProjectTheme, Project[]> {
 }
 
 /**
- * Get related projects for a given project
+ * Get related projects for a given project, preferring editorially-curated
+ * wiki backlinks. Falls back to theme-heuristic matches to fill remaining slots.
+ *
+ * wikiBacklinkSlugs: optional list from project.wikiBacklinks — when provided,
+ * backlinks that match a known project slug are used first (in wiki order).
  */
-export function getRelatedProjects(slug: string, limit: number = 3): Project[] {
+export function getRelatedProjects(
+  slug: string,
+  limit: number = 3,
+  wikiBacklinkSlugs?: readonly string[]
+): Project[] {
   const current = projects.find((p) => p.slug === slug);
   if (!current) return [];
 
-  // Find projects with the same theme, excluding current
-  const sameTheme = projects.filter(
-    (p) => p.theme === current.theme && p.slug !== slug
-  );
-
-  // If not enough same-theme projects, include others
-  if (sameTheme.length >= limit) {
-    return sameTheme.slice(0, limit);
+  // 1. Wiki-curated connections first, preserving the wiki author's order.
+  const ordered: Project[] = [];
+  const seen = new Set<string>([slug]);
+  if (wikiBacklinkSlugs?.length) {
+    for (const backlinkSlug of wikiBacklinkSlugs) {
+      if (seen.has(backlinkSlug)) continue;
+      const match = projects.find((p) => p.slug === backlinkSlug);
+      if (match) {
+        ordered.push(match);
+        seen.add(match.slug);
+        if (ordered.length >= limit) return ordered;
+      }
+    }
   }
 
-  const others = projects.filter(
-    (p) => p.theme !== current.theme && p.slug !== slug
+  // 2. Top up with same-theme projects to fill remaining slots.
+  const sameTheme = projects.filter(
+    (p) => p.theme === current.theme && !seen.has(p.slug)
   );
+  for (const project of sameTheme) {
+    ordered.push(project);
+    seen.add(project.slug);
+    if (ordered.length >= limit) return ordered;
+  }
 
-  return [...sameTheme, ...others].slice(0, limit);
+  // 3. Last resort: any remaining projects.
+  const others = projects.filter((p) => !seen.has(p.slug));
+  for (const project of others) {
+    ordered.push(project);
+    if (ordered.length >= limit) return ordered;
+  }
+
+  return ordered;
 }
 
 // Re-export theme styles for server components that import from this file

@@ -3,7 +3,7 @@
 
 ---
 
-## 🏔️ Act 1: The Soil (Why We Are Here)
+## Act 1: The Soil (Why We Are Here)
 
 ### The Problem: Disconnection
 We live in a time of profound disconnection.
@@ -31,7 +31,7 @@ We exist to:
 
 ---
 
-## 🏛️ Act 2: The Three Pillars (Our Work)
+## Act 2: The Three Pillars (Our Work)
 
 ### 1. THE LAND (Black Cockatoo Valley)
 *The Roots.*
@@ -59,7 +59,7 @@ We exist to:
 
 ---
 
-## 🎨 Act 3: Art & The Placemat
+## Act 3: Art & The Placemat
 
 ![The Placemat Poster](/Users/benknight/.gemini/antigravity/brain/a1e173d6-56fe-45a0-bf71-63935683918a/act_placemat_2026_poster_1767920710936.png)
 
@@ -79,7 +79,7 @@ Art is not a decoration. It is the **connective tissue**.
 
 ---
 
-## 📅 Act 4: The 2026 Roadmap (Making It Real)
+## Act 4: The 2026 Roadmap (Making It Real)
 
 We are moving from **building** to **operating**.
 

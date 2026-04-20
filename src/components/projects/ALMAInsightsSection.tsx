@@ -121,10 +121,10 @@ export function ALMAInsightsSection({
     <section className="space-y-8">
       <div className="text-center">
         <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-brown-deep)]">
-          ALMA Insights
+          What we learned
         </p>
         <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)] md:text-3xl">
-          Core Learnings & Outcomes
+          Key Learnings &amp; Outcomes
         </h2>
         <p className="mt-3 text-sm text-[var(--we-olive-deep)] max-w-2xl mx-auto">
           Insights verified through our ALMA (Adaptive Learning & Mapping Algorithm) system,

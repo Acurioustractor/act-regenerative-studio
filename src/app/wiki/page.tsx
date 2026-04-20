@@ -45,19 +45,19 @@ export default async function WikiHomepage() {
         <div className="mx-auto max-w-6xl px-4 py-16">
           <div className="max-w-4xl">
             <p className="text-xs uppercase tracking-[0.35em] text-[#D7E7D4]">
-              Living Knowledge Base
+              Wiki
             </p>
             <h1 className="mt-4 font-[var(--font-display)] text-4xl font-semibold md:text-6xl">
-              ACT wiki, used as working infrastructure
+              How the work actually gets done
             </h1>
             <p className="mt-6 max-w-3xl text-base leading-8 text-[#E8E1D0] md:text-lg">
-              This is the public face of the canonical ACT wiki. It is where project context,
-              methods, decisions, communities, and people can keep learning in public as the
-              ecosystem evolves.
+              Methods, decisions, and the people behind every project — kept
+              in public so you can check our thinking. Nothing here is
+              polished for you. It&rsquo;s what we use ourselves.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm">
-                {allPages.length} canonical pages
+                {allPages.length} pages
               </span>
               <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm">
                 {sections.length} sections
@@ -71,25 +71,25 @@ export default async function WikiHomepage() {
         <div className="grid gap-4 md:grid-cols-3">
           {[
             {
-              title: 'Living ecosystem map',
+              title: 'The ecosystem at a glance',
               description:
-                'See the public system map: hub, spokes, live layers, and the human decisions still open.',
+                'Six public works and the relationships between them. A single page to see how the whole thing holds together.',
               href: '/ecosystem',
-              cta: 'Open ecosystem',
-              stat: `${ecosystemSummary.surfaceCount} public surfaces`,
+              cta: 'Open the ecosystem',
+              stat: `${ecosystemSummary.surfaceCount} public works`,
             },
             {
               title: 'Stories from the field',
               description:
-                'Voices, interviews, and field material collected with consent through Empathy Ledger.',
+                'Voices, interviews, and field material — carried into the work with consent.',
               href: '/wiki/source-packets',
               cta: 'Browse stories',
               stat: `${packetSnapshot.packetCount} stories`,
             },
             {
-              title: 'How this site stays current',
+              title: 'Where our claims come from',
               description:
-                'Where each claim, number, and quote on this site originates — wiki, repo, or community story.',
+                'Every quote, number, and claim on this site traces back to a source. You can follow the trail.',
               href: '/wiki/source-bridges',
               cta: 'See the trail',
               stat: `${bridgeCount} sources`,

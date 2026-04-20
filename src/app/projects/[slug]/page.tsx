@@ -573,19 +573,19 @@ export default async function ProjectPage({
         projectTitle={project.title}
       />
 
-      {/* Connected in the wiki — editorially-curated backlinks */}
+      {/* Related work — editorially-curated wiki backlinks */}
       {project.wikiBacklinks.length > 0 && (
         <section className="rounded-[28px] border border-[var(--we-sand)] bg-[#FDFBF7] p-6 md:p-10">
           <div className="space-y-3">
             <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-brown-deep)]">
-              Connected in the wiki
+              Related work
             </p>
             <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
-              How this thread links through ACT
+              How this thread runs through ACT
             </h2>
             <p className="text-sm text-[var(--we-olive-deep)]">
-              The wiki curates these connections directly. Each link opens the
-              related page in the knowledge base.
+              Other places this work connects — people, projects, and
+              methods that pick up the same thread.
             </p>
           </div>
           <ul className="mt-6 flex flex-wrap gap-2">

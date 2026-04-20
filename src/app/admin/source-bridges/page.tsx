@@ -47,7 +47,7 @@ export default async function SourceBridgesPage() {
         description="Most pages on this site are composed from the ACT wiki, partner platforms, and the live story system. This page lists the trail — so you can see where a claim, a number, or a quote actually originates."
         actions={[
           { label: 'Browse the ecosystem', href: '/ecosystem' },
-          { label: 'See stories', href: '/wiki/source-packets', variant: 'outline' },
+          { label: 'See stories', href: '/admin/source-packets', variant: 'outline' },
         ]}
       >
         <div className="space-y-4">
@@ -74,7 +74,7 @@ export default async function SourceBridgesPage() {
           sourceLabel: 'Flagship bridge layer',
           storyCount: packs.length,
           mediaCount: totalBridgeCount,
-          href: '/wiki/source-packets',
+          href: '/admin/source-packets',
         }}
         stats={[
           { label: 'Flagship projects', value: packs.length },

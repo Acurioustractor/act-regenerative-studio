@@ -51,8 +51,6 @@ const staticRoutes: Array<{
   { path: "/art/commissions", changeFrequency: "monthly", priority: 0.6 },
   { path: "/art/exhibitions", changeFrequency: "monthly", priority: 0.6 },
   { path: "/art/residencies", changeFrequency: "monthly", priority: 0.6 },
-  { path: "/wiki/source-packets", changeFrequency: "monthly", priority: 0.5 },
-  { path: "/wiki/source-bridges", changeFrequency: "monthly", priority: 0.5 },
   { path: "/privacy", changeFrequency: "yearly", priority: 0.2 },
   { path: "/terms", changeFrequency: "yearly", priority: 0.2 },
 ];

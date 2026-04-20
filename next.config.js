@@ -46,6 +46,8 @@ const nextConfig = {
       { source: '/engine', destination: '/admin/engine', permanent: true },
       { source: '/image-picker', destination: '/admin/image-picker', permanent: true },
       { source: '/media-lab', destination: '/admin/media-lab', permanent: true },
+      { source: '/wiki/source-packets', destination: '/admin/source-packets', permanent: true },
+      { source: '/wiki/source-bridges', destination: '/admin/source-bridges', permanent: true },
     ];
   },
   // Exclude admin-wiki subdirectory (separate Next.js app)

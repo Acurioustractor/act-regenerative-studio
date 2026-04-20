@@ -75,7 +75,7 @@ export default async function SourcePacketsPage() {
         description="Stories collected with consent through Empathy Ledger and composed into ACT's public pages. Each one carries who it's from, where, and how it can be used."
         actions={[
           { label: 'Browse the ecosystem', href: '/ecosystem' },
-          { label: 'How this site stays current', href: '/wiki/source-bridges', variant: 'outline' },
+          { label: 'How this site stays current', href: '/admin/source-bridges', variant: 'outline' },
         ]}
       >
         <div className="space-y-4">
@@ -303,7 +303,7 @@ export default async function SourcePacketsPage() {
                       Open project page
                     </Link>
                     <Link
-                      href="/wiki/source-bridges"
+                      href="/admin/source-bridges"
                       className="rounded-full border border-[#4CAF50] px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:bg-[#E5F4E4]"
                     >
                       Open bridge layer

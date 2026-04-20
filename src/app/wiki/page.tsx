@@ -1,9 +1,11 @@
 import Link from 'next/link';
 
 import { WikiSearch } from '@/components/wiki/WikiSearch';
-import { getSourcePacketSnapshot } from '@/lib/empathy-ledger-source-packets';
+import {
+  canDisplayStoryteller,
+  getAllStorytellers,
+} from '@/lib/empathy-ledger-storytellers';
 import { getLivingEcosystemSummary } from '@/lib/living-ecosystem-canon';
-import { getFlagshipProjectPacks } from '@/lib/wiki/flagship-project-packs';
 import {
   getCanonicalWikiSections,
   listAllWikiPages,
@@ -16,12 +18,11 @@ export const metadata = {
 };
 
 export default async function WikiHomepage() {
-  const [allPages, packetSnapshot, ecosystemSummary, flagshipPacks] = await Promise.all([
+  const [allPages, ecosystemSummary] = await Promise.all([
     listAllWikiPages(),
-    Promise.resolve(getSourcePacketSnapshot()),
     getLivingEcosystemSummary(),
-    getFlagshipProjectPacks(),
   ]);
+  const storytellerCount = getAllStorytellers().filter(canDisplayStoryteller).length;
 
   const sections = getCanonicalWikiSections(
     allPages.map((page) => ({
@@ -37,10 +38,6 @@ export default async function WikiHomepage() {
       relativePath: page.relativePath,
       modifiedAt: page.modifiedAt,
     }))
-  );
-  const bridgeCount = flagshipPacks.reduce(
-    (total, pack) => total + (pack.sourceBridges?.length || 0),
-    0
   );
 
   const sourceNotConfigured = allPages.length === 0;
@@ -74,7 +71,7 @@ export default async function WikiHomepage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-4 pb-2 pt-10">
-        <div className="grid gap-4 md:grid-cols-3">
+        <div className="grid gap-4 md:grid-cols-2">
           {[
             {
               title: 'The ecosystem at a glance',
@@ -85,20 +82,12 @@ export default async function WikiHomepage() {
               stat: `${ecosystemSummary.surfaceCount} public works`,
             },
             {
-              title: 'Stories from the field',
+              title: 'Voices from the field',
               description:
-                'Voices, interviews, and field material — carried into the work with consent.',
-              href: '/wiki/source-packets',
-              cta: 'Browse stories',
-              stat: `${packetSnapshot.packetCount} stories`,
-            },
-            {
-              title: 'Where our claims come from',
-              description:
-                'Every quote, number, and claim on this site traces back to a source. You can follow the trail.',
-              href: '/wiki/source-bridges',
-              cta: 'See the trail',
-              stat: `${bridgeCount} sources`,
+                'The people whose stories, craft, and community work shape every project — carried with consent.',
+              href: '/storytellers',
+              cta: 'Meet the storytellers',
+              stat: `${storytellerCount} storytellers`,
             },
           ].map((item) => (
             <Link

@@ -1,7 +1,9 @@
+import Link from "next/link";
 import LivingSystemStrip from "@/components/LivingSystemStrip";
 import CardGrid from "../../components/CardGrid";
 import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
+import { EmpathyLedgerConnections } from "@/components/projects/EmpathyLedgerConnections";
 
 export const metadata = {
   title: "About",
@@ -32,22 +34,24 @@ const identityCards = [
   },
 ];
 
-const methodSteps = [
+const orientationLinks = [
   {
-    title: "Listen",
-    description: "Ground in place, people, and lived experience.",
+    title: "Projects",
+    description: "The 40-plus initiatives across justice, land, story, and ventures.",
+    href: "/projects",
+    meta: "See the portfolio",
   },
   {
-    title: "Curiosity",
-    description: "Ask better questions and test new ideas.",
+    title: "People",
+    description: "The team, elders, advisors, and partners holding the work.",
+    href: "/people",
+    meta: "Meet who is building this",
   },
   {
-    title: "Action",
-    description: "Prototype with partners and build shared tools.",
-  },
-  {
-    title: "Art",
-    description: "Translate change into culture and meaning.",
+    title: "Partners",
+    description: "Community organisations, funders, and co-investors walking with us.",
+    href: "/partners",
+    meta: "See who is walking with us",
   },
 ];
 
@@ -78,7 +82,7 @@ export default function AboutPage() {
       <LivingSystemStrip
         eyebrow="How it stays current"
         title="The work is written down where anyone can find it"
-        description="ACT’s method, projects, and commitments live in a working wiki. Stories and voices arrive through Empathy Ledger with consent. The site changes as those sources do, it is not a brochure."
+        description="ACT's method, projects, and commitments live in a working wiki. Stories and voices arrive through Empathy Ledger with consent. The site changes as those sources do, it is not a brochure."
         wiki={{
           href: "/wiki",
           label: "Open ACT wiki",
@@ -89,7 +93,7 @@ export default function AboutPage() {
         }}
         stats={[
           { label: "Method loop", value: "LCAA" },
-          { label: "Profit share", value: "40%" },
+          { label: "Structure", value: "Dual-entity" },
           { label: "Orientation", value: "Handover" },
         ]}
       />
@@ -103,13 +107,47 @@ export default function AboutPage() {
         <CardGrid cards={identityCards} className="grid gap-6 md:grid-cols-2 xl:grid-cols-4" />
       </section>
 
-      <section className="space-y-10">
-        <SectionHeading
-          eyebrow="Method"
-          title="Listen - Curiosity - Action - Art"
-          description="LCAA is the loop that keeps ACT from jumping to delivery before the listening is real."
-        />
-        <CardGrid cards={methodSteps} className="grid gap-6 md:grid-cols-2 lg:grid-cols-4" />
+      <section className="rounded-3xl border border-[var(--we-sand)] bg-white/60 p-8 md:p-12">
+        <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center">
+          <div className="space-y-3">
+            <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
+              Method
+            </p>
+            <h2 className="font-[var(--font-display)] text-3xl font-semibold text-[var(--we-olive)] md:text-4xl">
+              Listen, Curiosity, Action, Art
+            </h2>
+            <p className="text-sm leading-7 text-[var(--we-brown)]">
+              LCAA is the loop that keeps ACT from jumping to delivery before the listening is real. Every project sits somewhere in this cycle.
+            </p>
+            <Link
+              href="/method"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--we-olive)] underline-offset-4 hover:underline"
+            >
+              See how the method works
+              <span aria-hidden>&rarr;</span>
+            </Link>
+          </div>
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
+            {[
+              { letter: "L", word: "Listen" },
+              { letter: "C", word: "Curiosity" },
+              { letter: "A", word: "Action" },
+              { letter: "A", word: "Art" },
+            ].map((step) => (
+              <div
+                key={step.word}
+                className="flex flex-col items-start gap-2 rounded-2xl border border-[var(--we-sand)] bg-white/80 p-4"
+              >
+                <span className="font-[var(--font-display)] text-3xl text-[var(--we-olive)]">
+                  {step.letter}
+                </span>
+                <span className="text-sm font-semibold text-[var(--we-brown)]">
+                  {step.word}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       <section className="rounded-3xl border border-[var(--we-sand)] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12">
@@ -141,12 +179,50 @@ export default function AboutPage() {
               </p>
               <h3 className="mt-2 font-semibold text-[var(--we-olive)]">Trading with purpose</h3>
               <p className="mt-2 text-sm text-[var(--we-brown)]">
-                Generates revenue, supports the commons, and keeps 40% profit-sharing in view as a structural commitment.
+                Generates revenue, supports the commons, and keeps value circulating back to communities instead of extracting it.
               </p>
             </div>
           </div>
         </div>
       </section>
+
+      <section className="space-y-10">
+        <SectionHeading
+          eyebrow="Keep exploring"
+          title="Where to go from here"
+          description="About is a starting point. The depth lives in the people, partners, and projects that make the work real."
+        />
+        <div className="grid gap-6 md:grid-cols-3">
+          {orientationLinks.map((link) => (
+            <Link
+              key={link.href}
+              href={link.href}
+              className="group flex flex-col justify-between gap-4 rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6 transition hover:border-[var(--we-olive)] hover:bg-white"
+            >
+              <div className="space-y-2">
+                <h3 className="font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
+                  {link.title}
+                </h3>
+                <p className="text-sm leading-6 text-[var(--we-brown)]">
+                  {link.description}
+                </p>
+              </div>
+              <span className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--we-olive)]">
+                {link.meta}
+                <span aria-hidden className="transition group-hover:translate-x-1">
+                  &rarr;
+                </span>
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <EmpathyLedgerConnections
+        projectSlug="a-curious-tractor"
+        projectTitle="A Curious Tractor"
+        orgSlug="a-curious-tractor"
+      />
     </div>
   );
 }

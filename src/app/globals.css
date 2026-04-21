@@ -52,6 +52,19 @@ main > div {
   padding-right: clamp(1.5rem, 4vw, 3rem);
 }
 
+/* Clear the fixed floating nav on interior pages. Full-bleed heroes (home, etc.)
+   intentionally sit behind the nav and opt out below. */
+main > section:first-child,
+main > div:first-child {
+  padding-top: 6rem;
+}
+@media (min-width: 768px) {
+  main > section:first-child,
+  main > div:first-child {
+    padding-top: 7rem;
+  }
+}
+
 /* Full-bleed sections break out of container */
 main > .full-bleed,
 main > section.full-bleed,
@@ -60,6 +73,15 @@ main > div > section.full-bleed {
   max-width: none;
   padding-left: 0;
   padding-right: 0;
+}
+
+/* Full-bleed first children stay edge-to-edge and opt out of the header offset */
+main > section.full-bleed:first-child,
+main > div:first-child:has(> .full-bleed:first-child) {
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+  padding-top: 0;
 }
 
 /* ScrollReveal wrappers that contain full-bleed children must also break out */

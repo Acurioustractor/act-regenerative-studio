@@ -56,7 +56,7 @@ export default async function WikiHomepage() {
             <p className="mt-6 max-w-3xl text-base leading-8 text-[#E8E1D0] md:text-lg">
               Methods, decisions, and the people behind every project, kept
               in public so you can check our thinking. Nothing here is
-              polished for you. It&rsquo;s what we use ourselves.
+              polished for you. It's what we use ourselves.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm">

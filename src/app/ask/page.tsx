@@ -3,7 +3,7 @@ import LivingSystemStrip from "@/components/LivingSystemStrip";
 import PageHero from "@/components/PageHero";
 
 export const metadata = {
-  title: 'Ask ACT | A Curious Tractor',
+  title: 'Ask ACT',
   description: 'Ask questions across the ACT wiki, projects, methods, and public knowledge surfaces.',
 };
 
@@ -13,7 +13,7 @@ export default function AskPage() {
       <PageHero
         eyebrow="Ask ACT"
         title="Ask a question about the work"
-        description="A direct way to find your way into ACT&rsquo;s projects, methods, and thinking. Answers come from the wiki and point you back to the source so you can read the full context yourself."
+        description="A direct way to find your way into ACT's projects, methods, and thinking. Answers come from the wiki and point you back to the source so you can read the full context yourself."
         actions={[
           { label: "Open the wiki", href: "/wiki" },
           { label: "Explore projects", href: "/projects", variant: "outline" },
@@ -24,7 +24,7 @@ export default function AskPage() {
             What to ask
           </p>
           <p>
-            Practical questions about projects, methods, places, and the language we use. For sensitive or internal matters, this isn&rsquo;t the right channel, reach out directly instead.
+            Practical questions about projects, methods, places, and the language we use. For sensitive or internal matters, this isn't the right channel, reach out directly instead.
           </p>
         </div>
       </PageHero>

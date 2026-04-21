@@ -99,7 +99,7 @@ function RelatedWorkCard({ project }: { project: HydratedArtProject }) {
       )}
       <div className="p-5">
         <p className="text-sm italic leading-6 text-[#5A4A3A] line-clamp-2">
-          &ldquo;{project.quote}&rdquo;
+          "{project.quote}"
         </p>
         <div className="mt-3 flex flex-wrap gap-2">
           {project.mediums.map((medium) => (
@@ -239,7 +239,7 @@ export default async function ArtWorkPage({
       {/* Quote + Philosophy */}
       <section className="mx-auto max-w-3xl space-y-8">
         <blockquote className="border-l-2 border-[#CFA16B] pl-6 text-xl italic leading-8 text-[var(--we-brown)] md:text-2xl md:leading-10">
-          &ldquo;{project.quote}&rdquo;
+          "{project.quote}"
         </blockquote>
 
         <p className="text-[1.05rem] leading-8 text-[var(--we-brown)]">

@@ -2,7 +2,7 @@ import PageHero from "../../components/PageHero";
 import { WarmCard } from "@/components/warm-editorial";
 
 export const metadata = {
-  title: "Terms + Cultural Protocols | A Curious Tractor",
+  title: "Terms + Cultural Protocols",
   description:
     "Interim public terms for using ACT websites, submitting enquiries, and engaging with stories, media, and cultural material surfaced through the studio.",
 };

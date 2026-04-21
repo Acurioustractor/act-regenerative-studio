@@ -2,6 +2,7 @@ import Link from "next/link";
 import LivingSystemStrip from "@/components/LivingSystemStrip";
 import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
+import { EmpathyLedgerConnections } from "@/components/projects/EmpathyLedgerConnections";
 
 export const metadata = {
   title: "Principles",
@@ -44,7 +45,7 @@ const operationalPrinciples = [
     number: 6,
     title: "Enterprise Funds the Commons",
     description:
-      "Goods, Harvest, and related enterprise fund land care and community value, not extraction. 40% profit-sharing is built into all financial models.",
+      "Goods, Harvest, and related enterprise fund land care and community value, not extraction. Trading activity is structurally tied back to the commons.",
   },
   {
     number: 7,
@@ -106,8 +107,8 @@ const promises = [
       "Social, cultural, environmental and economic value remains with communities",
   },
   {
-    title: "40% Profit Sharing",
-    description: "Profits flow to community ownership, not extraction",
+    title: "Community Ownership of Value",
+    description: "Surplus flows back to community ownership, not extraction",
   },
   {
     title: "Farm as Commons",
@@ -197,11 +198,10 @@ export default function PrinciplesPage() {
         </div>
       </section>
 
-      {/* 10 Operational Principles */}
       <section className="space-y-10">
         <SectionHeading
           eyebrow="Practice"
-          title="10 Principles of Practice"
+          title={`${operationalPrinciples.length} Principles of Practice`}
           description="The operational backbone of how we work. When we are unclear, we return here."
         />
         <div className="grid gap-4 md:grid-cols-2">
@@ -277,9 +277,10 @@ export default function PrinciplesPage() {
                 </h3>
                 <p className="text-sm text-[var(--we-brown)]">
                   ACT operates as a dual-entity: a charitable CLG for grant
-                  eligibility and community protection, plus a mission-locked trading
-                  arm for equitable profit-sharing. This structure ensures we can
-                  sustain the work while keeping communities at the center.
+                  eligibility and community protection, plus a mission-locked
+                  trading arm that keeps value circulating back to communities.
+                  This structure ensures we can sustain the work while keeping
+                  communities at the center.
                 </p>
               </div>
             </div>
@@ -320,6 +321,12 @@ export default function PrinciplesPage() {
           </div>
         </div>
       </section>
+
+      <EmpathyLedgerConnections
+        projectSlug="a-curious-tractor"
+        projectTitle="A Curious Tractor"
+        orgSlug="a-curious-tractor"
+      />
     </div>
   );
 }

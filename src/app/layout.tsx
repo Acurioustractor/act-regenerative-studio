@@ -22,6 +22,7 @@ const sansFont = Work_Sans({
 });
 
 const navItems = [
+  { label: "About", href: "/about" },
   { label: "Projects", href: "/projects" },
   { label: "Stories", href: "/blog" },
   { label: "Art", href: "/art" },

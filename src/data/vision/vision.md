@@ -61,7 +61,7 @@ We exist to:
 
 ## Act 3: Art & The Placemat
 
-![The Placemat Poster](/Users/benknight/.gemini/antigravity/brain/a1e173d6-56fe-45a0-bf71-63935683918a/act_placemat_2026_poster_1767920710936.png)
+![The Placemat Poster](/act_placemat_2026_poster.png)
 
 **"The Placemat"** is our map. It is how we explain this complex ecosystem in one glance.
 

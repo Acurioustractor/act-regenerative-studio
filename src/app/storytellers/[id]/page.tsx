@@ -236,8 +236,8 @@ export default async function StorytellerPage({ params }: PageProps) {
         </h2>
         <p className="mt-3 max-w-2xl text-sm leading-7 text-[#E8E1D0]">
           Empathy Ledger is built on consent. Stories stay with the person who
-          tells them. If you&rsquo;d like to carry a story into the work, let us
-          know how you&rsquo;d like to be met.
+          tells them. If you'd like to carry a story into the work, let us
+          know how you'd like to be met.
         </p>
         <div className="mt-5 flex flex-wrap gap-3">
           <Link

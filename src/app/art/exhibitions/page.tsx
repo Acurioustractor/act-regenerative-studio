@@ -126,7 +126,7 @@ export default async function ExhibitionsPage() {
                 </div>
                 <div className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--we-olive)] transition group-hover:gap-3">
                   <span>Open work</span>
-                  <span aria-hidden="true">→</span>
+                  <span aria-hidden="true">&rarr;</span>
                 </div>
               </div>
             </Link>

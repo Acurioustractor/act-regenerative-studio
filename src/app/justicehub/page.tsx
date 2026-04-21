@@ -27,7 +27,7 @@ import { getProjectData } from "@/lib/projects/get-project-data";
 import { notFound } from "next/navigation";
 
 export const metadata = {
-  title: "JusticeHub | A Curious Tractor",
+  title: "JusticeHub",
   description:
     "Evidence-based justice alternatives. Proving what works, routing capital to what heals.",
 };
@@ -221,7 +221,7 @@ export default async function JusticeHubPage() {
                 title="What works, mapped by evidence"
                 lede={
                   <>
-                    The Australian Living Map of Alternatives sits on top of JusticeHub&apos;s funding
+                    The Australian Living Map of Alternatives sits on top of JusticeHub's funding
                     data layer. Evidence-based interventions mapped by topic and geography
                     across nine domains: child protection, community-led programs, diversion,
                     family services, Indigenous-led, legal services, NDIS, prevention, and
@@ -297,7 +297,7 @@ export default async function JusticeHubPage() {
               onDark
               lede={
                 <>
-                  JusticeHub&apos;s end state is programmable capital allocation.
+                  JusticeHub's end state is programmable capital allocation.
                   Impact-weighted quadratic funding routes resources to programs
                   based on verified community outcomes, not popularity or political
                   connections. The AI scores programs, the evidence dashboard makes
@@ -460,7 +460,7 @@ export default async function JusticeHubPage() {
             href="/projects/justicehub"
             className="inline-flex items-center gap-3 rounded-[var(--site-radius)] border-2 border-[var(--site-green)] px-8 py-4 font-[var(--font-sans)] text-[13px] font-semibold uppercase tracking-[0.12em] text-[var(--site-green)] transition hover:bg-[var(--site-green)] hover:text-white"
           >
-            Full project page <span aria-hidden="true">→</span>
+            Full project page <span aria-hidden="true">&rarr;</span>
           </Link>
         </div>
       </section>

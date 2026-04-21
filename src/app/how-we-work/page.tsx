@@ -2,6 +2,7 @@ import Link from "next/link";
 import LivingSystemStrip from "@/components/LivingSystemStrip";
 import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
+import { EmpathyLedgerConnections } from "@/components/projects/EmpathyLedgerConnections";
 import { getLiveServicesForSite } from "@/lib/empathy-ledger-services";
 import { resolveServiceProjectLinks } from "@/lib/projects/resolve-service-project-links";
 
@@ -63,7 +64,7 @@ const rhythms = [
     title: "Annually",
     items: [
       "Community accountability report",
-      "Profit-sharing distribution",
+      "Surplus distribution back to communities",
       "Long-term vision review",
     ],
   },
@@ -220,7 +221,7 @@ export default async function HowWeWorkPage() {
                 className="inline-flex items-center gap-2 text-sm font-semibold text-[#4CAF50] hover:gap-3 transition"
               >
                 <span>{collab.cta}</span>
-                <span aria-hidden="true">→</span>
+                <span aria-hidden="true">&rarr;</span>
               </Link>
             </div>
           ))}
@@ -336,7 +337,7 @@ export default async function HowWeWorkPage() {
                         className="inline-flex items-center gap-2 text-sm font-semibold text-[#4CAF50] hover:gap-3 transition"
                       >
                         <span>{ctaLabel}</span>
-                        <span aria-hidden="true">→</span>
+                        <span aria-hidden="true">&rarr;</span>
                       </a>
                     ) : (
                       <Link
@@ -344,7 +345,7 @@ export default async function HowWeWorkPage() {
                         className="inline-flex items-center gap-2 text-sm font-semibold text-[#4CAF50] hover:gap-3 transition"
                       >
                         <span>{ctaLabel}</span>
-                        <span aria-hidden="true">→</span>
+                        <span aria-hidden="true">&rarr;</span>
                       </Link>
                     )}
                   </div>
@@ -439,6 +440,12 @@ export default async function HowWeWorkPage() {
           </div>
         </div>
       </section>
+
+      <EmpathyLedgerConnections
+        projectSlug="a-curious-tractor"
+        projectTitle="A Curious Tractor"
+        orgSlug="a-curious-tractor"
+      />
     </div>
   );
 }

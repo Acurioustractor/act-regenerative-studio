@@ -203,7 +203,7 @@ function EmergingWorkCard({ project }: { project: HydratedArtProject }) {
       </h3>
 
       <blockquote className="mt-3 text-sm italic leading-6 text-[#5A4A3A]">
-        &ldquo;{project.quote}&rdquo;
+        "{project.quote}"
       </blockquote>
 
       <p className="mt-3 text-sm leading-6 text-[var(--we-brown)]">
@@ -240,7 +240,7 @@ export default async function ArtPage() {
             Art portfolio
           </p>
           <h1 className="font-[var(--font-display)] text-[2.4rem] font-semibold leading-[0.95] text-white md:text-[4.2rem]">
-            If art isn&apos;t being made and stories aren&apos;t being told, the whole system dies.
+            If art isn't being made and stories aren't being told, the whole system dies.
           </h1>
           <p className="max-w-2xl text-lg leading-8 text-[#D7C8B2] md:text-xl">
             Installation, photography, film, sculpture, performance, art as the final act of listening.

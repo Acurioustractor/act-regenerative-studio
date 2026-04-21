@@ -104,7 +104,7 @@ export default function ContactPage() {
                 className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[var(--we-olive)] transition hover:gap-3"
               >
                 <span>{path.cta}</span>
-                <span aria-hidden="true">→</span>
+                <span aria-hidden="true">&rarr;</span>
               </Link>
             </div>
           ))}

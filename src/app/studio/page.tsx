@@ -2,6 +2,7 @@ import Link from "next/link";
 import LivingSystemStrip from "@/components/LivingSystemStrip";
 import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
+import { EmpathyLedgerConnections } from "@/components/projects/EmpathyLedgerConnections";
 import {
   getLiveServicesForSite,
   type LiveServiceRecord,
@@ -283,7 +284,7 @@ export default async function StudioPage() {
                         className="inline-flex items-center gap-2 text-sm font-semibold text-[#4CAF50] hover:gap-3 transition"
                       >
                         <span>{action.label}</span>
-                        <span aria-hidden="true">→</span>
+                        <span aria-hidden="true">&rarr;</span>
                       </a>
                     ) : (
                       <Link
@@ -291,7 +292,7 @@ export default async function StudioPage() {
                         className="inline-flex items-center gap-2 text-sm font-semibold text-[#4CAF50] hover:gap-3 transition"
                       >
                         <span>{action.label}</span>
-                        <span aria-hidden="true">→</span>
+                        <span aria-hidden="true">&rarr;</span>
                       </Link>
                     )}
                   </div>
@@ -369,7 +370,7 @@ export default async function StudioPage() {
               ) : null}
               <span className="mt-3 inline-flex items-center gap-2 text-xs font-semibold text-[#4CAF50] transition group-hover:gap-3">
                 <span>Explore</span>
-                <span aria-hidden="true">→</span>
+                <span aria-hidden="true">&rarr;</span>
               </span>
             </Link>
           ))}
@@ -407,7 +408,7 @@ export default async function StudioPage() {
             </h3>
             <ul className="space-y-2 text-sm text-[var(--we-brown)]">
               <li>• Generates sustainable revenue</li>
-              <li>• 40% profit-sharing to communities</li>
+              <li>• Circulates surplus back to communities</li>
               <li>• Attracts impact investment</li>
               <li>• Creates jobs and opportunities</li>
             </ul>
@@ -448,6 +449,12 @@ export default async function StudioPage() {
           </div>
         </div>
       </section>
+
+      <EmpathyLedgerConnections
+        projectSlug="a-curious-tractor"
+        projectTitle="A Curious Tractor"
+        orgSlug="a-curious-tractor"
+      />
     </div>
   );
 }

@@ -2,12 +2,13 @@ import Link from "next/link";
 
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
+import { EmpathyLedgerConnections } from "@/components/projects/EmpathyLedgerConnections";
 import { buildProjectIndexSignals } from "@/lib/projects/build-project-index-signals";
 import { buildCuratedProjectCards } from "@/lib/projects/build-curated-project-cards";
 import { studioProjectConfigs } from "@/lib/projects/studio-project-configs";
 
 export const metadata = {
-  title: "Ecosystem | A Curious Tractor",
+  title: "Ecosystem",
   description:
     "Six public works across land, food, justice, storytelling, and art, grounded on Jinibara Country and held together by a single long conversation with place.",
 };
@@ -22,7 +23,7 @@ export default async function EcosystemPage() {
     <div className="space-y-20">
       <PageHero
         eyebrow="Ecosystem"
-        title="Six public works, one long conversation with place"
+        title="Public works, one long conversation with place"
         description="A farm, a food hub, a manufactured-goods program, a justice network, a storytelling platform, and a body of art. Each one is grounded in a specific community and a specific place. They share land, method, and a long view."
         actions={[
           { label: "Explore projects", href: "/projects" },
@@ -98,7 +99,7 @@ export default async function EcosystemPage() {
 
               <span className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-[#4CAF50] transition group-hover:gap-3">
                 <span>Open the field</span>
-                <span aria-hidden="true">→</span>
+                <span aria-hidden="true">&rarr;</span>
               </span>
             </Link>
           ))}
@@ -116,7 +117,7 @@ export default async function EcosystemPage() {
             </h2>
             <p className="max-w-2xl text-sm leading-7 text-[#D7C8B2]">
               Numbers straight from the community platforms people are actually
-              using. Not a marketing snapshot, what&rsquo;s moving this week.
+              using. Not a marketing snapshot, what's moving this week.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
@@ -206,12 +207,18 @@ export default async function EcosystemPage() {
               </p>
               <span className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#4CAF50]">
                 <span>{pathway.cta}</span>
-                <span aria-hidden="true">→</span>
+                <span aria-hidden="true">&rarr;</span>
               </span>
             </Link>
           ))}
         </div>
       </section>
+
+      <EmpathyLedgerConnections
+        projectSlug="a-curious-tractor"
+        projectTitle="A Curious Tractor"
+        orgSlug="a-curious-tractor"
+      />
     </div>
   );
 }

@@ -25,7 +25,7 @@ import { getProjectData } from "@/lib/projects/get-project-data";
 import { notFound } from "next/navigation";
 
 export const metadata = {
-  title: "Goods on Country | A Curious Tractor",
+  title: "Goods on Country",
   description:
     "Indestructible beds and washing machines from 100% recycled plastic, co-designed with remote Aboriginal communities across Australia.",
 };
@@ -164,7 +164,7 @@ export default async function GoodsPage() {
                     Elder Dianne Stokes, a Warumungu woman from Tennant Creek, named
                     the industrial washing machine in language. 20 machines deployed
                     across communities. Each one is IoT-instrumented, sending
-                    telemetry data back to ACT&apos;s R&D program for remote fleet
+                    telemetry data back to ACT's R&D program for remote fleet
                     management and anomaly detection.
                   </>
                 }
@@ -405,7 +405,7 @@ export default async function GoodsPage() {
             href="/projects/goods-on-country"
             className="inline-flex items-center gap-3 rounded-[var(--site-radius)] border-2 border-[var(--site-green)] px-8 py-4 font-[var(--font-sans)] text-[13px] font-semibold uppercase tracking-[0.12em] text-[var(--site-green)] transition hover:bg-[var(--site-green)] hover:text-white"
           >
-            Full project page <span aria-hidden="true">→</span>
+            Full project page <span aria-hidden="true">&rarr;</span>
           </Link>
         </div>
       </section>

@@ -23,7 +23,7 @@ import { getProjectData } from "@/lib/projects/get-project-data";
 import { notFound } from "next/navigation";
 
 export const metadata = {
-  title: "Empathy Ledger | A Curious Tractor",
+  title: "Empathy Ledger",
   description:
     "Consent-first storytelling. Community-owned narratives with sovereignty, live syndication, and revocable permission.",
 };
@@ -118,7 +118,7 @@ export default async function EmpathyLedgerPage() {
               ].map((item) => (
                 <HairlineCell key={item.type}>
                   <p className="font-[var(--font-display)] text-lg font-semibold text-[var(--site-ink)]">{item.type}</p>
-                  <p className="mt-3 font-[var(--font-body)] text-[14px] italic leading-[1.6] text-[var(--site-clay)]">&ldquo;{item.question}&rdquo;</p>
+                  <p className="mt-3 font-[var(--font-body)] text-[14px] italic leading-[1.6] text-[var(--site-clay)]">"{item.question}"</p>
                   <p className="mt-3 font-[var(--font-body)] text-[13px] leading-[1.7] text-[var(--site-muted)]">{item.detail}</p>
                 </HairlineCell>
               ))}
@@ -176,8 +176,8 @@ export default async function EmpathyLedgerPage() {
                 <p className="mt-4 font-[var(--font-body)] text-[15px] leading-[1.8] text-[var(--site-muted)]">
                   Palm Island Community Company runs community-controlled service
                   delivery, governance, and storytelling infrastructure. Their
-                  &ldquo;Our Story&rdquo; framing directly informs ACT&apos;s
-                  story-sovereignty practice. Richard Cassidy&apos;s governance
+                  "Our Story" framing directly informs ACT's
+                  story-sovereignty practice. Richard Cassidy's governance
                   work makes this the clearest example of community authority
                   over narrative.
                 </p>

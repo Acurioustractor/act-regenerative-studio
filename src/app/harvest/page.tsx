@@ -22,7 +22,7 @@ import { getProjectData } from "@/lib/projects/get-project-data";
 import { notFound } from "next/navigation";
 
 export const metadata = {
-  title: "The Harvest | A Curious Tractor",
+  title: "The Harvest",
   description:
     "A regenerative community hub in Witta, seasonal kitchen, garden centre, workshops, and venue hire grounded in local food culture.",
 };
@@ -139,7 +139,7 @@ export default async function HarvestPage() {
                 <>
                   Plants suited to the Sunshine Coast region, sourced and curated
                   for home growers, community gardens, and regenerative
-                  smallholders. This is Green Harvest&apos;s inheritance, evolved.
+                  smallholders. This is Green Harvest's inheritance, evolved.
                   The original organic seed business that operated from this site
                   for decades laid the foundation. We are growing what they started.
                 </>
@@ -194,7 +194,7 @@ export default async function HarvestPage() {
               onDark
               lede={
                 <>
-                  Barry Rodgerig&apos;s shed holds the memory of the hinterland as
+                  Barry Rodgerig's shed holds the memory of the hinterland as
                   working country. His decades of making, repairing, and sustaining
                   life on this land shaped how we understand the site. The shed is
                   not heritage. It still carries the work.
@@ -202,7 +202,7 @@ export default async function HarvestPage() {
               }
             />
             <p className="mt-6 font-[var(--font-body)] text-[15px] leading-[1.8] text-[#FAFAF7]/50">
-              Shaun Fisher&apos;s oyster-shell cycle turns Listen, Curiosity,
+              Shaun Fisher's oyster-shell cycle turns Listen, Curiosity,
               Action, Art into a material return loop. Shells from the oyster
               farm go back into the soil, feeding the garden that feeds the
               kitchen that feeds the community. It is LCAA made tangible in
@@ -390,7 +390,7 @@ export default async function HarvestPage() {
             href="/projects/the-harvest"
             className="inline-flex items-center gap-3 rounded-[var(--site-radius)] border-2 border-[var(--site-green)] px-8 py-4 font-[var(--font-sans)] text-[13px] font-semibold uppercase tracking-[0.12em] text-[var(--site-green)] transition hover:bg-[var(--site-green)] hover:text-white"
           >
-            Full project page <span aria-hidden="true">→</span>
+            Full project page <span aria-hidden="true">&rarr;</span>
           </Link>
         </div>
       </section>

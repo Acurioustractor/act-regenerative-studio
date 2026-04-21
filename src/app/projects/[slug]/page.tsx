@@ -1008,7 +1008,7 @@ export default async function ProjectPage({
                   <p className="text-sm text-[#D7C8B2] line-clamp-3">{work.description}</p>
                   <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#F3EBDD] transition group-hover:gap-3">
                     <span>View work</span>
-                    <span aria-hidden="true">→</span>
+                    <span aria-hidden="true">&rarr;</span>
                   </div>
                 </div>
               </Link>

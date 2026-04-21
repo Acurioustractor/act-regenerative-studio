@@ -21,7 +21,7 @@ import { getProjectData } from "@/lib/projects/get-project-data";
 import { notFound } from "next/navigation";
 
 export const metadata = {
-  title: "Black Cockatoo Valley | A Curious Tractor",
+  title: "Black Cockatoo Valley",
   description:
     "150 acres on Jinibara Country. Conservation-first land practice, residencies, workshops, and habitat restoration.",
 };
@@ -53,7 +53,7 @@ export default async function FarmPage() {
       {/* , , ,  THE WHY , , ,  */}
       <ScrollReveal>
         <ReadingLede id="story">
-          The land holding that grounds ACT&apos;s entire physical practice.
+          The land holding that grounds ACT's entire physical practice.
           Residencies, R&amp;D, habitat restoration, and community programs on
           a working valley near Witta, Queensland. When the creek is low or
           the grass is tired, we slow down. Capacity is a land decision
@@ -82,8 +82,8 @@ export default async function FarmPage() {
                   150 acres of pasture under regenerative grazing, food forest
                   and orchard, native corridor restoration zones, water catchment
                   systems, and studio and gathering buildings. Together with
-                  The Harvest in Witta town, Black Cockatoo Valley forms ACT&apos;s
-                  &ldquo;Place&rdquo; cluster, the land base that makes all the
+                  The Harvest in Witta town, Black Cockatoo Valley forms ACT's
+                  "Place" cluster, the land base that makes all the
                   digital and social enterprise work legible.
                 </>
               }
@@ -342,7 +342,7 @@ export default async function FarmPage() {
             href="/projects/black-cockatoo-valley"
             className="inline-flex items-center gap-3 rounded-[var(--site-radius)] border-2 border-[var(--site-green)] px-8 py-4 font-[var(--font-sans)] text-[13px] font-semibold uppercase tracking-[0.12em] text-[var(--site-green)] transition hover:bg-[var(--site-green)] hover:text-white"
           >
-            Full project page <span aria-hidden="true">→</span>
+            Full project page <span aria-hidden="true">&rarr;</span>
           </Link>
         </div>
       </section>

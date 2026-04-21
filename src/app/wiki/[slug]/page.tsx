@@ -101,7 +101,7 @@ export default async function WikiPageViewer({
                   {nextMove.title}
                 </h2>
                 <p className="mt-3 text-sm leading-7 text-[#E8E1D0]">
-                  This page shows up directly in the work we&rsquo;re doing on
+                  This page shows up directly in the work we're doing on
                   {' '}
                   {nextMove.title}.
                 </p>
@@ -152,7 +152,7 @@ export default async function WikiPageViewer({
                         href={entry.href}
                         className="inline-flex items-center gap-2 text-sm text-[var(--we-olive)] transition hover:text-[#3E9845]"
                       >
-                        <span aria-hidden="true">→</span> {entry.title}
+                        <span aria-hidden="true">&rarr;</span> {entry.title}
                       </Link>
                     </li>
                   ))}
@@ -178,7 +178,7 @@ export default async function WikiPageViewer({
                           href={entry.href}
                           className="inline-flex items-center gap-2 text-sm text-[var(--we-olive)] transition hover:text-[#3E9845]"
                         >
-                          <span aria-hidden="true">→</span> {entry.title}
+                          <span aria-hidden="true">&rarr;</span> {entry.title}
                           <span className="text-[10px] uppercase tracking-[0.22em] text-[#8A7A65]">
                             {entry.sectionTitle}
                           </span>

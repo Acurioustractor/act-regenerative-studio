@@ -5,10 +5,11 @@ import PageHero from "@/components/PageHero";
 import SectionHeading from '@/components/SectionHeading';
 import SignalBars from '@/components/impact/SignalBars';
 import ImpactSankey from '@/components/impact/ImpactSankey';
+import { EmpathyLedgerConnections } from '@/components/projects/EmpathyLedgerConnections';
 import { REAL_INITIATIVES, REAL_CONTEXTS, REAL_EVIDENCE } from '@/data/alma-seeds';
 
 export const metadata: Metadata = {
-    title: 'Impact & Learning | A Curious Tractor',
+    title: 'Impact & Learning',
     description: 'What the work is actually doing, initiatives, contexts, community authority, and the evidence behind the claims.',
 };
 
@@ -23,8 +24,8 @@ export default function ImpactPage() {
         <div className="space-y-20">
             <PageHero
                 eyebrow="Impact & learning"
-                title="What&rsquo;s working, what we&rsquo;re learning"
-                description="How we think about impact: the initiatives, the communities they sit with, who holds authority in each, and the evidence behind each claim. Honest about what&rsquo;s strong and what&rsquo;s still early."
+                title="What's working, what we're learning"
+                description="How we think about impact: the initiatives, the communities they sit with, who holds authority in each, and the evidence behind each claim. Honest about what's strong and what's still early."
                 actions={[
                     { label: "Open the wiki", href: "/wiki" },
                     { label: "Explore projects", href: "/projects", variant: "outline" },
@@ -96,7 +97,7 @@ export default function ImpactPage() {
             <section className="space-y-10">
                 <SectionHeading
                     eyebrow="Current set"
-                    title="What we&rsquo;re working on right now"
+                    title="What we're working on right now"
                 />
 
                 <CardGrid
@@ -167,6 +168,12 @@ export default function ImpactPage() {
                     </p>
                 </div>
             </section>
+
+            <EmpathyLedgerConnections
+                projectSlug="a-curious-tractor"
+                projectTitle="A Curious Tractor"
+                orgSlug="a-curious-tractor"
+            />
         </div>
     );
 }

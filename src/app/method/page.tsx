@@ -1,6 +1,7 @@
 import Link from "next/link";
 import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
+import { EmpathyLedgerConnections } from "@/components/projects/EmpathyLedgerConnections";
 
 export const metadata = {
   title: "Method",
@@ -51,6 +52,37 @@ const methodCommitments = [
     title: "Art is part of the method",
     description:
       "Art is not a decorative layer. It is one of the main ways change becomes felt, legible, and shareable.",
+  },
+];
+
+const inPractice = [
+  {
+    phase: "Listen",
+    project: "Fishers Oysters",
+    href: "/projects/fishers-oysters",
+    quote:
+      "We listened to Elders who remembered the reefs, to marine scientists documenting the damage, and to young people seeking pathways on Country.",
+  },
+  {
+    phase: "Curiosity",
+    project: "Empathy Ledger",
+    href: "/projects/empathy-ledger",
+    quote:
+      "How can technology serve cultural preservation without extracting value? We explored Indigenous-led frameworks like OCAP with First Nations technologists.",
+  },
+  {
+    phase: "Action",
+    project: "Goods on Country",
+    href: "/projects/goods-on-country",
+    quote:
+      "In 2025 we deployed 389 assets including 363 beds across 8 communities, built repair networks, and created feedback loops so every deployment improves the next.",
+  },
+  {
+    phase: "Art",
+    project: "JusticeHub",
+    href: "/projects/justicehub",
+    quote:
+      "We translate data into human stories and build installations like CONTAINED, experiential spaces that immerse visitors in the reality of youth detention.",
   },
 ];
 
@@ -115,6 +147,41 @@ export default function MethodPage() {
         </div>
       </section>
 
+      <section className="space-y-10">
+        <SectionHeading
+          eyebrow="In practice"
+          title="What this looks like in the field"
+          description="Each phase shows up differently on each project. These are four moments, one from each loop, drawn from live ACT work."
+        />
+        <div className="grid gap-6 md:grid-cols-2">
+          {inPractice.map((item) => (
+            <Link
+              key={item.phase}
+              href={item.href}
+              className="group flex flex-col gap-4 rounded-3xl border border-[var(--we-sand)] bg-white/70 p-7 transition hover:border-[var(--we-olive)] hover:bg-white"
+            >
+              <div className="flex items-center justify-between">
+                <span className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
+                  {item.phase}
+                </span>
+                <span className="text-xs font-semibold uppercase tracking-[0.2em] text-[var(--we-olive)]">
+                  {item.project}
+                </span>
+              </div>
+              <p className="text-sm leading-7 text-[var(--we-brown)]">
+                "{item.quote}"
+              </p>
+              <span className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--we-olive)]">
+                Read the project
+                <span aria-hidden className="transition group-hover:translate-x-1">
+                  &rarr;
+                </span>
+              </span>
+            </Link>
+          ))}
+        </div>
+      </section>
+
       <section className="rounded-3xl border border-[var(--we-sand)] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="space-y-4">
@@ -163,12 +230,18 @@ export default function MethodPage() {
               <p className="mt-3 text-sm text-[var(--we-brown)]">{page.description}</p>
               <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--we-olive)] transition group-hover:gap-3">
                 <span>{page.cta}</span>
-                <span aria-hidden="true">→</span>
+                <span aria-hidden="true">&rarr;</span>
               </div>
             </Link>
           ))}
         </div>
       </section>
+
+      <EmpathyLedgerConnections
+        projectSlug="a-curious-tractor"
+        projectTitle="A Curious Tractor"
+        orgSlug="a-curious-tractor"
+      />
     </div>
   );
 }

@@ -163,7 +163,7 @@ export default async function HomePage() {
         gradientStrength="strong"
         eyebrow="A Curious Tractor · Jinibara Country"
         title="Places, story systems, and public works you can step into."
-        subhead="Regenerative innovation from a farm on Jinibara Country. Justice platforms, ethical storytelling, circular goods, community art, and land care, all co-designed with the people who&rsquo;ll hold them."
+        subhead="Regenerative innovation from a farm on Jinibara Country. Justice platforms, ethical storytelling, circular goods, community art, and land care, all co-designed with the people who'll hold them."
         coverVideo={{
           url: "/media/field-videos/hero-farm-aerial.mp4",
           posterUrl: "/media/field-stills/hero-farm-aerial.jpg",
@@ -196,7 +196,7 @@ export default async function HomePage() {
       <section className="full-bleed border-b border-[var(--we-sand)] bg-[#F6F1E7] px-6 py-16 md:px-10 md:py-24">
         <div className="mx-auto flex max-w-[1100px] flex-col items-center text-center">
           <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-[var(--we-warm-brown)]">
-            I&rsquo;m here to&hellip;
+            I'm here to...
           </p>
           <p className="mt-3 font-[var(--font-body)] text-sm italic leading-relaxed text-[var(--we-warm-brown)]/80 md:text-[15px]">
             Pick the thing that pulled you here. Every door opens to somewhere real.
@@ -260,13 +260,13 @@ export default async function HomePage() {
             What is A Curious Tractor?
           </p>
           <h2 className="mt-6 font-[var(--font-display)] text-[clamp(2rem,4.2vw,3.6rem)] font-semibold leading-[1.08] text-[var(--we-olive)]">
-            A small studio that grows slowly, with the people who&rsquo;ll hold what we make.
+            A small studio that grows slowly, with the people who'll hold what we make.
           </h2>
           <div className="mt-10 h-px w-16 bg-[var(--we-warm-brown)]/40" />
           <p className="mt-10 max-w-[680px] font-[var(--font-body)] text-[18px] leading-[1.8] text-[var(--we-brown)] md:text-[19px]">
-            We listen first. Stay long enough to notice what&rsquo;s missing.
-            Build the thing with the communities who&rsquo;ll carry it. Hand
-            over the keys when they&rsquo;re ready. Then move on.
+            We listen first. Stay long enough to notice what's missing.
+            Build the thing with the communities who'll carry it. Hand
+            over the keys when they're ready. Then move on.
           </p>
           <p className="mt-6 max-w-[680px] font-[var(--font-body)] text-[18px] leading-[1.8] text-[var(--we-brown)] md:text-[19px]">
             That shows up as a farm on Jinibara Country, a justice

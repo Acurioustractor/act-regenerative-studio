@@ -124,7 +124,7 @@ export default function EventsPage() {
               </p>
               <span className="mt-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#4CAF50] transition group-hover:gap-3">
                 <span>{pathway.cta}</span>
-                <span aria-hidden="true">→</span>
+                <span aria-hidden="true">&rarr;</span>
               </span>
             </Link>
           ))}

@@ -2,7 +2,7 @@ import PageHero from "../../components/PageHero";
 import { WarmCard } from "@/components/warm-editorial";
 
 export const metadata = {
-  title: "Privacy + Consent | A Curious Tractor",
+  title: "Privacy + Consent",
   description:
     "Interim public summary of how ACT handles enquiries, consented stories, media, and cultural material across the studio website and linked project surfaces.",
 };

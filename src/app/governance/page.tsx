@@ -2,6 +2,7 @@ import LivingSystemStrip from "@/components/LivingSystemStrip";
 import CardGrid from "../../components/CardGrid";
 import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
+import { EmpathyLedgerConnections } from "@/components/projects/EmpathyLedgerConnections";
 
 export const metadata = {
   title: "Governance",
@@ -114,10 +115,16 @@ export default function GovernancePage() {
             Governance is where values either become structure or collapse into branding
           </h2>
           <p className="max-w-3xl text-sm leading-7 text-[#D7C8B2]">
-            ACT’s governance language points back to shared authority, cultural protocol, and handover. If a governance claim can’t be connected to what communities can actually see, change, or refuse, it’s probably just optics.
+            ACT's governance language points back to shared authority, cultural protocol, and handover. If a governance claim can't be connected to what communities can actually see, change, or refuse, it's probably just optics.
           </p>
         </div>
       </section>
+
+      <EmpathyLedgerConnections
+        projectSlug="a-curious-tractor"
+        projectTitle="A Curious Tractor"
+        orgSlug="a-curious-tractor"
+      />
     </div>
   );
 }

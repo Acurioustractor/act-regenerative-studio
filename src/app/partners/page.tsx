@@ -3,6 +3,7 @@ import LivingSystemStrip from "@/components/LivingSystemStrip";
 import { EnquiryExpectations } from "../../components/forms/EnquiryExpectations";
 import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
+import { EmpathyLedgerConnections } from "@/components/projects/EmpathyLedgerConnections";
 
 export const metadata = {
   title: "Partners",
@@ -46,7 +47,7 @@ const partnershipPrinciples = [
   {
     title: "Shared ownership",
     description:
-      "We build toward community ownership of tools, IP, and outcomes. 40% of profits flow back.",
+      "We build toward community ownership of tools, IP, and outcomes. Surplus circulates back to the communities the work serves.",
   },
   {
     title: "Transparent reporting",
@@ -260,10 +261,16 @@ export default function PartnersPage() {
             className="inline-flex items-center gap-2 text-sm font-semibold text-[#4CAF50] hover:gap-3 transition"
           >
             <span>Discuss funding partnership</span>
-            <span aria-hidden="true">→</span>
+            <span aria-hidden="true">&rarr;</span>
           </Link>
         </div>
       </section>
+
+      <EmpathyLedgerConnections
+        projectSlug="a-curious-tractor"
+        projectTitle="A Curious Tractor"
+        orgSlug="a-curious-tractor"
+      />
     </div>
   );
 }

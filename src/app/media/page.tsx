@@ -5,7 +5,7 @@ import SectionHeading from '@/components/SectionHeading';
 import { getShowcaseMedia } from '@/lib/media/get-showcase-media';
 
 export const metadata = {
-  title: 'Media, A Curious Tractor',
+  title: 'Media',
   description:
     'Photography, video, and field documentation from across the ACT ecosystem.',
 };
@@ -165,7 +165,7 @@ export default async function MediaPage() {
               ACT does not use stock photography. All media on this site comes
               from real field work, real communities, and real collaborators.
               Media featuring individuals is published with their consent
-              through Empathy Ledger&apos;s narrative sovereignty framework.
+              through Empathy Ledger's narrative sovereignty framework.
             </p>
           </div>
           <div className="flex flex-wrap gap-3 lg:justify-end">

@@ -17,7 +17,7 @@ export default function NotFound() {
           This page has moved, been retired, or never existed.
         </h1>
         <p className="mt-6 max-w-2xl text-base leading-8 text-[var(--we-brown)] md:text-lg">
-          The site changes as the work changes. Something here didn&rsquo;t
+          The site changes as the work changes. Something here didn't
           survive the last pass. Here are the places worth trying instead.
         </p>
 

@@ -79,7 +79,7 @@ export default async function EmpathyLedgerPage() {
       {/* ——— FULL-BLEED PHOTO ——— */}
       <PhotoBreak>
         <EditableImage
-          src="/media/field-stills/el-storytelling.jpg"
+          src="/media/field-stills/empathy-ledger-community-story.jpg"
           alt="Empathy Ledger storytelling session"
           slot="el-bleed-1"
           projectSlug="empathy-ledger"

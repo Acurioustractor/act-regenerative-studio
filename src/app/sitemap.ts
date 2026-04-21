@@ -6,9 +6,20 @@ import { getSiteEditorialArticles } from "@/lib/empathy-ledger-editorial";
 import { listAllWikiPages } from "@/lib/wiki/canonical-site-wiki";
 import { getCanonicalWikiProjectRecords } from "@/lib/wiki/canonical-project-wiki";
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  "https://act-regenerative-studio.vercel.app";
+const siteUrl = (() => {
+  // Reject dev URLs so we never ship a sitemap pointing at localhost.
+  // `.env.local` commonly sets NEXT_PUBLIC_SITE_URL to the dev host for previews,
+  // which would otherwise poison every <loc> in production.
+  const candidate = process.env.NEXT_PUBLIC_SITE_URL || "";
+  if (!candidate || /localhost|127\.0\.0\.1|0\.0\.0\.0/.test(candidate)) {
+    return process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : process.env.VERCEL_URL
+        ? `https://${process.env.VERCEL_URL}`
+        : "https://act-regenerative-studio.vercel.app";
+  }
+  return candidate;
+})();
 
 const staticRoutes: Array<{
   path: string;

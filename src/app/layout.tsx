@@ -30,9 +30,19 @@ const navItems = [
   { label: "Contact", href: "/contact" },
 ];
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL ||
-  "https://act-regenerative-studio.vercel.app";
+const siteUrl = (() => {
+  // Match sitemap.ts/robots.ts: reject dev URLs so production og:url / canonical
+  // never points at localhost even if `.env.local` sets NEXT_PUBLIC_SITE_URL for previews.
+  const candidate = process.env.NEXT_PUBLIC_SITE_URL || "";
+  if (!candidate || /localhost|127\.0\.0\.1|0\.0\.0\.0/.test(candidate)) {
+    return process.env.VERCEL_PROJECT_PRODUCTION_URL
+      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+      : process.env.VERCEL_URL
+        ? `https://${process.env.VERCEL_URL}`
+        : "https://act-regenerative-studio.vercel.app";
+  }
+  return candidate;
+})();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -87,6 +97,15 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${displayFont.variable} ${serifBody.variable} ${sansFont.variable}`}>
       <body className="min-h-screen antialiased">
+        {/* Skip link — visually hidden until focused. Lets keyboard + screenreader
+            users bypass the nav and jump straight to page content. */}
+        <a
+          href="#main-content"
+          className="absolute left-4 top-4 z-[100] -translate-y-24 rounded-full bg-[var(--we-olive)] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition-transform focus:translate-y-0 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-[#CFA16B]"
+        >
+          Skip to content
+        </a>
+
         {/* Floating nav — sits on top of full-bleed content */}
         <header className="fixed left-0 right-0 top-0 z-50 px-6 pt-4 md:px-8 md:pt-5">
           <div className="mx-auto max-w-[1200px]">
@@ -111,7 +130,7 @@ export default function RootLayout({
                   </span>
                 </Link>
 
-                <nav className="hidden items-center gap-6 md:flex">
+                <nav aria-label="Primary" className="hidden items-center gap-6 md:flex">
                   {navItems.map((item) => (
                     <Link
                       key={item.label}
@@ -128,7 +147,7 @@ export default function RootLayout({
         </header>
 
         {/* Full-bleed main — no max-width constraint */}
-        <main className="relative z-10 min-h-screen">{children}</main>
+        <main id="main-content" className="relative z-10 min-h-screen">{children}</main>
         <UnifiedFooter
             currentProject="A Curious Tractor"
             showProjects={true}

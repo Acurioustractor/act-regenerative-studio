@@ -100,7 +100,7 @@ async function loadWikiPages(wikiRoot) {
 
   const sectionFiles = globSync('{concepts,projects,sources,communities,people,stories,art,research,technical,finance,decisions,synthesis}/**/*.md', {
     cwd: wikiRoot,
-    ignore: ['**/README.md', '**/index.md'],
+    ignore: ['**/README.md', '**/index.md', '**/_*.md'],
     nodir: true,
   });
 

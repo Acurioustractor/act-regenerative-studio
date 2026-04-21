@@ -249,7 +249,7 @@ async function buildLiveCanonicalWikiPages(): Promise<CanonicalWikiPageRecord[] 
 
   const sectionFiles = await glob('{concepts,projects,sources,communities,people,stories,art,research,technical,finance,decisions,synthesis}/**/*.md', {
     cwd: wikiRoot,
-    ignore: ['**/README.md', '**/index.md'],
+    ignore: ['**/README.md', '**/index.md', '**/_*.md'],
     nodir: true,
   });
 
@@ -443,16 +443,20 @@ export function getCanonicalWikiSections(pages: CanonicalWikiPageRecord[]) {
  */
 export async function listAllWikiPages(): Promise<CanonicalWikiPageListItem[]> {
   const pages = await getCanonicalWikiPages();
-  const items: CanonicalWikiPageListItem[] = pages.map((page) => ({
-    title: page.title,
-    excerpt: page.excerpt,
-    sectionId: page.sectionId,
-    sectionTitle: page.sectionTitle,
-    stem: page.stem,
-    path: page.path,
-    relativePath: page.relativePath,
-    modifiedAt: page.modifiedAt,
-  }));
+  const items: CanonicalWikiPageListItem[] = pages
+    // Obsidian convention: underscore-prefixed files are drafts/templates/scratch.
+    // Filter defensively in case any upstream source tier (snapshot, Supabase) leaks them.
+    .filter((page) => !page.stem.startsWith('_') && !page.relativePath.split('/').some((seg) => seg.startsWith('_')))
+    .map((page) => ({
+      title: page.title,
+      excerpt: page.excerpt,
+      sectionId: page.sectionId,
+      sectionTitle: page.sectionTitle,
+      stem: page.stem,
+      path: page.path,
+      relativePath: page.relativePath,
+      modifiedAt: page.modifiedAt,
+    }));
   return items.sort((left, right) =>
     left.title.localeCompare(right.title, 'en', { sensitivity: 'base' })
   );
@@ -461,7 +465,7 @@ export async function listAllWikiPages(): Promise<CanonicalWikiPageListItem[]> {
 export async function renderCanonicalWikiMarkdown(content: string): Promise<string> {
   const pages = await getCanonicalWikiPages();
 
-  return content.replace(/\[\[([^\]]+)\]\]/g, (_match, inner) => {
+  const withWikilinks = content.replace(/\[\[([^\]]+)\]\]/g, (_match, inner) => {
     const [target, label] = inner.split('|');
     const resolved = matchPageRecord(pages, target.trim());
     const displayText = (label || target).trim();
@@ -472,4 +476,17 @@ export async function renderCanonicalWikiMarkdown(content: string): Promise<stri
 
     return `[${displayText}](/wiki/${resolved.stem})`;
   });
+
+  // Resolve raw Obsidian-style markdown links: [text](../sources/foo.md) or [text](foo.md#anchor).
+  // External links (http/https/mailto) pass through untouched; unresolved .md targets
+  // degrade to plain text so we never ship broken hrefs to the browser.
+  return withWikilinks.replace(
+    /\[([^\]]+)\]\(([^)\s]+?\.md)(#[^)]*)?\)/g,
+    (_match, label, mdPath, anchor) => {
+      if (/^(https?:|mailto:|\/\/)/i.test(mdPath)) return _match;
+      const resolved = matchPageRecord(pages, mdPath);
+      if (!resolved) return label;
+      return `[${label}](/wiki/${resolved.stem}${anchor || ''})`;
+    }
+  );
 }

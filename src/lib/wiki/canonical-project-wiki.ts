@@ -289,7 +289,7 @@ async function buildLiveCanonicalProjectRecords(): Promise<CanonicalWikiProjectR
 
   const projectFiles = await glob('projects/**/*.md', {
     cwd: wikiRoot,
-    ignore: ['**/README.md'],
+    ignore: ['**/README.md', '**/_*.md'],
     nodir: true,
   });
   const urlAuditMap = await loadUrlAuditMap(wikiRoot);

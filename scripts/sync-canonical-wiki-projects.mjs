@@ -179,7 +179,7 @@ async function loadProjectRecords(wikiRoot) {
   const identityRules = await loadProjectIdentityRules(wikiRoot);
   const projectFiles = globSync('projects/**/*.md', {
     cwd: wikiRoot,
-    ignore: ['**/README.md'],
+    ignore: ['**/README.md', '**/_*.md'],
     nodir: true,
   });
 

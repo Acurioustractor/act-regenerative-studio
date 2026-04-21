@@ -8,13 +8,36 @@ status: active
 # Work Stream: ultimate-project-pages
 
 ## Ledger
-**Updated:** 2026-04-22T05:00:00Z
-**Goal:** Smoke walk + obvious-bug fixes on dev (ledger Options for next session #2)
-**Branch:** main (uncommitted: 4 code edits + 2 sync scripts + regenerated wiki snapshots + ledger)
+**Updated:** 2026-04-22T18:00:00Z
+**Goal:** Homepage + stories hub shipped; next session picks up from browser polish + follow-up curation
+**Branch:** main — head 81b4fa7 (homepage/blog/sync/image-picker session, all work committed)
 **Test:** npm run build && npm run dev (dev on :3300)
 
+### Resume prompts (pick one and paste after /clear)
+
+**A — Browser-polish pass on the homepage.**
+> Dev on :3300 is already running. Open / and walk the eight sections: hero, audience chips, What is A Curious Tractor + Listen→Design with→Hand over→Move on, full-bleed Jinibara photo break, flagship projects grid, Voices from the Field (3-card editorial grid from EL, Seeds of Change lead), art callout, More from the field mosaic (9 non-flagship tiles with pencil editor widget), LCAA method, Invitation. Flag layout/contrast/mobile issues and fix the obvious ones. Don't touch copy or images — the curation is settled. No em dashes in any new copy.
+
+**B — Extend the partner-org allowlist.**
+> In `scripts/sync-el-media.mjs` there's `EL_PARTNER_ORG_MAP = { oonchiumpa: "oonchiumpa" }`. For each ACT project slug that corresponds to a partner organisation in Empathy Ledger, add a `project-slug: "el-org-slug"` entry. When you know which ones apply (user will tell you), re-run `npm run sync:el-media` and verify each project now has 20+ items in the featured snapshot.
+
+**C — Blog long-read polish.**
+> Open http://localhost:3300/blog/seeds-of-change-walking-with-elders-and-youth-on-kalkadoon-country. The long-read layout has: full-bleed hero, short italic lede, prose body at 720px, Field Photographs gallery (up to 8 EL previews), author block, CTA band, 3-card Suggested Reading. Check type sizes, spacing, gallery caption behaviour on mobile. Fix obvious issues. No em dashes.
+
+**D — Curation tweaks on the home mosaic.**
+> The "More from the field" mosaic at the bottom of src/app/page.tsx uses `mosaicTiles` (9 tiles). Current: PICC Elders Hull River Story, CivicScope, CONTAINED, Gold.Phone, Uncle Allan Palm Island, Dad.Lab, Community Capital, Oonchiumpa, SMART Recovery. Each tile has optional `override` (always win) and `fallback` (used when EL has nothing). Swap tiles, change names, repoint hrefs per user direction. Each `slot` id (e.g. `home-mosaic-dad-lab-25`) persists image picks to `src/data/image-overrides.json`.
+
+### Session outcome (2026-04-22 PM)
+- Homepage restructured (8 sections), stories hub live at /blog, long-read at /blog/<slug>, image-pick widget live on the home mosaic (src/data/image-overrides.json persists picks), EL partner-org allowlist introduced in sync-el-media.mjs (currently only oonchiumpa), 168 em dashes swept across src/.
+- Detailed followups list lives in the block below — unchanged aside from **new item: partner-org allowlist expansion (`EL_PARTNER_ORG_MAP` in sync-el-media.mjs currently has 1 entry; add per ACT-project ↔ EL-org pair as user identifies them).**
+
 ### Now
-[->] Smoke walk done on :3300. 19/19 smoke routes return 200. Fixed three real bugs found during the walk (see session roll-up). `/impact` stat-block color variance diagnosed — flagged as design decision.
+[->] **Homepage rebuild — 5 sections → 8 sections.** Added three new editorial blocks to answer the brief "support everything to know who ACT is · link to major projects · stories through EL · sparks of joy · showcase lots of project photos":
+- **"What is A Curious Tractor?" narrative section** — warm, plain-language 2-paragraph explainer with signature photo pair (harvest-witta-aerial). Right after audience chips. Copy: "A small studio that grows slowly, with the people who'll hold what we make." Dual CTAs to /about + /method.
+- **"Voices from the field" editorial thread** — full-bleed olive bg. Pulls the lead article from `getHomeEditorialFeature()` with its featured image + excerpt + author attribution, plus 2 supporting articles. Links through to individual `/blog/<slug>` routes + /storytellers.
+- **"Glimpses from the field" photo mosaic** — 9-tile varied-ratio grid pulling field-stills assets (harvest, goods, EL, BCV, JusticeHub, CONTAINED, Palm Island). Lead tile 2×2 portrait (4:5), others are 4:3/square mix. Each links to parent project. Hover reveals project eyebrow + caption over darkening gradient, photos gently scale (6s ease-out). Closing line in italic warm-brown: "Every photo is a place we've been listening…"
+- **Sparks of joy across the page**: chip hover lift + shadow, arrow-gap widens on every CTA hover, tile captions slide-up-reveal on hover, lead editorial image scales 8s on hover, gradient tightens on photo hover to preserve legibility.
+- h1 discipline maintained (count=1), sections=9, tsc clean, dev log clean, 200.
 
 ### Followups surfaced but deferred
 - **4 dead `/api/subscriptions/*` routes.** `src/app/api/subscriptions/{list,discover,analytics/savings,analytics/summary}/route.ts` — all proxies to an external "ACT Placemat" subscription-tracker service (`ACT_PLACEMAT_API_URL`, `ACT_PLACEMAT_API_KEY` env vars). Added in commit `6f00212` (2025-12-30). Zero references from anywhere in `src/` or `scripts/`. No admin UI wired up. Either (a) they're dead and should be `rm -rf src/app/api/subscriptions/` + drop the two env vars, or (b) ACT Placemat still calls them externally — in which case they need admin-only auth or at minimum a monitoring note since right now they're unauthenticated proxies. Needs your call; don't delete without confirmation.

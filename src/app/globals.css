@@ -19,7 +19,7 @@
   --site-shadow-hover: 0 8px 40px rgba(26, 26, 26, 0.12);
   --site-radius: 8px;
 
-  /* Warm Editorial palette — meta, legal, directory pages. See DESIGN.md. */
+  /* Warm Editorial palette, meta, legal, directory pages. See DESIGN.md. */
   --we-olive: #2F3E2E;        /* headings, dual-entity accents */
   --we-olive-deep: #3A4A3D;   /* contrast-adjusted olive for text-on-white */
   --we-brown: #4D3F33;        /* body text primary */
@@ -42,7 +42,7 @@ body {
   font-family: var(--font-body), 'Source Serif 4', Georgia, serif;
 }
 
-/* Default content container — generous white space */
+/* Default content container, generous white space */
 main > section,
 main > div {
   max-width: 1200px;

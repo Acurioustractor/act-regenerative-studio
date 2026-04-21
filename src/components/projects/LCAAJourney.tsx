@@ -163,7 +163,7 @@ export function LCAAJourney({
           How we work: The LCAA Method
         </h2>
         <p className="mt-4 max-w-2xl mx-auto text-[var(--we-olive-deep)]">
-          Every project follows our methodology of Listen, Curiosity, Action, and Art—
+          Every project follows our methodology of Listen, Curiosity, Action, and Art, 
           transforming community challenges into lasting solutions.
         </p>
       </div>

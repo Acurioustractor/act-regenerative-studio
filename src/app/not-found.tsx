@@ -11,7 +11,7 @@ export default function NotFound() {
     <div className="min-h-[70vh] bg-gradient-to-b from-[#F6F1E7] via-[#F5F1E8] to-white">
       <section className="mx-auto max-w-3xl px-4 py-24 md:py-32">
         <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
-          404 — Not found
+          404 · Not found
         </p>
         <h1 className="mt-4 font-[var(--font-display)] text-4xl font-semibold text-[var(--we-olive)] md:text-6xl">
           This page has moved, been retired, or never existed.

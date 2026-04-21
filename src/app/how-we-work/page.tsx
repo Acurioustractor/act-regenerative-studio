@@ -15,7 +15,7 @@ const workStyles = [
   {
     title: "Partnership First",
     description:
-      "We don't do projects 'to' communities—we do them alongside. Every partnership begins with listening, and communities lead the direction.",
+      "We don't do projects 'to' communities, we do them alongside. Every partnership begins with listening, and communities lead the direction.",
   },
   {
     title: "Prototype Quickly",
@@ -87,7 +87,7 @@ const collaborationTypes = [
   {
     title: "Infrastructure Access",
     description:
-      "Use of ACT's technical stack, tools, and platforms for aligned organizations—from Empathy Ledger's consent framework to JusticeHub's program registry.",
+      "Use of ACT's technical stack, tools, and platforms for aligned organizations, from Empathy Ledger's consent framework to JusticeHub's program registry.",
     cta: "Explore projects",
     href: "/projects",
   },

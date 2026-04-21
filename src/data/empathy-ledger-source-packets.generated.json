@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-12T01:33:44.673Z",
+  "generatedAt": "2026-04-20T00:50:02.223Z",
   "sourceUrl": "http://localhost:3030",
   "siteSlug": "act-regenerative-studio",
   "destination": "act_el",
@@ -23,7 +23,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "flagship_project_pack",
           "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
-          "captured_at": "2026-04-12T01:33:35.127Z",
+          "captured_at": "2026-04-20T00:50:01.046Z",
           "verification_status": "verified",
           "notes": "Flagship pack exists for this project slug."
         },
@@ -32,7 +32,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "site_editorial_manifest",
           "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
-          "captured_at": "2026-04-12T01:33:35.127Z",
+          "captured_at": "2026-04-20T00:50:01.046Z",
           "verification_status": "verified",
           "notes": "Editorial manifest found for act-regenerative-studio."
         }
@@ -169,7 +169,7 @@
         }
       ],
       "provenance": {
-        "generated_at": "2026-04-12T01:33:35.127Z",
+        "generated_at": "2026-04-20T00:50:01.046Z",
         "generated_by": "content-hub-source-packet-builder",
         "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
         "notes": "storyIds=0, storytellerIds=4, mediaIds=8"
@@ -226,7 +226,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "flagship_project_pack",
           "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
-          "captured_at": "2026-04-12T01:33:29.214Z",
+          "captured_at": "2026-04-20T00:50:00.551Z",
           "verification_status": "verified",
           "notes": "Flagship pack exists for this project slug."
         },
@@ -235,7 +235,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "site_editorial_manifest",
           "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
-          "captured_at": "2026-04-12T01:33:29.214Z",
+          "captured_at": "2026-04-20T00:50:00.551Z",
           "verification_status": "verified",
           "notes": "Editorial manifest found for act-regenerative-studio."
         }
@@ -307,7 +307,7 @@
         }
       ],
       "provenance": {
-        "generated_at": "2026-04-12T01:33:29.214Z",
+        "generated_at": "2026-04-20T00:50:00.551Z",
         "generated_by": "content-hub-source-packet-builder",
         "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
         "notes": "storyIds=0, storytellerIds=0, mediaIds=0"
@@ -346,7 +346,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "flagship_project_pack",
           "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
-          "captured_at": "2026-04-12T01:33:40.857Z",
+          "captured_at": "2026-04-20T00:50:01.546Z",
           "verification_status": "verified",
           "notes": "Flagship pack exists for this project slug."
         },
@@ -355,7 +355,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "site_editorial_manifest",
           "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
-          "captured_at": "2026-04-12T01:33:40.857Z",
+          "captured_at": "2026-04-20T00:50:01.546Z",
           "verification_status": "verified",
           "notes": "Editorial manifest found for act-regenerative-studio."
         }
@@ -492,7 +492,7 @@
         }
       ],
       "provenance": {
-        "generated_at": "2026-04-12T01:33:40.857Z",
+        "generated_at": "2026-04-20T00:50:01.546Z",
         "generated_by": "content-hub-source-packet-builder",
         "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
         "notes": "storyIds=0, storytellerIds=1, mediaIds=8"
@@ -540,7 +540,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "flagship_project_pack",
           "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
-          "captured_at": "2026-04-12T01:33:44.015Z",
+          "captured_at": "2026-04-20T00:50:01.776Z",
           "verification_status": "verified",
           "notes": "Flagship pack exists for this project slug."
         },
@@ -549,7 +549,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "site_editorial_manifest",
           "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
-          "captured_at": "2026-04-12T01:33:44.015Z",
+          "captured_at": "2026-04-20T00:50:01.776Z",
           "verification_status": "verified",
           "notes": "Editorial manifest found for act-regenerative-studio."
         }
@@ -686,7 +686,7 @@
         }
       ],
       "provenance": {
-        "generated_at": "2026-04-12T01:33:44.015Z",
+        "generated_at": "2026-04-20T00:50:01.776Z",
         "generated_by": "content-hub-source-packet-builder",
         "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
         "notes": "storyIds=0, storytellerIds=1, mediaIds=8"
@@ -726,7 +726,7 @@
         "entity_type": "project",
         "canonical_slug": "black-cockatoo-valley",
         "canonical_note_path": "wiki/projects/act-farm/black-cockatoo-valley.md",
-        "project_code": "ACT-BCV",
+        "project_code": "ACT-BV",
         "public_copy_owner": "act-regenerative-studio"
       },
       "source_refs": [
@@ -735,7 +735,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "flagship_project_pack",
           "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
-          "captured_at": "2026-04-12T01:33:44.666Z",
+          "captured_at": "2026-04-20T00:50:02.222Z",
           "verification_status": "verified",
           "notes": "Flagship pack exists for this project slug."
         },
@@ -744,7 +744,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "site_editorial_manifest",
           "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
-          "captured_at": "2026-04-12T01:33:44.666Z",
+          "captured_at": "2026-04-20T00:50:02.222Z",
           "verification_status": "verified",
           "notes": "Editorial manifest found for act-regenerative-studio."
         }
@@ -882,7 +882,7 @@
         }
       ],
       "provenance": {
-        "generated_at": "2026-04-12T01:33:44.666Z",
+        "generated_at": "2026-04-20T00:50:02.222Z",
         "generated_by": "content-hub-source-packet-builder",
         "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
         "notes": "storyIds=0, storytellerIds=0, mediaIds=8"

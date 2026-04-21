@@ -89,7 +89,7 @@ export default async function StudioPage() {
       <PageHero
         eyebrow="Studio"
         title="The studio that holds land, story, justice, and works together"
-        description="The studio is what keeps the projects connected. Shared land, shared method, shared memory &mdash; so the work can grow without the pieces drifting into unrelated brands."
+        description="The studio is what keeps the projects connected. Shared land, shared method, shared memory, so the work can grow without the pieces drifting into unrelated brands."
         actions={[
           { label: "Explore projects", href: "/projects" },
           { label: "Open the wiki", href: "/wiki", variant: "outline" },
@@ -109,7 +109,7 @@ export default async function StudioPage() {
       <LivingSystemStrip
         eyebrow="The studio"
         title="Where the work gets made"
-        description="ACT Regenerative Studio is the workshop behind the projects — the place where ideas get prototyped, partnerships are designed, and field material from communities feeds back into the next round of work."
+        description="ACT Regenerative Studio is the workshop behind the projects, the place where ideas get prototyped, partnerships are designed, and field material from communities feeds back into the next round of work."
         wiki={{
           href: "/wiki",
           label: "Background & method",

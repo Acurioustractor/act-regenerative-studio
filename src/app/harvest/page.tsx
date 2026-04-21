@@ -24,7 +24,7 @@ import { notFound } from "next/navigation";
 export const metadata = {
   title: "The Harvest | A Curious Tractor",
   description:
-    "A regenerative community hub in Witta — seasonal kitchen, garden centre, workshops, and venue hire grounded in local food culture.",
+    "A regenerative community hub in Witta, seasonal kitchen, garden centre, workshops, and venue hire grounded in local food culture.",
 };
 
 export default async function HarvestPage() {
@@ -60,11 +60,11 @@ export default async function HarvestPage() {
       <ExternalHandoffCard
         platformName="The Harvest"
         url="https://theharvestwitta.com.au"
-        whatHappensThere="seasonal meals, workshops, and venue hire actually happen — menus, booking, events"
+        whatHappensThere="seasonal meals, workshops, and venue hire actually happen, menus, booking, events"
         whyComeBack="the story of the land and how The Harvest fits the wider ACT ecosystem"
       />
 
-      {/* ——— THE WHY ——— */}
+      {/* , , ,  THE WHY , , ,  */}
       <ScrollReveal>
         <ReadingLede id="story">
           The Harvest grew from a site that already knew how to grow.
@@ -86,7 +86,7 @@ export default async function HarvestPage() {
         </ScrollReveal>
       ) : null}
 
-      {/* ——— THE SEASONAL KITCHEN ——— */}
+      {/* , , ,  THE SEASONAL KITCHEN , , ,  */}
       <ScrollReveal>
         <EditorialSplit
           left={
@@ -116,7 +116,7 @@ export default async function HarvestPage() {
         />
       </ScrollReveal>
 
-      {/* ——— THE GARDEN CENTRE ——— */}
+      {/* , , ,  THE GARDEN CENTRE , , ,  */}
       <ScrollReveal>
         <EditorialSplit
           bg="surface"
@@ -149,7 +149,7 @@ export default async function HarvestPage() {
         />
       </ScrollReveal>
 
-      {/* ——— PHOTO STRIP ——— */}
+      {/* , , ,  PHOTO STRIP , , ,  */}
       {galleryImages.length >= 3 && (
         <section className="px-8 py-8">
           <div className="mx-auto max-w-[1200px]">
@@ -158,7 +158,7 @@ export default async function HarvestPage() {
         </section>
       )}
 
-      {/* ——— WHAT'S ON SITE — Grid ——— */}
+      {/* , , ,  WHAT'S ON SITE, Grid , , ,  */}
       <ScrollReveal>
         <section className="px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[1200px]">
@@ -184,7 +184,7 @@ export default async function HarvestPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— THE INHERITANCE — Barry + Shaun ——— */}
+      {/* , , ,  THE INHERITANCE, Barry + Shaun , , ,  */}
       <ScrollReveal>
         <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[800px]">
@@ -212,7 +212,7 @@ export default async function HarvestPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— PHOTO STRIP ——— */}
+      {/* , , ,  PHOTO STRIP , , ,  */}
       {galleryImages.length >= 7 && (
         <section className="px-8 py-8">
           <div className="mx-auto max-w-[1200px]">
@@ -221,7 +221,7 @@ export default async function HarvestPage() {
         </section>
       )}
 
-      {/* ——— CSA ——— */}
+      {/* , , ,  CSA , , ,  */}
       <ScrollReveal>
         <EditorialSplit
           left={
@@ -258,7 +258,7 @@ export default async function HarvestPage() {
         />
       </ScrollReveal>
 
-      {/* ——— VIDEO ——— */}
+      {/* , , ,  VIDEO , , ,  */}
       {project.coverVideo && (
         <ScrollReveal>
           <section className="px-8 pb-16">
@@ -273,7 +273,7 @@ export default async function HarvestPage() {
         </ScrollReveal>
       )}
 
-      {/* ——— GALLERY ——— */}
+      {/* , , ,  GALLERY , , ,  */}
       {galleryImages.length > 4 && (
         <ScrollReveal>
           <section className="px-8 py-32 md:py-44">
@@ -291,7 +291,7 @@ export default async function HarvestPage() {
         </ScrollReveal>
       )}
 
-      {/* ——— WAYS TO TAKE PART ——— */}
+      {/* , , ,  WAYS TO TAKE PART , , ,  */}
       <ScrollReveal>
         <section className="px-8 py-24">
           <div className="mx-auto max-w-[1100px]">
@@ -311,7 +311,7 @@ export default async function HarvestPage() {
                 {
                   label: 'What is in season',
                   href: '/harvest/produce',
-                  description: 'The rhythm of the growing year — what you can expect on the table and at the garden centre right now.',
+                  description: 'The rhythm of the growing year, what you can expect on the table and at the garden centre right now.',
                 },
               ].map((item) => (
                 <Link
@@ -335,7 +335,7 @@ export default async function HarvestPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— BIG CTA ——— */}
+      {/* , , ,  BIG CTA , , ,  */}
       <ScrollReveal>
         <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[800px] text-center">
@@ -356,7 +356,7 @@ export default async function HarvestPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— INQUIRY ——— */}
+      {/* , , ,  INQUIRY , , ,  */}
       <ScrollReveal>
         <section id="inquiry" className="px-8 py-32 md:py-44">
           <div className="mx-auto grid max-w-[1100px] gap-20 lg:grid-cols-[1fr_1.2fr] lg:items-start">
@@ -377,10 +377,10 @@ export default async function HarvestPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— RELATED ——— */}
+      {/* , , ,  RELATED , , ,  */}
       <RelatedFields currentSlug="the-harvest" />
 
-      {/* ——— PROJECT PAGE ——— */}
+      {/* , , ,  PROJECT PAGE , , ,  */}
       <section className="full-bleed bg-[var(--site-surface)] px-8 py-16">
         <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-6">
           <p className="font-[var(--font-body)] text-[15px] text-[var(--site-muted)]">

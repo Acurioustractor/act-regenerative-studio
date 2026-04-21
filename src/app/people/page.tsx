@@ -5,7 +5,7 @@ import SectionHeading from '@/components/SectionHeading';
 import { getAllFeaturedStorytellers } from '@/lib/people/get-featured-people';
 
 export const metadata = {
-  title: 'People — A Curious Tractor',
+  title: 'People, A Curious Tractor',
   description:
     'The people behind the work: storytellers, community leaders, and collaborators across the ACT ecosystem.',
 };

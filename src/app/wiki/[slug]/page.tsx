@@ -121,7 +121,7 @@ export default async function WikiPageViewer({
                   See what this looks like on the ground
                 </h2>
                 <p className="mt-3 text-sm leading-7 text-[#E8E1D0]">
-                  Browse the public works — each one is a place you can step
+                  Browse the public works, each one is a place you can step
                   into, visit, or partner on.
                 </p>
                 <Link

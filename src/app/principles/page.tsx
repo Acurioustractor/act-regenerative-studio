@@ -240,7 +240,7 @@ export default function PrinciplesPage() {
                 <p className="text-sm text-[var(--we-brown)]">
                   Like a tractor's power take-off (PTO), ACT transfers resources,
                   knowledge, and capacity to community-led initiatives. We hand over
-                  the keys. The goal isn't to build our own empire—it's to build
+                  the keys. The goal isn't to build our own empire, it's to build
                   capacity for communities to drive their own futures.
                 </p>
               </div>
@@ -251,7 +251,7 @@ export default function PrinciplesPage() {
                 </h3>
                 <p className="text-sm text-[var(--we-brown)]">
                   Our north star is communities owning their narratives, land, and
-                  economic futures. We design for our own obsolescence—success means
+                  economic futures. We design for our own obsolescence, success means
                   communities no longer need us. Every project includes a sunset
                   clause.
                 </p>
@@ -265,7 +265,7 @@ export default function PrinciplesPage() {
                 </h3>
                 <p className="text-sm text-[var(--we-brown)]">
                   At Black Cockatoo Valley, conservation comes first. We practice
-                  low-impact, limited-volume activity—no extractive tourism. Revenue
+                  low-impact, limited-volume activity, no extractive tourism. Revenue
                   is reinvested into habitat care, weed management, and monitoring.
                   The land teaches us; we don't exploit it.
                 </p>

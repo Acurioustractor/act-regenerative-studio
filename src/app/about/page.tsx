@@ -78,7 +78,7 @@ export default function AboutPage() {
       <LivingSystemStrip
         eyebrow="How it stays current"
         title="The work is written down where anyone can find it"
-        description="ACT’s method, projects, and commitments live in a working wiki. Stories and voices arrive through Empathy Ledger with consent. The site changes as those sources do — it is not a brochure."
+        description="ACT’s method, projects, and commitments live in a working wiki. Stories and voices arrive through Empathy Ledger with consent. The site changes as those sources do, it is not a brochure."
         wiki={{
           href: "/wiki",
           label: "Open ACT wiki",

@@ -14,7 +14,7 @@ import {
 export const metadata = {
   title: "Wiki",
   description:
-    "Methods, decisions, and the people behind every project — kept in public so you can check our thinking.",
+    "Methods, decisions, and the people behind every project, kept in public so you can check our thinking.",
 };
 
 export default async function WikiHomepage() {
@@ -27,7 +27,7 @@ export default async function WikiHomepage() {
   const sections = getCanonicalWikiSections(
     allPages.map((page) => ({
       // getCanonicalWikiSections only reads sectionId/sectionTitle, but the
-      // type expects the full record shape — fill with safe empties.
+      // type expects the full record shape, fill with safe empties.
       title: page.title,
       excerpt: page.excerpt,
       content: '',
@@ -54,7 +54,7 @@ export default async function WikiHomepage() {
               How the work actually gets done
             </h1>
             <p className="mt-6 max-w-3xl text-base leading-8 text-[#E8E1D0] md:text-lg">
-              Methods, decisions, and the people behind every project — kept
+              Methods, decisions, and the people behind every project, kept
               in public so you can check our thinking. Nothing here is
               polished for you. It&rsquo;s what we use ourselves.
             </p>
@@ -84,7 +84,7 @@ export default async function WikiHomepage() {
             {
               title: 'Voices from the field',
               description:
-                'The people whose stories, craft, and community work shape every project — carried with consent.',
+                'The people whose stories, craft, and community work shape every project, carried with consent.',
               href: '/storytellers',
               cta: 'Meet the storytellers',
               stat: `${storytellerCount} storytellers`,

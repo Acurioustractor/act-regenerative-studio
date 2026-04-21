@@ -5,7 +5,7 @@ import SectionHeading from '@/components/SectionHeading';
 import { getShowcaseMedia } from '@/lib/media/get-showcase-media';
 
 export const metadata = {
-  title: 'Media — A Curious Tractor',
+  title: 'Media, A Curious Tractor',
   description:
     'Photography, video, and field documentation from across the ACT ecosystem.',
 };
@@ -31,7 +31,7 @@ export default async function MediaPage() {
           <p className="text-lg leading-8 text-[#56483b] md:text-[1.12rem]">
             Photography, video, and visual documentation from across the ACT
             ecosystem. Every image here is connected to a real project, a real
-            place, or a real person — not stock imagery.
+            place, or a real person, not stock imagery.
           </p>
           <div className="flex flex-wrap gap-4">
             <div className="rounded-full border border-[#d7c4aa] bg-white/50 px-4 py-2 text-[0.68rem] font-semibold uppercase tracking-[0.24em] text-[#5f4f41]">
@@ -121,7 +121,7 @@ export default async function MediaPage() {
         <SectionHeading
           eyebrow="Gallery"
           title="Photography from across the ecosystem"
-          description="Field stills, community moments, and project documentation — all connected to real places and real people."
+          description="Field stills, community moments, and project documentation, all connected to real places and real people."
         />
         <div className="mt-8 columns-2 gap-4 space-y-4 lg:columns-3 xl:columns-4">
           {[...featured, ...rest]

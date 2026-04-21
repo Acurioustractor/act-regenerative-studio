@@ -51,7 +51,7 @@ const partnershipPrinciples = [
   {
     title: "Transparent reporting",
     description:
-      "Partners receive honest updates about progress, challenges, and impact—good and bad.",
+      "Partners receive honest updates about progress, challenges, and impact, good and bad.",
   },
   {
     title: "Long-term commitment",

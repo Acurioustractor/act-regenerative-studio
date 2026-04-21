@@ -3,9 +3,9 @@ import Link from "next/link";
 import { getSiteEditorialArticles } from "../../lib/empathy-ledger-editorial";
 
 export const metadata = {
-  title: "Field notes",
+  title: "Stories",
   description:
-    "Editorial writing, community voices, and stories from the projects ACT is part of.",
+    "Every story here is published first in the Empathy Ledger, with consent, then syndicated to ACT. Field notes, editorial essays, and voices from across the ecosystem.",
 };
 
 export const revalidate = 60;
@@ -22,14 +22,36 @@ export default async function BlogPage() {
     <div className="space-y-16">
       <section className="rounded-[32px] border border-[var(--we-sand)] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12">
         <p className="text-xs uppercase tracking-[0.4em] text-[var(--we-warm-brown)]">
-          ACT Journal
+          Stories, syndicated from the Empathy Ledger
         </p>
         <h1 className="mt-4 text-3xl font-semibold text-[var(--we-olive)] md:text-5xl font-[var(--font-display)]">
-          Stories from the farm and studio
+          Every story here was carried with consent.
         </h1>
-        <p className="mt-4 max-w-2xl text-sm text-[var(--we-brown)] md:text-base">
-          Field notes, project updates, and reflections on regenerative practice.
+        <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--we-brown)] md:text-base">
+          Field notes, editorial essays, and voices from across the ecosystem.
+          Each one is published first in the Empathy Ledger, where storytellers
+          control how their words travel. When the consent is there, the story
+          flows here.
         </p>
+        <div className="mt-6 flex flex-wrap items-center gap-5">
+          <a
+            href="https://empathyledger.com"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--we-olive)] transition-all hover:gap-3"
+          >
+            Visit the Empathy Ledger <span aria-hidden="true">&rarr;</span>
+          </a>
+          <Link
+            href="/storytellers"
+            className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--we-warm-brown)] transition-all hover:gap-3 hover:text-[var(--we-olive)]"
+          >
+            Meet the storytellers <span aria-hidden="true">&rarr;</span>
+          </Link>
+          <p className="text-[11px] uppercase tracking-[0.18em] text-[var(--we-warm-brown)]/70">
+            {posts.length} stor{posts.length === 1 ? "y" : "ies"} flowing
+          </p>
+        </div>
       </section>
 
       <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -73,13 +95,12 @@ export default async function BlogPage() {
               {post.relatedProjectSlugs.length > 0 && (
                 <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.24em] text-[#4CAF50]">
                   {post.relatedProjectSlugs.slice(0, 2).map((slug) => (
-                    <Link
+                    <span
                       key={slug}
-                      href={`/projects/${slug}`}
                       className="rounded-full bg-[#E8F3E6] px-3 py-1 text-[var(--we-olive)]"
                     >
                       {slug.replace(/-/g, " ")}
-                    </Link>
+                    </span>
                   ))}
                 </div>
               )}

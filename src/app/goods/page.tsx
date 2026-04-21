@@ -80,7 +80,7 @@ export default async function GoodsPage() {
         linkLabel="Shop at Goods on Country"
       />
 
-      {/* ——— THE WHY ——— */}
+      {/* , , ,  THE WHY , , ,  */}
       <ScrollReveal>
         <ReadingLede id="story">
           In remote communities, families sleep on floors. Standard goods
@@ -89,7 +89,7 @@ export default async function GoodsPage() {
         </ReadingLede>
       </ScrollReveal>
 
-      {/* ——— FULL-BLEED PHOTO ——— */}
+      {/* , , ,  FULL-BLEED PHOTO , , ,  */}
       <PhotoBreak>
         <EditableImage
           src="/media/field-stills/goods-community-build.jpg"
@@ -111,7 +111,7 @@ export default async function GoodsPage() {
         </ScrollReveal>
       ) : null}
 
-      {/* ——— THE STRETCH BED — Product story ——— */}
+      {/* , , ,  THE STRETCH BED, Product story , , ,  */}
       <ScrollReveal>
         <EditorialSplit
           left={
@@ -145,7 +145,7 @@ export default async function GoodsPage() {
         />
       </ScrollReveal>
 
-      {/* ——— PAKKIMJALKI KARI — The washing machine ——— */}
+      {/* , , ,  PAKKIMJALKI KARI, The washing machine , , ,  */}
       <ScrollReveal>
         <EditorialSplit
           bg="surface"
@@ -179,7 +179,7 @@ export default async function GoodsPage() {
         />
       </ScrollReveal>
 
-      {/* ——— FROM RUBBISH TO BED — Manufacturing ——— */}
+      {/* , , ,  FROM RUBBISH TO BED, Manufacturing , , ,  */}
       <ScrollReveal>
         <section className="px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[1200px]">
@@ -207,7 +207,7 @@ export default async function GoodsPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— PHOTO STRIP ——— */}
+      {/* , , ,  PHOTO STRIP , , ,  */}
       {galleryImages.length >= 6 && (
         <section className="px-8 py-8">
           <div className="mx-auto max-w-[1200px]">
@@ -216,7 +216,7 @@ export default async function GoodsPage() {
         </section>
       )}
 
-      {/* ——— THE VISION — Containerised factories ——— */}
+      {/* , , ,  THE VISION, Containerised factories , , ,  */}
       <ScrollReveal>
         <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[800px]">
@@ -243,7 +243,7 @@ export default async function GoodsPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— WHERE WE WORK — Locations ——— */}
+      {/* , , ,  WHERE WE WORK, Locations , , ,  */}
       <ScrollReveal>
         <section className="px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[1200px]">
@@ -269,7 +269,7 @@ export default async function GoodsPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— PEOPLE ——— */}
+      {/* , , ,  PEOPLE , , ,  */}
       {portraitPeople.length >= 2 && (
         <ScrollReveal>
           <section className="px-8 py-32 md:py-44">
@@ -306,7 +306,7 @@ export default async function GoodsPage() {
         </ScrollReveal>
       )}
 
-      {/* ——— PHOTO STRIP ——— */}
+      {/* , , ,  PHOTO STRIP , , ,  */}
       {galleryImages.length >= 9 && (
         <section className="px-8 py-8">
           <div className="mx-auto max-w-[1200px]">
@@ -315,7 +315,7 @@ export default async function GoodsPage() {
         </section>
       )}
 
-      {/* ——— STATS ——— */}
+      {/* , , ,  STATS , , ,  */}
       <ScrollReveal>
         <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[1200px]">
@@ -333,7 +333,7 @@ export default async function GoodsPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— GALLERY ——— */}
+      {/* , , ,  GALLERY , , ,  */}
       {galleryImages.length > 4 && (
         <ScrollReveal>
           <section className="px-8 py-32 md:py-44">
@@ -351,7 +351,7 @@ export default async function GoodsPage() {
         </ScrollReveal>
       )}
 
-      {/* ——— BIG CTA ——— */}
+      {/* , , ,  BIG CTA , , ,  */}
       <ScrollReveal>
         <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[800px] text-center">
@@ -371,7 +371,7 @@ export default async function GoodsPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— INQUIRY ——— */}
+      {/* , , ,  INQUIRY , , ,  */}
       <ScrollReveal>
         <section id="inquiry" className="px-8 py-32 md:py-44">
           <div className="mx-auto grid max-w-[1100px] gap-20 lg:grid-cols-[1fr_1.2fr] lg:items-start">
@@ -392,10 +392,10 @@ export default async function GoodsPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— RELATED ——— */}
+      {/* , , ,  RELATED , , ,  */}
       <RelatedFields currentSlug="goods-on-country" />
 
-      {/* ——— PROJECT PAGE ——— */}
+      {/* , , ,  PROJECT PAGE , , ,  */}
       <section className="full-bleed bg-[var(--site-surface)] px-8 py-16">
         <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-6">
           <p className="font-[var(--font-body)] text-[15px] text-[var(--site-muted)]">

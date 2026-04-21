@@ -1,7 +1,40 @@
 {
-  "generatedAt": "2026-04-20T00:00:00.000Z",
-  "sourceUrl": null,
+  "generatedAt": "2026-04-21T01:03:38.942Z",
+  "sourceUrl": "https://empathy-ledger-v2.vercel.app/api/v1/sites/act-regenerative-studio/storytellers",
   "siteSlug": "act-regenerative-studio",
-  "storytellerCount": 0,
-  "storytellers": []
+  "storytellerCount": 1,
+  "storytellers": [
+    {
+      "id": "6383cfcc-1146-40c1-8337-d2e15e487022",
+      "list": {
+        "id": "6383cfcc-1146-40c1-8337-d2e15e487022",
+        "name": "Uncle Dale",
+        "bio": "Uncle Dale is a transformative advocate and leader, profoundly dedicated to the empowerment of First Nations youth. Born into a lineage deeply affected by systemic injustice, he passionately champions educational programs that instill self-worth and cultural pride in young people. Uncle Dale's unique vision centers on justice reinvestment, aimed at reshaping youth interactions with the criminal justice system through culturally resonant paths. His groundbreaking work includes the establishment of a healing center on country, offering vital resources such as education, training, and rehabilitation. Through these initiatives, Uncle Dale is not only reducing recidivism but also fostering a new era of self-determined, culturally empowered futures for his community.",
+        "avatarUrl": null,
+        "location": null,
+        "roles": [
+          {
+            "role": "contributor",
+            "roleDisplay": "Contributor",
+            "roleDescription": "Added photos to this gallery",
+            "roleColor": "blue",
+            "roleIcon": "camera",
+            "galleryId": "c9445b2a-375d-436b-a1e7-b96de3b2a0eb",
+            "isPrimary": false
+          }
+        ],
+        "uniqueRoles": [
+          {
+            "key": "contributor",
+            "display": "Contributor",
+            "description": "Added photos to this gallery",
+            "icon": "camera",
+            "color": "blue"
+          }
+        ],
+        "isPrimary": false
+      },
+      "detail": null
+    }
+  ]
 }

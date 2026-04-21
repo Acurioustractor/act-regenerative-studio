@@ -3,7 +3,7 @@
  *
  * Editorial cohort navigation: lists other ACT projects that share a wiki
  * cluster with this one (e.g. act-studio, justicehub, act-farm). Complements
- * the backlinks-driven "Related Projects" grid — we accept slight overlap
+ * the backlinks-driven "Related Projects" grid, we accept slight overlap
  * between the two rather than dedupe. Backlinks are author-curated "these are
  * connected" statements; cluster membership is "these live in the same editorial
  * neighbourhood". A project can legitimately surface in both lists, and the
@@ -60,7 +60,7 @@ export function SisterProjectsSection({
         </h2>
         <p className="mt-3 text-sm text-[var(--we-olive-deep)]">
           Other projects that share this project&rsquo;s editorial cluster in the
-          ACT wiki — the same neighbourhood of practice, place, or programme.
+          ACT wiki, the same neighbourhood of practice, place, or programme.
         </p>
       </div>
 

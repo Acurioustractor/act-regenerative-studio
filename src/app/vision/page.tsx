@@ -10,13 +10,13 @@ import { VisionSearch } from '@/components/ui/VisionSearch';
 export const metadata = {
   title: "Vision",
   description:
-    "A seasonal map of where ACT is trying to go — the working direction, not a polished roadmap.",
+    "A seasonal map of where ACT is trying to go, the working direction, not a polished roadmap.",
 };
 
 export default async function VisionPage() {
     const filePath = path.join(process.cwd(), 'src/data/vision/vision.md');
     const rawContent = fs.readFileSync(filePath, 'utf8');
-    // Strip leading `# Title` — page already has an h1 from PageHero and a
+    // Strip leading `# Title`, page already has an h1 from PageHero and a
     // section title above the doc. The markdown's own h1 would duplicate both.
     const content = rawContent.replace(/^#\s+.+\n+/, '');
 

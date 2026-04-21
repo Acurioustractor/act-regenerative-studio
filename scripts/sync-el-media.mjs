@@ -43,6 +43,17 @@ const LIMITS = {
   mediaLimit: 24,
 };
 
+// Explicit ACT-project-slug → Empathy-Ledger-organisation-slug map.
+// Use this ONLY for ACT projects that correspond to a real partner organisation
+// in EL (e.g. Oonchiumpa is an EL org with its own media pool, and we run a
+// project alongside them). Entries here cause the sync to merge the partner
+// org's media into that project's image pool. Blanket org fallbacks are
+// deliberately not applied so projects don't accidentally inherit each
+// other's pools.
+const EL_PARTNER_ORG_MAP = {
+  oonchiumpa: "oonchiumpa",
+};
+
 function createEmptySnapshot() {
   return {
     generatedAt: new Date().toISOString(),
@@ -266,7 +277,8 @@ async function fetchProjectContent(projectSlug, wikiRecord, projectCodeRegistry)
     const queryCandidate = encodeURIComponent(candidateKey);
     const orgId = encodeURIComponent(EMPATHY_LEDGER_ORGANIZATION_ID);
 
-    const [stories, storytellers, media] = await Promise.all([
+    // Project-scoped fetches (the primary path for every ACT project).
+    const [stories, storytellers, mediaByProject] = await Promise.all([
       fetchJson(
         `${EMPATHY_LEDGER_URL}/api/v1/content-hub/stories?project=${queryCandidate}&limit=${LIMITS.storyLimit}`
       ).catch(() => ({ stories: [] })),
@@ -277,6 +289,30 @@ async function fetchProjectContent(projectSlug, wikiRecord, projectCodeRegistry)
         `${EMPATHY_LEDGER_URL}/api/v1/content-hub/media?project=${queryCandidate}&limit=${LIMITS.mediaLimit}`
       ).catch(() => ({ media: [] })),
     ]);
+
+    // Explicit partner-org merge. ONLY for ACT project slugs that correspond
+    // to a real partner organisation in Empathy Ledger. Defined in
+    // EL_PARTNER_ORG_MAP (below, module-scope). This avoids blanket org
+    // fallbacks that would pollute unrelated projects with someone else's pool.
+    let mediaByOrg = { media: [] };
+    const partnerOrgSlug = EL_PARTNER_ORG_MAP[projectSlug];
+    if (partnerOrgSlug) {
+      mediaByOrg = await fetchJson(
+        `${EMPATHY_LEDGER_URL}/api/v1/content-hub/media?organization=${encodeURIComponent(partnerOrgSlug)}&limit=${LIMITS.mediaLimit}`
+      ).catch(() => ({ media: [] }));
+    }
+
+    const seenMediaIds = new Set();
+    const mergedItems = [];
+    for (const item of [
+      ...(mediaByProject?.media || []),
+      ...(mediaByOrg?.media || []),
+    ]) {
+      if (!item?.id || seenMediaIds.has(item.id)) continue;
+      seenMediaIds.add(item.id);
+      mergedItems.push(item);
+    }
+    const media = { media: mergedItems };
 
     const mediaCount = media?.media?.length || 0;
     const storyCount = stories?.stories?.length || 0;

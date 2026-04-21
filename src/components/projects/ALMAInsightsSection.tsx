@@ -220,7 +220,7 @@ export function ALMAInsightsSection({
                   "{topVignette.excerpt}"
                 </p>
                 <footer className="text-sm text-[#C9D4C0]">
-                  — {topVignette.frontmatter.voice_owner}
+                 , {topVignette.frontmatter.voice_owner}
                   {topVignette.frontmatter.voice_role && (
                     <span className="opacity-80">, {topVignette.frontmatter.voice_role}</span>
                   )}

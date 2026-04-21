@@ -6,7 +6,7 @@ import SectionHeading from "../../components/SectionHeading";
 export const metadata = {
   title: "Governance",
   description:
-    "How decisions get made at ACT — shared responsibility, community authority, and the long timelines behind handover.",
+    "How decisions get made at ACT, shared responsibility, community authority, and the long timelines behind handover.",
 };
 
 const governancePrinciples = [
@@ -71,7 +71,7 @@ export default function GovernancePage() {
       <LivingSystemStrip
         eyebrow="How we work"
         title="Shared stewardship, with the receipts"
-        description="ACT's governance commitments live in the wiki. The proof shows up in the projects and stories — what was decided, by whom, and what changed."
+        description="ACT's governance commitments live in the wiki. The proof shows up in the projects and stories, what was decided, by whom, and what changed."
         wiki={{
           href: "/wiki/governance-consent",
           label: "Read the governance notes",

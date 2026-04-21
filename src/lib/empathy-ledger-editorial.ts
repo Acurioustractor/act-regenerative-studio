@@ -227,15 +227,41 @@ export const getHomeEditorialFeature = cache(
     const featuredProjectMediaOverrides =
       snapshot.featuredHomeProjectMediaOverrides || {};
 
-    const prioritizedArticles = featuredSlugs
+    // Curated home picks: these win over the EL admin featuredHomeArticleSlugs.
+    // Use this list to keep the three home story cards intentional while EL
+    // admin curation catches up. Order = lead, supporting-1, supporting-2.
+    const HOME_CURATED_SLUGS = [
+      "seeds-of-change-walking-with-elders-and-youth-on-kalkadoon-country",
+      "historys-wounds-and-tomorrows-possibilities",
+      "life-is-hard-but-its-not",
+    ];
+
+    const curatedArticles = HOME_CURATED_SLUGS
       .map((slug) => snapshot.articles.find((article) => article.slug === slug))
       .filter(isEditorialArticle);
 
-    const seen = new Set(prioritizedArticles.map((article) => article.slug));
+    const adminPrioritized = featuredSlugs
+      .map((slug) => snapshot.articles.find((article) => article.slug === slug))
+      .filter(isEditorialArticle);
+
+    const seen = new Set([
+      ...curatedArticles.map((a) => a.slug),
+      ...adminPrioritized.map((a) => a.slug),
+    ]);
     const fallbackArticles = sortByPublishedDateDesc(snapshot.articles).filter(
       (article) => !seen.has(article.slug)
     );
-    const orderedArticles = [...prioritizedArticles, ...fallbackArticles];
+    const allOrdered = [
+      ...curatedArticles,
+      ...adminPrioritized,
+      ...fallbackArticles,
+    ];
+
+    // Home cards are image-led. If any pick has no featured image, push it
+    // below the image-having ones so we never ship a dark empty column.
+    const withImages = allOrdered.filter((article) => !!article.featuredImageUrl);
+    const withoutImages = allOrdered.filter((article) => !article.featuredImageUrl);
+    const orderedArticles = [...withImages, ...withoutImages];
 
     return {
       leadArticle: orderedArticles[0] || null,

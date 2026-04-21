@@ -5,7 +5,7 @@ export default function manifest(): MetadataRoute.Manifest {
     name: "A Curious Tractor",
     short_name: "ACT",
     description:
-      "A regenerative innovation studio stewarding a working farm on Jinibara Country.",
+      "A regenerative innovation studio stewarding a farm on Jinibara Country.",
     start_url: "/",
     display: "standalone",
     background_color: "#F6F1E7",

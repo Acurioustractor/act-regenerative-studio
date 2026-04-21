@@ -176,7 +176,7 @@ export function ProjectFieldMediaSection({
                 Project site
               </p>
               <p className="mt-1 text-sm leading-6 text-[var(--we-brown)]">
-                {projectTitle} runs its own site — visit it for the deeper story, current programs, and how to get involved.
+                {projectTitle} runs its own site, visit it for the deeper story, current programs, and how to get involved.
               </p>
             </div>
             <span className="text-sm font-semibold uppercase tracking-[0.18em]">

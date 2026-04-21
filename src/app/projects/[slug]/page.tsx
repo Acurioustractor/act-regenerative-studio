@@ -198,7 +198,7 @@ function getEngagementConfig(
     return {
       title: 'Work with Empathy Ledger',
       description:
-        'Empathy Ledger gives communities cryptographic ownership of their stories — designed for partners who care about consent, attribution, and how narrative travels.',
+        'Empathy Ledger gives communities cryptographic ownership of their stories, designed for partners who care about consent, attribution, and how narrative travels.',
       actions: [
         {
           label: 'Start a story or archive conversation',
@@ -461,8 +461,8 @@ export default async function ProjectPage({
           }
           description={
             workConfig
-              ? 'The story behind this work — where it came from, how it was made, and where it sits in the wider ACT studio.'
-              : 'The longer story behind this project — how it works in practice, the people leading it, and the communities it sits with.'
+              ? 'The story behind this work, where it came from, how it was made, and where it sits in the wider ACT studio.'
+              : 'The longer story behind this project, how it works in practice, the people leading it, and the communities it sits with.'
           }
           wiki={
             project.wikiData
@@ -561,19 +561,19 @@ export default async function ProjectPage({
         />
       )}
 
-      {/* Transcripts (consented, from EL) — silent if no transcripts for this project */}
+      {/* Transcripts (consented, from EL), silent if no transcripts for this project */}
       <TranscriptsSection
         transcripts={projectTranscripts}
         projectTitle={project.title}
       />
 
-      {/* Key people from wiki ## Key People section — silent if none */}
+      {/* Key people from wiki ## Key People section, silent if none */}
       <ProjectKeyPeopleSection
         people={project.keyPeople}
         projectTitle={project.title}
       />
 
-      {/* Related work — editorially-curated wiki backlinks */}
+      {/* Related work, editorially-curated wiki backlinks */}
       {project.wikiBacklinks.length > 0 && (
         <section className="rounded-[28px] border border-[var(--we-sand)] bg-[#FDFBF7] p-6 md:p-10">
           <div className="space-y-3">
@@ -584,7 +584,7 @@ export default async function ProjectPage({
               How this thread runs through ACT
             </h2>
             <p className="text-sm text-[var(--we-olive-deep)]">
-              Other places this work connects — people, projects, and
+              Other places this work connects, people, projects, and
               methods that pick up the same thread.
             </p>
           </div>
@@ -887,7 +887,7 @@ export default async function ProjectPage({
         </div>
       </section>
 
-      {/* Sister Projects — cluster-based editorial cohort (from wiki) */}
+      {/* Sister Projects, cluster-based editorial cohort (from wiki) */}
       <SisterProjectsSection
         cluster={project.wikiData?.cluster || ''}
         projects={sisterProjects}
@@ -1013,7 +1013,7 @@ export default async function ProjectPage({
           See this project in our 2025 Year in Review
         </h3>
         <p className="mx-auto mb-6 max-w-2xl text-sm text-[#5A4A3A]">
-          Explore the full story of our work in 2025—photos, videos, impact
+          Explore the full story of our work in 2025, photos, videos, impact
           metrics, and the journey across all our projects.
         </p>
         <a

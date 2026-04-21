@@ -22,7 +22,7 @@ const sansFont = Work_Sans({
 
 const navItems = [
   { label: "Projects", href: "/projects" },
-  { label: "Storytellers", href: "/storytellers" },
+  { label: "Stories", href: "/blog" },
   { label: "Art", href: "/art" },
   { label: "Farm", href: "/farm" },
   { label: "Method", href: "/method" },
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     template: "%s | A Curious Tractor",
   },
   description:
-    "A regenerative innovation studio stewarding a working farm on Jinibara Country. Places, story systems, and public works you can step into.",
+    "A regenerative innovation studio stewarding a farm on Jinibara Country. Places, story systems, and public works you can step into.",
   icons: {
     icon: "/branding/act-logo-square.png",
     apple: "/branding/act-logo-square.png",
@@ -97,7 +97,7 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${displayFont.variable} ${serifBody.variable} ${sansFont.variable}`}>
       <body className="min-h-screen antialiased">
-        {/* Skip link — visually hidden until focused. Lets keyboard + screenreader
+        {/* Skip link, visually hidden until focused. Lets keyboard + screenreader
             users bypass the nav and jump straight to page content. */}
         <a
           href="#main-content"
@@ -106,7 +106,7 @@ export default function RootLayout({
           Skip to content
         </a>
 
-        {/* Floating nav — sits on top of full-bleed content */}
+        {/* Floating nav, sits on top of full-bleed content */}
         <header className="fixed left-0 right-0 top-0 z-50 px-6 pt-4 md:px-8 md:pt-5">
           <div className="mx-auto max-w-[1200px]">
             <div className="relative overflow-hidden rounded-[var(--site-radius)] border border-[var(--site-line)] bg-[var(--site-panel)] px-5 py-3 shadow-[var(--site-shadow)] backdrop-blur-xl md:px-6">
@@ -146,7 +146,7 @@ export default function RootLayout({
           </div>
         </header>
 
-        {/* Full-bleed main — no max-width constraint */}
+        {/* Full-bleed main, no max-width constraint */}
         <main id="main-content" className="relative z-10 min-h-screen">{children}</main>
         <UnifiedFooter
             currentProject="A Curious Tractor"

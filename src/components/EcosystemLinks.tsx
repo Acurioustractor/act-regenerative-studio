@@ -184,7 +184,7 @@ export async function EcosystemLinks({
             {title}
           </h3>
         )}
-        <nav aria-label="Ecosystem — related sites" className="space-y-2">
+        <nav aria-label="Ecosystem, related sites" className="space-y-2">
           {projects.map((project) => (
             <a
               key={project.slug}

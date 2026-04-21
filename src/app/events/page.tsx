@@ -7,7 +7,7 @@ import SectionHeading from "../../components/SectionHeading";
 export const metadata = {
   title: "Events",
   description:
-    "Community meals, workshops, residencies, and public gatherings — invitations to step onto the valley.",
+    "Community meals, workshops, residencies, and public gatherings, invitations to step onto the valley.",
 };
 
 const eventTypes = [

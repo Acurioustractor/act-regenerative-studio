@@ -50,7 +50,7 @@ export default async function FarmPage() {
         secondaryCta={{ label: "The full story →", href: "#story" }}
       />
 
-      {/* ——— THE WHY ——— */}
+      {/* , , ,  THE WHY , , ,  */}
       <ScrollReveal>
         <ReadingLede id="story">
           The land holding that grounds ACT&apos;s entire physical practice.
@@ -70,7 +70,7 @@ export default async function FarmPage() {
         </ScrollReveal>
       ) : null}
 
-      {/* ——— THE SITE ——— */}
+      {/* , , ,  THE SITE , , ,  */}
       <ScrollReveal>
         <EditorialSplit
           left={
@@ -109,7 +109,7 @@ export default async function FarmPage() {
         />
       </ScrollReveal>
 
-      {/* ——— ACTIVITIES ——— */}
+      {/* , , ,  ACTIVITIES , , ,  */}
       <ScrollReveal>
         <section className="full-bleed bg-[var(--site-surface)] px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[1200px]">
@@ -135,7 +135,7 @@ export default async function FarmPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— PHOTO STRIP ——— */}
+      {/* , , ,  PHOTO STRIP , , ,  */}
       {galleryImages.length >= 3 && (
         <section className="px-8 py-8">
           <div className="mx-auto max-w-[1200px]">
@@ -144,7 +144,7 @@ export default async function FarmPage() {
         </section>
       )}
 
-      {/* ——— CONSERVATION PHILOSOPHY ——— */}
+      {/* , , ,  CONSERVATION PHILOSOPHY , , ,  */}
       <ScrollReveal>
         <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[800px]">
@@ -171,7 +171,7 @@ export default async function FarmPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— HOW LAND CONNECTS TO PROJECTS ——— */}
+      {/* , , ,  HOW LAND CONNECTS TO PROJECTS , , ,  */}
       <ScrollReveal>
         <section className="px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[1200px]">
@@ -198,7 +198,7 @@ export default async function FarmPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— VIDEO ——— */}
+      {/* , , ,  VIDEO , , ,  */}
       {project.coverVideo && (
         <ScrollReveal>
           <section className="px-8 pb-16">
@@ -213,7 +213,7 @@ export default async function FarmPage() {
         </ScrollReveal>
       )}
 
-      {/* ——— PHOTO STRIP ——— */}
+      {/* , , ,  PHOTO STRIP , , ,  */}
       {galleryImages.length >= 7 && (
         <section className="px-8 py-8">
           <div className="mx-auto max-w-[1200px]">
@@ -222,7 +222,7 @@ export default async function FarmPage() {
         </section>
       )}
 
-      {/* ——— GALLERY ——— */}
+      {/* , , ,  GALLERY , , ,  */}
       {galleryImages.length > 4 && (
         <ScrollReveal>
           <section className="px-8 py-32 md:py-44">
@@ -240,7 +240,7 @@ export default async function FarmPage() {
         </ScrollReveal>
       )}
 
-      {/* ——— WAYS ONTO THE VALLEY ——— */}
+      {/* , , ,  WAYS ONTO THE VALLEY , , ,  */}
       <ScrollReveal>
         <section className="px-8 py-24">
           <div className="mx-auto max-w-[1100px]">
@@ -289,7 +289,7 @@ export default async function FarmPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— BIG CTA ——— */}
+      {/* , , ,  BIG CTA , , ,  */}
       <ScrollReveal>
         <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[800px] text-center">
@@ -308,7 +308,7 @@ export default async function FarmPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— INQUIRY ——— */}
+      {/* , , ,  INQUIRY , , ,  */}
       <ScrollReveal>
         <section id="inquiry" className="px-8 py-32 md:py-44">
           <div className="mx-auto grid max-w-[1100px] gap-20 lg:grid-cols-[1fr_1.2fr] lg:items-start">
@@ -329,10 +329,10 @@ export default async function FarmPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— RELATED ——— */}
+      {/* , , ,  RELATED , , ,  */}
       <RelatedFields currentSlug="black-cockatoo-valley" />
 
-      {/* ——— PROJECT PAGE ——— */}
+      {/* , , ,  PROJECT PAGE , , ,  */}
       <section className="full-bleed bg-[var(--site-surface)] px-8 py-16">
         <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-6">
           <p className="font-[var(--font-body)] text-[15px] text-[var(--site-muted)]">

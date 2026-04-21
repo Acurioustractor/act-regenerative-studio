@@ -61,11 +61,11 @@ export default async function EmpathyLedgerPage() {
       <ExternalHandoffCard
         platformName="Empathy Ledger"
         url="https://empathyledger.com"
-        whatHappensThere="storytellers publish, control, and revoke their own narratives — and communities read them with consent"
+        whatHappensThere="storytellers publish, control, and revoke their own narratives, and communities read them with consent"
         whyComeBack="the story of how the platform came to be, the principles underneath it, and the work it supports"
       />
 
-      {/* ——— THE WHY ——— */}
+      {/* , , ,  THE WHY , , ,  */}
       <ScrollReveal>
         <ReadingLede id="story">
           Communities told us their stories were being extracted without
@@ -76,7 +76,7 @@ export default async function EmpathyLedgerPage() {
         </ReadingLede>
       </ScrollReveal>
 
-      {/* ——— FULL-BLEED PHOTO ——— */}
+      {/* , , ,  FULL-BLEED PHOTO , , ,  */}
       <PhotoBreak>
         <EditableImage
           src="/media/field-stills/empathy-ledger-community-story.jpg"
@@ -98,7 +98,7 @@ export default async function EmpathyLedgerPage() {
         </ScrollReveal>
       ) : null}
 
-      {/* ——— FIVE CONSENT TYPES ——— */}
+      {/* , , ,  FIVE CONSENT TYPES , , ,  */}
       <ScrollReveal>
         <section className="px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[1200px]">
@@ -127,7 +127,7 @@ export default async function EmpathyLedgerPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— VIDEO ——— */}
+      {/* , , ,  VIDEO , , ,  */}
       {project.coverVideo && (
         <ScrollReveal>
           <section className="px-8 pb-16">
@@ -142,7 +142,7 @@ export default async function EmpathyLedgerPage() {
         </ScrollReveal>
       )}
 
-      {/* ——— STATS ——— */}
+      {/* , , ,  STATS , , ,  */}
       <ScrollReveal>
         <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[1200px]">
@@ -160,7 +160,7 @@ export default async function EmpathyLedgerPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— COMMUNITY IMPLEMENTATIONS ——— */}
+      {/* , , ,  COMMUNITY IMPLEMENTATIONS , , ,  */}
       <ScrollReveal>
         <section className="px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[1200px]">
@@ -198,7 +198,7 @@ export default async function EmpathyLedgerPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— PHOTO BREAK ——— */}
+      {/* , , ,  PHOTO BREAK , , ,  */}
       <PhotoBreak>
         <EditableImage
           src="/media/field-stills/el-community.jpg"
@@ -209,7 +209,7 @@ export default async function EmpathyLedgerPage() {
         />
       </PhotoBreak>
 
-      {/* ——— THE CONNECTIVE TISSUE ——— */}
+      {/* , , ,  THE CONNECTIVE TISSUE , , ,  */}
       <ScrollReveal>
         <EditorialSplit
           bg="surface"
@@ -247,7 +247,7 @@ export default async function EmpathyLedgerPage() {
         />
       </ScrollReveal>
 
-      {/* ——— WHERE IT SERVES ——— */}
+      {/* , , ,  WHERE IT SERVES , , ,  */}
       <ScrollReveal>
         <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[1200px]">
@@ -272,7 +272,7 @@ export default async function EmpathyLedgerPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— PHOTO BREAK ——— */}
+      {/* , , ,  PHOTO BREAK , , ,  */}
       <PhotoBreak>
         <EditableImage
           src="/media/field-stills/el-field.jpg"
@@ -283,7 +283,7 @@ export default async function EmpathyLedgerPage() {
         />
       </PhotoBreak>
 
-      {/* ——— PHOTO STRIP ——— */}
+      {/* , , ,  PHOTO STRIP , , ,  */}
       {galleryImages.length >= 6 && (
         <section className="px-8 py-8">
           <div className="mx-auto max-w-[1200px]">
@@ -292,7 +292,7 @@ export default async function EmpathyLedgerPage() {
         </section>
       )}
 
-      {/* ——— FOUR COMMITMENTS ——— */}
+      {/* , , ,  FOUR COMMITMENTS , , ,  */}
       <ScrollReveal>
         <section className="px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[800px]">
@@ -315,7 +315,7 @@ export default async function EmpathyLedgerPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— GALLERY ——— */}
+      {/* , , ,  GALLERY , , ,  */}
       {galleryImages.length > 4 && (
         <ScrollReveal>
           <section className="px-8 py-32 md:py-44">
@@ -333,7 +333,7 @@ export default async function EmpathyLedgerPage() {
         </ScrollReveal>
       )}
 
-      {/* ——— BIG CTA ——— */}
+      {/* , , ,  BIG CTA , , ,  */}
       <ScrollReveal>
         <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[800px] text-center">
@@ -354,7 +354,7 @@ export default async function EmpathyLedgerPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— INQUIRY ——— */}
+      {/* , , ,  INQUIRY , , ,  */}
       <ScrollReveal>
         <section id="inquiry" className="px-8 py-32 md:py-44">
           <div className="mx-auto grid max-w-[1100px] gap-20 lg:grid-cols-[1fr_1.2fr] lg:items-start">
@@ -375,7 +375,7 @@ export default async function EmpathyLedgerPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— RELATED ——— */}
+      {/* , , ,  RELATED , , ,  */}
       <RelatedFields currentSlug="empathy-ledger" />
     </>
   );

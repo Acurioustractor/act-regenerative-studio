@@ -9,7 +9,7 @@ import { REAL_INITIATIVES, REAL_CONTEXTS, REAL_EVIDENCE } from '@/data/alma-seed
 
 export const metadata: Metadata = {
     title: 'Impact & Learning | A Curious Tractor',
-    description: 'What the work is actually doing — initiatives, contexts, community authority, and the evidence behind the claims.',
+    description: 'What the work is actually doing, initiatives, contexts, community authority, and the evidence behind the claims.',
 };
 
 export default function ImpactPage() {
@@ -35,7 +35,7 @@ export default function ImpactPage() {
                         What this page is for
                     </p>
                     <p>
-                        A working view, not a polished annual report. Read it to understand how ACT tracks what the work is doing &mdash; not as a real-time dashboard.
+                        A working view, not a polished annual report. Read it to understand how ACT tracks what the work is doing, not as a real-time dashboard.
                     </p>
                 </div>
             </PageHero>

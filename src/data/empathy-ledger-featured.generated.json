@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-04-13T04:08:11.194Z",
-  "sourceUrl": "https://empathyledger.com",
+  "generatedAt": "2026-04-21T09:36:58.184Z",
+  "sourceUrl": "https://empathy-ledger-v2.vercel.app",
   "sourceOrganizationId": "db0de7bd-eb10-446b-99e9-0f3b7c199b8a",
-  "projectCount": 71,
+  "projectCount": 93,
   "projects": {
     "black-cockatoo-valley": {
       "project": {
@@ -402,7 +402,7 @@
         "story_count": 0,
         "media_count": 24,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:27.987Z",
+        "fetched_at": "2026-04-21T09:36:05.049Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -431,8 +431,8 @@
             "custom_tagline": null,
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:27.584Z",
-            "approved_at": "2026-04-13T04:07:27.584Z"
+            "opted_in_at": "2026-04-21T09:36:04.609Z",
+            "approved_at": "2026-04-21T09:36:04.609Z"
           },
           {
             "storyteller_id": "09b970ed-f3e5-499f-a2de-6d1ba25bc19e",
@@ -446,8 +446,8 @@
             "custom_tagline": "European",
             "featured_priority": 2,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:27.584Z",
-            "approved_at": "2026-04-13T04:07:27.584Z"
+            "opted_in_at": "2026-04-21T09:36:04.609Z",
+            "approved_at": "2026-04-21T09:36:04.609Z"
           },
           {
             "storyteller_id": "7c4b1f9d-1d59-4563-a86e-37b9e614d338",
@@ -461,8 +461,8 @@
             "custom_tagline": "Greek-British",
             "featured_priority": 3,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:27.584Z",
-            "approved_at": "2026-04-13T04:07:27.584Z"
+            "opted_in_at": "2026-04-21T09:36:04.609Z",
+            "approved_at": "2026-04-21T09:36:04.609Z"
           },
           {
             "storyteller_id": "fa604a35-27a8-4238-8688-f5b0df49d349",
@@ -476,8 +476,8 @@
             "custom_tagline": "Non-Indigenous Australian",
             "featured_priority": 4,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:27.584Z",
-            "approved_at": "2026-04-13T04:07:27.584Z"
+            "opted_in_at": "2026-04-21T09:36:04.609Z",
+            "approved_at": "2026-04-21T09:36:04.609Z"
           },
           {
             "storyteller_id": "c6710f45-1dda-4966-80ea-83f246158983",
@@ -491,8 +491,8 @@
             "custom_tagline": null,
             "featured_priority": 5,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:27.584Z",
-            "approved_at": "2026-04-13T04:07:27.584Z"
+            "opted_in_at": "2026-04-21T09:36:04.609Z",
+            "approved_at": "2026-04-21T09:36:04.609Z"
           }
         ],
         "stories": []
@@ -506,7 +506,7 @@
         "story_count": 0,
         "media_count": 0,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:27.584Z",
+        "fetched_at": "2026-04-21T09:36:04.609Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -536,8 +536,8 @@
             "custom_tagline": "Non-Indigenous Australian",
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:29.533Z",
-            "approved_at": "2026-04-13T04:07:29.533Z"
+            "opted_in_at": "2026-04-21T09:36:06.703Z",
+            "approved_at": "2026-04-21T09:36:06.703Z"
           }
         ],
         "stories": []
@@ -926,7 +926,7 @@
         "story_count": 0,
         "media_count": 24,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:29.533Z",
+        "fetched_at": "2026-04-21T09:36:06.703Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -1329,7 +1329,7 @@
         "story_count": 0,
         "media_count": 24,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:28.151Z",
+        "fetched_at": "2026-04-21T09:36:05.258Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -1358,8 +1358,8 @@
             "custom_tagline": "First Nations Australian",
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:27.932Z",
-            "approved_at": "2026-04-13T04:07:27.932Z"
+            "opted_in_at": "2026-04-21T09:36:05.057Z",
+            "approved_at": "2026-04-21T09:36:05.057Z"
           }
         ],
         "stories": []
@@ -1688,7 +1688,7 @@
         "story_count": 0,
         "media_count": 20,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:27.933Z",
+        "fetched_at": "2026-04-21T09:36:05.057Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -1717,8 +1717,8 @@
             "custom_tagline": "First Nations Australian",
             "featured_priority": 1,
             "featured_story_count": 3,
-            "opted_in_at": "2026-04-13T04:07:27.545Z",
-            "approved_at": "2026-04-13T04:07:27.545Z"
+            "opted_in_at": "2026-04-21T09:36:04.817Z",
+            "approved_at": "2026-04-21T09:36:04.817Z"
           }
         ],
         "stories": [
@@ -1743,7 +1743,7 @@
             "featured_as_hero": true,
             "relevance_score": null,
             "ai_reasoning": "Empathy Ledger sync snapshot from Content Hub.",
-            "story_url": "https://empathyledger.com/stories/0576ab6c-4a46-42f5-b497-b9573f118ab6",
+            "story_url": "https://empathy-ledger-v2.vercel.app/stories/0576ab6c-4a46-42f5-b497-b9573f118ab6",
             "content_url": null
           },
           {
@@ -1767,7 +1767,7 @@
             "featured_as_hero": false,
             "relevance_score": null,
             "ai_reasoning": "Empathy Ledger sync snapshot from Content Hub.",
-            "story_url": "https://empathyledger.com/stories/1b26a0b5-5c72-426d-8a0c-2ef88036b7d5",
+            "story_url": "https://empathy-ledger-v2.vercel.app/stories/1b26a0b5-5c72-426d-8a0c-2ef88036b7d5",
             "content_url": null
           },
           {
@@ -1791,7 +1791,7 @@
             "featured_as_hero": false,
             "relevance_score": null,
             "ai_reasoning": "Empathy Ledger sync snapshot from Content Hub.",
-            "story_url": "https://empathyledger.com/stories/940c804a-e52c-4c48-a4fe-6a4d45778a74",
+            "story_url": "https://empathy-ledger-v2.vercel.app/stories/940c804a-e52c-4c48-a4fe-6a4d45778a74",
             "content_url": null
           }
         ]
@@ -1805,7 +1805,7 @@
         "story_count": 3,
         "media_count": 0,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:27.545Z",
+        "fetched_at": "2026-04-21T09:36:04.817Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -1834,8 +1834,8 @@
             "custom_tagline": null,
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:28.731Z",
-            "approved_at": "2026-04-13T04:07:28.731Z"
+            "opted_in_at": "2026-04-21T09:36:06.359Z",
+            "approved_at": "2026-04-21T09:36:06.359Z"
           },
           {
             "storyteller_id": "13742d49-901e-4c08-94b2-a864d1a9a8e9",
@@ -1849,8 +1849,8 @@
             "custom_tagline": "Māori, cross-cultural Indigenous knowledge holder",
             "featured_priority": 2,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:28.731Z",
-            "approved_at": "2026-04-13T04:07:28.731Z"
+            "opted_in_at": "2026-04-21T09:36:06.359Z",
+            "approved_at": "2026-04-21T09:36:06.359Z"
           },
           {
             "storyteller_id": "7a0cd28a-ad12-4f70-b900-d869b42c9f88",
@@ -1864,8 +1864,8 @@
             "custom_tagline": "Indigenous",
             "featured_priority": 3,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:28.731Z",
-            "approved_at": "2026-04-13T04:07:28.731Z"
+            "opted_in_at": "2026-04-21T09:36:06.359Z",
+            "approved_at": "2026-04-21T09:36:06.359Z"
           },
           {
             "storyteller_id": "8dab91aa-3a1f-4128-b41d-b89e532be1fa",
@@ -1879,8 +1879,8 @@
             "custom_tagline": "Australian",
             "featured_priority": 4,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:28.731Z",
-            "approved_at": "2026-04-13T04:07:28.731Z"
+            "opted_in_at": "2026-04-21T09:36:06.359Z",
+            "approved_at": "2026-04-21T09:36:06.359Z"
           }
         ],
         "stories": []
@@ -2269,7 +2269,7 @@
         "story_count": 0,
         "media_count": 24,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:28.731Z",
+        "fetched_at": "2026-04-21T09:36:06.359Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -2298,8 +2298,8 @@
             "custom_tagline": null,
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:30.549Z",
-            "approved_at": "2026-04-13T04:07:30.549Z"
+            "opted_in_at": "2026-04-21T09:36:07.533Z",
+            "approved_at": "2026-04-21T09:36:07.533Z"
           },
           {
             "storyteller_id": "ac700001-0000-0000-0000-000000000002",
@@ -2313,8 +2313,8 @@
             "custom_tagline": null,
             "featured_priority": 2,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:30.549Z",
-            "approved_at": "2026-04-13T04:07:30.549Z"
+            "opted_in_at": "2026-04-21T09:36:07.533Z",
+            "approved_at": "2026-04-21T09:36:07.533Z"
           },
           {
             "storyteller_id": "e1679978-f251-4074-8873-d3f5baa80950",
@@ -2328,8 +2328,8 @@
             "custom_tagline": "Aboriginal, Palm Island",
             "featured_priority": 3,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:30.549Z",
-            "approved_at": "2026-04-13T04:07:30.549Z"
+            "opted_in_at": "2026-04-21T09:36:07.533Z",
+            "approved_at": "2026-04-21T09:36:07.533Z"
           },
           {
             "storyteller_id": "69db1d7e-c3f5-4926-b4d4-2d098c040952",
@@ -2343,8 +2343,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 4,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:30.549Z",
-            "approved_at": "2026-04-13T04:07:30.549Z"
+            "opted_in_at": "2026-04-21T09:36:07.533Z",
+            "approved_at": "2026-04-21T09:36:07.533Z"
           },
           {
             "storyteller_id": "433f5fbc-2c8d-46c1-916d-d558c179e701",
@@ -2358,8 +2358,8 @@
             "custom_tagline": "Goa, Gangalidda, Gulf country",
             "featured_priority": 5,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:30.549Z",
-            "approved_at": "2026-04-13T04:07:30.549Z"
+            "opted_in_at": "2026-04-21T09:36:07.533Z",
+            "approved_at": "2026-04-21T09:36:07.533Z"
           },
           {
             "storyteller_id": "00d67731-1bd1-41b8-ab0e-4a3aa07848fa",
@@ -2373,8 +2373,8 @@
             "custom_tagline": "Aboriginal, Palm Island",
             "featured_priority": 6,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:30.549Z",
-            "approved_at": "2026-04-13T04:07:30.549Z"
+            "opted_in_at": "2026-04-21T09:36:07.533Z",
+            "approved_at": "2026-04-21T09:36:07.533Z"
           },
           {
             "storyteller_id": "8a78ec27-7d1e-4eee-9026-945b4809c723",
@@ -2388,8 +2388,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 7,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:30.549Z",
-            "approved_at": "2026-04-13T04:07:30.549Z"
+            "opted_in_at": "2026-04-21T09:36:07.533Z",
+            "approved_at": "2026-04-21T09:36:07.533Z"
           },
           {
             "storyteller_id": "e0da3338-1a38-4b5a-9a26-73c9873b9242",
@@ -2403,8 +2403,8 @@
             "custom_tagline": "Warga",
             "featured_priority": 8,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:30.549Z",
-            "approved_at": "2026-04-13T04:07:30.549Z"
+            "opted_in_at": "2026-04-21T09:36:07.533Z",
+            "approved_at": "2026-04-21T09:36:07.533Z"
           },
           {
             "storyteller_id": "c1ff43ff-c366-4807-9bb9-478da99f5706",
@@ -2418,8 +2418,8 @@
             "custom_tagline": "Aboriginal Australian (Yarrabah)",
             "featured_priority": 9,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:30.549Z",
-            "approved_at": "2026-04-13T04:07:30.549Z"
+            "opted_in_at": "2026-04-21T09:36:07.533Z",
+            "approved_at": "2026-04-21T09:36:07.533Z"
           },
           {
             "storyteller_id": "337766a9-d0ca-405c-acc1-7be7b13a6d4c",
@@ -2433,8 +2433,8 @@
             "custom_tagline": "Bugainuk",
             "featured_priority": 10,
             "featured_story_count": 2,
-            "opted_in_at": "2026-04-13T04:07:30.549Z",
-            "approved_at": "2026-04-13T04:07:30.549Z"
+            "opted_in_at": "2026-04-21T09:36:07.533Z",
+            "approved_at": "2026-04-21T09:36:07.533Z"
           }
         ],
         "stories": [
@@ -2461,7 +2461,7 @@
             "featured_as_hero": true,
             "relevance_score": null,
             "ai_reasoning": "Empathy Ledger sync snapshot from Content Hub.",
-            "story_url": "https://empathyledger.com/stories/28cb405e-78de-43e3-849c-5c87cbde3760",
+            "story_url": "https://empathy-ledger-v2.vercel.app/stories/28cb405e-78de-43e3-849c-5c87cbde3760",
             "content_url": null
           },
           {
@@ -2488,7 +2488,7 @@
             "featured_as_hero": false,
             "relevance_score": null,
             "ai_reasoning": "Empathy Ledger sync snapshot from Content Hub.",
-            "story_url": "https://empathyledger.com/stories/e94f98ed-00f3-42ff-b97c-2430ee4655ab",
+            "story_url": "https://empathy-ledger-v2.vercel.app/stories/e94f98ed-00f3-42ff-b97c-2430ee4655ab",
             "content_url": null
           }
         ]
@@ -2877,7 +2877,7 @@
         "story_count": 2,
         "media_count": 24,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:30.549Z",
+        "fetched_at": "2026-04-21T09:36:07.533Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -3281,7 +3281,7 @@
         "story_count": 0,
         "media_count": 24,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:33.804Z",
+        "fetched_at": "2026-04-21T09:36:10.651Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -3579,13 +3579,415 @@
         "story_count": 0,
         "media_count": 17,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:33.843Z",
+        "fetched_at": "2026-04-21T09:36:10.186Z",
         "source": "content-hub",
         "site_slug": null
       }
     },
     "goods-tennant-creek": null,
-    "oonchiumpa": null,
+    "oonchiumpa": {
+      "project": {
+        "slug": "oonchiumpa",
+        "title": "Oonchiumpa",
+        "organization": "A Curious Tractor",
+        "focus_areas": null,
+        "themes": null,
+        "project_id": null,
+        "organization_id": "db0de7bd-eb10-446b-99e9-0f3b7c199b8a"
+      },
+      "featured": {
+        "storytellers": [],
+        "stories": []
+      },
+      "media": {
+        "items": [
+          {
+            "id": "feaa054d-e697-4d95-9403-9c7d6463fa7e",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728260791-20260225-1E5A1755.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728260791-20260225-1E5A1755.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728260791-20260225-1E5A1755.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1755.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": true,
+            "is_featured": true,
+            "source": "content-hub"
+          },
+          {
+            "id": "b4895acc-8a1c-4284-8ef0-efff4a4cc2b6",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728258377-20260225-1E5A1754.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728258377-20260225-1E5A1754.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728258377-20260225-1E5A1754.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1754.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "73b33c6c-d041-4c76-9b76-c2f4d07fe089",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728255205-20260225-1E5A1851.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728255205-20260225-1E5A1851.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728255205-20260225-1E5A1851.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1851.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "9157f069-f8b8-4422-85ef-87687a8a2096",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728253177-20260225-1E5A1836.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728253177-20260225-1E5A1836.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728253177-20260225-1E5A1836.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1836.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "15482e88-f101-4d44-826a-6a50d5b8eeff",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728251048-20260225-1E5A1827.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728251048-20260225-1E5A1827.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728251048-20260225-1E5A1827.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1827.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "34928554-265b-4e99-a60f-6e16858f7330",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728248497-20260225-1E5A1815.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728248497-20260225-1E5A1815.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728248497-20260225-1E5A1815.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1815.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "bc22e312-9e96-4400-a571-2ceee0d20bc6",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728245885-20260225-1E5A1798.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728245885-20260225-1E5A1798.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728245885-20260225-1E5A1798.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1798.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "7cb31069-9fb7-4bc1-831d-0d67ebfaba5b",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728243337-20260225-1E5A1792.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728243337-20260225-1E5A1792.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728243337-20260225-1E5A1792.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1792.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "984ba7a9-f7ad-4c6f-9ffb-425a84cad5be",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728240770-20260225-1E5A1789.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728240770-20260225-1E5A1789.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728240770-20260225-1E5A1789.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1789.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "69d46514-13a5-46b8-9ba2-a48887e09cc6",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728237788-20260225-1E5A1786.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728237788-20260225-1E5A1786.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728237788-20260225-1E5A1786.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1786.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "0077d83b-27a9-499a-aa07-1979eba5799c",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728235053-20260225-1E5A1783.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728235053-20260225-1E5A1783.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728235053-20260225-1E5A1783.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1783.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "4f7f8657-6f69-41a1-93f4-33e210980e06",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728232194-20260225-1E5A1779.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728232194-20260225-1E5A1779.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728232194-20260225-1E5A1779.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1779.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "52b6492f-7b67-438e-90da-a2a3a7f7cdec",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728229728-20260225-1E5A1776.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728229728-20260225-1E5A1776.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728229728-20260225-1E5A1776.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1776.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "e735170f-114d-4ed6-8ea6-149997aac287",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728227104-20260225-1E5A1753.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728227104-20260225-1E5A1753.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728227104-20260225-1E5A1753.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1753.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "08dad018-43d8-4ae8-9f93-2045fc104c98",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728224453-20260225-1E5A1767.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728224453-20260225-1E5A1767.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728224453-20260225-1E5A1767.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1767.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "0c3622df-aace-481b-a645-46455c348560",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728222061-20260225-1E5A1765.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728222061-20260225-1E5A1765.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728222061-20260225-1E5A1765.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1765.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "70be662f-1e1c-4a68-a516-d6ffac2266e7",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728219763-20260225-1E5A1762.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728219763-20260225-1E5A1762.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728219763-20260225-1E5A1762.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1762.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "53e84d18-08d0-4292-8d3f-1f6ed0969528",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728217164-20260225-1E5A1761.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728217164-20260225-1E5A1761.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728217164-20260225-1E5A1761.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1761.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "dc1e1897-6c38-45d3-9699-231eab71cc39",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728215022-20260225-1E5A1760.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728215022-20260225-1E5A1760.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728215022-20260225-1E5A1760.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1760.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "23467557-81db-4bb0-97b1-64037f8e9094",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728212888-20260225-1E5A1759.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728212888-20260225-1E5A1759.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728212888-20260225-1E5A1759.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1759.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "c12c5665-51f7-4062-9c84-c0d953bd28dc",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728210413-20260225-1E5A1758.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728210413-20260225-1E5A1758.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728210413-20260225-1E5A1758.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1758.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "aaa12f78-7c9f-4ef9-b5d6-e19e3a456315",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728208632-20260225-1E5A1757.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728208632-20260225-1E5A1757.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728208632-20260225-1E5A1757.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1757.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "0a6f5a3e-343f-4322-9965-48336b8f81f7",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728206751-20260225-1E5A1756.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728206751-20260225-1E5A1756.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728206751-20260225-1E5A1756.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1756.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "05ad3b32-426a-4735-85b3-c5e092236b48",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728204565-20260225-1E5A1755.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728204565-20260225-1E5A1755.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728204565-20260225-1E5A1755.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1755.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          }
+        ],
+        "hero": {
+          "id": "feaa054d-e697-4d95-9403-9c7d6463fa7e",
+          "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728260791-20260225-1E5A1755.jpg",
+          "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728260791-20260225-1E5A1755.jpg",
+          "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728260791-20260225-1E5A1755.jpg",
+          "type": "image",
+          "kind": "image",
+          "title": null,
+          "alt": "Image: 20260225-1E5A1755.jpg",
+          "caption": null,
+          "credit": null,
+          "is_hero": true,
+          "is_featured": true,
+          "source": "content-hub"
+        }
+      },
+      "meta": {
+        "storyteller_count": 0,
+        "story_count": 0,
+        "media_count": 24,
+        "gallery_count": 0,
+        "fetched_at": "2026-04-21T09:36:11.746Z",
+        "source": "content-hub",
+        "site_slug": null
+      }
+    },
     "bupa-tfn-pitch": null,
     "pakkinjalki-kari": null,
     "weave-bed-tennant-creek": null,
@@ -3614,8 +4016,8 @@
             "custom_tagline": "First Nations Australian",
             "featured_priority": 1,
             "featured_story_count": 1,
-            "opted_in_at": "2026-04-13T04:07:36.307Z",
-            "approved_at": "2026-04-13T04:07:36.307Z"
+            "opted_in_at": "2026-04-21T09:36:13.824Z",
+            "approved_at": "2026-04-21T09:36:13.824Z"
           },
           {
             "storyteller_id": "48c32514-5762-4a44-bba5-5a7890b5e69f",
@@ -3629,8 +4031,8 @@
             "custom_tagline": null,
             "featured_priority": 2,
             "featured_story_count": 1,
-            "opted_in_at": "2026-04-13T04:07:36.307Z",
-            "approved_at": "2026-04-13T04:07:36.307Z"
+            "opted_in_at": "2026-04-21T09:36:13.824Z",
+            "approved_at": "2026-04-21T09:36:13.824Z"
           }
         ],
         "stories": [
@@ -3659,7 +4061,7 @@
             "featured_as_hero": true,
             "relevance_score": null,
             "ai_reasoning": "Empathy Ledger sync snapshot from Content Hub.",
-            "story_url": "https://empathyledger.com/stories/ac969b8a-d0c5-4e44-b3ef-4dd8de5dd234",
+            "story_url": "https://empathy-ledger-v2.vercel.app/stories/ac969b8a-d0c5-4e44-b3ef-4dd8de5dd234",
             "content_url": null
           },
           {
@@ -3686,7 +4088,7 @@
             "featured_as_hero": false,
             "relevance_score": null,
             "ai_reasoning": "Empathy Ledger sync snapshot from Content Hub.",
-            "story_url": "https://empathyledger.com/stories/a82cb795-962b-4db1-bc37-3d86afccc6de",
+            "story_url": "https://empathy-ledger-v2.vercel.app/stories/a82cb795-962b-4db1-bc37-3d86afccc6de",
             "content_url": null
           }
         ]
@@ -4075,7 +4477,7 @@
         "story_count": 2,
         "media_count": 24,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:36.307Z",
+        "fetched_at": "2026-04-21T09:36:13.824Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -4104,8 +4506,8 @@
             "custom_tagline": "Non-Indigenous Australian",
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:38.829Z",
-            "approved_at": "2026-04-13T04:07:38.829Z"
+            "opted_in_at": "2026-04-21T09:36:14.192Z",
+            "approved_at": "2026-04-21T09:36:14.192Z"
           }
         ],
         "stories": []
@@ -4494,7 +4896,7 @@
         "story_count": 0,
         "media_count": 24,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:38.829Z",
+        "fetched_at": "2026-04-21T09:36:14.192Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -4523,8 +4925,8 @@
             "custom_tagline": null,
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:36.667Z",
-            "approved_at": "2026-04-13T04:07:36.667Z"
+            "opted_in_at": "2026-04-21T09:36:13.619Z",
+            "approved_at": "2026-04-21T09:36:13.619Z"
           },
           {
             "storyteller_id": "8484b740-9e58-4d26-ad5a-f51cf2a52f10",
@@ -4538,8 +4940,8 @@
             "custom_tagline": "Non-Indigenous Australian",
             "featured_priority": 2,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:36.667Z",
-            "approved_at": "2026-04-13T04:07:36.667Z"
+            "opted_in_at": "2026-04-21T09:36:13.619Z",
+            "approved_at": "2026-04-21T09:36:13.619Z"
           },
           {
             "storyteller_id": "d5e5ee62-9610-4804-9307-9edc7f8bd86d",
@@ -4553,8 +4955,8 @@
             "custom_tagline": "Basque-Spanish Australian",
             "featured_priority": 3,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:36.667Z",
-            "approved_at": "2026-04-13T04:07:36.667Z"
+            "opted_in_at": "2026-04-21T09:36:13.619Z",
+            "approved_at": "2026-04-21T09:36:13.619Z"
           },
           {
             "storyteller_id": "9bc67418-9269-4771-8e73-6a34c008c7d4",
@@ -4568,8 +4970,8 @@
             "custom_tagline": "Non-Indigenous Australian",
             "featured_priority": 4,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:36.667Z",
-            "approved_at": "2026-04-13T04:07:36.667Z"
+            "opted_in_at": "2026-04-21T09:36:13.619Z",
+            "approved_at": "2026-04-21T09:36:13.619Z"
           },
           {
             "storyteller_id": "0c286ebe-7e62-4c6d-ac4e-d41f5f5ce8d8",
@@ -4583,8 +4985,8 @@
             "custom_tagline": null,
             "featured_priority": 5,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:36.667Z",
-            "approved_at": "2026-04-13T04:07:36.667Z"
+            "opted_in_at": "2026-04-21T09:36:13.619Z",
+            "approved_at": "2026-04-21T09:36:13.619Z"
           },
           {
             "storyteller_id": "1d4e8061-c292-4737-812a-19a05d632445",
@@ -4598,8 +5000,8 @@
             "custom_tagline": "Non-Indigenous Australian",
             "featured_priority": 6,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:36.667Z",
-            "approved_at": "2026-04-13T04:07:36.667Z"
+            "opted_in_at": "2026-04-21T09:36:13.619Z",
+            "approved_at": "2026-04-21T09:36:13.619Z"
           },
           {
             "storyteller_id": "c74da50a-f894-408b-afc7-b01aa45a80d9",
@@ -4613,8 +5015,8 @@
             "custom_tagline": "Non-Indigenous Australian",
             "featured_priority": 7,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:36.667Z",
-            "approved_at": "2026-04-13T04:07:36.667Z"
+            "opted_in_at": "2026-04-21T09:36:13.619Z",
+            "approved_at": "2026-04-21T09:36:13.619Z"
           }
         ],
         "stories": []
@@ -4628,7 +5030,7 @@
         "story_count": 0,
         "media_count": 0,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:36.667Z",
+        "fetched_at": "2026-04-21T09:36:13.619Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -4658,8 +5060,8 @@
             "custom_tagline": "Manbarra, Wulgurukaba",
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:41.199Z",
-            "approved_at": "2026-04-13T04:07:41.199Z"
+            "opted_in_at": "2026-04-21T09:36:16.293Z",
+            "approved_at": "2026-04-21T09:36:16.293Z"
           }
         ],
         "stories": []
@@ -4679,6 +5081,156 @@
             "credit": null,
             "is_hero": true,
             "is_featured": true,
+            "source": "content-hub"
+          },
+          {
+            "id": "7dd1e9ae-9c2f-4d8b-b725-9b304a95e7d4",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727434404-689ea47d7ad46723204525ce_Palm_Island_-_Goods_Low_res-147.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727434404-689ea47d7ad46723204525ce_Palm_Island_-_Goods_Low_res-147.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727434404-689ea47d7ad46723204525ce_Palm_Island_-_Goods_Low_res-147.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 689ea47d7ad46723204525ce_Palm Island - Goods Low res-147.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "9542dc74-1706-4a7f-8f78-f356f12371cb",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727431232-689e9d64f939662b16e9f6e6_Palm_Island_-_Goods_Low_res-146.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727431232-689e9d64f939662b16e9f6e6_Palm_Island_-_Goods_Low_res-146.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727431232-689e9d64f939662b16e9f6e6_Palm_Island_-_Goods_Low_res-146.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 689e9d64f939662b16e9f6e6_Palm Island - Goods Low res-146.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "2d33c4a4-becc-4220-bc13-ba78c5830754",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727428286-689eb3133843db6d21332cbb_UA_paintings9.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727428286-689eb3133843db6d21332cbb_UA_paintings9.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727428286-689eb3133843db6d21332cbb_UA_paintings9.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 689eb3133843db6d21332cbb_UA_paintings9.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "d8d16755-22ca-42e3-9bd7-2ab30d323c4a",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727425955-689eb20a9e37d633f5dd9d6b_UncleAllan16.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727425955-689eb20a9e37d633f5dd9d6b_UncleAllan16.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727425955-689eb20a9e37d633f5dd9d6b_UncleAllan16.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 689eb20a9e37d633f5dd9d6b_UncleAllan16.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "c0fedf47-0226-410d-9a5e-adfc7fefc4f4",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727423781-689eb06f3bd961ce3058a4e1_UncleAllan17.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727423781-689eb06f3bd961ce3058a4e1_UncleAllan17.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727423781-689eb06f3bd961ce3058a4e1_UncleAllan17.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 689eb06f3bd961ce3058a4e1_UncleAllan17.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "ac019f9d-415f-418d-8963-81e05ef7c354",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727421122-689eb2c3d894cc0a152d14f2_UA_paintings2.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727421122-689eb2c3d894cc0a152d14f2_UA_paintings2.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727421122-689eb2c3d894cc0a152d14f2_UA_paintings2.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 689eb2c3d894cc0a152d14f2_UA_paintings2.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "accbc18f-578b-4e89-99ce-cb2a91295733",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727418799-689eafd20c1ef2efe500407a_UncleAllan10.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727418799-689eafd20c1ef2efe500407a_UncleAllan10.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727418799-689eafd20c1ef2efe500407a_UncleAllan10.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 689eafd20c1ef2efe500407a_UncleAllan10.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "b16df993-146e-40ea-85e5-2699925be48d",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727415840-689eae48a02514dac885913b_UA_paintings14.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727415840-689eae48a02514dac885913b_UA_paintings14.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727415840-689eae48a02514dac885913b_UA_paintings14.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 689eae48a02514dac885913b_UA_paintings14.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "c435fdeb-466d-4f4d-bb32-702117876fdd",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727413387-689ea47d7ad46723204525ce_Palm_Island_-_Goods_Low_res-147.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727413387-689ea47d7ad46723204525ce_Palm_Island_-_Goods_Low_res-147.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727413387-689ea47d7ad46723204525ce_Palm_Island_-_Goods_Low_res-147.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 689ea47d7ad46723204525ce_Palm Island - Goods Low res-147.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "d1726df8-411c-4abd-afca-87df37755976",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727410362-689e9d64f939662b16e9f6e6_Palm_Island_-_Goods_Low_res-146.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727410362-689e9d64f939662b16e9f6e6_Palm_Island_-_Goods_Low_res-146.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776727410362-689e9d64f939662b16e9f6e6_Palm_Island_-_Goods_Low_res-146.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 689e9d64f939662b16e9f6e6_Palm Island - Goods Low res-146.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
             "source": "content-hub"
           },
           {
@@ -4875,51 +5427,6 @@
             "is_hero": false,
             "is_featured": false,
             "source": "content-hub"
-          },
-          {
-            "id": "df1d20c4-19db-4114-abd1-465973ddd14d",
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/palm-island/annual-report-photos/2020-21/photo-006.jpg",
-            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/palm-island/annual-report-photos/2020-21/photo-006.jpg",
-            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/palm-island/annual-report-photos/2020-21/photo-006.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "An abstract, repeating pattern features numerous concentric circles made of small dots in blue, gold",
-            "alt": "An abstract, repeating pattern features numerous concentric circles made of small dots in blue, gold, and orange-red, set against a dark reddish-purple background. The circles vary in size and overlap",
-            "caption": "An abstract, repeating pattern features numerous concentric circles made of small dots in blue, gold, and orange-red, set against a dark reddish-purple background. The circles vary in size and overlap slightly, creating a dense, textured design reminiscent of Indigenous Australian dot painting.",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
-            "id": "2d4e1af7-5045-4d9f-9745-1d3b10d181a0",
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/palm-island/annual-report-photos/2020-21/photo-007.jpg",
-            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/palm-island/annual-report-photos/2020-21/photo-007.jpg",
-            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/palm-island/annual-report-photos/2020-21/photo-007.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "A repeating pattern of concentric circles, formed by dots in shades of blue, golden yellow, and oran",
-            "alt": "A repeating pattern of concentric circles, formed by dots in shades of blue, golden yellow, and orange, on a dark blue background, all set against a textured dark red base. The style is characteristic",
-            "caption": "A repeating pattern of concentric circles, formed by dots in shades of blue, golden yellow, and orange, on a dark blue background, all set against a textured dark red base. The style is characteristic of Indigenous Australian dot painting.",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
-            "id": "4e2d9186-08ac-4849-88fb-fd553f33d533",
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/palm-island/annual-report-photos/2020-21/photo-001.jpg",
-            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/palm-island/annual-report-photos/2020-21/photo-001.jpg",
-            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/palm-island/annual-report-photos/2020-21/photo-001.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "A vibrant, seamless pattern featuring concentric circles made of dots, reminiscent of Indigenous Aus",
-            "alt": "A vibrant, seamless pattern featuring concentric circles made of dots, reminiscent of Indigenous Australian dot painting. The circles are predominantly blue and gold/yellow, set against a dark red or ",
-            "caption": "A vibrant, seamless pattern featuring concentric circles made of dots, reminiscent of Indigenous Australian dot painting. The circles are predominantly blue and gold/yellow, set against a dark red or reddish-brown background with outer rings also in reddish-brown or orange tones.",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
           }
         ],
         "hero": {
@@ -4941,9 +5448,9 @@
       "meta": {
         "storyteller_count": 1,
         "story_count": 0,
-        "media_count": 17,
+        "media_count": 24,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:41.200Z",
+        "fetched_at": "2026-04-21T09:36:16.293Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -5346,7 +5853,7 @@
         "story_count": 0,
         "media_count": 24,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:37.428Z",
+        "fetched_at": "2026-04-21T09:36:14.811Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -5645,7 +6152,7 @@
         "story_count": 0,
         "media_count": 17,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:44.433Z",
+        "fetched_at": "2026-04-21T09:36:22.009Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -5676,8 +6183,8 @@
             "custom_tagline": "Aboriginal Australian",
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:45.969Z",
-            "approved_at": "2026-04-13T04:07:45.969Z"
+            "opted_in_at": "2026-04-21T09:36:24.644Z",
+            "approved_at": "2026-04-21T09:36:24.644Z"
           },
           {
             "storyteller_id": "07dbb433-e386-49ca-a24a-e4a5a5c12417",
@@ -5691,8 +6198,8 @@
             "custom_tagline": "Manbarra, Wulgurukaba",
             "featured_priority": 2,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:45.969Z",
-            "approved_at": "2026-04-13T04:07:45.969Z"
+            "opted_in_at": "2026-04-21T09:36:24.644Z",
+            "approved_at": "2026-04-21T09:36:24.644Z"
           },
           {
             "storyteller_id": "cc513d49-5e69-445c-bd40-0df6b9c137f8",
@@ -5706,8 +6213,8 @@
             "custom_tagline": "Aboriginal Australian",
             "featured_priority": 3,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:45.969Z",
-            "approved_at": "2026-04-13T04:07:45.969Z"
+            "opted_in_at": "2026-04-21T09:36:24.644Z",
+            "approved_at": "2026-04-21T09:36:24.644Z"
           },
           {
             "storyteller_id": "2f8c49ff-36b7-44b9-b3df-de8b5f6b250f",
@@ -5721,8 +6228,8 @@
             "custom_tagline": "Aboriginal Australian",
             "featured_priority": 4,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:45.969Z",
-            "approved_at": "2026-04-13T04:07:45.969Z"
+            "opted_in_at": "2026-04-21T09:36:24.645Z",
+            "approved_at": "2026-04-21T09:36:24.645Z"
           },
           {
             "storyteller_id": "47ff2031-37d8-490a-9571-c9bda395d6f5",
@@ -5736,8 +6243,8 @@
             "custom_tagline": "Aboriginal Australian",
             "featured_priority": 5,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:45.969Z",
-            "approved_at": "2026-04-13T04:07:45.969Z"
+            "opted_in_at": "2026-04-21T09:36:24.645Z",
+            "approved_at": "2026-04-21T09:36:24.645Z"
           },
           {
             "storyteller_id": "f2811fa7-4109-4251-93b5-a6a378dad9e6",
@@ -5751,8 +6258,8 @@
             "custom_tagline": "Aboriginal Australian",
             "featured_priority": 6,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:45.969Z",
-            "approved_at": "2026-04-13T04:07:45.969Z"
+            "opted_in_at": "2026-04-21T09:36:24.645Z",
+            "approved_at": "2026-04-21T09:36:24.645Z"
           },
           {
             "storyteller_id": "5a6a4087-9d53-495e-bccf-8432f329c697",
@@ -5766,8 +6273,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 7,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:45.969Z",
-            "approved_at": "2026-04-13T04:07:45.969Z"
+            "opted_in_at": "2026-04-21T09:36:24.645Z",
+            "approved_at": "2026-04-21T09:36:24.645Z"
           },
           {
             "storyteller_id": "e881afe6-822e-4818-909a-019d97bbd709",
@@ -5781,8 +6288,8 @@
             "custom_tagline": "Aboriginal Australian",
             "featured_priority": 8,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:45.969Z",
-            "approved_at": "2026-04-13T04:07:45.969Z"
+            "opted_in_at": "2026-04-21T09:36:24.645Z",
+            "approved_at": "2026-04-21T09:36:24.645Z"
           },
           {
             "storyteller_id": "c935626b-cd65-49bc-b794-8d145e4e6e31",
@@ -5796,8 +6303,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 9,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:45.969Z",
-            "approved_at": "2026-04-13T04:07:45.969Z"
+            "opted_in_at": "2026-04-21T09:36:24.645Z",
+            "approved_at": "2026-04-21T09:36:24.645Z"
           },
           {
             "storyteller_id": "c34e763b-a1b7-46e4-9e8e-e86301634c9e",
@@ -5811,8 +6318,8 @@
             "custom_tagline": null,
             "featured_priority": 10,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:45.969Z",
-            "approved_at": "2026-04-13T04:07:45.969Z"
+            "opted_in_at": "2026-04-21T09:36:24.645Z",
+            "approved_at": "2026-04-21T09:36:24.645Z"
           }
         ],
         "stories": []
@@ -6201,7 +6708,7 @@
         "story_count": 0,
         "media_count": 24,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:45.969Z",
+        "fetched_at": "2026-04-21T09:36:24.645Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -6230,8 +6737,8 @@
             "custom_tagline": "Aboriginal Australian",
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:44.811Z",
-            "approved_at": "2026-04-13T04:07:44.811Z"
+            "opted_in_at": "2026-04-21T09:36:22.542Z",
+            "approved_at": "2026-04-21T09:36:22.542Z"
           },
           {
             "storyteller_id": "07dbb433-e386-49ca-a24a-e4a5a5c12417",
@@ -6245,8 +6752,8 @@
             "custom_tagline": "Manbarra, Wulgurukaba",
             "featured_priority": 2,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:44.811Z",
-            "approved_at": "2026-04-13T04:07:44.811Z"
+            "opted_in_at": "2026-04-21T09:36:22.542Z",
+            "approved_at": "2026-04-21T09:36:22.542Z"
           },
           {
             "storyteller_id": "cc513d49-5e69-445c-bd40-0df6b9c137f8",
@@ -6260,8 +6767,8 @@
             "custom_tagline": "Aboriginal Australian",
             "featured_priority": 3,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:44.811Z",
-            "approved_at": "2026-04-13T04:07:44.811Z"
+            "opted_in_at": "2026-04-21T09:36:22.542Z",
+            "approved_at": "2026-04-21T09:36:22.542Z"
           },
           {
             "storyteller_id": "2f8c49ff-36b7-44b9-b3df-de8b5f6b250f",
@@ -6275,8 +6782,8 @@
             "custom_tagline": "Aboriginal Australian",
             "featured_priority": 4,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:44.811Z",
-            "approved_at": "2026-04-13T04:07:44.811Z"
+            "opted_in_at": "2026-04-21T09:36:22.542Z",
+            "approved_at": "2026-04-21T09:36:22.542Z"
           },
           {
             "storyteller_id": "f2811fa7-4109-4251-93b5-a6a378dad9e6",
@@ -6290,8 +6797,8 @@
             "custom_tagline": "Aboriginal Australian",
             "featured_priority": 5,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:44.811Z",
-            "approved_at": "2026-04-13T04:07:44.811Z"
+            "opted_in_at": "2026-04-21T09:36:22.542Z",
+            "approved_at": "2026-04-21T09:36:22.542Z"
           },
           {
             "storyteller_id": "158bd930-c06d-44ab-b217-45a4048d70a7",
@@ -6305,8 +6812,8 @@
             "custom_tagline": "Aboriginal Australian",
             "featured_priority": 6,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:44.811Z",
-            "approved_at": "2026-04-13T04:07:44.811Z"
+            "opted_in_at": "2026-04-21T09:36:22.542Z",
+            "approved_at": "2026-04-21T09:36:22.542Z"
           },
           {
             "storyteller_id": "5a6a4087-9d53-495e-bccf-8432f329c697",
@@ -6320,8 +6827,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 7,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:44.811Z",
-            "approved_at": "2026-04-13T04:07:44.811Z"
+            "opted_in_at": "2026-04-21T09:36:22.542Z",
+            "approved_at": "2026-04-21T09:36:22.542Z"
           },
           {
             "storyteller_id": "e881afe6-822e-4818-909a-019d97bbd709",
@@ -6335,8 +6842,8 @@
             "custom_tagline": "Aboriginal Australian",
             "featured_priority": 8,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:44.811Z",
-            "approved_at": "2026-04-13T04:07:44.811Z"
+            "opted_in_at": "2026-04-21T09:36:22.542Z",
+            "approved_at": "2026-04-21T09:36:22.542Z"
           },
           {
             "storyteller_id": "32495b83-0275-4bf3-8c3b-5a6b54ea2b6a",
@@ -6350,8 +6857,8 @@
             "custom_tagline": "Aboriginal Australian (Palm Island)",
             "featured_priority": 9,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:44.811Z",
-            "approved_at": "2026-04-13T04:07:44.811Z"
+            "opted_in_at": "2026-04-21T09:36:22.542Z",
+            "approved_at": "2026-04-21T09:36:22.542Z"
           },
           {
             "storyteller_id": "3508f053-8c2a-400c-867e-a9a7ced877c0",
@@ -6365,8 +6872,8 @@
             "custom_tagline": "Aboriginal Australian",
             "featured_priority": 10,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:44.811Z",
-            "approved_at": "2026-04-13T04:07:44.811Z"
+            "opted_in_at": "2026-04-21T09:36:22.542Z",
+            "approved_at": "2026-04-21T09:36:22.542Z"
           }
         ],
         "stories": []
@@ -6449,21 +6956,6 @@
             "source": "content-hub"
           },
           {
-            "id": "3b1bc2b9-6956-4059-aa3c-eb0e7d5f39eb",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765843292995-rfhtt6.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765843292995-rfhtt6.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765843292995-rfhtt6.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "20251017-1E5A3593",
-            "alt": "Professional photo shoot, Palm Island, October 2025",
-            "caption": "Professional photo shoot, Palm Island, October 2025",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
             "id": "765097b5-e3ca-4271-b58f-6522b6375b9d",
             "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765842049240-q1i959.jpg",
             "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765842049240-q1i959.jpg",
@@ -6471,21 +6963,6 @@
             "type": "image",
             "kind": "image",
             "title": "20251015-1E5A2881",
-            "alt": "Professional photo shoot, Palm Island, October 2025",
-            "caption": "Professional photo shoot, Palm Island, October 2025",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
-            "id": "7e0c047e-abbd-47a2-9cf4-6e053ef173b6",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765841957090-05usba.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765841957090-05usba.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765841957090-05usba.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "20251017-1E5A3635",
             "alt": "Professional photo shoot, Palm Island, October 2025",
             "caption": "Professional photo shoot, Palm Island, October 2025",
             "credit": null,
@@ -6516,6 +6993,36 @@
             "type": "image",
             "kind": "image",
             "title": "20251017-1E5A3499",
+            "alt": "Professional photo shoot, Palm Island, October 2025",
+            "caption": "Professional photo shoot, Palm Island, October 2025",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "7e0c047e-abbd-47a2-9cf4-6e053ef173b6",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765841957090-05usba.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765841957090-05usba.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765841957090-05usba.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "20251017-1E5A3635",
+            "alt": "Professional photo shoot, Palm Island, October 2025",
+            "caption": "Professional photo shoot, Palm Island, October 2025",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "3b1bc2b9-6956-4059-aa3c-eb0e7d5f39eb",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765843292995-rfhtt6.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765843292995-rfhtt6.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765843292995-rfhtt6.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "20251017-1E5A3593",
             "alt": "Professional photo shoot, Palm Island, October 2025",
             "caption": "Professional photo shoot, Palm Island, October 2025",
             "credit": null,
@@ -6755,7 +7262,7 @@
         "story_count": 0,
         "media_count": 24,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:44.811Z",
+        "fetched_at": "2026-04-21T09:36:22.542Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -6784,8 +7291,8 @@
             "custom_tagline": null,
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:45.700Z",
-            "approved_at": "2026-04-13T04:07:45.700Z"
+            "opted_in_at": "2026-04-21T09:36:22.849Z",
+            "approved_at": "2026-04-21T09:36:22.849Z"
           },
           {
             "storyteller_id": "1a2296c2-b9ed-4a03-b97d-668f8ae3bc40",
@@ -6799,8 +7306,8 @@
             "custom_tagline": null,
             "featured_priority": 2,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:45.700Z",
-            "approved_at": "2026-04-13T04:07:45.700Z"
+            "opted_in_at": "2026-04-21T09:36:22.849Z",
+            "approved_at": "2026-04-21T09:36:22.849Z"
           },
           {
             "storyteller_id": "707b5632-e611-42db-8398-9d1585a9032e",
@@ -6814,8 +7321,8 @@
             "custom_tagline": "Bwgcolman",
             "featured_priority": 3,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:45.700Z",
-            "approved_at": "2026-04-13T04:07:45.700Z"
+            "opted_in_at": "2026-04-21T09:36:22.849Z",
+            "approved_at": "2026-04-21T09:36:22.849Z"
           },
           {
             "storyteller_id": "2a901211-6a99-4946-9602-7d7b3b6414b4",
@@ -6829,8 +7336,8 @@
             "custom_tagline": "Bwgcolman",
             "featured_priority": 4,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:45.700Z",
-            "approved_at": "2026-04-13T04:07:45.700Z"
+            "opted_in_at": "2026-04-21T09:36:22.849Z",
+            "approved_at": "2026-04-21T09:36:22.849Z"
           },
           {
             "storyteller_id": "0af93d80-f0c3-4186-a352-565415610091",
@@ -6844,8 +7351,8 @@
             "custom_tagline": null,
             "featured_priority": 5,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:45.700Z",
-            "approved_at": "2026-04-13T04:07:45.700Z"
+            "opted_in_at": "2026-04-21T09:36:22.849Z",
+            "approved_at": "2026-04-21T09:36:22.849Z"
           },
           {
             "storyteller_id": "f6e42990-1bd2-436c-ac91-f1bd07cf9bdc",
@@ -6859,8 +7366,8 @@
             "custom_tagline": "Yorta Yorta",
             "featured_priority": 6,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:45.700Z",
-            "approved_at": "2026-04-13T04:07:45.700Z"
+            "opted_in_at": "2026-04-21T09:36:22.849Z",
+            "approved_at": "2026-04-21T09:36:22.849Z"
           },
           {
             "storyteller_id": "64cd1b67-6cde-46e8-9e78-2e5830740d40",
@@ -6874,8 +7381,8 @@
             "custom_tagline": "Bwgcolman",
             "featured_priority": 7,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:45.700Z",
-            "approved_at": "2026-04-13T04:07:45.700Z"
+            "opted_in_at": "2026-04-21T09:36:22.849Z",
+            "approved_at": "2026-04-21T09:36:22.849Z"
           },
           {
             "storyteller_id": "ce1c1e6a-0dd5-4010-8d24-e900074a0d57",
@@ -6889,8 +7396,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 8,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:45.700Z",
-            "approved_at": "2026-04-13T04:07:45.700Z"
+            "opted_in_at": "2026-04-21T09:36:22.849Z",
+            "approved_at": "2026-04-21T09:36:22.849Z"
           }
         ],
         "stories": []
@@ -7279,7 +7786,7 @@
         "story_count": 0,
         "media_count": 24,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:45.700Z",
+        "fetched_at": "2026-04-21T09:36:22.849Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -7308,8 +7815,8 @@
             "custom_tagline": "Indigenous",
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:45.135Z",
-            "approved_at": "2026-04-13T04:07:45.135Z"
+            "opted_in_at": "2026-04-21T09:36:21.348Z",
+            "approved_at": "2026-04-21T09:36:21.348Z"
           }
         ],
         "stories": []
@@ -7323,190 +7830,12 @@
         "story_count": 0,
         "media_count": 0,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:45.135Z",
+        "fetched_at": "2026-04-21T09:36:21.348Z",
         "source": "content-hub",
         "site_slug": null
       }
     },
-    "mounty-yarns": {
-      "project": {
-        "slug": "mounty-yarns",
-        "title": "Mounty Yarns",
-        "organization": "A Curious Tractor",
-        "focus_areas": null,
-        "themes": null,
-        "project_id": null,
-        "organization_id": "db0de7bd-eb10-446b-99e9-0f3b7c199b8a"
-      },
-      "featured": {
-        "storytellers": [
-          {
-            "storyteller_id": "d2dd3045-1728-4c09-addb-460b45bc7525",
-            "full_name": "Adam",
-            "display_name": "Adam",
-            "bio": "Para Camilla and Wangkamarra man, mob from Burke. Co-runs the Youth Peak program with Leah. Youth leader.",
-            "profile_image_url": "https://d1d3n03t5zntha.cloudfront.net/5992079f-f686-46be-8448-f28ff448343e/media_stream-5e1caa7b6067419a9e906d8546804c4f.jpg",
-            "current_organization": null,
-            "current_role": null,
-            "featured_bio": "Para Camilla and Wangkamarra man, mob from Burke. Co-runs the Youth Peak program with Leah. Youth leader.",
-            "custom_tagline": "Para Camilla, Wangkamarra",
-            "featured_priority": 1,
-            "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:46.311Z",
-            "approved_at": "2026-04-13T04:07:46.311Z"
-          },
-          {
-            "storyteller_id": "cfea0022-7ee7-4c8d-a917-bf73addeacb4",
-            "full_name": "Amelia",
-            "display_name": "Amelia",
-            "bio": "Proud Mangpa Guara woman from Wilcannia, Kenya. Young community leader who teaches dance with her dad's group. Passionate about creative arts and bringing Aboriginal young people together.",
-            "profile_image_url": "https://d1d3n03t5zntha.cloudfront.net/49541aa6-6c6f-4284-85a1-bcddcb469531/media_stream-19da411bfaa84bceb1b84bd59a12dddd.jpg",
-            "current_organization": null,
-            "current_role": null,
-            "featured_bio": "Proud Mangpa Guara woman from Wilcannia, Kenya. Young community leader who teaches dance with her dad's group. Passionate about creative arts and bringing Aboriginal young people together.",
-            "custom_tagline": "Mangpa Guara",
-            "featured_priority": 2,
-            "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:46.311Z",
-            "approved_at": "2026-04-13T04:07:46.311Z"
-          },
-          {
-            "storyteller_id": "b2e7faf3-0f13-4112-bbd6-d32d697eacc7",
-            "full_name": "Archie Darcy",
-            "display_name": "Archie Darcy",
-            "bio": "Proud Wangkamarra and Camilla man from Burke and Warren. Youth worker turned case worker at Mounty Yarns. Focuses on breaking cycles and removing barriers for young people.",
-            "profile_image_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/avatars/generated/b2e7faf3-0f13-4112-bbd6-d32d697eacc7.svg",
-            "current_organization": null,
-            "current_role": null,
-            "featured_bio": "Proud Wangkamarra and Camilla man from Burke and Warren. Youth worker turned case worker at Mounty Yarns. Focuses on breaking cycles and removing barriers for young people.",
-            "custom_tagline": "Wangkamarra, Camilla",
-            "featured_priority": 3,
-            "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:46.311Z",
-            "approved_at": "2026-04-13T04:07:46.311Z"
-          },
-          {
-            "storyteller_id": "70e92915-8f5b-44c9-a338-5de3597bd85a",
-            "full_name": "Isabella",
-            "display_name": "Isabella",
-            "bio": "14 years old, goes to Mitchell High School, lives in Seven Hills. Artsy person who loves sport and music. Enjoys the non-judgmental environment at Mounty Yarns.",
-            "profile_image_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/avatars/generated/70e92915-8f5b-44c9-a338-5de3597bd85a.svg",
-            "current_organization": null,
-            "current_role": null,
-            "featured_bio": "14 years old, goes to Mitchell High School, lives in Seven Hills. Artsy person who loves sport and music. Enjoys the non-judgmental environment at Mounty Yarns.",
-            "custom_tagline": "Aboriginal",
-            "featured_priority": 4,
-            "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:46.311Z",
-            "approved_at": "2026-04-13T04:07:46.311Z"
-          },
-          {
-            "storyteller_id": "786b1699-6d27-4380-ba06-af5b0f789b40",
-            "full_name": "Isaiah",
-            "display_name": "Isaiah",
-            "bio": "From Mount Druitt. Works at Mount Druitt Aboriginal Community Service. Leading the backyard activation project for three years. Passionate about creating safe spaces for young people.",
-            "profile_image_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/avatars/generated/786b1699-6d27-4380-ba06-af5b0f789b40.svg",
-            "current_organization": null,
-            "current_role": null,
-            "featured_bio": "From Mount Druitt. Works at Mount Druitt Aboriginal Community Service. Leading the backyard activation project for three years. Passionate about creating safe spaces for young people.",
-            "custom_tagline": "Aboriginal",
-            "featured_priority": 5,
-            "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:46.311Z",
-            "approved_at": "2026-04-13T04:07:46.311Z"
-          },
-          {
-            "storyteller_id": "4e57819d-af8a-49e8-9bca-24c8a394d831",
-            "full_name": "Jaylee",
-            "display_name": "Jaylee",
-            "bio": "From Mount Druitt. Participates in Mounty Yarns programs 3-4 times a week. Aspires to be a youth worker and make music. Wants to influence other kids to do positive things.",
-            "profile_image_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/avatars/generated/4e57819d-af8a-49e8-9bca-24c8a394d831.svg",
-            "current_organization": null,
-            "current_role": null,
-            "featured_bio": "From Mount Druitt. Participates in Mounty Yarns programs 3-4 times a week. Aspires to be a youth worker and make music. Wants to influence other kids to do positive things.",
-            "custom_tagline": "Aboriginal",
-            "featured_priority": 6,
-            "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:46.311Z",
-            "approved_at": "2026-04-13T04:07:46.311Z"
-          },
-          {
-            "storyteller_id": "3cc1a8c4-bc78-43fc-9e1e-bbe7c9c8eb72",
-            "full_name": "Leah",
-            "display_name": "Leah",
-            "bio": "Hiri D and Camilla woman from Mount Druitt. Co-runs the Youth Peak program. Foster care experience. Passionate about giving young people a voice.",
-            "profile_image_url": "https://d1d3n03t5zntha.cloudfront.net/9446cf4c-9506-4b34-9fe4-206a8f1626ad/media_stream-ec57f72e3c6a4947ac1796d01d2f7cae.jpg",
-            "current_organization": null,
-            "current_role": null,
-            "featured_bio": "Hiri D and Camilla woman from Mount Druitt. Co-runs the Youth Peak program. Foster care experience. Passionate about giving young people a voice.",
-            "custom_tagline": "Hiri D, Camilla",
-            "featured_priority": 7,
-            "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:46.311Z",
-            "approved_at": "2026-04-13T04:07:46.311Z"
-          },
-          {
-            "storyteller_id": "a0070001-0000-0000-0000-000000000002",
-            "full_name": "Mounty Yarns Community",
-            "display_name": "Mounty Yarns Community",
-            "bio": "Generic community storyteller for Mounty Yarns multi-voice content. Synthetic record - the \"In Their Own Words\" piece features at least 8 named voices (Adam, Leah, Amelia, Shayle McKellar, Archie Darcy, Taleigha, Isabella, Polly) and is clearly collective rather than attributable to one person. Replace with the appropriate storyteller(s) when Mounty Yarns curates the piece.",
-            "profile_image_url": null,
-            "current_organization": null,
-            "current_role": null,
-            "featured_bio": "Generic community storyteller for Mounty Yarns multi-voice content. Synthetic record - the \"In Their Own Words\" piece features at least 8 named voices (Adam, Leah, Amelia, Shayle McKellar, Archie Darcy, Taleigha, Isabella, Polly) and is clearly collective rather than attributable to one person. Replace with the appropriate storyteller(s) when Mounty Yarns curates the piece.",
-            "custom_tagline": null,
-            "featured_priority": 8,
-            "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:46.311Z",
-            "approved_at": "2026-04-13T04:07:46.311Z"
-          },
-          {
-            "storyteller_id": "b0a32000-94f9-45fd-a15d-e82f9b8174c9",
-            "full_name": "Polly",
-            "display_name": "Polly",
-            "bio": "13 years old, goes to Mitchell High School, lives in Blacktown. Enjoys caring for people, music, and sport. Can express herself freely at Mounty Yarns.",
-            "profile_image_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/avatars/generated/b0a32000-94f9-45fd-a15d-e82f9b8174c9.svg",
-            "current_organization": null,
-            "current_role": null,
-            "featured_bio": "13 years old, goes to Mitchell High School, lives in Blacktown. Enjoys caring for people, music, and sport. Can express herself freely at Mounty Yarns.",
-            "custom_tagline": "Aboriginal",
-            "featured_priority": 9,
-            "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:46.311Z",
-            "approved_at": "2026-04-13T04:07:46.311Z"
-          },
-          {
-            "storyteller_id": "84acd4b1-4ab6-4f55-af19-f601e5f4de8b",
-            "full_name": "Shayle McKellar",
-            "display_name": "Shayle McKellar",
-            "bio": "Proud Wangkamarra man from Burke. Lived experience consultant and youth worker. Completed Year 12/HSC while in custody.",
-            "profile_image_url": "https://d1d3n03t5zntha.cloudfront.net/8ee2c1bf-e64c-48c4-a039-d79873cb041e/media_stream-6e9a8bf1e37f4a908a404af79bba0fa1.jpg",
-            "current_organization": null,
-            "current_role": null,
-            "featured_bio": "Proud Wangkamarra man from Burke. Lived experience consultant and youth worker. Completed Year 12/HSC while in custody.",
-            "custom_tagline": "Wangkamarra",
-            "featured_priority": 10,
-            "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:46.311Z",
-            "approved_at": "2026-04-13T04:07:46.311Z"
-          }
-        ],
-        "stories": []
-      },
-      "media": {
-        "items": [],
-        "hero": null
-      },
-      "meta": {
-        "storyteller_count": 10,
-        "story_count": 0,
-        "media_count": 0,
-        "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:46.311Z",
-        "source": "content-hub",
-        "site_slug": null
-      }
-    },
+    "mounty-yarns": null,
     "junes-patch": null,
     "designing-for-obsolescence": null,
     "dad-lab-25": {
@@ -7907,7 +8236,7 @@
         "story_count": 0,
         "media_count": 24,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:48.697Z",
+        "fetched_at": "2026-04-21T09:36:26.595Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -8317,13 +8646,14 @@
         "story_count": 0,
         "media_count": 24,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:56.285Z",
+        "fetched_at": "2026-04-21T09:36:34.426Z",
         "source": "content-hub",
         "site_slug": null
       }
     },
     "act-public-voice": null,
     "act-studio": null,
+    "artist-residency": null,
     "barkly-backbone": null,
     "bg-fit": {
       "project": {
@@ -8349,8 +8679,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:55.925Z",
-            "approved_at": "2026-04-13T04:07:55.925Z"
+            "opted_in_at": "2026-04-21T09:36:34.372Z",
+            "approved_at": "2026-04-21T09:36:34.372Z"
           },
           {
             "storyteller_id": "5e15553f-fd6f-4aae-be36-d0981acda745",
@@ -8364,8 +8694,8 @@
             "custom_tagline": null,
             "featured_priority": 2,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:55.925Z",
-            "approved_at": "2026-04-13T04:07:55.925Z"
+            "opted_in_at": "2026-04-21T09:36:34.372Z",
+            "approved_at": "2026-04-21T09:36:34.372Z"
           },
           {
             "storyteller_id": "f837496a-eef8-4b0f-a710-2922893da102",
@@ -8379,8 +8709,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 3,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:55.925Z",
-            "approved_at": "2026-04-13T04:07:55.925Z"
+            "opted_in_at": "2026-04-21T09:36:34.372Z",
+            "approved_at": "2026-04-21T09:36:34.372Z"
           },
           {
             "storyteller_id": "1b2598cf-80a2-4386-969a-3e9315950b04",
@@ -8394,8 +8724,8 @@
             "custom_tagline": "Gadigal",
             "featured_priority": 4,
             "featured_story_count": 2,
-            "opted_in_at": "2026-04-13T04:07:55.925Z",
-            "approved_at": "2026-04-13T04:07:55.925Z"
+            "opted_in_at": "2026-04-21T09:36:34.372Z",
+            "approved_at": "2026-04-21T09:36:34.372Z"
           },
           {
             "storyteller_id": "d98a2342-e42c-456a-96a6-19bb27f792ae",
@@ -8409,8 +8739,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 5,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:55.925Z",
-            "approved_at": "2026-04-13T04:07:55.925Z"
+            "opted_in_at": "2026-04-21T09:36:34.372Z",
+            "approved_at": "2026-04-21T09:36:34.372Z"
           },
           {
             "storyteller_id": "aeadcbda-0acc-40b4-a562-8f3121ef661c",
@@ -8424,8 +8754,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 6,
             "featured_story_count": 1,
-            "opted_in_at": "2026-04-13T04:07:55.925Z",
-            "approved_at": "2026-04-13T04:07:55.925Z"
+            "opted_in_at": "2026-04-21T09:36:34.372Z",
+            "approved_at": "2026-04-21T09:36:34.372Z"
           },
           {
             "storyteller_id": "4cad7521-38bd-4d57-91a1-5920f5706b2a",
@@ -8439,8 +8769,8 @@
             "custom_tagline": null,
             "featured_priority": 7,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:55.925Z",
-            "approved_at": "2026-04-13T04:07:55.925Z"
+            "opted_in_at": "2026-04-21T09:36:34.372Z",
+            "approved_at": "2026-04-21T09:36:34.372Z"
           },
           {
             "storyteller_id": "21932f39-7e6b-4a8f-99ae-04b0f8544b8f",
@@ -8454,8 +8784,8 @@
             "custom_tagline": "Australian",
             "featured_priority": 8,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:55.925Z",
-            "approved_at": "2026-04-13T04:07:55.925Z"
+            "opted_in_at": "2026-04-21T09:36:34.372Z",
+            "approved_at": "2026-04-21T09:36:34.372Z"
           },
           {
             "storyteller_id": "c79b6dc3-4cdb-4af3-a6d6-2f7065d361b3",
@@ -8469,8 +8799,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 9,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:55.925Z",
-            "approved_at": "2026-04-13T04:07:55.925Z"
+            "opted_in_at": "2026-04-21T09:36:34.372Z",
+            "approved_at": "2026-04-21T09:36:34.372Z"
           },
           {
             "storyteller_id": "f9f2e7d9-056a-4533-8d25-a94bf68e9b6d",
@@ -8484,8 +8814,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 10,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:55.925Z",
-            "approved_at": "2026-04-13T04:07:55.925Z"
+            "opted_in_at": "2026-04-21T09:36:34.372Z",
+            "approved_at": "2026-04-21T09:36:34.372Z"
           }
         ],
         "stories": [
@@ -8511,7 +8841,7 @@
             "featured_as_hero": true,
             "relevance_score": null,
             "ai_reasoning": "Empathy Ledger sync snapshot from Content Hub.",
-            "story_url": "https://empathyledger.com/stories/ce620748-6b15-4497-a1f5-baef224d5bf1",
+            "story_url": "https://empathy-ledger-v2.vercel.app/stories/ce620748-6b15-4497-a1f5-baef224d5bf1",
             "content_url": null
           },
           {
@@ -8536,7 +8866,7 @@
             "featured_as_hero": false,
             "relevance_score": null,
             "ai_reasoning": "Empathy Ledger sync snapshot from Content Hub.",
-            "story_url": "https://empathyledger.com/stories/5f8a774a-6725-4ec0-b2c0-80f88c05e72d",
+            "story_url": "https://empathy-ledger-v2.vercel.app/stories/5f8a774a-6725-4ec0-b2c0-80f88c05e72d",
             "content_url": null
           },
           {
@@ -8561,7 +8891,7 @@
             "featured_as_hero": false,
             "relevance_score": null,
             "ai_reasoning": "Empathy Ledger sync snapshot from Content Hub.",
-            "story_url": "https://empathyledger.com/stories/37b2d916-85db-4ef2-ad65-d2e8a6a19ac0",
+            "story_url": "https://empathy-ledger-v2.vercel.app/stories/37b2d916-85db-4ef2-ad65-d2e8a6a19ac0",
             "content_url": null
           },
           {
@@ -8586,7 +8916,7 @@
             "featured_as_hero": false,
             "relevance_score": null,
             "ai_reasoning": "Empathy Ledger sync snapshot from Content Hub.",
-            "story_url": "https://empathyledger.com/stories/33d25ec6-2d88-4e00-9291-35df8589f8ab",
+            "story_url": "https://empathy-ledger-v2.vercel.app/stories/33d25ec6-2d88-4e00-9291-35df8589f8ab",
             "content_url": null
           },
           {
@@ -8612,7 +8942,7 @@
             "featured_as_hero": false,
             "relevance_score": null,
             "ai_reasoning": "Empathy Ledger sync snapshot from Content Hub.",
-            "story_url": "https://empathyledger.com/stories/31ac3a2c-6517-48b2-9f2b-26b8c5f8faef",
+            "story_url": "https://empathy-ledger-v2.vercel.app/stories/31ac3a2c-6517-48b2-9f2b-26b8c5f8faef",
             "content_url": null
           },
           {
@@ -8638,7 +8968,7 @@
             "featured_as_hero": false,
             "relevance_score": null,
             "ai_reasoning": "Empathy Ledger sync snapshot from Content Hub.",
-            "story_url": "https://empathyledger.com/stories/f3d6042b-3da8-4ee0-a1bc-f29b57df8ecf",
+            "story_url": "https://empathy-ledger-v2.vercel.app/stories/f3d6042b-3da8-4ee0-a1bc-f29b57df8ecf",
             "content_url": null
           }
         ]
@@ -9027,7 +9357,7 @@
         "story_count": 6,
         "media_count": 24,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:55.925Z",
+        "fetched_at": "2026-04-21T09:36:34.372Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -9057,8 +9387,8 @@
             "custom_tagline": "First Nations Australian",
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:07:56.619Z",
-            "approved_at": "2026-04-13T04:07:56.619Z"
+            "opted_in_at": "2026-04-21T09:36:34.483Z",
+            "approved_at": "2026-04-21T09:36:34.483Z"
           }
         ],
         "stories": []
@@ -9072,7 +9402,7 @@
         "story_count": 0,
         "media_count": 0,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:56.619Z",
+        "fetched_at": "2026-04-21T09:36:34.483Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -9475,13 +9805,18 @@
         "story_count": 0,
         "media_count": 24,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:07:58.275Z",
+        "fetched_at": "2026-04-21T09:36:36.417Z",
         "source": "content-hub",
         "site_slug": null
       }
     },
+    "community-capital-bowral-2025": null,
+    "community-capital-at-bcv": null,
     "confit-pathways": null,
+    "corporate-innovation-retreats": null,
     "custodian-economy": null,
+    "dad-lab-bcv-2025": null,
+    "dad-lab-at-bcv": null,
     "deadlylabs": null,
     "diagrama": {
       "project": {
@@ -9507,8 +9842,8 @@
             "custom_tagline": null,
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:08:00.075Z",
-            "approved_at": "2026-04-13T04:08:00.075Z"
+            "opted_in_at": "2026-04-21T09:36:40.529Z",
+            "approved_at": "2026-04-21T09:36:40.529Z"
           },
           {
             "storyteller_id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
@@ -9522,8 +9857,8 @@
             "custom_tagline": "First Nations Australian",
             "featured_priority": 2,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:08:00.075Z",
-            "approved_at": "2026-04-13T04:08:00.075Z"
+            "opted_in_at": "2026-04-21T09:36:40.529Z",
+            "approved_at": "2026-04-21T09:36:40.529Z"
           },
           {
             "storyteller_id": "a3988106-4165-4529-b0c2-074da2dfa537",
@@ -9537,8 +9872,8 @@
             "custom_tagline": null,
             "featured_priority": 3,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:08:00.075Z",
-            "approved_at": "2026-04-13T04:08:00.075Z"
+            "opted_in_at": "2026-04-21T09:36:40.529Z",
+            "approved_at": "2026-04-21T09:36:40.529Z"
           },
           {
             "storyteller_id": "51ed5b8f-3a3c-4638-97d3-a06839e51ec1",
@@ -9552,8 +9887,8 @@
             "custom_tagline": "British",
             "featured_priority": 4,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:08:00.075Z",
-            "approved_at": "2026-04-13T04:08:00.075Z"
+            "opted_in_at": "2026-04-21T09:36:40.529Z",
+            "approved_at": "2026-04-21T09:36:40.529Z"
           },
           {
             "storyteller_id": "9ee735fb-f9f7-48ae-bf1e-d814c9e8bfd2",
@@ -9567,8 +9902,8 @@
             "custom_tagline": "Spanish",
             "featured_priority": 5,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:08:00.075Z",
-            "approved_at": "2026-04-13T04:08:00.075Z"
+            "opted_in_at": "2026-04-21T09:36:40.529Z",
+            "approved_at": "2026-04-21T09:36:40.529Z"
           },
           {
             "storyteller_id": "5e6e4716-4c2b-484e-8273-1ecee8801350",
@@ -9582,8 +9917,8 @@
             "custom_tagline": "Spanish",
             "featured_priority": 6,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:08:00.075Z",
-            "approved_at": "2026-04-13T04:08:00.075Z"
+            "opted_in_at": "2026-04-21T09:36:40.529Z",
+            "approved_at": "2026-04-21T09:36:40.529Z"
           },
           {
             "storyteller_id": "3c70e3b9-d419-44d0-a2cd-5ac7e849711f",
@@ -9597,8 +9932,8 @@
             "custom_tagline": "Spanish",
             "featured_priority": 7,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:08:00.075Z",
-            "approved_at": "2026-04-13T04:08:00.075Z"
+            "opted_in_at": "2026-04-21T09:36:40.529Z",
+            "approved_at": "2026-04-21T09:36:40.529Z"
           },
           {
             "storyteller_id": "1c51f57e-82a4-469e-a065-eec85836a5b5",
@@ -9612,8 +9947,8 @@
             "custom_tagline": null,
             "featured_priority": 8,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:08:00.075Z",
-            "approved_at": "2026-04-13T04:08:00.075Z"
+            "opted_in_at": "2026-04-21T09:36:40.529Z",
+            "approved_at": "2026-04-21T09:36:40.529Z"
           },
           {
             "storyteller_id": "ee202ace-d18b-4d9f-bf2a-c700eb3480fa",
@@ -9627,8 +9962,8 @@
             "custom_tagline": null,
             "featured_priority": 9,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:08:00.075Z",
-            "approved_at": "2026-04-13T04:08:00.075Z"
+            "opted_in_at": "2026-04-21T09:36:40.529Z",
+            "approved_at": "2026-04-21T09:36:40.529Z"
           },
           {
             "storyteller_id": "e99b08c7-6ac0-4d01-9623-db0ca03f81c5",
@@ -9642,8 +9977,8 @@
             "custom_tagline": null,
             "featured_priority": 10,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:08:00.075Z",
-            "approved_at": "2026-04-13T04:08:00.075Z"
+            "opted_in_at": "2026-04-21T09:36:40.529Z",
+            "approved_at": "2026-04-21T09:36:40.529Z"
           }
         ],
         "stories": []
@@ -9657,13 +9992,16 @@
         "story_count": 0,
         "media_count": 0,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:08:00.075Z",
+        "fetched_at": "2026-04-21T09:36:40.529Z",
         "source": "content-hub",
         "site_slug": null
       }
     },
     "annual-field-service": null,
+    "empathy-ledger-storytelling-residency": null,
+    "facilitation": null,
     "feel-good-project": null,
+    "makers-weekend": null,
     "grantscope": {
       "project": {
         "slug": "grantscope",
@@ -9688,8 +10026,8 @@
             "custom_tagline": "First Nations Australian",
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-04-13T04:08:03.251Z",
-            "approved_at": "2026-04-13T04:08:03.251Z"
+            "opted_in_at": "2026-04-21T09:36:43.356Z",
+            "approved_at": "2026-04-21T09:36:43.356Z"
           }
         ],
         "stories": []
@@ -9703,7 +10041,477 @@
         "story_count": 0,
         "media_count": 0,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:08:03.251Z",
+        "fetched_at": "2026-04-21T09:36:43.356Z",
+        "source": "content-hub",
+        "site_slug": null
+      }
+    },
+    "harvest-pairings": null,
+    "industry-residency-at-the-harvest": null,
+    "innovation-sessions": null,
+    "judges-on-country": null,
+    "junes-patch-healthcare-retreat": null,
+    "junes-patch-year-one-2025": null,
+    "justicehub-centre-of-excellence": {
+      "project": {
+        "slug": "justicehub-centre-of-excellence",
+        "title": "JusticeHub Centre of Excellence",
+        "organization": "A Curious Tractor",
+        "focus_areas": null,
+        "themes": null,
+        "project_id": null,
+        "organization_id": "db0de7bd-eb10-446b-99e9-0f3b7c199b8a"
+      },
+      "featured": {
+        "storytellers": [
+          {
+            "storyteller_id": "dcbdaa70-1871-46e5-b77b-9dad0d0a8894",
+            "full_name": "Ade Rizer",
+            "display_name": "Ade Rizer",
+            "bio": "Ade Rizer is a compassionate youth advocate and leader, passionately dedicated to fostering safe and nurturing environments for children. With a unique blend of basketball and mentorship, Ade transforms traditional spaces into havens where young minds can grow and express themselves. Despite limited resources, they ingeniously leverage community support to provide tailored guidance and develop essential programs for youths aged 12 to 18. Ade's commitment to empowering children, especially those facing crowded and challenging home situations, is unwavering, as they continuously seek innovative solutions and collaborations to enhance the emotional well-being of the kids they serve.",
+            "profile_image_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/profile-images/storytellers/ade_rizer.jpg",
+            "current_organization": null,
+            "current_role": null,
+            "featured_bio": "Ade Rizer is a compassionate youth advocate and leader, passionately dedicated to fostering safe and nurturing environments for children. With a unique blend of basketball and mentorship, Ade transforms traditional spaces into havens where young minds can grow and express themselves. Despite limited resources, they ingeniously leverage community support to provide tailored guidance and develop essential programs for youths aged 12 to 18. Ade's commitment to empowering children, especially those facing crowded and challenging home situations, is unwavering, as they continuously seek innovative solutions and collaborations to enhance the emotional well-being of the kids they serve.",
+            "custom_tagline": null,
+            "featured_priority": 1,
+            "featured_story_count": 0,
+            "opted_in_at": "2026-04-21T09:36:49.582Z",
+            "approved_at": "2026-04-21T09:36:49.582Z"
+          },
+          {
+            "storyteller_id": "13742d49-901e-4c08-94b2-a864d1a9a8e9",
+            "full_name": "G Mana",
+            "display_name": "G Mana",
+            "bio": "G Mana is a dedicated cultural ambassador from the Wato tribe of New Zealand, with ancestral roots in the sacred lands of Waikato. Deeply shaped by the teachings of his grandmother and the principles of Tikanga, he carries with him a profound sense of humility and reverence as he navigates life across borders. G Mana has fostered connections with Indigenous communities in Australia, being warmly embraced and adopted by local elders. His rich journey involves sharing stories, listening to the deep pains and hopes of his hosts, and nurturing young people, all while honoring the sacred lands and cultures he engages with.",
+            "profile_image_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/profile-images/storytellers/g_mana.jpg",
+            "current_organization": null,
+            "current_role": null,
+            "featured_bio": "G Mana is a dedicated cultural ambassador from the Wato tribe of New Zealand, with ancestral roots in the sacred lands of Waikato. Deeply shaped by the teachings of his grandmother and the principles of Tikanga, he carries with him a profound sense of humility and reverence as he navigates life across borders. G Mana has fostered connections with Indigenous communities in Australia, being warmly embraced and adopted by local elders. His rich journey involves sharing stories, listening to the deep pains and hopes of his hosts, and nurturing young people, all while honoring the sacred lands and cultures he engages with.",
+            "custom_tagline": "Māori, cross-cultural Indigenous knowledge holder",
+            "featured_priority": 2,
+            "featured_story_count": 0,
+            "opted_in_at": "2026-04-21T09:36:49.582Z",
+            "approved_at": "2026-04-21T09:36:49.582Z"
+          },
+          {
+            "storyteller_id": "7a0cd28a-ad12-4f70-b900-d869b42c9f88",
+            "full_name": "Laquisha",
+            "display_name": "Laquisha",
+            "bio": "Laquisha is a young Aboriginal woman from Alice Springs who shares her lived experience of the youth justice system with honesty and courage. Her account of court proceedings, detention, and the pressures facing young people provides critical insight into the realities of Aboriginal youth in Central Australia.",
+            "profile_image_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774045077303-1E5A2239-2.jpg",
+            "current_organization": null,
+            "current_role": null,
+            "featured_bio": "Laquisha is a young Aboriginal woman from Alice Springs who shares her lived experience of the youth justice system with honesty and courage. Her account of court proceedings, detention, and the pressures facing young people provides critical insight into the realities of Aboriginal youth in Central Australia.",
+            "custom_tagline": "Indigenous",
+            "featured_priority": 3,
+            "featured_story_count": 0,
+            "opted_in_at": "2026-04-21T09:36:49.582Z",
+            "approved_at": "2026-04-21T09:36:49.582Z"
+          },
+          {
+            "storyteller_id": "8dab91aa-3a1f-4128-b41d-b89e532be1fa",
+            "full_name": "Nigel",
+            "display_name": "Nigel",
+            "bio": null,
+            "profile_image_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/projects/81bdb028-7855-4682-b501-b727f24e0d6d/media/1770942256899_Screenshot_2026-02-13_at_10.22.18_am.png",
+            "current_organization": null,
+            "current_role": null,
+            "featured_bio": null,
+            "custom_tagline": "Australian",
+            "featured_priority": 4,
+            "featured_story_count": 0,
+            "opted_in_at": "2026-04-21T09:36:49.582Z",
+            "approved_at": "2026-04-21T09:36:49.582Z"
+          }
+        ],
+        "stories": []
+      },
+      "media": {
+        "items": [
+          {
+            "id": "d759752d-8162-4041-b59c-601e72bdec4c",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/galleries/c9445b2a-375d-436b-a1e7-b96de3b2a0eb/1769459504514-6m1kr-IMG_5114.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/galleries/c9445b2a-375d-436b-a1e7-b96de3b2a0eb/1769459504514-6m1kr-IMG_5114.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/galleries/c9445b2a-375d-436b-a1e7-b96de3b2a0eb/1769459504514-6m1kr-IMG_5114.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "IMG_5114",
+            "alt": "IMG_5114",
+            "caption": null,
+            "credit": null,
+            "is_hero": true,
+            "is_featured": true,
+            "source": "content-hub"
+          },
+          {
+            "id": "f0f98f23-d5a5-48cd-9b6b-e187fe2cb70a",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072641384-1E5A2159.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072641384-1E5A2159.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072641384-1E5A2159.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 1E5A2159.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "7c23b3dc-0f88-4ec9-8ade-3342f8d23e3d",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072640325-1E5A2170.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072640325-1E5A2170.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072640325-1E5A2170.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 1E5A2170.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "49b59525-dce7-4067-b655-8f157934c7a0",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072639291-1E5A2172.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072639291-1E5A2172.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072639291-1E5A2172.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 1E5A2172.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "d32130c0-43d9-42cd-bfad-b88a5a0ae1d2",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072638266-1E5A2183.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072638266-1E5A2183.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072638266-1E5A2183.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 1E5A2183.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "ad9ef95c-1997-4f95-abe4-646a1ac67b27",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072636943-1E5A2190.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072636943-1E5A2190.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072636943-1E5A2190.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 1E5A2190.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "e9b0d1e6-ba3f-4435-854b-8dcec9d7b874",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072635078-1E5A2194.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072635078-1E5A2194.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072635078-1E5A2194.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 1E5A2194.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "0c45b7f4-457b-4337-9642-b851ff16dd85",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072632636-Nigel.mp3",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072632636-Nigel.mp3",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072632636-Nigel.mp3",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Audio: Nigel.mp3",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "52befe38-69bc-46b4-95fa-98e273c27afc",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072633011-1E5A2196.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072633011-1E5A2196.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072633011-1E5A2196.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 1E5A2196.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "ae236d0c-1115-4486-8a8e-eea7dd41e1ac",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072631265-1E5A2226.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072631265-1E5A2226.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072631265-1E5A2226.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 1E5A2226.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "68f6f646-d33f-4f2d-90a3-66ad8f2179da",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072629644-1E5A2208.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072629644-1E5A2208.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072629644-1E5A2208.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 1E5A2208.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "4e000562-c653-4f2a-ab30-35ce7da12f67",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072627985-1E5A2212.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072627985-1E5A2212.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072627985-1E5A2212.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 1E5A2212.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "1fd93a5b-e177-476f-a0c3-96933340fbd1",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774045248510-Laquisha.mp3",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774045248510-Laquisha.mp3",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774045248510-Laquisha.mp3",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Audio: Laquisha.mp3",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "2691eb3e-2121-4181-9089-3fbf9783d06e",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774045087229-Laquisha.mp3",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774045087229-Laquisha.mp3",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774045087229-Laquisha.mp3",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Audio: Laquisha.mp3",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "e1d7dfa1-eb18-4be4-a01f-f1a18da7cbc2",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774045078647-1E5A2233.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774045078647-1E5A2233.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774045078647-1E5A2233.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 1E5A2233.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "cb5c8ccf-1e50-4bea-953f-723edba14c82",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774045077303-1E5A2239-2.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774045077303-1E5A2239-2.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774045077303-1E5A2239-2.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 1E5A2239-2.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "8fec57b9-0730-410f-849c-09fb0deae94d",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774045075535-1E5A2239.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774045075535-1E5A2239.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774045075535-1E5A2239.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 1E5A2239.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "e0234a1e-b07e-4de0-8848-ddbf4b6b02ab",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1773632810168_IMG_2111.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1773632810168_IMG_2111.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1773632810168_IMG_2111.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "IMG_2111.HEIC",
+            "alt": "IMG_2111.HEIC",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "9cc39e1a-b5ac-4c1b-892d-1317f8ba922f",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1773632809212_IMG_2112.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1773632809212_IMG_2112.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1773632809212_IMG_2112.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "IMG_2112.HEIC",
+            "alt": "IMG_2112.HEIC",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "51d9afeb-83f0-48cf-b4ec-af60f6ac248e",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1773632808342_IMG_2119.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1773632808342_IMG_2119.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1773632808342_IMG_2119.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "IMG_2119.HEIC",
+            "alt": "IMG_2119.HEIC",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "29530a6d-c6f4-47fc-bdeb-05ec5204b82e",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1773632807445_IMG_2120.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1773632807445_IMG_2120.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1773632807445_IMG_2120.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "IMG_2120.HEIC",
+            "alt": "IMG_2120.HEIC",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "83c00e11-05ca-48cb-ba6c-a33ea31da796",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1773632806315_IMG_4402.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1773632806315_IMG_4402.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1773632806315_IMG_4402.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "IMG_4402.HEIC",
+            "alt": "IMG_4402.HEIC",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "5669c9da-d6da-403b-b9f5-048e9d645781",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1773632805360_IMG_4417.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1773632805360_IMG_4417.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1773632805360_IMG_4417.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "IMG_4417.HEIC",
+            "alt": "IMG_4417.HEIC",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "91a674ac-54b4-4e54-ae5c-7ed1ef26c44b",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1773632803692_IMG_4557.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1773632803692_IMG_4557.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1773632803692_IMG_4557.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "IMG_4557.HEIC",
+            "alt": "IMG_4557.HEIC",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          }
+        ],
+        "hero": {
+          "id": "d759752d-8162-4041-b59c-601e72bdec4c",
+          "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/galleries/c9445b2a-375d-436b-a1e7-b96de3b2a0eb/1769459504514-6m1kr-IMG_5114.jpg",
+          "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/galleries/c9445b2a-375d-436b-a1e7-b96de3b2a0eb/1769459504514-6m1kr-IMG_5114.jpg",
+          "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/galleries/c9445b2a-375d-436b-a1e7-b96de3b2a0eb/1769459504514-6m1kr-IMG_5114.jpg",
+          "type": "image",
+          "kind": "image",
+          "title": "IMG_5114",
+          "alt": "IMG_5114",
+          "caption": null,
+          "credit": null,
+          "is_hero": true,
+          "is_featured": true,
+          "source": "content-hub"
+        }
+      },
+      "meta": {
+        "storyteller_count": 4,
+        "story_count": 0,
+        "media_count": 24,
+        "gallery_count": 0,
+        "fetched_at": "2026-04-21T09:36:49.582Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -9712,6 +10520,7 @@
     "minderoo-pitch-package": null,
     "picc": null,
     "place-based-policy-lab": null,
+    "radical-scoops-at-the-harvest": null,
     "redtape": {
       "project": {
         "slug": "redtape",
@@ -10110,16 +10919,719 @@
         "story_count": 0,
         "media_count": 24,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:08:04.083Z",
+        "fetched_at": "2026-04-21T09:36:48.529Z",
         "source": "content-hub",
         "site_slug": null
       }
     },
     "resoleution": null,
+    "smart-recovery": {
+      "project": {
+        "slug": "smart-recovery",
+        "title": "SMART Recovery",
+        "organization": "A Curious Tractor",
+        "focus_areas": null,
+        "themes": null,
+        "project_id": null,
+        "organization_id": "db0de7bd-eb10-446b-99e9-0f3b7c199b8a"
+      },
+      "featured": {
+        "storytellers": [],
+        "stories": []
+      },
+      "media": {
+        "items": [
+          {
+            "id": "8aa649e9-2000-4a83-9962-1f0e1af497ee",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506966272-IMG_8544.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506966272-IMG_8544.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506966272-IMG_8544.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: IMG_8544.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": true,
+            "is_featured": true,
+            "source": "content-hub"
+          },
+          {
+            "id": "6cbdfbbb-afd7-442e-aa81-628282832305",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506964856-IMG_8543.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506964856-IMG_8543.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506964856-IMG_8543.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: IMG_8543.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "315e9f50-c99e-40eb-815e-b26a342e2d35",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506963540-IMG_8541.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506963540-IMG_8541.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506963540-IMG_8541.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: IMG_8541.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "5ab7468e-299e-442d-b538-969f6e32e037",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506962308-IMG_8539.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506962308-IMG_8539.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506962308-IMG_8539.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: IMG_8539.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "44886616-cf33-479d-aa1b-83fbe1d1a59d",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506961000-IMG_8537.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506961000-IMG_8537.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506961000-IMG_8537.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: IMG_8537.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "48397bc3-7e70-4000-b731-12a3b1d9f3e4",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506959733-IMG_8536.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506959733-IMG_8536.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506959733-IMG_8536.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: IMG_8536.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "2b639468-7ce9-44b7-815c-407dd48a58ea",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506958312-IMG_8535.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506958312-IMG_8535.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506958312-IMG_8535.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: IMG_8535.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "79b55f53-bd20-41cf-af51-eedaa1415632",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506957016-IMG_8534.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506957016-IMG_8534.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506957016-IMG_8534.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: IMG_8534.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "de8707a6-97cd-46f8-9f18-4a10c454d3fb",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506955717-IMG_8533.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506955717-IMG_8533.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506955717-IMG_8533.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: IMG_8533.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "c44ce0ec-9e96-4668-a1a6-46ea476d21ba",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506954357-IMG_8532.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506954357-IMG_8532.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506954357-IMG_8532.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: IMG_8532.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "de1ceada-59c6-40ba-9a75-4f2450b5ded1",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506952829-IMG_8531.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506952829-IMG_8531.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506952829-IMG_8531.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: IMG_8531.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "997e8540-fe58-4b88-8574-a0c6c4d84f0b",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506951628-IMG_8530.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506951628-IMG_8530.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506951628-IMG_8530.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: IMG_8530.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "5702000c-3f38-4fe7-b528-d778bae311e4",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506950400-IMG_8529.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506950400-IMG_8529.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506950400-IMG_8529.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: IMG_8529.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "4506ea00-9124-4e07-b1e6-82868891feee",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506949183-IMG_8528.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506949183-IMG_8528.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506949183-IMG_8528.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: IMG_8528.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "521dff8a-77df-4fd8-b547-adfbb22c004e",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506947973-IMG_8527.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506947973-IMG_8527.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506947973-IMG_8527.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: IMG_8527.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "92b87f5f-bad6-457b-949e-360c5cddf48e",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506946644-IMG_8526.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506946644-IMG_8526.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506946644-IMG_8526.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: IMG_8526.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "2c467e72-53c8-48eb-b651-7620ac186bb2",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506944872-IMG_8525.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506944872-IMG_8525.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506944872-IMG_8525.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: IMG_8525.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          }
+        ],
+        "hero": {
+          "id": "8aa649e9-2000-4a83-9962-1f0e1af497ee",
+          "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506966272-IMG_8544.jpg",
+          "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506966272-IMG_8544.jpg",
+          "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775506966272-IMG_8544.jpg",
+          "type": "image",
+          "kind": "image",
+          "title": null,
+          "alt": "Image: IMG_8544.jpg",
+          "caption": null,
+          "credit": null,
+          "is_hero": true,
+          "is_featured": true,
+          "source": "content-hub"
+        }
+      },
+      "meta": {
+        "storyteller_count": 0,
+        "story_count": 0,
+        "media_count": 17,
+        "gallery_count": 0,
+        "fetched_at": "2026-04-21T09:36:52.275Z",
+        "source": "content-hub",
+        "site_slug": null
+      }
+    },
     "staying": null,
+    "stays": null,
     "the-brave-ones": null,
-    "the-caravan": null,
+    "the-caravan": {
+      "project": {
+        "slug": "the-caravan",
+        "title": "The Caravan",
+        "organization": "A Curious Tractor",
+        "focus_areas": null,
+        "themes": null,
+        "project_id": null,
+        "organization_id": "db0de7bd-eb10-446b-99e9-0f3b7c199b8a"
+      },
+      "featured": {
+        "storytellers": [],
+        "stories": []
+      },
+      "media": {
+        "items": [
+          {
+            "id": "b4895acc-8a1c-4284-8ef0-efff4a4cc2b6",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728258377-20260225-1E5A1754.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728258377-20260225-1E5A1754.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728258377-20260225-1E5A1754.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1754.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": true,
+            "is_featured": true,
+            "source": "content-hub"
+          },
+          {
+            "id": "73b33c6c-d041-4c76-9b76-c2f4d07fe089",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728255205-20260225-1E5A1851.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728255205-20260225-1E5A1851.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728255205-20260225-1E5A1851.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1851.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "9157f069-f8b8-4422-85ef-87687a8a2096",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728253177-20260225-1E5A1836.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728253177-20260225-1E5A1836.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728253177-20260225-1E5A1836.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1836.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "15482e88-f101-4d44-826a-6a50d5b8eeff",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728251048-20260225-1E5A1827.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728251048-20260225-1E5A1827.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728251048-20260225-1E5A1827.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1827.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "34928554-265b-4e99-a60f-6e16858f7330",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728248497-20260225-1E5A1815.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728248497-20260225-1E5A1815.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728248497-20260225-1E5A1815.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1815.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "bc22e312-9e96-4400-a571-2ceee0d20bc6",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728245885-20260225-1E5A1798.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728245885-20260225-1E5A1798.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728245885-20260225-1E5A1798.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1798.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "7cb31069-9fb7-4bc1-831d-0d67ebfaba5b",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728243337-20260225-1E5A1792.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728243337-20260225-1E5A1792.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728243337-20260225-1E5A1792.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1792.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "984ba7a9-f7ad-4c6f-9ffb-425a84cad5be",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728240770-20260225-1E5A1789.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728240770-20260225-1E5A1789.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728240770-20260225-1E5A1789.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1789.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "69d46514-13a5-46b8-9ba2-a48887e09cc6",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728237788-20260225-1E5A1786.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728237788-20260225-1E5A1786.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728237788-20260225-1E5A1786.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1786.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "0077d83b-27a9-499a-aa07-1979eba5799c",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728235053-20260225-1E5A1783.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728235053-20260225-1E5A1783.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728235053-20260225-1E5A1783.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1783.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "4f7f8657-6f69-41a1-93f4-33e210980e06",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728232194-20260225-1E5A1779.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728232194-20260225-1E5A1779.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728232194-20260225-1E5A1779.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1779.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "52b6492f-7b67-438e-90da-a2a3a7f7cdec",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728229728-20260225-1E5A1776.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728229728-20260225-1E5A1776.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728229728-20260225-1E5A1776.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1776.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "e735170f-114d-4ed6-8ea6-149997aac287",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728227104-20260225-1E5A1753.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728227104-20260225-1E5A1753.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728227104-20260225-1E5A1753.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1753.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "08dad018-43d8-4ae8-9f93-2045fc104c98",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728224453-20260225-1E5A1767.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728224453-20260225-1E5A1767.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728224453-20260225-1E5A1767.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1767.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "0c3622df-aace-481b-a645-46455c348560",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728222061-20260225-1E5A1765.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728222061-20260225-1E5A1765.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728222061-20260225-1E5A1765.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1765.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "70be662f-1e1c-4a68-a516-d6ffac2266e7",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728219763-20260225-1E5A1762.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728219763-20260225-1E5A1762.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728219763-20260225-1E5A1762.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1762.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "53e84d18-08d0-4292-8d3f-1f6ed0969528",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728217164-20260225-1E5A1761.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728217164-20260225-1E5A1761.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728217164-20260225-1E5A1761.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1761.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "dc1e1897-6c38-45d3-9699-231eab71cc39",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728215022-20260225-1E5A1760.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728215022-20260225-1E5A1760.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728215022-20260225-1E5A1760.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1760.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "23467557-81db-4bb0-97b1-64037f8e9094",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728212888-20260225-1E5A1759.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728212888-20260225-1E5A1759.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728212888-20260225-1E5A1759.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1759.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "c12c5665-51f7-4062-9c84-c0d953bd28dc",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728210413-20260225-1E5A1758.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728210413-20260225-1E5A1758.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728210413-20260225-1E5A1758.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1758.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "aaa12f78-7c9f-4ef9-b5d6-e19e3a456315",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728208632-20260225-1E5A1757.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728208632-20260225-1E5A1757.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728208632-20260225-1E5A1757.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1757.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "0a6f5a3e-343f-4322-9965-48336b8f81f7",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728206751-20260225-1E5A1756.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728206751-20260225-1E5A1756.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728206751-20260225-1E5A1756.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1756.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "05ad3b32-426a-4735-85b3-c5e092236b48",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728204565-20260225-1E5A1755.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728204565-20260225-1E5A1755.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728204565-20260225-1E5A1755.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1755.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "289b9bbb-9bc5-4292-8b0b-65464c3babbe",
+            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728201117-20260225-1E5A1754.jpg",
+            "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728201117-20260225-1E5A1754.jpg",
+            "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728201117-20260225-1E5A1754.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": null,
+            "alt": "Image: 20260225-1E5A1754.jpg",
+            "caption": null,
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          }
+        ],
+        "hero": {
+          "id": "b4895acc-8a1c-4284-8ef0-efff4a4cc2b6",
+          "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728258377-20260225-1E5A1754.jpg",
+          "thumbnail_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728258377-20260225-1E5A1754.jpg",
+          "preview_url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1776728258377-20260225-1E5A1754.jpg",
+          "type": "image",
+          "kind": "image",
+          "title": null,
+          "alt": "Image: 20260225-1E5A1754.jpg",
+          "caption": null,
+          "credit": null,
+          "is_hero": true,
+          "is_featured": true,
+          "source": "content-hub"
+        }
+      },
+      "meta": {
+        "storyteller_count": 0,
+        "story_count": 0,
+        "media_count": 24,
+        "gallery_count": 0,
+        "fetched_at": "2026-04-21T09:36:52.267Z",
+        "source": "content-hub",
+        "site_slug": null
+      }
+    },
+    "the-caravan-at-bcv": null,
     "the-full-idea": null,
+    "the-space-at-bcv": null,
     "three-circles": null,
     "the-vagina": null,
     "treacher": {
@@ -10295,10 +11807,11 @@
         "story_count": 0,
         "media_count": 9,
         "gallery_count": 0,
-        "fetched_at": "2026-04-13T04:08:07.866Z",
+        "fetched_at": "2026-04-21T09:36:55.160Z",
         "source": "content-hub",
         "site_slug": null
       }
-    }
+    },
+    "workshops-at-bcv": null
   }
 }

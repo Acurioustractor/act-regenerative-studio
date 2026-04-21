@@ -24,7 +24,7 @@ export default function AskPage() {
             What to ask
           </p>
           <p>
-            Practical questions about projects, methods, places, and the language we use. For sensitive or internal matters, this isn&rsquo;t the right channel &mdash; reach out directly instead.
+            Practical questions about projects, methods, places, and the language we use. For sensitive or internal matters, this isn&rsquo;t the right channel, reach out directly instead.
           </p>
         </div>
       </PageHero>

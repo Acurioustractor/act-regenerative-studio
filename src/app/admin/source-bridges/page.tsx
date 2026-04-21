@@ -44,7 +44,7 @@ export default async function SourceBridgesPage() {
       <PageHero
         eyebrow="How this site stays current"
         title="Pages here point back to the work they came from"
-        description="Most pages on this site are composed from the ACT wiki, partner platforms, and the live story system. This page lists the trail — so you can see where a claim, a number, or a quote actually originates."
+        description="Most pages on this site are composed from the ACT wiki, partner platforms, and the live story system. This page lists the trail, so you can see where a claim, a number, or a quote actually originates."
         actions={[
           { label: 'Browse the ecosystem', href: '/ecosystem' },
           { label: 'See stories', href: '/admin/source-packets', variant: 'outline' },
@@ -55,8 +55,8 @@ export default async function SourceBridgesPage() {
             Why this matters
           </p>
           <p className="text-sm leading-7 text-[var(--we-brown)]">
-            ACT works in the open. When the website makes a claim — about a project's outcomes,
-            a partnership, or a methodology — you should be able to follow it back to a wiki
+            ACT works in the open. When the website makes a claim, about a project's outcomes,
+            a partnership, or a methodology, you should be able to follow it back to a wiki
             entry, a community story, or an implementation repo. This page is that trail.
           </p>
         </div>

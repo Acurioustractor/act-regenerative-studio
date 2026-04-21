@@ -48,14 +48,14 @@ export default function UnifiedFooter({
               </h3>
             </div>
             <p className="max-w-sm text-sm leading-7 text-[#e0d4c4]">
-              A regenerative innovation studio stewarding a working farm on
+              A regenerative innovation studio stewarding a farm on
               Jinibara Country. We cultivate seeds of impact through listening,
               curiosity, action, and art.
             </p>
 
             {/* Custom Links */}
             {customLinks.length > 0 && (
-              <nav aria-label="Footer — quick links" className="space-y-2 pt-4">
+              <nav aria-label="Footer, quick links" className="space-y-2 pt-4">
                 {customLinks.map((link) => (
                   <Link
                     key={link.href}
@@ -75,7 +75,7 @@ export default function UnifiedFooter({
               <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-[#dbc5a6]">
                 Fields of practice
               </h3>
-              <nav aria-label="Footer — fields of practice" className="space-y-3">
+              <nav aria-label="Footer, fields of practice" className="space-y-3">
                 {fieldLinks.map((project) => (
                   <Link key={project.href} href={project.href} className="group block">
                     <div className="flex items-center gap-1.5 text-sm font-medium text-[#f2e8d9] transition group-hover:text-[#9cd09e]">
@@ -106,12 +106,12 @@ export default function UnifiedFooter({
             </div>
           )}
 
-          {/* Column 3: Studio — identity, governance, partners */}
+          {/* Column 3: Studio, identity, governance, partners */}
           <div className="space-y-4">
             <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-[#dbc5a6]">
               Studio
             </h3>
-            <nav aria-label="Footer — studio" className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-[#e0d4c4]">
+            <nav aria-label="Footer, studio" className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-[#e0d4c4]">
               {[
                 { label: 'About', href: '/about' },
                 { label: 'Vision', href: '/vision' },

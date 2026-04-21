@@ -12,7 +12,7 @@ import {
 export const metadata = {
   title: "Art",
   description:
-    "Installations, photography, film, sculpture — art as the final act of listening. Works from across the ACT ecosystem.",
+    "Installations, photography, film, sculpture, art as the final act of listening. Works from across the ACT ecosystem.",
 };
 
 function formatMedium(medium: ArtMedium): string {
@@ -243,10 +243,10 @@ export default async function ArtPage() {
             If art isn&apos;t being made and stories aren&apos;t being told, the whole system dies.
           </h1>
           <p className="max-w-2xl text-lg leading-8 text-[#D7C8B2] md:text-xl">
-            Installation, photography, film, sculpture, performance &mdash; art as the final act of listening.
+            Installation, photography, film, sculpture, performance, art as the final act of listening.
           </p>
           <p className="max-w-2xl text-[0.92rem] leading-7 text-[#9F927F]">
-            Every project in the ACT ecosystem follows the same path: Listen, then get curious, then act, then make art. These are the works that emerge at the end of that journey &mdash; where research, community trust, and lived experience become something you can see, hear, enter, or hold.
+            Every project in the ACT ecosystem follows the same path: Listen, then get curious, then act, then make art. These are the works that emerge at the end of that journey, where research, community trust, and lived experience become something you can see, hear, enter, or hold.
           </p>
           <div className="flex flex-wrap gap-6 pt-4">
             <div>
@@ -341,7 +341,7 @@ export default async function ArtPage() {
             Listen &middot; Curiosity &middot; Action &middot; Art
           </h2>
           <p className="text-[0.97rem] leading-8 text-[var(--we-brown)]">
-            Art is not where ACT starts. It is where the process arrives after listening has earned trust, curiosity has surfaced what matters, and action has built something real. The art carries the story of what was learned, heard, and tested &mdash; not as illustration, but as a form that can move through public life on its own terms.
+            Art is not where ACT starts. It is where the process arrives after listening has earned trust, curiosity has surfaced what matters, and action has built something real. The art carries the story of what was learned, heard, and tested, not as illustration, but as a form that can move through public life on its own terms.
           </p>
           <div className="mt-8 grid gap-4 sm:grid-cols-4">
             {[
@@ -403,7 +403,7 @@ export default async function ArtPage() {
             <p className="max-w-xl text-sm leading-7 text-[#D7C8B2]">
               If you have a story that needs a form, a place that needs an
               intervention, or an institution that needs to feel something
-              differently &mdash; the studio takes commissions, residencies, and
+              differently, the studio takes commissions, residencies, and
               collaborations.
             </p>
           </div>

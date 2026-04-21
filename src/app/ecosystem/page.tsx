@@ -9,7 +9,7 @@ import { studioProjectConfigs } from "@/lib/projects/studio-project-configs";
 export const metadata = {
   title: "Ecosystem | A Curious Tractor",
   description:
-    "Six public works across land, food, justice, storytelling, and art — grounded on Jinibara Country and held together by a single long conversation with place.",
+    "Six public works across land, food, justice, storytelling, and art, grounded on Jinibara Country and held together by a single long conversation with place.",
 };
 
 export default async function EcosystemPage() {
@@ -116,7 +116,7 @@ export default async function EcosystemPage() {
             </h2>
             <p className="max-w-2xl text-sm leading-7 text-[#D7C8B2]">
               Numbers straight from the community platforms people are actually
-              using. Not a marketing snapshot — what&rsquo;s moving this week.
+              using. Not a marketing snapshot, what&rsquo;s moving this week.
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
@@ -167,7 +167,7 @@ export default async function EcosystemPage() {
             {
               title: "Projects",
               description:
-                "The public fields of practice — land, food, goods, justice, story.",
+                "The public fields of practice, land, food, goods, justice, story.",
               href: "/projects",
               cta: "Open projects",
             },
@@ -181,7 +181,7 @@ export default async function EcosystemPage() {
             {
               title: "Storytellers",
               description:
-                "The people the work comes through — their stories, carried with consent.",
+                "The people the work comes through, their stories, carried with consent.",
               href: "/storytellers",
               cta: "Meet storytellers",
             },

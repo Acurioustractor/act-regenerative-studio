@@ -76,11 +76,11 @@ export default async function JusticeHubPage() {
       <ExternalHandoffCard
         platformName="JusticeHub"
         url="https://justicehub.com.au"
-        whatHappensThere="the evidence library, program directory, and justice network actually live — searchable, forkable, open"
+        whatHappensThere="the evidence library, program directory, and justice network actually live, searchable, forkable, open"
         whyComeBack="the story behind the data and why this work matters"
       />
 
-      {/* ——— THE WHY ——— */}
+      {/* , , ,  THE WHY , , ,  */}
       <ScrollReveal>
         <ReadingLede id="story">
           Youth detention costs $1.3 million per child per year and has an
@@ -91,7 +91,7 @@ export default async function JusticeHubPage() {
         </ReadingLede>
       </ScrollReveal>
 
-      {/* ——— FULL-BLEED PHOTO ——— */}
+      {/* , , ,  FULL-BLEED PHOTO , , ,  */}
       <PhotoBreak>
         <EditableImage
           src="/media/field-stills/justicehub-community.jpg"
@@ -113,7 +113,7 @@ export default async function JusticeHubPage() {
         </ScrollReveal>
       ) : null}
 
-      {/* ——— THE ECONOMIC CASE ——— */}
+      {/* , , ,  THE ECONOMIC CASE , , ,  */}
       <ScrollReveal>
         <EditorialSplit
           left={
@@ -140,7 +140,7 @@ export default async function JusticeHubPage() {
         />
       </ScrollReveal>
 
-      {/* ——— VIDEO ——— */}
+      {/* , , ,  VIDEO , , ,  */}
       {project.coverVideo && (
         <ScrollReveal>
           <section className="px-8 pb-16">
@@ -155,7 +155,7 @@ export default async function JusticeHubPage() {
         </ScrollReveal>
       )}
 
-      {/* ——— STATS ——— */}
+      {/* , , ,  STATS , , ,  */}
       <ScrollReveal>
         <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[1200px]">
@@ -173,7 +173,7 @@ export default async function JusticeHubPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— THREE PATHWAYS ——— */}
+      {/* , , ,  THREE PATHWAYS , , ,  */}
       <ScrollReveal>
         <section className="px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[1200px]">
@@ -199,7 +199,7 @@ export default async function JusticeHubPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— PHOTO BREAK ——— */}
+      {/* , , ,  PHOTO BREAK , , ,  */}
       <PhotoBreak>
         <EditableImage
           src="/media/field-stills/justicehub-field.jpg"
@@ -210,7 +210,7 @@ export default async function JusticeHubPage() {
         />
       </PhotoBreak>
 
-      {/* ——— ALMA ——— */}
+      {/* , , ,  ALMA , , ,  */}
       <ScrollReveal>
         <EditorialSplit
           bg="surface"
@@ -251,7 +251,7 @@ export default async function JusticeHubPage() {
         />
       </ScrollReveal>
 
-      {/* ——— LOCAL PROOF POINTS ——— */}
+      {/* , , ,  LOCAL PROOF POINTS , , ,  */}
       <ScrollReveal>
         <section className="px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[1200px]">
@@ -278,7 +278,7 @@ export default async function JusticeHubPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— PHOTO STRIP ——— */}
+      {/* , , ,  PHOTO STRIP , , ,  */}
       {galleryImages.length >= 6 && (
         <section className="px-8 py-8">
           <div className="mx-auto max-w-[1200px]">
@@ -287,7 +287,7 @@ export default async function JusticeHubPage() {
         </section>
       )}
 
-      {/* ——— THE VISION — Capital routing ——— */}
+      {/* , , ,  THE VISION, Capital routing , , ,  */}
       <ScrollReveal>
         <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[800px]">
@@ -314,7 +314,7 @@ export default async function JusticeHubPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— PHOTO BREAK ——— */}
+      {/* , , ,  PHOTO BREAK , , ,  */}
       <PhotoBreak>
         <EditableImage
           src="/media/field-stills/justicehub-community-2.jpg"
@@ -325,7 +325,7 @@ export default async function JusticeHubPage() {
         />
       </PhotoBreak>
 
-      {/* ——— PEOPLE ——— */}
+      {/* , , ,  PEOPLE , , ,  */}
       {portraitPeople.length >= 2 && (
         <ScrollReveal>
           <section className="px-8 py-32 md:py-44">
@@ -362,7 +362,7 @@ export default async function JusticeHubPage() {
         </ScrollReveal>
       )}
 
-      {/* ——— STORYTELLERS (fallback) ——— */}
+      {/* , , ,  STORYTELLERS (fallback) , , ,  */}
       {portraitPeople.length < 2 && (storytellers.length + stories.length >= 2) && (
         <ScrollReveal>
           <section className="full-bleed bg-[var(--site-surface)] px-8 py-32 md:py-44">
@@ -387,7 +387,7 @@ export default async function JusticeHubPage() {
         </ScrollReveal>
       )}
 
-      {/* ——— GALLERY ——— */}
+      {/* , , ,  GALLERY , , ,  */}
       {galleryImages.length > 4 && (
         <ScrollReveal>
           <section className="px-8 py-32 md:py-44">
@@ -405,7 +405,7 @@ export default async function JusticeHubPage() {
         </ScrollReveal>
       )}
 
-      {/* ——— BIG CTA ——— */}
+      {/* , , ,  BIG CTA , , ,  */}
       <ScrollReveal>
         <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[800px] text-center">
@@ -426,7 +426,7 @@ export default async function JusticeHubPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— INQUIRY ——— */}
+      {/* , , ,  INQUIRY , , ,  */}
       <ScrollReveal>
         <section id="inquiry" className="px-8 py-32 md:py-44">
           <div className="mx-auto grid max-w-[1100px] gap-20 lg:grid-cols-[1fr_1.2fr] lg:items-start">
@@ -447,10 +447,10 @@ export default async function JusticeHubPage() {
         </section>
       </ScrollReveal>
 
-      {/* ——— RELATED ——— */}
+      {/* , , ,  RELATED , , ,  */}
       <RelatedFields currentSlug="justicehub" />
 
-      {/* ——— PROJECT PAGE ——— */}
+      {/* , , ,  PROJECT PAGE , , ,  */}
       <section className="full-bleed bg-[var(--site-surface)] px-8 py-16">
         <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-6">
           <p className="font-[var(--font-body)] text-[15px] text-[var(--site-muted)]">

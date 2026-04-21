@@ -85,19 +85,13 @@ export async function buildCuratedProjectCards(
     const firstImageMedia = projectData?.mediaGallery.find((item: { type: string }) =>
       item.type.startsWith("image")
     );
-    const previewMedia =
-      mediaOverride
-        ? {
-            kind: mediaOverride.kind,
-            url: mediaOverride.url,
-            posterUrl: mediaOverride.posterUrl || null,
-            alt:
-              mediaOverride.alt ||
-              projectData?.coverImage?.alt ||
-              projectData?.title ||
-              config.fallbackTitle,
-          }
-        : projectData?.coverVideo
+
+    // Priority: real Empathy Ledger media first (cover video → hero video → cover image
+    // → first gallery image). Fall through to the editorial override and the synthetic
+    // fallback last. This keeps the home cards sourced from EL whenever EL has material
+    // for the project, and only uses the editorial override when EL is empty.
+    const realElPreview =
+      projectData?.coverVideo
         ? {
             kind: "video" as const,
             url: projectData.coverVideo.url,
@@ -115,15 +109,44 @@ export async function buildCuratedProjectCards(
               null,
             alt: heroMedia.alt || heroMedia.title || projectData?.title || config.fallbackTitle,
           }
+        : heroMedia?.kind === "image"
+        ? {
+            kind: "image" as const,
+            url: heroMedia.url,
+            posterUrl: null,
+            alt: heroMedia.alt || heroMedia.title || projectData?.title || config.fallbackTitle,
+          }
         : projectData?.coverImage?.url
-          ? {
-              kind: "image" as const,
-              url: projectData.coverImage.url,
-              posterUrl: null,
-              alt:
-                projectData.coverImage.alt || projectData.title || config.fallbackTitle,
-            }
-          : undefined;
+        ? {
+            kind: "image" as const,
+            url: projectData.coverImage.url,
+            posterUrl: null,
+            alt:
+              projectData.coverImage.alt || projectData.title || config.fallbackTitle,
+          }
+        : firstImageMedia?.url
+        ? {
+            kind: "image" as const,
+            url: firstImageMedia.url,
+            posterUrl: null,
+            alt: firstImageMedia.alt || projectData?.title || config.fallbackTitle,
+          }
+        : null;
+
+    const previewMedia =
+      realElPreview ||
+      (mediaOverride
+        ? {
+            kind: mediaOverride.kind,
+            url: mediaOverride.url,
+            posterUrl: mediaOverride.posterUrl || null,
+            alt:
+              mediaOverride.alt ||
+              projectData?.coverImage?.alt ||
+              projectData?.title ||
+              config.fallbackTitle,
+          }
+        : undefined);
     const fieldMedia = projectData ? getProjectFieldMedia(projectData) : null;
     const previewUrl =
       previewMedia?.kind === "video"

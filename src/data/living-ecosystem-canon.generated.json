@@ -155,6 +155,7 @@
       "verification_status": "inferred",
       "human_decision_required": true,
       "repo_path": "/Users/benknight/Code/JusticeHub",
+      "site_url": "https://www.justicehub.com.au",
       "canonical_note_path": "wiki/projects/justicehub/justicehub.md",
       "notes": "Best-fit current reading is spoke. Human confirmation still required."
     },
@@ -166,6 +167,7 @@
       "verification_status": "inferred",
       "human_decision_required": true,
       "repo_path": "/Users/benknight/Code/Goods Asset Register",
+      "site_url": "https://www.goodsoncountry.com",
       "canonical_note_path": "wiki/projects/goods-on-country.md",
       "notes": "Best-fit current reading is spoke. Human confirmation still required."
     },
@@ -188,6 +190,7 @@
       "verification_status": "inferred",
       "human_decision_required": true,
       "repo_path": "/Users/benknight/Code/The Harvest Website",
+      "site_url": "https://www.theharvestwitta.com.au",
       "canonical_note_path": "wiki/projects/the-harvest/the-harvest.md",
       "notes": "Best-fit current reading is spoke. Human confirmation still required."
     }

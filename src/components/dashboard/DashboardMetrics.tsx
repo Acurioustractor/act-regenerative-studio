@@ -80,7 +80,7 @@ export function DashboardMetrics() {
               <div>
                 <p className="text-sm text-[var(--we-brown)]">{card.label}</p>
                 <p className="mt-2 text-3xl font-bold text-[var(--we-olive)]">
-                  {loading ? "—" : card.value}
+                  {loading ? ", " : card.value}
                 </p>
               </div>
               <Icon className={`w-8 h-8 ${card.color}`} />

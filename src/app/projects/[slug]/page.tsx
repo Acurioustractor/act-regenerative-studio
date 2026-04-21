@@ -39,6 +39,7 @@ import {
 } from '@/components/projects';
 import { getTranscriptsForProject } from '@/lib/empathy-ledger-transcripts';
 import { getClusterCohort } from '@/lib/projects/cluster-cohort';
+import { EmpathyLedgerConnections } from '@/components/projects/EmpathyLedgerConnections';
 
 interface EngagementAction {
   label: string;
@@ -412,6 +413,15 @@ export default async function ProjectPage({
 
   return (
     <div className="space-y-16 pb-24">
+      {project.empathyLedger && (
+        <EmpathyLedgerConnections
+          projectSlug={project.slug}
+          projectTitle={project.title}
+          orgSlug={project.empathyLedger.orgSlug}
+          elProjectSlugs={project.empathyLedger.elProjectSlugs}
+          notes={project.empathyLedger.notes}
+        />
+      )}
       {/* Hero Section with Cover Image */}
       <ProjectHero
         title={project.title}

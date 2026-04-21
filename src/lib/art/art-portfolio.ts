@@ -58,6 +58,16 @@ export interface ArtProjectConfig {
   connectedProjectHref?: string;
   philosophy?: string;
   impact?: string;
+  /**
+   * Direct Empathy Ledger link for this art piece. Use when the art work
+   * doesn't map cleanly to a parent ACT project slug. Takes precedence over
+   * the ACT-project fallback when rendering the EL Connections panel.
+   */
+  empathyLedger?: {
+    orgSlug: string;
+    elProjectSlugs?: string[];
+    notes?: string;
+  };
 }
 
 export interface HydratedArtProject extends ArtProjectConfig {
@@ -69,6 +79,28 @@ export interface HydratedArtProject extends ArtProjectConfig {
 }
 
 const ART_PROJECTS: ArtProjectConfig[] = [
+  {
+    slug: 'the-caravan',
+    elSlugs: ['the-caravan', 'ACT-CVN'],
+    title: 'The Caravan',
+    quote:
+      'Mobile leadership infrastructure born at the Community Capital Leadership Retreat \u2014 a room that travels, carrying conversation between communities.',
+    description:
+      'The Caravan is a rolling, hand-built space for leadership gatherings, listening sessions, and on-Country conversations. Born out of the 10x10 Community Capital Leadership Retreat, it carries the intimacy of that retreat between communities \u2014 a mobile room where the table is always set and the kettle is always on.',
+    mediums: ['installation', 'making'],
+    tags: ['community-portrait', 'public-art', 'social-practice'],
+    status: 'active',
+    lcaaStages: ['Action', 'Art'],
+    location: 'Mobile \u2014 Australia',
+    year: '2024\u2013present',
+    photoCount: 24,
+    storytellerCount: 0,
+    connectedProject: 'Community Capital',
+    connectedProjectHref: '/projects/10x10-retreat',
+    philosophy:
+      'The most important spaces are the ones that show up when and where they are needed. The Caravan is a room with wheels \u2014 it goes to the conversation rather than asking the conversation to come to it.',
+    empathyLedger: { orgSlug: 'a-curious-tractor', elProjectSlugs: ['the-caravan'] },
+  },
   {
     slug: 'picc-photo-kiosk',
     elSlugs: ['picc-photo-kiosk'],

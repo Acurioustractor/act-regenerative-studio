@@ -2,6 +2,7 @@
 
 import NextImage from "next/image";
 import { useState, useEffect } from "react";
+import { createPortal } from "react-dom";
 
 interface EditableImageProps {
   src: string;
@@ -23,10 +24,20 @@ interface PickerImage {
   alt: string | null;
 }
 
-interface ProjectGroup {
+interface OrgGroup {
   slug: string;
+  name: string;
+  id: string | null;
   images: PickerImage[];
 }
+
+interface ProjectGroup {
+  slug: string;
+  title: string;
+  images: PickerImage[];
+}
+
+type Segment = "projects" | "orgs";
 
 export function EditableImage({
   src: defaultSrc,
@@ -40,8 +51,11 @@ export function EditableImage({
 }: EditableImageProps) {
   const [currentSrc, setCurrentSrc] = useState(defaultSrc);
   const [picking, setPicking] = useState(false);
+  const [allOrgs, setAllOrgs] = useState<OrgGroup[]>([]);
   const [allProjects, setAllProjects] = useState<ProjectGroup[]>([]);
-  const [activeProject, setActiveProject] = useState(projectSlug);
+  const [activeSegment, setActiveSegment] = useState<Segment>("projects");
+  const [activeOrgSlug, setActiveOrgSlug] = useState<string>("");
+  const [activeProjectSlug, setActiveProjectSlug] = useState<string>(projectSlug);
   const [loading, setLoading] = useState(false);
 
   // Load override from saved config on mount
@@ -58,20 +72,36 @@ export function EditableImage({
 
   function openPicker() {
     setPicking(true);
-    if (allProjects.length === 0) {
+    if (allOrgs.length === 0 && allProjects.length === 0) {
       setLoading(true);
-      fetch(`/api/image-picker?project=${projectSlug}`)
+      fetch(`/api/image-picker`)
         .then((r) => r.json())
         .then((data) => {
+          const orgs: OrgGroup[] = (data.organizations || []).filter(
+            (o: OrgGroup) => o.images && o.images.length > 0
+          );
           const projects: ProjectGroup[] = (data.projects || [])
             .filter((p: ProjectGroup) => p.images && p.images.length > 0)
             .sort((a: ProjectGroup, b: ProjectGroup) => {
-              // Put current project first
               if (a.slug === projectSlug) return -1;
               if (b.slug === projectSlug) return 1;
-              return a.slug.localeCompare(b.slug);
+              return a.title.localeCompare(b.title);
             });
+
+          const projectOrgId =
+            (data.projectOrgIdMap && data.projectOrgIdMap[projectSlug]) || null;
+          const defaultOrg =
+            orgs.find((o) => projectOrgId && o.id === projectOrgId) ||
+            orgs.find((o) => o.slug === "a-curious-tractor") ||
+            orgs[0];
+
+          const hasProject = projects.some((p) => p.slug === projectSlug);
+
+          setAllOrgs(orgs);
           setAllProjects(projects);
+          setActiveOrgSlug(defaultOrg?.slug || "");
+          setActiveProjectSlug(hasProject ? projectSlug : projects[0]?.slug || "");
+          setActiveSegment(hasProject ? "projects" : "orgs");
         })
         .catch(() => {})
         .finally(() => setLoading(false));
@@ -88,7 +118,16 @@ export function EditableImage({
     }).catch(() => {});
   }
 
-  const activeImages = allProjects.find((p) => p.slug === activeProject)?.images || [];
+  const activeOrg = allOrgs.find((o) => o.slug === activeOrgSlug);
+  const activeProject = allProjects.find((p) => p.slug === activeProjectSlug);
+  const activeImages =
+    activeSegment === "orgs"
+      ? activeOrg?.images || []
+      : activeProject?.images || [];
+  const activeLabel =
+    activeSegment === "orgs"
+      ? activeOrg?.name || "Empathy Ledger"
+      : activeProject?.title || activeProject?.slug || "Project";
 
   return (
     <>
@@ -114,10 +153,10 @@ export function EditableImage({
         </button>
       </div>
 
-      {/* Picker modal */}
-      {picking && (
+      {/* Picker modal — portalled to body to escape any parent stacking context */}
+      {picking && typeof document !== "undefined" && createPortal(
         <div
-          className="fixed inset-0 z-[100] flex items-end justify-center bg-black/80 backdrop-blur-sm sm:items-center"
+          className="fixed inset-0 z-[200] flex items-end justify-center bg-black/80 backdrop-blur-sm sm:items-center"
           onClick={() => setPicking(false)}
         >
           <div
@@ -131,7 +170,7 @@ export function EditableImage({
                   Pick a photo
                 </p>
                 <p className="text-xs text-white/40">
-                  {activeProject}, {activeImages.length} images
+                  {activeLabel}, {activeImages.length} images
                 </p>
               </div>
               <button
@@ -144,22 +183,63 @@ export function EditableImage({
               </button>
             </div>
 
-            {/* Project tabs */}
-            <div className="flex gap-1 overflow-x-auto border-b border-white/5 px-4 py-2">
-              {allProjects.map((proj) => (
-                <button
-                  key={proj.slug}
-                  onClick={() => setActiveProject(proj.slug)}
-                  className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-medium transition ${
-                    activeProject === proj.slug
-                      ? "bg-white/15 text-white"
-                      : "text-white/40 hover:bg-white/5 hover:text-white/70"
-                  }`}
-                >
-                  {proj.slug.replace(/-/g, " ")}
-                  <span className="ml-1 text-[10px] opacity-50">{proj.images.length}</span>
-                </button>
-              ))}
+            {/* Segment toggle: ACT Projects | Organisations */}
+            <div className="shrink-0 flex gap-2 border-b border-white/5 px-4 py-3">
+              <button
+                onClick={() => setActiveSegment("projects")}
+                className={`rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-wide transition ${
+                  activeSegment === "projects"
+                    ? "bg-white text-[#1a1a1a]"
+                    : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white"
+                }`}
+              >
+                ACT Projects
+                <span className="ml-1.5 text-[10px] opacity-60">{allProjects.length}</span>
+              </button>
+              <button
+                onClick={() => setActiveSegment("orgs")}
+                className={`rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-wide transition ${
+                  activeSegment === "orgs"
+                    ? "bg-white text-[#1a1a1a]"
+                    : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white"
+                }`}
+              >
+                Organisations
+                <span className="ml-1.5 text-[10px] opacity-60">{allOrgs.length}</span>
+              </button>
+            </div>
+
+            {/* Tabs within the active segment */}
+            <div className="shrink-0 flex gap-1 overflow-x-auto border-b border-white/5 px-4 py-2">
+              {activeSegment === "projects"
+                ? allProjects.map((proj) => (
+                    <button
+                      key={proj.slug}
+                      onClick={() => setActiveProjectSlug(proj.slug)}
+                      className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-medium whitespace-nowrap transition ${
+                        activeProjectSlug === proj.slug
+                          ? "bg-white/20 text-white"
+                          : "text-white/60 hover:bg-white/10 hover:text-white"
+                      }`}
+                    >
+                      {proj.title}
+                      <span className="ml-1 text-[10px] opacity-60">{proj.images.length}</span>
+                    </button>
+                  ))
+                : allOrgs.map((org) => (
+                    <button
+                      key={org.slug}
+                      onClick={() => setActiveOrgSlug(org.slug)}
+                      className={`shrink-0 rounded-full px-3 py-1.5 text-xs font-medium whitespace-nowrap transition ${
+                        activeOrgSlug === org.slug
+                          ? "bg-white/20 text-white"
+                          : "text-white/60 hover:bg-white/10 hover:text-white"
+                      }`}
+                    >
+                      {org.name}
+                      <span className="ml-1 text-[10px] opacity-60">{org.images.length}</span>
+                    </button>
+                  ))}
             </div>
 
             {/* Grid */}
@@ -207,7 +287,8 @@ export function EditableImage({
               )}
             </div>
           </div>
-        </div>
+        </div>,
+        document.body
       )}
     </>
   );

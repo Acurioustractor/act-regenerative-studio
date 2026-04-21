@@ -32,6 +32,7 @@ const OUTPUT_PATH = path.resolve(
 );
 
 const PROJECTS_TS_PATH = path.resolve(process.cwd(), 'src/data/projects.ts');
+const ART_PORTFOLIO_PATH = path.resolve(process.cwd(), 'src/lib/art/art-portfolio.ts');
 const WIKI_PROJECTS_PATH = path.resolve(
   process.cwd(),
   'src/data/wiki-projects.generated.json'
@@ -40,19 +41,45 @@ const WIKI_PROJECTS_PATH = path.resolve(
 const LIMITS = {
   storyLimit: 10,
   storytellerLimit: 10,
-  mediaLimit: 24,
+  // Per-project media cap. EL's content-hub API is paginated at 50/page so
+  // we page through up to this total. 250 covers every current EL project
+  // (largest is "The Harvest" at 239 media).
+  mediaLimit: 250,
+  // Per-organisation pool for the image picker. Paginated at 50/page (EL cap).
+  orgMediaLimit: 500,
 };
 
-// Explicit ACT-project-slug → Empathy-Ledger-organisation-slug map.
-// Use this ONLY for ACT projects that correspond to a real partner organisation
-// in EL (e.g. Oonchiumpa is an EL org with its own media pool, and we run a
-// project alongside them). Entries here cause the sync to merge the partner
-// org's media into that project's image pool. Blanket org fallbacks are
-// deliberately not applied so projects don't accidentally inherit each
-// other's pools.
-const EL_PARTNER_ORG_MAP = {
-  oonchiumpa: "oonchiumpa",
-};
+// EL organisations indexed by slug. The content-hub media endpoint filters
+// by `organization_id` (UUID) only — the `organization` (slug) param is
+// silently ignored. This registry lets us resolve slug → UUID for the sync.
+// Keep this in sync with the `organizations` table in EL.
+const EL_ORG_REGISTRY = [
+  { slug: "a-curious-tractor", name: "A Curious Tractor", id: "db0de7bd-eb10-446b-99e9-0f3b7c199b8a" },
+  { slug: "bg-fit", name: "BG Fit", id: "cb749bd5-1658-4fb1-a1f1-0bb173a8e8f4" },
+  { slug: "confit-pathways", name: "Confit Pathways", id: "f7f70fd6-bb60-4004-a910-bafbeb594caf" },
+  { slug: "diagrama", name: "Diagrama", id: "fbe80fa6-8f25-413b-b1b5-43e132341732" },
+  { slug: "ecstra-foundation-limited", name: "Ecstra Foundation", id: "f785a540-bc60-4f90-9569-3828885f1765" },
+  { slug: "fishers-oysters", name: "Fishers Oysters", id: "d44703a8-78c7-47d9-bac9-b4714bb183c0" },
+  { slug: "global-laundry-alliance", name: "Global Laundry Alliance", id: "5492bb3c-53f0-46d5-9676-4667e6ef4095" },
+  { slug: "independent-storytellers", name: "Independent Storytellers", id: "0a1bd4a5-5e01-470f-83f6-f55f86c0aa83" },
+  { slug: "june-canavan-foundation", name: "June Canavan Foundation", id: "460955e2-8926-4b3d-a5a3-b2ed3d54a46c" },
+  { slug: "justicehub", name: "JusticeHub", id: "0e878fa2-0b44-49b7-86d7-ecf169345582" },
+  { slug: "minderoo-foundation", name: "Minderoo Foundation", id: "808aa0dc-a8d7-4976-ae3e-ab75a71587c7" },
+  { slug: "mingaminga-rangers", name: "MingaMinga Rangers", id: "3a924e56-4c2b-4775-858f-20a3f57008b2" },
+  { slug: "mmeic", name: "MMEIC", id: "220e657b-a1e5-41ff-8781-4bd9cf7468da" },
+  { slug: "mounty-yarns", name: "Mounty Yarns", id: "e08b256c-0adf-41ce-b641-e373024c3927" },
+  { slug: "oonchiumpa", name: "Oonchiumpa", id: "c53077e1-98de-4216-9149-6268891ff62e" },
+  { slug: "orange-sky", name: "Orange Sky", id: "1d542d98-38ea-4f1f-b1ad-60dced1a2985" },
+  { slug: "palm-island-community-company", name: "Palm Island Community Company", id: "084f851c-72e0-41fb-b5ba-f3088f44862d" },
+  { slug: "paul-ramsay-foundation-limited", name: "Paul Ramsay Foundation", id: "f7e27906-f25f-4dd8-881a-fe8b318321e4" },
+  { slug: "rio-tinto-foundation", name: "Rio Tinto Foundation", id: "5e5aba94-27f1-4088-98e4-97f87dcb250e" },
+  { slug: "smart-recovery", name: "SMART Recovery Australia", id: "57046635-d996-43bc-b290-da886fa049c7" },
+  { slug: "snow-foundation", name: "Snow Foundation", id: "4a1c31e8-89b7-476d-a74b-0c8b37efc850" },
+  { slug: "the-buttery", name: "The Buttery", id: "94f4d7f1-9334-48db-953f-12b2c042309b" },
+  { slug: "the-trustee-for-the-ian-potter-foundation", name: "Ian Potter Foundation", id: "e2678b97-ddc2-47b2-9744-52cbb39c094d" },
+  { slug: "tomnet", name: "TOMNET", id: "087e9e7e-40c0-4b11-8054-5b4ccfa647c5" },
+  { slug: "young-guns", name: "Young Guns", id: "b8385439-b76e-47ae-9911-5a9c933396d2" },
+];
 
 function createEmptySnapshot() {
   return {
@@ -92,17 +119,50 @@ async function loadWikiProjectMap() {
 }
 
 async function loadProjectSlugs() {
-  const raw = await fs.readFile(PROJECTS_TS_PATH, 'utf8');
+  const sources = [PROJECTS_TS_PATH, ART_PORTFOLIO_PATH];
   const slugs = [];
-  const pattern = /slug:\s*"([^"]+)"/g;
-  let match = pattern.exec(raw);
-
-  while (match) {
-    slugs.push(match[1]);
-    match = pattern.exec(raw);
+  for (const filePath of sources) {
+    try {
+      const raw = await fs.readFile(filePath, 'utf8');
+      // Match `slug: '...'` or `slug: "..."` so it works in both files
+      const pattern = /\bslug:\s*['"]([^'"]+)['"]/g;
+      let m;
+      while ((m = pattern.exec(raw))) slugs.push(m[1]);
+    } catch {
+      // Optional source — ignore if missing
+    }
   }
-
   return Array.from(new Set(slugs));
+}
+
+/**
+ * Parse each ACT project's explicit `elProjectSlugs` so the sync can pull
+ * media from multiple EL projects and merge them into this project's pool.
+ * Returns { [actSlug]: string[] }.
+ */
+async function loadElProjectSlugMap() {
+  const result = {};
+  for (const filePath of [PROJECTS_TS_PATH, ART_PORTFOLIO_PATH]) {
+    let raw;
+    try {
+      raw = await fs.readFile(filePath, 'utf8');
+    } catch {
+      continue;
+    }
+    // Match either ' or " quoting; empathyLedger may sit anywhere within the
+    // record. Use a non-greedy capture so we stop at the first closing brace.
+    const projectRe = /\bslug:\s*['"]([^'"]+)['"][\s\S]*?empathyLedger:\s*\{([\s\S]*?)\}/g;
+    let m;
+    while ((m = projectRe.exec(raw))) {
+      const actSlug = m[1];
+      const inner = m[2];
+      const arr = /["']?elProjectSlugs["']?\s*:\s*\[([^\]]*)\]/.exec(inner);
+      if (!arr) continue;
+      const slugs = [...arr[1].matchAll(/['"]([^'"]+)['"]/g)].map((x) => x[1]);
+      if (slugs.length > 0) result[actSlug] = slugs;
+    }
+  }
+  return result;
 }
 
 async function fetchJson(url) {
@@ -264,55 +324,125 @@ function buildFeaturedResponse(projectSlug, wikiRecord, payload) {
   };
 }
 
-async function fetchProjectContent(projectSlug, wikiRecord, projectCodeRegistry) {
-  const candidateKeys = getProjectKeyCandidates(
-    projectSlug,
-    wikiRecord,
-    projectCodeRegistry
+async function fetchOrganizationMedia(org) {
+  const pageLimit = 50; // EL endpoint hard-caps at 50
+  const maxItems = LIMITS.orgMediaLimit;
+  const items = [];
+  const seen = new Set();
+  let page = 1;
+
+  while (items.length < maxItems) {
+    const params = new URLSearchParams({
+      organization_id: org.id,
+      limit: String(pageLimit),
+      page: String(page),
+    });
+    const payload = await fetchJson(
+      `${EMPATHY_LEDGER_URL}/api/v1/content-hub/media?${params.toString()}`
+    ).catch(() => null);
+
+    const batch = payload?.media || [];
+    if (batch.length === 0) break;
+
+    for (const item of batch) {
+      if (!item?.id || seen.has(item.id)) continue;
+      if (!item.url) continue;
+      seen.add(item.id);
+      const kind = inferMediaKind(item.mediaType);
+      if (kind !== 'image' && kind !== 'video') continue;
+      items.push({
+        id: item.id,
+        url: item.url,
+        thumbnail_url: item.thumbnailUrl || null,
+        preview_url: item.thumbnailUrl || null,
+        type: item.mediaType || 'image',
+        kind,
+        title: item.title || null,
+        alt: item.altText || item.title || null,
+        caption: item.description || null,
+        credit: item.attributionText || null,
+        is_hero: Boolean(item.isHero),
+        is_featured: Boolean(item.isHero),
+        source: 'content-hub',
+      });
+      if (items.length >= maxItems) break;
+    }
+
+    if (!payload?.pagination?.hasMore) break;
+    page += 1;
+  }
+
+  if (items.length === 0) return null;
+
+  return {
+    org: { slug: org.slug, name: org.name, id: org.id },
+    media: { items },
+    meta: {
+      media_count: items.length,
+      fetched_at: new Date().toISOString(),
+      source: 'content-hub',
+    },
+  };
+}
+
+async function fetchProjectContent(projectSlug, wikiRecord, projectCodeRegistry, extraElSlugs = []) {
+  const candidateKeys = Array.from(
+    new Set([
+      ...getProjectKeyCandidates(projectSlug, wikiRecord, projectCodeRegistry),
+      ...extraElSlugs,
+    ])
   );
   let bestResponse = null;
   let bestScore = -1;
+  // Accumulate media across ALL candidates that return content, so that
+  // when an ACT project spans multiple EL projects (e.g. MMEIC Cultural
+  // Initiative + Quandamooka Justice), the panel sees the union.
+  const mergedMedia = [];
+  const seenMediaIds = new Set();
 
   for (const candidateKey of candidateKeys) {
     const queryCandidate = encodeURIComponent(candidateKey);
     const orgId = encodeURIComponent(EMPATHY_LEDGER_ORGANIZATION_ID);
 
-    // Project-scoped fetches (the primary path for every ACT project).
-    const [stories, storytellers, mediaByProject] = await Promise.all([
+    // Project-scoped fetches. The per-organisation image pool is now
+    // synced separately into snapshot.organizations and surfaced by the
+    // image picker, so there's no partner-org merge here.
+    const [stories, storytellers, media] = await Promise.all([
       fetchJson(
         `${EMPATHY_LEDGER_URL}/api/v1/content-hub/stories?project=${queryCandidate}&limit=${LIMITS.storyLimit}`
       ).catch(() => ({ stories: [] })),
       fetchJson(
         `${EMPATHY_LEDGER_URL}/api/v1/content-hub/storytellers?project=${queryCandidate}&limit=${LIMITS.storytellerLimit}`
       ).catch(() => ({ storytellers: [] })),
-      fetchJson(
-        `${EMPATHY_LEDGER_URL}/api/v1/content-hub/media?project=${queryCandidate}&limit=${LIMITS.mediaLimit}`
-      ).catch(() => ({ media: [] })),
+      (async () => {
+        // EL caps limit at 50/page; paginate until we reach mediaLimit.
+        const pageLimit = 50;
+        const merged = [];
+        const seenIds = new Set();
+        let page = 1;
+        while (merged.length < LIMITS.mediaLimit) {
+          const params = new URLSearchParams({
+            project: candidateKey,
+            limit: String(pageLimit),
+            page: String(page),
+          });
+          const resp = await fetchJson(
+            `${EMPATHY_LEDGER_URL}/api/v1/content-hub/media?${params.toString()}`
+          ).catch(() => null);
+          const batch = resp?.media || [];
+          if (batch.length === 0) break;
+          for (const item of batch) {
+            if (!item?.id || seenIds.has(item.id)) continue;
+            seenIds.add(item.id);
+            merged.push(item);
+            if (merged.length >= LIMITS.mediaLimit) break;
+          }
+          if (!resp?.pagination?.hasMore) break;
+          page += 1;
+        }
+        return { media: merged };
+      })(),
     ]);
-
-    // Explicit partner-org merge. ONLY for ACT project slugs that correspond
-    // to a real partner organisation in Empathy Ledger. Defined in
-    // EL_PARTNER_ORG_MAP (below, module-scope). This avoids blanket org
-    // fallbacks that would pollute unrelated projects with someone else's pool.
-    let mediaByOrg = { media: [] };
-    const partnerOrgSlug = EL_PARTNER_ORG_MAP[projectSlug];
-    if (partnerOrgSlug) {
-      mediaByOrg = await fetchJson(
-        `${EMPATHY_LEDGER_URL}/api/v1/content-hub/media?organization=${encodeURIComponent(partnerOrgSlug)}&limit=${LIMITS.mediaLimit}`
-      ).catch(() => ({ media: [] }));
-    }
-
-    const seenMediaIds = new Set();
-    const mergedItems = [];
-    for (const item of [
-      ...(mediaByProject?.media || []),
-      ...(mediaByOrg?.media || []),
-    ]) {
-      if (!item?.id || seenMediaIds.has(item.id)) continue;
-      seenMediaIds.add(item.id);
-      mergedItems.push(item);
-    }
-    const media = { media: mergedItems };
 
     const mediaCount = media?.media?.length || 0;
     const storyCount = stories?.stories?.length || 0;
@@ -329,6 +459,17 @@ async function fetchProjectContent(projectSlug, wikiRecord, projectCodeRegistry)
       media,
     });
 
+    // Merge media from every candidate so projects spanning multiple EL
+    // records (e.g. MMEIC Cultural Initiative + Quandamooka Justice) see
+    // the union rather than whichever one wins the score tiebreaker.
+    if (candidateResponse?.media?.items) {
+      for (const item of candidateResponse.media.items) {
+        if (!item?.id || seenMediaIds.has(item.id)) continue;
+        seenMediaIds.add(item.id);
+        mergedMedia.push(item);
+      }
+    }
+
     const score = mediaCount * 10000 + storyCount * 100 + storytellerCount;
     if (candidateResponse && score > bestScore) {
       bestResponse = candidateResponse;
@@ -336,15 +477,33 @@ async function fetchProjectContent(projectSlug, wikiRecord, projectCodeRegistry)
     }
   }
 
+  if (bestResponse && mergedMedia.length > 0) {
+    bestResponse = {
+      ...bestResponse,
+      media: {
+        items: mergedMedia.slice(0, LIMITS.mediaLimit),
+        hero:
+          mergedMedia.find((item) => item.is_hero) ||
+          mergedMedia[0] ||
+          null,
+      },
+      meta: {
+        ...bestResponse.meta,
+        media_count: Math.min(mergedMedia.length, LIMITS.mediaLimit),
+      },
+    };
+  }
+
   return bestResponse;
 }
 
 async function main() {
   try {
-    const [staticSlugs, wikiProjectMap, projectCodeRegistry] = await Promise.all([
+    const [staticSlugs, wikiProjectMap, projectCodeRegistry, elProjectSlugMap] = await Promise.all([
       loadProjectSlugs(),
       loadWikiProjectMap(),
       loadProjectCodeRegistrySnapshot(),
+      loadElProjectSlugMap(),
     ]);
 
     // Merge static + wiki slugs so wiki-only projects also get synced
@@ -357,26 +516,46 @@ async function main() {
           const content = await fetchProjectContent(
             slug,
             wikiProjectMap.get(slug) || null,
-            projectCodeRegistry
+            projectCodeRegistry,
+            elProjectSlugMap[slug] || []
           );
           return [slug, content];
         })
       )
     );
 
+    const orgEntries = await Promise.all(
+      EL_ORG_REGISTRY.map((org) =>
+        limit(async () => {
+          const content = await fetchOrganizationMedia(org);
+          return [org.slug, content];
+        })
+      )
+    );
+
     const projects = Object.fromEntries(entries);
+    const organizations = Object.fromEntries(orgEntries);
+
     const snapshot = {
       generatedAt: new Date().toISOString(),
       sourceUrl: EMPATHY_LEDGER_URL,
       sourceOrganizationId: EMPATHY_LEDGER_ORGANIZATION_ID,
       projectCount: projectSlugs.length,
       projects,
+      organizations,
     };
 
     await writeSnapshot(snapshot);
 
-    const populatedCount = Object.values(projects).filter(Boolean).length;
-    console.log(`synced EL media snapshot for ${populatedCount}/${projectSlugs.length} projects to ${OUTPUT_PATH}`);
+    const populatedProjectCount = Object.values(projects).filter(Boolean).length;
+    const populatedOrgCount = Object.values(organizations).filter(Boolean).length;
+    const totalOrgImages = Object.values(organizations)
+      .filter(Boolean)
+      .reduce((sum, entry) => sum + (entry.media?.items?.length || 0), 0);
+    console.log(
+      `synced EL media snapshot: ${populatedProjectCount}/${projectSlugs.length} projects, ` +
+        `${populatedOrgCount}/${EL_ORG_REGISTRY.length} orgs (${totalOrgImages} images) → ${OUTPUT_PATH}`
+    );
   } catch (error) {
     const message =
       error instanceof Error ? error.message : 'Empathy Ledger sync failed';

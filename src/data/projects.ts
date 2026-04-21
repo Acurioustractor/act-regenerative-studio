@@ -28,11 +28,20 @@ export type Project = {
     author: string;
     role: string;
   };
+  // Explicit link to Empathy Ledger content so each page always has the
+  // partner org's media, stories, and projects on hand for reflection,
+  // story-writing, and page-building (especially art pages).
+  empathyLedger?: {
+    orgSlug: string;            // EL organisation slug (e.g. "oonchiumpa")
+    elProjectSlugs?: string[];  // EL project slugs under that org
+    notes?: string;             // optional context for the team
+  };
 };
 
 export const projects: Project[] = [
   {
     slug: "black-cockatoo-valley",
+    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"BCV is ACT-stewarded land; parent org for now."},
     title: "Black Cockatoo Valley",
     theme: "valley",
     tagline: "Land practice, residencies, and conservation on Jinibara Country",
@@ -42,6 +51,7 @@ export const projects: Project[] = [
   },
   {
     slug: "global-laundry-alliance",
+    empathyLedger: { orgSlug: "global-laundry-alliance" },
     title: "Global Laundry Alliance",
     theme: "justice",
     tagline: "Reframing access to laundry as a dignity issue",
@@ -53,6 +63,7 @@ export const projects: Project[] = [
   },
   {
     slug: "diagrama-spain",
+    empathyLedger: { orgSlug: "diagrama" },
     title: "Diagrama Spain/England Journey",
     theme: "justice",
     tagline: "Learning from Spain's youth justice transformation",
@@ -64,6 +75,7 @@ export const projects: Project[] = [
   },
   {
     slug: "green-harvest-witta",
+    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org — refine when partner context is confirmed."},
     title: "Green Harvest Witta",
     theme: "earth",
     tagline: "Sowing seeds of community-led innovation",
@@ -75,6 +87,7 @@ export const projects: Project[] = [
   },
   {
     slug: "gold-phone",
+    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org — refine when partner context is confirmed."},
     title: "Gold.Phone",
     theme: "earth",
     tagline: "Repurposing the past for community connection",
@@ -86,6 +99,7 @@ export const projects: Project[] = [
   },
   {
     slug: "empathy-ledger",
+    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"The platform itself; ACT parent org for now."},
     title: "Empathy Ledger",
     theme: "earth",
     tagline: "Every Story Matters",
@@ -114,6 +128,7 @@ export const projects: Project[] = [
   },
   {
     slug: "fishers-oysters",
+    empathyLedger: { orgSlug: "fishers-oysters" },
     title: "Fishers Oysters",
     theme: "earth",
     tagline: "Indigenous-led aquaculture on Quandamooka Country",
@@ -144,6 +159,7 @@ export const projects: Project[] = [
   },
   {
     slug: "justicehub",
+    empathyLedger: { orgSlug: "justicehub" },
     title: "JusticeHub",
     theme: "justice",
     tagline: "TRUTH • ACTION • JUSTICE",
@@ -174,6 +190,7 @@ export const projects: Project[] = [
   },
   {
     slug: "goods-on-country",
+    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Goods is ACT-stewarded; parent org for now."},
     title: "Goods on Country",
     theme: "goods",
     tagline: "Quality furniture for every home on Country",
@@ -204,6 +221,7 @@ export const projects: Project[] = [
   },
   {
     slug: "bg-fit-mount-isa",
+    empathyLedger: { orgSlug: "bg-fit" },
     title: "BG Fit Mount Isa",
     theme: "justice",
     tagline: "Community connection through fitness and culture",
@@ -216,6 +234,10 @@ export const projects: Project[] = [
   },
   {
     slug: "quandamooka-justice-strategy",
+    empathyLedger: {
+      orgSlug: "mmeic",
+      elProjectSlugs: ["mmeic-cultural-initiative", "quandamooka"],
+    },
     title: "Quandamooka Justice and Healing Strategy",
     theme: "justice",
     tagline: "Elder-led justice reinvestment on Country",
@@ -226,6 +248,7 @@ export const projects: Project[] = [
   },
   {
     slug: "smart-recovery-gp-kits",
+    empathyLedger: { orgSlug: "smart-recovery" },
     title: "SMART Recovery GP Kits",
     theme: "justice",
     tagline: "Lowering barriers to addiction support",
@@ -237,6 +260,7 @@ export const projects: Project[] = [
   },
   {
     slug: "goods-tennant-creek",
+    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Goods program — ACT parent org."},
     title: "Goods Tennant Creek Journey",
     theme: "goods",
     tagline: "Co-creating with Traditional Owners",
@@ -249,6 +273,7 @@ export const projects: Project[] = [
   },
   {
     slug: "oonchiumpa",
+    empathyLedger: { orgSlug: "oonchiumpa" },
     title: "Oonchiumpa",
     theme: "justice",
     tagline: "Aboriginal-led pathways for young people in crisis",
@@ -260,6 +285,7 @@ export const projects: Project[] = [
   },
   {
     slug: "bupa-tfn-pitch",
+    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org."},
     title: "Bupa TFN Healthy People, Healthy Planet",
     theme: "goods",
     tagline: "Championing human and planetary health",
@@ -271,6 +297,7 @@ export const projects: Project[] = [
   },
   {
     slug: "pakkinjalki-kari",
+    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org — refine when partner context is confirmed."},
     title: "Pakkinjalki kari (Washing Machine)",
     theme: "goods",
     tagline: "Culturally appropriate design on Warumungu Country",
@@ -282,6 +309,7 @@ export const projects: Project[] = [
   },
   {
     slug: "weave-bed-tennant-creek",
+    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org."},
     title: "Weave Bed Design",
     theme: "goods",
     tagline: "Washable, repairable, community-built",
@@ -293,6 +321,7 @@ export const projects: Project[] = [
   },
   {
     slug: "naidoc-week-mount-isa",
+    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org — refine when partner context is confirmed."},
     title: "NAIDOC Week Mount Isa",
     theme: "justice",
     tagline: "Kinship in action with BG Fit",
@@ -305,6 +334,7 @@ export const projects: Project[] = [
   },
   {
     slug: "contained",
+    empathyLedger: {"orgSlug":"justicehub"},
     title: "CONTAINED",
     theme: "justice",
     tagline: "Experiential youth justice installation",
@@ -314,6 +344,7 @@ export const projects: Project[] = [
   },
   {
     slug: "the-harvest",
+    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"The Harvest — ACT parent org until an EL org exists."},
     title: "The Harvest",
     theme: "harvest",
     tagline: "Community hub for connection and healing",
@@ -325,6 +356,7 @@ export const projects: Project[] = [
   },
   {
     slug: "tomnet",
+    empathyLedger: { orgSlug: "tomnet" },
     title: "TOMNET",
     theme: "justice",
     tagline: "Moving men from isolation to belonging",
@@ -334,6 +366,7 @@ export const projects: Project[] = [
   },
   {
     slug: "westpac-summit-2025",
+    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org."},
     title: "Westpac Summit 2025",
     theme: "earth",
     tagline: "Scholar Cards activation",
@@ -343,6 +376,7 @@ export const projects: Project[] = [
   },
   {
     slug: "uncle-allan-palm-island-art",
+    empathyLedger: { orgSlug: "palm-island-community-company" },
     title: "Uncle Allan Palm Island Art",
     theme: "earth",
     tagline: "Cultural sovereignty through digital storytelling",
@@ -352,6 +386,7 @@ export const projects: Project[] = [
   },
   {
     slug: "the-confessional",
+    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org."},
     title: "The Confessional",
     theme: "earth",
     tagline: "Space for honest conversation",
@@ -361,6 +396,7 @@ export const projects: Project[] = [
   },
   {
     slug: "smart-hcp-gp-uplift",
+    empathyLedger: { orgSlug: "smart-recovery" },
     title: "SMART HCP GP Uplift",
     theme: "justice",
     tagline: "Healthcare provider integration for addiction support",
@@ -370,6 +406,7 @@ export const projects: Project[] = [
   },
   {
     slug: "smart-connect",
+    empathyLedger: { orgSlug: "smart-recovery" },
     title: "SMART Connect",
     theme: "justice",
     tagline: "Connecting people to peer support",
@@ -379,6 +416,7 @@ export const projects: Project[] = [
   },
   {
     slug: "regional-arts-fellowship",
+    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"BCV-linked fellowship; ACT parent org for now."},
     title: "Regional Arts Fellowship",
     theme: "earth",
     tagline: "Art, technology, and agriculture converge",
@@ -388,6 +426,7 @@ export const projects: Project[] = [
   },
   {
     slug: "picc-centre-precinct",
+    empathyLedger: { orgSlug: "palm-island-community-company" },
     title: "PICC Centre Precinct",
     theme: "earth",
     tagline: "Reimagining community space on Palm Island",
@@ -397,6 +436,7 @@ export const projects: Project[] = [
   },
   {
     slug: "picc-photo-kiosk",
+    empathyLedger: { orgSlug: "palm-island-community-company" },
     title: "PICC Photo Kiosk",
     theme: "earth",
     tagline: "Community-controlled photo studio",
@@ -406,6 +446,7 @@ export const projects: Project[] = [
   },
   {
     slug: "picc-elders-hull-river",
+    empathyLedger: { orgSlug: "palm-island-community-company" },
     title: "PICC Elders Hull River Trip",
     theme: "earth",
     tagline: "Elders return to Country",
@@ -415,6 +456,7 @@ export const projects: Project[] = [
   },
   {
     slug: "picc-annual-report",
+    empathyLedger: { orgSlug: "palm-island-community-company" },
     title: "PICC Annual Report",
     theme: "earth",
     tagline: "Community-led storytelling and accountability",
@@ -424,6 +466,7 @@ export const projects: Project[] = [
   },
   {
     slug: "caring-for-those-who-care",
+    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org — refine when partner context is confirmed."},
     title: "Caring for Those Who Care",
     theme: "justice",
     tagline: "Amplifying voices of NFP leaders",
@@ -433,6 +476,7 @@ export const projects: Project[] = [
   },
   {
     slug: "mounty-yarns",
+    empathyLedger: { orgSlug: "mounty-yarns" },
     title: "Mounty Yarns",
     theme: "justice",
     tagline: "Youth-led leadership in Mount Druitt",
@@ -442,6 +486,7 @@ export const projects: Project[] = [
   },
   {
     slug: "junes-patch",
+    empathyLedger: {"orgSlug":"june-canavan-foundation"},
     title: "June's Patch",
     theme: "earth",
     tagline: "Nature-based therapy and healing",
@@ -451,6 +496,7 @@ export const projects: Project[] = [
   },
   {
     slug: "designing-for-obsolescence",
+    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org."},
     title: "Designing for Obsolescence",
     theme: "goods",
     tagline: "Rethinking product lifecycles",
@@ -460,6 +506,7 @@ export const projects: Project[] = [
   },
   {
     slug: "dad-lab-25",
+    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org."},
     title: "Dad.Lab.25",
     theme: "justice",
     tagline: "Exploring fatherhood in Australia",
@@ -469,6 +516,7 @@ export const projects: Project[] = [
   },
   {
     slug: "10x10-retreat",
+    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org — refine when partner context is confirmed."},
     title: "10x10 Community Capital Leadership Retreat",
     theme: "harvest",
     tagline: "Ten leaders, ten days, growing community capital together",
@@ -486,6 +534,7 @@ export const projects: Project[] = [
   },
   {
     slug: "act-monthly-dinners",
+    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org."},
     title: "ACT Monthly Dinners",
     theme: "harvest",
     tagline: "Breaking bread, building connection, crafting shared story",
@@ -503,6 +552,7 @@ export const projects: Project[] = [
   },
   {
     slug: "anat-spectra-2025",
+    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org — refine if a partner org is added in EL."},
     title: "ANAT SPECTRA 2025",
     theme: "earth",
     tagline: "Art, technology, and community storytelling",
@@ -520,6 +570,7 @@ export const projects: Project[] = [
   },
   {
     slug: "cars-and-microcontrollers",
+    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org."},
     title: "Cars and Microcontrollers",
     theme: "goods",
     tagline: "Learning by making - hands-on skills that build confidence",
@@ -537,6 +588,7 @@ export const projects: Project[] = [
   },
   {
     slug: "travelling-womens-car",
+    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org — may also relate to Oonchiumpa."},
     title: "Travelling Women's Car",
     theme: "earth",
     tagline: "A mobile space for women's stories and cultural preservation",
@@ -554,6 +606,7 @@ export const projects: Project[] = [
   },
   {
     slug: "nfp-leaders-interviews",
+    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org."},
     title: "NFP Leaders Interview Project",
     theme: "justice",
     tagline: "Capturing sector wisdom through conversations with leaders",
@@ -571,6 +624,7 @@ export const projects: Project[] = [
   },
   {
     slug: "project-her-self",
+    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org — refine when partner context is confirmed."},
     title: "Project Her Self",
     theme: "earth",
     tagline: "Design and storytelling centering women's voices",

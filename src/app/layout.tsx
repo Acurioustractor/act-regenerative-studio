@@ -3,6 +3,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Fraunces, Source_Serif_4, Work_Sans } from "next/font/google";
 import UnifiedFooter from "../components/UnifiedFooter";
+import { MobileMenu } from "../components/MobileMenu";
 import "./globals.css";
 
 const displayFont = Fraunces({
@@ -141,6 +142,8 @@ export default function RootLayout({
                     </Link>
                   ))}
                 </nav>
+
+                <MobileMenu items={navItems} />
               </div>
             </div>
           </div>

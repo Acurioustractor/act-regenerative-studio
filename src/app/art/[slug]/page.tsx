@@ -9,6 +9,8 @@ import {
   type HydratedArtProject,
   type ArtMedium,
 } from '@/lib/art/art-portfolio';
+import { projects as actProjects } from '@/data/projects';
+import { EmpathyLedgerConnections } from '@/components/projects/EmpathyLedgerConnections';
 
 export function generateStaticParams() {
   return getAllArtSlugs().map((slug) => ({ slug }));
@@ -133,8 +135,33 @@ export default async function ArtWorkPage({
     (item) => item.id !== project.heroImage?.id && item.kind === 'image'
   );
 
+  // Resolve EL mapping. Priority:
+  // 1. Direct empathyLedger field on the art piece
+  // 2. ACT project whose slug matches the art slug
+  // 3. ACT project whose slug or title matches connectedProject (case-insensitive)
+  const connected = project.connectedProject?.toLowerCase() || '';
+  const linkedAct =
+    actProjects.find((p) => p.slug === project.slug) ||
+    actProjects.find(
+      (p) =>
+        connected &&
+        (p.slug === connected || p.title.toLowerCase() === connected)
+    ) ||
+    null;
+  const elMapping = project.empathyLedger || linkedAct?.empathyLedger;
+  const elOwnerSlug = project.empathyLedger ? project.slug : linkedAct?.slug;
+
   return (
     <div className="space-y-16">
+      {elMapping && elOwnerSlug && (
+        <EmpathyLedgerConnections
+          projectSlug={elOwnerSlug}
+          projectTitle={project.title}
+          orgSlug={elMapping.orgSlug}
+          elProjectSlugs={elMapping.elProjectSlugs}
+          notes={elMapping.notes}
+        />
+      )}
       {/* Hero */}
       {heroUrl ? (
         <section className="relative overflow-hidden rounded-[36px]">

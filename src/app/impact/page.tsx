@@ -75,7 +75,7 @@ export default function ImpactPage() {
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                     <div className="p-6 bg-white/60 rounded-2xl border border-[#E1D3BA] text-center">
-                        <div className="text-4xl font-[var(--font-display)] text-[#D87D4A]">{totalInitiatives}</div>
+                        <div className="text-4xl font-[var(--font-display)] text-[var(--we-warm-brown)]">{totalInitiatives}</div>
                         <div className="text-xs uppercase tracking-widest mt-2 text-[var(--we-warm-brown)]">Current initiatives</div>
                     </div>
                     <div className="p-6 bg-white/60 rounded-2xl border border-[#E1D3BA] text-center">
@@ -83,14 +83,12 @@ export default function ImpactPage() {
                         <div className="text-xs uppercase tracking-widest mt-2 text-[var(--we-warm-brown)]">Contexts in view</div>
                     </div>
                     <div className="p-6 bg-white/60 rounded-2xl border border-[#E1D3BA] text-center">
-                        <div className="text-4xl font-[var(--font-display)] text-[#4CAF50]">{communityLedCount}</div>
+                        <div className="text-4xl font-[var(--font-display)] text-[var(--we-warm-brown)]">{communityLedCount}</div>
                         <div className="text-xs uppercase tracking-widest mt-2 text-[var(--we-warm-brown)]">High authority</div>
                     </div>
-                    <div className="p-6 bg-white/60 rounded-2xl border border-[#E1D3BA] flex items-center justify-center">
-                        <div className="text-center">
-                            <div className="text-4xl font-[var(--font-display)] text-[var(--we-olive)]">{highEvidenceCount}</div>
-                            <div className="text-xs uppercase tracking-widest mt-2 text-[var(--we-warm-brown)]">High evidence</div>
-                        </div>
+                    <div className="p-6 bg-white/60 rounded-2xl border border-[#E1D3BA] text-center">
+                        <div className="text-4xl font-[var(--font-display)] text-[var(--we-warm-brown)]">{highEvidenceCount}</div>
+                        <div className="text-xs uppercase tracking-widest mt-2 text-[var(--we-warm-brown)]">High evidence</div>
                     </div>
                 </div>
             </section>

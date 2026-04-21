@@ -55,7 +55,7 @@ export default function UnifiedFooter({
 
             {/* Custom Links */}
             {customLinks.length > 0 && (
-              <nav className="space-y-2 pt-4">
+              <nav aria-label="Footer — quick links" className="space-y-2 pt-4">
                 {customLinks.map((link) => (
                   <Link
                     key={link.href}
@@ -75,7 +75,7 @@ export default function UnifiedFooter({
               <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-[#dbc5a6]">
                 Fields of practice
               </h3>
-              <nav className="space-y-3">
+              <nav aria-label="Footer — fields of practice" className="space-y-3">
                 {fieldLinks.map((project) => (
                   <Link key={project.href} href={project.href} className="group block">
                     <div className="flex items-center gap-1.5 text-sm font-medium text-[#f2e8d9] transition group-hover:text-[#9cd09e]">
@@ -111,7 +111,7 @@ export default function UnifiedFooter({
             <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-[#dbc5a6]">
               Studio
             </h3>
-            <nav className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-[#e0d4c4]">
+            <nav aria-label="Footer — studio" className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-[#e0d4c4]">
               {[
                 { label: 'About', href: '/about' },
                 { label: 'Vision', href: '/vision' },

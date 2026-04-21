@@ -19,7 +19,7 @@ type WikiMeta = {
 };
 
 interface LivingSystemStripProps {
-  eyebrow?: string;
+  eyebrow: string;
   title: string;
   description: string;
   wiki?: WikiMeta | null;
@@ -40,7 +40,7 @@ function renderPill(value: string) {
 }
 
 export default function LivingSystemStrip({
-  eyebrow = "Living system",
+  eyebrow,
   title,
   description,
   wiki,

@@ -15,7 +15,10 @@ export const metadata = {
 
 export default async function VisionPage() {
     const filePath = path.join(process.cwd(), 'src/data/vision/vision.md');
-    const content = fs.readFileSync(filePath, 'utf8');
+    const rawContent = fs.readFileSync(filePath, 'utf8');
+    // Strip leading `# Title` — page already has an h1 from PageHero and a
+    // section title above the doc. The markdown's own h1 would duplicate both.
+    const content = rawContent.replace(/^#\s+.+\n+/, '');
 
     return (
         <div className="space-y-20">
@@ -74,9 +77,9 @@ export default async function VisionPage() {
                     title="ACT 2026: The Harvest Year"
                     description="A working directional document kept in public so it stays readable and accountable."
                 />
-                <main className="rounded-[32px] border border-[var(--we-sand)] bg-white/85 p-8 md:p-12">
+                <div className="rounded-[32px] border border-[var(--we-sand)] bg-white/85 p-8 md:p-12">
                     <MarkdownViewer content={content} />
-                </main>
+                </div>
             </section>
 
             <section className="rounded-3xl border border-[#2F2A25] bg-[#11110F] p-8 text-[#F3EBDD] md:p-12">

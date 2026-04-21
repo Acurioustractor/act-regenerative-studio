@@ -103,7 +103,7 @@ export interface EnrichedProject extends Project {
   // Ecosystem data (from act-ecosystem repository)
   ecosystemData?: EcosystemProject;
 
-  // Canonical ACT wiki data
+  // Working wiki data
   wikiData?: CanonicalWikiProjectMatch;
   flagshipPack?: ACTFlagshipProjectPack;
 
@@ -356,7 +356,7 @@ export const getProjectData = cache(async function getProjectData(
     wikiKeyPeople,
     wikiBacklinks,
   ] = await Promise.all([
-    // Canonical ACT wiki enrichment (reuse pre-fetch)
+    // Working wiki enrichment (reuse pre-fetch)
     Promise.resolve(wikiDataPreFetch),
 
     // Canonical flagship pack enrichment

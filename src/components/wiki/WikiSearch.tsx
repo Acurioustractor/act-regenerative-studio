@@ -126,7 +126,7 @@ export function WikiSearch({ pages, sections }: WikiSearchProps) {
       <div className="flex items-center justify-between gap-4">
         <div>
           <p className="text-xs uppercase tracking-[0.3em] text-[#7A6A55]">
-            Canonical ACT wiki
+            Working wiki
           </p>
           <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
             {totalLabel} available

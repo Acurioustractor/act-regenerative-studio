@@ -1,7 +1,7 @@
 /**
  * Empathy Ledger Service Syndication
  *
- * Site-scoped services/capabilities for the ACT studio shell.
+ * Site-scoped services/capabilities for the ACT site.
  * Unlike the old content-hub service feed, this only reads the service layer
  * that sits inside the site's existing project/org boundary.
  */

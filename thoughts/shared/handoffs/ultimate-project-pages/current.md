@@ -1,5 +1,5 @@
 ---
-date: 2026-04-23T12:00:00Z
+date: 2026-04-23T18:00:00Z
 session_name: ultimate-project-pages
 branch: main
 status: active
@@ -8,10 +8,10 @@ status: active
 # Work Stream: ultimate-project-pages
 
 ## Ledger
-**Updated:** 2026-04-23T12:00:00Z
-**Goal:** Reconcile `src/data/projects.ts` + wiki to a single canonical hierarchy, clean up the carryover resume prompts (A–G), push.
-**Branch:** main — head `a1e22db` ("polish(site): mosaic cleanup + external voice on index pages"), pushed to `origin/main`. Working tree clean apart from `supabase/.temp/cli-latest` (autogen).
-**Test:** `npm run dev` on :3300. Run `npm run sync:wiki && npm run sync:el-media` after any EL-linkage or wiki-slug change.
+**Updated:** 2026-04-23T18:00:00Z
+**Goal:** Reconcile `src/data/projects.ts` + wiki to a single canonical hierarchy, clean the carryover resume prompts (A–G), refresh the vision doc + farm size, tidy GitHub branches, ship.
+**Branch:** main — head `686daf2` ("docs: add HTML viewer for ALMA diagrams"), pushed to `origin/main`. Working tree clean apart from `supabase/.temp/cli-latest` (autogen). Production build verified clean (83+ project pages prerender; all static pages compile).
+**Test:** `npm run dev` on :3300. Run `npm run sync:wiki && npm run sync:el-media` after any EL-linkage or wiki-slug change. `npm run build` passes.
 
 ---
 
@@ -35,8 +35,20 @@ The canonical list tiers everything:
 
 1. `ff09c68` — `refactor(projects): reconcile canonical project list` — 2 deletions, 9 event demotions, 4 slug renames, 11 redirects in `next.config.js`, 8 defaulted EL notes cleaned (`travelling-womens-car → oonchiumpa`; the other 7 kept `a-curious-tractor`), `projects.ts.backup` removed. Regenerated `wiki-projects`, `wiki-pages`, `wiki-flagship-project-packs`, `empathy-ledger-featured`, `living-ecosystem-canon`, `project-code-registry` snapshots. Rolled in prior session's uncommitted work (art sub-page voice cleanup, blog title-case fix, EL Connections admin gate + video thumbs, `/admin/pending-el-stories` scaffold, EL editorial-approval workflow design doc).
 2. `a1e22db` — `polish(site): mosaic cleanup + external voice on index pages` — homepage mosaic: replaced demoted `dad-lab-25` tile with `fishers-oysters`, fixed `/goods-on-country` href → `/goods`. Index-page external-voice sweep on events, wiki, storytellers (removed dev language like `EMPATHY_LEDGER_API_KEY`, npm sync commands, "syndication layer", snapshot timestamps). Normalized a raw `→` to `&rarr;` span on the wiki index.
+3. `f29b1dd` — `docs(ledger): update handoff + draft EL phase-1 issue body` — first ledger rewrite + saved the drafted GH issue body at `thoughts/shared/plans/el-editorial-approval-phase1-issue-draft.md` (cross-repo auto-post was blocked by guardrail).
+4. `b738648` — `docs(vision): correct farm size + refresh 2026 roadmap` — single source of truth for BCV size: **557,803 m² = ~55.8 ha = ~138 acres**. Corrected across 8 files (`vision.md`, `CLAUDE.md`, `src/app/farm/page.tsx` ×3, `compendium/CHANGELOG.md`, `compendium/appendices/glossary.md`, `compendium/02-place/black-cockatoo-valley.md`, `docs/brand/content-drafts/draft-mission-and-about.md`, `docs/architecture/act-ecosystem.md`). Vision 2026 roadmap refreshed for April reality: Q1 ✅ (ACT Hub, GHL), Q2 ✅ (EL V1), rest flagged. Added Fishers Oysters to Pillar 3 + Art-cross-cutting note.
+5. `f0d144b` — `feat: add ALMA diagrams as SVG files` — cherry-picked from the deleted `claude/find-act-compendium-jR0C5` branch. Adds `assets/diagrams/alma-loop.svg` + `alma-vs-traditional.svg`.
+6. `686daf2` — `docs: add HTML viewer for ALMA diagrams` — cherry-picked from the same deleted branch. Adds `docs/diagrams/alma-diagrams.html`.
 
-Both pushed to `origin/main` (27 commits shipped in the push).
+All 6 pushed to `origin/main` across three pushes during the session.
+
+### GitHub cleanup this session
+
+- **Branches deleted:** `origin/codex/act-node22-next-fix` (PR #37 was merged; 3 post-merge commits were either superseded or obsolete — main has more sophisticated versions of `.eslintrc.json`, supabase client lazy init, etc.), `origin/claude/find-act-compendium-jR0C5` (Jan 14 branch carrying ALMA diagram work — valuable content was cherry-picked before deletion).
+- **Worktrees pruned:** `/private/tmp/act-regenerative-studio-node22-fix` (dead) and `/private/tmp/act-regenerative-studio-flagship-deploy` (dead).
+- **Cherry-pick outcome:** 2 commits landed (ALMA SVGs + HTML viewer). 4 commits skipped — ALMA framework + Mermaid commits targeted `ACT_Compendium_2026.md` which was deleted on main; codex pre-merge commit was already in main via PR squash (`707b8cb`); codex post-merge commits were superseded by later main work.
+- **Current branches:** only `main` locally; only `origin/main` on remote.
+- **Production build verified clean** post-cleanup.
 
 ### Resume-prompt status (A–G from prior ledger)
 
@@ -47,7 +59,7 @@ Both pushed to `origin/main` (27 commits shipped in the push).
 | C — Mosaic tile decisions | **done** | `dad-lab-25` tile replaced with `fishers-oysters`. `civicgraph` slug works via wiki-backed `/projects/[slug]`. `oonchiumpa` still on fallback image — EL org exists but has 0 media. |
 | D — Blog long-read mobile pass | **open** | Needs browser + mobile viewport; flagged for next session with user driving. |
 | E — No-copy-pass pages | **done** | Events, wiki, storytellers rewrites landed in `a1e22db`. Terms, privacy, blog index already clean. |
-| F — Vision markdown refresh | **open** | `src/data/vision/vision.md` still has 2025–2028 quarterly checklists. Needs user walkthrough of what's still accurate. |
+| F — Vision markdown refresh | **done** | Landed in `b738648`. Farm size corrected globally. 2026 roadmap reflects April reality. Fishers Oysters added to Pillar 3. Art-cross-cutting note added. The "2025–2028 checklists" the prior handoff warned about didn't exist — the doc was already 2026-focused; only Q-level statuses needed updating. |
 | G — EL sync for missing orgs | **done** | Re-ran `sync:el-media`. Coverage unchanged: `tomnet` has project/0 media; `oonchiumpa` has org/0 media; `mounty-yarns`, `mmeic` have neither. All still blocked upstream. |
 
 ### Files touched this session (highlights)

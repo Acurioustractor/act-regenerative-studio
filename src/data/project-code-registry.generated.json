@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-21T01:02:37.617Z",
+  "generatedAt": "2026-04-22T01:01:06.190Z",
   "sourceConfigPath": "/Users/benknight/Code/act-global-infrastructure/config/project-codes.json",
   "projectCount": 74,
   "unresolvedWikiProjectSlugs": [
@@ -54,7 +54,7 @@
       "category": "events",
       "canonicalSlug": "10x10-retreat",
       "wikiSlug": null,
-      "staticSlug": "10x10-retreat",
+      "staticSlug": null,
       "aliases": [
         "10x10-retreat",
         "ACT-10",
@@ -240,7 +240,7 @@
       "category": "community",
       "canonicalSlug": "act-monthly-dinners",
       "wikiSlug": "act-monthly-dinners",
-      "staticSlug": "act-monthly-dinners",
+      "staticSlug": null,
       "aliases": [
         "act-monthly-dinners",
         "ACT-MD",
@@ -520,7 +520,7 @@
       "category": "health",
       "canonicalSlug": "bg-fit",
       "wikiSlug": "bg-fit",
-      "staticSlug": null,
+      "staticSlug": "bg-fit",
       "aliases": [
         "bg-fit",
         "ACT-BG",
@@ -737,7 +737,7 @@
       "category": "arts",
       "canonicalSlug": "cars-and-microcontrollers",
       "wikiSlug": "cars-and-microcontrollers",
-      "staticSlug": "cars-and-microcontrollers",
+      "staticSlug": null,
       "aliases": [
         "cars-and-microcontrollers",
         "ACT-MC",
@@ -829,10 +829,9 @@
       "category": "funding",
       "canonicalSlug": "community-capital",
       "wikiSlug": "community-capital",
-      "staticSlug": "10x10-retreat",
+      "staticSlug": null,
       "aliases": [
         "community-capital",
-        "10x10-retreat",
         "ACT-CP",
         "Community Capital",
         "10x10-community-capital",
@@ -846,19 +845,18 @@
       ],
       "queryAliases": [
         "community-capital",
-        "10x10-retreat",
         "ACT-CP",
         "10x10-community-capital",
         "community-capital-retreat"
       ],
       "lookupKeys": [
         "community-capital",
-        "10x10-retreat",
         "act-cp",
         "10x10-community-capital",
         "community-capital-retreat",
         "10x10",
         "10x10-community-capital-leadership-retreat",
+        "10x10-retreat",
         "act-cp-community-capital"
       ],
       "legacyCodes": [],
@@ -999,7 +997,7 @@
       "category": "community",
       "canonicalSlug": "dad-lab-25",
       "wikiSlug": "dad-lab-25",
-      "staticSlug": "dad-lab-25",
+      "staticSlug": null,
       "aliases": [
         "dad-lab-25",
         "ACT-DL",
@@ -1122,7 +1120,7 @@
       "category": "justice",
       "canonicalSlug": "diagrama",
       "wikiSlug": "diagrama",
-      "staticSlug": null,
+      "staticSlug": "diagrama",
       "aliases": [
         "diagrama",
         "ACT-DG",
@@ -1521,7 +1519,7 @@
       "category": "enterprise",
       "canonicalSlug": "global-laundry-alliance",
       "wikiSlug": "global-laundry-alliance",
-      "staticSlug": "global-laundry-alliance",
+      "staticSlug": null,
       "aliases": [
         "global-laundry-alliance",
         "ACT-GL",
@@ -2311,7 +2309,7 @@
       "category": "community",
       "canonicalSlug": "project-her-self",
       "wikiSlug": null,
-      "staticSlug": "project-her-self",
+      "staticSlug": null,
       "aliases": [
         "project-her-self",
         "ACT-HS",
@@ -3080,7 +3078,7 @@
       "category": "events",
       "canonicalSlug": "westpac-summit-2025",
       "wikiSlug": null,
-      "staticSlug": "westpac-summit-2025",
+      "staticSlug": null,
       "aliases": [
         "westpac-summit-2025",
         "ACT-WE",

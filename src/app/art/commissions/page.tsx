@@ -68,7 +68,7 @@ export default async function ArtCommissionsPage() {
         <SectionHeading
           eyebrow="Relevant case studies"
           title="Current works that show the commission logic"
-          description="These pieces are already being carried by the live ACT stack, so they are the clearest current reference points for how a commission can look, feel, and grow over time."
+          description="Three works that trace the arc of how a commission can take shape at ACT — from the question that starts it, through the making, to the public life it takes on afterwards."
         />
         <div className="grid gap-6 lg:grid-cols-3">
           {works.map((work) => (
@@ -86,7 +86,7 @@ export default async function ArtCommissionsPage() {
               ) : (
                 <div className="flex h-48 items-end bg-gradient-to-br from-[#171612] via-[#2F2A25] to-[#5B4634] p-5 text-white">
                   <p className="text-xs uppercase tracking-[0.22em]">
-                    {work.previewMedia?.kind || "Live project record"}
+                    {work.previewMedia?.kind || work.medium}
                   </p>
                 </div>
               )}

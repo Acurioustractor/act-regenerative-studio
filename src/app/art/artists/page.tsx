@@ -14,8 +14,8 @@ export default async function ArtistsPage() {
     <div className="space-y-20">
       <PageHero
         eyebrow="Artists and collaborators"
-        title="People currently visible through the works layer"
-        description="This page is not a fixed roster. It surfaces people and collaborator signals that are already present in the public works system, so the site can grow from real project documentation rather than a separate profile database."
+        title="The people behind the work"
+        description="Not a fixed roster. The artists, storytellers, and partners shown here are the people currently shaping ACT projects in public. As the work changes, this page changes with it."
         actions={[
           { label: "Explore works", href: "/art" },
           { label: "Apply for a residency", href: "/art/residencies", variant: "outline" },
@@ -25,9 +25,9 @@ export default async function ArtistsPage() {
 
       <section className="space-y-10">
         <SectionHeading
-          eyebrow="Current roster"
-          title="People, practices, and named collaborators"
-          description="Some entries come from the live story layer. Others come from the public project framing itself. As the underlying project records deepen, this page will deepen with them."
+          eyebrow="Current collaborators"
+          title="Artists, storytellers, and partners"
+          description="A living roll-call drawn from the projects themselves. Some are storytellers whose voices appear directly in the work; others are named collaborators across residencies, commissions, and Country-based partnerships."
         />
         <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
           {collaborators.map((collaborator) => (
@@ -40,7 +40,7 @@ export default async function ArtistsPage() {
                 <div className="space-y-1">
                   <p className="text-xs uppercase tracking-[0.22em] text-[var(--we-warm-brown)]">
                     {collaborator.source === "storyteller"
-                      ? "Live storyteller signal"
+                      ? "Storyteller"
                       : "Project collaborator"}
                   </p>
                   <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">

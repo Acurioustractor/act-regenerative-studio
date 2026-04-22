@@ -156,7 +156,7 @@ function getEngagementConfig(
         {
           label: 'Talk about a deployment',
           description:
-            'Bring a community need, goods pathway, or partnership question into the conversation.',
+            'Bring a community need, goods-on-country pathway, or partnership question into the conversation.',
           href: '/contact?type=project-partnership&source=project-page&context=goods-on-country',
           variant: 'primary',
         },
@@ -164,7 +164,7 @@ function getEngagementConfig(
           label: 'See the Goods field page',
           description:
             'Read the ACT-facing overview of the Goods work, its context, and how it links back into the broader ecosystem.',
-          href: '/goods',
+          href: '/goods-on-country',
           variant: 'secondary',
         },
       ],

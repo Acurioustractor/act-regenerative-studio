@@ -1,5 +1,5 @@
 ---
-date: 2026-04-22T23:30:00Z
+date: 2026-04-23T00:00:00Z
 session_name: ultimate-project-pages
 branch: main
 status: active
@@ -8,73 +8,98 @@ status: active
 # Work Stream: ultimate-project-pages
 
 ## Ledger
-**Updated:** 2026-04-22T23:30:00Z
-**Goal:** Site-wide text-hygiene + structural polish across every user-facing interior page is done. Next session continues with Farm/Harvest/Art sub-pages (content passes) or inherited follow-ups (EL approval workflow, default-org cleanup, blog polish).
-**Branch:** main — head 881cfdb ("feat(el): per-page Empathy Ledger connections + mobile nav drawer") + this session's commit on top.
+**Updated:** 2026-04-23T00:00:00Z
+**Goal:** Last session swept the seven inherited resume prompts (A–G). All seven processed: A/B/E fully done, C/D/F/G done to the limit of what could happen without further user input. Next session picks up the open items those four left behind.
+**Branch:** main — head 881cfdb ("feat(el): per-page Empathy Ledger connections + mobile nav drawer") + this session's uncommitted changes.
 **Test:** npm run dev on :3300. `npm run sync:el-media` after any EL-linkage changes.
 
-### Session outcome (2026-04-22 late evening — text-hygiene pass)
+### Session outcome (2026-04-23 — sweep of inherited resume prompts A–G)
 
-- **Global header offset fix** — interior pages were clipping under the `fixed` floating nav. Added CSS rule in `src/app/globals.css`: `main > section:first-child, main > div:first-child` get `padding-top: 6rem` (mobile) / `7rem` (md+). Full-bleed first-child sections (home DocHero) opt out via `main > section.full-bleed:first-child` override. Fixes every PageHero-based page + every custom-hero page without touching individual files.
-- **About added to main nav** in `src/app/layout.tsx` (first position after logo). MobileMenu picks it up automatically.
-- **40% / profit-share scrub** — user flagged as "random and weird." All user-facing mentions removed across About, Principles (3 spots), Partners, Studio. Rewrites use "value circulating back to communities" / "surplus distribution" / dual-entity framing.
-- **Metadata title duplication fixed** — 12 pages had `{page title} | A Curious Tractor` explicitly, which layout.tsx then templated to `{page title} | A Curious Tractor | A Curious Tractor`. Stripped the suffix on Media, Impact, Storytellers, Ask, Privacy, Goods, Ecosystem, Empathy Ledger, Farm, Harvest, Terms, JusticeHub, People.
-- **Page polish pass** (each got entity decoding, arrow normalization, EL Connections panel on meta pages where relevant):
-  - About — LCAA teaser now deep-links to /method (no duplication), fan-out strip to Projects/People/Partners, EL panel, straight quote fix.
-  - Method — added "In practice" section with one real project moment per LCAA phase (Fishers Oysters / Empathy Ledger / Goods / JusticeHub), EL panel, arrow fix.
-  - How we work — "Surplus distribution back to communities" rewrite, 3 arrows, EL panel.
-  - Principles — `${operationalPrinciples.length}` dynamic heading (was hardcoded "10"), EL panel.
-  - Vision — fixed broken local `/Users/benknight/.gemini/...` image path in `src/data/vision/vision.md` → `/act_placemat_2026_poster.png` (image was 404ing on every render).
-  - Governance — 3 curly apostrophes in dark CTA, EL panel.
-  - Ecosystem — "Six public works" → "Public works" (curatedProjects only renders 5; Art has its own door), `&rsquo;` entity, 2 arrows, EL panel.
-  - Impact — 4 `&rsquo;` entities, EL panel.
-  - Partners — arrow, EL panel.
-  - Studio — 3 arrows, EL panel.
-  - Contact — 1 arrow.
-  - Farm / Harvest / Goods / JusticeHub / Empathy Ledger (project landers) — HTML entity decoding (`&apos;`, `&ldquo;`, `&rdquo;`), trailing span arrows. Left CTA button-label arrows (`The full story →`) as intentional copy.
-- **Site-wide final entity sweep** — decoded every remaining `&rsquo; &lsquo; &rdquo; &ldquo; &apos; &hellip;` across src/app (Method, Media, Ask, not-found, Art, Art/[slug], Home, Storytellers/[id], Wiki/[slug], Wiki).
-- **Site-wide decorative arrow sweep** — every `<span aria-hidden="true">→</span>` normalized to `&rarr;` (events, art/artists, art/exhibitions, art/commissions, art/artworks, projects/[slug], wiki/[slug], plus the earlier cluster).
+**A — Farm sub-pages copy polish: nothing to fix.**
+- `/farm/stay`, `/farm/retreats`, `/farm/workshops` audited end-to-end. No HTML entities, no curly quotes, no decorative arrow spans, no metadata blocks (so no double-suffix). They were written clean from the start.
 
-### What was deliberately left
+**B — Harvest + Art sub-pages.**
+- Harvest sub-pages (`/harvest/csa`, `/harvest/produce`) — same audit as A: clean.
+- Art sub-pages stripped of insider/system jargon for external readers (per the user-memory voice rule):
+  - `art/artists/page.tsx` — hero + section rewritten ("works layer"/"live story layer" → plain language); chip "Live storyteller signal" → "Storyteller".
+  - `art/artworks/page.tsx` — hero + section rewritten (no more "public ACT stack", "wiki carries the durable framing"); removed the `formatLiveSource` pill that exposed "Live feed"/"Project record"; fallback "Awaiting approved media" → "Images to come".
+  - `art/exhibitions/page.tsx` — section description rewritten (no "public project records").
+  - `art/commissions/page.tsx` — section description rewritten (no "live ACT stack"); fallback chip "Live project record" → work's medium.
+  - `art/residencies/page.tsx` — already clean.
 
-- **CTA button-label arrows** (e.g. `The full story →`, `Get in touch →`, `Partner with us →`) — stay as copy, not decorative spans.
-- **Inline text labels** like `Open ACT hub page →`, `Enter the art →`, `View 2025 Year in Review →` — design intent in hover/inline states.
-- **Data labels** like JusticeHub's `5 → <1` (police contacts).
-- **Code comments & webhook server logs** (arrows in `api/webhooks/ghl/route.ts`).
+**E — EL Connections panel UX polish (full prompt landed).**
+- `src/components/projects/EmpathyLedgerConnections.tsx`:
+  - **Admin gating** — added Supabase `useEffect` that resolves the current session's `profiles.role` (same gate AdminShell uses); component returns `null` unless role is `admin` or `editor`. Public visitors no longer see the launcher.
+  - **Launcher position** — moved bottom-left → bottom-right to clear the Next.js dev indicator. Drawer now slides in from the right (`items-end justify-end`) for consistency.
+  - **Notes banner** — replaced the faint amber strip with a bordered card: icon + "Mapping note" label + the note text in higher-contrast amber.
+  - **Video tab** — replaced the raw URL list with thumbnail cards (centered play-button overlay) when EL provides `thumbnail_url`/`preview_url`. Direct-upload videos (`.mp4`/`.webm`/`.mov`) get an inline `<video controls preload="metadata">` so the first frame previews without auto-loading the file. Generic external links fall back to a gradient placeholder with a play button.
 
-### Known follow-ups (inherited + new)
+**D — EL → site editorial approval workflow (phase 0 done).**
+- Wrote design doc at `thoughts/shared/plans/el-editorial-approval-workflow.md`. Three layers, five phases:
+  1. **EL schema** — add `approved_for_act_site` (bool) + `approved_at` + `approved_by` to `stories` and `media`. Backfill all existing rows as approved (one-time SQL).
+  2. **EL API** — content-hub endpoints accept `?approved_for=act-regenerative-studio`; new admin-only `/api/v1/content-hub/pending` endpoint exposes the queue.
+  3. **ACT consumer** — sync scripts add the flag behind `EL_APPROVAL_GATE` env (initially OFF); admin queue page wired to `/pending`; UI cues on the EL Connections panel.
+- Scaffolded `/admin/pending-el-stories` route (`src/app/admin/pending-el-stories/page.tsx`) with an honest "waiting on EL API" empty state, deep-link to coverage dashboard + EL issue tracker, and the workflow summary visible to the team. Inherits the admin layout's Supabase auth gate.
 
-- **Farm sub-pages** (`/farm/stay`, `/farm/retreats`, `/farm/workshops`) — not yet polished. 80–106 lines each.
-- **Harvest sub-pages** (`/harvest/csa`, `/harvest/produce`) — not yet polished. ~95 lines each.
-- **Art sub-pages** (`/art/artworks`, `/art/artists`, `/art/exhibitions`, `/art/commissions`, `/art/residencies`) — got arrow fixes only, no full copy pass.
-- **Events** — got arrow fix, no copy pass. 135 lines.
-- **Terms / Privacy** — title fixes only, no full pass.
-- **Blog index / Wiki index / Storytellers index** — lightly touched, could use a proper review.
-- **26 projects defaulted to `a-curious-tractor`** still need review (from previous session). Dashboard at `/admin/empathy-ledger-coverage`.
-- **Three EL orgs still missing from snapshot** (`tomnet`, `mounty-yarns`, `mmeic`) — will auto-fix on next sync once media is added upstream.
-- **EL → site editorial approval workflow** (approved_for_act_site flag) — not started.
-- **EL Connections panel UX** — admin-only gating, video previews, launcher collides with Next.js dev indicator on localhost.
-- **`/vision` markdown** — `vision.md` still references `2025 → 2026 → 2027 → 2028` plans with specific Q1/Q2/Q3 checklists. Could use a refresh if directions have shifted.
+**C — 26 defaulted EL mappings (partial cleanup).**
+- 6 of the 26 are legitimately ACT-stewarded (not "defaults"); cleaned their `notes` field in `src/data/projects.ts` so the dashboard stops flagging them amber:
+  - `black-cockatoo-valley`, `empathy-ledger`, `goods-on-country`, `goods-tennant-creek`, `the-harvest`, `act-monthly-dinners`.
+- 18 partner-adjacent projects still defaulted — need user input per project before changing `orgSlug`.
+
+**F — Blog long-read polish (code-only pass).**
+- `/blog/[slug]/page.tsx`: title-cased related-project chips so they render "Green Harvest Witta" instead of "green harvest witta".
+- Em-dash sweep across blog static copy: clean. (Em dashes inside article body come from EL via `post.content` — fixing those belongs upstream.)
+- Type sizes / spacing / gradients reviewed on code. Nothing obvious to tune from a pure code read. Mobile caption behaviour and bento-grid ghost-cell scenarios still need a browser to verify.
+
+**G — Mosaic curation (audit only).**
+- 6 of 9 tiles render cleanly from EL (PICC Elders, CONTAINED, Gold.Phone, Uncle Allan, Community Capital, SMART Recovery — all have heroes + real media pools).
+- 3 worth user attention:
+  - **`oonchiumpa`** — NO EL block at all in the snapshot, despite being a registered EL org. Currently using `/media/field-stills/goods-remote-aerial.jpg` fallback. Re-run `npm run sync:el-media` first; if still empty the EL org may have org-level media but no project record.
+  - **`civicgraph`** — 0 EL media items, tile name is "CivicScope" (slug/name mismatch suggests rename in EL). Using `justicehub-container.jpg` fallback. Either fix the slug, add media in EL, or drop the tile.
+  - **`dad-lab-25`** — uses `override: jinibara-country-aerial.jpg` (a BCV aerial that's thematically off). EL has 233 items for this slug. Removing the override would let the EL hero show through.
+
+### Files touched
+
+- `src/app/art/artists/page.tsx`
+- `src/app/art/artworks/page.tsx`
+- `src/app/art/exhibitions/page.tsx`
+- `src/app/art/commissions/page.tsx`
+- `src/components/projects/EmpathyLedgerConnections.tsx`
+- `src/data/projects.ts` (6 mapping notes removed)
+- `src/app/blog/[slug]/page.tsx` (title-case fix)
+- `src/app/admin/pending-el-stories/page.tsx` (new)
+- `thoughts/shared/plans/el-editorial-approval-workflow.md` (new)
+
+### Known follow-ups (carried forward)
+
+- **18 partner-adjacent projects still defaulted** to `a-curious-tractor` in `src/data/projects.ts`. Need user to name each project + its correct EL org. Examples: `green-harvest-witta`, `gold-phone`, `bupa-tfn-pitch`, `pakkinjalki-kari`, `naidoc-week-mount-isa`, `westpac-summit-2025`, `the-confessional`, `regional-arts-fellowship`, `caring-for-those-who-care`, `designing-for-obsolescence`, `dad-lab-25`, `10x10-retreat`, `anat-spectra-2025`, `cars-and-microcontrollers`, `travelling-womens-car` (note already hints at Oonchiumpa), `nfp-leaders-interviews`, `project-her-self`, `weave-bed-tennant-creek`. Dashboard at `/admin/empathy-ledger-coverage`.
+- **EL approval workflow phase 1** — open issue in `empathy-ledger-v2` for the schema migration; reference the design doc.
+- **Blog long-read mobile pass** — Field Photographs caption breakpoint, bento-grid ghost cells when gallery < 3, suggested-reading on narrow screens. Needs a browser.
+- **Mosaic tile decisions** — three flagged above. One-line changes once user confirms direction.
+- **Three EL orgs still missing from snapshot** (`tomnet`, `mounty-yarns`, `mmeic`) — auto-fix when media added upstream. Run `npm run sync:el-media` after.
+- **Events page (135 lines)** — got arrow fix, no copy pass.
+- **Terms / Privacy** — title fixes only, no full copy pass.
+- **`/vision` markdown** — still references `2025 → 2026 → 2027 → 2028` checklists; refresh if directions shifted.
 
 ### Resume prompts (pick one and paste after /clear)
 
-**A — Finish the Farm cluster copy polish.**
-> Dev on :3300. Open /farm/stay, /farm/retreats, /farm/workshops. Each is ~80–106 lines. Apply the same polish pattern we used on /farm itself: decode any `&apos; &ldquo; &rdquo;` HTML entities, normalize `<span aria-hidden="true">→</span>` to `&rarr;`, check for curly quotes, verify the metadata title doesn't double-suffix `| A Curious Tractor` (layout.tsx adds the template). Check that the pages render above the fixed floating nav (recent globals.css rule should handle this). Don't add EL panels to these sub-pages — they're transactional, not showcase.
+**A — Refine specific defaulted EL mappings.**
+> 18 ACT projects in `src/data/projects.ts` still default to `a-curious-tractor` org with a "refine" note. Visit /admin/empathy-ledger-coverage to see them. I'll name each project and the correct EL org slug; you update the mapping (and optionally `elProjectSlugs: [...]` for a specific EL project), remove the `notes` field, then re-run `npm run sync:el-media`.
 
-**B — Harvest and Art sub-pages cleanup.**
-> Same pattern as prompt A but for /harvest/csa, /harvest/produce, /art/artworks, /art/artists, /art/exhibitions, /art/commissions, /art/residencies. Arrows in spans already converted. Left to do: HTML entity scrub, metadata title double-suffix check, any curly quotes or stray `&apos;` in text.
+**B — Open the EL approval-workflow issue + start phase 1.**
+> Read the design doc at `thoughts/shared/plans/el-editorial-approval-workflow.md`. Open a GitHub issue in `empathy-ledger-v2` capturing phase 1 (schema migration on `stories` + `media` tables, plus a one-time backfill SQL marking existing rows as approved). Then if I have access, draft the migration file in the EL repo. The ACT-side admin page is already scaffolded at `/admin/pending-el-stories`.
 
-**C — Refine the 26 `a-curious-tractor` default EL mappings.**
-> Visit /admin/empathy-ledger-coverage to see all 43 ACT projects and their EL org mapping. 26 are flagged as defaulted (amber). For each one I name, update `src/data/projects.ts` to point at the correct EL org slug (and optionally `elProjectSlugs: [...]` for a specific EL project), remove the `notes` field, then re-run `npm run sync:el-media`.
+**C — Mosaic tile decisions.**
+> Three flagged: (1) `oonchiumpa` has no EL block — re-run sync first, then decide whether to keep the local fallback or drop the tile; (2) `civicgraph` slug/name mismatch with EL ("CivicScope") — fix slug, add EL media, or drop; (3) `dad-lab-25` override points at a BCV aerial despite EL having 233 items — likely safe to remove the override and let the EL hero through.
 
-**D — EL → site editorial workflow.**
-> Sketch + start the approval pipeline: new EL stories should flow to the ACT site only when the team marks them "approved for ACT platform." Today the sync pulls everything matching the project/org. We need: (1) a way to tag EL stories as `approved_for_act_site: true`, (2) the sync to honour that flag, (3) a small admin queue at `/admin/pending-el-stories` showing new untagged items. Start by checking the EL `stories` table for any approval-flag columns, then propose the data model.
+**D — Blog long-read mobile pass.**
+> Dev on :3300. Open /blog/seeds-of-change-walking-with-elders-and-youth-on-kalkadoon-country at mobile width. Check: Field Photographs caption legibility at narrow widths, bento-grid behaviour when gallery has fewer than 3 items, suggested-reading 3-card grid on phone, hero title clamp at very small viewports.
 
-**E — Panel UX polish + admin gating.**
-> The EL Connections panel (src/components/projects/EmpathyLedgerConnections.tsx) currently renders for everyone. Consider: (a) admin-only gating — the affordance fits the team, not public visitors; (b) bottom-left launcher button collides with the Next.js dev indicator on localhost; (c) Videos tab just lists URLs — should have actual video player previews; (d) notes banner (amber) could be clearer. Pick one and fix it.
+**E — Tackle the inherited "no copy pass" pages.**
+> Events (~135 lines), Terms, Privacy, blog index, wiki index, storytellers index. Apply the established polish pattern: HTML-entity decoding, decorative-arrow normalization (`<span aria-hidden="true">→</span>` → `&rarr;`), curly-quote scrub, metadata title double-suffix check, and an external-voice read-through (no insider jargon, no debug labels).
 
-**F — Blog long-read polish.**
-> Dev on :3300. Open http://localhost:3300/blog/seeds-of-change-walking-with-elders-and-youth-on-kalkadoon-country. The long-read layout has: full-bleed hero, short italic lede, prose body at 720px, Field Photographs gallery (up to 8 EL previews), author block, CTA band, 3-card Suggested Reading. Check type sizes, spacing, gallery caption behaviour on mobile. Fix obvious issues. No em dashes.
+**F — Vision markdown refresh.**
+> `src/data/vision/vision.md` still talks about the 2025–2028 quarter-by-quarter checklists. Walk me through what's still accurate vs stale, and rewrite the dated sections to reflect where the org actually is in 2026.
 
-**G — Mosaic curation tweaks on the home.**
-> The "More from the field" mosaic at the bottom of src/app/page.tsx uses `mosaicTiles` (9 tiles). Current roster: PICC Elders Hull River Story, CivicScope, CONTAINED, Gold.Phone, Uncle Allan Palm Island, Dad.Lab, Community Capital, Oonchiumpa, SMART Recovery. Each tile has optional `override` (always wins) and `fallback` (used when EL has nothing). Swap tiles, change names, repoint hrefs per user direction. Each `slot` id (e.g. `home-mosaic-dad-lab-25`) persists image picks to `src/data/image-overrides.json`.
+**G — Re-run EL syncs and check for `tomnet`, `mounty-yarns`, `mmeic`, `oonchiumpa`.**
+> `npm run sync:el-media`; then check `src/data/empathy-ledger-featured.generated.json` to see whether the four orgs that were missing/empty now have content. If they do, update any pages that depended on the missing data.

@@ -43,30 +43,21 @@ const RELATED_FIELD_MEDIA: Record<
 > = {
   justicehub: {
     photoSlugs: [
-      'diagrama-spain',
-      'bg-fit-mount-isa',
+      'diagrama',
+      'bg-fit',
       'oonchiumpa',
-      'naidoc-week-mount-isa',
     ],
-    videoSlug: 'naidoc-week-mount-isa',
   },
   'goods-on-country': {
     photoSlugs: [
       'goods-tennant-creek',
       'pakkinjalki-kari',
       'weave-bed-tennant-creek',
-      'bupa-tfn-pitch',
     ],
     videoSlug: 'goods-tennant-creek',
   },
-  'the-harvest': {
-    photoSlugs: ['green-harvest-witta'],
-  },
   'empathy-ledger': {
-    photoSlugs: ['gold-phone', 'global-laundry-alliance', 'diagrama-spain'],
-  },
-  'black-cockatoo-valley': {
-    photoSlugs: ['green-harvest-witta'],
+    photoSlugs: ['gold-phone', 'diagrama'],
   },
 };
 
@@ -134,7 +125,7 @@ const LOCAL_FIELD_MEDIA_OVERRIDES: Record<
         url: '/media/field-stills/goods-delivery-2.jpg',
         alt: 'Goods on Country delivery scene in community context',
         caption:
-          'The delivery moment matters as much as the product: goods arriving, being handled, and becoming useful in context.',
+          'The delivery moment matters as much as the product: goods-on-country arriving, being handled, and becoming useful in context.',
         eyebrow: 'Delivery still',
         sourceTitle: 'Goods on Country',
         href: '/media/field-stills/goods-delivery-2.jpg',

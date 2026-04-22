@@ -83,7 +83,7 @@ export default async function GoodsPage() {
       {/* , , ,  THE WHY , , ,  */}
       <ScrollReveal>
         <ReadingLede id="story">
-          In remote communities, families sleep on floors. Standard goods
+          In remote communities, families sleep on floors. Standard goods-on-country
           break in weeks. Nobody comes to fix them. The replacement cycle
           drains resources and dignity at the same time.
         </ReadingLede>
@@ -172,7 +172,7 @@ export default async function GoodsPage() {
               <p className="mt-6 font-[var(--font-body)] text-[15px] leading-[1.8] text-[var(--site-muted)]">
                 The washing machine fleet serves a dual purpose: providing clean
                 laundry infrastructure to communities, and generating data that
-                makes the next generation of community-deployed goods smarter.
+                makes the next generation of community-deployed goods-on-country smarter.
               </p>
             </>
           }
@@ -224,7 +224,7 @@ export default async function GoodsPage() {
               eyebrow="The vision"
               title="Containerised factories on Country"
               onDark
-              lede="The scale vision is not a central factory that ships to communities. It is containerised manufacturing infrastructure that communities own and operate. Each facility is self-contained in shipping containers, produces 1,000 to 1,500 goods annually, and employs 4 to 6 local workers processing locally-sourced recycled plastic."
+              lede="The scale vision is not a central factory that ships to communities. It is containerised manufacturing infrastructure that communities own and operate. Each facility is self-contained in shipping containers, produces 1,000 to 1,500 goods-on-country annually, and employs 4 to 6 local workers processing locally-sourced recycled plastic."
             />
             <div className="mt-16 grid gap-8 md:grid-cols-3">
               {[
@@ -380,7 +380,7 @@ export default async function GoodsPage() {
                 eyebrow="Get in touch"
                 eyebrowColor="muted"
                 title="Work with us"
-                lede="Communities, organisations, health services, and funders who want to see essential goods designed with dignity."
+                lede="Communities, organisations, health services, and funders who want to see essential goods-on-country designed with dignity."
               />
               <p className="mt-6 font-[var(--font-body)] text-[15px] text-[var(--site-muted)]">
                 Or email{" "}

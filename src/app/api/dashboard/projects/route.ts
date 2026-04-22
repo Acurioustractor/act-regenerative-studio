@@ -102,7 +102,7 @@ export async function GET() {
       },
       {
         name: "Goods on Country",
-        slug: "goods",
+        slug: "goods-on-country",
         url: "https://goodsoncountry.netlify.app",
         status: "unknown",
         lastDeployed: new Date().toISOString(),

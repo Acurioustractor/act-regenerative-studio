@@ -83,7 +83,7 @@ const LEGACY_ALIASES: Record<string, string> = {
   'the-farm': 'projects/act-farm',
   'the-studio': 'projects/act-studio',
   'the-harvest': 'projects/the-harvest',
-  goods: 'projects/goods-on-country',
+  'goods-on-country': 'projects/goods-on-country',
   justicehub: 'projects/justicehub',
   'empathy-ledger': 'projects/empathy-ledger',
   contained: 'projects/contained',

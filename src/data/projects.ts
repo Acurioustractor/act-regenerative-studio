@@ -41,7 +41,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     slug: "black-cockatoo-valley",
-    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"BCV is ACT-stewarded land; parent org for now."},
+    empathyLedger: { orgSlug: "a-curious-tractor" },
     title: "Black Cockatoo Valley",
     theme: "valley",
     tagline: "Land practice, residencies, and conservation on Jinibara Country",
@@ -50,19 +50,7 @@ export const projects: Project[] = [
     focus: ["Stewardship", "Residencies", "Jinibara Country"],
   },
   {
-    slug: "global-laundry-alliance",
-    empathyLedger: { orgSlug: "global-laundry-alliance" },
-    title: "Global Laundry Alliance",
-    theme: "justice",
-    tagline: "Reframing access to laundry as a dignity issue",
-    description:
-      "Global Laundry Alliance (GLA) is a collaboration reframing access to laundry as a dignity issue and a basic right, not a \"nice-to-have\" service. It connects communities and organisations working across homelessness, refugee displacement, and global poverty to co-design practical laundry solutions with lived-experience leadership, and to shift the story from charity to systems change.\n\nThe project positions laundry spaces as community hubs, using storytelling and shared learning to spread what works across contexts, and build momentum toward policy and funding frameworks that treat clean clothes as foundational to belonging, opportunity, and self-worth.",
-    focus: ["Community dignity", "Systems change", "Global collaboration"],
-    heroImage:
-      "https://tednluwflfhxyucgwigh.supabase.co/storage/v1/object/public/photos/community/f598b4ef-ce37-4eb3-9160-d415e743a577.jpeg",
-  },
-  {
-    slug: "diagrama-spain",
+    slug: "diagrama",
     empathyLedger: { orgSlug: "diagrama" },
     title: "Diagrama Spain/England Journey",
     theme: "justice",
@@ -74,20 +62,8 @@ export const projects: Project[] = [
       "https://tednluwflfhxyucgwigh.supabase.co/storage/v1/object/public/photos/community/3909ee10-4611-4413-bc50-a35378d044c8.jpeg",
   },
   {
-    slug: "green-harvest-witta",
-    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org — refine when partner context is confirmed."},
-    title: "Green Harvest Witta",
-    theme: "earth",
-    tagline: "Sowing seeds of community-led innovation",
-    description:
-      "Green Harvest Witta has a \"next chapter\" vision. Transforming its legacy of sustainability and community knowledge-sharing into a living, community-led innovation hub.⁠ More soon...\n⁠​",
-    focus: ["Sustainability", "Community knowledge", "Innovation hub"],
-    heroImage:
-      "https://tednluwflfhxyucgwigh.supabase.co/storage/v1/object/public/photos/community/37eb9379-c39d-4eee-b5ad-d279f920c578.jpeg",
-  },
-  {
     slug: "gold-phone",
-    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org — refine when partner context is confirmed."},
+    empathyLedger: { orgSlug: "a-curious-tractor" },
     title: "Gold.Phone",
     theme: "earth",
     tagline: "Repurposing the past for community connection",
@@ -99,7 +75,7 @@ export const projects: Project[] = [
   },
   {
     slug: "empathy-ledger",
-    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"The platform itself; ACT parent org for now."},
+    empathyLedger: { orgSlug: "a-curious-tractor" },
     title: "Empathy Ledger",
     theme: "earth",
     tagline: "Every Story Matters",
@@ -190,7 +166,7 @@ export const projects: Project[] = [
   },
   {
     slug: "goods-on-country",
-    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Goods is ACT-stewarded; parent org for now."},
+    empathyLedger: { orgSlug: "a-curious-tractor" },
     title: "Goods on Country",
     theme: "goods",
     tagline: "Quality furniture for every home on Country",
@@ -198,7 +174,7 @@ export const projects: Project[] = [
       "Every Australian deserves access to quality household essentials, regardless of where they live. We partner with Aboriginal Elders and Traditional Owners to deliver durable beds, washing machines, and furniture to remote communities.",
     focus: ["Remote Communities", "Essential Goods", "Community Partnership"],
     listen:
-      "We listened to Traditional Owners in remote NT, WA, and Queensland communities who described the challenge of accessing basic household goods. Expensive freight, unsuitable products, and lack of repair infrastructure meant families went without essentials or paid 3-4x urban prices.",
+      "We listened to Traditional Owners in remote NT, WA, and Queensland communities who described the challenge of accessing basic household goods-on-country. Expensive freight, unsuitable products, and lack of repair infrastructure meant families went without essentials or paid 3-4x urban prices.",
     curiosity:
       "What if we designed furniture specifically for remote conditions? What if beds could withstand extreme heat, washing machines could handle bore water, and everything was built to last 20 years instead of 2? We researched materials, tested prototypes, and learned from community feedback.",
     action:
@@ -220,7 +196,7 @@ export const projects: Project[] = [
       "https://tednluwflfhxyucgwigh.supabase.co/storage/v1/object/public/photos/community/49a62fee-d7a8-4f54-8f41-b89f48e9536b.jpeg",
   },
   {
-    slug: "bg-fit-mount-isa",
+    slug: "bg-fit",
     empathyLedger: { orgSlug: "bg-fit" },
     title: "BG Fit Mount Isa",
     theme: "justice",
@@ -260,7 +236,7 @@ export const projects: Project[] = [
   },
   {
     slug: "goods-tennant-creek",
-    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Goods program — ACT parent org."},
+    empathyLedger: { orgSlug: "a-curious-tractor" },
     title: "Goods Tennant Creek Journey",
     theme: "goods",
     tagline: "Co-creating with Traditional Owners",
@@ -284,20 +260,8 @@ export const projects: Project[] = [
       "https://tednluwflfhxyucgwigh.supabase.co/storage/v1/object/public/photos/community/c6adc97f-cc96-45b0-a37a-ea081213a67e.jpeg",
   },
   {
-    slug: "bupa-tfn-pitch",
-    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org."},
-    title: "Bupa TFN Healthy People, Healthy Planet",
-    theme: "goods",
-    tagline: "Championing human and planetary health",
-    description:
-      "Three amazing changemakers selected to pitch at our special Healthy People, Healthy Planet event with Bupa Foundation in Melbourne - streamed nationally - on Tuesday 2 September 2025! Join us as we raise vital funds for program that champion human and planetary health! 🌏\n\n🌿 Nicholas Marchesi OAM (Him/He), A Curious Tractor – Partnering with remote and First Nations communities to co-design essential goods like beds and washing machines that improve health, dignity and daily life. \n⚡Georgia Cooke, CORENA - Citizens Own Renewable Energy Network Australia Inc – Helping community organisations cut emissions and energy costs through a revolving fund that delivers clean energy upgrades and lasting climate impact. \n🌾 James McLennan, Farm My School – Turning unused school grounds into regenerative farms that tackle food insecurity and build stronger, healthier communities.",
-    focus: ["Social enterprise", "Community health", "Climate action"],
-    heroImage:
-      "https://tednluwflfhxyucgwigh.supabase.co/storage/v1/object/public/photos/community/edf0d290-5cea-43b3-9061-d1f8ee9da7e4.gif",
-  },
-  {
     slug: "pakkinjalki-kari",
-    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org — refine when partner context is confirmed."},
+    empathyLedger: { orgSlug: "a-curious-tractor" },
     title: "Pakkinjalki kari (Washing Machine)",
     theme: "goods",
     tagline: "Culturally appropriate design on Warumungu Country",
@@ -309,28 +273,15 @@ export const projects: Project[] = [
   },
   {
     slug: "weave-bed-tennant-creek",
-    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org."},
+    empathyLedger: { orgSlug: "a-curious-tractor" },
     title: "Weave Bed Design",
     theme: "goods",
     tagline: "Washable, repairable, community-built",
     description:
       "Imagine if you could weave a bed? \n\nDesigning, iterating and learning with community. Thankful for Jimmy Frank Jupurrurla and his community for embracing the opportunity to re imagine Goods for the community.\n\nThis is one of our prototype's in action - a washable, repairable, community built bed.",
-    focus: ["Prototype design", "Community iteration", "Repairable goods"],
+    focus: ["Prototype design", "Community iteration", "Repairable goods-on-country"],
     heroImage:
       "https://tednluwflfhxyucgwigh.supabase.co/storage/v1/object/public/photos/community/e9f86c0c-abff-4246-9b50-624e362b0347.jpeg",
-  },
-  {
-    slug: "naidoc-week-mount-isa",
-    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org — refine when partner context is confirmed."},
-    title: "NAIDOC Week Mount Isa",
-    theme: "justice",
-    tagline: "Kinship in action with BG Fit",
-    description:
-      "Watch Brodie Germaine move through his community with a microphone like he's conducting ceremony, not interviews. \n\nThis isn't journalism - it's kinship in action.\n\nUncle Warren King doesn't mince words about what he sees: \n\n\"This fellow here, I'm very proud of it because he is doing that (passing on culture) as a young man. With his own business and his involvement in community has been staunch strong and resilient as well.\" \n\nThat's 60,000 years of cultural authority recognising the real thing when it walks past.\n\nUncle George cuts straight to strategy: \n\n\"It starts with the little kids, you know. You'll see a lot of little kids that walk around the streets... Pull 'em up and have a chat.\" \n\nNo million-dollar framework. \n\nJust presence. \n\nJust care. \n\nJust the radical act of seeing kids before they disappear.",
-    focus: ["Cultural celebration", "Youth connection", "Community leadership"],
-    heroImage:
-      "https://tednluwflfhxyucgwigh.supabase.co/storage/v1/object/public/photos/community/03c0e261-4946-43a4-863f-7444ac1374c8.jpeg",
-    videoUrl: "https://share.descript.com/view/a4yhx0PaaCe",
   },
   {
     slug: "contained",
@@ -344,7 +295,7 @@ export const projects: Project[] = [
   },
   {
     slug: "the-harvest",
-    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"The Harvest — ACT parent org until an EL org exists."},
+    empathyLedger: { orgSlug: "a-curious-tractor" },
     title: "The Harvest",
     theme: "harvest",
     tagline: "Community hub for connection and healing",
@@ -365,16 +316,6 @@ export const projects: Project[] = [
     focus: ["Mental wellbeing", "Peer-led support", "Regional community"],
   },
   {
-    slug: "westpac-summit-2025",
-    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org."},
-    title: "Westpac Summit 2025",
-    theme: "earth",
-    tagline: "Scholar Cards activation",
-    description:
-      "Westpac Summit '25 — Closing Plenary \"Scholar Cards\" Activation",
-    focus: ["Community engagement", "Storytelling activation", "Leadership"],
-  },
-  {
     slug: "uncle-allan-palm-island-art",
     empathyLedger: { orgSlug: "palm-island-community-company" },
     title: "Uncle Allan Palm Island Art",
@@ -386,7 +327,7 @@ export const projects: Project[] = [
   },
   {
     slug: "the-confessional",
-    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org."},
+    empathyLedger: { orgSlug: "a-curious-tractor" },
     title: "The Confessional",
     theme: "earth",
     tagline: "Space for honest conversation",
@@ -395,7 +336,7 @@ export const projects: Project[] = [
     focus: ["Safe space", "Vulnerability", "Community healing"],
   },
   {
-    slug: "smart-hcp-gp-uplift",
+    slug: "smart-hcp-uplift",
     empathyLedger: { orgSlug: "smart-recovery" },
     title: "SMART HCP GP Uplift",
     theme: "justice",
@@ -466,7 +407,7 @@ export const projects: Project[] = [
   },
   {
     slug: "caring-for-those-who-care",
-    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org — refine when partner context is confirmed."},
+    empathyLedger: { orgSlug: "a-curious-tractor" },
     title: "Caring for Those Who Care",
     theme: "justice",
     tagline: "Amplifying voices of NFP leaders",
@@ -496,7 +437,7 @@ export const projects: Project[] = [
   },
   {
     slug: "designing-for-obsolescence",
-    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org."},
+    empathyLedger: { orgSlug: "a-curious-tractor" },
     title: "Designing for Obsolescence",
     theme: "goods",
     tagline: "Rethinking product lifecycles",
@@ -505,90 +446,8 @@ export const projects: Project[] = [
     focus: ["Circular design", "Repair culture", "Product lifecycle"],
   },
   {
-    slug: "dad-lab-25",
-    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org."},
-    title: "Dad.Lab.25",
-    theme: "justice",
-    tagline: "Exploring fatherhood in Australia",
-    description:
-      "Exploring Dad.Lab.25 in Australia. This project creates space for fathers to gather, share experiences, and explore what it means to show up for their kids and communities.",
-    focus: ["Fatherhood", "Community support", "Gender equity"],
-  },
-  {
-    slug: "10x10-retreat",
-    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org — refine when partner context is confirmed."},
-    title: "10x10 Community Capital Leadership Retreat",
-    theme: "harvest",
-    tagline: "Ten leaders, ten days, growing community capital together",
-    description:
-      "The 10x10 Retreat brings together ten community leaders for an intensive period of learning, connection, and practice development around community capital and shared enterprise. Deep learning, peer connection, and shared tools for community-owned business.",
-    focus: ["Leadership development", "Community capital", "Shared enterprise"],
-    listen:
-      "We listened to community leaders who said they needed extended time together - not a conference, but a genuine period of learning and relationship building.",
-    curiosity:
-      "What happens when you bring diverse leaders together for enough time that real relationships form? How do we grow community capital intentionally?",
-    action:
-      "Ten participants from diverse community leadership contexts spend ten days at The Harvest in immersive learning and practice development.",
-    art:
-      "The retreat produces action plans, deep connections, and shared tools that participants take back to their communities.",
-  },
-  {
-    slug: "act-monthly-dinners",
-    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org."},
-    title: "ACT Monthly Dinners",
-    theme: "harvest",
-    tagline: "Breaking bread, building connection, crafting shared story",
-    description:
-      "Regular gatherings at The Harvest where people come together to eat, listen, and contribute to ACT's evolving story. Not a meeting. Not a presentation. A meal where conversation shapes what we become.",
-    focus: ["Community gathering", "Shared meals", "Collective voice"],
-    listen:
-      "The best insights don't come from reports. They come from dinner conversation - the kind that happens when people are fed, comfortable, and given permission to speak honestly.",
-    curiosity:
-      "What emerges when we create regular space for community to gather, eat, and speak? How do dinner conversations shape direction?",
-    action:
-      "Monthly dinners with food from the farm, structured conversation on themes that matter, and space for everyone's voice.",
-    art:
-      "Relationships and insights that continue beyond each evening, shaping ACT's evolving story through collective voice.",
-  },
-  {
-    slug: "anat-spectra-2025",
-    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org — refine if a partner org is added in EL."},
-    title: "ANAT SPECTRA 2025",
-    theme: "earth",
-    tagline: "Art, technology, and community storytelling",
-    description:
-      "A collaboration with the Australian Network for Art and Technology (ANAT), exploring how creative practice and emerging technology can serve community storytelling. Technology for community voice, art as evidence, and ethical tools that respect rather than extract.",
-    focus: ["Art & technology", "Community storytelling", "Ethical tech"],
-    listen:
-      "ANAT and ACT came together recognizing that technology often extracts from communities rather than serving them. We listened for ways creative practice could change this.",
-    curiosity:
-      "How can emerging technology serve storytelling rather than surveillance? What does ethical technology look like when built with communities?",
-    action:
-      "Cross-disciplinary learning bringing artists, technologists, and communities together to build tools that respect community voice.",
-    art:
-      "Creative outputs that demonstrate a different relationship between technology and community - tools that serve rather than extract.",
-  },
-  {
-    slug: "cars-and-microcontrollers",
-    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org."},
-    title: "Cars and Microcontrollers",
-    theme: "goods",
-    tagline: "Learning by making - hands-on skills that build confidence",
-    description:
-      "A hands-on learning program using practical making - working on vehicles and electronics - as a pathway to skills, confidence, and connection. Not everyone learns from books. Some people need to build.",
-    focus: ["Practical skills", "Hands-on learning", "Employment pathways"],
-    listen:
-      "We heard from young people who didn't fit traditional education but came alive when they could work with their hands on real things.",
-    curiosity:
-      "What happens when learning is physical rather than theoretical? How do mechanical and electronic skills build confidence?",
-    action:
-      "Practical workshops working on vehicles and microcontrollers, building skills through making and fixing real things.",
-    art:
-      "The moment someone makes something work and realizes they can solve problems - that's the transformation this program creates.",
-  },
-  {
     slug: "travelling-womens-car",
-    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org — may also relate to Oonchiumpa."},
+    empathyLedger: { orgSlug: "oonchiumpa" },
     title: "Travelling Women's Car",
     theme: "earth",
     tagline: "A mobile space for women's stories and cultural preservation",
@@ -606,7 +465,7 @@ export const projects: Project[] = [
   },
   {
     slug: "nfp-leaders-interviews",
-    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org."},
+    empathyLedger: { orgSlug: "a-curious-tractor" },
     title: "NFP Leaders Interview Project",
     theme: "justice",
     tagline: "Capturing sector wisdom through conversations with leaders",
@@ -621,23 +480,5 @@ export const projects: Project[] = [
       "Structured interviews with NFP leaders across Australia, capturing and analysing insights about community work, systems change, and impact.",
     art:
       "A shared resource of sector wisdom - patterns, warnings, and insights made available to the next generation of leaders.",
-  },
-  {
-    slug: "project-her-self",
-    empathyLedger: {"orgSlug":"a-curious-tractor","notes":"Default ACT parent org — refine when partner context is confirmed."},
-    title: "Project Her Self",
-    theme: "earth",
-    tagline: "Design and storytelling centering women's voices",
-    description:
-      "A design and storytelling initiative focused on women's empowerment - creating spaces, tools, and narratives that centre women's experiences and agency. Design often fails to consider women's needs; this project responds.",
-    focus: ["Women's empowerment", "Inclusive design", "Storytelling"],
-    listen:
-      "We listened to women who said design rarely considers their needs, experiences, and perspectives - from public spaces to digital tools.",
-    curiosity:
-      "What does design look like when led by women's input? How do we capture and amplify women's narratives authentically?",
-    action:
-      "Design processes led by women's voices, storytelling that captures diverse women's experiences, and outcomes focused on increasing agency.",
-    art:
-      "Spaces, tools, and narratives that truly reflect and serve women - demonstrating what inclusive design can achieve.",
   },
 ];

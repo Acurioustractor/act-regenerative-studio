@@ -225,7 +225,9 @@ export default async function BlogPostPage({
                     href={`/projects/${projectSlug}`}
                     className="rounded-full border border-[var(--we-sand)] bg-white/80 px-4 py-2 font-[var(--font-sans)] text-[12px] text-[var(--we-olive)] transition hover:-translate-y-0.5 hover:border-[#4CAF50] hover:bg-white hover:shadow-sm"
                   >
-                    {projectSlug.replace(/-/g, " ")}
+                    {projectSlug
+                      .replace(/-/g, " ")
+                      .replace(/\b\w/g, (c) => c.toUpperCase())}
                   </Link>
                 ))}
               </div>

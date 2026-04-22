@@ -13,7 +13,7 @@ export const studioProjectConfigs: CuratedProjectCardConfig[] = [
   {
     slug: "goods-on-country",
     eyebrow: "Goods",
-    href: "/goods",
+    href: "/goods-on-country",
     fallbackTitle: "Goods on Country",
     fallbackTagline: "Circular economy for remote communities",
     fallbackDescription:

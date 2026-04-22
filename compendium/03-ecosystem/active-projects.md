@@ -20,7 +20,7 @@ Active project list for internal alignment. Each project should be able to answe
 |---------|---------|
 | **Empathy Ledger** | Consent-first storytelling platform for community voice |
 | **JusticeHub** | Community-owned justice infrastructure and knowledge sharing |
-| **Goods.** | Essential goods co-designed with community for health and dignity |
+| **Goods.** | Essential goods-on-country co-designed with community for health and dignity |
 
 ---
 

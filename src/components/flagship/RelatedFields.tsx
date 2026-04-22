@@ -1,7 +1,7 @@
 import Link from "next/link";
 
 const allFields = [
-  { slug: "goods-on-country", href: "/goods", title: "Goods on Country", eyebrow: "Goods", video: "/media/field-videos/goods-community-build.mp4", poster: "/media/field-stills/goods-community-build.jpg" },
+  { slug: "goods-on-country", href: "/goods-on-country", title: "Goods on Country", eyebrow: "Goods", video: "/media/field-videos/goods-community-build.mp4", poster: "/media/field-stills/goods-community-build.jpg" },
   { slug: "justicehub", href: "/justicehub", title: "JusticeHub", eyebrow: "Justice", video: "/media/field-videos/justicehub-container.mp4", poster: "/media/field-stills/justicehub-container.jpg" },
   { slug: "the-harvest", href: "/harvest", title: "The Harvest", eyebrow: "Commons", video: "/media/field-videos/harvest-witta-aerial.mp4", poster: "/media/field-stills/harvest-witta-aerial.jpg" },
   { slug: "empathy-ledger", href: "/empathy-ledger", title: "Empathy Ledger", eyebrow: "Stories", video: "/media/field-videos/empathy-ledger-elder-trip.mp4", poster: "/media/field-stills/empathy-ledger-elder-trip.jpg" },

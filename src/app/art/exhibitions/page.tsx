@@ -64,7 +64,7 @@ export default async function ExhibitionsPage() {
         <SectionHeading
           eyebrow="Works in circulation"
           title="Current pieces that can travel, gather, or exhibit"
-          description="These works already have public project records, so they are the right entry points for exhibition conversations rather than a separate manual list."
+          description="Studio works that are ready to be encountered in public — as full installation, touring documentation, or community gathering. Each one opens into its full story."
         />
         <div className="grid gap-6 lg:grid-cols-2">
           {works.map((work) => (

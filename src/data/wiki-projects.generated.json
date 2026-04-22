@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-21T01:02:37.277Z",
+  "generatedAt": "2026-04-22T00:58:49.627Z",
   "sourceRoot": "/Users/benknight/Code/act-global-infrastructure/wiki",
   "projectCount": 80,
   "projects": [
@@ -105,7 +105,7 @@
       "canonicalUrl": null,
       "repoUrl": "https://github.com/Acurioustractor/act-regenerative-studio",
       "deployUrl": "https://act-regenerative-studio-benjamin-knights-projects.vercel.app/",
-      "modifiedAt": "2026-04-21T00:33:48.162Z"
+      "modifiedAt": "2026-04-22T00:57:51.860Z"
     },
     {
       "slug": "artist-residency",
@@ -1227,10 +1227,10 @@
     },
     {
       "slug": "minderoo-pitch-package",
-      "title": "Minderoo Pitch Package — STAY (Crescendo tier)",
-      "summary": "The operational version. Not the prose pitch (that's SHIPPED-2026-04-09-minderoo-stay-pitch.md). This is the package that runs the conversation: who calls Lucy when, with what amount, on what timeline, with what supporting artefacts, and how it connects to the CONTAINED launch ten days from now.",
+      "title": "Minderoo Pitch Package — The Three Circles",
+      "summary": "Help turn the evidence Minderoo already supported into a living, Indigenous-led mechanism for recognition, redirection, and community-led proof.",
       "overview": null,
-      "status": "ready for Ben's first call action",
+      "status": "aligned on 2026-04-21 to the COLI → Third Reality → Brave Ones bridge",
       "code": null,
       "tier": null,
       "canonicalSlug": "justicehub",
@@ -1249,7 +1249,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.795Z"
+      "modifiedAt": "2026-04-21T08:39:14.620Z"
     },
     {
       "slug": "mounty-yarns",
@@ -1769,7 +1769,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.787Z"
+      "modifiedAt": "2026-04-21T02:59:46.529Z"
     },
     {
       "slug": "the-caravan",

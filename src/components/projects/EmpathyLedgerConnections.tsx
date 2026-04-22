@@ -1,9 +1,10 @@
 "use client";
 
-import { useState, useMemo } from "react";
+import { useState, useMemo, useEffect } from "react";
 import NextImage from "next/image";
 import { createPortal } from "react-dom";
 import featuredSnapshot from "@/data/empathy-ledger-featured.generated.json";
+import { supabase } from "@/lib/supabase/client";
 
 interface EmpathyLedgerConnectionsProps {
   projectSlug: string;
@@ -50,6 +51,31 @@ export function EmpathyLedgerConnections({
   const [open, setOpen] = useState(false);
   const [tab, setTab] = useState<"photos" | "videos" | "stories">("photos");
   const [scope, setScope] = useState<"project" | "org">("project");
+  const [allowed, setAllowed] = useState(false);
+
+  useEffect(() => {
+    let active = true;
+    const check = async () => {
+      const { data: sessionData } = await supabase.auth.getSession();
+      const userId = sessionData.session?.user.id;
+      if (!userId) {
+        if (active) setAllowed(false);
+        return;
+      }
+      const { data: profile } = await supabase
+        .from("profiles")
+        .select("role")
+        .eq("id", userId)
+        .single();
+      if (active) setAllowed(!!profile && /^(admin|editor)$/.test(profile.role));
+    };
+    check();
+    const { data: listener } = supabase.auth.onAuthStateChange(() => check());
+    return () => {
+      active = false;
+      listener.subscription.unsubscribe();
+    };
+  }, []);
 
   const snapshot = featuredSnapshot as unknown as {
     organizations?: Record<string, OrgBlock | null>;
@@ -83,12 +109,14 @@ export function EmpathyLedgerConnections({
 
   const orgName = orgBlock?.org?.name || orgSlug;
 
+  if (!allowed) return null;
+
   return (
     <>
-      {/* Collapsed launcher button (bottom-left, fixed) */}
+      {/* Collapsed launcher button (bottom-right, fixed — bottom-left collides with Next dev indicator) */}
       <button
         onClick={() => setOpen(true)}
-        className="fixed bottom-6 left-6 z-[90] flex items-center gap-2 rounded-full bg-[var(--we-olive,#5a6b3a)] px-4 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-lg transition hover:opacity-90"
+        className="fixed bottom-6 right-6 z-[90] flex items-center gap-2 rounded-full bg-[var(--we-olive,#5a6b3a)] px-4 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-white shadow-lg transition hover:opacity-90"
         aria-label="Open Empathy Ledger connections"
       >
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
@@ -105,7 +133,7 @@ export function EmpathyLedgerConnections({
 
       {open && typeof document !== "undefined" && createPortal(
         <div
-          className="fixed inset-0 z-[200] flex items-end justify-start bg-black/60 backdrop-blur-sm sm:items-stretch"
+          className="fixed inset-0 z-[200] flex items-end justify-end bg-black/60 backdrop-blur-sm sm:items-stretch"
           onClick={() => setOpen(false)}
         >
           <aside
@@ -132,9 +160,27 @@ export function EmpathyLedgerConnections({
                 </button>
               </div>
               {notes && (
-                <p className="mt-2 rounded-md bg-amber-500/10 px-2 py-1 text-[11px] text-amber-200/90">
-                  {notes}
-                </p>
+                <div className="mt-3 flex gap-2 rounded-md border border-amber-400/30 bg-amber-500/10 px-3 py-2">
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    className="mt-0.5 shrink-0 text-amber-300"
+                    aria-hidden="true"
+                  >
+                    <circle cx="12" cy="12" r="10" />
+                    <path d="M12 8v4M12 16h.01" />
+                  </svg>
+                  <div className="text-[11px] leading-5 text-amber-100/90">
+                    <p className="font-semibold uppercase tracking-[0.14em] text-amber-200">
+                      Mapping note
+                    </p>
+                    <p className="mt-0.5 text-amber-100/80">{notes}</p>
+                  </div>
+                </div>
               )}
 
               {/* Deep links */}
@@ -252,18 +298,80 @@ export function EmpathyLedgerConnections({
                   <EmptyState label="No videos in this org's EL pool yet." />
                 ) : (
                   <div className="space-y-3">
-                    {videos.map((v) => (
-                      <a
-                        key={v.id}
-                        href={v.url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="block rounded-md border border-white/10 bg-white/5 p-3 transition hover:bg-white/10"
-                      >
-                        <p className="text-sm font-medium">{v.title || "Untitled video"}</p>
-                        <p className="mt-1 truncate text-[11px] text-white/50">{v.url}</p>
-                      </a>
-                    ))}
+                    {videos.map((v) => {
+                      const thumb = v.thumbnail_url || v.preview_url;
+                      const isDirectVideo = /\.(mp4|webm|mov)(\?|$)/i.test(v.url);
+                      return (
+                        <div
+                          key={v.id}
+                          className="overflow-hidden rounded-md border border-white/10 bg-white/5"
+                        >
+                          {thumb ? (
+                            <a
+                              href={v.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group relative block aspect-video overflow-hidden bg-black"
+                            >
+                              <NextImage
+                                src={thumb}
+                                alt={v.alt || v.title || ""}
+                                fill
+                                sizes="400px"
+                                className="object-cover transition group-hover:opacity-80"
+                                unoptimized
+                              />
+                              <div className="absolute inset-0 flex items-center justify-center bg-black/25 transition group-hover:bg-black/10">
+                                <div className="grid h-12 w-12 place-items-center rounded-full bg-white/95 text-[#1a1a1a] shadow-lg">
+                                  <svg
+                                    width="18"
+                                    height="18"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    aria-hidden="true"
+                                  >
+                                    <path d="M8 5v14l11-7z" />
+                                  </svg>
+                                </div>
+                              </div>
+                            </a>
+                          ) : isDirectVideo ? (
+                            <video
+                              src={v.url}
+                              controls
+                              preload="metadata"
+                              className="w-full bg-black"
+                            />
+                          ) : (
+                            <a
+                              href={v.url}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="group relative block aspect-video overflow-hidden bg-gradient-to-br from-[#2a2a2a] to-[#111]"
+                            >
+                              <div className="absolute inset-0 flex items-center justify-center">
+                                <div className="grid h-12 w-12 place-items-center rounded-full bg-white/90 text-[#1a1a1a] shadow-lg transition group-hover:scale-105">
+                                  <svg
+                                    width="18"
+                                    height="18"
+                                    viewBox="0 0 24 24"
+                                    fill="currentColor"
+                                    aria-hidden="true"
+                                  >
+                                    <path d="M8 5v14l11-7z" />
+                                  </svg>
+                                </div>
+                              </div>
+                            </a>
+                          )}
+                          <div className="px-3 py-2">
+                            <p className="text-sm font-medium">
+                              {v.title || "Untitled video"}
+                            </p>
+                          </div>
+                        </div>
+                      );
+                    })}
                   </div>
                 )
               )}

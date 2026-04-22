@@ -58,11 +58,11 @@ shareability: "EXTERNAL-LITE"
 
 ## Story Summary
 
-The Goods on Country program emerged from a simple observation on Palm Island: essential goods—beds, washing machines, basic furniture—kept breaking down, and there was no local capacity to repair them. Replacements meant waiting for stock to arrive from the mainland, often at inflated prices. Meanwhile, families slept on the floor or wore dirty clothes.
+The Goods on Country program emerged from a simple observation on Palm Island: essential goods-on-country—beds, washing machines, basic furniture—kept breaking down, and there was no local capacity to repair them. Replacements meant waiting for stock to arrive from the mainland, often at inflated prices. Meanwhile, families slept on the floor or wore dirty clothes.
 
 Community members identified the pattern long before outside organizations noticed. They knew what they needed. What they lacked was the supply chain and manufacturing relationships to make it happen.
 
-The partnership between PICC, Orange Sky, and ACT created something different: essential goods designed for durability and local repair. The beds are steel-framed, designed to be fixed with basic tools. The washing machines are simplified to reduce failure points. And crucially, 40% of the profit flows back to the community.
+The partnership between PICC, Orange Sky, and ACT created something different: essential goods-on-country designed for durability and local repair. The beds are steel-framed, designed to be fixed with basic tools. The washing machines are simplified to reduce failure points. And crucially, 40% of the profit flows back to the community.
 
 This isn't charity. It's a prototype for community-controlled supply chains. Palm Island residents aren't passive recipients of aid—they're co-designers of products that meet their actual needs, and owners of the enterprise that delivers them.
 
@@ -89,7 +89,7 @@ The innovation here isn't technological. It's structural. Community voice shapes
 
 ### LCAA Shift
 
-**Curiosity → Action**: The question "what if communities designed their own essential goods?" became a functioning manufacturing partnership with community ownership built in. The curiosity continues—next products (fridges, furniture) are in planning.
+**Curiosity → Action**: The question "what if communities designed their own essential goods-on-country?" became a functioning manufacturing partnership with community ownership built in. The curiosity continues—next products (fridges, furniture) are in planning.
 
 ---
 
@@ -105,7 +105,7 @@ The innovation here isn't technological. It's structural. Community voice shapes
   allowfullscreen>
 </iframe>
 
-*Cliff speaks about beds and community - how essential goods connect to dignity*
+*Cliff speaks about beds and community - how essential goods-on-country connect to dignity*
 
 ### Photos
 

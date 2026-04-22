@@ -4,12 +4,6 @@ import PageHero from "../../../components/PageHero";
 import SectionHeading from "../../../components/SectionHeading";
 import { getFeaturedWorks } from "@/lib/works/live-featured-works";
 
-function formatLiveSource(source: "site-syndication" | "content-hub" | null) {
-  if (source === "site-syndication") return "Live feed";
-  if (source === "content-hub") return "Live feed";
-  return "Project record";
-}
-
 export default async function ArtworksPage() {
   const works = await getFeaturedWorks();
 
@@ -17,8 +11,8 @@ export default async function ArtworksPage() {
     <div className="space-y-20">
       <PageHero
         eyebrow="Artworks"
-        title="A live index of studio works"
-        description="This archive is fed by the same system as the rest of the ACT site: the wiki carries the durable framing, while Empathy Ledger brings through approved stories, photos, video, and voice where they exist."
+        title="An evolving index of studio works"
+        description="A working catalogue of pieces that ACT is currently making, showing, or carrying with community. Each card opens into the fuller story, with photos, voice, and video where the work already has them."
         actions={[
           { label: "Enter the works", href: "/art" },
           { label: "Commission work", href: "/art/commissions", variant: "outline" },
@@ -29,8 +23,8 @@ export default async function ArtworksPage() {
       <section className="space-y-10">
         <SectionHeading
           eyebrow="Current works"
-          title="Pieces currently surfaced through the public ACT stack"
-          description="These are not placeholder archive entries. Each card is tied to a live project record, so the documentation can deepen as the work changes."
+          title="What the studio is making right now"
+          description="These aren't placeholders. Each piece is in motion — in residency, on tour, in commission, or still being carried with the community that shaped it."
         />
         <div className="grid gap-6 lg:grid-cols-2">
           {works.map((work) => (
@@ -72,7 +66,7 @@ export default async function ArtworksPage() {
               ) : (
                 <div className="flex h-64 items-end bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-6">
                   <p className="text-sm uppercase tracking-[0.24em] text-[var(--we-warm-brown)]">
-                    Awaiting approved media
+                    Images to come
                   </p>
                 </div>
               )}
@@ -82,8 +76,6 @@ export default async function ArtworksPage() {
                   <span>{work.medium}</span>
                   <span>•</span>
                   <span>{work.place}</span>
-                  <span>•</span>
-                  <span>{formatLiveSource(work.live.source)}</span>
                 </div>
 
                 <div>

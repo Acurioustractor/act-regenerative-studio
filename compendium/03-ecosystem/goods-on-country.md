@@ -1,6 +1,6 @@
 ---
 title: Goods on Country
-slug: goods-on-country
+slug: goods
 website_path: /projects/goods
 excerpt: "Your waste, your wealth"
 image: /images/goods-hero.jpg

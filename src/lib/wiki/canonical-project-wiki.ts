@@ -58,8 +58,6 @@ const SECTION_HEADINGS = [
 ];
 
 const PROJECT_SLUG_ALIASES: Record<string, string[]> = {
-  'bg-fit-mount-isa': ['bg-fit'],
-  'diagrama-spain': ['diagrama'],
   'goods-tennant-creek': ['goods-on-country'],
 };
 

@@ -11,7 +11,7 @@ last_updated: 2026-01-12
 
 **"Country caring for people, people caring for Country"**
 
-Black Cockatoo Valley is a 150-acre property on Jinibara Country near Witta, Queensland. Conservation-first, we work with Country, not on it. The land sets the pace; we do not scale beyond what the land and community can carry.
+Black Cockatoo Valley is a ~138-acre property on Jinibara Country near Witta, Queensland. Conservation-first, we work with Country, not on it. The land sets the pace; we do not scale beyond what the land and community can carry.
 
 ---
 
@@ -21,7 +21,7 @@ Black Cockatoo Valley is a 150-acre property on Jinibara Country near Witta, Que
 |--------|-------|
 | **Location** | Near Witta, Sunshine Coast hinterland, Queensland |
 | **Country** | Jinibara (Traditional Owners) |
-| **Size** | 150 acres (117 hectares) |
+| **Size** | 138 acres (55.8 hectares) |
 | **Features** | Mary River views, creeks, forest to Elaman Creek |
 | **Ecosystem** | Threatened species habitat (Glossy Black Cockatoo, others) |
 | **Designation** | Nature Refuge (conservation covenant) |

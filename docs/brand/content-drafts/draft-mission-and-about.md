@@ -20,7 +20,7 @@ Social, cultural, environmental, and economic value stays in community hands. 40
 
 A Curious Tractor exists at the intersection of regenerative land practice, social innovation, and cultural production. We're not consultants who parachute in with solutions. We're collaborators who show up, listen deeply, and transfer capacity to communities leading their own transformation.
 
-Operating from Black Cockatoo Valley—a 150-acre conservation estate on Jinibara lands—we steward both working Country and a studio for systems change. The farm is our commons. The studio is our toolkit. Together, they demonstrate how land care, community ownership, and creative disruption can replace extractive systems with regenerative ones.
+Operating from Black Cockatoo Valley—a ~138-acre conservation estate on Jinibara lands—we steward both working Country and a studio for systems change. The farm is our commons. The studio is our toolkit. Together, they demonstrate how land care, community ownership, and creative disruption can replace extractive systems with regenerative ones.
 
 ### How We Work: The LCAA Method
 
@@ -58,7 +58,7 @@ We name extractive systems and work to dismantle them. Change requires getting o
 
 **Goods on Country** — Circular-economy venture co-designing essential products for remote communities while converting local waste into manufacturing inputs. Your waste, your wealth.
 
-**Black Cockatoo Valley** — Our 150-acre regeneration estate combining eco-cottages, Indigenous land-care jobs, and biodiversity credits to finance habitat restoration. Country caring for people, people caring for Country.
+**Black Cockatoo Valley** — Our ~138-acre regeneration estate combining eco-cottages, Indigenous land-care jobs, and biodiversity credits to finance habitat restoration. Country caring for people, people caring for Country.
 
 **The Harvest** — Community-supported agriculture program and seasonal gatherings connecting local stewards to regenerative land practice and shared meals.
 

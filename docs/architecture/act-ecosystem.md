@@ -73,7 +73,7 @@ ACT is the **unifying voice** that:
 ### 2. **Physical Commons Stewardship**
 
 ACT directly stewards **Black Cockatoo Valley**:
-- 150-acre conservation estate on Jinibara Country
+- ~138-acre conservation estate on Jinibara Country
 - Working farm (The Harvest CSA program)
 - R&D site and studio space
 - Accommodation for residencies (ACT Farm bookings)

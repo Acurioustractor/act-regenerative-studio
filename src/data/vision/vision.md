@@ -37,7 +37,7 @@ We exist to:
 *The Roots.*
 *   **Role**: The grounding force. A living lab for conservation and connection.
 *   **The Work**: 
-    *   Restoring 117 hectares of Jinibara Country.
+    *   Stewarding ~55.8 hectares (~138 acres) of Jinibara Country.
     *   Hosting **Residencies** for artists and thinkers to touch the soil.
     *   Demonstrating that land stewardship is the first step of innovation.
 
@@ -55,7 +55,10 @@ We exist to:
 *   **The Work**:
     *   **Witta Hub**: A physical space for local making, growing, and gathering.
     *   **Goods on Country**: Manufacturing things that last, right here.
+    *   **Fishers Oysters**: Indigenous-led reef restoration and aquaculture on Quandamooka Country — a standalone partner showing what economic sovereignty on Country can look like.
     *   **Participation**: Not just volunteering, but *building* livelihoods together.
+
+> **Art cuts across all three pillars** — not a fourth column, but the connective tissue that lets land, studio, and harvest speak to each other. See Act 3.
 
 ---
 
@@ -82,20 +85,21 @@ Art is not a decoration. It is the **connective tissue**.
 ## Act 4: The 2026 Roadmap (Making It Real)
 
 We are moving from **building** to **operating**.
+*Status as of April 2026.*
 
 ### Q1: Unification (The Digital Foundation)
-*   [ ] **ACT Hub Launch**: One front door for all projects (`act.place`).
-*   [ ] **GHL Integration**: Seamless flows for guests, volunteers, and buyers.
-*   [ ] **The Harvest Live**: A marketplace for local good.
+*   [x] **ACT Hub Launch**: One front door for all projects — live at this site, surfacing every flagship, the wiki, the storyteller index, and the editorial feed.
+*   [x] **GHL Integration**: CRM pipelines and flows for guests, volunteers, and buyers wired across The Harvest, Empathy Ledger, JusticeHub, and BCV.
+*   [ ] **The Harvest Live**: A marketplace for local good — *in progress.*
 
 ### Q2: Participation (Inviting the World)
-*   [ ] **Residency Cohort 1**: Artists on the land.
-*   [ ] **Empathy Ledger V1**: Public release of the storytelling engine.
-*   [ ] **Goods E-commerce**: Selling products that tell a story.
+*   [ ] **Residency Cohort 1**: Artists on the land — *scheduled.*
+*   [x] **Empathy Ledger V1**: Public, consent-first storytelling engine with 230+ storytellers, 15+ partner organisations, and editorial syndication into the ACT site and partner sites.
+*   [ ] **Goods E-commerce**: Selling products that tell a story — *in progress.*
 
 ### Q3: Sovereignty (Handing Over)
 *   [ ] **Governance Templates**: Open-sourcing our rulebook.
-*   [ ] **Impact Dashboards**: Real-time transparency on every dollar and outcome.
+*   [ ] **Impact Dashboards**: Real-time transparency on every dollar and outcome — *scaffolded.*
 
 ---
 

@@ -199,7 +199,7 @@ This codebase serves 6+ ACT projects:
 1. **Empathy Ledger** - Ethical storytelling platform, consent-first, OCAP® principles
 2. **JusticeHub** - Open-source justice network, forkable program models
 3. **The Harvest** - Community hub, therapeutic horticulture, heritage preservation
-4. **Black Cockatoo Valley** - 150-acre regeneration estate, conservation-first
+4. **Black Cockatoo Valley** - ~138-acre (~55.8 ha) regeneration estate on Jinibara Country, conservation-first
 5. **Goods on Country** - Circular economy, waste-to-wealth manufacturing
 6. **Art Program** - Revolution through creativity, installations and residencies
 

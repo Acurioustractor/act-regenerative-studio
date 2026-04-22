@@ -19,7 +19,7 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/).
 - `voice-guide.md` - Brand voice, farm metaphors, what to avoid
 
 #### Place Section (02-place/)
-- `black-cockatoo-valley.md` - 150-acre property, conservation-first, impact goals
+- `black-cockatoo-valley.md` - ~138-acre property, conservation-first, impact goals
 - `the-harvest.md` - Witta enterprise hub, CSA, therapeutic horticulture
 - `act-farm.md` - Studio practice, farm metaphor operations
 

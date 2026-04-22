@@ -23,7 +23,7 @@ import { notFound } from "next/navigation";
 export const metadata = {
   title: "Black Cockatoo Valley",
   description:
-    "150 acres on Jinibara Country. Conservation-first land practice, residencies, workshops, and habitat restoration.",
+    "138 acres on Jinibara Country. Conservation-first land practice, residencies, workshops, and habitat restoration.",
 };
 
 export default async function FarmPage() {
@@ -43,7 +43,7 @@ export default async function FarmPage() {
         eyebrow="Land"
         title="Black Cockatoo Valley"
         titleMaxChars={14}
-        subhead="150 acres on Jinibara Country. Conservation is the baseline. The land sets the pace."
+        subhead="138 acres on Jinibara Country. Conservation is the baseline. The land sets the pace."
         coverVideo={project.coverVideo}
         coverImage={project.coverImage}
         primaryCta={{ label: "Plan a visit", href: "#inquiry" }}
@@ -79,7 +79,7 @@ export default async function FarmPage() {
               title="What the valley holds"
               lede={
                 <>
-                  150 acres of pasture under regenerative grazing, food forest
+                  138 acres of pasture under regenerative grazing, food forest
                   and orchard, native corridor restoration zones, water catchment
                   systems, and studio and gathering buildings. Together with
                   The Harvest in Witta town, Black Cockatoo Valley forms ACT's

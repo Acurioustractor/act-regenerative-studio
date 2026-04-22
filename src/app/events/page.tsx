@@ -107,7 +107,7 @@ export default function EventsPage() {
         <SectionHeading
           eyebrow="Current pathways"
           title="Where to look now"
-          description="Until a fuller event syndication layer exists, these are the main public pathways into ACT gatherings and invitations."
+          description="Until a central events calendar is in place, these are the main pathways into ACT gatherings and invitations."
         />
         <div className="grid gap-6 md:grid-cols-3">
           {currentPathways.map((pathway) => (

@@ -101,7 +101,7 @@ export default async function WikiHomepage() {
               </h2>
               <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">{item.description}</p>
               <span className="mt-4 inline-flex text-xs font-semibold uppercase tracking-[0.18em] text-[#4CAF50]">
-                {item.cta} →
+                {item.cta} <span aria-hidden="true">&rarr;</span>
               </span>
             </Link>
           ))}
@@ -121,11 +121,10 @@ export default async function WikiHomepage() {
         {sourceNotConfigured ? (
           <div className="rounded-[28px] border border-dashed border-[#D7C4A2] bg-white/80 px-6 py-14 text-center">
             <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
-              Wiki source not configured
+              The wiki is still coming online
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-[var(--we-brown)]">
-              No canonical wiki pages are available in this environment. Configure Supabase, the
-              live canonical wiki filesystem, or regenerate the snapshot to populate this index.
+              Pages will appear here shortly. Check back soon, or reach out if you need something specific in the meantime.
             </p>
           </div>
         ) : (

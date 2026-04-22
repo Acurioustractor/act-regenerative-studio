@@ -4,7 +4,6 @@ import { notFound } from 'next/navigation';
 import {
   canDisplayStoryteller,
   getAllStorytellers,
-  getStorytellerSnapshotMeta,
 } from '@/lib/empathy-ledger-storytellers';
 
 export const metadata = {
@@ -14,7 +13,6 @@ export const metadata = {
 };
 
 export default function StorytellersIndexPage() {
-  const meta = getStorytellerSnapshotMeta();
   const storytellers = getAllStorytellers().filter(canDisplayStoryteller);
 
   return (
@@ -37,18 +35,11 @@ export default function StorytellersIndexPage() {
       {storytellers.length === 0 ? (
         <section className="rounded-[28px] border border-[var(--we-sand)] bg-[#FDFBF7] p-8">
           <h2 className="font-[var(--font-display)] text-xl font-semibold text-[var(--we-olive)]">
-            No storytellers to show yet.
+            Storytellers coming soon.
           </h2>
           <p className="mt-3 text-sm text-[var(--we-olive-deep)]">
-            Storyteller profiles are sourced from Empathy Ledger via site-scoped
-            syndication. This surface populates once <code className="px-1 text-[var(--we-warm-brown)]">EMPATHY_LEDGER_API_KEY</code> is
-            configured and <code className="px-1 text-[var(--we-warm-brown)]">npm run sync:el-storytellers</code> has run.
+            Profiles are published through the Empathy Ledger once storytellers have given consent. New voices will appear here as they come onboard.
           </p>
-          {meta.generatedAt ? (
-            <p className="mt-3 text-xs uppercase tracking-[0.22em] text-[var(--we-brown-deep)]">
-              Snapshot generated {meta.generatedAt}
-            </p>
-          ) : null}
         </section>
       ) : (
         <section className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">

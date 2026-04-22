@@ -35,12 +35,7 @@ const mosaicTiles: Array<{
   { slug: "contained", name: "CONTAINED", href: "/projects/contained" },
   { slug: "gold-phone", name: "Gold.Phone", href: "/art/gold-phone" },
   { slug: "uncle-allan-palm-island-art", name: "Uncle Allan Palm Island", href: "/projects/uncle-allan-palm-island-art" },
-  {
-    slug: "dad-lab-25",
-    name: "Dad.Lab",
-    href: "/projects/dad-lab-25",
-    override: "/media/field-stills/jinibara-country-aerial.jpg",
-  },
+  { slug: "fishers-oysters", name: "Fishers Oysters", href: "/projects/fishers-oysters" },
   { slug: "community-capital", name: "Community Capital", href: "/projects/community-capital" },
   {
     slug: "oonchiumpa",
@@ -80,7 +75,7 @@ function resolveMosaicImage(
 const featuredProjectConfigs = [
   {
     slug: "goods-on-country",
-    href: "/goods-on-country",
+    href: "/goods",
     eyebrow: "Goods",
     fallbackTitle: "Goods",
     fallbackTagline: "Circular economy held closer to community",

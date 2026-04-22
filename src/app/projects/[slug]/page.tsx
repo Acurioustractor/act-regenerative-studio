@@ -147,7 +147,7 @@ function getEngagementConfig(
     };
   }
 
-  if (slug === 'goods-on-country') {
+  if (slug === 'goods') {
     return {
       title: 'Ways to engage with Goods on Country',
       description:
@@ -156,15 +156,15 @@ function getEngagementConfig(
         {
           label: 'Talk about a deployment',
           description:
-            'Bring a community need, goods-on-country pathway, or partnership question into the conversation.',
-          href: '/contact?type=project-partnership&source=project-page&context=goods-on-country',
+            'Bring a community need, goods pathway, or partnership question into the conversation.',
+          href: '/contact?type=project-partnership&source=project-page&context=goods',
           variant: 'primary',
         },
         {
           label: 'See the Goods field page',
           description:
             'Read the ACT-facing overview of the Goods work, its context, and how it links back into the broader ecosystem.',
-          href: '/goods-on-country',
+          href: '/goods',
           variant: 'secondary',
         },
       ],

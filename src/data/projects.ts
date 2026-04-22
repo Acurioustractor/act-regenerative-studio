@@ -165,7 +165,7 @@ export const projects: Project[] = [
       "https://tednluwflfhxyucgwigh.supabase.co/storage/v1/object/public/photos/community/c202f7b9-23eb-4477-8214-df40108476fa.png",
   },
   {
-    slug: "goods-on-country",
+    slug: "goods",
     empathyLedger: { orgSlug: "a-curious-tractor" },
     title: "Goods on Country",
     theme: "goods",
@@ -174,7 +174,7 @@ export const projects: Project[] = [
       "Every Australian deserves access to quality household essentials, regardless of where they live. We partner with Aboriginal Elders and Traditional Owners to deliver durable beds, washing machines, and furniture to remote communities.",
     focus: ["Remote Communities", "Essential Goods", "Community Partnership"],
     listen:
-      "We listened to Traditional Owners in remote NT, WA, and Queensland communities who described the challenge of accessing basic household goods-on-country. Expensive freight, unsuitable products, and lack of repair infrastructure meant families went without essentials or paid 3-4x urban prices.",
+      "We listened to Traditional Owners in remote NT, WA, and Queensland communities who described the challenge of accessing basic household goods on Country. Expensive freight, unsuitable products, and lack of repair infrastructure meant families went without essentials or paid 3-4x urban prices.",
     curiosity:
       "What if we designed furniture specifically for remote conditions? What if beds could withstand extreme heat, washing machines could handle bore water, and everything was built to last 20 years instead of 2? We researched materials, tested prototypes, and learned from community feedback.",
     action:
@@ -279,7 +279,7 @@ export const projects: Project[] = [
     tagline: "Washable, repairable, community-built",
     description:
       "Imagine if you could weave a bed? \n\nDesigning, iterating and learning with community. Thankful for Jimmy Frank Jupurrurla and his community for embracing the opportunity to re imagine Goods for the community.\n\nThis is one of our prototype's in action - a washable, repairable, community built bed.",
-    focus: ["Prototype design", "Community iteration", "Repairable goods-on-country"],
+    focus: ["Prototype design", "Community iteration", "Repairable goods on Country"],
     heroImage:
       "https://tednluwflfhxyucgwigh.supabase.co/storage/v1/object/public/photos/community/e9f86c0c-abff-4246-9b50-624e362b0347.jpeg",
   },

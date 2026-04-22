@@ -48,7 +48,7 @@ const RELATED_FIELD_MEDIA: Record<
       'oonchiumpa',
     ],
   },
-  'goods-on-country': {
+  'goods': {
     photoSlugs: [
       'goods-tennant-creek',
       'pakkinjalki-kari',
@@ -100,7 +100,7 @@ const LOCAL_FIELD_MEDIA_OVERRIDES: Record<
       autoplay: true,
     },
   },
-  'goods-on-country': {
+  'goods': {
     images: [
       {
         id: 'goods-remote-aerial',
@@ -125,7 +125,7 @@ const LOCAL_FIELD_MEDIA_OVERRIDES: Record<
         url: '/media/field-stills/goods-delivery-2.jpg',
         alt: 'Goods on Country delivery scene in community context',
         caption:
-          'The delivery moment matters as much as the product: goods-on-country arriving, being handled, and becoming useful in context.',
+          'The delivery moment matters as much as the product: goods arriving, being handled, and becoming useful in context.',
         eyebrow: 'Delivery still',
         sourceTitle: 'Goods on Country',
         href: '/media/field-stills/goods-delivery-2.jpg',

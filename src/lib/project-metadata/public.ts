@@ -100,7 +100,7 @@ async function enrichWithWiki(base: ProjectMetadata): Promise<ProjectMetadata> {
     priority:
       wikiRecord?.tier === 'Place' ||
       wikiRecord?.tier === 'Ecosystem' ||
-      ['justicehub', 'goods-on-country', 'the-harvest', 'empathy-ledger', 'black-cockatoo-valley'].includes(base.slug)
+      ['justicehub', 'goods', 'the-harvest', 'empathy-ledger', 'black-cockatoo-valley'].includes(base.slug)
         ? 1
         : 0,
     focusAreas: staticProject.focus || base.focusAreas,

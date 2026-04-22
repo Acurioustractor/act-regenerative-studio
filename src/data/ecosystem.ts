@@ -82,9 +82,9 @@ export const ecosystemProjects: EcosystemProject[] = [
   },
   {
     name: 'Goods on Country',
-    slug: 'goods-on-country',
-    tagline: 'Circular economy & community goods-on-country',
-    description: 'Asset tracking and circular economy for community goods-on-country',
+    slug: 'goods',
+    tagline: 'Circular economy & community goods on Country',
+    description: 'Asset tracking and circular economy for community goods on Country',
     url: 'https://goodsoncountry.netlify.app',
     repo: 'Acurioustractor/goods-asset-tracker',
     category: 'community',

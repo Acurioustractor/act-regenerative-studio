@@ -31,7 +31,7 @@ interface EcosystemLinksProps {
 
 const PRIORITY_SLUGS = [
   'justicehub',
-  'goods-on-country',
+  'goods',
   'the-harvest',
   'empathy-ledger',
   'act-farm',

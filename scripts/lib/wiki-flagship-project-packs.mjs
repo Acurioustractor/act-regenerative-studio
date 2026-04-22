@@ -3,7 +3,7 @@ import path from 'node:path';
 
 export const FLAGSHIP_PROJECT_SLUGS = [
   'justicehub',
-  'goods-on-country',
+  'goods',
   'the-harvest',
   'empathy-ledger',
   'black-cockatoo-valley',
@@ -11,7 +11,7 @@ export const FLAGSHIP_PROJECT_SLUGS = [
 
 const FLAGSHIP_RELATIVE_PATHS = {
   justicehub: 'projects/justicehub/justicehub.md',
-  'goods-on-country': 'projects/goods-on-country.md',
+  'goods': 'projects/goods.md',
   'the-harvest': 'projects/the-harvest/the-harvest.md',
   'empathy-ledger': 'projects/empathy-ledger.md',
   'black-cockatoo-valley': 'projects/act-farm/black-cockatoo-valley.md',
@@ -30,7 +30,7 @@ const FLAGSHIP_IMPLEMENTATION_REPOS = {
       },
     ],
   },
-  'goods-on-country': {
+  'goods': {
     primary: {
       name: 'Goods',
       role: 'Asset register, delivery workflow, and operational product infrastructure.',

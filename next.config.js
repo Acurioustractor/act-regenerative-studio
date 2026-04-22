@@ -52,6 +52,8 @@ const nextConfig = {
       { source: '/projects/diagrama-spain', destination: '/projects/diagrama', permanent: true },
       { source: '/projects/bg-fit-mount-isa', destination: '/projects/bg-fit', permanent: true },
       { source: '/projects/smart-hcp-gp-uplift', destination: '/projects/smart-hcp-uplift', permanent: true },
+      { source: '/projects/goods-on-country', destination: '/goods', permanent: true },
+      { source: '/goods-on-country', destination: '/goods', permanent: true },
       // Deleted/demoted entries redirect to parent context
       { source: '/projects/green-harvest-witta', destination: '/harvest', permanent: true },
       { source: '/projects/project-her-self', destination: '/projects', permanent: true },

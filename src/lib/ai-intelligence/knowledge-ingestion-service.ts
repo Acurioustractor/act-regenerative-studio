@@ -178,7 +178,7 @@ function extractProjects(title: string, content: string): string[] {
     'justicehub': 'justicehub',
     'theharvest': 'harvest',
     'act-farm': 'act farm',
-    'goods-on-country': 'goods-on-country on country',
+    'goods': 'goods on country',
     'bcv': 'black cockatoo valley',
     'act-studio': 'act studio'
   };

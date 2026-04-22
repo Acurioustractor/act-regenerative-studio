@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-22T01:01:06.190Z",
+  "generatedAt": "2026-04-22T02:33:20.795Z",
   "sourceConfigPath": "/Users/benknight/Code/act-global-infrastructure/config/project-codes.json",
   "projectCount": 74,
   "unresolvedWikiProjectSlugs": [
@@ -1606,27 +1606,27 @@
       "tier": "ecosystem",
       "category": "enterprise",
       "canonicalSlug": "goods-on-country",
-      "wikiSlug": "goods-on-country",
-      "staticSlug": "goods-on-country",
+      "wikiSlug": "goods",
+      "staticSlug": "goods",
       "aliases": [
         "goods-on-country",
+        "goods",
         "ACT-GD",
         "Goods",
-        "goods",
         "Goods.",
         "act-gd",
         "ACT-GD — Goods"
       ],
       "queryAliases": [
         "goods-on-country",
-        "ACT-GD",
         "goods",
+        "ACT-GD",
         "Goods"
       ],
       "lookupKeys": [
         "goods-on-country",
-        "act-gd",
         "goods",
+        "act-gd",
         "act-gd-goods"
       ],
       "legacyCodes": [],

@@ -74,7 +74,7 @@ function resolveMosaicImage(
 
 const featuredProjectConfigs = [
   {
-    slug: "goods-on-country",
+    slug: "goods",
     href: "/goods",
     eyebrow: "Goods",
     fallbackTitle: "Goods",
@@ -158,7 +158,7 @@ export default async function HomePage() {
         gradientStrength="strong"
         eyebrow="A Curious Tractor · Jinibara Country"
         title="Places, story systems, and public works you can step into."
-        subhead="Regenerative innovation from a farm on Jinibara Country. Justice platforms, ethical storytelling, circular goods-on-country, community art, and land care, all co-designed with the people who'll hold them."
+        subhead="Regenerative innovation from a farm on Jinibara Country. Justice platforms, ethical storytelling, circular goods on Country, community art, and land care, all co-designed with the people who'll hold them."
         coverVideo={{
           url: "/media/field-videos/hero-farm-aerial.mp4",
           posterUrl: "/media/field-stills/hero-farm-aerial.jpg",
@@ -211,8 +211,8 @@ export default async function HomePage() {
               { label: 'Be an artist', href: '/art' },
               { label: 'Have some fun', href: '/events' },
               { label: 'Find myself', href: '/storytellers' },
-              { label: 'Buy a bed', href: '/goods-on-country' },
-              { label: 'Buy a washing machine', href: '/goods-on-country' },
+              { label: 'Buy a bed', href: '/goods' },
+              { label: 'Buy a washing machine', href: '/goods' },
             ].map((chip) => (
               <li key={chip.label}>
                 <Link
@@ -266,7 +266,7 @@ export default async function HomePage() {
           <p className="mt-6 max-w-[680px] font-[var(--font-body)] text-[18px] leading-[1.8] text-[var(--we-brown)] md:text-[19px]">
             That shows up as a farm on Jinibara Country, a justice
             platform that lets programs be owned locally, a storytelling
-            system built on consent, circular goods-on-country made close to place,
+            system built on consent, circular goods made close to place,
             an art line that makes it all legible, and a growing
             constellation of other places alongside.
           </p>
@@ -769,7 +769,7 @@ export default async function HomePage() {
               },
               {
                 title: "Support",
-                body: "Back the commons through goods-on-country, partnerships, and long-term aligned support.",
+                body: "Back the commons through goods, partnerships, and long-term aligned support.",
                 href: "/partners",
                 cta: "Explore partnership",
               },

@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-04-22T00:58:49.831Z",
+  "generatedAt": "2026-04-22T02:32:38.638Z",
   "sourceRoot": "/Users/benknight/Code/act-global-infrastructure/wiki",
   "packCount": 5,
   "packs": [
@@ -160,34 +160,34 @@
       ]
     },
     {
-      "slug": "goods-on-country",
+      "slug": "goods",
       "title": "Goods on Country",
       "status": "Active",
-      "canonicalSlug": "goods-on-country",
+      "canonicalSlug": "goods",
       "canonicalCode": "ACT-GD",
       "entityType": "project",
       "taggingMode": "own-code",
-      "cluster": "goods-on-country",
+      "cluster": "goods",
       "parentProject": null,
-      "empathyLedgerKey": "goods-on-country",
-      "websiteSlug": "goods-on-country",
+      "empathyLedgerKey": "goods",
+      "websiteSlug": "goods",
       "summary": "Manufacturing durable household goods from 100% recycled plastic for remote and marginalised Australian communities — where conventional products fail within weeks.",
       "overview": "Goods on Country is ACT's circular economy social enterprise. It designs, manufactures, and deploys indestructible household goods for remote Aboriginal and marginalised communities across Australia, where extreme heat, overcrowding, dust, and limited repair infrastructure destroy standard products in weeks rather than years. The enterprise operates through A Curious Tractor Pty Ltd (ABN: 21 591 780 066) and trades at goodsoncountry.com.au. It is not an Indigenous-owned organisation — it partners deeply with Indigenous-owned organisations (Oonchiumpa, Wilya Janta) and community bodies. Communities are co-designers, not recipients. Internal project code: ACT-GD",
       "whatItIs": "Goods on Country is ACT's circular economy social enterprise. It designs, manufactures, and deploys indestructible household goods for remote Aboriginal and marginalised communities across Australia, where extreme heat, overcrowding, dust, and limited repair infrastructure destroy standard products in weeks rather than years. The enterprise operates through A Curious Tractor Pty Ltd (ABN: 21 591 780 066) and trades at goodsoncountry.com.au. It is not an Indigenous-owned organisation — it partners deeply with Indigenous-owned organisations (Oonchiumpa, Wilya Janta) and community bodies. Communities are co-designers, not recipients. Internal project code: ACT-GD",
       "clusterContext": null,
       "systemPosition": "Goods on Country is one of ACT's flagship public fields, but its truth is distributed across layers: - the wiki holds the durable product logic, partnership model, capital stack, and handover arc - Empathy Ledger should hold the live community voice, photos, video, and consented deployment stories - the Goods Asset Register, GrantScope Goods Workspace, and related project codebases hold the operational implementation truth - the public websites should compose those layers without becoming a second place where product or partnership truth gets rewritten by hand That is why Goods on Country needs to stay linked to Living Website Operating System, Designing for Obsolescence, and the partner ecology around Oonchiumpa and PICC.",
       "sourcePage": {
-        "relativePath": "projects/goods-on-country.md",
-        "wikiPath": "projects/goods-on-country",
-        "modifiedAt": "2026-04-13T13:16:51.105Z"
+        "relativePath": "projects/goods.md",
+        "wikiPath": "projects/goods",
+        "modifiedAt": "2026-04-22T02:31:25.315Z"
       },
       "downstream": {
         "website": {
           "primaryPath": "/goods",
-          "projectPath": "/projects/goods-on-country"
+          "projectPath": "/projects/goods"
         },
         "empathyLedger": {
-          "projectKey": "goods-on-country"
+          "projectKey": "goods"
         }
       },
       "implementation": {

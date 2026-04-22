@@ -58,7 +58,8 @@ const SECTION_HEADINGS = [
 ];
 
 const PROJECT_SLUG_ALIASES: Record<string, string[]> = {
-  'goods-tennant-creek': ['goods-on-country'],
+  'goods-tennant-creek': ['goods'],
+  'goods-on-country': ['goods'],
 };
 
 let liveRecordPromise: Promise<CanonicalWikiProjectRecord[] | null> | null = null;

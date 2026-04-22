@@ -12,7 +12,7 @@ import { buildProjectIndexSignals } from '@/lib/projects/build-project-index-sig
 export const metadata = {
   title: "Projects",
   description:
-    "The public fields of practice at ACT, land, food, goods-on-country, justice, story, art. What the work looks like on the ground.",
+    "The public fields of practice at ACT, land, food, goods, justice, story, art. What the work looks like on the ground.",
 };
 
 type ProjectStatus = 'active' | 'planning' | 'development';
@@ -71,7 +71,7 @@ const FEATURED_OUTPUTS: FeaturedProjectConfig[] = [
     contributionAreas: ['Backend', 'Frontend', 'Research'],
   },
   {
-    slug: 'goods-on-country',
+    slug: 'goods',
     repo: 'Acurioustractor/goods-asset-tracker',
     url: null,
     status: 'active',

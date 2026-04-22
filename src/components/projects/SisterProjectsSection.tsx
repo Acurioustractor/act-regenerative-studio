@@ -30,7 +30,7 @@ function formatClusterLabel(cluster: string): string {
     'act-farm': 'ACT Farm',
     'empathy-ledger': 'Empathy Ledger',
     'the-harvest': 'The Harvest',
-    'goods-on-country': 'Goods on Country',
+    'goods': 'Goods on Country',
     justicehub: 'JusticeHub',
     picc: 'PICC',
   };

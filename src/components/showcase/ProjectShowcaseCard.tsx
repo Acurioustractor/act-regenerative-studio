@@ -59,7 +59,7 @@ const toneBySlug: Record<
     outlineAction: 'border-[#627b67] text-[#f4ecde] hover:bg-[#243327]',
     status: 'bg-[#f4d04f] text-[#0b1f2a]',
   },
-  'goods-on-country': {
+  'goods': {
     card: 'border-[#d5bf9e] bg-gradient-to-br from-[#f3e9da] via-[#eadbc5] to-[#dfc8aa] text-[#261e16]',
     title: 'text-[#261e16]',
     tagline: 'text-[#8c4d28]',

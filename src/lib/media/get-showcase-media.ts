@@ -86,7 +86,7 @@ const LOCAL_FIELD_MEDIA: ShowcaseMediaItem[] = [
     credit: null,
     isHero: false,
     isFeatured: true,
-    projectSlug: 'goods-on-country',
+    projectSlug: 'goods',
     source: 'local',
   },
   {
@@ -100,7 +100,7 @@ const LOCAL_FIELD_MEDIA: ShowcaseMediaItem[] = [
     credit: null,
     isHero: false,
     isFeatured: true,
-    projectSlug: 'goods-on-country',
+    projectSlug: 'goods',
     source: 'local',
   },
   {

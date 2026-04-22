@@ -31,7 +31,7 @@ export const metadata = {
 };
 
 export default async function GoodsPage() {
-  const project = await getProjectData("goods-on-country");
+  const project = await getProjectData("goods");
   if (!project) notFound();
 
   const galleryImages = project.mediaGallery
@@ -83,7 +83,7 @@ export default async function GoodsPage() {
       {/* , , ,  THE WHY , , ,  */}
       <ScrollReveal>
         <ReadingLede id="story">
-          In remote communities, families sleep on floors. Standard goods-on-country
+          In remote communities, families sleep on floors. Standard goods
           break in weeks. Nobody comes to fix them. The replacement cycle
           drains resources and dignity at the same time.
         </ReadingLede>
@@ -95,7 +95,7 @@ export default async function GoodsPage() {
           src="/media/field-stills/goods-community-build.jpg"
           alt="Community stretch bed build in remote Australia"
           slot="goods-bleed-1"
-          projectSlug="goods-on-country"
+          projectSlug="goods"
           fill sizes="100vw" className="object-cover object-top" priority
         />
       </PhotoBreak>
@@ -151,7 +151,7 @@ export default async function GoodsPage() {
           bg="surface"
           left={
             <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--site-radius)]">
-              <EditableImage src="/media/field-stills/goods-delivery-2.jpg" alt="Goods on Country community deployment" slot="goods-washing" projectSlug="goods-on-country" fill sizes="50vw" className="object-cover" />
+              <EditableImage src="/media/field-stills/goods-delivery-2.jpg" alt="Goods on Country community deployment" slot="goods-washing" projectSlug="goods" fill sizes="50vw" className="object-cover" />
             </div>
           }
           right={
@@ -172,7 +172,7 @@ export default async function GoodsPage() {
               <p className="mt-6 font-[var(--font-body)] text-[15px] leading-[1.8] text-[var(--site-muted)]">
                 The washing machine fleet serves a dual purpose: providing clean
                 laundry infrastructure to communities, and generating data that
-                makes the next generation of community-deployed goods-on-country smarter.
+                makes the next generation of community-deployed goods smarter.
               </p>
             </>
           }
@@ -224,7 +224,7 @@ export default async function GoodsPage() {
               eyebrow="The vision"
               title="Containerised factories on Country"
               onDark
-              lede="The scale vision is not a central factory that ships to communities. It is containerised manufacturing infrastructure that communities own and operate. Each facility is self-contained in shipping containers, produces 1,000 to 1,500 goods-on-country annually, and employs 4 to 6 local workers processing locally-sourced recycled plastic."
+              lede="The scale vision is not a central factory that ships to communities. It is containerised manufacturing infrastructure that communities own and operate. Each facility is self-contained in shipping containers, produces 1,000 to 1,500 goods annually, and employs 4 to 6 local workers processing locally-sourced recycled plastic."
             />
             <div className="mt-16 grid gap-8 md:grid-cols-3">
               {[
@@ -380,20 +380,20 @@ export default async function GoodsPage() {
                 eyebrow="Get in touch"
                 eyebrowColor="muted"
                 title="Work with us"
-                lede="Communities, organisations, health services, and funders who want to see essential goods-on-country designed with dignity."
+                lede="Communities, organisations, health services, and funders who want to see essential goods designed with dignity."
               />
               <p className="mt-6 font-[var(--font-body)] text-[15px] text-[var(--site-muted)]">
                 Or email{" "}
                 <a href="mailto:hi@act.place" className="text-[var(--site-green)] underline">hi@act.place</a>
               </p>
             </div>
-            <QuickInquiryForm projectName="Goods on Country" projectSlug="goods-on-country" projectCode="ACT-GD" />
+            <QuickInquiryForm projectName="Goods on Country" projectSlug="goods" projectCode="ACT-GD" />
           </div>
         </section>
       </ScrollReveal>
 
       {/* , , ,  RELATED , , ,  */}
-      <RelatedFields currentSlug="goods-on-country" />
+      <RelatedFields currentSlug="goods" />
 
       {/* , , ,  PROJECT PAGE , , ,  */}
       <section className="full-bleed bg-[var(--site-surface)] px-8 py-16">
@@ -402,7 +402,7 @@ export default async function GoodsPage() {
             See the full project page with stories, media, and storytellers
           </p>
           <Link
-            href="/projects/goods-on-country"
+            href="/projects/goods"
             className="inline-flex items-center gap-3 rounded-[var(--site-radius)] border-2 border-[var(--site-green)] px-8 py-4 font-[var(--font-sans)] text-[13px] font-semibold uppercase tracking-[0.12em] text-[var(--site-green)] transition hover:bg-[var(--site-green)] hover:text-white"
           >
             Full project page <span aria-hidden="true">&rarr;</span>

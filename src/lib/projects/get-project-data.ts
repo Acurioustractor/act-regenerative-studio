@@ -66,7 +66,7 @@ const LOCAL_COVER_VIDEO_OVERRIDES: Record<
     posterUrl: '/media/field-stills/justicehub-container.jpg',
     title: 'CONTAINED installation open and close',
   },
-  'goods-on-country': {
+  'goods': {
     url: '/media/field-videos/goods-community-build.mp4',
     posterUrl: '/media/field-stills/goods-community-build.jpg',
     title: 'Community stretch bed build in remote Australia',

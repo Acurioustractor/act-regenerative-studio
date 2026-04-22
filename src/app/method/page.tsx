@@ -73,7 +73,7 @@ const inPractice = [
   {
     phase: "Action",
     project: "Goods on Country",
-    href: "/projects/goods-on-country",
+    href: "/projects/goods",
     quote:
       "In 2025 we deployed 389 assets including 363 beds across 8 communities, built repair networks, and created feedback loops so every deployment improves the next.",
   },

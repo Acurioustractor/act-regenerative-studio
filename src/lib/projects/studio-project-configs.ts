@@ -11,9 +11,9 @@ export const studioProjectConfigs: CuratedProjectCardConfig[] = [
       "Justice models, evidence, and community-owned infrastructure.",
   },
   {
-    slug: "goods-on-country",
+    slug: "goods",
     eyebrow: "Goods",
-    href: "/goods-on-country",
+    href: "/goods",
     fallbackTitle: "Goods on Country",
     fallbackTagline: "Circular economy for remote communities",
     fallbackDescription:

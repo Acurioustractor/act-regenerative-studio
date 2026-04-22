@@ -150,32 +150,49 @@ export default async function BlogPostPage({
             <p className="mb-8 text-center font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-[var(--we-warm-brown)] md:mb-12">
               Field photographs
             </p>
-            <div className="grid gap-3 md:grid-cols-2 md:gap-4 lg:grid-cols-3">
-              {gallery.map((photo, i) => (
-                <div
-                  key={photo.url + i}
-                  className={`relative overflow-hidden rounded-[20px] bg-[#1B1A16] ${
-                    i === 0 ? "aspect-[16/10] lg:col-span-2 lg:row-span-2 lg:aspect-[16/11]" : "aspect-[4/3]"
-                  }`}
-                >
-                  <Image
-                    src={photo.url}
-                    alt={photo.alt || `Field photograph from ${post.title}`}
-                    fill
-                    sizes={i === 0
-                      ? "(min-width: 1024px) 66vw, (min-width: 768px) 100vw, 100vw"
-                      : "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"}
-                    className="object-cover transition-transform duration-[6s] ease-out hover:scale-[1.03]"
-                  />
-                  {photo.caption ? (
-                    <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/70 via-black/10 to-transparent p-4 md:p-5">
-                      <p className="font-[var(--font-body)] text-sm italic text-[#F3EBDD]/90 md:text-base">
-                        {photo.caption}
-                      </p>
-                    </div>
-                  ) : null}
-                </div>
-              ))}
+            <div
+              className={`grid gap-3 md:gap-4 ${
+                gallery.length === 1
+                  ? "mx-auto max-w-[900px] grid-cols-1"
+                  : gallery.length === 2
+                    ? "md:grid-cols-2"
+                    : "md:grid-cols-2 lg:grid-cols-3"
+              }`}
+            >
+              {gallery.map((photo, i) => {
+                const isBentoLead = i === 0 && gallery.length >= 3;
+                return (
+                  <div
+                    key={photo.url + i}
+                    className={`relative overflow-hidden rounded-[20px] bg-[#1B1A16] ${
+                      isBentoLead
+                        ? "aspect-[16/10] lg:col-span-2 lg:row-span-2 lg:aspect-[16/11]"
+                        : gallery.length === 1
+                          ? "aspect-[16/10]"
+                          : "aspect-[4/3]"
+                    }`}
+                  >
+                    <Image
+                      src={photo.url}
+                      alt={photo.alt || `Field photograph from ${post.title}`}
+                      fill
+                      sizes={isBentoLead
+                        ? "(min-width: 1024px) 66vw, (min-width: 768px) 100vw, 100vw"
+                        : gallery.length === 1
+                          ? "(min-width: 900px) 900px, 100vw"
+                          : "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"}
+                      className="object-cover transition-transform duration-[6s] ease-out hover:scale-[1.03]"
+                    />
+                    {photo.caption ? (
+                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-4 md:p-5">
+                        <p className="font-[var(--font-body)] text-[13px] italic leading-snug text-[#F3EBDD] md:text-base md:leading-normal">
+                          {photo.caption}
+                        </p>
+                      </div>
+                    ) : null}
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>

@@ -105,7 +105,7 @@ export default async function HarvestPage() {
           right={
             <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--site-radius)]">
               <EditableImage
-                src="/media/field-stills/harvest-kitchen.jpg"
+                src="/media/field-stills/harvest-witta-aerial.jpg"
                 alt="The Harvest seasonal kitchen"
                 slot="harvest-kitchen"
                 projectSlug="the-harvest"
@@ -123,7 +123,7 @@ export default async function HarvestPage() {
           left={
             <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--site-radius)]">
               <EditableImage
-                src="/media/field-stills/harvest-garden.jpg"
+                src="/media/field-stills/harvest-witta-aerial-2.jpg"
                 alt="The Harvest garden centre"
                 slot="harvest-garden"
                 projectSlug="the-harvest"
@@ -247,7 +247,7 @@ export default async function HarvestPage() {
           right={
             <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--site-radius)]">
               <EditableImage
-                src="/media/field-stills/harvest-produce.jpg"
+                src="/media/field-stills/harvest-witta-aerial-3.jpg"
                 alt="Seasonal produce from The Harvest"
                 slot="harvest-csa"
                 projectSlug="the-harvest"

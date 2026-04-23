@@ -202,7 +202,7 @@ export default async function JusticeHubPage() {
       {/* , , ,  PHOTO BREAK , , ,  */}
       <PhotoBreak>
         <EditableImage
-          src="/media/field-stills/justicehub-field.jpg"
+          src="/media/field-stills/justicehub-community.jpg"
           alt="Justice program field work"
           slot="jh-bleed-2"
           projectSlug="justicehub"
@@ -240,7 +240,7 @@ export default async function JusticeHubPage() {
           right={
             <div className="relative aspect-[4/3] overflow-hidden rounded-[var(--site-radius)]">
               <EditableImage
-                src="/media/field-stills/justicehub-alma.jpg"
+                src="/media/field-stills/justicehub-container.jpg"
                 alt="Australian Living Map of Alternatives"
                 slot="jh-alma"
                 projectSlug="justicehub"

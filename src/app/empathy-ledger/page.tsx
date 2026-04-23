@@ -201,7 +201,7 @@ export default async function EmpathyLedgerPage() {
       {/* , , ,  PHOTO BREAK , , ,  */}
       <PhotoBreak>
         <EditableImage
-          src="/media/field-stills/el-community.jpg"
+          src="/media/field-stills/empathy-ledger-community-story.jpg"
           alt="Community storytelling on Country"
           slot="el-bleed-2"
           projectSlug="empathy-ledger"
@@ -275,7 +275,7 @@ export default async function EmpathyLedgerPage() {
       {/* , , ,  PHOTO BREAK , , ,  */}
       <PhotoBreak>
         <EditableImage
-          src="/media/field-stills/el-field.jpg"
+          src="/media/field-stills/empathy-ledger-elder-trip.jpg"
           alt="Empathy Ledger field work"
           slot="el-bleed-3"
           projectSlug="empathy-ledger"

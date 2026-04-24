@@ -1,5 +1,7 @@
 # Design System — A Curious Tractor
 
+> **Inherits identity from** `act-global-infrastructure/.claude/skills/act-brand-alignment/references/brand-core.md` (LCAA method, voice, values, project narratives, "we hand over the keys" PTO metaphor). **Defines the parent visual** for the Editorial Warmth cluster — see `act-global-infrastructure/wiki/decisions/act-brand-alignment-map.md`. Sub-brands JusticeHub, Empathy Ledger v2, Goods, Harvest, Farm relate back to this system.
+
 ## Product Context
 - **What this is:** Public-facing website for ACT, a regenerative innovation ecosystem
 - **Who it's for:** Funders evaluating, artists seeking collaboration, community members, curious strangers

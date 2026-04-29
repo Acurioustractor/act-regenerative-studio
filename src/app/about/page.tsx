@@ -8,29 +8,77 @@ import { EmpathyLedgerConnections } from "@/components/projects/EmpathyLedgerCon
 export const metadata = {
   title: "About",
   description:
-    "A regenerative innovation studio on Jinibara Country. Land, story, method, and the commitment to hand over the keys when community leadership is ready.",
+    "A Curious Tractor. Two humans, one tractor. We build platforms, places, and tools with communities, designed to be handed back when the season ends.",
 };
 
-const identityCards = [
+const founders = [
   {
-    title: "A regenerative studio",
+    eyebrow: "Co-founder. Systems and story.",
+    title: "Benjamin Knight",
     description:
-      "We hold land practice, justice work, cultural production, and shared infrastructure inside one ecosystem.",
+      "Ben grew up in Muswellbrook. He spent three years sitting with people on the street as a photographer for Orange Sky. He listened to men talk about hope in a prison in Bolivia. He met Brodie in Mount Isa during NAIDOC week and watched a community already running its own answers. Every job he has had has been an apprenticeship in not interrupting.",
   },
   {
-    title: "Jinibara Country",
+    eyebrow: "Co-founder. Place and hospitality.",
+    title: "Nicholas Marchesi OAM",
     description:
-      "The work is grounded on Jinibara Country and shaped by reciprocal, place-first practice.",
+      "Nic was twenty when he and Lucas Patchett bolted a washing machine into a van and drove to a park in Brisbane. They went to do laundry. They found themselves doing conversation. Orange Sky grew from there into a national service and earned Nic an OAM for service to community. He now treats every project as something broken that could work again.",
+  },
+];
+
+const lcaaPhases = [
+  {
+    title: "Listen",
+    description:
+      "Sit with place, people, and lived experience. Receive what is offered. Resist the urge to arrive with a fix.",
   },
   {
-    title: "Power take-off philosophy",
+    title: "Curiosity",
     description:
-      "Like a tractor PTO, we transfer capacity to community-led initiatives and design to hand over the keys.",
+      "Ask better questions. Prototype. Test. Stay in the not-knowing long enough for the right answer to surface.",
   },
   {
-    title: "Dual-entity structure",
+    title: "Action",
     description:
-      "A charitable foundation and a mission-locked trading arm let us protect community value while sustaining the work.",
+      "Build with communities, not for them. Ship rough, then iterate.",
+  },
+  {
+    title: "Art",
+    description:
+      "Translate the work into culture. Art is how we know we have learned something.",
+  },
+];
+
+const projectClusters = [
+  {
+    title: "Empathy Ledger",
+    description:
+      "Sovereign storytelling. Communities own their narratives, with consent and cryptographic protocols built in.",
+    href: "/empathy-ledger",
+  },
+  {
+    title: "JusticeHub",
+    description:
+      "Open-source justice network. Forkable program models, civic intelligence, public-money transparency.",
+    href: "/justicehub",
+  },
+  {
+    title: "Goods on Country",
+    description:
+      "Circular manufacturing on Country. Community ownership, materials with stories, products that last.",
+    href: "/goods",
+  },
+  {
+    title: "The Harvest, ACT Farm, Black Cockatoo Valley",
+    description:
+      "Place and land practice. Witta hub, Jinibara Country regeneration, retreats, residencies.",
+    href: "/farm",
+  },
+  {
+    title: "The Studio",
+    description:
+      "Gold.Phone, The Confessional, Uncle Allan, CONTAINED. Art as the fourth phase, the highest expression of the work.",
+    href: "/art",
   },
 ];
 
@@ -42,10 +90,10 @@ const orientationLinks = [
     meta: "See the portfolio",
   },
   {
-    title: "People",
-    description: "The team, elders, advisors, and partners holding the work.",
-    href: "/people",
-    meta: "Meet who is building this",
+    title: "Economy",
+    description: "How the money moves, where it lands, and why we built it this way.",
+    href: "/economy",
+    meta: "Read the four lanes",
   },
   {
     title: "Partners",
@@ -60,11 +108,11 @@ export default function AboutPage() {
     <div className="space-y-20">
       <PageHero
         eyebrow="About ACT"
-        title="A regenerative studio built to make itself less necessary over time"
-        description="A Curious Tractor is a studio, land practice, and shared ecosystem for projects working across justice, stories, art, and community-owned futures."
+        title="Two humans, one tractor"
+        description="A Curious Tractor is a studio, land practice, and shared ecosystem for projects working across justice, stories, art, and community-owned futures. We build with communities, designed to be handed back when the season ends."
         actions={[
           { label: "Explore projects", href: "/projects" },
-          { label: "See the method", href: "/method", variant: "outline" },
+          { label: "How the money moves", href: "/economy", variant: "outline" },
         ]}
       >
         <div className="space-y-3">
@@ -78,6 +126,39 @@ export default function AboutPage() {
           </ul>
         </div>
       </PageHero>
+
+      <section className="space-y-10">
+        <SectionHeading
+          eyebrow="Two humans"
+          title="The why under everything"
+          description="ACT was co-founded by two people whose practice predates the org. The org is the vehicle. The drive is older."
+        />
+        <CardGrid cards={founders} className="grid gap-6 md:grid-cols-2" />
+        <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6 md:p-8">
+          <p className="text-sm leading-7 text-[var(--we-brown)]">
+            Different doors into the same kitchen. Ben moves through systems and story. Nic moves through place and people. Both build, both connect, both make art at the end because they cannot help it.
+          </p>
+        </div>
+      </section>
+
+      <section className="space-y-10">
+        <SectionHeading
+          eyebrow="What ACT is"
+          title="Not a charity, not a consultancy, not an NGO"
+          description="A regenerative innovation ecosystem that powers communities without owning what it builds."
+        />
+        <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-8 md:p-12 space-y-4">
+          <p className="text-sm leading-7 text-[var(--we-brown)]">
+            The name comes from the agricultural Power Take-Off mechanism, the connection shaft that transfers engine power from a tractor to attached implements. A tractor powers things. The farmer directs it. When the season ends, it is unhitched.
+          </p>
+          <p className="text-sm leading-7 text-[var(--we-brown)]">
+            This is not a brand metaphor. It is a delivery philosophy. We build with communities, not for them. The measure of success is not reach or scale. It is that ACT becomes unnecessary.
+          </p>
+          <p className="text-sm leading-7 text-[var(--we-brown)]">
+            ACT partners with First Nations communities and is not a First Nations organisation.
+          </p>
+        </div>
+      </section>
 
       <LivingSystemStrip
         eyebrow="How it stays current"
@@ -93,60 +174,29 @@ export default function AboutPage() {
         }}
         stats={[
           { label: "Method loop", value: "LCAA" },
-          { label: "Structure", value: "Dual-entity" },
+          { label: "Structure", value: "Three Pty + charity" },
           { label: "Orientation", value: "Handover" },
         ]}
       />
 
       <section className="space-y-10">
         <SectionHeading
-          eyebrow="Identity"
-          title="Who we are"
-          description="The commitments that keep ACT grounded in place, authority, and transfer rather than generic innovation language."
+          eyebrow="Method"
+          title="Listen, Curiosity, Action, Art"
+          description="Our operating loop. Not a checklist. Art returns us to Listen, and the cycle continues."
         />
-        <CardGrid cards={identityCards} className="grid gap-6 md:grid-cols-2 xl:grid-cols-4" />
-      </section>
-
-      <section className="rounded-3xl border border-[var(--we-sand)] bg-white/60 p-8 md:p-12">
-        <div className="grid gap-8 lg:grid-cols-[1fr_1.1fr] lg:items-center">
-          <div className="space-y-3">
-            <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
-              Method
-            </p>
-            <h2 className="font-[var(--font-display)] text-3xl font-semibold text-[var(--we-olive)] md:text-4xl">
-              Listen, Curiosity, Action, Art
-            </h2>
-            <p className="text-sm leading-7 text-[var(--we-brown)]">
-              LCAA is the loop that keeps ACT from jumping to delivery before the listening is real. Every project sits somewhere in this cycle.
-            </p>
+        <CardGrid cards={lcaaPhases} className="grid gap-6 md:grid-cols-2 xl:grid-cols-4" />
+        <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-8 md:p-12">
+          <p className="text-sm leading-7 text-[var(--we-brown)]">
+            Listen, Curiosity, Action, Art did not come from a whiteboard. It is a description of what already happens when Ben builds, Nic connects, and both make art at the end. The method is the founders' practice externalised, then offered to the work.{" "}
             <Link
               href="/method"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--we-olive)] underline-offset-4 hover:underline"
+              className="font-semibold text-[var(--we-olive)] underline-offset-4 hover:underline"
             >
               See how the method works
-              <span aria-hidden>&rarr;</span>
             </Link>
-          </div>
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-4">
-            {[
-              { letter: "L", word: "Listen" },
-              { letter: "C", word: "Curiosity" },
-              { letter: "A", word: "Action" },
-              { letter: "A", word: "Art" },
-            ].map((step) => (
-              <div
-                key={step.word}
-                className="flex flex-col items-start gap-2 rounded-2xl border border-[var(--we-sand)] bg-white/80 p-4"
-              >
-                <span className="font-[var(--font-display)] text-3xl text-[var(--we-olive)]">
-                  {step.letter}
-                </span>
-                <span className="text-sm font-semibold text-[var(--we-brown)]">
-                  {step.word}
-                </span>
-              </div>
-            ))}
-          </div>
+            .
+          </p>
         </div>
       </section>
 
@@ -157,32 +207,67 @@ export default function AboutPage() {
               Structure
             </p>
             <h2 className="font-[var(--font-display)] text-3xl font-semibold text-[var(--we-olive)] md:text-4xl">
-              Built to protect community value and keep the work moving
+              Three Pty Ltds plus a charity
             </h2>
             <p className="text-sm leading-7 text-[var(--we-brown)]">
-              ACT uses a dual-entity structure so grant-funded, place-based, and community-protective work can sit alongside trading activity without collapsing into the logic of extraction.
+              ACT trades through A Curious Tractor Pty Ltd (the trade muscle) plus Harvest Pty Ltd and Farm Pty Ltd, which carry their own ledgers for The Harvest and ACT Farm. A Kind Tractor Ltd is the charity, currently dormant, ready to activate when the time comes.
             </p>
+            <p className="text-sm leading-7 text-[var(--we-brown)]">
+              The structure costs more in compliance and saves more in legibility. Each project's economic story stays its own.
+            </p>
+            <Link
+              href="/economy"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--we-olive)] underline-offset-4 hover:underline"
+            >
+              How the money moves
+              <span aria-hidden>&rarr;</span>
+            </Link>
           </div>
-          <div className="grid gap-4 sm:grid-cols-2">
-            <div className="rounded-3xl border border-[#D8C7A5] bg-white/75 p-6">
-              <p className="text-xs uppercase tracking-[0.22em] text-[var(--we-warm-brown)]">
-                Foundation
-              </p>
-              <h3 className="mt-2 font-semibold text-[var(--we-olive)]">Community protection</h3>
-              <p className="mt-2 text-sm text-[var(--we-brown)]">
-                Holds charitable, relationship-based, and public-good work in ways that protect local value and authority.
-              </p>
-            </div>
-            <div className="rounded-3xl border border-[#D8C7A5] bg-white/75 p-6">
-              <p className="text-xs uppercase tracking-[0.22em] text-[var(--we-warm-brown)]">
-                Ventures
-              </p>
-              <h3 className="mt-2 font-semibold text-[var(--we-olive)]">Trading with purpose</h3>
-              <p className="mt-2 text-sm text-[var(--we-brown)]">
-                Generates revenue, supports the commons, and keeps value circulating back to communities instead of extracting it.
-              </p>
-            </div>
+          <div className="grid gap-3 sm:grid-cols-2">
+            {[
+              { label: "Trade muscle", name: "A Curious Tractor Pty Ltd" },
+              { label: "Place ledger", name: "Harvest Pty Ltd" },
+              { label: "Land ledger", name: "Farm Pty Ltd" },
+              { label: "Public-good cap", name: "A Kind Tractor Ltd" },
+            ].map((entity) => (
+              <div
+                key={entity.name}
+                className="rounded-2xl border border-[#D8C7A5] bg-white/80 p-5"
+              >
+                <p className="text-xs uppercase tracking-[0.22em] text-[var(--we-warm-brown)]">
+                  {entity.label}
+                </p>
+                <h3 className="mt-2 font-semibold text-[var(--we-olive)]">
+                  {entity.name}
+                </h3>
+              </div>
+            ))}
           </div>
+        </div>
+      </section>
+
+      <section className="space-y-10">
+        <SectionHeading
+          eyebrow="What we build"
+          title="The cluster"
+          description="A small group of interconnected projects spanning place, technology, justice, and art. Not siloed programs. Components of a single ecosystem."
+        />
+        <CardGrid cards={projectClusters} className="grid gap-6 md:grid-cols-2 lg:grid-cols-3" />
+      </section>
+
+      <section className="space-y-10">
+        <SectionHeading
+          eyebrow="Discipline"
+          title="Beautiful obsolescence"
+          description="Why we build for handover from day one."
+        />
+        <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-8 md:p-12 space-y-4">
+          <p className="text-sm leading-7 text-[var(--we-brown)]">
+            Every platform, tool, and engagement is designed with handover in mind from day one. Sunset clauses in agreements. Documentation as a deliverable. Training embedded in delivery. Open-source codebases.
+          </p>
+          <p className="text-sm leading-7 text-[var(--we-brown)]">
+            The test for any ACT project: can the community run this without us? Can they modify it? Can they export their data? If any answer is no, the work is not finished.
+          </p>
         </div>
       </section>
 

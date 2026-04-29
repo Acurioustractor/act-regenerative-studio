@@ -28,6 +28,7 @@ const navItems = [
   { label: "Art", href: "/art" },
   { label: "Farm", href: "/farm" },
   { label: "Method", href: "/method" },
+  { label: "Economy", href: "/economy" },
   { label: "Wiki", href: "/wiki" },
   { label: "Contact", href: "/contact" },
 ];
@@ -160,6 +161,7 @@ export default function RootLayout({
               { label: "Art", href: "/art" },
               { label: "Farm", href: "/farm" },
               { label: "Method", href: "/method" },
+              { label: "Economy", href: "/economy" },
               { label: "About", href: "/about" },
               { label: "Partners", href: "/partners" },
               { label: "Wiki", href: "/wiki" },

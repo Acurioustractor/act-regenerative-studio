@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-22T02:32:38.638Z",
-  "sourceRoot": "/Users/benknight/Code/act-global-infrastructure/wiki",
+  "generatedAt": "2026-05-08T23:47:33.649Z",
+  "sourceRoot": "/home/runner/work/act-regenerative-studio/act-regenerative-studio/_canonical-wiki/wiki",
   "packCount": 5,
   "packs": [
     {
@@ -23,7 +23,7 @@
       "sourcePage": {
         "relativePath": "projects/justicehub/justicehub.md",
         "wikiPath": "projects/justicehub",
-        "modifiedAt": "2026-04-20T03:41:09.783Z"
+        "modifiedAt": "2026-05-08T23:47:17.065Z"
       },
       "downstream": {
         "website": {
@@ -155,7 +155,7 @@
         {
           "id": "lcaa-phase",
           "title": "LCAA Phase",
-          "body": "In the LCAA Method, JusticeHub is the evidence layer of The Third Reality — the Curiosity infrastructure that catalogs what works, surfaces it for funders and policymakers, and connects young people, communities, and decision-makers to community-led alternatives to detention. LCAA arc for JusticeHub: - Listen — three doors named by role rather than urgency (\"I need help\", \"I do the work\", \"I fund or shape policy\"); ALMA AI chat surfacing community voice alongside policy evidence; service directory built from community knowledge - Curiosity — 1,387 verified models, 430 with evidence data, 98K orgs mapped, $94.6B funding tracked; international comparisons (Diagrama, Spain); the cost case (community-led ~$15K/year vs detention ~$1.3M/year, 86x cheaper) - Action — Cost Calculator, System Map, Impact Dashboard, Learning Trips; capital routing via Allo Protocol and Hypercerts; service directory connecting youth to support; on-the-ground proof from BG Fit, Oonchiumpa, and ConFit Pathways - Art — CONTAINED — the touring shipping container exhibition that brings justice reform into public consciousness and makes system change felt, not abstract; portraits from The Brave Ones live on its inside walls The platform is built for the communities the system impacts, not for the system itself."
+          "body": "In the LCAA Method, JusticeHub is the evidence layer of The Third Reality — the Curiosity infrastructure that catalogs what works, surfaces it for funders and policymakers, and connects young people, communities, and decision-makers to community-led alternatives to detention. LCAA arc for JusticeHub: - Listen — three doors named by role rather than urgency (\"I need help\", \"I do the work\", \"I fund or shape policy\"); evidence chat surfacing community voice alongside policy evidence; service directory built from community knowledge - Curiosity — 1,387 verified models, 430 with evidence data, 98K orgs mapped, $94.6B funding tracked; international comparisons (Diagrama, Spain); the cost case (community-led ~$15K/year vs detention ~$1.3M/year, 86x cheaper) - Action — Cost Calculator, System Map, Impact Dashboard, Learning Trips; capital routing via Allo Protocol and Hypercerts; service directory connecting youth to support; on-the-ground proof from BG Fit, Oonchiumpa, and ConFit Pathways - Art — CONTAINED — the touring shipping container exhibition that brings justice reform into public consciousness and makes system change felt, not abstract; portraits from The Brave Ones live on its inside walls The platform is built for the communities the system impacts, not for the system itself."
         }
       ]
     },
@@ -179,7 +179,7 @@
       "sourcePage": {
         "relativePath": "projects/goods.md",
         "wikiPath": "projects/goods",
-        "modifiedAt": "2026-04-22T02:31:25.315Z"
+        "modifiedAt": "2026-05-08T23:47:17.064Z"
       },
       "downstream": {
         "website": {
@@ -295,7 +295,7 @@
         {
           "id": "community-partnerships",
           "title": "Community Partnerships",
-          "body": "### Palm Island (PICC) Palm Island Community Company has been a key deployment partner. 141 beds deployed on Palm Island. Palm Island Housing is in active expansion discussions. PICC is also a consortium partner in the REAL Innovation Fund (DEWR) application alongside Oonchiumpa and ACT. See also: PICC ### Tennant Creek Multiple Tennant Creek community organisations engaged: - Centrecorp — approved 107 beds for Utopia Homelands; applications submitted for 100 beds across 4 communities - Anyinginyi Health — requested washing machine fleet; specs in negotiation - Julalikari — introduced ACT to Anyinginyi Health 200 v1 beds were delivered to Tennant Creek communities in early 2025, but were unfunded (~$36K outstanding), creating a cashflow gap that has constrained R&D capacity. ### Central Australia - Oonchiumpa Consultancy (Alice Springs) — 100% Aboriginal-staffed, confirmed manufacturing partner for the Central Australian containerised facility. Two years of co-design collaboration. Fred Campbell (Western Arrernte man) leads cultural consultation. - NPY Women's Council — ongoing relationship; 200–350 beds requested, \"always looking for beds\" - Wilya Janta (Simon Quilty) — fridges requested for Norm's community; engaged but progressing slowly ### East Arnhem / Top End - Miwatj Health — exploring fleet deployment across 8 clinics; 500+ mattress and 300 washer requests from Groote Eylandt communities documented - Groote Eylandt communities — significant documented demand; Groote Eylandt Aboriginal Trust identified as a capital target - Maningrida — $1.1M demand identified in GHL pipeline - Wadeye, Galiwinku, Milingimbi — high-value demand signals in community pipeline ### Kalgoorlie / WA Co-design consultations conducted with Kalgoorlie communities during product development."
+          "body": "### Palm Island (PICC) Palm Island Community Company has been a key deployment partner. 141 beds deployed on Palm Island. Palm Island Housing is in active expansion discussions. PICC is also a consortium partner in the REAL Innovation Fund (DEWR) application alongside Oonchiumpa and ACT. See also: PICC ### Tennant Creek Multiple Tennant Creek community organisations engaged: - Centrecorp — approved 107 beds for Utopia Homelands; applications submitted for 100 beds across 4 communities - Anyinginyi Health — requested washing machine fleet; specs in negotiation - Julalikari — introduced ACT to Anyinginyi Health 200 v1 beds were delivered to Tennant Creek communities in early 2025. The associated invoices were settled in late 2025: Centrecorp Foundation paid $37,620 (INV-0259) and Our Community Shed paid $13,500 (INV-0260) on 2025-08-11, and Julalikari Council paid $19,800 (INV-0282) on 2025-10-21 — total $70,920 closing the v1 bed delivery. The earlier claim that ~$36K remained outstanding was carried from pre-August 2025 and is superseded. ### Central Australia - Oonchiumpa Consultancy (Alice Springs) — 100% Aboriginal-staffed, confirmed manufacturing partner for the Central Australian containerised facility. Two years of co-design collaboration. Fred Campbell (Western Arrernte man) leads cultural consultation. - NPY Women's Council — ongoing relationship; 200–350 beds requested, \"always looking for beds\" - Wilya Janta (Simon Quilty) — fridges requested for Norm's community; engaged but progressing slowly ### East Arnhem / Top End - Miwatj Health — exploring fleet deployment across 8 clinics; 500+ mattress and 300 washer requests from Groote Eylandt communities documented - Groote Eylandt communities — significant documented demand; Groote Eylandt Aboriginal Trust identified as a capital target - Maningrida — $1.1M demand identified in GHL pipeline - Wadeye, Galiwinku, Milingimbi — high-value demand signals in community pipeline ### Kalgoorlie / WA Co-design consultations conducted with Kalgoorlie communities during product development."
         },
         {
           "id": "key-source-bridges",
@@ -329,7 +329,7 @@
       "sourcePage": {
         "relativePath": "projects/the-harvest/the-harvest.md",
         "wikiPath": "projects/the-harvest",
-        "modifiedAt": "2026-04-14T01:52:41.528Z"
+        "modifiedAt": "2026-05-08T23:47:17.067Z"
       },
       "downstream": {
         "website": {
@@ -470,7 +470,7 @@
       "sourcePage": {
         "relativePath": "projects/empathy-ledger.md",
         "wikiPath": "projects/empathy-ledger",
-        "modifiedAt": "2026-04-20T03:41:09.759Z"
+        "modifiedAt": "2026-05-08T23:47:17.063Z"
       },
       "downstream": {
         "website": {
@@ -619,7 +619,7 @@
       "sourcePage": {
         "relativePath": "projects/act-farm/black-cockatoo-valley.md",
         "wikiPath": "projects/act-farm/black-cockatoo-valley",
-        "modifiedAt": "2026-04-20T03:41:09.698Z"
+        "modifiedAt": "2026-05-08T23:47:17.060Z"
       },
       "downstream": {
         "website": {

@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-04-22T02:32:38.448Z",
-  "sourceRoot": "/Users/benknight/Code/act-global-infrastructure/wiki",
-  "projectCount": 80,
+  "generatedAt": "2026-05-08T23:47:33.603Z",
+  "sourceRoot": "/home/runner/work/act-regenerative-studio/act-regenerative-studio/_canonical-wiki/wiki",
+  "projectCount": 89,
   "projects": [
     {
       "slug": "act-farm",
@@ -23,11 +23,37 @@
       "projectPagePath": "/projects/act-farm",
       "publicSurface": "project",
       "empathyLedgerKey": "act-farm",
-      "publicSiteUrl": "https://act-farm.vercel.app/",
-      "canonicalUrl": "https://act-farm.vercel.app/",
-      "repoUrl": "https://github.com/Acurioustractor/act-farm",
-      "deployUrl": "https://act-farm-benjamin-knights-projects.vercel.app/",
-      "modifiedAt": "2026-04-13T11:40:42.620Z"
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-05-08T23:47:17.060Z"
+    },
+    {
+      "slug": "act-infrastructure",
+      "title": "ACT Infrastructure",
+      "summary": "The operational layer underneath the visible projects — internal tooling, technology, admin costs, and travel that keep the ecosystem running.",
+      "overview": null,
+      "status": "Active",
+      "code": "ACT-IN",
+      "tier": "Ecosystem",
+      "canonicalSlug": "act-infrastructure",
+      "canonicalCode": "ACT-IN",
+      "entityType": "project",
+      "taggingMode": "own-code",
+      "cluster": "act-infrastructure",
+      "parentProject": null,
+      "websiteSlug": "act-infrastructure",
+      "relativePath": "projects/act-infrastructure.md",
+      "websitePath": "/projects/act-infrastructure",
+      "projectPagePath": "/projects/act-infrastructure",
+      "publicSurface": "project",
+      "empathyLedgerKey": "act-infrastructure",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-05-08T23:47:17.061Z"
     },
     {
       "slug": "act-monthly-dinners",
@@ -41,7 +67,7 @@
       "canonicalCode": "ACT-MD",
       "entityType": "project",
       "taggingMode": "own-code",
-      "cluster": "projects",
+      "cluster": "act-monthly-dinners",
       "parentProject": null,
       "websiteSlug": "act-monthly-dinners",
       "relativePath": "projects/act-monthly-dinners.md",
@@ -53,33 +79,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.732Z"
-    },
-    {
-      "slug": "act-public-voice",
-      "title": "ACT Public Voice",
-      "summary": "How A Curious Tractor describes itself to the world — in the words chosen for act.place.",
-      "overview": null,
-      "status": "Active",
-      "code": "ACT-MISC",
-      "tier": null,
-      "canonicalSlug": "act-public-voice",
-      "canonicalCode": "ACT-MISC",
-      "entityType": "project",
-      "taggingMode": "own-code",
-      "cluster": "projects",
-      "parentProject": null,
-      "websiteSlug": "act-public-voice",
-      "relativePath": "projects/act-public-voice.md",
-      "websitePath": "/projects/act-public-voice",
-      "projectPagePath": "/projects/act-public-voice",
-      "publicSurface": "project",
-      "empathyLedgerKey": "act-public-voice",
-      "publicSiteUrl": "https://act.place/",
-      "canonicalUrl": "https://act.place/",
-      "repoUrl": null,
-      "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.786Z"
+      "modifiedAt": "2026-05-08T23:47:17.061Z"
     },
     {
       "slug": "act-studio",
@@ -103,9 +103,217 @@
       "empathyLedgerKey": "act-studio",
       "publicSiteUrl": null,
       "canonicalUrl": null,
-      "repoUrl": "https://github.com/Acurioustractor/act-regenerative-studio",
-      "deployUrl": "https://act-regenerative-studio-benjamin-knights-projects.vercel.app/",
-      "modifiedAt": "2026-04-22T02:32:20.857Z"
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-05-08T23:47:17.062Z"
+    },
+    {
+      "slug": "rd-activity-register",
+      "title": "ACT-CG core activity 1: Cross-source organisational entity resolution",
+      "summary": null,
+      "overview": null,
+      "status": "in_progress",
+      "code": null,
+      "tier": null,
+      "canonicalSlug": "rd-activity-register",
+      "canonicalCode": null,
+      "entityType": null,
+      "taggingMode": null,
+      "cluster": "projects",
+      "parentProject": null,
+      "websiteSlug": "rd-activity-register",
+      "relativePath": "projects/civicgraph/rd-activity-register.md",
+      "websitePath": "/projects/rd-activity-register",
+      "projectPagePath": "/projects/rd-activity-register",
+      "publicSurface": "project",
+      "empathyLedgerKey": "rd-activity-register",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-05-08T23:47:17.062Z"
+    },
+    {
+      "slug": "rd-activity-register.md.provenance",
+      "title": "ACT-CG R&D Activity Register — Provenance",
+      "summary": null,
+      "overview": "- Output: R&D activity register for project ACT-CG (CivicGraph) - Intended destination: wiki/projects/civicgraph/rd-activity-register.md (canonical) and thoughts/shared/rd-pack-fy26/act-cg-rd-activity-register.md (pack via symlink) - Why generated: FY25-26 R&D Tax Incentive evidence pack assembly per Path C decision (2026-04-27). Lodgement window Jul 2026 – 30 Apr 2027.",
+      "status": "Draft",
+      "code": null,
+      "tier": null,
+      "canonicalSlug": "rd-activity-register.md.provenance",
+      "canonicalCode": null,
+      "entityType": null,
+      "taggingMode": null,
+      "cluster": "projects",
+      "parentProject": null,
+      "websiteSlug": "rd-activity-register.md.provenance",
+      "relativePath": "projects/civicgraph/rd-activity-register.md.provenance.md",
+      "websitePath": "/projects/rd-activity-register.md.provenance",
+      "projectPagePath": "/projects/rd-activity-register.md.provenance",
+      "publicSurface": "project",
+      "empathyLedgerKey": "rd-activity-register.md.provenance",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-05-08T23:47:17.063Z"
+    },
+    {
+      "slug": "rd-activity-register",
+      "title": "ACT-EL core activity 1: OCAP-respecting consent capture and multi-tenant story ledger",
+      "summary": null,
+      "overview": null,
+      "status": "in_progress",
+      "code": null,
+      "tier": null,
+      "canonicalSlug": "rd-activity-register",
+      "canonicalCode": null,
+      "entityType": null,
+      "taggingMode": null,
+      "cluster": "projects",
+      "parentProject": null,
+      "websiteSlug": "rd-activity-register",
+      "relativePath": "projects/empathy-ledger/rd-activity-register.md",
+      "websitePath": "/projects/rd-activity-register",
+      "projectPagePath": "/projects/rd-activity-register",
+      "publicSurface": "project",
+      "empathyLedgerKey": "rd-activity-register",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-05-08T23:47:17.064Z"
+    },
+    {
+      "slug": "rd-activity-register.md.provenance",
+      "title": "ACT-EL R&D Activity Register — Provenance",
+      "summary": null,
+      "overview": "- Output: R&D activity register for project ACT-EL (Empathy Ledger) - Intended destination: wiki/projects/empathy-ledger/rd-activity-register.md (canonical) and thoughts/shared/rd-pack-fy26/act-el-rd-activity-register.md (pack via symlink) - Why generated: FY25-26 R&D Tax Incentive evidence pack assembly per Path C decision (2026-04-27).",
+      "status": "Draft",
+      "code": null,
+      "tier": null,
+      "canonicalSlug": "rd-activity-register.md.provenance",
+      "canonicalCode": null,
+      "entityType": null,
+      "taggingMode": null,
+      "cluster": "projects",
+      "parentProject": null,
+      "websiteSlug": "rd-activity-register.md.provenance",
+      "relativePath": "projects/empathy-ledger/rd-activity-register.md.provenance.md",
+      "websitePath": "/projects/rd-activity-register.md.provenance",
+      "projectPagePath": "/projects/rd-activity-register.md.provenance",
+      "publicSurface": "project",
+      "empathyLedgerKey": "rd-activity-register.md.provenance",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-05-08T23:47:17.064Z"
+    },
+    {
+      "slug": "rd-activity-register",
+      "title": "ACT-GD core activity 1: Buyer-supplier matching and demand-side procurement infrastructure",
+      "summary": null,
+      "overview": null,
+      "status": "in_progress",
+      "code": null,
+      "tier": null,
+      "canonicalSlug": "rd-activity-register",
+      "canonicalCode": null,
+      "entityType": null,
+      "taggingMode": null,
+      "cluster": "projects",
+      "parentProject": null,
+      "websiteSlug": "rd-activity-register",
+      "relativePath": "projects/goods/rd-activity-register.md",
+      "websitePath": "/projects/rd-activity-register",
+      "projectPagePath": "/projects/rd-activity-register",
+      "publicSurface": "project",
+      "empathyLedgerKey": "rd-activity-register",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-05-08T23:47:17.064Z"
+    },
+    {
+      "slug": "rd-activity-register.md.provenance",
+      "title": "ACT-GD R&D Activity Register — Provenance",
+      "summary": null,
+      "overview": "- Output: R&D activity register for project ACT-GD (Goods on Country) - Intended destination: wiki/projects/goods/rd-activity-register.md (canonical) and thoughts/shared/rd-pack-fy26/act-gd-rd-activity-register.md (pack via symlink) - Why generated: FY25-26 R&D Tax Incentive evidence pack assembly per Path C decision (2026-04-27).",
+      "status": "Draft",
+      "code": null,
+      "tier": null,
+      "canonicalSlug": "rd-activity-register.md.provenance",
+      "canonicalCode": null,
+      "entityType": null,
+      "taggingMode": null,
+      "cluster": "projects",
+      "parentProject": null,
+      "websiteSlug": "rd-activity-register.md.provenance",
+      "relativePath": "projects/goods/rd-activity-register.md.provenance.md",
+      "websitePath": "/projects/rd-activity-register.md.provenance",
+      "projectPagePath": "/projects/rd-activity-register.md.provenance",
+      "publicSurface": "project",
+      "empathyLedgerKey": "rd-activity-register.md.provenance",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-05-08T23:47:17.064Z"
+    },
+    {
+      "slug": "rd-activity-register",
+      "title": "ACT-JH core activity 1: Federated community-led-services evidence layer",
+      "summary": null,
+      "overview": null,
+      "status": "in_progress",
+      "code": null,
+      "tier": null,
+      "canonicalSlug": "rd-activity-register",
+      "canonicalCode": null,
+      "entityType": null,
+      "taggingMode": null,
+      "cluster": "projects",
+      "parentProject": null,
+      "websiteSlug": "rd-activity-register",
+      "relativePath": "projects/justicehub/rd-activity-register.md",
+      "websitePath": "/projects/rd-activity-register",
+      "projectPagePath": "/projects/rd-activity-register",
+      "publicSurface": "project",
+      "empathyLedgerKey": "rd-activity-register",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-05-08T23:47:17.065Z"
+    },
+    {
+      "slug": "rd-activity-register.md.provenance",
+      "title": "ACT-JH R&D Activity Register — Provenance",
+      "summary": null,
+      "overview": "- Output: R&D activity register for project ACT-JH (JusticeHub) - Intended destination: wiki/projects/justicehub/rd-activity-register.md (canonical) and thoughts/shared/rd-pack-fy26/act-jh-rd-activity-register.md (pack via symlink) - Why generated: FY25-26 R&D Tax Incentive evidence pack assembly per Path C decision (2026-04-27).",
+      "status": "Draft",
+      "code": null,
+      "tier": null,
+      "canonicalSlug": "rd-activity-register.md.provenance",
+      "canonicalCode": null,
+      "entityType": null,
+      "taggingMode": null,
+      "cluster": "projects",
+      "parentProject": null,
+      "websiteSlug": "rd-activity-register.md.provenance",
+      "relativePath": "projects/justicehub/rd-activity-register.md.provenance.md",
+      "websitePath": "/projects/rd-activity-register.md.provenance",
+      "projectPagePath": "/projects/rd-activity-register.md.provenance",
+      "publicSurface": "project",
+      "empathyLedgerKey": "rd-activity-register.md.provenance",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-05-08T23:47:17.065Z"
     },
     {
       "slug": "artist-residency",
@@ -131,7 +339,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.700Z"
+      "modifiedAt": "2026-05-08T23:47:17.061Z"
     },
     {
       "slug": "barkly-backbone",
@@ -140,12 +348,12 @@
       "overview": "Barkly Backbone is an early-stage concept for a shared operational infrastructure serving community organisations in the Barkly region of the Northern Territory. The Barkly — centred on Tennant Creek, approximately 500km north of Alice Springs — is one of Australia's most remote and geographically dispersed regions, with a predominantly Aboriginal population spread across vast distances and served by a small number of chronically under-resourced organisations. The concept draws from the \"backbone organisation\" model developed in collective impact theory: a dedicated entity that provides shared services — administration, technology, data, logistics, governance support — so that frontline community organisations don't have to build those capabilities themselves. Every hour a Tennant Creek youth worker spends on compliance paperwork is an hour not spent with a young person. Barkly Backbone is the concept that addresses that equation.",
       "status": "Ideation",
       "code": "ACT-BB",
-      "tier": null,
+      "tier": "satellite",
       "canonicalSlug": "barkly-backbone",
       "canonicalCode": "ACT-BB",
       "entityType": "project",
       "taggingMode": "own-code",
-      "cluster": "projects",
+      "cluster": "barkly-backbone",
       "parentProject": null,
       "websiteSlug": "barkly-backbone",
       "relativePath": "projects/barkly-backbone.md",
@@ -157,7 +365,7 @@
       "canonicalUrl": null,
       "repoUrl": "https://github.com/Acurioustractor/barkly-research-platform",
       "deployUrl": "https://barkly-research-platform-benjamin-knights-projects.vercel.app/",
-      "modifiedAt": "2026-04-20T03:41:09.745Z"
+      "modifiedAt": "2026-05-08T23:47:17.062Z"
     },
     {
       "slug": "bg-fit",
@@ -171,7 +379,7 @@
       "canonicalCode": "ACT-BG",
       "entityType": "project",
       "taggingMode": "own-code",
-      "cluster": "projects",
+      "cluster": "bg-fit",
       "parentProject": null,
       "websiteSlug": "bg-fit",
       "relativePath": "projects/bg-fit.md",
@@ -183,7 +391,33 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.789Z"
+      "modifiedAt": "2026-05-08T23:47:17.062Z"
+    },
+    {
+      "slug": "black-cockatoo-valley",
+      "title": "Black Cockatoo Valley",
+      "summary": "A 150-acre property on Jinibara Country near Witta, Queensland. Conservation-first. The land sets the pace, not the calendar.",
+      "overview": "Black Cockatoo Valley (BCV) is ACT's land-practice site. The work begins from a single rule: the land is the teacher and the limiter. Conservation-first is the baseline, always. When the creek is low or the grass is tired, the calendar yields. Capacity is a land decision before it is a business decision. BCV is the quiet anchor of the ACT ecosystem. It is where residencies, workshops, regenerative R&D, and habitat restoration happen in a rhythm the property itself permits. Revenue from residencies and workshops is reinvested in restoration, weed management, and monitoring. No extractive tourism. Limited-volume operations. Long-term stewardship in community.",
+      "status": "active",
+      "code": null,
+      "tier": "satellite",
+      "canonicalSlug": "black-cockatoo-valley",
+      "canonicalCode": "ACT-BV",
+      "entityType": "project",
+      "taggingMode": "own-code",
+      "cluster": "black-cockatoo-valley",
+      "parentProject": null,
+      "websiteSlug": "black-cockatoo-valley",
+      "relativePath": "projects/black-cockatoo-valley.md",
+      "websitePath": "/projects/black-cockatoo-valley",
+      "projectPagePath": "/projects/black-cockatoo-valley",
+      "publicSurface": "project",
+      "empathyLedgerKey": "black-cockatoo-valley",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-05-08T23:47:17.062Z"
     },
     {
       "slug": "black-cockatoo-valley",
@@ -209,7 +443,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.698Z"
+      "modifiedAt": "2026-05-08T23:47:17.060Z"
     },
     {
       "slug": "campfire",
@@ -223,7 +457,7 @@
       "canonicalCode": "ACT-CM",
       "entityType": "project",
       "taggingMode": "own-code",
-      "cluster": "projects",
+      "cluster": "campfire",
       "parentProject": null,
       "websiteSlug": "campfire",
       "relativePath": "projects/campfire.md",
@@ -235,21 +469,21 @@
       "canonicalUrl": "https://campfire-website-amber.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/Campfire-Website",
       "deployUrl": "https://campfire-website-amber.vercel.app/",
-      "modifiedAt": "2026-04-20T03:41:09.747Z"
+      "modifiedAt": "2026-05-08T23:47:17.062Z"
     },
     {
       "slug": "caring-for-those-who-care",
       "title": "Caring for Those Who Care",
       "summary": "A sector sustainability initiative identifying and filling the wellbeing gaps for NFP leaders and workers — research-led, storytelling-powered, and grounded in the conviction that sustaining the carers is inseparable from sustaining the communities they serve.",
       "overview": "Caring for Those Who Care addresses a structural blind spot in the social sector: the people who dedicate their working lives to holding communities together are themselves underserved, under-supported, and often operating at significant personal cost. NFP leaders in particular carry a particular burden — responsible for organisations, staff, and communities, expected to model resilience, and often without the peer support or institutional backing that leaders in other sectors take for granted. The project combines rigorous research, community storytelling, and practical recommendations to identify the gaps and build the case for systemic change in how the sector cares for its own.",
-      "status": null,
-      "code": "ACT-CA",
-      "tier": null,
+      "status": "Active",
+      "code": null,
+      "tier": "studio",
       "canonicalSlug": "caring-for-those-who-care",
       "canonicalCode": "ACT-CA",
       "entityType": "project",
       "taggingMode": "own-code",
-      "cluster": "projects",
+      "cluster": "caring-for-those-who-care",
       "parentProject": null,
       "websiteSlug": "caring-for-those-who-care",
       "relativePath": "projects/caring-for-those-who-care.md",
@@ -261,7 +495,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.790Z"
+      "modifiedAt": "2026-05-08T23:47:17.062Z"
     },
     {
       "slug": "cars-and-microcontrollers",
@@ -287,7 +521,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.734Z"
+      "modifiedAt": "2026-05-08T23:47:17.062Z"
     },
     {
       "slug": "civicgraph",
@@ -301,7 +535,7 @@
       "canonicalCode": "ACT-CS",
       "entityType": "project",
       "taggingMode": "own-code",
-      "cluster": "projects",
+      "cluster": "civicgraph",
       "parentProject": null,
       "websiteSlug": "civicgraph",
       "relativePath": "projects/civicgraph.md",
@@ -313,7 +547,7 @@
       "canonicalUrl": "https://civicgraph.app/",
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.749Z"
+      "modifiedAt": "2026-05-08T23:47:17.062Z"
     },
     {
       "slug": "community-capital",
@@ -322,12 +556,12 @@
       "overview": "Community Capital is an ACT-facilitated leadership retreat — formally titled the 10x10 Community Capital Leadership Retreat — bringing together community leaders and social impact capital. The inaugural Phase 1 retreat ran 23–25 February 2025 in Bowral, NSW (documented in the Bowral case study in the ACT Farm cluster). It is funded via the Social Impact Hub Foundation, which distributes approximately $10 million in funds to not-for-profits annually. ACT's role is facilitation: creating and holding the space between people doing community-level work and people with access to capital, without imposing its own agenda on either.",
       "status": "Active",
       "code": "ACT-CP",
-      "tier": null,
+      "tier": "satellite",
       "canonicalSlug": "community-capital",
       "canonicalCode": "ACT-CP",
       "entityType": "project",
       "taggingMode": "own-code",
-      "cluster": "projects",
+      "cluster": "community-capital",
       "parentProject": null,
       "websiteSlug": "community-capital",
       "relativePath": "projects/community-capital.md",
@@ -339,7 +573,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.751Z"
+      "modifiedAt": "2026-05-08T23:47:17.063Z"
     },
     {
       "slug": "community-capital-bowral-2025",
@@ -365,7 +599,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-14T01:52:41.495Z"
+      "modifiedAt": "2026-05-08T23:47:17.060Z"
     },
     {
       "slug": "community-capital-at-bcv",
@@ -391,7 +625,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-14T01:52:41.493Z"
+      "modifiedAt": "2026-05-08T23:47:17.060Z"
     },
     {
       "slug": "confit-pathways",
@@ -405,7 +639,7 @@
       "canonicalCode": "ACT-CT",
       "entityType": "project",
       "taggingMode": "own-code",
-      "cluster": "projects",
+      "cluster": "confit-pathways",
       "parentProject": null,
       "websiteSlug": "confit-pathways",
       "relativePath": "projects/confit-pathways.md",
@@ -417,7 +651,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.753Z"
+      "modifiedAt": "2026-05-08T23:47:17.063Z"
     },
     {
       "slug": "contained",
@@ -432,7 +666,7 @@
       "entityType": "work",
       "taggingMode": "own-code",
       "cluster": "justicehub",
-      "parentProject": "justicehub",
+      "parentProject": null,
       "websiteSlug": "contained",
       "relativePath": "projects/contained.md",
       "websitePath": "/projects/contained",
@@ -443,7 +677,7 @@
       "canonicalUrl": null,
       "repoUrl": "https://github.com/Acurioustractor/contained-campaign-site",
       "deployUrl": null,
-      "modifiedAt": "2026-04-13T11:41:24.632Z"
+      "modifiedAt": "2026-05-08T23:47:17.063Z"
     },
     {
       "slug": "corporate-innovation-retreats",
@@ -469,33 +703,33 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.703Z"
+      "modifiedAt": "2026-05-08T23:47:17.061Z"
     },
     {
-      "slug": "custodian-economy",
-      "title": "Custodian Economy",
-      "summary": "An economic model exploring what it means to be custodians rather than owners, applied to land, knowledge, and enterprise.",
-      "overview": "Custodian Economy is ACT's exploration of economic models grounded in custodianship rather than ownership. The project asks a fundamental question: what does an economy look like when its participants see themselves as temporary stewards of resources, land, and knowledge rather than extractive owners? This work draws on First Nations concepts of custodianship of Country, blended with contemporary thinking about community capital, regenerative economics, and mission-locked enterprise structures. It informs the dual-entity architecture that ACT itself uses (Foundation for charitable work, Ventures for mission-locked trading) and the broader ecosystem's approach to value creation that doesn't require value extraction.",
-      "status": "Active",
-      "code": "ACT-CE",
-      "tier": "Satellite",
-      "canonicalSlug": "custodian-economy",
+      "slug": "custodian-first-economy",
+      "title": "Custodian First Economy",
+      "summary": "Partner project that ACT works with. Supports young people on youth justice orders. Not ACT's own program; ACT's role inside it is one of partnership.",
+      "overview": null,
+      "status": "Stub",
+      "code": null,
+      "tier": "satellite",
+      "canonicalSlug": "custodian-first-economy",
       "canonicalCode": "ACT-CE",
       "entityType": "project",
       "taggingMode": "own-code",
-      "cluster": "projects",
+      "cluster": "custodian-first-economy",
       "parentProject": null,
-      "websiteSlug": "custodian-economy",
-      "relativePath": "projects/custodian-economy.md",
-      "websitePath": "/projects/custodian-economy",
-      "projectPagePath": "/projects/custodian-economy",
-      "publicSurface": "project",
-      "empathyLedgerKey": "custodian-economy",
+      "websiteSlug": "custodian-first-economy",
+      "relativePath": "projects/custodian-first-economy.md",
+      "websitePath": "/projects/custodian-first-economy",
+      "projectPagePath": "/projects/custodian-first-economy",
+      "publicSurface": "partner",
+      "empathyLedgerKey": "custodian-first-economy",
       "publicSiteUrl": null,
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.755Z"
+      "modifiedAt": "2026-05-08T23:47:17.063Z"
     },
     {
       "slug": "dad-lab-bcv-2025",
@@ -521,7 +755,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-14T01:52:41.496Z"
+      "modifiedAt": "2026-05-08T23:47:17.060Z"
     },
     {
       "slug": "dad-lab-at-bcv",
@@ -547,7 +781,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.705Z"
+      "modifiedAt": "2026-05-08T23:47:17.061Z"
     },
     {
       "slug": "dad-lab-25",
@@ -561,7 +795,7 @@
       "canonicalCode": "ACT-DL",
       "entityType": "project",
       "taggingMode": "own-code",
-      "cluster": "projects",
+      "cluster": "dad-lab-25",
       "parentProject": null,
       "websiteSlug": "dad-lab-25",
       "relativePath": "projects/dad-lab-25.md",
@@ -573,33 +807,33 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.791Z"
+      "modifiedAt": "2026-05-08T23:47:17.063Z"
     },
     {
       "slug": "deadlylabs",
       "title": "DeadlyLabs",
       "summary": "STEM education meets youth detention — where sports science converges with cultural identity to redefine futures.",
       "overview": "DeadlyLabs is a project of DeadlyScience, an Indigenous-led initiative founded in 2019 by Corey Tutt (Kamilaroi man) to make STEM education accessible for remote Indigenous communities. The \"Kickin' It\" program brings sports science into youth detention centres, engaging detained young people as co-creators of STEM kits. The partnership with Acmena Youth Justice Centre allows detained youth to become innovators — infusing their perspectives into STEM kits that celebrate the scientific legacy of Aboriginal and Torres Strait Islander people.",
-      "status": null,
+      "status": "Active",
       "code": null,
-      "tier": null,
-      "canonicalSlug": "justicehub",
-      "canonicalCode": "ACT-JH",
+      "tier": "background",
+      "canonicalSlug": "deadlylabs",
+      "canonicalCode": "ACT-DLB",
       "entityType": "partner-proof",
       "taggingMode": "related-proof",
-      "cluster": "projects",
+      "cluster": "deadlylabs",
       "parentProject": "justicehub",
-      "websiteSlug": "justicehub",
+      "websiteSlug": "deadlylabs",
       "relativePath": "projects/deadlylabs.md",
-      "websitePath": "/projects/justicehub",
-      "projectPagePath": "/projects/justicehub",
+      "websitePath": "/projects/deadlylabs",
+      "projectPagePath": "/projects/deadlylabs",
       "publicSurface": "project",
-      "empathyLedgerKey": "justicehub",
+      "empathyLedgerKey": "deadlylabs",
       "publicSiteUrl": null,
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.757Z"
+      "modifiedAt": "2026-05-08T23:47:17.063Z"
     },
     {
       "slug": "designing-for-obsolescence",
@@ -613,7 +847,7 @@
       "canonicalCode": "ACT-DO",
       "entityType": "project",
       "taggingMode": "own-code",
-      "cluster": "projects",
+      "cluster": "designing-for-obsolescence",
       "parentProject": null,
       "websiteSlug": "designing-for-obsolescence",
       "relativePath": "projects/designing-for-obsolescence.md",
@@ -625,7 +859,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.792Z"
+      "modifiedAt": "2026-05-08T23:47:17.063Z"
     },
     {
       "slug": "diagrama",
@@ -639,7 +873,7 @@
       "canonicalCode": "ACT-DG",
       "entityType": "project",
       "taggingMode": "own-code",
-      "cluster": "projects",
+      "cluster": "diagrama",
       "parentProject": null,
       "websiteSlug": "diagrama",
       "relativePath": "projects/diagrama.md",
@@ -651,7 +885,7 @@
       "canonicalUrl": null,
       "repoUrl": "https://github.com/Acurioustractor/diagrama-australia",
       "deployUrl": "https://diagramaaustralia.org/",
-      "modifiedAt": "2026-04-12T20:50:21.792Z"
+      "modifiedAt": "2026-05-08T23:47:17.063Z"
     },
     {
       "slug": "empathy-ledger",
@@ -677,7 +911,7 @@
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/empathy-ledger-v2",
       "deployUrl": "https://www.empathyledger.com/",
-      "modifiedAt": "2026-04-20T03:41:09.759Z"
+      "modifiedAt": "2026-05-08T23:47:17.063Z"
     },
     {
       "slug": "annual-field-service",
@@ -703,7 +937,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.764Z"
+      "modifiedAt": "2026-05-08T23:47:17.063Z"
     },
     {
       "slug": "empathy-ledger-storytelling-residency",
@@ -729,7 +963,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.707Z"
+      "modifiedAt": "2026-05-08T23:47:17.061Z"
     },
     {
       "slug": "facilitation",
@@ -755,7 +989,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.709Z"
+      "modifiedAt": "2026-05-08T23:47:17.061Z"
     },
     {
       "slug": "feel-good-project",
@@ -764,12 +998,12 @@
       "overview": "The Feel Good Project is an ACT-supported initiative providing mobile hair care and beauty services to women experiencing hardship — homelessness, domestic violence, poverty, or crisis. ACT's contribution was helping build a caravan: a mobile salon that brings the service to where women are, rather than asking women in difficult circumstances to navigate their way to a fixed location. The project is active. Financial tracking in Xero under ACT-FG — Feel Good Project confirms it has incurred costs. Deeper operational detail — the partner organisation, service geography, and outcomes data — has not yet been fully ingested into the wiki.",
       "status": "Active",
       "code": "ACT-FG",
-      "tier": null,
+      "tier": "satellite",
       "canonicalSlug": "feel-good-project",
       "canonicalCode": "ACT-FG",
       "entityType": "project",
       "taggingMode": "own-code",
-      "cluster": "projects",
+      "cluster": "feel-good-project",
       "parentProject": null,
       "websiteSlug": "feel-good-project",
       "relativePath": "projects/feel-good-project.md",
@@ -781,7 +1015,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.774Z"
+      "modifiedAt": "2026-05-08T23:47:17.064Z"
     },
     {
       "slug": "fishers-oysters",
@@ -795,7 +1029,7 @@
       "canonicalCode": "ACT-FO",
       "entityType": "project",
       "taggingMode": "own-code",
-      "cluster": "projects",
+      "cluster": "fishers-oysters",
       "parentProject": null,
       "websiteSlug": "fishers-oysters",
       "relativePath": "projects/fishers-oysters.md",
@@ -807,7 +1041,7 @@
       "canonicalUrl": "https://fishers-oysters.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/fishers-oysters",
       "deployUrl": "https://www.fishersoysters.com/",
-      "modifiedAt": "2026-04-12T20:50:21.793Z"
+      "modifiedAt": "2026-05-08T23:47:17.064Z"
     },
     {
       "slug": "global-laundry-alliance",
@@ -821,7 +1055,7 @@
       "canonicalCode": "ACT-GL",
       "entityType": "project",
       "taggingMode": "own-code",
-      "cluster": "projects",
+      "cluster": "global-laundry-alliance",
       "parentProject": null,
       "websiteSlug": "global-laundry-alliance",
       "relativePath": "projects/global-laundry-alliance.md",
@@ -833,7 +1067,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.793Z"
+      "modifiedAt": "2026-05-08T23:47:17.064Z"
     },
     {
       "slug": "gold-phone",
@@ -859,7 +1093,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.787Z"
+      "modifiedAt": "2026-05-08T23:47:17.062Z"
     },
     {
       "slug": "goods",
@@ -881,11 +1115,11 @@
       "projectPagePath": "/projects/goods",
       "publicSurface": "project",
       "empathyLedgerKey": "goods",
-      "publicSiteUrl": null,
-      "canonicalUrl": null,
-      "repoUrl": null,
+      "publicSiteUrl": "https://v2-rho-ochre.vercel.app/",
+      "canonicalUrl": "https://v2-rho-ochre.vercel.app/",
+      "repoUrl": "https://github.com/Acurioustractor/goods-asset-tracker",
       "deployUrl": null,
-      "modifiedAt": "2026-04-22T02:31:25.315Z"
+      "modifiedAt": "2026-05-08T23:47:17.064Z"
     },
     {
       "slug": "makers-weekend",
@@ -911,7 +1145,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.724Z"
+      "modifiedAt": "2026-05-08T23:47:17.061Z"
     },
     {
       "slug": "grantscope",
@@ -919,25 +1153,25 @@
       "summary": "Decision infrastructure connecting supplier intelligence, place-based funding data, and outcome evidence.",
       "overview": null,
       "status": "Active — Circle One technical reference for [[three-circles|The Three Circles]]",
-      "code": "ACT-CS",
-      "tier": "foundational",
-      "canonicalSlug": "civicgraph",
-      "canonicalCode": "ACT-CS",
+      "code": null,
+      "tier": "background",
+      "canonicalSlug": "grantscope",
+      "canonicalCode": "ACT-GS",
       "entityType": "alias-brand",
       "taggingMode": "alias-of",
       "cluster": "data-infrastructure",
       "parentProject": "civicgraph",
-      "websiteSlug": "civicgraph",
+      "websiteSlug": "grantscope",
       "relativePath": "projects/grantscope.md",
-      "websitePath": "/projects/civicgraph",
-      "projectPagePath": "/projects/civicgraph",
+      "websitePath": "/projects/grantscope",
+      "projectPagePath": "/projects/grantscope",
       "publicSurface": "project",
-      "empathyLedgerKey": "civicgraph",
-      "publicSiteUrl": null,
-      "canonicalUrl": null,
-      "repoUrl": null,
-      "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.776Z"
+      "empathyLedgerKey": "grantscope",
+      "publicSiteUrl": "https://civicgraph.app/",
+      "canonicalUrl": "https://grantscope.vercel.app/",
+      "repoUrl": "https://github.com/Acurioustractor/grantscope",
+      "deployUrl": "https://civicgraph.app/",
+      "modifiedAt": "2026-05-08T23:47:17.064Z"
     },
     {
       "slug": "green-harvest-witta",
@@ -959,11 +1193,11 @@
       "projectPagePath": "/projects/green-harvest-witta",
       "publicSurface": "project",
       "empathyLedgerKey": "green-harvest-witta",
-      "publicSiteUrl": "https://www.theharvestwitta.com.au/",
-      "canonicalUrl": "https://witta-swot-analysis.vercel.app/",
-      "repoUrl": "https://github.com/Acurioustractor/theharvest",
-      "deployUrl": "https://www.theharvestwitta.com.au/",
-      "modifiedAt": "2026-04-20T03:41:09.803Z"
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-05-08T23:47:17.067Z"
     },
     {
       "slug": "harvest-pairings",
@@ -989,7 +1223,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.711Z"
+      "modifiedAt": "2026-05-08T23:47:17.061Z"
     },
     {
       "slug": "industry-residency-at-the-harvest",
@@ -1015,7 +1249,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.716Z"
+      "modifiedAt": "2026-05-08T23:47:17.061Z"
     },
     {
       "slug": "innovation-sessions",
@@ -1041,7 +1275,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.719Z"
+      "modifiedAt": "2026-05-08T23:47:17.061Z"
     },
     {
       "slug": "judges-on-country",
@@ -1067,7 +1301,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.779Z"
+      "modifiedAt": "2026-05-08T23:47:17.065Z"
     },
     {
       "slug": "junes-patch",
@@ -1081,7 +1315,7 @@
       "canonicalCode": "ACT-JP",
       "entityType": "project",
       "taggingMode": "own-code",
-      "cluster": "projects",
+      "cluster": "junes-patch",
       "parentProject": null,
       "websiteSlug": "junes-patch",
       "relativePath": "projects/junes-patch.md",
@@ -1093,7 +1327,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-13T11:41:50.114Z"
+      "modifiedAt": "2026-05-08T23:47:17.064Z"
     },
     {
       "slug": "junes-patch-healthcare-retreat",
@@ -1119,7 +1353,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.722Z"
+      "modifiedAt": "2026-05-08T23:47:17.061Z"
     },
     {
       "slug": "junes-patch-year-one-2025",
@@ -1145,7 +1379,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-14T02:26:27.162Z"
+      "modifiedAt": "2026-05-08T23:47:17.060Z"
     },
     {
       "slug": "justicehub",
@@ -1167,11 +1401,11 @@
       "projectPagePath": "/projects/justicehub",
       "publicSurface": "project",
       "empathyLedgerKey": "justicehub",
-      "publicSiteUrl": "https://www.justicehub.com.au/",
-      "canonicalUrl": "https://www.justicehub.com.au/",
-      "repoUrl": "https://github.com/Acurioustractor/justicehub-platform",
-      "deployUrl": "https://www.justicehub.com.au/",
-      "modifiedAt": "2026-04-20T03:41:09.783Z"
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-05-08T23:47:17.065Z"
     },
     {
       "slug": "justicehub-centre-of-excellence",
@@ -1197,7 +1431,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.781Z"
+      "modifiedAt": "2026-05-08T23:47:17.065Z"
     },
     {
       "slug": "marriage-celebrant",
@@ -1211,7 +1445,7 @@
       "canonicalCode": "ACT-CB",
       "entityType": "project",
       "taggingMode": "own-code",
-      "cluster": "projects",
+      "cluster": "marriage-celebrant",
       "parentProject": null,
       "websiteSlug": "marriage-celebrant",
       "relativePath": "projects/marriage-celebrant.md",
@@ -1223,7 +1457,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.793Z"
+      "modifiedAt": "2026-05-08T23:47:17.065Z"
     },
     {
       "slug": "minderoo-pitch-package",
@@ -1249,7 +1483,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-21T08:39:14.620Z"
+      "modifiedAt": "2026-05-08T23:47:17.065Z"
     },
     {
       "slug": "mounty-yarns",
@@ -1263,7 +1497,7 @@
       "canonicalCode": "ACT-MY",
       "entityType": "project",
       "taggingMode": "own-code",
-      "cluster": "projects",
+      "cluster": "mounty-yarns",
       "parentProject": null,
       "websiteSlug": "mounty-yarns",
       "relativePath": "projects/mounty-yarns.md",
@@ -1275,7 +1509,7 @@
       "canonicalUrl": "https://mounty-yarns.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/mounty-yarns",
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.798Z"
+      "modifiedAt": "2026-05-08T23:47:17.065Z"
     },
     {
       "slug": "oonchiumpa",
@@ -1289,7 +1523,7 @@
       "canonicalCode": "ACT-OO",
       "entityType": "project",
       "taggingMode": "own-code",
-      "cluster": "projects",
+      "cluster": "oonchiumpa",
       "parentProject": null,
       "websiteSlug": "oonchiumpa",
       "relativePath": "projects/oonchiumpa.md",
@@ -1300,8 +1534,8 @@
       "publicSiteUrl": "https://oonchiumpa.vercel.app/",
       "canonicalUrl": "https://oonchiumpa.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/Oonchiumpa",
-      "deployUrl": "https://oonchiumpa-app.vercel.app/",
-      "modifiedAt": "2026-04-20T04:10:06.975Z"
+      "deployUrl": null,
+      "modifiedAt": "2026-05-08T23:47:17.065Z"
     },
     {
       "slug": "picc",
@@ -1323,11 +1557,11 @@
       "projectPagePath": "/projects/picc",
       "publicSurface": "project",
       "empathyLedgerKey": "picc",
-      "publicSiteUrl": "https://picc.studio/",
-      "canonicalUrl": "https://palm-island-repository.vercel.app/",
-      "repoUrl": "https://github.com/Acurioustractor/palm-island-repository",
-      "deployUrl": "https://picc.studio/",
-      "modifiedAt": "2026-04-20T03:41:09.797Z"
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-05-08T23:47:17.066Z"
     },
     {
       "slug": "picc-annual-report",
@@ -1349,11 +1583,11 @@
       "projectPagePath": "/projects/picc",
       "publicSurface": "project",
       "empathyLedgerKey": "picc",
-      "publicSiteUrl": "https://picc.studio/",
-      "canonicalUrl": "https://palm-island-repository.vercel.app/",
-      "repoUrl": "https://github.com/Acurioustractor/palm-island-repository",
-      "deployUrl": "https://picc.studio/",
-      "modifiedAt": "2026-04-12T20:50:21.799Z"
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-05-08T23:47:17.066Z"
     },
     {
       "slug": "picc-centre-precinct",
@@ -1375,11 +1609,11 @@
       "projectPagePath": "/projects/picc-centre-precinct",
       "publicSurface": "project",
       "empathyLedgerKey": "picc-centre-precinct",
-      "publicSiteUrl": "https://picc-station-map.vercel.app/",
-      "canonicalUrl": "https://picc-station-map.vercel.app/",
-      "repoUrl": "https://github.com/Acurioustractor/picc-station-site-plan",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.795Z"
+      "modifiedAt": "2026-05-08T23:47:17.066Z"
     },
     {
       "slug": "picc-elders-hull-river",
@@ -1401,11 +1635,11 @@
       "projectPagePath": "/projects/picc-elders-hull-river",
       "publicSurface": "project",
       "empathyLedgerKey": "picc-elders-hull-river",
-      "publicSiteUrl": "https://picc.studio/",
-      "canonicalUrl": "https://palm-island-repository.vercel.app/",
-      "repoUrl": "https://github.com/Acurioustractor/palm-island-repository",
-      "deployUrl": "https://picc.studio/",
-      "modifiedAt": "2026-04-12T20:50:21.800Z"
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-05-08T23:47:17.066Z"
     },
     {
       "slug": "picc-photo-kiosk",
@@ -1427,37 +1661,37 @@
       "projectPagePath": "/projects/picc-photo-kiosk",
       "publicSurface": "project",
       "empathyLedgerKey": "picc-photo-kiosk",
-      "publicSiteUrl": "https://picc.studio/",
-      "canonicalUrl": "https://palm-island-repository.vercel.app/",
-      "repoUrl": "https://github.com/Acurioustractor/palm-island-repository",
-      "deployUrl": "https://picc.studio/",
-      "modifiedAt": "2026-04-12T20:50:21.800Z"
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-05-08T23:47:17.066Z"
     },
     {
       "slug": "place-based-policy-lab",
       "title": "Place-Based Policy Lab",
       "summary": "An evidence-based, participatory research initiative co-designing community-led policy from the ground up — where expertise lives in the community, not the think tank.",
       "overview": "The Place-Based Policy Lab operates from a fundamental challenge to how policy is typically made: policy designed at a distance from the communities it affects tends to reproduce the same structural conditions that created the problems it claims to solve. The Lab inverts this — starting with community-held knowledge, using participatory research methods to surface and systematise that knowledge, and building evidence bases that communities own and can deploy. \"Place-based\" is the operative commitment: policy designed for a specific place, with the people of that place, grounded in the particular history, ecology, economy, and social fabric of that location. Generic policy applied universally fails communities whose needs don't fit the template.",
-      "status": null,
+      "status": "Active",
       "code": null,
-      "tier": null,
-      "canonicalSlug": "justicehub",
-      "canonicalCode": "ACT-JH",
+      "tier": "background",
+      "canonicalSlug": "place-based-policy-lab",
+      "canonicalCode": "ACT-PB",
       "entityType": "method-lab",
       "taggingMode": "parent-code",
-      "cluster": "projects",
+      "cluster": "place-based-policy-lab",
       "parentProject": "justicehub",
-      "websiteSlug": "justicehub",
+      "websiteSlug": "place-based-policy-lab",
       "relativePath": "projects/place-based-policy-lab.md",
-      "websitePath": "/projects/justicehub",
-      "projectPagePath": "/projects/justicehub",
+      "websitePath": "/projects/place-based-policy-lab",
+      "projectPagePath": "/projects/place-based-policy-lab",
       "publicSurface": "project",
-      "empathyLedgerKey": "justicehub",
+      "empathyLedgerKey": "place-based-policy-lab",
       "publicSiteUrl": null,
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-08T09:11:25.363Z"
+      "modifiedAt": "2026-05-08T23:47:17.066Z"
     },
     {
       "slug": "quandamooka-justice-strategy",
@@ -1467,23 +1701,23 @@
       "status": "Active",
       "code": "ACT-QD",
       "tier": "Satellite",
-      "canonicalSlug": "justicehub",
+      "canonicalSlug": "quandamooka-justice-strategy",
       "canonicalCode": "ACT-QD",
       "entityType": "community-strategy",
       "taggingMode": "parent-code",
-      "cluster": "projects",
+      "cluster": "quandamooka-justice-strategy",
       "parentProject": "justicehub",
-      "websiteSlug": "justicehub",
+      "websiteSlug": "quandamooka-justice-strategy",
       "relativePath": "projects/quandamooka-justice-strategy.md",
-      "websitePath": "/projects/justicehub",
-      "projectPagePath": "/projects/justicehub",
+      "websitePath": "/projects/quandamooka-justice-strategy",
+      "projectPagePath": "/projects/quandamooka-justice-strategy",
       "publicSurface": "project",
-      "empathyLedgerKey": "justicehub",
+      "empathyLedgerKey": "quandamooka-justice-strategy",
       "publicSiteUrl": null,
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T23:51:41.541Z"
+      "modifiedAt": "2026-05-08T23:47:17.066Z"
     },
     {
       "slug": "radical-scoops-at-the-harvest",
@@ -1509,7 +1743,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-14T02:21:22.513Z"
+      "modifiedAt": "2026-05-08T23:47:17.060Z"
     },
     {
       "slug": "redtape",
@@ -1535,7 +1769,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.737Z"
+      "modifiedAt": "2026-05-08T23:47:17.062Z"
     },
     {
       "slug": "regional-arts-fellowship",
@@ -1561,7 +1795,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.787Z"
+      "modifiedAt": "2026-05-08T23:47:17.062Z"
     },
     {
       "slug": "resoleution",
@@ -1575,7 +1809,7 @@
       "canonicalCode": "ACT-RS",
       "entityType": "project",
       "taggingMode": "own-code",
-      "cluster": "projects",
+      "cluster": "resoleution",
       "parentProject": null,
       "websiteSlug": "resoleution",
       "relativePath": "projects/resoleution.md",
@@ -1587,7 +1821,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.799Z"
+      "modifiedAt": "2026-05-08T23:47:17.066Z"
     },
     {
       "slug": "smart-connect",
@@ -1611,9 +1845,9 @@
       "empathyLedgerKey": "smart-connect",
       "publicSiteUrl": null,
       "canonicalUrl": null,
-      "repoUrl": "https://github.com/Acurioustractor/SMART-Connect",
+      "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.801Z"
+      "modifiedAt": "2026-05-08T23:47:17.066Z"
     },
     {
       "slug": "smart-hcp-gp-uplift",
@@ -1639,7 +1873,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.801Z"
+      "modifiedAt": "2026-05-08T23:47:17.066Z"
     },
     {
       "slug": "smart-recovery",
@@ -1665,7 +1899,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.801Z"
+      "modifiedAt": "2026-05-08T23:47:17.066Z"
     },
     {
       "slug": "smart-recovery-gp-kits",
@@ -1691,7 +1925,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.801Z"
+      "modifiedAt": "2026-05-08T23:47:17.066Z"
     },
     {
       "slug": "staying",
@@ -1717,7 +1951,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T04:15:56.230Z"
+      "modifiedAt": "2026-05-08T23:47:17.065Z"
     },
     {
       "slug": "stays",
@@ -1743,7 +1977,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.726Z"
+      "modifiedAt": "2026-05-08T23:47:17.061Z"
     },
     {
       "slug": "the-brave-ones",
@@ -1769,7 +2003,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-21T02:59:46.529Z"
+      "modifiedAt": "2026-05-08T23:47:17.065Z"
     },
     {
       "slug": "the-caravan",
@@ -1795,7 +2029,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.739Z"
+      "modifiedAt": "2026-05-08T23:47:17.062Z"
     },
     {
       "slug": "the-caravan-at-bcv",
@@ -1821,7 +2055,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-14T01:52:41.498Z"
+      "modifiedAt": "2026-05-08T23:47:17.060Z"
     },
     {
       "slug": "the-confessional",
@@ -1847,7 +2081,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-13T13:17:49.591Z"
+      "modifiedAt": "2026-05-08T23:47:17.062Z"
     },
     {
       "slug": "the-full-idea",
@@ -1873,7 +2107,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T04:16:56.790Z"
+      "modifiedAt": "2026-05-08T23:47:17.065Z"
     },
     {
       "slug": "the-harvest",
@@ -1895,11 +2129,11 @@
       "projectPagePath": "/projects/the-harvest",
       "publicSurface": "project",
       "empathyLedgerKey": "the-harvest",
-      "publicSiteUrl": "https://www.theharvestwitta.com.au/",
-      "canonicalUrl": "https://witta-swot-analysis.vercel.app/",
-      "repoUrl": "https://github.com/Acurioustractor/theharvest",
-      "deployUrl": "https://www.theharvestwitta.com.au/",
-      "modifiedAt": "2026-04-14T01:52:41.528Z"
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-05-08T23:47:17.067Z"
     },
     {
       "slug": "the-space-at-bcv",
@@ -1925,7 +2159,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.728Z"
+      "modifiedAt": "2026-05-08T23:47:17.061Z"
     },
     {
       "slug": "three-circles",
@@ -1951,7 +2185,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.791Z"
+      "modifiedAt": "2026-05-08T23:47:17.065Z"
     },
     {
       "slug": "the-vagina",
@@ -1977,21 +2211,21 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.741Z"
+      "modifiedAt": "2026-05-08T23:47:17.062Z"
     },
     {
       "slug": "tomnet",
       "title": "TOMNET",
       "summary": "A community network dedicated to elder support — connecting older people to each other, to services, and to the social fabric that sustains wellbeing in later life.",
       "overview": "TOMNET is a community network operating in the tradition of grassroots mutual aid and neighbourhood connection for older Australians. At its core, TOMNET addresses one of the most pervasive and underacknowledged health challenges in aged communities: social isolation. The network works by creating and maintaining the connective tissue of community — the informal relationships, neighbourhood check-ins, shared activities, and information pathways that formal aged care services cannot replicate and rarely attempt.",
-      "status": null,
-      "code": "ACT-TN",
-      "tier": null,
+      "status": "Active",
+      "code": null,
+      "tier": "background",
       "canonicalSlug": "tomnet",
       "canonicalCode": "ACT-TN",
       "entityType": "project",
       "taggingMode": "own-code",
-      "cluster": "projects",
+      "cluster": "tomnet",
       "parentProject": null,
       "websiteSlug": "tomnet",
       "relativePath": "projects/tomnet.md",
@@ -2003,7 +2237,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.802Z"
+      "modifiedAt": "2026-05-08T23:47:17.067Z"
     },
     {
       "slug": "treacher",
@@ -2029,7 +2263,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.743Z"
+      "modifiedAt": "2026-05-08T23:47:17.062Z"
     },
     {
       "slug": "uncle-allan-palm-island-art",
@@ -2051,11 +2285,11 @@
       "projectPagePath": "/projects/uncle-allan-palm-island-art",
       "publicSurface": "work",
       "empathyLedgerKey": "uncle-allan-palm-island-art",
-      "publicSiteUrl": "https://picc.studio/",
-      "canonicalUrl": "https://palm-island-repository.vercel.app/",
-      "repoUrl": "https://github.com/Acurioustractor/palm-island-repository",
-      "deployUrl": "https://picc.studio/",
-      "modifiedAt": "2026-04-12T20:50:21.788Z"
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-05-08T23:47:17.062Z"
     },
     {
       "slug": "workshops-at-bcv",
@@ -2081,7 +2315,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.730Z"
+      "modifiedAt": "2026-05-08T23:47:17.061Z"
     }
   ]
 }

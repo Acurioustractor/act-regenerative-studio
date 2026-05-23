@@ -9,21 +9,40 @@
  *   npm run ask "What's the LCAA methodology?"
  *   npm run ask "How do I create an invoice?" --tier=fast
  *   npm run ask "What's our profit-sharing policy?" --sources
+ *   npm run ask "What's new this week?" --feed
  *
  * Options:
  *   --tier=fast    Use quick tier for faster, cheaper responses
  *   --tier=deep    Use deep tier for comprehensive answers (default)
  *   --sources      Show source documents and confidence scores
+ *   --feed         Prepend the latest cross-codebase activity feed as
+ *                  context. Substantially improves answers to "what
+ *                  shipped?", "what changed?", "what's new in <project>?"
+ *                  questions. Feed is written daily by
+ *                  act-global-infrastructure/scripts/build-cross-codebase-feed.mjs
+ *                  at thoughts/shared/cross-codebase-feed/latest.md
  *   --port=3000    Specify the port where Next.js dev server is running (default: 3000)
  */
 
 import fetch from 'node:fetch';
+import { readFileSync, existsSync } from 'node:fs';
 
 const args = process.argv.slice(2);
 const query = args.find(arg => !arg.startsWith('--'));
 const tier = args.find(arg => arg.startsWith('--tier='))?.split('=')[1] || 'deep';
 const showSources = args.includes('--sources');
+const includeFeed = args.includes('--feed');
 const port = args.find(arg => arg.startsWith('--port='))?.split('=')[1] || '3000';
+
+const FEED_PATH = '/Users/benknight/Code/act-global-infrastructure/thoughts/shared/cross-codebase-feed/latest.md';
+
+function loadFeed() {
+  if (!existsSync(FEED_PATH)) {
+    console.warn(`⚠️  Feed not found at ${FEED_PATH} — run build-cross-codebase-feed.mjs first`);
+    return null;
+  }
+  return readFileSync(FEED_PATH, 'utf8');
+}
 
 if (!query) {
   console.log(`
@@ -54,7 +73,24 @@ Examples:
 }
 
 console.log(`\n🔍 Asking ACT: "${query}"\n`);
-console.log(`⚙️  Tier: ${tier}\n`);
+console.log(`⚙️  Tier: ${tier}${includeFeed ? '  ·  feed: included' : ''}\n`);
+
+let enrichedQuery = query;
+if (includeFeed) {
+  const feed = loadFeed();
+  if (feed) {
+    enrichedQuery = [
+      'You are answering a question about ACT (A Curious Tractor). Use the cross-codebase activity feed below as primary context for any question about what shipped, changed, was decided, or was discussed recently. Cite specific commits, plans, or files where relevant.',
+      '',
+      '=== CROSS-CODEBASE ACTIVITY FEED ===',
+      feed,
+      '=== END FEED ===',
+      '',
+      'QUESTION:',
+      query,
+    ].join('\n');
+  }
+}
 
 try {
   // Call the API endpoint
@@ -66,7 +102,7 @@ try {
       'Content-Type': 'application/json',
     },
     body: JSON.stringify({
-      query,
+      query: enrichedQuery,
       tier,
       topK: 10,
       minSimilarity: 0.7

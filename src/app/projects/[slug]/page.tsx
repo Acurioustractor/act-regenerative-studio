@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
+import { STORYTELLERS_PUBLIC } from '@/lib/launch-flags';
 import { JsonLd } from '@/components/seo/JsonLd';
 import LivingSystemStrip from '@/components/LivingSystemStrip';
 import { NewsletterCTA } from '@/components/forms/NewsletterCTA';
@@ -593,8 +594,8 @@ export default async function ProjectPage({
       {/* Community Voices from Empathy Ledger */}
       {/* Launch hold (2026-05-27): storyteller blocks (Community Voices, Transcripts,
           Key People) hidden while /storytellers is held — their profile links point
-          at the held surface. Restore by removing the `false &&` guards. */}
-      {false && project.empathyLedgerContent && (
+          at the held surface. Flip STORYTELLERS_PUBLIC in @/lib/launch-flags to restore. */}
+      {STORYTELLERS_PUBLIC && project.empathyLedgerContent && (
         <CommunityVoicesSection
           storytellers={project.empathyLedgerContent.featured.storytellers}
           stories={project.empathyLedgerContent.featured.stories}
@@ -603,7 +604,7 @@ export default async function ProjectPage({
       )}
 
       {/* Transcripts (consented, from EL), silent if no transcripts for this project */}
-      {false && (
+      {STORYTELLERS_PUBLIC && (
         <TranscriptsSection
           transcripts={projectTranscripts}
           projectTitle={project.title}
@@ -611,7 +612,7 @@ export default async function ProjectPage({
       )}
 
       {/* Key people from wiki ## Key People section, silent if none */}
-      {false && (
+      {STORYTELLERS_PUBLIC && (
         <ProjectKeyPeopleSection
           people={project.keyPeople}
           projectTitle={project.title}

@@ -10,8 +10,9 @@ import {
 } from "@/components/design-system";
 import { EditableImage } from "@/components/flagship/EditableImage";
 import { buildCuratedProjectCards } from "@/lib/projects/build-curated-project-cards";
+import { getPublicProjectCount } from "@/lib/projects/public-projects";
 import { getAllArtProjects, splitFeaturedAndEmerging } from "@/lib/art/art-portfolio";
-import { getHomeEditorialFeature } from "@/lib/empathy-ledger-editorial";
+import { getHomeEditorialFeature, getSiteEditorialArticles } from "@/lib/empathy-ledger-editorial";
 import { cleanMediaAlt } from "@/lib/media/alt-text";
 import { pageMetadata } from "@/lib/seo/site";
 import featuredSnapshot from "@/data/empathy-ledger-featured.generated.json";
@@ -155,14 +156,26 @@ export default async function HomePage() {
     featuredProjectConfigs.map((c) => [c.slug, c.fallbackTitle])
   );
 
-  const [featuredProjects, allArtProjects] = await Promise.all([
-    buildCuratedProjectCards(orderedConfigs, {
-      includeMedia: true,
-      mediaEmphasisSlugs: homeEditorialFeature.featuredMediaProjectSlugs,
-      mediaOverrides: homeEditorialFeature.featuredProjectMediaOverrides,
-    }),
-    getAllArtProjects(),
-  ]);
+  const [featuredProjects, allArtProjects, allEditorialArticles, publicProjectCount] =
+    await Promise.all([
+      buildCuratedProjectCards(orderedConfigs, {
+        includeMedia: true,
+        mediaEmphasisSlugs: homeEditorialFeature.featuredMediaProjectSlugs,
+        mediaOverrides: homeEditorialFeature.featuredProjectMediaOverrides,
+      }),
+      getAllArtProjects(),
+      getSiteEditorialArticles(),
+      getPublicProjectCount(),
+    ]);
+
+  // Hero stats: all wired to live data so they never drift. "Projects" counts the
+  // distinct public /projects/<slug> pages (canonical records minus demoted/renamed
+  // redirects); artworks and field stories from their portfolios.
+  const heroStats = [
+    { n: String(publicProjectCount), l: "Projects" },
+    { n: String(allArtProjects.length), l: "Artworks" },
+    { n: String(allEditorialArticles.length), l: "Field stories" },
+  ];
   const { featured: featuredArt } = splitFeaturedAndEmerging(allArtProjects);
   // Curated order: CONTAINED (lead), Gold.Phone, The Confessional
   const artOrder = ["contained", "gold-phone", "the-confessional"];
@@ -190,11 +203,7 @@ export default async function HomePage() {
         primaryCta={{ label: "Explore projects", href: "/projects" }}
         statsAfter={
           <div className="flex flex-wrap gap-12 border-t border-[#FAFAF7]/10 pt-8">
-            {[
-              { n: "58", l: "Projects" },
-              { n: "10", l: "Artworks" },
-              { n: "191", l: "Wiki articles" },
-            ].map(({ n, l }) => (
+            {heroStats.map(({ n, l }) => (
               <div key={l}>
                 <p className="font-[var(--font-display)] text-3xl font-bold text-[#FAFAF7]">
                   {n}

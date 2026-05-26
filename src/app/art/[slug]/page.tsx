@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+import { STORYTELLERS_PUBLIC } from '@/lib/launch-flags';
 import {
   getAllArtSlugs,
   getArtProject,
@@ -398,8 +399,8 @@ export default async function ArtWorkPage({
             )}
 
             {/* Storytellers */}
-            {/* Launch hold (2026-05-27): hidden while /storytellers is held. Restore by removing `false &&`. */}
-            {false && project.storytellers.length > 0 && (
+            {/* Launch hold (2026-05-27): hidden while /storytellers is held. See @/lib/launch-flags. */}
+            {STORYTELLERS_PUBLIC && project.storytellers.length > 0 && (
               <div className="rounded-[24px] border border-[var(--we-sand)] bg-[#FDFBF7] p-6">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)] mb-4">
                   Storytellers

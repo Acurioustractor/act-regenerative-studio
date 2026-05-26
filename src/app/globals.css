@@ -93,6 +93,21 @@ main > div:has(> .full-bleed) {
   padding-right: 0;
 }
 
+/* Confessions: a patched-through voice scrolls in. */
+@keyframes confessionIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.confession-detail-in {
+  animation: confessionIn 0.5s ease-out both;
+}
+
 body::after {
   content: "";
   position: fixed;

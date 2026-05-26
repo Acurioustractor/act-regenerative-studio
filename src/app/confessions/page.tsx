@@ -2,7 +2,8 @@ import Link from 'next/link';
 
 import { CallTimer } from '@/components/confessions/CallTimer';
 import { ConfessionField } from '@/components/confessions/ConfessionField';
-import { ConfessionWall } from '@/components/confessions/ConfessionWall';
+import { Murmuration } from '@/components/confessions/Murmuration';
+import { Switchboard } from '@/components/confessions/Switchboard';
 import { heroVoices, mockConfessions } from '@/data/confessions-mock';
 import { pageMetadata } from '@/lib/seo/site';
 
@@ -249,7 +250,7 @@ export default function ConfessionsPage() {
         </div>
       </section>
 
-      {/* THE WALL — what's coming through the line (mock until the line is live) */}
+      {/* THE SWITCHBOARD — confessions arrive as patch-lights; click to hear one */}
       <section className="border-t border-[#221E19] px-6 py-24 md:py-32">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
@@ -258,15 +259,15 @@ export default function ConfessionsPage() {
               The line is open
             </p>
             <h2 className="mt-7 font-[var(--font-display)] text-[clamp(1.8rem,4vw,2.6rem)] font-semibold leading-tight">
-              Anonymous and unedited.
+              The switchboard. Every call patched through.
             </h2>
             <p className="mx-auto mt-5 max-w-xl font-[var(--font-body)] leading-8 text-[#A99B86]">
-              Sample messages while the line warms up. When the real confessions land, this is exactly
-              how they appear: anonymous, unedited, identifying details removed.
+              Each light is a confession, cabled down to the operator. Click one to patch through and
+              hear it. Sample messages while the line warms up. When the real ones land, this is the board.
             </p>
           </div>
           <div className="mt-14">
-            <ConfessionWall confessions={mockConfessions} />
+            <Switchboard confessions={mockConfessions} />
           </div>
         </div>
       </section>
@@ -306,6 +307,27 @@ export default function ConfessionsPage() {
             consulted to exhaustion. Confession booth meets late-night talkback. The phone is open the
             whole of Philanthropy Week.
           </p>
+        </div>
+      </section>
+
+      {/* THE MURMURATION — themes as gravity wells, the shape of the findings */}
+      <section className="border-t border-[#221E19] bg-[#0D0C0A] px-6 py-24 md:py-32">
+        <div className="mx-auto max-w-6xl">
+          <div className="text-center">
+            <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
+              The findings, as a shape
+            </p>
+            <h2 className="mt-7 font-[var(--font-display)] text-[clamp(1.8rem,4vw,2.6rem)] font-semibold leading-tight">
+              What philanthropy is, and isn’t, hearing.
+            </h2>
+            <p className="mx-auto mt-5 max-w-xl font-[var(--font-body)] leading-8 text-[#A99B86]">
+              Confessions drift toward what they are about. The money. The power. The forms. The shame.
+              The hope. The breakthrough. The clusters are the findings. Click a node to hear one.
+            </p>
+          </div>
+          <div className="mt-14">
+            <Murmuration confessions={mockConfessions} />
+          </div>
         </div>
       </section>
 

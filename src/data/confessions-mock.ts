@@ -27,6 +27,27 @@ export interface Confession {
 /** Flip to false the day real moderated confessions replace this. */
 export const IS_MOCK = true;
 
+/** Theme display + a warm hue per theme (rgb triple) for the visualisations. */
+export const themeMeta: Record<ConfessionTheme, { label: string; rgb: string }> = {
+  money: { label: 'money', rgb: '207,161,107' },
+  power: { label: 'power', rgb: '199,125,74' },
+  'the forms': { label: 'the forms', rgb: '156,143,111' },
+  shame: { label: 'shame', rgb: '181,97,90' },
+  hope: { label: 'hope', rgb: '216,194,122' },
+  breakthrough: { label: 'breakthrough', rgb: '224,185,133' },
+  'the weird': { label: 'the weird', rgb: '143,155,118' },
+};
+
+export const themeOrder: ConfessionTheme[] = [
+  'money',
+  'power',
+  'the forms',
+  'shame',
+  'hope',
+  'breakthrough',
+  'the weird',
+];
+
 export const mockConfessions: Confession[] = [
   {
     id: 'm01',

@@ -17,17 +17,32 @@ function seededHeights(seed: string, n: number): number[] {
   return out;
 }
 
-export function Waveform({ seed, bars = 34 }: { seed: string; bars?: number }) {
+// progress: null = idle (uniform). 0..1 = playback scrubber, bars up to the
+// playhead are lit, the rest dim.
+export function Waveform({
+  seed,
+  bars = 34,
+  progress = null,
+}: {
+  seed: string;
+  bars?: number;
+  progress?: number | null;
+}) {
   const heights = seededHeights(seed, bars);
   return (
     <div className="flex h-7 items-center gap-[2px]" aria-hidden="true">
-      {heights.map((v, i) => (
-        <span
-          key={i}
-          className="flex-1 rounded-full bg-[#CFA16B]/40"
-          style={{ height: `${Math.round(v * 100)}%` }}
-        />
-      ))}
+      {heights.map((v, i) => {
+        const played = progress != null && i / Math.max(bars - 1, 1) <= progress;
+        const cls =
+          progress == null ? 'bg-[#CFA16B]/40' : played ? 'bg-[#E0B068]/90' : 'bg-[#CFA16B]/18';
+        return (
+          <span
+            key={i}
+            className={`flex-1 rounded-full transition-colors duration-150 ${cls}`}
+            style={{ height: `${Math.round(v * 100)}%` }}
+          />
+        );
+      })}
     </div>
   );
 }

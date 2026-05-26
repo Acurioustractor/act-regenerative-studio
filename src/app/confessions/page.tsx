@@ -4,7 +4,7 @@ import { CallTimer } from '@/components/confessions/CallTimer';
 import { ConfessionField } from '@/components/confessions/ConfessionField';
 import { Murmuration } from '@/components/confessions/Murmuration';
 import { RotaryDial } from '@/components/confessions/RotaryDial';
-import { Switchboard } from '@/components/confessions/Switchboard';
+import { VoicemailInbox } from '@/components/confessions/VoicemailInbox';
 import { heroVoices, mockConfessions } from '@/data/confessions-mock';
 import { pageMetadata } from '@/lib/seo/site';
 
@@ -256,7 +256,7 @@ export default function ConfessionsPage() {
         </div>
       </section>
 
-      {/* THE SWITCHBOARD — confessions arrive as patch-lights; click to hear one */}
+      {/* THE INBOX — an elegant voicemail list; play, scrub, filter by theme */}
       <section className="border-t border-[#2E2215] px-6 py-24 md:py-32">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
@@ -265,15 +265,15 @@ export default function ConfessionsPage() {
               The line is open
             </p>
             <h2 className="mt-7 font-[var(--font-display)] text-[clamp(1.8rem,4vw,2.6rem)] font-semibold leading-tight">
-              The switchboard. Every call patched through.
+              The inbox. Every message, in full.
             </h2>
             <p className="mx-auto mt-5 max-w-xl font-[var(--font-body)] leading-8 text-[#A99B86]">
-              Each light is a confession, cabled down to the operator. Click one to patch through and
-              hear it. Sample messages while the line warms up. When the real ones land, this is the board.
+              Press play to listen. Filter by what each one is about. Sample messages while the line
+              warms up. When the real confessions land, they arrive here, anonymous and unedited.
             </p>
           </div>
           <div className="mt-14">
-            <Switchboard confessions={mockConfessions} />
+            <VoicemailInbox confessions={mockConfessions} />
           </div>
         </div>
       </section>

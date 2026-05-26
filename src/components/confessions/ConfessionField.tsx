@@ -30,7 +30,7 @@ export const CONFESSION_PROMPTS: string[] = [
   'Leave a message at the tone.',
 ];
 
-const GOLD = '255, 170, 60'; // warm amber-gold, between the Gold.Phone amber and ACT gold
+const GOLD = '224, 176, 104'; // warm brass / candlelight, softer than neon amber
 
 type Particle = {
   text: string;
@@ -221,7 +221,7 @@ export function ConfessionField({ voices = CONFESSION_PROMPTS }: { voices?: stri
   if (reducedMotion) {
     return (
       <div className="absolute inset-0 flex items-center justify-center">
-        <ul className="flex max-w-2xl flex-wrap items-center justify-center gap-x-5 gap-y-2 px-6 text-center text-[0.8rem] uppercase tracking-[0.18em] text-[rgba(255,170,60,0.45)]">
+        <ul className="flex max-w-2xl flex-wrap items-center justify-center gap-x-5 gap-y-2 px-6 text-center text-[0.8rem] uppercase tracking-[0.18em] text-[rgba(224,176,104,0.45)]">
           {voices.slice(0, 10).map((v) => (
             <li key={v}>{v}</li>
           ))}
@@ -243,7 +243,7 @@ export function ConfessionField({ voices = CONFESSION_PROMPTS }: { voices?: stri
         className={`pointer-events-none absolute inset-x-0 bottom-10 mx-auto max-w-xl px-6 text-center font-[var(--font-display)] text-lg italic leading-7 text-[#F3EBDD] transition-opacity duration-700 md:text-xl ${
           caught ? 'opacity-100' : 'opacity-0'
         }`}
-        style={{ textShadow: '0 0 24px rgba(255,170,60,0.35)' }}
+        style={{ textShadow: '0 0 24px rgba(224,176,104,0.35)' }}
       >
         {caught}
       </div>

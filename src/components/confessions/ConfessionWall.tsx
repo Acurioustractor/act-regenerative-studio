@@ -62,7 +62,7 @@ export function ConfessionWall({ confessions }: { confessions: Confession[] }) {
         <figure
           key={c.id}
           style={{ transitionDelay: `${Math.min(i * 70, 900)}ms` }}
-          className={`break-inside-avoid rounded-2xl border border-[#2A251F] bg-[#13110E] p-6 transition-all duration-700 ease-out ${
+          className={`break-inside-avoid rounded-2xl border border-[#3A2C18] bg-[#1E160D] p-6 transition-all duration-700 ease-out ${
             revealed ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
           }`}
         >

@@ -3,6 +3,7 @@ import Link from 'next/link';
 import { CallTimer } from '@/components/confessions/CallTimer';
 import { ConfessionField } from '@/components/confessions/ConfessionField';
 import { Murmuration } from '@/components/confessions/Murmuration';
+import { RotaryDial } from '@/components/confessions/RotaryDial';
 import { Switchboard } from '@/components/confessions/Switchboard';
 import { heroVoices, mockConfessions } from '@/data/confessions-mock';
 import { pageMetadata } from '@/lib/seo/site';
@@ -61,12 +62,13 @@ function CallCTA({ size = 'lg' }: { size?: 'lg' | 'sm' }) {
   return (
     <a
       href={TEL}
-      className={`group inline-flex items-center gap-3 rounded-full bg-[#CFA16B] font-semibold text-[#0D0C0A] transition-all hover:gap-4 hover:bg-[#E0B985] ${
+      className={`group inline-flex items-center gap-3 rounded-full bg-[#CFA16B] font-semibold text-[#1A130B] transition-all hover:gap-4 hover:bg-[#E0B985] ${
         size === 'lg' ? 'px-7 py-4 text-base' : 'px-5 py-3 text-sm'
       }`}
     >
       <span aria-hidden="true">☎</span>
-      Call {DISPLAY_NUMBER}
+      <span>Call</span>
+      <span className="font-mono tracking-[0.04em] tabular-nums">{DISPLAY_NUMBER}</span>
     </a>
   );
 }
@@ -83,13 +85,17 @@ function Redact({ w = 'w-20' }: { w?: string }) {
 
 export default function ConfessionsPage() {
   return (
-    <div className="relative bg-[#0A0908] text-[#F3EBDD]">
+    <div className="relative bg-[#15100A] text-[#F3EBDD]">
       {/* HERO, immersive. `full-bleed` (see globals.css) makes this first child
           break the default 1200px container so the dark page runs edge to edge
           and sits flush behind the fixed nav, like the homepage hero. */}
       <section className="full-bleed relative min-h-[100svh] overflow-hidden">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,#171310_0%,#0A0908_62%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,#241910_0%,#15100A_60%)]" />
         <ConfessionField voices={heroVoices} />
+        {/* Faint rotary-dial engraving, the old-phone signature. */}
+        <RotaryDial className="pointer-events-none absolute left-1/2 top-1/2 h-[min(86vmin,800px)] w-[min(86vmin,800px)] -translate-x-1/2 -translate-y-1/2 text-[#CFA16B]/[0.07]" />
+        {/* Warm vignette, the object under a single light. */}
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,#0E0A05_100%)]" />
 
         <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-3xl flex-col items-center justify-center px-6 pb-20 pt-32 text-center">
           <CallTimer />
@@ -105,7 +111,7 @@ export default function ConfessionsPage() {
 
           <div className="mt-9 flex flex-col items-center gap-3">
             <CallCTA />
-            <p className="font-[var(--font-sans)] text-xs uppercase tracking-[0.35em] text-[rgba(255,170,60,0.7)]">
+            <p className="font-[var(--font-sans)] text-xs uppercase tracking-[0.35em] text-[rgba(224,176,104,0.7)]">
               Leave a message at the tone
             </p>
           </div>
@@ -117,7 +123,7 @@ export default function ConfessionsPage() {
       </section>
 
       {/* INVITATION */}
-      <section className="border-t border-[#221E19] px-6 py-24 md:py-32">
+      <section className="border-t border-[#2E2215] px-6 py-24 md:py-32">
         <div className="mx-auto max-w-3xl text-center">
           <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
             Anti-pretending
@@ -145,7 +151,7 @@ export default function ConfessionsPage() {
             {LITANY.map((line) => (
               <li
                 key={line}
-                className="font-[var(--font-sans)] text-sm font-semibold uppercase tracking-[0.18em] text-[rgba(255,170,60,0.75)]"
+                className="font-[var(--font-sans)] text-sm font-semibold uppercase tracking-[0.18em] text-[rgba(224,176,104,0.75)]"
               >
                 {line}
               </li>
@@ -155,7 +161,7 @@ export default function ConfessionsPage() {
       </section>
 
       {/* WHAT WAS THE GIFT FOR — the history spine */}
-      <section className="border-t border-[#221E19] bg-[#0D0C0A] px-6 py-24 md:py-32">
+      <section className="border-t border-[#2E2215] bg-[#1A130B] px-6 py-24 md:py-32">
         <div className="mx-auto max-w-3xl">
           <p className="text-center font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
             Before the foundation
@@ -169,9 +175,9 @@ export default function ConfessionsPage() {
             relationship. Four words still remember it.
           </p>
 
-          <dl className="mt-14 space-y-px overflow-hidden rounded-3xl border border-[#2A251F]">
+          <dl className="mt-14 space-y-px overflow-hidden rounded-3xl border border-[#3A2C18]">
             {HISTORY.map((h) => (
-              <div key={h.word} className="bg-[#13110E] p-7 md:flex md:gap-8 md:p-8">
+              <div key={h.word} className="bg-[#1E160D] p-7 md:flex md:gap-8 md:p-8">
                 <dt className="md:w-56 md:shrink-0">
                   <span className="font-[var(--font-display)] text-2xl text-[#CFA16B]">{h.word}</span>
                   <span className="mt-1 block font-[var(--font-sans)] text-[11px] uppercase tracking-[0.2em] text-[#7C7060]">
@@ -196,14 +202,14 @@ export default function ConfessionsPage() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="border-t border-[#221E19] px-6 py-24 md:py-32">
+      <section className="border-t border-[#2E2215] px-6 py-24 md:py-32">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-center font-[var(--font-display)] text-[clamp(1.8rem,4vw,2.6rem)] font-semibold">
             How it works
           </h2>
           <div className="mt-14 grid gap-8 md:grid-cols-3">
             {STEPS.map((step) => (
-              <div key={step.n} className="rounded-3xl border border-[#2A251F] bg-[#13110E] p-7">
+              <div key={step.n} className="rounded-3xl border border-[#3A2C18] bg-[#1E160D] p-7">
                 <span className="font-[var(--font-display)] text-3xl text-[#CFA16B]">{step.n}</span>
                 <p className="mt-4 font-[var(--font-display)] text-xl">{step.label}</p>
                 <p className="mt-3 font-[var(--font-body)] text-[0.95rem] leading-7 text-[#A99B86]">
@@ -224,7 +230,7 @@ export default function ConfessionsPage() {
       </section>
 
       {/* HOW WE SHARE IT BACK — redaction, the one rule */}
-      <section className="border-t border-[#221E19] bg-[#0D0C0A] px-6 py-24 md:py-32">
+      <section className="border-t border-[#2E2215] bg-[#1A130B] px-6 py-24 md:py-32">
         <div className="mx-auto max-w-2xl">
           <p className="text-center font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
             How we share it back
@@ -238,7 +244,7 @@ export default function ConfessionsPage() {
           </p>
 
           <figure className="mt-12">
-            <blockquote className="rounded-3xl border border-[#2A251F] bg-[#0A0908] p-8 font-[var(--font-body)] text-lg leading-9 text-[#D8CBB6] md:p-10">
+            <blockquote className="rounded-3xl border border-[#3A2C18] bg-[#15100A] p-8 font-[var(--font-body)] text-lg leading-9 text-[#D8CBB6] md:p-10">
               “I worked at <Redact w="w-24" /> for six years. We declined more good people than we
               ever funded, and we never told <Redact w="w-16" /> why. I still think about the ones we
               said no to.”
@@ -251,11 +257,11 @@ export default function ConfessionsPage() {
       </section>
 
       {/* THE SWITCHBOARD — confessions arrive as patch-lights; click to hear one */}
-      <section className="border-t border-[#221E19] px-6 py-24 md:py-32">
+      <section className="border-t border-[#2E2215] px-6 py-24 md:py-32">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
             <p className="inline-flex items-center gap-2.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
-              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[rgba(255,170,60,0.9)]" />
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[rgba(224,176,104,0.9)]" />
               The line is open
             </p>
             <h2 className="mt-7 font-[var(--font-display)] text-[clamp(1.8rem,4vw,2.6rem)] font-semibold leading-tight">
@@ -273,12 +279,12 @@ export default function ConfessionsPage() {
       </section>
 
       {/* THE GREETING, styled like an answering machine transcript */}
-      <section className="border-t border-[#221E19] px-6 py-24 md:py-32">
+      <section className="border-t border-[#2E2215] px-6 py-24 md:py-32">
         <div className="mx-auto max-w-2xl">
           <p className="text-center font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
             What you will hear
           </p>
-          <blockquote className="mt-8 rounded-3xl border border-[#2A251F] bg-[#0D0C0A] p-8 font-[var(--font-body)] text-lg leading-9 text-[#D8CBB6] md:p-10">
+          <blockquote className="mt-8 rounded-3xl border border-[#3A2C18] bg-[#1A130B] p-8 font-[var(--font-body)] text-lg leading-9 text-[#D8CBB6] md:p-10">
             <p>Hello. You’ve reached Confessions to Philanthropy.</p>
             <p className="mt-4">No one is available to take your call right now.</p>
             <p className="mt-4 text-[#A99B86]">
@@ -294,7 +300,7 @@ export default function ConfessionsPage() {
       </section>
 
       {/* THE WEEK — guest chair rhythm */}
-      <section className="border-t border-[#221E19] bg-[#0D0C0A] px-6 py-24 md:py-28">
+      <section className="border-t border-[#2E2215] bg-[#1A130B] px-6 py-24 md:py-28">
         <div className="mx-auto max-w-3xl text-center">
           <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
             All week, the operator’s chair
@@ -311,7 +317,7 @@ export default function ConfessionsPage() {
       </section>
 
       {/* THE MURMURATION — themes as gravity wells, the shape of the findings */}
-      <section className="border-t border-[#221E19] bg-[#0D0C0A] px-6 py-24 md:py-32">
+      <section className="border-t border-[#2E2215] bg-[#1A130B] px-6 py-24 md:py-32">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
             <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
@@ -332,12 +338,12 @@ export default function ConfessionsPage() {
       </section>
 
       {/* THE FRIDAY INBOX — findings teaser */}
-      <section className="border-t border-[#221E19] px-6 py-24 md:py-28">
+      <section className="border-t border-[#2E2215] px-6 py-24 md:py-28">
         <div className="mx-auto max-w-2xl text-center">
           <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
             Friday
           </p>
-          <p className="mt-7 font-[var(--font-sans)] text-sm uppercase tracking-[0.3em] text-[rgba(255,170,60,0.7)]">
+          <p className="mt-7 font-[var(--font-sans)] text-sm uppercase tracking-[0.3em] text-[rgba(224,176,104,0.7)]">
             ▸ Philanthropy has {mockConfessions.length} new messages
           </p>
           <h2 className="mt-5 font-[var(--font-display)] text-[clamp(1.8rem,4.5vw,2.8rem)] font-semibold leading-tight">
@@ -351,14 +357,14 @@ export default function ConfessionsPage() {
       </section>
 
       {/* CLOSING CTA */}
-      <section className="border-t border-[#221E19] bg-[#0D0C0A] px-6 py-24 text-center md:py-32">
+      <section className="border-t border-[#2E2215] bg-[#1A130B] px-6 py-24 text-center md:py-32">
         <div className="mx-auto max-w-2xl">
           <h2 className="font-[var(--font-display)] text-[clamp(2rem,5vw,3.2rem)] font-semibold leading-tight">
             Pick up the phone. Say the thing.
           </h2>
           <div className="mt-10 flex flex-col items-center gap-4">
             <CallCTA />
-            <p className="font-[var(--font-sans)] text-xs uppercase tracking-[0.35em] text-[rgba(255,170,60,0.7)]">
+            <p className="font-[var(--font-sans)] text-xs uppercase tracking-[0.35em] text-[rgba(224,176,104,0.7)]">
               Anonymous messages welcome
             </p>
           </div>

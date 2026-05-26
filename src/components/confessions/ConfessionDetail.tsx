@@ -20,7 +20,7 @@ export function ConfessionDetail({ confession }: { confession: Confession | null
 
   return (
     <div
-      className="confession-detail-in mx-auto max-w-2xl rounded-2xl border bg-[#13110E] p-7 md:p-8"
+      className="confession-detail-in mx-auto max-w-2xl rounded-2xl border bg-[#1E160D] p-7 md:p-8"
       style={{ borderColor: `rgba(${t.rgb},0.35)` }}
     >
       <div className="flex items-center justify-between gap-4">
@@ -30,7 +30,7 @@ export function ConfessionDetail({ confession }: { confession: Confession | null
         >
           {t.label}
         </span>
-        <span className="inline-flex items-center gap-1.5 font-[var(--font-sans)] text-[11px] uppercase tracking-[0.18em] text-[#7C7060]">
+        <span className="inline-flex items-center gap-1.5 font-mono text-[11px] tracking-[0.05em] text-[#9A8C73]">
           <span aria-hidden="true">▸</span> voicemail · {formatDuration(confession.durationSeconds)}
         </span>
       </div>

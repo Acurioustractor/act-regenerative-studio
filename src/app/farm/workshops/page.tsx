@@ -29,6 +29,15 @@ const workshopThemes = [
   },
 ];
 
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata = pageMetadata({
+  title: "Workshops",
+  description:
+    "Learning on Country at Black Cockatoo Valley. Workshops that blend land care, justice practice, and creative inquiry.",
+  path: "/farm/workshops",
+});
+
 export default async function FarmWorkshopsPage() {
   const project = await getProjectData("black-cockatoo-valley");
 

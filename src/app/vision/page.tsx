@@ -8,11 +8,14 @@ import { MarkdownViewer } from '@/components/ui/MarkdownViewer';
 import { VisionSearch } from '@/components/ui/VisionSearch';
 import { cleanPublicBrandText } from '@/lib/brand/public-copy';
 
-export const metadata = {
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata = pageMetadata({
   title: "Vision",
   description:
     "A seasonal map of where ACT is trying to go, the working direction, not a polished roadmap.",
-};
+  path: "/vision",
+});
 
 export default async function VisionPage() {
     const filePath = path.join(process.cwd(), 'src/data/vision/vision.md');

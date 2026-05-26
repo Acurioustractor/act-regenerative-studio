@@ -4,6 +4,15 @@ import PageHero from "../../../components/PageHero";
 import SectionHeading from "../../../components/SectionHeading";
 import { getFeaturedWorks } from "@/lib/works/live-featured-works";
 
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata = pageMetadata({
+  title: "Artworks",
+  description:
+    "A working catalogue of pieces ACT is currently making, showing, or carrying with community, each opening into its fuller story.",
+  path: "/art/artworks",
+});
+
 export default async function ArtworksPage() {
   const works = await getFeaturedWorks();
 

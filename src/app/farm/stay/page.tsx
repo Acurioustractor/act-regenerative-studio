@@ -26,6 +26,15 @@ const stayOptions = [
   },
 ];
 
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata = pageMetadata({
+  title: "Stay",
+  description:
+    "Accommodation at Black Cockatoo Valley. Slow down, stay close to the work, and join the rhythm of the land, shaped by stewardship and season.",
+  path: "/farm/stay",
+});
+
 export default async function FarmStayPage() {
   const project = await getProjectData("black-cockatoo-valley");
 

@@ -26,7 +26,6 @@ export default function UnifiedFooter({
 
   const studioLinks = [
     { label: 'Method', href: '/method' },
-    { label: 'Economy', href: '/economy' },
     { label: 'Partners', href: '/partners' },
     { label: 'Governance', href: '/governance' },
     { label: 'Impact', href: '/impact' },

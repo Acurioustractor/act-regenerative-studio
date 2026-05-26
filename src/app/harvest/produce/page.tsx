@@ -38,6 +38,15 @@ const practices = [
   },
 ];
 
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata = pageMetadata({
+  title: "Seasonal Produce",
+  description:
+    "A seasonal view into what grows across the year at The Harvest and how we share it with community.",
+  path: "/harvest/produce",
+});
+
 export default async function HarvestProducePage() {
   const project = await getProjectData("the-harvest");
 

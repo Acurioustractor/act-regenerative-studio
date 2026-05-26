@@ -3,11 +3,14 @@ import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
 import { EmpathyLedgerConnections } from "@/components/projects/EmpathyLedgerConnections";
 
-export const metadata = {
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata = pageMetadata({
   title: "Method",
   description:
     "Listen, curiosity, action, art. The sequence that shapes every project ACT takes on.",
-};
+  path: "/method",
+});
 
 const lcaaSteps = [
   {

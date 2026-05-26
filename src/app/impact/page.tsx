@@ -8,10 +8,13 @@ import ImpactSankey from '@/components/impact/ImpactSankey';
 import { EmpathyLedgerConnections } from '@/components/projects/EmpathyLedgerConnections';
 import { REAL_INITIATIVES, REAL_CONTEXTS, REAL_EVIDENCE } from '@/data/alma-seeds';
 
-export const metadata: Metadata = {
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata: Metadata = pageMetadata({
     title: 'Impact & Learning',
     description: 'What the work is actually doing, initiatives, contexts, community authority, and the evidence behind the claims.',
-};
+  path: "/impact",
+});
 
 export default function ImpactPage() {
     // Calculate high-level metrics

@@ -5,11 +5,14 @@ import {
   getAllStorytellers,
 } from '@/lib/empathy-ledger-storytellers';
 
-export const metadata = {
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata = pageMetadata({
   title: 'Storytellers',
   description:
     'The people whose voice, experience, and custodianship carry the work. Portraits and full storyteller profiles from the ACT ecosystem, syndicated through Empathy Ledger with consent.',
-};
+  path: "/storytellers",
+});
 
 export default function StorytellersIndexPage() {
   const storytellers = getAllStorytellers().filter(canDisplayStoryteller);

@@ -31,6 +31,15 @@ const retreatFlow = [
   "Collective reflection and art translation",
 ];
 
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata = pageMetadata({
+  title: "Retreats",
+  description:
+    "Gatherings for regeneration at Black Cockatoo Valley, built around learning, rest, and shared governance practice, co-designed to the capacities of the place.",
+  path: "/farm/retreats",
+});
+
 export default async function FarmRetreatsPage() {
   const project = await getProjectData("black-cockatoo-valley");
 

@@ -4,11 +4,14 @@ import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
 import { EmpathyLedgerConnections } from "@/components/projects/EmpathyLedgerConnections";
 
-export const metadata = {
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata = pageMetadata({
   title: "Governance",
   description:
     "How decisions get made at ACT, shared responsibility, community authority, and the long timelines behind handover.",
-};
+  path: "/governance",
+});
 
 const governancePrinciples = [
   {

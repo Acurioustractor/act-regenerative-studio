@@ -4,7 +4,7 @@ import { CallTimer } from '@/components/confessions/CallTimer';
 import { ConfessionField } from '@/components/confessions/ConfessionField';
 import { RotaryDial } from '@/components/confessions/RotaryDial';
 import { VoicemailInbox } from '@/components/confessions/VoicemailInbox';
-import { heroVoices, mockConfessions } from '@/data/confessions-mock';
+import { heroVoices, mockConfessions, IS_MOCK } from '@/data/confessions-mock';
 import { pageMetadata } from '@/lib/seo/site';
 
 export const metadata = pageMetadata({
@@ -13,6 +13,12 @@ export const metadata = pageMetadata({
     'A gold phone for the things people don’t say out loud. Call and leave an anonymous message for philanthropy. What do you wish it knew?',
   path: '/confessions',
 });
+
+// Real moderated confessions arrive via the Dialpad pipeline (Phase 2). Until
+// IS_MOCK flips to false in confessions-mock, the inbox shows shaped sample
+// messages; after, it reads the real (initially empty) feed. Gating here means
+// nothing fabricated renders once the line goes live.
+const confessions = IS_MOCK ? mockConfessions : [];
 
 const DISPLAY_NUMBER = '+61 (0) 2 8503 4273';
 const TEL = 'tel:+61285034273';
@@ -272,7 +278,7 @@ export default function ConfessionsPage() {
             </p>
           </div>
           <div className="mt-14">
-            <VoicemailInbox confessions={mockConfessions} />
+            <VoicemailInbox confessions={confessions} />
           </div>
         </div>
       </section>
@@ -322,7 +328,7 @@ export default function ConfessionsPage() {
             Friday
           </p>
           <p className="mt-7 font-[var(--font-sans)] text-sm uppercase tracking-[0.3em] text-[rgba(224,176,104,0.7)]">
-            ▸ Philanthropy has {mockConfessions.length} new messages
+            ▸ Philanthropy has {confessions.length} new messages
           </p>
           <h2 className="mt-5 font-[var(--font-display)] text-[clamp(1.8rem,4.5vw,2.8rem)] font-semibold leading-tight">
             The honest version drops Friday.

@@ -5,21 +5,51 @@ import path from 'node:path';
 const baseUrl = (process.env.LAUNCH_CHECK_BASE_URL || 'http://localhost:3001').replace(/\/$/, '');
 const repoRoot = process.cwd();
 
+// Every static public route in the sitemap. Dynamic detail pages (/projects/*,
+// /wiki/*, /storytellers/*, /art/<slug>, /blog/*) are added separately below and
+// policed for drift by checkSitemapCoverage(). Keep this in sync with the static
+// routes in src/app/sitemap.ts.
 const launchRoutes = [
   '/',
-  '/about',
   '/projects',
   '/stories',
   '/stories/utopia-may-2026',
-  '/goods',
-  '/justicehub',
-  '/empathy-ledger',
-  '/harvest',
-  '/farm',
+  '/storytellers',
   '/art',
+  '/farm',
+  '/harvest',
+  '/goods',
+  '/empathy-ledger',
+  '/justicehub',
+  '/ecosystem',
+  '/method',
   '/wiki',
+  '/about',
+  '/vision',
+  '/principles',
+  '/how-we-work',
+  '/governance',
+  '/studio',
+  '/impact',
+  '/partners',
+  '/events',
   '/contact',
   '/blog',
+  '/media',
+  '/people',
+  '/ask',
+  '/farm/stay',
+  '/farm/retreats',
+  '/farm/workshops',
+  '/harvest/csa',
+  '/harvest/produce',
+  '/art/artists',
+  '/art/artworks',
+  '/art/commissions',
+  '/art/exhibitions',
+  '/art/residencies',
+  '/privacy',
+  '/terms',
 ];
 
 function readProjectRoutes() {
@@ -176,6 +206,39 @@ function checkNewsletterSource() {
     .map((needle) => `NewsletterForm: missing payload tag source ${needle}`);
 }
 
+// Drift guard: every top-level static route the sitemap exposes must be in the
+// launch gate, so a new public page can't ship indexed but unchecked. Dynamic
+// detail pages live two segments deep and are covered by template + samples.
+async function checkSitemapCoverage(covered) {
+  let xml;
+  try {
+    const response = await fetch(`${baseUrl}/sitemap.xml`);
+    xml = await response.text();
+  } catch (error) {
+    return [`sitemap.xml: request failed: ${error.message}`];
+  }
+
+  const failures = [];
+  const seen = new Set();
+  for (const loc of xml.match(/<loc>[^<]+<\/loc>/g) || []) {
+    const href = loc.replace(/<\/?loc>/g, '').trim();
+    let pathname;
+    try {
+      pathname = new URL(href).pathname.replace(/\/$/, '') || '/';
+    } catch {
+      continue;
+    }
+    const depth = pathname === '/' ? 0 : pathname.split('/').filter(Boolean).length;
+    if (depth <= 1 && !covered.has(pathname) && !seen.has(pathname)) {
+      seen.add(pathname);
+      failures.push(
+        `sitemap coverage: ${pathname} is in the sitemap but missing from the launch gate (add it to launchRoutes so its metadata is checked)`
+      );
+    }
+  }
+  return failures;
+}
+
 const projectRouteResult = readProjectRoutes();
 const projectRoutes = Array.isArray(projectRouteResult)
   ? projectRouteResult
@@ -192,6 +255,7 @@ for (const route of routes) {
 }
 
 failures.push(...checkNewsletterSource());
+failures.push(...(await checkSitemapCoverage(new Set(launchRoutes))));
 
 if (failures.length > 0) {
   console.error(`Launch check failed against ${baseUrl}`);
@@ -202,4 +266,4 @@ if (failures.length > 0) {
 }
 
 console.log(`Launch check passed against ${baseUrl}`);
-console.log(`Checked ${routes.length} routes, h1s, metadata, stale CTAs, placeholder copy, consent leaks, and newsletter context tags.`);
+console.log(`Checked ${routes.length} routes, h1s, metadata, stale CTAs, placeholder copy, consent leaks, newsletter context tags, and sitemap coverage.`);

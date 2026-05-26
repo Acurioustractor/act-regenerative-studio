@@ -28,6 +28,7 @@ const staticRoutes: Array<{
 }> = [
   { path: "/", changeFrequency: "weekly", priority: 1.0 },
   { path: "/projects", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/stories", changeFrequency: "weekly", priority: 0.8 },
   { path: "/storytellers", changeFrequency: "weekly", priority: 0.9 },
   { path: "/art", changeFrequency: "weekly", priority: 0.9 },
   { path: "/farm", changeFrequency: "monthly", priority: 0.8 },

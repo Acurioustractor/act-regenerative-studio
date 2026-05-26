@@ -4,11 +4,14 @@ import Link from 'next/link';
 import SectionHeading from '@/components/SectionHeading';
 import { getShowcaseMedia } from '@/lib/media/get-showcase-media';
 
-export const metadata = {
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata = pageMetadata({
   title: 'Media',
   description:
     'Photography, video, and field documentation from across the ACT ecosystem.',
-};
+  path: "/media",
+});
 
 export default async function MediaPage() {
   const { items, projectNames, stats } = await getShowcaseMedia();

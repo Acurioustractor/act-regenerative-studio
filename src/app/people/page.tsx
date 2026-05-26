@@ -4,11 +4,14 @@ import Link from 'next/link';
 import SectionHeading from '@/components/SectionHeading';
 import { getAllFeaturedStorytellers } from '@/lib/people/get-featured-people';
 
-export const metadata = {
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata = pageMetadata({
   title: 'People',
   description:
     'The people behind the work: storytellers, community leaders, and collaborators across the ACT ecosystem.',
-};
+  path: "/people",
+});
 
 export default async function PeoplePage() {
   const { storytellers, projectNames, stats } = await getAllFeaturedStorytellers();

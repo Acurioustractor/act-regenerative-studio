@@ -12,7 +12,20 @@ import { EditableImage } from "@/components/flagship/EditableImage";
 import { buildCuratedProjectCards } from "@/lib/projects/build-curated-project-cards";
 import { getAllArtProjects, splitFeaturedAndEmerging } from "@/lib/art/art-portfolio";
 import { getHomeEditorialFeature } from "@/lib/empathy-ledger-editorial";
+import { cleanMediaAlt } from "@/lib/media/alt-text";
+import { pageMetadata } from "@/lib/seo/site";
 import featuredSnapshot from "@/data/empathy-ledger-featured.generated.json";
+
+export const metadata = pageMetadata({
+  title: "A Curious Tractor",
+  description:
+    "A regenerative innovation studio on Jinibara Country. Explore ACT projects, stories, public works, art, farm practice, and the living wiki.",
+  path: "/",
+  image: {
+    url: "/media/field-stills/hero-farm-aerial.jpg",
+    alt: "Black Cockatoo Valley aerial view through morning fog",
+  },
+});
 
 // 9 non-flagship projects for the "More from the field" mosaic.
 // Hero images come from the EL featured snapshot; `override` wins over EL
@@ -49,25 +62,35 @@ const mosaicTiles: Array<{
 // Resolution order: explicit override → EL hero → EL first item → local fallback.
 function resolveMosaicImage(
   slug: string,
+  name: string,
   override?: string,
   fallback?: string
 ): { url: string; alt: string } | null {
   if (override) {
-    return { url: override, alt: "" };
+    return { url: override, alt: `${name} project image` };
   }
   const project = (featuredSnapshot.projects as Record<string, unknown>)[slug] as
-    | { media?: { hero?: { url?: string; alt?: string | null }; items?: Array<{ url?: string; alt?: string | null }> } }
+    | {
+        media?: {
+          hero?: { url?: string; alt?: string | null; title?: string | null; kind?: string | null };
+          items?: Array<{ url?: string; alt?: string | null; title?: string | null; kind?: string | null }>;
+        };
+      }
     | undefined;
-  const hero = project?.media?.hero;
-  if (hero?.url) {
-    return { url: hero.url, alt: hero.alt || "" };
-  }
-  const first = project?.media?.items?.[0];
-  if (first?.url) {
-    return { url: first.url, alt: first.alt || "" };
+
+  const isImageMedia = (item: { url?: string; kind?: string | null } | undefined) =>
+    item?.url ? /\.(jpe?g|png|webp|gif)(\?|#|$)/i.test(item.url) : false;
+  const candidate = [project?.media?.hero, ...(project?.media?.items || [])].find(isImageMedia);
+
+  if (candidate?.url) {
+    const fallbackAlt = `${name} project image`;
+    return {
+      url: candidate.url,
+      alt: cleanMediaAlt(candidate.alt || candidate.title, fallbackAlt) || fallbackAlt,
+    };
   }
   if (fallback) {
-    return { url: fallback, alt: "" };
+    return { url: fallback, alt: `${name} project image` };
   }
   return null;
 }
@@ -157,15 +180,14 @@ export default async function HomePage() {
         fullHeight
         gradientStrength="strong"
         eyebrow="A Curious Tractor · Jinibara Country"
-        title="Places, story systems, and public works you can step into."
-        subhead="Regenerative innovation from a farm on Jinibara Country. Justice platforms, ethical storytelling, circular goods on Country, community art, and land care, all co-designed with the people who'll hold them."
+        title="A Curious Tractor"
+        subhead="Places, story systems, and public works you can step into. Regenerative innovation from a farm on Jinibara Country, co-designed with the people who will hold the work."
         coverVideo={{
           url: "/media/field-videos/hero-farm-aerial.mp4",
           posterUrl: "/media/field-stills/hero-farm-aerial.jpg",
           title: "Black Cockatoo Valley aerial through morning fog",
         }}
-        primaryCta={{ label: "Enter the work", href: "/projects" }}
-        secondaryCta={{ label: "See the art →", href: "/art" }}
+        primaryCta={{ label: "Explore projects", href: "/projects" }}
         statsAfter={
           <div className="flex flex-wrap gap-12 border-t border-[#FAFAF7]/10 pt-8">
             {[
@@ -301,7 +323,7 @@ export default async function HomePage() {
               href="/method"
               className="inline-flex items-center gap-2 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--we-olive)] transition-all hover:gap-3"
             >
-              See the LCAA method <span aria-hidden="true">&rarr;</span>
+              See the method <span aria-hidden="true">&rarr;</span>
             </Link>
           </div>
         </div>
@@ -547,7 +569,7 @@ export default async function HomePage() {
           {/* Centred CTAs below the grid */}
           <div className="mx-auto mt-14 flex max-w-[820px] flex-wrap items-center justify-center gap-4 md:mt-20 md:gap-6">
             <Link
-              href="/blog"
+              href="/stories"
               className="inline-flex items-center gap-2 rounded-full border border-[#CFA16B]/60 bg-[#CFA16B]/5 px-7 py-3.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#F3EBDD] transition-all hover:-translate-y-0.5 hover:border-[#CFA16B] hover:bg-[#CFA16B]/15 hover:gap-3 md:text-sm"
             >
               Read all stories <span aria-hidden="true">&rarr;</span>
@@ -665,7 +687,7 @@ export default async function HomePage() {
         */}
         <div className="grid grid-cols-2 md:grid-cols-4 md:grid-rows-[repeat(3,minmax(0,1fr))] md:aspect-[4/3]">
           {mosaicTiles.map((tile, i) => {
-            const img = resolveMosaicImage(tile.slug, tile.override, tile.fallback);
+            const img = resolveMosaicImage(tile.slug, tile.name, tile.override, tile.fallback);
             const isLead = i === 0;
             // Each tile gets a stable slot id so the image-override JSON can
             // remember which image belongs to which mosaic position.

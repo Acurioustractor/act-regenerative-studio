@@ -4,6 +4,7 @@ import { useState, useMemo, useEffect } from "react";
 import NextImage from "next/image";
 import { createPortal } from "react-dom";
 import featuredSnapshot from "@/data/empathy-ledger-featured.generated.json";
+import { cleanMediaAlt } from "@/lib/media/alt-text";
 import { supabase } from "@/lib/supabase/client";
 
 interface EmpathyLedgerConnectionsProps {
@@ -108,6 +109,9 @@ export function EmpathyLedgerConnections({
   const storytellers = projectBlock?.featured?.storytellers || [];
 
   const orgName = orgBlock?.org?.name || orgSlug;
+  const getMediaAlt = (item: MediaItem) =>
+    cleanMediaAlt(item.alt || item.title, `${projectTitle} Empathy Ledger media`) ||
+    `${projectTitle} Empathy Ledger media`;
 
   if (!allowed) return null;
 
@@ -280,7 +284,7 @@ export function EmpathyLedgerConnections({
                         >
                           <NextImage
                             src={thumb}
-                            alt={p.alt || p.title || ""}
+                            alt={getMediaAlt(p)}
                             fill
                             sizes="180px"
                             className="object-cover"
@@ -315,7 +319,7 @@ export function EmpathyLedgerConnections({
                             >
                               <NextImage
                                 src={thumb}
-                                alt={v.alt || v.title || ""}
+                                alt={getMediaAlt(v)}
                                 fill
                                 sizes="400px"
                                 className="object-cover transition group-hover:opacity-80"

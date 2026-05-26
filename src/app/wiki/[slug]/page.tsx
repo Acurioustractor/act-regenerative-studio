@@ -1,8 +1,10 @@
+import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, BookOpen } from 'lucide-react';
 import ReactMarkdown from 'react-markdown';
 
+import { JsonLd } from '@/components/seo/JsonLd';
 import {
   getCanonicalWikiPage,
   renderCanonicalWikiMarkdown,
@@ -11,6 +13,30 @@ import {
   getRelatedWikiPagesInSection,
   getWikiBacklinksForSlug,
 } from '@/lib/wiki/backlinks';
+import { breadcrumbJsonLd, pageMetadata } from '@/lib/seo/site';
+import {
+  sanitizePublicWikiExcerpt,
+  sanitizePublicWikiText,
+} from '@/lib/wiki/public-wiki-copy';
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const page = await getCanonicalWikiPage(slug);
+
+  if (!page) return {};
+
+  return pageMetadata({
+    title: page.title,
+    description:
+      sanitizePublicWikiExcerpt(page.excerpt, page.title) ||
+      `ACT wiki context for ${page.title}, including source notes and related project links.`,
+    path: `/wiki/${slug}`,
+  });
+}
 
 export default async function WikiPageViewer({
   params,
@@ -24,8 +50,11 @@ export default async function WikiPageViewer({
     notFound();
   }
 
+  const publicExcerpt = sanitizePublicWikiExcerpt(page.excerpt, page.title);
+  const publicContent = sanitizePublicWikiText(page.content) || '';
+
   const [renderedContent, backlinks, related] = await Promise.all([
-    renderCanonicalWikiMarkdown(page.content),
+    renderCanonicalWikiMarkdown(publicContent),
     getWikiBacklinksForSlug(page.stem),
     getRelatedWikiPagesInSection(page.stem, 5),
   ]);
@@ -36,6 +65,14 @@ export default async function WikiPageViewer({
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-[#F6F1E7] via-[#F5F1E8] to-white">
+      <JsonLd
+        id={`wiki-${slug}-breadcrumb-jsonld`}
+        data={breadcrumbJsonLd([
+          { name: 'Home', path: '/' },
+          { name: 'Wiki', path: '/wiki' },
+          { name: page.title, path: `/wiki/${slug}` },
+        ])}
+      />
       <section className="border-b border-[var(--we-sand)] bg-white/90">
         <div className="mx-auto max-w-5xl px-4 py-10">
           <Link
@@ -61,9 +98,9 @@ export default async function WikiPageViewer({
             {page.title}
           </h1>
 
-          {page.excerpt && (
+          {publicExcerpt && (
             <p className="mt-6 max-w-3xl text-base leading-8 text-[var(--we-brown)] md:text-lg">
-              {page.excerpt}
+              {publicExcerpt}
             </p>
           )}
         </div>

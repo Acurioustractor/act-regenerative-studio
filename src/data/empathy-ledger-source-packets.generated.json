@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-04-20T00:50:02.223Z",
-  "sourceUrl": "http://localhost:3030",
+  "generatedAt": "2026-05-26T09:15:13.470Z",
+  "sourceUrl": "https://empathy-ledger-v2.vercel.app",
   "siteSlug": "act-regenerative-studio",
   "destination": "act_el",
   "packetCount": 5,
@@ -23,7 +23,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "flagship_project_pack",
           "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
-          "captured_at": "2026-04-20T00:50:01.046Z",
+          "captured_at": "2026-05-26T09:15:08.893Z",
           "verification_status": "verified",
           "notes": "Flagship pack exists for this project slug."
         },
@@ -32,7 +32,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "site_editorial_manifest",
           "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
-          "captured_at": "2026-04-20T00:50:01.046Z",
+          "captured_at": "2026-05-26T09:15:08.893Z",
           "verification_status": "verified",
           "notes": "Editorial manifest found for act-regenerative-studio."
         }
@@ -169,7 +169,7 @@
         }
       ],
       "provenance": {
-        "generated_at": "2026-04-20T00:50:01.046Z",
+        "generated_at": "2026-05-26T09:15:08.893Z",
         "generated_by": "content-hub-source-packet-builder",
         "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
         "notes": "storyIds=0, storytellerIds=4, mediaIds=8"
@@ -208,230 +208,120 @@
         ]
       }
     },
-    "goods-on-country": {
-      "packet_id": "pkt_goods-on-country_act-regenerative-studio",
+    "goods": {
+      "packet_id": "pkt_goods_act-regenerative-studio",
       "schema_version": "1.0.0",
       "packet_type": "project",
       "status": "review",
       "canonical_entity": {
         "entity_type": "project",
-        "canonical_slug": "goods-on-country",
-        "canonical_note_path": "wiki/projects/goods-on-country.md",
-        "project_code": null,
+        "canonical_slug": "goods",
+        "canonical_note_path": "wiki/projects/goods.md",
+        "project_code": "ACT-GD",
         "public_copy_owner": "act-regenerative-studio"
       },
       "source_refs": [
         {
-          "source_id": "goods-on-country-flagship-pack",
+          "source_id": "goods-flagship-pack",
           "source_system": "empathy-ledger-v2",
           "source_kind": "flagship_project_pack",
           "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
-          "captured_at": "2026-04-20T00:50:00.551Z",
-          "verification_status": "verified",
-          "notes": "Flagship pack exists for this project slug."
+          "captured_at": "2026-05-26T09:15:08.177Z",
+          "verification_status": "unverified",
+          "notes": "No flagship pack found."
         },
         {
-          "source_id": "goods-on-country-act-regenerative-studio-manifest",
+          "source_id": "goods-act-regenerative-studio-manifest",
           "source_system": "empathy-ledger-v2",
           "source_kind": "site_editorial_manifest",
           "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
-          "captured_at": "2026-04-20T00:50:00.551Z",
+          "captured_at": "2026-05-26T09:15:08.177Z",
           "verification_status": "verified",
           "notes": "Editorial manifest found for act-regenerative-studio."
         }
       ],
       "narrative": {
-        "headline": "Goods on Country",
-        "summary": "Goods on Country is one of ACT's flagship public fields, but its truth is distributed across layers: - the wiki holds the durable product logic, partnership model, capital stack, and handover arc - Empathy Ledger should hold the live community voice, photos, video, and consented deployment stories - the Goods Asset Register, GrantScope Goods Workspace, and related project codebases hold the operational implementation truth - the public websites should compose those layers without becoming a second place where product or partnership truth gets rewritten by hand That is why Goods on Country needs to stay linked to Living Website Operating System, Designing for Obsolescence, and the partner ecology around Oonchiumpa and PICC.",
-        "body_markdown": "Goods on Country is one of ACT's flagship public fields, but its truth is distributed across layers: - the wiki holds the durable product logic, partnership model, capital stack, and handover arc - Empathy Ledger should hold the live community voice, photos, video, and consented deployment stories - the Goods Asset Register, GrantScope Goods Workspace, and related project codebases hold the operational implementation truth - the public websites should compose those layers without becoming a second place where product or partnership truth gets rewritten by hand That is why Goods on Country needs to stay linked to Living Website Operating System, Designing for Obsolescence, and the partner ecology around Oonchiumpa and PICC.",
+        "headline": "Goods",
+        "summary": "Dianne Stokes, a traditional owner in Tennant Creek, has spent twenty-four years transforming bare country into a home, starting with nothing but her car for shelter.",
+        "body_markdown": "- Where the Country Calls Me Home — Dianne Stokes, a traditional owner in Tennant Creek, has spent twenty-four years transforming bare country into a home, starting with nothing but her car for shelter.\n- Pakkimjalki Kari: Beds, Washing Machines, and the Blessings We Share — When a brand-new washing machine arrives at Alba Camp in Tennant Creek, Dianne Stokes can't contain her joy. This is the story of beds, washing machines, and what happens when a community decides that the most basic goods — the ones most Australians take for granted — are blessings worth sharing.",
         "themes": [
-          "goods-on-country"
-        ],
-        "approved_quotes": []
-      },
-      "media_assets": [],
-      "review": {
-        "editorial": {
-          "status": "approved",
-          "owner": "act-regenerative-studio-editorial-manifest",
-          "decided_at": null,
-          "notes": "Packet assembled from curated EL editorial and flagship data."
-        },
-        "cultural": {
-          "status": "not-required",
-          "owner": null,
-          "decided_at": null,
-          "notes": "Packet only includes public-facing content-hub surfaces."
-        },
-        "consent": {
-          "status": "approved",
-          "owner": "content-hub",
-          "decided_at": null,
-          "notes": "Packet assembled from EL content-hub surfaces already filtered for public/community delivery."
-        },
-        "release": {
-          "status": "pending",
-          "owner": "release-captain",
-          "decided_at": null,
-          "notes": "Downstream publish still needs preview verification in the destination site."
-        }
-      },
-      "outputs": [
-        {
-          "target_surface": "act-regenerative-studio",
-          "output_type": "homepage-feature",
-          "status": "review",
-          "destination": "/api/v1/content-hub/editorial?site=act-regenerative-studio",
-          "notes": "Native site-facing packet for editorial/homepage composition."
-        },
-        {
-          "target_surface": "act-regenerative-studio",
-          "output_type": "project-card",
-          "status": "review",
-          "destination": "sync-el-source-packets.mjs",
-          "notes": "Hub-facing packet snapshot for project and portfolio composition."
-        },
-        {
-          "target_surface": "social",
-          "output_type": "explainer-image-brief",
-          "status": "queued",
-          "destination": null,
-          "notes": "No hero media found yet."
-        },
-        {
-          "target_surface": "video",
-          "output_type": "explainer-video-brief",
-          "status": "queued",
-          "destination": null,
-          "notes": "Packet can drive explainer/video generation once release gate is approved."
-        }
-      ],
-      "provenance": {
-        "generated_at": "2026-04-20T00:50:00.551Z",
-        "generated_by": "content-hub-source-packet-builder",
-        "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
-        "notes": "storyIds=0, storytellerIds=0, mediaIds=0"
-      },
-      "packet_context": {
-        "site_slug": "act-regenerative-studio",
-        "destination": "act_el",
-        "project_name": "Goods on Country",
-        "story_ids": [],
-        "storyteller_ids": [],
-        "media_asset_ids": [],
-        "featured_article_slugs": [
-          "wilya-janta-a-paradigm-shift-in-housing-for-remote-aboriginal-communities",
-          "at-the-speed-of-ceremony-learning-partnership-on-palm-island",
-          "historys-wounds-and-tomorrows-possibilities",
-          "the-tapestry-of-dignity-witnessing-the-birth-of-the-global-laundry-alliance",
-          "building-the-act-ecosystem-a-vision-for-community-centered-technology"
-        ]
-      }
-    },
-    "the-harvest": {
-      "packet_id": "pkt_the-harvest_act-regenerative-studio",
-      "schema_version": "1.0.0",
-      "packet_type": "project",
-      "status": "review",
-      "canonical_entity": {
-        "entity_type": "project",
-        "canonical_slug": "the-harvest",
-        "canonical_note_path": "wiki/projects/the-harvest.md",
-        "project_code": "ACT-HV",
-        "public_copy_owner": "act-regenerative-studio"
-      },
-      "source_refs": [
-        {
-          "source_id": "the-harvest-flagship-pack",
-          "source_system": "empathy-ledger-v2",
-          "source_kind": "flagship_project_pack",
-          "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
-          "captured_at": "2026-04-20T00:50:01.546Z",
-          "verification_status": "verified",
-          "notes": "Flagship pack exists for this project slug."
-        },
-        {
-          "source_id": "the-harvest-act-regenerative-studio-manifest",
-          "source_system": "empathy-ledger-v2",
-          "source_kind": "site_editorial_manifest",
-          "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
-          "captured_at": "2026-04-20T00:50:01.546Z",
-          "verification_status": "verified",
-          "notes": "Editorial manifest found for act-regenerative-studio."
-        }
-      ],
-      "narrative": {
-        "headline": "The Harvest / Witta Harvest HQ",
-        "summary": "The Harvest is not only a venue or cafe concept. It is one of the public fronts where ACT's place, enterprise, and story systems meet: - the wiki holds the durable place logic, operating frame, and relationship to ACT Farm - Empathy Ledger should carry the live seasonal stories, photos, and community voice - the Harvest website should stay a focused spoke surface, not a second place where strategic truth gets rewritten by hand That is why The Harvest needs to stay linked to Living Website Operating System and to the Studio's wider economic logic in Studio Business Model.",
-        "body_markdown": "The Harvest is not only a venue or cafe concept. It is one of the public fronts where ACT's place, enterprise, and story systems meet: - the wiki holds the durable place logic, operating frame, and relationship to ACT Farm - Empathy Ledger should carry the live seasonal stories, photos, and community voice - the Harvest website should stay a focused spoke surface, not a second place where strategic truth gets rewritten by hand That is why The Harvest needs to stay linked to Living Website Operating System and to the Studio's wider economic logic in Studio Business Model.",
-        "themes": [
-          "the-harvest"
+          "Connection to Country",
+          "Cultural Preservation",
+          "Youth Empowerment",
+          "Two-Way Learning",
+          "Resilience",
+          "Community Resilience",
+          "Data Sovereignty",
+          "Language Preservation",
+          "Intergenerational Knowledge",
+          "Cultural Protocols",
+          "Housing Sovereignty"
         ],
         "approved_quotes": []
       },
       "media_assets": [
         {
-          "asset_id": "40d0f978-af44-41d8-a646-2f63da2723ae",
+          "asset_id": "c56c6e30-ef00-4346-b824-a64bb01e5024",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508704229-20260307-1E5A2151.jpg",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775505862303-20260329-1E5A2872.jpg",
           "caption": null,
-          "alt_text": "Image: 20260307-1E5A2151.jpg",
+          "alt_text": "Image: 20260329-1E5A2872.jpg",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "9184efce-1134-4ea4-9fdd-05e3ba66617d",
+          "asset_id": "6505d292-dd60-484e-8da7-8b1bc67302c4",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508703061-20260307-1E5A2150.jpg",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775505861206-20260329-1E5A2867.jpg",
           "caption": null,
-          "alt_text": "Image: 20260307-1E5A2150.jpg",
+          "alt_text": "Image: 20260329-1E5A2867.jpg",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "5c5b290b-27f4-4552-8bcb-28da9efec27c",
+          "asset_id": "e4297139-c2a4-4edd-9db3-df3e680e61ac",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508701906-20260307-1E5A2146.jpg",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775505860088-20260329-1E5A2866.jpg",
           "caption": null,
-          "alt_text": "Image: 20260307-1E5A2146.jpg",
+          "alt_text": "Image: 20260329-1E5A2866.jpg",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "a1f2818f-256b-4aa2-9871-dd7bde6f4f72",
+          "asset_id": "87dc0c7e-4060-46e0-970c-4b56c829be17",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508700747-20260307-1E5A2145.jpg",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775505858942-20260329-1E5A2865.jpg",
           "caption": null,
-          "alt_text": "Image: 20260307-1E5A2145.jpg",
+          "alt_text": "Image: 20260329-1E5A2865.jpg",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "2248ba28-1d71-4f36-b707-67c21e0f5672",
+          "asset_id": "818b77e2-c3c5-4a77-8460-6cb4afab2455",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508699486-20260307-1E5A2142.jpg",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775505857809-20260329-1E5A2864.jpg",
           "caption": null,
-          "alt_text": "Image: 20260307-1E5A2142.jpg",
+          "alt_text": "Image: 20260329-1E5A2864.jpg",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "f9649ec3-3aba-405f-9e56-ca7e6c90f688",
+          "asset_id": "9095cafb-1570-4ccf-af97-af86bfc2e038",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508698287-20260307-1E5A2141.jpg",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775505856712-20260329-1E5A2863.jpg",
           "caption": null,
-          "alt_text": "Image: 20260307-1E5A2141.jpg",
+          "alt_text": "Image: 20260329-1E5A2863.jpg",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "0ddd542a-0e7e-4473-bdef-e53e20a04005",
+          "asset_id": "72327163-31c0-4279-97d6-b314cebf062f",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508697123-20260307-1E5A2140.jpg",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775505855331-20260329-1E5A2862.jpg",
           "caption": null,
-          "alt_text": "Image: 20260307-1E5A2140.jpg",
+          "alt_text": "Image: 20260329-1E5A2862.jpg",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "be5b2592-9574-43c9-b249-65c2936d53aa",
+          "asset_id": "7d960662-77a0-4747-8ab6-1d24607ce491",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508696030-20260307-1E5A2139.jpg",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775505854272-20260329-1E5A2861.jpg",
           "caption": null,
-          "alt_text": "Image: 20260307-1E5A2139.jpg",
+          "alt_text": "Image: 20260329-1E5A2861.jpg",
           "usage_rights": "approved"
         }
       ],
@@ -492,28 +382,235 @@
         }
       ],
       "provenance": {
-        "generated_at": "2026-04-20T00:50:01.546Z",
+        "generated_at": "2026-05-26T09:15:08.178Z",
         "generated_by": "content-hub-source-packet-builder",
         "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
-        "notes": "storyIds=0, storytellerIds=1, mediaIds=8"
+        "notes": "storyIds=2, storytellerIds=6, mediaIds=8"
+      },
+      "packet_context": {
+        "site_slug": "act-regenerative-studio",
+        "destination": "act_el",
+        "project_name": "Goods",
+        "story_ids": [
+          "28cb405e-78de-43e3-849c-5c87cbde3760",
+          "e94f98ed-00f3-42ff-b97c-2430ee4655ab"
+        ],
+        "storyteller_ids": [
+          "5c3911f8-bf43-4101-be4a-d48c38536dda",
+          "ac700001-0000-0000-0000-000000000002",
+          "e1679978-f251-4074-8873-d3f5baa80950",
+          "69db1d7e-c3f5-4926-b4d4-2d098c040952",
+          "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
+          "433f5fbc-2c8d-46c1-916d-d558c179e701"
+        ],
+        "media_asset_ids": [
+          "c56c6e30-ef00-4346-b824-a64bb01e5024",
+          "6505d292-dd60-484e-8da7-8b1bc67302c4",
+          "e4297139-c2a4-4edd-9db3-df3e680e61ac",
+          "87dc0c7e-4060-46e0-970c-4b56c829be17",
+          "818b77e2-c3c5-4a77-8460-6cb4afab2455",
+          "9095cafb-1570-4ccf-af97-af86bfc2e038",
+          "72327163-31c0-4279-97d6-b314cebf062f",
+          "7d960662-77a0-4747-8ab6-1d24607ce491"
+        ],
+        "featured_article_slugs": []
+      }
+    },
+    "the-harvest": {
+      "packet_id": "pkt_the-harvest_act-regenerative-studio",
+      "schema_version": "1.0.0",
+      "packet_type": "project",
+      "status": "review",
+      "canonical_entity": {
+        "entity_type": "project",
+        "canonical_slug": "the-harvest",
+        "canonical_note_path": "wiki/projects/the-harvest.md",
+        "project_code": "ACT-HV",
+        "public_copy_owner": "act-regenerative-studio"
+      },
+      "source_refs": [
+        {
+          "source_id": "the-harvest-flagship-pack",
+          "source_system": "empathy-ledger-v2",
+          "source_kind": "flagship_project_pack",
+          "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
+          "captured_at": "2026-05-26T09:15:11.963Z",
+          "verification_status": "verified",
+          "notes": "Flagship pack exists for this project slug."
+        },
+        {
+          "source_id": "the-harvest-act-regenerative-studio-manifest",
+          "source_system": "empathy-ledger-v2",
+          "source_kind": "site_editorial_manifest",
+          "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
+          "captured_at": "2026-05-26T09:15:11.963Z",
+          "verification_status": "verified",
+          "notes": "Editorial manifest found for act-regenerative-studio."
+        }
+      ],
+      "narrative": {
+        "headline": "The Harvest / Witta Harvest HQ",
+        "summary": "The Harvest is not only a venue or cafe concept. It is one of the public fronts where ACT's place, enterprise, and story systems meet: - the wiki holds the durable place logic, operating frame, and relationship to ACT Farm - Empathy Ledger should carry the live seasonal stories, photos, and community voice - the Harvest website should stay a focused spoke surface, not a second place where strategic truth gets rewritten by hand That is why The Harvest needs to stay linked to Living Website Operating System and to the Studio's wider economic logic in Studio Business Model.",
+        "body_markdown": "The Harvest is not only a venue or cafe concept. It is one of the public fronts where ACT's place, enterprise, and story systems meet: - the wiki holds the durable place logic, operating frame, and relationship to ACT Farm - Empathy Ledger should carry the live seasonal stories, photos, and community voice - the Harvest website should stay a focused spoke surface, not a second place where strategic truth gets rewritten by hand That is why The Harvest needs to stay linked to Living Website Operating System and to the Studio's wider economic logic in Studio Business Model.",
+        "themes": [
+          "the-harvest",
+          "Resilience",
+          "Community",
+          "Rural Life",
+          "Deep Listening"
+        ],
+        "approved_quotes": []
+      },
+      "media_assets": [
+        {
+          "asset_id": "106a87f4-897b-44ce-8eb7-d8d601fe2d1f",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1778791351674-IMG_2966.MP4",
+          "caption": null,
+          "alt_text": "Video: IMG_2966.MP4",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "77a1a19f-de91-4599-b5d1-9d111e878218",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1778791344131-IMG_2966.HEIC",
+          "caption": null,
+          "alt_text": "Image: IMG_2966.HEIC",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "5de41e2b-7970-40e1-a66a-b021fe672944",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1778791337381-IMG_2964.MP4",
+          "caption": null,
+          "alt_text": "Video: IMG_2964.MP4",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "cb18b99b-fdad-410e-80d5-8296d1b3056e",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1778791329468-IMG_2964.HEIC",
+          "caption": null,
+          "alt_text": "Image: IMG_2964.HEIC",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "2ce4837a-ea2b-4a4f-9ca3-1d678f51735f",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1778791322550-IMG_2962.MP4",
+          "caption": null,
+          "alt_text": "Video: IMG_2962.MP4",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "f0888269-073b-40a9-83ae-3426d62600e9",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1778791314169-IMG_2962.HEIC",
+          "caption": null,
+          "alt_text": "Image: IMG_2962.HEIC",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "6cc5c2d1-a64c-43e6-9c42-a2e597140abf",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1778791305798-IMG_2956.MP4",
+          "caption": null,
+          "alt_text": "Video: IMG_2956.MP4",
+          "usage_rights": "approved"
+        },
+        {
+          "asset_id": "4b4b2cd9-4ec8-45b5-abb2-38a15f07e12f",
+          "kind": "image",
+          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1778791296889-IMG_2956.HEIC",
+          "caption": null,
+          "alt_text": "Image: IMG_2956.HEIC",
+          "usage_rights": "approved"
+        }
+      ],
+      "review": {
+        "editorial": {
+          "status": "approved",
+          "owner": "act-regenerative-studio-editorial-manifest",
+          "decided_at": null,
+          "notes": "Packet assembled from curated EL editorial and flagship data."
+        },
+        "cultural": {
+          "status": "not-required",
+          "owner": null,
+          "decided_at": null,
+          "notes": "Packet only includes public-facing content-hub surfaces."
+        },
+        "consent": {
+          "status": "approved",
+          "owner": "content-hub",
+          "decided_at": null,
+          "notes": "Packet assembled from EL content-hub surfaces already filtered for public/community delivery."
+        },
+        "release": {
+          "status": "pending",
+          "owner": "release-captain",
+          "decided_at": null,
+          "notes": "Downstream publish still needs preview verification in the destination site."
+        }
+      },
+      "outputs": [
+        {
+          "target_surface": "act-regenerative-studio",
+          "output_type": "homepage-feature",
+          "status": "review",
+          "destination": "/api/v1/content-hub/editorial?site=act-regenerative-studio",
+          "notes": "Native site-facing packet for editorial/homepage composition."
+        },
+        {
+          "target_surface": "act-regenerative-studio",
+          "output_type": "project-card",
+          "status": "review",
+          "destination": "sync-el-source-packets.mjs",
+          "notes": "Hub-facing packet snapshot for project and portfolio composition."
+        },
+        {
+          "target_surface": "social",
+          "output_type": "explainer-image-brief",
+          "status": "review",
+          "destination": null,
+          "notes": "Packet has media and narrative context for image brief generation."
+        },
+        {
+          "target_surface": "video",
+          "output_type": "explainer-video-brief",
+          "status": "queued",
+          "destination": null,
+          "notes": "Packet can drive explainer/video generation once release gate is approved."
+        }
+      ],
+      "provenance": {
+        "generated_at": "2026-05-26T09:15:11.963Z",
+        "generated_by": "content-hub-source-packet-builder",
+        "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
+        "notes": "storyIds=1, storytellerIds=4, mediaIds=8"
       },
       "packet_context": {
         "site_slug": "act-regenerative-studio",
         "destination": "act_el",
         "project_name": "The Harvest",
-        "story_ids": [],
+        "story_ids": [
+          "8a777af3-558f-4ccc-864a-fc9b6b52e031"
+        ],
         "storyteller_ids": [
-          "99e753e0-07d6-439a-ab2a-f203bb657efa"
+          "99e753e0-07d6-439a-ab2a-f203bb657efa",
+          "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
+          "9ad1702d-01a4-4b50-a60a-7d498517f682",
+          "c2ba535c-aa50-42c3-af18-ed61d3330716"
         ],
         "media_asset_ids": [
-          "40d0f978-af44-41d8-a646-2f63da2723ae",
-          "9184efce-1134-4ea4-9fdd-05e3ba66617d",
-          "5c5b290b-27f4-4552-8bcb-28da9efec27c",
-          "a1f2818f-256b-4aa2-9871-dd7bde6f4f72",
-          "2248ba28-1d71-4f36-b707-67c21e0f5672",
-          "f9649ec3-3aba-405f-9e56-ca7e6c90f688",
-          "0ddd542a-0e7e-4473-bdef-e53e20a04005",
-          "be5b2592-9574-43c9-b249-65c2936d53aa"
+          "106a87f4-897b-44ce-8eb7-d8d601fe2d1f",
+          "77a1a19f-de91-4599-b5d1-9d111e878218",
+          "5de41e2b-7970-40e1-a66a-b021fe672944",
+          "cb18b99b-fdad-410e-80d5-8296d1b3056e",
+          "2ce4837a-ea2b-4a4f-9ca3-1d678f51735f",
+          "f0888269-073b-40a9-83ae-3426d62600e9",
+          "6cc5c2d1-a64c-43e6-9c42-a2e597140abf",
+          "4b4b2cd9-4ec8-45b5-abb2-38a15f07e12f"
         ],
         "featured_article_slugs": [
           "edition-1-sowing-seeds-of-connection-2",
@@ -540,7 +637,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "flagship_project_pack",
           "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
-          "captured_at": "2026-04-20T00:50:01.776Z",
+          "captured_at": "2026-05-26T09:15:11.222Z",
           "verification_status": "verified",
           "notes": "Flagship pack exists for this project slug."
         },
@@ -549,7 +646,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "site_editorial_manifest",
           "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
-          "captured_at": "2026-04-20T00:50:01.776Z",
+          "captured_at": "2026-05-26T09:15:11.222Z",
           "verification_status": "verified",
           "notes": "Editorial manifest found for act-regenerative-studio."
         }
@@ -686,16 +783,18 @@
         }
       ],
       "provenance": {
-        "generated_at": "2026-04-20T00:50:01.776Z",
+        "generated_at": "2026-05-26T09:15:11.222Z",
         "generated_by": "content-hub-source-packet-builder",
         "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
-        "notes": "storyIds=0, storytellerIds=1, mediaIds=8"
+        "notes": "storyIds=1, storytellerIds=1, mediaIds=8"
       },
       "packet_context": {
         "site_slug": "act-regenerative-studio",
         "destination": "act_el",
         "project_name": "Empathy Ledger",
-        "story_ids": [],
+        "story_ids": [
+          "6ac1fc12-f6fa-4dd6-930b-9159f692b04d"
+        ],
         "storyteller_ids": [
           "8b5f3aa0-5955-43ac-8442-37e48e7fc810"
         ],
@@ -735,7 +834,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "flagship_project_pack",
           "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
-          "captured_at": "2026-04-20T00:50:02.222Z",
+          "captured_at": "2026-05-26T09:15:13.367Z",
           "verification_status": "verified",
           "notes": "Flagship pack exists for this project slug."
         },
@@ -744,7 +843,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "site_editorial_manifest",
           "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
-          "captured_at": "2026-04-20T00:50:02.222Z",
+          "captured_at": "2026-05-26T09:15:13.367Z",
           "verification_status": "verified",
           "notes": "Editorial manifest found for act-regenerative-studio."
         }
@@ -882,7 +981,7 @@
         }
       ],
       "provenance": {
-        "generated_at": "2026-04-20T00:50:02.222Z",
+        "generated_at": "2026-05-26T09:15:13.367Z",
         "generated_by": "content-hub-source-packet-builder",
         "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
         "notes": "storyIds=0, storytellerIds=0, mediaIds=8"

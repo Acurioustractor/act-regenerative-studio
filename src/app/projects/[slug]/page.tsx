@@ -2,7 +2,9 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { Suspense } from 'react';
+import { JsonLd } from '@/components/seo/JsonLd';
 import LivingSystemStrip from '@/components/LivingSystemStrip';
+import { NewsletterCTA } from '@/components/forms/NewsletterCTA';
 // Server-only imports (use fs, supabase, etc.)
 import {
   getProjectData,
@@ -40,6 +42,7 @@ import {
 import { getTranscriptsForProject } from '@/lib/empathy-ledger-transcripts';
 import { getClusterCohort } from '@/lib/projects/cluster-cohort';
 import { EmpathyLedgerConnections } from '@/components/projects/EmpathyLedgerConnections';
+import { breadcrumbJsonLd, pageMetadata } from '@/lib/seo/site';
 
 interface EngagementAction {
   label: string;
@@ -66,10 +69,17 @@ export async function generateMetadata({
   const { slug } = await params;
   const project = await getProjectData(slug);
   if (!project) return {};
-  return {
-    title: `${project.title} | A Curious Tractor`,
+  return pageMetadata({
+    title: project.title,
     description: project.tagline || project.description,
-  };
+    path: `/projects/${project.slug}`,
+    image: project.coverImage?.url
+      ? {
+          url: project.coverImage.url,
+          alt: project.coverImage.alt || `${project.title} project image`,
+        }
+      : undefined,
+  });
 }
 
 // Loading skeleton for sections
@@ -413,6 +423,14 @@ export default async function ProjectPage({
 
   return (
     <div className="space-y-16 pb-24">
+      <JsonLd
+        id={`project-${project.slug}-breadcrumb-jsonld`}
+        data={breadcrumbJsonLd([
+          { name: 'Home', path: '/' },
+          { name: 'Projects', path: '/projects' },
+          { name: project.title, path: `/projects/${project.slug}` },
+        ])}
+      />
       {project.empathyLedger && (
         <EmpathyLedgerConnections
           projectSlug={project.slug}
@@ -459,6 +477,16 @@ export default async function ProjectPage({
         projectTitle={project.title}
         media={fieldMedia}
         projectWebsiteUrl={project.projectWebsiteUrl}
+      />
+
+      <NewsletterCTA
+        title={`Follow ${project.title} field notes`}
+        description="Get new stories, images, and project updates after they are cleared through Empathy Ledger and connected back into the ACT wiki."
+        projectCode={project.wikiData?.code || undefined}
+        projectSlug={project.slug}
+        source={`project-${project.slug}`}
+        audience="project-reader"
+        additionalTags={[`Project title: ${project.title}`]}
       />
 
       {(project.wikiData || liveContentAvailable) && (
@@ -681,9 +709,9 @@ export default async function ProjectPage({
                   <h3 className="font-[var(--font-display)] text-2xl font-semibold text-white group-hover:text-[#F7DE72]">
                     {projectEditorial.leadArticle.title}
                   </h3>
-                  <p className="max-w-2xl text-sm leading-7 text-[#E7D9C5]">
+                    <p className="max-w-2xl text-sm leading-7 text-[#E7D9C5]">
                     {projectEditorial.leadArticle.excerpt ||
-                      'Open this field note in the ACT journal.'}
+                      'Open this field note in the ACT blog archive.'}
                   </p>
                   <div className="flex items-center justify-between pt-2 text-xs uppercase tracking-[0.22em] text-[#D7C8B2]">
                     <span>{projectEditorial.leadArticle.authorName}</span>
@@ -743,7 +771,7 @@ export default async function ProjectPage({
                       {article.title}
                     </h3>
                     <p className="text-sm text-[var(--we-olive-deep)] line-clamp-3">
-                      {article.excerpt || 'Open this field note in the ACT journal.'}
+                      {article.excerpt || 'Open this field note in the ACT blog archive.'}
                     </p>
                     <div className="flex items-center justify-between pt-2 text-xs uppercase tracking-[0.22em] text-[var(--we-warm-brown)]">
                       <span>{article.authorName}</span>
@@ -884,11 +912,11 @@ export default async function ProjectPage({
                     rel="noopener noreferrer"
                     className={`${buttonClass} mt-5`}
                   >
-                    Open path
+                    {action.label}
                   </a>
                 ) : (
                   <Link href={action.href} className={`${buttonClass} mt-5`}>
-                    Open path
+                    {action.label}
                   </Link>
                 )}
               </div>
@@ -908,10 +936,10 @@ export default async function ProjectPage({
         <section className="space-y-6">
           <div className="text-center">
             <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-brown-deep)]">
-              Explore More
+              Explore more
             </p>
             <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
-              Related Projects
+              Related projects
             </h2>
           </div>
           <div className="grid gap-6 md:grid-cols-3">
@@ -956,10 +984,10 @@ export default async function ProjectPage({
         <section className="space-y-6">
           <div className="text-center">
             <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-brown-deep)]">
-              Studio Line
+              Studio line
             </p>
             <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
-              Related Works
+              Related works
             </h2>
             <p className="mt-3 text-sm text-[var(--we-olive-deep)]">
               Some ACT projects also belong to a broader line of studio works. These pieces share
@@ -1017,23 +1045,31 @@ export default async function ProjectPage({
         </section>
       )}
 
-      {/* Year-in-Review Link */}
+      {/* Story and wiki follow-through */}
       <section className="rounded-3xl border border-[var(--we-sand)] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 text-center md:p-12">
         <h3 className="mb-3 font-[var(--font-display)] text-xl font-semibold text-[var(--we-olive)] md:text-2xl">
-          See this project in our 2025 Year in Review
+          Keep following {project.title}
         </h3>
         <p className="mx-auto mb-6 max-w-2xl text-sm text-[#5A4A3A]">
-          Explore the full story of our work in 2025, photos, videos, impact
-          metrics, and the journey across all our projects.
+          Stories, source notes, media, and partner pathways should keep pointing
+          back to the same public record as this project changes.
         </p>
-        <a
-          href="https://act.place/2025-review"
-          target="_blank"
-          rel="noopener noreferrer"
-          className="inline-flex items-center justify-center rounded-full bg-[#4CAF50] px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-[#3D9143]"
-        >
-          View 2025 Year in Review →
-        </a>
+        <div className="flex flex-wrap justify-center gap-4">
+          <Link
+            href="/stories"
+            className="inline-flex items-center justify-center rounded-full bg-[#4CAF50] px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-[#3D9143]"
+          >
+            Read stories
+          </Link>
+          {project.wikiData ? (
+            <Link
+              href={`/wiki/${project.slug}`}
+              className="inline-flex items-center justify-center rounded-full border border-[#4CAF50] px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--we-olive)] transition hover:bg-[#E5F4E4]"
+            >
+              Open wiki
+            </Link>
+          ) : null}
+        </div>
       </section>
     </div>
   );

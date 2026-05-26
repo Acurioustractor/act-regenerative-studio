@@ -13,6 +13,7 @@ import {
   type FeaturedStoryteller,
   type FeaturedStory,
 } from '@/lib/empathy-ledger-featured';
+import { cleanMediaAlt } from '@/lib/media/alt-text';
 
 export type ArtMedium =
   | 'photography'
@@ -356,8 +357,24 @@ async function hydrateArtProject(
     if (elContent) break;
   }
 
-  const media = elContent?.media.items || [];
-  const heroImage = elContent?.media.hero || media[0] || null;
+  const cleanItem = (
+    item: FeaturedMediaItem,
+    index: number
+  ): FeaturedMediaItem => {
+    const fallbackAlt =
+      index === 0
+        ? `${config.title} artwork documentation`
+        : `${config.title} artwork documentation ${index + 1}`;
+    return {
+      ...item,
+      alt: cleanMediaAlt(item.alt || item.title, fallbackAlt) || fallbackAlt,
+    };
+  };
+
+  const media = (elContent?.media.items || []).map(cleanItem);
+  const heroImage = elContent?.media.hero
+    ? cleanItem(elContent.media.hero, 0)
+    : media[0] || null;
   const storytellers = elContent?.featured.storytellers || [];
   const stories = elContent?.featured.stories || [];
 

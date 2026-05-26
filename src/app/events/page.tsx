@@ -3,12 +3,14 @@ import LivingSystemStrip from "@/components/LivingSystemStrip";
 import CardGrid from "../../components/CardGrid";
 import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
+import { pageMetadata } from "@/lib/seo/site";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Events",
   description:
     "Community meals, workshops, residencies, and public gatherings, invitations to step onto the valley.",
-};
+  path: "/events",
+});
 
 const eventTypes = [
   {

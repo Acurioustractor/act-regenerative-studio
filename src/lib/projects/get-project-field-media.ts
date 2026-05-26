@@ -1,5 +1,6 @@
 import { projects } from '@/data/projects';
 import type { ProjectTheme } from '@/data/projects';
+import { cleanMediaAlt } from '@/lib/media/alt-text';
 import type { EnrichedProject } from './get-project-data';
 
 export interface ProjectFieldMediaImage {
@@ -318,10 +319,11 @@ export function getProjectFieldMedia(project: EnrichedProject): ProjectFieldMedi
 
   for (const item of project.mediaGallery) {
     if (!isImageType(item.type)) continue;
+    const fallbackAlt = `${project.title} field image`;
     pushImage({
       id: item.id,
       url: item.thumbnailUrl || item.url,
-      alt: item.alt || item.title || `${project.title} image`,
+      alt: cleanMediaAlt(item.alt || item.title, fallbackAlt) || fallbackAlt,
       caption: item.caption || item.title || null,
       eyebrow: item.source === 'empathy_ledger' ? 'Story' : 'Project image',
       sourceTitle: null,
@@ -330,10 +332,11 @@ export function getProjectFieldMedia(project: EnrichedProject): ProjectFieldMedi
   }
 
   if (project.coverImage && !project.coverImage.url.toLowerCase().endsWith('.png')) {
+    const fallbackAlt = `${project.title} project image`;
     pushImage({
       id: `${project.slug}-cover`,
       url: project.coverImage.url,
-      alt: project.coverImage.alt,
+      alt: cleanMediaAlt(project.coverImage.alt, fallbackAlt) || fallbackAlt,
       caption: project.tagline,
       eyebrow: 'Project image',
       sourceTitle: null,

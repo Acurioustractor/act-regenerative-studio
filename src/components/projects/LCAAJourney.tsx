@@ -160,7 +160,7 @@ export function LCAAJourney({
           Our Process
         </p>
         <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)] md:text-3xl">
-          How we work: The LCAA Method
+          How we work: Listen, Curiosity, Action, Art
         </h2>
         <p className="mt-4 max-w-2xl mx-auto text-[var(--we-olive-deep)]">
           Every project follows our methodology of Listen, Curiosity, Action, and Art, 

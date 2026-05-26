@@ -1,4 +1,6 @@
 import type { EditorialMediaOverride } from "@/lib/empathy-ledger-editorial";
+import { cleanPublicBrandText } from "@/lib/brand/public-copy";
+import { cleanMediaAlt } from "@/lib/media/alt-text";
 import { buildProjectIndexSignals } from "@/lib/projects/build-project-index-signals";
 import { getProjectData } from "@/lib/projects/get-project-data";
 import { getProjectFieldMedia } from "@/lib/projects/get-project-field-media";
@@ -43,14 +45,16 @@ export interface CuratedProjectCard {
 
 function excerptToTagline(value: string | null, fallback: string): string {
   if (!value) return fallback;
+  const cleanValue = cleanPublicBrandText(value) || value;
 
-  return value.length > 110 ? `${value.slice(0, 107).trimEnd()}...` : value;
+  return cleanValue.length > 110 ? `${cleanValue.slice(0, 107).trimEnd()}...` : cleanValue;
 }
 
 function descriptionFromOverview(value: string | null, fallback: string): string {
   if (!value) return fallback;
+  const cleanValue = cleanPublicBrandText(value) || value;
 
-  return value.length > 240 ? `${value.slice(0, 237).trimEnd()}...` : value;
+  return cleanValue.length > 240 ? `${cleanValue.slice(0, 237).trimEnd()}...` : cleanValue;
 }
 
 export async function buildCuratedProjectCards(
@@ -85,6 +89,7 @@ export async function buildCuratedProjectCards(
     const firstImageMedia = projectData?.mediaGallery.find((item: { type: string }) =>
       item.type.startsWith("image")
     );
+    const fallbackAlt = `${projectData?.title || config.fallbackTitle} project image`;
 
     // Priority: real Empathy Ledger media first (cover video → hero video → cover image
     // → first gallery image). Fall through to the editorial override and the synthetic
@@ -96,7 +101,7 @@ export async function buildCuratedProjectCards(
             kind: "video" as const,
             url: projectData.coverVideo.url,
             posterUrl: projectData.coverVideo.posterUrl || projectData.coverImage?.url || null,
-            alt: projectData.coverVideo.title || projectData.title || config.fallbackTitle,
+            alt: cleanMediaAlt(projectData.coverVideo.title, fallbackAlt) || fallbackAlt,
           }
         : heroMedia?.kind === "video"
         ? {
@@ -107,29 +112,28 @@ export async function buildCuratedProjectCards(
               projectData?.coverImage?.url ||
               firstImageMedia?.url ||
               null,
-            alt: heroMedia.alt || heroMedia.title || projectData?.title || config.fallbackTitle,
+            alt: cleanMediaAlt(heroMedia.alt || heroMedia.title, fallbackAlt) || fallbackAlt,
           }
         : heroMedia?.kind === "image"
         ? {
             kind: "image" as const,
             url: heroMedia.url,
             posterUrl: null,
-            alt: heroMedia.alt || heroMedia.title || projectData?.title || config.fallbackTitle,
+            alt: cleanMediaAlt(heroMedia.alt || heroMedia.title, fallbackAlt) || fallbackAlt,
           }
         : projectData?.coverImage?.url
         ? {
             kind: "image" as const,
             url: projectData.coverImage.url,
             posterUrl: null,
-            alt:
-              projectData.coverImage.alt || projectData.title || config.fallbackTitle,
+            alt: cleanMediaAlt(projectData.coverImage.alt, fallbackAlt) || fallbackAlt,
           }
         : firstImageMedia?.url
         ? {
             kind: "image" as const,
             url: firstImageMedia.url,
             posterUrl: null,
-            alt: firstImageMedia.alt || projectData?.title || config.fallbackTitle,
+            alt: cleanMediaAlt(firstImageMedia.alt, fallbackAlt) || fallbackAlt,
           }
         : null;
 
@@ -140,11 +144,10 @@ export async function buildCuratedProjectCards(
             kind: mediaOverride.kind,
             url: mediaOverride.url,
             posterUrl: mediaOverride.posterUrl || null,
-            alt:
-              mediaOverride.alt ||
-              projectData?.coverImage?.alt ||
-              projectData?.title ||
-              config.fallbackTitle,
+            alt: cleanMediaAlt(
+              mediaOverride.alt || projectData?.coverImage?.alt,
+              fallbackAlt
+            ) || fallbackAlt,
           }
         : undefined);
     const fieldMedia = projectData ? getProjectFieldMedia(projectData) : null;
@@ -167,7 +170,9 @@ export async function buildCuratedProjectCards(
       slug: config.slug,
       href: config.href,
       eyebrow: config.eyebrow,
-      title: flagshipPack?.title || wikiRecord?.title || config.fallbackTitle,
+      title:
+        cleanPublicBrandText(flagshipPack?.title || wikiRecord?.title || config.fallbackTitle) ||
+        config.fallbackTitle,
       tagline: excerptToTagline(
         flagshipPack?.summary || wikiRecord?.summary || null,
         config.fallbackTagline

@@ -1,12 +1,14 @@
 import Image from "next/image";
 import Link from "next/link";
 import { getSiteEditorialArticles } from "../../lib/empathy-ledger-editorial";
+import { pageMetadata } from "@/lib/seo/site";
 
-export const metadata = {
-  title: "Stories",
+export const metadata = pageMetadata({
+  title: "Blog",
   description:
-    "Every story here is published first in the Empathy Ledger, with consent, then syndicated to ACT. Field notes, editorial essays, and voices from across the ecosystem.",
-};
+    "The ACT blog archive. Field notes, editorial essays, and consent-cleared writing syndicated from Empathy Ledger.",
+  path: "/blog",
+});
 
 export const revalidate = 60;
 
@@ -22,10 +24,10 @@ export default async function BlogPage() {
     <div className="space-y-16">
       <section className="rounded-[32px] border border-[var(--we-sand)] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12">
         <p className="text-xs uppercase tracking-[0.4em] text-[var(--we-warm-brown)]">
-          Stories, syndicated from the Empathy Ledger
+          Blog archive, syndicated from Empathy Ledger
         </p>
         <h1 className="mt-4 text-3xl font-semibold text-[var(--we-olive)] md:text-5xl font-[var(--font-display)]">
-          Every story here was carried with consent.
+          Field notes and articles carried with consent.
         </h1>
         <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--we-brown)] md:text-base">
           Field notes, editorial essays, and voices from across the ecosystem.
@@ -34,11 +36,17 @@ export default async function BlogPage() {
           flows here.
         </p>
         <div className="mt-6 flex flex-wrap items-center gap-5">
+          <Link
+            href="/stories"
+            className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--we-olive)] transition-all hover:gap-3"
+          >
+            Read stories <span aria-hidden="true">&rarr;</span>
+          </Link>
           <a
             href="https://empathyledger.com"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--we-olive)] transition-all hover:gap-3"
+            className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--we-warm-brown)] transition-all hover:gap-3"
           >
             Visit the Empathy Ledger <span aria-hidden="true">&rarr;</span>
           </a>
@@ -78,7 +86,7 @@ export default async function BlogPage() {
             </div>
             <div className="flex flex-1 flex-col gap-3 p-6">
               <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
-                Journal
+                Blog
               </p>
               {post.tags && post.tags.length > 0 && (
                 <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
@@ -108,7 +116,7 @@ export default async function BlogPage() {
                 {post.title}
               </h2>
               <p className="text-sm text-[var(--we-brown)]">
-                {post.excerpt || "A story from the ACT Farm."}
+                {post.excerpt || "A story carried through ACT and Empathy Ledger."}
               </p>
               {post.authorName ? (
                 <div className="flex items-center gap-2 text-xs text-[var(--we-warm-brown)]">
@@ -124,7 +132,7 @@ export default async function BlogPage() {
         ))}
         {posts.length === 0 ? (
           <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-6 text-sm text-[var(--we-brown)]">
-            No posts yet. Publish your first story in Empathy Ledger to see it here.
+            No public articles are available from Empathy Ledger yet. Field stories and project pages still carry the live story system.
           </div>
         ) : null}
       </section>

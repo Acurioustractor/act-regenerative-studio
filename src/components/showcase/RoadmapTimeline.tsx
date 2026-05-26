@@ -156,7 +156,7 @@ export function RoadmapTimeline() {
                 {/* LCAA Phase */}
                 <div className="mt-4 flex items-center gap-2">
                   <span className="text-xs text-[var(--we-brown)] uppercase tracking-wider">
-                    LCAA:
+                    Method:
                   </span>
                   <span className={`rounded-full border-2 ${lcaaColors[milestone.lcaaPhase]} bg-white px-3 py-0.5 text-xs font-semibold uppercase tracking-wider text-[var(--we-olive)]`}>
                     {milestone.lcaaPhase}

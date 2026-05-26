@@ -2,6 +2,57 @@ import { NextRequest, NextResponse } from 'next/server';
 
 export const dynamic = 'force-dynamic';
 
+type FormFields = Record<string, unknown>;
+
+interface FormSubmissionBody {
+  projectCode?: string;
+  formType?: string;
+  fields?: FormFields;
+  additionalTags?: unknown;
+  dryRun?: boolean;
+}
+
+interface NormalizedFormSubmission {
+  projectCode?: string;
+  formType?: string;
+  fields: FormFields;
+  additionalTags: string[];
+}
+
+const SOURCE_SITE_TAG = 'act-regenerative-studio';
+
+function normalizeTags(tags: unknown): string[] {
+  if (!Array.isArray(tags)) return [];
+
+  return tags
+    .filter((tag): tag is string => typeof tag === 'string')
+    .map((tag) => tag.trim())
+    .filter(Boolean);
+}
+
+function hasContactPoint(fields: FormFields | undefined): boolean {
+  if (!fields) return false;
+
+  const email = fields.email;
+  const phone = fields.phone;
+
+  return (
+    (typeof email === 'string' && email.trim().length > 0) ||
+    (typeof phone === 'string' && phone.trim().length > 0)
+  );
+}
+
+function buildSubmission(body: FormSubmissionBody): NormalizedFormSubmission {
+  const additionalTags = normalizeTags(body.additionalTags);
+
+  return {
+    projectCode: body.projectCode,
+    formType: body.formType,
+    fields: body.fields || {},
+    additionalTags: Array.from(new Set([...additionalTags, SOURCE_SITE_TAG])),
+  };
+}
+
 /**
  * Form Submission API
  *
@@ -25,66 +76,73 @@ export const dynamic = 'force-dynamic';
  * }
  */
 export async function POST(request: NextRequest) {
-  try {
-    const body = await request.json();
-    const { projectCode, formType, fields, additionalTags } = body;
+  let body: FormSubmissionBody;
 
-    // Validate required fields
-    if (!fields?.email && !fields?.phone) {
+  try {
+    body = await request.json();
+  } catch {
+    return NextResponse.json(
+      { success: false, error: 'Invalid JSON payload' },
+      { status: 400 }
+    );
+  }
+
+  if (!hasContactPoint(body.fields)) {
+    return NextResponse.json(
+      { success: false, error: 'Email or phone required' },
+      { status: 400 }
+    );
+  }
+
+  const submission = buildSubmission(body);
+  const apiUrl = process.env.ACT_ECOSYSTEM_API_URL || 'http://localhost:3456';
+
+  if (body.dryRun === true) {
+    if (process.env.NODE_ENV === 'production') {
       return NextResponse.json(
-        { success: false, error: 'Email or phone required' },
-        { status: 400 }
+        { success: false, error: 'Dry run is unavailable in production' },
+        { status: 403 }
       );
     }
 
-    // Forward to act-ecosystem Command Center API
-    const apiUrl = process.env.ACT_ECOSYSTEM_API_URL || 'http://localhost:3456';
+    return NextResponse.json({
+      success: true,
+      dryRun: true,
+      message: 'Validated locally. No CRM submission was sent.',
+      wouldForwardTo: `${apiUrl}/api/forms/submit`,
+      submission,
+    });
+  }
 
-    console.log(`📝 Forwarding form submission to ${apiUrl}/api/forms/submit`);
-    console.log(`   Project: ${projectCode || 'none'}, Type: ${formType || 'general'}`);
+  try {
+    // Forward to act-ecosystem Command Center API
+    console.log(`Forwarding form submission to ${apiUrl}/api/forms/submit`);
+    console.log(`Project: ${submission.projectCode || 'none'}, Type: ${submission.formType || 'general'}`);
 
     const response = await fetch(`${apiUrl}/api/forms/submit`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
       },
-      body: JSON.stringify({
-        projectCode,
-        formType,
-        fields,
-        additionalTags: [
-          ...(additionalTags || []),
-          'act-regenerative-studio',  // Track source site
-        ],
-      }),
+      body: JSON.stringify(submission),
     });
 
     if (!response.ok) {
       const errorText = await response.text();
-      console.error(`❌ API error: ${response.status}`, errorText);
+      console.error(`API error: ${response.status}`, errorText);
 
       // If the ecosystem API is down, fall back to local storage
-      return await handleFallback(body);
+      return await handleFallback(submission);
     }
 
     const result = await response.json();
-    console.log(`✅ Form submitted successfully:`, result);
+    console.log('Form submitted successfully:', result);
 
     return NextResponse.json(result);
 
   } catch (error) {
     console.error('Form submission error:', error);
-
-    // Try fallback for network errors
-    try {
-      const body = await request.clone().json();
-      return await handleFallback(body);
-    } catch {
-      return NextResponse.json(
-        { success: false, error: 'Failed to process form submission' },
-        { status: 500 }
-      );
-    }
+    return await handleFallback(submission);
   }
 }
 
@@ -92,8 +150,8 @@ export async function POST(request: NextRequest) {
  * Fallback handler when act-ecosystem API is unavailable
  * Stores submission locally for later sync
  */
-async function handleFallback(body: any): Promise<NextResponse> {
-  console.warn('⚠️ Using fallback - storing submission locally');
+async function handleFallback(body: NormalizedFormSubmission): Promise<NextResponse> {
+  console.warn('Using fallback. Storing submission locally.');
 
   try {
     const { createClient } = await import('@supabase/supabase-js');

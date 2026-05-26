@@ -39,6 +39,19 @@ interface ProjectGroup {
 
 type Segment = "projects" | "orgs";
 
+const imageUrlPattern = /\.(jpe?g|png|webp|gif)(\?|#|$)/i;
+
+function isImageUrl(url: string | null | undefined) {
+  return Boolean(url && imageUrlPattern.test(url));
+}
+
+function pickerImageSource(image: PickerImage) {
+  if (isImageUrl(image.thumbnail_url)) return image.thumbnail_url;
+  if (isImageUrl(image.preview_url)) return image.preview_url;
+  if (isImageUrl(image.url)) return image.url;
+  return null;
+}
+
 export function EditableImage({
   src: defaultSrc,
   alt,
@@ -63,8 +76,9 @@ export function EditableImage({
     fetch("/api/image-overrides")
       .then((r) => r.json())
       .then((data) => {
-        if (data.overrides?.[slot]) {
-          setCurrentSrc(data.overrides[slot]);
+        const override = data.overrides?.[slot];
+        if (isImageUrl(override)) {
+          setCurrentSrc(override);
         }
       })
       .catch(() => {});
@@ -109,6 +123,8 @@ export function EditableImage({
   }
 
   async function pickImage(url: string) {
+    if (!isImageUrl(url)) return;
+
     setCurrentSrc(url);
     setPicking(false);
     await fetch("/api/image-overrides", {
@@ -124,6 +140,7 @@ export function EditableImage({
     activeSegment === "orgs"
       ? activeOrg?.images || []
       : activeProject?.images || [];
+  const activeDisplayImages = activeImages.filter((image) => isImageUrl(image.url) && pickerImageSource(image));
   const activeLabel =
     activeSegment === "orgs"
       ? activeOrg?.name || "Empathy Ledger"
@@ -248,9 +265,11 @@ export function EditableImage({
                 <p className="py-12 text-center text-sm text-white/30">Loading...</p>
               ) : (
                 <div className="grid grid-cols-3 gap-2 sm:grid-cols-4 md:grid-cols-5">
-                  {activeImages.map((img) => {
-                    const thumb = img.thumbnail_url || img.preview_url || img.url;
+                  {activeDisplayImages.map((img) => {
+                    const thumb = pickerImageSource(img);
                     const isActive = currentSrc === img.url;
+                    if (!thumb) return null;
+
                     return (
                       <button
                         key={img.id}

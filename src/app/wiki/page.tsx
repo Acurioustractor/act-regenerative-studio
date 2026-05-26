@@ -10,22 +10,31 @@ import {
   getCanonicalWikiSections,
   listAllWikiPages,
 } from '@/lib/wiki/canonical-site-wiki';
+import { pageMetadata } from '@/lib/seo/site';
+import { cleanPublicBrandText } from '@/lib/brand/public-copy';
+import { sanitizePublicWikiExcerpt } from '@/lib/wiki/public-wiki-copy';
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Wiki",
   description:
     "Methods, decisions, and the people behind every project, kept in public so you can check our thinking.",
-};
+  path: "/wiki",
+});
 
 export default async function WikiHomepage() {
   const [allPages, ecosystemSummary] = await Promise.all([
     listAllWikiPages(),
     getLivingEcosystemSummary(),
   ]);
+  const publicPages = allPages.map((page) => ({
+    ...page,
+    title: cleanPublicBrandText(page.title) || page.title,
+    excerpt: sanitizePublicWikiExcerpt(page.excerpt, page.title),
+  }));
   const storytellerCount = getAllStorytellers().filter(canDisplayStoryteller).length;
 
   const sections = getCanonicalWikiSections(
-    allPages.map((page) => ({
+    publicPages.map((page) => ({
       // getCanonicalWikiSections only reads sectionId/sectionTitle, but the
       // type expects the full record shape, fill with safe empties.
       title: page.title,
@@ -55,8 +64,8 @@ export default async function WikiHomepage() {
             </h1>
             <p className="mt-6 max-w-3xl text-base leading-8 text-[#E8E1D0] md:text-lg">
               Methods, decisions, and the people behind every project, kept
-              in public so you can check our thinking. Nothing here is
-              polished for you. It's what we use ourselves.
+              in public so you can check our thinking. This is the source
+              trail behind the projects, stories, and choices on the site.
             </p>
             <div className="mt-8 flex flex-wrap gap-3">
               <span className="rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm">
@@ -114,7 +123,7 @@ export default async function WikiHomepage() {
             href="/projects"
             className="rounded-full border border-[#4CAF50] px-4 py-2 text-sm font-medium text-[var(--we-olive)] transition hover:bg-[#E5F4E4]"
           >
-            Back to projects
+            Explore projects
           </Link>
         </div>
 
@@ -124,11 +133,12 @@ export default async function WikiHomepage() {
               The wiki is still coming online
             </h2>
             <p className="mx-auto mt-3 max-w-2xl text-sm leading-7 text-[var(--we-brown)]">
-              Pages will appear here shortly. Check back soon, or reach out if you need something specific in the meantime.
+              Pages will appear here once the source record is ready, or reach
+              out if you need something specific in the meantime.
             </p>
           </div>
         ) : (
-          <WikiSearch pages={allPages} sections={sections} />
+          <WikiSearch pages={publicPages} sections={sections} />
         )}
       </section>
     </div>

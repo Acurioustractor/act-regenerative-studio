@@ -15,6 +15,7 @@ import {
   type ProjectSourcePacket,
 } from '@/lib/empathy-ledger-source-packets';
 import { getProjectBySlug as getEcosystemProject, type EcosystemProject } from '@/lib/ecosystem';
+import { cleanMediaAlt } from '@/lib/media/alt-text';
 import { getCanonicalWikiProject, type CanonicalWikiProjectMatch } from '@/lib/wiki/canonical-project-wiki';
 import { getFlagshipProjectPack } from '@/lib/wiki/flagship-project-packs';
 import {
@@ -217,11 +218,15 @@ function sanitizeCaption(caption: string | null | undefined): string | undefined
 }
 
 function sanitizeAlt(alt: string | null | undefined): string | undefined {
-  if (!alt) return undefined;
-  const trimmed = alt.trim();
-  if (!trimmed) return undefined;
-  // "Image: foo.jpg" style filenames are not useful alt text.
-  if (/^Image:\s/i.test(trimmed)) return undefined;
+  return cleanMediaAlt(alt);
+}
+
+function sanitizeLaunchCopy(value: string | null | undefined, projectTitle: string): string {
+  const trimmed = value?.trim();
+  if (!trimmed) return '';
+  if (/coming soon|placeholder|still being prepared|still being surfaced/i.test(trimmed)) {
+    return `${projectTitle} is an ACT work in development. Public details will be shared when the story, media, and permissions are ready.`;
+  }
   return trimmed;
 }
 
@@ -291,7 +296,7 @@ function getEmpathyLedgerCover(
 
   return {
     url: hero.url,
-    alt: hero.alt || hero.title || `${projectTitle} cover`,
+    alt: sanitizeAlt(hero.alt) || sanitizeAlt(hero.title) || `${projectTitle} project image`,
     source: 'empathy_ledger',
   };
 }
@@ -307,7 +312,10 @@ function getSourcePacketCover(
 
   return {
     url: hero.uri_or_path,
-    alt: hero.alt_text || packet?.narrative?.headline || `${projectTitle} cover`,
+    alt:
+      sanitizeAlt(hero.alt_text) ||
+      sanitizeAlt(packet?.narrative?.headline) ||
+      `${projectTitle} project image`,
     source: 'empathy_ledger',
   };
 }
@@ -434,15 +442,34 @@ export const getProjectData = cache(async function getProjectData(
   const mergedArt = wikiLCAA?.art ?? baseProject.art ?? undefined;
 
   // Quote + stats merge: wiki wins when present; fall back to baseProject static.
-  const mergedQuote = wikiQuote
+  const rawMergedQuote = wikiQuote
     ? {
         text: wikiQuote.text,
         author: wikiQuote.author || baseProject.quote?.author || '',
         role: wikiQuote.role || baseProject.quote?.role || '',
       }
     : baseProject.quote;
+  const mergedQuote = rawMergedQuote
+    ? {
+        ...rawMergedQuote,
+        text: sanitizeLaunchCopy(rawMergedQuote.text, baseProject.title),
+      }
+    : undefined;
   const mergedStats =
     wikiStats && wikiStats.length > 0 ? wikiStats : baseProject.stats;
+  const rawTagline =
+    firstNonEmpty(flagshipPack?.summary, wikiData?.summary, baseProject.tagline) ||
+    baseProject.tagline;
+  const rawDescription =
+    firstNonEmpty(
+      flagshipPack?.overview,
+      flagshipPack?.whatItIs,
+      flagshipPack?.systemPosition,
+      wikiData?.overview,
+      baseProject.description
+    ) || baseProject.description;
+  const safeTagline = sanitizeLaunchCopy(rawTagline, baseProject.title);
+  const safeDescription = sanitizeLaunchCopy(rawDescription, baseProject.title);
 
   return {
     ...baseProject,
@@ -454,17 +481,8 @@ export const getProjectData = cache(async function getProjectData(
     stats: mergedStats,
     keyPeople: wikiKeyPeople || [],
     wikiBacklinks: wikiBacklinks || [],
-    tagline:
-      firstNonEmpty(flagshipPack?.summary, wikiData?.summary, baseProject.tagline) ||
-      baseProject.tagline,
-    description:
-      firstNonEmpty(
-        flagshipPack?.overview,
-        flagshipPack?.whatItIs,
-        flagshipPack?.systemPosition,
-        wikiData?.overview,
-        baseProject.description
-      ) || baseProject.description,
+    tagline: safeTagline,
+    description: safeDescription,
     coverImage: localCoverOverride
       ? {
           url: localCoverOverride.url,

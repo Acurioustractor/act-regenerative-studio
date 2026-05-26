@@ -22,13 +22,19 @@ import {
   EditorialSplit,
 } from "@/components/design-system";
 import { getProjectData } from "@/lib/projects/get-project-data";
+import { pageMetadata } from "@/lib/seo/site";
 import { notFound } from "next/navigation";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Goods on Country",
   description:
     "Indestructible beds and washing machines from 100% recycled plastic, co-designed with remote Aboriginal communities across Australia.",
-};
+  path: "/goods",
+  image: {
+    url: "/media/field-stills/goods-remote-aerial.jpg",
+    alt: "Goods on Country field work seen from above",
+  },
+});
 
 export default async function GoodsPage() {
   const project = await getProjectData("goods");
@@ -68,8 +74,8 @@ export default async function GoodsPage() {
         subhead="389 products. 8 communities. 9,225kg of plastic diverted from landfill."
         coverVideo={project.coverVideo}
         coverImage={project.coverImage}
-        primaryCta={{ label: "Shop at goodsoncountry.com", href: "https://goodsoncountry.com", external: true }}
-        secondaryCta={{ label: "The full story →", href: "#story" }}
+        primaryCta={{ label: "Order Goods products", href: "https://goodsoncountry.com", external: true }}
+        secondaryCta={{ label: "Read the story", href: "#story" }}
       />
 
       <ExternalHandoffCard
@@ -77,7 +83,7 @@ export default async function GoodsPage() {
         url="https://goodsoncountry.com"
         whatHappensThere="procurement teams and communities order durable, community-designed beds and washing machines"
         whyComeBack="the story behind each product, the communities they come from, and the plastic they keep out of landfill"
-        linkLabel="Shop at Goods on Country"
+        linkLabel="Order Goods products"
       />
 
       {/* , , ,  THE WHY , , ,  */}

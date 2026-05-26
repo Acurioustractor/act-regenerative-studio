@@ -39,6 +39,13 @@ function renderPill(value: string) {
   );
 }
 
+function publicStatusLabel(status: string) {
+  if (/coming soon|placeholder|still being prepared|still being surfaced/i.test(status)) {
+    return 'In development';
+  }
+  return status;
+}
+
 export default function LivingSystemStrip({
   eyebrow,
   title,
@@ -106,7 +113,7 @@ export default function LivingSystemStrip({
 
         <div className="space-y-4">
           <div className="flex flex-wrap gap-2">
-            {wiki?.status ? renderPill(`Status: ${wiki.status}`) : null}
+            {wiki?.status ? renderPill(`Status: ${publicStatusLabel(wiki.status)}`) : null}
             {wiki?.code ? renderPill(`Code: ${wiki.code}`) : null}
             {wiki?.tier ? renderPill(`Tier: ${wiki.tier}`) : null}
             {live?.sourceLabel ? renderPill(live.sourceLabel) : null}

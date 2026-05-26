@@ -6,6 +6,7 @@ import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import { MarkdownViewer } from '@/components/ui/MarkdownViewer';
 import { VisionSearch } from '@/components/ui/VisionSearch';
+import { cleanPublicBrandText } from '@/lib/brand/public-copy';
 
 export const metadata = {
   title: "Vision",
@@ -18,7 +19,7 @@ export default async function VisionPage() {
     const rawContent = fs.readFileSync(filePath, 'utf8');
     // Strip leading `# Title`, page already has an h1 from PageHero and a
     // section title above the doc. The markdown's own h1 would duplicate both.
-    const content = rawContent.replace(/^#\s+.+\n+/, '');
+    const content = cleanPublicBrandText(rawContent.replace(/^#\s+.+\n+/, '')) || '';
 
     return (
         <div className="space-y-20">
@@ -56,7 +57,7 @@ export default async function VisionPage() {
                 stats={[
                     { label: "Frame", value: "Seasonal" },
                     { label: "Orientation", value: "Place-first" },
-                    { label: "Method", value: "LCAA" },
+                    { label: "Method", value: "Listen · Curiosity · Action · Art" },
                 ]}
             />
 

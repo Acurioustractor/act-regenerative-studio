@@ -4,6 +4,8 @@ import Link from "next/link";
 import { Fraunces, Source_Serif_4, Work_Sans } from "next/font/google";
 import UnifiedFooter from "../components/UnifiedFooter";
 import { MobileMenu } from "../components/MobileMenu";
+import { JsonLd } from "@/components/seo/JsonLd";
+import { organizationJsonLd, siteUrl, websiteJsonLd } from "@/lib/seo/site";
 import "./globals.css";
 
 const displayFont = Fraunces({
@@ -24,28 +26,12 @@ const sansFont = Work_Sans({
 const navItems = [
   { label: "About", href: "/about" },
   { label: "Projects", href: "/projects" },
-  { label: "Stories", href: "/blog" },
+  { label: "Stories", href: "/stories" },
   { label: "Art", href: "/art" },
   { label: "Farm", href: "/farm" },
-  { label: "Method", href: "/method" },
-  { label: "Economy", href: "/economy" },
   { label: "Wiki", href: "/wiki" },
   { label: "Contact", href: "/contact" },
 ];
-
-const siteUrl = (() => {
-  // Match sitemap.ts/robots.ts: reject dev URLs so production og:url / canonical
-  // never points at localhost even if `.env.local` sets NEXT_PUBLIC_SITE_URL for previews.
-  const candidate = process.env.NEXT_PUBLIC_SITE_URL || "";
-  if (!candidate || /localhost|127\.0\.0\.1|0\.0\.0\.0/.test(candidate)) {
-    return process.env.VERCEL_PROJECT_PRODUCTION_URL
-      ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
-      : process.env.VERCEL_URL
-        ? `https://${process.env.VERCEL_URL}`
-        : "https://act-regenerative-studio.vercel.app";
-  }
-  return candidate;
-})();
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
@@ -63,7 +49,6 @@ export const metadata: Metadata = {
   openGraph: {
     type: "website",
     siteName: "A Curious Tractor",
-    url: siteUrl,
     title: "A Curious Tractor | Regenerative Innovation Studio",
     description:
       "Places, story systems, and public works you can step into. A regenerative studio on Jinibara Country.",
@@ -86,9 +71,6 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
-  },
-  alternates: {
-    canonical: "/",
   },
 };
 
@@ -153,19 +135,20 @@ export default function RootLayout({
 
         {/* Full-bleed main, no max-width constraint */}
         <main id="main-content" className="relative z-10 min-h-screen">{children}</main>
+        <JsonLd id="act-organization-jsonld" data={organizationJsonLd} />
+        <JsonLd id="act-website-jsonld" data={websiteJsonLd} />
         <UnifiedFooter
             currentProject="A Curious Tractor"
             showProjects={true}
             customLinks={[
               { label: "Projects", href: "/projects" },
+              { label: "Stories", href: "/stories" },
+              { label: "Blog", href: "/blog" },
               { label: "Art", href: "/art" },
               { label: "Farm", href: "/farm" },
-              { label: "Method", href: "/method" },
-              { label: "Economy", href: "/economy" },
-              { label: "About", href: "/about" },
-              { label: "Partners", href: "/partners" },
               { label: "Wiki", href: "/wiki" },
               { label: "Contact", href: "/contact" },
+              { label: "About", href: "/about" },
             ]}
             contactEmail="hi@act.place"
           />

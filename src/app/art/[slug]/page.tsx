@@ -341,7 +341,7 @@ export default async function ArtWorkPage({
             />
             {project.lcaaStages && project.lcaaStages.length > 0 && (
               <DetailRow
-                label="LCAA stage"
+                label="Method stage"
                 value={project.lcaaStages.join(', ')}
               />
             )}

@@ -1,222 +1,256 @@
 #!/usr/bin/env node
 
-import fs from "node:fs";
-import path from "node:path";
-import { fileURLToPath } from "node:url";
+import fs from 'node:fs';
+import path from 'node:path';
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-const repoRoot = path.resolve(__dirname, "..");
-const projectsPath = path.join(repoRoot, "src", "data", "projects.ts");
+const repoRoot = process.cwd();
+const publicRoot = path.join(repoRoot, 'public');
+const baseUrl = (process.env.MEDIA_AUDIT_BASE_URL || 'http://localhost:3001').replace(/\/$/, '');
+const asJson = process.argv.includes('--json');
 
-if (typeof fetch !== "function") {
-  console.error("Fetch API not available. Use Node 18+ to run this script.");
-  process.exit(1);
+const launchRoutes = [
+  '/',
+  '/projects',
+  '/stories',
+  '/stories/utopia-may-2026',
+  '/goods',
+  '/justicehub',
+  '/empathy-ledger',
+  '/harvest',
+  '/farm',
+  '/art',
+  '/wiki',
+  '/contact',
+];
+
+const sourceRoots = [
+  path.join(repoRoot, 'src/app'),
+  path.join(repoRoot, 'src/components'),
+  path.join(repoRoot, 'src/lib'),
+];
+
+const sourceExtensions = new Set(['.ts', '.tsx', '.js', '.jsx', '.md', '.mdx', '.json']);
+const publicAssetPattern =
+  /["'`](\/(?:(?:media|branding)\/[^"'`\s)]+|act_placemat_2026_poster\.png))["'`]/g;
+const mediaExtensionPattern = /\.(jpe?g|png|webp|gif|mp4|mov)$/i;
+const imageExtensionPattern = /\.(jpe?g|png|webp|gif)$/i;
+const videoExtensionPattern = /\.(mp4|mov|webm)(\?|#|$)/i;
+const imageWarnBytes = Number(process.env.MEDIA_AUDIT_IMAGE_WARN_BYTES || 1024 * 1024);
+const videoWarnBytes = Number(process.env.MEDIA_AUDIT_VIDEO_WARN_BYTES || 5 * 1024 * 1024);
+
+const failures = [];
+const warnings = [];
+
+function walkFiles(dir) {
+  if (!fs.existsSync(dir)) return [];
+
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  const files = [];
+
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      if (entry.name === 'node_modules' || entry.name === '.next') continue;
+      files.push(...walkFiles(fullPath));
+    } else if (sourceExtensions.has(path.extname(entry.name))) {
+      files.push(fullPath);
+    }
+  }
+
+  return files;
 }
 
-const args = new Set(process.argv.slice(2));
-const asJson = args.has("--json");
-const timeoutMs = 10000;
+function publicPathToFile(assetPath) {
+  const cleanPath = assetPath.split('?')[0].split('#')[0];
+  return path.join(publicRoot, cleanPath.replace(/^\//, ''));
+}
 
-const readProjectsSource = () => {
-  const raw = fs.readFileSync(projectsPath, "utf8");
-  const startIndex = raw.indexOf("export const projects");
-  if (startIndex === -1) {
-    throw new Error("Could not find projects array in src/data/projects.ts");
-  }
-  return raw.slice(startIndex);
-};
+function bytesLabel(bytes) {
+  if (bytes >= 1024 * 1024) return `${(bytes / (1024 * 1024)).toFixed(1)} MB`;
+  return `${Math.ceil(bytes / 1024)} KB`;
+}
 
-const extractField = (block, field) => {
-  const match = block.match(
-    new RegExp(`${field}:\\s*([\"'])([\\s\\S]*?)\\1`)
-  );
-  return match ? match[2].trim() : null;
-};
+function getTagAttr(tag, attr) {
+  const match = tag.match(new RegExp(`${attr}=["']([^"']*)["']`, 'i'));
+  return match?.[1] ?? null;
+}
 
-const parseProjects = (source) => {
-  const slugMatches = [...source.matchAll(/slug:\s*["']([^"']+)["']/g)];
-  return slugMatches.map((match, index) => {
-    const start = match.index ?? 0;
-    const end =
-      index + 1 < slugMatches.length
-        ? slugMatches[index + 1].index ?? source.length
-        : source.length;
-    const block = source.slice(start, end);
-    return {
-      slug: extractField(block, "slug") ?? "unknown",
-      title: extractField(block, "title") ?? "Untitled project",
-      heroImage: extractField(block, "heroImage"),
-      videoUrl: extractField(block, "videoUrl"),
-    };
-  });
-};
+function decodeImageSrc(src) {
+  if (!src) return null;
 
-const fetchWithTimeout = async (url, options) => {
-  const controller = new AbortController();
-  const timeout = setTimeout(() => controller.abort(), timeoutMs);
   try {
-    const response = await fetch(url, { ...options, signal: controller.signal });
-    return response;
-  } finally {
-    clearTimeout(timeout);
+    const parsed = new URL(src, baseUrl);
+    if (parsed.pathname === '/_next/image') {
+      const encoded = parsed.searchParams.get('url');
+      return encoded ? decodeURIComponent(encoded) : null;
+    }
+    return parsed.pathname;
+  } catch {
+    return src;
   }
-};
+}
 
-const checkUrl = async (url) => {
-  const attempts = [
-    { method: "HEAD" },
-    { method: "GET", headers: { Range: "bytes=0-0" } },
-  ];
+function isWeakAlt(alt) {
+  const trimmed = alt.trim();
+  if (!trimmed) return true;
+  if (mediaExtensionPattern.test(trimmed)) return true;
+  if (/^(image|photo|field photo|media item|hero image|selected image|current hero image)$/i.test(trimmed)) return true;
+  if (/^img[_-]?\d+/i.test(trimmed)) return true;
+  if (/^[a-z0-9]+[-_][a-z0-9-_]+[-_]\d{3,}$/i.test(trimmed)) return true;
+  return false;
+}
 
-  for (const attempt of attempts) {
+function collectSourceAssetReferences() {
+  const references = new Map();
+
+  for (const filePath of sourceRoots.flatMap(walkFiles)) {
+    const source = fs.readFileSync(filePath, 'utf8');
+    for (const match of source.matchAll(publicAssetPattern)) {
+      const assetPath = match[1];
+      if (!mediaExtensionPattern.test(assetPath)) continue;
+
+      if (!references.has(assetPath)) {
+        references.set(assetPath, []);
+      }
+      references.get(assetPath).push(path.relative(repoRoot, filePath));
+    }
+  }
+
+  return references;
+}
+
+function auditSourceReferences(references) {
+  for (const [assetPath, files] of references) {
+    const filePath = publicPathToFile(assetPath);
+    if (!fs.existsSync(filePath)) {
+      failures.push(`Missing public media file ${assetPath}, referenced by ${files.slice(0, 3).join(', ')}`);
+    }
+  }
+}
+
+function auditAssetSizes() {
+  const mediaRoot = path.join(publicRoot, 'media');
+  const brandingRoot = path.join(publicRoot, 'branding');
+  const assetFiles = [...walkPublicAssets(mediaRoot), ...walkPublicAssets(brandingRoot)];
+
+  for (const filePath of assetFiles) {
+    const relativePath = `/${path.relative(publicRoot, filePath)}`;
+    const size = fs.statSync(filePath).size;
+
+    if (imageExtensionPattern.test(filePath) && size > imageWarnBytes) {
+      warnings.push(`Image over ${bytesLabel(imageWarnBytes)}: ${relativePath} is ${bytesLabel(size)}`);
+    }
+    if (videoExtensionPattern.test(filePath) && size > videoWarnBytes) {
+      warnings.push(`Video over ${bytesLabel(videoWarnBytes)}: ${relativePath} is ${bytesLabel(size)}`);
+    }
+  }
+}
+
+function walkPublicAssets(dir) {
+  if (!fs.existsSync(dir)) return [];
+
+  const entries = fs.readdirSync(dir, { withFileTypes: true });
+  const files = [];
+
+  for (const entry of entries) {
+    const fullPath = path.join(dir, entry.name);
+    if (entry.isDirectory()) {
+      files.push(...walkPublicAssets(fullPath));
+    } else if (mediaExtensionPattern.test(entry.name)) {
+      files.push(fullPath);
+    }
+  }
+
+  return files;
+}
+
+async function auditRenderedRouteMedia() {
+  let imageCount = 0;
+  let localImageCount = 0;
+
+  for (const route of launchRoutes) {
+    let response;
+    let html;
+
     try {
-      const response = await fetchWithTimeout(url, {
-        method: attempt.method,
-        headers: attempt.headers,
-        redirect: "follow",
-      });
-
-      if (response.ok) {
-        return {
-          ok: true,
-          status: response.status,
-          method: attempt.method,
-          contentType: response.headers.get("content-type"),
-        };
-      }
-
-      if (response.status === 405 || response.status === 403) {
-        continue;
-      }
-
-      return {
-        ok: false,
-        status: response.status,
-        method: attempt.method,
-        contentType: response.headers.get("content-type"),
-      };
+      response = await fetch(`${baseUrl}${route}`);
+      html = await response.text();
     } catch (error) {
-      if (attempt.method === "GET") {
-        return {
-          ok: false,
-          status: null,
-          method: attempt.method,
-          error: error instanceof Error ? error.message : String(error),
-        };
+      failures.push(`${route}: media audit request failed: ${error.message}`);
+      continue;
+    }
+
+    if (response.status !== 200) {
+      failures.push(`${route}: expected 200 for media audit, got ${response.status}`);
+      continue;
+    }
+
+    const imageTags = html.match(/<img\b[^>]*>/gi) || [];
+    imageCount += imageTags.length;
+
+    for (const tag of imageTags) {
+      const alt = getTagAttr(tag, 'alt');
+      const src = decodeImageSrc(getTagAttr(tag, 'src'));
+
+      if (videoExtensionPattern.test(src || '')) {
+        failures.push(`${route}: rendered image points to video asset ${src}`);
+      }
+
+      if (alt === null) {
+        failures.push(`${route}: rendered image missing alt text`);
+      } else if (isWeakAlt(alt)) {
+        failures.push(`${route}: rendered image has weak alt text "${alt}"`);
+      }
+
+      if (src?.startsWith('/media/') || src?.startsWith('/branding/') || src === '/act_placemat_2026_poster.png') {
+        localImageCount += 1;
+        const filePath = publicPathToFile(src);
+        if (!fs.existsSync(filePath)) {
+          failures.push(`${route}: rendered image points to missing public file ${src}`);
+        }
       }
     }
   }
 
-  return {
-    ok: false,
-    status: null,
-    method: "HEAD",
-    error: "No successful request",
-  };
+  return { imageCount, localImageCount };
+}
+
+const references = collectSourceAssetReferences();
+auditSourceReferences(references);
+auditAssetSizes();
+const rendered = await auditRenderedRouteMedia();
+
+const summary = {
+  baseUrl,
+  launchRoutes: launchRoutes.length,
+  sourceReferences: references.size,
+  renderedImages: rendered.imageCount,
+  renderedLocalImages: rendered.localImageCount,
+  warnings: warnings.length,
+  failures: failures.length,
 };
 
-const formatList = (items) =>
-  items.length === 0 ? "None" : items.map((item) => `- ${item}`).join("\n");
+if (asJson) {
+  console.log(JSON.stringify({ summary, warnings, failures }, null, 2));
+} else {
+  console.log(`Media audit checked ${launchRoutes.length} launch routes against ${baseUrl}`);
+  console.log(`Source media references: ${references.size}`);
+  console.log(`Rendered images: ${rendered.imageCount}`);
+  console.log(`Rendered local images: ${rendered.localImageCount}`);
 
-const run = async () => {
-  const source = readProjectsSource();
-  const projects = parseProjects(source);
-
-  const missingHero = projects.filter((item) => !item.heroImage);
-  const missingVideo = projects.filter((item) => !item.videoUrl);
-
-  const urlEntries = [];
-  projects.forEach((project) => {
-    if (project.heroImage) {
-      urlEntries.push({
-        slug: project.slug,
-        title: project.title,
-        type: "heroImage",
-        url: project.heroImage,
-      });
-    }
-    if (project.videoUrl) {
-      urlEntries.push({
-        slug: project.slug,
-        title: project.title,
-        type: "videoUrl",
-        url: project.videoUrl,
-      });
-    }
-  });
-
-  const cache = new Map();
-  const results = [];
-
-  for (const entry of urlEntries) {
-    if (!cache.has(entry.url)) {
-      cache.set(entry.url, await checkUrl(entry.url));
-    }
-    results.push({
-      ...entry,
-      ...cache.get(entry.url),
-    });
+  if (warnings.length > 0) {
+    console.log('');
+    console.log('Warnings:');
+    warnings.forEach((warning) => console.log(`- ${warning}`));
   }
 
-  const failed = results.filter((result) => !result.ok);
-
-  if (asJson) {
-    const payload = {
-      summary: {
-        totalProjects: projects.length,
-        heroImages: projects.length - missingHero.length,
-        videos: projects.length - missingVideo.length,
-        missingHero: missingHero.length,
-        missingVideo: missingVideo.length,
-        urlChecks: results.length,
-        failedUrls: failed.length,
-      },
-      missingHero: missingHero.map((item) => ({
-        slug: item.slug,
-        title: item.title,
-      })),
-      missingVideo: missingVideo.map((item) => ({
-        slug: item.slug,
-        title: item.title,
-      })),
-      failed,
-    };
-    console.log(JSON.stringify(payload, null, 2));
-    process.exitCode = failed.length > 0 ? 1 : 0;
-    return;
+  if (failures.length > 0) {
+    console.error('');
+    console.error('Failures:');
+    failures.forEach((failure) => console.error(`- ${failure}`));
   }
+}
 
-  console.log("Media audit for src/data/projects.ts");
-  console.log("");
-  console.log(`Projects: ${projects.length}`);
-  console.log(`Hero images: ${projects.length - missingHero.length}`);
-  console.log(`Videos: ${projects.length - missingVideo.length}`);
-  console.log(`Missing hero images: ${missingHero.length}`);
-  console.log(`Missing videos: ${missingVideo.length}`);
-  console.log("");
-  console.log("Missing hero images:");
-  console.log(formatList(missingHero.map((item) => `${item.title} (${item.slug})`)));
-  console.log("");
-  console.log("Missing videos:");
-  console.log(formatList(missingVideo.map((item) => `${item.title} (${item.slug})`)));
-  console.log("");
-  console.log(`URL checks: ${results.length}`);
-  console.log(`Failed URLs: ${failed.length}`);
-  if (failed.length > 0) {
-    console.log("");
-    console.log("Failed URL details:");
-    failed.forEach((item) => {
-      console.log(
-        `- ${item.type} | ${item.title} (${item.slug}) | ${item.url} | status: ${
-          item.status ?? "n/a"
-        } | method: ${item.method}${item.error ? ` | error: ${item.error}` : ""}`
-      );
-    });
-    process.exitCode = 1;
-  }
-};
-
-run().catch((error) => {
-  console.error("Media audit failed:", error);
+if (failures.length > 0) {
   process.exit(1);
-});
+}

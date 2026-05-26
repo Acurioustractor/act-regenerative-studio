@@ -25,6 +25,20 @@ interface ProjectBlock {
   media?: { items?: PickerImage[] };
 }
 
+const imageUrlPattern = /\.(jpe?g|png|webp|gif)(\?|#|$)/i;
+
+function isImageUrl(url: string | null | undefined) {
+  return Boolean(url && imageUrlPattern.test(url));
+}
+
+function isPickerImage(item: PickerImage) {
+  return (
+    item.kind === "image" &&
+    isImageUrl(item.url) &&
+    (isImageUrl(item.thumbnail_url) || isImageUrl(item.preview_url) || isImageUrl(item.url))
+  );
+}
+
 export async function GET() {
   const snapshot = featuredSnapshot as unknown as {
     projects: Record<string, ProjectBlock | null>;
@@ -34,7 +48,7 @@ export async function GET() {
   const organizations = Object.entries(snapshot.organizations || {})
     .filter(([, o]) => o !== null)
     .map(([slug, o]) => {
-      const images = (o!.media?.items || []).filter((m) => m.kind === "image");
+      const images = (o!.media?.items || []).filter(isPickerImage);
       return {
         slug,
         name: o!.org?.name || slug,
@@ -48,7 +62,7 @@ export async function GET() {
   const projects = Object.entries(snapshot.projects)
     .filter(([, p]) => p !== null)
     .map(([slug, p]) => {
-      const images = (p!.media?.items || []).filter((m) => m.kind === "image");
+      const images = (p!.media?.items || []).filter(isPickerImage);
       return {
         slug,
         title: p!.project?.title || slug,

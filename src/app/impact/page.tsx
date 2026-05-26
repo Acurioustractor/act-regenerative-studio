@@ -164,7 +164,7 @@ export default function ImpactPage() {
                         Impact is for learning and accountability, not performance theatre
                     </h2>
                     <p className="max-w-3xl text-sm leading-7 text-[#D7C8B2]">
-                        The strongest next version of this page will connect ALMA more directly to canonical wiki pages, project-level live story signals, and clearer provenance. For now, this surface is deliberately framed as a working model rather than overstated as a live dashboard.
+                        The strongest next version of this page will connect the Australian Living Map of Alternatives more directly to canonical wiki pages, project-level live story signals, and clearer provenance. For now, this surface is deliberately framed as a working model rather than overstated as a live dashboard.
                     </p>
                 </div>
             </section>

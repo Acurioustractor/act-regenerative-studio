@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import { notFound } from 'next/navigation';
 
 import {
   canDisplayStoryteller,
@@ -35,7 +34,7 @@ export default function StorytellersIndexPage() {
       {storytellers.length === 0 ? (
         <section className="rounded-[28px] border border-[var(--we-sand)] bg-[#FDFBF7] p-8">
           <h2 className="font-[var(--font-display)] text-xl font-semibold text-[var(--we-olive)]">
-            Storytellers coming soon.
+            Storyteller profiles open as consent clears.
           </h2>
           <p className="mt-3 text-sm text-[var(--we-olive-deep)]">
             Profiles are published through the Empathy Ledger once storytellers have given consent. New voices will appear here as they come onboard.

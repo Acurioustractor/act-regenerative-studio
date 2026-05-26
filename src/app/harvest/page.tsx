@@ -19,13 +19,15 @@ import {
   EditorialSplit,
 } from "@/components/design-system";
 import { getProjectData } from "@/lib/projects/get-project-data";
+import { pageMetadata } from "@/lib/seo/site";
 import { notFound } from "next/navigation";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "The Harvest",
   description:
     "A regenerative community hub in Witta, seasonal kitchen, garden centre, workshops, and venue hire grounded in local food culture.",
-};
+  path: "/harvest",
+});
 
 export default async function HarvestPage() {
   const project = await getProjectData("the-harvest");
@@ -53,8 +55,8 @@ export default async function HarvestPage() {
         subhead="A seasonal kitchen, garden centre, and community hub on the former Green Harvest site in Witta, Queensland."
         coverVideo={project.coverVideo}
         coverImage={project.coverImage}
-        primaryCta={{ label: "Visit theharvestwitta.com.au", href: "https://theharvestwitta.com.au", external: true }}
-        secondaryCta={{ label: "The full story →", href: "#story" }}
+        primaryCta={{ label: "Visit The Harvest", href: "https://theharvestwitta.com.au", external: true }}
+        secondaryCta={{ label: "Read the story", href: "#story" }}
       />
 
       <ExternalHandoffCard
@@ -205,7 +207,8 @@ export default async function HarvestPage() {
               Shaun Fisher's oyster-shell cycle turns Listen, Curiosity,
               Action, Art into a material return loop. Shells from the oyster
               farm go back into the soil, feeding the garden that feeds the
-              kitchen that feeds the community. It is LCAA made tangible in
+              kitchen that feeds the community. It is Listen, Curiosity,
+              Action, Art made tangible in
               the material build of the place.
             </p>
           </div>

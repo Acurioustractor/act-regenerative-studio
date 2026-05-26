@@ -69,7 +69,7 @@ const operationalPrinciples = [
     number: 10,
     title: "Art Returns Us to Listen",
     description:
-      "Art is not a layer on top. It is how we make change felt and understood. The LCAA loop only completes when Art returns us to Listen.",
+      "Art is not a layer on top. It is how we make change felt and understood. The method only completes when Art returns us to Listen.",
   },
 ];
 

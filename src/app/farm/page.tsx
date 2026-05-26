@@ -18,13 +18,19 @@ import {
   EditorialSplit,
 } from "@/components/design-system";
 import { getProjectData } from "@/lib/projects/get-project-data";
+import { pageMetadata } from "@/lib/seo/site";
 import { notFound } from "next/navigation";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Black Cockatoo Valley",
   description:
     "138 acres on Jinibara Country. Conservation-first land practice, residencies, workshops, and habitat restoration.",
-};
+  path: "/farm",
+  image: {
+    url: "/media/field-stills/hero-farm-aerial.jpg",
+    alt: "Black Cockatoo Valley aerial view through morning fog",
+  },
+});
 
 export default async function FarmPage() {
   const project = await getProjectData("black-cockatoo-valley");
@@ -47,7 +53,7 @@ export default async function FarmPage() {
         coverVideo={project.coverVideo}
         coverImage={project.coverImage}
         primaryCta={{ label: "Plan a visit", href: "#inquiry" }}
-        secondaryCta={{ label: "The full story →", href: "#story" }}
+        secondaryCta={{ label: "Read the story", href: "#story" }}
       />
 
       {/* , , ,  THE WHY , , ,  */}

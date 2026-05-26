@@ -24,11 +24,19 @@ export default function UnifiedFooter({
     }))
     .filter((project) => !currentProject || project.name !== currentProject);
 
+  const studioLinks = [
+    { label: 'Method', href: '/method' },
+    { label: 'Economy', href: '/economy' },
+    { label: 'Partners', href: '/partners' },
+    { label: 'Governance', href: '/governance' },
+    { label: 'Impact', href: '/impact' },
+    { label: 'Studio services', href: '/studio' },
+  ];
+
   return (
     <footer className="mt-8 pb-2">
       <div className="mx-auto rounded-lg bg-[#1a1612] px-6 py-12 text-[#f2e8d9] md:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
-          {/* Column 1: About */}
           <div className="space-y-4">
             <p className="site-eyebrow text-[#dbc5a6] before:bg-[#8a7560]">
               A Curious Tractor
@@ -52,28 +60,43 @@ export default function UnifiedFooter({
               Jinibara Country. We cultivate seeds of impact through listening,
               curiosity, action, and art.
             </p>
-
-            {/* Custom Links */}
-            {customLinks.length > 0 && (
-              <nav aria-label="Footer, quick links" className="space-y-2 pt-4">
-                {customLinks.map((link) => (
-                  <Link
-                    key={link.href}
-                    href={link.href}
-                    className="site-glow-link block text-sm text-[#e8ddd0] transition hover:text-white"
-                  >
-                    {link.label}
-                  </Link>
-                ))}
-              </nav>
-            )}
+            <p className="text-xs leading-6 text-[#c8b8a4]">
+              A Curious Tractor Pty Ltd · ACN 697 347 676
+            </p>
+            <nav aria-label="Footer, studio context" className="flex flex-wrap gap-x-4 gap-y-2 text-sm text-[#e0d4c4]">
+              {studioLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="site-glow-link transition hover:text-white"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
           </div>
 
-          {/* Column 2: Public fields */}
+          <div className="space-y-4">
+            <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-[#dbc5a6]">
+              Core routes
+            </h3>
+            <nav aria-label="Footer, core routes" className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-[#e0d4c4]">
+              {customLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className="site-glow-link transition hover:text-white"
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </nav>
+          </div>
+
           {showProjects && (
             <div className="space-y-4">
               <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-[#dbc5a6]">
-                Fields of practice
+                Project fields
               </h3>
               <nav aria-label="Footer, fields of practice" className="space-y-3">
                 {fieldLinks.map((project) => (
@@ -106,38 +129,6 @@ export default function UnifiedFooter({
             </div>
           )}
 
-          {/* Column 3: Studio, identity, governance, partners */}
-          <div className="space-y-4">
-            <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-[#dbc5a6]">
-              Studio
-            </h3>
-            <nav aria-label="Footer, studio" className="grid grid-cols-2 gap-x-4 gap-y-2 text-sm text-[#e0d4c4]">
-              {[
-                { label: 'About', href: '/about' },
-                { label: 'Vision', href: '/vision' },
-                { label: 'Method', href: '/method' },
-                { label: 'Principles', href: '/principles' },
-                { label: 'How we work', href: '/how-we-work' },
-                { label: 'Governance', href: '/governance' },
-                { label: 'Impact', href: '/impact' },
-                { label: 'Studio services', href: '/studio' },
-                { label: 'Partners', href: '/partners' },
-                { label: 'Events', href: '/events' },
-                { label: 'Ask ACT', href: '/ask' },
-                { label: 'Wiki', href: '/wiki' },
-              ].map((link) => (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className="site-glow-link transition hover:text-white"
-                >
-                  {link.label}
-                </Link>
-              ))}
-            </nav>
-          </div>
-
-          {/* Column 4: Connect */}
           <div className="space-y-4">
             <h3 className="text-sm font-semibold uppercase tracking-[0.24em] text-[#dbc5a6]">
               Connect
@@ -153,12 +144,19 @@ export default function UnifiedFooter({
 
               <div className="pt-4">
                 <h4 className="mb-2 text-sm font-medium text-[#fff6ea]">
-                  Stay Connected
+                  Join the newsletter
                 </h4>
                 <p className="mb-3 text-xs text-[#c8b8a4]">
-                  Get updates about our ecosystem
+                  Get project notes, stories, and consent-cleared media.
                 </p>
-                <NewsletterForm />
+                <NewsletterForm contextLabel="Footer newsletter signup" source="footer" />
+                <p className="mt-3 text-[11px] leading-5 text-[#c8b8a4]">
+                  We handle contact details under our{' '}
+                  <Link href="/privacy" className="underline underline-offset-2 hover:text-white">
+                    Privacy
+                  </Link>{' '}
+                  settings.
+                </p>
               </div>
             </div>
           </div>
@@ -175,13 +173,14 @@ export default function UnifiedFooter({
             </p>
           </div>
 
-          <div className="flex gap-4">
+          <div className="flex flex-wrap gap-4">
             <Link href="/privacy" className="hover:text-white">
               Privacy
             </Link>
             <Link href="/terms" className="hover:text-white">
               Terms
             </Link>
+            <span>A Curious Tractor Pty Ltd · ACN 697 347 676</span>
             <span>© {new Date().getFullYear()} A Curious Tractor</span>
           </div>
         </div>

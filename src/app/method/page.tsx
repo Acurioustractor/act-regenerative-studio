@@ -109,7 +109,7 @@ export default function MethodPage() {
       <PageHero
         eyebrow="Method"
         title="The method behind the work"
-        description="ACT uses LCAA as a working loop for regenerative innovation. We listen deeply, stay curious, build with people, and translate learning into art that can travel further."
+        description="ACT uses Listen, Curiosity, Action, Art as a working loop for regenerative innovation. We listen deeply, stay curious, build with people, and translate learning into art that can travel further."
         actions={[
           { label: "Explore projects", href: "/projects" },
           { label: "Read our principles", href: "/principles", variant: "outline" },
@@ -128,7 +128,7 @@ export default function MethodPage() {
 
       <section className="space-y-10">
         <SectionHeading
-          eyebrow="LCAA"
+          eyebrow="Listen · Curiosity · Action · Art"
           title="Listen. Curiosity. Action. Art."
           description="This loop is how ACT moves from listening to practical response without losing meaning."
         />

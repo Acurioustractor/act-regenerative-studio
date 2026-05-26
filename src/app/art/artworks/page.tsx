@@ -24,7 +24,7 @@ export default async function ArtworksPage() {
         <SectionHeading
           eyebrow="Current works"
           title="What the studio is making right now"
-          description="These aren't placeholders. Each piece is in motion — in residency, on tour, in commission, or still being carried with the community that shaped it."
+          description="These works are active. Each piece is in motion, in residency, on tour, in commission, or being carried with the community that shaped it."
         />
         <div className="grid gap-6 lg:grid-cols-2">
           {works.map((work) => (

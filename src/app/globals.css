@@ -34,12 +34,14 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
   background: var(--site-bg);
   color: var(--site-ink);
   font-family: var(--font-body), 'Source Serif 4', Georgia, serif;
+  overflow-x: clip;
 }
 
 /* Default content container, generous white space */

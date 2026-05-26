@@ -591,7 +591,10 @@ export default async function ProjectPage({
       )}
 
       {/* Community Voices from Empathy Ledger */}
-      {project.empathyLedgerContent && (
+      {/* Launch hold (2026-05-27): storyteller blocks (Community Voices, Transcripts,
+          Key People) hidden while /storytellers is held — their profile links point
+          at the held surface. Restore by removing the `false &&` guards. */}
+      {false && project.empathyLedgerContent && (
         <CommunityVoicesSection
           storytellers={project.empathyLedgerContent.featured.storytellers}
           stories={project.empathyLedgerContent.featured.stories}
@@ -600,16 +603,20 @@ export default async function ProjectPage({
       )}
 
       {/* Transcripts (consented, from EL), silent if no transcripts for this project */}
-      <TranscriptsSection
-        transcripts={projectTranscripts}
-        projectTitle={project.title}
-      />
+      {false && (
+        <TranscriptsSection
+          transcripts={projectTranscripts}
+          projectTitle={project.title}
+        />
+      )}
 
       {/* Key people from wiki ## Key People section, silent if none */}
-      <ProjectKeyPeopleSection
-        people={project.keyPeople}
-        projectTitle={project.title}
-      />
+      {false && (
+        <ProjectKeyPeopleSection
+          people={project.keyPeople}
+          projectTitle={project.title}
+        />
+      )}
 
       {/* Related work, editorially-curated wiki backlinks */}
       {project.wikiBacklinks.length > 0 && (

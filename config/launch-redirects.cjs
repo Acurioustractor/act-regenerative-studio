@@ -38,6 +38,16 @@ const launchRedirects = [
   { source: '/projects/anat-spectra-2025', destination: '/events', permanent: true },
   { source: '/projects/cars-and-microcontrollers', destination: '/events', permanent: true },
   { source: '/projects/global-laundry-alliance', destination: '/events', permanent: true },
+
+  // Launch holds (2026-05-27) — temporary, reverse when each surface is ready.
+  // Kept as 307s (permanent: false) so engines don't cache them and the routes
+  // can return cleanly. Mirror any change here in src/app/sitemap.ts and the
+  // launchRoutes list in scripts/check-launch-site.mjs.
+  // - /storytellers: held until more than one consented profile is syndicated.
+  // - /ask: public AI Q&A held for a later phase (cost/safety/injection review).
+  { source: '/storytellers', destination: '/stories', permanent: false },
+  { source: '/storytellers/:slug*', destination: '/stories', permanent: false },
+  { source: '/ask', destination: '/wiki', permanent: false },
 ];
 
 module.exports = { launchRedirects };

@@ -369,7 +369,8 @@ export default async function JusticeHubPage() {
       )}
 
       {/* , , ,  STORYTELLERS (fallback) , , ,  */}
-      {portraitPeople.length < 2 && (storytellers.length + stories.length >= 2) && (
+      {/* Launch hold (2026-05-27): storyteller strip hidden while /storytellers is held. Restore by removing `false &&`. */}
+      {false && portraitPeople.length < 2 && (storytellers.length + stories.length >= 2) && (
         <ScrollReveal>
           <section className="full-bleed bg-[var(--site-surface)] px-8 py-32 md:py-44">
             <div className="mx-auto max-w-[1200px]">

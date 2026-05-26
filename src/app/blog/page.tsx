@@ -50,12 +50,8 @@ export default async function BlogPage() {
           >
             Visit the Empathy Ledger <span aria-hidden="true">&rarr;</span>
           </a>
-          <Link
-            href="/storytellers"
-            className="inline-flex items-center gap-2 text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--we-warm-brown)] transition-all hover:gap-3 hover:text-[var(--we-olive)]"
-          >
-            Meet the storytellers <span aria-hidden="true">&rarr;</span>
-          </Link>
+          {/* Launch hold (2026-05-27): "Meet the storytellers" link removed while
+              the /storytellers surface is held. */}
           <p className="text-[11px] uppercase tracking-[0.18em] text-[var(--we-warm-brown)]/70">
             {posts.length} stor{posts.length === 1 ? "y" : "ies"} flowing
           </p>

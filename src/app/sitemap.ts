@@ -29,7 +29,7 @@ const staticRoutes: Array<{
   { path: "/", changeFrequency: "weekly", priority: 1.0 },
   { path: "/projects", changeFrequency: "weekly", priority: 0.9 },
   { path: "/stories", changeFrequency: "weekly", priority: 0.8 },
-  { path: "/storytellers", changeFrequency: "weekly", priority: 0.9 },
+  // Launch hold (2026-05-27): /storytellers held until >1 consented profile syncs.
   { path: "/art", changeFrequency: "weekly", priority: 0.9 },
   { path: "/farm", changeFrequency: "monthly", priority: 0.8 },
   { path: "/harvest", changeFrequency: "monthly", priority: 0.8 },
@@ -52,7 +52,7 @@ const staticRoutes: Array<{
   { path: "/blog", changeFrequency: "weekly", priority: 0.7 },
   { path: "/media", changeFrequency: "weekly", priority: 0.6 },
   { path: "/people", changeFrequency: "weekly", priority: 0.6 },
-  { path: "/ask", changeFrequency: "monthly", priority: 0.5 },
+  // Launch hold (2026-05-27): /ask (public AI Q&A) held for a later phase.
   { path: "/farm/stay", changeFrequency: "monthly", priority: 0.6 },
   { path: "/farm/retreats", changeFrequency: "monthly", priority: 0.6 },
   { path: "/farm/workshops", changeFrequency: "monthly", priority: 0.6 },
@@ -127,7 +127,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...staticEntries,
     ...projectEntries,
     ...wikiEntries,
-    ...storytellerEntries,
+    // Launch hold (2026-05-27): storyteller URLs withheld while the surface is
+    // held. storytellerEntries stays computed for an easy restore.
+    // ...storytellerEntries,
     ...artEntries,
     ...editorialEntries,
   ];

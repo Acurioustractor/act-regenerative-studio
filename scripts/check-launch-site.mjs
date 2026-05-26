@@ -14,7 +14,7 @@ const launchRoutes = [
   '/projects',
   '/stories',
   '/stories/utopia-may-2026',
-  '/storytellers',
+  // Launch hold (2026-05-27): /storytellers held — see config/launch-redirects.cjs
   '/art',
   '/farm',
   '/harvest',
@@ -37,7 +37,7 @@ const launchRoutes = [
   '/blog',
   '/media',
   '/people',
-  '/ask',
+  // Launch hold (2026-05-27): /ask held — see config/launch-redirects.cjs
   '/farm/stay',
   '/farm/retreats',
   '/farm/workshops',

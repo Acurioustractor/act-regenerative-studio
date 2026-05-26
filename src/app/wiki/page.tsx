@@ -90,14 +90,8 @@ export default async function WikiHomepage() {
               cta: 'Open the ecosystem',
               stat: `${ecosystemSummary.surfaceCount} public works`,
             },
-            {
-              title: 'Voices from the field',
-              description:
-                'The people whose stories, craft, and community work shape every project, carried with consent.',
-              href: '/storytellers',
-              cta: 'Meet the storytellers',
-              stat: `${storytellerCount} storytellers`,
-            },
+            // Launch hold (2026-05-27): "Voices from the field" card removed while
+            // the /storytellers surface is held. Restore alongside that surface.
           ].map((item) => (
             <Link
               key={item.title}

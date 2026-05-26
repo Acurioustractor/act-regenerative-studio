@@ -183,13 +183,6 @@ export default async function EcosystemPage() {
               cta: "Enter the works",
             },
             {
-              title: "Storytellers",
-              description:
-                "The people the work comes through, their stories, carried with consent.",
-              href: "/storytellers",
-              cta: "Meet storytellers",
-            },
-            {
               title: "Method",
               description:
                 "Listen, curiosity, action, art. The sequence that shapes every project.",

@@ -192,7 +192,6 @@ export default async function HomePage() {
           <div className="flex flex-wrap gap-12 border-t border-[#FAFAF7]/10 pt-8">
             {[
               { n: "58", l: "Projects" },
-              { n: "319", l: "Storytellers" },
               { n: "10", l: "Artworks" },
               { n: "191", l: "Wiki articles" },
             ].map(({ n, l }) => (
@@ -232,7 +231,7 @@ export default async function HomePage() {
               { label: 'See some art', href: '/art' },
               { label: 'Be an artist', href: '/art' },
               { label: 'Have some fun', href: '/events' },
-              { label: 'Find myself', href: '/storytellers' },
+              { label: 'Find myself', href: '/stories' },
               { label: 'Buy a bed', href: '/goods' },
               { label: 'Buy a washing machine', href: '/goods' },
             ].map((chip) => (
@@ -567,18 +566,14 @@ export default async function HomePage() {
           </div>
 
           {/* Centred CTAs below the grid */}
+          {/* Launch hold (2026-05-27): "Meet the storytellers" CTA removed while
+              the /storytellers surface is held. Restore alongside that surface. */}
           <div className="mx-auto mt-14 flex max-w-[820px] flex-wrap items-center justify-center gap-4 md:mt-20 md:gap-6">
             <Link
               href="/stories"
               className="inline-flex items-center gap-2 rounded-full border border-[#CFA16B]/60 bg-[#CFA16B]/5 px-7 py-3.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#F3EBDD] transition-all hover:-translate-y-0.5 hover:border-[#CFA16B] hover:bg-[#CFA16B]/15 hover:gap-3 md:text-sm"
             >
               Read all stories <span aria-hidden="true">&rarr;</span>
-            </Link>
-            <Link
-              href="/storytellers"
-              className="inline-flex items-center gap-2 rounded-full border border-transparent px-6 py-3.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#CFA16B] transition-all hover:gap-3 hover:text-[#E0B680] md:text-sm"
-            >
-              Meet the storytellers <span aria-hidden="true">&rarr;</span>
             </Link>
           </div>
         </section>

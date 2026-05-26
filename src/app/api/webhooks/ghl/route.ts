@@ -225,7 +225,7 @@ async function handleContactForm(payload: GHLWebhookPayload) {
   // Add partnership tags in GHL
   try {
     const { addTagsToContact } = await import('@/lib/ghl');
-    await addTagsToContact(payload.contactId, ['Partnership Inquiry', 'Website Signup']);
+    await addTagsToContact(payload.contactId, ['Partnership Inquiry', 'Website Signup', 'act-inquiry', 'project-regen-studio']);
     console.log("✅ Added partnership tags to contact in GHL");
   } catch (error) {
     console.error("❌ Failed to add partnership tags in GHL:", error);

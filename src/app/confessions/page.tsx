@@ -83,18 +83,10 @@ function Redact({ w = 'w-20' }: { w?: string }) {
 export default function ConfessionsPage() {
   return (
     <div className="relative bg-[#0A0908] text-[#F3EBDD]">
-      {/* Analog film grain over the whole page. Subtle, decorative, non-interactive. */}
-      <div
-        aria-hidden="true"
-        className="pointer-events-none absolute inset-0 z-[60] opacity-[0.06] mix-blend-soft-light"
-        style={{
-          backgroundImage:
-            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
-        }}
-      />
-
-      {/* HERO, immersive. The interactive field is the backdrop. */}
-      <section className="relative min-h-[100svh] overflow-hidden">
+      {/* HERO, immersive. `full-bleed` (see globals.css) makes this first child
+          break the default 1200px container so the dark page runs edge to edge
+          and sits flush behind the fixed nav, like the homepage hero. */}
+      <section className="full-bleed relative min-h-[100svh] overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_38%,#171310_0%,#0A0908_62%)]" />
         <ConfessionField voices={heroVoices} />
 
@@ -357,6 +349,17 @@ export default function ConfessionsPage() {
           </p>
         </div>
       </section>
+
+      {/* Analog film grain over the whole page. Subtle, decorative, non-interactive.
+          Last child + absolute inset-0 so it overlays every section. */}
+      <div
+        aria-hidden="true"
+        className="pointer-events-none absolute inset-0 z-[60] opacity-[0.06] mix-blend-soft-light"
+        style={{
+          backgroundImage:
+            "url(\"data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E\")",
+        }}
+      />
     </div>
   );
 }

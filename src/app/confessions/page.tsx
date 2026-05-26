@@ -2,7 +2,6 @@ import Link from 'next/link';
 
 import { CallTimer } from '@/components/confessions/CallTimer';
 import { ConfessionField } from '@/components/confessions/ConfessionField';
-import { Murmuration } from '@/components/confessions/Murmuration';
 import { RotaryDial } from '@/components/confessions/RotaryDial';
 import { VoicemailInbox } from '@/components/confessions/VoicemailInbox';
 import { heroVoices, mockConfessions } from '@/data/confessions-mock';
@@ -313,27 +312,6 @@ export default function ConfessionsPage() {
             consulted to exhaustion. Confession booth meets late-night talkback. The phone is open the
             whole of Philanthropy Week.
           </p>
-        </div>
-      </section>
-
-      {/* THE MURMURATION — themes as gravity wells, the shape of the findings */}
-      <section className="border-t border-[#2E2215] bg-[#1A130B] px-6 py-24 md:py-32">
-        <div className="mx-auto max-w-6xl">
-          <div className="text-center">
-            <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
-              The findings, as a shape
-            </p>
-            <h2 className="mt-7 font-[var(--font-display)] text-[clamp(1.8rem,4vw,2.6rem)] font-semibold leading-tight">
-              What philanthropy is, and isn’t, hearing.
-            </h2>
-            <p className="mx-auto mt-5 max-w-xl font-[var(--font-body)] leading-8 text-[#A99B86]">
-              Confessions drift toward what they are about. The money. The power. The forms. The shame.
-              The hope. The breakthrough. The clusters are the findings. Click a node to hear one.
-            </p>
-          </div>
-          <div className="mt-14">
-            <Murmuration confessions={mockConfessions} />
-          </div>
         </div>
       </section>
 

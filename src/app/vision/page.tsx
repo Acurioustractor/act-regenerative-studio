@@ -106,12 +106,6 @@ export default async function VisionPage() {
                         >
                             Open projects
                         </Link>
-                        <Link
-                            href="/wiki"
-                            className="rounded-full border border-[#CFA16B] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#F3EBDD] transition hover:bg-[#1B1A16]"
-                        >
-                            Open wiki
-                        </Link>
                     </div>
                 </div>
             </section>

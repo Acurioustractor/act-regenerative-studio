@@ -96,7 +96,6 @@ export default async function StudioPage() {
         description="The studio is what keeps the projects connected. Shared land, shared method, shared memory, so the work can grow without the pieces drifting into unrelated brands."
         actions={[
           { label: "Explore projects", href: "/projects" },
-          { label: "Open the wiki", href: "/wiki", variant: "outline" },
         ]}
       >
         <div className="space-y-4">

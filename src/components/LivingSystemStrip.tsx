@@ -1,5 +1,7 @@
 import Link from "next/link";
 
+import { WIKI_PUBLIC } from "@/lib/launch-flags";
+
 type LiveMeta = {
   sourceLabel?: string | null;
   siteLabel?: string | null;
@@ -80,7 +82,7 @@ export default function LivingSystemStrip({
             </p>
           </div>
           <div className="flex flex-wrap gap-3">
-            {wiki ? (
+            {wiki && WIKI_PUBLIC ? (
               <Link
                 href={wiki.href}
                 className="rounded-full bg-[#4CAF50] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#3E9845]"

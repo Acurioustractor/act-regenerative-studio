@@ -13,3 +13,11 @@
  * build type-check. A `boolean`-typed flag keeps normal narrowing.
  */
 export const STORYTELLERS_PUBLIC: boolean = false;
+
+/**
+ * `WIKI_PUBLIC` gates the public /wiki surface and every link/CTA that points at
+ * it while the wiki is a longer build. Flip to `true` to relaunch (also re-open
+ * the /wiki routes in config/launch-redirects.cjs + sitemap.ts + check-launch-site.mjs
+ * and restore the nav entries). Annotated `: boolean` for the same narrowing reason.
+ */
+export const WIKI_PUBLIC: boolean = false;

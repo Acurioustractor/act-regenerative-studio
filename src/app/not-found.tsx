@@ -53,21 +53,6 @@ export default function NotFound() {
           </Link>
 
           <Link
-            href="/wiki"
-            className="rounded-[24px] border border-[var(--we-sand)] bg-white/90 p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-[#7A9B76] hover:shadow-lg"
-          >
-            <p className="text-xs uppercase tracking-[0.24em] text-[#7A6A55]">
-              Thinking in public
-            </p>
-            <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
-              Wiki
-            </h2>
-            <p className="mt-2 text-sm leading-6 text-[var(--we-brown)]">
-              Methods, decisions, and the people behind every project.
-            </p>
-          </Link>
-
-          <Link
             href="/contact"
             className="rounded-[24px] border border-[var(--we-sand)] bg-white/90 p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-[#7A9B76] hover:shadow-lg"
           >

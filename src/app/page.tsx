@@ -234,7 +234,6 @@ export default async function HomePage() {
               { label: 'Partner', href: '/contact?type=project-partnership&source=home-audience' },
               { label: 'Support the work', href: '/contact?type=support&source=home-audience' },
               { label: 'Share a story', href: '/contact?type=share-your-story&source=home-audience' },
-              { label: 'Research or write', href: '/wiki' },
               { label: 'Visit the farm', href: '/farm' },
               { label: 'Visit The Harvest', href: '/harvest' },
               { label: 'See some art', href: '/art' },

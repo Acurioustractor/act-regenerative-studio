@@ -38,7 +38,7 @@ const staticRoutes: Array<{
   { path: "/justicehub", changeFrequency: "monthly", priority: 0.8 },
   { path: "/ecosystem", changeFrequency: "monthly", priority: 0.8 },
   { path: "/method", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/wiki", changeFrequency: "weekly", priority: 0.7 },
+  // Launch hold (2026-05-27): /wiki held (longer build); see config/launch-redirects.cjs.
   { path: "/about", changeFrequency: "monthly", priority: 0.7 },
   { path: "/vision", changeFrequency: "monthly", priority: 0.6 },
   { path: "/principles", changeFrequency: "monthly", priority: 0.6 },
@@ -126,9 +126,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     ...staticEntries,
     ...projectEntries,
-    ...wikiEntries,
-    // Launch hold (2026-05-27): storyteller URLs withheld while the surface is
-    // held. storytellerEntries stays computed for an easy restore.
+    // Launch hold (2026-05-27): wiki + storyteller URLs withheld while those
+    // surfaces are held. Both stay computed for an easy restore.
+    // ...wikiEntries,
     // ...storytellerEntries,
     ...artEntries,
     ...editorialEntries,

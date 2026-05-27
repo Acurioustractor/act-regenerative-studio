@@ -30,8 +30,7 @@ export default function ImpactPage() {
                 title="What's working, what we're learning"
                 description="How we think about impact: the initiatives, the communities they sit with, who holds authority in each, and the evidence behind each claim. Honest about what's strong and what's still early."
                 actions={[
-                    { label: "Open the wiki", href: "/wiki" },
-                    { label: "Explore projects", href: "/projects", variant: "outline" },
+                    { label: "Explore projects", href: "/projects" },
                 ]}
             >
                 <div className="space-y-3">

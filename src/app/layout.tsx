@@ -29,7 +29,6 @@ const navItems = [
   { label: "Stories", href: "/stories" },
   { label: "Art", href: "/art" },
   { label: "Farm", href: "/farm" },
-  { label: "Wiki", href: "/wiki" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -146,7 +145,6 @@ export default function RootLayout({
               { label: "Blog", href: "/blog" },
               { label: "Art", href: "/art" },
               { label: "Farm", href: "/farm" },
-              { label: "Wiki", href: "/wiki" },
               { label: "Contact", href: "/contact" },
               { label: "About", href: "/about" },
             ]}

@@ -45,9 +45,12 @@ const launchRedirects = [
   // launchRoutes list in scripts/check-launch-site.mjs.
   // - /storytellers: held until more than one consented profile is syndicated.
   // - /ask: public AI Q&A held for a later phase (cost/safety/injection review).
+  // - /wiki: living wiki is a longer build; held until it is ready.
   { source: '/storytellers', destination: '/stories', permanent: false },
   { source: '/storytellers/:slug*', destination: '/stories', permanent: false },
-  { source: '/ask', destination: '/wiki', permanent: false },
+  { source: '/ask', destination: '/projects', permanent: false },
+  { source: '/wiki', destination: '/projects', permanent: false },
+  { source: '/wiki/:slug*', destination: '/projects', permanent: false },
 ];
 
 module.exports = { launchRedirects };

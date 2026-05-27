@@ -23,7 +23,7 @@ const launchRoutes = [
   '/justicehub',
   '/ecosystem',
   '/method',
-  '/wiki',
+  // Launch hold (2026-05-27): /wiki held — see config/launch-redirects.cjs
   '/about',
   '/vision',
   '/principles',

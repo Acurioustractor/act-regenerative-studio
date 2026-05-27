@@ -60,6 +60,11 @@ export interface ArtProjectConfig {
   philosophy?: string;
   impact?: string;
   /**
+   * Local looping hero video for video-led works that have no Empathy Ledger
+   * photo media. Used as the card thumbnail and the detail-page hero.
+   */
+  heroVideo?: { url: string; posterUrl?: string; alt?: string };
+  /**
    * Direct Empathy Ledger link for this art piece. Use when the art work
    * doesn't map cleanly to a parent ACT project slug. Takes precedence over
    * the ACT-project fallback when rendering the EL Connections panel.
@@ -164,6 +169,11 @@ const ART_PROJECTS: ArtProjectConfig[] = [
     year: '2026',
     photoCount: 0,
     storytellerCount: 0,
+    heroVideo: {
+      url: '/media/field-videos/confessions-to-philanthropy.mp4',
+      posterUrl: '/media/field-stills/confessions-to-philanthropy.jpg',
+      alt: 'Confessions to Philanthropy, the gold phone film',
+    },
     connectedProject: 'Confessions to Philanthropy',
     connectedProjectHref: '/confessions',
     philosophy:
@@ -447,7 +457,8 @@ export function splitFeaturedAndEmerging(
       project.status === 'concept' ||
       (project.media.length === 0 &&
         project.storytellerCount === 0 &&
-        project.stories.length === 0)
+        project.stories.length === 0 &&
+        !project.heroVideo)
     ) {
       emerging.push(project);
     } else {

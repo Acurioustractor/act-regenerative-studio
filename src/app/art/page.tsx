@@ -2,6 +2,7 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import SectionHeading from '@/components/SectionHeading';
+import { SiteLoopVideo } from '@/components/media/SiteLoopVideo';
 import {
   getAllArtProjects,
   splitFeaturedAndEmerging,
@@ -45,19 +46,28 @@ function ArtProjectBlock({ project, index }: { project: HydratedArtProject; inde
   return (
     <article className="group">
       <Link href={`/art/${project.slug}`} className="block">
-        {hasMedia && heroUrl ? (
+        {(hasMedia && heroUrl) || project.heroVideo ? (
           <div className={`grid gap-0 lg:grid-cols-[1fr_1fr] ${isEven ? '' : 'lg:direction-rtl'}`}>
-            {/* Image panel */}
+            {/* Media panel (image, or looping video when the work is video-led) */}
             <div className={`relative overflow-hidden ${isEven ? 'lg:rounded-l-[32px]' : 'lg:rounded-r-[32px] lg:order-2'} rounded-t-[32px] lg:rounded-none`}>
               <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[520px]">
-                <Image
-                  src={heroUrl}
-                  alt={project.heroImage?.alt || project.title}
-                  fill
-                  priority={index === 0}
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                />
+                {heroUrl ? (
+                  <Image
+                    src={heroUrl}
+                    alt={project.heroImage?.alt || project.title}
+                    fill
+                    priority={index === 0}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  />
+                ) : project.heroVideo ? (
+                  <SiteLoopVideo
+                    src={project.heroVideo.url}
+                    poster={project.heroVideo.posterUrl}
+                    title={project.heroVideo.alt || project.title}
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  />
+                ) : null}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent lg:bg-none" />
               </div>
               {/* Gallery count badge */}

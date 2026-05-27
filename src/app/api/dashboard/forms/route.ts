@@ -26,10 +26,11 @@ export async function GET() {
       },
     };
 
+    // Reads the same table the form API writes to (pending_form_submissions).
     const { data: submissions, error } = await supabase
-      .from('ghl_submissions')
+      .from('pending_form_submissions')
       .select('*')
-      .order('submitted_at', { ascending: false })
+      .order('created_at', { ascending: false })
       .limit(50);
 
     if (error) {
@@ -46,11 +47,11 @@ export async function GET() {
     const sevenDaysAgo = new Date(now.getTime() - 7 * 24 * 60 * 60 * 1000);
 
     response.stats.total24h = submissions.filter(
-      s => new Date(s.submitted_at) > oneDayAgo
+      s => new Date(s.created_at) > oneDayAgo
     ).length;
 
     response.stats.total7d = submissions.filter(
-      s => new Date(s.submitted_at) > sevenDaysAgo
+      s => new Date(s.created_at) > sevenDaysAgo
     ).length;
 
     response.stats.byType = submissions.reduce((acc: Record<string, number>, s: any) => {
@@ -59,15 +60,23 @@ export async function GET() {
       return acc;
     }, {});
 
-    response.submissions = submissions.map((s: any) => ({
-      id: s.id,
-      formName: s.form_name,
-      formType: s.form_type,
-      submittedAt: s.submitted_at,
-      name: s.name,
-      email: s.email,
-      synced: s.synced_to_notion,
-    }));
+    response.submissions = submissions.map((s: any) => {
+      const fields = (s.fields || {}) as Record<string, unknown>;
+      const str = (v: unknown) => (typeof v === 'string' ? v.trim() : '');
+      const name =
+        [str(fields.firstName), str(fields.lastName)].filter(Boolean).join(' ') ||
+        str(fields.name) ||
+        str(fields.fullName);
+      return {
+        id: s.id,
+        formName: s.form_type,
+        formType: s.form_type,
+        submittedAt: s.created_at,
+        name: name || null,
+        email: str(fields.email) || null,
+        synced: s.synced,
+      };
+    });
 
     return NextResponse.json(response);
   } catch (error) {

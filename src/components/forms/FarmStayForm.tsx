@@ -52,7 +52,7 @@ export function FarmStayForm({
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          projectCode: 'ACT-FM',
+          projectCode: 'ACT-BV',
           formType: 'farm-stay',
           fields: formData,
           additionalTags: [

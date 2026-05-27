@@ -147,12 +147,66 @@ export async function POST(request: NextRequest) {
 }
 
 /**
- * Fallback handler when act-ecosystem API is unavailable
- * Stores submission locally for later sync
+ * Direct GHL push (production path).
+ *
+ * The act-ecosystem Command Center normally owns the GHL integration, but it is a
+ * localhost-only service, so in production we push to the SAME GHL location
+ * directly via the shared client (reads GHL_API_KEY / GHL_LOCATION_ID). Best
+ * effort: the contact is tagged with the project code, form type, and the form's
+ * context tags so it matches the ecosystem's tagging. Returns true on upsert.
+ *
+ * This only runs from the fallback path (Command Center unreachable), so in dev
+ * (Command Center up) the contact is not double-created.
+ */
+async function pushToGHL(body: NormalizedFormSubmission): Promise<boolean> {
+  if (!process.env.GHL_API_KEY || !process.env.GHL_LOCATION_ID) return false;
+
+  try {
+    const { createGHLClient } = await import('@/lib/ghl/client');
+    const client = createGHLClient();
+    const fields = body.fields;
+    const str = (value: unknown): string | undefined =>
+      typeof value === 'string' && value.trim().length > 0 ? value.trim() : undefined;
+
+    const tags = Array.from(
+      new Set([
+        ...body.additionalTags,
+        ...(body.projectCode ? [body.projectCode] : []),
+        ...(body.formType ? [body.formType] : []),
+      ])
+    );
+
+    await client.contacts.upsert({
+      email: str(fields.email),
+      phone: str(fields.phone),
+      firstName: str(fields.firstName),
+      lastName: str(fields.lastName),
+      name: str(fields.name) || str(fields.fullName),
+      source: 'act-regenerative-studio',
+      tags,
+    });
+
+    return true;
+  } catch (error) {
+    console.error('GHL direct push failed:', error);
+    return false;
+  }
+}
+
+/**
+ * Command-Center-unavailable path. Pushes the contact straight to GHL (the same
+ * location the Command Center uses), then always records the full submission in
+ * Supabase so the message body is never lost. The Supabase row is marked
+ * synced=true when GHL already has the contact, so a later drain won't
+ * double-create it. Succeeds if either GHL or Supabase accepted the submission.
  */
 async function handleFallback(body: NormalizedFormSubmission): Promise<NextResponse> {
-  console.warn('Using fallback. Storing submission locally.');
+  const ghlOk = await pushToGHL(body);
+  console.warn(
+    `Command Center unavailable. GHL direct push: ${ghlOk ? 'ok' : 'skipped/failed'}. Recording submission.`
+  );
 
+  let stored = false;
   try {
     const { createClient } = await import('@supabase/supabase-js');
     const supabase = createClient(
@@ -160,7 +214,6 @@ async function handleFallback(body: NormalizedFormSubmission): Promise<NextRespo
       process.env.SUPABASE_SERVICE_ROLE_KEY!
     );
 
-    // Store in a pending submissions table
     const { error } = await supabase.from('pending_form_submissions').insert({
       project_code: body.projectCode,
       form_type: body.formType,
@@ -168,28 +221,32 @@ async function handleFallback(body: NormalizedFormSubmission): Promise<NextRespo
       additional_tags: body.additionalTags,
       source: 'act-regenerative-studio',
       created_at: new Date().toISOString(),
-      synced: false,
+      synced: ghlOk,
     });
 
     if (error) {
-      console.error('Failed to store fallback submission:', error);
-      return NextResponse.json(
-        { success: false, error: 'Failed to store submission' },
-        { status: 500 }
-      );
+      console.error('Failed to store submission:', error);
+    } else {
+      stored = true;
     }
+  } catch (error) {
+    console.error('Supabase store error:', error);
+  }
 
+  if (ghlOk || stored) {
     return NextResponse.json({
       success: true,
-      message: 'Submission queued for processing',
+      message: ghlOk
+        ? 'Submitted to GHL'
+        : 'Submission queued for processing',
+      ghl: ghlOk,
+      stored,
       fallback: true,
     });
-
-  } catch (error) {
-    console.error('Fallback storage error:', error);
-    return NextResponse.json(
-      { success: false, error: 'Service temporarily unavailable' },
-      { status: 503 }
-    );
   }
+
+  return NextResponse.json(
+    { success: false, error: 'Service temporarily unavailable' },
+    { status: 503 }
+  );
 }

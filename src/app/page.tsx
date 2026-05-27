@@ -18,6 +18,8 @@ import { pageMetadata } from "@/lib/seo/site";
 import featuredSnapshot from "@/data/empathy-ledger-featured.generated.json";
 import { heroFragments } from "@/data/confessions-mock";
 import { CallCTA } from "@/components/confessions/CallCTA";
+import { RotaryDial } from "@/components/confessions/RotaryDial";
+import { FullscreenVideo } from "@/components/flagship/FullscreenVideo";
 
 export const metadata = pageMetadata({
   title: "A Curious Tractor",
@@ -236,39 +238,58 @@ export default async function HomePage() {
            (heroFragments); the real moderated feed lands via Phase 2. ---- */}
       <section className="full-bleed relative overflow-hidden bg-[#15100A] px-6 py-24 text-[#F3EBDD] md:px-10 md:py-32">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_36%,#241910_0%,#15100A_62%)]" />
+        {/* Rotary-dial engraving: the gold-phone object under a single light. */}
+        <RotaryDial className="pointer-events-none absolute left-1/2 top-1/2 h-[min(80vmin,720px)] w-[min(80vmin,720px)] -translate-x-1/2 -translate-y-1/2 text-[#CFA16B]/[0.06]" />
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,#0E0A05_100%)]" />
-        <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center text-center">
-          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-[#CFA16B]">
-            Confessions to Philanthropy · Queensland Philanthropy Week
-          </p>
-          <h2 className="mt-6 font-[var(--font-display)] text-[clamp(2.1rem,5vw,3.6rem)] font-semibold leading-[1.05] text-[#F3EBDD]">
-            Tell philanthropy what you really think.
-          </h2>
-          <p className="mt-6 max-w-xl font-[var(--font-body)] text-[17px] leading-8 text-[#D8CBB6]">
-            There is a lot the sector never says out loud. Funders who know the model is bent.
-            Grantees who cannot say it because they need the cheque. So we built a gold phone.
-            Call it. Confess. No name, no consequences, no &ldquo;dear valued stakeholder&rdquo;.
-          </p>
+        <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2 md:gap-16">
+          {/* The pitch */}
+          <div className="text-center md:text-left">
+            <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-[#CFA16B]">
+              Confessions to Philanthropy · Queensland Philanthropy Week
+            </p>
+            <h2 className="mt-6 font-[var(--font-display)] text-[clamp(2.1rem,5vw,3.6rem)] font-semibold leading-[1.05] text-[#F3EBDD]">
+              Tell philanthropy what you really think.
+            </h2>
+            <p className="mt-6 mx-auto max-w-xl font-[var(--font-body)] text-[17px] leading-8 text-[#D8CBB6] md:mx-0">
+              There is a lot the sector never says out loud. Funders who know the model is bent.
+              Grantees who cannot say it because they need the cheque. So we built a gold phone.
+              Call it. Confess. No name, no consequences, no &ldquo;dear valued stakeholder&rdquo;.
+            </p>
 
-          <ul className="mt-9 flex flex-wrap items-center justify-center gap-2.5">
-            {heroFragments.slice(1, 4).map((line) => (
-              <li
-                key={line}
-                className="rounded-full border border-[#CFA16B]/25 bg-[#CFA16B]/5 px-4 py-2 font-[var(--font-body)] text-[13px] italic text-[#E0D4B9]"
+            <ul className="mt-9 flex flex-wrap items-center justify-center gap-2.5 md:justify-start">
+              {heroFragments.slice(1, 4).map((line) => (
+                <li
+                  key={line}
+                  className="rounded-full border border-[#CFA16B]/25 bg-[#CFA16B]/5 px-4 py-2 font-[var(--font-body)] text-[13px] italic text-[#E0D4B9]"
+                >
+                  &ldquo;{line}&rdquo;
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-10 flex flex-col items-center gap-4 md:items-start">
+              <CallCTA />
+              <Link
+                href="/confessions"
+                className="group inline-flex items-center gap-2 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#CFA16B] transition-all hover:gap-3 hover:text-[#E0B985]"
               >
-                &ldquo;{line}&rdquo;
-              </li>
-            ))}
-          </ul>
+                Hear what has been confessed <span aria-hidden="true">&rarr;</span>
+              </Link>
+            </div>
+          </div>
 
-          <div className="mt-10 flex flex-col items-center gap-4">
-            <CallCTA />
-            <Link
-              href="/confessions"
-              className="group inline-flex items-center gap-2 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#CFA16B] transition-all hover:gap-3 hover:text-[#E0B985]"
-            >
-              Hear what has been confessed <span aria-hidden="true">&rarr;</span>
-            </Link>
+          {/* The film, opens fullscreen in a modal */}
+          <div className="flex flex-col items-center gap-3">
+            <div className="w-full overflow-hidden rounded-[var(--site-radius)] border border-[#CFA16B]/20 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.85)]">
+              <FullscreenVideo
+                src="/media/field-videos/confessions-to-philanthropy.mp4"
+                poster="/media/field-stills/confessions-to-philanthropy.jpg"
+                title="Confessions to Philanthropy, the film"
+              />
+            </div>
+            <p className="font-[var(--font-sans)] text-[10px] uppercase tracking-[0.3em] text-[#CFA16B]/70">
+              Confessions to Philanthropy · the film
+            </p>
           </div>
         </div>
       </section>

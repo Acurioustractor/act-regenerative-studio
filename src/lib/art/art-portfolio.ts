@@ -149,6 +149,27 @@ const ART_PROJECTS: ArtProjectConfig[] = [
       'Prototype deployed. Voice connection platform built. Partnering with councils and public space curators for permanent installations.',
   },
   {
+    slug: 'confessions-to-philanthropy',
+    elSlugs: ['confessions-to-philanthropy'],
+    title: 'Confessions to Philanthropy',
+    quote:
+      'A gold phone for the things people don’t say out loud. An anonymous voicemail for the truths, love notes, hot takes and confessions people carry about giving.',
+    description:
+      'Confessions to Philanthropy is a gold phone and an anonymous voicemail for the sector that funds change. Callers leave unscripted messages about giving and power, the awkward and hopeful and unsaid, and the inbox becomes a public record you can listen to. It is not anti-philanthropy. It is a place to say the quiet bit out loud.',
+    mediums: ['interactive', 'performance'],
+    tags: ['participatory', 'social-practice', 'public-art'],
+    status: 'active',
+    lcaaStages: ['Listen', 'Art'],
+    location: 'Distributed / digital',
+    year: '2026',
+    photoCount: 0,
+    storytellerCount: 0,
+    connectedProject: 'Confessions to Philanthropy',
+    connectedProjectHref: '/confessions',
+    philosophy:
+      'The word philanthropy first described Prometheus, who stole fire from the gods and gave it to people. It began as defiance of power, not a tool of it. The gold phone returns philanthropy to honesty: anonymous, unscripted, and unafraid of the quiet bit.',
+  },
+  {
     slug: 'the-confessional',
     elSlugs: ['the-confessional'],
     title: 'The Confessional',

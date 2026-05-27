@@ -17,6 +17,30 @@ function redirectedProjectPaths(): Set<string> {
 }
 
 /**
+ * Single source of truth for "held" project slugs: any project with a
+ * `/projects/<slug>` redirect (launch holds, slug renames, demoted entries).
+ * A held project is removed everywhere it would otherwise be linked — the page
+ * (redirect), the public count, the sitemap, the /projects index, the homepage
+ * mosaic, and related-projects. To hide a project, add one redirect line in
+ * config/launch-redirects.cjs.
+ */
+export function heldProjectSlugs(): Set<string> {
+  const slugs = new Set<string>();
+  for (const path of redirectedProjectPaths()) {
+    const slug = path.replace(/^\/projects\//, "");
+    if (slug) slugs.add(slug);
+  }
+  return slugs;
+}
+
+/** True when a project slug (or its website alias) is held off the public launch. */
+export function isHeldProject(slug: string | null | undefined, websiteSlug?: string | null): boolean {
+  if (!slug && !websiteSlug) return false;
+  const held = heldProjectSlugs();
+  return (slug ? held.has(slug) : false) || (websiteSlug ? held.has(websiteSlug) : false);
+}
+
+/**
  * Distinct, publicly-reachable project pages: every canonical project record that
  * resolves to a `/projects/<slug>` route which is not redirected away. Mirrors the
  * slug the sitemap derives (`websiteSlug || slug`) so the count tracks the live site.

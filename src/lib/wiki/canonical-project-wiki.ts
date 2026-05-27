@@ -248,7 +248,7 @@ function resolvePublicSiteUrl(audit: UrlAuditResult | null): string | null {
   if (!audit) return null;
 
   const customDomain = normalizeUrl(audit.sources?.customDomain);
-  if (customDomain) {
+  if (customDomain && !isGenericDeployHost(customDomain)) {
     return customDomain;
   }
 
@@ -262,7 +262,10 @@ function resolvePublicSiteUrl(audit: UrlAuditResult | null): string | null {
     return repoHomepage;
   }
 
-  return normalizeUrl(audit.canonicalUrl);
+  // Filter the final fallback too: a preview/deploy host in canonicalUrl must
+  // not become a public-facing "Project website" link.
+  const canonicalUrl = normalizeUrl(audit.canonicalUrl);
+  return canonicalUrl && !isGenericDeployHost(canonicalUrl) ? canonicalUrl : null;
 }
 
 async function loadUrlAuditMap(wikiRoot: string): Promise<Map<string, UrlAuditResult>> {
@@ -279,6 +282,25 @@ async function loadUrlAuditMap(wikiRoot: string): Promise<Map<string, UrlAuditRe
   }
 }
 
+// Collapse records that resolve to the same slug (e.g. a project referenced
+// from more than one cluster folder). Prefer the shallower path, which is the
+// canonical top-level definition.
+function dedupeCanonicalRecordsBySlug(
+  records: CanonicalWikiProjectRecord[]
+): CanonicalWikiProjectRecord[] {
+  const bySlug = new Map<string, CanonicalWikiProjectRecord>();
+  for (const record of records) {
+    const existing = bySlug.get(record.slug);
+    if (
+      !existing ||
+      record.relativePath.split('/').length < existing.relativePath.split('/').length
+    ) {
+      bySlug.set(record.slug, record);
+    }
+  }
+  return [...bySlug.values()];
+}
+
 async function buildLiveCanonicalProjectRecords(): Promise<CanonicalWikiProjectRecord[] | null> {
   const wikiRoot = await resolveCanonicalWikiRoot();
 
@@ -288,7 +310,8 @@ async function buildLiveCanonicalProjectRecords(): Promise<CanonicalWikiProjectR
 
   const projectFiles = await glob('projects/**/*.md', {
     cwd: wikiRoot,
-    ignore: ['**/README.md', '**/_*.md'],
+    // Provenance sidecars (*.provenance.md) are metadata, never public projects.
+    ignore: ['**/README.md', '**/_*.md', '**/*.provenance.md'],
     nodir: true,
   });
   const urlAuditMap = await loadUrlAuditMap(wikiRoot);
@@ -303,6 +326,18 @@ async function buildLiveCanonicalProjectRecords(): Promise<CanonicalWikiProjectR
       ]);
 
       const { content, data } = matter(rawContent);
+
+      // Skip internal R&D Tax Incentive registers and provenance docs — they
+      // live inside project folders but are compliance artifacts, not public
+      // projects. Keyed on frontmatter so renamed files stay excluded.
+      if (
+        data?.type === 'provenance' ||
+        data?.claim_total_aud != null ||
+        data?.ausindustry_registration != null
+      ) {
+        return null;
+      }
+
       const titleMatch = content.match(/^#\s+(.+)$/m);
       const overviewSection =
         SECTION_HEADINGS.map((heading) => extractSection(content, heading)).find(Boolean) || null;
@@ -364,7 +399,9 @@ async function buildLiveCanonicalProjectRecords(): Promise<CanonicalWikiProjectR
     })
   );
 
-  return records.sort((left, right) => left.title.localeCompare(right.title));
+  return dedupeCanonicalRecordsBySlug(
+    records.filter((record): record is NonNullable<typeof record> => record !== null)
+  ).sort((left, right) => left.title.localeCompare(right.title));
 }
 
 async function getLiveCanonicalProjectRecords(): Promise<CanonicalWikiProjectRecord[] | null> {

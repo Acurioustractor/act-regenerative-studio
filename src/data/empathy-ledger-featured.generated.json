@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-05-26T09:14:53.818Z",
+  "generatedAt": "2026-05-27T06:02:22.759Z",
   "sourceUrl": "https://empathy-ledger-v2.vercel.app",
   "sourceOrganizationId": "db0de7bd-eb10-446b-99e9-0f3b7c199b8a",
-  "projectCount": 89,
+  "projectCount": 88,
   "projects": {
     "black-cockatoo-valley": {
       "project": {
@@ -552,7 +552,7 @@
         "story_count": 0,
         "media_count": 34,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:12:50.054Z",
+        "fetched_at": "2026-05-27T06:00:32.099Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -581,8 +581,8 @@
             "custom_tagline": null,
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:50.214Z",
-            "approved_at": "2026-05-26T09:12:50.214Z"
+            "opted_in_at": "2026-05-27T06:00:31.263Z",
+            "approved_at": "2026-05-27T06:00:31.263Z"
           },
           {
             "storyteller_id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
@@ -596,8 +596,8 @@
             "custom_tagline": "First Nations Australian",
             "featured_priority": 2,
             "featured_story_count": 1,
-            "opted_in_at": "2026-05-26T09:12:50.214Z",
-            "approved_at": "2026-05-26T09:12:50.214Z"
+            "opted_in_at": "2026-05-27T06:00:31.263Z",
+            "approved_at": "2026-05-27T06:00:31.263Z"
           },
           {
             "storyteller_id": "a3988106-4165-4529-b0c2-074da2dfa537",
@@ -611,8 +611,8 @@
             "custom_tagline": null,
             "featured_priority": 3,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:50.214Z",
-            "approved_at": "2026-05-26T09:12:50.214Z"
+            "opted_in_at": "2026-05-27T06:00:31.263Z",
+            "approved_at": "2026-05-27T06:00:31.263Z"
           },
           {
             "storyteller_id": "51ed5b8f-3a3c-4638-97d3-a06839e51ec1",
@@ -626,8 +626,8 @@
             "custom_tagline": "British",
             "featured_priority": 4,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:50.214Z",
-            "approved_at": "2026-05-26T09:12:50.214Z"
+            "opted_in_at": "2026-05-27T06:00:31.263Z",
+            "approved_at": "2026-05-27T06:00:31.263Z"
           },
           {
             "storyteller_id": "9ee735fb-f9f7-48ae-bf1e-d814c9e8bfd2",
@@ -641,8 +641,8 @@
             "custom_tagline": "Spanish",
             "featured_priority": 5,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:50.214Z",
-            "approved_at": "2026-05-26T09:12:50.214Z"
+            "opted_in_at": "2026-05-27T06:00:31.263Z",
+            "approved_at": "2026-05-27T06:00:31.263Z"
           },
           {
             "storyteller_id": "5e6e4716-4c2b-484e-8273-1ecee8801350",
@@ -656,8 +656,8 @@
             "custom_tagline": "Spanish",
             "featured_priority": 6,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:50.214Z",
-            "approved_at": "2026-05-26T09:12:50.214Z"
+            "opted_in_at": "2026-05-27T06:00:31.263Z",
+            "approved_at": "2026-05-27T06:00:31.263Z"
           },
           {
             "storyteller_id": "3c70e3b9-d419-44d0-a2cd-5ac7e849711f",
@@ -671,8 +671,8 @@
             "custom_tagline": "Spanish",
             "featured_priority": 7,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:50.214Z",
-            "approved_at": "2026-05-26T09:12:50.214Z"
+            "opted_in_at": "2026-05-27T06:00:31.263Z",
+            "approved_at": "2026-05-27T06:00:31.263Z"
           },
           {
             "storyteller_id": "1c51f57e-82a4-469e-a065-eec85836a5b5",
@@ -686,8 +686,8 @@
             "custom_tagline": null,
             "featured_priority": 8,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:50.214Z",
-            "approved_at": "2026-05-26T09:12:50.214Z"
+            "opted_in_at": "2026-05-27T06:00:31.263Z",
+            "approved_at": "2026-05-27T06:00:31.263Z"
           },
           {
             "storyteller_id": "ee202ace-d18b-4d9f-bf2a-c700eb3480fa",
@@ -701,8 +701,8 @@
             "custom_tagline": null,
             "featured_priority": 9,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:50.214Z",
-            "approved_at": "2026-05-26T09:12:50.214Z"
+            "opted_in_at": "2026-05-27T06:00:31.263Z",
+            "approved_at": "2026-05-27T06:00:31.263Z"
           },
           {
             "storyteller_id": "e99b08c7-6ac0-4d01-9623-db0ca03f81c5",
@@ -716,8 +716,8 @@
             "custom_tagline": null,
             "featured_priority": 10,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:50.214Z",
-            "approved_at": "2026-05-26T09:12:50.214Z"
+            "opted_in_at": "2026-05-27T06:00:31.264Z",
+            "approved_at": "2026-05-27T06:00:31.264Z"
           }
         ],
         "stories": [
@@ -752,7 +752,7 @@
         "story_count": 1,
         "media_count": 0,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:12:50.214Z",
+        "fetched_at": "2026-05-27T06:00:31.264Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -1590,7 +1590,7 @@
         "story_count": 0,
         "media_count": 53,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:12:52.431Z",
+        "fetched_at": "2026-05-27T06:00:33.697Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -1619,8 +1619,8 @@
             "custom_tagline": "First Nations Australian",
             "featured_priority": 1,
             "featured_story_count": 1,
-            "opted_in_at": "2026-05-26T09:12:50.168Z",
-            "approved_at": "2026-05-26T09:12:50.168Z"
+            "opted_in_at": "2026-05-27T06:00:33.275Z",
+            "approved_at": "2026-05-27T06:00:33.275Z"
           }
         ],
         "stories": [
@@ -1970,7 +1970,7 @@
         "story_count": 1,
         "media_count": 20,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:12:50.168Z",
+        "fetched_at": "2026-05-27T06:00:33.275Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -1999,8 +1999,8 @@
             "custom_tagline": "First Nations Australian",
             "featured_priority": 1,
             "featured_story_count": 3,
-            "opted_in_at": "2026-05-26T09:12:49.934Z",
-            "approved_at": "2026-05-26T09:12:49.934Z"
+            "opted_in_at": "2026-05-27T06:00:32.192Z",
+            "approved_at": "2026-05-27T06:00:32.192Z"
           }
         ],
         "stories": [
@@ -2087,7 +2087,7 @@
         "story_count": 3,
         "media_count": 0,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:12:49.934Z",
+        "fetched_at": "2026-05-27T06:00:32.192Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -2116,8 +2116,8 @@
             "custom_tagline": null,
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:01.090Z",
-            "approved_at": "2026-05-26T09:13:01.090Z"
+            "opted_in_at": "2026-05-27T06:00:42.798Z",
+            "approved_at": "2026-05-27T06:00:42.798Z"
           },
           {
             "storyteller_id": "13742d49-901e-4c08-94b2-a864d1a9a8e9",
@@ -2131,8 +2131,8 @@
             "custom_tagline": "Māori, cross-cultural Indigenous knowledge holder",
             "featured_priority": 2,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:01.090Z",
-            "approved_at": "2026-05-26T09:13:01.090Z"
+            "opted_in_at": "2026-05-27T06:00:42.798Z",
+            "approved_at": "2026-05-27T06:00:42.798Z"
           },
           {
             "storyteller_id": "7a0cd28a-ad12-4f70-b900-d869b42c9f88",
@@ -2146,8 +2146,8 @@
             "custom_tagline": "Indigenous",
             "featured_priority": 3,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:01.090Z",
-            "approved_at": "2026-05-26T09:13:01.090Z"
+            "opted_in_at": "2026-05-27T06:00:42.798Z",
+            "approved_at": "2026-05-27T06:00:42.798Z"
           },
           {
             "storyteller_id": "8dab91aa-3a1f-4128-b41d-b89e532be1fa",
@@ -2161,8 +2161,8 @@
             "custom_tagline": "Australian",
             "featured_priority": 4,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:01.090Z",
-            "approved_at": "2026-05-26T09:13:01.090Z"
+            "opted_in_at": "2026-05-27T06:00:42.798Z",
+            "approved_at": "2026-05-27T06:00:42.798Z"
           }
         ],
         "stories": []
@@ -5941,7 +5941,7 @@
         "story_count": 0,
         "media_count": 250,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:13:01.090Z",
+        "fetched_at": "2026-05-27T06:00:42.798Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -5970,8 +5970,8 @@
             "custom_tagline": null,
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:59.868Z",
-            "approved_at": "2026-05-26T09:12:59.868Z"
+            "opted_in_at": "2026-05-27T06:00:41.763Z",
+            "approved_at": "2026-05-27T06:00:41.763Z"
           },
           {
             "storyteller_id": "ac700001-0000-0000-0000-000000000002",
@@ -5985,8 +5985,8 @@
             "custom_tagline": null,
             "featured_priority": 2,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:59.868Z",
-            "approved_at": "2026-05-26T09:12:59.868Z"
+            "opted_in_at": "2026-05-27T06:00:41.763Z",
+            "approved_at": "2026-05-27T06:00:41.763Z"
           },
           {
             "storyteller_id": "e1679978-f251-4074-8873-d3f5baa80950",
@@ -6000,8 +6000,8 @@
             "custom_tagline": "Aboriginal, Palm Island",
             "featured_priority": 3,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:59.868Z",
-            "approved_at": "2026-05-26T09:12:59.868Z"
+            "opted_in_at": "2026-05-27T06:00:41.763Z",
+            "approved_at": "2026-05-27T06:00:41.763Z"
           },
           {
             "storyteller_id": "69db1d7e-c3f5-4926-b4d4-2d098c040952",
@@ -6015,8 +6015,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 4,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:59.868Z",
-            "approved_at": "2026-05-26T09:12:59.868Z"
+            "opted_in_at": "2026-05-27T06:00:41.763Z",
+            "approved_at": "2026-05-27T06:00:41.763Z"
           },
           {
             "storyteller_id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
@@ -6030,8 +6030,8 @@
             "custom_tagline": "First Nations Australian",
             "featured_priority": 5,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:59.868Z",
-            "approved_at": "2026-05-26T09:12:59.868Z"
+            "opted_in_at": "2026-05-27T06:00:41.763Z",
+            "approved_at": "2026-05-27T06:00:41.763Z"
           },
           {
             "storyteller_id": "433f5fbc-2c8d-46c1-916d-d558c179e701",
@@ -6045,8 +6045,8 @@
             "custom_tagline": "Goa, Gangalidda, Gulf country",
             "featured_priority": 6,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:59.868Z",
-            "approved_at": "2026-05-26T09:12:59.868Z"
+            "opted_in_at": "2026-05-27T06:00:41.763Z",
+            "approved_at": "2026-05-27T06:00:41.763Z"
           },
           {
             "storyteller_id": "00d67731-1bd1-41b8-ab0e-4a3aa07848fa",
@@ -6060,8 +6060,8 @@
             "custom_tagline": "Aboriginal, Palm Island",
             "featured_priority": 7,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:59.868Z",
-            "approved_at": "2026-05-26T09:12:59.868Z"
+            "opted_in_at": "2026-05-27T06:00:41.763Z",
+            "approved_at": "2026-05-27T06:00:41.763Z"
           },
           {
             "storyteller_id": "8a78ec27-7d1e-4eee-9026-945b4809c723",
@@ -6075,8 +6075,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 8,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:59.868Z",
-            "approved_at": "2026-05-26T09:12:59.868Z"
+            "opted_in_at": "2026-05-27T06:00:41.763Z",
+            "approved_at": "2026-05-27T06:00:41.763Z"
           },
           {
             "storyteller_id": "e0da3338-1a38-4b5a-9a26-73c9873b9242",
@@ -6090,8 +6090,8 @@
             "custom_tagline": "Warga",
             "featured_priority": 9,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:59.868Z",
-            "approved_at": "2026-05-26T09:12:59.868Z"
+            "opted_in_at": "2026-05-27T06:00:41.763Z",
+            "approved_at": "2026-05-27T06:00:41.763Z"
           },
           {
             "storyteller_id": "c1ff43ff-c366-4807-9bb9-478da99f5706",
@@ -6105,8 +6105,8 @@
             "custom_tagline": "Aboriginal Australian (Yarrabah)",
             "featured_priority": 10,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:59.868Z",
-            "approved_at": "2026-05-26T09:12:59.868Z"
+            "opted_in_at": "2026-05-27T06:00:41.763Z",
+            "approved_at": "2026-05-27T06:00:41.763Z"
           }
         ],
         "stories": [
@@ -9654,7 +9654,7 @@
         "story_count": 2,
         "media_count": 231,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:12:59.868Z",
+        "fetched_at": "2026-05-27T06:00:41.763Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -9683,8 +9683,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:49.732Z",
-            "approved_at": "2026-05-26T09:12:49.732Z"
+            "opted_in_at": "2026-05-27T06:00:32.251Z",
+            "approved_at": "2026-05-27T06:00:32.251Z"
           },
           {
             "storyteller_id": "5e15553f-fd6f-4aae-be36-d0981acda745",
@@ -9698,8 +9698,8 @@
             "custom_tagline": null,
             "featured_priority": 2,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:49.732Z",
-            "approved_at": "2026-05-26T09:12:49.732Z"
+            "opted_in_at": "2026-05-27T06:00:32.251Z",
+            "approved_at": "2026-05-27T06:00:32.251Z"
           },
           {
             "storyteller_id": "f837496a-eef8-4b0f-a710-2922893da102",
@@ -9713,8 +9713,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 3,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:49.732Z",
-            "approved_at": "2026-05-26T09:12:49.732Z"
+            "opted_in_at": "2026-05-27T06:00:32.251Z",
+            "approved_at": "2026-05-27T06:00:32.251Z"
           },
           {
             "storyteller_id": "1b2598cf-80a2-4386-969a-3e9315950b04",
@@ -9728,8 +9728,8 @@
             "custom_tagline": "Gadigal",
             "featured_priority": 4,
             "featured_story_count": 2,
-            "opted_in_at": "2026-05-26T09:12:49.732Z",
-            "approved_at": "2026-05-26T09:12:49.732Z"
+            "opted_in_at": "2026-05-27T06:00:32.251Z",
+            "approved_at": "2026-05-27T06:00:32.251Z"
           },
           {
             "storyteller_id": "d98a2342-e42c-456a-96a6-19bb27f792ae",
@@ -9743,8 +9743,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 5,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:49.732Z",
-            "approved_at": "2026-05-26T09:12:49.732Z"
+            "opted_in_at": "2026-05-27T06:00:32.251Z",
+            "approved_at": "2026-05-27T06:00:32.251Z"
           },
           {
             "storyteller_id": "aeadcbda-0acc-40b4-a562-8f3121ef661c",
@@ -9758,8 +9758,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 6,
             "featured_story_count": 1,
-            "opted_in_at": "2026-05-26T09:12:49.732Z",
-            "approved_at": "2026-05-26T09:12:49.732Z"
+            "opted_in_at": "2026-05-27T06:00:32.251Z",
+            "approved_at": "2026-05-27T06:00:32.251Z"
           },
           {
             "storyteller_id": "4cad7521-38bd-4d57-91a1-5920f5706b2a",
@@ -9773,8 +9773,8 @@
             "custom_tagline": null,
             "featured_priority": 7,
             "featured_story_count": 1,
-            "opted_in_at": "2026-05-26T09:12:49.732Z",
-            "approved_at": "2026-05-26T09:12:49.732Z"
+            "opted_in_at": "2026-05-27T06:00:32.251Z",
+            "approved_at": "2026-05-27T06:00:32.251Z"
           },
           {
             "storyteller_id": "21932f39-7e6b-4a8f-99ae-04b0f8544b8f",
@@ -9788,8 +9788,8 @@
             "custom_tagline": "Australian",
             "featured_priority": 8,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:49.732Z",
-            "approved_at": "2026-05-26T09:12:49.732Z"
+            "opted_in_at": "2026-05-27T06:00:32.251Z",
+            "approved_at": "2026-05-27T06:00:32.251Z"
           },
           {
             "storyteller_id": "c79b6dc3-4cdb-4af3-a6d6-2f7065d361b3",
@@ -9803,8 +9803,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 9,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:49.732Z",
-            "approved_at": "2026-05-26T09:12:49.732Z"
+            "opted_in_at": "2026-05-27T06:00:32.251Z",
+            "approved_at": "2026-05-27T06:00:32.251Z"
           },
           {
             "storyteller_id": "f9f2e7d9-056a-4533-8d25-a94bf68e9b6d",
@@ -9818,8 +9818,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 10,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:12:49.732Z",
-            "approved_at": "2026-05-26T09:12:49.732Z"
+            "opted_in_at": "2026-05-27T06:00:32.251Z",
+            "approved_at": "2026-05-27T06:00:32.251Z"
           }
         ],
         "stories": [
@@ -10401,7 +10401,7 @@
         "story_count": 7,
         "media_count": 25,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:12:49.732Z",
+        "fetched_at": "2026-05-27T06:00:32.251Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -10430,8 +10430,8 @@
             "custom_tagline": "Bundjalung, Tongan, Genebrawa/Gabi",
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:10.798Z",
-            "approved_at": "2026-05-26T09:13:10.798Z"
+            "opted_in_at": "2026-05-27T06:00:50.668Z",
+            "approved_at": "2026-05-27T06:00:50.668Z"
           },
           {
             "storyteller_id": "b88f6b78-09e0-4767-89b6-9d2c9214dc1e",
@@ -10445,8 +10445,8 @@
             "custom_tagline": "Non-Indigenous Australian",
             "featured_priority": 2,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:10.798Z",
-            "approved_at": "2026-05-26T09:13:10.798Z"
+            "opted_in_at": "2026-05-27T06:00:50.668Z",
+            "approved_at": "2026-05-27T06:00:50.668Z"
           }
         ],
         "stories": []
@@ -11564,6 +11564,21 @@
             "source": "content-hub"
           },
           {
+            "id": "eb40a628-193f-4b94-9e08-c459b7fd9542",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/picc-website/service-photos/store-retail/1771370634441-7dst5w.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/picc-website/service-photos/store-retail/1771370634441-7dst5w.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/picc-website/service-photos/store-retail/1771370634441-7dst5w.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "1E5A7500",
+            "alt": "Three people smiling in a kitchen with blue tiles and stainless steel counters during renovation work",
+            "caption": "Three people standing in a kitchen undergoing renovation or upgrade, with light blue tiled walls and stainless steel fixtures. The image captures community members involved in what appears to be a services facility improvement project.",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
             "id": "30b77807-49ef-416d-a752-70d2f87a048f",
             "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/hero-assets/youth-cleaning-corridor.mp4",
             "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/hero-assets/youth-cleaning-corridor.mp4",
@@ -11603,21 +11618,6 @@
             "title": "Youth Sweeping — The Centre",
             "alt": "Youth Sweeping — The Centre",
             "caption": "Young person sweeping the verandah at The Centre, PICC jobs program",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
-            "id": "eb40a628-193f-4b94-9e08-c459b7fd9542",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/picc-website/service-photos/store-retail/1771370634441-7dst5w.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/picc-website/service-photos/store-retail/1771370634441-7dst5w.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/picc-website/service-photos/store-retail/1771370634441-7dst5w.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "1E5A7500",
-            "alt": "Three people smiling in a kitchen with blue tiles and stainless steel counters during renovation work",
-            "caption": "Three people standing in a kitchen undergoing renovation or upgrade, with light blue tiled walls and stainless steel fixtures. The image captures community members involved in what appears to be a services facility improvement project.",
             "credit": null,
             "is_hero": false,
             "is_featured": false,
@@ -11969,36 +11969,6 @@
             "source": "content-hub"
           },
           {
-            "id": "e3d94b7c-076e-4415-8b47-638d549b2941",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1771284689401-zn8rui.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1771284689401-zn8rui.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1771284689401-zn8rui.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "Station Photo 88",
-            "alt": "White insulated door with warning label in concrete storage room with ceiling-mounted cooling unit",
-            "caption": "A white commercial refrigeration unit or cold storage door with warning signage, located in what appears to be a storage or service area with concrete flooring and basic utility infrastructure.",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
-            "id": "f4d7da80-f0d5-4bc0-872d-69c1e511dae9",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1771284678850-ocnlzd.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1771284678850-ocnlzd.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1771284678850-ocnlzd.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "Station Photo 79",
-            "alt": "Overgrown palm trees and dried vegetation behind wire fence on Palm Island",
-            "caption": "An overgrown area with palm trees and dried vegetation behind a wire fence, showing natural landscape in need of maintenance. A building structure is partially visible in the background.",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
             "id": "fb58a612-9d11-4125-8d1e-1e85b25cc1cf",
             "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1771284711989-o061ks.jpg",
             "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1771284711989-o061ks.jpg",
@@ -12008,6 +11978,36 @@
             "title": "Station Photo 102",
             "alt": "Open electrical switchboard showing circuit breakers and safety switches mounted on pale yellow wall",
             "caption": "An open electrical switchboard panel mounted on a wall, showing circuit breakers and RCD safety switches with labeled circuits for various areas of a building in Palm Island.",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "bf5f8b40-8124-486f-ba12-3ced01e1175c",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1771284675215-z4wlan.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1771284675215-z4wlan.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1771284675215-z4wlan.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "Station Photo 75",
+            "alt": "Empty room with wooden floor, beige walls, window with blinds and air conditioning unit",
+            "caption": "An empty room with hardwood flooring, beige walls, a window with blinds, and a wall-mounted air conditioning unit. The space appears to be a residential or community service facility room in Palm Island.",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "9ccf7488-4bde-4d0c-80a5-4d19c04dfed2",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1771284612163-46yymm.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1771284612163-46yymm.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1771284612163-46yymm.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "Station Photo 28",
+            "alt": "White elevated weatherboard house with metal roof on Palm Island, surrounded by tropical trees",
+            "caption": "A single-story white weatherboard house elevated on stumps, typical of Queensland tropical architecture, with a satellite dish and corrugated metal roof. The residence is surrounded by tropical trees and cleared ground in the Palm Island Aboriginal community.",
             "credit": null,
             "is_hero": false,
             "is_featured": false,
@@ -12479,21 +12479,6 @@
             "source": "content-hub"
           },
           {
-            "id": "9ccf7488-4bde-4d0c-80a5-4d19c04dfed2",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1771284612163-46yymm.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1771284612163-46yymm.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1771284612163-46yymm.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "Station Photo 28",
-            "alt": "White elevated weatherboard house with metal roof on Palm Island, surrounded by tropical trees",
-            "caption": "A single-story white weatherboard house elevated on stumps, typical of Queensland tropical architecture, with a satellite dish and corrugated metal roof. The residence is surrounded by tropical trees and cleared ground in the Palm Island Aboriginal community.",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
             "id": "a2f847bd-e185-444a-9df3-2dbfd1796ba7",
             "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1771284630995-npv0r8.jpg",
             "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1771284630995-npv0r8.jpg",
@@ -12608,21 +12593,6 @@
             "title": "Station Photo 71",
             "alt": "Outdoor community space with fire pit, palm trees, and rock garden borders at Palm Island",
             "caption": "A community gathering space featuring a central fire pit surrounded by rock borders, with palm trees and native vegetation throughout. The area includes wooden posts for shade structures and a small utility building, creating an outdoor communal area.",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
-            "id": "bf5f8b40-8124-486f-ba12-3ced01e1175c",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1771284675215-z4wlan.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1771284675215-z4wlan.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1771284675215-z4wlan.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "Station Photo 75",
-            "alt": "Empty room with wooden floor, beige walls, window with blinds and air conditioning unit",
-            "caption": "An empty room with hardwood flooring, beige walls, a window with blinds, and a wall-mounted air conditioning unit. The space appears to be a residential or community service facility room in Palm Island.",
             "credit": null,
             "is_hero": false,
             "is_featured": false,
@@ -13293,9 +13263,9 @@
       "meta": {
         "storyteller_count": 2,
         "story_count": 0,
-        "media_count": 188,
+        "media_count": 186,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:13:10.798Z",
+        "fetched_at": "2026-05-27T06:00:50.669Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -13593,7 +13563,7 @@
         "story_count": 0,
         "media_count": 17,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:12:55.283Z",
+        "fetched_at": "2026-05-27T06:00:37.695Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -13626,8 +13596,8 @@
             "custom_tagline": "First Nations Australian",
             "featured_priority": 1,
             "featured_story_count": 2,
-            "opted_in_at": "2026-05-26T09:13:00.487Z",
-            "approved_at": "2026-05-26T09:13:00.487Z"
+            "opted_in_at": "2026-05-27T06:00:42.207Z",
+            "approved_at": "2026-05-27T06:00:42.207Z"
           },
           {
             "storyteller_id": "48c32514-5762-4a44-bba5-5a7890b5e69f",
@@ -13641,8 +13611,8 @@
             "custom_tagline": null,
             "featured_priority": 2,
             "featured_story_count": 1,
-            "opted_in_at": "2026-05-26T09:13:00.487Z",
-            "approved_at": "2026-05-26T09:13:00.487Z"
+            "opted_in_at": "2026-05-27T06:00:42.207Z",
+            "approved_at": "2026-05-27T06:00:42.207Z"
           }
         ],
         "stories": [
@@ -14887,7 +14857,7 @@
         "story_count": 3,
         "media_count": 76,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:13:00.487Z",
+        "fetched_at": "2026-05-27T06:00:42.208Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -14916,8 +14886,8 @@
             "custom_tagline": "Non-Indigenous Australian",
             "featured_priority": 1,
             "featured_story_count": 1,
-            "opted_in_at": "2026-05-26T09:13:11.094Z",
-            "approved_at": "2026-05-26T09:13:11.094Z"
+            "opted_in_at": "2026-05-27T06:00:51.848Z",
+            "approved_at": "2026-05-27T06:00:51.848Z"
           },
           {
             "storyteller_id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
@@ -14931,8 +14901,8 @@
             "custom_tagline": "First Nations Australian",
             "featured_priority": 2,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:11.094Z",
-            "approved_at": "2026-05-26T09:13:11.094Z"
+            "opted_in_at": "2026-05-27T06:00:51.848Z",
+            "approved_at": "2026-05-27T06:00:51.848Z"
           },
           {
             "storyteller_id": "9ad1702d-01a4-4b50-a60a-7d498517f682",
@@ -14946,8 +14916,8 @@
             "custom_tagline": "New Zealander",
             "featured_priority": 3,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:11.094Z",
-            "approved_at": "2026-05-26T09:13:11.094Z"
+            "opted_in_at": "2026-05-27T06:00:51.848Z",
+            "approved_at": "2026-05-27T06:00:51.848Z"
           },
           {
             "storyteller_id": "c2ba535c-aa50-42c3-af18-ed61d3330716",
@@ -14961,8 +14931,8 @@
             "custom_tagline": "Anglo-Australian",
             "featured_priority": 4,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:11.094Z",
-            "approved_at": "2026-05-26T09:13:11.094Z"
+            "opted_in_at": "2026-05-27T06:00:51.848Z",
+            "approved_at": "2026-05-27T06:00:51.848Z"
           }
         ],
         "stories": [
@@ -18767,7 +18737,7 @@
         "story_count": 1,
         "media_count": 250,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:13:11.094Z",
+        "fetched_at": "2026-05-27T06:00:51.848Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -18796,8 +18766,8 @@
             "custom_tagline": null,
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:00.509Z",
-            "approved_at": "2026-05-26T09:13:00.509Z"
+            "opted_in_at": "2026-05-27T06:00:41.485Z",
+            "approved_at": "2026-05-27T06:00:41.485Z"
           },
           {
             "storyteller_id": "8484b740-9e58-4d26-ad5a-f51cf2a52f10",
@@ -18811,8 +18781,8 @@
             "custom_tagline": "Non-Indigenous Australian",
             "featured_priority": 2,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:00.509Z",
-            "approved_at": "2026-05-26T09:13:00.509Z"
+            "opted_in_at": "2026-05-27T06:00:41.485Z",
+            "approved_at": "2026-05-27T06:00:41.485Z"
           },
           {
             "storyteller_id": "d5e5ee62-9610-4804-9307-9edc7f8bd86d",
@@ -18826,8 +18796,8 @@
             "custom_tagline": "Basque-Spanish Australian",
             "featured_priority": 3,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:00.509Z",
-            "approved_at": "2026-05-26T09:13:00.509Z"
+            "opted_in_at": "2026-05-27T06:00:41.485Z",
+            "approved_at": "2026-05-27T06:00:41.485Z"
           },
           {
             "storyteller_id": "9bc67418-9269-4771-8e73-6a34c008c7d4",
@@ -18841,8 +18811,8 @@
             "custom_tagline": "Non-Indigenous Australian",
             "featured_priority": 4,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:00.509Z",
-            "approved_at": "2026-05-26T09:13:00.509Z"
+            "opted_in_at": "2026-05-27T06:00:41.485Z",
+            "approved_at": "2026-05-27T06:00:41.485Z"
           },
           {
             "storyteller_id": "0c286ebe-7e62-4c6d-ac4e-d41f5f5ce8d8",
@@ -18856,8 +18826,8 @@
             "custom_tagline": null,
             "featured_priority": 5,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:00.509Z",
-            "approved_at": "2026-05-26T09:13:00.509Z"
+            "opted_in_at": "2026-05-27T06:00:41.485Z",
+            "approved_at": "2026-05-27T06:00:41.485Z"
           },
           {
             "storyteller_id": "1d4e8061-c292-4737-812a-19a05d632445",
@@ -18871,8 +18841,8 @@
             "custom_tagline": "Non-Indigenous Australian",
             "featured_priority": 6,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:00.509Z",
-            "approved_at": "2026-05-26T09:13:00.509Z"
+            "opted_in_at": "2026-05-27T06:00:41.485Z",
+            "approved_at": "2026-05-27T06:00:41.485Z"
           },
           {
             "storyteller_id": "c74da50a-f894-408b-afc7-b01aa45a80d9",
@@ -18886,8 +18856,8 @@
             "custom_tagline": "Non-Indigenous Australian",
             "featured_priority": 7,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:00.509Z",
-            "approved_at": "2026-05-26T09:13:00.509Z"
+            "opted_in_at": "2026-05-27T06:00:41.485Z",
+            "approved_at": "2026-05-27T06:00:41.485Z"
           }
         ],
         "stories": []
@@ -18901,7 +18871,7 @@
         "story_count": 0,
         "media_count": 0,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:13:00.509Z",
+        "fetched_at": "2026-05-27T06:00:41.485Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -18930,8 +18900,8 @@
             "custom_tagline": "Aboriginal, Manbarra, Wulgurukaba, Nanggarra Wanggarra",
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:02.984Z",
-            "approved_at": "2026-05-26T09:13:02.984Z"
+            "opted_in_at": "2026-05-27T06:00:44.710Z",
+            "approved_at": "2026-05-27T06:00:44.710Z"
           }
         ],
         "stories": []
@@ -19425,7 +19395,7 @@
         "story_count": 0,
         "media_count": 31,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:13:02.984Z",
+        "fetched_at": "2026-05-27T06:00:44.710Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -20188,7 +20158,7 @@
         "story_count": 0,
         "media_count": 48,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:13:04.923Z",
+        "fetched_at": "2026-05-27T06:00:45.358Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -20218,8 +20188,8 @@
             "custom_tagline": null,
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:09.692Z",
-            "approved_at": "2026-05-26T09:13:09.692Z"
+            "opted_in_at": "2026-05-27T06:00:49.386Z",
+            "approved_at": "2026-05-27T06:00:49.386Z"
           },
           {
             "storyteller_id": "3243ec27-3d86-40df-a08a-3d6201e950e3",
@@ -20233,8 +20203,8 @@
             "custom_tagline": null,
             "featured_priority": 2,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:09.692Z",
-            "approved_at": "2026-05-26T09:13:09.692Z"
+            "opted_in_at": "2026-05-27T06:00:49.386Z",
+            "approved_at": "2026-05-27T06:00:49.386Z"
           },
           {
             "storyteller_id": "6aec02e0-d670-47ac-88a4-8ff66ffbac49",
@@ -20248,8 +20218,8 @@
             "custom_tagline": null,
             "featured_priority": 3,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:09.692Z",
-            "approved_at": "2026-05-26T09:13:09.692Z"
+            "opted_in_at": "2026-05-27T06:00:49.386Z",
+            "approved_at": "2026-05-27T06:00:49.386Z"
           },
           {
             "storyteller_id": "6ff0f145-205f-4cce-99c9-2348b3f95385",
@@ -20263,8 +20233,8 @@
             "custom_tagline": null,
             "featured_priority": 4,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:09.692Z",
-            "approved_at": "2026-05-26T09:13:09.692Z"
+            "opted_in_at": "2026-05-27T06:00:49.386Z",
+            "approved_at": "2026-05-27T06:00:49.386Z"
           },
           {
             "storyteller_id": "b841d8b1-0b34-4112-9088-97fa622e2b8e",
@@ -20278,8 +20248,8 @@
             "custom_tagline": null,
             "featured_priority": 5,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:09.692Z",
-            "approved_at": "2026-05-26T09:13:09.692Z"
+            "opted_in_at": "2026-05-27T06:00:49.386Z",
+            "approved_at": "2026-05-27T06:00:49.386Z"
           },
           {
             "storyteller_id": "4870011c-3254-4b90-8fbf-5827d0fa7a6c",
@@ -20293,8 +20263,8 @@
             "custom_tagline": null,
             "featured_priority": 6,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:09.692Z",
-            "approved_at": "2026-05-26T09:13:09.692Z"
+            "opted_in_at": "2026-05-27T06:00:49.386Z",
+            "approved_at": "2026-05-27T06:00:49.386Z"
           },
           {
             "storyteller_id": "8cbd7bab-c1c2-48af-b48b-0b459d6886ef",
@@ -20308,8 +20278,8 @@
             "custom_tagline": null,
             "featured_priority": 7,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:09.692Z",
-            "approved_at": "2026-05-26T09:13:09.692Z"
+            "opted_in_at": "2026-05-27T06:00:49.386Z",
+            "approved_at": "2026-05-27T06:00:49.386Z"
           },
           {
             "storyteller_id": "bcfa37a8-63a9-426e-935b-ef9d55229262",
@@ -20323,8 +20293,8 @@
             "custom_tagline": null,
             "featured_priority": 8,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:09.692Z",
-            "approved_at": "2026-05-26T09:13:09.692Z"
+            "opted_in_at": "2026-05-27T06:00:49.386Z",
+            "approved_at": "2026-05-27T06:00:49.386Z"
           },
           {
             "storyteller_id": "c0bd36a0-fe06-44ee-819a-111966b1a801",
@@ -20338,8 +20308,8 @@
             "custom_tagline": null,
             "featured_priority": 9,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:09.692Z",
-            "approved_at": "2026-05-26T09:13:09.692Z"
+            "opted_in_at": "2026-05-27T06:00:49.386Z",
+            "approved_at": "2026-05-27T06:00:49.386Z"
           },
           {
             "storyteller_id": "b1d65641-9e75-450f-a840-c1eb78ea662e",
@@ -20353,8 +20323,8 @@
             "custom_tagline": null,
             "featured_priority": 10,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:09.692Z",
-            "approved_at": "2026-05-26T09:13:09.692Z"
+            "opted_in_at": "2026-05-27T06:00:49.386Z",
+            "approved_at": "2026-05-27T06:00:49.386Z"
           }
         ],
         "stories": []
@@ -20368,7 +20338,7 @@
         "story_count": 0,
         "media_count": 0,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:13:09.692Z",
+        "fetched_at": "2026-05-27T06:00:49.386Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -20398,8 +20368,8 @@
             "custom_tagline": "Aboriginal, Manbarra, Wulgurukaba, Nanggarra Wanggarra",
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:11.685Z",
-            "approved_at": "2026-05-26T09:13:11.685Z"
+            "opted_in_at": "2026-05-27T06:00:51.148Z",
+            "approved_at": "2026-05-27T06:00:51.148Z"
           },
           {
             "storyteller_id": "5a6a4087-9d53-495e-bccf-8432f329c697",
@@ -20413,8 +20383,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 2,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:11.685Z",
-            "approved_at": "2026-05-26T09:13:11.685Z"
+            "opted_in_at": "2026-05-27T06:00:51.148Z",
+            "approved_at": "2026-05-27T06:00:51.148Z"
           },
           {
             "storyteller_id": "8de37a6c-6799-41b5-8540-d994ab5fa03f",
@@ -20428,8 +20398,8 @@
             "custom_tagline": "Aboriginal Australian",
             "featured_priority": 3,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:11.685Z",
-            "approved_at": "2026-05-26T09:13:11.685Z"
+            "opted_in_at": "2026-05-27T06:00:51.148Z",
+            "approved_at": "2026-05-27T06:00:51.148Z"
           },
           {
             "storyteller_id": "f6e42990-1bd2-436c-ac91-f1bd07cf9bdc",
@@ -20443,8 +20413,8 @@
             "custom_tagline": "Yorta Yorta",
             "featured_priority": 4,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:11.685Z",
-            "approved_at": "2026-05-26T09:13:11.685Z"
+            "opted_in_at": "2026-05-27T06:00:51.148Z",
+            "approved_at": "2026-05-27T06:00:51.148Z"
           }
         ],
         "stories": []
@@ -20458,7 +20428,7 @@
         "story_count": 0,
         "media_count": 0,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:13:11.685Z",
+        "fetched_at": "2026-05-27T06:00:51.148Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -20487,8 +20457,8 @@
             "custom_tagline": "Aboriginal Australian",
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:42.386Z",
-            "approved_at": "2026-05-26T09:13:42.386Z"
+            "opted_in_at": "2026-05-27T06:01:20.850Z",
+            "approved_at": "2026-05-27T06:01:20.850Z"
           },
           {
             "storyteller_id": "07dbb433-e386-49ca-a24a-e4a5a5c12417",
@@ -20502,8 +20472,8 @@
             "custom_tagline": "Aboriginal, Manbarra, Wulgurukaba, Nanggarra Wanggarra",
             "featured_priority": 2,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:42.386Z",
-            "approved_at": "2026-05-26T09:13:42.386Z"
+            "opted_in_at": "2026-05-27T06:01:20.850Z",
+            "approved_at": "2026-05-27T06:01:20.851Z"
           },
           {
             "storyteller_id": "cc513d49-5e69-445c-bd40-0df6b9c137f8",
@@ -20517,8 +20487,8 @@
             "custom_tagline": "Aboriginal, South Sea Islander, Durabal",
             "featured_priority": 3,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:42.386Z",
-            "approved_at": "2026-05-26T09:13:42.386Z"
+            "opted_in_at": "2026-05-27T06:01:20.851Z",
+            "approved_at": "2026-05-27T06:01:20.851Z"
           },
           {
             "storyteller_id": "2f8c49ff-36b7-44b9-b3df-de8b5f6b250f",
@@ -20532,8 +20502,8 @@
             "custom_tagline": "Aboriginal, South Sea Islander, Durabal",
             "featured_priority": 4,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:42.386Z",
-            "approved_at": "2026-05-26T09:13:42.386Z"
+            "opted_in_at": "2026-05-27T06:01:20.851Z",
+            "approved_at": "2026-05-27T06:01:20.851Z"
           },
           {
             "storyteller_id": "47ff2031-37d8-490a-9571-c9bda395d6f5",
@@ -20547,8 +20517,8 @@
             "custom_tagline": "Aboriginal Australian",
             "featured_priority": 5,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:42.386Z",
-            "approved_at": "2026-05-26T09:13:42.386Z"
+            "opted_in_at": "2026-05-27T06:01:20.851Z",
+            "approved_at": "2026-05-27T06:01:20.851Z"
           },
           {
             "storyteller_id": "f2811fa7-4109-4251-93b5-a6a378dad9e6",
@@ -20562,8 +20532,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 6,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:42.386Z",
-            "approved_at": "2026-05-26T09:13:42.386Z"
+            "opted_in_at": "2026-05-27T06:01:20.851Z",
+            "approved_at": "2026-05-27T06:01:20.851Z"
           },
           {
             "storyteller_id": "5a6a4087-9d53-495e-bccf-8432f329c697",
@@ -20577,8 +20547,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 7,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:42.386Z",
-            "approved_at": "2026-05-26T09:13:42.386Z"
+            "opted_in_at": "2026-05-27T06:01:20.851Z",
+            "approved_at": "2026-05-27T06:01:20.851Z"
           },
           {
             "storyteller_id": "e881afe6-822e-4818-909a-019d97bbd709",
@@ -20592,8 +20562,8 @@
             "custom_tagline": "Aboriginal, Mamu",
             "featured_priority": 8,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:42.386Z",
-            "approved_at": "2026-05-26T09:13:42.386Z"
+            "opted_in_at": "2026-05-27T06:01:20.851Z",
+            "approved_at": "2026-05-27T06:01:20.851Z"
           },
           {
             "storyteller_id": "c935626b-cd65-49bc-b794-8d145e4e6e31",
@@ -20607,8 +20577,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 9,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:42.386Z",
-            "approved_at": "2026-05-26T09:13:42.386Z"
+            "opted_in_at": "2026-05-27T06:01:20.851Z",
+            "approved_at": "2026-05-27T06:01:20.851Z"
           },
           {
             "storyteller_id": "c34e763b-a1b7-46e4-9e8e-e86301634c9e",
@@ -20622,8 +20592,8 @@
             "custom_tagline": null,
             "featured_priority": 10,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:42.386Z",
-            "approved_at": "2026-05-26T09:13:42.386Z"
+            "opted_in_at": "2026-05-27T06:01:20.851Z",
+            "approved_at": "2026-05-27T06:01:20.851Z"
           }
         ],
         "stories": [
@@ -21115,21 +21085,6 @@
             "source": "content-hub"
           },
           {
-            "id": "92694059-1316-4508-92f7-f5d60116250a",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270231871-mz765.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270231871-mz765.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270231871-mz765.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "20250927-IMG_0953",
-            "alt": "PhotoBooth at Palm Island Spring Festival, September 2025",
-            "caption": "PhotoBooth at Palm Island Spring Festival, September 2025",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
             "id": "9d35aa73-b2c5-4b6a-a0c4-379fbcdb247b",
             "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270211717-ktnwcn.jpg",
             "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270211717-ktnwcn.jpg",
@@ -21137,21 +21092,6 @@
             "type": "image",
             "kind": "image",
             "title": "20250927-IMG_0770",
-            "alt": "PhotoBooth at Palm Island Spring Festival, September 2025",
-            "caption": "PhotoBooth at Palm Island Spring Festival, September 2025",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
-            "id": "9f5b1330-101b-4b63-bdad-0e3daf59323d",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270228642-t11xk.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270228642-t11xk.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270228642-t11xk.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "20250927-IMG_0924",
             "alt": "PhotoBooth at Palm Island Spring Festival, September 2025",
             "caption": "PhotoBooth at Palm Island Spring Festival, September 2025",
             "credit": null,
@@ -21175,36 +21115,6 @@
             "source": "content-hub"
           },
           {
-            "id": "a4b0c982-000d-472d-9d84-dc7a6c3a2daa",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270229627-keed5j.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270229627-keed5j.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270229627-keed5j.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "20250927-IMG_0939",
-            "alt": "PhotoBooth at Palm Island Spring Festival, September 2025",
-            "caption": "PhotoBooth at Palm Island Spring Festival, September 2025",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
-            "id": "a4f4a3d8-6b19-48cc-b5ab-6c6678be6e40",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270216070-2rphoh.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270216070-2rphoh.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270216070-2rphoh.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "20250927-IMG_0796",
-            "alt": "PhotoBooth at Palm Island Spring Festival, September 2025",
-            "caption": "PhotoBooth at Palm Island Spring Festival, September 2025",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
             "id": "a7e9f5a6-37c6-4a29-b256-7cfcdcf395d3",
             "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270225010-u6qcq.jpg",
             "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270225010-u6qcq.jpg",
@@ -21212,21 +21122,6 @@
             "type": "image",
             "kind": "image",
             "title": "20250927-IMG_0900",
-            "alt": "PhotoBooth at Palm Island Spring Festival, September 2025",
-            "caption": "PhotoBooth at Palm Island Spring Festival, September 2025",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
-            "id": "b945820e-ace2-4159-b97b-e51fef7a421b",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270232790-xx2oqw.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270232790-xx2oqw.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270232790-xx2oqw.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "20250927-IMG_0956",
             "alt": "PhotoBooth at Palm Island Spring Festival, September 2025",
             "caption": "PhotoBooth at Palm Island Spring Festival, September 2025",
             "credit": null,
@@ -21250,21 +21145,6 @@
             "source": "content-hub"
           },
           {
-            "id": "c1e48fa1-907b-40ec-833e-499d885741c6",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270214868-m7rmz.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270214868-m7rmz.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270214868-m7rmz.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "20250927-IMG_0791",
-            "alt": "PhotoBooth at Palm Island Spring Festival, September 2025",
-            "caption": "PhotoBooth at Palm Island Spring Festival, September 2025",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
             "id": "c1e93898-7533-4458-8bb0-fab12abfe541",
             "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270222205-5zo4w.jpg",
             "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270222205-5zo4w.jpg",
@@ -21272,21 +21152,6 @@
             "type": "image",
             "kind": "image",
             "title": "20250927-IMG_0872",
-            "alt": "PhotoBooth at Palm Island Spring Festival, September 2025",
-            "caption": "PhotoBooth at Palm Island Spring Festival, September 2025",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
-            "id": "c628ba5f-75c2-4395-af22-4e809b7d4d31",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270220836-jd6i7.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270220836-jd6i7.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270220836-jd6i7.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "20250927-IMG_0864",
             "alt": "PhotoBooth at Palm Island Spring Festival, September 2025",
             "caption": "PhotoBooth at Palm Island Spring Festival, September 2025",
             "credit": null,
@@ -21310,6 +21175,36 @@
             "source": "content-hub"
           },
           {
+            "id": "a4f4a3d8-6b19-48cc-b5ab-6c6678be6e40",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270216070-2rphoh.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270216070-2rphoh.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270216070-2rphoh.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "20250927-IMG_0796",
+            "alt": "PhotoBooth at Palm Island Spring Festival, September 2025",
+            "caption": "PhotoBooth at Palm Island Spring Festival, September 2025",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "92694059-1316-4508-92f7-f5d60116250a",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270231871-mz765.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270231871-mz765.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270231871-mz765.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "20250927-IMG_0953",
+            "alt": "PhotoBooth at Palm Island Spring Festival, September 2025",
+            "caption": "PhotoBooth at Palm Island Spring Festival, September 2025",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
             "id": "cc2f0b9c-6a42-43c9-9ccd-0ecdefcee40a",
             "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270218740-jaj7b.jpg",
             "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270218740-jaj7b.jpg",
@@ -21317,6 +21212,81 @@
             "type": "image",
             "kind": "image",
             "title": "20250927-IMG_0812",
+            "alt": "PhotoBooth at Palm Island Spring Festival, September 2025",
+            "caption": "PhotoBooth at Palm Island Spring Festival, September 2025",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "a4b0c982-000d-472d-9d84-dc7a6c3a2daa",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270229627-keed5j.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270229627-keed5j.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270229627-keed5j.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "20250927-IMG_0939",
+            "alt": "PhotoBooth at Palm Island Spring Festival, September 2025",
+            "caption": "PhotoBooth at Palm Island Spring Festival, September 2025",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "b945820e-ace2-4159-b97b-e51fef7a421b",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270232790-xx2oqw.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270232790-xx2oqw.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270232790-xx2oqw.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "20250927-IMG_0956",
+            "alt": "PhotoBooth at Palm Island Spring Festival, September 2025",
+            "caption": "PhotoBooth at Palm Island Spring Festival, September 2025",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "9f5b1330-101b-4b63-bdad-0e3daf59323d",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270228642-t11xk.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270228642-t11xk.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270228642-t11xk.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "20250927-IMG_0924",
+            "alt": "PhotoBooth at Palm Island Spring Festival, September 2025",
+            "caption": "PhotoBooth at Palm Island Spring Festival, September 2025",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "c1e48fa1-907b-40ec-833e-499d885741c6",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270214868-m7rmz.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270214868-m7rmz.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270214868-m7rmz.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "20250927-IMG_0791",
+            "alt": "PhotoBooth at Palm Island Spring Festival, September 2025",
+            "caption": "PhotoBooth at Palm Island Spring Festival, September 2025",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "c628ba5f-75c2-4395-af22-4e809b7d4d31",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270220836-jd6i7.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270220836-jd6i7.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764270220836-jd6i7.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "20250927-IMG_0864",
             "alt": "PhotoBooth at Palm Island Spring Festival, September 2025",
             "caption": "PhotoBooth at Palm Island Spring Festival, September 2025",
             "credit": null,
@@ -24481,7 +24451,7 @@
         "story_count": 3,
         "media_count": 250,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:13:42.386Z",
+        "fetched_at": "2026-05-27T06:01:20.851Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -24510,8 +24480,8 @@
             "custom_tagline": "Aboriginal Australian",
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:27.928Z",
-            "approved_at": "2026-05-26T09:13:27.928Z"
+            "opted_in_at": "2026-05-27T06:01:10.677Z",
+            "approved_at": "2026-05-27T06:01:10.677Z"
           },
           {
             "storyteller_id": "07dbb433-e386-49ca-a24a-e4a5a5c12417",
@@ -24525,8 +24495,8 @@
             "custom_tagline": "Aboriginal, Manbarra, Wulgurukaba, Nanggarra Wanggarra",
             "featured_priority": 2,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:27.928Z",
-            "approved_at": "2026-05-26T09:13:27.928Z"
+            "opted_in_at": "2026-05-27T06:01:10.677Z",
+            "approved_at": "2026-05-27T06:01:10.677Z"
           },
           {
             "storyteller_id": "cc513d49-5e69-445c-bd40-0df6b9c137f8",
@@ -24540,8 +24510,8 @@
             "custom_tagline": "Aboriginal, South Sea Islander, Durabal",
             "featured_priority": 3,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:27.928Z",
-            "approved_at": "2026-05-26T09:13:27.928Z"
+            "opted_in_at": "2026-05-27T06:01:10.677Z",
+            "approved_at": "2026-05-27T06:01:10.677Z"
           },
           {
             "storyteller_id": "2f8c49ff-36b7-44b9-b3df-de8b5f6b250f",
@@ -24555,8 +24525,8 @@
             "custom_tagline": "Aboriginal, South Sea Islander, Durabal",
             "featured_priority": 4,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:27.928Z",
-            "approved_at": "2026-05-26T09:13:27.928Z"
+            "opted_in_at": "2026-05-27T06:01:10.677Z",
+            "approved_at": "2026-05-27T06:01:10.677Z"
           },
           {
             "storyteller_id": "f2811fa7-4109-4251-93b5-a6a378dad9e6",
@@ -24570,8 +24540,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 5,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:27.928Z",
-            "approved_at": "2026-05-26T09:13:27.928Z"
+            "opted_in_at": "2026-05-27T06:01:10.677Z",
+            "approved_at": "2026-05-27T06:01:10.677Z"
           },
           {
             "storyteller_id": "158bd930-c06d-44ab-b217-45a4048d70a7",
@@ -24585,8 +24555,8 @@
             "custom_tagline": "Aboriginal Australian",
             "featured_priority": 6,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:27.928Z",
-            "approved_at": "2026-05-26T09:13:27.928Z"
+            "opted_in_at": "2026-05-27T06:01:10.677Z",
+            "approved_at": "2026-05-27T06:01:10.677Z"
           },
           {
             "storyteller_id": "5a6a4087-9d53-495e-bccf-8432f329c697",
@@ -24600,8 +24570,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 7,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:27.928Z",
-            "approved_at": "2026-05-26T09:13:27.928Z"
+            "opted_in_at": "2026-05-27T06:01:10.677Z",
+            "approved_at": "2026-05-27T06:01:10.677Z"
           },
           {
             "storyteller_id": "e881afe6-822e-4818-909a-019d97bbd709",
@@ -24615,8 +24585,8 @@
             "custom_tagline": "Aboriginal, Mamu",
             "featured_priority": 8,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:27.928Z",
-            "approved_at": "2026-05-26T09:13:27.928Z"
+            "opted_in_at": "2026-05-27T06:01:10.677Z",
+            "approved_at": "2026-05-27T06:01:10.677Z"
           },
           {
             "storyteller_id": "32495b83-0275-4bf3-8c3b-5a6b54ea2b6a",
@@ -24630,8 +24600,8 @@
             "custom_tagline": "Aboriginal Australian (Palm Island)",
             "featured_priority": 9,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:27.928Z",
-            "approved_at": "2026-05-26T09:13:27.928Z"
+            "opted_in_at": "2026-05-27T06:01:10.677Z",
+            "approved_at": "2026-05-27T06:01:10.677Z"
           },
           {
             "storyteller_id": "3508f053-8c2a-400c-867e-a9a7ced877c0",
@@ -24645,8 +24615,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 10,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:27.928Z",
-            "approved_at": "2026-05-26T09:13:27.928Z"
+            "opted_in_at": "2026-05-27T06:01:10.677Z",
+            "approved_at": "2026-05-27T06:01:10.677Z"
           }
         ],
         "stories": []
@@ -24819,36 +24789,6 @@
             "source": "content-hub"
           },
           {
-            "id": "084e1e3b-4196-4e1c-b349-b1cf3a607ad2",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765843210165-6khdad.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765843210165-6khdad.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765843210165-6khdad.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "20251016-1E5A3142",
-            "alt": "Professional photo shoot, Palm Island, October 2025",
-            "caption": "Professional photo shoot, Palm Island, October 2025",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
-            "id": "1f8645d4-4423-4278-8e60-423614b7a186",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/profile-images/a177c7bf-d20f-43e3-b78c-533ea8f40ce9-1765912123256.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/profile-images/a177c7bf-d20f-43e3-b78c-533ea8f40ce9-1765912123256.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/profile-images/a177c7bf-d20f-43e3-b78c-533ea8f40ce9-1765912123256.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "Profile photo - Aunty Ethel",
-            "alt": "Profile image for Aunty Ethel",
-            "caption": "Profile image for Aunty Ethel",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
             "id": "3b1bc2b9-6956-4059-aa3c-eb0e7d5f39eb",
             "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765843292995-rfhtt6.jpg",
             "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765843292995-rfhtt6.jpg",
@@ -24858,51 +24798,6 @@
             "title": "20251017-1E5A3593",
             "alt": "Professional photo shoot, Palm Island, October 2025",
             "caption": "Professional photo shoot, Palm Island, October 2025",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
-            "id": "42837214-9d35-40d1-b77a-92277d0bfacc",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/profile-images/b0000000-0000-0000-0000-000000000004-1765912144225.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/profile-images/b0000000-0000-0000-0000-000000000004-1765912144225.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/profile-images/b0000000-0000-0000-0000-000000000004-1765912144225.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "Profile photo - Allan Palm Island",
-            "alt": "Profile image for Allan Palm Island",
-            "caption": "Profile image for Allan Palm Island",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
-            "id": "4fdf7b42-3edf-4212-b5ed-f4b74ad69280",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/profile-images/5ce8bc61-440f-4bc8-8994-bcd86f86ad8c-1765912081082.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/profile-images/5ce8bc61-440f-4bc8-8994-bcd86f86ad8c-1765912081082.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/profile-images/5ce8bc61-440f-4bc8-8994-bcd86f86ad8c-1765912081082.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "Profile photo - Cyndel",
-            "alt": "Profile image for Cyndel",
-            "caption": "Profile image for Cyndel",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
-            "id": "510c4383-155f-4ebd-9063-97b294518893",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/profile-images/94974979-c361-41d4-9126-1af6f2af3a3b-1765912061693.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/profile-images/94974979-c361-41d4-9126-1af6f2af3a3b-1765912061693.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/profile-images/94974979-c361-41d4-9126-1af6f2af3a3b-1765912061693.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "Profile photo - Elsa",
-            "alt": "Profile image for Elsa",
-            "caption": "Profile image for Elsa",
             "credit": null,
             "is_hero": false,
             "is_featured": false,
@@ -24948,6 +24843,96 @@
             "title": "20251017-1E5A3502",
             "alt": "Professional photo shoot, Palm Island, October 2025",
             "caption": "Professional photo shoot, Palm Island, October 2025",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "bcfc2f2c-16dc-43cc-b681-87ee971b72aa",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765842089659-h7jez5.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765842089659-h7jez5.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765842089659-h7jez5.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "20251017-1E5A3499",
+            "alt": "Professional photo shoot, Palm Island, October 2025",
+            "caption": "Professional photo shoot, Palm Island, October 2025",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "084e1e3b-4196-4e1c-b349-b1cf3a607ad2",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765843210165-6khdad.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765843210165-6khdad.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765843210165-6khdad.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "20251016-1E5A3142",
+            "alt": "Professional photo shoot, Palm Island, October 2025",
+            "caption": "Professional photo shoot, Palm Island, October 2025",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "1f8645d4-4423-4278-8e60-423614b7a186",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/profile-images/a177c7bf-d20f-43e3-b78c-533ea8f40ce9-1765912123256.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/profile-images/a177c7bf-d20f-43e3-b78c-533ea8f40ce9-1765912123256.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/profile-images/a177c7bf-d20f-43e3-b78c-533ea8f40ce9-1765912123256.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "Profile photo - Aunty Ethel",
+            "alt": "Profile image for Aunty Ethel",
+            "caption": "Profile image for Aunty Ethel",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "42837214-9d35-40d1-b77a-92277d0bfacc",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/profile-images/b0000000-0000-0000-0000-000000000004-1765912144225.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/profile-images/b0000000-0000-0000-0000-000000000004-1765912144225.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/profile-images/b0000000-0000-0000-0000-000000000004-1765912144225.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "Profile photo - Allan Palm Island",
+            "alt": "Profile image for Allan Palm Island",
+            "caption": "Profile image for Allan Palm Island",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "4fdf7b42-3edf-4212-b5ed-f4b74ad69280",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/profile-images/5ce8bc61-440f-4bc8-8994-bcd86f86ad8c-1765912081082.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/profile-images/5ce8bc61-440f-4bc8-8994-bcd86f86ad8c-1765912081082.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/profile-images/5ce8bc61-440f-4bc8-8994-bcd86f86ad8c-1765912081082.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "Profile photo - Cyndel",
+            "alt": "Profile image for Cyndel",
+            "caption": "Profile image for Cyndel",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "510c4383-155f-4ebd-9063-97b294518893",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/profile-images/94974979-c361-41d4-9126-1af6f2af3a3b-1765912061693.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/profile-images/94974979-c361-41d4-9126-1af6f2af3a3b-1765912061693.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/profile-images/94974979-c361-41d4-9126-1af6f2af3a3b-1765912061693.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "Profile photo - Elsa",
+            "alt": "Profile image for Elsa",
+            "caption": "Profile image for Elsa",
             "credit": null,
             "is_hero": false,
             "is_featured": false,
@@ -25008,21 +24993,6 @@
             "title": "Profile photo - Winni",
             "alt": "Profile image for Winni",
             "caption": "Profile image for Winni",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
-            "id": "bcfc2f2c-16dc-43cc-b681-87ee971b72aa",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765842089659-h7jez5.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765842089659-h7jez5.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1765842089659-h7jez5.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "20251017-1E5A3499",
-            "alt": "Professional photo shoot, Palm Island, October 2025",
-            "caption": "Professional photo shoot, Palm Island, October 2025",
             "credit": null,
             "is_hero": false,
             "is_featured": false,
@@ -26011,21 +25981,6 @@
             "type": "image",
             "kind": "image",
             "title": "20251016-1E5A3405",
-            "alt": "Professional photo shoot, Palm Island, October 2025",
-            "caption": "Professional photo shoot, Palm Island, October 2025",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
-            "id": "159469ab-974e-43d9-ad86-75b9655ca0fe",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380823698-d8aq2b.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380823698-d8aq2b.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380823698-d8aq2b.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "20251016-1E5A3390",
             "alt": "Professional photo shoot, Palm Island, October 2025",
             "caption": "Professional photo shoot, Palm Island, October 2025",
             "credit": null,
@@ -27549,36 +27504,6 @@
             "source": "content-hub"
           },
           {
-            "id": "2bcb39bf-53de-4974-806a-e857f5fab661",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380779060-2161gq.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380779060-2161gq.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380779060-2161gq.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "20251016-1E5A3202",
-            "alt": "Professional photo shoot, Palm Island, October 2025",
-            "caption": "Professional photo shoot, Palm Island, October 2025",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
-            "id": "2d1e48c7-7878-4b7d-9cc7-e7bccfe431b8",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380780205-6479ka.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380780205-6479ka.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380780205-6479ka.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "20251016-1E5A3206",
-            "alt": "Professional photo shoot, Palm Island, October 2025",
-            "caption": "Professional photo shoot, Palm Island, October 2025",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
             "id": "30025a4d-feff-4d7b-b9f4-1b17bf58d050",
             "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380787670-rxz17q.jpg",
             "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380787670-rxz17q.jpg",
@@ -27654,21 +27579,6 @@
             "source": "content-hub"
           },
           {
-            "id": "55e28b98-4d70-4976-b263-4d02e1c9856f",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380777733-naoata.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380777733-naoata.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380777733-naoata.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "20251016-1E5A3191",
-            "alt": "Professional photo shoot, Palm Island, October 2025",
-            "caption": "Professional photo shoot, Palm Island, October 2025",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
             "id": "589e54ea-3a7b-4fe5-809a-e3b54903c50b",
             "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380786401-pja9b.jpg",
             "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380786401-pja9b.jpg",
@@ -27676,21 +27586,6 @@
             "type": "image",
             "kind": "image",
             "title": "20251016-1E5A3233",
-            "alt": "Professional photo shoot, Palm Island, October 2025",
-            "caption": "Professional photo shoot, Palm Island, October 2025",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
-            "id": "5db0a4da-f20c-4144-a675-1b93fbf90e3a",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380768971-ijh1zt.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380768971-ijh1zt.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380768971-ijh1zt.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "20251016-1E5A3148",
             "alt": "Professional photo shoot, Palm Island, October 2025",
             "caption": "Professional photo shoot, Palm Island, October 2025",
             "credit": null,
@@ -27909,21 +27804,6 @@
             "source": "content-hub"
           },
           {
-            "id": "95e1954a-704f-45cb-9d05-482302bdd46f",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380769608-jfkfdm.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380769608-jfkfdm.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380769608-jfkfdm.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "20251016-1E5A3150",
-            "alt": "Professional photo shoot, Palm Island, October 2025",
-            "caption": "Professional photo shoot, Palm Island, October 2025",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
             "id": "a7a774cc-1232-4ff7-af87-0d81262f8610",
             "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380781234-w2kyc8.jpg",
             "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380781234-w2kyc8.jpg",
@@ -28029,21 +27909,6 @@
             "source": "content-hub"
           },
           {
-            "id": "be25049c-e7a7-426c-adc0-2a9b0b4a0793",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380778419-c0mccm.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380778419-c0mccm.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380778419-c0mccm.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "20251016-1E5A3202-2",
-            "alt": "Professional photo shoot, Palm Island, October 2025",
-            "caption": "Professional photo shoot, Palm Island, October 2025",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
             "id": "c2c2623f-f248-4e27-b6a0-4c71440e7a64",
             "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380782225-5vd507.jpg",
             "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380782225-5vd507.jpg",
@@ -28051,21 +27916,6 @@
             "type": "image",
             "kind": "image",
             "title": "20251016-1E5A3216",
-            "alt": "Professional photo shoot, Palm Island, October 2025",
-            "caption": "Professional photo shoot, Palm Island, October 2025",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
-            "id": "c66d92f9-8c65-461b-90d8-45162bddb228",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380790811-hvmmp.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380790811-hvmmp.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380790811-hvmmp.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "20251016-1E5A3249",
             "alt": "Professional photo shoot, Palm Island, October 2025",
             "caption": "Professional photo shoot, Palm Island, October 2025",
             "credit": null,
@@ -28119,21 +27969,6 @@
             "source": "content-hub"
           },
           {
-            "id": "e98c6ed5-0773-4070-a7cc-5b1e23490d8c",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380766710-dyj3g5.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380766710-dyj3g5.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380766710-dyj3g5.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "20251016-1E5A3140",
-            "alt": "Professional photo shoot, Palm Island, October 2025",
-            "caption": "Professional photo shoot, Palm Island, October 2025",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
             "id": "f322af97-72fd-4916-9c8b-08b810459a06",
             "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380775775-rbft3.jpg",
             "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380775775-rbft3.jpg",
@@ -28164,13 +27999,118 @@
             "source": "content-hub"
           },
           {
-            "id": "06ee2696-e269-4e5f-bb41-569fef08b52f",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380750292-4rc6fh.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380750292-4rc6fh.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380750292-4rc6fh.jpg",
+            "id": "2bcb39bf-53de-4974-806a-e857f5fab661",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380779060-2161gq.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380779060-2161gq.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380779060-2161gq.jpg",
             "type": "image",
             "kind": "image",
-            "title": "20251016-1E5A3082",
+            "title": "20251016-1E5A3202",
+            "alt": "Professional photo shoot, Palm Island, October 2025",
+            "caption": "Professional photo shoot, Palm Island, October 2025",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "2d1e48c7-7878-4b7d-9cc7-e7bccfe431b8",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380780205-6479ka.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380780205-6479ka.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380780205-6479ka.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "20251016-1E5A3206",
+            "alt": "Professional photo shoot, Palm Island, October 2025",
+            "caption": "Professional photo shoot, Palm Island, October 2025",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "55e28b98-4d70-4976-b263-4d02e1c9856f",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380777733-naoata.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380777733-naoata.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380777733-naoata.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "20251016-1E5A3191",
+            "alt": "Professional photo shoot, Palm Island, October 2025",
+            "caption": "Professional photo shoot, Palm Island, October 2025",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "5db0a4da-f20c-4144-a675-1b93fbf90e3a",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380768971-ijh1zt.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380768971-ijh1zt.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380768971-ijh1zt.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "20251016-1E5A3148",
+            "alt": "Professional photo shoot, Palm Island, October 2025",
+            "caption": "Professional photo shoot, Palm Island, October 2025",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "95e1954a-704f-45cb-9d05-482302bdd46f",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380769608-jfkfdm.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380769608-jfkfdm.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380769608-jfkfdm.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "20251016-1E5A3150",
+            "alt": "Professional photo shoot, Palm Island, October 2025",
+            "caption": "Professional photo shoot, Palm Island, October 2025",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "be25049c-e7a7-426c-adc0-2a9b0b4a0793",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380778419-c0mccm.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380778419-c0mccm.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380778419-c0mccm.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "20251016-1E5A3202-2",
+            "alt": "Professional photo shoot, Palm Island, October 2025",
+            "caption": "Professional photo shoot, Palm Island, October 2025",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "c66d92f9-8c65-461b-90d8-45162bddb228",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380790811-hvmmp.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380790811-hvmmp.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380790811-hvmmp.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "20251016-1E5A3249",
+            "alt": "Professional photo shoot, Palm Island, October 2025",
+            "caption": "Professional photo shoot, Palm Island, October 2025",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "e98c6ed5-0773-4070-a7cc-5b1e23490d8c",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380766710-dyj3g5.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380766710-dyj3g5.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380766710-dyj3g5.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "20251016-1E5A3140",
             "alt": "Professional photo shoot, Palm Island, October 2025",
             "caption": "Professional photo shoot, Palm Island, October 2025",
             "credit": null,
@@ -28186,6 +28126,81 @@
             "type": "image",
             "kind": "image",
             "title": "20251016-1E5A3093",
+            "alt": "Professional photo shoot, Palm Island, October 2025",
+            "caption": "Professional photo shoot, Palm Island, October 2025",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "565c37b9-1ae5-476d-a6d4-f27994218ee0",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380729007-kh36nv.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380729007-kh36nv.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380729007-kh36nv.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "20251016-1E5A2987",
+            "alt": "Professional photo shoot, Palm Island, October 2025",
+            "caption": "Professional photo shoot, Palm Island, October 2025",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "9596e906-8e24-4d3c-8e70-a427bd31c737",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380752659-8g8vac.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380752659-8g8vac.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380752659-8g8vac.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "20251016-1E5A3098",
+            "alt": "Professional photo shoot, Palm Island, October 2025",
+            "caption": "Professional photo shoot, Palm Island, October 2025",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "bcbd2e64-e87b-4011-ae86-81d1e1b8fcdf",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380744661-a7cq6n.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380744661-a7cq6n.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380744661-a7cq6n.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "20251016-1E5A3068",
+            "alt": "Professional photo shoot, Palm Island, October 2025",
+            "caption": "Professional photo shoot, Palm Island, October 2025",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "d95b0d60-dfe5-44d0-be25-650ca6cc1dd9",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380751477-javzv1.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380751477-javzv1.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380751477-javzv1.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "20251016-1E5A3092",
+            "alt": "Professional photo shoot, Palm Island, October 2025",
+            "caption": "Professional photo shoot, Palm Island, October 2025",
+            "credit": null,
+            "is_hero": false,
+            "is_featured": false,
+            "source": "content-hub"
+          },
+          {
+            "id": "06ee2696-e269-4e5f-bb41-569fef08b52f",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380750292-4rc6fh.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380750292-4rc6fh.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380750292-4rc6fh.jpg",
+            "type": "image",
+            "kind": "image",
+            "title": "20251016-1E5A3082",
             "alt": "Professional photo shoot, Palm Island, October 2025",
             "caption": "Professional photo shoot, Palm Island, October 2025",
             "credit": null,
@@ -28344,58 +28359,13 @@
             "source": "content-hub"
           },
           {
-            "id": "43cb9a6f-c3f6-4a2a-850c-11485d470a39",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380736718-sn1hf.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380736718-sn1hf.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380736718-sn1hf.jpg",
+            "id": "5bd21cbc-5aac-4c49-a9e3-af6edc4c2cf6",
+            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380732146-sgznyp.jpg",
+            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380732146-sgznyp.jpg",
+            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380732146-sgznyp.jpg",
             "type": "image",
             "kind": "image",
-            "title": "20251016-1E5A3028-2",
-            "alt": "Professional photo shoot, Palm Island, October 2025",
-            "caption": "Professional photo shoot, Palm Island, October 2025",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
-            "id": "4d18b2b6-0f89-48d8-b947-bcdcce58778a",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380741283-a1i5hb.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380741283-a1i5hb.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380741283-a1i5hb.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "20251016-1E5A3058",
-            "alt": "Professional photo shoot, Palm Island, October 2025",
-            "caption": "Professional photo shoot, Palm Island, October 2025",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
-            "id": "515ff5a6-82b5-42d6-a015-46d643a16153",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380758228-h2t3jk.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380758228-h2t3jk.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380758228-h2t3jk.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "20251016-1E5A3122",
-            "alt": "Professional photo shoot, Palm Island, October 2025",
-            "caption": "Professional photo shoot, Palm Island, October 2025",
-            "credit": null,
-            "is_hero": false,
-            "is_featured": false,
-            "source": "content-hub"
-          },
-          {
-            "id": "53e471c5-6f5c-4bce-9afb-1e7cf9656b27",
-            "url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380735175-x0fsq.jpg",
-            "thumbnail_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380735175-x0fsq.jpg",
-            "preview_url": "https://uaxhjzqrdotoahjnxmbj.supabase.co/storage/v1/object/public/story-media/1764380735175-x0fsq.jpg",
-            "type": "image",
-            "kind": "image",
-            "title": "20251016-1E5A3021",
+            "title": "20251016-1E5A3000-2",
             "alt": "Professional photo shoot, Palm Island, October 2025",
             "caption": "Professional photo shoot, Palm Island, October 2025",
             "credit": null,
@@ -28425,7 +28395,7 @@
         "story_count": 0,
         "media_count": 250,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:13:27.928Z",
+        "fetched_at": "2026-05-27T06:01:10.678Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -28454,8 +28424,8 @@
             "custom_tagline": null,
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:46.479Z",
-            "approved_at": "2026-05-26T09:13:46.479Z"
+            "opted_in_at": "2026-05-27T06:01:24.520Z",
+            "approved_at": "2026-05-27T06:01:24.520Z"
           },
           {
             "storyteller_id": "1a2296c2-b9ed-4a03-b97d-668f8ae3bc40",
@@ -28469,8 +28439,8 @@
             "custom_tagline": null,
             "featured_priority": 2,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:46.479Z",
-            "approved_at": "2026-05-26T09:13:46.479Z"
+            "opted_in_at": "2026-05-27T06:01:24.520Z",
+            "approved_at": "2026-05-27T06:01:24.520Z"
           },
           {
             "storyteller_id": "707b5632-e611-42db-8398-9d1585a9032e",
@@ -28484,8 +28454,8 @@
             "custom_tagline": "Bwgcolman",
             "featured_priority": 3,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:46.479Z",
-            "approved_at": "2026-05-26T09:13:46.479Z"
+            "opted_in_at": "2026-05-27T06:01:24.520Z",
+            "approved_at": "2026-05-27T06:01:24.520Z"
           },
           {
             "storyteller_id": "a918ee32-432e-46b8-a32b-b677dd0a85cf",
@@ -28499,8 +28469,8 @@
             "custom_tagline": "Non-Indigenous Australian",
             "featured_priority": 4,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:46.479Z",
-            "approved_at": "2026-05-26T09:13:46.479Z"
+            "opted_in_at": "2026-05-27T06:01:24.520Z",
+            "approved_at": "2026-05-27T06:01:24.520Z"
           },
           {
             "storyteller_id": "2e6fb89b-0562-4778-a737-a04e9c3cde0e",
@@ -28514,8 +28484,8 @@
             "custom_tagline": "Non-Indigenous Australian",
             "featured_priority": 5,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:46.479Z",
-            "approved_at": "2026-05-26T09:13:46.479Z"
+            "opted_in_at": "2026-05-27T06:01:24.520Z",
+            "approved_at": "2026-05-27T06:01:24.520Z"
           },
           {
             "storyteller_id": "2a901211-6a99-4946-9602-7d7b3b6414b4",
@@ -28529,8 +28499,8 @@
             "custom_tagline": "Bwgcolman",
             "featured_priority": 6,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:46.479Z",
-            "approved_at": "2026-05-26T09:13:46.479Z"
+            "opted_in_at": "2026-05-27T06:01:24.520Z",
+            "approved_at": "2026-05-27T06:01:24.520Z"
           },
           {
             "storyteller_id": "0af93d80-f0c3-4186-a352-565415610091",
@@ -28544,8 +28514,8 @@
             "custom_tagline": null,
             "featured_priority": 7,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:46.479Z",
-            "approved_at": "2026-05-26T09:13:46.479Z"
+            "opted_in_at": "2026-05-27T06:01:24.520Z",
+            "approved_at": "2026-05-27T06:01:24.520Z"
           },
           {
             "storyteller_id": "1b172967-1be4-40fe-a505-de84b8a58f1d",
@@ -28559,8 +28529,8 @@
             "custom_tagline": "Eastern Googiallanji, Okla, Bulgaman",
             "featured_priority": 8,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:46.479Z",
-            "approved_at": "2026-05-26T09:13:46.479Z"
+            "opted_in_at": "2026-05-27T06:01:24.520Z",
+            "approved_at": "2026-05-27T06:01:24.520Z"
           },
           {
             "storyteller_id": "f6e42990-1bd2-436c-ac91-f1bd07cf9bdc",
@@ -28574,8 +28544,8 @@
             "custom_tagline": "Yorta Yorta",
             "featured_priority": 9,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:46.479Z",
-            "approved_at": "2026-05-26T09:13:46.479Z"
+            "opted_in_at": "2026-05-27T06:01:24.520Z",
+            "approved_at": "2026-05-27T06:01:24.520Z"
           },
           {
             "storyteller_id": "64cd1b67-6cde-46e8-9e78-2e5830740d40",
@@ -28589,8 +28559,8 @@
             "custom_tagline": "Aboriginal, Bwgcolman",
             "featured_priority": 10,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:46.479Z",
-            "approved_at": "2026-05-26T09:13:46.479Z"
+            "opted_in_at": "2026-05-27T06:01:24.520Z",
+            "approved_at": "2026-05-27T06:01:24.520Z"
           }
         ],
         "stories": []
@@ -32369,7 +32339,7 @@
         "story_count": 0,
         "media_count": 250,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:13:46.479Z",
+        "fetched_at": "2026-05-27T06:01:24.520Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -32398,8 +32368,8 @@
             "custom_tagline": "Indigenous",
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:17.008Z",
-            "approved_at": "2026-05-26T09:13:17.008Z"
+            "opted_in_at": "2026-05-27T06:00:55.732Z",
+            "approved_at": "2026-05-27T06:00:55.732Z"
           }
         ],
         "stories": []
@@ -32413,7 +32383,7 @@
         "story_count": 0,
         "media_count": 0,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:13:17.008Z",
+        "fetched_at": "2026-05-27T06:00:55.732Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -32836,11 +32806,12 @@
         "story_count": 0,
         "media_count": 25,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:13:29.320Z",
+        "fetched_at": "2026-05-27T06:01:06.910Z",
         "source": "content-hub",
         "site_slug": null
       }
     },
+    "confessions-to-philanthropy": null,
     "redtape": {
       "project": {
         "slug": "redtape",
@@ -33314,7 +33285,7 @@
         "story_count": 0,
         "media_count": 29,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:13:29.729Z",
+        "fetched_at": "2026-05-27T06:01:08.553Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -33343,8 +33314,8 @@
             "custom_tagline": "Aboriginal, Manbarra, Wulgurukaba, Nanggarra Wanggarra",
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:30.547Z",
-            "approved_at": "2026-05-26T09:13:30.547Z"
+            "opted_in_at": "2026-05-27T06:01:08.985Z",
+            "approved_at": "2026-05-27T06:01:08.985Z"
           }
         ],
         "stories": []
@@ -33838,7 +33809,7 @@
         "story_count": 0,
         "media_count": 31,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:13:30.547Z",
+        "fetched_at": "2026-05-27T06:01:08.985Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -34016,7 +33987,7 @@
         "story_count": 0,
         "media_count": 9,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:13:30.858Z",
+        "fetched_at": "2026-05-27T06:01:09.647Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -34570,7 +34541,7 @@
         "story_count": 0,
         "media_count": 34,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:13:35.436Z",
+        "fetched_at": "2026-05-27T06:01:13.794Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -34578,8 +34549,6 @@
     "act-infrastructure": null,
     "act-monthly-dinners": null,
     "act-studio": null,
-    "rd-activity-register": null,
-    "rd-activity-register.md.provenance": null,
     "artist-residency": null,
     "barkly-backbone": null,
     "campfire": null,
@@ -34607,8 +34576,8 @@
             "custom_tagline": "First Nations Australian",
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:39.591Z",
-            "approved_at": "2026-05-26T09:13:39.591Z"
+            "opted_in_at": "2026-05-27T06:01:17.711Z",
+            "approved_at": "2026-05-27T06:01:17.711Z"
           }
         ],
         "stories": []
@@ -34622,7 +34591,7 @@
         "story_count": 0,
         "media_count": 0,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:13:39.591Z",
+        "fetched_at": "2026-05-27T06:01:17.711Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -37980,7 +37949,7 @@
         "story_count": 0,
         "media_count": 221,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:13:50.122Z",
+        "fetched_at": "2026-05-27T06:01:26.809Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -41525,7 +41494,7 @@
         "story_count": 0,
         "media_count": 233,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:13:57.897Z",
+        "fetched_at": "2026-05-27T06:01:33.434Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -41559,8 +41528,8 @@
             "custom_tagline": null,
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:48.992Z",
-            "approved_at": "2026-05-26T09:13:48.992Z"
+            "opted_in_at": "2026-05-27T06:01:25.501Z",
+            "approved_at": "2026-05-27T06:01:25.501Z"
           },
           {
             "storyteller_id": "09b970ed-f3e5-499f-a2de-6d1ba25bc19e",
@@ -41574,8 +41543,8 @@
             "custom_tagline": "European",
             "featured_priority": 2,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:48.992Z",
-            "approved_at": "2026-05-26T09:13:48.992Z"
+            "opted_in_at": "2026-05-27T06:01:25.501Z",
+            "approved_at": "2026-05-27T06:01:25.501Z"
           },
           {
             "storyteller_id": "7c4b1f9d-1d59-4563-a86e-37b9e614d338",
@@ -41589,8 +41558,8 @@
             "custom_tagline": "Greek-British",
             "featured_priority": 3,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:48.992Z",
-            "approved_at": "2026-05-26T09:13:48.992Z"
+            "opted_in_at": "2026-05-27T06:01:25.501Z",
+            "approved_at": "2026-05-27T06:01:25.501Z"
           },
           {
             "storyteller_id": "fa604a35-27a8-4238-8688-f5b0df49d349",
@@ -41604,8 +41573,8 @@
             "custom_tagline": "Non-Indigenous Australian",
             "featured_priority": 4,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:48.992Z",
-            "approved_at": "2026-05-26T09:13:48.992Z"
+            "opted_in_at": "2026-05-27T06:01:25.501Z",
+            "approved_at": "2026-05-27T06:01:25.501Z"
           },
           {
             "storyteller_id": "c6710f45-1dda-4966-80ea-83f246158983",
@@ -41619,8 +41588,8 @@
             "custom_tagline": null,
             "featured_priority": 5,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:48.992Z",
-            "approved_at": "2026-05-26T09:13:48.992Z"
+            "opted_in_at": "2026-05-27T06:01:25.501Z",
+            "approved_at": "2026-05-27T06:01:25.501Z"
           }
         ],
         "stories": []
@@ -41634,7 +41603,7 @@
         "story_count": 0,
         "media_count": 0,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:13:48.992Z",
+        "fetched_at": "2026-05-27T06:01:25.501Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -41664,8 +41633,8 @@
             "custom_tagline": "First Nations Australian",
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:13:51.763Z",
-            "approved_at": "2026-05-26T09:13:51.763Z"
+            "opted_in_at": "2026-05-27T06:01:29.500Z",
+            "approved_at": "2026-05-27T06:01:29.500Z"
           }
         ],
         "stories": []
@@ -41679,7 +41648,7 @@
         "story_count": 0,
         "media_count": 0,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:13:51.763Z",
+        "fetched_at": "2026-05-27T06:01:29.500Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -41708,8 +41677,8 @@
             "custom_tagline": "Non-Indigenous Australian",
             "featured_priority": 1,
             "featured_story_count": 1,
-            "opted_in_at": "2026-05-26T09:14:04.059Z",
-            "approved_at": "2026-05-26T09:14:04.059Z"
+            "opted_in_at": "2026-05-27T06:01:39.788Z",
+            "approved_at": "2026-05-27T06:01:39.788Z"
           },
           {
             "storyteller_id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
@@ -41723,8 +41692,8 @@
             "custom_tagline": "First Nations Australian",
             "featured_priority": 2,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:14:04.059Z",
-            "approved_at": "2026-05-26T09:14:04.059Z"
+            "opted_in_at": "2026-05-27T06:01:39.788Z",
+            "approved_at": "2026-05-27T06:01:39.788Z"
           },
           {
             "storyteller_id": "9ad1702d-01a4-4b50-a60a-7d498517f682",
@@ -41738,8 +41707,8 @@
             "custom_tagline": "New Zealander",
             "featured_priority": 3,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:14:04.059Z",
-            "approved_at": "2026-05-26T09:14:04.059Z"
+            "opted_in_at": "2026-05-27T06:01:39.788Z",
+            "approved_at": "2026-05-27T06:01:39.788Z"
           },
           {
             "storyteller_id": "c2ba535c-aa50-42c3-af18-ed61d3330716",
@@ -41753,8 +41722,8 @@
             "custom_tagline": "Anglo-Australian",
             "featured_priority": 4,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:14:04.059Z",
-            "approved_at": "2026-05-26T09:14:04.059Z"
+            "opted_in_at": "2026-05-27T06:01:39.788Z",
+            "approved_at": "2026-05-27T06:01:39.788Z"
           }
         ],
         "stories": [
@@ -45559,7 +45528,7 @@
         "story_count": 1,
         "media_count": 250,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:14:04.059Z",
+        "fetched_at": "2026-05-27T06:01:39.788Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -45594,8 +45563,8 @@
             "custom_tagline": null,
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:14:13.002Z",
-            "approved_at": "2026-05-26T09:14:13.002Z"
+            "opted_in_at": "2026-05-27T06:01:47.470Z",
+            "approved_at": "2026-05-27T06:01:47.470Z"
           },
           {
             "storyteller_id": "13742d49-901e-4c08-94b2-a864d1a9a8e9",
@@ -45609,8 +45578,8 @@
             "custom_tagline": "Māori, cross-cultural Indigenous knowledge holder",
             "featured_priority": 2,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:14:13.002Z",
-            "approved_at": "2026-05-26T09:14:13.002Z"
+            "opted_in_at": "2026-05-27T06:01:47.470Z",
+            "approved_at": "2026-05-27T06:01:47.470Z"
           },
           {
             "storyteller_id": "7a0cd28a-ad12-4f70-b900-d869b42c9f88",
@@ -45624,8 +45593,8 @@
             "custom_tagline": "Indigenous",
             "featured_priority": 3,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:14:13.002Z",
-            "approved_at": "2026-05-26T09:14:13.002Z"
+            "opted_in_at": "2026-05-27T06:01:47.470Z",
+            "approved_at": "2026-05-27T06:01:47.470Z"
           },
           {
             "storyteller_id": "8dab91aa-3a1f-4128-b41d-b89e532be1fa",
@@ -45639,8 +45608,8 @@
             "custom_tagline": "Australian",
             "featured_priority": 4,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:14:13.002Z",
-            "approved_at": "2026-05-26T09:14:13.002Z"
+            "opted_in_at": "2026-05-27T06:01:47.470Z",
+            "approved_at": "2026-05-27T06:01:47.470Z"
           }
         ],
         "stories": []
@@ -49419,7 +49388,7 @@
         "story_count": 0,
         "media_count": 250,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:14:13.002Z",
+        "fetched_at": "2026-05-27T06:01:47.471Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -49450,8 +49419,8 @@
             "custom_tagline": "Aboriginal, Manbarra, Wulgurukaba, Nanggarra Wanggarra",
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:14:01.808Z",
-            "approved_at": "2026-05-26T09:14:01.808Z"
+            "opted_in_at": "2026-05-27T06:01:39.612Z",
+            "approved_at": "2026-05-27T06:01:39.612Z"
           },
           {
             "storyteller_id": "5a6a4087-9d53-495e-bccf-8432f329c697",
@@ -49465,8 +49434,8 @@
             "custom_tagline": "Aboriginal",
             "featured_priority": 2,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:14:01.808Z",
-            "approved_at": "2026-05-26T09:14:01.808Z"
+            "opted_in_at": "2026-05-27T06:01:39.612Z",
+            "approved_at": "2026-05-27T06:01:39.612Z"
           },
           {
             "storyteller_id": "8de37a6c-6799-41b5-8540-d994ab5fa03f",
@@ -49480,8 +49449,8 @@
             "custom_tagline": "Aboriginal Australian",
             "featured_priority": 3,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:14:01.808Z",
-            "approved_at": "2026-05-26T09:14:01.808Z"
+            "opted_in_at": "2026-05-27T06:01:39.612Z",
+            "approved_at": "2026-05-27T06:01:39.612Z"
           },
           {
             "storyteller_id": "f6e42990-1bd2-436c-ac91-f1bd07cf9bdc",
@@ -49495,8 +49464,8 @@
             "custom_tagline": "Yorta Yorta",
             "featured_priority": 4,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:14:01.808Z",
-            "approved_at": "2026-05-26T09:14:01.808Z"
+            "opted_in_at": "2026-05-27T06:01:39.612Z",
+            "approved_at": "2026-05-27T06:01:39.612Z"
           }
         ],
         "stories": []
@@ -49510,7 +49479,7 @@
         "story_count": 0,
         "media_count": 0,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:14:01.808Z",
+        "fetched_at": "2026-05-27T06:01:39.612Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -49543,8 +49512,8 @@
             "custom_tagline": null,
             "featured_priority": 1,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:14:08.539Z",
-            "approved_at": "2026-05-26T09:14:08.539Z"
+            "opted_in_at": "2026-05-27T06:01:44.820Z",
+            "approved_at": "2026-05-27T06:01:44.820Z"
           },
           {
             "storyteller_id": "3243ec27-3d86-40df-a08a-3d6201e950e3",
@@ -49558,8 +49527,8 @@
             "custom_tagline": null,
             "featured_priority": 2,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:14:08.539Z",
-            "approved_at": "2026-05-26T09:14:08.539Z"
+            "opted_in_at": "2026-05-27T06:01:44.820Z",
+            "approved_at": "2026-05-27T06:01:44.820Z"
           },
           {
             "storyteller_id": "6aec02e0-d670-47ac-88a4-8ff66ffbac49",
@@ -49573,8 +49542,8 @@
             "custom_tagline": null,
             "featured_priority": 3,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:14:08.539Z",
-            "approved_at": "2026-05-26T09:14:08.539Z"
+            "opted_in_at": "2026-05-27T06:01:44.820Z",
+            "approved_at": "2026-05-27T06:01:44.820Z"
           },
           {
             "storyteller_id": "6ff0f145-205f-4cce-99c9-2348b3f95385",
@@ -49588,8 +49557,8 @@
             "custom_tagline": null,
             "featured_priority": 4,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:14:08.539Z",
-            "approved_at": "2026-05-26T09:14:08.539Z"
+            "opted_in_at": "2026-05-27T06:01:44.820Z",
+            "approved_at": "2026-05-27T06:01:44.820Z"
           },
           {
             "storyteller_id": "b841d8b1-0b34-4112-9088-97fa622e2b8e",
@@ -49603,8 +49572,8 @@
             "custom_tagline": null,
             "featured_priority": 5,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:14:08.539Z",
-            "approved_at": "2026-05-26T09:14:08.539Z"
+            "opted_in_at": "2026-05-27T06:01:44.820Z",
+            "approved_at": "2026-05-27T06:01:44.820Z"
           },
           {
             "storyteller_id": "4870011c-3254-4b90-8fbf-5827d0fa7a6c",
@@ -49618,8 +49587,8 @@
             "custom_tagline": null,
             "featured_priority": 6,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:14:08.539Z",
-            "approved_at": "2026-05-26T09:14:08.539Z"
+            "opted_in_at": "2026-05-27T06:01:44.820Z",
+            "approved_at": "2026-05-27T06:01:44.820Z"
           },
           {
             "storyteller_id": "8cbd7bab-c1c2-48af-b48b-0b459d6886ef",
@@ -49633,8 +49602,8 @@
             "custom_tagline": null,
             "featured_priority": 7,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:14:08.539Z",
-            "approved_at": "2026-05-26T09:14:08.539Z"
+            "opted_in_at": "2026-05-27T06:01:44.820Z",
+            "approved_at": "2026-05-27T06:01:44.820Z"
           },
           {
             "storyteller_id": "bcfa37a8-63a9-426e-935b-ef9d55229262",
@@ -49648,8 +49617,8 @@
             "custom_tagline": null,
             "featured_priority": 8,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:14:08.539Z",
-            "approved_at": "2026-05-26T09:14:08.539Z"
+            "opted_in_at": "2026-05-27T06:01:44.820Z",
+            "approved_at": "2026-05-27T06:01:44.820Z"
           },
           {
             "storyteller_id": "c0bd36a0-fe06-44ee-819a-111966b1a801",
@@ -49663,8 +49632,8 @@
             "custom_tagline": null,
             "featured_priority": 9,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:14:08.539Z",
-            "approved_at": "2026-05-26T09:14:08.539Z"
+            "opted_in_at": "2026-05-27T06:01:44.820Z",
+            "approved_at": "2026-05-27T06:01:44.820Z"
           },
           {
             "storyteller_id": "b1d65641-9e75-450f-a840-c1eb78ea662e",
@@ -49678,8 +49647,8 @@
             "custom_tagline": null,
             "featured_priority": 10,
             "featured_story_count": 0,
-            "opted_in_at": "2026-05-26T09:14:08.539Z",
-            "approved_at": "2026-05-26T09:14:08.539Z"
+            "opted_in_at": "2026-05-27T06:01:44.820Z",
+            "approved_at": "2026-05-27T06:01:44.820Z"
           }
         ],
         "stories": []
@@ -49693,7 +49662,7 @@
         "story_count": 0,
         "media_count": 0,
         "gallery_count": 0,
-        "fetched_at": "2026-05-26T09:14:08.539Z",
+        "fetched_at": "2026-05-27T06:01:44.820Z",
         "source": "content-hub",
         "site_slug": null
       }
@@ -57221,7 +57190,7 @@
       },
       "meta": {
         "media_count": 500,
-        "fetched_at": "2026-05-26T09:14:52.608Z",
+        "fetched_at": "2026-05-27T06:02:21.537Z",
         "source": "content-hub"
       }
     },
@@ -57297,7 +57266,7 @@
       },
       "meta": {
         "media_count": 4,
-        "fetched_at": "2026-05-26T09:14:41.787Z",
+        "fetched_at": "2026-05-27T06:02:14.044Z",
         "source": "content-hub"
       }
     },
@@ -57523,7 +57492,7 @@
       },
       "meta": {
         "media_count": 14,
-        "fetched_at": "2026-05-26T09:14:41.803Z",
+        "fetched_at": "2026-05-27T06:02:14.035Z",
         "source": "content-hub"
       }
     },
@@ -57749,7 +57718,7 @@
       },
       "meta": {
         "media_count": 14,
-        "fetched_at": "2026-05-26T09:14:41.889Z",
+        "fetched_at": "2026-05-27T06:02:14.080Z",
         "source": "content-hub"
       }
     },
@@ -57796,7 +57765,7 @@
       },
       "meta": {
         "media_count": 2,
-        "fetched_at": "2026-05-26T09:14:41.869Z",
+        "fetched_at": "2026-05-27T06:02:14.169Z",
         "source": "content-hub"
       }
     },
@@ -57887,7 +57856,7 @@
       },
       "meta": {
         "media_count": 5,
-        "fetched_at": "2026-05-26T09:14:41.889Z",
+        "fetched_at": "2026-05-27T06:02:14.139Z",
         "source": "content-hub"
       }
     },
@@ -60514,7 +60483,7 @@
       },
       "meta": {
         "media_count": 174,
-        "fetched_at": "2026-05-26T09:14:45.837Z",
+        "fetched_at": "2026-05-27T06:02:16.219Z",
         "source": "content-hub"
       }
     },
@@ -65090,7 +65059,7 @@
       },
       "meta": {
         "media_count": 304,
-        "fetched_at": "2026-05-26T09:14:47.960Z",
+        "fetched_at": "2026-05-27T06:02:18.247Z",
         "source": "content-hub"
       }
     },
@@ -65167,7 +65136,7 @@
       },
       "meta": {
         "media_count": 4,
-        "fetched_at": "2026-05-26T09:14:42.866Z",
+        "fetched_at": "2026-05-27T06:02:15.045Z",
         "source": "content-hub"
       }
     },
@@ -65303,7 +65272,7 @@
       },
       "meta": {
         "media_count": 8,
-        "fetched_at": "2026-05-26T09:14:43.274Z",
+        "fetched_at": "2026-05-27T06:02:15.046Z",
         "source": "content-hub"
       }
     },
@@ -72820,7 +72789,7 @@
       },
       "meta": {
         "media_count": 500,
-        "fetched_at": "2026-05-26T09:14:51.079Z",
+        "fetched_at": "2026-05-27T06:02:20.728Z",
         "source": "content-hub"
       }
     },
@@ -74696,7 +74665,7 @@
       },
       "meta": {
         "media_count": 124,
-        "fetched_at": "2026-05-26T09:14:45.849Z",
+        "fetched_at": "2026-05-27T06:02:17.006Z",
         "source": "content-hub"
       }
     },
@@ -82212,7 +82181,7 @@
       },
       "meta": {
         "media_count": 500,
-        "fetched_at": "2026-05-26T09:14:53.818Z",
+        "fetched_at": "2026-05-27T06:02:22.759Z",
         "source": "content-hub"
       }
     },
@@ -88710,7 +88679,7 @@
       },
       "meta": {
         "media_count": 432,
-        "fetched_at": "2026-05-26T09:14:50.662Z",
+        "fetched_at": "2026-05-27T06:02:20.673Z",
         "source": "content-hub"
       }
     },
@@ -90976,7 +90945,7 @@
       },
       "meta": {
         "media_count": 150,
-        "fetched_at": "2026-05-26T09:14:47.899Z",
+        "fetched_at": "2026-05-27T06:02:17.999Z",
         "source": "content-hub"
       }
     },
@@ -91802,7 +91771,7 @@
       },
       "meta": {
         "media_count": 54,
-        "fetched_at": "2026-05-26T09:14:47.300Z",
+        "fetched_at": "2026-05-27T06:02:17.340Z",
         "source": "content-hub"
       }
     },
@@ -91939,7 +91908,7 @@
       },
       "meta": {
         "media_count": 8,
-        "fetched_at": "2026-05-26T09:14:47.228Z",
+        "fetched_at": "2026-05-27T06:02:18.249Z",
         "source": "content-hub"
       }
     },
@@ -92030,7 +91999,7 @@
       },
       "meta": {
         "media_count": 5,
-        "fetched_at": "2026-05-26T09:14:48.185Z",
+        "fetched_at": "2026-05-27T06:02:18.278Z",
         "source": "content-hub"
       }
     }

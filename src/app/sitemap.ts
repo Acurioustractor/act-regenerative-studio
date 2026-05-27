@@ -5,6 +5,7 @@ import { getAllStorytellers } from "@/lib/empathy-ledger-storytellers";
 import { getSiteEditorialArticles } from "@/lib/empathy-ledger-editorial";
 import { listAllWikiPages } from "@/lib/wiki/canonical-site-wiki";
 import { getCanonicalWikiProjectRecords } from "@/lib/wiki/canonical-project-wiki";
+import { heldProjectSlugs } from "@/lib/projects/public-projects";
 
 const siteUrl = (() => {
   // Reject dev URLs so we never ship a sitemap pointing at localhost.
@@ -86,12 +87,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: route.priority,
   }));
 
-  const projectEntries: MetadataRoute.Sitemap = projectRecords.map((record) => ({
-    url: `${siteUrl}/projects/${record.websiteSlug || record.slug}`,
-    lastModified: record.modifiedAt ? new Date(record.modifiedAt) : now,
-    changeFrequency: "monthly",
-    priority: 0.7,
-  }));
+  const held = heldProjectSlugs();
+  const projectEntries: MetadataRoute.Sitemap = projectRecords
+    .filter((record) => !held.has(record.slug) && !held.has(record.websiteSlug || record.slug))
+    .map((record) => ({
+      url: `${siteUrl}/projects/${record.websiteSlug || record.slug}`,
+      lastModified: record.modifiedAt ? new Date(record.modifiedAt) : now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    }));
 
   const wikiEntries: MetadataRoute.Sitemap = wikiPages.map((page) => ({
     url: `${siteUrl}/wiki/${page.stem}`,

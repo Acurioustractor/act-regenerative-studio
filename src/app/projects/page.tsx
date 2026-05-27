@@ -9,6 +9,7 @@ import { buildCuratedProjectCards } from '@/lib/projects/build-curated-project-c
 import { getCanonicalWikiProjectRecords } from '@/lib/wiki/canonical-project-wiki';
 import { getFlagshipProjectPacks } from '@/lib/wiki/flagship-project-packs';
 import { buildProjectIndexSignals } from '@/lib/projects/build-project-index-signals';
+import { heldProjectSlugs } from '@/lib/projects/public-projects';
 import { pageMetadata } from '@/lib/seo/site';
 import { cleanPublicBrandText } from '@/lib/brand/public-copy';
 
@@ -290,9 +291,14 @@ export default async function ProjectsPage() {
   );
 
   const featuredSlugs = new Set(FEATURED_OUTPUTS.map((item) => item.slug));
+  const held = heldProjectSlugs();
   const projectIndex = canonicalProjects
     .filter(
-    (record) => !featuredSlugs.has(record.slug) && !HIDDEN_PROJECT_SLUGS.has(record.slug)
+      (record) =>
+        !featuredSlugs.has(record.slug) &&
+        !HIDDEN_PROJECT_SLUGS.has(record.slug) &&
+        !held.has(record.slug) &&
+        !held.has(record.websiteSlug || record.slug)
     )
     .sort((a, b) => {
       const signalDelta =

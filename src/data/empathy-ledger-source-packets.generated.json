@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-26T09:15:13.470Z",
+  "generatedAt": "2026-05-27T06:02:35.133Z",
   "sourceUrl": "https://empathy-ledger-v2.vercel.app",
   "siteSlug": "act-regenerative-studio",
   "destination": "act_el",
@@ -23,7 +23,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "flagship_project_pack",
           "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
-          "captured_at": "2026-05-26T09:15:08.893Z",
+          "captured_at": "2026-05-27T06:02:31.492Z",
           "verification_status": "verified",
           "notes": "Flagship pack exists for this project slug."
         },
@@ -32,7 +32,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "site_editorial_manifest",
           "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
-          "captured_at": "2026-05-26T09:15:08.893Z",
+          "captured_at": "2026-05-27T06:02:31.492Z",
           "verification_status": "verified",
           "notes": "Editorial manifest found for act-regenerative-studio."
         }
@@ -169,7 +169,7 @@
         }
       ],
       "provenance": {
-        "generated_at": "2026-05-26T09:15:08.893Z",
+        "generated_at": "2026-05-27T06:02:31.492Z",
         "generated_by": "content-hub-source-packet-builder",
         "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
         "notes": "storyIds=0, storytellerIds=4, mediaIds=8"
@@ -226,7 +226,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "flagship_project_pack",
           "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
-          "captured_at": "2026-05-26T09:15:08.177Z",
+          "captured_at": "2026-05-27T06:02:30.725Z",
           "verification_status": "unverified",
           "notes": "No flagship pack found."
         },
@@ -235,7 +235,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "site_editorial_manifest",
           "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
-          "captured_at": "2026-05-26T09:15:08.177Z",
+          "captured_at": "2026-05-27T06:02:30.725Z",
           "verification_status": "verified",
           "notes": "Editorial manifest found for act-regenerative-studio."
         }
@@ -382,7 +382,7 @@
         }
       ],
       "provenance": {
-        "generated_at": "2026-05-26T09:15:08.178Z",
+        "generated_at": "2026-05-27T06:02:30.725Z",
         "generated_by": "content-hub-source-packet-builder",
         "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
         "notes": "storyIds=2, storytellerIds=6, mediaIds=8"
@@ -434,7 +434,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "flagship_project_pack",
           "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
-          "captured_at": "2026-05-26T09:15:11.963Z",
+          "captured_at": "2026-05-27T06:02:33.578Z",
           "verification_status": "verified",
           "notes": "Flagship pack exists for this project slug."
         },
@@ -443,7 +443,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "site_editorial_manifest",
           "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
-          "captured_at": "2026-05-26T09:15:11.963Z",
+          "captured_at": "2026-05-27T06:02:33.578Z",
           "verification_status": "verified",
           "notes": "Editorial manifest found for act-regenerative-studio."
         }
@@ -584,7 +584,7 @@
         }
       ],
       "provenance": {
-        "generated_at": "2026-05-26T09:15:11.963Z",
+        "generated_at": "2026-05-27T06:02:33.578Z",
         "generated_by": "content-hub-source-packet-builder",
         "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
         "notes": "storyIds=1, storytellerIds=4, mediaIds=8"
@@ -637,7 +637,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "flagship_project_pack",
           "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
-          "captured_at": "2026-05-26T09:15:11.222Z",
+          "captured_at": "2026-05-27T06:02:33.364Z",
           "verification_status": "verified",
           "notes": "Flagship pack exists for this project slug."
         },
@@ -646,7 +646,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "site_editorial_manifest",
           "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
-          "captured_at": "2026-05-26T09:15:11.222Z",
+          "captured_at": "2026-05-27T06:02:33.364Z",
           "verification_status": "verified",
           "notes": "Editorial manifest found for act-regenerative-studio."
         }
@@ -783,7 +783,7 @@
         }
       ],
       "provenance": {
-        "generated_at": "2026-05-26T09:15:11.222Z",
+        "generated_at": "2026-05-27T06:02:33.364Z",
         "generated_by": "content-hub-source-packet-builder",
         "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
         "notes": "storyIds=1, storytellerIds=1, mediaIds=8"
@@ -834,7 +834,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "flagship_project_pack",
           "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
-          "captured_at": "2026-05-26T09:15:13.367Z",
+          "captured_at": "2026-05-27T06:02:35.200Z",
           "verification_status": "verified",
           "notes": "Flagship pack exists for this project slug."
         },
@@ -843,7 +843,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "site_editorial_manifest",
           "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
-          "captured_at": "2026-05-26T09:15:13.367Z",
+          "captured_at": "2026-05-27T06:02:35.200Z",
           "verification_status": "verified",
           "notes": "Editorial manifest found for act-regenerative-studio."
         }
@@ -981,7 +981,7 @@
         }
       ],
       "provenance": {
-        "generated_at": "2026-05-26T09:15:13.367Z",
+        "generated_at": "2026-05-27T06:02:35.200Z",
         "generated_by": "content-hub-source-packet-builder",
         "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
         "notes": "storyIds=0, storytellerIds=0, mediaIds=8"

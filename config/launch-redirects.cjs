@@ -51,6 +51,20 @@ const launchRedirects = [
   { source: '/ask', destination: '/projects', permanent: false },
   { source: '/wiki', destination: '/projects', permanent: false },
   { source: '/wiki/:slug*', destination: '/projects', permanent: false },
+
+  // Project holds (2026-05-27) — not-ready / internal pages held off the public
+  // launch. 307s (permanent: false) so they reverse cleanly when each is ready.
+  // This is the single source of truth: a hold here removes the project from the
+  // page (redirect), the public count, the sitemap, the /projects index, the
+  // homepage mosaic, and related-projects (see heldProjectSlugs in public-projects).
+  { source: '/projects/act-infrastructure', destination: '/projects', permanent: false },
+  { source: '/projects/custodian-first-economy', destination: '/projects', permanent: false },
+  { source: '/projects/facilitation', destination: '/projects', permanent: false },
+  { source: '/projects/grantscope', destination: '/projects', permanent: false },
+  { source: '/projects/minderoo-pitch-package', destination: '/projects', permanent: false },
+  { source: '/projects/three-circles', destination: '/projects', permanent: false },
+  { source: '/projects/the-full-idea', destination: '/projects', permanent: false },
+  { source: '/projects/annual-field-service', destination: '/projects', permanent: false },
 ];
 
 module.exports = { launchRedirects };

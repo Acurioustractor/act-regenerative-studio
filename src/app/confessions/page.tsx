@@ -1,11 +1,12 @@
 import Link from 'next/link';
 
+import { CallCTA } from '@/components/confessions/CallCTA';
 import { CallTimer } from '@/components/confessions/CallTimer';
 import { ConfessionField } from '@/components/confessions/ConfessionField';
 import { RotaryDial } from '@/components/confessions/RotaryDial';
 import { VoicemailInbox } from '@/components/confessions/VoicemailInbox';
 import { heroVoices, mockConfessions, IS_MOCK } from '@/data/confessions-mock';
-import { pageMetadata } from '@/lib/seo/site';
+import { pageMetadata, siteUrl } from '@/lib/seo/site';
 
 export const metadata = pageMetadata({
   title: 'Confessions to Philanthropy',
@@ -19,9 +20,6 @@ export const metadata = pageMetadata({
 // messages; after, it reads the real (initially empty) feed. Gating here means
 // nothing fabricated renders once the line goes live.
 const confessions = IS_MOCK ? mockConfessions : [];
-
-const DISPLAY_NUMBER = '+61 (0) 2 8503 4273';
-const TEL = 'tel:+61285034273';
 
 const QUESTIONS = [
   'What do you wish philanthropy knew?',
@@ -63,20 +61,18 @@ const HISTORY = [
   },
 ];
 
-function CallCTA({ size = 'lg' }: { size?: 'lg' | 'sm' }) {
-  return (
-    <a
-      href={TEL}
-      className={`group inline-flex items-center gap-3 rounded-full bg-[#CFA16B] font-semibold text-[#1A130B] transition-all hover:gap-4 hover:bg-[#E0B985] ${
-        size === 'lg' ? 'px-7 py-4 text-base' : 'px-5 py-3 text-sm'
-      }`}
-    >
-      <span aria-hidden="true">☎</span>
-      <span>Call</span>
-      <span className="font-mono tracking-[0.04em] tabular-nums">{DISPLAY_NUMBER}</span>
-    </a>
-  );
-}
+// Share kit: post the campaign or pass the number on. Intent links share the
+// /confessions URL, which renders the gold-phone card via opengraph-image.
+const SHARE_URL = `${siteUrl}/confessions`;
+const SHARE_TEXT =
+  'I told philanthropy what I really think. Confessions to Philanthropy, a gold phone from A Curious Tractor:';
+const SHARE_X = `https://twitter.com/intent/tweet?text=${encodeURIComponent(SHARE_TEXT)}&url=${encodeURIComponent(SHARE_URL)}`;
+const SHARE_LINKEDIN = `https://www.linkedin.com/sharing/share-offsite/?url=${encodeURIComponent(SHARE_URL)}`;
+const SHARE_CARDS = [
+  { variant: 'hook', label: 'The hook' },
+  { variant: 'answer', label: 'A confession' },
+  { variant: 'invite', label: 'The invite' },
+];
 
 // A redaction bar, the moderation made visible. Cream block over removed text.
 function Redact({ w = 'w-20' }: { w?: string }) {
@@ -359,6 +355,64 @@ export default function ConfessionsPage() {
             </Link>
             . Not anti-philanthropy. Anti-pretending.
           </p>
+        </div>
+      </section>
+
+      {/* PASS IT ON, share kit */}
+      <section className="border-t border-[#2E2215] bg-[#15100A] px-6 py-20 text-center md:py-28">
+        <div className="mx-auto max-w-3xl">
+          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-[#CFA16B]">
+            Pass it on
+          </p>
+          <h2 className="mt-5 font-[var(--font-display)] text-[clamp(1.8rem,4.5vw,2.6rem)] font-semibold leading-tight">
+            The honest stuff spreads quietly.
+          </h2>
+          <p className="mx-auto mt-5 max-w-xl font-[var(--font-body)] text-[16px] leading-7 text-[#C7B9A4]">
+            Send the number to someone who has been holding a confession. Or post a card.
+          </p>
+
+          <div className="mt-9 flex flex-wrap items-center justify-center gap-3">
+            <a
+              href={SHARE_X}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full bg-[#CFA16B] px-5 py-2.5 text-sm font-semibold text-[#1A130B] transition hover:bg-[#E0B985]"
+            >
+              Share on X
+            </a>
+            <a
+              href={SHARE_LINKEDIN}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 rounded-full border border-[#CFA16B]/40 px-5 py-2.5 text-sm font-semibold text-[#CFA16B] transition hover:border-[#CFA16B] hover:bg-[#CFA16B]/10"
+            >
+              Share on LinkedIn
+            </a>
+          </div>
+
+          <div className="mt-10 grid gap-4 sm:grid-cols-3">
+            {SHARE_CARDS.map((card) => (
+              <a
+                key={card.variant}
+                href={`/confessions/share/${card.variant}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group block overflow-hidden rounded-xl border border-[#CFA16B]/20 transition hover:border-[#CFA16B]/50"
+              >
+                {/* eslint-disable-next-line @next/next/no-img-element */}
+                <img
+                  src={`/confessions/share/${card.variant}`}
+                  alt={`Confessions to Philanthropy share card: ${card.label}`}
+                  width={1200}
+                  height={630}
+                  className="aspect-[1200/630] w-full object-cover transition group-hover:opacity-90"
+                />
+                <span className="block bg-[#1A130B] px-3 py-2 font-[var(--font-sans)] text-[10px] uppercase tracking-[0.25em] text-[#CFA16B]/80">
+                  {card.label}
+                </span>
+              </a>
+            ))}
+          </div>
         </div>
       </section>
 

@@ -16,6 +16,8 @@ import { getHomeEditorialFeature, getSiteEditorialArticles } from "@/lib/empathy
 import { cleanMediaAlt } from "@/lib/media/alt-text";
 import { pageMetadata } from "@/lib/seo/site";
 import featuredSnapshot from "@/data/empathy-ledger-featured.generated.json";
+import { heroFragments } from "@/data/confessions-mock";
+import { CallCTA } from "@/components/confessions/CallCTA";
 
 export const metadata = pageMetadata({
   title: "A Curious Tractor",
@@ -186,6 +188,16 @@ export default async function HomePage() {
     ...featuredArt.filter((p) => p.heroImage && !artOrder.includes(p.slug)),
   ].slice(0, 3);
 
+  // The confession each flagship answers: the bridge from the campaign band
+  // into real, verified-live project pages. Keyed by the homepage config slug.
+  const confessionBySlug: Record<string, string> = {
+    goods: "Communities are treated as beneficiaries, never owners.",
+    justicehub: "Programs die the day the grant ends.",
+    "the-harvest": "Nobody funds the unglamorous infrastructure that actually holds.",
+    "empathy-ledger": "Funders make you perform gratitude for your own story.",
+    "black-cockatoo-valley": "Impact is a glossy PDF, not a thing that lives in the ground.",
+  };
+
   return (
     <>
       {/* , , ,  1. HERO, Full-screen dark, farm drone video , , ,  */}
@@ -201,6 +213,7 @@ export default async function HomePage() {
           title: "Black Cockatoo Valley aerial through morning fog",
         }}
         primaryCta={{ label: "Explore projects", href: "/projects" }}
+        secondaryCta={{ label: "Confessions to Philanthropy", href: "/confessions" }}
         statsAfter={
           <div className="flex flex-wrap gap-12 border-t border-[#FAFAF7]/10 pt-8">
             {heroStats.map(({ n, l }) => (
@@ -216,6 +229,49 @@ export default async function HomePage() {
           </div>
         }
       />
+
+      {/* ---- 1a. CONFESSIONS TO PHILANTHROPY ---- launch campaign lead.
+           Matches the /confessions palette (espresso + candlelight gold) so the
+           two read as one campaign. Sample lines reuse the honest mock
+           (heroFragments); the real moderated feed lands via Phase 2. ---- */}
+      <section className="full-bleed relative overflow-hidden bg-[#15100A] px-6 py-24 text-[#F3EBDD] md:px-10 md:py-32">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_36%,#241910_0%,#15100A_62%)]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,#0E0A05_100%)]" />
+        <div className="relative z-10 mx-auto flex max-w-3xl flex-col items-center text-center">
+          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-[#CFA16B]">
+            Confessions to Philanthropy · Queensland Philanthropy Week
+          </p>
+          <h2 className="mt-6 font-[var(--font-display)] text-[clamp(2.1rem,5vw,3.6rem)] font-semibold leading-[1.05] text-[#F3EBDD]">
+            Tell philanthropy what you really think.
+          </h2>
+          <p className="mt-6 max-w-xl font-[var(--font-body)] text-[17px] leading-8 text-[#D8CBB6]">
+            There is a lot the sector never says out loud. Funders who know the model is bent.
+            Grantees who cannot say it because they need the cheque. So we built a gold phone.
+            Call it. Confess. No name, no consequences, no &ldquo;dear valued stakeholder&rdquo;.
+          </p>
+
+          <ul className="mt-9 flex flex-wrap items-center justify-center gap-2.5">
+            {heroFragments.slice(1, 4).map((line) => (
+              <li
+                key={line}
+                className="rounded-full border border-[#CFA16B]/25 bg-[#CFA16B]/5 px-4 py-2 font-[var(--font-body)] text-[13px] italic text-[#E0D4B9]"
+              >
+                &ldquo;{line}&rdquo;
+              </li>
+            ))}
+          </ul>
+
+          <div className="mt-10 flex flex-col items-center gap-4">
+            <CallCTA />
+            <Link
+              href="/confessions"
+              className="group inline-flex items-center gap-2 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#CFA16B] transition-all hover:gap-3 hover:text-[#E0B985]"
+            >
+              Hear what has been confessed <span aria-hidden="true">&rarr;</span>
+            </Link>
+          </div>
+        </div>
+      </section>
 
       {/* , , ,  1b. AUDIENCE CHIPS, uniform grid, playful surprise tile , , ,  */}
       <section className="full-bleed border-b border-[var(--we-sand)] bg-[#F6F1E7] px-6 py-16 md:px-10 md:py-24">
@@ -363,8 +419,9 @@ export default async function HomePage() {
       <section className="px-8 py-28 md:py-36">
         <div className="mx-auto max-w-[1200px]">
           <SectionHeader
-            eyebrow="Flagship projects"
-            title="How the work meets the ground"
+            eyebrow="What we build instead"
+            title="We did not just build somewhere to confess. We built the answer."
+            lede="Every confession points at something broken. Here is the regenerative alternative, built with community, in the ground, designed to be owned locally."
             eyebrowColor="muted"
           />
         </div>
@@ -405,6 +462,12 @@ export default async function HomePage() {
                   <p className="mt-2 max-w-lg font-[var(--font-body)] text-[15px] leading-relaxed text-[#FAFAF7]/70">
                     {featuredProjects[0].tagline}
                   </p>
+                  {confessionBySlug[featuredProjects[0].slug] && (
+                    <p className="mt-3 flex max-w-lg items-start gap-2 font-[var(--font-body)] text-[13px] italic leading-snug text-[#CFA16B]">
+                      <span aria-hidden="true" className="not-italic">☎</span>
+                      <span>&ldquo;{confessionBySlug[featuredProjects[0].slug]}&rdquo;</span>
+                    </p>
+                  )}
                   <span className="mt-4 inline-flex items-center gap-2 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FAFAF7]/80 transition-all group-hover:gap-3">
                     Enter field <span aria-hidden="true">&rarr;</span>
                   </span>
@@ -457,6 +520,12 @@ export default async function HomePage() {
                   <p className="mt-1 line-clamp-2 font-[var(--font-body)] text-sm leading-relaxed text-[#FAFAF7]/65">
                     {project.tagline}
                   </p>
+                  {confessionBySlug[project.slug] && (
+                    <p className="mt-2 flex items-start gap-1.5 font-[var(--font-body)] text-[12px] italic leading-snug text-[#CFA16B]/90">
+                      <span aria-hidden="true" className="not-italic">☎</span>
+                      <span>&ldquo;{confessionBySlug[project.slug]}&rdquo;</span>
+                    </p>
+                  )}
                   <span className="mt-3 inline-flex items-center gap-2 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FAFAF7]/70 transition-all group-hover:gap-3 group-hover:text-[#FAFAF7]">
                     Enter field <span aria-hidden="true">&rarr;</span>
                   </span>

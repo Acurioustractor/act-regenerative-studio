@@ -194,8 +194,12 @@ function resolvePipelineRoute(
  * This only runs from the fallback path (Command Center unreachable), so in dev
  * (Command Center up) the contact is not double-created.
  */
-async function pushToGHL(body: NormalizedFormSubmission): Promise<boolean> {
-  if (!process.env.GHL_API_KEY || !process.env.GHL_LOCATION_ID) return false;
+type GHLPushResult = { contact: boolean; opportunity: 'created' | 'failed' | 'skipped' };
+
+async function pushToGHL(body: NormalizedFormSubmission): Promise<GHLPushResult> {
+  if (!process.env.GHL_API_KEY || !process.env.GHL_LOCATION_ID) {
+    return { contact: false, opportunity: 'skipped' };
+  }
 
   try {
     const { createGHLClient } = await import('@/lib/ghl/client');
@@ -224,6 +228,7 @@ async function pushToGHL(body: NormalizedFormSubmission): Promise<boolean> {
 
     // Open an opportunity in the mapped pipeline for team tracking. Off by
     // default; set GHL_ENABLE_PIPELINES=true once the routing is reviewed.
+    let opportunity: GHLPushResult['opportunity'] = 'skipped';
     if (process.env.GHL_ENABLE_PIPELINES === 'true') {
       const result = upserted as { id?: string; contact?: { id?: string } };
       const contactId = result?.id || result?.contact?.id;
@@ -243,17 +248,19 @@ async function pushToGHL(body: NormalizedFormSubmission): Promise<boolean> {
             status: 'open',
             source: 'act-regenerative-studio',
           });
+          opportunity = 'created';
         } catch (oppError) {
           // Non-fatal: the contact (lead) is captured regardless.
           console.error('GHL opportunity create failed (non-fatal):', oppError);
+          opportunity = 'failed';
         }
       }
     }
 
-    return true;
+    return { contact: true, opportunity };
   } catch (error) {
     console.error('GHL direct push failed:', error);
-    return false;
+    return { contact: false, opportunity: 'skipped' };
   }
 }
 
@@ -265,9 +272,10 @@ async function pushToGHL(body: NormalizedFormSubmission): Promise<boolean> {
  * double-create it. Succeeds if either GHL or Supabase accepted the submission.
  */
 async function handleFallback(body: NormalizedFormSubmission): Promise<NextResponse> {
-  const ghlOk = await pushToGHL(body);
+  const ghl = await pushToGHL(body);
+  const ghlOk = ghl.contact;
   console.warn(
-    `Command Center unavailable. GHL direct push: ${ghlOk ? 'ok' : 'skipped/failed'}. Recording submission.`
+    `Command Center unavailable. GHL contact: ${ghlOk ? 'ok' : 'skipped/failed'}, opportunity: ${ghl.opportunity}. Recording submission.`
   );
 
   let stored = false;
@@ -304,6 +312,7 @@ async function handleFallback(body: NormalizedFormSubmission): Promise<NextRespo
         ? 'Submitted to GHL'
         : 'Submission queued for processing',
       ghl: ghlOk,
+      opportunity: ghl.opportunity,
       stored,
       fallback: true,
     });

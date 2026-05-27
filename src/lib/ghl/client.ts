@@ -223,8 +223,12 @@ export class GHLClient {
      * Create an opportunity
      */
     create: async (opportunity: GHLOpportunity): Promise<GHLOpportunity> => {
-      return this.request<GHLOpportunity>('/opportunities', {
+      // LeadConnector opportunities require the trailing slash and the
+      // 2023-02-21 API version (contacts use 2021-07-28); the older version /
+      // missing slash 404s.
+      return this.request<GHLOpportunity>('/opportunities/', {
         method: 'POST',
+        headers: { Version: '2023-02-21' },
         body: JSON.stringify({
           ...opportunity,
           locationId: this.config.locationId,

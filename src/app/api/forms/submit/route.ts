@@ -150,17 +150,19 @@ export async function POST(request: NextRequest) {
 // the lead enters for team tracking. Newsletter signups are subscribers, not
 // pipeline leads, so they get no opportunity. See
 // docs/strategy/act-forms-ghl-pipelines-messages.md.
+// pipelineId is the GHL pipeline id (ghl_id), NOT the Supabase mirror row id.
+// stageId values are the real GHL stage ids from the synced stages payload.
 const GHL_PIPELINES = {
   universalInquiry: {
-    pipelineId: 'f3335820-3298-4b27-a713-21ffe28d9973',
+    pipelineId: 'ggQw10DuH0XRji6keimS',
     stageId: '2eded979-7439-407d-89b6-762499b56658', // New Inquiry
   },
   empathyLedger: {
-    pipelineId: '1922823d-8d72-4578-9f1e-3db50f5fe1b8',
+    pipelineId: 'aRGmSaMh62wPO2R0Bt4g',
     stageId: '5c73d63e-619f-465a-90bb-151ea20351d7', // Identified
   },
   goodsBuyer: {
-    pipelineId: '6754452b-f789-4726-a98e-696775f21fea',
+    pipelineId: 'FjMyJM3YzWQFmKqR9fur',
     stageId: '1fd317ec-f8f1-4837-b324-e48c22956cdd', // First Contact
   },
 } as const;

@@ -182,7 +182,7 @@ export default async function ArtWorkPage({
                 src={project.heroVideo.url}
                 poster={project.heroVideo.posterUrl}
                 title={project.heroVideo.alt || project.title}
-                preload="auto"
+                preload="metadata"
                 className="absolute inset-0 h-full w-full object-cover"
               />
             ) : null}

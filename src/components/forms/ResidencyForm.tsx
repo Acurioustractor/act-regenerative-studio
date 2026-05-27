@@ -53,7 +53,7 @@ export function ResidencyForm({
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
-          projectCode: 'ACT-AR',
+          projectCode: 'ACT-AS',
           formType: 'residency',
           fields: formData,
           additionalTags: [

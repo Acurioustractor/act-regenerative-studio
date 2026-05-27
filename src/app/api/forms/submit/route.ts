@@ -146,6 +146,39 @@ export async function POST(request: NextRequest) {
   }
 }
 
+// Live GHL pipeline + entry-stage IDs (ACT location). Maps a submission to where
+// the lead enters for team tracking. Newsletter signups are subscribers, not
+// pipeline leads, so they get no opportunity. See
+// docs/strategy/act-forms-ghl-pipelines-messages.md.
+const GHL_PIPELINES = {
+  universalInquiry: {
+    pipelineId: 'f3335820-3298-4b27-a713-21ffe28d9973',
+    stageId: '2eded979-7439-407d-89b6-762499b56658', // New Inquiry
+  },
+  empathyLedger: {
+    pipelineId: '1922823d-8d72-4578-9f1e-3db50f5fe1b8',
+    stageId: '5c73d63e-619f-465a-90bb-151ea20351d7', // Identified
+  },
+  goodsBuyer: {
+    pipelineId: '6754452b-f789-4726-a98e-696775f21fea',
+    stageId: '1fd317ec-f8f1-4837-b324-e48c22956cdd', // First Contact
+  },
+} as const;
+
+function resolvePipelineRoute(
+  body: NormalizedFormSubmission
+): { pipelineId: string; stageId: string } | null {
+  if (body.formType === 'newsletter') return null; // subscriber, not a pipeline lead
+  switch (body.projectCode) {
+    case 'ACT-EL':
+      return GHL_PIPELINES.empathyLedger;
+    case 'ACT-GD':
+      return GHL_PIPELINES.goodsBuyer;
+    default:
+      return GHL_PIPELINES.universalInquiry; // catch-all (Universal Inquiry)
+  }
+}
+
 /**
  * Direct GHL push (production path).
  *
@@ -154,6 +187,9 @@ export async function POST(request: NextRequest) {
  * directly via the shared client (reads GHL_API_KEY / GHL_LOCATION_ID). Best
  * effort: the contact is tagged with the project code, form type, and the form's
  * context tags so it matches the ecosystem's tagging. Returns true on upsert.
+ *
+ * When GHL_ENABLE_PIPELINES=true it also opens an opportunity in the mapped
+ * pipeline/stage (non-fatal: a failed opportunity does not fail the contact).
  *
  * This only runs from the fallback path (Command Center unreachable), so in dev
  * (Command Center up) the contact is not double-created.
@@ -176,7 +212,7 @@ async function pushToGHL(body: NormalizedFormSubmission): Promise<boolean> {
       ])
     );
 
-    await client.contacts.upsert({
+    const upserted = await client.contacts.upsert({
       email: str(fields.email),
       phone: str(fields.phone),
       firstName: str(fields.firstName),
@@ -185,6 +221,34 @@ async function pushToGHL(body: NormalizedFormSubmission): Promise<boolean> {
       source: 'act-regenerative-studio',
       tags,
     });
+
+    // Open an opportunity in the mapped pipeline for team tracking. Off by
+    // default; set GHL_ENABLE_PIPELINES=true once the routing is reviewed.
+    if (process.env.GHL_ENABLE_PIPELINES === 'true') {
+      const result = upserted as { id?: string; contact?: { id?: string } };
+      const contactId = result?.id || result?.contact?.id;
+      const route = resolvePipelineRoute(body);
+      if (contactId && route) {
+        const displayName =
+          str(fields.name) ||
+          [str(fields.firstName), str(fields.lastName)].filter(Boolean).join(' ') ||
+          str(fields.email) ||
+          'Website inquiry';
+        try {
+          await client.opportunities.create({
+            contactId,
+            pipelineId: route.pipelineId,
+            pipelineStageId: route.stageId,
+            name: `${displayName} - ${body.formType || 'inquiry'}`,
+            status: 'open',
+            source: 'act-regenerative-studio',
+          });
+        } catch (oppError) {
+          // Non-fatal: the contact (lead) is captured regardless.
+          console.error('GHL opportunity create failed (non-fatal):', oppError);
+        }
+      }
+    }
 
     return true;
   } catch (error) {

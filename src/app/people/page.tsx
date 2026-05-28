@@ -3,6 +3,7 @@ import Link from 'next/link';
 
 import SectionHeading from '@/components/SectionHeading';
 import { getAllFeaturedStorytellers } from '@/lib/people/get-featured-people';
+import { resolveProjectChipHref } from '@/lib/projects/public-projects';
 
 import { pageMetadata } from "@/lib/seo/site";
 
@@ -93,15 +94,19 @@ export default async function PeoplePage() {
                 </p>
               )}
               <div className="mt-3 flex flex-wrap gap-1.5">
-                {person.projects.map((projectSlug) => (
-                  <Link
-                    key={projectSlug}
-                    href={`/projects/${projectSlug}`}
-                    className="rounded-full bg-[#EDF6EC] px-2.5 py-1 text-[10px] font-medium text-[var(--we-olive)] transition hover:bg-[#d9ead7]"
-                  >
-                    {projectNames[projectSlug] || projectSlug}
-                  </Link>
-                ))}
+                {person.projects.map((projectSlug) => {
+                  const href = resolveProjectChipHref(projectSlug);
+                  if (!href) return null;
+                  return (
+                    <Link
+                      key={projectSlug}
+                      href={href}
+                      className="rounded-full bg-[#EDF6EC] px-2.5 py-1 text-[10px] font-medium text-[var(--we-olive)] transition hover:bg-[#d9ead7]"
+                    >
+                      {projectNames[projectSlug] || projectSlug}
+                    </Link>
+                  );
+                })}
               </div>
               {person.storyCount > 0 && (
                 <p className="mt-2 text-[10px] text-[#9F927F]">

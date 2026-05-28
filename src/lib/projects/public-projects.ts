@@ -40,6 +40,40 @@ export function isHeldProject(slug: string | null | undefined, websiteSlug?: str
   return (slug ? held.has(slug) : false) || (websiteSlug ? held.has(websiteSlug) : false);
 }
 
+let redirectDestinationCache: Map<string, string> | null = null;
+
+/** Each `/projects/<slug>` redirect's destination, keyed by slug. Cached — the
+ *  launch-redirects config is static, so this is built once per process. */
+function projectRedirectDestinations(): Map<string, string> {
+  if (redirectDestinationCache) return redirectDestinationCache;
+  const map = new Map<string, string>();
+  for (const redirect of launchRedirects as LaunchRedirect[]) {
+    if (!redirect.source.startsWith("/projects/")) continue;
+    const slug = redirect.source.replace(/\/:.*$/, "").replace(/\/$/, "").replace(/^\/projects\//, "");
+    if (slug) map.set(slug, redirect.destination);
+  }
+  redirectDestinationCache = map;
+  return map;
+}
+
+/**
+ * Resolve a project slug (as referenced by people chips, related lists, etc.) to
+ * the URL it should link to, following launch redirects so a chip never lands on
+ * a redirect bounce:
+ *  - a flagship rename or section demotion returns its real destination
+ *    (`the-harvest` -> `/harvest`, `global-laundry-alliance` -> `/events`);
+ *  - a fully-held project, whose redirect points at the generic `/projects`
+ *    index, returns `null` so the caller drops the chip rather than link to a
+ *    dead-end (`grantscope`);
+ *  - anything else returns its own `/projects/<slug>` page.
+ */
+export function resolveProjectChipHref(slug: string): string | null {
+  const dest = projectRedirectDestinations().get(slug);
+  if (!dest) return `/projects/${slug}`;
+  if (dest === "/projects") return null;
+  return dest;
+}
+
 /**
  * Distinct, publicly-reachable project pages: every canonical project record that
  * resolves to a `/projects/<slug>` route which is not redirected away. Mirrors the

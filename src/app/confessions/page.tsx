@@ -269,8 +269,18 @@ export default function ConfessionsPage() {
               The inbox. Every message, in full.
             </h2>
             <p className="mx-auto mt-5 max-w-xl font-[var(--font-body)] leading-8 text-[#A99B86]">
-              Press play to listen. Filter by what each one is about. Sample messages while the line
-              warms up. When the real confessions land, they arrive here, anonymous and unedited.
+              {IS_MOCK ? (
+                <>
+                  Press play to listen. Filter by what each one is about. Sample messages while the
+                  line warms up. When the real confessions land, they arrive here, anonymous and
+                  unedited.
+                </>
+              ) : (
+                <>
+                  Press play to listen. Filter by what each one is about. Every message is anonymous
+                  and unedited, exactly as it came through.
+                </>
+              )}
             </p>
           </div>
           <div className="mt-14">

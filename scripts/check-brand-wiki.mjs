@@ -2,9 +2,21 @@
 
 import fs from 'node:fs';
 import path from 'node:path';
+import { createRequire } from 'node:module';
+
+const require = createRequire(import.meta.url);
+// Single source of truth for launch holds (see config/launch-redirects.cjs). When
+// a surface like /wiki is held behind a 307, its positioning/route checks below
+// are skipped and auto-reactivate the moment the hold is lifted.
+const { launchRedirects } = require('../config/launch-redirects.cjs');
 
 const repoRoot = process.cwd();
 const baseUrl = (process.env.BRAND_WIKI_CHECK_BASE_URL || 'http://localhost:3001').replace(/\/$/, '');
+
+/** True when `route` is temporarily held behind a 307 (permanent: false). */
+function isHeldRoute(route) {
+  return launchRedirects.some((r) => r.permanent === false && r.source === route);
+}
 
 const launchRoutes = [
   '/',
@@ -76,6 +88,14 @@ const bannedPublicPatterns = [
   { pattern: /\bcoming soon\b/i, reason: 'placeholder copy' },
   { pattern: /\bstill being prepared\b/i, reason: 'placeholder copy' },
   { pattern: /\bstill being surfaced\b/i, reason: 'placeholder copy' },
+];
+
+// Anti-extractive critiques legitimately *name* the bad framing in order to
+// reject it (the homepage confession wall quotes the status quo ACT dismantles).
+// These exact phrases are stripped before the banned-language scan so that
+// naming the problem is not mistaken for endorsing it. Keep entries specific.
+const allowedCritiquePhrases = [
+  /treated as beneficiaries, never owners/gi,
 ];
 
 const failures = [];
@@ -171,6 +191,10 @@ async function checkRouteBrandSignals() {
     }
   }
 
+  // /wiki is held behind a 307 for launch; its positioning copy does not render
+  // while redirected. check:redirects already verifies the hold itself.
+  if (isHeldRoute('/wiki')) return;
+
   const wiki = await fetchRoute('/wiki');
   if (wiki.response.status !== 200) {
     failures.push(`/wiki: expected 200, got ${wiki.response.status}`);
@@ -185,21 +209,34 @@ async function checkRouteBrandSignals() {
 
 async function checkPublicRouteLanguage() {
   for (const route of launchRoutes) {
+    // Held surfaces 307 away; skip rather than scan the redirect destination
+    // under the wrong route label (the destination is checked on its own route).
+    if (isHeldRoute(route)) continue;
+
     const { response, visibleText } = await fetchRoute(route);
     if (response.status !== 200) {
       failures.push(`${route}: expected 200, got ${response.status}`);
       continue;
     }
 
+    // Strip documented anti-extractive critiques so naming the bad framing is
+    // not mistaken for endorsing it.
+    let scanText = visibleText;
+    for (const phrase of allowedCritiquePhrases) scanText = scanText.replace(phrase, ' ');
+
     for (const { pattern, reason } of bannedPublicPatterns) {
-      if (pattern.test(visibleText)) {
-        failures.push(`${route}: ${reason}: "${visibleSnippet(visibleText, pattern)}"`);
+      if (pattern.test(scanText)) {
+        failures.push(`${route}: ${reason}: "${visibleSnippet(scanText, pattern)}"`);
       }
     }
   }
 }
 
 async function checkRequiredWikiRoutes() {
+  // The /wiki/* detail routes are held behind a 307 for launch; their content is
+  // not reachable while redirected. Re-checked automatically once /wiki is live.
+  if (isHeldRoute('/wiki')) return;
+
   for (const stem of requiredWikiPages) {
     const { response } = await fetchRoute(`/wiki/${stem}`);
     if (response.status !== 200) {

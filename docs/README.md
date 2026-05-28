@@ -139,6 +139,8 @@
 | Document | Purpose |
 |----------|---------|
 | [master-plan.md](./strategy/master-plan.md) | ACT master plan |
+| [website-launch-operating-system.md](./strategy/website-launch-operating-system.md) | Local-first website launch plan and story system |
+| [website-launch-audit.md](./strategy/website-launch-audit.md) | Route status, launch checks, story system decisions |
 | [act-ecosystem-roadmap.md](./strategy/act-ecosystem-roadmap.md) | Long-term ecosystem roadmap |
 | [next-steps-roadmap.md](./strategy/next-steps-roadmap.md) | Short-term next steps |
 | [visual-strategy.md](./strategy/visual-strategy.md) | Visual strategy |

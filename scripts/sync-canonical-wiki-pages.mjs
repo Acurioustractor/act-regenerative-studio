@@ -72,6 +72,26 @@ function removeLeadingTitle(content) {
   return content.replace(/^#\s+.+\n+/m, '').trim();
 }
 
+function extractMarkdownContent(rawContent, relativePath) {
+  try {
+    return matter(rawContent).content;
+  } catch (error) {
+    if (!rawContent.startsWith('---')) {
+      throw error;
+    }
+
+    const endOfFrontmatter = rawContent.indexOf('\n---', 3);
+    if (endOfFrontmatter === -1) {
+      throw error;
+    }
+
+    console.warn(
+      `warning: ignored malformed frontmatter in ${relativePath}: ${error.reason || error.message}`
+    );
+    return rawContent.slice(endOfFrontmatter + 4).trimStart();
+  }
+}
+
 async function resolveCanonicalWikiRoot() {
   const candidates = [
     process.env.ACT_CANONICAL_WIKI_ROOT,
@@ -114,7 +134,7 @@ async function loadWikiPages(wikiRoot) {
         fs.stat(absolutePath),
       ]);
 
-      const { content } = matter(rawContent);
+      const content = extractMarkdownContent(rawContent, relativePath);
       const titleMatch = content.match(/^#\s+(.+)$/m);
       const pathKey = relativePath === 'index.md' ? 'index' : relativePathToPagePath(relativePath);
       const stem = pathKey.split('/').pop() || pathKey;

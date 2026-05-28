@@ -4,11 +4,14 @@ import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
 import { EmpathyLedgerConnections } from "@/components/projects/EmpathyLedgerConnections";
 
-export const metadata = {
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata = pageMetadata({
   title: "Principles",
   description:
     "Country sets the pace. Community authority comes first. Build for handover. Nine operational principles behind ACT.",
-};
+  path: "/principles",
+});
 
 const operationalPrinciples = [
   {
@@ -69,7 +72,7 @@ const operationalPrinciples = [
     number: 10,
     title: "Art Returns Us to Listen",
     description:
-      "Art is not a layer on top. It is how we make change felt and understood. The LCAA loop only completes when Art returns us to Listen.",
+      "Art is not a layer on top. It is how we make change felt and understood. The method only completes when Art returns us to Listen.",
   },
 ];
 

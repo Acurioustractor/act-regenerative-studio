@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-05-08T23:47:33.603Z",
-  "sourceRoot": "/home/runner/work/act-regenerative-studio/act-regenerative-studio/_canonical-wiki/wiki",
-  "projectCount": 89,
+  "generatedAt": "2026-05-27T06:24:52.651Z",
+  "sourceRoot": "/Users/benknight/Code/act-global-infrastructure/wiki",
+  "projectCount": 80,
   "projects": [
     {
       "slug": "act-farm",
@@ -27,7 +27,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.060Z"
+      "modifiedAt": "2026-04-13T11:40:42.620Z"
     },
     {
       "slug": "act-infrastructure",
@@ -53,7 +53,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.061Z"
+      "modifiedAt": "2026-05-14T20:40:08.559Z"
     },
     {
       "slug": "act-monthly-dinners",
@@ -79,7 +79,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.061Z"
+      "modifiedAt": "2026-05-14T20:40:08.560Z"
     },
     {
       "slug": "act-studio",
@@ -105,215 +105,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.062Z"
-    },
-    {
-      "slug": "rd-activity-register",
-      "title": "ACT-CG core activity 1: Cross-source organisational entity resolution",
-      "summary": null,
-      "overview": null,
-      "status": "in_progress",
-      "code": null,
-      "tier": null,
-      "canonicalSlug": "rd-activity-register",
-      "canonicalCode": null,
-      "entityType": null,
-      "taggingMode": null,
-      "cluster": "projects",
-      "parentProject": null,
-      "websiteSlug": "rd-activity-register",
-      "relativePath": "projects/civicgraph/rd-activity-register.md",
-      "websitePath": "/projects/rd-activity-register",
-      "projectPagePath": "/projects/rd-activity-register",
-      "publicSurface": "project",
-      "empathyLedgerKey": "rd-activity-register",
-      "publicSiteUrl": null,
-      "canonicalUrl": null,
-      "repoUrl": null,
-      "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.062Z"
-    },
-    {
-      "slug": "rd-activity-register.md.provenance",
-      "title": "ACT-CG R&D Activity Register — Provenance",
-      "summary": null,
-      "overview": "- Output: R&D activity register for project ACT-CG (CivicGraph) - Intended destination: wiki/projects/civicgraph/rd-activity-register.md (canonical) and thoughts/shared/rd-pack-fy26/act-cg-rd-activity-register.md (pack via symlink) - Why generated: FY25-26 R&D Tax Incentive evidence pack assembly per Path C decision (2026-04-27). Lodgement window Jul 2026 – 30 Apr 2027.",
-      "status": "Draft",
-      "code": null,
-      "tier": null,
-      "canonicalSlug": "rd-activity-register.md.provenance",
-      "canonicalCode": null,
-      "entityType": null,
-      "taggingMode": null,
-      "cluster": "projects",
-      "parentProject": null,
-      "websiteSlug": "rd-activity-register.md.provenance",
-      "relativePath": "projects/civicgraph/rd-activity-register.md.provenance.md",
-      "websitePath": "/projects/rd-activity-register.md.provenance",
-      "projectPagePath": "/projects/rd-activity-register.md.provenance",
-      "publicSurface": "project",
-      "empathyLedgerKey": "rd-activity-register.md.provenance",
-      "publicSiteUrl": null,
-      "canonicalUrl": null,
-      "repoUrl": null,
-      "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.063Z"
-    },
-    {
-      "slug": "rd-activity-register",
-      "title": "ACT-EL core activity 1: OCAP-respecting consent capture and multi-tenant story ledger",
-      "summary": null,
-      "overview": null,
-      "status": "in_progress",
-      "code": null,
-      "tier": null,
-      "canonicalSlug": "rd-activity-register",
-      "canonicalCode": null,
-      "entityType": null,
-      "taggingMode": null,
-      "cluster": "projects",
-      "parentProject": null,
-      "websiteSlug": "rd-activity-register",
-      "relativePath": "projects/empathy-ledger/rd-activity-register.md",
-      "websitePath": "/projects/rd-activity-register",
-      "projectPagePath": "/projects/rd-activity-register",
-      "publicSurface": "project",
-      "empathyLedgerKey": "rd-activity-register",
-      "publicSiteUrl": null,
-      "canonicalUrl": null,
-      "repoUrl": null,
-      "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.064Z"
-    },
-    {
-      "slug": "rd-activity-register.md.provenance",
-      "title": "ACT-EL R&D Activity Register — Provenance",
-      "summary": null,
-      "overview": "- Output: R&D activity register for project ACT-EL (Empathy Ledger) - Intended destination: wiki/projects/empathy-ledger/rd-activity-register.md (canonical) and thoughts/shared/rd-pack-fy26/act-el-rd-activity-register.md (pack via symlink) - Why generated: FY25-26 R&D Tax Incentive evidence pack assembly per Path C decision (2026-04-27).",
-      "status": "Draft",
-      "code": null,
-      "tier": null,
-      "canonicalSlug": "rd-activity-register.md.provenance",
-      "canonicalCode": null,
-      "entityType": null,
-      "taggingMode": null,
-      "cluster": "projects",
-      "parentProject": null,
-      "websiteSlug": "rd-activity-register.md.provenance",
-      "relativePath": "projects/empathy-ledger/rd-activity-register.md.provenance.md",
-      "websitePath": "/projects/rd-activity-register.md.provenance",
-      "projectPagePath": "/projects/rd-activity-register.md.provenance",
-      "publicSurface": "project",
-      "empathyLedgerKey": "rd-activity-register.md.provenance",
-      "publicSiteUrl": null,
-      "canonicalUrl": null,
-      "repoUrl": null,
-      "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.064Z"
-    },
-    {
-      "slug": "rd-activity-register",
-      "title": "ACT-GD core activity 1: Buyer-supplier matching and demand-side procurement infrastructure",
-      "summary": null,
-      "overview": null,
-      "status": "in_progress",
-      "code": null,
-      "tier": null,
-      "canonicalSlug": "rd-activity-register",
-      "canonicalCode": null,
-      "entityType": null,
-      "taggingMode": null,
-      "cluster": "projects",
-      "parentProject": null,
-      "websiteSlug": "rd-activity-register",
-      "relativePath": "projects/goods/rd-activity-register.md",
-      "websitePath": "/projects/rd-activity-register",
-      "projectPagePath": "/projects/rd-activity-register",
-      "publicSurface": "project",
-      "empathyLedgerKey": "rd-activity-register",
-      "publicSiteUrl": null,
-      "canonicalUrl": null,
-      "repoUrl": null,
-      "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.064Z"
-    },
-    {
-      "slug": "rd-activity-register.md.provenance",
-      "title": "ACT-GD R&D Activity Register — Provenance",
-      "summary": null,
-      "overview": "- Output: R&D activity register for project ACT-GD (Goods on Country) - Intended destination: wiki/projects/goods/rd-activity-register.md (canonical) and thoughts/shared/rd-pack-fy26/act-gd-rd-activity-register.md (pack via symlink) - Why generated: FY25-26 R&D Tax Incentive evidence pack assembly per Path C decision (2026-04-27).",
-      "status": "Draft",
-      "code": null,
-      "tier": null,
-      "canonicalSlug": "rd-activity-register.md.provenance",
-      "canonicalCode": null,
-      "entityType": null,
-      "taggingMode": null,
-      "cluster": "projects",
-      "parentProject": null,
-      "websiteSlug": "rd-activity-register.md.provenance",
-      "relativePath": "projects/goods/rd-activity-register.md.provenance.md",
-      "websitePath": "/projects/rd-activity-register.md.provenance",
-      "projectPagePath": "/projects/rd-activity-register.md.provenance",
-      "publicSurface": "project",
-      "empathyLedgerKey": "rd-activity-register.md.provenance",
-      "publicSiteUrl": null,
-      "canonicalUrl": null,
-      "repoUrl": null,
-      "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.064Z"
-    },
-    {
-      "slug": "rd-activity-register",
-      "title": "ACT-JH core activity 1: Federated community-led-services evidence layer",
-      "summary": null,
-      "overview": null,
-      "status": "in_progress",
-      "code": null,
-      "tier": null,
-      "canonicalSlug": "rd-activity-register",
-      "canonicalCode": null,
-      "entityType": null,
-      "taggingMode": null,
-      "cluster": "projects",
-      "parentProject": null,
-      "websiteSlug": "rd-activity-register",
-      "relativePath": "projects/justicehub/rd-activity-register.md",
-      "websitePath": "/projects/rd-activity-register",
-      "projectPagePath": "/projects/rd-activity-register",
-      "publicSurface": "project",
-      "empathyLedgerKey": "rd-activity-register",
-      "publicSiteUrl": null,
-      "canonicalUrl": null,
-      "repoUrl": null,
-      "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.065Z"
-    },
-    {
-      "slug": "rd-activity-register.md.provenance",
-      "title": "ACT-JH R&D Activity Register — Provenance",
-      "summary": null,
-      "overview": "- Output: R&D activity register for project ACT-JH (JusticeHub) - Intended destination: wiki/projects/justicehub/rd-activity-register.md (canonical) and thoughts/shared/rd-pack-fy26/act-jh-rd-activity-register.md (pack via symlink) - Why generated: FY25-26 R&D Tax Incentive evidence pack assembly per Path C decision (2026-04-27).",
-      "status": "Draft",
-      "code": null,
-      "tier": null,
-      "canonicalSlug": "rd-activity-register.md.provenance",
-      "canonicalCode": null,
-      "entityType": null,
-      "taggingMode": null,
-      "cluster": "projects",
-      "parentProject": null,
-      "websiteSlug": "rd-activity-register.md.provenance",
-      "relativePath": "projects/justicehub/rd-activity-register.md.provenance.md",
-      "websitePath": "/projects/rd-activity-register.md.provenance",
-      "projectPagePath": "/projects/rd-activity-register.md.provenance",
-      "publicSurface": "project",
-      "empathyLedgerKey": "rd-activity-register.md.provenance",
-      "publicSiteUrl": null,
-      "canonicalUrl": null,
-      "repoUrl": null,
-      "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.065Z"
+      "modifiedAt": "2026-05-14T20:40:37.231Z"
     },
     {
       "slug": "artist-residency",
@@ -339,7 +131,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.061Z"
+      "modifiedAt": "2026-04-20T03:41:09.700Z"
     },
     {
       "slug": "barkly-backbone",
@@ -365,7 +157,7 @@
       "canonicalUrl": null,
       "repoUrl": "https://github.com/Acurioustractor/barkly-research-platform",
       "deployUrl": "https://barkly-research-platform-benjamin-knights-projects.vercel.app/",
-      "modifiedAt": "2026-05-08T23:47:17.062Z"
+      "modifiedAt": "2026-05-14T20:40:08.562Z"
     },
     {
       "slug": "bg-fit",
@@ -391,7 +183,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.062Z"
+      "modifiedAt": "2026-05-14T20:40:08.563Z"
     },
     {
       "slug": "black-cockatoo-valley",
@@ -417,33 +209,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.062Z"
-    },
-    {
-      "slug": "black-cockatoo-valley",
-      "title": "Black Cockatoo Valley",
-      "summary": "Conservation-first. We work with Country, not on it. The land sets the pace; we do not scale beyond what the land and community can carry.",
-      "overview": "Black Cockatoo Valley is a 150-acre property on Jinibara Country near Witta, Queensland. It is the land holding that grounds ACT's entire physical practice — the site where residencies, R&D, habitat restoration, and community programs take place. Together with The Harvest (the former nursery in Witta town), Black Cockatoo Valley forms ACT's \"Place\" cluster — the land base that makes all the digital and social enterprise work legible.",
-      "status": "Active",
-      "code": "ACT-BV",
-      "tier": "Place",
-      "canonicalSlug": "black-cockatoo-valley",
-      "canonicalCode": "ACT-BV",
-      "entityType": "project",
-      "taggingMode": "own-code",
-      "cluster": "act-farm",
-      "parentProject": "act-farm",
-      "websiteSlug": "black-cockatoo-valley",
-      "relativePath": "projects/act-farm/black-cockatoo-valley.md",
-      "websitePath": "/farm",
-      "projectPagePath": "/projects/black-cockatoo-valley",
-      "publicSurface": "project",
-      "empathyLedgerKey": "black-cockatoo-valley",
-      "publicSiteUrl": null,
-      "canonicalUrl": null,
-      "repoUrl": null,
-      "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.060Z"
+      "modifiedAt": "2026-05-14T20:40:08.564Z"
     },
     {
       "slug": "campfire",
@@ -465,11 +231,11 @@
       "projectPagePath": "/projects/campfire",
       "publicSurface": "project",
       "empathyLedgerKey": "campfire",
-      "publicSiteUrl": "https://campfire-website-amber.vercel.app/",
+      "publicSiteUrl": null,
       "canonicalUrl": "https://campfire-website-amber.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/Campfire-Website",
       "deployUrl": "https://campfire-website-amber.vercel.app/",
-      "modifiedAt": "2026-05-08T23:47:17.062Z"
+      "modifiedAt": "2026-05-14T20:40:08.565Z"
     },
     {
       "slug": "caring-for-those-who-care",
@@ -495,7 +261,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.062Z"
+      "modifiedAt": "2026-05-14T20:40:08.567Z"
     },
     {
       "slug": "cars-and-microcontrollers",
@@ -521,7 +287,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.062Z"
+      "modifiedAt": "2026-04-20T03:41:09.734Z"
     },
     {
       "slug": "civicgraph",
@@ -547,7 +313,7 @@
       "canonicalUrl": "https://civicgraph.app/",
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.062Z"
+      "modifiedAt": "2026-05-14T20:40:37.231Z"
     },
     {
       "slug": "community-capital",
@@ -573,7 +339,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.063Z"
+      "modifiedAt": "2026-05-14T20:40:08.573Z"
     },
     {
       "slug": "community-capital-bowral-2025",
@@ -599,7 +365,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.060Z"
+      "modifiedAt": "2026-04-14T01:52:41.495Z"
     },
     {
       "slug": "community-capital-at-bcv",
@@ -625,7 +391,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.060Z"
+      "modifiedAt": "2026-04-14T01:52:41.493Z"
     },
     {
       "slug": "confit-pathways",
@@ -651,7 +417,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.063Z"
+      "modifiedAt": "2026-05-14T20:40:08.577Z"
     },
     {
       "slug": "contained",
@@ -677,7 +443,7 @@
       "canonicalUrl": null,
       "repoUrl": "https://github.com/Acurioustractor/contained-campaign-site",
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.063Z"
+      "modifiedAt": "2026-05-26T00:19:55.754Z"
     },
     {
       "slug": "corporate-innovation-retreats",
@@ -703,7 +469,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.061Z"
+      "modifiedAt": "2026-04-20T03:41:09.703Z"
     },
     {
       "slug": "custodian-first-economy",
@@ -729,7 +495,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.063Z"
+      "modifiedAt": "2026-05-14T20:40:08.586Z"
     },
     {
       "slug": "dad-lab-bcv-2025",
@@ -755,7 +521,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.060Z"
+      "modifiedAt": "2026-04-14T01:52:41.496Z"
     },
     {
       "slug": "dad-lab-at-bcv",
@@ -781,7 +547,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.061Z"
+      "modifiedAt": "2026-04-20T03:41:09.705Z"
     },
     {
       "slug": "dad-lab-25",
@@ -807,7 +573,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.063Z"
+      "modifiedAt": "2026-05-14T20:40:08.587Z"
     },
     {
       "slug": "deadlylabs",
@@ -833,7 +599,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.063Z"
+      "modifiedAt": "2026-05-14T20:40:08.588Z"
     },
     {
       "slug": "designing-for-obsolescence",
@@ -859,7 +625,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.063Z"
+      "modifiedAt": "2026-05-14T20:40:08.589Z"
     },
     {
       "slug": "diagrama",
@@ -885,7 +651,7 @@
       "canonicalUrl": null,
       "repoUrl": "https://github.com/Acurioustractor/diagrama-australia",
       "deployUrl": "https://diagramaaustralia.org/",
-      "modifiedAt": "2026-05-08T23:47:17.063Z"
+      "modifiedAt": "2026-05-14T20:40:08.590Z"
     },
     {
       "slug": "empathy-ledger",
@@ -911,7 +677,7 @@
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/empathy-ledger-v2",
       "deployUrl": "https://www.empathyledger.com/",
-      "modifiedAt": "2026-05-08T23:47:17.063Z"
+      "modifiedAt": "2026-05-14T20:40:37.232Z"
     },
     {
       "slug": "annual-field-service",
@@ -937,7 +703,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.063Z"
+      "modifiedAt": "2026-04-20T03:41:09.764Z"
     },
     {
       "slug": "empathy-ledger-storytelling-residency",
@@ -963,7 +729,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.061Z"
+      "modifiedAt": "2026-04-20T03:41:09.707Z"
     },
     {
       "slug": "facilitation",
@@ -989,7 +755,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.061Z"
+      "modifiedAt": "2026-04-20T03:41:09.709Z"
     },
     {
       "slug": "feel-good-project",
@@ -1015,7 +781,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.064Z"
+      "modifiedAt": "2026-05-14T20:40:08.593Z"
     },
     {
       "slug": "fishers-oysters",
@@ -1041,7 +807,7 @@
       "canonicalUrl": "https://fishers-oysters.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/fishers-oysters",
       "deployUrl": "https://www.fishersoysters.com/",
-      "modifiedAt": "2026-05-08T23:47:17.064Z"
+      "modifiedAt": "2026-05-14T20:40:08.594Z"
     },
     {
       "slug": "global-laundry-alliance",
@@ -1067,7 +833,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.064Z"
+      "modifiedAt": "2026-05-14T20:40:08.595Z"
     },
     {
       "slug": "gold-phone",
@@ -1093,7 +859,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.062Z"
+      "modifiedAt": "2026-04-12T20:50:21.787Z"
     },
     {
       "slug": "goods",
@@ -1115,11 +881,11 @@
       "projectPagePath": "/projects/goods",
       "publicSurface": "project",
       "empathyLedgerKey": "goods",
-      "publicSiteUrl": "https://v2-rho-ochre.vercel.app/",
+      "publicSiteUrl": null,
       "canonicalUrl": "https://v2-rho-ochre.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/goods-asset-tracker",
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.064Z"
+      "modifiedAt": "2026-05-26T00:20:11.705Z"
     },
     {
       "slug": "makers-weekend",
@@ -1145,7 +911,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.061Z"
+      "modifiedAt": "2026-04-20T03:41:09.724Z"
     },
     {
       "slug": "grantscope",
@@ -1156,7 +922,7 @@
       "code": null,
       "tier": "background",
       "canonicalSlug": "grantscope",
-      "canonicalCode": "ACT-GS",
+      "canonicalCode": "ACT-CG",
       "entityType": "alias-brand",
       "taggingMode": "alias-of",
       "cluster": "data-infrastructure",
@@ -1171,7 +937,7 @@
       "canonicalUrl": "https://grantscope.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/grantscope",
       "deployUrl": "https://civicgraph.app/",
-      "modifiedAt": "2026-05-08T23:47:17.064Z"
+      "modifiedAt": "2026-05-16T02:39:54.976Z"
     },
     {
       "slug": "green-harvest-witta",
@@ -1197,7 +963,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.067Z"
+      "modifiedAt": "2026-04-20T03:41:09.803Z"
     },
     {
       "slug": "harvest-pairings",
@@ -1223,7 +989,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.061Z"
+      "modifiedAt": "2026-04-20T03:41:09.711Z"
     },
     {
       "slug": "industry-residency-at-the-harvest",
@@ -1249,7 +1015,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.061Z"
+      "modifiedAt": "2026-04-20T03:41:09.716Z"
     },
     {
       "slug": "innovation-sessions",
@@ -1275,7 +1041,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.061Z"
+      "modifiedAt": "2026-04-20T03:41:09.719Z"
     },
     {
       "slug": "judges-on-country",
@@ -1301,7 +1067,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.065Z"
+      "modifiedAt": "2026-04-20T03:41:09.779Z"
     },
     {
       "slug": "junes-patch",
@@ -1327,7 +1093,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.064Z"
+      "modifiedAt": "2026-05-14T20:40:08.599Z"
     },
     {
       "slug": "junes-patch-healthcare-retreat",
@@ -1353,7 +1119,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.061Z"
+      "modifiedAt": "2026-04-20T03:41:09.722Z"
     },
     {
       "slug": "junes-patch-year-one-2025",
@@ -1379,7 +1145,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.060Z"
+      "modifiedAt": "2026-04-14T02:26:27.162Z"
     },
     {
       "slug": "justicehub",
@@ -1405,7 +1171,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.065Z"
+      "modifiedAt": "2026-05-24T20:38:45.458Z"
     },
     {
       "slug": "justicehub-centre-of-excellence",
@@ -1431,7 +1197,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.065Z"
+      "modifiedAt": "2026-04-20T03:41:09.781Z"
     },
     {
       "slug": "marriage-celebrant",
@@ -1457,7 +1223,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.065Z"
+      "modifiedAt": "2026-05-14T20:40:08.600Z"
     },
     {
       "slug": "minderoo-pitch-package",
@@ -1483,7 +1249,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.065Z"
+      "modifiedAt": "2026-04-24T03:46:10.280Z"
     },
     {
       "slug": "mounty-yarns",
@@ -1505,11 +1271,11 @@
       "projectPagePath": "/projects/mounty-yarns",
       "publicSurface": "project",
       "empathyLedgerKey": "mounty-yarns",
-      "publicSiteUrl": "https://mounty-yarns.vercel.app/",
+      "publicSiteUrl": null,
       "canonicalUrl": "https://mounty-yarns.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/mounty-yarns",
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.065Z"
+      "modifiedAt": "2026-05-14T20:40:08.601Z"
     },
     {
       "slug": "oonchiumpa",
@@ -1531,11 +1297,11 @@
       "projectPagePath": "/projects/oonchiumpa",
       "publicSurface": "project",
       "empathyLedgerKey": "oonchiumpa",
-      "publicSiteUrl": "https://oonchiumpa.vercel.app/",
+      "publicSiteUrl": null,
       "canonicalUrl": "https://oonchiumpa.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/Oonchiumpa",
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.065Z"
+      "modifiedAt": "2026-05-14T20:40:37.235Z"
     },
     {
       "slug": "picc",
@@ -1561,7 +1327,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.066Z"
+      "modifiedAt": "2026-05-14T20:40:37.236Z"
     },
     {
       "slug": "picc-annual-report",
@@ -1587,7 +1353,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.066Z"
+      "modifiedAt": "2026-04-12T20:50:21.799Z"
     },
     {
       "slug": "picc-centre-precinct",
@@ -1613,7 +1379,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.066Z"
+      "modifiedAt": "2026-04-20T03:41:09.795Z"
     },
     {
       "slug": "picc-elders-hull-river",
@@ -1639,7 +1405,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.066Z"
+      "modifiedAt": "2026-04-12T20:50:21.800Z"
     },
     {
       "slug": "picc-photo-kiosk",
@@ -1665,7 +1431,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.066Z"
+      "modifiedAt": "2026-04-12T20:50:21.800Z"
     },
     {
       "slug": "place-based-policy-lab",
@@ -1691,7 +1457,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.066Z"
+      "modifiedAt": "2026-05-14T20:40:08.603Z"
     },
     {
       "slug": "quandamooka-justice-strategy",
@@ -1717,7 +1483,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.066Z"
+      "modifiedAt": "2026-05-14T20:40:08.605Z"
     },
     {
       "slug": "radical-scoops-at-the-harvest",
@@ -1743,7 +1509,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.060Z"
+      "modifiedAt": "2026-04-14T02:21:22.513Z"
     },
     {
       "slug": "redtape",
@@ -1769,7 +1535,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.062Z"
+      "modifiedAt": "2026-04-20T03:41:09.737Z"
     },
     {
       "slug": "regional-arts-fellowship",
@@ -1795,7 +1561,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.062Z"
+      "modifiedAt": "2026-04-12T20:50:21.787Z"
     },
     {
       "slug": "resoleution",
@@ -1821,7 +1587,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.066Z"
+      "modifiedAt": "2026-05-14T20:40:08.606Z"
     },
     {
       "slug": "smart-connect",
@@ -1847,7 +1613,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.066Z"
+      "modifiedAt": "2026-04-12T20:50:21.801Z"
     },
     {
       "slug": "smart-hcp-gp-uplift",
@@ -1873,7 +1639,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.066Z"
+      "modifiedAt": "2026-04-12T20:50:21.801Z"
     },
     {
       "slug": "smart-recovery",
@@ -1899,7 +1665,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.066Z"
+      "modifiedAt": "2026-04-20T03:41:09.801Z"
     },
     {
       "slug": "smart-recovery-gp-kits",
@@ -1925,7 +1691,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.066Z"
+      "modifiedAt": "2026-04-12T20:50:21.801Z"
     },
     {
       "slug": "staying",
@@ -1951,7 +1717,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.065Z"
+      "modifiedAt": "2026-05-14T20:40:37.234Z"
     },
     {
       "slug": "stays",
@@ -1977,7 +1743,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.061Z"
+      "modifiedAt": "2026-04-20T03:41:09.726Z"
     },
     {
       "slug": "the-brave-ones",
@@ -2003,7 +1769,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.065Z"
+      "modifiedAt": "2026-05-14T20:40:37.234Z"
     },
     {
       "slug": "the-caravan",
@@ -2029,7 +1795,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.062Z"
+      "modifiedAt": "2026-04-20T03:41:09.739Z"
     },
     {
       "slug": "the-caravan-at-bcv",
@@ -2055,7 +1821,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.060Z"
+      "modifiedAt": "2026-04-14T01:52:41.498Z"
     },
     {
       "slug": "the-confessional",
@@ -2081,7 +1847,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.062Z"
+      "modifiedAt": "2026-04-13T13:17:49.591Z"
     },
     {
       "slug": "the-full-idea",
@@ -2107,7 +1873,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.065Z"
+      "modifiedAt": "2026-05-14T20:40:37.234Z"
     },
     {
       "slug": "the-harvest",
@@ -2133,7 +1899,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.067Z"
+      "modifiedAt": "2026-05-26T00:20:19.724Z"
     },
     {
       "slug": "the-space-at-bcv",
@@ -2159,7 +1925,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.061Z"
+      "modifiedAt": "2026-04-20T03:41:09.728Z"
     },
     {
       "slug": "three-circles",
@@ -2185,7 +1951,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.065Z"
+      "modifiedAt": "2026-05-14T20:40:37.235Z"
     },
     {
       "slug": "the-vagina",
@@ -2211,7 +1977,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.062Z"
+      "modifiedAt": "2026-04-20T03:41:09.741Z"
     },
     {
       "slug": "tomnet",
@@ -2237,7 +2003,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.067Z"
+      "modifiedAt": "2026-05-14T20:40:08.607Z"
     },
     {
       "slug": "treacher",
@@ -2263,7 +2029,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.062Z"
+      "modifiedAt": "2026-04-20T03:41:09.743Z"
     },
     {
       "slug": "uncle-allan-palm-island-art",
@@ -2289,7 +2055,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.062Z"
+      "modifiedAt": "2026-04-12T20:50:21.788Z"
     },
     {
       "slug": "workshops-at-bcv",
@@ -2315,7 +2081,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-08T23:47:17.061Z"
+      "modifiedAt": "2026-04-20T03:41:09.730Z"
     }
   ]
 }

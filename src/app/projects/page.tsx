@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 
 import SectionHeading from '@/components/SectionHeading';
 import { ProjectShowcaseCard } from '@/components/showcase/ProjectShowcaseCard';
@@ -8,12 +9,16 @@ import { buildCuratedProjectCards } from '@/lib/projects/build-curated-project-c
 import { getCanonicalWikiProjectRecords } from '@/lib/wiki/canonical-project-wiki';
 import { getFlagshipProjectPacks } from '@/lib/wiki/flagship-project-packs';
 import { buildProjectIndexSignals } from '@/lib/projects/build-project-index-signals';
+import { heldProjectSlugs } from '@/lib/projects/public-projects';
+import { pageMetadata } from '@/lib/seo/site';
+import { cleanPublicBrandText } from '@/lib/brand/public-copy';
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Projects",
   description:
     "The public fields of practice at ACT, land, food, goods, justice, story, art. What the work looks like on the ground.",
-};
+  path: "/projects",
+});
 
 type ProjectStatus = 'active' | 'planning' | 'development';
 type LCAAPhase = 'listen' | 'curiosity' | 'action' | 'art';
@@ -119,15 +124,29 @@ const DOMAIN_BADGE_STYLES: Record<string, string> = {
   Studio: 'border-[#E1C8E8] bg-[#F7EFFA] text-[#6B4D6B]',
 };
 
+function compactBadgeLabel(value: string | null | undefined) {
+  const trimmed = value?.trim();
+  if (!trimmed) return null;
+  if (/coming soon|placeholder|still being prepared|still being surfaced/i.test(trimmed)) {
+    return 'In development';
+  }
+  if (trimmed.length > 28) {
+    return cleanPublicBrandText(trimmed.split(/[—-]/)[0]?.trim()) || 'Active';
+  }
+  return cleanPublicBrandText(trimmed);
+}
+
 function excerptToTagline(value: string | null, fallback: string): string {
   if (!value) return fallback;
+  const cleanValue = cleanPublicBrandText(value) || value;
 
-  return value.length > 110 ? `${value.slice(0, 107).trimEnd()}...` : value;
+  return cleanValue.length > 110 ? `${cleanValue.slice(0, 107).trimEnd()}...` : cleanValue;
 }
 
 function descriptionFromOverview(value: string | null, fallback: string): string {
   if (!value) return fallback;
-  return value.length > 280 ? `${value.slice(0, 277).trimEnd()}...` : value;
+  const cleanValue = cleanPublicBrandText(value) || value;
+  return cleanValue.length > 280 ? `${cleanValue.slice(0, 277).trimEnd()}...` : cleanValue;
 }
 
 function signalWeight(signals?: {
@@ -160,7 +179,7 @@ export default async function ProjectsPage() {
         fallbackTitle: config.slug,
         fallbackTagline: 'Canonical ACT project',
         fallbackDescription:
-          'This featured ACT output will inherit more context as the wiki keeps growing.',
+          'Open this project to see the strongest current context, media, and source trail.',
       })),
       { includeMedia: true }
     ),
@@ -180,11 +199,11 @@ export default async function ProjectsPage() {
       value:
         signalPayload.summary.activeServiceCount > 0
           ? String(signalPayload.summary.activeServiceCount)
-          : 'Not yet',
+          : 'Mapped',
       hint:
         signalPayload.summary.activeServiceCount > 0
           ? 'Places to enter, join, or work with the portfolio are already visible.'
-          : 'Entry points are still being surfaced across the public portfolio.',
+          : 'Project entry points are being reviewed through the launch nav and contact paths.',
     },
     {
       label: 'Works in public',
@@ -205,7 +224,7 @@ export default async function ProjectsPage() {
       hint:
         signalPayload.summary.totalMediaSignals > 0
           ? 'Photos, clips, and media previews already touching the graph.'
-          : 'Media is still arriving unevenly across the public project layer.',
+          : 'Media coverage is growing unevenly across the public project layer.',
     },
   ];
 
@@ -221,7 +240,7 @@ export default async function ProjectsPage() {
 
     return {
       slug: config.slug,
-      name: flagshipPack?.title || wikiRecord?.title || config.slug,
+      name: cleanPublicBrandText(flagshipPack?.title || wikiRecord?.title || config.slug) || config.slug,
       hubHref: `/projects/${config.slug}`,
       tagline: excerptToTagline(
         flagshipPack?.summary || wikiRecord?.summary || null,
@@ -272,9 +291,14 @@ export default async function ProjectsPage() {
   );
 
   const featuredSlugs = new Set(FEATURED_OUTPUTS.map((item) => item.slug));
+  const held = heldProjectSlugs();
   const projectIndex = canonicalProjects
     .filter(
-    (record) => !featuredSlugs.has(record.slug) && !HIDDEN_PROJECT_SLUGS.has(record.slug)
+      (record) =>
+        !featuredSlugs.has(record.slug) &&
+        !HIDDEN_PROJECT_SLUGS.has(record.slug) &&
+        !held.has(record.slug) &&
+        !held.has(record.websiteSlug || record.slug)
     )
     .sort((a, b) => {
       const signalDelta =
@@ -301,8 +325,6 @@ export default async function ProjectsPage() {
   return (
     <div className="space-y-16">
       <section className="site-surface relative overflow-hidden rounded-[38px] bg-gradient-to-br from-[#f7f1e8] via-[#e9ddca] to-[#d5c09f] p-8 md:p-12">
-        <div className="absolute -left-10 top-8 h-36 w-36 rounded-full bg-[#d9ead7] blur-3xl" />
-        <div className="absolute right-0 top-0 h-44 w-44 translate-x-10 -translate-y-8 rounded-full bg-[#d3a24f]/18 blur-3xl" />
         <div className="relative grid gap-8 lg:grid-cols-[1.16fr_0.84fr]">
           <div className="space-y-6">
             <p className="site-eyebrow">Projects</p>
@@ -337,7 +359,7 @@ export default async function ProjectsPage() {
                 See flagship projects
               </Link>
               <Link
-                href="/blog"
+                href="/stories"
                 className="site-glow-link rounded-full border border-[#245c43] bg-white/45 px-7 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#1f2b21] transition hover:bg-[#e5f4e4]"
               >
                 Read field notes
@@ -346,6 +368,20 @@ export default async function ProjectsPage() {
           </div>
 
           <div className="grid gap-4 sm:grid-cols-2">
+            <div className="relative min-h-[210px] overflow-hidden rounded-[28px] border border-[#244c39] bg-[#15261d] shadow-[0_24px_60px_rgba(43,31,18,0.2)] sm:col-span-2">
+              <Image
+                src="/media/field-stills/goods-remote-aerial.jpg"
+                alt="Goods on Country field work seen from above"
+                fill
+                priority
+                sizes="(min-width: 1024px) 38vw, 100vw"
+                className="object-cover"
+              />
+              <div className="absolute inset-0 bg-gradient-to-t from-[#15261d]/88 via-[#15261d]/35 to-transparent" />
+              <p className="absolute bottom-5 left-5 max-w-xs font-[var(--font-display)] text-2xl font-semibold leading-tight text-[#f5ecde]">
+                See the public works before you study the system.
+              </p>
+            </div>
             <div className="rounded-[28px] border border-[#244c39] bg-[#15261d] p-6 text-[#f5ecde] shadow-[0_24px_60px_rgba(43,31,18,0.2)] sm:col-span-2">
               <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-[#cfa16b]">
                 Start here
@@ -406,7 +442,7 @@ export default async function ProjectsPage() {
               Flagship projects
             </Link>
             <Link
-              href="/blog"
+              href="/stories"
               className="site-glow-link rounded-full border border-[#245c43] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#1f2b21] transition hover:bg-[#E5F4E4]"
             >
               Follow field writing
@@ -458,10 +494,10 @@ export default async function ProjectsPage() {
         </div>
       </section>
 
-      <section className="grid gap-6 lg:grid-cols-[1.06fr_0.94fr]">
-        <div className="site-surface rounded-[34px] bg-[rgba(255,251,245,0.78)] p-7">
+      <section className="grid min-w-0 gap-6 lg:grid-cols-[1.06fr_0.94fr]">
+        <div className="site-surface min-w-0 rounded-[34px] bg-[rgba(255,251,245,0.78)] p-7">
           <p className="site-eyebrow">Seed archive</p>
-          <h2 className="mt-4 font-[var(--font-display)] text-[2.2rem] font-semibold leading-tight text-[#241c15]">
+          <h2 className="mt-4 break-words font-[var(--font-display)] text-[2.2rem] font-semibold leading-tight text-[#241c15]">
             More projects, pilots, and live strands sit behind the flagship layer.
           </h2>
           <p className="mt-4 max-w-2xl text-sm leading-7 text-[var(--we-brown)]">
@@ -506,24 +542,23 @@ export default async function ProjectsPage() {
               return (
                 <article
                   key={project.relativePath}
-                  className="rounded-[24px] border border-[var(--we-sand)] bg-[#FDFBF7] p-5 transition-all hover:border-[#2d6a4f] hover:shadow-[0_18px_45px_rgba(50,42,31,0.08)]"
+                  className="min-w-0 rounded-[24px] border border-[var(--we-sand)] bg-[#FDFBF7] p-5 transition-all hover:border-[#2d6a4f] hover:shadow-[0_18px_45px_rgba(50,42,31,0.08)]"
                 >
-                  <Link href={`/projects/${project.slug}`} className="group block">
+                  <Link href={`/projects/${project.slug}`} className="group block min-w-0">
                     <div className="mb-3 flex items-start justify-between gap-3">
                       <h3 className="text-base font-semibold leading-tight text-[var(--we-olive)] group-hover:text-[#2d6a4f]">
-                        {project.title}
+                        {cleanPublicBrandText(project.title) || project.title}
                       </h3>
-                      {(project.status || project.tier) && (
+                      {compactBadgeLabel(project.status || project.tier) && (
                         <span
-                          className={`whitespace-nowrap rounded-full border px-2.5 py-1 text-[10px] font-medium ${statusStyle}`}
+                          className={`max-w-[9rem] truncate rounded-full border px-2.5 py-1 text-[10px] font-medium ${statusStyle}`}
                         >
-                          {project.status || project.tier}
+                          {compactBadgeLabel(project.status || project.tier)}
                         </span>
                       )}
                     </div>
                     <p className="text-sm leading-7 text-[#5A4A3A]">
-                      {project.summary ||
-                        project.overview ||
+                      {cleanPublicBrandText(project.summary || project.overview) ||
                         'Open the project page to read the ACT wiki framing.'}
                     </p>
                     {liveSignals &&
@@ -605,12 +640,6 @@ export default async function ProjectsPage() {
             </div>
             <div className="flex flex-wrap gap-3">
               <Link
-                href="/wiki"
-                className="site-glow-link rounded-full bg-[var(--we-olive)] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#263425]"
-              >
-                Read the deeper archive
-              </Link>
-              <Link
                 href="/contact"
                 className="site-glow-link rounded-full border border-[#245c43] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#1f2b21] transition hover:bg-[#E5F4E4]"
               >
@@ -620,10 +649,10 @@ export default async function ProjectsPage() {
           </div>
         </div>
 
-        <div className="space-y-6">
-          <div className="site-surface rounded-[34px] bg-[rgba(255,251,245,0.78)] p-7">
+        <div className="min-w-0 space-y-6">
+          <div className="site-surface min-w-0 rounded-[34px] bg-[rgba(255,251,245,0.78)] p-7">
             <p className="site-eyebrow">Roadmap & rhythm</p>
-            <h2 className="mt-4 font-[var(--font-display)] text-[2.2rem] font-semibold leading-tight text-[#241c15]">
+            <h2 className="mt-4 break-words font-[var(--font-display)] text-[2.2rem] font-semibold leading-tight text-[#241c15]">
               Seasons of listening, making, testing, and handover.
             </h2>
             <p className="mt-4 text-sm leading-7 text-[var(--we-brown)]">
@@ -633,7 +662,7 @@ export default async function ProjectsPage() {
             </p>
           </div>
 
-          <div className="rounded-[34px] border border-[var(--we-sand)] bg-[#fbf7f0] p-6 shadow-[0_18px_45px_rgba(50,42,31,0.08)]">
+          <div className="min-w-0 rounded-[34px] border border-[var(--we-sand)] bg-[#fbf7f0] p-6 shadow-[0_18px_45px_rgba(50,42,31,0.08)]">
             <RoadmapTimeline />
           </div>
         </div>
@@ -658,12 +687,6 @@ export default async function ProjectsPage() {
               className="site-glow-link rounded-full bg-[#245c43] px-7 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#1c4935]"
             >
               Get in touch
-            </Link>
-            <Link
-              href="/wiki"
-              className="site-glow-link rounded-full border border-[#245c43] px-7 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#1f2b21] transition hover:bg-white/75"
-            >
-              Browse the wiki
             </Link>
           </div>
         </div>

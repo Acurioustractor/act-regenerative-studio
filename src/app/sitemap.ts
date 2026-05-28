@@ -5,6 +5,7 @@ import { getAllStorytellers } from "@/lib/empathy-ledger-storytellers";
 import { getSiteEditorialArticles } from "@/lib/empathy-ledger-editorial";
 import { listAllWikiPages } from "@/lib/wiki/canonical-site-wiki";
 import { getCanonicalWikiProjectRecords } from "@/lib/wiki/canonical-project-wiki";
+import { heldProjectSlugs } from "@/lib/projects/public-projects";
 
 const siteUrl = (() => {
   // Reject dev URLs so we never ship a sitemap pointing at localhost.
@@ -28,7 +29,8 @@ const staticRoutes: Array<{
 }> = [
   { path: "/", changeFrequency: "weekly", priority: 1.0 },
   { path: "/projects", changeFrequency: "weekly", priority: 0.9 },
-  { path: "/storytellers", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/stories", changeFrequency: "weekly", priority: 0.8 },
+  // Launch hold (2026-05-27): /storytellers held until >1 consented profile syncs.
   { path: "/art", changeFrequency: "weekly", priority: 0.9 },
   { path: "/farm", changeFrequency: "monthly", priority: 0.8 },
   { path: "/harvest", changeFrequency: "monthly", priority: 0.8 },
@@ -37,7 +39,7 @@ const staticRoutes: Array<{
   { path: "/justicehub", changeFrequency: "monthly", priority: 0.8 },
   { path: "/ecosystem", changeFrequency: "monthly", priority: 0.8 },
   { path: "/method", changeFrequency: "monthly", priority: 0.7 },
-  { path: "/wiki", changeFrequency: "weekly", priority: 0.7 },
+  // Launch hold (2026-05-27): /wiki held (longer build); see config/launch-redirects.cjs.
   { path: "/about", changeFrequency: "monthly", priority: 0.7 },
   { path: "/vision", changeFrequency: "monthly", priority: 0.6 },
   { path: "/principles", changeFrequency: "monthly", priority: 0.6 },
@@ -51,7 +53,7 @@ const staticRoutes: Array<{
   { path: "/blog", changeFrequency: "weekly", priority: 0.7 },
   { path: "/media", changeFrequency: "weekly", priority: 0.6 },
   { path: "/people", changeFrequency: "weekly", priority: 0.6 },
-  { path: "/ask", changeFrequency: "monthly", priority: 0.5 },
+  // Launch hold (2026-05-27): /ask (public AI Q&A) held for a later phase.
   { path: "/farm/stay", changeFrequency: "monthly", priority: 0.6 },
   { path: "/farm/retreats", changeFrequency: "monthly", priority: 0.6 },
   { path: "/farm/workshops", changeFrequency: "monthly", priority: 0.6 },
@@ -85,12 +87,15 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: route.priority,
   }));
 
-  const projectEntries: MetadataRoute.Sitemap = projectRecords.map((record) => ({
-    url: `${siteUrl}/projects/${record.websiteSlug || record.slug}`,
-    lastModified: record.modifiedAt ? new Date(record.modifiedAt) : now,
-    changeFrequency: "monthly",
-    priority: 0.7,
-  }));
+  const held = heldProjectSlugs();
+  const projectEntries: MetadataRoute.Sitemap = projectRecords
+    .filter((record) => !held.has(record.slug) && !held.has(record.websiteSlug || record.slug))
+    .map((record) => ({
+      url: `${siteUrl}/projects/${record.websiteSlug || record.slug}`,
+      lastModified: record.modifiedAt ? new Date(record.modifiedAt) : now,
+      changeFrequency: "monthly",
+      priority: 0.7,
+    }));
 
   const wikiEntries: MetadataRoute.Sitemap = wikiPages.map((page) => ({
     url: `${siteUrl}/wiki/${page.stem}`,
@@ -125,8 +130,10 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   return [
     ...staticEntries,
     ...projectEntries,
-    ...wikiEntries,
-    ...storytellerEntries,
+    // Launch hold (2026-05-27): wiki + storyteller URLs withheld while those
+    // surfaces are held. Both stay computed for an easy restore.
+    // ...wikiEntries,
+    // ...storytellerEntries,
     ...artEntries,
     ...editorialEntries,
   ];

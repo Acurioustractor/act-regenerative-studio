@@ -34,12 +34,14 @@
 
 html {
   scroll-behavior: smooth;
+  overflow-x: clip;
 }
 
 body {
   background: var(--site-bg);
   color: var(--site-ink);
   font-family: var(--font-body), 'Source Serif 4', Georgia, serif;
+  overflow-x: clip;
 }
 
 /* Default content container, generous white space */
@@ -89,6 +91,21 @@ main > div:has(> .full-bleed) {
   max-width: none;
   padding-left: 0;
   padding-right: 0;
+}
+
+/* Confessions: a patched-through voice scrolls in. */
+@keyframes confessionIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.confession-detail-in {
+  animation: confessionIn 0.5s ease-out both;
 }
 
 body::after {

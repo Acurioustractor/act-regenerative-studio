@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
+import { STORYTELLERS_PUBLIC } from "@/lib/launch-flags";
 import { ImageLightbox } from "@/components/flagship/ImageLightbox";
 import { FullscreenVideo } from "@/components/flagship/FullscreenVideo";
 import { QuickInquiryForm } from "@/components/flagship/QuickInquiryForm";
@@ -24,13 +25,19 @@ import {
   ComparisonStatPair,
 } from "@/components/design-system";
 import { getProjectData } from "@/lib/projects/get-project-data";
+import { pageMetadata } from "@/lib/seo/site";
 import { notFound } from "next/navigation";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "JusticeHub",
   description:
     "Evidence-based justice alternatives. Proving what works, routing capital to what heals.",
-};
+  path: "/justicehub",
+  image: {
+    url: "/media/field-stills/justicehub-container.jpg",
+    alt: "JusticeHub public work and community infrastructure",
+  },
+});
 
 export default async function JusticeHubPage() {
   const project = await getProjectData("justicehub");
@@ -69,8 +76,8 @@ export default async function JusticeHubPage() {
         subhead="1,000+ alternative models. $94.6B in funding tracked. 98,418 organisations mapped."
         coverVideo={project.coverVideo}
         coverImage={project.coverImage}
-        primaryCta={{ label: "Visit justicehub.com.au", href: "https://justicehub.com.au", external: true }}
-        secondaryCta={{ label: "The full story →", href: "#story" }}
+        primaryCta={{ label: "Open JusticeHub", href: "https://justicehub.com.au", external: true }}
+        secondaryCta={{ label: "Read the story", href: "#story" }}
       />
 
       <ExternalHandoffCard
@@ -185,7 +192,7 @@ export default async function JusticeHubPage() {
             <HairlineGrid columns={3} className="mt-16">
               {[
                 { title: "For young people", body: "Direct pathways to local support, legal help, and community programs. The Youth Scout finds what is available near you.", icon: "I need help" },
-                { title: "For organisations", body: "A directory of 1,000+ verified alternatives with evidence data and forkable program designs. The Australian Living Map of Alternatives.", icon: "ALMA Network" },
+                { title: "For organisations", body: "A directory of 1,000+ verified alternatives with evidence data and forkable program designs. The Australian Living Map of Alternatives.", icon: "Alternatives map" },
                 { title: "For policymakers", body: "Evidence dashboards, cost calculators, and system maps that make the economic case for diversion from detention to community.", icon: "Evidence tools" },
               ].map((item) => (
                 <HairlineCell key={item.title} padding="breathing">
@@ -363,7 +370,8 @@ export default async function JusticeHubPage() {
       )}
 
       {/* , , ,  STORYTELLERS (fallback) , , ,  */}
-      {portraitPeople.length < 2 && (storytellers.length + stories.length >= 2) && (
+      {/* Launch hold (2026-05-27): storyteller strip hidden while /storytellers is held. Flip STORYTELLERS_PUBLIC in @/lib/launch-flags to restore. */}
+      {STORYTELLERS_PUBLIC && portraitPeople.length < 2 && (storytellers.length + stories.length >= 2) && (
         <ScrollReveal>
           <section className="full-bleed bg-[var(--site-surface)] px-8 py-32 md:py-44">
             <div className="mx-auto max-w-[1200px]">

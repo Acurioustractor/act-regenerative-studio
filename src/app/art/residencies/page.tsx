@@ -26,6 +26,15 @@ const residencyFormats = [
   },
 ];
 
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata = pageMetadata({
+  title: "Art Residencies",
+  description:
+    "Residencies for art and social change, rooted in Black Cockatoo Valley and the studio's commitment to place, story, and shared stewardship.",
+  path: "/art/residencies",
+});
+
 export default async function ArtResidenciesPage() {
   const project = await getProjectData("black-cockatoo-valley");
 

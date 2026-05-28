@@ -2,10 +2,13 @@ import { AskACT } from '@/components/AskACT';
 import LivingSystemStrip from "@/components/LivingSystemStrip";
 import PageHero from "@/components/PageHero";
 
-export const metadata = {
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata = pageMetadata({
   title: 'Ask ACT',
   description: 'Ask questions across the ACT wiki, projects, methods, and public knowledge surfaces.',
-};
+  path: "/ask",
+});
 
 export default function AskPage() {
   return (

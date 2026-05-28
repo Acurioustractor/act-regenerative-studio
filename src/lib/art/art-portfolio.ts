@@ -13,6 +13,7 @@ import {
   type FeaturedStoryteller,
   type FeaturedStory,
 } from '@/lib/empathy-ledger-featured';
+import { cleanMediaAlt } from '@/lib/media/alt-text';
 
 export type ArtMedium =
   | 'photography'
@@ -58,6 +59,11 @@ export interface ArtProjectConfig {
   connectedProjectHref?: string;
   philosophy?: string;
   impact?: string;
+  /**
+   * Local looping hero video for video-led works that have no Empathy Ledger
+   * photo media. Used as the card thumbnail and the detail-page hero.
+   */
+  heroVideo?: { url: string; posterUrl?: string; alt?: string };
   /**
    * Direct Empathy Ledger link for this art piece. Use when the art work
    * doesn't map cleanly to a parent ACT project slug. Takes precedence over
@@ -146,6 +152,32 @@ const ART_PROJECTS: ArtProjectConfig[] = [
       'Social isolation is a design failure, not a personal one. Gold.Phone treats voice as the simplest technology for connection. Two strangers. No screens. No filters. Just presence.',
     impact:
       'Prototype deployed. Voice connection platform built. Partnering with councils and public space curators for permanent installations.',
+  },
+  {
+    slug: 'confessions-to-philanthropy',
+    elSlugs: ['confessions-to-philanthropy'],
+    title: 'Confessions to Philanthropy',
+    quote:
+      'A gold phone for the things people don’t say out loud. An anonymous voicemail for the truths, love notes, hot takes and confessions people carry about giving.',
+    description:
+      'Confessions to Philanthropy is a gold phone and an anonymous voicemail for the sector that funds change. Callers leave unscripted messages about giving and power, the awkward and hopeful and unsaid, and the inbox becomes a public record you can listen to. It is not anti-philanthropy. It is a place to say the quiet bit out loud.',
+    mediums: ['interactive', 'performance'],
+    tags: ['participatory', 'social-practice', 'public-art'],
+    status: 'active',
+    lcaaStages: ['Listen', 'Art'],
+    location: 'Distributed / digital',
+    year: '2026',
+    photoCount: 0,
+    storytellerCount: 0,
+    heroVideo: {
+      url: '/media/field-videos/confessions-to-philanthropy.mp4',
+      posterUrl: '/media/field-stills/confessions-to-philanthropy.jpg',
+      alt: 'Confessions to Philanthropy, the gold phone film',
+    },
+    connectedProject: 'Confessions to Philanthropy',
+    connectedProjectHref: '/confessions',
+    philosophy:
+      'The word philanthropy first described Prometheus, who stole fire from the gods and gave it to people. It began as defiance of power, not a tool of it. The gold phone returns philanthropy to honesty: anonymous, unscripted, and unafraid of the quiet bit.',
   },
   {
     slug: 'the-confessional',
@@ -356,8 +388,24 @@ async function hydrateArtProject(
     if (elContent) break;
   }
 
-  const media = elContent?.media.items || [];
-  const heroImage = elContent?.media.hero || media[0] || null;
+  const cleanItem = (
+    item: FeaturedMediaItem,
+    index: number
+  ): FeaturedMediaItem => {
+    const fallbackAlt =
+      index === 0
+        ? `${config.title} artwork documentation`
+        : `${config.title} artwork documentation ${index + 1}`;
+    return {
+      ...item,
+      alt: cleanMediaAlt(item.alt || item.title, fallbackAlt) || fallbackAlt,
+    };
+  };
+
+  const media = (elContent?.media.items || []).map(cleanItem);
+  const heroImage = elContent?.media.hero
+    ? cleanItem(elContent.media.hero, 0)
+    : media[0] || null;
   const storytellers = elContent?.featured.storytellers || [];
   const stories = elContent?.featured.stories || [];
 
@@ -409,7 +457,8 @@ export function splitFeaturedAndEmerging(
       project.status === 'concept' ||
       (project.media.length === 0 &&
         project.storytellerCount === 0 &&
-        project.stories.length === 0)
+        project.stories.length === 0 &&
+        !project.heroVideo)
     ) {
       emerging.push(project);
     } else {

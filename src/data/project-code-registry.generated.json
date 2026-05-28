@@ -1,9 +1,8 @@
 {
-  "generatedAt": "2026-04-22T02:50:16.980Z",
+  "generatedAt": "2026-05-27T06:00:28.268Z",
   "sourceConfigPath": "/Users/benknight/Code/act-global-infrastructure/config/project-codes.json",
-  "projectCount": 74,
+  "projectCount": 75,
   "unresolvedWikiProjectSlugs": [
-    "act-public-voice",
     "annual-field-service",
     "artist-residency",
     "community-capital-at-bcv",
@@ -11,10 +10,8 @@
     "corporate-innovation-retreats",
     "dad-lab-at-bcv",
     "dad-lab-bcv-2025",
-    "deadlylabs",
     "empathy-ledger-storytelling-residency",
     "facilitation",
-    "grantscope",
     "green-harvest-witta",
     "harvest-pairings",
     "industry-residency-at-the-harvest",
@@ -27,13 +24,12 @@
     "picc-annual-report",
     "picc-centre-precinct",
     "picc-photo-kiosk",
-    "place-based-policy-lab",
     "quandamooka-justice-strategy",
     "radical-scoops-at-the-harvest",
     "resoleution",
     "smart-connect",
     "smart-hcp-gp-uplift",
-    "smart-recovery",
+    "smart-recovery-gp-kits",
     "staying",
     "stays",
     "the-brave-ones",
@@ -50,7 +46,7 @@
       "code": "ACT-10",
       "name": "10x10 Retreat",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "events",
       "canonicalSlug": "10x10-retreat",
       "wikiSlug": null,
@@ -69,8 +65,7 @@
         "10x10-retreat",
         "ACT-10",
         "10x10 Retreat",
-        "10x10",
-        "retreat"
+        "10x10"
       ],
       "lookupKeys": [
         "10x10-retreat",
@@ -97,7 +92,7 @@
       "code": "ACT-BR",
       "name": "ACT Bali Retreat",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "events",
       "canonicalSlug": "act-bali-retreat",
       "wikiSlug": null,
@@ -116,8 +111,7 @@
         "act-bali-retreat",
         "ACT-BR",
         "ACT Bali Retreat",
-        "bali",
-        "retreat"
+        "bali"
       ],
       "lookupKeys": [
         "act-bali-retreat",
@@ -144,7 +138,7 @@
       "code": "ACT-CC",
       "name": "ACT Conservation Collective",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "regenerative",
       "canonicalSlug": "act-conservation-collective",
       "wikiSlug": null,
@@ -162,8 +156,7 @@
         "act-conservation-collective",
         "ACT-CC",
         "ACT Conservation Collective",
-        "conservation-collective",
-        "A Curious Tractor Conservation Collective (ACT-CC)"
+        "conservation-collective"
       ],
       "lookupKeys": [
         "act-conservation-collective",
@@ -190,7 +183,7 @@
       "tier": "ecosystem",
       "category": "tech",
       "canonicalSlug": "act-infrastructure",
-      "wikiSlug": null,
+      "wikiSlug": "act-infrastructure",
       "staticSlug": null,
       "aliases": [
         "act-infrastructure",
@@ -207,8 +200,7 @@
         "act-infrastructure",
         "ACT-IN",
         "ACT Infrastructure",
-        "infrastructure",
-        "operations"
+        "infrastructure"
       ],
       "lookupKeys": [
         "act-infrastructure",
@@ -254,8 +246,7 @@
         "act-monthly-dinners",
         "ACT-MD",
         "ACT Monthly Dinners",
-        "act-monthly",
-        "dinners"
+        "act-monthly"
       ],
       "lookupKeys": [
         "act-monthly-dinners",
@@ -330,42 +321,10 @@
       "syndicationSlug": "act_core"
     },
     {
-      "code": "ACT-APO",
-      "name": "Active Projects Overview",
-      "status": "archived",
-      "tier": null,
-      "category": "tech",
-      "canonicalSlug": "active-projects-overview",
-      "wikiSlug": null,
-      "staticSlug": null,
-      "aliases": [
-        "active-projects-overview",
-        "ACT-APO",
-        "Active Projects Overview"
-      ],
-      "queryAliases": [
-        "active-projects-overview",
-        "ACT-APO",
-        "Active Projects Overview"
-      ],
-      "lookupKeys": [
-        "active-projects-overview",
-        "act-apo"
-      ],
-      "legacyCodes": [],
-      "notionPages": [
-        "Active Projects Overview"
-      ],
-      "ghlTags": [],
-      "xeroTracking": null,
-      "productionUrl": null,
-      "syndicationSlug": null
-    },
-    {
       "code": "ACT-AI",
       "name": "AIME",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "indigenous",
       "canonicalSlug": "aime",
       "wikiSlug": null,
@@ -398,45 +357,10 @@
       "syndicationSlug": null
     },
     {
-      "code": "ACT-AMT",
-      "name": "API Migration Test",
-      "status": "archived",
-      "tier": null,
-      "category": "tech",
-      "canonicalSlug": "api-migration-test",
-      "wikiSlug": null,
-      "staticSlug": null,
-      "aliases": [
-        "api-migration-test",
-        "ACT-AMT",
-        "API Migration Test",
-        "API Migration Test Project"
-      ],
-      "queryAliases": [
-        "api-migration-test",
-        "ACT-AMT",
-        "API Migration Test",
-        "API Migration Test Project"
-      ],
-      "lookupKeys": [
-        "api-migration-test",
-        "act-amt",
-        "api-migration-test-project"
-      ],
-      "legacyCodes": [],
-      "notionPages": [
-        "API Migration Test Project"
-      ],
-      "ghlTags": [],
-      "xeroTracking": null,
-      "productionUrl": null,
-      "syndicationSlug": null
-    },
-    {
       "code": "ACT-AS",
       "name": "Art for Social Change",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "arts",
       "canonicalSlug": "art-for-social-change",
       "wikiSlug": null,
@@ -557,7 +481,7 @@
       "code": "ACT-BM",
       "name": "Bimberi",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "justice",
       "canonicalSlug": "bimberi",
       "wikiSlug": null,
@@ -733,7 +657,7 @@
       "code": "ACT-MC",
       "name": "Cars and Microcontrollers",
       "status": "active",
-      "tier": "studio",
+      "tier": "background",
       "category": "arts",
       "canonicalSlug": "cars-and-microcontrollers",
       "wikiSlug": "cars-and-microcontrollers",
@@ -751,8 +675,7 @@
         "cars-and-microcontrollers",
         "ACT-MC",
         "Cars and Microcontrollers",
-        "cars-microcontrollers",
-        "Cars and microcontrollers"
+        "cars-microcontrollers"
       ],
       "lookupKeys": [
         "cars-and-microcontrollers",
@@ -955,35 +878,37 @@
     },
     {
       "code": "ACT-CE",
-      "name": "Custodian Economy",
+      "name": "Custodian First Economy",
       "status": "active",
       "tier": "satellite",
       "category": "enterprise",
-      "canonicalSlug": "custodian-economy",
-      "wikiSlug": "custodian-economy",
+      "canonicalSlug": "custodian-first-economy",
+      "wikiSlug": "custodian-first-economy",
       "staticSlug": null,
       "aliases": [
-        "custodian-economy",
+        "custodian-first-economy",
         "ACT-CE",
-        "Custodian Economy",
-        "ACT-CE — Custodian Economy"
-      ],
-      "queryAliases": [
-        "custodian-economy",
-        "ACT-CE",
+        "Custodian First Economy",
+        "ACT-CE — Custodian Economy",
         "Custodian Economy"
       ],
+      "queryAliases": [
+        "custodian-first-economy",
+        "ACT-CE",
+        "Custodian First Economy"
+      ],
       "lookupKeys": [
-        "custodian-economy",
+        "custodian-first-economy",
         "act-ce",
-        "act-ce-custodian-economy"
+        "act-ce-custodian-economy",
+        "custodian-economy"
       ],
       "legacyCodes": [],
       "notionPages": [
-        "Custodian Economy"
+        "Custodian First Economy"
       ],
       "ghlTags": [
-        "custodian-economy"
+        "custodian-first-economy"
       ],
       "xeroTracking": "ACT-CE — Custodian Economy",
       "productionUrl": null,
@@ -1035,7 +960,7 @@
       "code": "ACT-DH",
       "name": "Deadly Homes and Gardens",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "indigenous",
       "canonicalSlug": "deadly-homes-and-gardens",
       "wikiSlug": null,
@@ -1068,6 +993,37 @@
         "deadly-homes"
       ],
       "xeroTracking": "ACT-DH — Deadly Homes and Gardens",
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
+      "code": "ACT-DLB",
+      "name": "Deadly Labs",
+      "status": "active",
+      "tier": "background",
+      "category": "background",
+      "canonicalSlug": "deadlylabs",
+      "wikiSlug": "deadlylabs",
+      "staticSlug": null,
+      "aliases": [
+        "deadlylabs",
+        "ACT-DLB",
+        "Deadly Labs"
+      ],
+      "queryAliases": [
+        "deadlylabs",
+        "ACT-DLB",
+        "Deadly Labs"
+      ],
+      "lookupKeys": [
+        "deadlylabs",
+        "act-dlb",
+        "deadly-labs"
+      ],
+      "legacyCodes": [],
+      "notionPages": [],
+      "ghlTags": [],
+      "xeroTracking": null,
       "productionUrl": null,
       "syndicationSlug": null
     },
@@ -1116,7 +1072,7 @@
       "code": "ACT-DG",
       "name": "Diagrama",
       "status": "active",
-      "tier": null,
+      "tier": "background",
       "category": "justice",
       "canonicalSlug": "diagrama",
       "wikiSlug": "diagrama",
@@ -1152,7 +1108,7 @@
       "code": "ACT-DD",
       "name": "Double Disadvantage",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "justice",
       "canonicalSlug": "double-disadvantage",
       "wikiSlug": null,
@@ -1191,7 +1147,7 @@
       "code": "ACT-EFI",
       "name": "Economic Freedom Initiative",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "enterprise",
       "canonicalSlug": "economic-freedom-initiative",
       "wikiSlug": null,
@@ -1275,7 +1231,7 @@
       "code": "ACT-FP",
       "name": "Fairfax PLACE Tech",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "tech",
       "canonicalSlug": "fairfax-place-tech",
       "wikiSlug": null,
@@ -1294,8 +1250,7 @@
         "fairfax-place-tech",
         "ACT-FP",
         "Fairfax PLACE Tech",
-        "fairfax",
-        "place-tech"
+        "fairfax"
       ],
       "lookupKeys": [
         "fairfax-place-tech",
@@ -1354,7 +1309,7 @@
       "code": "ACT-FA",
       "name": "Festival Activations",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "events",
       "canonicalSlug": "festival-activations",
       "wikiSlug": null,
@@ -1371,8 +1326,7 @@
         "festival-activations",
         "ACT-FA",
         "Festival Activations",
-        "festivals",
-        "activations"
+        "festivals"
       ],
       "lookupKeys": [
         "festival-activations",
@@ -1397,7 +1351,7 @@
       "code": "ACT-FN",
       "name": "First Nations Youth Advocacy",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "justice",
       "canonicalSlug": "first-nations-youth-advocacy",
       "wikiSlug": null,
@@ -1415,8 +1369,7 @@
         "first-nations-youth-advocacy",
         "ACT-FN",
         "First Nations Youth Advocacy",
-        "first-nations",
-        "youth-advocacy"
+        "first-nations"
       ],
       "lookupKeys": [
         "first-nations-youth-advocacy",
@@ -1483,7 +1436,7 @@
       "code": "ACT-GCC",
       "name": "Global Community Connections",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "community",
       "canonicalSlug": "global-community-connections",
       "wikiSlug": null,
@@ -1534,8 +1487,7 @@
         "global-laundry-alliance",
         "ACT-GL",
         "Global Laundry Alliance",
-        "gla",
-        "global-laundry"
+        "gla"
       ],
       "lookupKeys": [
         "global-laundry-alliance",
@@ -1561,7 +1513,7 @@
       "code": "ACT-GP",
       "name": "Gold Phone",
       "status": "active",
-      "tier": "studio",
+      "tier": "background",
       "category": "arts",
       "canonicalSlug": "gold-phone",
       "wikiSlug": "gold-phone",
@@ -1639,6 +1591,37 @@
       "xeroTracking": "ACT-GD — Goods",
       "productionUrl": "https://www.goodsoncountry.com",
       "syndicationSlug": "act_gd"
+    },
+    {
+      "code": "ACT-GS",
+      "name": "GrantScope (CivicGraph)",
+      "status": "active",
+      "tier": "background",
+      "category": "background",
+      "canonicalSlug": "grantscope",
+      "wikiSlug": "grantscope",
+      "staticSlug": null,
+      "aliases": [
+        "grantscope",
+        "ACT-GS",
+        "GrantScope (CivicGraph)"
+      ],
+      "queryAliases": [
+        "grantscope",
+        "ACT-GS",
+        "GrantScope (CivicGraph)"
+      ],
+      "lookupKeys": [
+        "grantscope",
+        "act-gs",
+        "grantscope-civicgraph"
+      ],
+      "legacyCodes": [],
+      "notionPages": [],
+      "ghlTags": [],
+      "xeroTracking": null,
+      "productionUrl": null,
+      "syndicationSlug": null
     },
     {
       "code": "ACT-JP",
@@ -1742,7 +1725,7 @@
       "code": "ACT-JC",
       "name": "JusticeHub Centre of Excellence",
       "status": "ideation",
-      "tier": "satellite",
+      "tier": "background",
       "category": "justice",
       "canonicalSlug": "justicehub-centre-of-excellence",
       "wikiSlug": "justicehub-centre-of-excellence",
@@ -1760,8 +1743,7 @@
         "justicehub-centre-of-excellence",
         "justicehub",
         "ACT-JC",
-        "JusticeHub Centre of Excellence",
-        "coe"
+        "JusticeHub Centre of Excellence"
       ],
       "lookupKeys": [
         "justicehub-centre-of-excellence",
@@ -1786,7 +1768,7 @@
       "code": "ACT-MN",
       "name": "Maningrida",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "justice",
       "canonicalSlug": "maningrida",
       "wikiSlug": null,
@@ -1857,7 +1839,7 @@
       "code": "ACT-MR",
       "name": "MingaMinga Rangers",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "indigenous",
       "canonicalSlug": "mingaminga-rangers",
       "wikiSlug": null,
@@ -1875,8 +1857,7 @@
         "mingaminga-rangers",
         "ACT-MR",
         "MingaMinga Rangers",
-        "mingaminga",
-        "rangers"
+        "mingaminga"
       ],
       "lookupKeys": [
         "mingaminga-rangers",
@@ -1901,7 +1882,7 @@
       "code": "ACT-MM",
       "name": "MMEIC Justice",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "justice",
       "canonicalSlug": "mmeic-justice",
       "wikiSlug": null,
@@ -1919,8 +1900,7 @@
         "mmeic-justice",
         "ACT-MM",
         "MMEIC Justice",
-        "mmeic",
-        "MMEIC - Justice Projects"
+        "mmeic"
       ],
       "lookupKeys": [
         "mmeic-justice",
@@ -1982,13 +1962,13 @@
       "code": "ACT-MU",
       "name": "Murrup + ACT",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "indigenous",
-      "canonicalSlug": "murrup-act",
+      "canonicalSlug": "murrup-and-act",
       "wikiSlug": null,
       "staticSlug": null,
       "aliases": [
-        "murrup-act",
+        "murrup-and-act",
         "ACT-MU",
         "Murrup + ACT",
         "murrup",
@@ -1996,14 +1976,15 @@
         "ACT-MU — Murrup + ACT"
       ],
       "queryAliases": [
-        "murrup-act",
+        "murrup-and-act",
         "ACT-MU",
         "Murrup + ACT",
         "murrup"
       ],
       "lookupKeys": [
-        "murrup-act",
+        "murrup-and-act",
         "act-mu",
+        "murrup-act",
         "murrup",
         "act-mu-murrup-act"
       ],
@@ -2022,7 +2003,7 @@
       "code": "ACT-OE",
       "name": "Olive Express",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "regenerative",
       "canonicalSlug": "olive-express",
       "wikiSlug": null,
@@ -2096,13 +2077,13 @@
       "code": "ACT-OS",
       "name": "Orange Sky EL",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "stories",
-      "canonicalSlug": "orange-sky-el",
+      "canonicalSlug": "orange-sky-empathy-ledger",
       "wikiSlug": null,
       "staticSlug": null,
       "aliases": [
-        "orange-sky-el",
+        "orange-sky-empathy-ledger",
         "ACT-OS",
         "Orange Sky EL",
         "orange-sky",
@@ -2111,15 +2092,15 @@
         "ACT-OS — Orange Sky EL"
       ],
       "queryAliases": [
-        "orange-sky-el",
+        "orange-sky-empathy-ledger",
         "ACT-OS",
         "Orange Sky EL",
-        "orange-sky",
-        "Orange Sky Empathy Ledger Project Repository - review"
+        "orange-sky"
       ],
       "lookupKeys": [
-        "orange-sky-el",
+        "orange-sky-empathy-ledger",
         "act-os",
+        "orange-sky-el",
         "orange-sky",
         "orange-sky-empathy-ledger-project-repository-review",
         "act-os-orange-sky-el"
@@ -2195,14 +2176,13 @@
       "code": "ACT-ER",
       "name": "PICC Elders Room",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "indigenous",
       "canonicalSlug": "picc-elders-hull-river",
       "wikiSlug": "picc-elders-hull-river",
-      "staticSlug": "picc-annual-report",
+      "staticSlug": "picc-elders-hull-river",
       "aliases": [
         "picc-elders-hull-river",
-        "picc-annual-report",
         "ACT-ER",
         "PICC Elders Room",
         "picc",
@@ -2217,15 +2197,12 @@
       ],
       "queryAliases": [
         "picc-elders-hull-river",
-        "picc-annual-report",
         "ACT-ER",
         "PICC Elders Room",
-        "picc",
-        "palm-island"
+        "picc"
       ],
       "lookupKeys": [
         "picc-elders-hull-river",
-        "picc-annual-report",
         "act-er",
         "picc-elders-room",
         "picc",
@@ -2234,6 +2211,7 @@
         "hull-river",
         "annual-report",
         "picc-elders-trip-to-hull-river-in-october",
+        "picc-annual-report",
         "act-er-picc-elders-room"
       ],
       "legacyCodes": [],
@@ -2256,12 +2234,13 @@
       "code": "ACT-PS",
       "name": "PICC On Country Photo Studio",
       "status": "active",
-      "tier": "studio",
+      "tier": "background",
       "category": "indigenous",
-      "canonicalSlug": "picc",
+      "canonicalSlug": "picc-on-country-photo-studio",
       "wikiSlug": "picc",
       "staticSlug": null,
       "aliases": [
+        "picc-on-country-photo-studio",
         "picc",
         "ACT-PS",
         "PICC On Country Photo Studio",
@@ -2272,16 +2251,16 @@
         "ACT-PI"
       ],
       "queryAliases": [
+        "picc-on-country-photo-studio",
         "picc",
         "ACT-PS",
         "PICC On Country Photo Studio",
-        "palm-island",
         "ACT-PI"
       ],
       "lookupKeys": [
+        "picc-on-country-photo-studio",
         "picc",
         "act-ps",
-        "picc-on-country-photo-studio",
         "palm-island",
         "photo-studio",
         "picc-photo-studio",
@@ -2302,10 +2281,40 @@
       "syndicationSlug": null
     },
     {
+      "code": "ACT-PB",
+      "name": "Place-Based Policy Lab",
+      "status": "active",
+      "tier": "background",
+      "category": "background",
+      "canonicalSlug": "place-based-policy-lab",
+      "wikiSlug": "place-based-policy-lab",
+      "staticSlug": null,
+      "aliases": [
+        "place-based-policy-lab",
+        "ACT-PB",
+        "Place-Based Policy Lab"
+      ],
+      "queryAliases": [
+        "place-based-policy-lab",
+        "ACT-PB",
+        "Place-Based Policy Lab"
+      ],
+      "lookupKeys": [
+        "place-based-policy-lab",
+        "act-pb"
+      ],
+      "legacyCodes": [],
+      "notionPages": [],
+      "ghlTags": [],
+      "xeroTracking": null,
+      "productionUrl": null,
+      "syndicationSlug": null
+    },
+    {
       "code": "ACT-HS",
       "name": "Project Her-Self",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "community",
       "canonicalSlug": "project-her-self",
       "wikiSlug": null,
@@ -2323,8 +2332,7 @@
         "project-her-self",
         "ACT-HS",
         "Project Her-Self",
-        "project-herself",
-        "Project Her Self design"
+        "project-herself"
       ],
       "lookupKeys": [
         "project-her-self",
@@ -2348,7 +2356,7 @@
       "code": "ACT-QF",
       "name": "QFCC Empathy Ledger",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "stories",
       "canonicalSlug": "qfcc-empathy-ledger",
       "wikiSlug": null,
@@ -2388,7 +2396,7 @@
       "code": "ACT-RT",
       "name": "Redtape",
       "status": "active",
-      "tier": "studio",
+      "tier": "background",
       "category": "arts",
       "canonicalSlug": "redtape",
       "wikiSlug": "redtape",
@@ -2429,7 +2437,7 @@
       "code": "ACT-RA",
       "name": "Regional Arts Fellowship",
       "status": "active",
-      "tier": "studio",
+      "tier": "background",
       "category": "arts",
       "canonicalSlug": "regional-arts-fellowship",
       "wikiSlug": "regional-arts-fellowship",
@@ -2471,7 +2479,7 @@
       "code": "ACT-RP",
       "name": "RPPP Stream Two",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "indigenous",
       "canonicalSlug": "rppp-stream-two",
       "wikiSlug": null,
@@ -2490,8 +2498,7 @@
         "rppp-stream-two",
         "ACT-RP",
         "RPPP Stream Two",
-        "rppp",
-        "precinct"
+        "rppp"
       ],
       "lookupKeys": [
         "rppp-stream-two",
@@ -2517,7 +2524,7 @@
       "code": "ACT-SF",
       "name": "SAF Foundation",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "funding",
       "canonicalSlug": "saf-foundation",
       "wikiSlug": null,
@@ -2556,7 +2563,7 @@
       "code": "ACT-SE",
       "name": "SEFA Partnership",
       "status": "archived",
-      "tier": "satellite",
+      "tier": "background",
       "category": "funding",
       "canonicalSlug": "sefa-partnership",
       "wikiSlug": null,
@@ -2598,11 +2605,11 @@
       "status": "active",
       "tier": "satellite",
       "category": "health",
-      "canonicalSlug": "smart-recovery-gp-kits",
-      "wikiSlug": "smart-recovery-gp-kits",
+      "canonicalSlug": "smart-recovery",
+      "wikiSlug": "smart-recovery",
       "staticSlug": "smart-connect",
       "aliases": [
-        "smart-recovery-gp-kits",
+        "smart-recovery",
         "smart-connect",
         "ACT-SM",
         "SMART",
@@ -2614,18 +2621,17 @@
         "ACT-SM — SMART"
       ],
       "queryAliases": [
-        "smart-recovery-gp-kits",
+        "smart-recovery",
         "smart-connect",
         "ACT-SM",
         "SMART",
         "smart"
       ],
       "lookupKeys": [
-        "smart-recovery-gp-kits",
+        "smart-recovery",
         "smart-connect",
         "act-sm",
         "smart",
-        "smart-recovery",
         "smart-hcp-gp-uplift-project",
         "smart-stories",
         "act-sm-smart"
@@ -2648,17 +2654,17 @@
       "code": "ACT-SS",
       "name": "Storm Stories",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "indigenous",
-      "canonicalSlug": "picc",
+      "canonicalSlug": "storm-stories",
       "wikiSlug": "picc",
       "staticSlug": null,
       "aliases": [
+        "storm-stories",
         "picc",
         "ACT-SS",
         "Storm Stories",
         "palm-island",
-        "storm-stories",
         "PICC - Storm Stories",
         "PICC Storm Stories",
         "PICC",
@@ -2666,16 +2672,16 @@
         "ACT-PI"
       ],
       "queryAliases": [
+        "storm-stories",
         "picc",
         "ACT-SS",
         "Storm Stories",
-        "palm-island",
         "ACT-PI"
       ],
       "lookupKeys": [
+        "storm-stories",
         "picc",
         "act-ss",
-        "storm-stories",
         "palm-island",
         "picc-storm-stories",
         "act-ss-storm-stories",
@@ -2699,7 +2705,7 @@
       "code": "ACT-SX",
       "name": "SXSW 2025",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "events",
       "canonicalSlug": "sxsw-2025",
       "wikiSlug": null,
@@ -2740,7 +2746,7 @@
       "code": "ACT-CF",
       "name": "The Confessional",
       "status": "active",
-      "tier": "studio",
+      "tier": "background",
       "category": "arts",
       "canonicalSlug": "the-confessional",
       "wikiSlug": "the-confessional",
@@ -2878,7 +2884,7 @@
       "code": "ACT-SH",
       "name": "The Shed",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "tech",
       "canonicalSlug": "the-shed",
       "wikiSlug": null,
@@ -2917,7 +2923,7 @@
       "code": "ACT-TN",
       "name": "TOMNET",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "community",
       "canonicalSlug": "tomnet",
       "wikiSlug": "tomnet",
@@ -2953,7 +2959,7 @@
       "code": "ACT-TW",
       "name": "Travelling Women's Car",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "indigenous",
       "canonicalSlug": "travelling-womens-car",
       "wikiSlug": null,
@@ -2993,7 +2999,7 @@
       "code": "ACT-TR",
       "name": "Treacher",
       "status": "ideation",
-      "tier": "studio",
+      "tier": "background",
       "category": "arts",
       "canonicalSlug": "treacher",
       "wikiSlug": "treacher",
@@ -3029,7 +3035,7 @@
       "code": "ACT-UA",
       "name": "Uncle Allan Palm Island Art",
       "status": "active",
-      "tier": "studio",
+      "tier": "background",
       "category": "indigenous",
       "canonicalSlug": "uncle-allan-palm-island-art",
       "wikiSlug": "uncle-allan-palm-island-art",
@@ -3047,8 +3053,7 @@
         "uncle-allan-palm-island-art",
         "ACT-UA",
         "Uncle Allan Palm Island Art",
-        "uncle-allan",
-        "palm-island-art"
+        "uncle-allan"
       ],
       "lookupKeys": [
         "uncle-allan-palm-island-art",
@@ -3074,7 +3079,7 @@
       "code": "ACT-WE",
       "name": "Westpac Summit 2025",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "events",
       "canonicalSlug": "westpac-summit-2025",
       "wikiSlug": null,
@@ -3092,8 +3097,7 @@
         "westpac-summit-2025",
         "ACT-WE",
         "Westpac Summit 2025",
-        "westpac",
-        "summit"
+        "westpac"
       ],
       "lookupKeys": [
         "westpac-summit-2025",
@@ -3119,7 +3123,7 @@
       "code": "ACT-WJ",
       "name": "Wilya Janta",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "indigenous",
       "canonicalSlug": "wilya-janta",
       "wikiSlug": null,
@@ -3158,7 +3162,7 @@
       "code": "ACT-YC",
       "name": "YAC Story and Action",
       "status": "archived",
-      "tier": null,
+      "tier": "background",
       "category": "justice",
       "canonicalSlug": "yac-story-and-action",
       "wikiSlug": null,
@@ -3176,8 +3180,7 @@
         "yac-story-and-action",
         "ACT-YC",
         "YAC Story and Action",
-        "yac",
-        "YAC story and action"
+        "yac"
       ],
       "lookupKeys": [
         "yac-story-and-action",

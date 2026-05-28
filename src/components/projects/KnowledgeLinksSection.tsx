@@ -190,12 +190,12 @@ export function KnowledgeLinksSection({
           )}
           {ecosystemData.alma_program && (
             <span className="inline-flex items-center gap-1.5 rounded-full bg-[#E8F0E8] px-3 py-1.5 text-xs text-[#4D6B4D]">
-              ALMA · {ecosystemData.alma_program}
+              Australian Living Map of Alternatives · {ecosystemData.alma_program}
             </span>
           )}
           {ecosystemData.lcaa_themes && ecosystemData.lcaa_themes.length > 0 && (
             <span className="inline-flex items-center gap-1.5 rounded-full bg-[#F0E8F0] px-3 py-1.5 text-xs text-[#6B4D6B]">
-              LCAA: {ecosystemData.lcaa_themes.join(', ')}
+              Method: {ecosystemData.lcaa_themes.join(', ')}
             </span>
           )}
         </div>

@@ -6,6 +6,15 @@ import {
   getFeaturedWorkCollaborators,
 } from "@/lib/works/live-featured-works";
 
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata = pageMetadata({
+  title: "Artists & Collaborators",
+  description:
+    "The artists, storytellers, and partners currently shaping ACT projects in public. A living roll-call drawn from the work itself.",
+  path: "/art/artists",
+});
+
 export default async function ArtistsPage() {
   const works = await getFeaturedWorks();
   const collaborators = getFeaturedWorkCollaborators(works, 8);

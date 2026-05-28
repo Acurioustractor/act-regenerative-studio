@@ -26,6 +26,15 @@ const shareTypes = [
   },
 ];
 
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata = pageMetadata({
+  title: "CSA Shares",
+  description:
+    "Community Supported Agriculture shares from The Harvest, connecting you to the land and to each other while we build the long-term model.",
+  path: "/harvest/csa",
+});
+
 export default async function HarvestCsaPage() {
   const project = await getProjectData("the-harvest");
 

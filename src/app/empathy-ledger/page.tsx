@@ -20,13 +20,15 @@ import {
   EditorialSplit,
 } from "@/components/design-system";
 import { getProjectData } from "@/lib/projects/get-project-data";
+import { pageMetadata } from "@/lib/seo/site";
 import { notFound } from "next/navigation";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Empathy Ledger",
   description:
     "Consent-first storytelling. Community-owned narratives with sovereignty, live syndication, and revocable permission.",
-};
+  path: "/empathy-ledger",
+});
 
 export default async function EmpathyLedgerPage() {
   const project = await getProjectData("empathy-ledger");
@@ -54,8 +56,8 @@ export default async function EmpathyLedgerPage() {
         subhead="Not your story. Not my story. But a third reality we can only discover together."
         coverVideo={project.coverVideo}
         coverImage={project.coverImage}
-        primaryCta={{ label: "Visit empathyledger.com", href: "https://empathyledger.com", external: true }}
-        secondaryCta={{ label: "The full story →", href: "#story" }}
+        primaryCta={{ label: "Open Empathy Ledger", href: "https://empathyledger.com", external: true }}
+        secondaryCta={{ label: "Read the story", href: "#story" }}
       />
 
       <ExternalHandoffCard

@@ -5,12 +5,14 @@ import { ContactForm } from "../../components/forms/ContactForm";
 import { EnquiryExpectations } from "../../components/forms/EnquiryExpectations";
 import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
+import { pageMetadata } from "@/lib/seo/site";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Contact",
   description:
     "Reach out to explore a project, partnership, residency, commission, or a story you'd like to share.",
-};
+  path: "/contact",
+});
 
 const contactPaths = [
   {
@@ -18,21 +20,21 @@ const contactPaths = [
     description:
       "You have a live challenge, field, place, or institutional question and want to explore whether ACT is the right collaborator.",
     href: "/contact?type=project-partnership&source=contact-paths&context=project-or-partnership",
-    cta: "Use this path",
+    cta: "Start this enquiry",
   },
   {
     title: "Residency or visit",
     description:
       "You want to come onto Jinibara Country through a residency, farm stay, workshop, or field-based invitation.",
     href: "/contact?type=residency-visit&source=contact-paths&context=residency-or-visit",
-    cta: "Use this path",
+    cta: "Start this enquiry",
   },
   {
     title: "Commission or cultural work",
     description:
       "You want to make something public through installation, story process, exhibition, or voice-led work.",
     href: "/contact?type=commission-cultural-work&source=contact-paths&context=commission-or-cultural-work",
-    cta: "Use this path",
+    cta: "Start this enquiry",
   },
 ];
 
@@ -77,7 +79,7 @@ export default function ContactPage() {
         stats={[
           { label: "Primary inbox", value: "hi@act.place" },
           { label: "Orientation", value: "Place-first" },
-          { label: "Method", value: "LCAA" },
+          { label: "Method", value: "Listen · Curiosity · Action · Art" },
         ]}
       />
 

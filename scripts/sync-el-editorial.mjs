@@ -131,7 +131,7 @@ async function fetchProjectEditorialRecipes() {
   url.searchParams.set('destination', EMPATHY_LEDGER_EDITORIAL_DESTINATION);
   url.searchParams.set('site', EMPATHY_LEDGER_SITE_SLUG);
 
-  const payload = await fetchJson(url.toString());
+  const payload = await fetchJson(url.toString(), false);
   return {
     featuredHomeArticleSlugs: Array.isArray(payload?.featuredHomeArticleSlugs)
       ? payload.featuredHomeArticleSlugs
@@ -182,9 +182,9 @@ function buildHeaders() {
   return headers;
 }
 
-async function fetchJson(url) {
+async function fetchJson(url, useAuth = true) {
   const response = await fetch(url, {
-    headers: buildHeaders(),
+    headers: useAuth ? buildHeaders() : {},
     signal: AbortSignal.timeout(DEFAULT_TIMEOUT_MS),
   });
 

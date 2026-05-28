@@ -6,11 +6,14 @@ import { EmpathyLedgerConnections } from "@/components/projects/EmpathyLedgerCon
 import { getLiveServicesForSite } from "@/lib/empathy-ledger-services";
 import { resolveServiceProjectLinks } from "@/lib/projects/resolve-service-project-links";
 
-export const metadata = {
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata = pageMetadata({
   title: "How we work",
   description:
     "Partnership first. Country sets the pace. Sunset clauses. The working rhythms behind every project.",
-};
+  path: "/how-we-work",
+});
 
 const workStyles = [
   {

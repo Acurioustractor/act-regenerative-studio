@@ -168,29 +168,29 @@ export function WikiSearch({ pages, sections }: WikiSearchProps) {
           </button>
         </div>
       ) : (
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
+        <div className="grid min-w-0 gap-5 md:grid-cols-2 xl:grid-cols-3">
           {filtered.map((page) => (
             <Link
               key={page.path}
               href={`/wiki/${page.stem}`}
-              className="group rounded-[28px] border border-[var(--we-sand)] bg-white/90 p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#7A9B76] hover:shadow-lg"
+              className="group min-w-0 overflow-hidden rounded-[28px] border border-[var(--we-sand)] bg-white/90 p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#7A9B76] hover:shadow-lg"
             >
-              <div className="flex items-center justify-between gap-3">
-                <span className="rounded-full bg-[#F5F1E8] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#5A4A3A]">
+              <div className="flex min-w-0 items-center justify-between gap-3">
+                <span className="min-w-0 rounded-full bg-[#F5F1E8] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#5A4A3A]">
                   {page.sectionTitle}
                 </span>
-                <span className="text-[11px] uppercase tracking-[0.18em] text-[#8A7A65]">
-                  {page.stem}
+                <span className="min-w-0 truncate text-[11px] uppercase tracking-[0.18em] text-[#8A7A65]">
+                  Wiki page
                 </span>
               </div>
-              <h3 className="mt-4 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)] group-hover:text-[#4E6A4F]">
+              <h3 className="mt-4 break-words font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)] group-hover:text-[#4E6A4F]">
                 {page.title}
               </h3>
-              <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">
+              <p className="mt-3 break-words text-sm leading-7 text-[var(--we-brown)]">
                 {page.excerpt || 'Read the full page for context, examples, and links.'}
               </p>
-              <div className="mt-5 flex items-center justify-between text-xs text-[#7A6A55]">
-                <span className="truncate pr-2">{page.relativePath}</span>
+              <div className="mt-5 flex min-w-0 items-center justify-between gap-3 text-xs text-[#7A6A55]">
+                <span className="min-w-0 truncate pr-2">{page.sectionTitle} source</span>
                 <span className="font-medium text-[#4CAF50]">Open →</span>
               </div>
             </Link>

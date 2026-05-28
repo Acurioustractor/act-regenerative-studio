@@ -4,6 +4,7 @@ import {
   getFeaturedContentForProject,
   type FeaturedMediaItem,
 } from '@/lib/empathy-ledger-featured';
+import { cleanMediaAlt } from '@/lib/media/alt-text';
 import { getCanonicalWikiProjectRecords } from '@/lib/wiki/canonical-project-wiki';
 
 export interface ShowcaseMediaItem {
@@ -187,6 +188,7 @@ export const getShowcaseMedia = cache(
       for (const m of result.value.media.items) {
         if (seenUrls.has(m.url)) continue;
         seenUrls.add(m.url);
+        const projectName = projectNames[slug] || slug;
 
         items.push({
           id: m.id,
@@ -194,7 +196,7 @@ export const getShowcaseMedia = cache(
           thumbnailUrl: m.thumbnail_url || m.preview_url || null,
           kind: m.kind,
           title: m.title,
-          alt: m.alt,
+          alt: cleanMediaAlt(m.alt || m.title, `${projectName} field media`) || `${projectName} field media`,
           caption: m.caption,
           credit: m.credit,
           isHero: m.is_hero,

@@ -41,6 +41,15 @@ function formatClusterLabel(cluster: string): string {
     .join(' ');
 }
 
+function publicExcerpt(excerpt: string | null | undefined, name: string) {
+  const trimmed = excerpt?.trim();
+  if (!trimmed) return null;
+  if (/coming soon|placeholder|still being prepared|still being surfaced/i.test(trimmed)) {
+    return `${name} is in development, with public details held until the story and source record are ready.`;
+  }
+  return trimmed;
+}
+
 export function SisterProjectsSection({
   cluster,
   projects,
@@ -74,9 +83,9 @@ export function SisterProjectsSection({
               <h3 className="font-[var(--font-display)] text-lg font-semibold text-[var(--we-olive)] group-hover:text-[#7A9B76]">
                 {project.name}
               </h3>
-              {project.excerpt ? (
+              {publicExcerpt(project.excerpt, project.name) ? (
                 <p className="mt-2 text-sm leading-6 text-[var(--we-olive-deep)] line-clamp-3">
-                  {project.excerpt}
+                  {publicExcerpt(project.excerpt, project.name)}
                 </p>
               ) : null}
               <span className="mt-4 inline-block text-[11px] uppercase tracking-[0.22em] text-[var(--we-brown-deep)] group-hover:text-[var(--we-olive)]">

@@ -5,11 +5,14 @@ import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
 import { EmpathyLedgerConnections } from "@/components/projects/EmpathyLedgerConnections";
 
-export const metadata = {
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata = pageMetadata({
   title: "Partners",
   description:
     "Community partners, philanthropic collaborators, and research institutions working alongside ACT.",
-};
+  path: "/partners",
+});
 
 const partnerTypes = [
   {

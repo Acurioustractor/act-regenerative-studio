@@ -2,18 +2,22 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import SectionHeading from '@/components/SectionHeading';
+import { SiteLoopVideo } from '@/components/media/SiteLoopVideo';
 import {
   getAllArtProjects,
   splitFeaturedAndEmerging,
   type HydratedArtProject,
   type ArtMedium,
 } from '@/lib/art/art-portfolio';
+import { cleanPublicBrandText } from '@/lib/brand/public-copy';
+import { pageMetadata } from '@/lib/seo/site';
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "Art",
   description:
     "Installations, photography, film, sculpture, art as the final act of listening. Works from across the ACT ecosystem.",
-};
+  path: "/art",
+});
 
 function formatMedium(medium: ArtMedium): string {
   const labels: Record<ArtMedium, string> = {
@@ -35,22 +39,35 @@ function ArtProjectBlock({ project, index }: { project: HydratedArtProject; inde
   const hasMedia = project.media.length > 0;
   const heroUrl = project.heroImage?.url || project.heroImage?.thumbnail_url;
   const isEven = index % 2 === 0;
+  const quote = cleanPublicBrandText(project.quote) || project.quote;
+  const description = cleanPublicBrandText(project.description) || project.description;
+  const location = cleanPublicBrandText(project.location) || project.location;
 
   return (
     <article className="group">
       <Link href={`/art/${project.slug}`} className="block">
-        {hasMedia && heroUrl ? (
+        {(hasMedia && heroUrl) || project.heroVideo ? (
           <div className={`grid gap-0 lg:grid-cols-[1fr_1fr] ${isEven ? '' : 'lg:direction-rtl'}`}>
-            {/* Image panel */}
+            {/* Media panel (image, or looping video when the work is video-led) */}
             <div className={`relative overflow-hidden ${isEven ? 'lg:rounded-l-[32px]' : 'lg:rounded-r-[32px] lg:order-2'} rounded-t-[32px] lg:rounded-none`}>
               <div className="relative aspect-[4/3] lg:aspect-auto lg:min-h-[520px]">
-                <Image
-                  src={heroUrl}
-                  alt={project.heroImage?.alt || project.title}
-                  fill
-                  sizes="(max-width: 1024px) 100vw, 50vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                />
+                {heroUrl ? (
+                  <Image
+                    src={heroUrl}
+                    alt={project.heroImage?.alt || project.title}
+                    fill
+                    priority={index === 0}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
+                    className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  />
+                ) : project.heroVideo ? (
+                  <SiteLoopVideo
+                    src={project.heroVideo.url}
+                    poster={project.heroVideo.posterUrl}
+                    title={project.heroVideo.alt || project.title}
+                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                  />
+                ) : null}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent lg:bg-none" />
               </div>
               {/* Gallery count badge */}
@@ -84,13 +101,13 @@ function ArtProjectBlock({ project, index }: { project: HydratedArtProject; inde
               </h2>
 
               <blockquote className="mt-5 border-l-2 border-[#CFA16B] pl-5 text-[0.95rem] italic leading-7 text-[#5A4A3A]">
-                {project.quote}
+                {quote}
               </blockquote>
 
               <p className="mt-5 text-[0.92rem] leading-7 text-[var(--we-brown)]">
-                {project.description.length > 200
-                  ? `${project.description.slice(0, 197).trimEnd()}...`
-                  : project.description}
+                {description.length > 200
+                  ? `${description.slice(0, 197).trimEnd()}...`
+                  : description}
               </p>
 
               <div className="mt-5 flex flex-wrap gap-2">
@@ -109,10 +126,10 @@ function ArtProjectBlock({ project, index }: { project: HydratedArtProject; inde
                   {project.storytellerCount > 0 && (
                     <span>{project.storytellerCount} storyteller{project.storytellerCount === 1 ? '' : 's'}</span>
                   )}
-                  {project.location && <span>{project.location}</span>}
+                  {location && <span>{location}</span>}
                 </div>
                 <span className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--we-olive)] transition-all group-hover:gap-3">
-                  Enter the work <span aria-hidden="true">&rarr;</span>
+                  View work <span aria-hidden="true">&rarr;</span>
                 </span>
               </div>
             </div>
@@ -137,15 +154,15 @@ function ArtProjectBlock({ project, index }: { project: HydratedArtProject; inde
               </h2>
 
               <blockquote className="mt-5 border-l-2 border-[#CFA16B] pl-5 text-[0.95rem] italic leading-7 text-[#5A4A3A]">
-                {project.quote}
+                {quote}
               </blockquote>
 
               <p className="mt-5 text-[0.92rem] leading-7 text-[var(--we-brown)]">
-                {project.description}
+                {description}
               </p>
 
               <div className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-[var(--we-olive)] transition-all group-hover:gap-3">
-                Enter the work <span aria-hidden="true">&rarr;</span>
+                View work <span aria-hidden="true">&rarr;</span>
               </div>
             </div>
           </div>
@@ -179,6 +196,9 @@ function ArtProjectBlock({ project, index }: { project: HydratedArtProject; inde
 }
 
 function EmergingWorkCard({ project }: { project: HydratedArtProject }) {
+  const quote = cleanPublicBrandText(project.quote) || project.quote;
+  const description = cleanPublicBrandText(project.description) || project.description;
+
   return (
     <Link
       href={`/art/${project.slug}`}
@@ -203,13 +223,13 @@ function EmergingWorkCard({ project }: { project: HydratedArtProject }) {
       </h3>
 
       <blockquote className="mt-3 text-sm italic leading-6 text-[#5A4A3A]">
-        "{project.quote}"
+        "{quote}"
       </blockquote>
 
       <p className="mt-3 text-sm leading-6 text-[var(--we-brown)]">
-        {project.description.length > 140
-          ? `${project.description.slice(0, 137).trimEnd()}...`
-          : project.description}
+        {description.length > 140
+          ? `${description.slice(0, 137).trimEnd()}...`
+          : description}
       </p>
 
       <div className="mt-4 inline-flex items-center gap-2 text-sm font-semibold text-[var(--we-olive)] opacity-0 transition-opacity group-hover:opacity-100">
@@ -228,13 +248,26 @@ export default async function ArtPage() {
     (sum, p) => sum + p.storytellerCount,
     0
   );
+  const heroArtwork = featured.find(
+    (project) => project.heroImage?.url || project.heroImage?.thumbnail_url
+  );
+  const heroImageUrl = heroArtwork?.heroImage?.url || heroArtwork?.heroImage?.thumbnail_url;
 
   return (
     <div className="space-y-20">
       {/* Hero */}
       <section className="relative overflow-hidden rounded-[36px] border border-[#2F2A25] bg-[#0D0C0A] px-8 py-14 text-[#F3EBDD] md:px-14 md:py-20">
-        <div className="absolute -left-20 top-20 h-64 w-64 rounded-full bg-[#CFA16B]/8 blur-[100px]" />
-        <div className="absolute -right-10 bottom-10 h-48 w-48 rounded-full bg-[#7A9B76]/8 blur-[80px]" />
+        {heroImageUrl ? (
+          <Image
+            src={heroImageUrl}
+            alt={heroArtwork?.heroImage?.alt || `${heroArtwork?.title || 'ACT art'} documentation`}
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover opacity-35"
+          />
+        ) : null}
+        <div className="absolute inset-0 bg-gradient-to-r from-[#0D0C0A] via-[#0D0C0A]/86 to-[#0D0C0A]/42" />
         <div className="relative max-w-4xl space-y-6">
           <p className="text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
             Art portfolio

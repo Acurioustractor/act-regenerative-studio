@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useState, useCallback, useEffect } from "react";
 
+import { cleanMediaAlt } from "@/lib/media/alt-text";
+
 interface GalleryImage {
   id: string;
   url: string;
@@ -43,6 +45,10 @@ export function ImageLightbox({ images }: { images: GalleryImage[] }) {
 
   if (!images.length) return null;
 
+  const fallbackAlt = "Field documentation from A Curious Tractor";
+  const getAlt = (img: GalleryImage) =>
+    cleanMediaAlt(img.alt || img.title, fallbackAlt) || fallbackAlt;
+
   return (
     <>
       <div className="grid gap-3 md:grid-cols-3">
@@ -58,7 +64,7 @@ export function ImageLightbox({ images }: { images: GalleryImage[] }) {
           >
             <Image
               src={img.thumbnailUrl || img.url}
-              alt={img.alt || img.title || "Field documentation"}
+              alt={getAlt(img)}
               fill
               sizes={
                 i === 0
@@ -126,11 +132,7 @@ export function ImageLightbox({ images }: { images: GalleryImage[] }) {
           >
             <Image
               src={images[selectedIndex].url}
-              alt={
-                images[selectedIndex].alt ||
-                images[selectedIndex].title ||
-                "Field documentation"
-              }
+              alt={getAlt(images[selectedIndex])}
               width={1600}
               height={1000}
               className="max-h-[85vh] w-auto rounded-[var(--site-radius)] object-contain"

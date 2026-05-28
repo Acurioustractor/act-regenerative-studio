@@ -9,6 +9,12 @@ const OVERRIDES_PATH = join(
   "src/data/image-overrides.json"
 );
 
+const imageUrlPattern = /\.(jpe?g|png|webp|gif)(\?|#|$)/i;
+
+function isImageUrl(url: string) {
+  return imageUrlPattern.test(url);
+}
+
 async function loadOverrides(): Promise<Record<string, string>> {
   try {
     const raw = await readFile(OVERRIDES_PATH, "utf-8");
@@ -27,6 +33,9 @@ export async function POST(request: NextRequest) {
   const { slot, url } = await request.json();
   if (!slot || !url) {
     return NextResponse.json({ error: "slot and url required" }, { status: 400 });
+  }
+  if (!isImageUrl(url)) {
+    return NextResponse.json({ error: "url must point to an image file" }, { status: 400 });
   }
 
   const overrides = await loadOverrides();

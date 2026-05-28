@@ -234,8 +234,8 @@ export function ALMAInsightsSection({
       {/* ALMA Methodology Note */}
       <div className="rounded-2xl border border-[var(--we-sand)] bg-[#F6F1E7] p-6 text-center">
         <p className="text-sm text-[var(--we-olive-deep)]">
-          <span className="font-medium">What is ALMA?</span> Our Adaptive Learning & Mapping Algorithm
-          ensures insights are community-verified, ethically gathered, and actionable.
+          <span className="font-medium">What is the Australian Living Map of Alternatives?</span> It
+          keeps evidence, alternatives, and local authority connected so insights are community-verified, ethically gathered, and actionable.
           It prioritizes Indigenous data sovereignty and community authority over extractive research practices.
         </p>
       </div>

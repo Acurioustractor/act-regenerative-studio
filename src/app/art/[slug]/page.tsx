@@ -2,6 +2,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 
+import { STORYTELLERS_PUBLIC } from '@/lib/launch-flags';
+import { SiteLoopVideo } from '@/components/media/SiteLoopVideo';
 import {
   getAllArtSlugs,
   getArtProject,
@@ -163,17 +165,27 @@ export default async function ArtWorkPage({
         />
       )}
       {/* Hero */}
-      {heroUrl ? (
+      {heroUrl || project.heroVideo ? (
         <section className="relative overflow-hidden rounded-[36px]">
           <div className="relative aspect-[21/9] min-h-[340px] md:min-h-[480px]">
-            <Image
-              src={heroUrl}
-              alt={project.heroImage?.alt || project.title}
-              fill
-              sizes="100vw"
-              className="object-cover"
-              priority
-            />
+            {heroUrl ? (
+              <Image
+                src={heroUrl}
+                alt={project.heroImage?.alt || project.title}
+                fill
+                sizes="100vw"
+                className="object-cover"
+                priority
+              />
+            ) : project.heroVideo ? (
+              <SiteLoopVideo
+                src={project.heroVideo.url}
+                poster={project.heroVideo.posterUrl}
+                title={project.heroVideo.alt || project.title}
+                preload="metadata"
+                className="absolute inset-0 h-full w-full object-cover"
+              />
+            ) : null}
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />
           </div>
           <div className="absolute inset-x-0 bottom-0 p-8 md:p-12">
@@ -341,7 +353,7 @@ export default async function ArtWorkPage({
             />
             {project.lcaaStages && project.lcaaStages.length > 0 && (
               <DetailRow
-                label="LCAA stage"
+                label="Method stage"
                 value={project.lcaaStages.join(', ')}
               />
             )}
@@ -398,7 +410,8 @@ export default async function ArtWorkPage({
             )}
 
             {/* Storytellers */}
-            {project.storytellers.length > 0 && (
+            {/* Launch hold (2026-05-27): hidden while /storytellers is held. See @/lib/launch-flags. */}
+            {STORYTELLERS_PUBLIC && project.storytellers.length > 0 && (
               <div className="rounded-[24px] border border-[var(--we-sand)] bg-[#FDFBF7] p-6">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)] mb-4">
                   Storytellers

@@ -7,11 +7,14 @@ import { buildProjectIndexSignals } from "@/lib/projects/build-project-index-sig
 import { buildCuratedProjectCards } from "@/lib/projects/build-curated-project-cards";
 import { studioProjectConfigs } from "@/lib/projects/studio-project-configs";
 
-export const metadata = {
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata = pageMetadata({
   title: "Ecosystem",
   description:
     "Six public works across land, food, justice, storytelling, and art, grounded on Jinibara Country and held together by a single long conversation with place.",
-};
+  path: "/ecosystem",
+});
 
 export default async function EcosystemPage() {
   const [signalPayload, curatedProjects] = await Promise.all([
@@ -178,13 +181,6 @@ export default async function EcosystemPage() {
                 "The art, installations, and voice-led public pieces.",
               href: "/art",
               cta: "Enter the works",
-            },
-            {
-              title: "Storytellers",
-              description:
-                "The people the work comes through, their stories, carried with consent.",
-              href: "/storytellers",
-              cta: "Meet storytellers",
             },
             {
               title: "Method",

@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { createPortal } from "react-dom";
 
 interface FullscreenVideoProps {
   src: string;
@@ -10,6 +11,21 @@ interface FullscreenVideoProps {
 
 export function FullscreenVideo({ src, poster, title }: FullscreenVideoProps) {
   const [isOpen, setIsOpen] = useState(false);
+
+  // Close on Escape and lock body scroll while the modal is open.
+  useEffect(() => {
+    if (!isOpen) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setIsOpen(false);
+    };
+    document.addEventListener("keydown", onKey);
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = "hidden";
+    return () => {
+      document.removeEventListener("keydown", onKey);
+      document.body.style.overflow = prevOverflow;
+    };
+  }, [isOpen]);
 
   return (
     <>
@@ -48,36 +64,45 @@ export function FullscreenVideo({ src, poster, title }: FullscreenVideoProps) {
         </div>
       </button>
 
-      {isOpen && (
-        <div
-          className="fixed inset-0 z-50 flex items-center justify-center bg-black/95"
-          onClick={() => setIsOpen(false)}
-        >
-          <button
-            onClick={() => setIsOpen(false)}
-            className="absolute right-6 top-6 z-50 rounded-full bg-white/10 p-3 text-white transition hover:bg-white/20"
-            aria-label="Close"
-          >
-            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-              <path d="M18 6L6 18M6 6l12 12" />
-            </svg>
-          </button>
+      {/* Rendered through a portal to document.body so it escapes the <main>
+          (relative z-10) stacking context and sits above the fixed header
+          (z-50). Without this the header covers the close button. */}
+      {isOpen &&
+        typeof document !== "undefined" &&
+        createPortal(
           <div
-            className="relative max-h-[90vh] max-w-[90vw]"
-            onClick={(e) => e.stopPropagation()}
+            className="fixed inset-0 z-[200] flex items-center justify-center bg-black/95 p-4"
+            onClick={() => setIsOpen(false)}
+            role="dialog"
+            aria-modal="true"
+            aria-label={title}
           >
-            <video
-              src={src}
-              poster={poster || undefined}
-              className="max-h-[90vh] w-auto rounded-[var(--site-radius)]"
-              controls
-              autoPlay
-              playsInline
-              aria-label={title}
-            />
-          </div>
-        </div>
-      )}
+            <button
+              onClick={() => setIsOpen(false)}
+              className="absolute right-5 top-5 z-10 rounded-full bg-white/10 p-3 text-white transition hover:bg-white/20"
+              aria-label="Close video"
+            >
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+                <path d="M18 6L6 18M6 6l12 12" />
+              </svg>
+            </button>
+            <div
+              className="relative max-h-[90vh] max-w-[90vw]"
+              onClick={(e) => e.stopPropagation()}
+            >
+              <video
+                src={src}
+                poster={poster || undefined}
+                className="max-h-[90vh] w-auto rounded-[var(--site-radius)]"
+                controls
+                autoPlay
+                playsInline
+                aria-label={title}
+              />
+            </div>
+          </div>,
+          document.body
+        )}
     </>
   );
 }

@@ -11,11 +11,14 @@ import { buildCuratedProjectCards } from "@/lib/projects/build-curated-project-c
 import { resolveServiceProjectLinks } from "@/lib/projects/resolve-service-project-links";
 import { studioProjectConfigs } from "@/lib/projects/studio-project-configs";
 
-export const metadata = {
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata = pageMetadata({
   title: "Studio",
   description:
     "The workshop behind the projects. Where ideas get prototyped, partnerships are designed, and field material feeds the next round of work.",
-};
+  path: "/studio",
+});
 
 const fallbackStudioCapabilities = [
   {
@@ -93,7 +96,6 @@ export default async function StudioPage() {
         description="The studio is what keeps the projects connected. Shared land, shared method, shared memory, so the work can grow without the pieces drifting into unrelated brands."
         actions={[
           { label: "Explore projects", href: "/projects" },
-          { label: "Open the wiki", href: "/wiki", variant: "outline" },
         ]}
       >
         <div className="space-y-4">

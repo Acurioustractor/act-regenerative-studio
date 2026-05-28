@@ -1,11 +1,14 @@
 import PageHero from "../../components/PageHero";
 import { WarmCard } from "@/components/warm-editorial";
 
-export const metadata = {
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata = pageMetadata({
   title: "Privacy + Consent",
   description:
     "Interim public summary of how ACT handles enquiries, consented stories, media, and cultural material across the studio website and linked project surfaces.",
-};
+  path: "/privacy",
+});
 
 export default function PrivacyPage() {
   return (

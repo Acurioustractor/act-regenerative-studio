@@ -31,7 +31,7 @@ export default function GHLEmbed({
         />
       </div>
       <p className="mt-3 text-xs uppercase tracking-[0.2em] text-[#7A6A55]">
-        GHL embed placeholder
+        Secure contact flow
       </p>
     </div>
   );

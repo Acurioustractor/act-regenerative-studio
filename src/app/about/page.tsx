@@ -4,12 +4,14 @@ import CardGrid from "../../components/CardGrid";
 import PageHero from "../../components/PageHero";
 import SectionHeading from "../../components/SectionHeading";
 import { EmpathyLedgerConnections } from "@/components/projects/EmpathyLedgerConnections";
+import { pageMetadata } from "@/lib/seo/site";
 
-export const metadata = {
+export const metadata = pageMetadata({
   title: "About",
   description:
     "A Curious Tractor. Two humans, one tractor. We build platforms, places, and tools with communities, designed to be handed back when the season ends.",
-};
+  path: "/about",
+});
 
 const founders = [
   {
@@ -173,7 +175,7 @@ export default function AboutPage() {
           href: `${process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL || "https://empathyledger.com"}/projects`,
         }}
         stats={[
-          { label: "Method loop", value: "LCAA" },
+          { label: "Method loop", value: "Listen · Curiosity · Action · Art" },
           { label: "Structure", value: "Three Pty + charity" },
           { label: "Orientation", value: "Handover" },
         ]}

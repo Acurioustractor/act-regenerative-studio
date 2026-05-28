@@ -22,6 +22,15 @@ const commissionModes = [
   },
 ];
 
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata = pageMetadata({
+  title: "Commissions",
+  description:
+    "Commission work through the ACT studio. Forms that sit between art, infrastructure, and public reasoning, helping a place or campaign hold a hard reality differently.",
+  path: "/art/commissions",
+});
+
 export default async function ArtCommissionsPage() {
   const works = await getFeaturedWorks({ limit: 3 });
 

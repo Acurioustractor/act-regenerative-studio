@@ -1,13 +1,30 @@
 'use client';
 
 import { useState } from 'react';
+import { usePathname } from 'next/navigation';
 
 interface NewsletterFormProps {
   projectCode?: string;  // e.g., 'ACT-HV' for The Harvest
+  contextLabel?: string;
+  source?: string;
+  projectSlug?: string;
+  storySlug?: string;
+  audience?: string;
+  additionalTags?: string[];
   className?: string;
 }
 
-export function NewsletterForm({ projectCode, className = '' }: NewsletterFormProps) {
+export function NewsletterForm({
+  projectCode,
+  contextLabel = 'Footer newsletter signup',
+  source = 'footer',
+  projectSlug,
+  storySlug,
+  audience,
+  additionalTags = [],
+  className = '',
+}: NewsletterFormProps) {
+  const pathname = usePathname();
   const [email, setEmail] = useState('');
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
@@ -32,7 +49,16 @@ export function NewsletterForm({ projectCode, className = '' }: NewsletterFormPr
           projectCode: projectCode || 'ACT-IN', // Default to ACT Infrastructure
           formType: 'newsletter',
           fields: { email },
-          additionalTags: ['Newsletter', 'Footer Signup'],
+          additionalTags: [
+            'Newsletter',
+            `Context: ${contextLabel}`,
+            `Route: ${pathname}`,
+            `Source: ${source}`,
+            ...(projectSlug ? [`Project: ${projectSlug}`] : []),
+            ...(storySlug ? [`Story: ${storySlug}`] : []),
+            ...(audience ? [`Audience: ${audience}`] : []),
+            ...additionalTags,
+          ],
         }),
       });
 
@@ -59,7 +85,7 @@ export function NewsletterForm({ projectCode, className = '' }: NewsletterFormPr
           type="email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
-          placeholder="Your email"
+          placeholder="Email address"
           disabled={status === 'loading'}
           className="flex-1 rounded border border-[#E4D7BF] bg-white px-3 py-2 text-sm text-[var(--we-olive)] placeholder:text-[#B8A88A] focus:border-[#4CAF50] focus:outline-none disabled:opacity-50"
         />
@@ -68,7 +94,7 @@ export function NewsletterForm({ projectCode, className = '' }: NewsletterFormPr
           disabled={status === 'loading'}
           className="rounded bg-[#4CAF50] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#3D9143] disabled:opacity-50"
         >
-          {status === 'loading' ? '...' : 'Subscribe'}
+          {status === 'loading' ? '...' : 'Join'}
         </button>
       </div>
       {message && (

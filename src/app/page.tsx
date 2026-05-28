@@ -10,9 +10,27 @@ import {
 } from "@/components/design-system";
 import { EditableImage } from "@/components/flagship/EditableImage";
 import { buildCuratedProjectCards } from "@/lib/projects/build-curated-project-cards";
+import { getPublicProjectCount } from "@/lib/projects/public-projects";
 import { getAllArtProjects, splitFeaturedAndEmerging } from "@/lib/art/art-portfolio";
-import { getHomeEditorialFeature } from "@/lib/empathy-ledger-editorial";
+import { getHomeEditorialFeature, getSiteEditorialArticles } from "@/lib/empathy-ledger-editorial";
+import { cleanMediaAlt } from "@/lib/media/alt-text";
+import { pageMetadata } from "@/lib/seo/site";
 import featuredSnapshot from "@/data/empathy-ledger-featured.generated.json";
+import { heroFragments } from "@/data/confessions-mock";
+import { CallCTA } from "@/components/confessions/CallCTA";
+import { RotaryDial } from "@/components/confessions/RotaryDial";
+import { FullscreenVideo } from "@/components/flagship/FullscreenVideo";
+
+export const metadata = pageMetadata({
+  title: "A Curious Tractor",
+  description:
+    "A regenerative innovation studio on Jinibara Country. Explore ACT projects, stories, public works, art, farm practice, and the living wiki.",
+  path: "/",
+  image: {
+    url: "/media/field-stills/hero-farm-aerial.jpg",
+    alt: "Black Cockatoo Valley aerial view through morning fog",
+  },
+});
 
 // 9 non-flagship projects for the "More from the field" mosaic.
 // Hero images come from the EL featured snapshot; `override` wins over EL
@@ -49,25 +67,35 @@ const mosaicTiles: Array<{
 // Resolution order: explicit override → EL hero → EL first item → local fallback.
 function resolveMosaicImage(
   slug: string,
+  name: string,
   override?: string,
   fallback?: string
 ): { url: string; alt: string } | null {
   if (override) {
-    return { url: override, alt: "" };
+    return { url: override, alt: `${name} project image` };
   }
   const project = (featuredSnapshot.projects as Record<string, unknown>)[slug] as
-    | { media?: { hero?: { url?: string; alt?: string | null }; items?: Array<{ url?: string; alt?: string | null }> } }
+    | {
+        media?: {
+          hero?: { url?: string; alt?: string | null; title?: string | null; kind?: string | null };
+          items?: Array<{ url?: string; alt?: string | null; title?: string | null; kind?: string | null }>;
+        };
+      }
     | undefined;
-  const hero = project?.media?.hero;
-  if (hero?.url) {
-    return { url: hero.url, alt: hero.alt || "" };
-  }
-  const first = project?.media?.items?.[0];
-  if (first?.url) {
-    return { url: first.url, alt: first.alt || "" };
+
+  const isImageMedia = (item: { url?: string; kind?: string | null } | undefined) =>
+    item?.url ? /\.(jpe?g|png|webp|gif)(\?|#|$)/i.test(item.url) : false;
+  const candidate = [project?.media?.hero, ...(project?.media?.items || [])].find(isImageMedia);
+
+  if (candidate?.url) {
+    const fallbackAlt = `${name} project image`;
+    return {
+      url: candidate.url,
+      alt: cleanMediaAlt(candidate.alt || candidate.title, fallbackAlt) || fallbackAlt,
+    };
   }
   if (fallback) {
-    return { url: fallback, alt: "" };
+    return { url: fallback, alt: `${name} project image` };
   }
   return null;
 }
@@ -132,14 +160,26 @@ export default async function HomePage() {
     featuredProjectConfigs.map((c) => [c.slug, c.fallbackTitle])
   );
 
-  const [featuredProjects, allArtProjects] = await Promise.all([
-    buildCuratedProjectCards(orderedConfigs, {
-      includeMedia: true,
-      mediaEmphasisSlugs: homeEditorialFeature.featuredMediaProjectSlugs,
-      mediaOverrides: homeEditorialFeature.featuredProjectMediaOverrides,
-    }),
-    getAllArtProjects(),
-  ]);
+  const [featuredProjects, allArtProjects, allEditorialArticles, publicProjectCount] =
+    await Promise.all([
+      buildCuratedProjectCards(orderedConfigs, {
+        includeMedia: true,
+        mediaEmphasisSlugs: homeEditorialFeature.featuredMediaProjectSlugs,
+        mediaOverrides: homeEditorialFeature.featuredProjectMediaOverrides,
+      }),
+      getAllArtProjects(),
+      getSiteEditorialArticles(),
+      getPublicProjectCount(),
+    ]);
+
+  // Hero stats: all wired to live data so they never drift. "Projects" counts the
+  // distinct public /projects/<slug> pages (canonical records minus demoted/renamed
+  // redirects); artworks and field stories from their portfolios.
+  const heroStats = [
+    { n: String(publicProjectCount), l: "Projects" },
+    { n: String(allArtProjects.length), l: "Artworks" },
+    { n: String(allEditorialArticles.length), l: "Field stories" },
+  ];
   const { featured: featuredArt } = splitFeaturedAndEmerging(allArtProjects);
   // Curated order: CONTAINED (lead), Gold.Phone, The Confessional
   const artOrder = ["contained", "gold-phone", "the-confessional"];
@@ -150,6 +190,16 @@ export default async function HomePage() {
     ...featuredArt.filter((p) => p.heroImage && !artOrder.includes(p.slug)),
   ].slice(0, 3);
 
+  // The confession each flagship answers: the bridge from the campaign band
+  // into real, verified-live project pages. Keyed by the homepage config slug.
+  const confessionBySlug: Record<string, string> = {
+    goods: "Communities are treated as beneficiaries, never owners.",
+    justicehub: "Programs die the day the grant ends.",
+    "the-harvest": "Nobody funds the unglamorous infrastructure that actually holds.",
+    "empathy-ledger": "Funders make you perform gratitude for your own story.",
+    "black-cockatoo-valley": "Impact is a glossy PDF, not a thing that lives in the ground.",
+  };
+
   return (
     <>
       {/* , , ,  1. HERO, Full-screen dark, farm drone video , , ,  */}
@@ -157,23 +207,18 @@ export default async function HomePage() {
         fullHeight
         gradientStrength="strong"
         eyebrow="A Curious Tractor · Jinibara Country"
-        title="Places, story systems, and public works you can step into."
-        subhead="Regenerative innovation from a farm on Jinibara Country. Justice platforms, ethical storytelling, circular goods on Country, community art, and land care, all co-designed with the people who'll hold them."
+        title="A Curious Tractor"
+        subhead="Places, story systems, and public works you can step into. Regenerative innovation from a farm on Jinibara Country, co-designed with the people who will hold the work."
         coverVideo={{
           url: "/media/field-videos/hero-farm-aerial.mp4",
           posterUrl: "/media/field-stills/hero-farm-aerial.jpg",
           title: "Black Cockatoo Valley aerial through morning fog",
         }}
-        primaryCta={{ label: "Enter the work", href: "/projects" }}
-        secondaryCta={{ label: "See the art →", href: "/art" }}
+        primaryCta={{ label: "Explore projects", href: "/projects" }}
+        secondaryCta={{ label: "Confessions to Philanthropy", href: "/confessions" }}
         statsAfter={
           <div className="flex flex-wrap gap-12 border-t border-[#FAFAF7]/10 pt-8">
-            {[
-              { n: "58", l: "Projects" },
-              { n: "319", l: "Storytellers" },
-              { n: "10", l: "Artworks" },
-              { n: "191", l: "Wiki articles" },
-            ].map(({ n, l }) => (
+            {heroStats.map(({ n, l }) => (
               <div key={l}>
                 <p className="font-[var(--font-display)] text-3xl font-bold text-[#FAFAF7]">
                   {n}
@@ -186,6 +231,68 @@ export default async function HomePage() {
           </div>
         }
       />
+
+      {/* ---- 1a. CONFESSIONS TO PHILANTHROPY ---- launch campaign lead.
+           Matches the /confessions palette (espresso + candlelight gold) so the
+           two read as one campaign. Sample lines reuse the honest mock
+           (heroFragments); the real moderated feed lands via Phase 2. ---- */}
+      <section className="full-bleed relative overflow-hidden bg-[#15100A] px-6 py-24 text-[#F3EBDD] md:px-10 md:py-32">
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_36%,#241910_0%,#15100A_62%)]" />
+        {/* Rotary-dial engraving: the gold-phone object under a single light. */}
+        <RotaryDial className="pointer-events-none absolute left-1/2 top-1/2 h-[min(80vmin,720px)] w-[min(80vmin,720px)] -translate-x-1/2 -translate-y-1/2 text-[#CFA16B]/[0.06]" />
+        <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_45%,#0E0A05_100%)]" />
+        <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-12 md:grid-cols-2 md:gap-16">
+          {/* The pitch */}
+          <div className="text-center md:text-left">
+            <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-[#CFA16B]">
+              Confessions to Philanthropy · Queensland Philanthropy Week
+            </p>
+            <h2 className="mt-6 font-[var(--font-display)] text-[clamp(2.1rem,5vw,3.6rem)] font-semibold leading-[1.05] text-[#F3EBDD]">
+              Tell philanthropy what you really think.
+            </h2>
+            <p className="mt-6 mx-auto max-w-xl font-[var(--font-body)] text-[17px] leading-8 text-[#D8CBB6] md:mx-0">
+              There is a lot the sector never says out loud. Funders who know the model is bent.
+              Grantees who cannot say it because they need the cheque. So we built a gold phone.
+              Call it. Confess. No name, no consequences, no &ldquo;dear valued stakeholder&rdquo;.
+            </p>
+
+            <ul className="mt-9 flex flex-wrap items-center justify-center gap-2.5 md:justify-start">
+              {heroFragments.slice(1, 4).map((line) => (
+                <li
+                  key={line}
+                  className="rounded-full border border-[#CFA16B]/25 bg-[#CFA16B]/5 px-4 py-2 font-[var(--font-body)] text-[13px] italic text-[#E0D4B9]"
+                >
+                  &ldquo;{line}&rdquo;
+                </li>
+              ))}
+            </ul>
+
+            <div className="mt-10 flex flex-col items-center gap-4 md:items-start">
+              <CallCTA />
+              <Link
+                href="/confessions"
+                className="group inline-flex items-center gap-2 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#CFA16B] transition-all hover:gap-3 hover:text-[#E0B985]"
+              >
+                Hear what has been confessed <span aria-hidden="true">&rarr;</span>
+              </Link>
+            </div>
+          </div>
+
+          {/* The film, opens fullscreen in a modal */}
+          <div className="flex flex-col items-center gap-3">
+            <div className="w-full overflow-hidden rounded-[var(--site-radius)] border border-[#CFA16B]/20 shadow-[0_30px_80px_-30px_rgba(0,0,0,0.85)]">
+              <FullscreenVideo
+                src="/media/field-videos/confessions-to-philanthropy.mp4"
+                poster="/media/field-stills/confessions-to-philanthropy.jpg"
+                title="Confessions to Philanthropy, the film"
+              />
+            </div>
+            <p className="font-[var(--font-sans)] text-[10px] uppercase tracking-[0.3em] text-[#CFA16B]/70">
+              Confessions to Philanthropy · the film
+            </p>
+          </div>
+        </div>
+      </section>
 
       {/* , , ,  1b. AUDIENCE CHIPS, uniform grid, playful surprise tile , , ,  */}
       <section className="full-bleed border-b border-[var(--we-sand)] bg-[#F6F1E7] px-6 py-16 md:px-10 md:py-24">
@@ -204,13 +311,12 @@ export default async function HomePage() {
               { label: 'Partner', href: '/contact?type=project-partnership&source=home-audience' },
               { label: 'Support the work', href: '/contact?type=support&source=home-audience' },
               { label: 'Share a story', href: '/contact?type=share-your-story&source=home-audience' },
-              { label: 'Research or write', href: '/wiki' },
               { label: 'Visit the farm', href: '/farm' },
               { label: 'Visit The Harvest', href: '/harvest' },
               { label: 'See some art', href: '/art' },
               { label: 'Be an artist', href: '/art' },
               { label: 'Have some fun', href: '/events' },
-              { label: 'Find myself', href: '/storytellers' },
+              { label: 'Find myself', href: '/stories' },
               { label: 'Buy a bed', href: '/goods' },
               { label: 'Buy a washing machine', href: '/goods' },
             ].map((chip) => (
@@ -301,7 +407,7 @@ export default async function HomePage() {
               href="/method"
               className="inline-flex items-center gap-2 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--we-olive)] transition-all hover:gap-3"
             >
-              See the LCAA method <span aria-hidden="true">&rarr;</span>
+              See the method <span aria-hidden="true">&rarr;</span>
             </Link>
           </div>
         </div>
@@ -334,8 +440,9 @@ export default async function HomePage() {
       <section className="px-8 py-28 md:py-36">
         <div className="mx-auto max-w-[1200px]">
           <SectionHeader
-            eyebrow="Flagship projects"
-            title="How the work meets the ground"
+            eyebrow="What we build instead"
+            title="We did not just build somewhere to confess. We built the answer."
+            lede="Every confession points at something broken. Here is the regenerative alternative, built with community, in the ground, designed to be owned locally."
             eyebrowColor="muted"
           />
         </div>
@@ -376,6 +483,12 @@ export default async function HomePage() {
                   <p className="mt-2 max-w-lg font-[var(--font-body)] text-[15px] leading-relaxed text-[#FAFAF7]/70">
                     {featuredProjects[0].tagline}
                   </p>
+                  {confessionBySlug[featuredProjects[0].slug] && (
+                    <p className="mt-3 flex max-w-lg items-start gap-2 font-[var(--font-body)] text-[13px] italic leading-snug text-[#CFA16B]">
+                      <span aria-hidden="true" className="not-italic">☎</span>
+                      <span>&ldquo;{confessionBySlug[featuredProjects[0].slug]}&rdquo;</span>
+                    </p>
+                  )}
                   <span className="mt-4 inline-flex items-center gap-2 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FAFAF7]/80 transition-all group-hover:gap-3">
                     Enter field <span aria-hidden="true">&rarr;</span>
                   </span>
@@ -428,6 +541,12 @@ export default async function HomePage() {
                   <p className="mt-1 line-clamp-2 font-[var(--font-body)] text-sm leading-relaxed text-[#FAFAF7]/65">
                     {project.tagline}
                   </p>
+                  {confessionBySlug[project.slug] && (
+                    <p className="mt-2 flex items-start gap-1.5 font-[var(--font-body)] text-[12px] italic leading-snug text-[#CFA16B]/90">
+                      <span aria-hidden="true" className="not-italic">☎</span>
+                      <span>&ldquo;{confessionBySlug[project.slug]}&rdquo;</span>
+                    </p>
+                  )}
                   <span className="mt-3 inline-flex items-center gap-2 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.2em] text-[#FAFAF7]/70 transition-all group-hover:gap-3 group-hover:text-[#FAFAF7]">
                     Enter field <span aria-hidden="true">&rarr;</span>
                   </span>
@@ -545,18 +664,14 @@ export default async function HomePage() {
           </div>
 
           {/* Centred CTAs below the grid */}
+          {/* Launch hold (2026-05-27): "Meet the storytellers" CTA removed while
+              the /storytellers surface is held. Restore alongside that surface. */}
           <div className="mx-auto mt-14 flex max-w-[820px] flex-wrap items-center justify-center gap-4 md:mt-20 md:gap-6">
             <Link
-              href="/blog"
+              href="/stories"
               className="inline-flex items-center gap-2 rounded-full border border-[#CFA16B]/60 bg-[#CFA16B]/5 px-7 py-3.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#F3EBDD] transition-all hover:-translate-y-0.5 hover:border-[#CFA16B] hover:bg-[#CFA16B]/15 hover:gap-3 md:text-sm"
             >
               Read all stories <span aria-hidden="true">&rarr;</span>
-            </Link>
-            <Link
-              href="/storytellers"
-              className="inline-flex items-center gap-2 rounded-full border border-transparent px-6 py-3.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#CFA16B] transition-all hover:gap-3 hover:text-[#E0B680] md:text-sm"
-            >
-              Meet the storytellers <span aria-hidden="true">&rarr;</span>
             </Link>
           </div>
         </section>
@@ -665,7 +780,7 @@ export default async function HomePage() {
         */}
         <div className="grid grid-cols-2 md:grid-cols-4 md:grid-rows-[repeat(3,minmax(0,1fr))] md:aspect-[4/3]">
           {mosaicTiles.map((tile, i) => {
-            const img = resolveMosaicImage(tile.slug, tile.override, tile.fallback);
+            const img = resolveMosaicImage(tile.slug, tile.name, tile.override, tile.fallback);
             const isLead = i === 0;
             // Each tile gets a stable slot id so the image-override JSON can
             // remember which image belongs to which mosaic position.

@@ -1,13 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
+import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
+import { JsonLd } from "@/components/seo/JsonLd";
 import {
   getEditorialArticleBySlug,
   getEditorialArticleStaticSlugs,
   getSiteEditorialArticles,
   type EditorialArticle,
 } from "../../../lib/empathy-ledger-editorial";
+import { articleJsonLd, breadcrumbJsonLd, pageMetadata } from "@/lib/seo/site";
 
 export const revalidate = 60;
 
@@ -18,6 +21,30 @@ export async function generateStaticParams() {
     console.error("Failed to generate static params for blog posts:", error);
     return [];
   }
+}
+
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ slug: string }>;
+}): Promise<Metadata> {
+  const { slug } = await params;
+  const post = await getEditorialArticleBySlug(slug);
+
+  if (!post) return {};
+
+  return pageMetadata({
+    title: post.title,
+    description: post.excerpt || 'ACT blog writing carried with consent through Empathy Ledger.',
+    path: `/blog/${post.slug}`,
+    type: 'article',
+    image: post.featuredImageUrl
+      ? {
+          url: post.featuredImageUrl,
+          alt: post.featuredImageAlt || post.title,
+        }
+      : undefined,
+  });
 }
 
 function shortLede(raw: string | null): string | null {
@@ -78,6 +105,25 @@ export default async function BlogPostPage({
 
   return (
     <>
+      <JsonLd
+        id={`blog-${post.slug}-article-jsonld`}
+        data={articleJsonLd({
+          title: post.title,
+          description: post.excerpt || 'ACT blog writing carried with consent through Empathy Ledger.',
+          path: `/blog/${post.slug}`,
+          image: post.featuredImageUrl,
+          authorName: post.authorName,
+          publishedAt: post.publishedAt,
+        })}
+      />
+      <JsonLd
+        id={`blog-${post.slug}-breadcrumb-jsonld`}
+        data={breadcrumbJsonLd([
+          { name: 'Home', path: '/' },
+          { name: 'Blog', path: '/blog' },
+          { name: post.title, path: `/blog/${post.slug}` },
+        ])}
+      />
       {/* , , ,  HERO: full-bleed image with title + meta overlay , , ,  */}
       <section className="full-bleed relative min-h-[60vh] w-full overflow-hidden bg-[#11110F] md:min-h-[75vh]">
         {hasHero ? (
@@ -96,7 +142,7 @@ export default async function BlogPostPage({
             href="/blog"
             className="inline-flex items-center gap-2 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[#CFA16B] transition-all hover:gap-3 hover:text-[#E0B680]"
           >
-            <span aria-hidden="true">&larr;</span> All stories
+            <span aria-hidden="true">&larr;</span> Blog archive
           </Link>
           <h1 className="mt-6 font-[var(--font-display)] text-[clamp(2.2rem,5vw,4.2rem)] font-semibold leading-[1.05] text-[#F3EBDD]">
             {post.title}
@@ -137,7 +183,8 @@ export default async function BlogPostPage({
             </div>
           ) : (
             <p className="font-[var(--font-body)] italic text-[var(--we-warm-brown)]">
-              This story is still being prepared.
+              This story has no public body yet. Its media, project links, and
+              source record remain connected through Empathy Ledger.
             </p>
           )}
         </article>
@@ -269,13 +316,13 @@ export default async function BlogPostPage({
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 rounded-full border border-[#CFA16B]/60 bg-[#CFA16B]/5 px-7 py-3.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#F3EBDD] transition-all hover:-translate-y-0.5 hover:border-[#CFA16B] hover:bg-[#CFA16B]/15 hover:gap-3 md:text-sm"
             >
-              Open in Empathy Ledger <span aria-hidden="true">&rarr;</span>
+              Open source record <span aria-hidden="true">&rarr;</span>
             </a>
             <Link
-              href="/blog"
+              href="/stories"
               className="inline-flex items-center gap-2 rounded-full border border-transparent px-6 py-3.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#CFA16B] transition-all hover:gap-3 hover:text-[#E0B680] md:text-sm"
             >
-              All stories <span aria-hidden="true">&rarr;</span>
+              Read stories <span aria-hidden="true">&rarr;</span>
             </Link>
             <Link
               href="/contact"
@@ -304,7 +351,7 @@ export default async function BlogPostPage({
                 href="/blog"
                 className="inline-flex items-center gap-2 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--we-olive)] transition-all hover:gap-3"
               >
-                All stories <span aria-hidden="true">&rarr;</span>
+                Blog archive <span aria-hidden="true">&rarr;</span>
               </Link>
             </div>
 

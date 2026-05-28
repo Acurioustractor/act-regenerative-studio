@@ -6,19 +6,23 @@ import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import { MarkdownViewer } from '@/components/ui/MarkdownViewer';
 import { VisionSearch } from '@/components/ui/VisionSearch';
+import { cleanPublicBrandText } from '@/lib/brand/public-copy';
 
-export const metadata = {
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata = pageMetadata({
   title: "Vision",
   description:
     "A seasonal map of where ACT is trying to go, the working direction, not a polished roadmap.",
-};
+  path: "/vision",
+});
 
 export default async function VisionPage() {
     const filePath = path.join(process.cwd(), 'src/data/vision/vision.md');
     const rawContent = fs.readFileSync(filePath, 'utf8');
     // Strip leading `# Title`, page already has an h1 from PageHero and a
     // section title above the doc. The markdown's own h1 would duplicate both.
-    const content = rawContent.replace(/^#\s+.+\n+/, '');
+    const content = cleanPublicBrandText(rawContent.replace(/^#\s+.+\n+/, '')) || '';
 
     return (
         <div className="space-y-20">
@@ -56,7 +60,7 @@ export default async function VisionPage() {
                 stats={[
                     { label: "Frame", value: "Seasonal" },
                     { label: "Orientation", value: "Place-first" },
-                    { label: "Method", value: "LCAA" },
+                    { label: "Method", value: "Listen · Curiosity · Action · Art" },
                 ]}
             />
 
@@ -101,12 +105,6 @@ export default async function VisionPage() {
                             className="rounded-full bg-[#CFA16B] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#11110F] transition hover:bg-[#E0B680]"
                         >
                             Open projects
-                        </Link>
-                        <Link
-                            href="/wiki"
-                            className="rounded-full border border-[#CFA16B] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#F3EBDD] transition hover:bg-[#1B1A16]"
-                        >
-                            Open wiki
                         </Link>
                     </div>
                 </div>

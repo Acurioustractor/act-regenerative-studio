@@ -8,10 +8,13 @@ import ImpactSankey from '@/components/impact/ImpactSankey';
 import { EmpathyLedgerConnections } from '@/components/projects/EmpathyLedgerConnections';
 import { REAL_INITIATIVES, REAL_CONTEXTS, REAL_EVIDENCE } from '@/data/alma-seeds';
 
-export const metadata: Metadata = {
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata: Metadata = pageMetadata({
     title: 'Impact & Learning',
     description: 'What the work is actually doing, initiatives, contexts, community authority, and the evidence behind the claims.',
-};
+  path: "/impact",
+});
 
 export default function ImpactPage() {
     // Calculate high-level metrics
@@ -27,8 +30,7 @@ export default function ImpactPage() {
                 title="What's working, what we're learning"
                 description="How we think about impact: the initiatives, the communities they sit with, who holds authority in each, and the evidence behind each claim. Honest about what's strong and what's still early."
                 actions={[
-                    { label: "Open the wiki", href: "/wiki" },
-                    { label: "Explore projects", href: "/projects", variant: "outline" },
+                    { label: "Explore projects", href: "/projects" },
                 ]}
             >
                 <div className="space-y-3">
@@ -164,7 +166,7 @@ export default function ImpactPage() {
                         Impact is for learning and accountability, not performance theatre
                     </h2>
                     <p className="max-w-3xl text-sm leading-7 text-[#D7C8B2]">
-                        The strongest next version of this page will connect ALMA more directly to canonical wiki pages, project-level live story signals, and clearer provenance. For now, this surface is deliberately framed as a working model rather than overstated as a live dashboard.
+                        The strongest next version of this page will connect the Australian Living Map of Alternatives more directly to canonical wiki pages, project-level live story signals, and clearer provenance. For now, this surface is deliberately framed as a working model rather than overstated as a live dashboard.
                     </p>
                 </div>
             </section>

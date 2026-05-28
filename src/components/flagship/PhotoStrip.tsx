@@ -3,6 +3,8 @@
 import Image from "next/image";
 import { useState } from "react";
 
+import { cleanMediaAlt } from "@/lib/media/alt-text";
+
 interface MediaItem {
   url: string;
   alt?: string;
@@ -39,6 +41,9 @@ export function PhotoStrip({
       : columns === 4
         ? "grid-cols-2 md:grid-cols-4"
         : "grid-cols-3";
+  const fallbackAlt = "Field documentation from A Curious Tractor";
+  const getAlt = (img: MediaItem) =>
+    cleanMediaAlt(img.alt || img.title, fallbackAlt) || fallbackAlt;
 
   return (
     <>
@@ -51,7 +56,7 @@ export function PhotoStrip({
           >
             <Image
               src={img.url}
-              alt={img.alt || img.title || ""}
+              alt={getAlt(img)}
               fill
               sizes={`${Math.round(100 / columns)}vw`}
               className="object-cover transition duration-500 group-hover:scale-105"
@@ -70,7 +75,7 @@ export function PhotoStrip({
           <div className="relative max-h-[85vh] max-w-[90vw]">
             <Image
               src={images[lightboxIdx].url}
-              alt={images[lightboxIdx].alt || ""}
+              alt={getAlt(images[lightboxIdx])}
               width={1200}
               height={800}
               className="max-h-[85vh] w-auto rounded-lg object-contain"

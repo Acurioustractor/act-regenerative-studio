@@ -21,6 +21,15 @@ const exhibitionPatterns = [
   },
 ];
 
+import { pageMetadata } from "@/lib/seo/site";
+
+export const metadata = pageMetadata({
+  title: "Exhibitions",
+  description:
+    "Spaces where the work becomes public. Installations, documentation, and temporary sites that make a system, story, or place legible in public life.",
+  path: "/art/exhibitions",
+});
+
 export default async function ExhibitionsPage() {
   const works = await getFeaturedWorks();
 

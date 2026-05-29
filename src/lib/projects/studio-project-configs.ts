@@ -24,7 +24,7 @@ export const studioProjectConfigs: CuratedProjectCardConfig[] = [
     eyebrow: "Commons",
     href: "/harvest",
     fallbackTitle: "The Harvest",
-    fallbackTagline: "Community hub and CSA programs",
+    fallbackTagline: "Community hub and Community Supported Agriculture programs",
     fallbackDescription:
       "Gatherings, local enterprise, and practical exchange rooted in place.",
   },

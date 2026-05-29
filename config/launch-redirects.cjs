@@ -46,11 +46,14 @@ const launchRedirects = [
   // - /storytellers: held until more than one consented profile is syndicated.
   // - /ask: public AI Q&A held for a later phase (cost/safety/injection review).
   // - /wiki: living wiki is a longer build; held until it is ready.
+  // - /people: held 2026-05-29 (internal research notes were leaking into public
+  //   bios from the Empathy Ledger data); sanitize the bio source before reopening.
   { source: '/storytellers', destination: '/stories', permanent: false },
   { source: '/storytellers/:slug*', destination: '/stories', permanent: false },
   { source: '/ask', destination: '/projects', permanent: false },
   { source: '/wiki', destination: '/projects', permanent: false },
   { source: '/wiki/:slug*', destination: '/projects', permanent: false },
+  { source: '/people', destination: '/about', permanent: false },
 
   // Project holds (2026-05-27) — not-ready / internal pages held off the public
   // launch. 307s (permanent: false) so they reverse cleanly when each is ready.

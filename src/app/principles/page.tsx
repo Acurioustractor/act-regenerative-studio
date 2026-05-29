@@ -24,7 +24,7 @@ const operationalPrinciples = [
     number: 2,
     title: "Community Authority Comes First",
     description:
-      "Consent, cultural protocols, and local authority are non-negotiable. OCAP is enforced in code and practice. Elder review is required where culture demands it.",
+      "Consent, cultural protocols, and local authority are non-negotiable. OCAP® (Ownership, Control, Access, and Possession) is enforced in code and practice. Elder review is required where culture demands it.",
   },
   {
     number: 3,

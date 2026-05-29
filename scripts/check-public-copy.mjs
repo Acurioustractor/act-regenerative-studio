@@ -41,6 +41,16 @@ const INTERNAL_PHRASES = [
   /["'`]Open flagship field["'`]/,
 ];
 
+// High-signal internal markers that leaked from research/CRM data into public
+// bios (the /people incident, 2026-05-29). Checked in .tsx always, and in the
+// Empathy Ledger bio data via `--data` (run before un-gating /people, since the
+// generated source still carries these until the bios are sanitized at sync).
+const INTERNAL_MARKERS = [
+  /\bPUBLIC-ARCHIVE-CONFIRMED\b/i,
+  /\bcluster identity\b/i,
+  /\bStrengths:\s+\w/,
+];
+
 // Decorative emoji that should not appear in user-facing component literals.
 // Limit to the set we've cleaned; expand as needed.
 const BANNED_EMOJI = /[👂🔍⚡🎨🌱🚀🌟💡🎯📍👥📖📊🛡⚙📈📚💬🌐💻🤝📝🌿💪🧭🎙🌊]/u;
@@ -49,6 +59,10 @@ const BANNED_EMOJI = /[👂🔍⚡🎨🌱🚀🌟💡🎯📍👥📖📊🛡�
 // We only flag *.tsx (rendering surface). Plain *.ts under app/ is server
 // route logic with internal logging emojis that never reach the browser.
 const TARGET_GLOBS = [/^src\/app\/.*\.tsx$/, /^src\/components\/.*\.tsx$/];
+// Generated public-bio data. Scanned only with `--data` because the EL source
+// still carries internal markers until the bios are sanitized; keeping it out
+// of the default run lets the launch gate stay green while /people is gated.
+const DATA_GLOBS = [/^src\/data\/empathy-ledger-(featured|storytellers).*\.generated\.json$/];
 const SKIP_PATTERNS = [
   /\/__tests__\//,
   /\.test\.(t|j)sx?$/,
@@ -80,8 +94,10 @@ function listStagedFiles() {
   }
 }
 
-function scanFile(absolutePath, repoRelativePath) {
-  if (!TARGET_GLOBS.some((re) => re.test(repoRelativePath))) return [];
+function scanFile(absolutePath, repoRelativePath, { scanData = false } = {}) {
+  const isTsx = TARGET_GLOBS.some((re) => re.test(repoRelativePath));
+  const isData = DATA_GLOBS.some((re) => re.test(repoRelativePath));
+  if (!isTsx && !(isData && scanData)) return [];
   if (SKIP_PATTERNS.some((re) => re.test(repoRelativePath))) return [];
   if (!fs.existsSync(absolutePath) || fs.statSync(absolutePath).isDirectory()) return [];
 
@@ -90,23 +106,37 @@ function scanFile(absolutePath, repoRelativePath) {
   const lines = content.split('\n');
 
   lines.forEach((line, idx) => {
-    for (const phrase of INTERNAL_PHRASES) {
-      if (phrase.test(line)) {
+    // Internal research/CRM markers: flagged everywhere we scan (.tsx and data).
+    for (const marker of INTERNAL_MARKERS) {
+      if (marker.test(line)) {
         findings.push({
           file: repoRelativePath,
           line: idx + 1,
-          kind: 'internal-phrase',
+          kind: 'internal-marker',
           text: line.trim().slice(0, 140),
         });
       }
     }
-    if (BANNED_EMOJI.test(line)) {
-      findings.push({
-        file: repoRelativePath,
-        line: idx + 1,
-        kind: 'decorative-emoji',
-        text: line.trim().slice(0, 140),
-      });
+    // Prose phrases + decorative emoji only matter on the rendered .tsx surface.
+    if (isTsx) {
+      for (const phrase of INTERNAL_PHRASES) {
+        if (phrase.test(line)) {
+          findings.push({
+            file: repoRelativePath,
+            line: idx + 1,
+            kind: 'internal-phrase',
+            text: line.trim().slice(0, 140),
+          });
+        }
+      }
+      if (BANNED_EMOJI.test(line)) {
+        findings.push({
+          file: repoRelativePath,
+          line: idx + 1,
+          kind: 'decorative-emoji',
+          text: line.trim().slice(0, 140),
+        });
+      }
     }
   });
 
@@ -115,6 +145,7 @@ function scanFile(absolutePath, repoRelativePath) {
 
 function main() {
   const stagedOnly = process.argv.includes('--staged');
+  const scanData = process.argv.includes('--data');
   const repoRoot = process.cwd();
 
   let candidates;
@@ -130,7 +161,7 @@ function main() {
     }));
   }
 
-  const findings = candidates.flatMap(({ abs, rel }) => scanFile(abs, rel));
+  const findings = candidates.flatMap(({ abs, rel }) => scanFile(abs, rel, { scanData }));
 
   if (findings.length === 0) {
     console.log('check:copy ✓ no internal-copy patterns found in user-facing files');

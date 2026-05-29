@@ -124,14 +124,16 @@ export default async function EcosystemPage() {
             </p>
           </div>
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
-            <div className="rounded-2xl border border-[#4A3B2E] bg-[#171612] px-5 py-4">
-              <p className="text-2xl font-semibold text-[#F3EBDD]">
-                {signalPayload.summary.activeServiceCount}
-              </p>
-              <p className="mt-1 text-xs uppercase tracking-[0.2em] text-[#BDAE98]">
-                Platforms serving communities
-              </p>
-            </div>
+            {signalPayload.summary.activeServiceCount > 0 && (
+              <div className="rounded-2xl border border-[#4A3B2E] bg-[#171612] px-5 py-4">
+                <p className="text-2xl font-semibold text-[#F3EBDD]">
+                  {signalPayload.summary.activeServiceCount}
+                </p>
+                <p className="mt-1 text-xs uppercase tracking-[0.2em] text-[#BDAE98]">
+                  Platforms serving communities
+                </p>
+              </div>
+            )}
             <div className="rounded-2xl border border-[#4A3B2E] bg-[#171612] px-5 py-4">
               <p className="text-2xl font-semibold text-[#F3EBDD]">
                 {signalPayload.summary.featuredWorkCount}

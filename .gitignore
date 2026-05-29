@@ -12,6 +12,10 @@ out/
 build/
 dist/
 
+# Raw gold-phone recordings — contain caller PII (names, phone numbers).
+# Only cleared, consented clips under public/confessions/audio/ may be committed.
+Confessions Recordings/
+
 # Production
 *.log
 npm-debug.log*

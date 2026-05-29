@@ -278,8 +278,9 @@ export default function ConfessionsPage() {
                 </>
               ) : (
                 <>
-                  Press play to listen. Filter by what each one is about. Every message is anonymous
-                  and unedited, exactly as it came through.
+                  Press play to hear the real voice. Some callers shared their words and not their
+                  voice, and we kept it that way. Filter by what each one is about. Every message is
+                  anonymous and unedited, exactly as it came through.
                 </>
               )}
             </p>
@@ -347,6 +348,14 @@ export default function ConfessionsPage() {
           <p className="mx-auto mt-6 max-w-xl font-[var(--font-body)] text-lg leading-8 text-[#C7B9A4]">
             At the end of the week we play it back. Anonymous, themed, said out loud. Not a survey. Not
             an acquittal. Every number opens back into a voice.
+          </p>
+          <p className="mt-9">
+            <Link
+              href="/art/the-payout-wall"
+              className="inline-flex items-center gap-2 rounded-full border border-[#CFA16B]/40 px-5 py-2.5 text-sm font-semibold text-[#CFA16B] transition hover:border-[#CFA16B] hover:bg-[#CFA16B]/10"
+            >
+              See the receipts: The Payout Wall <span aria-hidden="true">&rarr;</span>
+            </Link>
           </p>
         </div>
       </section>

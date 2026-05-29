@@ -3,38 +3,44 @@ import Link from 'next/link';
 import { PayoutWall } from '@/components/confessions/PayoutWall';
 import { CallCTA } from '@/components/confessions/CallCTA';
 import { pageMetadata } from '@/lib/seo/site';
+import wallData from '../../../../public/confessions/payout-wall.json';
+
+// All figures come from the verified snapshot (scripts/build-payout-wall-data.mjs),
+// so the page and the wall always agree and re-running the script updates both.
+const s = wallData.stats;
 
 export const metadata = pageMetadata({
   title: 'The Payout Wall',
-  description:
-    'Australian foundations gave $12.95 billion last year. About 112 of them will let you ask. One cell per foundation, the rare open doors lit gold, the voices behind the data on the gold phone.',
+  description: `Australian foundations gave $${s.totalGivingB} billion last year. About ${s.openCount} of them will let you ask. One cell per foundation, the rare open doors lit gold, the voices behind the data on the gold phone.`,
   path: '/art/the-payout-wall',
 });
 
-// Robust, query-verified receipts only (2026-05-29). The "45 foundations control
-// half" concentration line is deliberately held back until a manual operating-
-// charity exclusion list lands, because the raw giving set still ranks aid
-// fundraisers (World Vision, Red Cross) as top "givers". See
-// grantscope/output/foundation-power.provenance.md.
+// Receipts read from the verified snapshot (scripts/build-payout-wall-data.mjs),
+// so the numbers can never drift from the data. The concentration cuts ("N move
+// half", "N confirmed grantmakers control half") are computed in the pipeline by
+// the confirmed-grantmaker filter, not hand-entered. The donor-contractor "15x"
+// is the one figure not in this snapshot (separate AusTender analysis, see
+// grantscope/output/foundation-power.provenance.md).
+const givers = s.nGivers.toLocaleString();
 const RECEIPTS = [
   {
-    big: '45',
-    line: 'Of the 10,133 organisations that give, just 45 move half of the $12.95 billion between them. The top 100 move two thirds. The whole system is built around a handful.',
+    big: String(s.giversToHalf),
+    line: `Of the ${givers} organisations that give, just ${s.giversToHalf} move half of the $${s.totalGivingB} billion between them. The top 100 move two thirds. The whole system is built around a handful.`,
   },
   {
-    big: '7',
-    line: 'Narrow it to the foundations confirmed as grantmakers, the corporate foundations, family trusts and endowments, and it is starker still: just seven of them control half of the $2.34 billion they give. BHP, Paul Ramsay and Rio Tinto among them.',
+    big: String(s.grantmakerToHalf),
+    line: `Narrow it to the foundations confirmed as grantmakers, the corporate foundations, family trusts and endowments, and it is starker still: just ${s.grantmakerToHalf} of them control half of the $${s.grantmakerTotalB} billion they give. BHP, Paul Ramsay and Rio Tinto among them.`,
   },
   {
-    big: '98.9%',
-    line: 'Of 10,133 organisations that give money, only about 112 publish an open application program. For everyone else there is no form, no front door, no public way in.',
+    big: `${s.pctNoOpenDoor.toFixed(1)}%`,
+    line: `Of ${givers} organisations that give money, only about ${s.openCount} publish an open application program. For everyone else there is no form, no front door, no public way in.`,
   },
   {
-    big: '$43.3B',
-    line: 'Foundation capital paying out under five percent a year. A further $15.6 billion sat in foundations that moved nothing at all. The US has a legal floor that forces it to move. Australia has none.',
+    big: `$${s.hoardUnder5B.toFixed(1)}B`,
+    line: `Foundation capital paying out under five percent a year. A further $${s.deadCapitalB.toFixed(1)} billion sat in foundations that moved nothing at all. The US has a legal floor that forces it to move. Australia has none.`,
   },
   {
-    big: '96.8%',
+    big: `${s.pctUntraceable}%`,
     line: 'For every $50 a foundation gives, you can trace where one dollar landed. The rest disappears between the tax return and the community.',
   },
   {
@@ -56,9 +62,9 @@ export default function PayoutWallPage() {
             The Payout Wall
           </h1>
           <p className="mx-auto mt-6 max-w-xl font-[var(--font-body)] text-lg leading-8 text-[#D8CBB6]">
-            Australia’s foundations and charities gave $12.95 billion last year. About 112 of them
-            will let you ask. Every cell below is one of them. The few with an open door glow gold.
-            Almost none do.
+            Australia’s foundations and charities gave ${s.totalGivingB} billion last year. About{' '}
+            {s.openCount} of them will let you ask. Every cell below is one of them. The few with an
+            open door glow gold. Almost none do.
           </p>
         </div>
       </section>

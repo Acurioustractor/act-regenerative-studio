@@ -39,7 +39,9 @@ export function PayoutWall() {
   const audioRef = useRef<HTMLAudioElement | null>(null);
   const acRef = useRef<AudioContext | null>(null);
   const analyserRef = useRef<AnalyserNode | null>(null);
-  const freqRef = useRef<Uint8Array | null>(null);
+  // Pin the buffer generic: getByteFrequencyData wants Uint8Array<ArrayBuffer>
+  // (TS 5.7+ made Uint8Array generic), and that is what `new Uint8Array(n)` is.
+  const freqRef = useRef<Uint8Array<ArrayBuffer> | null>(null);
   const playingRef = useRef(false);
   const ampRef = useRef(0);
 

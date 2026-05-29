@@ -20,6 +20,12 @@ export type ConfessionTheme =
   | 'breakthrough'
   | 'the weird';
 
+/** Whether a confession's actual recording is cleared for public playback.
+ *  'cleared' = the caller consented to their VOICE being played AND the audio
+ *  carries no identifying detail. 'text-only' (default) publishes the words
+ *  only, rendered exactly as before (decorative waveform, no audio). */
+export type ConfessionAudioStatus = 'cleared' | 'text-only';
+
 export interface Confession {
   id: string;
   /** Anonymised transcript. "█" runs are removed identifying details. */
@@ -27,6 +33,12 @@ export interface Confession {
   theme: ConfessionTheme;
   /** Call length in seconds, shown like a voicemail duration. */
   durationSeconds: number;
+  /** Omit => treated as 'text-only'. 'cleared' shows a real play button + plays audioSrc. */
+  audioStatus?: ConfessionAudioStatus;
+  /** Static path under /public to the cleared clip, e.g. '/confessions/audio/c02.mp3'. */
+  audioSrc?: string;
+  /** Short note shown on a text-only row, e.g. "Shared as words, by the caller's choice." */
+  consentNote?: string;
 }
 
 /** True shows the sample set (mockConfessions) for local design work; false
@@ -161,7 +173,47 @@ export const realConfessions: Confession[] = [
     id: 'c01',
     theme: 'money',
     durationSeconds: 22,
+    consentNote: 'Shared as words.',
     text: 'Hi! I wish there was more money, I wish there was money for everything. In the meantime, keep doing the good work that you’re doing, and keep sharing the stories because hopefully that will inspire others.',
+  },
+  {
+    id: 'c02',
+    theme: 'power',
+    durationSeconds: 24,
+    audioStatus: 'cleared',
+    audioSrc: '/confessions/audio/c02.mp3',
+    text: "Hello, this is a message for philanthropy. I just think you've got a really difficult job, and you do it really difficultly. I think if you just gave up on thinking that you knew what you were doing, then you'd actually do a much better job. Just give the money to the people who actually know what is going on, and then you might actually have a better job. That's all.",
+  },
+  {
+    id: 'c03',
+    theme: 'money',
+    durationSeconds: 28,
+    audioStatus: 'cleared',
+    audioSrc: '/confessions/audio/c03.mp3',
+    text: "My confession is, please just ask us. Genuinely ask. Not with a corporate brochure or a glossy annual report. Tell us about the people, the animals, the places, the ecosystems you're actually saving. Show us the real story. Not talk about the organisation. And please don't be shy about it. When you make the ask human and honest, the answer is always yes.",
+  },
+  {
+    id: 'c04',
+    theme: 'hope',
+    durationSeconds: 79,
+    audioStatus: 'cleared',
+    audioSrc: '/confessions/audio/c04.mp3',
+    text: "So, my confession. It's not really a confession. It's to say that I wish you didn't have to exist. I'm incredibly thankful that there are people who believe in philanthropy and put time and effort and soul into it. Our society benefits so hugely from it. But I wish you didn't have to exist. I wish we lived in a world where capitalism didn't drive us, where governments were able to support everyone, where equity was just a given. But it's not. And so, until then, we have amazing philanthropic organisations and givers and providers, those who pour their heart and soul into ensuring our world is still providing the best opportunity to those who don't have it. So I guess, yeah, my takeaway is just a huge thank you. But I wish you didn't have to exist. I love this idea, and love following all of those that are in the post. So thank you. Thank you, and keep being inspiring.",
+  },
+  {
+    id: 'c05',
+    theme: 'money',
+    durationSeconds: 31,
+    consentNote: 'Shared as words.',
+    text: "Philanthropy is the practice of giving time, money or resources to help others and benefit society. The word actually comes from the Greek, meaning love of humanity. Whilst the concept has existed over millennia, in many, many different cultures, I think it's lost its way a little bit, in that it tends to be about money now.",
+  },
+  {
+    id: 'c06',
+    theme: 'hope',
+    durationSeconds: 29,
+    audioStatus: 'cleared',
+    audioSrc: '/confessions/audio/c06.mp3',
+    text: "I wish that I could do more. I love working in this sector, being able to make a change. But I also hate it, because it's opened my eyes up to this huge, gigantic need. And I struggle to sleep every night, knowing that while I'm making a difference, it's only a very small drop in a very big ocean.",
   },
 ];
 

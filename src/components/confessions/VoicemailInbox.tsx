@@ -1,6 +1,6 @@
 'use client';
 
-import { useEffect, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 import type { Confession, ConfessionTheme } from '@/data/confessions-mock';
 import { themeMeta, themeOrder } from '@/data/confessions-mock';
@@ -21,11 +21,15 @@ function PlayIcon({ playing }: { playing: boolean }) {
   );
 }
 
+const isCleared = (c: Confession) => c.audioStatus === 'cleared' && !!c.audioSrc;
+
 export function VoicemailInbox({ confessions }: { confessions: Confession[] }) {
   const [filter, setFilter] = useState<ConfessionTheme | 'all'>('all');
   const [playingId, setPlayingId] = useState<string | null>(null);
   const [progress, setProgress] = useState(0);
+  const [elapsed, setElapsed] = useState(0);
   const [reduced, setReduced] = useState(false);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
 
   useEffect(() => {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -35,11 +39,69 @@ export function VoicemailInbox({ confessions }: { confessions: Confession[] }) {
     return () => mq.removeEventListener('change', on);
   }, []);
 
-  // Sweep a playhead across the scrubber. No audio yet, so the duration is
-  // scaled to a watchable few seconds; swaps to the real recording later.
+  // One shared audio element for the whole inbox.
   useEffect(() => {
-    if (!playingId) return;
+    const a = new Audio();
+    a.preload = 'none';
+    audioRef.current = a;
+    return () => {
+      a.pause();
+      a.src = '';
+      audioRef.current = null;
+    };
+  }, []);
+
+  // Drive whatever is playing. Cleared rows play their real recording with the
+  // waveform synced to currentTime; text-only rows (and reduced-motion, and any
+  // audio load error) fall back to the original decorative sweep.
+  useEffect(() => {
+    if (!playingId) {
+      audioRef.current?.pause();
+      return;
+    }
     const conf = confessions.find((c) => c.id === playingId);
+
+    if (conf && isCleared(conf) && !reduced) {
+      const a = audioRef.current;
+      if (a) {
+        let fellBack = false;
+        const onTime = () => {
+          if (a.duration > 0) {
+            setProgress(a.currentTime / a.duration);
+            setElapsed(a.currentTime);
+          }
+        };
+        const stop = () => setPlayingId(null);
+        const startSweep = () => {
+          // Audio could not load/play: degrade to the decorative sweep so the
+          // row still responds instead of sitting dead.
+          fellBack = true;
+          const durMs = Math.min(Math.max(conf.durationSeconds * 110, 1800), 6000);
+          const start = performance.now();
+          const tick = (t: number) => {
+            const p = Math.min(1, (t - start) / durMs);
+            setProgress(p);
+            if (p < 1) requestAnimationFrame(tick);
+            else setPlayingId(null);
+          };
+          requestAnimationFrame(tick);
+        };
+        a.addEventListener('timeupdate', onTime);
+        a.addEventListener('ended', stop);
+        a.addEventListener('error', startSweep);
+        a.src = conf.audioSrc!;
+        a.currentTime = 0;
+        a.play().catch(startSweep);
+        return () => {
+          a.removeEventListener('timeupdate', onTime);
+          a.removeEventListener('ended', stop);
+          a.removeEventListener('error', startSweep);
+          if (!fellBack) a.pause();
+        };
+      }
+    }
+
+    // Text-only + reduced-motion path: original sweep, no audio.
     if (reduced) {
       setProgress(1);
       const id = setTimeout(() => setPlayingId(null), 900);
@@ -65,6 +127,7 @@ export function VoicemailInbox({ confessions }: { confessions: Confession[] }) {
 
   const toggle = (id: string) => {
     setProgress(0);
+    setElapsed(0);
     setPlayingId((cur) => (cur === id ? null : id));
   };
 
@@ -105,7 +168,17 @@ export function VoicemailInbox({ confessions }: { confessions: Confession[] }) {
       <ul className="mt-10 overflow-hidden rounded-2xl border border-[#3A2C18] bg-[#1A130B]">
         {shown.map((c) => {
           const playing = playingId === c.id;
+          const cleared = isCleared(c);
           const t = themeMeta[c.theme];
+          const label =
+            playing && cleared ? formatDuration(Math.floor(elapsed)) : formatDuration(c.durationSeconds);
+          const ariaLabel = cleared
+            ? playing
+              ? 'Pause recording'
+              : 'Play the recording'
+            : playing
+              ? 'Stop'
+              : 'Play message (shared as words)';
           return (
             <li
               key={c.id}
@@ -115,7 +188,8 @@ export function VoicemailInbox({ confessions }: { confessions: Confession[] }) {
               <div className="flex items-start gap-5">
                 <button
                   onClick={() => toggle(c.id)}
-                  aria-label={playing ? 'Pause message' : 'Play message'}
+                  aria-label={ariaLabel}
+                  aria-pressed={playing}
                   className="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-transform hover:scale-105"
                   style={{
                     borderColor: `rgba(${t.rgb},0.5)`,
@@ -133,8 +207,16 @@ export function VoicemailInbox({ confessions }: { confessions: Confession[] }) {
                     >
                       {t.label}
                     </span>
-                    <span className="font-mono text-[11px] tracking-[0.05em] text-[#9A8C73]">
-                      ▸ {formatDuration(c.durationSeconds)}
+                    <span className="flex items-center gap-2 font-mono text-[11px] tracking-[0.05em] text-[#9A8C73]">
+                      {cleared && (
+                        <span
+                          aria-hidden="true"
+                          title="Real recording"
+                          className="inline-block h-1.5 w-1.5 rounded-full"
+                          style={{ background: playing ? `rgb(${t.rgb})` : `rgba(${t.rgb},0.55)` }}
+                        />
+                      )}
+                      ▸ {label}
                     </span>
                   </div>
                   <div className="mt-3">
@@ -143,6 +225,11 @@ export function VoicemailInbox({ confessions }: { confessions: Confession[] }) {
                   <blockquote className="mt-4 font-[var(--font-body)] leading-8 text-[#E4D8C4]">
                     {renderTranscript(c.text)}
                   </blockquote>
+                  {c.consentNote && (
+                    <p className="mt-3 font-[var(--font-sans)] text-[10px] uppercase tracking-[0.2em] text-[#7C7060]">
+                      {c.consentNote}
+                    </p>
+                  )}
                 </div>
               </div>
             </li>

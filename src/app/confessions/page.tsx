@@ -278,8 +278,9 @@ export default function ConfessionsPage() {
                 </>
               ) : (
                 <>
-                  Press play to listen. Filter by what each one is about. Every message is anonymous
-                  and unedited, exactly as it came through.
+                  Press play to hear the real voice. Some callers shared their words and not their
+                  voice, and we kept it that way. Filter by what each one is about. Every message is
+                  anonymous and unedited, exactly as it came through.
                 </>
               )}
             </p>

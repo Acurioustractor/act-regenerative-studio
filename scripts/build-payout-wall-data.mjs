@@ -23,7 +23,7 @@ async function fetchAllGivers() {
   for (let from = 0; ; from += PAGE) {
     const { data, error } = await sb
       .from('foundations')
-      .select('name, total_giving_annual, open_programs')
+      .select('name, total_giving_annual, open_programs, foundation_power_profiles(reportable_in_power_map, capital_source_class)')
       .gt('total_giving_annual', 0)
       .order('total_giving_annual', { ascending: false })
       .range(from, from + PAGE - 1);
@@ -44,6 +44,35 @@ rows.forEach((r, i) => {
 const top = rows.slice(0, 45).map((r) => ({ name: r.name, g: Math.round(Number(r.total_giving_annual)) }));
 const totalGivingB = +(giving.reduce((a, b) => a + b, 0) / 1e9).toFixed(2);
 
+// How many entities, ranked by giving, it takes to reach half the total.
+const nToHalf = (vals) => {
+  const tot = vals.reduce((a, b) => a + b, 0);
+  let cum = 0;
+  for (let i = 0; i < vals.length; i++) {
+    cum += vals[i];
+    if (cum >= tot * 0.5) return i + 1;
+  }
+  return vals.length;
+};
+
+// Confirmed-grantmaker cut: reportable + a known capital_source_class (excludes
+// the 'unknown'-class aid charities/universities that top the raw giving list).
+// Computed in-pipeline so "N control half" is data-driven, not a magic number.
+const GRANTMAKER_CLASSES = new Set([
+  'corporate_foundation', 'family_trust', 'institutional_endowment', 'community_foundation', 'ancillary_fund',
+]);
+const profileOf = (r) =>
+  Array.isArray(r.foundation_power_profiles) ? r.foundation_power_profiles[0] : r.foundation_power_profiles;
+const grantmakers = rows.filter((r) => {
+  const p = profileOf(r);
+  return p && p.reportable_in_power_map === true && GRANTMAKER_CLASSES.has(p.capital_source_class);
+});
+const gmGiving = grantmakers.map((r) => Number(r.total_giving_annual)).sort((a, b) => b - a);
+const giversToHalf = nToHalf(giving); // giving is already sorted descending
+const grantmakerToHalf = nToHalf(gmGiving);
+const grantmakerTotalB = +(gmGiving.reduce((a, b) => a + b, 0) / 1e9).toFixed(2);
+const grantmakerTop = grantmakers.slice(0, 6).map((r) => r.name);
+
 const out = {
   meta: {
     runDate: '2026-05-29',
@@ -58,6 +87,11 @@ const out = {
     top45SharePct: 50.1,
     top100SharePct: 66.7,
     gini: 0.9482,
+    giversToHalf,
+    grantmakerN: grantmakers.length,
+    grantmakerTotalB,
+    grantmakerToHalf,
+    grantmakerTop,
     openCount: openIdx.length,
     pctNoOpenDoor: +((100 * (rows.length - openIdx.length)) / rows.length).toFixed(2),
     onlyOpenInTop15: 1,

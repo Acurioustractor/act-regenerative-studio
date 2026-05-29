@@ -37,7 +37,7 @@ const launchRoutes = [
   '/contact',
   '/blog',
   '/media',
-  '/people',
+  // Launch hold (2026-05-29): /people held (internal bio notes leaking); see config/launch-redirects.cjs
   // Launch hold (2026-05-27): /ask held — see config/launch-redirects.cjs
   '/farm/stay',
   '/farm/retreats',

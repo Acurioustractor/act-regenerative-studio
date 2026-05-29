@@ -53,7 +53,7 @@ const staticRoutes: Array<{
   { path: "/contact", changeFrequency: "monthly", priority: 0.8 },
   { path: "/blog", changeFrequency: "weekly", priority: 0.7 },
   { path: "/media", changeFrequency: "weekly", priority: 0.6 },
-  { path: "/people", changeFrequency: "weekly", priority: 0.6 },
+  // Launch hold (2026-05-29): /people held (internal bio notes leaking); see config/launch-redirects.cjs
   // Launch hold (2026-05-27): /ask (public AI Q&A) held for a later phase.
   { path: "/farm/stay", changeFrequency: "monthly", priority: 0.6 },
   { path: "/farm/retreats", changeFrequency: "monthly", priority: 0.6 },

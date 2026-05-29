@@ -14,14 +14,14 @@ We live in a time of profound disconnection.
 Communities are tired of being "serviced." They want to own the tools, tell their own stories, and grow their own futures.
 
 ### The Solution: A Regenerative Innovation Studio
-**A Curious Tractor (ACT)** is not just a farm, and not just a tech studio. It is a **hybrid engine** for shared governance and community ownership.
+**A Curious Tractor (ACT)** is a regenerative innovation studio: part working farm, part technology studio, built as a **hybrid engine** for shared governance and community ownership.
 
 We exist to:
 1.  **Model** regenerative stewardship on our own land (Black Cockatoo Valley).
 2.  **Build** the digital tools for others to do the same (The Studio).
 3.  **Share** the abundance through local connection (The Harvest).
 
-### Our Method: L.C.A.A.
+### Our Method: Listen, Curiosity, Action, Art
 *   **Listen**: We do not assume. We ask. We start with place.
 *   **Curiosity**: We prototype, test, and learn.
 *   **Action**: We build things that work.
@@ -68,7 +68,7 @@ We exist to:
 
 **"The Placemat"** is our map. It is how we explain this complex ecosystem in one glance.
 
-*   **The Soil (Principles)**: LCAA, Governance, Obsolescence.
+*   **The Soil (Principles)**: Listen, Curiosity, Action, Art; Governance; Obsolescence.
 *   **The Pillars (Focus)**: Land, Studio, Harvest.
 *   **The Mycelium (Art)**: Connecting it all.
 
@@ -82,24 +82,23 @@ Art is not a decoration. It is the **connective tissue**.
 
 ---
 
-## Act 4: The 2026 Roadmap (Making It Real)
+## Act 4: Making It Real
 
-We are moving from **building** to **operating**.
-*Status as of April 2026.*
+We are moving from building to operating. Here is where the harvest year stands.
 
-### Q1: Unification (The Digital Foundation)
-*   [x] **ACT Hub Launch**: One front door for all projects — live at this site, surfacing every flagship, the wiki, the storyteller index, and the editorial feed.
-*   [x] **GHL Integration**: CRM pipelines and flows for guests, volunteers, and buyers wired across The Harvest, Empathy Ledger, JusticeHub, and BCV.
-*   [ ] **The Harvest Live**: A marketplace for local good — *in progress.*
+### Unification: the digital foundation
+*   **The ACT Hub is live.** One front door for the whole ecosystem, surfacing every flagship, the storyteller index, and the editorial feed.
+*   **CRM pipelines are wired** across The Harvest, Empathy Ledger, JusticeHub, and Black Cockatoo Valley, so guests, volunteers, and buyers are looked after.
+*   **The Harvest marketplace** for local goods is in build.
 
-### Q2: Participation (Inviting the World)
-*   [ ] **Residency Cohort 1**: Artists on the land — *scheduled.*
-*   [x] **Empathy Ledger V1**: Public, consent-first storytelling engine with 230+ storytellers, 15+ partner organisations, and editorial syndication into the ACT site and partner sites.
-*   [ ] **Goods E-commerce**: Selling products that tell a story — *in progress.*
+### Participation: inviting the world
+*   **Empathy Ledger is public**, a consent-first storytelling engine carrying community stories, with partner organisations and editorial syndication into the ACT site and partner sites.
+*   **The first residency cohort** brings artists and thinkers onto the land this year.
+*   **Goods on Country** moves toward selling objects that carry a story.
 
-### Q3: Sovereignty (Handing Over)
-*   [ ] **Governance Templates**: Open-sourcing our rulebook.
-*   [ ] **Impact Dashboards**: Real-time transparency on every dollar and outcome — *scaffolded.*
+### Sovereignty: handing over
+*   **Governance templates** open-source the way we hold this work.
+*   **Impact dashboards** give communities real-time transparency on the dollars and the outcomes.
 
 ---
 

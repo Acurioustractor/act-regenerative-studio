@@ -24,6 +24,14 @@ interface PageMetadataInput {
   path: string;
   type?: 'website' | 'article';
   noIndex?: boolean;
+  /**
+   * Absolute URL to use as the canonical (and og:url) when the master copy of
+   * this content lives off-site, e.g. a syndicated Empathy Ledger article.
+   * Defaults to `path`, keeping pages self-canonical. Set this for any page
+   * that re-publishes content whose canonical home is elsewhere, so search
+   * engines attribute the original rather than flagging duplicate content.
+   */
+  canonicalUrl?: string;
   image?: {
     url: string;
     alt: string;
@@ -38,6 +46,7 @@ export function pageMetadata({
   path,
   type = 'website',
   noIndex = false,
+  canonicalUrl,
   image,
 }: PageMetadataInput): Metadata {
   const imageMeta = image
@@ -51,18 +60,21 @@ export function pageMetadata({
       ]
     : undefined;
 
+  // Point at the off-site source when one is given, otherwise stay self-canonical.
+  const canonical = canonicalUrl || path;
+
   return {
     title,
     description,
     alternates: {
-      canonical: path,
+      canonical,
     },
     openGraph: {
       type,
       siteName: 'A Curious Tractor',
       title,
       description,
-      url: path,
+      url: canonical,
       images: imageMeta,
     },
     twitter: {

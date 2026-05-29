@@ -38,6 +38,10 @@ export async function generateMetadata({
     description: post.excerpt || 'ACT blog writing carried with consent through Empathy Ledger.',
     path: `/blog/${post.slug}`,
     type: 'article',
+    // These articles are syndicated from Empathy Ledger, which holds the master
+    // copy. Point the canonical at the source so search engines attribute it
+    // there instead of treating /blog as duplicate content.
+    canonicalUrl: post.canonicalUrl,
     image: post.featuredImageUrl
       ? {
           url: post.featuredImageUrl,

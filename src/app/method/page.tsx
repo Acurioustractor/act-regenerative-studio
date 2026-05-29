@@ -71,7 +71,7 @@ const inPractice = [
     project: "Empathy Ledger",
     href: "/projects/empathy-ledger",
     quote:
-      "How can technology serve cultural preservation without extracting value? We explored Indigenous-led frameworks like OCAP with First Nations technologists.",
+      "How can technology serve cultural preservation without extracting value? We explored Indigenous-led frameworks like OCAP® (Ownership, Control, Access, and Possession) with First Nations technologists.",
   },
   {
     phase: "Action",

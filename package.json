@@ -19,6 +19,7 @@
     "lint": "next lint",
     "check:brand": "node scripts/check-brand-wiki.mjs",
     "check:copy": "node scripts/check-public-copy.mjs",
+    "check:copy:data": "node scripts/check-public-copy.mjs --data",
     "check:forms": "node scripts/check-form-payloads.mjs",
     "check:launch": "node scripts/check-launch-site.mjs",
     "check:launch-ready": "node scripts/check-launch-ready.mjs",

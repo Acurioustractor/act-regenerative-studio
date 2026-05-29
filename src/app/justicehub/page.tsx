@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { STORYTELLERS_PUBLIC } from "@/lib/launch-flags";
 import { ImageLightbox } from "@/components/flagship/ImageLightbox";
@@ -73,7 +72,7 @@ export default async function JusticeHubPage() {
         eyebrow="Justice"
         title="Proving what works. Funding what heals."
         titleMaxChars={16}
-        subhead="1,000+ alternative models. $94.6B in funding tracked. 98,418 organisations mapped."
+        subhead="Communities already hold the answers to youth justice. JusticeHub gathers the proof and routes capital to programs that work."
         coverVideo={project.coverVideo}
         coverImage={project.coverImage}
         primaryCta={{ label: "Open JusticeHub", href: "https://justicehub.com.au", external: true }}
@@ -457,21 +456,6 @@ export default async function JusticeHubPage() {
 
       {/* , , ,  RELATED , , ,  */}
       <RelatedFields currentSlug="justicehub" />
-
-      {/* , , ,  PROJECT PAGE , , ,  */}
-      <section className="full-bleed bg-[var(--site-surface)] px-8 py-16">
-        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-6">
-          <p className="font-[var(--font-body)] text-[15px] text-[var(--site-muted)]">
-            See the full project page with stories, media, and storytellers
-          </p>
-          <Link
-            href="/projects/justicehub"
-            className="inline-flex items-center gap-3 rounded-[var(--site-radius)] border-2 border-[var(--site-green)] px-8 py-4 font-[var(--font-sans)] text-[13px] font-semibold uppercase tracking-[0.12em] text-[var(--site-green)] transition hover:bg-[var(--site-green)] hover:text-white"
-          >
-            Full project page <span aria-hidden="true">&rarr;</span>
-          </Link>
-        </div>
-      </section>
     </>
   );
 }

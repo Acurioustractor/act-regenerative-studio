@@ -62,7 +62,7 @@ const PROJECT_TO_ORGANIZATION_MAP: Record<string, string> = {
   'Empathy Ledger': 'Empathy Ledger',
   'Goods on Country': 'Goods.',
   'Goods Tennant Creek Journey': 'Goods.',
-  'Pakkinjalki kari (Washing Machine)': 'Goods.',
+  'Pakkimjalki Kari (Washing Machine)': 'Goods.',
   'Weave Bed Design': 'Goods.',
   'Fishers Oysters': 'Fishers Oysters',
   'BG Fit Mount Isa': 'BG Fit',

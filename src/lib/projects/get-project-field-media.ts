@@ -52,7 +52,7 @@ const RELATED_FIELD_MEDIA: Record<
   'goods': {
     photoSlugs: [
       'goods-tennant-creek',
-      'pakkinjalki-kari',
+      'pakkimjalki-kari',
       'weave-bed-tennant-creek',
     ],
     videoSlug: 'goods-tennant-creek',

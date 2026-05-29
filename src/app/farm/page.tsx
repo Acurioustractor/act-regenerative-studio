@@ -49,7 +49,7 @@ export default async function FarmPage() {
         eyebrow="Land"
         title="Black Cockatoo Valley"
         titleMaxChars={14}
-        subhead="138 acres on Jinibara Country. Conservation is the baseline. The land sets the pace."
+        subhead="Country caring for people, people caring for Country. 138 acres on Jinibara Country, where the land sets the pace."
         coverVideo={project.coverVideo}
         coverImage={project.coverImage}
         primaryCta={{ label: "Plan a visit", href: "#inquiry" }}
@@ -337,21 +337,6 @@ export default async function FarmPage() {
 
       {/* , , ,  RELATED , , ,  */}
       <RelatedFields currentSlug="black-cockatoo-valley" />
-
-      {/* , , ,  PROJECT PAGE , , ,  */}
-      <section className="full-bleed bg-[var(--site-surface)] px-8 py-16">
-        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-6">
-          <p className="font-[var(--font-body)] text-[15px] text-[var(--site-muted)]">
-            See the full project page with stories, media, and storytellers
-          </p>
-          <Link
-            href="/projects/black-cockatoo-valley"
-            className="inline-flex items-center gap-3 rounded-[var(--site-radius)] border-2 border-[var(--site-green)] px-8 py-4 font-[var(--font-sans)] text-[13px] font-semibold uppercase tracking-[0.12em] text-[var(--site-green)] transition hover:bg-[var(--site-green)] hover:text-white"
-          >
-            Full project page <span aria-hidden="true">&rarr;</span>
-          </Link>
-        </div>
-      </section>
     </>
   );
 }

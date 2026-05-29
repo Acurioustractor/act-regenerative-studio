@@ -22,6 +22,10 @@ const RECEIPTS = [
     line: 'Of the 10,133 organisations that give, just 45 move half of the $12.95 billion between them. The top 100 move two thirds. The whole system is built around a handful.',
   },
   {
+    big: '7',
+    line: 'Narrow it to the foundations confirmed as grantmakers, the corporate foundations, family trusts and endowments, and it is starker still: just seven of them control half of the $2.34 billion they give. BHP, Paul Ramsay and Rio Tinto among them.',
+  },
+  {
     big: '98.9%',
     line: 'Of 10,133 organisations that give money, only about 112 publish an open application program. For everyone else there is no form, no front door, no public way in.',
   },

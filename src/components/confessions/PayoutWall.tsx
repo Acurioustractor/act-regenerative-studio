@@ -64,6 +64,8 @@ export function PayoutWall() {
     const open = new Set(data.openIdx);
     const giving = data.giving;
     const n = giving.length;
+    const dead = (data.deadZone && data.deadZone.count) || 0; // foundations that gave nothing
+    const total = n + dead;
     const maxG = Math.log10(giving[0] + 1);
     const minG = Math.log10((giving[n - 1] || 1) + 1);
     const span = Math.max(maxG - minG, 0.0001);
@@ -86,10 +88,17 @@ export function PayoutWall() {
       s.fillRect(0, 0, W, H);
       const pad = Math.max(cell * 0.22, dpr);
       const sz = Math.max(cell - pad, 1);
-      for (let i = 0; i < n; i++) {
+      for (let i = 0; i < total; i++) {
+        const [x, y] = xy(i);
+        if (i >= n) {
+          // the dead zone: capital that moved nothing. Cool, inert, matte grey,
+          // a distinct mass against the warm brass of the givers.
+          s.fillStyle = 'rgba(64,60,55,0.42)';
+          s.fillRect(x + pad / 2, y + pad / 2, sz, sz);
+          continue;
+        }
         if (open.has(i)) continue; // doors live in the animated layer
         const t = (Math.log10(giving[i] + 1) - minG) / span; // 0..1 by giving
-        const [x, y] = xy(i);
         // dark brass -> warm gold ramp by giving (less red, more brass)
         const R = Math.round(74 + 150 * t), G = Math.round(56 + 120 * t), B = Math.round(30 + 74 * t);
         s.fillStyle = `rgba(${R},${G},${B},${0.32 + 0.5 * t})`;
@@ -103,8 +112,8 @@ export function PayoutWall() {
       H = Math.max(1, Math.floor(rect.height * dpr));
       canvas.width = W; canvas.height = H;
       const aspect = W / H;
-      cols = Math.max(1, Math.ceil(Math.sqrt(n * aspect)));
-      rows = Math.ceil(n / cols);
+      cols = Math.max(1, Math.ceil(Math.sqrt(total * aspect)));
+      rows = Math.ceil(total / cols);
       cell = Math.min(W / cols, H / rows);
       offX = (W - cols * cell) / 2;
       offY = (H - rows * cell) / 2;
@@ -214,7 +223,7 @@ export function PayoutWall() {
           <span className="flex items-center gap-2"><span className="inline-block h-2 w-2 rounded-full bg-[#FFE4AA] shadow-[0_0_8px_2px_rgba(224,176,104,0.8)]" /> {s ? s.openCount : '~112'} with a public door</span>
           <span className="flex items-center gap-2"><span className="inline-block h-2 w-2 rounded-[1px] bg-[#6b4f2a]" /> {s ? s.nGivers.toLocaleString() : '10,133'} that give, no way in</span>
         </div>
-        <div className="pointer-events-none absolute bottom-3 right-4 font-mono text-[10px] tracking-[0.05em] text-[#7C7060]">
+        <div className="pointer-events-none absolute bottom-3 right-4 hidden font-mono text-[10px] tracking-[0.05em] text-[#7C7060] sm:block">
           one cell = one foundation · brightness = annual giving
         </div>
         {/* The dead block: capital that moved nothing. A matte void that pulses with a voice. */}

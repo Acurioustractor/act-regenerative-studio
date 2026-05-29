@@ -371,7 +371,7 @@ export default async function HarvestPage() {
               />
               <p className="mt-6 font-[var(--font-body)] text-[15px] text-[var(--site-muted)]">
                 Or email{" "}
-                <a href="mailto:hi@act.place" className="text-[var(--site-green)] underline">hi@act.place</a>
+                <a href="mailto:hi@theharvestwitta.com.au" className="text-[var(--site-green)] underline">hi@theharvestwitta.com.au</a>
               </p>
             </div>
             <QuickInquiryForm projectName="The Harvest" projectSlug="the-harvest" projectCode="ACT-HV" />

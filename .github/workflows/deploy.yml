@@ -30,13 +30,19 @@ jobs:
           NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL || secrets.SUPABASE_URL }}
           NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY || secrets.SUPABASE_ANON_KEY }}
 
-      - name: 🚀 Deploy to Vercel
-        uses: amondnet/vercel-action@v25
-        with:
-          vercel-token: ${{ secrets.VERCEL_TOKEN }}
-          vercel-org-id: ${{ secrets.VERCEL_ORG_ID }}
-          vercel-project-id: ${{ secrets.VERCEL_PROJECT_ID }}
-          vercel-args: '--prod'
+      # The previous amondnet/vercel-action@v25 pinned Vercel CLI 25.1.0, which
+      # Vercel's API now rejects ("requires version 47.2.2 or later"), so every
+      # deploy failed at this step. Install the current CLI and deploy directly.
+      # VERCEL_ORG_ID + VERCEL_PROJECT_ID identify the project; the token authes.
+      - name: 🔼 Install latest Vercel CLI
+        run: npm install --global vercel@latest
+
+      - name: 🚀 Deploy to Vercel (production)
+        run: vercel deploy --prod --yes --token="$VERCEL_TOKEN"
+        env:
+          VERCEL_TOKEN: ${{ secrets.VERCEL_TOKEN }}
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
 
       - name: 💬 Comment on PR (if applicable)
         if: github.event_name == 'pull_request'

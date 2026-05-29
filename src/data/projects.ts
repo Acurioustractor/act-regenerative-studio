@@ -260,13 +260,13 @@ export const projects: Project[] = [
       "https://tednluwflfhxyucgwigh.supabase.co/storage/v1/object/public/photos/community/c6adc97f-cc96-45b0-a37a-ea081213a67e.jpeg",
   },
   {
-    slug: "pakkinjalki-kari",
+    slug: "pakkimjalki-kari",
     empathyLedger: { orgSlug: "a-curious-tractor" },
-    title: "Pakkinjalki kari (Washing Machine)",
+    title: "Pakkimjalki Kari (Washing Machine)",
     theme: "goods",
     tagline: "Culturally appropriate design on Warumungu Country",
     description:
-      "We built a culturally appropriate Washing Machine! \n\nHere is our first crack! \"Pakkinjalki kari\" (Washing Machine) designed on Warumungu country with the community.\n\nThrough hundreds of hours of conversation this is what the community asked for:\n\n- Something that is easy to use // We removed all the buttons and have one \"go\" button \n- Something that is appropriate for the environment // We hardened all the surfaces with recycled plastic that is easy to clean and durable\n- Something this is easy to repair // We built this off one of the most common washing machine's already in market so there are parts and contractors all around the country, however we are creating jobs and businesses by training the community to be able to repair this. \n- Remove the complexity and make the machine smart // We will find this out! \n\nWe have a long way to go as a country in getting desirable, functional and fit for purpose Goods for communities however hopefully this is a step forward.",
+      "We built a culturally appropriate Washing Machine! \n\nHere is our first crack! \"Pakkimjalki Kari\" (Washing Machine) designed on Warumungu country with the community.\n\nThrough hundreds of hours of conversation this is what the community asked for:\n\n- Something that is easy to use // We removed all the buttons and have one \"go\" button \n- Something that is appropriate for the environment // We hardened all the surfaces with recycled plastic that is easy to clean and durable\n- Something this is easy to repair // We built this off one of the most common washing machine's already in market so there are parts and contractors all around the country, however we are creating jobs and businesses by training the community to be able to repair this. \n- Remove the complexity and make the machine smart // We will find this out! \n\nWe have a long way to go as a country in getting desirable, functional and fit for purpose Goods for communities however hopefully this is a step forward.",
     focus: ["Co-design", "Repair culture", "Community manufacturing"],
     heroImage:
       "https://tednluwflfhxyucgwigh.supabase.co/storage/v1/object/public/photos/community/dc210fe8-9f73-44af-b4a3-155889affc81.jpeg",

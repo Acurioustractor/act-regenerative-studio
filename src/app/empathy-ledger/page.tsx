@@ -107,7 +107,7 @@ export default async function EmpathyLedgerPage() {
             <SectionHeader
               eyebrow="Consent architecture"
               title="Five consent relationships, not one checkbox"
-              lede="Informed by two years of work with Aboriginal communities in Central Australia and Queensland. The consent model reflects OCAP principles: Ownership, Control, Access, Possession."
+              lede="Informed by two years of work with Aboriginal communities in Central Australia and Queensland. The consent model reflects OCAP® principles: Ownership, Control, Access, and Possession."
               ledeMaxWidth="640px"
             />
             <HairlineGrid columns={5} className="mt-16">

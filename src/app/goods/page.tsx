@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 import { ImageLightbox } from "@/components/flagship/ImageLightbox";
 import { FullscreenVideo } from "@/components/flagship/FullscreenVideo";
@@ -400,21 +399,6 @@ export default async function GoodsPage() {
 
       {/* , , ,  RELATED , , ,  */}
       <RelatedFields currentSlug="goods" />
-
-      {/* , , ,  PROJECT PAGE , , ,  */}
-      <section className="full-bleed bg-[var(--site-surface)] px-8 py-16">
-        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-6">
-          <p className="font-[var(--font-body)] text-[15px] text-[var(--site-muted)]">
-            See the full project page with stories, media, and storytellers
-          </p>
-          <Link
-            href="/projects/goods"
-            className="inline-flex items-center gap-3 rounded-[var(--site-radius)] border-2 border-[var(--site-green)] px-8 py-4 font-[var(--font-sans)] text-[13px] font-semibold uppercase tracking-[0.12em] text-[var(--site-green)] transition hover:bg-[var(--site-green)] hover:text-white"
-          >
-            Full project page <span aria-hidden="true">&rarr;</span>
-          </Link>
-        </div>
-      </section>
     </>
   );
 }

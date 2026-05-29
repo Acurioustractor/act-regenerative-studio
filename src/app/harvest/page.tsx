@@ -207,9 +207,8 @@ export default async function HarvestPage() {
               Shaun Fisher's oyster-shell cycle turns Listen, Curiosity,
               Action, Art into a material return loop. Shells from the oyster
               farm go back into the soil, feeding the garden that feeds the
-              kitchen that feeds the community. It is Listen, Curiosity,
-              Action, Art made tangible in
-              the material build of the place.
+              kitchen that feeds the community. It is the whole method made
+              tangible in the material build of the place.
             </p>
           </div>
         </section>
@@ -372,7 +371,7 @@ export default async function HarvestPage() {
               />
               <p className="mt-6 font-[var(--font-body)] text-[15px] text-[var(--site-muted)]">
                 Or email{" "}
-                <a href="mailto:hello@theharvest.community" className="text-[var(--site-green)] underline">hello@theharvest.community</a>
+                <a href="mailto:hi@theharvestwitta.com.au" className="text-[var(--site-green)] underline">hi@theharvestwitta.com.au</a>
               </p>
             </div>
             <QuickInquiryForm projectName="The Harvest" projectSlug="the-harvest" projectCode="ACT-HV" />
@@ -382,21 +381,6 @@ export default async function HarvestPage() {
 
       {/* , , ,  RELATED , , ,  */}
       <RelatedFields currentSlug="the-harvest" />
-
-      {/* , , ,  PROJECT PAGE , , ,  */}
-      <section className="full-bleed bg-[var(--site-surface)] px-8 py-16">
-        <div className="mx-auto flex max-w-[1200px] flex-wrap items-center justify-between gap-6">
-          <p className="font-[var(--font-body)] text-[15px] text-[var(--site-muted)]">
-            See the full project page with stories, media, and storytellers
-          </p>
-          <Link
-            href="/projects/the-harvest"
-            className="inline-flex items-center gap-3 rounded-[var(--site-radius)] border-2 border-[var(--site-green)] px-8 py-4 font-[var(--font-sans)] text-[13px] font-semibold uppercase tracking-[0.12em] text-[var(--site-green)] transition hover:bg-[var(--site-green)] hover:text-white"
-          >
-            Full project page <span aria-hidden="true">&rarr;</span>
-          </Link>
-        </div>
-      </section>
     </>
   );
 }

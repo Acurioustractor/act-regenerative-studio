@@ -36,6 +36,31 @@ const STEPS = [
   { n: '3', label: 'That is it.', sub: 'No form. No grant language. No “dear valued stakeholder”.' },
 ];
 
+// The lineage trio: ACT has a practice of building anonymous truth-telling
+// infrastructure, and Confessions to Philanthropy is the latest in that line.
+// All three slugs resolve at /art/[slug] (verified 200). No em-dashes (ACT voice).
+const LINEAGE = [
+  {
+    year: '2023',
+    title: 'The Confessional',
+    slug: 'the-confessional',
+    line: 'A horse trailer made into a room where honesty becomes possible.',
+  },
+  {
+    year: '2024',
+    title: 'Gold.Phone',
+    slug: 'gold-phone',
+    line: 'A booth that connects strangers by voice. No screens, no profiles.',
+  },
+  {
+    year: '2026',
+    title: 'Confessions to Philanthropy',
+    slug: 'confessions-to-philanthropy',
+    line: 'The same gold phone, pointed at the sector that funds change.',
+    current: true,
+  },
+];
+
 // A short, conservative history. Only well-established beats: the Greek
 // etymology, the waqf as an early perpetual endowment, tzedakah, the langar.
 // No contested figures, no anthropological claims about First Nations culture.
@@ -356,6 +381,58 @@ export default function ConfessionsPage() {
             >
               See the receipts: The Payout Wall <span aria-hidden="true">&rarr;</span>
             </Link>
+          </p>
+        </div>
+      </section>
+
+      {/* THE LINE OF WORK, lineage of the phones we have built */}
+      <section className="border-t border-[#2E2215] bg-[#1A130B] px-6 py-24 md:py-28">
+        <div className="mx-auto max-w-5xl">
+          <div className="text-center">
+            <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
+              A line of work
+            </p>
+            <h2 className="mx-auto mt-7 max-w-2xl font-[var(--font-display)] text-[clamp(1.7rem,4vw,2.4rem)] font-semibold leading-tight">
+              This is not the first phone we have built.
+            </h2>
+            <p className="mx-auto mt-6 max-w-xl font-[var(--font-body)] text-lg leading-8 text-[#C7B9A4]">
+              For years we have built quiet places where the truth gets easier to say. Confessions to
+              Philanthropy is the latest in that line.
+            </p>
+          </div>
+
+          <ol className="mt-14 grid gap-6 md:grid-cols-3">
+            {LINEAGE.map((w) => (
+              <li key={w.slug}>
+                <Link
+                  href={`/art/${w.slug}`}
+                  className={`group flex h-full flex-col rounded-3xl border p-8 transition ${
+                    w.current
+                      ? 'border-[#CFA16B]/60 bg-[#15100A] shadow-[0_0_36px_-14px_rgba(207,161,107,0.55)]'
+                      : 'border-[#2E2215] bg-[#15100A] hover:border-[#5A4A30]'
+                  }`}
+                >
+                  <span className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[#7C7060]">
+                    {w.year}
+                    {w.current && <span className="ml-2 text-[#CFA16B]">the current call</span>}
+                  </span>
+                  <span className="mt-3 font-[var(--font-display)] text-xl font-semibold text-[#E0B068]">
+                    {w.title}
+                  </span>
+                  <span className="mt-3 flex-1 font-[var(--font-body)] text-[15px] leading-7 text-[#C7B9A4]">
+                    {w.line}
+                  </span>
+                  <span className="mt-6 inline-flex items-center gap-1.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.2em] text-[rgba(224,176,104,0.85)] group-hover:text-[#CFA16B]">
+                    See the work <span aria-hidden="true">&rarr;</span>
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ol>
+
+          <p className="mx-auto mt-12 max-w-2xl text-center font-[var(--font-body)] text-[16px] leading-8 text-[#A99B86]">
+            Same idea every time. Take away the screens and the grant language, and people tell the
+            truth. The line is open again, and this time it is pointed at philanthropy.
           </p>
         </div>
       </section>

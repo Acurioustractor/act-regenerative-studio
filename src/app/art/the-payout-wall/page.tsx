@@ -105,6 +105,14 @@ export default function PayoutWallPage() {
             We name systems, not people. Foundations are shown as open or closed, never as
             wrongdoers.
           </p>
+          <p className="mt-8">
+            <Link
+              href="/art/the-payout-wall/method"
+              className="font-[var(--font-sans)] text-xs uppercase tracking-[0.3em] text-[rgba(224,176,104,0.85)] underline-offset-4 hover:underline"
+            >
+              How we know + right of reply &rarr;
+            </Link>
+          </p>
         </div>
       </section>
 

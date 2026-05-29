@@ -349,6 +349,14 @@ export default function ConfessionsPage() {
             At the end of the week we play it back. Anonymous, themed, said out loud. Not a survey. Not
             an acquittal. Every number opens back into a voice.
           </p>
+          <p className="mt-9">
+            <Link
+              href="/art/the-payout-wall"
+              className="inline-flex items-center gap-2 rounded-full border border-[#CFA16B]/40 px-5 py-2.5 text-sm font-semibold text-[#CFA16B] transition hover:border-[#CFA16B] hover:bg-[#CFA16B]/10"
+            >
+              See the receipts: The Payout Wall <span aria-hidden="true">&rarr;</span>
+            </Link>
+          </p>
         </div>
       </section>
 

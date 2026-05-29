@@ -93,7 +93,7 @@ export function PayoutWall() {
         if (i >= n) {
           // the dead zone: capital that moved nothing. Cool, inert, matte grey,
           // a distinct mass against the warm brass of the givers.
-          s.fillStyle = 'rgba(64,60,55,0.42)';
+          s.fillStyle = 'rgba(82,78,72,0.62)';
           s.fillRect(x + pad / 2, y + pad / 2, sz, sz);
           continue;
         }

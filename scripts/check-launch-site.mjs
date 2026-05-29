@@ -11,6 +11,7 @@ const repoRoot = process.cwd();
 // routes in src/app/sitemap.ts.
 const launchRoutes = [
   '/',
+  '/confessions',
   '/projects',
   '/stories',
   '/stories/utopia-may-2026',

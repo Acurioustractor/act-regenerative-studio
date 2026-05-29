@@ -29,8 +29,8 @@ const variants: Record<
   },
   answer: {
     kicker: 'Confessions to Philanthropy',
-    headline: '“We needed the grant, so I said nothing.”',
-    sub: 'Confess anonymously. Then see what we build instead.',
+    headline: '“I wish there was money for everything.”',
+    sub: 'A real message, left at the tone. Add yours.',
   },
   invite: {
     kicker: 'Queensland Philanthropy Week',

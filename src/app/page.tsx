@@ -16,7 +16,6 @@ import { getHomeEditorialFeature, getSiteEditorialArticles } from "@/lib/empathy
 import { cleanMediaAlt } from "@/lib/media/alt-text";
 import { pageMetadata } from "@/lib/seo/site";
 import featuredSnapshot from "@/data/empathy-ledger-featured.generated.json";
-import { heroFragments } from "@/data/confessions-mock";
 import { CallCTA } from "@/components/confessions/CallCTA";
 import { RotaryDial } from "@/components/confessions/RotaryDial";
 import { FullscreenVideo } from "@/components/flagship/FullscreenVideo";
@@ -234,8 +233,8 @@ export default async function HomePage() {
 
       {/* ---- 1a. CONFESSIONS TO PHILANTHROPY ---- launch campaign lead.
            Matches the /confessions palette (espresso + candlelight gold) so the
-           two read as one campaign. Sample lines reuse the honest mock
-           (heroFragments); the real moderated feed lands via Phase 2. ---- */}
+           two read as one campaign. The chips below are the campaign litany
+           (real invitation copy), never fabricated confessions. ---- */}
       <section className="full-bleed relative overflow-hidden bg-[#15100A] px-6 py-24 text-[#F3EBDD] md:px-10 md:py-32">
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_50%_36%,#241910_0%,#15100A_62%)]" />
         {/* Rotary-dial engraving: the gold-phone object under a single light. */}
@@ -257,12 +256,12 @@ export default async function HomePage() {
             </p>
 
             <ul className="mt-9 flex flex-wrap items-center justify-center gap-2.5 md:justify-start">
-              {heroFragments.slice(1, 4).map((line) => (
+              {['The good.', 'The weird.', 'The messy.', 'The breakthrough.'].map((line) => (
                 <li
                   key={line}
-                  className="rounded-full border border-[#CFA16B]/25 bg-[#CFA16B]/5 px-4 py-2 font-[var(--font-body)] text-[13px] italic text-[#E0D4B9]"
+                  className="rounded-full border border-[#CFA16B]/25 bg-[#CFA16B]/5 px-4 py-2 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.18em] text-[rgba(224,176,104,0.85)]"
                 >
-                  &ldquo;{line}&rdquo;
+                  {line}
                 </li>
               ))}
             </ul>

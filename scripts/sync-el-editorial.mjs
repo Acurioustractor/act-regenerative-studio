@@ -34,6 +34,16 @@ const OUTPUT_PATH = path.resolve(
   'src/data/empathy-ledger-editorial.generated.json'
 );
 
+// Local consent-withdrawal tombstone. Article slugs or storyteller ids listed
+// here are never published, and the rule is enforced even when Empathy Ledger
+// is unreachable and we fall back to the existing snapshot. A withdrawal must
+// be a positive local signal we honor during an outage, not something we can
+// only learn by reaching the source.
+const WITHDRAWN_PATH = path.resolve(
+  process.cwd(),
+  'config/withdrawn-editorial.json'
+);
+
 const PROJECT_EDITORIAL_RECIPES_PATH = path.resolve(
   process.cwd(),
   'src/data/project-editorial-recipes.json'
@@ -76,16 +86,85 @@ async function writeSnapshot(snapshot) {
   await fs.writeFile(OUTPUT_PATH, `${JSON.stringify(snapshot, null, 2)}\n`);
 }
 
-async function keepExistingSnapshot(reason) {
+async function loadWithdrawnTombstone() {
   try {
-    await fs.access(OUTPUT_PATH);
-    console.log(`${reason}, keeping existing EL editorial snapshot at ${OUTPUT_PATH}`);
-    return;
+    const parsed = JSON.parse(await fs.readFile(WITHDRAWN_PATH, 'utf8'));
+    return {
+      slugs: new Set(Array.isArray(parsed.slugs) ? parsed.slugs : []),
+      storytellerIds: new Set(
+        Array.isArray(parsed.storytellerIds) ? parsed.storytellerIds : []
+      ),
+    };
   } catch {
-    const emptySnapshot = createEmptySnapshot();
-    await writeSnapshot(emptySnapshot);
-    console.log(`${reason}, wrote empty EL editorial snapshot to ${OUTPUT_PATH}`);
+    return { slugs: new Set(), storytellerIds: new Set() };
   }
+}
+
+function isWithdrawn(article, tombstone) {
+  const storytellerId = article.storyteller?.id;
+  return (
+    tombstone.slugs.has(article.slug) ||
+    (storytellerId && tombstone.storytellerIds.has(storytellerId))
+  );
+}
+
+function recomputeProjectArticleCounts(articles) {
+  const counts = {};
+  for (const article of articles) {
+    for (const slug of article.relatedProjectSlugs || []) {
+      counts[slug] = (counts[slug] || 0) + 1;
+    }
+  }
+  return counts;
+}
+
+// Drop any withdrawn articles and keep the derived counts honest. Returns the
+// filtered article list plus how many were removed, for logging.
+function enforceWithdrawals(articles, tombstone) {
+  const kept = [];
+  let removed = 0;
+  for (const article of articles) {
+    if (isWithdrawn(article, tombstone)) {
+      removed += 1;
+      console.log(
+        `[sync:el-editorial] consent withdrawn: removing ${article.slug} (honored regardless of Empathy Ledger reachability)`
+      );
+    } else {
+      kept.push(article);
+    }
+  }
+  return { kept, removed };
+}
+
+async function keepExistingSnapshot(reason, tombstone = { slugs: new Set(), storytellerIds: new Set() }) {
+  let existing;
+  try {
+    existing = JSON.parse(await fs.readFile(OUTPUT_PATH, 'utf8'));
+  } catch {
+    await writeSnapshot(createEmptySnapshot());
+    console.log(`${reason}, wrote empty EL editorial snapshot to ${OUTPUT_PATH}`);
+    return;
+  }
+
+  // Even when Empathy Ledger is unreachable, locally-recorded withdrawals must
+  // still take effect, so a storyteller who withdrew during the outage is never
+  // left published in the kept snapshot.
+  const articles = Array.isArray(existing.articles) ? existing.articles : [];
+  const { kept, removed } = enforceWithdrawals(articles, tombstone);
+  if (removed > 0) {
+    await writeSnapshot({
+      ...existing,
+      articles: kept,
+      articleCount: kept.length,
+      projectArticleCounts: recomputeProjectArticleCounts(kept),
+    });
+    console.log(
+      `${reason}, kept existing EL editorial snapshot and enforced ${removed} consent withdrawal(s)`
+    );
+    return;
+  }
+
+  console.log(`${reason}, keeping existing EL editorial snapshot at ${OUTPUT_PATH}`);
 }
 
 async function loadWikiProjectRecords() {
@@ -327,6 +406,8 @@ function sortByPublishedDateDesc(items) {
 }
 
 async function main() {
+  // Loaded before the try so withdrawals are enforced on the fall-back path too.
+  const withdrawn = await loadWithdrawnTombstone();
   try {
     const [
       wikiRecords,
@@ -407,6 +488,20 @@ async function main() {
               projectEditorialRecipes
             );
 
+            // Consent + credit: a person-voiced piece (one with a storyteller)
+            // must never ship under the generic "ACT Team" byline, which erases
+            // the storyteller. Prefer the storyteller's name; if none resolves,
+            // withhold the article until attribution is set in Empathy Ledger
+            // rather than publish it misattributed.
+            const resolvedAuthor =
+              detail.authorName || detail.storyteller?.displayName || '';
+            if (detail.storyteller && !resolvedAuthor) {
+              console.warn(
+                `[sync:el-editorial] withholding ${article.slug}: person-voiced (has a storyteller) but no author name resolved; set attribution in Empathy Ledger to publish`
+              );
+              return null;
+            }
+
             return {
               id: detail.id || article.id,
               title: detail.title || article.title,
@@ -414,7 +509,7 @@ async function main() {
               subtitle: detail.subtitle || article.subtitle || null,
               excerpt: detail.excerpt || article.excerpt || null,
               content: detail.content || article.content || null,
-              authorName: detail.authorName || 'ACT Team',
+              authorName: resolvedAuthor || 'ACT Team',
               authorBio: detail.authorBio || null,
               articleType: detail.articleType || null,
               primaryProject: detail.primaryProject || null,
@@ -491,7 +586,13 @@ async function main() {
       )
     );
 
-    const articles = sortByPublishedDateDesc(detailedArticles);
+    // Drop articles withheld for missing attribution (null) before sorting, then
+    // enforce consent withdrawals on the fresh build too.
+    const hydrated = detailedArticles.filter(Boolean);
+    const { kept: articles } = enforceWithdrawals(
+      sortByPublishedDateDesc(hydrated),
+      withdrawn
+    );
     const projectArticleCounts = {};
 
     for (const article of articles) {
@@ -528,7 +629,8 @@ async function main() {
     await keepExistingSnapshot(
       `[sync:el-editorial] ${
         error instanceof Error ? error.message : 'Failed to build snapshot'
-      }`
+      }`,
+      withdrawn
     );
   }
 }

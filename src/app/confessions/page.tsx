@@ -5,7 +5,7 @@ import { CallTimer } from '@/components/confessions/CallTimer';
 import { ConfessionField } from '@/components/confessions/ConfessionField';
 import { RotaryDial } from '@/components/confessions/RotaryDial';
 import { VoicemailInbox } from '@/components/confessions/VoicemailInbox';
-import { heroVoices, mockConfessions, IS_MOCK } from '@/data/confessions-mock';
+import { heroVoices, mockConfessions, realConfessions, IS_MOCK } from '@/data/confessions-mock';
 import { pageMetadata, siteUrl } from '@/lib/seo/site';
 
 export const metadata = pageMetadata({
@@ -15,11 +15,12 @@ export const metadata = pageMetadata({
   path: '/confessions',
 });
 
-// Real moderated confessions arrive via the Dialpad pipeline (Phase 2). Until
-// IS_MOCK flips to false in confessions-mock, the inbox shows shaped sample
-// messages; after, it reads the real (initially empty) feed. Gating here means
-// nothing fabricated renders once the line goes live.
-const confessions = IS_MOCK ? mockConfessions : [];
+// The inbox shows realConfessions (consented, human-moderated) when live. Set
+// IS_MOCK true only for local design work, which swaps in the shaped sample set.
+// Gating here means nothing fabricated renders once the line is live. New real
+// messages are curated into realConfessions until the Dialpad pipeline (Phase 2)
+// auto-populates them.
+const confessions = IS_MOCK ? mockConfessions : realConfessions;
 
 const QUESTIONS = [
   'What do you wish philanthropy knew?',
@@ -322,7 +323,11 @@ export default function ConfessionsPage() {
           <p className="mx-auto mt-6 max-w-xl font-[var(--font-body)] text-lg leading-8 text-[#C7B9A4]">
             A grantee. A funder willing to be honest on the record. A historian. Someone who has been
             consulted to exhaustion. Confession booth meets late-night talkback. The phone is open the
-            whole of Philanthropy Week.
+            whole of Queensland Philanthropy Week.
+          </p>
+          <p className="mx-auto mt-6 max-w-xl font-[var(--font-body)] text-[15px] leading-8 text-[#A99B86]">
+            Queensland Gives runs the week: Queensland Philanthropy Week 2026, more than 24 events to
+            connect, reflect and celebrate giving, led by the connector Tara Castle.
           </p>
         </div>
       </section>
@@ -334,7 +339,7 @@ export default function ConfessionsPage() {
             Friday
           </p>
           <p className="mt-7 font-[var(--font-sans)] text-sm uppercase tracking-[0.3em] text-[rgba(224,176,104,0.7)]">
-            ▸ Philanthropy has {confessions.length} new messages
+            ▸ Philanthropy has {confessions.length} new {confessions.length === 1 ? 'message' : 'messages'}
           </p>
           <h2 className="mt-5 font-[var(--font-display)] text-[clamp(1.8rem,4.5vw,2.8rem)] font-semibold leading-tight">
             The honest version drops Friday.

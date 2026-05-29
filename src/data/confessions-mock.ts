@@ -1,7 +1,12 @@
-// MOCK confessions for testing the /confessions experience before the real
-// Dialpad pipeline is live. Shaped to match the eventual moderated output
-// (Dialpad webhook -> strip caller-ID + PII -> human approval -> this shape)
-// so it is a drop-in swap later. NOTHING here is a real message.
+// Confession data for the /confessions experience.
+//
+// `realConfessions` holds the messages we actually display: each one listened to
+// by a human, stripped of identifying detail, and shared with the caller's
+// consent. Add new cleared messages there. `mockConfessions` is the shaped
+// sample set, shown only when IS_MOCK is true (local design/testing, never in
+// production). Both match the eventual moderated output shape (Dialpad webhook
+// -> strip caller-ID + PII -> human approval -> this shape) so the real pipeline
+// is a drop-in later.
 //
 // Redaction convention: runs of "█" mark where a name or identifying detail
 // was removed by the moderator. The wall renders those runs as redaction bars.
@@ -24,8 +29,9 @@ export interface Confession {
   durationSeconds: number;
 }
 
-/** Flip to false the day real moderated confessions replace this. */
-export const IS_MOCK = true;
+/** True shows the sample set (mockConfessions) for local design work; false
+ *  shows realConfessions, the consented messages. Live = false. */
+export const IS_MOCK = false;
 
 /** Theme display + a warm hue per theme (rgb triple) for the visualisations. */
 export const themeMeta: Record<ConfessionTheme, { label: string; rgb: string }> = {
@@ -147,20 +153,20 @@ export const mockConfessions: Confession[] = [
   },
 ];
 
-/** Short, punchy lines for the hero catch-a-voice field (must read in 1-2 lines). */
-export const heroFragments: string[] = [
-  'You backed us when no one else would.',
-  'We needed the grant, so I said nothing.',
-  'Stop calling it a partnership.',
-  'I cried in the car when it came through.',
-  'We are still here.',
-  'The work is so good.',
-  'Why is it usually fourteen months?',
-  'Do better.',
+/** Real, moderated confessions, the messages the inbox actually shows. Each one
+ *  has been listened to by a human, had identifying detail removed, and is
+ *  shared with the caller's consent. Add new cleared messages here. */
+export const realConfessions: Confession[] = [
+  {
+    id: 'c01',
+    theme: 'money',
+    durationSeconds: 22,
+    text: 'Hi! I wish there was more money, I wish there was money for everything. In the meantime, keep doing the good work that you’re doing, and keep sharing the stories because hopefully that will inspire others.',
+  },
 ];
 
-// What the hero catch-a-voice field surfaces: the brief's prompts and litany
-// (real copy, not mock) mixed with the short fragments above. Lives here (a
+// What the hero catch-a-voice field surfaces: the campaign's own prompts and
+// litany, real invitation copy, never a fabricated confession. Lives here (a
 // plain module) so the server page can pass it into the client field without
 // importing a value across the client boundary.
 export const heroVoices: string[] = [
@@ -176,5 +182,4 @@ export const heroVoices: string[] = [
   'Say the quiet bit out loud.',
   'You can be anonymous.',
   'Leave a message at the tone.',
-  ...heroFragments,
 ];

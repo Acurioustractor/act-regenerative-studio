@@ -26,6 +26,7 @@ async function fetchAllGivers() {
       .select('name, total_giving_annual, open_programs, foundation_power_profiles(reportable_in_power_map, capital_source_class)')
       .gt('total_giving_annual', 0)
       .order('total_giving_annual', { ascending: false })
+      .order('id', { ascending: true }) // unique tiebreaker: deterministic offset pagination across ties in total_giving_annual
       .range(from, from + PAGE - 1);
     if (error) { console.error('query error:', error.message); process.exit(1); }
     out.push(...data);
@@ -75,9 +76,9 @@ const grantmakerTop = grantmakers.slice(0, 6).map((r) => r.name);
 
 const out = {
   meta: {
-    runDate: '2026-05-29',
+    runDate: new Date().toISOString().slice(0, 10),
     source: 'CivicGraph / Supabase tednluwflfhxyucgwigh (foundations + acnc_ais)',
-    note: 'Annual giving across the AI-enriched foundation set. Hoard + dead-zone are the reportable_in_power_map cut from acnc_ais. See grantscope/output/foundation-power.provenance.md.',
+    note: 'Giving + openness are computed live at build time. Hoard/dead-zone/gini/share are carried from the 2026-05-29 provenance lock (re-verify before publishing). See grantscope/output/foundation-power.provenance.md.',
   },
   // Locked, verified figures (re-run by hand 2026-05-29). Hardcoded the financial
   // cuts (hoard/dead) so the page never needs the acnc_ais join at build time.
@@ -94,7 +95,6 @@ const out = {
     grantmakerTop,
     openCount: openIdx.length,
     pctNoOpenDoor: +((100 * (rows.length - openIdx.length)) / rows.length).toFixed(2),
-    onlyOpenInTop15: 1,
     hoardTotalB: 60.1,
     hoardUnder5B: 43.34,
     hoardUnder5Pct: 72.1,

@@ -185,44 +185,68 @@ export function VoicemailInbox({ confessions }: { confessions: Confession[] }) {
               className="border-b border-[#2E2215] p-6 last:border-b-0 md:p-7"
               style={playing ? { background: `rgba(${t.rgb},0.05)` } : undefined}
             >
-              <div className="flex items-start gap-5">
-                <button
-                  onClick={() => toggle(c.id)}
-                  aria-label={ariaLabel}
-                  aria-pressed={playing}
-                  className="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-transform hover:scale-105"
-                  style={{
-                    borderColor: `rgba(${t.rgb},0.5)`,
-                    color: `rgb(${t.rgb})`,
-                    background: `rgba(${t.rgb},0.08)`,
-                  }}
-                >
-                  <PlayIcon playing={playing} />
-                </button>
-                <div className="min-w-0 flex-1">
-                  <div className="flex items-center justify-between gap-3">
-                    <span
-                      className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.2em]"
-                      style={{ color: `rgb(${t.rgb})` }}
-                    >
-                      {t.label}
-                    </span>
-                    <span className="flex items-center gap-2 font-mono text-[11px] tracking-[0.05em] text-[#9A8C73]">
-                      {cleared && (
+              {cleared ? (
+                <div className="flex items-start gap-5">
+                  <button
+                    onClick={() => toggle(c.id)}
+                    aria-label={ariaLabel}
+                    aria-pressed={playing}
+                    className="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-transform hover:scale-105"
+                    style={{
+                      borderColor: `rgba(${t.rgb},0.5)`,
+                      color: `rgb(${t.rgb})`,
+                      background: `rgba(${t.rgb},0.08)`,
+                    }}
+                  >
+                    <PlayIcon playing={playing} />
+                  </button>
+                  <div className="min-w-0 flex-1">
+                    <div className="flex items-center justify-between gap-3">
+                      <span
+                        className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.2em]"
+                        style={{ color: `rgb(${t.rgb})` }}
+                      >
+                        {t.label}
+                      </span>
+                      <span className="flex items-center gap-2 font-mono text-[11px] tracking-[0.05em] text-[#9A8C73]">
                         <span
                           aria-hidden="true"
                           title="Real recording"
                           className="inline-block h-1.5 w-1.5 rounded-full"
                           style={{ background: playing ? `rgb(${t.rgb})` : `rgba(${t.rgb},0.55)` }}
                         />
-                      )}
-                      ▸ {label}
+                        ▸ {label}
+                      </span>
+                    </div>
+                    <div className="mt-3">
+                      <Waveform seed={c.id + c.text.slice(0, 12)} bars={56} progress={playing ? progress : null} />
+                    </div>
+                    <blockquote className="mt-4 font-[var(--font-body)] leading-8 text-[#E4D8C4]">
+                      {renderTranscript(c.text)}
+                    </blockquote>
+                    {c.consentNote && (
+                      <p className="mt-3 font-[var(--font-sans)] text-[10px] uppercase tracking-[0.2em] text-[#7C7060]">
+                        {c.consentNote}
+                      </p>
+                    )}
+                  </div>
+                </div>
+              ) : (
+                <div>
+                  <div className="flex items-center gap-3">
+                    <span
+                      className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.2em]"
+                      style={{ color: `rgb(${t.rgb})` }}
+                    >
+                      {t.label}
                     </span>
+                    <span
+                      aria-hidden="true"
+                      className="h-px flex-1"
+                      style={{ background: `rgba(${t.rgb},0.25)` }}
+                    />
                   </div>
-                  <div className="mt-3">
-                    <Waveform seed={c.id + c.text.slice(0, 12)} bars={56} progress={playing ? progress : null} />
-                  </div>
-                  <blockquote className="mt-4 font-[var(--font-body)] leading-8 text-[#E4D8C4]">
+                  <blockquote className="mt-5 font-[var(--font-body)] text-[19px] italic leading-[1.75] text-[#EFE6D2]">
                     {renderTranscript(c.text)}
                   </blockquote>
                   {c.consentNote && (
@@ -231,7 +255,7 @@ export function VoicemailInbox({ confessions }: { confessions: Confession[] }) {
                     </p>
                   )}
                 </div>
-              </div>
+              )}
             </li>
           );
         })}

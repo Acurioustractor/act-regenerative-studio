@@ -9,6 +9,7 @@ import { useEffect, useRef, useState } from 'react';
 
 import type { Confession } from '@/data/confessions-mock';
 import { realConfessions, themeMeta } from '@/data/confessions-mock';
+import { renderTranscript } from './transcript';
 
 const THEME_SEQ = ['money', 'power', 'the forms', 'shame', 'hope', 'breakthrough', 'the weird'];
 
@@ -137,7 +138,7 @@ export function FridayTape() {
                     {t.label}
                   </span>
                   <blockquote className="mt-3 font-[var(--font-body)] text-[17px] italic leading-[1.7] text-[#E4D8C4]">
-                    &ldquo;{c.text}&rdquo;
+                    &ldquo;{renderTranscript(c.text)}&rdquo;
                   </blockquote>
                 </div>
               </div>

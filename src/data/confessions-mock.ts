@@ -205,7 +205,7 @@ export const realConfessions: Confession[] = [
     theme: 'money',
     durationSeconds: 31,
     consentNote: 'Shared as words.',
-    text: "Philanthropy is the practice of giving time, money or resources to help others and benefit society. The word actually comes from the Greek, meaning love of humanity. Whilst the concept has existed over millennia, in many, many different cultures, I think it's lost its way a little bit, in that it tends to be about money now.",
+    text: "Philanthropy is the practice of giving time, money or resources to help others and benefit society. The word actually comes from the Greek, meaning love of humanity. Whilst the concept has existed over millennia, in many, many different cultures, I think it's lost its way a little bit, in that it tends to be about money now, and it can be quite divisive.",
   },
   {
     id: 'c06',

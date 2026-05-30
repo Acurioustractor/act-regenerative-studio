@@ -12,6 +12,9 @@ const repoRoot = process.cwd();
 const launchRoutes = [
   '/',
   '/confessions',
+  '/confessions/wall',
+  '/confessions/friday',
+  '/confessions/method',
   '/projects',
   '/stories',
   '/stories/utopia-may-2026',

@@ -71,6 +71,13 @@ const launchRedirects = [
   { source: '/projects/three-circles', destination: '/projects', permanent: false },
   { source: '/projects/the-full-idea', destination: '/projects', permanent: false },
   { source: '/projects/annual-field-service', destination: '/projects', permanent: false },
+
+  // Campaign IA unification (2026-05-30): the Payout Wall + its method page moved
+  // under /confessions so the whole Confessions to Philanthropy campaign lives in
+  // one place. 308 permanent so the /art entry, the Friday tape link, and any
+  // shared links keep resolving.
+  { source: '/art/the-payout-wall', destination: '/confessions/wall', permanent: true },
+  { source: '/art/the-payout-wall/method', destination: '/confessions/method', permanent: true },
 ];
 
 module.exports = { launchRedirects };

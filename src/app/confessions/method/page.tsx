@@ -6,7 +6,7 @@ export const metadata = pageMetadata({
   title: 'The Payout Wall — method and right of reply',
   description:
     'How the Payout Wall is built, what the numbers mean, where the limits are, and how a foundation can see and contest its own reading. We hold ourselves to the same standard.',
-  path: '/art/the-payout-wall/method',
+  path: '/confessions/method',
 });
 
 const SECTIONS = [
@@ -39,7 +39,7 @@ const SECTIONS = [
 export default function PayoutWallMethodPage() {
   return (
     <div className="relative min-h-screen bg-[#15100A] text-[#F3EBDD]">
-      <section className="full-bleed border-b border-[#2E2215] px-6 pb-12 pt-32 md:pt-40">
+      <section className="full-bleed border-b border-[#2E2215] px-6 pb-12 pt-10 md:pt-14">
         <div className="mx-auto max-w-2xl text-center">
           <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
             Method and right of reply
@@ -77,7 +77,7 @@ export default function PayoutWallMethodPage() {
 
           <div className="border-t border-[#2E2215] pt-8 text-center">
             <Link
-              href="/art/the-payout-wall"
+              href="/confessions/wall"
               className="font-[var(--font-sans)] text-xs uppercase tracking-[0.3em] text-[rgba(224,176,104,0.85)] underline-offset-4 hover:underline"
             >
               &larr; Back to the Payout Wall

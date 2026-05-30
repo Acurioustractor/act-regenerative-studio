@@ -12,7 +12,7 @@ const s = wallData.stats;
 export const metadata = pageMetadata({
   title: 'The Payout Wall',
   description: `Australian foundations gave $${s.totalGivingB} billion last year. About ${s.openCount} of them will let you ask. One cell per foundation, the rare open doors lit gold, the voices behind the data on the gold phone.`,
-  path: '/art/the-payout-wall',
+  path: '/confessions/wall',
 });
 
 // Receipts read from the verified snapshot (scripts/build-payout-wall-data.mjs),
@@ -53,7 +53,7 @@ export default function PayoutWallPage() {
   return (
     <div className="relative min-h-screen bg-[#15100A] text-[#F3EBDD]">
       {/* HERO */}
-      <section className="full-bleed border-b border-[#2E2215] px-6 pb-12 pt-32 md:pt-40">
+      <section className="full-bleed border-b border-[#2E2215] px-6 pb-12 pt-10 md:pt-14">
         <div className="mx-auto max-w-3xl text-center">
           <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
             The receipts
@@ -113,7 +113,7 @@ export default function PayoutWallPage() {
           </p>
           <p className="mt-8">
             <Link
-              href="/art/the-payout-wall/method"
+              href="/confessions/method"
               className="font-[var(--font-sans)] text-xs uppercase tracking-[0.3em] text-[rgba(224,176,104,0.85)] underline-offset-4 hover:underline"
             >
               How we know + right of reply &rarr;

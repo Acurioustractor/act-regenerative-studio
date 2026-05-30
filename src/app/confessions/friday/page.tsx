@@ -30,7 +30,7 @@ export default function FridayTapePage() {
   return (
     <div className="relative min-h-screen bg-[#15100A] text-[#F3EBDD]">
       {/* COLD OPEN */}
-      <section className="full-bleed border-b border-[#2E2215] px-6 pb-14 pt-32 text-center md:pt-40">
+      <section className="full-bleed border-b border-[#2E2215] px-6 pb-14 pt-10 text-center md:pt-14">
         <div className="mx-auto max-w-2xl">
           <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
             Friday
@@ -80,7 +80,7 @@ export default function FridayTapePage() {
             The voices told us how it feels. The data shows how it is built.
           </p>
           <Link
-            href="/art/the-payout-wall"
+            href="/confessions/wall"
             className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#CFA16B]/40 px-5 py-2.5 text-sm font-semibold text-[#CFA16B] transition hover:border-[#CFA16B] hover:bg-[#CFA16B]/10"
           >
             See the receipts: The Payout Wall <span aria-hidden="true">&rarr;</span>

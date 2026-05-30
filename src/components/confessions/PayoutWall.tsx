@@ -101,9 +101,10 @@ export function PayoutWall() {
         }
         if (open.has(i)) continue; // doors live in the animated layer
         const t = (Math.log10(giving[i] + 1) - minG) / span; // 0..1 by giving
-        // dark brass -> warm gold ramp by giving (less red, more brass)
-        const R = Math.round(74 + 150 * t), G = Math.round(56 + 120 * t), B = Math.round(30 + 74 * t);
-        s.fillStyle = `rgba(${R},${G},${B},${0.32 + 0.5 * t})`;
+        // brass -> warm gold ramp by giving. Floor lifted so every closed door is a
+        // visible mark: the wall reads as a dense field of doors, not empty space.
+        const R = Math.round(96 + 128 * t), G = Math.round(70 + 106 * t), B = Math.round(40 + 64 * t);
+        s.fillStyle = `rgba(${R},${G},${B},${0.5 + 0.42 * t})`;
         s.fillRect(x + pad / 2, y + pad / 2, sz, sz);
       }
     };
@@ -219,10 +220,10 @@ export function PayoutWall() {
   return (
     <div className="w-full">
       <div className="relative w-full overflow-hidden rounded-2xl border border-[#3A2C18] bg-[#0E0A05]">
-        <canvas ref={canvasRef} className="block h-[58vh] min-h-[360px] w-full" aria-hidden="true" />
+        <canvas ref={canvasRef} className="block h-[46vh] min-h-[320px] w-full" aria-hidden="true" />
         {/* legend */}
-        <div className="pointer-events-none absolute left-4 top-4 flex flex-col gap-1 font-[var(--font-sans)] text-[10px] uppercase tracking-[0.18em] text-[#A99B86]">
-          <span className="flex items-center gap-2"><span className="inline-block h-2 w-2 rounded-full bg-[#FFE4AA] shadow-[0_0_8px_2px_rgba(224,176,104,0.8)]" /> {s ? s.openCount : '~112'} with a public door</span>
+        <div className="pointer-events-none absolute left-3 top-3 flex flex-col gap-1.5 rounded-md border border-[#241a10] bg-black/70 px-3.5 py-2.5 font-[var(--font-sans)] text-[10px] uppercase tracking-[0.16em] text-[#C3B5A0] backdrop-blur-[2px]">
+          <span className="flex items-center gap-2"><span className="inline-block h-2 w-2 rounded-full bg-[#FFE4AA] shadow-[0_0_8px_2px_rgba(224,176,104,0.8)]" /> {s ? s.openCount : '~113'} with a public door</span>
           <span className="flex items-center gap-2"><span className="inline-block h-2 w-2 rounded-[1px] bg-[#6b4f2a]" /> {s ? s.nGivers.toLocaleString() : '10,133'} that give, no way in</span>
         </div>
         <div className="pointer-events-none absolute bottom-3 right-4 hidden font-mono text-[10px] tracking-[0.05em] text-[#7C7060] sm:block">

@@ -124,7 +124,7 @@ export default function ConfessionsPage() {
         {/* Warm vignette, the object under a single light. */}
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,#0E0A05_100%)]" />
 
-        <div className="relative z-10 mx-auto flex min-h-[100svh] max-w-3xl flex-col items-center justify-center px-6 pb-20 pt-32 text-center">
+        <div className="relative z-10 mx-auto flex min-h-[88svh] max-w-3xl flex-col items-center justify-center px-6 pb-20 pt-10 text-center">
           <CallTimer />
           <h1 className="mt-8 font-[var(--font-display)] text-[clamp(2.6rem,7vw,5rem)] font-semibold leading-[1.02] tracking-tight">
             You’ve reached
@@ -376,7 +376,7 @@ export default function ConfessionsPage() {
           </p>
           <p className="mt-9">
             <Link
-              href="/art/the-payout-wall"
+              href="/confessions/wall"
               className="inline-flex items-center gap-2 rounded-full border border-[#CFA16B]/40 px-5 py-2.5 text-sm font-semibold text-[#CFA16B] transition hover:border-[#CFA16B] hover:bg-[#CFA16B]/10"
             >
               See the receipts: The Payout Wall <span aria-hidden="true">&rarr;</span>

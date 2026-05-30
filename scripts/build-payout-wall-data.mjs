@@ -42,7 +42,6 @@ rows.forEach((r, i) => {
   const op = r.open_programs;
   if (Array.isArray(op) && op.length > 0) openIdx.push(i);
 });
-const top = rows.slice(0, 45).map((r) => ({ name: r.name, g: Math.round(Number(r.total_giving_annual)) }));
 const totalGivingB = +(giving.reduce((a, b) => a + b, 0) / 1e9).toFixed(2);
 
 // How many entities, ranked by giving, it takes to reach half the total.
@@ -73,6 +72,10 @@ const giversToHalf = nToHalf(giving); // giving is already sorted descending
 const grantmakerToHalf = nToHalf(gmGiving);
 const grantmakerTotalB = +(gmGiving.reduce((a, b) => a + b, 0) / 1e9).toFixed(2);
 const grantmakerTop = grantmakers.slice(0, 6).map((r) => r.name);
+// Named cells: top confirmed grantmakers by giving (clean cut; excludes the
+// operating-charity and university mislabels that top the raw giving list). The
+// wall's 10,133 cell brightnesses stay in `giving`; only the named list is filtered.
+const top = grantmakers.slice(0, 45).map((r) => ({ name: r.name, g: Math.round(Number(r.total_giving_annual)) }));
 
 const out = {
   meta: {
@@ -105,7 +108,7 @@ const out = {
   },
   giving, // sorted descending, one number per foundation
   openIdx, // indices into `giving` that publish an open application program
-  top, // the 45 that give half, named (public entities)
+  top, // top 45 confirmed grantmakers by giving, named (public entities; clean cut)
   deadZone: { count: 2257, capitalB: 15.64 },
 };
 

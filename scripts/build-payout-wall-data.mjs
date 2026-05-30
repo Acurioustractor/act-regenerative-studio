@@ -26,6 +26,7 @@ async function fetchAllGivers() {
       .select('name, total_giving_annual, open_programs, foundation_power_profiles(reportable_in_power_map, capital_source_class)')
       .gt('total_giving_annual', 0)
       .order('total_giving_annual', { ascending: false })
+      .order('id', { ascending: true }) // unique tiebreaker: deterministic offset pagination across ties in total_giving_annual
       .range(from, from + PAGE - 1);
     if (error) { console.error('query error:', error.message); process.exit(1); }
     out.push(...data);
@@ -41,7 +42,6 @@ rows.forEach((r, i) => {
   const op = r.open_programs;
   if (Array.isArray(op) && op.length > 0) openIdx.push(i);
 });
-const top = rows.slice(0, 45).map((r) => ({ name: r.name, g: Math.round(Number(r.total_giving_annual)) }));
 const totalGivingB = +(giving.reduce((a, b) => a + b, 0) / 1e9).toFixed(2);
 
 // How many entities, ranked by giving, it takes to reach half the total.
@@ -72,12 +72,16 @@ const giversToHalf = nToHalf(giving); // giving is already sorted descending
 const grantmakerToHalf = nToHalf(gmGiving);
 const grantmakerTotalB = +(gmGiving.reduce((a, b) => a + b, 0) / 1e9).toFixed(2);
 const grantmakerTop = grantmakers.slice(0, 6).map((r) => r.name);
+// Named cells: top confirmed grantmakers by giving (clean cut; excludes the
+// operating-charity and university mislabels that top the raw giving list). The
+// wall's 10,133 cell brightnesses stay in `giving`; only the named list is filtered.
+const top = grantmakers.slice(0, 45).map((r) => ({ name: r.name, g: Math.round(Number(r.total_giving_annual)) }));
 
 const out = {
   meta: {
-    runDate: '2026-05-29',
+    runDate: new Date().toISOString().slice(0, 10),
     source: 'CivicGraph / Supabase tednluwflfhxyucgwigh (foundations + acnc_ais)',
-    note: 'Annual giving across the AI-enriched foundation set. Hoard + dead-zone are the reportable_in_power_map cut from acnc_ais. See grantscope/output/foundation-power.provenance.md.',
+    note: 'Giving + openness are computed live at build time. Hoard/dead-zone/gini/share are carried from the 2026-05-29 provenance lock (re-verify before publishing). See grantscope/output/foundation-power.provenance.md.',
   },
   // Locked, verified figures (re-run by hand 2026-05-29). Hardcoded the financial
   // cuts (hoard/dead) so the page never needs the acnc_ais join at build time.
@@ -94,7 +98,6 @@ const out = {
     grantmakerTop,
     openCount: openIdx.length,
     pctNoOpenDoor: +((100 * (rows.length - openIdx.length)) / rows.length).toFixed(2),
-    onlyOpenInTop15: 1,
     hoardTotalB: 60.1,
     hoardUnder5B: 43.34,
     hoardUnder5Pct: 72.1,
@@ -105,7 +108,7 @@ const out = {
   },
   giving, // sorted descending, one number per foundation
   openIdx, // indices into `giving` that publish an open application program
-  top, // the 45 that give half, named (public entities)
+  top, // top 45 confirmed grantmakers by giving, named (public entities; clean cut)
   deadZone: { count: 2257, capitalB: 15.64 },
 };
 

@@ -95,16 +95,18 @@ export function PayoutWall() {
         if (i >= n) {
           // the dead zone: capital that moved nothing. Cool, inert, matte grey,
           // a distinct mass against the warm brass of the givers.
-          s.fillStyle = 'rgba(82,78,72,0.62)';
+          s.fillStyle = 'rgba(74,70,66,0.5)';
           s.fillRect(x + pad / 2, y + pad / 2, sz, sz);
           continue;
         }
         if (open.has(i)) continue; // doors live in the animated layer
         const t = (Math.log10(giving[i] + 1) - minG) / span; // 0..1 by giving
-        // brass -> warm gold ramp by giving. Floor lifted so every closed door is a
-        // visible mark: the wall reads as a dense field of doors, not empty space.
-        const R = Math.round(96 + 128 * t), G = Math.round(70 + 106 * t), B = Math.round(40 + 64 * t);
-        s.fillStyle = `rgba(${R},${G},${B},${0.5 + 0.42 * t})`;
+        // Warm brown -> gold ramp by giving, on a deliberately DARK field: most doors
+        // are closed, so most cells sit low and dark; the steep alpha ramp keeps the
+        // few big givers bright, giving the wall depth instead of a flat or empty
+        // field. The rare open doors (gold, animated layer) blaze on top of this.
+        const R = Math.round(120 + 128 * t), G = Math.round(64 + 132 * t), B = Math.round(28 + 92 * t);
+        s.fillStyle = `rgba(${R},${G},${B},${0.4 + 0.5 * t})`;
         s.fillRect(x + pad / 2, y + pad / 2, sz, sz);
       }
     };
@@ -148,17 +150,17 @@ export function PayoutWall() {
       for (const i of data.openIdx) {
         const [x, y] = xy(i);
         const cx = x + cell / 2, cy = y + cell / 2;
-        const r = cell * (1.5 + amp * 2.2 + 0.3 * idle);
+        const r = cell * (2.1 + amp * 2.6 + 0.4 * idle);
         const a = Math.min(1, breath);
         const grad = ctx.createRadialGradient(cx, cy, 0, cx, cy, r);
-        grad.addColorStop(0, `rgba(255,205,120,${0.5 * a})`);
-        grad.addColorStop(0.4, `rgba(224,176,104,${0.2 * a})`);
-        grad.addColorStop(1, 'rgba(224,176,104,0)');
+        grad.addColorStop(0, `rgba(255,224,150,${0.7 * a})`);
+        grad.addColorStop(0.4, `rgba(240,190,118,${0.26 * a})`);
+        grad.addColorStop(1, 'rgba(240,190,118,0)');
         ctx.fillStyle = grad;
         ctx.beginPath();
         ctx.arc(cx, cy, r, 0, Math.PI * 2);
         ctx.fill();
-        ctx.fillStyle = `rgba(255,228,170,${Math.min(1, 0.75 + amp * 0.5)})`;
+        ctx.fillStyle = `rgba(255,243,212,${Math.min(1, 0.82 + amp * 0.4)})`;
         ctx.fillRect(x + pad / 2, y + pad / 2, sz, sz);
       }
       ctx.restore();
@@ -216,40 +218,61 @@ export function PayoutWall() {
   };
 
   const s = data?.stats;
+  const activeVoice = VOICES.find((v) => v.id === playingId) ?? null;
 
   return (
     <div className="w-full">
+      {/* The voices are the way in: press one and the wall breathes with it. */}
+      <div className="mx-auto mb-5 max-w-2xl text-center">
+        <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-[#CFA16B]">
+          The wall is the system. The phone is the people.
+        </p>
+        <p className="mt-3 font-[var(--font-body)] text-base leading-7 text-[#E4D8C4]">
+          Press a confession below and the wall breathes with the voice. Real voicemails from the gold
+          phone, played over the receipts.
+        </p>
+      </div>
+
       <div className="relative w-full overflow-hidden rounded-2xl border border-[#3A2C18] bg-[#0E0A05]">
         <canvas ref={canvasRef} className="block h-[46vh] min-h-[320px] w-full" aria-hidden="true" />
         {/* legend */}
-        <div className="pointer-events-none absolute left-3 top-3 flex flex-col gap-1.5 rounded-md border border-[#241a10] bg-black/70 px-3.5 py-2.5 font-[var(--font-sans)] text-[10px] uppercase tracking-[0.16em] text-[#C3B5A0] backdrop-blur-[2px]">
+        <div className="pointer-events-none absolute left-3 top-3 flex flex-col gap-1.5 rounded-md border border-[#3A2C18] bg-black/85 px-3.5 py-2.5 font-[var(--font-sans)] text-[11px] uppercase tracking-[0.14em] text-[#EFE6D2] backdrop-blur-[2px]">
           <span className="flex items-center gap-2"><span className="inline-block h-2 w-2 rounded-full bg-[#FFE4AA] shadow-[0_0_8px_2px_rgba(224,176,104,0.8)]" /> {s ? s.openCount : '~113'} with a public door</span>
           <span className="flex items-center gap-2"><span className="inline-block h-2 w-2 rounded-[1px] bg-[#6b4f2a]" /> {s ? s.nGivers.toLocaleString() : '10,133'} that give, no way in</span>
         </div>
-        <div className="pointer-events-none absolute bottom-3 right-4 hidden font-mono text-[10px] tracking-[0.05em] text-[#7C7060] sm:block">
+        <div className={`pointer-events-none absolute bottom-3 right-4 hidden rounded bg-black/80 px-2.5 py-1 font-mono text-[11px] tracking-[0.04em] text-[#B0A48E] transition-opacity sm:block ${activeVoice ? 'opacity-0' : 'opacity-100'}`}>
           one cell = one foundation · brightness = annual giving
         </div>
         {/* The dead block: capital that moved nothing. A matte void that pulses with a voice. */}
         {s && (
           <div
-            className={`pointer-events-none absolute bottom-3 left-4 rounded-md border border-[#241a10] bg-black/80 px-3.5 py-2.5 ${playingId ? 'animate-pulse' : ''}`}
+            className={`pointer-events-none absolute bottom-3 left-4 rounded-md border border-[#241a10] bg-black/80 px-3.5 py-2.5 transition-opacity ${playingId ? 'animate-pulse opacity-0' : 'opacity-100'}`}
           >
-            <p className="font-[var(--font-display)] text-xl font-bold leading-none text-[#5a4a32]">
+            <p className="font-[var(--font-display)] text-xl font-bold leading-none text-[#C4B5A0]">
               ${s.deadCapitalB}B
             </p>
-            <p className="mt-1 font-[var(--font-sans)] text-[9px] uppercase tracking-[0.16em] text-[#6b5f4e]">
+            <p className="mt-1 font-[var(--font-sans)] text-[10px] uppercase tracking-[0.14em] text-[#9C8E78]">
               {s.deadCount.toLocaleString()} foundations · moved nothing
             </p>
           </div>
         )}
+        {/* The human truth, spoken over the data: the playing confession's words. */}
+        {activeVoice && (
+          <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/92 via-black/60 to-transparent px-6 pb-8 pt-24">
+            <div className="mx-auto max-w-2xl text-center">
+              <span className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.3em] text-[#E0B068]">
+                {activeVoice.tag}
+              </span>
+              <p className="mt-2 font-[var(--font-body)] text-[clamp(1.15rem,2.7vw,1.7rem)] italic leading-snug text-[#F8F1E3]">
+                &ldquo;{activeVoice.line}&rdquo;
+              </p>
+            </div>
+          </div>
+        )}
       </div>
 
-      {/* The voices: the human truth behind the receipts */}
-      <div className="mt-8">
-        <p className="text-center font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-[#CFA16B]">
-          The wall is the system. The phone is the people.
-        </p>
-        <div className="mx-auto mt-6 grid max-w-3xl gap-3 sm:grid-cols-2">
+      {/* The controls: the four cleared voices, right under the wall. */}
+      <div className="mx-auto mt-5 grid max-w-3xl gap-3 sm:grid-cols-2">
           {VOICES.map((v) => {
             const playing = playingId === v.id;
             return (
@@ -282,10 +305,6 @@ export function PayoutWall() {
             );
           })}
         </div>
-        <p className="mt-5 text-center font-[var(--font-body)] text-[13px] text-[#7C7060]">
-          Press play and watch the wall breathe. Real voicemails from the gold phone.
-        </p>
-      </div>
     </div>
   );
 }

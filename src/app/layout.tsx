@@ -90,8 +90,10 @@ export default function RootLayout({
           Skip to content
         </a>
 
-        {/* Floating nav, sits on top of full-bleed content */}
-        <header className="fixed left-0 right-0 top-0 z-50 px-6 pt-4 md:px-8 md:pt-5">
+        {/* Floating nav, sits on top of full-bleed content. data-site-chrome lets
+            /confessions hide it (see confessions/layout.tsx) so the campaign runs
+            as its own contained site with only its campaign nav. */}
+        <header data-site-chrome className="fixed left-0 right-0 top-0 z-50 px-6 pt-4 md:px-8 md:pt-5">
           <div className="mx-auto max-w-[1200px]">
             <div className="relative overflow-hidden rounded-[var(--site-radius)] border border-[var(--site-line)] bg-[var(--site-panel)] px-5 py-3 shadow-[var(--site-shadow)] backdrop-blur-xl md:px-6">
               <div className="flex items-center justify-between gap-5">
@@ -136,7 +138,8 @@ export default function RootLayout({
         <main id="main-content" className="relative z-10 min-h-screen">{children}</main>
         <JsonLd id="act-organization-jsonld" data={organizationJsonLd} />
         <JsonLd id="act-website-jsonld" data={websiteJsonLd} />
-        <UnifiedFooter
+        <div data-site-chrome>
+          <UnifiedFooter
             currentProject="A Curious Tractor"
             showProjects={true}
             customLinks={[
@@ -150,6 +153,7 @@ export default function RootLayout({
             ]}
             contactEmail="hi@act.place"
           />
+        </div>
       </body>
     </html>
   );

@@ -5,7 +5,7 @@ import { CallTimer } from '@/components/confessions/CallTimer';
 import { ConfessionField } from '@/components/confessions/ConfessionField';
 import { RotaryDial } from '@/components/confessions/RotaryDial';
 import { VoicemailInbox } from '@/components/confessions/VoicemailInbox';
-import { heroVoices, mockConfessions, realConfessions, IS_MOCK } from '@/data/confessions-mock';
+import { mockConfessions, realConfessions, IS_MOCK } from '@/data/confessions-mock';
 import { pageMetadata, siteUrl } from '@/lib/seo/site';
 
 export const metadata = pageMetadata({
@@ -118,13 +118,15 @@ export default function ConfessionsPage() {
           and sits flush behind the fixed nav, like the homepage hero. */}
       <section className="full-bleed relative min-h-[100svh] overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_42%,#241910_0%,#15100A_60%)]" />
-        <ConfessionField voices={heroVoices} />
+        <ConfessionField confessions={confessions} interactive={false} />
         {/* Faint rotary-dial engraving, the old-phone signature. */}
         <RotaryDial className="pointer-events-none absolute left-1/2 top-1/2 h-[min(86vmin,800px)] w-[min(86vmin,800px)] -translate-x-1/2 -translate-y-1/2 text-[#CFA16B]/[0.07]" />
         {/* Warm vignette, the object under a single light. */}
         <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_center,transparent_40%,#0E0A05_100%)]" />
 
-        <div className="relative z-10 mx-auto flex min-h-[88svh] max-w-3xl flex-col items-center justify-center px-6 pb-20 pt-10 text-center">
+        {/* pointer-events-none lets taps fall through to the voices on the canvas
+            behind this column; the interactive controls re-enable them. */}
+        <div className="pointer-events-none relative z-10 mx-auto flex min-h-[88svh] max-w-3xl flex-col items-center justify-center px-6 pb-20 pt-10 text-center">
           <CallTimer />
           <h1 className="mt-8 font-[var(--font-display)] text-[clamp(2.6rem,7vw,5rem)] font-semibold leading-[1.02] tracking-tight">
             You’ve reached
@@ -136,16 +138,25 @@ export default function ConfessionsPage() {
             truths, love notes, hot takes and confessions people have about giving.
           </p>
 
-          <div className="mt-9 flex flex-col items-center gap-3">
+          <div className="pointer-events-auto mt-9 flex flex-col items-center gap-3">
             <CallCTA />
             <p className="font-[var(--font-sans)] text-xs uppercase tracking-[0.35em] text-[rgba(224,176,104,0.7)]">
               Leave a message at the tone
             </p>
           </div>
 
-          <p className="pointer-events-none mt-14 font-[var(--font-sans)] text-[11px] uppercase tracking-[0.3em] text-[#7C7060]">
-            Move the receiver over a voice to hear it
-          </p>
+          <div className="pointer-events-auto mt-14 flex flex-col items-center gap-3">
+            <p className="font-[var(--font-sans)] text-[11px] uppercase tracking-[0.3em] text-[#7C7060]">
+              {confessions.length} messages on the line
+            </p>
+            <Link
+              href="/confessions/listen"
+              className="inline-flex items-center gap-2 rounded-full border border-[#CFA16B]/50 px-5 py-2.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.24em] text-[rgba(224,176,104,0.9)] transition hover:border-[#CFA16B] hover:text-[#F3EBDD]"
+            >
+              Listen to the messages
+              <span aria-hidden="true">→</span>
+            </Link>
+          </div>
         </div>
       </section>
 
@@ -376,10 +387,10 @@ export default function ConfessionsPage() {
           </p>
           <p className="mt-9">
             <Link
-              href="/confessions/wall"
+              href="/confessions/listen"
               className="inline-flex items-center gap-2 rounded-full border border-[#CFA16B]/40 px-5 py-2.5 text-sm font-semibold text-[#CFA16B] transition hover:border-[#CFA16B] hover:bg-[#CFA16B]/10"
             >
-              See the receipts: The Payout Wall <span aria-hidden="true">&rarr;</span>
+              Listen to the voices <span aria-hidden="true">&rarr;</span>
             </Link>
           </p>
         </div>

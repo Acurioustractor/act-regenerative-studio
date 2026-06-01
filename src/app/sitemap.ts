@@ -29,9 +29,8 @@ const staticRoutes: Array<{
 }> = [
   { path: "/", changeFrequency: "weekly", priority: 1.0 },
   { path: "/confessions", changeFrequency: "weekly", priority: 0.9 },
-  { path: "/confessions/wall", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/confessions/listen", changeFrequency: "weekly", priority: 0.8 },
   { path: "/confessions/friday", changeFrequency: "weekly", priority: 0.8 },
-  { path: "/confessions/method", changeFrequency: "monthly", priority: 0.6 },
   { path: "/projects", changeFrequency: "weekly", priority: 0.9 },
   { path: "/stories", changeFrequency: "weekly", priority: 0.8 },
   // Launch hold (2026-05-27): /storytellers held until >1 consented profile syncs.

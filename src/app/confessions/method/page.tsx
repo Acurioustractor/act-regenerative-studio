@@ -77,10 +77,10 @@ export default function PayoutWallMethodPage() {
 
           <div className="border-t border-[#2E2215] pt-8 text-center">
             <Link
-              href="/confessions/wall"
+              href="/confessions/listen"
               className="font-[var(--font-sans)] text-xs uppercase tracking-[0.3em] text-[rgba(224,176,104,0.85)] underline-offset-4 hover:underline"
             >
-              &larr; Back to the Payout Wall
+              &larr; Back to the line
             </Link>
           </div>
         </div>

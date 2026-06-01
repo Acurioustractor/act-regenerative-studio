@@ -63,9 +63,19 @@ const GRANTMAKER_CLASSES = new Set([
 ]);
 const profileOf = (r) =>
   Array.isArray(r.foundation_power_profiles) ? r.foundation_power_profiles[0] : r.foundation_power_profiles;
-const grantmakers = rows.filter((r) => {
+// Confirmed grantmaker: reportable in the power map AND a known grantmaking
+// capital class. Operating charities, universities and aid orgs (the 'unknown'
+// class that tops the raw giving list) are NOT grantmakers, so the wall must not
+// make a "no public door" claim about them. The UI uses `nonGmIdx` to suppress
+// the door line on those cells and show them as plain givers.
+const isGrantmaker = (r) => {
   const p = profileOf(r);
-  return p && p.reportable_in_power_map === true && GRANTMAKER_CLASSES.has(p.capital_source_class);
+  return !!(p && p.reportable_in_power_map === true && GRANTMAKER_CLASSES.has(p.capital_source_class));
+};
+const grantmakers = rows.filter(isGrantmaker);
+const nonGmIdx = [];
+rows.forEach((r, i) => {
+  if (!isGrantmaker(r)) nonGmIdx.push(i);
 });
 const gmGiving = grantmakers.map((r) => Number(r.total_giving_annual)).sort((a, b) => b - a);
 const giversToHalf = nToHalf(giving); // giving is already sorted descending
@@ -81,7 +91,7 @@ const out = {
   meta: {
     runDate: new Date().toISOString().slice(0, 10),
     source: 'CivicGraph / Supabase tednluwflfhxyucgwigh (foundations + acnc_ais)',
-    note: 'Giving + openness are computed live at build time. Hoard/dead-zone/gini/share are carried from the 2026-05-29 provenance lock (re-verify before publishing). See grantscope/output/foundation-power.provenance.md.',
+    note: 'Giving, openness, names + grantmaker classification are computed live from source on runDate (this run supersedes the 2026-05-29 openness snapshot). Hoard/dead-zone/gini/share are still carried from the 2026-05-29 provenance lock (re-verify before publishing). See grantscope/output/foundation-power.provenance.md.',
   },
   // Locked, verified figures (re-run by hand 2026-05-29). Hardcoded the financial
   // cuts (hoard/dead) so the page never needs the acnc_ais join at build time.
@@ -107,7 +117,9 @@ const out = {
     pctUntraceable: 96.8,
   },
   giving, // sorted descending, one number per foundation
+  names: rows.map((r) => r.name), // public ACNC entity name, parallel to `giving`
   openIdx, // indices into `giving` that publish an open application program
+  nonGmIdx, // indices that are NOT confirmed grantmakers (no "no door" claim)
   top, // top 45 confirmed grantmakers by giving, named (public entities; clean cut)
   deadZone: { count: 2257, capitalB: 15.64 },
 };

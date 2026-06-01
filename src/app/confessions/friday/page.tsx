@@ -80,10 +80,10 @@ export default function FridayTapePage() {
             The voices told us how it feels. The data shows how it is built.
           </p>
           <Link
-            href="/confessions/wall"
+            href="/confessions/listen"
             className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#CFA16B]/40 px-5 py-2.5 text-sm font-semibold text-[#CFA16B] transition hover:border-[#CFA16B] hover:bg-[#CFA16B]/10"
           >
-            See the receipts: The Payout Wall <span aria-hidden="true">&rarr;</span>
+            Listen to the voices <span aria-hidden="true">&rarr;</span>
           </Link>
         </div>
       </section>

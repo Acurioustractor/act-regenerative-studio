@@ -10,9 +10,8 @@ import { usePathname } from 'next/navigation';
 
 const ITEMS = [
   { href: '/confessions', label: 'Confess' },
-  { href: '/confessions/wall', label: 'The Wall' },
+  { href: '/confessions/listen', label: 'Listen' },
   { href: '/confessions/friday', label: 'Friday Tape' },
-  { href: '/confessions/method', label: 'Method' },
 ] as const;
 
 export function CampaignNav() {
@@ -22,7 +21,7 @@ export function CampaignNav() {
   return (
     <nav
       aria-label="Confessions to Philanthropy"
-      className="full-bleed relative z-40 flex flex-wrap items-center justify-center gap-x-2 gap-y-2 border-b border-[#2E2215] bg-[#15100A]/95 px-4 pb-3 pt-24 backdrop-blur-sm md:pt-28"
+      className="full-bleed relative z-40 flex flex-wrap items-center justify-center gap-x-2 gap-y-2 border-b border-[#2E2215] bg-[#15100A]/95 px-4 pb-3 pt-5 backdrop-blur-sm md:pt-6"
     >
       <span className="mr-1 hidden font-[var(--font-sans)] text-[10px] uppercase tracking-[0.22em] text-[#6F6353] md:inline">
         Confessions to Philanthropy

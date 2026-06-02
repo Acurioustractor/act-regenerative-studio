@@ -262,6 +262,28 @@ async function pushToGHL(body: NormalizedFormSubmission): Promise<GHLPushResult>
         : {}),
     });
 
+    // Notify the GHL "ACT — Intake" workflow (Inbound Webhook trigger) so it seats the
+    // contact on the Membership Journey via NATIVE actions (reliable trigger + tag-added),
+    // per decision #7. Fire-and-forget — a webhook hiccup must never fail the signup.
+    const INTAKE_WEBHOOK_URL = process.env.GHL_INTAKE_WEBHOOK_URL
+      || 'https://services.leadconnectorhq.com/hooks/agzsSZWgovjwgpcoASWG/webhook-trigger/8432ee10-f5d5-4f72-a6fb-5f0829b937c6';
+    try {
+      await fetch(INTAKE_WEBHOOK_URL, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          email: str(fields.email),
+          formType: body.formType || 'general',
+          projectCode: body.projectCode || '',
+          firstName: str(fields.firstName),
+          lastName: str(fields.lastName),
+          name: str(fields.name) || str(fields.fullName),
+        }),
+      });
+    } catch (webhookError) {
+      console.error('GHL intake webhook notify failed (non-fatal):', webhookError);
+    }
+
     // Open an opportunity in the mapped pipeline for team tracking. Off by
     // default; set GHL_ENABLE_PIPELINES=true once the routing is reviewed.
     let opportunity: GHLPushResult['opportunity'] = 'skipped';

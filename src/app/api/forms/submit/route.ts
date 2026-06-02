@@ -21,6 +21,24 @@ interface NormalizedFormSubmission {
 
 const SOURCE_SITE_TAG = 'act-regenerative-studio';
 
+// projectCode → CRM identity. The namespaced `project:` tag and the newsletter
+// comms-list slug BOTH derive from a form's projectCode — never hardcoded — so a
+// newsletter embedded on any project's page seats to THAT project's list, not
+// ACT-IN's. This is the "route by projectCode, never by formType" contract.
+// Canonical taxonomy + tag scheme: act-global-infrastructure
+// wiki/decisions/act-site-form-alignment.md (the VERIFIED registry, §4a).
+// Slugs for ACT-BV / ACT-AS are provisional (not yet pinned in registry §4a).
+const PROJECT_REGISTRY: Record<string, { tag: string; commsSlug: string }> = {
+  'ACT-IN': { tag: 'project:act-in', commsSlug: 'act' },                     // ACT ecosystem (act.place default)
+  'ACT-HV': { tag: 'project:act-hv', commsSlug: 'harvest' },                 // The Harvest
+  'ACT-BV': { tag: 'project:act-bv', commsSlug: 'farm' },                    // Black Cockatoo Valley / Farm (provisional)
+  'ACT-AS': { tag: 'project:act-as', commsSlug: 'art' },                     // Art / residency (provisional)
+  'ACT-EL': { tag: 'project:empathy-ledger', commsSlug: 'empathy-ledger' },  // Empathy Ledger (OCAP-gated)
+  'ACT-JH': { tag: 'project:justicehub', commsSlug: 'justicehub' },          // JusticeHub
+  'ACT-GD': { tag: 'project:goods', commsSlug: 'goods' },                    // Goods
+};
+const DEFAULT_PROJECT = PROJECT_REGISTRY['ACT-IN'];
+
 function normalizeTags(tags: unknown): string[] {
   if (!Array.isArray(tags)) return [];
 
@@ -234,13 +252,21 @@ async function pushToGHL(body: NormalizedFormSubmission): Promise<GHLPushResult>
     };
     const formTags = FORM_RULES[body.formType ?? ''] ?? ['source:website-form'];
 
+    // Derive the project's CRM identity from projectCode (default ACT-IN). The
+    // namespaced project: tag and the newsletter comms list both come from here —
+    // a newsletter on the Harvest page (ACT-HV) gets comms:harvest-newsletter,
+    // NOT comms:act-newsletter. This closes the "newsletter == Harvest" bug class
+    // by routing on projectCode rather than assuming the ACT-IN list.
+    const project = PROJECT_REGISTRY[body.projectCode ?? ''] ?? DEFAULT_PROJECT;
+
     const tags = Array.from(
       new Set([
         ...body.additionalTags,
         ...(body.projectCode ? [body.projectCode] : []),
+        project.tag,
         ...(body.formType ? [body.formType] : []),
         ...formTags,
-        ...(isNewsletter ? ['tier:connected', 'comms:act-newsletter'] : []),
+        ...(isNewsletter ? ['tier:connected', `comms:${project.commsSlug}-newsletter`] : []),
       ])
     );
 

@@ -2,6 +2,12 @@
 const { launchRedirects } = require('./config/launch-redirects.cjs');
 
 const nextConfig = {
+  // Data-heavy routes (/projects/[slug], /ecosystem, /empathy-ledger, /art/*,
+  // /sitemap) fetch EL/Supabase at build-time static generation and were blowing
+  // the default 60s per-page cap, failing the whole production deploy. Raise the
+  // cap so slow-but-finite fetches complete and the build stays fully static.
+  // If a fetch ever truly hangs past this, switch those routes to runtime/ISR.
+  staticPageGenerationTimeout: 180,
   images: {
     remotePatterns: [
       {

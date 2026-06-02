@@ -218,12 +218,28 @@ async function pushToGHL(body: NormalizedFormSubmission): Promise<GHLPushResult>
     // the GHL custom field contact.newsletter_consent (SINGLE_OPTIONS Yes/No).
     const isNewsletter = body.formType === 'newsletter';
     const NEWSLETTER_CONSENT_FIELD_ID = 'aVnqmajnysMtGYhLD0oA';
+    const CONSENT_SOURCE_FIELD_ID = 'HdnMUyXkZRPZG7l7cygG';
+
+    // Per-form namespaced tags so each submission seats the contact correctly for the
+    // belonging journey: how they arrived (source:) + what they did (role:/action:).
+    // The tier: RUNG and the DATE fields are deliberately NOT set here — the GHL intake
+    // workflow applies them via native actions (reliable tag-added + set-if-empty),
+    // per decision #7 in act-global-infrastructure/thoughts/shared/plans/2026-06-02-harvest-ghl-tier1-build.md.
+    const FORM_RULES: Record<string, string[]> = {
+      newsletter: ['source:website-form'],
+      contact: ['source:website-form'],
+      donation: ['source:website-form', 'role:supporter', 'action:contributed'],
+      volunteer: ['source:website-form', 'role:volunteer'],
+      event: ['source:event-signup', 'interest:events', 'action:attended'],
+    };
+    const formTags = FORM_RULES[body.formType ?? ''] ?? ['source:website-form'];
 
     const tags = Array.from(
       new Set([
         ...body.additionalTags,
         ...(body.projectCode ? [body.projectCode] : []),
         ...(body.formType ? [body.formType] : []),
+        ...formTags,
         ...(isNewsletter ? ['tier:connected', 'comms:act-newsletter'] : []),
       ])
     );
@@ -237,7 +253,12 @@ async function pushToGHL(body: NormalizedFormSubmission): Promise<GHLPushResult>
       source: 'act-regenerative-studio',
       tags,
       ...(isNewsletter
-        ? { customFields: [{ id: NEWSLETTER_CONSENT_FIELD_ID, field_value: 'Yes' }] }
+        ? {
+            customFields: [
+              { id: NEWSLETTER_CONSENT_FIELD_ID, field_value: 'Yes' },
+              { id: CONSENT_SOURCE_FIELD_ID, field_value: 'act-regenerative-studio' },
+            ],
+          }
         : {}),
     });
 

@@ -28,7 +28,12 @@ export interface GHLContact {
   country?: string;
   source?: string;
   tags?: string[];
-  customFields?: Record<string, any>;
+  // GHL's /contacts API expects customFields as an ARRAY of {id|key, field_value}.
+  // The legacy Record form is kept for back-compat but the array form is what
+  // actually sets a field (verified against the live API 2026-06-02).
+  customFields?:
+    | Array<{ id?: string; key?: string; field_value: unknown }>
+    | Record<string, any>;
   dateOfBirth?: string;
   companyName?: string;
   website?: string;

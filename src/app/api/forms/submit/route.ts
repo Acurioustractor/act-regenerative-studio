@@ -210,11 +210,21 @@ async function pushToGHL(body: NormalizedFormSubmission): Promise<GHLPushResult>
     const str = (value: unknown): string | undefined =>
       typeof value === 'string' && value.trim().length > 0 ? value.trim() : undefined;
 
+    // A newsletter signup is an explicit, express opt-in (email typed into a
+    // clearly-labelled newsletter box). Stamp consent + belonging here, at the
+    // source, so it never depends on a GHL workflow trigger firing on an
+    // API-created contact (those are unreliable). newsletter_consent is the ONLY
+    // legal send signal and is set HERE and nowhere else by inference. Field id =
+    // the GHL custom field contact.newsletter_consent (SINGLE_OPTIONS Yes/No).
+    const isNewsletter = body.formType === 'newsletter';
+    const NEWSLETTER_CONSENT_FIELD_ID = 'aVnqmajnysMtGYhLD0oA';
+
     const tags = Array.from(
       new Set([
         ...body.additionalTags,
         ...(body.projectCode ? [body.projectCode] : []),
         ...(body.formType ? [body.formType] : []),
+        ...(isNewsletter ? ['tier:connected', 'comms:act-newsletter'] : []),
       ])
     );
 
@@ -226,6 +236,9 @@ async function pushToGHL(body: NormalizedFormSubmission): Promise<GHLPushResult>
       name: str(fields.name) || str(fields.fullName),
       source: 'act-regenerative-studio',
       tags,
+      ...(isNewsletter
+        ? { customFields: [{ id: NEWSLETTER_CONSENT_FIELD_ID, field_value: 'Yes' }] }
+        : {}),
     });
 
     // Open an opportunity in the mapped pipeline for team tracking. Off by

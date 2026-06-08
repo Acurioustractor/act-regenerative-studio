@@ -66,16 +66,18 @@ export function ContactForm({
         body: JSON.stringify({
           projectCode,
           formType,
-          fields: formData,
-          additionalTags: [
-            'Contact Form',
-            'Website Inquiry',
-            `Context: ${contextLabel}`,
-            `Route: ${pathname}`,
-            ...(presetSource ? [`Source: ${presetSource}`] : []),
-            ...(presetContext ? [`Requested context: ${presetContext}`] : []),
-            ...additionalTags,
-          ],
+          // Provenance (page context/route + any ?source/?context UTM params)
+          // lives in fields, not tags — preserved on the Supabase row without
+          // polluting the GHL tag space. Canonical source:/project: tags are
+          // applied server-side by /api/forms/submit (FORM_RULES + project registry).
+          fields: {
+            ...formData,
+            context: contextLabel,
+            source_route: pathname,
+            ...(presetSource ? { preset_source: presetSource } : {}),
+            ...(presetContext ? { requested_context: presetContext } : {}),
+          },
+          additionalTags: [...additionalTags],
         }),
       });
 

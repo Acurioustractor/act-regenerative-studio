@@ -257,8 +257,27 @@ async function pushToGHL(body: NormalizedFormSubmission): Promise<GHLPushResult>
       newsletter: ['source:website', 'role:supporter'],
       contact: ['source:website'],
       donation: ['source:website', 'role:supporter', 'action:contributed'],
-      volunteer: ['source:website', 'role:volunteer'],
+      // taxonomy wants role:supporter + interest:volunteer (both canonical), not a
+      // bare role:volunteer — flagged as a follow-up in commit a807396. No live
+      // act.place form emits `volunteer` today (native/future path), zero live impact.
+      volunteer: ['source:website', 'role:supporter', 'interest:volunteer'],
+      // TODO(event): taxonomy wants source:event:<slug> (per-event), which needs the
+      // form to pass the event slug. Left as source:event-signup until that plumbing
+      // exists; no live act.place form emits `event` today.
       event: ['source:event-signup', 'interest:events', 'action:attended'],
+      // P1 contract alignment (2026-06-08, plan
+      // act-global-infrastructure/thoughts/shared/plans/2026-06-08-whole-system-forms-tag-alignment.md).
+      // The five inquiry/application forms. These are NOT newsletters: they grant
+      // NO comms:/newsletter_consent (only the newsletter formType does, below) —
+      // identity tags only, so a smart-list can find them but no send fires.
+      // role:supporter is the field-justified role (these forms capture no field
+      // that justifies role:partner/funder); the flagship `interest` select is
+      // preserved in fields for human follow-up, not auto-promoted to a role.
+      csa: ['source:website', 'role:supporter', 'interest:membership'],
+      'farm-stay': ['source:website', 'role:supporter', 'interest:farm-stay'],
+      residency: ['source:website', 'role:supporter', 'interest:residency'],
+      'payout-wall-contest': ['source:website', 'role:supporter', 'interest:justice-reform'],
+      'flagship-inquiry': ['source:website', 'role:supporter'],
     };
     const formTags = FORM_RULES[body.formType ?? ''] ?? ['source:website'];
 
@@ -274,9 +293,21 @@ async function pushToGHL(body: NormalizedFormSubmission): Promise<GHLPushResult>
     // (project:act-in) and the per-form rules carry the same meaning without
     // polluting the tag space the smart-lists query. body.additionalTags is the
     // form's own namespaced provenance (e.g. source:website-footer).
+    //
+    // Contract guard (P1, 2026-06-08): only colon-namespaced tags reach GHL.
+    // Defense in depth — drops any flat tag a form (or the SOURCE_SITE_TAG) tries
+    // to send, so a single regression can't repollute the tag space the
+    // smart-lists query. Dropped tags are logged (visible regression signal) and
+    // the FULL raw additionalTags are still preserved on the Supabase fallback row
+    // (handleFallback), so no provenance is lost — it just doesn't become a GHL tag.
+    const namespacedExtra = body.additionalTags.filter((t) => t.includes(':'));
+    const droppedFlat = body.additionalTags.filter((t) => !t.includes(':'));
+    if (droppedFlat.length > 0) {
+      console.warn(`Dropped ${droppedFlat.length} non-namespaced tag(s) before GHL: ${droppedFlat.join(', ')}`);
+    }
     const tags = Array.from(
       new Set([
-        ...body.additionalTags,
+        ...namespacedExtra,
         project.tag,
         ...formTags,
         ...(isNewsletter ? ['tier:curious', `comms:${project.commsSlug}-newsletter`] : []),

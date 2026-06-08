@@ -48,15 +48,20 @@ export function NewsletterForm({
         body: JSON.stringify({
           projectCode: projectCode || 'ACT-IN', // Default to ACT Infrastructure
           formType: 'newsletter',
-          fields: { email },
+          // High-cardinality provenance (route/context) rides in fields → it is
+          // stored in the pending_form_submissions row but never reaches GHL
+          // (pushToGHL reads only email/phone/name). Keeps the audit trail
+          // without polluting the tag space.
+          fields: { email, signupRoute: pathname, signupContext: contextLabel, signupPlacement: source },
+          // Namespaced provenance only (taxonomy: no ad-hoc flat tags). The
+          // signup channel (source:website), comms list, project: and tier are
+          // seated server-side in /api/forms/submit; here we add only the
+          // placement sub-source + optional page/story/audience context.
           additionalTags: [
-            'Newsletter',
-            `Context: ${contextLabel}`,
-            `Route: ${pathname}`,
-            `Source: ${source}`,
-            ...(projectSlug ? [`Project: ${projectSlug}`] : []),
-            ...(storySlug ? [`Story: ${storySlug}`] : []),
-            ...(audience ? [`Audience: ${audience}`] : []),
+            `source:website-${source}`,
+            ...(projectSlug ? [`source:page:${projectSlug}`] : []),
+            ...(storySlug ? [`source:story:${storySlug}`] : []),
+            ...(audience ? [`interest:${audience}`] : []),
             ...additionalTags,
           ],
         }),

@@ -240,17 +240,46 @@ async function pushToGHL(body: NormalizedFormSubmission): Promise<GHLPushResult>
 
     // Per-form namespaced tags so each submission seats the contact correctly for the
     // belonging journey: how they arrived (source:) + what they did (role:/action:).
-    // The tier: RUNG and the DATE fields are deliberately NOT set here — the GHL intake
-    // workflow applies them via native actions (reliable tag-added + set-if-empty),
-    // per decision #7 in act-global-infrastructure/thoughts/shared/plans/2026-06-02-harvest-ghl-tier1-build.md.
+    // A newsletter signup seeds the ENTRY rung tier:curious (see the tags block
+    // below); the DATE fields and rung ADVANCEMENT (curious→connected→member) are
+    // applied by the GHL intake workflow via native actions (reliable tag-added +
+    // set-if-empty), per decision #7 in
+    // act-global-infrastructure/thoughts/shared/plans/2026-06-02-harvest-ghl-tier1-build.md.
+    //
+    // Slug is source:website (channel) per the canonical taxonomy
+    // (act-global-infrastructure wiki/concepts/ghl-audience-comms-automation.md
+    // §"Forms → tag contract"). A newsletter signup is an express opt-in BY a
+    // supporter, so it also seats role:supporter — the identity tag the
+    // "Org supporters" smart-list (role:supporter AND newsletter_consent=Yes AND
+    // NOT lane:community) queries on. Without it, signups are invisible to that
+    // segment and to role-gated automations (e.g. the supporter onboarding drip).
     const FORM_RULES: Record<string, string[]> = {
-      newsletter: ['source:website-form'],
-      contact: ['source:website-form'],
-      donation: ['source:website-form', 'role:supporter', 'action:contributed'],
-      volunteer: ['source:website-form', 'role:volunteer'],
+      newsletter: ['source:website', 'role:supporter'],
+      contact: ['source:website'],
+      donation: ['source:website', 'role:supporter', 'action:contributed'],
+      // taxonomy wants role:supporter + interest:volunteer (both canonical), not a
+      // bare role:volunteer — flagged as a follow-up in commit a807396. No live
+      // act.place form emits `volunteer` today (native/future path), zero live impact.
+      volunteer: ['source:website', 'role:supporter', 'interest:volunteer'],
+      // TODO(event): taxonomy wants source:event:<slug> (per-event), which needs the
+      // form to pass the event slug. Left as source:event-signup until that plumbing
+      // exists; no live act.place form emits `event` today.
       event: ['source:event-signup', 'interest:events', 'action:attended'],
+      // P1 contract alignment (2026-06-08, plan
+      // act-global-infrastructure/thoughts/shared/plans/2026-06-08-whole-system-forms-tag-alignment.md).
+      // The five inquiry/application forms. These are NOT newsletters: they grant
+      // NO comms:/newsletter_consent (only the newsletter formType does, below) —
+      // identity tags only, so a smart-list can find them but no send fires.
+      // role:supporter is the field-justified role (these forms capture no field
+      // that justifies role:partner/funder); the flagship `interest` select is
+      // preserved in fields for human follow-up, not auto-promoted to a role.
+      csa: ['source:website', 'role:supporter', 'interest:membership'],
+      'farm-stay': ['source:website', 'role:supporter', 'interest:farm-stay'],
+      residency: ['source:website', 'role:supporter', 'interest:residency'],
+      'payout-wall-contest': ['source:website', 'role:supporter', 'interest:justice-reform'],
+      'flagship-inquiry': ['source:website', 'role:supporter'],
     };
-    const formTags = FORM_RULES[body.formType ?? ''] ?? ['source:website-form'];
+    const formTags = FORM_RULES[body.formType ?? ''] ?? ['source:website'];
 
     // Derive the project's CRM identity from projectCode (default ACT-IN). The
     // namespaced project: tag and the newsletter comms list both come from here —
@@ -259,14 +288,29 @@ async function pushToGHL(body: NormalizedFormSubmission): Promise<GHLPushResult>
     // by routing on projectCode rather than assuming the ACT-IN list.
     const project = PROJECT_REGISTRY[body.projectCode ?? ''] ?? DEFAULT_PROJECT;
 
+    // Namespaced tags ONLY. The raw projectCode ("ACT-IN") and raw formType
+    // ("newsletter") are intentionally NOT seated as flat tags — project.tag
+    // (project:act-in) and the per-form rules carry the same meaning without
+    // polluting the tag space the smart-lists query. body.additionalTags is the
+    // form's own namespaced provenance (e.g. source:website-footer).
+    //
+    // Contract guard (P1, 2026-06-08): only colon-namespaced tags reach GHL.
+    // Defense in depth — drops any flat tag a form (or the SOURCE_SITE_TAG) tries
+    // to send, so a single regression can't repollute the tag space the
+    // smart-lists query. Dropped tags are logged (visible regression signal) and
+    // the FULL raw additionalTags are still preserved on the Supabase fallback row
+    // (handleFallback), so no provenance is lost — it just doesn't become a GHL tag.
+    const namespacedExtra = body.additionalTags.filter((t) => t.includes(':'));
+    const droppedFlat = body.additionalTags.filter((t) => !t.includes(':'));
+    if (droppedFlat.length > 0) {
+      console.warn(`Dropped ${droppedFlat.length} non-namespaced tag(s) before GHL: ${droppedFlat.join(', ')}`);
+    }
     const tags = Array.from(
       new Set([
-        ...body.additionalTags,
-        ...(body.projectCode ? [body.projectCode] : []),
+        ...namespacedExtra,
         project.tag,
-        ...(body.formType ? [body.formType] : []),
         ...formTags,
-        ...(isNewsletter ? ['tier:connected', `comms:${project.commsSlug}-newsletter`] : []),
+        ...(isNewsletter ? ['tier:curious', `comms:${project.commsSlug}-newsletter`] : []),
       ])
     );
 

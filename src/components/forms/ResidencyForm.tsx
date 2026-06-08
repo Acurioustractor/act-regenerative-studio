@@ -55,16 +55,12 @@ export function ResidencyForm({
         body: JSON.stringify({
           projectCode: 'ACT-AS',
           formType: 'residency',
-          fields: formData,
-          additionalTags: [
-            'Art Residency',
-            'Artist Application',
-            `Residency: ${formData.residencyType || 'Unspecified'}`,
-            `Practice: ${formData.practiceType || 'Unspecified'}`,
-            `Context: ${contextLabel}`,
-            `Route: ${pathname}`,
-            ...additionalTags,
-          ],
+          // Provenance (page context/route) lives in fields, not tags — it is
+          // preserved on the Supabase row without polluting the GHL tag space.
+          // Canonical role:/interest:/source:/project: tags are applied server-side
+          // by /api/forms/submit (FORM_RULES + project registry).
+          fields: { ...formData, context: contextLabel, source_route: pathname },
+          additionalTags: [...additionalTags],
         }),
       });
 

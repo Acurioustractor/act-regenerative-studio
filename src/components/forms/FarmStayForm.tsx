@@ -54,15 +54,12 @@ export function FarmStayForm({
         body: JSON.stringify({
           projectCode: 'ACT-BV',
           formType: 'farm-stay',
-          fields: formData,
-          additionalTags: [
-            'Farm Stay',
-            'Accommodation',
-            `Stay: ${formData.stayType || 'Unspecified'}`,
-            `Context: ${contextLabel}`,
-            `Route: ${pathname}`,
-            ...additionalTags,
-          ],
+          // Provenance (page context/route) lives in fields, not tags — it is
+          // preserved on the Supabase row without polluting the GHL tag space.
+          // Canonical role:/interest:/source:/project: tags are applied server-side
+          // by /api/forms/submit (FORM_RULES + project registry).
+          fields: { ...formData, context: contextLabel, source_route: pathname },
+          additionalTags: [...additionalTags],
         }),
       });
 

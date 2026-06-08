@@ -46,13 +46,13 @@ export function FoundationContestForm() {
         body: JSON.stringify({
           projectCode: 'ACT-IN',
           formType: 'payout-wall-contest',
-          fields: form,
-          additionalTags: [
-            'Payout Wall',
-            'Data contest / right of reply',
-            `Foundation: ${form.foundation}`,
-            'Route: /confessions/wall',
-          ],
+          // foundation + the submitter's role are already in `form` (the fields).
+          // Page provenance lives in fields, not tags. Canonical
+          // source:/role:/interest:/project: tags are applied server-side by
+          // /api/forms/submit (FORM_RULES + project registry) — payout-wall-contest
+          // gets role:supporter + interest:justice-reform, no comms:/consent.
+          fields: { ...form, source_route: '/confessions/wall' },
+          additionalTags: [],
         }),
       });
       const result = await res.json();

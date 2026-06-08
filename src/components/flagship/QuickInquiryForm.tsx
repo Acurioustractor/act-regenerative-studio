@@ -45,18 +45,22 @@ export function QuickInquiryForm({
         body: JSON.stringify({
           projectCode: projectCode || undefined,
           formType: "flagship-inquiry",
+          // The flagship `interest` select (Collaborate/Partner/Fund/Visit/Learn)
+          // + which flagship project they were on live in fields for human
+          // follow-up — they are NOT auto-promoted to role:partner/funder (the
+          // form captures no field that justifies it). Canonical
+          // source:/role:/project: tags are applied server-side by
+          // /api/forms/submit (FORM_RULES + project registry → role:supporter).
           fields: {
             firstName: firstName || name,
             lastName: lastName || undefined,
             email,
             message: message || undefined,
+            interest: interest || undefined,
+            flagship_project: projectName,
+            source_route: `flagship-page-${projectSlug}`,
           },
-          additionalTags: [
-            "Flagship Inquiry",
-            `Project: ${projectName}`,
-            `Interest: ${interest || "General"}`,
-            `Source: flagship-page-${projectSlug}`,
-          ],
+          additionalTags: [],
         }),
       });
 

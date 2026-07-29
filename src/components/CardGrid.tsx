@@ -26,7 +26,7 @@ export default function CardGrid({
     className ?? "grid gap-6 md:grid-cols-2 lg:grid-cols-3";
   const baseCardClass =
     cardClassName ??
-    "group flex h-full flex-col justify-between rounded-3xl border border-[#E1D3BA] bg-white/70 p-6 transition hover:-translate-y-1 hover:border-[#4CAF50] hover:shadow-[0_18px_45px_rgba(50,42,31,0.12)]";
+    "group flex h-full flex-col justify-between rounded-3xl border border-[#E1D3BA] bg-white/70 p-6 transition hover:-translate-y-1 hover:border-forest hover:shadow-[0_18px_45px_rgba(50,42,31,0.12)]";
 
   return (
     <div className={gridClass}>
@@ -60,7 +60,7 @@ export default function CardGrid({
                 )}
               </div>
               {card.href && (
-                <span className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#4CAF50]">
+                <span className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-forest">
                   {card.ctaLabel ?? "Explore"}
                   <span aria-hidden="true">→</span>
                 </span>
@@ -87,7 +87,7 @@ export default function CardGrid({
               )}
             </div>
             {card.href && (
-              <span className="mt-6 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#4CAF50]">
+              <span className="mt-6 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-forest">
                 {card.ctaLabel ?? "Explore"}
                 <span aria-hidden="true">→</span>
               </span>
@@ -96,7 +96,7 @@ export default function CardGrid({
         );
 
         const cardClass = card.image
-          ? "group flex h-full flex-col overflow-hidden rounded-3xl border border-[#E1D3BA] bg-white transition hover:-translate-y-1 hover:border-[#4CAF50] hover:shadow-[0_18px_45px_rgba(50,42,31,0.12)]"
+          ? "group flex h-full flex-col overflow-hidden rounded-3xl border border-[#E1D3BA] bg-white transition hover:-translate-y-1 hover:border-forest hover:shadow-[0_18px_45px_rgba(50,42,31,0.12)]"
           : baseCardClass;
 
         return card.href ? (

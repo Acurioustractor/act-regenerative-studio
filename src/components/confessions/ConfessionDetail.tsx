@@ -10,7 +10,7 @@ import { Waveform } from './Waveform';
 export function ConfessionDetail({ confession }: { confession: Confession | null }) {
   if (!confession) {
     return (
-      <p className="text-center font-[var(--font-sans)] text-[11px] uppercase tracking-[0.3em] text-[#7C7060]">
+      <p className="text-center font-[var(--font-sans)] text-[11px] uppercase tracking-[0.3em] text-sand-lift">
         Click a light to patch through to a voice
       </p>
     );

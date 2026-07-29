@@ -84,7 +84,7 @@ export default async function ArtCommissionsPage() {
             <Link
               key={work.slug}
               href={work.href}
-              className="group overflow-hidden rounded-3xl border border-[#E1D3BA] bg-white/80 transition hover:-translate-y-1 hover:border-[#4CAF50] hover:shadow-[0_18px_45px_rgba(50,42,31,0.1)]"
+              className="group overflow-hidden rounded-3xl border border-[#E1D3BA] bg-white/80 transition hover:-translate-y-1 hover:border-forest hover:shadow-[0_18px_45px_rgba(50,42,31,0.1)]"
             >
               {work.previewMedia?.kind === "image" ? (
                 <img
@@ -152,7 +152,7 @@ export default async function ArtCommissionsPage() {
       <div className="flex justify-center">
         <Link
           href="/contact?type=commission-cultural-work&source=art-commissions&context=works-commission"
-          className="inline-flex rounded-full bg-[#4CAF50] px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-[#3D9143]"
+          className="inline-flex rounded-full bg-forest px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-forest-deep"
         >
           Start a commission enquiry
         </Link>

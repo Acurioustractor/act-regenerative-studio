@@ -19,6 +19,41 @@
   --site-shadow-hover: 0 8px 40px rgba(26, 26, 26, 0.12);
   --site-radius: 8px;
 
+  /* --- Canonical tokens, locked to what the homepage actually renders. ---
+     The homepage is the reference implementation of Bold Documentary: sharp
+     corners, no shadows, hairline rules at graded alpha. Mirrored into
+     tailwind.config.ts so these are reachable as utilities (bg-sage,
+     text-clay-text, border-rule) instead of arbitrary [#hex] values. */
+  --site-green-deep: #24472F; /* pressed / hover state for forest-green actions */
+  --site-sage: #E8EDE5;       /* section band behind "Choose a way into the work" */
+  --site-clay-light: #D6A17D; /* closing CTA band */
+
+  /* Contrast-adjusted clay for small uppercase eyebrow labels. Raw --site-clay
+     is 2.95:1 on bg and 2.60:1 on sage, both failing WCAG AA for body text.
+     This passes on bg (5.33), sage (4.69) and surface (4.77). Use --site-clay
+     only for rules, borders and large decorative type. */
+  --site-clay-text: #945A32;
+
+  /* --site-muted (#6B6B6B) passes on bg at 5.10 but not comfortably on the
+     sage and surface bands. Use this where a muted tone sits on either. */
+  --site-muted-deep: #5F625E;
+
+  /* Light-on-dark accents. The dark sections invert the problem: --site-green
+     is only 2.11:1 on --site-dark and --site-clay-text only 4.04:1, so neither
+     may be used for text there. Raw --site-clay is fine on dark (5.42:1); the
+     tokens below cover the cases it does not.
+
+     Rule of thumb: clay-text and forest on light, clay and forest-lift on dark. */
+  --site-forest-lift: #8FB88A;  /* green accent on dark, 7.48:1 */
+  --site-muted-lift: #9A9A9A;   /* muted text on dark, 6.39:1 on #1A1612 */
+  --site-sand-lift: #A99B86;    /* warm muted on the Confessions darks, 6.57:1+ */
+  --site-sage-deep: #55744F;    /* sage-green label on near-white, 5.08:1 */
+
+  /* Hairline rules, the homepage's only divider treatment. */
+  --site-rule: rgba(26, 31, 26, 0.14);
+  --site-rule-strong: rgba(26, 31, 26, 0.35);
+  --site-rule-invert: rgba(250, 250, 247, 0.18);
+
   /* Warm Editorial palette, meta, legal, directory pages. See DESIGN.md. */
   --we-olive: #2F3E2E;        /* headings, dual-entity accents */
   --we-olive-deep: #3A4A3D;   /* contrast-adjusted olive for text-on-white */

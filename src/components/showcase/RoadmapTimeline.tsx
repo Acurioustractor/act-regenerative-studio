@@ -84,7 +84,7 @@ const ROADMAP: Milestone[] = [
 ];
 
 const statusColors = {
-  completed: 'bg-[#4CAF50]',
+  completed: 'bg-forest',
   'in-progress': 'bg-yellow-500',
   planned: 'bg-blue-500',
 };

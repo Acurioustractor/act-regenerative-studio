@@ -108,7 +108,7 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
         <button
           type="button"
           onClick={handleSignOut}
-          className="mt-6 rounded-full border border-[#4CAF50] px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)]"
+          className="mt-6 rounded-full border border-forest px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)]"
         >
           Sign out
         </button>
@@ -135,14 +135,14 @@ export default function AdminShell({ children }: { children: React.ReactNode }) 
         <div className="flex flex-wrap items-center gap-3">
           <Link
             href="/"
-            className="rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)]"
+            className="rounded-full border border-forest px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)]"
           >
             View site
           </Link>
           <button
             type="button"
             onClick={handleSignOut}
-            className="rounded-full bg-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white"
+            className="rounded-full bg-forest px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white"
           >
             Sign out
           </button>

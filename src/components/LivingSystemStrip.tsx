@@ -85,7 +85,7 @@ export default function LivingSystemStrip({
             {wiki && WIKI_PUBLIC ? (
               <Link
                 href={wiki.href}
-                className="rounded-full bg-[#4CAF50] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#3E9845]"
+                className="rounded-full bg-forest px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#3E9845]"
               >
                 {wiki.label || "Open wiki memory"}
               </Link>
@@ -95,7 +95,7 @@ export default function LivingSystemStrip({
                 href={live.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-[#4CAF50] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:bg-[#E5F4E4]"
+                className="rounded-full border border-forest px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:bg-forest-soft"
               >
                 Open live story layer
               </a>

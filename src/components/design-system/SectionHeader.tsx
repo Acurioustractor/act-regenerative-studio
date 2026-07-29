@@ -23,7 +23,7 @@ export function SectionHeader({
   const ledeColor = onDark ? "text-[#FAFAF7]/60" : "text-[var(--site-muted)]";
   const eyebrowTone =
     eyebrowColor === "clay"
-      ? "text-[var(--site-clay)]"
+      ? "text-clay-text"
       : onDark
         ? "text-[#FAFAF7]/60"
         : "text-[var(--site-muted)]";

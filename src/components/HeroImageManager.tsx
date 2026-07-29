@@ -98,7 +98,7 @@ export default function HeroImageManager({
     return (
       <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6">
         <div className="flex items-center justify-center py-8">
-          <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#4CAF50]"></div>
+          <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-forest"></div>
           <p className="ml-3 text-[var(--we-warm-brown)]">Loading hero image...</p>
         </div>
       </div>
@@ -162,7 +162,7 @@ export default function HeroImageManager({
         <div className="mt-4 flex gap-3">
           <button
             onClick={() => setShowPicker(!showPicker)}
-            className="rounded-full bg-[#4CAF50] px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white hover:bg-[#45a049] transition-colors"
+            className="rounded-full bg-forest px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white hover:bg-[#45a049] transition-colors"
           >
             {showPicker ? 'Hide Picker' : currentHero ? 'Change Hero Image' : 'Select Hero Image'}
           </button>
@@ -212,19 +212,19 @@ export default function HeroImageManager({
         </h4>
         <ul className="space-y-2 text-sm text-[var(--we-brown)]">
           <li className="flex items-start">
-            <span className="text-[#4CAF50] mr-2">→</span>
+            <span className="text-forest mr-2">→</span>
             The hero image appears at the top of the project page
           </li>
           <li className="flex items-start">
-            <span className="text-[#4CAF50] mr-2">→</span>
+            <span className="text-forest mr-2">→</span>
             You can select any image from the media library
           </li>
           <li className="flex items-start">
-            <span className="text-[#4CAF50] mr-2">→</span>
+            <span className="text-forest mr-2">→</span>
             Changes take effect immediately
           </li>
           <li className="flex items-start">
-            <span className="text-[#4CAF50] mr-2">→</span>
+            <span className="text-forest mr-2">→</span>
             Recommended aspect ratio: 21:9 (wide format)
           </li>
         </ul>

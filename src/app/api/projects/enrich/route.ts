@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { projects } from '@/data/projects';
 import { enrichProject, batchEnrichProjects } from '@/lib/project-enrichment';
+import { requireInternal } from "@/lib/auth/require-internal";
 
 export const runtime = 'nodejs';
 export const dynamic = 'force-dynamic';
@@ -79,6 +80,8 @@ export async function GET(request: NextRequest) {
  * Enrich specific projects by slugs
  */
 export async function POST(request: NextRequest) {
+  const denied = requireInternal(request);
+  if (denied) return denied;
   try {
     const body = await request.json();
     const { slugs, options } = body;

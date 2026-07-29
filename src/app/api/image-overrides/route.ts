@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 import { readFile, writeFile } from "fs/promises";
 import { join } from "path";
+import { requireInternal } from "@/lib/auth/require-internal";
 
 export const dynamic = "force-dynamic";
 
@@ -30,6 +31,8 @@ export async function GET() {
 }
 
 export async function POST(request: NextRequest) {
+  const denied = requireInternal(request);
+  if (denied) return denied;
   const { slot, url } = await request.json();
   if (!slot || !url) {
     return NextResponse.json({ error: "slot and url required" }, { status: 400 });

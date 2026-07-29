@@ -2,6 +2,17 @@
   "extends": ["next/core-web-vitals"],
   "rules": {
     "react/no-unescaped-entities": "off",
-    "@typescript-eslint/no-explicit-any": "off"
+    "@typescript-eslint/no-explicit-any": "off",
+    "no-restricted-syntax": [
+      "error",
+      {
+        "selector": "Literal[value=/#(4[cC][aA][fF]50|3[dD]9143|2[eE]7[dD]32)/]",
+        "message": "Material Design green is not an ACT colour. Use the forest tokens: text-forest, bg-forest, border-forest, bg-forest-deep, bg-forest-soft. See tailwind.config.ts."
+      },
+      {
+        "selector": "TemplateElement[value.raw=/#(4[cC][aA][fF]50|3[dD]9143|2[eE]7[dD]32)/]",
+        "message": "Material Design green is not an ACT colour. Use the forest tokens: text-forest, bg-forest, border-forest, bg-forest-deep, bg-forest-soft. See tailwind.config.ts."
+      }
+    ]
   }
 }

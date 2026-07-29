@@ -80,7 +80,7 @@ export function SisterProjectsSection({
               href={`/projects/${project.slug}`}
               className="group block h-full rounded-[20px] border border-[var(--we-sand)] bg-white p-5 transition hover:border-[#7A9B76] hover:shadow-lg"
             >
-              <h3 className="font-[var(--font-display)] text-lg font-semibold text-[var(--we-olive)] group-hover:text-[#7A9B76]">
+              <h3 className="font-[var(--font-display)] text-lg font-semibold text-[var(--we-olive)] group-hover:text-forest-sage">
                 {project.name}
               </h3>
               {publicExcerpt(project.excerpt, project.name) ? (

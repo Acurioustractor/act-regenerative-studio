@@ -224,14 +224,14 @@ export default async function StudioPage() {
                               <Link
                                 key={projectLink.key}
                                 href={projectLink.href}
-                                className="rounded-full bg-[#EDF6EC] px-3 py-1 text-xs font-medium text-[var(--we-olive)] transition hover:bg-[#DCEED8]"
+                                className="rounded-full bg-forest-soft px-3 py-1 text-xs font-medium text-[var(--we-olive)] transition hover:bg-[#DCEED8]"
                               >
                                 {projectLink.label}
                               </Link>
                             ) : (
                               <span
                                 key={projectLink.key}
-                                className="rounded-full bg-[#EDF6EC] px-3 py-1 text-xs font-medium text-[var(--we-olive)]"
+                                className="rounded-full bg-forest-soft px-3 py-1 text-xs font-medium text-[var(--we-olive)]"
                               >
                                 {projectLink.label}
                               </span>
@@ -283,7 +283,7 @@ export default async function StudioPage() {
                         href={action.href}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm font-semibold text-[#4CAF50] hover:gap-3 transition"
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-forest hover:gap-3 transition"
                       >
                         <span>{action.label}</span>
                         <span aria-hidden="true">&rarr;</span>
@@ -291,7 +291,7 @@ export default async function StudioPage() {
                     ) : (
                       <Link
                         href={action.href}
-                        className="inline-flex items-center gap-2 text-sm font-semibold text-[#4CAF50] hover:gap-3 transition"
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-forest hover:gap-3 transition"
                       >
                         <span>{action.label}</span>
                         <span aria-hidden="true">&rarr;</span>
@@ -330,13 +330,13 @@ export default async function StudioPage() {
             <Link
               key={project.slug}
               href={project.href}
-              className="group rounded-2xl border border-[#D8C7A5] bg-gradient-to-br from-white/80 via-[#F8F2E8] to-[#E6D6BA] p-6 transition hover:-translate-y-1 hover:border-[#4CAF50] hover:shadow-lg"
+              className="group rounded-2xl border border-[#D8C7A5] bg-gradient-to-br from-white/80 via-[#F8F2E8] to-[#E6D6BA] p-6 transition hover:-translate-y-1 hover:border-forest hover:shadow-lg"
             >
               <p className="text-[11px] uppercase tracking-[0.2em] text-[var(--we-warm-brown)]">
                 {project.eyebrow}
               </p>
               <h3 className="mt-2 font-semibold text-[var(--we-olive)]">{project.title}</h3>
-              <p className="mt-1 text-sm font-medium text-[#4CAF50]">{project.tagline}</p>
+              <p className="mt-1 text-sm font-medium text-forest">{project.tagline}</p>
               <p className="mt-3 text-sm leading-6 text-[var(--we-brown)]">
                 {project.description}
               </p>
@@ -347,7 +347,7 @@ export default async function StudioPage() {
                 project.liveSignals.mediaCount > 0) ? (
                 <div className="mt-4 flex flex-wrap gap-2">
                   {project.liveSignals.serviceConnectionCount > 0 ? (
-                    <span className="rounded-full bg-[#EDF6EC] px-2.5 py-1 text-[10px] font-medium text-[var(--we-olive)]">
+                    <span className="rounded-full bg-forest-soft px-2.5 py-1 text-[10px] font-medium text-[var(--we-olive)]">
                       {project.liveSignals.serviceConnectionCount} service
                       {project.liveSignals.serviceConnectionCount === 1 ? "" : "s"}
                     </span>
@@ -370,7 +370,7 @@ export default async function StudioPage() {
                   ) : null}
                 </div>
               ) : null}
-              <span className="mt-3 inline-flex items-center gap-2 text-xs font-semibold text-[#4CAF50] transition group-hover:gap-3">
+              <span className="mt-3 inline-flex items-center gap-2 text-xs font-semibold text-forest transition group-hover:gap-3">
                 <span>Explore</span>
                 <span aria-hidden="true">&rarr;</span>
               </span>
@@ -387,7 +387,7 @@ export default async function StudioPage() {
         />
         <div className="grid gap-8 lg:grid-cols-2">
           <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-4">
-            <div className="inline-block rounded-full bg-[#E5F4E4] px-4 py-1 text-xs font-medium text-[var(--we-olive)]">
+            <div className="inline-block rounded-full bg-forest-soft px-4 py-1 text-xs font-medium text-[var(--we-olive)]">
               Not-for-profit
             </div>
             <h3 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
@@ -426,25 +426,25 @@ export default async function StudioPage() {
         />
         <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-4">
           <div className="text-center space-y-2">
-            <p className="text-4xl font-bold text-[#4CAF50]">3+</p>
+            <p className="text-4xl font-bold text-forest">3+</p>
             <p className="text-sm text-[var(--we-brown)]">
               Communities independently replicating ACT models
             </p>
           </div>
           <div className="text-center space-y-2">
-            <p className="text-4xl font-bold text-[#4CAF50]">117</p>
+            <p className="text-4xl font-bold text-forest">117</p>
             <p className="text-sm text-[var(--we-brown)]">
               Hectares of land under conservation
             </p>
           </div>
           <div className="text-center space-y-2">
-            <p className="text-4xl font-bold text-[#4CAF50]">50+</p>
+            <p className="text-4xl font-bold text-forest">50+</p>
             <p className="text-sm text-[var(--we-brown)]">
               Jobs created in marginalised communities
             </p>
           </div>
           <div className="text-center space-y-2">
-            <p className="text-4xl font-bold text-[#4CAF50]">1000+</p>
+            <p className="text-4xl font-bold text-forest">1000+</p>
             <p className="text-sm text-[var(--we-brown)]">
               Stories protected through Empathy Ledger
             </p>

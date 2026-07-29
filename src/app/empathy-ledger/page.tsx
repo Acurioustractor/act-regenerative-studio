@@ -120,7 +120,7 @@ export default async function EmpathyLedgerPage() {
               ].map((item) => (
                 <HairlineCell key={item.type}>
                   <p className="font-[var(--font-display)] text-lg font-semibold text-[var(--site-ink)]">{item.type}</p>
-                  <p className="mt-3 font-[var(--font-body)] text-[14px] italic leading-[1.6] text-[var(--site-clay)]">"{item.question}"</p>
+                  <p className="mt-3 font-[var(--font-body)] text-[14px] italic leading-[1.6] text-clay-text">"{item.question}"</p>
                   <p className="mt-3 font-[var(--font-body)] text-[13px] leading-[1.7] text-[var(--site-muted)]">{item.detail}</p>
                 </HairlineCell>
               ))}
@@ -173,7 +173,7 @@ export default async function EmpathyLedgerPage() {
             />
             <div className="mt-16 grid gap-10 md:grid-cols-2">
               <div className="rounded-[var(--site-radius)] border border-[var(--site-line)] p-10">
-                <p className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--site-clay)]">Palm Island</p>
+                <p className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.2em] text-clay-text">Palm Island</p>
                 <h3 className="mt-3 font-[var(--font-display)] text-2xl font-semibold text-[var(--site-ink)]">PICC</h3>
                 <p className="mt-4 font-[var(--font-body)] text-[15px] leading-[1.8] text-[var(--site-muted)]">
                   Palm Island Community Company runs community-controlled service
@@ -185,7 +185,7 @@ export default async function EmpathyLedgerPage() {
                 </p>
               </div>
               <div className="rounded-[var(--site-radius)] border border-[var(--site-line)] p-10">
-                <p className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--site-clay)]">Alice Springs</p>
+                <p className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.2em] text-clay-text">Alice Springs</p>
                 <h3 className="mt-3 font-[var(--font-display)] text-2xl font-semibold text-[var(--site-ink)]">Oonchiumpa</h3>
                 <p className="mt-4 font-[var(--font-body)] text-[15px] leading-[1.8] text-[var(--site-muted)]">
                   Community-led youth, culture, and justice storytelling on
@@ -240,7 +240,7 @@ export default async function EmpathyLedgerPage() {
                 { platform: "The Harvest", adds: "Seasonal community stories" },
               ].map((item) => (
                 <div key={item.platform} className="rounded-[var(--site-radius)] border border-[var(--site-line)] p-6">
-                  <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--site-clay)]">{item.platform}</p>
+                  <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.1em] text-clay-text">{item.platform}</p>
                   <p className="mt-2 font-[var(--font-body)] text-[14px] leading-[1.6] text-[var(--site-muted)]">{item.adds}</p>
                 </div>
               ))}

@@ -7,6 +7,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getSupabaseServerClient } from '@/lib/supabase/server';
 import { createMediaItem } from '@/lib/media/client';
+import { requireInternal } from "@/lib/auth/require-internal";
 
 const MAX_FILE_SIZE = 50 * 1024 * 1024; // 50MB
 const ALLOWED_TYPES = {
@@ -17,6 +18,8 @@ const ALLOWED_TYPES = {
 };
 
 export async function POST(request: NextRequest) {
+  const denied = requireInternal(request);
+  if (denied) return denied;
   try {
     const formData = await request.formData();
     const file = formData.get('file') as File;

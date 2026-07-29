@@ -1,10 +1,11 @@
 {
-  "generatedAt": "2026-05-27T06:00:28.268Z",
+  "generatedAt": "2026-07-23T07:22:05.725Z",
   "sourceConfigPath": "/Users/benknight/Code/act-global-infrastructure/config/project-codes.json",
-  "projectCount": 75,
+  "projectCount": 74,
   "unresolvedWikiProjectSlugs": [
     "annual-field-service",
     "artist-residency",
+    "black-cockatoo-valley",
     "community-capital-at-bcv",
     "community-capital-bowral-2025",
     "corporate-innovation-retreats",
@@ -513,62 +514,6 @@
         "bimberi"
       ],
       "xeroTracking": "ACT-BM — Bimberi",
-      "productionUrl": null,
-      "syndicationSlug": null
-    },
-    {
-      "code": "ACT-BV",
-      "name": "Black Cockatoo Valley",
-      "status": "active",
-      "tier": "satellite",
-      "category": "regenerative",
-      "canonicalSlug": "black-cockatoo-valley",
-      "wikiSlug": "black-cockatoo-valley",
-      "staticSlug": "black-cockatoo-valley",
-      "aliases": [
-        "black-cockatoo-valley",
-        "ACT-BV",
-        "Black Cockatoo Valley",
-        "act-farm",
-        "bcv",
-        "the-farm",
-        "ACT-BCV",
-        "black-cockatoo",
-        "BCV Reforest",
-        "BCV: Regenerative Conservation",
-        "BCV",
-        "ACT-BV — Black Cockatoo Valley"
-      ],
-      "queryAliases": [
-        "black-cockatoo-valley",
-        "ACT-BV",
-        "ACT-BCV",
-        "act-farm"
-      ],
-      "lookupKeys": [
-        "black-cockatoo-valley",
-        "act-bv",
-        "act-farm",
-        "bcv",
-        "the-farm",
-        "act-bcv",
-        "black-cockatoo",
-        "bcv-reforest",
-        "bcv-regenerative-conservation",
-        "act-bv-black-cockatoo-valley"
-      ],
-      "legacyCodes": [
-        "ACT-BCV"
-      ],
-      "notionPages": [
-        "BCV Reforest",
-        "BCV: Regenerative Conservation"
-      ],
-      "ghlTags": [
-        "bcv",
-        "black-cockatoo"
-      ],
-      "xeroTracking": "ACT-BV — Black Cockatoo Valley",
       "productionUrl": null,
       "syndicationSlug": null
     },
@@ -2790,37 +2735,62 @@
       "category": "regenerative",
       "canonicalSlug": "act-farm",
       "wikiSlug": "act-farm",
-      "staticSlug": null,
+      "staticSlug": "black-cockatoo-valley",
       "aliases": [
         "act-farm",
+        "black-cockatoo-valley",
         "ACT-FM",
         "The Farm",
         "farm",
         "the-farm",
+        "bcv",
+        "ACT-BV",
+        "ACT-BCV",
+        "black-cockatoo",
         "ACT Farm",
+        "BCV Reforest",
+        "BCV: Regenerative Conservation",
+        "BCV",
+        "ACT-BV — Black Cockatoo Valley",
         "ACT-FM — The Farm"
       ],
       "queryAliases": [
         "act-farm",
+        "black-cockatoo-valley",
         "ACT-FM",
-        "farm",
-        "the-farm"
+        "ACT-BV",
+        "ACT-BCV"
       ],
       "lookupKeys": [
         "act-farm",
+        "black-cockatoo-valley",
         "act-fm",
         "the-farm",
         "farm",
+        "bcv",
+        "act-bv",
+        "act-bcv",
+        "black-cockatoo",
+        "bcv-reforest",
+        "bcv-regenerative-conservation",
+        "act-bv-black-cockatoo-valley",
         "act-fm-the-farm"
       ],
-      "legacyCodes": [],
+      "legacyCodes": [
+        "ACT-BV",
+        "ACT-BCV"
+      ],
       "notionPages": [
         "The Farm",
-        "ACT Farm"
+        "ACT Farm",
+        "BCV Reforest",
+        "BCV: Regenerative Conservation"
       ],
       "ghlTags": [
         "farm",
-        "the-farm"
+        "the-farm",
+        "bcv",
+        "black-cockatoo"
       ],
       "xeroTracking": "ACT-FM — The Farm",
       "productionUrl": "https://act-farm.vercel.app",

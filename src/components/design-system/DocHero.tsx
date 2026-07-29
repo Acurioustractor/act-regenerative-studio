@@ -95,7 +95,7 @@ export function DocHero({
       <div className="relative z-10 mx-auto w-full max-w-[1200px] px-8 pb-24 pt-40 md:pb-32">
         {eyebrow ? (
           <p
-            className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-[var(--site-clay)]"
+            className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-clay-text"
             style={{ textShadow: "0 1px 12px rgba(0,0,0,0.6)" }}
           >
             {eyebrow}

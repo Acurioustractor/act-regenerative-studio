@@ -18,7 +18,7 @@ const LEVEL_MAP: Record<SignalLevel, number> = {
     'None': 0
 };
 
-export default function SignalBars({ label, level, color = '#4CAF50', showLabel = true }: SignalBarsProps) {
+export default function SignalBars({ label, level, color = '#2D5A3D', showLabel = true }: SignalBarsProps) {
     const strength = LEVEL_MAP[level] || 0;
     const maxFunction = 4;
 

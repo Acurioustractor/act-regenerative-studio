@@ -32,7 +32,7 @@ function VignetteCard({ vignette, theme }: { vignette: ProjectVignette; theme: P
       {/* Header with voice owner and role */}
       <div className="mb-4 flex items-start justify-between">
         <div>
-          <h4 className="font-[var(--font-display)] text-lg font-semibold text-[var(--we-olive)] group-hover:text-[#7A9B76]">
+          <h4 className="font-[var(--font-display)] text-lg font-semibold text-[var(--we-olive)] group-hover:text-forest-sage">
             {frontmatter.voice_owner}
           </h4>
           <p className="text-sm text-[var(--we-brown-deep)]">{frontmatter.voice_role}</p>
@@ -60,7 +60,7 @@ function VignetteCard({ vignette, theme }: { vignette: ProjectVignette; theme: P
       {/* Footer with ALMA badge and metadata */}
       <div className="flex items-center justify-between pt-4 border-t border-[var(--we-sand)]/50">
         {almaBadge ? (
-          <span className="flex items-center gap-1.5 text-xs text-[#7A9B76]">
+          <span className="flex items-center gap-1.5 text-xs text-forest-sage">
             <svg
               className="h-3.5 w-3.5"
               fill="currentColor"

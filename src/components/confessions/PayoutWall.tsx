@@ -535,7 +535,7 @@ export function PayoutWall({ minimal = false, message, messageHint }: { minimal?
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search any foundation by name…"
-              className="w-full rounded-lg border border-[#3A2C18] bg-[#1A130B] px-3.5 py-2.5 font-[var(--font-body)] text-sm text-[#F3EBDD] placeholder:text-[#7C7060] focus:border-[#CFA16B] focus:outline-none"
+              className="w-full rounded-lg border border-[#3A2C18] bg-[#1A130B] px-3.5 py-2.5 font-[var(--font-body)] text-sm text-[#F3EBDD] placeholder:text-sand-lift focus:border-[#CFA16B] focus:outline-none"
             />
           </label>
           <div className="flex items-center gap-4 text-[12px]">
@@ -548,7 +548,7 @@ export function PayoutWall({ minimal = false, message, messageHint }: { minimal?
             >
               Open doors only
             </button>
-            <span className="font-mono text-[11px] text-[#7C7060]">
+            <span className="font-mono text-[11px] text-sand-lift">
               {data ? `${filtered.length.toLocaleString()} of ${entries.length.toLocaleString()}` : '…'}
             </span>
           </div>
@@ -570,11 +570,11 @@ export function PayoutWall({ minimal = false, message, messageHint }: { minimal?
             </li>
           ))}
           {data && filtered.length === 0 && (
-            <li className="px-4 py-6 text-center font-[var(--font-body)] text-sm text-[#7C7060]">No foundation matches “{query}”.</li>
+            <li className="px-4 py-6 text-center font-[var(--font-body)] text-sm text-sand-lift">No foundation matches “{query}”.</li>
           )}
         </ul>
         {filtered.length > CAP && (
-          <p className="mt-2 text-center font-[var(--font-sans)] text-[11px] uppercase tracking-[0.16em] text-[#7C7060]">
+          <p className="mt-2 text-center font-[var(--font-sans)] text-[11px] uppercase tracking-[0.16em] text-sand-lift">
             Showing the top {CAP} by giving. Search a name to narrow it down.
           </p>
         )}

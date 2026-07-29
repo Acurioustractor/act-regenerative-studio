@@ -110,7 +110,7 @@ export default function ImpactPage() {
                         theme: init.status === 'active' ? 'Active' : 'Concept',
                         meta: (
                             <div className="mt-4 flex gap-6">
-                                <SignalBars label="Evidence" level={init.evidence_strength} color="#4CAF50" />
+                                <SignalBars label="Evidence" level={init.evidence_strength} color="#2D5A3D" />
                                 <SignalBars label="Authority" level={init.community_authority} color="#D87D4A" />
                             </div>
                         )

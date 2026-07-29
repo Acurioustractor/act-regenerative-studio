@@ -109,7 +109,7 @@ export default async function WikiPageViewer({
       <section className="mx-auto max-w-5xl px-4 py-12">
         <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_260px]">
           <article className="rounded-[32px] border border-[var(--we-sand)] bg-white/90 px-6 py-8 shadow-sm md:px-10 md:py-10">
-            <div className="prose prose-lg max-w-none prose-headings:font-[var(--font-display)] prose-headings:text-[var(--we-olive)] prose-p:text-[var(--we-brown)] prose-li:text-[var(--we-brown)] prose-strong:text-[var(--we-olive)] prose-a:text-[#4CAF50]">
+            <div className="prose prose-lg max-w-none prose-headings:font-[var(--font-display)] prose-headings:text-[var(--we-olive)] prose-p:text-[var(--we-brown)] prose-li:text-[var(--we-brown)] prose-strong:text-[var(--we-olive)] prose-a:text-forest">
               <ReactMarkdown>{renderedContent}</ReactMarkdown>
             </div>
           </article>
@@ -117,7 +117,7 @@ export default async function WikiPageViewer({
           <aside className="space-y-5">
             <div className="rounded-[28px] border border-[var(--we-sand)] bg-white/90 p-6 shadow-sm">
               <div className="flex items-center gap-3">
-                <BookOpen className="h-5 w-5 text-[#4CAF50]" />
+                <BookOpen className="h-5 w-5 text-forest" />
                 <h2 className="font-[var(--font-display)] text-xl font-semibold text-[var(--we-olive)]">
                   About this page
                 </h2>
@@ -144,7 +144,7 @@ export default async function WikiPageViewer({
                 </p>
                 <Link
                   href={nextMove.href}
-                  className="mt-5 inline-flex rounded-full bg-[#4CAF50] px-4 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#3E9845]"
+                  className="mt-5 inline-flex rounded-full bg-forest px-4 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#3E9845]"
                 >
                   Open the project
                 </Link>
@@ -163,7 +163,7 @@ export default async function WikiPageViewer({
                 </p>
                 <Link
                   href="/projects"
-                  className="mt-5 inline-flex rounded-full bg-[#4CAF50] px-4 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#3E9845]"
+                  className="mt-5 inline-flex rounded-full bg-forest px-4 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#3E9845]"
                 >
                   Explore projects
                 </Link>

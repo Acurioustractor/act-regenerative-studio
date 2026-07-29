@@ -168,7 +168,7 @@ export function ImpactDashboard({
         >
           <div className="mx-auto max-w-3xl text-center">
             <svg
-              className="mx-auto mb-6 h-8 w-8 text-[#7A9B76] opacity-60"
+              className="mx-auto mb-6 h-8 w-8 text-forest-sage opacity-60"
               fill="currentColor"
               viewBox="0 0 24 24"
             >

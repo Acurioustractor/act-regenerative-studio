@@ -71,7 +71,7 @@ export function FoundationContestForm() {
   };
 
   const input =
-    'w-full rounded-lg border border-[#3A2C18] bg-[#1A130B] px-3.5 py-2.5 font-[var(--font-body)] text-sm text-[#F3EBDD] placeholder:text-[#7C7060] focus:border-[#CFA16B] focus:outline-none disabled:opacity-50';
+    'w-full rounded-lg border border-[#3A2C18] bg-[#1A130B] px-3.5 py-2.5 font-[var(--font-body)] text-sm text-[#F3EBDD] placeholder:text-sand-lift focus:border-[#CFA16B] focus:outline-none disabled:opacity-50';
   const label = 'mb-1.5 block font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.18em] text-[#9C8E78]';
   const loading = status === 'loading';
 

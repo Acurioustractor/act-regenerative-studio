@@ -309,7 +309,7 @@ export function EcosystemConstellation({ nodes }: { nodes: ConstellationNode[] }
 
             <Link
               href={selected.href}
-              className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#4CAF50] px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.16em] text-white transition hover:bg-[#3D9143]"
+              className="mt-6 inline-flex items-center gap-2 rounded-full bg-forest px-5 py-2.5 text-sm font-semibold uppercase tracking-[0.16em] text-white transition hover:bg-forest-deep"
             >
               Open {selected.title}
               <span aria-hidden="true">&rarr;</span>

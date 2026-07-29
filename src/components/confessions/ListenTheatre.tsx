@@ -194,7 +194,7 @@ export function ListenTheatre({ confessions }: { confessions: Confession[] }) {
               <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[#CFA16B]">
                 The messages
               </p>
-              <span className="font-mono text-[11px] text-[#7C7060]">{order.length}</span>
+              <span className="font-mono text-[11px] text-sand-lift">{order.length}</span>
             </div>
             <ul className="flex-1 overflow-y-auto px-2.5 pb-4">
               {order.map((c, i) => {
@@ -220,7 +220,7 @@ export function ListenTheatre({ confessions }: { confessions: Confession[] }) {
                           <span className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.18em]" style={{ color: `rgb(${t.rgb})` }}>
                             {t.label}
                           </span>
-                          <span className="font-mono text-[10px] text-[#7C7060]">
+                          <span className="font-mono text-[10px] text-sand-lift">
                             {cleared ? `▸ ${formatDuration(c.durationSeconds)}` : '✎ words'}
                           </span>
                         </span>
@@ -238,7 +238,7 @@ export function ListenTheatre({ confessions }: { confessions: Confession[] }) {
           {/* MAIN — now playing + transport */}
           <div className="relative z-10 flex min-h-0 flex-1 flex-col">
             <div className="flex items-center justify-between px-6 pt-5">
-              <p className="font-[var(--font-sans)] text-[11px] uppercase tracking-[0.3em] text-[#7C7060]">
+              <p className="font-[var(--font-sans)] text-[11px] uppercase tracking-[0.3em] text-sand-lift">
                 Confessions to philanthropy
               </p>
               <button
@@ -256,7 +256,7 @@ export function ListenTheatre({ confessions }: { confessions: Confession[] }) {
                 <div className="mx-auto max-w-2xl">
                   <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.32em]" style={{ color: `rgb(${themeMeta[active.theme].rgb})` }}>
                     {activeCleared ? (isPlaying ? 'Now playing' : 'Paused') : 'Shared as words'}
-                    <span className="mx-2 text-[#7C7060]">·</span>
+                    <span className="mx-2 text-sand-lift">·</span>
                     {themeMeta[active.theme].label}
                   </p>
                   {activeCleared && (
@@ -268,7 +268,7 @@ export function ListenTheatre({ confessions }: { confessions: Confession[] }) {
                     &ldquo;{active.text}&rdquo;
                   </p>
                   {active.consentNote && (
-                    <p className="mt-4 font-[var(--font-sans)] text-[10px] uppercase tracking-[0.2em] text-[#7C7060]">{active.consentNote}</p>
+                    <p className="mt-4 font-[var(--font-sans)] text-[10px] uppercase tracking-[0.2em] text-sand-lift">{active.consentNote}</p>
                   )}
                 </div>
               ) : (

@@ -115,7 +115,7 @@ export function ProjectShowcaseCard({ project }: { project: Project }) {
       muted: 'text-[#6b5a45]',
       softPill: 'bg-[#F5F1E8] text-[var(--we-brown)]',
       strongAction: 'bg-[var(--we-olive)] text-white hover:bg-[#263425]',
-      outlineAction: 'border-[#4CAF50] text-[var(--we-olive)] hover:bg-[#4CAF50]/10',
+      outlineAction: 'border-forest text-[var(--we-olive)] hover:bg-forest/10',
       status: 'bg-[var(--we-olive)] text-white',
     };
 

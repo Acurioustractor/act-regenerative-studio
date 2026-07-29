@@ -178,7 +178,7 @@ export default async function BlogPostPage({
       <section className="bg-[#FBF6EC] px-6 py-20 md:px-10 md:py-28">
         <article className="mx-auto max-w-[720px]">
           {content ? (
-            <div className="rich-text prose prose-lg max-w-none prose-headings:font-[var(--font-display)] prose-headings:text-[var(--we-olive)] prose-p:text-[17px] prose-p:leading-[1.8] prose-p:text-[var(--we-brown)] prose-a:text-[#4CAF50] prose-a:no-underline hover:prose-a:underline prose-strong:text-[var(--we-olive)] prose-blockquote:border-l-[3px] prose-blockquote:border-[#CFA16B] prose-blockquote:bg-[#F3EBDD]/50 prose-blockquote:py-1 prose-blockquote:italic prose-img:rounded-[20px]">
+            <div className="rich-text prose prose-lg max-w-none prose-headings:font-[var(--font-display)] prose-headings:text-[var(--we-olive)] prose-p:text-[17px] prose-p:leading-[1.8] prose-p:text-[var(--we-brown)] prose-a:text-forest prose-a:no-underline hover:prose-a:underline prose-strong:text-[var(--we-olive)] prose-blockquote:border-l-[3px] prose-blockquote:border-[#CFA16B] prose-blockquote:bg-[#F3EBDD]/50 prose-blockquote:py-1 prose-blockquote:italic prose-img:rounded-[20px]">
               {looksLikeHtml ? (
                 <div dangerouslySetInnerHTML={{ __html: content }} />
               ) : (
@@ -291,7 +291,7 @@ export default async function BlogPostPage({
                   <Link
                     key={projectSlug}
                     href={`/projects/${projectSlug}`}
-                    className="rounded-full border border-[var(--we-sand)] bg-white/80 px-4 py-2 font-[var(--font-sans)] text-[12px] text-[var(--we-olive)] transition hover:-translate-y-0.5 hover:border-[#4CAF50] hover:bg-white hover:shadow-sm"
+                    className="rounded-full border border-[var(--we-sand)] bg-white/80 px-4 py-2 font-[var(--font-sans)] text-[12px] text-[var(--we-olive)] transition hover:-translate-y-0.5 hover:border-forest hover:bg-white hover:shadow-sm"
                   >
                     {projectSlug
                       .replace(/-/g, " ")
@@ -364,7 +364,7 @@ export default async function BlogPostPage({
                 <Link
                   key={other.slug}
                   href={`/blog/${other.slug}`}
-                  className="group flex flex-col overflow-hidden rounded-[24px] border border-[var(--we-sand)] bg-white/80 transition-all hover:-translate-y-1 hover:border-[#4CAF50] hover:shadow-[0_20px_50px_-20px_rgba(47,62,46,0.18)]"
+                  className="group flex flex-col overflow-hidden rounded-[24px] border border-[var(--we-sand)] bg-white/80 transition-all hover:-translate-y-1 hover:border-forest hover:shadow-[0_20px_50px_-20px_rgba(47,62,46,0.18)]"
                 >
                   <div className="relative aspect-[16/10] overflow-hidden bg-[#F5F0E8]">
                     {other.featuredImageUrl ? (
@@ -387,7 +387,7 @@ export default async function BlogPostPage({
                     <p className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
                       {other.articleType || "Editorial"}
                     </p>
-                    <h3 className="font-[var(--font-display)] text-xl font-semibold leading-tight text-[var(--we-olive)] transition-colors group-hover:text-[#4CAF50]">
+                    <h3 className="font-[var(--font-display)] text-xl font-semibold leading-tight text-[var(--we-olive)] transition-colors group-hover:text-forest">
                       {other.title}
                     </h3>
                     {other.excerpt ? (
@@ -395,7 +395,7 @@ export default async function BlogPostPage({
                         {other.excerpt}
                       </p>
                     ) : null}
-                    <span className="mt-auto inline-flex items-center gap-2 pt-2 font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.22em] text-[#4CAF50] transition-all group-hover:gap-3">
+                    <span className="mt-auto inline-flex items-center gap-2 pt-2 font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.22em] text-forest transition-all group-hover:gap-3">
                       Read <span aria-hidden="true">&rarr;</span>
                     </span>
                   </div>

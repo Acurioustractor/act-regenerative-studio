@@ -1,6 +1,8 @@
 import assert from "node:assert/strict";
 import { createHmac } from "node:crypto";
-import test from "node:test";
+// Runner is vitest, so this file is collected by `npm test` alongside the API
+// contract tests. The node:assert assertions below work unchanged.
+import { test } from "vitest";
 
 import {
   EMPATHY_LEDGER_EDITORIAL_EVENTS,

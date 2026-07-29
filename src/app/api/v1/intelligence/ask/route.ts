@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { unifiedRAG } from '@/lib/ai-intelligence/unified-rag-service';
 import type { RAGQuery } from '@/lib/ai-intelligence/unified-rag-service';
+import { requireInternal } from "@/lib/auth/require-internal";
 
 /**
  * POST /api/v1/intelligence/ask
@@ -28,6 +29,8 @@ import type { RAGQuery } from '@/lib/ai-intelligence/unified-rag-service';
  * }
  */
 export async function POST(request: NextRequest) {
+  const denied = requireInternal(request);
+  if (denied) return denied;
   try {
     const body: RAGQuery = await request.json();
 

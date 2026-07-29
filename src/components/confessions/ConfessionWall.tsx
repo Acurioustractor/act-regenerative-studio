@@ -72,7 +72,7 @@ export function ConfessionWall({ confessions }: { confessions: Confession[] }) {
           </blockquote>
           <figcaption className="mt-5 flex items-center justify-between font-[var(--font-sans)] text-[11px] uppercase tracking-[0.18em]">
             <span className="text-[#CFA16B]">{c.theme}</span>
-            <span className="inline-flex items-center gap-1.5 text-[#7C7060]">
+            <span className="inline-flex items-center gap-1.5 text-sand-lift">
               <span aria-hidden="true">▸</span> {formatDuration(c.durationSeconds)}
             </span>
           </figcaption>

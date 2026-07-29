@@ -430,7 +430,7 @@ export default async function ArtWorkPage({
                           />
                         </div>
                       ) : (
-                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-[#E5F4E4] text-xs font-semibold text-[#2F5233]">
+                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-forest-soft text-xs font-semibold text-[#2F5233]">
                           {(storyteller.display_name || '?')[0]}
                         </div>
                       )}
@@ -488,7 +488,7 @@ export default async function ArtWorkPage({
       <div className="flex justify-center">
         <Link
           href="/art"
-          className="rounded-full border border-[var(--we-sand)] px-8 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:border-[#245c43] hover:bg-[#E5F4E4]"
+          className="rounded-full border border-[var(--we-sand)] px-8 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:border-[#245c43] hover:bg-forest-soft"
         >
           Back to art portfolio
         </Link>

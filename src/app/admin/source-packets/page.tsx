@@ -298,13 +298,13 @@ export default async function SourcePacketsPage() {
                   <div className="flex flex-wrap gap-3">
                     <Link
                       href={`/projects/${slug}`}
-                      className="rounded-full bg-[#4CAF50] px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#3E9845]"
+                      className="rounded-full bg-forest px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#3E9845]"
                     >
                       Open project page
                     </Link>
                     <Link
                       href="/admin/source-bridges"
-                      className="rounded-full border border-[#4CAF50] px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:bg-[#E5F4E4]"
+                      className="rounded-full border border-forest px-5 py-3 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:bg-forest-soft"
                     >
                       Open bridge layer
                     </Link>

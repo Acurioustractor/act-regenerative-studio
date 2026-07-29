@@ -157,7 +157,7 @@ function BlockView({
           <div className="mx-auto grid max-w-[1120px] gap-10 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
             <div>
               {block.eyebrow ? (
-                <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--site-clay)]">
+                <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-clay-text">
                   {block.eyebrow}
                 </p>
               ) : null}
@@ -192,7 +192,7 @@ function BlockView({
       return (
         <section className="bg-[var(--site-surface)] px-6 py-20 md:px-10 md:py-28">
           <div className="mx-auto max-w-[1120px]">
-            <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--site-clay)]">
+            <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-clay-text">
               Field proof
             </p>
             <h2 className="mt-4 font-[var(--font-display)] text-[clamp(2rem,4vw,3rem)] font-light leading-[1.1] text-[var(--site-ink)]">
@@ -230,7 +230,7 @@ function BlockView({
           <div className="absolute inset-0 bg-gradient-to-t from-[var(--site-dark)] via-[var(--site-dark)]/55 to-[var(--site-dark)]/10" />
           <div className="relative z-10 mx-auto flex min-h-[82vh] max-w-[1120px] flex-col justify-end px-8 pb-20 pt-40">
             {block.eyebrow ? (
-              <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--site-clay)]">
+              <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-clay-text">
                 {block.eyebrow}
               </p>
             ) : null}
@@ -251,7 +251,7 @@ function BlockView({
         <section className="bg-[var(--site-dark)] px-6 py-20 md:px-10 md:py-28">
           <div className="mx-auto max-w-[820px] border-l-4 border-[var(--site-clay)] pl-8 md:pl-12">
             {block.consentLabel ? (
-              <p className="mb-5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--site-clay)]">
+              <p className="mb-5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-clay-text">
                 {block.consentLabel}
               </p>
             ) : null}
@@ -271,7 +271,7 @@ function BlockView({
       return (
         <section className="px-6 py-20 md:px-10 md:py-28">
           <div className="mx-auto max-w-[1120px]">
-            <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--site-clay)]">
+            <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-clay-text">
               Voice layer
             </p>
             <h2 className="mt-4 font-[var(--font-display)] text-[clamp(2rem,4vw,3rem)] font-light leading-[1.1] text-[var(--site-ink)]">
@@ -297,7 +297,7 @@ function BlockView({
                       {voice.who}
                       {voice.community ? ` / ${voice.community}` : ''}
                     </p>
-                    <p className="mt-2 text-xs uppercase tracking-[0.2em] text-[var(--site-clay)]">
+                    <p className="mt-2 text-xs uppercase tracking-[0.2em] text-clay-text">
                       Consent: {voice.consent}
                     </p>
                   </article>
@@ -312,7 +312,7 @@ function BlockView({
       return (
         <section className="bg-[#F6F1E7] px-6 py-20 md:px-10 md:py-28">
           <div className="mx-auto max-w-[1220px]">
-            <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--site-clay)]">
+            <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-clay-text">
               Empathy Ledger media
             </p>
             <h2 className="mt-4 font-[var(--font-display)] text-[clamp(2rem,4vw,3rem)] font-light leading-[1.1] text-[var(--site-ink)]">
@@ -364,7 +364,7 @@ function BlockView({
       return (
         <section className="bg-[var(--site-dark)] px-6 py-20 text-[#FAFAF7] md:px-10 md:py-28">
           <div className="mx-auto max-w-[1120px]">
-            <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--site-clay)]">
+            <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-clay-text">
               Empathy Ledger video
             </p>
             <h2 className="mt-4 font-[var(--font-display)] text-[clamp(2rem,4vw,3rem)] font-light leading-[1.1]">
@@ -426,7 +426,7 @@ function BlockView({
       return (
         <section className="px-6 py-20 md:px-10 md:py-28">
           <div className="mx-auto max-w-[1120px]">
-            <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--site-clay)]">
+            <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-clay-text">
               Before and after
             </p>
             <h2 className="mt-4 font-[var(--font-display)] text-[clamp(2rem,4vw,3rem)] font-light leading-[1.1] text-[var(--site-ink)]">
@@ -457,7 +457,7 @@ function BlockView({
       return (
         <section className="bg-[var(--site-surface)] px-6 py-20 md:px-10 md:py-28">
           <div className="mx-auto max-w-[1120px]">
-            <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--site-clay)]">
+            <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-clay-text">
               Source trail
             </p>
             <h2 className="mt-4 font-[var(--font-display)] text-[clamp(2rem,4vw,3rem)] font-light leading-[1.1] text-[var(--site-ink)]">
@@ -564,7 +564,7 @@ export function StoryScroll({ story, internalPreview = false }: StoryScrollProps
           <div className="absolute inset-0 bg-gradient-to-t from-[var(--site-dark)] via-[var(--site-dark)]/55 to-[var(--site-dark)]/15" />
         </div>
         <div className="relative z-10 mx-auto w-full max-w-[1200px] px-8 pb-24 pt-40 md:pb-32">
-          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-[var(--site-clay)]">
+          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-clay-text">
             {story.hero.eyebrow}
           </p>
           <h1 className="mt-4 max-w-[13ch] font-[var(--font-display)] text-[clamp(3rem,7vw,5.5rem)] font-light leading-[1.05] text-[#FAFAF7]">

@@ -193,7 +193,7 @@ export default async function HowWeWorkPage() {
               <ul className="space-y-2">
                 {rhythm.items.map((item) => (
                   <li key={item} className="text-sm text-[var(--we-brown)] flex gap-2">
-                    <span className="text-[#4CAF50]">•</span>
+                    <span className="text-forest">•</span>
                     {item}
                   </li>
                 ))}
@@ -221,7 +221,7 @@ export default async function HowWeWorkPage() {
               <p className="text-sm text-[var(--we-brown)]">{collab.description}</p>
               <Link
                 href={collab.href}
-                className="inline-flex items-center gap-2 text-sm font-semibold text-[#4CAF50] hover:gap-3 transition"
+                className="inline-flex items-center gap-2 text-sm font-semibold text-forest hover:gap-3 transition"
               >
                 <span>{collab.cta}</span>
                 <span aria-hidden="true">&rarr;</span>
@@ -315,14 +315,14 @@ export default async function HowWeWorkPage() {
                               <Link
                                 key={projectLink.key}
                                 href={projectLink.href}
-                                className="rounded-full bg-[#EDF6EC] px-3 py-1 text-xs font-medium text-[var(--we-olive)] transition hover:bg-[#DCEED8]"
+                                className="rounded-full bg-forest-soft px-3 py-1 text-xs font-medium text-[var(--we-olive)] transition hover:bg-[#DCEED8]"
                               >
                                 {projectLink.label}
                               </Link>
                             ) : (
                               <span
                                 key={projectLink.key}
-                                className="rounded-full bg-[#EDF6EC] px-3 py-1 text-xs font-medium text-[var(--we-olive)]"
+                                className="rounded-full bg-forest-soft px-3 py-1 text-xs font-medium text-[var(--we-olive)]"
                               >
                                 {projectLink.label}
                               </span>
@@ -337,7 +337,7 @@ export default async function HowWeWorkPage() {
                         href={ctaHref}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="inline-flex items-center gap-2 text-sm font-semibold text-[#4CAF50] hover:gap-3 transition"
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-forest hover:gap-3 transition"
                       >
                         <span>{ctaLabel}</span>
                         <span aria-hidden="true">&rarr;</span>
@@ -345,7 +345,7 @@ export default async function HowWeWorkPage() {
                     ) : (
                       <Link
                         href={ctaHref}
-                        className="inline-flex items-center gap-2 text-sm font-semibold text-[#4CAF50] hover:gap-3 transition"
+                        className="inline-flex items-center gap-2 text-sm font-semibold text-forest hover:gap-3 transition"
                       >
                         <span>{ctaLabel}</span>
                         <span aria-hidden="true">&rarr;</span>

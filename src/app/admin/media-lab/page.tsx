@@ -51,7 +51,7 @@ const explainerModels = [
 ];
 
 const mediaGalleryStyle: CSSProperties = {
-  ["--color-primary" as string]: "#4CAF50",
+  ["--color-primary" as string]: "#2D5A3D",
 };
 
 const getEmbedUrl = (url: string) =>
@@ -230,7 +230,7 @@ export default function MediaLabPage({
               name="q"
               defaultValue={query}
               placeholder="Search projects..."
-              className="w-full rounded-full border border-[#D6C8B0] bg-white px-4 py-2 text-sm text-[var(--we-olive)] focus:border-[#4CAF50] focus:outline-none"
+              className="w-full rounded-full border border-[#D6C8B0] bg-white px-4 py-2 text-sm text-[var(--we-olive)] focus:border-forest focus:outline-none"
             />
           </form>
         </div>
@@ -259,7 +259,7 @@ export default function MediaLabPage({
                 </div>
                 <div className="flex flex-wrap gap-2">
                   {project.heroImage ? (
-                    <span className="rounded-full bg-[#4CAF50] px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-white">
+                    <span className="rounded-full bg-forest px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-white">
                       Hero
                     </span>
                   ) : (
@@ -268,7 +268,7 @@ export default function MediaLabPage({
                     </span>
                   )}
                   {project.videoUrl && (
-                    <span className="rounded-full border border-[#4CAF50] px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-[var(--we-olive)]">
+                    <span className="rounded-full border border-forest px-3 py-1 text-[10px] uppercase tracking-[0.2em] text-[var(--we-olive)]">
                       Video
                     </span>
                   )}
@@ -348,7 +348,7 @@ export default function MediaLabPage({
                     href={project.videoUrl}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#4CAF50]"
+                    className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-forest"
                   >
                     Open source link
                   </a>

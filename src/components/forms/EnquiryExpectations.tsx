@@ -33,7 +33,7 @@ export function EnquiryExpectations({
           <ul className="mt-4 space-y-2 text-sm leading-7 text-[var(--we-brown)]">
             {whatHelps.map((item) => (
               <li key={item} className="flex items-start gap-2">
-                <span className="text-[#4CAF50]">•</span>
+                <span className="text-forest">•</span>
                 <span>{item}</span>
               </li>
             ))}

@@ -135,7 +135,7 @@ export function KnowledgeLinksSection({
               className="group flex items-start gap-4 rounded-2xl border border-[var(--we-sand)] bg-white p-5 transition-all hover:border-[#7A9B76] hover:shadow-md"
             >
               <div className="flex-1">
-                <h3 className="font-semibold text-[var(--we-olive)] group-hover:text-[#7A9B76]">
+                <h3 className="font-semibold text-[var(--we-olive)] group-hover:text-forest-sage">
                   {link.title}
                   {link.external && (
                     <svg
@@ -172,13 +172,13 @@ export function KnowledgeLinksSection({
           {ecosystemData.status && (
             <span className={`inline-flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-medium ${
               ecosystemData.status === 'active'
-                ? 'bg-[#E5F4E4] text-[#2F5233]'
+                ? 'bg-forest-soft text-[#2F5233]'
                 : ecosystemData.status === 'ideation'
                 ? 'bg-[#FFF8E7] text-[#8B6914]'
                 : 'bg-[#F0F0F0] text-[#666666]'
             }`}>
               <span className={`h-1.5 w-1.5 rounded-full ${
-                ecosystemData.status === 'active' ? 'bg-[#4CAF50]' : 'bg-current opacity-50'
+                ecosystemData.status === 'active' ? 'bg-forest' : 'bg-current opacity-50'
               }`} />
               {ecosystemData.status.charAt(0).toUpperCase() + ecosystemData.status.slice(1)}
             </span>
@@ -207,7 +207,7 @@ export function KnowledgeLinksSection({
           <span>Part of the</span>
           <Link
             href="/"
-            className="font-semibold text-[var(--we-olive)] hover:text-[#7A9B76] transition"
+            className="font-semibold text-[var(--we-olive)] hover:text-forest-sage transition"
           >
             ACT studio field
           </Link>

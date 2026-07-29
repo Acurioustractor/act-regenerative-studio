@@ -36,7 +36,7 @@ interface Link {
 const COLORS = {
     context: 'var(--we-warm-brown)',
     type: '#D87D4A',
-    evidence: '#4CAF50'
+    evidence: '#2D5A3D'
 };
 
 export default function ImpactSankey() {

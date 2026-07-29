@@ -151,7 +151,7 @@ export function ProjectFieldMediaSection({
                 </div>
                 <div className="space-y-2 p-4">
                   {item.sourceTitle ? (
-                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#7A9B76]">
+                    <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-forest-sage">
                       {item.sourceTitle}
                     </p>
                   ) : null}
@@ -172,7 +172,7 @@ export function ProjectFieldMediaSection({
             className="site-glow-link flex items-center justify-between rounded-[24px] border border-[#D6C19A] bg-[#F8F1E5] px-5 py-4 text-[var(--we-olive)] transition hover:bg-white"
           >
             <div>
-              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[#7A9B76]">
+              <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-forest-sage">
                 Project site
               </p>
               <p className="mt-1 text-sm leading-6 text-[var(--we-brown)]">

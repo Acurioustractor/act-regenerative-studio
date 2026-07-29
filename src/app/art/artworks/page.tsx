@@ -40,7 +40,7 @@ export default async function ArtworksPage() {
             <Link
               key={work.slug}
               href={work.href}
-              className="group overflow-hidden rounded-[28px] border border-[#E1D3BA] bg-white/80 transition hover:-translate-y-1 hover:border-[#4CAF50] hover:shadow-[0_20px_50px_rgba(50,42,31,0.12)]"
+              className="group overflow-hidden rounded-[28px] border border-[#E1D3BA] bg-white/80 transition hover:-translate-y-1 hover:border-forest hover:shadow-[0_20px_50px_rgba(50,42,31,0.12)]"
             >
               {work.previewMedia ? (
                 work.previewMedia.kind === "image" ? (
@@ -101,12 +101,12 @@ export default async function ArtworksPage() {
                     {work.collaborators}
                   </span>
                   {work.live.storyCount > 0 ? (
-                    <span className="rounded-full bg-[#EDF6EC] px-3 py-1 text-xs font-medium text-[var(--we-olive)]">
+                    <span className="rounded-full bg-forest-soft px-3 py-1 text-xs font-medium text-[var(--we-olive)]">
                       {work.live.storyCount} approved stories
                     </span>
                   ) : null}
                   {work.live.mediaCount > 0 ? (
-                    <span className="rounded-full bg-[#EDF6EC] px-3 py-1 text-xs font-medium text-[var(--we-olive)]">
+                    <span className="rounded-full bg-forest-soft px-3 py-1 text-xs font-medium text-[var(--we-olive)]">
                       {work.live.mediaCount} media items
                     </span>
                   ) : null}

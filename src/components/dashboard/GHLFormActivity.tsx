@@ -48,7 +48,7 @@ export function GHLFormActivity() {
       case "contact":
         return <Mail className="w-5 h-5 text-[#2196F3]" />;
       case "farm_stay":
-        return <Calendar className="w-5 h-5 text-[#4CAF50]" />;
+        return <Calendar className="w-5 h-5 text-forest" />;
       case "csa":
         return <Package className="w-5 h-5 text-[#FF9800]" />;
       case "art_residency":
@@ -119,7 +119,7 @@ export function GHLFormActivity() {
                     {submission.formName}
                   </p>
                   {submission.synced ? (
-                    <span className="text-xs bg-[#4CAF50]/20 text-[#4CAF50] px-2 py-1 rounded-full">
+                    <span className="text-xs bg-forest/20 text-forest px-2 py-1 rounded-full">
                       Synced to Notion
                     </span>
                   ) : (

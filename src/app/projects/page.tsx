@@ -116,7 +116,7 @@ const FEATURED_OUTPUTS: FeaturedProjectConfig[] = [
 const HIDDEN_PROJECT_SLUGS = new Set(['act-public-voice']);
 
 const DOMAIN_BADGE_STYLES: Record<string, string> = {
-  Active: 'border-[#8CB58B] bg-[#E5F4E4] text-[#2F5233]',
+  Active: 'border-[#8CB58B] bg-forest-soft text-[#2F5233]',
   Ideation: 'border-[#D7C4A2] bg-[#FFF7E9] text-[#8B6914]',
   Ecosystem: 'border-[#D9C9A9] bg-[#F5F1E8] text-[#5A4A3A]',
   Place: 'border-[#A2C5A2] bg-[#EEF7EE] text-[#2F5233]',
@@ -360,7 +360,7 @@ export default async function ProjectsPage() {
               </Link>
               <Link
                 href="/stories"
-                className="site-glow-link rounded-full border border-[#245c43] bg-white/45 px-7 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#1f2b21] transition hover:bg-[#e5f4e4]"
+                className="site-glow-link rounded-full border border-[#245c43] bg-white/45 px-7 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#1f2b21] transition hover:bg-forest-soft"
               >
                 Read field notes
               </Link>
@@ -443,7 +443,7 @@ export default async function ProjectsPage() {
             </Link>
             <Link
               href="/stories"
-              className="site-glow-link rounded-full border border-[#245c43] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#1f2b21] transition hover:bg-[#E5F4E4]"
+              className="site-glow-link rounded-full border border-[#245c43] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#1f2b21] transition hover:bg-forest-soft"
             >
               Follow field writing
             </Link>
@@ -568,7 +568,7 @@ export default async function ProjectsPage() {
                       liveSignals.mediaCount > 0) ? (
                       <div className="mt-4 flex flex-wrap gap-2">
                         {liveSignals.serviceConnectionCount > 0 ? (
-                          <span className="rounded-full bg-[#EDF6EC] px-2.5 py-1 text-[10px] font-medium text-[var(--we-olive)]">
+                          <span className="rounded-full bg-forest-soft px-2.5 py-1 text-[10px] font-medium text-[var(--we-olive)]">
                             {liveSignals.serviceConnectionCount} service
                             {liveSignals.serviceConnectionCount === 1 ? '' : 's'}
                           </span>
@@ -607,7 +607,7 @@ export default async function ProjectsPage() {
                         href={project.publicSiteUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="site-glow-link rounded-full border border-[#4CAF50] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:bg-[#E5F4E4]"
+                        className="site-glow-link rounded-full border border-forest px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:bg-forest-soft"
                       >
                         Project website
                       </a>
@@ -641,7 +641,7 @@ export default async function ProjectsPage() {
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/contact"
-                className="site-glow-link rounded-full border border-[#245c43] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#1f2b21] transition hover:bg-[#E5F4E4]"
+                className="site-glow-link rounded-full border border-[#245c43] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#1f2b21] transition hover:bg-forest-soft"
               >
                 Bring a strand in
               </Link>

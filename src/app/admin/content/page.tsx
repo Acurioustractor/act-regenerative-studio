@@ -155,7 +155,7 @@ export default function ContentListPage() {
             type="button"
             onClick={handleCreate}
             disabled={creating}
-            className="rounded-full bg-[#4CAF50] px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white"
+            className="rounded-full bg-forest px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white"
           >
             {creating ? "Creating..." : "Create"}
           </button>
@@ -206,7 +206,7 @@ export default function ContentListPage() {
               <Link
                 key={item.id}
                 href={`/admin/content/${item.id}`}
-                className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-[var(--we-sand)] bg-white/70 p-4 transition hover:border-[#4CAF50]"
+                className="flex flex-wrap items-center justify-between gap-4 rounded-2xl border border-[var(--we-sand)] bg-white/70 p-4 transition hover:border-forest"
               >
                 <div>
                   <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">

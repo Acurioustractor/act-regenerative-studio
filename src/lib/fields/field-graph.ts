@@ -113,7 +113,14 @@ export function fieldsForQuestion(question: FieldQuestion): LivingFieldId[] {
   return [...new Set(mapped.filter(isFieldId))];
 }
 
-/** Articles belonging to a field, newest first. */
+/**
+ * Articles belonging to a field.
+ *
+ * Sorted by publishedAt for stability rather than for meaning: the feed's dates
+ * are migration artifacts (21 of 29 share one timestamp to the millisecond), so
+ * the resulting order is effectively the feed's own. This will do what the sort
+ * implies once real dates arrive.
+ */
 export function articlesForField(fieldId: LivingFieldId): EditorialArticle[] {
   return allArticles()
     .filter((article) => fieldsForArticle(article).includes(fieldId))

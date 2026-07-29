@@ -4,6 +4,10 @@ import {
 } from "@/lib/empathy-ledger-editorial";
 import { fieldQuestions, type FieldQuestion } from "@/data/field-questions";
 import { livingFields, type LivingFieldId } from "@/data/living-field";
+import {
+  DELIBERATELY_UNASSIGNED,
+  FIELD_ASSIGNMENTS,
+} from "@/data/field-assignments";
 
 /**
  * The join between the five fields and everything written about them.
@@ -88,11 +92,19 @@ function allArticles(): EditorialArticle[] {
   return getEditorialSnapshot().articles;
 }
 
-/** Every field an article touches, derived from its related project slugs. */
+/**
+ * Every field an article touches.
+ *
+ * Two sources, unioned. The project slugs cover four fields structurally; the
+ * hand-curated overlay in field-assignments.ts covers art, which has no project
+ * slug upstream and therefore cannot be derived. The overlay only ever adds, so
+ * an article keeps the fields its project tags imply.
+ */
 export function fieldsForArticle(article: EditorialArticle): LivingFieldId[] {
   const slugs = article.relatedProjectSlugs ?? [];
-  const mapped = slugs.map((slug) => PROJECT_SLUG_TO_FIELD[slug] ?? null);
-  return [...new Set(mapped.filter(isFieldId))];
+  const derived = slugs.map((slug) => PROJECT_SLUG_TO_FIELD[slug] ?? null);
+  const curated = FIELD_ASSIGNMENTS[article.slug] ?? [];
+  return [...new Set([...derived, ...curated].filter(isFieldId))];
 }
 
 /** Every field a question touches, derived from its free-text tags. */
@@ -163,7 +175,11 @@ export function fieldCoverage(): Array<{
  * inside the test file where it would be invisible to anyone reading this
  * module.
  */
-export function unmappedReferences(): { slugs: string[]; tags: string[] } {
+export function unmappedReferences(): {
+  slugs: string[];
+  tags: string[];
+  staleAssignments: string[];
+} {
   const slugs = new Set<string>();
   for (const article of allArticles()) {
     for (const slug of article.relatedProjectSlugs ?? []) {
@@ -176,5 +192,20 @@ export function unmappedReferences(): { slugs: string[]; tags: string[] } {
       if (!(tag in QUESTION_TAG_TO_FIELD)) tags.add(tag);
     }
   }
-  return { slugs: [...slugs].sort(), tags: [...tags].sort() };
+  // Curated entries pointing at articles the feed no longer carries. A renamed
+  // or withdrawn article would otherwise leave an assignment that silently
+  // stops applying, and art would quietly empty out again.
+  const present = new Set(allArticles().map((article) => article.slug));
+  const staleAssignments = [
+    ...Object.keys(FIELD_ASSIGNMENTS),
+    ...Object.keys(DELIBERATELY_UNASSIGNED),
+  ]
+    .filter((slug) => !present.has(slug))
+    .sort();
+
+  return {
+    slugs: [...slugs].sort(),
+    tags: [...tags].sort(),
+    staleAssignments,
+  };
 }

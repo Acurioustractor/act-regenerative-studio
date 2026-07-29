@@ -21,12 +21,14 @@ import { getEditorialSnapshot } from "@/lib/empathy-ledger-editorial";
  */
 describe("field graph guard", () => {
   it("maps every project slug and question tag that appears in the data", () => {
-    const { slugs, tags } = unmappedReferences();
+    const { slugs, tags, staleAssignments } = unmappedReferences();
     expect(
-      { unmappedSlugs: slugs, unmappedTags: tags },
-      "Add these to PROJECT_SLUG_TO_FIELD / QUESTION_TAG_TO_FIELD in field-graph.ts. " +
-        "Map to null if they deliberately belong to no field.",
-    ).toEqual({ unmappedSlugs: [], unmappedTags: [] });
+      { unmappedSlugs: slugs, unmappedTags: tags, staleAssignments },
+      "Unmapped slugs/tags go in PROJECT_SLUG_TO_FIELD / QUESTION_TAG_TO_FIELD " +
+        "(map to null if they deliberately belong to no field). Stale assignments " +
+        "are curated entries in field-assignments.ts pointing at articles the feed " +
+        "no longer carries; the article was renamed or withdrawn.",
+    ).toEqual({ unmappedSlugs: [], unmappedTags: [], staleAssignments: [] });
   });
 
   it("only ever resolves to canonical field ids", () => {
@@ -73,6 +75,22 @@ describe("lookups", () => {
     for (const article of getEditorialSnapshot().articles.slice(0, 10)) {
       expect(relatedArticles(article, 2).length).toBeLessThanOrEqual(2);
     }
+  });
+
+  it("gives the art field content it cannot derive from project slugs", () => {
+    // No upstream project maps to art, so without the curated overlay this is
+    // zero and the field page is empty.
+    expect(articlesForField("art").length).toBeGreaterThan(0);
+  });
+
+  it("adds curated fields without removing derived ones", () => {
+    const contained = getEditorialSnapshot().articles.find(
+      (a) => a.slug === "contained-where-policy-meets-flesh",
+    );
+    expect(contained).toBeDefined();
+    const fields = fieldsForArticle(contained!);
+    expect(fields).toContain("art"); // curated
+    expect(fields).toContain("justice"); // derived from its project slug
   });
 
   it("reports coverage for all five fields", () => {

@@ -1,148 +1,75 @@
-import LivingSystemStrip from "@/components/LivingSystemStrip";
 import Link from "next/link";
 import { Suspense } from "react";
-import { ContactForm } from "../../components/forms/ContactForm";
-import { EnquiryExpectations } from "../../components/forms/EnquiryExpectations";
-import PageHero from "../../components/PageHero";
-import SectionHeading from "../../components/SectionHeading";
+import { ContactForm } from "@/components/forms/ContactForm";
 import { pageMetadata } from "@/lib/seo/site";
+import styles from "./contact.module.css";
 
 export const metadata = pageMetadata({
   title: "Contact",
-  description:
-    "Reach out to explore a project, partnership, residency, commission, or a story you'd like to share.",
+  description: "Bring A Curious Tractor a question, project, artwork, place or possibility worth exploring together.",
   path: "/contact",
 });
 
-const contactPaths = [
-  {
-    title: "Project or partnership",
-    description:
-      "You have a live challenge, field, place, or institutional question and want to explore whether ACT is the right collaborator.",
-    href: "/contact?type=project-partnership&source=contact-paths&context=project-or-partnership",
-    cta: "Start this enquiry",
-  },
-  {
-    title: "Residency or visit",
-    description:
-      "You want to come onto Jinibara Country through a residency, farm stay, workshop, or field-based invitation.",
-    href: "/contact?type=residency-visit&source=contact-paths&context=residency-or-visit",
-    cta: "Start this enquiry",
-  },
-  {
-    title: "Commission or cultural work",
-    description:
-      "You want to make something public through installation, story process, exhibition, or voice-led work.",
-    href: "/contact?type=commission-cultural-work&source=contact-paths&context=commission-or-cultural-work",
-    cta: "Start this enquiry",
-  },
+const paths = [
+  ["A project", "A live challenge, partnership or practical idea."],
+  ["Art or story", "An installation, commission, exhibition or story."],
+  ["A visit", "The Harvest, the farm, a residency or time on Country."],
+  ["A question", "Something unfinished that might be worth exploring together."],
 ];
 
 export default function ContactPage() {
   return (
-    <div className="space-y-20">
-      <PageHero
-        eyebrow="Contact"
-        title="Start a conversation with the right amount of context"
-        description="Reach out to explore a project, partnership, residency, or commission. ACT works best when the conversation begins with the real place, people, and pressure involved."
-        actions={[
-          { label: "Explore projects", href: "/projects" },
-          { label: "See how we work", href: "/how-we-work", variant: "outline" },
-        ]}
-      >
-        <div className="space-y-3">
-          <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
-            Studio contact
+    <div className={styles.page}>
+      <section className={styles.hero}>
+        <div className={styles.invitation}>
+          <p className={styles.eyebrow}>Contact</p>
+          <h1>Bring us the question you cannot leave alone.</h1>
+          <p className={styles.intro}>
+            It might begin with an artwork, a place, a system that is not working, or something practical that needs to be built. Start where you are.
           </p>
-          <p>
-            Email: <span className="font-semibold">hi@act.place</span>
-          </p>
-          <p>Location: Jinibara Country, Black Cockatoo Valley.</p>
-          <p className="text-sm leading-6 text-[var(--we-brown)]">
-            The more specific you can be about the field, the people, and the timing, the better the conversation will be.
-          </p>
+          <div className={styles.direct}>
+            <span>Prefer email?</span>
+            <a href="mailto:hi@act.place">hi@act.place</a>
+          </div>
         </div>
-      </PageHero>
 
-      <LivingSystemStrip
-        eyebrow="Before you write"
-        title="The site already carries some of the context"
-        description="Project framing comes from the ACT wiki. Stories, media, and collaboration proof arrive through Empathy Ledger. When you reach out, the conversation can start partway in rather than from zero."
-        wiki={{
-          href: "/wiki",
-          label: "Open ACT wiki",
-        }}
-        live={{
-          sourceLabel: "Project and story context through Empathy Ledger",
-          href: `${process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL || "https://empathyledger.com"}/projects`,
-        }}
-        stats={[
-          { label: "Primary inbox", value: "hi@act.place" },
-          { label: "Orientation", value: "Place-first" },
-          { label: "Method", value: "Listen · Curiosity · Action · Art" },
-        ]}
-      />
-
-      <section className="space-y-10">
-        <SectionHeading
-          eyebrow="Best fit"
-          title="What kind of conversation are you starting?"
-          description="You do not need a polished brief, but it helps to know which path you are roughly in."
-        />
-        <div className="grid gap-6 md:grid-cols-3">
-          {contactPaths.map((path) => (
-            <div
-              key={path.title}
-              className="rounded-3xl border border-[#E1D3BA] bg-white/75 p-7"
-            >
-              <h3 className="font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
-                {path.title}
-              </h3>
-              <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">
-                {path.description}
-              </p>
-              <Link
-                href={path.href}
-                className="mt-5 inline-flex items-center gap-2 text-sm font-semibold text-[var(--we-olive)] transition hover:gap-3"
-              >
-                <span>{path.cta}</span>
-                <span aria-hidden="true">&rarr;</span>
-              </Link>
-            </div>
-          ))}
-        </div>
-      </section>
-
-      <section className="space-y-10">
-        <SectionHeading
-          eyebrow="Get in touch"
-          title="Contact form"
-          description="Tell us about the field you are working in, who is involved, what stage you are at, and what kind of conversation you are hoping to have."
-        />
-        <EnquiryExpectations
-          title="A little context helps us route this well"
-          intro="We read these enquiries as conversation starters, not as procurement forms. The clearer you are about the field, urgency, place, and people involved, the easier it is to respond in a useful way."
-          whatHelps={[
-            "Name the project, place, or community context if there is one.",
-            "Tell us whether this is an early conversation, live need, or commissioning decision.",
-            "Be direct about timing, budget, or constraints if they already exist.",
-          ]}
-          whatHappensNext={[
-            "We review for fit, timing, and who in the ACT field should respond.",
-            "Some enquiries are better handled through a project-specific page or form.",
-            "If there is alignment, the next step is usually a smaller real conversation rather than a larger deck.",
-          ]}
-        />
-        <div className="mx-auto max-w-2xl">
-          <Suspense fallback={<div className="rounded-3xl border border-[var(--we-sand)] bg-white/80 p-8 text-sm text-[var(--we-brown)]">Loading contact form…</div>}>
+        <div className={styles.formPanel} id="start-a-conversation">
+          <div className={styles.formHeading}>
+            <p className={styles.eyebrow}>Start a conversation</p>
+            <h2>A little context is enough.</h2>
+            <p>No polished brief required. Tell us what is happening, who is involved and what you are curious about.</p>
+          </div>
+          <Suspense fallback={<p className={styles.loading}>Loading the form…</p>}>
             <ContactForm
               projectCode="ACT-IN"
               formType="contact"
-              contextLabel="Studio contact page"
+              contextLabel="ACT contact page"
               additionalTags={["Public contact route"]}
             />
           </Suspense>
         </div>
+      </section>
+
+      <section className={styles.paths} aria-labelledby="contact-paths-title">
+        <div>
+          <p className={styles.eyebrow}>Ways in</p>
+          <h2 id="contact-paths-title">You do not need to know which project it belongs to.</h2>
+        </div>
+        <div className={styles.pathGrid}>
+          {paths.map(([title, description], index) => (
+            <Link key={title} href={`/contact?type=${["project-partnership", "commission-cultural-work", "residency-visit", "general"][index]}#start-a-conversation`}>
+              <span>0{index + 1}</span>
+              <strong>{title}</strong>
+              <p>{description}</p>
+              <i aria-hidden="true">→</i>
+            </Link>
+          ))}
+        </div>
+      </section>
+
+      <section className={styles.expectation}>
+        <p className={styles.eyebrow}>What happens next</p>
+        <p>We read every message. We will route it to the person closest to the work and reply with an honest next step, usually within a few working days.</p>
       </section>
     </div>
   );

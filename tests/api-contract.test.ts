@@ -57,6 +57,37 @@ const call = (path: string, method: string, headers: Record<string, string> = {}
     redirect: "manual",
   });
 
+/**
+ * Preflight: are we talking to the server we think we are?
+ *
+ * Port 3001 is a busy address on this machine. A run against a stale server, or
+ * against another session's, produced sixteen assertion failures that all read
+ * as "the middleware is broken" when the middleware was fine and the request
+ * never reached it. One clear failure beats sixteen misleading ones.
+ */
+describe("environment", () => {
+  it("reaches a server at all", async () => {
+    const res = await fetch(baseUrl + "/", { redirect: "manual" }).catch(
+      () => null,
+    );
+    expect(
+      res?.status,
+      `No server responding at ${baseUrl}. Start one, or set TEST_BASE_URL.`,
+    ).toBe(200);
+  });
+
+  it.runIf(token)("is running this build, with this token", async () => {
+    const res = await fetch(baseUrl + "/admin", { redirect: "manual" });
+    expect(
+      res.status,
+      `${baseUrl} answered ${res.status} for /admin without credentials, expected 404. ` +
+        "That server is either running code without src/middleware.ts or was " +
+        "started with a different ACT_INTERNAL_TOKEN. Point TEST_BASE_URL at the " +
+        "right one rather than trusting the assertions below.",
+    ).toBe(404);
+  });
+});
+
 describe("public surface", () => {
   it.each(publicPages)("%s is reachable without credentials", async (path) => {
     const res = await fetch(baseUrl + path, { redirect: "manual" });

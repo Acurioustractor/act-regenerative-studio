@@ -2,6 +2,7 @@
 
 import { useEffect, useState } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
+import styles from './contact-form.module.css';
 
 interface ContactFormProps {
   projectCode?: string;
@@ -16,49 +17,30 @@ export function ContactForm({
   formType = 'contact',
   contextLabel = 'General studio contact',
   additionalTags = [],
-  className = ''
+  className = '',
 }: ContactFormProps) {
   const pathname = usePathname();
   const searchParams = useSearchParams();
   const presetInquiryType = searchParams.get('type') || '';
   const presetSource = searchParams.get('source') || '';
   const presetContext = searchParams.get('context') || '';
-  const [formData, setFormData] = useState({
-    firstName: '',
-    lastName: '',
-    email: '',
-    phone: '',
-    inquiryType: '',
-    message: '',
-  });
+  const [formData, setFormData] = useState({ firstName: '', email: '', inquiryType: '', message: '' });
   const [status, setStatus] = useState<'idle' | 'loading' | 'success' | 'error'>('idle');
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    if (presetInquiryType && !formData.inquiryType) {
-      setFormData((prev) => ({ ...prev, inquiryType: presetInquiryType }));
-    }
-  }, [presetInquiryType, formData.inquiryType]);
+    if (presetInquiryType) setFormData((current) => ({ ...current, inquiryType: presetInquiryType }));
+  }, [presetInquiryType]);
 
-  const handleChange = (
-    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
-  ) => {
-    const { name, value } = e.target;
-    setFormData(prev => ({ ...prev, [name]: value }));
+  const handleChange = (event: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
+    const { name, value } = event.target;
+    setFormData((current) => ({ ...current, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-
-    if (!formData.email && !formData.phone) {
-      setStatus('error');
-      setMessage('Please enter an email or phone number');
-      return;
-    }
-
+  const handleSubmit = async (event: React.FormEvent) => {
+    event.preventDefault();
     setStatus('loading');
     setMessage('');
-
     try {
       const response = await fetch('/api/forms/submit', {
         method: 'POST',
@@ -66,10 +48,6 @@ export function ContactForm({
         body: JSON.stringify({
           projectCode,
           formType,
-          // Provenance (page context/route + any ?source/?context UTM params)
-          // lives in fields, not tags — preserved on the Supabase row without
-          // polluting the GHL tag space. Canonical source:/project: tags are
-          // applied server-side by /api/forms/submit (FORM_RULES + project registry).
           fields: {
             ...formData,
             context: contextLabel,
@@ -77,153 +55,54 @@ export function ContactForm({
             ...(presetSource ? { preset_source: presetSource } : {}),
             ...(presetContext ? { requested_context: presetContext } : {}),
           },
-          additionalTags: [...additionalTags],
+          additionalTags,
         }),
       });
-
       const result = await response.json();
-
-      if (result.success) {
-        setStatus('success');
-        setMessage('Thanks for reaching out! We\'ll be in touch soon.');
-        setFormData({ firstName: '', lastName: '', email: '', phone: '', inquiryType: '', message: '' });
-      } else {
-        setStatus('error');
-        setMessage(result.error || 'Something went wrong');
-      }
+      if (!response.ok || !result.success) throw new Error(result.error || 'The message could not be sent.');
+      setStatus('success');
+      setMessage('Thank you. Your message has reached us.');
+      setFormData({ firstName: '', email: '', inquiryType: '', message: '' });
     } catch (error) {
       setStatus('error');
-      setMessage('Network error - please try again');
+      setMessage(error instanceof Error ? error.message : 'The message could not be sent. Please email hi@act.place.');
     }
   };
 
-  const inputClass = "w-full rounded border border-[#E4D7BF] bg-white px-4 py-3 text-[var(--we-olive)] placeholder:text-[#B8A88A] focus:border-[#4CAF50] focus:outline-none disabled:opacity-50";
-  const labelClass = "block text-sm font-medium text-[var(--we-brown-deep)] mb-1";
-
   return (
-    <form onSubmit={handleSubmit} className={`space-y-6 ${className}`}>
-      {(presetSource || presetContext) && (
-        <div className="rounded-2xl border border-[#D9C9A9] bg-[#F6F1E7]/80 p-4 text-sm text-[var(--we-brown)]">
-          <p className="font-medium text-[var(--we-olive)]">
-            This enquiry is already carrying page context.
-          </p>
-          <p className="mt-2 leading-7">
-            {presetContext
-              ? `You are reaching out from the ${presetContext.replace(/-/g, ' ')} path.`
-              : 'You are reaching out from a more specific ACT route.'}{' '}
-            We will include that context when the enquiry is routed.
-          </p>
-        </div>
-      )}
-
-      <div className="grid gap-4 md:grid-cols-2">
-        <div>
-          <label htmlFor="firstName" className={labelClass}>First name</label>
-          <input
-            type="text"
-            id="firstName"
-            name="firstName"
-            value={formData.firstName}
-            onChange={handleChange}
-            placeholder="Your first name"
-            disabled={status === 'loading'}
-            className={inputClass}
-          />
-        </div>
-        <div>
-          <label htmlFor="lastName" className={labelClass}>Last name</label>
-          <input
-            type="text"
-            id="lastName"
-            name="lastName"
-            value={formData.lastName}
-            onChange={handleChange}
-            placeholder="Your last name"
-            disabled={status === 'loading'}
-            className={inputClass}
-          />
-        </div>
+    <form onSubmit={handleSubmit} className={`${styles.form} ${className}`}>
+      <div className={styles.twoUp}>
+        <label>
+          <span>Your name</span>
+          <input required name="firstName" value={formData.firstName} onChange={handleChange} autoComplete="given-name" placeholder="What should we call you?" disabled={status === 'loading'} />
+        </label>
+        <label>
+          <span>Your email</span>
+          <input required type="email" name="email" value={formData.email} onChange={handleChange} autoComplete="email" placeholder="you@example.com" disabled={status === 'loading'} />
+        </label>
       </div>
-
-      <div className="grid gap-4 md:grid-cols-2">
-        <div>
-          <label htmlFor="inquiryType" className={labelClass}>Conversation type</label>
-          <select
-            id="inquiryType"
-            name="inquiryType"
-            value={formData.inquiryType}
-            onChange={handleChange}
-            disabled={status === 'loading'}
-            className={inputClass}
-          >
-            <option value="">Choose the closest fit</option>
-            <option value="project-partnership">Project or partnership</option>
-            <option value="residency-visit">Residency or visit</option>
-            <option value="commission-cultural-work">Commission or cultural work</option>
-            <option value="share-your-story">Share a story</option>
-            <option value="support">Support the work</option>
-            <option value="research">Research or press</option>
-            <option value="general">General enquiry</option>
-          </select>
-        </div>
-        <div>
-          <label htmlFor="email" className={labelClass}>Email *</label>
-          <input
-            type="email"
-            id="email"
-            name="email"
-            value={formData.email}
-            onChange={handleChange}
-            placeholder="you@example.com"
-            disabled={status === 'loading'}
-            className={inputClass}
-          />
-        </div>
+      <label>
+        <span>What brings you here?</span>
+        <select required name="inquiryType" value={formData.inquiryType} onChange={handleChange} disabled={status === 'loading'}>
+          <option value="">Choose the closest fit</option>
+          <option value="project-partnership">A project or partnership</option>
+          <option value="commission-cultural-work">Art, story or a commission</option>
+          <option value="residency-visit">A visit or residency</option>
+          <option value="share-your-story">A story to share</option>
+          <option value="support">Supporting the work</option>
+          <option value="research">Research or media</option>
+          <option value="general">A question or something else</option>
+        </select>
+      </label>
+      <label>
+        <span>What is happening?</span>
+        <textarea required name="message" value={formData.message} onChange={handleChange} rows={6} placeholder="Tell us enough to understand the place, people and question. It does not need to be polished." disabled={status === 'loading'} />
+      </label>
+      <div className={styles.finish}>
+        <p>We will only use these details to respond to your enquiry.</p>
+        <button type="submit" disabled={status === 'loading'}>{status === 'loading' ? 'Sending…' : 'Send the question'} <span>→</span></button>
       </div>
-
-      <div>
-        <label htmlFor="phone" className={labelClass}>Phone</label>
-        <input
-          type="tel"
-          id="phone"
-          name="phone"
-          value={formData.phone}
-          onChange={handleChange}
-          placeholder="+61 4XX XXX XXX"
-          disabled={status === 'loading'}
-          className={inputClass}
-        />
-      </div>
-
-      <div>
-        <label htmlFor="message" className={labelClass}>Message</label>
-        <textarea
-          id="message"
-          name="message"
-          value={formData.message}
-          onChange={handleChange}
-          placeholder="Tell us about your project, partnership, or how we can collaborate..."
-          rows={5}
-          disabled={status === 'loading'}
-          className={inputClass}
-        />
-      </div>
-
-      <div className="flex flex-col gap-3">
-        <button
-          type="submit"
-          disabled={status === 'loading'}
-          className="w-full rounded bg-[#4CAF50] px-6 py-3 text-base font-semibold text-white transition hover:bg-[#3D9143] disabled:opacity-50 md:w-auto"
-        >
-          {status === 'loading' ? 'Sending...' : 'Send message'}
-        </button>
-
-        {message && (
-          <p className={`text-sm ${status === 'success' ? 'text-green-600' : 'text-red-600'}`}>
-            {message}
-          </p>
-        )}
-      </div>
+      {message ? <p className={status === 'success' ? styles.success : styles.error} role="status">{message}</p> : null}
     </form>
   );
 }

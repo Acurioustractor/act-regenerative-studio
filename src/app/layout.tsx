@@ -5,6 +5,7 @@ import { Fraunces, Source_Serif_4, Work_Sans } from "next/font/google";
 import UnifiedFooter from "../components/UnifiedFooter";
 import { MobileMenu } from "../components/MobileMenu";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { SiteChromeGate } from "@/components/SiteChromeGate";
 import { organizationJsonLd, siteUrl, websiteJsonLd } from "@/lib/seo/site";
 import "./globals.css";
 
@@ -23,12 +24,20 @@ const sansFont = Work_Sans({
   variable: "--font-sans",
 });
 
+/**
+ * Primary nav for the routes that keep the site chrome (see SiteChromeGate,
+ * which hides it on the homepage and the editorial roots that carry their own).
+ *
+ * Live routes only. "Projects" pointed at /projects and "Farm" at /farm, both
+ * 307s since the site collapse, so the nav on /privacy, /terms and the
+ * Confessions pages sent every visitor through a redirect.
+ */
 const navItems = [
   { label: "About", href: "/about" },
-  { label: "Projects", href: "/projects" },
+  { label: "Fields", href: "/#fields" },
   { label: "Stories", href: "/stories" },
   { label: "Art", href: "/art" },
-  { label: "Farm", href: "/farm" },
+  { label: "Harvest", href: "/harvest" },
   { label: "Contact", href: "/contact" },
 ];
 
@@ -41,9 +50,12 @@ export const metadata: Metadata = {
   description:
     "A regenerative innovation studio stewarding a farm on Jinibara Country. Places, story systems, and public works you can step into.",
   icons: {
-    icon: "/branding/act-logo-square.png",
-    apple: "/branding/act-logo-square.png",
-    shortcut: "/branding/act-logo-square.png",
+    icon: [
+      { url: "/branding/act/act-mark-16.png", sizes: "16x16", type: "image/png" },
+      { url: "/branding/act/act-mark-32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [{ url: "/branding/act/act-mark-180.png", sizes: "180x180", type: "image/png" }],
+    shortcut: "/branding/act/act-mark-32.png",
   },
   openGraph: {
     type: "website",
@@ -53,9 +65,9 @@ export const metadata: Metadata = {
       "Places, story systems, and public works you can step into. A regenerative studio on Jinibara Country.",
     images: [
       {
-        url: "/branding/act-logo-square.png",
-        width: 1200,
-        height: 630,
+        url: "/branding/act-place-logo.png",
+        width: 1000,
+        height: 1000,
         alt: "A Curious Tractor",
       },
     ],
@@ -65,7 +77,7 @@ export const metadata: Metadata = {
     title: "A Curious Tractor | Regenerative Innovation Studio",
     description:
       "Places, story systems, and public works you can step into.",
-    images: ["/branding/act-logo-square.png"],
+    images: ["/branding/act-place-logo.png"],
   },
   robots: {
     index: true,
@@ -93,7 +105,7 @@ export default function RootLayout({
         {/* Floating nav, sits on top of full-bleed content. data-site-chrome lets
             /confessions hide it (see confessions/layout.tsx) so the campaign runs
             as its own contained site with only its campaign nav. */}
-        <header data-site-chrome className="fixed left-0 right-0 top-0 z-50 px-6 pt-4 md:px-8 md:pt-5">
+        <SiteChromeGate><header data-site-chrome className="fixed left-0 right-0 top-0 z-50 px-6 pt-4 md:px-8 md:pt-5">
           <div className="mx-auto max-w-[1200px]">
             <div className="relative overflow-hidden rounded-[var(--site-radius)] border border-[var(--site-line)] bg-[var(--site-panel)] px-5 py-3 shadow-[var(--site-shadow)] backdrop-blur-xl md:px-6">
               <div className="flex items-center justify-between gap-5">
@@ -103,7 +115,7 @@ export default function RootLayout({
                 >
                   <span className="flex h-8 w-8 items-center justify-center overflow-hidden rounded-md">
                     <Image
-                      src="/branding/act-logo-square.png"
+                      src="/branding/act-place-logo.png"
                       alt="A Curious Tractor logo"
                       width={32}
                       height={32}
@@ -132,28 +144,31 @@ export default function RootLayout({
               </div>
             </div>
           </div>
-        </header>
+        </header></SiteChromeGate>
 
         {/* Full-bleed main, no max-width constraint */}
         <main id="main-content" className="relative z-10 min-h-screen">{children}</main>
         <JsonLd id="act-organization-jsonld" data={organizationJsonLd} />
         <JsonLd id="act-website-jsonld" data={websiteJsonLd} />
-        <div data-site-chrome>
+        <SiteChromeGate><div data-site-chrome>
           <UnifiedFooter
             currentProject="A Curious Tractor"
             showProjects={true}
+            /* Live routes only. /projects, /blog and /farm are 307s since the
+               site collapse; see scripts/sweep-routes.mjs for the current set. */
             customLinks={[
-              { label: "Projects", href: "/projects" },
+              { label: "Fields", href: "/#fields" },
               { label: "Stories", href: "/stories" },
-              { label: "Blog", href: "/blog" },
+              { label: "Questions", href: "/questions" },
               { label: "Art", href: "/art" },
-              { label: "Farm", href: "/farm" },
-              { label: "Contact", href: "/contact" },
+              { label: "The Harvest", href: "/harvest" },
+              { label: "Confessions", href: "/confessions" },
               { label: "About", href: "/about" },
+              { label: "Contact", href: "/contact" },
             ]}
             contactEmail="hi@act.place"
           />
-        </div>
+        </div></SiteChromeGate>
       </body>
     </html>
   );

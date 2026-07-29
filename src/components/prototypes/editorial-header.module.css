@@ -1,0 +1,149 @@
+.header {
+  position: fixed;
+  z-index: 60;
+  inset: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 72px;
+  padding: 0.5rem clamp(1rem, 4vw, 4rem);
+  border-bottom: 1px solid rgba(26, 31, 26, 0.12);
+  background: color-mix(in srgb, #fafaf7 92%, transparent);
+  backdrop-filter: blur(14px);
+  color: #1a1f1a;
+  font: 650 0.64rem/1 var(--font-sans);
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+}
+.wordmark {
+  position: relative;
+  z-index: 2;
+}
+.header nav {
+  display: flex;
+  align-items: center;
+  gap: clamp(0.75rem, 2.1vw, 2rem);
+}
+.header nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  white-space: nowrap;
+}
+.header nav a:hover {
+  color: #2d5a3d;
+}
+.menuButton {
+  display: none;
+}
+.pageRail {
+  position: fixed;
+  z-index: 55;
+  inset: 72px 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 36px;
+  padding: 0 clamp(1rem, 4vw, 4rem);
+  border-bottom: 1px solid rgba(26, 31, 26, 0.1);
+  background: #e8ede5;
+  color: #1a1f1a;
+  font: 650 0.55rem/1 var(--font-sans);
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+}
+.pageRail > span {
+  color: #2d5a3d;
+}
+.pageRail > div {
+  display: flex;
+  gap: clamp(1rem, 2.5vw, 2.5rem);
+}
+.pageRail a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 36px;
+}
+.pageRail a:hover {
+  color:#945a32;
+}
+@media (max-width: 820px) {
+  .header {
+    height: 58px;
+    padding: 0.45rem 1rem;
+  }
+  .menuButton {
+    position: relative;
+    z-index: 2;
+    display: grid;
+    place-content: center;
+    gap: 6px;
+    width: 44px;
+    height: 44px;
+    padding: 0;
+    border: 0;
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+  }
+  .menuButton span {
+    display: block;
+    width: 24px;
+    height: 1px;
+    background: currentColor;
+    transition: transform 0.2s ease;
+  }
+  .menuButton[aria-expanded="true"] span:first-child {
+    transform: translateY(3.5px) rotate(45deg);
+  }
+  .menuButton[aria-expanded="true"] span:last-child {
+    transform: translateY(-3.5px) rotate(-45deg);
+  }
+  .header nav {
+    position: fixed;
+    z-index: 1;
+    inset: 0;
+    visibility: hidden;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.2rem;
+    padding: 5rem 1.5rem 2rem;
+    background: #fafaf7;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateY(-0.75rem);
+    transition:
+      opacity 0.2s ease,
+      transform 0.2s ease,
+      visibility 0s linear 0.2s;
+  }
+  .header nav.open {
+    visibility: visible;
+    opacity: 1;
+    pointer-events: auto;
+    transform: none;
+    transition-delay: 0s;
+  }
+  .header nav a {
+    justify-content: center;
+    min-height: 58px;
+    font: 300 clamp(2.4rem, 11vw, 4.2rem)/1 var(--font-display);
+    letter-spacing: -0.03em;
+    text-transform: none;
+  }
+  .pageRail {
+    inset: 58px 0 auto;
+    min-height: 38px;
+    gap: 1.5rem;
+    overflow-x: auto;
+    padding-inline: 1rem;
+    white-space: nowrap;
+  }
+  .pageRail > div {
+    gap: 1.4rem;
+  }
+  .pageRail a {
+    min-height: 38px;
+  }
+}

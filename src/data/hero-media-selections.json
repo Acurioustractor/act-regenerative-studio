@@ -1,0 +1,46 @@
+{
+  "homepage": {
+    "mediaId": "goods-stretch-bed",
+    "videoUrl": "/media/field-videos/goods-stretch-bed-community.mp4",
+    "posterUrl": "/media/field-stills/goods-stretch-bed-community.jpg",
+    "title": "Stretch bed in community",
+    "field": "Goods on Country"
+  },
+  "fields": {
+    "art": {
+      "mediaId": "confessions-to-philanthropy",
+      "videoUrl": "/media/field-videos/confessions-to-philanthropy.mp4",
+      "posterUrl": "/media/field-stills/confessions-to-philanthropy.jpg",
+      "title": "Confessions to Philanthropy",
+      "field": "Art"
+    },
+    "empathy": {
+      "mediaId": "empathy-elder-trip",
+      "videoUrl": "/media/field-videos/empathy-ledger-elder-trip.mp4",
+      "posterUrl": "/media/field-stills/empathy-ledger-elder-trip.jpg",
+      "title": "Elders on the water",
+      "field": "Empathy Ledger"
+    },
+    "justice": {
+      "mediaId": "justice-container",
+      "videoUrl": "/media/field-videos/justicehub-container.mp4",
+      "posterUrl": "/media/field-stills/justicehub-container.jpg",
+      "title": "The container",
+      "field": "JusticeHub"
+    },
+    "goods": {
+      "mediaId": "goods-build",
+      "videoUrl": "/media/field-videos/goods-community-build.mp4",
+      "posterUrl": "/media/field-stills/goods-community-build.jpg",
+      "title": "Building together",
+      "field": "Goods on Country"
+    },
+    "harvest": {
+      "mediaId": "harvest-field-notes-dji-0021",
+      "videoUrl": "/media/field-videos/harvest-field-notes-dji-0021.mp4",
+      "posterUrl": "/media/field-stills/harvest-field-notes-dji-0021.jpg",
+      "title": "The Harvest across the field",
+      "field": "The Harvest"
+    }
+  }
+}

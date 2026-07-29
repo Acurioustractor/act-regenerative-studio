@@ -1,11 +1,47 @@
 import Link from "next/link";
 
 const allFields = [
-  { slug: "goods", href: "/goods", title: "Goods on Country", eyebrow: "Goods", video: "/media/field-videos/goods-community-build.mp4", poster: "/media/field-stills/goods-community-build.jpg" },
-  { slug: "justicehub", href: "/justicehub", title: "JusticeHub", eyebrow: "Justice", video: "/media/field-videos/justicehub-container.mp4", poster: "/media/field-stills/justicehub-container.jpg" },
-  { slug: "the-harvest", href: "/harvest", title: "The Harvest", eyebrow: "Commons", video: "/media/field-videos/harvest-witta-aerial.mp4", poster: "/media/field-stills/harvest-witta-aerial.jpg" },
-  { slug: "empathy-ledger", href: "/empathy-ledger", title: "Empathy Ledger", eyebrow: "Stories", video: "/media/field-videos/empathy-ledger-elder-trip.mp4", poster: "/media/field-stills/empathy-ledger-elder-trip.jpg" },
-  { slug: "black-cockatoo-valley", href: "/farm", title: "Black Cockatoo Valley", eyebrow: "Land", video: "/media/field-videos/hero-farm-aerial.mp4", poster: "/media/field-stills/hero-farm-aerial.jpg" },
+  {
+    slug: "goods",
+    href: "/fields/goods",
+    title: "Goods on Country",
+    eyebrow: "Goods",
+    video: "/media/field-videos/goods-community-build.mp4",
+    poster: "/media/field-stills/goods-community-build.jpg",
+  },
+  {
+    slug: "justicehub",
+    href: "/fields/justice",
+    title: "JusticeHub",
+    eyebrow: "Justice",
+    video: "/media/field-videos/justicehub-container.mp4",
+    poster: "/media/field-stills/justicehub-container.jpg",
+  },
+  {
+    slug: "the-harvest",
+    href: "/harvest",
+    title: "The Harvest",
+    eyebrow: "Commons",
+    video: "/media/field-videos/harvest-witta-aerial.mp4",
+    poster: "/media/field-stills/harvest-witta-aerial.jpg",
+  },
+  {
+    slug: "empathy-ledger",
+    href: "/fields/empathy",
+    title: "Empathy Ledger",
+    eyebrow: "Stories",
+    video: "/media/field-videos/empathy-ledger-elder-trip.mp4",
+    poster: "/media/field-stills/empathy-ledger-elder-trip.jpg",
+  },
+  {
+    slug: "black-cockatoo-valley",
+    // /farm is a 307; Black Cockatoo Valley's story lives in /about#history.
+    href: "/about#history",
+    title: "Black Cockatoo Valley",
+    eyebrow: "Land",
+    video: "/media/field-videos/hero-farm-aerial.mp4",
+    poster: "/media/field-stills/hero-farm-aerial.jpg",
+  },
 ];
 
 export function RelatedFields({ currentSlug }: { currentSlug: string }) {

@@ -64,3 +64,32 @@ yarn-error.log*
 .obsidian/
 .env.shared
 .gstack/
+
+# ---------------------------------------------------------------------------
+# Working artifacts, 2026-07-29
+# ---------------------------------------------------------------------------
+
+# Consent-bearing material. The Confessions voicemails are recordings of real
+# people. Git history is effectively permanent and hard to redact, which is the
+# opposite of what consent-first storytelling requires. Keep them out.
+Voicemails*/
+
+# Agent and tooling caches
+.agents/
+.codex/
+.tldr/
+.claude/cache/
+.claude/tsc-cache/
+.claude/scheduled_tasks.lock
+.playwright-mcp/
+
+# QA and review screenshots taken at the repo root
+qa-*.jpeg
+qa-*.png
+act-home-*.png
+act-live-*.png
+act-local-*.png
+confessions-band.png
+confessions-film-modal.png
+confessions-wall-*.png
+home-viewport.png

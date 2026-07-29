@@ -1,0 +1,235 @@
+.page {
+  --paper: #f5f4ed;
+  --ink: #171c17;
+  --green: #2d6545;
+  --clay: #c98259;
+  min-height: 100vh;
+  padding: 9rem clamp(1.25rem, 5vw, 5rem) 6rem;
+  background: var(--paper);
+  color: var(--ink);
+}
+.hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(30rem, 1.12fr);
+  gap: clamp(3rem, 7vw, 8rem);
+  max-width: 88rem;
+  margin: 0 auto;
+  align-items: start;
+}
+.invitation {
+  position: sticky;
+  top: 8rem;
+  padding-top: 2rem;
+}
+.eyebrow {
+  margin: 0 0 1.4rem;
+  color:var(--clay-text);
+  font: 650 0.75rem/1 var(--font-sans);
+  letter-spacing: 0.24em;
+  text-transform: uppercase;
+}
+.invitation h1 {
+  max-width: 11ch;
+  margin: 0;
+  font: 400 clamp(3.8rem, 6.5vw, 7.8rem)/0.9 var(--font-display);
+  letter-spacing: -0.055em;
+}
+.intro {
+  max-width: 34rem;
+  margin: 2.5rem 0 0;
+  color: var(--green);
+  font: 400 clamp(1.35rem, 2vw, 1.8rem)/1.35 var(--font-body);
+}
+.direct {
+  display: flex;
+  gap: 1rem;
+  margin-top: 3rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(23, 28, 23, 0.18);
+  font: 0.78rem var(--font-sans);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+.direct span {
+  color: #6b706b;
+}
+.direct a {
+  color: var(--green);
+  font-weight: 700;
+}
+.formPanel {
+  padding: clamp(1.5rem, 4vw, 3.5rem);
+  border: 1px solid rgba(23, 28, 23, 0.18);
+  background: #fffefa;
+  box-shadow: 1.2rem 1.2rem 0 rgba(201, 130, 89, 0.12);
+}
+.formHeading {
+  margin-bottom: 2.5rem;
+}
+.formHeading h2 {
+  margin: 0;
+  font: 400 clamp(2.3rem, 3.4vw, 4rem)/0.98 var(--font-display);
+  letter-spacing: -0.04em;
+}
+.formHeading > p:last-child {
+  max-width: 37rem;
+  margin: 1.2rem 0 0;
+  color: #5c625c;
+  font: 1.05rem/1.55 var(--font-body);
+}
+.loading {
+  font-family: var(--font-sans);
+}
+.paths {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 5rem;
+  max-width: 88rem;
+  margin: 9rem auto 0;
+  padding-top: 4rem;
+  border-top: 1px solid rgba(23, 28, 23, 0.2);
+}
+.paths h2 {
+  max-width: 14ch;
+  margin: 0;
+  font: 400 clamp(2.4rem, 4vw, 4.7rem)/0.98 var(--font-display);
+  letter-spacing: -0.045em;
+}
+.pathGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid rgba(23, 28, 23, 0.18);
+  border-left: 1px solid rgba(23, 28, 23, 0.18);
+}
+.pathGrid a {
+  position: relative;
+  min-height: 15rem;
+  padding: 1.6rem;
+  border-right: 1px solid rgba(23, 28, 23, 0.18);
+  border-bottom: 1px solid rgba(23, 28, 23, 0.18);
+  color: var(--ink);
+  transition:
+    background 0.2s ease,
+    color 0.2s ease;
+}
+.pathGrid a:hover,
+.pathGrid a:focus-visible {
+  background: var(--green);
+  color: var(--paper);
+  outline: none;
+}
+.pathGrid span {
+  font: 0.68rem var(--font-sans);
+  letter-spacing: 0.18em;
+}
+.pathGrid strong {
+  display: block;
+  margin-top: 2.6rem;
+  font: 400 2rem var(--font-display);
+}
+.pathGrid p {
+  max-width: 19rem;
+  color: inherit;
+  font: 1rem/1.45 var(--font-body);
+  opacity: 0.72;
+}
+.pathGrid i {
+  position: absolute;
+  right: 1.5rem;
+  bottom: 1.3rem;
+  font: normal 1.3rem var(--font-sans);
+}
+.expectation {
+  display: grid;
+  grid-template-columns: 0.7fr 1.3fr;
+  gap: 5rem;
+  max-width: 88rem;
+  margin: 7rem auto 0;
+  padding-top: 2rem;
+  border-top: 1px solid rgba(23, 28, 23, 0.2);
+}
+.expectation > p:last-child {
+  max-width: 48rem;
+  margin: 0;
+  font: 400 clamp(1.45rem, 2.4vw, 2.25rem)/1.3 var(--font-body);
+  color: var(--green);
+}
+@media (min-width: 901px) and (max-height: 800px) {
+  .page {
+    padding-top: 6rem;
+  }
+  .hero {
+    gap: clamp(2rem, 5vw, 5rem);
+  }
+  .invitation {
+    top: 6rem;
+    padding-top: 1rem;
+  }
+  .invitation h1 {
+    font-size: clamp(3.6rem, 9.5vh, 5rem);
+  }
+  .intro {
+    margin-top: 1.4rem;
+    font-size: 1.2rem;
+  }
+  .direct {
+    margin-top: 1.5rem;
+  }
+  .formPanel {
+    padding: 2rem;
+  }
+  .formHeading {
+    margin-bottom: 1.5rem;
+  }
+  .formHeading h2 {
+    font-size: 2.6rem;
+  }
+  .formHeading > p:last-child {
+    margin-top: 0.7rem;
+    font-size: 0.95rem;
+  }
+}
+@media (max-width: 900px) {
+  .page {
+    padding-top: 7rem;
+  }
+  .hero {
+    grid-template-columns: 1fr;
+  }
+  .invitation {
+    position: static;
+  }
+  .invitation h1 {
+    font-size: clamp(3.6rem, 13vw, 6rem);
+  }
+  .formPanel {
+    box-shadow: 0.65rem 0.65rem 0 rgba(201, 130, 89, 0.12);
+  }
+  .paths,
+  .expectation {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+    margin-top: 6rem;
+  }
+  .pathGrid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+@media (max-width: 560px) {
+  .page {
+    padding-inline: 1rem;
+  }
+  .pathGrid {
+    grid-template-columns: 1fr;
+  }
+  .pathGrid a {
+    min-height: 12rem;
+  }
+  .direct {
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+  .formPanel {
+    padding: 1.35rem;
+  }
+}

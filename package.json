@@ -38,10 +38,18 @@
     "sync:wiki-pages": "node scripts/sync-canonical-wiki-pages.mjs",
     "sync:wiki-flagship-packs": "node scripts/sync-canonical-wiki-flagship-packs.mjs",
     "media:audit": "node scripts/media-audit.mjs",
+    "story:sweep": "node scripts/sweep-story-sources.mjs",
+    "check:living-field": "node scripts/check-living-field.mjs",
     "ask": "node scripts/ask-act.mjs",
     "dev:all": "node scripts/dev-servers.mjs",
     "start:ecosystem": "node scripts/dev-servers.mjs",
-    "db:seed:alma": "npx ts-node scripts/seed_alma_real_initiatives.ts && npx ts-node scripts/seed_alma_contexts.ts && npx ts-node scripts/seed_alma_evidence.ts"
+    "db:seed:alma": "npx ts-node scripts/seed_alma_real_initiatives.ts && npx ts-node scripts/seed_alma_contexts.ts && npx ts-node scripts/seed_alma_evidence.ts",
+    "type-check": "tsc --noEmit",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "test:api": "vitest run tests/api-contract.test.ts",
+    "sweep:routes": "node scripts/sweep-routes.mjs",
+    "check:contrast": "node scripts/check-contrast.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.2",
@@ -72,8 +80,10 @@
     "autoprefixer": "^10.4.17",
     "eslint": "^8",
     "eslint-config-next": "15.5.15",
+    "playwright": "^1.62.0",
     "postcss": "^8.4.33",
     "tailwindcss": "^3.4.1",
-    "typescript": "^5"
+    "typescript": "^5",
+    "vitest": "^4.1.10"
   }
 }

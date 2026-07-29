@@ -99,7 +99,7 @@ export const organizationJsonLd = {
   legalName: 'A Curious Tractor Pty Ltd',
   identifier: 'ACN 697 347 676',
   url: siteUrl,
-  logo: absoluteUrl('/branding/act-logo-square.png'),
+  logo: absoluteUrl('/branding/act-place-logo.png'),
   email: 'hi@act.place',
   description:
     'A regenerative innovation studio stewarding a farm on Jinibara Country, building public works, story systems, circular goods, and land-based projects.',
@@ -167,7 +167,7 @@ export function articleJsonLd({
       name: 'A Curious Tractor',
       logo: {
         '@type': 'ImageObject',
-        url: absoluteUrl('/branding/act-logo-square.png'),
+        url: absoluteUrl('/branding/act-place-logo.png'),
       },
     },
     datePublished: publishedAt || undefined,

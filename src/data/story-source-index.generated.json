@@ -1,0 +1,2760 @@
+{
+  "generatedAt": "2026-07-21T07:26:21.225Z",
+  "policy": "Discovery only. Files are not copied. Repository presence and public paths do not establish permission. Empathy Ledger authority records govern reuse.",
+  "publishingChain": [
+    "canonical project",
+    "Empathy Ledger record",
+    "consent, credit and cultural review",
+    "approved derivative packet",
+    "ACT history"
+  ],
+  "totals": {
+    "images": 8350,
+    "videos": 284,
+    "audio": 117,
+    "storyCandidates": 2806,
+    "governanceFiles": 654
+  },
+  "projects": [
+    {
+      "code": "ACT-CORE",
+      "name": "A Curious Tractor",
+      "field": "The whole field",
+      "repoPath": "/Users/benknight/Code/act-regenerative-studio",
+      "site": "https://act.place",
+      "governance": "hub",
+      "accent": "#2D5A3D",
+      "invitation": "Begin with the art. Follow the object, image or question into the wider field.",
+      "storyThread": "Two people learning what to build, what to hold and what to give away.",
+      "motionIdea": "A quiet aerial field gives way to objects, hands and unfinished work.",
+      "exists": true,
+      "counts": {
+        "files": 1363,
+        "images": 95,
+        "videos": 14,
+        "audio": 15,
+        "storyCandidates": 123,
+        "governanceFiles": 11
+      },
+      "candidates": [
+        {
+          "path": "src/app/prototypes/field-history/layout.tsx",
+          "score": 9,
+          "kind": "tsx"
+        },
+        {
+          "path": "src/app/prototypes/field-history/page.tsx",
+          "score": 9,
+          "kind": "tsx"
+        },
+        {
+          "path": "src/app/prototypes/history-media/page.tsx",
+          "score": 9,
+          "kind": "tsx"
+        },
+        {
+          "path": "src/components/dashboard/DeploymentHistory.tsx",
+          "score": 8,
+          "kind": "tsx"
+        },
+        {
+          "path": "thoughts/shared/brand-system-submission/code-for-claude/src/components/dashboard/DeploymentHistory.tsx",
+          "score": 8,
+          "kind": "tsx"
+        },
+        {
+          "path": "thoughts/shared/research/2026-07-21-act-history-archive-media-audit.md",
+          "score": 8,
+          "kind": "md"
+        },
+        {
+          "path": "docs/strategy/act-website-review-2026-05-27.md",
+          "score": 6,
+          "kind": "md"
+        },
+        {
+          "path": "public/branding/preview.html",
+          "score": 6,
+          "kind": "html"
+        },
+        {
+          "path": "src/app/admin/enrichment-review/page.tsx",
+          "score": 6,
+          "kind": "tsx"
+        },
+        {
+          "path": "src/app/admin/knowledge-review/page.tsx",
+          "score": 6,
+          "kind": "tsx"
+        },
+        {
+          "path": "docs/features/story-impact/implementation.md",
+          "score": 5,
+          "kind": "md"
+        },
+        {
+          "path": "docs/strategy/confessions-newsletter-1.html",
+          "score": 5,
+          "kind": "html"
+        },
+        {
+          "path": "src/app/admin/storytellers/[id]/page.tsx",
+          "score": 5,
+          "kind": "tsx"
+        },
+        {
+          "path": "src/app/blog/[slug]/page.tsx",
+          "score": 5,
+          "kind": "tsx"
+        },
+        {
+          "path": "src/app/blog/page.tsx",
+          "score": 5,
+          "kind": "tsx"
+        },
+        {
+          "path": "src/app/prototypes/living-field/field-story.tsx",
+          "score": 5,
+          "kind": "tsx"
+        },
+        {
+          "path": "src/app/prototypes/story-atlas/layout.tsx",
+          "score": 5,
+          "kind": "tsx"
+        },
+        {
+          "path": "src/app/prototypes/story-atlas/page.tsx",
+          "score": 5,
+          "kind": "tsx"
+        }
+      ],
+      "mediaCandidates": [
+        {
+          "path": "public/media/field-videos/hero-farm-aerial.mp4",
+          "score": 14,
+          "kind": "video"
+        },
+        {
+          "path": "public/media/field-videos/black-cockatoo-valley-farm-aerial.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "public/media/field-videos/contained-aerial.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "public/media/field-videos/empathy-ledger-community-story.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "public/media/field-videos/empathy-ledger-elder-trip.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "public/media/field-videos/goods-community-build.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "public/media/field-videos/goods-delivery.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "public/media/field-videos/goods-remote-aerial.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "public/media/field-videos/harvest-witta-aerial.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "public/media/field-videos/justicehub-community.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "public/media/field-videos/justicehub-container.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "public/media/field-videos/palm-island-coastline.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "public/media/field-stills/hero-farm-aerial.jpg",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "public/media/field-stills/black-cockatoo-valley-farm-aerial-2.jpg",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "public/media/field-stills/black-cockatoo-valley-farm-aerial-3.jpg",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "public/media/field-stills/black-cockatoo-valley-farm-aerial.jpg",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "public/media/field-stills/contained-aerial.jpg",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "public/media/field-stills/empathy-ledger-community-story-2.jpg",
+          "score": 7,
+          "kind": "image"
+        }
+      ],
+      "governanceFiles": [
+        ".agents/skills/act-daily-driver/references/approved-actions-protocol.md",
+        "assets/compendium-2026/consented-story-candidates.json",
+        "business/showcase/gifted-data-drop-power-loop.provenance.md",
+        "compendium/04-story/vignettes/justice-youth/14-cb-cultural-responsibility.md",
+        "compendium/04-story/vignettes/palm-island/04-elders-speak-consultation.md",
+        "compendium/05-operations/cultural-protocols.md",
+        "compendium/05-operations/governance.md",
+        "src/app/governance/page.tsx",
+        "thoughts/shared/flagship-hero-stats-provenance.md",
+        "thoughts/shared/plans/el-editorial-approval-phase1-issue-draft.md",
+        "thoughts/shared/plans/el-editorial-approval-workflow.md"
+      ],
+      "mediaDirectories": [
+        {
+          "directory": ".",
+          "count": 33
+        },
+        {
+          "directory": "public/media/field-stills",
+          "count": 24
+        },
+        {
+          "directory": "assets/compendium-2026/00-inbox",
+          "count": 20
+        },
+        {
+          "directory": "public/media/field-videos",
+          "count": 13
+        },
+        {
+          "directory": "Confessions Recordings",
+          "count": 11
+        },
+        {
+          "directory": "output/video-stills",
+          "count": 7
+        },
+        {
+          "directory": "public/branding",
+          "count": 4
+        },
+        {
+          "directory": "public/confessions/audio",
+          "count": 4
+        },
+        {
+          "directory": "thoughts/shared/brand-system-submission",
+          "count": 4
+        },
+        {
+          "directory": "assets/diagrams",
+          "count": 2
+        },
+        {
+          "directory": "04_Visuals",
+          "count": 1
+        },
+        {
+          "directory": "public",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "code": "ACT-EL",
+      "name": "Empathy Ledger",
+      "field": "Story",
+      "repoPath": "/Users/benknight/Code/empathy-ledger-v2",
+      "site": "https://www.empathyledger.com",
+      "governance": "authority",
+      "accent": "#96643A",
+      "invitation": "Hear a voice. See how permission travels with it.",
+      "storyThread": "The story remains with the storyteller after the camera leaves.",
+      "motionIdea": "Voice, breath and transcript move together. Consent remains visible at the edge.",
+      "exists": true,
+      "counts": {
+        "files": 10952,
+        "images": 749,
+        "videos": 14,
+        "audio": 8,
+        "storyCandidates": 1180,
+        "governanceFiles": 423
+      },
+      "candidates": [
+        {
+          "path": "archive/sprint-components/sprint-3-public/browse/StoryPreviewCard.tsx",
+          "score": 9,
+          "kind": "tsx"
+        },
+        {
+          "path": "docs/13-platform/STORYTELLER_MANAGEMENT_REVIEW.md",
+          "score": 9,
+          "kind": "md"
+        },
+        {
+          "path": "docs/15-reports/analysis/STORY_REVIEW_ANALYSIS_PREVIEW.md",
+          "score": 9,
+          "kind": "md"
+        },
+        {
+          "path": "docs/decisions/2026-07-12-articles-elder-review-gate-deferred.md",
+          "score": 9,
+          "kind": "md"
+        },
+        {
+          "path": "docs/decisions/2026-07-12-journal-articles-gate-separate-from-isPublishable.md",
+          "score": 9,
+          "kind": "md"
+        },
+        {
+          "path": "docs/orgs/the-buttery/scraped/pages/history.html",
+          "score": 9,
+          "kind": "html"
+        },
+        {
+          "path": "src/app/admin/storyteller-preview/kristy-journey/page.tsx",
+          "score": 9,
+          "kind": "tsx"
+        },
+        {
+          "path": "src/app/admin/storyteller-preview/page.tsx",
+          "score": 9,
+          "kind": "tsx"
+        },
+        {
+          "path": "src/app/case-study-review/[token]/story/page.tsx",
+          "score": 9,
+          "kind": "tsx"
+        },
+        {
+          "path": "src/app/storyteller/me/file/capture/journal/page.tsx",
+          "score": 9,
+          "kind": "tsx"
+        },
+        {
+          "path": "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/src-backup-pre-streamline/app/storytellers/[id]/review/page.tsx",
+          "score": 8,
+          "kind": "tsx"
+        },
+        {
+          "path": "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/src-backup-pre-streamline/components/community/ApprovalRevisionHistory.tsx",
+          "score": 8,
+          "kind": "tsx"
+        },
+        {
+          "path": "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/src-backup-pre-streamline/components/consent/ConsentHistoryViewer.tsx",
+          "score": 8,
+          "kind": "tsx"
+        },
+        {
+          "path": "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/src-backup-pre-streamline/components/storyteller/ComprehensiveReviewWorkflow.tsx",
+          "score": 8,
+          "kind": "tsx"
+        },
+        {
+          "path": "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/src-backup-pre-streamline/components/storyteller/ContentReviewDashboard.tsx",
+          "score": 8,
+          "kind": "tsx"
+        },
+        {
+          "path": "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/src-backup-pre-streamline/components/storyteller/ReviewNotifications.tsx",
+          "score": 8,
+          "kind": "tsx"
+        },
+        {
+          "path": "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/src-backup-pre-streamline/components/storyteller/ReviewNotificationSystem.tsx",
+          "score": 8,
+          "kind": "tsx"
+        },
+        {
+          "path": "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/src/components/community/ApprovalRevisionHistory.tsx",
+          "score": 8,
+          "kind": "tsx"
+        }
+      ],
+      "mediaCandidates": [
+        {
+          "path": "public/brand-elements/empathy-ledger-river-hero-v1.png",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "tmp/palm-video-package/video/palm-walkthrough-draft.mp4",
+          "score": 10,
+          "kind": "video"
+        },
+        {
+          "path": "output/product-design/storyteller-dashboard-current-state-2026-07-15/11-owner-transcript-editor.png",
+          "score": 9,
+          "kind": "image"
+        },
+        {
+          "path": "output/video-projects/_examples/intro-card/renders/final.mp4",
+          "score": 9,
+          "kind": "video"
+        },
+        {
+          "path": "tmp/browser-pass-article-flow-2/01-new-editor.png",
+          "score": 9,
+          "kind": "image"
+        },
+        {
+          "path": "tmp/browser-pass-article-flow/01-new-editor.png",
+          "score": 9,
+          "kind": "image"
+        },
+        {
+          "path": "tmp/palm-video-package/audio/palm-bed.mp3",
+          "score": 9,
+          "kind": "audio"
+        },
+        {
+          "path": "tmp/palm-video-package/audio/palm-voiceover.mp3",
+          "score": 9,
+          "kind": "audio"
+        },
+        {
+          "path": "tmp/palm-video-package/frames/palm-cover.png",
+          "score": 9,
+          "kind": "image"
+        },
+        {
+          "path": "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/media/ET.jpeg",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/media/images/colours.jpeg",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/media/images/coloursnew.jpeg",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/media/images/home.png",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/media/images/legacy/colours.jpeg",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/media/images/legacy/coloursnew.jpeg",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/media/images/legacy/home.png",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/media/images/legacy/Screen.png",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/media/images/legacy/screen1.jpeg",
+          "score": 7,
+          "kind": "image"
+        }
+      ],
+      "governanceFiles": [
+        ".agents/skills/local/cultural-review/skill.md",
+        ".agents/skills/local/empathy-ledger-codebase/refs/cultural-safety.md",
+        "_archive/governance-followups-2026-07-03/RESTORE.md",
+        "_archive/governance-followups-2026-07-03/media-review.page.tsx",
+        "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/.superdesign/design_iterations/consent_sovereignty_dashboard_1.html",
+        "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/documentation/business/GOVERNMENT_USE_CASES.md",
+        "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/src-backup-pre-streamline/app/admin/consent/page.tsx",
+        "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/src-backup-pre-streamline/app/community/approval-system-demo/page.tsx",
+        "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/src-backup-pre-streamline/app/community/approvals/page.tsx",
+        "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/src-backup-pre-streamline/app/cultural/context-preservation-demo/page.tsx",
+        "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/src-backup-pre-streamline/app/cultural/knowledge-sharing-control-demo/page.tsx",
+        "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/src-backup-pre-streamline/app/cultural/workflow-engine-demo/page.tsx",
+        "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/src-backup-pre-streamline/app/docs/business/GOVERNMENT_USE_CASES/page.tsx",
+        "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/src-backup-pre-streamline/app/modules/cultural-protocols/page.tsx",
+        "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/src-backup-pre-streamline/app/wiki/government/overview/page.tsx",
+        "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/src-backup-pre-streamline/components/admin/ProtocolComplianceManager.tsx",
+        "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/src-backup-pre-streamline/components/admin/sections/CulturalSection.tsx",
+        "archive/empathy-ledger-v02-2025/Empathy Ledger v.02/src-backup-pre-streamline/components/auth/ConsentManager.tsx"
+      ],
+      "mediaDirectories": [
+        {
+          "directory": "docs/orgs/the-buttery",
+          "count": 409
+        },
+        {
+          "directory": "thoughts/shared/storyboard",
+          "count": 39
+        },
+        {
+          "directory": "archive/empathy-ledger-v02-2025/Empathy Ledger v.02",
+          "count": 34
+        },
+        {
+          "directory": ".",
+          "count": 22
+        },
+        {
+          "directory": "public/images/illustrations",
+          "count": 18
+        },
+        {
+          "directory": "public/images/world-tour",
+          "count": 15
+        },
+        {
+          "directory": "public/images/maps",
+          "count": 14
+        },
+        {
+          "directory": "output/design-audit/dashboard-redesign-2026-07-12",
+          "count": 13
+        },
+        {
+          "directory": "output/product-design/storyteller-dashboard-current-state-2026-07-15",
+          "count": 13
+        },
+        {
+          "directory": "public/brand-elements",
+          "count": 13
+        },
+        {
+          "directory": "public/icons",
+          "count": 13
+        },
+        {
+          "directory": "output/design-audit/super-admin-2026-07-12",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "code": "ACT-JH",
+      "name": "JusticeHub",
+      "field": "Justice",
+      "repoPath": "/Users/benknight/Code/JusticeHub",
+      "site": "https://www.justicehub.com.au",
+      "governance": "project-review",
+      "accent": "#4A2560",
+      "invitation": "Enter through CONTAINED. Leave through a community alternative.",
+      "storyThread": "The cell is expensive. The fire already holds another answer.",
+      "motionIdea": "A container opens into roads, programs, people and proof.",
+      "exists": true,
+      "counts": {
+        "files": 5568,
+        "images": 518,
+        "videos": 12,
+        "audio": 0,
+        "storyCandidates": 571,
+        "governanceFiles": 38
+      },
+      "candidates": [
+        {
+          "path": "docs/articles/the-fire-and-the-road-review-2026-07-16.md",
+          "score": 9,
+          "kind": "md"
+        },
+        {
+          "path": "docs/operations/development/SUPABASE_MIGRATION_HISTORY_REBASELINE_BLOCKER_2026-02-27.md",
+          "score": 9,
+          "kind": "md"
+        },
+        {
+          "path": "data/webflow-migration/articles-markdown/walking-new-paths-reflections-from-bimberi.md",
+          "score": 8,
+          "kind": "md"
+        },
+        {
+          "path": "output/contained-crm-intelligence/02-campaign-playbook-best-in-history.md",
+          "score": 8,
+          "kind": "md"
+        },
+        {
+          "path": "output/contained-touchpoint-history-review/contained-do-not-send-risk-review-2026-07-03.csv",
+          "score": 8,
+          "kind": "csv"
+        },
+        {
+          "path": "output/contained-touchpoint-history-review/contained-ghl-campaign-send-package-2026-07-04.json",
+          "score": 8,
+          "kind": "json"
+        },
+        {
+          "path": "output/contained-touchpoint-history-review/contained-ghl-campaign-send-package-2026-07-04.md",
+          "score": 8,
+          "kind": "md"
+        },
+        {
+          "path": "output/contained-touchpoint-history-review/contained-ghl-campaign-send-review-2026-07-04.csv",
+          "score": 8,
+          "kind": "csv"
+        },
+        {
+          "path": "output/contained-touchpoint-history-review/contained-ghl-import-update-package-2026-07-04.csv",
+          "score": 8,
+          "kind": "csv"
+        },
+        {
+          "path": "output/contained-touchpoint-history-review/contained-ghl-manual-send-steps-2026-07-04.csv",
+          "score": 8,
+          "kind": "csv"
+        },
+        {
+          "path": "output/contained-touchpoint-history-review/contained-ghl-send-candidates-2026-07-03.csv",
+          "score": 8,
+          "kind": "csv"
+        },
+        {
+          "path": "output/contained-touchpoint-history-review/contained-manual-send-alignment-apply-2026-07-04.json",
+          "score": 8,
+          "kind": "json"
+        },
+        {
+          "path": "output/contained-touchpoint-history-review/contained-manual-send-alignment-dry-run-2026-07-04.json",
+          "score": 8,
+          "kind": "json"
+        },
+        {
+          "path": "output/contained-touchpoint-history-review/contained-manual-send-run-sheet-2026-07-04.json",
+          "score": 8,
+          "kind": "json"
+        },
+        {
+          "path": "output/contained-touchpoint-history-review/contained-manual-send-run-sheet-2026-07-04.md",
+          "score": 8,
+          "kind": "md"
+        },
+        {
+          "path": "output/contained-touchpoint-history-review/contained-outreach-send-plan-2026-07-03.csv",
+          "score": 8,
+          "kind": "csv"
+        },
+        {
+          "path": "output/contained-touchpoint-history-review/contained-outreach-working-plan-2026-07-03.json",
+          "score": 8,
+          "kind": "json"
+        },
+        {
+          "path": "output/contained-touchpoint-history-review/contained-outreach-working-plan-2026-07-03.md",
+          "score": 8,
+          "kind": "md"
+        }
+      ],
+      "mediaCandidates": [
+        {
+          "path": "public/media/contained/cell-video.mov",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "public/stories/fire-and-road/video/camp-country.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": ".playwright-mcp/audit/blog-gallery/gallery-item:-media-previewphotofeaturedtrad.png",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": ".playwright-mcp/audit/blog-gallery/gallery-item:-media-previewvideo3:24featured.png",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "designs/assets/oonchiumpa-hero.jpg",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "output/campaign-assets/justicehub-hero-landscape.png",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "public/images/articles/a-heros-journey-from-addiction-to-inspiration-the-life-of-vic.jpg",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "public/images/articles/from-trouble-to-transformation-the-campfire-journey.jpg",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "public/images/contained/_archived-ai-photorealistic/hero-container-landscape.png",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "public/images/contained/justicehub-hero-landscape.png",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "public/images/goods/stretch-bed-hero.jpg",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "public/images/orgs/oonchiumpa/hero.jpg",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "public/images/orgs/oonchiumpa/march-2026/cover-boys-drone.jpg",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "scripts/story-video/output/story-ffmpeg.mp4",
+          "score": 10,
+          "kind": "video"
+        },
+        {
+          "path": "scripts/story-video/output/story-puppeteer.mp4",
+          "score": 10,
+          "kind": "video"
+        },
+        {
+          "path": "public/stories/fire-and-road/video/hero-river.mp4",
+          "score": 9,
+          "kind": "video"
+        },
+        {
+          "path": "scripts/story-video/output/hero-input.png",
+          "score": 9,
+          "kind": "image"
+        },
+        {
+          "path": ".playwright-mcp/.playwright-mcp/audit/stories/story-detail.png",
+          "score": 7,
+          "kind": "image"
+        }
+      ],
+      "governanceFiles": [
+        "_archive/2026-07-12/src/components/spending/GovernmentPromises.tsx",
+        "compendium/operations/authority.md",
+        "data/government/qld-youth-justice-providers.json",
+        "data/government/youth-justice-ctg-2025.csv",
+        "data/webflow-migration/articles-markdown/navigating-two-worlds-cultural-authority-and-youth-empowerment-in-mparntwe.md",
+        "data/webflow-migration/articles-markdown/queensland-government-spending-on-youth-justice-and-community-safety.md",
+        "data/webflow-migration/articles-markdown/the-necessity-of-state-government-in-australia-a-queensland-perspective.md",
+        "docs/DATA_GOVERNANCE_MASTER_PLAN.md",
+        "docs/archive/sessions-2024-2025/old-root-docs/CONSENT_EMAIL_TEMPLATE.md",
+        "docs/strategic/governance/INDIGENOUS_ADVISORY_BOARD.md",
+        "docs/strategic/governance/JUSTICE_SYSTEM_METRICS_2036.md",
+        "docs/strategic/governance/PARTNERSHIP_ETHICAL_REVIEW.md",
+        "docs/strategic/governance/index.md",
+        "output/campaign-hub/el-syndication-image-fix-prompt.md",
+        "public/pitch/minderoo/minderoo-consent-snapshot.json",
+        "src/app/admin/alma/elder-review/page.tsx",
+        "src/app/admin/governed-proof/PrintBriefButton.tsx",
+        "src/app/admin/governed-proof/ReviewPendingActions.tsx"
+      ],
+      "mediaDirectories": [
+        {
+          "directory": "public/images/articles",
+          "count": 118
+        },
+        {
+          "directory": "public/images/contained",
+          "count": 62
+        },
+        {
+          "directory": ".playwright-mcp/.playwright-mcp/audit",
+          "count": 58
+        },
+        {
+          "directory": "public/images/orgs",
+          "count": 50
+        },
+        {
+          "directory": "public/stories/fire-and-road",
+          "count": 35
+        },
+        {
+          "directory": "thoughts/shared/judges-on-country",
+          "count": 32
+        },
+        {
+          "directory": "designs/assets",
+          "count": 29
+        },
+        {
+          "directory": ".playwright-mcp/audit/special-pages",
+          "count": 16
+        },
+        {
+          "directory": ".playwright-mcp/audit/wiki",
+          "count": 11
+        },
+        {
+          "directory": "public/pitch/minderoo",
+          "count": 10
+        },
+        {
+          "directory": "public/images/proposals",
+          "count": 9
+        },
+        {
+          "directory": "output/contained-touchpoint-history-review",
+          "count": 8
+        }
+      ]
+    },
+    {
+      "code": "ACT-GD",
+      "name": "Goods on Country",
+      "field": "Making",
+      "repoPath": "/Users/benknight/Code/Goods Asset Register",
+      "site": "https://www.goodsoncountry.com",
+      "governance": "project-review",
+      "accent": "#B75C3B",
+      "invitation": "Touch the object. Follow its materials, repair and value home.",
+      "storyThread": "A bed arrives. The harder question is what stays after the truck leaves.",
+      "motionIdea": "Assembly, testing and distance become a moving material story.",
+      "exists": true,
+      "counts": {
+        "files": 6396,
+        "images": 3869,
+        "videos": 66,
+        "audio": 1,
+        "storyCandidates": 352,
+        "governanceFiles": 43
+      },
+      "candidates": [
+        {
+          "path": "v2/docs/fleet-machine-history-may-2026.md",
+          "score": 9,
+          "kind": "md"
+        },
+        {
+          "path": "v2/docs/fleet-pipeline-history-may-2026.md",
+          "score": 9,
+          "kind": "md"
+        },
+        {
+          "path": "thoughts/shared/handoffs/2026-05-28-history-survey.md",
+          "score": 8,
+          "kind": "md"
+        },
+        {
+          "path": "tmp/ds-pull/preview/storyteller-card.html",
+          "score": 8,
+          "kind": "html"
+        },
+        {
+          "path": "v2/src/components/fleet/event-history-table.tsx",
+          "score": 8,
+          "kind": "tsx"
+        },
+        {
+          "path": "wiki/articles/qbe-review.md",
+          "score": 8,
+          "kind": "md"
+        },
+        {
+          "path": "wiki/articles/sources/snow-pitch-feedback-reflections.md",
+          "score": 8,
+          "kind": "md"
+        },
+        {
+          "path": "wiki/outputs/2026-05-14-washing-machine-full-history.md",
+          "score": 8,
+          "kind": "md"
+        },
+        {
+          "path": "v2/docs/Final Snow pitch with Snow feedback and reflections.md",
+          "score": 6,
+          "kind": "md"
+        },
+        {
+          "path": "v2/public/brand/icons/preview.html",
+          "score": 6,
+          "kind": "html"
+        },
+        {
+          "path": "v2/public/brand/logos/preview.html",
+          "score": 6,
+          "kind": "html"
+        },
+        {
+          "path": "v2/src/app/admin/photo-review/page.tsx",
+          "score": 6,
+          "kind": "tsx"
+        },
+        {
+          "path": "v2/src/app/admin/photo-review/raw/photo-review.html",
+          "score": 6,
+          "kind": "html"
+        },
+        {
+          "path": "v2/src/app/admin/route-review/page.tsx",
+          "score": 6,
+          "kind": "tsx"
+        },
+        {
+          "path": "v2/src/app/pitch/photo-review/page.tsx",
+          "score": 6,
+          "kind": "tsx"
+        },
+        {
+          "path": "v2/src/app/production/journal/journal-form.tsx",
+          "score": 6,
+          "kind": "tsx"
+        },
+        {
+          "path": "v2/src/app/production/journal/page.tsx",
+          "score": 6,
+          "kind": "tsx"
+        },
+        {
+          "path": "design/brand/claude-design/goods-deck-review.html",
+          "score": 5,
+          "kind": "html"
+        }
+      ],
+      "mediaCandidates": [
+        {
+          "path": "v2/public/video/building-together-desktop.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "v2/public/video/building-together-mobile.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "v2/public/video/community-desktop.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "v2/public/video/community-mobile.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "v2/public/video/partners/centrecorp/utopia-bed-building.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "v2/public/video/partners/centrecorp/utopia-community-setup.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "v2/public/video/partners/centrecorp/utopia-delivery-road.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "v2/public/video/partners/centrecorp/utopia-good-news-full.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "v2/public/video/partners/oonchiumpa/karen-liddle-on-beds.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "v2/public/video/partners/oonchiumpa/mykel-building-the-bed.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "_archive/2026-07-03/public-images/brand/goods-brand-hero.png",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "deploy/video/community-desktop.mp4",
+          "score": 10,
+          "kind": "video"
+        },
+        {
+          "path": "deploy/video/community-mobile.mp4",
+          "score": 10,
+          "kind": "video"
+        },
+        {
+          "path": "design/deck-assets/goods-plastic-journey.jpg",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "design/starred-images/partners--alice-springs--karen-liddle-on-beds.mp4",
+          "score": 10,
+          "kind": "video"
+        },
+        {
+          "path": "design/starred-images/partners--alice-springs--mykel-building-the-bed.mp4",
+          "score": 10,
+          "kind": "video"
+        },
+        {
+          "path": "design/starred-images/video--alice-springs--timelapse-of-making-beds-in-alice-springs--1779530084142-timelapse-boys-making-beds.mp4",
+          "score": 10,
+          "kind": "video"
+        },
+        {
+          "path": "design/starred-images/video--alice-springs--young-girls-making-beds--1779529985909-girls-making-normal-speed.mp4",
+          "score": 10,
+          "kind": "video"
+        }
+      ],
+      "governanceFiles": [
+        "compendium/operations/authority.md",
+        "design/goods-funder-deck-v2.provenance.md",
+        "thoughts/shared/handoffs/impact-model-align/P2-consent-gate.md",
+        "thoughts/shared/qbe-program/diagnostic/07-governance-data-reporting.md",
+        "v2/.wiki-content/brand-comms/CONSENT_BACKLOG.md",
+        "v2/.wiki-content/brand-comms/CONSENT_PROCESS.md",
+        "v2/.wiki-content/enterprise/07-governance-data-reporting.md",
+        "v2/.wiki-content/governance/README.md",
+        "v2/.wiki-content/governance/ai-human-in-loop-policy.md",
+        "v2/.wiki-content/governance/board-structure.md",
+        "v2/.wiki-content/governance/compliance.md",
+        "v2/.wiki-content/governance/data-sovereignty.md",
+        "v2/.wiki-content/governance/legal-structure.md",
+        "v2/.wiki-content/governance/policies-register.md",
+        "v2/.wiki-content/governance/risk-register.md",
+        "v2/output/goods-storyteller-provenance-2026-07-14.csv",
+        "v2/output/goods-storyteller-provenance-2026-07-14.json",
+        "v2/public/docs/partners/centrecorp/utopia-outcomes-one-pager.provenance.md"
+      ],
+      "mediaDirectories": [
+        {
+          "directory": "data/qr_export_packages/by_community",
+          "count": 753
+        },
+        {
+          "directory": "data/qr_codes/png",
+          "count": 404
+        },
+        {
+          "directory": "data/qr_codes/svg",
+          "count": 404
+        },
+        {
+          "directory": "data/qr_codes_dtf/all_svg",
+          "count": 404
+        },
+        {
+          "directory": "data/qr_codes_dtf/beds",
+          "count": 384
+        },
+        {
+          "directory": "v2/public/images",
+          "count": 276
+        },
+        {
+          "directory": "Utpoia Photos Export",
+          "count": 172
+        },
+        {
+          "directory": "design/starred-images",
+          "count": 134
+        },
+        {
+          "directory": "data/new_beds/batch_156",
+          "count": 112
+        },
+        {
+          "directory": ".",
+          "count": 111
+        },
+        {
+          "directory": "design/brand/kit",
+          "count": 101
+        },
+        {
+          "directory": "media/analysis-Stretch Bed Overlay",
+          "count": 93
+        }
+      ]
+    },
+    {
+      "code": "ACT-HV",
+      "name": "The Harvest",
+      "field": "Hospitality",
+      "repoPath": "/Users/benknight/Code/The Harvest Website",
+      "site": "https://theharvestwitta.com.au",
+      "governance": "project-review",
+      "accent": "#A06A45",
+      "invitation": "Come to the table. Find the garden, kitchen and people holding it open.",
+      "storyThread": "A kettle, a plate and a garden lower the distance between strangers.",
+      "motionIdea": "Hands move from soil to table while the day changes around the place.",
+      "exists": true,
+      "counts": {
+        "files": 2252,
+        "images": 1376,
+        "videos": 92,
+        "audio": 0,
+        "storyCandidates": 62,
+        "governanceFiles": 5
+      },
+      "candidates": [
+        {
+          "path": "docs/brand/real-photo-and-history-assets.md",
+          "score": 9,
+          "kind": "md"
+        },
+        {
+          "path": "docs/community-intelligence/09-heritage-and-history.md",
+          "score": 9,
+          "kind": "md"
+        },
+        {
+          "path": "thoughts/wiki/history/origins.md",
+          "score": 9,
+          "kind": "md"
+        },
+        {
+          "path": "research/data/trove-history.json",
+          "score": 8,
+          "kind": "json"
+        },
+        {
+          "path": "docs/brand/brand-review-workflow.md",
+          "score": 6,
+          "kind": "md"
+        },
+        {
+          "path": "docs/brand/works-copy-review.md",
+          "score": 6,
+          "kind": "md"
+        },
+        {
+          "path": "docs/communications/harvest-system-review-2026-07-06.md",
+          "score": 6,
+          "kind": "md"
+        },
+        {
+          "path": "docs/communications/weekly-plans/2026-05-07-harvest-social-review-and-plan.md",
+          "score": 6,
+          "kind": "md"
+        },
+        {
+          "path": "docs/community-intelligence/08-venues-and-reviews.md",
+          "score": 6,
+          "kind": "md"
+        },
+        {
+          "path": "docs/runbooks/vercel-preview-smoke.md",
+          "score": 6,
+          "kind": "md"
+        },
+        {
+          "path": "docs/strategy/the-harvest-lease-legal-review.md",
+          "score": 6,
+          "kind": "md"
+        },
+        {
+          "path": ".Codex/cache/agents/scout/ghl-harvest-pipeline-member-review-2026-06-16.json",
+          "score": 5,
+          "kind": "json"
+        },
+        {
+          "path": ".Codex/cache/agents/scout/ghl-harvest-pipeline-member-review-2026-06-16.md",
+          "score": 5,
+          "kind": "md"
+        },
+        {
+          "path": ".Codex/cache/agents/scout/ghl-harvest-shop-support-review-2026-06-16.csv",
+          "score": 5,
+          "kind": "csv"
+        },
+        {
+          "path": ".Codex/cache/agents/scout/ghl-harvest-shop-support-review-2026-06-16.json",
+          "score": 5,
+          "kind": "json"
+        },
+        {
+          "path": ".Codex/cache/agents/scout/ghl-harvest-shop-support-review-2026-06-16.md",
+          "score": 5,
+          "kind": "md"
+        },
+        {
+          "path": "client/src/pages/HarvestReviewTest.tsx",
+          "score": 5,
+          "kind": "tsx"
+        },
+        {
+          "path": "docs/communications/articles-launch-set/01-milk-create-pavilion.md",
+          "score": 5,
+          "kind": "md"
+        }
+      ],
+      "mediaCandidates": [
+        {
+          "path": "client/public/images/compendium/hero-aerial.mp4",
+          "score": 14,
+          "kind": "video"
+        },
+        {
+          "path": "client/public/images/compendium/hero-aerial.jpg",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "client/public/images/compendium/hero-aerial.webp",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "client/public/images/harvest-hero.jpg",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "client/public/images/optimized/hero-aerial-1400.webp",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "client/public/images/optimized/hero-aerial-1600.webp",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "client/public/images/overrides/works-the-garden-feature-1.jpg",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "client/public/images/overrides/works-the-garden-hero.jpg",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "docs/communications/debriefs/_whatsapp-exports/2026-04-27T09-46-44-632Z-whatsapp-chat-harvest-garden-crew/00003025-VIDEO-2026-02-23-09-12-59.mp4",
+          "score": 10,
+          "kind": "video"
+        },
+        {
+          "path": "docs/communications/debriefs/_whatsapp-exports/2026-04-27T09-46-44-632Z-whatsapp-chat-harvest-garden-crew/00003029-VIDEO-2026-02-23-10-51-42.mp4",
+          "score": 10,
+          "kind": "video"
+        },
+        {
+          "path": "docs/communications/debriefs/_whatsapp-exports/2026-04-27T09-46-44-632Z-whatsapp-chat-harvest-garden-crew/00003031-VIDEO-2026-02-23-11-30-50.mp4",
+          "score": 10,
+          "kind": "video"
+        },
+        {
+          "path": "docs/communications/debriefs/_whatsapp-exports/2026-04-27T09-46-44-632Z-whatsapp-chat-harvest-garden-crew/00003041-VIDEO-2026-02-23-16-21-10.mp4",
+          "score": 10,
+          "kind": "video"
+        },
+        {
+          "path": "docs/communications/debriefs/_whatsapp-exports/2026-04-27T09-46-44-632Z-whatsapp-chat-harvest-garden-crew/00003042-VIDEO-2026-02-23-16-21-54.mp4",
+          "score": 10,
+          "kind": "video"
+        },
+        {
+          "path": "docs/communications/debriefs/_whatsapp-exports/2026-04-27T09-46-44-632Z-whatsapp-chat-harvest-garden-crew/00003049-VIDEO-2026-02-23-21-14-01.mp4",
+          "score": 10,
+          "kind": "video"
+        },
+        {
+          "path": "docs/communications/debriefs/_whatsapp-exports/2026-04-27T09-46-44-632Z-whatsapp-chat-harvest-garden-crew/00003068-VIDEO-2026-02-24-15-49-55.mp4",
+          "score": 10,
+          "kind": "video"
+        },
+        {
+          "path": "docs/communications/debriefs/_whatsapp-exports/2026-04-27T09-46-44-632Z-whatsapp-chat-harvest-garden-crew/00003069-VIDEO-2026-02-24-15-50-15.mp4",
+          "score": 10,
+          "kind": "video"
+        },
+        {
+          "path": "docs/communications/debriefs/_whatsapp-exports/2026-04-27T09-46-44-632Z-whatsapp-chat-harvest-garden-crew/00003080-VIDEO-2026-02-24-21-23-07.mp4",
+          "score": 10,
+          "kind": "video"
+        },
+        {
+          "path": "docs/communications/debriefs/_whatsapp-exports/2026-04-27T09-46-44-632Z-whatsapp-chat-harvest-garden-crew/00003224-VIDEO-2026-03-05-20-40-21.mp4",
+          "score": 10,
+          "kind": "video"
+        }
+      ],
+      "governanceFiles": [
+        ".Codex/cache/agents/scout/ghl-shop-pipeline-provenance-2026-06-16.json",
+        "compendium/operations/authority.md",
+        "docs/sop/photos-and-consent.md",
+        "docs/strategy/harvest-master-plan.provenance.md",
+        "thoughts/wiki/operations/staffing-model-trina-couple-2026-06.provenance.md"
+      ],
+      "mediaDirectories": [
+        {
+          "directory": "client/public/images",
+          "count": 910
+        },
+        {
+          "directory": "docs/communications/debriefs",
+          "count": 456
+        },
+        {
+          "directory": ".",
+          "count": 38
+        },
+        {
+          "directory": "docs/brand/archive",
+          "count": 31
+        },
+        {
+          "directory": "public/images",
+          "count": 13
+        },
+        {
+          "directory": "client/src/assets",
+          "count": 5
+        },
+        {
+          "directory": "docs/strategy/weekend-20-june-2026",
+          "count": 5
+        },
+        {
+          "directory": "client/public",
+          "count": 3
+        },
+        {
+          "directory": "tmp/pdfs",
+          "count": 3
+        },
+        {
+          "directory": "images",
+          "count": 2
+        },
+        {
+          "directory": "tmp/pdfs/6398-guide",
+          "count": 2
+        }
+      ]
+    },
+    {
+      "code": "ACT-FM",
+      "name": "Black Cockatoo Valley",
+      "field": "Place",
+      "repoPath": "/Users/benknight/Code/act-farm",
+      "site": "https://act.place/farm",
+      "governance": "project-review",
+      "accent": "#46664B",
+      "invitation": "Walk into the valley. Let place slow the rest of the website down.",
+      "storyThread": "Place is one of the ways the work thinks.",
+      "motionIdea": "Mist, creek, fence, bird and boots. No rush to explain.",
+      "exists": true,
+      "counts": {
+        "files": 131,
+        "images": 26,
+        "videos": 2,
+        "audio": 0,
+        "storyCandidates": 9,
+        "governanceFiles": 0
+      },
+      "candidates": [
+        {
+          "path": "app/case-studies/[slug]/page.tsx",
+          "score": 1,
+          "kind": "tsx"
+        },
+        {
+          "path": "app/case-studies/page.tsx",
+          "score": 1,
+          "kind": "tsx"
+        },
+        {
+          "path": "app/stories/[id]/page.tsx",
+          "score": 1,
+          "kind": "tsx"
+        },
+        {
+          "path": "app/stories/page.tsx",
+          "score": 1,
+          "kind": "tsx"
+        },
+        {
+          "path": "components/experiences/CaseStudyCard.tsx",
+          "score": 1,
+          "kind": "tsx"
+        },
+        {
+          "path": "components/experiences/FirstCaseStudyInvite.tsx",
+          "score": 1,
+          "kind": "tsx"
+        },
+        {
+          "path": "components/sections/CaseStudyStrip.tsx",
+          "score": 1,
+          "kind": "tsx"
+        },
+        {
+          "path": "components/sections/StoriesStrip.tsx",
+          "score": 1,
+          "kind": "tsx"
+        },
+        {
+          "path": "QUICK_START.md",
+          "score": 1,
+          "kind": "md"
+        }
+      ],
+      "mediaCandidates": [
+        {
+          "path": "public/media/hero-aerial.mp4",
+          "score": 14,
+          "kind": "video"
+        },
+        {
+          "path": "public/media/bcv-aerial.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "public/images/hero/farm-drone.jpg",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "public/media/hero-aerial-poster.jpg",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "public/file.svg",
+          "score": 2,
+          "kind": "image"
+        },
+        {
+          "path": "public/globe.svg",
+          "score": 2,
+          "kind": "image"
+        },
+        {
+          "path": "public/images/map/drone-before.jpg",
+          "score": 2,
+          "kind": "image"
+        },
+        {
+          "path": "public/images/map/drone-current.jpg",
+          "score": 2,
+          "kind": "image"
+        },
+        {
+          "path": "public/images/map/habitat-zones.jpg",
+          "score": 2,
+          "kind": "image"
+        },
+        {
+          "path": "public/images/map/site-plan.jpg",
+          "score": 2,
+          "kind": "image"
+        },
+        {
+          "path": "public/images/stay/pink-cabin-1.jpg",
+          "score": 2,
+          "kind": "image"
+        },
+        {
+          "path": "public/images/stay/pink-cabin-2.jpg",
+          "score": 2,
+          "kind": "image"
+        },
+        {
+          "path": "public/images/stay/pink-cabin-3.jpg",
+          "score": 2,
+          "kind": "image"
+        },
+        {
+          "path": "public/images/stay/pink-cabin-4.jpg",
+          "score": 2,
+          "kind": "image"
+        },
+        {
+          "path": "public/images/stay/pink-cabin-5.jpg",
+          "score": 2,
+          "kind": "image"
+        },
+        {
+          "path": "public/images/stay/train-carriage-1.jpg",
+          "score": 2,
+          "kind": "image"
+        },
+        {
+          "path": "public/images/stay/train-carriage-2.jpg",
+          "score": 2,
+          "kind": "image"
+        },
+        {
+          "path": "public/images/stay/train-carriage-3.jpg",
+          "score": 2,
+          "kind": "image"
+        }
+      ],
+      "governanceFiles": [],
+      "mediaDirectories": [
+        {
+          "directory": "public/images/stay",
+          "count": 11
+        },
+        {
+          "directory": "public",
+          "count": 5
+        },
+        {
+          "directory": "public/images/map",
+          "count": 4
+        },
+        {
+          "directory": "public/images",
+          "count": 3
+        },
+        {
+          "directory": "public/media",
+          "count": 3
+        },
+        {
+          "directory": ".",
+          "count": 1
+        },
+        {
+          "directory": "public/images/hero",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "code": "ACT-ART",
+      "name": "Art + CONTAINED",
+      "field": "Art",
+      "repoPath": "/Users/benknight/Code/Contained",
+      "site": "https://www.justicehub.com.au/contained",
+      "governance": "archive-reference",
+      "accent": "#C4845C",
+      "invitation": "Cross the threshold. Feel the system before reading about it.",
+      "storyThread": "Art keeps the contradiction in the room.",
+      "motionIdea": "Darkness, steel, light and voice turn a page into an encounter.",
+      "exists": true,
+      "counts": {
+        "files": 98,
+        "images": 11,
+        "videos": 0,
+        "audio": 0,
+        "storyCandidates": 47,
+        "governanceFiles": 0
+      },
+      "candidates": [
+        {
+          "path": "contained-site/src/app/about/page.tsx",
+          "score": 2,
+          "kind": "tsx"
+        },
+        {
+          "path": "contained-site/src/app/layout.tsx",
+          "score": 2,
+          "kind": "tsx"
+        },
+        {
+          "path": "contained-site/src/app/page.tsx",
+          "score": 2,
+          "kind": "tsx"
+        },
+        {
+          "path": "contained-brand-guide.md",
+          "score": 1,
+          "kind": "md"
+        },
+        {
+          "path": "contained-campaign.html",
+          "score": 1,
+          "kind": "html"
+        },
+        {
+          "path": "contained-site/ACT.PLACE-INTEGRATION-STRATEGY.md",
+          "score": 1,
+          "kind": "md"
+        },
+        {
+          "path": "contained-site/ACT.PLACE-INTEGRATION.md",
+          "score": 1,
+          "kind": "md"
+        },
+        {
+          "path": "contained-site/CLAUDE_CODE_INTEGRATION.md",
+          "score": 1,
+          "kind": "md"
+        },
+        {
+          "path": "contained-site/DEPLOYMENT-GUIDE.md",
+          "score": 1,
+          "kind": "md"
+        },
+        {
+          "path": "contained-site/INSTALLATION.md",
+          "score": 1,
+          "kind": "md"
+        },
+        {
+          "path": "contained-site/INTEGRATION_GUIDE.md",
+          "score": 1,
+          "kind": "md"
+        },
+        {
+          "path": "contained-site/package-integration.json",
+          "score": 1,
+          "kind": "json"
+        },
+        {
+          "path": "contained-site/package-lock.json",
+          "score": 1,
+          "kind": "json"
+        },
+        {
+          "path": "contained-site/package.json",
+          "score": 1,
+          "kind": "json"
+        },
+        {
+          "path": "contained-site/README.md",
+          "score": 1,
+          "kind": "md"
+        },
+        {
+          "path": "contained-site/SETUP-COMMANDS.md",
+          "score": 1,
+          "kind": "md"
+        },
+        {
+          "path": "contained-site/src/components/about/about-hero.tsx",
+          "score": 1,
+          "kind": "tsx"
+        },
+        {
+          "path": "contained-site/src/components/about/about-navigation.tsx",
+          "score": 1,
+          "kind": "tsx"
+        }
+      ],
+      "mediaCandidates": [
+        {
+          "path": "contained-site/public/file.svg",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "contained-site/public/globe.svg",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "contained-site/public/images/backgrounds/container-grid.png",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "contained-site/public/images/stories/amara.jpg",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "contained-site/public/images/stories/david.jpg",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "contained-site/public/images/stories/kiani.jpg",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "contained-site/public/next.svg",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "contained-site/public/vercel.svg",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "contained-site/public/window.svg",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "CONTAINED _ Transform Youth Justice.jpeg",
+          "score": 6,
+          "kind": "image"
+        }
+      ],
+      "governanceFiles": [],
+      "mediaDirectories": [
+        {
+          "directory": "contained-site/public",
+          "count": 5
+        },
+        {
+          "directory": "contained-site/public/images",
+          "count": 5
+        },
+        {
+          "directory": ".",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "code": "ACT-OO",
+      "name": "Oonchiumpa",
+      "field": "Community authority",
+      "repoPath": "/Users/benknight/Code/Oochiumpa",
+      "site": null,
+      "governance": "partner-boundary",
+      "accent": "#8B5B3E",
+      "invitation": "A governed source. Nothing travels without community authority.",
+      "storyThread": "The kitchen table holds the decision before the platform does.",
+      "motionIdea": "Interaction pattern reference only until a media packet is approved.",
+      "exists": true,
+      "counts": {
+        "files": 1156,
+        "images": 217,
+        "videos": 30,
+        "audio": 0,
+        "storyCandidates": 62,
+        "governanceFiles": 4
+      },
+      "candidates": [
+        {
+          "path": "docs/guides/BLOG-MEDIA-GUIDE.md",
+          "score": 5,
+          "kind": "md"
+        },
+        {
+          "path": "docs/guides/BLOG-QUICK-START.md",
+          "score": 5,
+          "kind": "md"
+        },
+        {
+          "path": "grant/00-REVIEW-INDEX.md",
+          "score": 5,
+          "kind": "md"
+        },
+        {
+          "path": "grant/Application-Narrative-vs-Strategy-Review.md",
+          "score": 5,
+          "kind": "md"
+        },
+        {
+          "path": "oonchiumpa-app/src/components/LiveContentPreview.tsx",
+          "score": 5,
+          "kind": "tsx"
+        },
+        {
+          "path": "PLATFORM_REVIEW_AND_NEXT_PHASE.md",
+          "score": 5,
+          "kind": "md"
+        },
+        {
+          "path": "SUPABASE_CONNECTION_REVIEW.md",
+          "score": 5,
+          "kind": "md"
+        },
+        {
+          "path": "thoughts/shared/design-review-20260415.md",
+          "score": 5,
+          "kind": "md"
+        },
+        {
+          "path": "thoughts/shared/design-review-findings.md",
+          "score": 5,
+          "kind": "md"
+        },
+        {
+          "path": "thoughts/shared/narrative-edit-review.md",
+          "score": 5,
+          "kind": "md"
+        },
+        {
+          "path": "WEBSITE-CONTENT-MANAGEMENT-REVIEW.md",
+          "score": 5,
+          "kind": "md"
+        },
+        {
+          "path": "all-story-photos.json",
+          "score": 4,
+          "kind": "json"
+        },
+        {
+          "path": "blog-post-law-students.md",
+          "score": 4,
+          "kind": "md"
+        },
+        {
+          "path": "blog-post-loves-creek.md",
+          "score": 4,
+          "kind": "md"
+        },
+        {
+          "path": "blog-post-storylistening.md",
+          "score": 4,
+          "kind": "md"
+        },
+        {
+          "path": "blog-post-sydney-invitation.md",
+          "score": 4,
+          "kind": "md"
+        },
+        {
+          "path": "LAW-STUDENTS-BLOG-INSTRUCTIONS.md",
+          "score": 4,
+          "kind": "md"
+        },
+        {
+          "path": "OONCHIUMPA_STORYTELLERS_LIST.md",
+          "score": 4,
+          "kind": "md"
+        }
+      ],
+      "mediaCandidates": [
+        {
+          "path": "oonchiumpa-app/public/videos/hero/alice-drone.mp4",
+          "score": 14,
+          "kind": "video"
+        },
+        {
+          "path": "oonchiumpa-app/public/videos/hero/bed-making.mp4",
+          "score": 14,
+          "kind": "video"
+        },
+        {
+          "path": "oonchiumpa-app/public/videos/hero/boxing.mp4",
+          "score": 14,
+          "kind": "video"
+        },
+        {
+          "path": "oonchiumpa-app/public/videos/hero/country-pan.mp4",
+          "score": 14,
+          "kind": "video"
+        },
+        {
+          "path": "oonchiumpa-app/public/videos/hero/first-part.mp4",
+          "score": 14,
+          "kind": "video"
+        },
+        {
+          "path": "oonchiumpa-app/public/videos/hero/river-drone.mp4",
+          "score": 14,
+          "kind": "video"
+        },
+        {
+          "path": "oonchiumpa-app/public/videos/hero/youth-drone.mp4",
+          "score": 14,
+          "kind": "video"
+        },
+        {
+          "path": "oonchiumpa-app/public/videos/hero/youth-walking.mp4",
+          "score": 14,
+          "kind": "video"
+        },
+        {
+          "path": "oonchiumpa-app/public/atnarpa-snow/assets/videos/light/camp-cut-20s-light.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "oonchiumpa-app/public/atnarpa-snow/assets/videos/light/camp-to-house-drone-follow-light.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "oonchiumpa-app/public/atnarpa-snow/assets/videos/light/header-dji-0323-light.backup-original.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "oonchiumpa-app/public/atnarpa-snow/assets/videos/light/header-dji-0323-light.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "oonchiumpa-app/public/atnarpa-snow/assets/videos/light/work-on-station-01-light.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "oonchiumpa-app/public/atnarpa-snow/assets/videos/light/work-on-station-02-light.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "oonchiumpa-app/public/atnarpa-snow/assets/videos/light/work-on-station-03-light.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "oonchiumpa-app/public/atnarpa-snow/assets/videos/light/work-on-station-04-light.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "oonchiumpa-app/public/atnarpa-snow/assets/videos/light/work-on-station-05-light.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "oonchiumpa-app/public/images/hero/hero-main.jpg",
+          "score": 10,
+          "kind": "image"
+        }
+      ],
+      "governanceFiles": [
+        "REAL_INNOVATION_FUND/drafts/12_marchesi_authority_letter.md",
+        "grant/LoS-06-YENOs-NT-Government.md",
+        "grant/LoS-10-Template-Elder-Community.md",
+        "oonchiumpa-platform/packages/cultural-protocols/package.json"
+      ],
+      "mediaDirectories": [
+        {
+          "directory": "oonchiumpa-platform/docs/Reports",
+          "count": 63
+        },
+        {
+          "directory": "oonchiumpa-app/public/atnarpa-snow",
+          "count": 52
+        },
+        {
+          "directory": "output/assets/atnarpa",
+          "count": 43
+        },
+        {
+          "directory": "oonchiumpa-app/public/images",
+          "count": 29
+        },
+        {
+          "directory": "output/assets/videos",
+          "count": 24
+        },
+        {
+          "directory": "oonchiumpa-app/public/videos",
+          "count": 16
+        },
+        {
+          "directory": "Photos",
+          "count": 4
+        },
+        {
+          "directory": "output/pdf",
+          "count": 3
+        },
+        {
+          "directory": "output/pdf/tmp",
+          "count": 3
+        },
+        {
+          "directory": "oonchiumpa-platform/apps/web-frontend",
+          "count": 2
+        },
+        {
+          "directory": "oonchiumpa-platform/legacy/simple-react-prototype",
+          "count": 2
+        },
+        {
+          "directory": ".superdesign/brand_styles/archiprotemplate.webflow.io",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "code": "ACT-PI",
+      "name": "Palm Island Repository",
+      "field": "Community archive",
+      "repoPath": "/Users/benknight/Code/Palm Island Reposistory",
+      "site": null,
+      "governance": "client-boundary",
+      "accent": "#4C7180",
+      "invitation": "A community archive, not an ACT media library.",
+      "storyThread": "The story returns to the island and remains governed there.",
+      "motionIdea": "Study the archive pattern. Do not lift the archive material.",
+      "exists": true,
+      "counts": {
+        "files": 4152,
+        "images": 1355,
+        "videos": 18,
+        "audio": 0,
+        "storyCandidates": 390,
+        "governanceFiles": 125
+      },
+      "candidates": [
+        {
+          "path": "docs/archive/QUICK-GUIDE-STORY-REVIEW.md",
+          "score": 9,
+          "kind": "md"
+        },
+        {
+          "path": "docs/Palm Island history.md",
+          "score": 9,
+          "kind": "md"
+        },
+        {
+          "path": "docs/palm-island-health-wellbeing-history.md",
+          "score": 9,
+          "kind": "md"
+        },
+        {
+          "path": "web-platform/app/(public)/history/HistoryContent.tsx",
+          "score": 9,
+          "kind": "tsx"
+        },
+        {
+          "path": "web-platform/app/(public)/history/page.tsx",
+          "score": 9,
+          "kind": "tsx"
+        },
+        {
+          "path": "web-platform/app/wiki/history/[chapter]/page.tsx",
+          "score": 8,
+          "kind": "tsx"
+        },
+        {
+          "path": "web-platform/app/wiki/history/page.tsx",
+          "score": 8,
+          "kind": "tsx"
+        },
+        {
+          "path": "web-platform/components/history/AnimatedCounter.tsx",
+          "score": 8,
+          "kind": "tsx"
+        },
+        {
+          "path": "web-platform/components/history/ArtifactsList.tsx",
+          "score": 8,
+          "kind": "tsx"
+        },
+        {
+          "path": "web-platform/components/history/GrowthChart.tsx",
+          "score": 8,
+          "kind": "tsx"
+        },
+        {
+          "path": "web-platform/components/history/YearCard.tsx",
+          "score": 8,
+          "kind": "tsx"
+        },
+        {
+          "path": "web-platform/components/story-review/ThematicAnalysisPanel.tsx",
+          "score": 8,
+          "kind": "tsx"
+        },
+        {
+          "path": "web-platform/content/history.md",
+          "score": 8,
+          "kind": "md"
+        },
+        {
+          "path": "web-platform/lib/pdf/templates/HistoryPDF.tsx",
+          "score": 8,
+          "kind": "tsx"
+        },
+        {
+          "path": "web-platform/picc-vault/themes/colonial_history.md",
+          "score": 8,
+          "kind": "md"
+        },
+        {
+          "path": "web-platform/picc-vault/transcripts/from-floods-to-forty-tribes-yarning-about-healing-history-and-recovery.md",
+          "score": 8,
+          "kind": "md"
+        },
+        {
+          "path": "docs/archive/ANNUAL-REPORT-STRATEGIES-REVIEW.md",
+          "score": 6,
+          "kind": "md"
+        },
+        {
+          "path": "docs/archive/ANNUAL-REPORT-SYSTEM-REVIEW.md",
+          "score": 6,
+          "kind": "md"
+        }
+      ],
+      "mediaCandidates": [
+        {
+          "path": "web-platform/public/hero-assets/clips/country-waterfall.mp4",
+          "score": 14,
+          "kind": "video"
+        },
+        {
+          "path": "web-platform/public/hero-assets/clips/elders-on-country.mp4",
+          "score": 14,
+          "kind": "video"
+        },
+        {
+          "path": "web-platform/public/hero-assets/clips/palm-island-aerial.mp4",
+          "score": 14,
+          "kind": "video"
+        },
+        {
+          "path": "web-platform/public/hero-assets/clips/palm-island-sunset.mp4",
+          "score": 14,
+          "kind": "video"
+        },
+        {
+          "path": "web-platform/public/hero-assets/stills/jetty-aerial.jpg",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "web-platform/public/hero-assets/stills/kids-beach-palm.jpg",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "web-platform/public/hero-assets/stills/mountain-valley.jpg",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "web-platform/public/hero-assets/stills/palm-sunset-palms.jpg",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "web-platform/public/hero-assets/stills/palm-sunset-pier.jpg",
+          "score": 10,
+          "kind": "image"
+        },
+        {
+          "path": "web-platform/public/hero-assets/clips/centre-youth-work.mp4",
+          "score": 9,
+          "kind": "video"
+        },
+        {
+          "path": "web-platform/public/hero-assets/clips/daycare-celebration.mp4",
+          "score": 9,
+          "kind": "video"
+        },
+        {
+          "path": "web-platform/public/hero-assets/clips/daycare-playground.mp4",
+          "score": 9,
+          "kind": "video"
+        },
+        {
+          "path": "web-platform/public/hero-assets/clips/kids-beach.mp4",
+          "score": 9,
+          "kind": "video"
+        },
+        {
+          "path": "web-platform/public/hero-assets/clips/mountain-panorama.mp4",
+          "score": 9,
+          "kind": "video"
+        },
+        {
+          "path": "web-platform/public/hero-assets/clips/youth-cleaning-corridor.mp4",
+          "score": 9,
+          "kind": "video"
+        },
+        {
+          "path": "web-platform/public/hero-assets/clips/youth-sweeping.mp4",
+          "score": 9,
+          "kind": "video"
+        },
+        {
+          "path": "web-platform/public/hero-assets/clips/youth-team-group.mp4",
+          "score": 9,
+          "kind": "video"
+        },
+        {
+          "path": "web-platform/public/video/hero-desktop-web.mp4",
+          "score": 9,
+          "kind": "video"
+        }
+      ],
+      "governanceFiles": [
+        "docs/archive/CONTACT-CONSENT-FEATURES.md",
+        "docs/archive/ELDER-STORIES-IMPORT-TEMPLATE.md",
+        "docs/archive/STORY-APPROVAL-WORKFLOW.md",
+        "templates/elder-story-template.md",
+        "web-platform/app/(public)/elders/family/page.tsx",
+        "web-platform/app/(public)/elders/leadership/page.tsx",
+        "web-platform/app/(public)/elders/page.tsx",
+        "web-platform/app/(public)/elders/voices-on-country/page.tsx",
+        "web-platform/app/(public)/governance/[slug]/page.tsx",
+        "web-platform/app/(public)/governance/page.tsx",
+        "web-platform/app/picc/elders-room/EldersRoomClient.tsx",
+        "web-platform/app/picc/elders-room/page.tsx",
+        "web-platform/app/picc/elders/meetings/AttendeesPanel.tsx",
+        "web-platform/app/picc/elders/meetings/page.tsx",
+        "web-platform/app/picc/governance/page.tsx",
+        "web-platform/app/picc/permissions/page.tsx",
+        "web-platform/app/wiki/innovation/elders-trip/page.tsx",
+        "web-platform/components/annual-report/2024-25/ElderPortraitSection.tsx"
+      ],
+      "mediaDirectories": [
+        {
+          "directory": "web-platform/public/annual-report-photos",
+          "count": 500
+        },
+        {
+          "directory": "web-platform/public/documents",
+          "count": 346
+        },
+        {
+          "directory": "web-platform/public/icons",
+          "count": 176
+        },
+        {
+          "directory": "web-platform/pencil-photos",
+          "count": 104
+        },
+        {
+          "directory": "web-platform/public/archive-photos",
+          "count": 60
+        },
+        {
+          "directory": "web-platform/public/hero-assets",
+          "count": 28
+        },
+        {
+          "directory": "web-platform/images",
+          "count": 24
+        },
+        {
+          "directory": "web-platform/public/cyclone-kirrily-temp",
+          "count": 22
+        },
+        {
+          "directory": "output/notion-upload/picc-public-route-screenshots",
+          "count": 18
+        },
+        {
+          "directory": "output/notion-upload/picc-public-route-screenshots 2",
+          "count": 18
+        },
+        {
+          "directory": "web-platform/public/service-icons",
+          "count": 17
+        },
+        {
+          "directory": "annual-reports/output",
+          "count": 14
+        }
+      ]
+    },
+    {
+      "code": "ACT-VIDEO",
+      "name": "ACT video storytelling",
+      "field": "Movement",
+      "repoPath": "/Users/benknight/Code/act-video-storytelling",
+      "site": null,
+      "governance": "prototype-reference",
+      "accent": "#6E5A72",
+      "invitation": "Test how voice can move without becoming spectacle.",
+      "storyThread": "The edit follows breath before it follows brand.",
+      "motionIdea": "Voice Canvas, emotional arcs and photo reveals form the motion grammar.",
+      "exists": true,
+      "counts": {
+        "files": 226,
+        "images": 118,
+        "videos": 23,
+        "audio": 1,
+        "storyCandidates": 6,
+        "governanceFiles": 0
+      },
+      "candidates": [
+        {
+          "path": "public/review.html",
+          "score": 6,
+          "kind": "html"
+        },
+        {
+          "path": "src/compositions/StoryReel.tsx",
+          "score": 4,
+          "kind": "tsx"
+        },
+        {
+          "path": "thoughts/research-storyteller-ui-patterns.md",
+          "score": 4,
+          "kind": "md"
+        },
+        {
+          "path": "scripts/test-data/real-transcript.json",
+          "score": 1,
+          "kind": "json"
+        },
+        {
+          "path": "src/compositions/InterviewVideo.tsx",
+          "score": 1,
+          "kind": "tsx"
+        },
+        {
+          "path": "thoughts/shared/handoffs/interview-video-editor/current.md",
+          "score": 1,
+          "kind": "md"
+        }
+      ],
+      "mediaCandidates": [
+        {
+          "path": "public/previous-renders/aquisha-full-edit-v3.mp4",
+          "score": 9,
+          "kind": "video"
+        },
+        {
+          "path": "public/previous-renders/aquisha-scene-edit-v1.mp4",
+          "score": 9,
+          "kind": "video"
+        },
+        {
+          "path": "public/previous-renders/aquisha-voicecanvas-edit.mp4",
+          "score": 9,
+          "kind": "video"
+        },
+        {
+          "path": "public/brand-assets/test-music-documentary.wav",
+          "score": 8,
+          "kind": "audio"
+        },
+        {
+          "path": "public/brand-assets/test-gemini-community.png",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "public/brand-elements/v2-emotion-grief-reflection.png",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "public/storyteller-portraits/07dbb433-e386-49ca-a24a-e4a5a5c12417.jpg",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "public/voice-canvas/overlays/passionate-particles.png",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "public/voice-canvas/overlays/reflective-particles.png",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "public/voice-canvas/overlays/sorrowful-particles.png",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "public/voice-canvas/overlays/tense-particles.png",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "public/voice-canvas/textures/landscapes/aquisha-country-painting.png",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "public/voice-canvas/textures/landscapes/gemini-community-scene.png",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "public/voice-canvas/textures/overlays/passionate-particles.png",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "public/voice-canvas/textures/overlays/reflective-particles.png",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "public/voice-canvas/textures/overlays/sorrowful-particles.png",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "public/voice-canvas/textures/overlays/tense-particles.png",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "public/previous-renders/aquisha-full-treatment-v2.mp4",
+          "score": 6,
+          "kind": "video"
+        }
+      ],
+      "governanceFiles": [],
+      "mediaDirectories": [
+        {
+          "directory": "public/voice-canvas/textures",
+          "count": 40
+        },
+        {
+          "directory": "out",
+          "count": 17
+        },
+        {
+          "directory": "public/voice-canvas",
+          "count": 15
+        },
+        {
+          "directory": "public/voice-canvas/videos",
+          "count": 14
+        },
+        {
+          "directory": "public/brand-assets/images",
+          "count": 12
+        },
+        {
+          "directory": "public/brand-elements",
+          "count": 12
+        },
+        {
+          "directory": "public/voice-canvas/overlays",
+          "count": 10
+        },
+        {
+          "directory": "public/brand-assets",
+          "count": 9
+        },
+        {
+          "directory": "public/brand-assets/design-specs",
+          "count": 6
+        },
+        {
+          "directory": "public/previous-renders",
+          "count": 6
+        },
+        {
+          "directory": "public/storyteller-portraits",
+          "count": 1
+        }
+      ]
+    },
+    {
+      "code": "ACT-10Y",
+      "name": "Living story map",
+      "field": "Time",
+      "repoPath": "/Users/benknight/Code/10-years",
+      "site": null,
+      "governance": "partner-boundary",
+      "accent": "#817042",
+      "invitation": "A governed Oonchiumpa and Palm story system.",
+      "storyThread": "People move across time. Aspirations become milestones.",
+      "motionIdea": "Use the horizontal-time and vertical-people pattern, not its community media.",
+      "exists": true,
+      "counts": {
+        "files": 113,
+        "images": 16,
+        "videos": 12,
+        "audio": 0,
+        "storyCandidates": 3,
+        "governanceFiles": 5
+      },
+      "candidates": [
+        {
+          "path": "src/pages/HistoryPage.tsx",
+          "score": 8,
+          "kind": "tsx"
+        },
+        {
+          "path": "src/pages/YearDetailPage.tsx",
+          "score": 5,
+          "kind": "tsx"
+        },
+        {
+          "path": "src/pages/YearsIndexPage.tsx",
+          "score": 5,
+          "kind": "tsx"
+        }
+      ],
+      "mediaCandidates": [
+        {
+          "path": "public/media/clips/country-waterfall.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "public/media/clips/elders-on-country.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "public/media/clips/palm-island-aerial.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "public/media/clips/palm-island-sunset.mp4",
+          "score": 11,
+          "kind": "video"
+        },
+        {
+          "path": "public/media/stills/jetty-aerial.jpg",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "public/media/stills/kids-beach-palm.jpg",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "public/media/stills/mountain-valley.jpg",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "public/media/stills/palm-sunset-palms.jpg",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "public/media/stills/palm-sunset-pier.jpg",
+          "score": 7,
+          "kind": "image"
+        },
+        {
+          "path": "public/media/clips/centre-youth-work.mp4",
+          "score": 6,
+          "kind": "video"
+        },
+        {
+          "path": "public/media/clips/daycare-celebration.mp4",
+          "score": 6,
+          "kind": "video"
+        },
+        {
+          "path": "public/media/clips/daycare-playground.mp4",
+          "score": 6,
+          "kind": "video"
+        },
+        {
+          "path": "public/media/clips/kids-beach.mp4",
+          "score": 6,
+          "kind": "video"
+        },
+        {
+          "path": "public/media/clips/mountain-panorama.mp4",
+          "score": 6,
+          "kind": "video"
+        },
+        {
+          "path": "public/media/clips/youth-cleaning-corridor.mp4",
+          "score": 6,
+          "kind": "video"
+        },
+        {
+          "path": "public/media/clips/youth-sweeping.mp4",
+          "score": 6,
+          "kind": "video"
+        },
+        {
+          "path": "public/media/clips/youth-team-group.mp4",
+          "score": 6,
+          "kind": "video"
+        },
+        {
+          "path": "public/media/stills/centre-youth-landscaping.jpg",
+          "score": 2,
+          "kind": "image"
+        }
+      ],
+      "governanceFiles": [
+        "src/pages/CommunityGovernancePage.tsx",
+        "src/pages/ElderLineagePage.tsx",
+        "src/pages/ElderProfilePage.tsx",
+        "src/pages/EldersIndexPage.tsx",
+        "src/pages/FamilyGovernancePage.tsx"
+      ],
+      "mediaDirectories": [
+        {
+          "directory": "public/media/stills",
+          "count": 16
+        },
+        {
+          "directory": "public/media/clips",
+          "count": 12
+        }
+      ]
+    },
+    {
+      "code": "ACT-RV",
+      "name": "Reciprocal Voices",
+      "field": "Participation",
+      "repoPath": "/Users/benknight/Code/reciprocal-voices-interactive",
+      "site": null,
+      "governance": "prototype-reference",
+      "accent": "#68735B",
+      "invitation": "Pick up the handset. A voice changes the space around it.",
+      "storyThread": "Listening is an action the visitor performs.",
+      "motionIdea": "Voice particles gather and separate around a physical gesture.",
+      "exists": true,
+      "counts": {
+        "files": 169,
+        "images": 0,
+        "videos": 1,
+        "audio": 92,
+        "storyCandidates": 1,
+        "governanceFiles": 0
+      },
+      "candidates": [
+        {
+          "path": "audio/transcripts.json",
+          "score": 1,
+          "kind": "json"
+        }
+      ],
+      "mediaCandidates": [
+        {
+          "path": "audio/Podcast/original.mp4",
+          "score": 5,
+          "kind": "video"
+        },
+        {
+          "path": "audio/ambient/ambient-background.mp3",
+          "score": 4,
+          "kind": "audio"
+        },
+        {
+          "path": "audio/collective/all-voices-collective-LOUD.mp3",
+          "score": 4,
+          "kind": "audio"
+        },
+        {
+          "path": "audio/collective/all-voices-collective-QUIET-BACKUP.mp3",
+          "score": 4,
+          "kind": "audio"
+        },
+        {
+          "path": "audio/collective/all-voices-collective.mp3",
+          "score": 4,
+          "kind": "audio"
+        },
+        {
+          "path": "audio/individual/voice-001.mp3",
+          "score": 4,
+          "kind": "audio"
+        },
+        {
+          "path": "audio/individual/voice-002.mp3",
+          "score": 4,
+          "kind": "audio"
+        },
+        {
+          "path": "audio/individual/voice-003.mp3",
+          "score": 4,
+          "kind": "audio"
+        },
+        {
+          "path": "audio/individual/voice-004.mp3",
+          "score": 4,
+          "kind": "audio"
+        },
+        {
+          "path": "audio/individual/voice-005.mp3",
+          "score": 4,
+          "kind": "audio"
+        },
+        {
+          "path": "audio/individual/voice-006.mp3",
+          "score": 4,
+          "kind": "audio"
+        },
+        {
+          "path": "audio/individual/voice-007.mp3",
+          "score": 4,
+          "kind": "audio"
+        },
+        {
+          "path": "audio/individual/voice-008.mp3",
+          "score": 4,
+          "kind": "audio"
+        },
+        {
+          "path": "audio/individual/voice-009.mp3",
+          "score": 4,
+          "kind": "audio"
+        },
+        {
+          "path": "audio/individual/voice-010.mp3",
+          "score": 4,
+          "kind": "audio"
+        },
+        {
+          "path": "audio/individual/voice-011.mp3",
+          "score": 4,
+          "kind": "audio"
+        },
+        {
+          "path": "audio/individual/voice-012.mp3",
+          "score": 4,
+          "kind": "audio"
+        },
+        {
+          "path": "audio/individual/voice-013.mp3",
+          "score": 4,
+          "kind": "audio"
+        }
+      ],
+      "governanceFiles": [],
+      "mediaDirectories": [
+        {
+          "directory": "audio/individual",
+          "count": 73
+        },
+        {
+          "directory": "audio/New audio",
+          "count": 15
+        },
+        {
+          "directory": "audio/collective",
+          "count": 3
+        },
+        {
+          "directory": "audio/Podcast",
+          "count": 1
+        },
+        {
+          "directory": "audio/ambient",
+          "count": 1
+        }
+      ]
+    }
+  ]
+}

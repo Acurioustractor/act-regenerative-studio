@@ -42,6 +42,10 @@ const nextConfig = {
         protocol: "https",
         hostname: "d1d3n03t5zntha.cloudfront.net",
       },
+      {
+        protocol: "https",
+        hostname: "www.empathyledger.com",
+      },
     ],
   },
   eslint: {

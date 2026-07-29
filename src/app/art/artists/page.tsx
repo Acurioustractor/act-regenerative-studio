@@ -43,7 +43,7 @@ export default async function ArtistsPage() {
             <Link
               key={collaborator.key}
               href={collaborator.href}
-              className="group overflow-hidden rounded-3xl border border-[#E1D3BA] bg-white/80 transition hover:-translate-y-1 hover:border-[#4CAF50] hover:shadow-[0_18px_45px_rgba(50,42,31,0.1)]"
+              className="group overflow-hidden rounded-3xl border border-[#E1D3BA] bg-white/80 transition hover:-translate-y-1 hover:border-forest hover:shadow-[0_18px_45px_rgba(50,42,31,0.1)]"
             >
               <div className="flex min-h-[120px] items-end bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-6">
                 <div className="space-y-1">
@@ -58,7 +58,7 @@ export default async function ArtistsPage() {
                 </div>
               </div>
               <div className="space-y-4 p-6">
-                <p className="text-sm font-medium uppercase tracking-[0.18em] text-[#4CAF50]">
+                <p className="text-sm font-medium uppercase tracking-[0.18em] text-forest">
                   {collaborator.role}
                 </p>
                 <p className="text-sm leading-7 text-[var(--we-brown)]">

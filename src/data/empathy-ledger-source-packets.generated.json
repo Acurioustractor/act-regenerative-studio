@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-05-27T06:02:35.133Z",
-  "sourceUrl": "https://empathy-ledger-v2.vercel.app",
+  "generatedAt": "2026-07-23T07:24:27.398Z",
+  "sourceUrl": "https://www.empathyledger.com",
   "siteSlug": "act-regenerative-studio",
   "destination": "act_el",
   "packetCount": 5,
@@ -23,7 +23,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "flagship_project_pack",
           "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
-          "captured_at": "2026-05-27T06:02:31.492Z",
+          "captured_at": "2026-07-23T07:24:23.091Z",
           "verification_status": "verified",
           "notes": "Flagship pack exists for this project slug."
         },
@@ -32,7 +32,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "site_editorial_manifest",
           "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
-          "captured_at": "2026-05-27T06:02:31.492Z",
+          "captured_at": "2026-07-23T07:24:23.091Z",
           "verification_status": "verified",
           "notes": "Editorial manifest found for act-regenerative-studio."
         }
@@ -50,7 +50,7 @@
         {
           "asset_id": "d759752d-8162-4041-b59c-601e72bdec4c",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/galleries/c9445b2a-375d-436b-a1e7-b96de3b2a0eb/1769459504514-6m1kr-IMG_5114.jpg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/d759752d-8162-4041-b59c-601e72bdec4c/file",
           "caption": null,
           "alt_text": "IMG_5114",
           "usage_rights": "approved"
@@ -58,7 +58,7 @@
         {
           "asset_id": "f0f98f23-d5a5-48cd-9b6b-e187fe2cb70a",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072641384-1E5A2159.jpg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/f0f98f23-d5a5-48cd-9b6b-e187fe2cb70a/file",
           "caption": null,
           "alt_text": "Image: 1E5A2159.jpg",
           "usage_rights": "approved"
@@ -66,7 +66,7 @@
         {
           "asset_id": "7c23b3dc-0f88-4ec9-8ade-3342f8d23e3d",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072640325-1E5A2170.jpg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/7c23b3dc-0f88-4ec9-8ade-3342f8d23e3d/file",
           "caption": null,
           "alt_text": "Image: 1E5A2170.jpg",
           "usage_rights": "approved"
@@ -74,7 +74,7 @@
         {
           "asset_id": "49b59525-dce7-4067-b655-8f157934c7a0",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072639291-1E5A2172.jpg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/49b59525-dce7-4067-b655-8f157934c7a0/file",
           "caption": null,
           "alt_text": "Image: 1E5A2172.jpg",
           "usage_rights": "approved"
@@ -82,7 +82,7 @@
         {
           "asset_id": "d32130c0-43d9-42cd-bfad-b88a5a0ae1d2",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072638266-1E5A2183.jpg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/d32130c0-43d9-42cd-bfad-b88a5a0ae1d2/file",
           "caption": null,
           "alt_text": "Image: 1E5A2183.jpg",
           "usage_rights": "approved"
@@ -90,7 +90,7 @@
         {
           "asset_id": "ad9ef95c-1997-4f95-abe4-646a1ac67b27",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072636943-1E5A2190.jpg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/ad9ef95c-1997-4f95-abe4-646a1ac67b27/file",
           "caption": null,
           "alt_text": "Image: 1E5A2190.jpg",
           "usage_rights": "approved"
@@ -98,7 +98,7 @@
         {
           "asset_id": "e9b0d1e6-ba3f-4435-854b-8dcec9d7b874",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072635078-1E5A2194.jpg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/e9b0d1e6-ba3f-4435-854b-8dcec9d7b874/file",
           "caption": null,
           "alt_text": "Image: 1E5A2194.jpg",
           "usage_rights": "approved"
@@ -106,7 +106,7 @@
         {
           "asset_id": "0c45b7f4-457b-4337-9642-b851ff16dd85",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774072632636-Nigel.mp3",
+          "uri_or_path": "https://www.empathyledger.com/api/media/0c45b7f4-457b-4337-9642-b851ff16dd85/file",
           "caption": null,
           "alt_text": "Audio: Nigel.mp3",
           "usage_rights": "approved"
@@ -169,7 +169,7 @@
         }
       ],
       "provenance": {
-        "generated_at": "2026-05-27T06:02:31.492Z",
+        "generated_at": "2026-07-23T07:24:23.091Z",
         "generated_by": "content-hub-source-packet-builder",
         "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
         "notes": "storyIds=0, storytellerIds=4, mediaIds=8"
@@ -226,7 +226,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "flagship_project_pack",
           "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
-          "captured_at": "2026-05-27T06:02:30.725Z",
+          "captured_at": "2026-07-23T07:24:22.373Z",
           "verification_status": "unverified",
           "notes": "No flagship pack found."
         },
@@ -235,13 +235,13 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "site_editorial_manifest",
           "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
-          "captured_at": "2026-05-27T06:02:30.725Z",
+          "captured_at": "2026-07-23T07:24:22.373Z",
           "verification_status": "verified",
           "notes": "Editorial manifest found for act-regenerative-studio."
         }
       ],
       "narrative": {
-        "headline": "Goods",
+        "headline": "Goods on Country",
         "summary": "Dianne Stokes, a traditional owner in Tennant Creek, has spent twenty-four years transforming bare country into a home, starting with nothing but her car for shelter.",
         "body_markdown": "- Where the Country Calls Me Home — Dianne Stokes, a traditional owner in Tennant Creek, has spent twenty-four years transforming bare country into a home, starting with nothing but her car for shelter.\n- Pakkimjalki Kari: Beds, Washing Machines, and the Blessings We Share — When a brand-new washing machine arrives at Alba Camp in Tennant Creek, Dianne Stokes can't contain her joy. This is the story of beds, washing machines, and what happens when a community decides that the most basic goods — the ones most Australians take for granted — are blessings worth sharing.",
         "themes": [
@@ -261,67 +261,67 @@
       },
       "media_assets": [
         {
-          "asset_id": "c56c6e30-ef00-4346-b824-a64bb01e5024",
+          "asset_id": "5a192347-d609-40db-ab29-15cd56f3b951",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775505862303-20260329-1E5A2872.jpg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/5a192347-d609-40db-ab29-15cd56f3b951/file",
           "caption": null,
-          "alt_text": "Image: 20260329-1E5A2872.jpg",
+          "alt_text": "20251213-1E5A8857",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "6505d292-dd60-484e-8da7-8b1bc67302c4",
+          "asset_id": "452647d6-4a98-4b34-a418-7c4ad770d269",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775505861206-20260329-1E5A2867.jpg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/452647d6-4a98-4b34-a418-7c4ad770d269/file",
           "caption": null,
-          "alt_text": "Image: 20260329-1E5A2867.jpg",
+          "alt_text": "20251213-1E5A8851",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "e4297139-c2a4-4edd-9db3-df3e680e61ac",
+          "asset_id": "c4458a30-923d-474c-9660-1c7503d55c54",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775505860088-20260329-1E5A2866.jpg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/c4458a30-923d-474c-9660-1c7503d55c54/file",
           "caption": null,
-          "alt_text": "Image: 20260329-1E5A2866.jpg",
+          "alt_text": "20251213-1E5A8836",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "87dc0c7e-4060-46e0-970c-4b56c829be17",
+          "asset_id": "251a5737-903f-4102-962c-182797640a6a",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775505858942-20260329-1E5A2865.jpg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/251a5737-903f-4102-962c-182797640a6a/file",
           "caption": null,
-          "alt_text": "Image: 20260329-1E5A2865.jpg",
+          "alt_text": "20251213-1E5A8818",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "818b77e2-c3c5-4a77-8460-6cb4afab2455",
+          "asset_id": "26ec660b-0c14-4d84-8957-2dbf653f8461",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775505857809-20260329-1E5A2864.jpg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/26ec660b-0c14-4d84-8957-2dbf653f8461/file",
           "caption": null,
-          "alt_text": "Image: 20260329-1E5A2864.jpg",
+          "alt_text": "20251213-1E5A8807",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "9095cafb-1570-4ccf-af97-af86bfc2e038",
+          "asset_id": "fb671a07-0d45-42a8-96ae-3aa95100509a",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775505856712-20260329-1E5A2863.jpg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/fb671a07-0d45-42a8-96ae-3aa95100509a/file",
           "caption": null,
-          "alt_text": "Image: 20260329-1E5A2863.jpg",
+          "alt_text": "20251213-1E5A8773",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "72327163-31c0-4279-97d6-b314cebf062f",
+          "asset_id": "34155a64-1d36-48d5-a4bc-dba596d1432f",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775505855331-20260329-1E5A2862.jpg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/34155a64-1d36-48d5-a4bc-dba596d1432f/file",
           "caption": null,
-          "alt_text": "Image: 20260329-1E5A2862.jpg",
+          "alt_text": "20251213-1E5A8753",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "7d960662-77a0-4747-8ab6-1d24607ce491",
+          "asset_id": "5cd01f4f-92ae-4cff-bf4f-317a7d4bba27",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775505854272-20260329-1E5A2861.jpg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/5cd01f4f-92ae-4cff-bf4f-317a7d4bba27/file",
           "caption": null,
-          "alt_text": "Image: 20260329-1E5A2861.jpg",
+          "alt_text": "20251213-1E5A8739",
           "usage_rights": "approved"
         }
       ],
@@ -382,7 +382,7 @@
         }
       ],
       "provenance": {
-        "generated_at": "2026-05-27T06:02:30.725Z",
+        "generated_at": "2026-07-23T07:24:22.373Z",
         "generated_by": "content-hub-source-packet-builder",
         "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
         "notes": "storyIds=2, storytellerIds=6, mediaIds=8"
@@ -390,28 +390,28 @@
       "packet_context": {
         "site_slug": "act-regenerative-studio",
         "destination": "act_el",
-        "project_name": "Goods",
+        "project_name": "Goods on Country",
         "story_ids": [
           "28cb405e-78de-43e3-849c-5c87cbde3760",
           "e94f98ed-00f3-42ff-b97c-2430ee4655ab"
         ],
         "storyteller_ids": [
           "5c3911f8-bf43-4101-be4a-d48c38536dda",
-          "ac700001-0000-0000-0000-000000000002",
           "e1679978-f251-4074-8873-d3f5baa80950",
           "69db1d7e-c3f5-4926-b4d4-2d098c040952",
           "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
-          "433f5fbc-2c8d-46c1-916d-d558c179e701"
+          "433f5fbc-2c8d-46c1-916d-d558c179e701",
+          "00d67731-1bd1-41b8-ab0e-4a3aa07848fa"
         ],
         "media_asset_ids": [
-          "c56c6e30-ef00-4346-b824-a64bb01e5024",
-          "6505d292-dd60-484e-8da7-8b1bc67302c4",
-          "e4297139-c2a4-4edd-9db3-df3e680e61ac",
-          "87dc0c7e-4060-46e0-970c-4b56c829be17",
-          "818b77e2-c3c5-4a77-8460-6cb4afab2455",
-          "9095cafb-1570-4ccf-af97-af86bfc2e038",
-          "72327163-31c0-4279-97d6-b314cebf062f",
-          "7d960662-77a0-4747-8ab6-1d24607ce491"
+          "5a192347-d609-40db-ab29-15cd56f3b951",
+          "452647d6-4a98-4b34-a418-7c4ad770d269",
+          "c4458a30-923d-474c-9660-1c7503d55c54",
+          "251a5737-903f-4102-962c-182797640a6a",
+          "26ec660b-0c14-4d84-8957-2dbf653f8461",
+          "fb671a07-0d45-42a8-96ae-3aa95100509a",
+          "34155a64-1d36-48d5-a4bc-dba596d1432f",
+          "5cd01f4f-92ae-4cff-bf4f-317a7d4bba27"
         ],
         "featured_article_slugs": []
       }
@@ -434,7 +434,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "flagship_project_pack",
           "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
-          "captured_at": "2026-05-27T06:02:33.578Z",
+          "captured_at": "2026-07-23T07:24:25.859Z",
           "verification_status": "verified",
           "notes": "Flagship pack exists for this project slug."
         },
@@ -443,7 +443,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "site_editorial_manifest",
           "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
-          "captured_at": "2026-05-27T06:02:33.578Z",
+          "captured_at": "2026-07-23T07:24:25.859Z",
           "verification_status": "verified",
           "notes": "Editorial manifest found for act-regenerative-studio."
         }
@@ -463,67 +463,67 @@
       },
       "media_assets": [
         {
-          "asset_id": "106a87f4-897b-44ce-8eb7-d8d601fe2d1f",
+          "asset_id": "4493c460-6fb6-4020-a4ae-f5dcd3c26833",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1778791351674-IMG_2966.MP4",
+          "uri_or_path": "https://www.empathyledger.com/api/media/4493c460-6fb6-4020-a4ae-f5dcd3c26833/file",
           "caption": null,
-          "alt_text": "Video: IMG_2966.MP4",
+          "alt_text": "Image: 20260620-1E5A7341.jpg",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "77a1a19f-de91-4599-b5d1-9d111e878218",
+          "asset_id": "3702cbca-c0e9-45cd-bdb1-5e20771b1394",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1778791344131-IMG_2966.HEIC",
+          "uri_or_path": "https://www.empathyledger.com/api/media/3702cbca-c0e9-45cd-bdb1-5e20771b1394/file",
           "caption": null,
-          "alt_text": "Image: IMG_2966.HEIC",
+          "alt_text": "Image: 20260620-1E5A7340.jpg",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "5de41e2b-7970-40e1-a66a-b021fe672944",
+          "asset_id": "a5777c33-3ea8-49ce-8290-a15e1d2e0ad3",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1778791337381-IMG_2964.MP4",
+          "uri_or_path": "https://www.empathyledger.com/api/media/a5777c33-3ea8-49ce-8290-a15e1d2e0ad3/file",
           "caption": null,
-          "alt_text": "Video: IMG_2964.MP4",
+          "alt_text": "Image: 20260620-1E5A7336.jpg",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "cb18b99b-fdad-410e-80d5-8296d1b3056e",
+          "asset_id": "c53b3179-2a5a-4e8c-a636-9f55e3605cf0",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1778791329468-IMG_2964.HEIC",
+          "uri_or_path": "https://www.empathyledger.com/api/media/c53b3179-2a5a-4e8c-a636-9f55e3605cf0/file",
           "caption": null,
-          "alt_text": "Image: IMG_2964.HEIC",
+          "alt_text": "Image: 20260620-1E5A7334.jpg",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "2ce4837a-ea2b-4a4f-9ca3-1d678f51735f",
+          "asset_id": "a8822866-f19f-4aea-96f4-ff5153d6cede",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1778791322550-IMG_2962.MP4",
+          "uri_or_path": "https://www.empathyledger.com/api/media/a8822866-f19f-4aea-96f4-ff5153d6cede/file",
           "caption": null,
-          "alt_text": "Video: IMG_2962.MP4",
+          "alt_text": "Image: 20260620-1E5A7329.jpg",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "f0888269-073b-40a9-83ae-3426d62600e9",
+          "asset_id": "9d03a639-dfd0-4b27-931d-b7c944724d57",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1778791314169-IMG_2962.HEIC",
+          "uri_or_path": "https://www.empathyledger.com/api/media/9d03a639-dfd0-4b27-931d-b7c944724d57/file",
           "caption": null,
-          "alt_text": "Image: IMG_2962.HEIC",
+          "alt_text": "Image: 20260620-1E5A7321.jpg",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "6cc5c2d1-a64c-43e6-9c42-a2e597140abf",
+          "asset_id": "8d2fd729-e6e5-4355-b5d4-a7481e1b9c74",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1778791305798-IMG_2956.MP4",
+          "uri_or_path": "https://www.empathyledger.com/api/media/8d2fd729-e6e5-4355-b5d4-a7481e1b9c74/file",
           "caption": null,
-          "alt_text": "Video: IMG_2956.MP4",
+          "alt_text": "Image: 20260620-1E5A7318.jpg",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "4b4b2cd9-4ec8-45b5-abb2-38a15f07e12f",
+          "asset_id": "a6a1321f-4534-48e9-a021-051afe354696",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1778791296889-IMG_2956.HEIC",
+          "uri_or_path": "https://www.empathyledger.com/api/media/a6a1321f-4534-48e9-a021-051afe354696/file",
           "caption": null,
-          "alt_text": "Image: IMG_2956.HEIC",
+          "alt_text": "Image: 20260620-1E5A7316.jpg",
           "usage_rights": "approved"
         }
       ],
@@ -584,7 +584,7 @@
         }
       ],
       "provenance": {
-        "generated_at": "2026-05-27T06:02:33.578Z",
+        "generated_at": "2026-07-23T07:24:25.859Z",
         "generated_by": "content-hub-source-packet-builder",
         "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
         "notes": "storyIds=1, storytellerIds=4, mediaIds=8"
@@ -603,14 +603,14 @@
           "c2ba535c-aa50-42c3-af18-ed61d3330716"
         ],
         "media_asset_ids": [
-          "106a87f4-897b-44ce-8eb7-d8d601fe2d1f",
-          "77a1a19f-de91-4599-b5d1-9d111e878218",
-          "5de41e2b-7970-40e1-a66a-b021fe672944",
-          "cb18b99b-fdad-410e-80d5-8296d1b3056e",
-          "2ce4837a-ea2b-4a4f-9ca3-1d678f51735f",
-          "f0888269-073b-40a9-83ae-3426d62600e9",
-          "6cc5c2d1-a64c-43e6-9c42-a2e597140abf",
-          "4b4b2cd9-4ec8-45b5-abb2-38a15f07e12f"
+          "4493c460-6fb6-4020-a4ae-f5dcd3c26833",
+          "3702cbca-c0e9-45cd-bdb1-5e20771b1394",
+          "a5777c33-3ea8-49ce-8290-a15e1d2e0ad3",
+          "c53b3179-2a5a-4e8c-a636-9f55e3605cf0",
+          "a8822866-f19f-4aea-96f4-ff5153d6cede",
+          "9d03a639-dfd0-4b27-931d-b7c944724d57",
+          "8d2fd729-e6e5-4355-b5d4-a7481e1b9c74",
+          "a6a1321f-4534-48e9-a021-051afe354696"
         ],
         "featured_article_slugs": [
           "edition-1-sowing-seeds-of-connection-2",
@@ -637,7 +637,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "flagship_project_pack",
           "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
-          "captured_at": "2026-05-27T06:02:33.364Z",
+          "captured_at": "2026-07-23T07:24:25.325Z",
           "verification_status": "verified",
           "notes": "Flagship pack exists for this project slug."
         },
@@ -646,7 +646,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "site_editorial_manifest",
           "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
-          "captured_at": "2026-05-27T06:02:33.364Z",
+          "captured_at": "2026-07-23T07:24:25.325Z",
           "verification_status": "verified",
           "notes": "Editorial manifest found for act-regenerative-studio."
         }
@@ -664,7 +664,7 @@
         {
           "asset_id": "f72c1ea4-13e9-45b9-a25d-41648f396847",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/compendium-2026/project-activated-global-laundry-alliance-gla-bf5913c4.jpeg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/f72c1ea4-13e9-45b9-a25d-41648f396847/file",
           "caption": null,
           "alt_text": "Project Activated:  Global Laundry Alliance (GLA)",
           "usage_rights": "approved"
@@ -672,7 +672,7 @@
         {
           "asset_id": "27628d4b-6400-4c37-af5f-a1a2bc3fbccd",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/compendium-2026/time-in-mount-isa-with-bg-fit-267d22ec.jpeg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/27628d4b-6400-4c37-af5f-a1a2bc3fbccd/file",
           "caption": null,
           "alt_text": "Time in Mount Isa with BG Fit",
           "usage_rights": "approved"
@@ -680,7 +680,7 @@
         {
           "asset_id": "7325bf26-eb57-44ab-89ef-2951045d7ba2",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/compendium-2026/project-active-empathy-ledger-374170a9.jpeg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/7325bf26-eb57-44ab-89ef-2951045d7ba2/file",
           "caption": null,
           "alt_text": "Project Active: Empathy Ledger",
           "usage_rights": "approved"
@@ -688,7 +688,7 @@
         {
           "asset_id": "f87d3cda-e960-4263-a50b-65af1c71acf8",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/compendium-2026/bupa-tfn-healthy-people-healthy-planet-pitch-night-for-goods-0a758122.gif",
+          "uri_or_path": "https://www.empathyledger.com/api/media/f87d3cda-e960-4263-a50b-65af1c71acf8/file",
           "caption": null,
           "alt_text": "Bupa TFN Healthy People, Healthy Planet pitch night for Goods.",
           "usage_rights": "approved"
@@ -696,7 +696,7 @@
         {
           "asset_id": "b526a40a-64fd-4d46-a847-1608992c61e3",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/compendium-2026/designing-the-weave-bed-in-tennant-creek-5b0ad988.jpeg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/b526a40a-64fd-4d46-a847-1608992c61e3/file",
           "caption": null,
           "alt_text": "Designing the weave bed in Tennant Creek",
           "usage_rights": "approved"
@@ -704,7 +704,7 @@
         {
           "asset_id": "d3c4ace8-04f6-4f51-acde-20ed1915ed00",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/compendium-2026/project-love-confit-pathways-82f25863.jpeg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/d3c4ace8-04f6-4f51-acde-20ed1915ed00/file",
           "caption": null,
           "alt_text": "Project Love: Confit Pathways",
           "usage_rights": "approved"
@@ -712,7 +712,7 @@
         {
           "asset_id": "5998b8d6-3832-453d-9e6a-dcdb08f6ad61",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/compendium-2026/gpce-general-practice-conference-exhibition-confernce-1107298d.png",
+          "uri_or_path": "https://www.empathyledger.com/api/media/5998b8d6-3832-453d-9e6a-dcdb08f6ad61/file",
           "caption": null,
           "alt_text": "GPCE (General Practice Conference & Exhibition) Confernce",
           "usage_rights": "approved"
@@ -720,9 +720,9 @@
         {
           "asset_id": "3efefb68-e839-4b46-ab50-1f2c61f74550",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/compendium-2026/launching-the-pakkinjalki-kari-washing-machine-9805f097.jpeg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/3efefb68-e839-4b46-ab50-1f2c61f74550/file",
           "caption": null,
-          "alt_text": "Launching the \"Pakkinjalki kari\" (Washing Machine)",
+          "alt_text": "Launching the \"Pakkimjalki Kari\" (Washing Machine)",
           "usage_rights": "approved"
         }
       ],
@@ -783,7 +783,7 @@
         }
       ],
       "provenance": {
-        "generated_at": "2026-05-27T06:02:33.364Z",
+        "generated_at": "2026-07-23T07:24:25.325Z",
         "generated_by": "content-hub-source-packet-builder",
         "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
         "notes": "storyIds=1, storytellerIds=1, mediaIds=8"
@@ -834,7 +834,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "flagship_project_pack",
           "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
-          "captured_at": "2026-05-27T06:02:35.200Z",
+          "captured_at": "2026-07-23T07:24:27.461Z",
           "verification_status": "verified",
           "notes": "Flagship pack exists for this project slug."
         },
@@ -843,7 +843,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "site_editorial_manifest",
           "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
-          "captured_at": "2026-05-27T06:02:35.200Z",
+          "captured_at": "2026-07-23T07:24:27.461Z",
           "verification_status": "verified",
           "notes": "Editorial manifest found for act-regenerative-studio."
         }
@@ -862,7 +862,7 @@
         {
           "asset_id": "5069f707-3634-4d0c-99f9-d206492e7ec5",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508333946-June_s_patch-56.jpg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/5069f707-3634-4d0c-99f9-d206492e7ec5/file",
           "caption": null,
           "alt_text": "Image: June_s patch-56.jpg",
           "usage_rights": "approved"
@@ -870,7 +870,7 @@
         {
           "asset_id": "8ca9c231-725f-4553-a965-dea18f3acc2e",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508332661-June_s_patch-36.jpg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/8ca9c231-725f-4553-a965-dea18f3acc2e/file",
           "caption": null,
           "alt_text": "Image: June_s patch-36.jpg",
           "usage_rights": "approved"
@@ -878,7 +878,7 @@
         {
           "asset_id": "bac1a511-c71d-4e37-8f03-a4872d1fba97",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508331557-June_C_Board_Meeting-73.jpg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/bac1a511-c71d-4e37-8f03-a4872d1fba97/file",
           "caption": null,
           "alt_text": "Image: June C Board Meeting-73.jpg",
           "usage_rights": "approved"
@@ -886,7 +886,7 @@
         {
           "asset_id": "3ba5c625-da9d-4089-a943-38101e3156be",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508330427-June_C_Board_Meeting-68.jpg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/3ba5c625-da9d-4089-a943-38101e3156be/file",
           "caption": null,
           "alt_text": "Image: June C Board Meeting-68.jpg",
           "usage_rights": "approved"
@@ -894,7 +894,7 @@
         {
           "asset_id": "878c22ad-7e1a-4922-91fb-a84992e6882d",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508329362-June_C_Board_Meeting-65.jpg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/878c22ad-7e1a-4922-91fb-a84992e6882d/file",
           "caption": null,
           "alt_text": "Image: June C Board Meeting-65.jpg",
           "usage_rights": "approved"
@@ -902,7 +902,7 @@
         {
           "asset_id": "4b4a9665-8c6c-4450-a65e-47af26f7c507",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508328286-June_C_Board_Meeting-60.jpg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/4b4a9665-8c6c-4450-a65e-47af26f7c507/file",
           "caption": null,
           "alt_text": "Image: June C Board Meeting-60.jpg",
           "usage_rights": "approved"
@@ -910,7 +910,7 @@
         {
           "asset_id": "9fe0a7f0-e7b3-4c29-a914-2f6a93c9046e",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508327143-June_C_Board_Meeting-16.jpg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/9fe0a7f0-e7b3-4c29-a914-2f6a93c9046e/file",
           "caption": null,
           "alt_text": "Image: June C Board Meeting-16.jpg",
           "usage_rights": "approved"
@@ -918,7 +918,7 @@
         {
           "asset_id": "45d24cbc-be54-41b8-a177-f84f66d7dd48",
           "kind": "image",
-          "uri_or_path": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1775508326080-IMG_9801-Edit.jpg",
+          "uri_or_path": "https://www.empathyledger.com/api/media/45d24cbc-be54-41b8-a177-f84f66d7dd48/file",
           "caption": null,
           "alt_text": "Image: IMG_9801-Edit.jpg",
           "usage_rights": "approved"
@@ -981,7 +981,7 @@
         }
       ],
       "provenance": {
-        "generated_at": "2026-05-27T06:02:35.200Z",
+        "generated_at": "2026-07-23T07:24:27.461Z",
         "generated_by": "content-hub-source-packet-builder",
         "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
         "notes": "storyIds=0, storytellerIds=0, mediaIds=8"

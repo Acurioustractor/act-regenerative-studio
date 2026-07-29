@@ -51,14 +51,14 @@ export default function LoginPanel() {
           placeholder="you@act.place"
           value={email}
           onChange={(event) => setEmail(event.target.value)}
-          className="w-full rounded-2xl border border-[var(--we-sand)] bg-white px-4 py-3 text-sm text-[var(--we-olive)] focus:outline-none focus:ring-2 focus:ring-[#4CAF50]"
+          className="w-full rounded-2xl border border-[var(--we-sand)] bg-white px-4 py-3 text-sm text-[var(--we-olive)] focus:outline-none focus:ring-2 focus:ring-forest"
           autoComplete="email"
           required
         />
         <button
           type="submit"
           disabled={sending}
-          className="w-full rounded-full bg-[#4CAF50] px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-[#3D9143] disabled:opacity-60"
+          className="w-full rounded-full bg-forest px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white transition hover:bg-forest-deep disabled:opacity-60"
         >
           {sending ? "Sending..." : "Send magic link"}
         </button>

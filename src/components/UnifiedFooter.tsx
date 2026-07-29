@@ -24,12 +24,15 @@ export default function UnifiedFooter({
     }))
     .filter((project) => !currentProject || project.name !== currentProject);
 
+  // Every href here must return 200. /method, /partners, /governance, /impact
+  // and /studio were folded into /about and /contact during the site collapse,
+  // so linking to them pushed visitors through a redirect. The anchors below
+  // land on the sections that absorbed each one.
   const studioLinks = [
-    { label: 'Method', href: '/method' },
-    { label: 'Partners', href: '/partners' },
-    { label: 'Governance', href: '/governance' },
-    { label: 'Impact', href: '/impact' },
-    { label: 'Studio services', href: '/studio' },
+    { label: 'How we work', href: '/about#convictions' },
+    { label: 'Our bearings', href: '/about#bearings' },
+    { label: 'Stories', href: '/stories' },
+    { label: 'Work with us', href: '/contact' },
   ];
 
   return (
@@ -37,13 +40,13 @@ export default function UnifiedFooter({
       <div className="mx-auto rounded-lg bg-[#1a1612] px-6 py-12 text-[#f2e8d9] md:px-8">
         <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-4">
           <div className="space-y-4">
-            <p className="site-eyebrow text-[#dbc5a6] before:bg-[#8a7560]">
+            <p className="site-eyebrow !text-[#dbc5a6] before:bg-[#8a7560]">
               A Curious Tractor
             </p>
             <div className="flex items-center gap-3">
               <span className="flex h-14 w-14 items-center justify-center overflow-hidden rounded-2xl border border-[#4a3c2f] bg-white/8">
                 <Image
-                  src="/branding/act-logo-square.png"
+                  src="/branding/act-place-logo.png"
                   alt="A Curious Tractor logo"
                   width={56}
                   height={56}

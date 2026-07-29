@@ -43,7 +43,7 @@ function SignalBar({ value, max = 5 }: { value: number; max?: number }) {
   return (
     <div className="h-2 w-full rounded-full bg-[var(--we-sand)]/50">
       <div
-        className="h-2 rounded-full bg-gradient-to-r from-[#7A9B76] to-[#4CAF50] transition-all duration-500"
+        className="h-2 rounded-full bg-gradient-to-r from-[#7A9B76] to-forest transition-all duration-500"
         style={{ width: `${percentage}%` }}
       />
     </div>
@@ -191,7 +191,7 @@ export function ALMAInsightsSection({
                       <div className="flex flex-wrap items-center gap-2 mb-2">
                         <span className="font-semibold text-[var(--we-olive)]">{learning.voice}</span>
                         {learning.authority && (
-                          <span className="rounded-full bg-[#E5F4E4] px-2 py-0.5 text-xs text-[#3D7A4D]">
+                          <span className="rounded-full bg-forest-soft px-2 py-0.5 text-xs text-[#3D7A4D]">
                             {learning.authority}
                           </span>
                         )}

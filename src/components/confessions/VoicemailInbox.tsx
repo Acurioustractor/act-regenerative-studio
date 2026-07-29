@@ -225,7 +225,7 @@ export function VoicemailInbox({ confessions }: { confessions: Confession[] }) {
                       {renderTranscript(c.text)}
                     </blockquote>
                     {c.consentNote && (
-                      <p className="mt-3 font-[var(--font-sans)] text-[10px] uppercase tracking-[0.2em] text-[#7C7060]">
+                      <p className="mt-3 font-[var(--font-sans)] text-[10px] uppercase tracking-[0.2em] text-sand-lift">
                         {c.consentNote}
                       </p>
                     )}
@@ -250,7 +250,7 @@ export function VoicemailInbox({ confessions }: { confessions: Confession[] }) {
                     {renderTranscript(c.text)}
                   </blockquote>
                   {c.consentNote && (
-                    <p className="mt-3 font-[var(--font-sans)] text-[10px] uppercase tracking-[0.2em] text-[#7C7060]">
+                    <p className="mt-3 font-[var(--font-sans)] text-[10px] uppercase tracking-[0.2em] text-sand-lift">
                       {c.consentNote}
                     </p>
                   )}

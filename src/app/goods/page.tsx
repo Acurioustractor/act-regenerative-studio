@@ -239,7 +239,7 @@ export default async function GoodsPage() {
               ].map((item) => (
                 <div key={item.year} className="border-l-2 border-[var(--site-clay)]/30 pl-6">
                   <p className="font-[var(--font-display)] text-3xl font-bold text-[#FAFAF7]">{item.year}</p>
-                  <p className="mt-2 font-[var(--font-sans)] text-[12px] font-semibold uppercase tracking-[0.1em] text-[var(--site-clay)]">{item.label}</p>
+                  <p className="mt-2 font-[var(--font-sans)] text-[12px] font-semibold uppercase tracking-[0.1em] text-clay-text">{item.label}</p>
                   <p className="mt-2 font-[var(--font-body)] text-[14px] leading-[1.7] text-[#FAFAF7]/50">{item.desc}</p>
                 </div>
               ))}

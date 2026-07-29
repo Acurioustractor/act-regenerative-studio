@@ -146,7 +146,7 @@ export function StudioWorkSection({
             key={item.eyebrow}
             className={`rounded-[26px] border border-[var(--we-sand)] ${item.tone} p-5`}
           >
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#7A9B76]">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-forest-sage">
               {item.eyebrow}
             </p>
             <p className="mt-3 font-[var(--font-display)] text-lg font-semibold leading-snug text-[var(--we-olive)]">
@@ -175,7 +175,7 @@ export function StudioWorkSection({
 
         <div className="sm:col-span-2 grid gap-4 md:grid-cols-[0.95fr_1.05fr]">
           <div className="rounded-[28px] border border-[var(--we-sand)] bg-white p-5">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#7A9B76]">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-forest-sage">
               Live trace
             </p>
             <p className="mt-3 font-[var(--font-display)] text-3xl font-semibold text-[var(--we-olive)]">

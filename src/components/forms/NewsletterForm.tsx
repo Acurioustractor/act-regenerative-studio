@@ -92,12 +92,12 @@ export function NewsletterForm({
           onChange={(e) => setEmail(e.target.value)}
           placeholder="Email address"
           disabled={status === 'loading'}
-          className="flex-1 rounded border border-[#E4D7BF] bg-white px-3 py-2 text-sm text-[var(--we-olive)] placeholder:text-[#B8A88A] focus:border-[#4CAF50] focus:outline-none disabled:opacity-50"
+          className="flex-1 rounded border border-[#E4D7BF] bg-white px-3 py-2 text-sm text-[var(--we-olive)] placeholder:text-[#B8A88A] focus:border-forest focus:outline-none disabled:opacity-50"
         />
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="rounded bg-[#4CAF50] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#3D9143] disabled:opacity-50"
+          className="rounded bg-forest px-4 py-2 text-sm font-semibold text-white transition hover:bg-forest-deep disabled:opacity-50"
         >
           {status === 'loading' ? '...' : 'Join'}
         </button>

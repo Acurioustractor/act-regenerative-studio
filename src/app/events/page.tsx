@@ -116,7 +116,7 @@ export default function EventsPage() {
             <Link
               key={pathway.title}
               href={pathway.href}
-              className="group rounded-3xl border border-[#E1D3BA] bg-white/75 p-7 transition hover:-translate-y-1 hover:border-[#4CAF50] hover:shadow-[0_18px_45px_rgba(50,42,31,0.1)]"
+              className="group rounded-3xl border border-[#E1D3BA] bg-white/75 p-7 transition hover:-translate-y-1 hover:border-forest hover:shadow-[0_18px_45px_rgba(50,42,31,0.1)]"
             >
               <h3 className="font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
                 {pathway.title}
@@ -124,7 +124,7 @@ export default function EventsPage() {
               <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">
                 {pathway.description}
               </p>
-              <span className="mt-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#4CAF50] transition group-hover:gap-3">
+              <span className="mt-5 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-forest transition group-hover:gap-3">
                 <span>{pathway.cta}</span>
                 <span aria-hidden="true">&rarr;</span>
               </span>

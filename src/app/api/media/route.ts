@@ -7,6 +7,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { getMediaItems, createMediaItem, searchMedia } from '@/lib/media/client';
+import { requireInternal } from "@/lib/auth/require-internal";
 
 export async function GET(request: NextRequest) {
   try {
@@ -72,6 +73,8 @@ export async function GET(request: NextRequest) {
 }
 
 export async function POST(request: NextRequest) {
+  const denied = requireInternal(request);
+  if (denied) return denied;
   try {
     const body = await request.json();
 

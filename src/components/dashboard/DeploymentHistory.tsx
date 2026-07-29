@@ -42,7 +42,7 @@ export function DeploymentHistory() {
   const getStatusIcon = (status: Deployment["status"]) => {
     switch (status) {
       case "ready":
-        return <CheckCircle className="w-5 h-5 text-[#4CAF50]" />;
+        return <CheckCircle className="w-5 h-5 text-forest" />;
       case "building":
         return <Clock className="w-5 h-5 text-[#FF9800] animate-pulse" />;
       case "error":
@@ -53,7 +53,7 @@ export function DeploymentHistory() {
 
   const getStatusBadge = (status: Deployment["status"]) => {
     const badges = {
-      ready: "bg-[#4CAF50]/20 text-[#4CAF50]",
+      ready: "bg-forest/20 text-forest",
       building: "bg-[#FF9800]/20 text-[#FF9800]",
       error: "bg-[#F44336]/20 text-[#F44336]",
       canceled: "bg-[#9E9E9E]/20 text-[#9E9E9E]",

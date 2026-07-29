@@ -639,7 +639,7 @@ export default async function ProjectPage({
               <li key={link.slug}>
                 <Link
                   href={`/wiki/${link.slug}`}
-                  className="inline-flex items-center rounded-full border border-[var(--we-sand)] bg-white px-4 py-2 text-sm text-[var(--we-olive)] transition hover:border-[#7A9B76] hover:text-[#7A9B76]"
+                  className="inline-flex items-center rounded-full border border-[var(--we-sand)] bg-white px-4 py-2 text-sm text-[var(--we-olive)] transition hover:border-[#7A9B76] hover:text-forest-sage"
                 >
                   {link.name}
                 </Link>
@@ -759,7 +759,7 @@ export default async function ProjectPage({
                     </div>
                   )}
                   <div className="space-y-3 p-5">
-                    <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.24em] text-[#4CAF50]">
+                    <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.24em] text-forest">
                       {article.articleType ? (
                         <span className="rounded-full bg-[#E8F3E6] px-3 py-1 text-[var(--we-olive)]">
                           {article.articleType.replace(/_/g, ' ')}
@@ -775,7 +775,7 @@ export default async function ProjectPage({
                         </span>
                       ) : null}
                     </div>
-                    <h3 className="font-[var(--font-display)] text-lg font-semibold text-[var(--we-olive)] group-hover:text-[#7A9B76]">
+                    <h3 className="font-[var(--font-display)] text-lg font-semibold text-[var(--we-olive)] group-hover:text-forest-sage">
                       {article.title}
                     </h3>
                     <p className="text-sm text-[var(--we-olive-deep)] line-clamp-3">
@@ -899,7 +899,7 @@ export default async function ProjectPage({
             const buttonClass =
               action.variant === 'primary'
                 ? `inline-flex items-center justify-center rounded-full px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] ${theme.button}`
-                : 'inline-flex items-center justify-center rounded-full border border-[#4CAF50] px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--we-olive)] transition hover:bg-[#E5F4E4]';
+                : 'inline-flex items-center justify-center rounded-full border border-forest px-5 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--we-olive)] transition hover:bg-forest-soft';
             const isExternal = action.href.startsWith('http');
 
             return (
@@ -974,7 +974,7 @@ export default async function ProjectPage({
                     >
                       {related.theme}
                     </span>
-                    <h3 className="font-[var(--font-display)] text-lg font-semibold text-[var(--we-olive)] group-hover:text-[#7A9B76]">
+                    <h3 className="font-[var(--font-display)] text-lg font-semibold text-[var(--we-olive)] group-hover:text-forest-sage">
                       {related.title}
                     </h3>
                     <p className="mt-2 text-sm text-[var(--we-olive-deep)] line-clamp-2">
@@ -1065,14 +1065,14 @@ export default async function ProjectPage({
         <div className="flex flex-wrap justify-center gap-4">
           <Link
             href="/stories"
-            className="inline-flex items-center justify-center rounded-full bg-[#4CAF50] px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-[#3D9143]"
+            className="inline-flex items-center justify-center rounded-full bg-forest px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-forest-deep"
           >
             Read stories
           </Link>
           {project.wikiData ? (
             <Link
               href={`/wiki/${project.slug}`}
-              className="inline-flex items-center justify-center rounded-full border border-[#4CAF50] px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--we-olive)] transition hover:bg-[#E5F4E4]"
+              className="inline-flex items-center justify-center rounded-full border border-forest px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--we-olive)] transition hover:bg-forest-soft"
             >
               Open wiki
             </Link>

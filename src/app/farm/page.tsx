@@ -277,7 +277,7 @@ export default async function FarmPage() {
                 <Link
                   key={item.href}
                   href={item.href}
-                  className="group rounded-[24px] border border-[var(--we-sand)] bg-white/80 p-6 transition hover:-translate-y-0.5 hover:border-[#4CAF50] hover:shadow-[0_12px_32px_rgba(50,42,31,0.08)]"
+                  className="group rounded-[24px] border border-[var(--we-sand)] bg-white/80 p-6 transition hover:-translate-y-0.5 hover:border-forest hover:shadow-[0_12px_32px_rgba(50,42,31,0.08)]"
                 >
                   <p className="font-[var(--font-display)] text-xl font-semibold text-[var(--we-olive)]">
                     {item.label}
@@ -285,7 +285,7 @@ export default async function FarmPage() {
                   <p className="mt-2 text-sm leading-6 text-[var(--we-brown)]">
                     {item.description}
                   </p>
-                  <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-[0.18em] text-[#4CAF50] transition group-hover:gap-2">
+                  <span className="mt-4 inline-flex items-center gap-1 text-xs font-semibold uppercase tracking-[0.18em] text-forest transition group-hover:gap-2">
                     Read more <span aria-hidden="true">&rarr;</span>
                   </span>
                 </Link>

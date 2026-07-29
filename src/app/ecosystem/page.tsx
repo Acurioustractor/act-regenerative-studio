@@ -56,7 +56,7 @@ export default async function EcosystemPage() {
             <Link
               key={project.slug}
               href={project.href}
-              className="group rounded-2xl border border-[#E1D3BA] bg-white/80 p-6 transition hover:-translate-y-1 hover:border-[#4CAF50] hover:shadow-lg"
+              className="group rounded-2xl border border-[#E1D3BA] bg-white/80 p-6 transition hover:-translate-y-1 hover:border-forest hover:shadow-lg"
             >
               <p className="text-[11px] uppercase tracking-[0.2em] text-[var(--we-warm-brown)]">
                 {project.eyebrow}
@@ -64,7 +64,7 @@ export default async function EcosystemPage() {
               <h2 className="mt-2 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
                 {project.title}
               </h2>
-              <p className="mt-1 text-sm font-medium text-[#4CAF50]">{project.tagline}</p>
+              <p className="mt-1 text-sm font-medium text-forest">{project.tagline}</p>
               <p className="mt-3 text-sm leading-6 text-[var(--we-brown)]">
                 {project.description}
               </p>
@@ -76,7 +76,7 @@ export default async function EcosystemPage() {
                 project.liveSignals.mediaCount > 0) ? (
                 <div className="mt-4 flex flex-wrap gap-2">
                   {project.liveSignals.serviceConnectionCount > 0 ? (
-                    <span className="rounded-full bg-[#EDF6EC] px-2.5 py-1 text-[10px] font-medium text-[var(--we-olive)]">
+                    <span className="rounded-full bg-forest-soft px-2.5 py-1 text-[10px] font-medium text-[var(--we-olive)]">
                       {project.liveSignals.serviceConnectionCount} service
                       {project.liveSignals.serviceConnectionCount === 1 ? "" : "s"}
                     </span>
@@ -100,7 +100,7 @@ export default async function EcosystemPage() {
                 </div>
               ) : null}
 
-              <span className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-[#4CAF50] transition group-hover:gap-3">
+              <span className="mt-4 inline-flex items-center gap-2 text-xs font-semibold text-forest transition group-hover:gap-3">
                 <span>Open the field</span>
                 <span aria-hidden="true">&rarr;</span>
               </span>
@@ -195,7 +195,7 @@ export default async function EcosystemPage() {
             <Link
               key={pathway.title}
               href={pathway.href}
-              className="rounded-2xl border border-[#E1D3BA] bg-white/75 p-6 transition hover:-translate-y-1 hover:border-[#4CAF50] hover:shadow-md"
+              className="rounded-2xl border border-[#E1D3BA] bg-white/75 p-6 transition hover:-translate-y-1 hover:border-forest hover:shadow-md"
             >
               <h3 className="font-[var(--font-display)] text-xl font-semibold text-[var(--we-olive)]">
                 {pathway.title}
@@ -203,7 +203,7 @@ export default async function EcosystemPage() {
               <p className="mt-3 text-sm leading-6 text-[var(--we-brown)]">
                 {pathway.description}
               </p>
-              <span className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-[#4CAF50]">
+              <span className="mt-4 inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.18em] text-forest">
                 <span>{pathway.cta}</span>
                 <span aria-hidden="true">&rarr;</span>
               </span>

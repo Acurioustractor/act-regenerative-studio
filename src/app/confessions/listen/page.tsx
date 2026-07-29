@@ -50,7 +50,7 @@ export default function ListenPage() {
           <div className="relative mt-6 h-[60vh] min-h-[440px] w-full overflow-hidden rounded-3xl border border-[#2E2215]">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_44%,#241910_0%,#15100A_66%)]" />
             <ConfessionField confessions={confessions} interactive />
-            <p className="pointer-events-none absolute inset-x-0 top-5 text-center font-[var(--font-sans)] text-[11px] uppercase tracking-[0.3em] text-[#7C7060]">
+            <p className="pointer-events-none absolute inset-x-0 top-5 text-center font-[var(--font-sans)] text-[11px] uppercase tracking-[0.3em] text-sand-lift">
               Tap a voice to hear it
             </p>
           </div>
@@ -58,7 +58,7 @@ export default function ListenPage() {
           {/* FULL-SCREEN LISTENING */}
           <div className="mt-6 flex flex-col items-center gap-3">
             <ListenTheatre confessions={confessions} />
-            <p className="font-[var(--font-sans)] text-[11px] uppercase tracking-[0.24em] text-[#7C7060]">
+            <p className="font-[var(--font-sans)] text-[11px] uppercase tracking-[0.24em] text-sand-lift">
               {confessions.length} on the line. Listen full screen, or play them all.
             </p>
           </div>

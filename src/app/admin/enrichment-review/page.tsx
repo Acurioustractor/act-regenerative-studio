@@ -111,7 +111,7 @@ export default function EnrichmentReviewPage() {
               onClick={() => setFilter(status)}
               className={`px-4 py-2 rounded-full text-sm font-medium transition-colors ${
                 filter === status
-                  ? 'bg-[#4CAF50] text-white'
+                  ? 'bg-forest text-white'
                   : 'bg-white border border-[var(--we-sand)] text-[var(--we-olive)] hover:bg-[#F7F2E8]'
               }`}
             >
@@ -123,7 +123,7 @@ export default function EnrichmentReviewPage() {
         {/* Loading State */}
         {loading && (
           <div className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-12 text-center">
-            <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-[#4CAF50]"></div>
+            <div className="inline-block animate-spin rounded-full h-8 w-8 border-b-2 border-forest"></div>
             <p className="mt-3 text-[var(--we-warm-brown)]">Loading enrichment items...</p>
           </div>
         )}

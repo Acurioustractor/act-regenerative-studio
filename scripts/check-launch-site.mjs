@@ -1,96 +1,60 @@
 #!/usr/bin/env node
-import fs from 'node:fs';
-import path from 'node:path';
+import fs from "node:fs";
+import path from "node:path";
 
-const baseUrl = (process.env.LAUNCH_CHECK_BASE_URL || 'http://localhost:3001').replace(/\/$/, '');
+const baseUrl = (
+  process.env.LAUNCH_CHECK_BASE_URL || "http://localhost:3001"
+).replace(/\/$/, "");
 const repoRoot = process.cwd();
 
-// Every static public route in the sitemap. Dynamic detail pages (/projects/*,
-// /wiki/*, /storytellers/*, /art/<slug>, /blog/*) are added separately below and
-// policed for drift by checkSitemapCoverage(). Keep this in sync with the static
-// routes in src/app/sitemap.ts.
+// Every static route in the editorial public site. Dynamic article, art and
+// question pages are covered through sitemap drift checks and the focused Living
+// Field QA. Keep this list aligned with src/app/sitemap.ts.
 const launchRoutes = [
-  '/',
-  '/confessions',
-  '/confessions/wall',
-  '/confessions/friday',
-  '/confessions/method',
-  '/projects',
-  '/stories',
-  '/stories/utopia-may-2026',
-  // Launch hold (2026-05-27): /storytellers held — see config/launch-redirects.cjs
-  '/art',
-  '/farm',
-  '/harvest',
-  '/goods',
-  '/empathy-ledger',
-  '/justicehub',
-  '/ecosystem',
-  '/method',
-  // Launch hold (2026-05-27): /wiki held — see config/launch-redirects.cjs
-  '/about',
-  '/vision',
-  '/principles',
-  '/how-we-work',
-  '/governance',
-  '/studio',
-  '/impact',
-  '/partners',
-  '/events',
-  '/contact',
-  '/blog',
-  '/media',
-  // Launch hold (2026-05-29): /people held (internal bio notes leaking); see config/launch-redirects.cjs
-  // Launch hold (2026-05-27): /ask held — see config/launch-redirects.cjs
-  '/farm/stay',
-  '/farm/retreats',
-  '/farm/workshops',
-  '/harvest/csa',
-  '/harvest/produce',
-  '/art/artists',
-  '/art/artworks',
-  '/art/commissions',
-  '/art/exhibitions',
-  '/art/residencies',
-  '/privacy',
-  '/terms',
+  "/",
+  "/confessions",
+  "/confessions/listen",
+  "/confessions/wall",
+  "/confessions/friday",
+  "/confessions/method",
+  "/stories",
+  "/questions",
+  "/fields/art",
+  "/fields/empathy",
+  "/fields/justice",
+  "/fields/goods",
+  "/fields/harvest",
+  "/stories/utopia-may-2026",
+  "/art",
+  "/harvest",
+  "/about",
+  "/contact",
+  "/harvest/csa",
+  "/harvest/produce",
+  "/art/artists",
+  "/art/artworks",
+  "/art/commissions",
+  "/art/exhibitions",
+  "/art/residencies",
+  "/privacy",
+  "/terms",
 ];
-
-function readProjectRoutes() {
-  const filePath = path.join(repoRoot, 'src/data/wiki-projects.generated.json');
-  try {
-    const parsed = JSON.parse(fs.readFileSync(filePath, 'utf8'));
-    return Array.from(
-      new Set(
-        (parsed.projects || [])
-          .map((project) => project?.slug)
-          .filter(Boolean)
-          .map((slug) => `/projects/${slug}`)
-      )
-    );
-  } catch (error) {
-    return {
-      error: `Unable to read generated project routes from ${filePath}: ${error.message}`,
-      routes: [],
-    };
-  }
-}
 
 function stripScriptsAndStyles(html) {
   return html
-    .replace(/<script\b[\s\S]*?<\/script>/gi, '')
-    .replace(/<style\b[\s\S]*?<\/style>/gi, '');
+    .replace(/<script\b[\s\S]*?<\/script>/gi, "")
+    .replace(/<style\b[\s\S]*?<\/style>/gi, "");
 }
 
 function getTagAttr(tag, attr) {
-  const match = tag.match(new RegExp(`${attr}=["']([^"']+)["']`, 'i'));
+  const match = tag.match(new RegExp(`${attr}=["']([^"']+)["']`, "i"));
   return match?.[1] || null;
 }
 
 function getCanonicalHref(html) {
   const tags = html.match(/<link\b[^>]*>/gi) || [];
   for (const tag of tags) {
-    if (getTagAttr(tag, 'rel') === 'canonical') return getTagAttr(tag, 'href');
+    if (getTagAttr(tag, "rel") === "canonical") return getTagAttr(tag, "href");
   }
   return null;
 }
@@ -98,7 +62,8 @@ function getCanonicalHref(html) {
 function getOgUrl(html) {
   const tags = html.match(/<meta\b[^>]*>/gi) || [];
   for (const tag of tags) {
-    if (getTagAttr(tag, 'property') === 'og:url') return getTagAttr(tag, 'content');
+    if (getTagAttr(tag, "property") === "og:url")
+      return getTagAttr(tag, "content");
   }
   return null;
 }
@@ -106,7 +71,7 @@ function getOgUrl(html) {
 function pathFromHref(href) {
   if (!href) return null;
   try {
-    return new URL(href, baseUrl).pathname || '/';
+    return new URL(href, baseUrl).pathname || "/";
   } catch {
     return href;
   }
@@ -129,33 +94,44 @@ async function checkRoute(route) {
     return [`${route}: request failed: ${error.message}`];
   }
 
-  failIf(response.status !== 200, failures, route, `expected 200, got ${response.status}`);
+  failIf(
+    response.status !== 200,
+    failures,
+    route,
+    `expected 200, got ${response.status}`,
+  );
 
   const visibleHtml = stripScriptsAndStyles(html);
-  const visibleText = visibleHtml.replace(/<[^>]+>/g, ' ');
+  const visibleText = visibleHtml.replace(/<[^>]+>/g, " ");
   const h1Count = (visibleHtml.match(/<h1\b/gi) || []).length;
-  failIf(h1Count !== 1, failures, route, `expected exactly one h1, found ${h1Count}`);
+  failIf(
+    h1Count !== 1,
+    failures,
+    route,
+    `expected exactly one h1, found ${h1Count}`,
+  );
 
   const canonicalHref = getCanonicalHref(html);
   const ogUrl = getOgUrl(html);
   const finalPath = response.url ? new URL(response.url).pathname : route;
-  const expectedPath = finalPath === '/' ? '/' : finalPath.replace(/\/$/, '');
+  const expectedPath = finalPath === "/" ? "/" : finalPath.replace(/\/$/, "");
   const canonicalPath = pathFromHref(canonicalHref);
   const ogPath = pathFromHref(ogUrl);
 
-  failIf(!canonicalHref, failures, route, 'missing canonical metadata');
-  failIf(!ogUrl, failures, route, 'missing og:url metadata');
+  failIf(!canonicalHref, failures, route, "missing canonical metadata");
+  failIf(!ogUrl, failures, route, "missing og:url metadata");
   failIf(
-    canonicalPath && canonicalPath.replace(/\/$/, '') !== expectedPath.replace(/\/$/, ''),
+    canonicalPath &&
+      canonicalPath.replace(/\/$/, "") !== expectedPath.replace(/\/$/, ""),
     failures,
     route,
-    `canonical points to ${canonicalHref}, expected ${expectedPath}`
+    `canonical points to ${canonicalHref}, expected ${expectedPath}`,
   );
   failIf(
-    ogPath && ogPath.replace(/\/$/, '') !== expectedPath.replace(/\/$/, ''),
+    ogPath && ogPath.replace(/\/$/, "") !== expectedPath.replace(/\/$/, ""),
     failures,
     route,
-    `og:url points to ${ogUrl}, expected ${expectedPath}`
+    `og:url points to ${ogUrl}, expected ${expectedPath}`,
   );
 
   const stalePatterns = [
@@ -165,7 +141,12 @@ async function checkRoute(route) {
     /year[- ]in[- ]review/i,
   ];
   for (const pattern of stalePatterns) {
-    failIf(pattern.test(visibleHtml), failures, route, `stale launch reference matched ${pattern}`);
+    failIf(
+      pattern.test(visibleHtml),
+      failures,
+      route,
+      `stale launch reference matched ${pattern}`,
+    );
   }
 
   const placeholderPatterns = [
@@ -176,10 +157,15 @@ async function checkRoute(route) {
     /GHL embed/i,
   ];
   for (const pattern of placeholderPatterns) {
-    failIf(pattern.test(visibleText), failures, route, `placeholder/internal copy matched ${pattern}`);
+    failIf(
+      pattern.test(visibleText),
+      failures,
+      route,
+      `placeholder/internal copy matched ${pattern}`,
+    );
   }
 
-  if (route === '/stories/utopia-may-2026') {
+  if (route === "/stories/utopia-may-2026") {
     const consentLeakPatterns = [
       /Internal preview/i,
       /Consent:\s*pending/i,
@@ -187,7 +173,12 @@ async function checkRoute(route) {
       /Mykel/i,
     ];
     for (const pattern of consentLeakPatterns) {
-      failIf(pattern.test(visibleText), failures, route, `pending-consent story content matched ${pattern}`);
+      failIf(
+        pattern.test(visibleText),
+        failures,
+        route,
+        `pending-consent story content matched ${pattern}`,
+      );
     }
   }
 
@@ -195,15 +186,19 @@ async function checkRoute(route) {
 }
 
 function checkNewsletterSource() {
-  const sourcePath = path.join(repoRoot, 'src/components/forms/NewsletterForm.tsx');
-  const source = fs.readFileSync(sourcePath, 'utf8');
+  const sourcePath = path.join(
+    repoRoot,
+    "src/components/forms/NewsletterForm.tsx",
+  );
+  const source = fs.readFileSync(sourcePath, "utf8");
   const required = [
-    "'Newsletter'",
-    '`Route: ${pathname}`',
-    '`Source: ${source}`',
-    '`Audience: ${audience}`',
-    '`Project: ${projectSlug}`',
-    '`Story: ${storySlug}`',
+    "formType: 'newsletter'",
+    "signupRoute: pathname",
+    "signupPlacement: source",
+    "`source:website-${source}`",
+    "`source:page:${projectSlug}`",
+    "`source:story:${storySlug}`",
+    "`interest:${audience}`",
   ];
   return required
     .filter((needle) => !source.includes(needle))
@@ -225,36 +220,28 @@ async function checkSitemapCoverage(covered) {
   const failures = [];
   const seen = new Set();
   for (const loc of xml.match(/<loc>[^<]+<\/loc>/g) || []) {
-    const href = loc.replace(/<\/?loc>/g, '').trim();
+    const href = loc.replace(/<\/?loc>/g, "").trim();
     let pathname;
     try {
-      pathname = new URL(href).pathname.replace(/\/$/, '') || '/';
+      pathname = new URL(href).pathname.replace(/\/$/, "") || "/";
     } catch {
       continue;
     }
-    const depth = pathname === '/' ? 0 : pathname.split('/').filter(Boolean).length;
+    const depth =
+      pathname === "/" ? 0 : pathname.split("/").filter(Boolean).length;
     if (depth <= 1 && !covered.has(pathname) && !seen.has(pathname)) {
       seen.add(pathname);
       failures.push(
-        `sitemap coverage: ${pathname} is in the sitemap but missing from the launch gate (add it to launchRoutes so its metadata is checked)`
+        `sitemap coverage: ${pathname} is in the sitemap but missing from the launch gate (add it to launchRoutes so its metadata is checked)`,
       );
     }
   }
   return failures;
 }
 
-const projectRouteResult = readProjectRoutes();
-const projectRoutes = Array.isArray(projectRouteResult)
-  ? projectRouteResult
-  : projectRouteResult.routes;
-const routes = Array.from(new Set([...launchRoutes, ...projectRoutes]));
-
 const failures = [];
-if (!Array.isArray(projectRouteResult) && projectRouteResult.error) {
-  failures.push(projectRouteResult.error);
-}
 
-for (const route of routes) {
+for (const route of launchRoutes) {
   failures.push(...(await checkRoute(route)));
 }
 
@@ -270,4 +257,6 @@ if (failures.length > 0) {
 }
 
 console.log(`Launch check passed against ${baseUrl}`);
-console.log(`Checked ${routes.length} routes, h1s, metadata, stale CTAs, placeholder copy, consent leaks, newsletter context tags, and sitemap coverage.`);
+console.log(
+  `Checked ${launchRoutes.length} routes, h1s, metadata, stale CTAs, placeholder copy, consent leaks, newsletter context tags, and sitemap coverage.`,
+);

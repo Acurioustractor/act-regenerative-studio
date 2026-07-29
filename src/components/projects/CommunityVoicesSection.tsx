@@ -77,7 +77,7 @@ export function CommunityVoicesSection({
                     </p>
                   )}
                   {storyteller.custom_tagline && (
-                    <p className="mt-2 text-sm italic text-[#7A9B76]">
+                    <p className="mt-2 text-sm italic text-forest-sage">
                       {storyteller.custom_tagline}
                     </p>
                   )}
@@ -147,7 +147,7 @@ export function CommunityVoicesSection({
                   </div>
                 )}
                 <div className="p-6">
-                  <h4 className="font-[var(--font-display)] text-lg font-semibold text-[var(--we-olive)] group-hover:text-[#7A9B76]">
+                  <h4 className="font-[var(--font-display)] text-lg font-semibold text-[var(--we-olive)] group-hover:text-forest-sage">
                     {story.story_title}
                   </h4>
                   <p className="mt-1 text-sm text-[var(--we-brown-deep)]">
@@ -170,7 +170,7 @@ export function CommunityVoicesSection({
                       ))}
                     </div>
                   )}
-                  <p className="mt-4 text-sm font-medium text-[#7A9B76] group-hover:underline">
+                  <p className="mt-4 text-sm font-medium text-forest-sage group-hover:underline">
                     Read full story →
                   </p>
                 </div>

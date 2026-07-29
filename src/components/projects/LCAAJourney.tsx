@@ -204,7 +204,7 @@ export function LCAAJourney({
               key={phase.key}
               className={`h-2 rounded-full transition-all ${
                 contentMap[phase.key]
-                  ? 'w-8 bg-[#4CAF50]'
+                  ? 'w-8 bg-forest'
                   : 'w-2 bg-[var(--we-sand)]'
               }`}
             />

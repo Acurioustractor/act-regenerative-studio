@@ -225,7 +225,7 @@ export default function MethodPage() {
             <Link
               key={page.title}
               href={page.href}
-              className="group rounded-3xl border border-[#E1D3BA] bg-white/75 p-7 transition hover:-translate-y-1 hover:border-[#4CAF50] hover:shadow-[0_18px_45px_rgba(50,42,31,0.1)]"
+              className="group rounded-3xl border border-[#E1D3BA] bg-white/75 p-7 transition hover:-translate-y-1 hover:border-forest hover:shadow-[0_18px_45px_rgba(50,42,31,0.1)]"
             >
               <h3 className="font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
                 {page.title}

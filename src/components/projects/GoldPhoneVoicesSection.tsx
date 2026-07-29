@@ -91,7 +91,7 @@ export function GoldPhoneVoicesSection() {
 
         <div className="space-y-4">
           <div className="rounded-[30px] border border-[#D5C3A6] bg-[#F7F1E5] p-6">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#7A9B76]">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-forest-sage">
               Transcript rail
             </p>
             <h3 className="mt-3 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
@@ -130,7 +130,7 @@ export function GoldPhoneVoicesSection() {
 
       <div className="grid gap-4 md:grid-cols-[0.9fr_1.1fr_0.9fr]">
         <div className="rounded-[28px] border border-[#D5C3A6] bg-white p-6">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#7A9B76]">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-forest-sage">
             Work behaviour
           </p>
           <p className="mt-3 font-[var(--font-display)] text-xl font-semibold text-[var(--we-olive)]">
@@ -163,7 +163,7 @@ export function GoldPhoneVoicesSection() {
         </div>
 
         <div className="rounded-[28px] border border-[#D5C3A6] bg-[#F8F3EA] p-6">
-          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-[#7A9B76]">
+          <p className="text-[11px] font-semibold uppercase tracking-[0.24em] text-forest-sage">
             Next pathway
           </p>
           <p className="mt-3 font-[var(--font-display)] text-xl font-semibold text-[var(--we-olive)]">

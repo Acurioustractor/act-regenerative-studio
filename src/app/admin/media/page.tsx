@@ -173,7 +173,7 @@ export default function MediaPage() {
           Upload images, video, or documents to the public media bucket.
         </p>
         <div className="mt-4 flex flex-wrap items-center gap-4">
-          <label className="rounded-full bg-[#4CAF50] px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white">
+          <label className="rounded-full bg-forest px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white">
             <input
               type="file"
               multiple

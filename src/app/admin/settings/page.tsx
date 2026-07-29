@@ -92,7 +92,7 @@ export default function SettingsPage() {
           type="button"
           onClick={handleSave}
           disabled={saving}
-          className="rounded-full bg-[#4CAF50] px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white"
+          className="rounded-full bg-forest px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white"
         >
           {saving ? "Saving..." : "Save settings"}
         </button>

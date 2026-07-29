@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-27T06:00:28.148Z",
+  "generatedAt": "2026-07-23T07:22:05.498Z",
   "sourceRoot": "/Users/benknight/Code/act-global-infrastructure/wiki",
   "packCount": 5,
   "packs": [
@@ -23,7 +23,7 @@
       "sourcePage": {
         "relativePath": "projects/justicehub/justicehub.md",
         "wikiPath": "projects/justicehub",
-        "modifiedAt": "2026-05-24T20:38:45.458Z"
+        "modifiedAt": "2026-06-07T04:06:15.029Z"
       },
       "downstream": {
         "website": {
@@ -179,7 +179,7 @@
       "sourcePage": {
         "relativePath": "projects/goods.md",
         "wikiPath": "projects/goods",
-        "modifiedAt": "2026-05-26T00:20:11.705Z"
+        "modifiedAt": "2026-06-07T04:06:15.027Z"
       },
       "downstream": {
         "website": {
@@ -329,7 +329,7 @@
       "sourcePage": {
         "relativePath": "projects/the-harvest/the-harvest.md",
         "wikiPath": "projects/the-harvest",
-        "modifiedAt": "2026-05-26T00:20:19.724Z"
+        "modifiedAt": "2026-06-07T04:06:15.033Z"
       },
       "downstream": {
         "website": {
@@ -470,7 +470,7 @@
       "sourcePage": {
         "relativePath": "projects/empathy-ledger.md",
         "wikiPath": "projects/empathy-ledger",
-        "modifiedAt": "2026-05-14T20:40:37.232Z"
+        "modifiedAt": "2026-06-07T04:06:15.025Z"
       },
       "downstream": {
         "website": {

@@ -113,7 +113,7 @@ export default function MediaGalleryPage() {
         <div className="mb-6 flex gap-4">
           <button
             onClick={() => setShowUploadForm(!showUploadForm)}
-            className="rounded-full bg-[#4CAF50] px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white hover:bg-[#45a049] transition-colors"
+            className="rounded-full bg-forest px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white hover:bg-[#45a049] transition-colors"
           >
             {showUploadForm ? 'Cancel Upload' : 'Upload Media'}
           </button>
@@ -149,7 +149,7 @@ export default function MediaGalleryPage() {
                   name="file"
                   required
                   accept="image/*,video/*,audio/*,.pdf,.doc,.docx"
-                  className="w-full px-3 py-2 border border-[var(--we-sand)] rounded-lg bg-white focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-[var(--we-sand)] rounded-lg bg-white focus:ring-2 focus:ring-forest focus:border-transparent"
                 />
                 <p className="mt-1 text-sm text-[var(--we-warm-brown)]">
                   Supported: Images, Videos, Audio, PDF, DOC (Max 50MB)
@@ -164,7 +164,7 @@ export default function MediaGalleryPage() {
                 <input
                   type="text"
                   name="title"
-                  className="w-full px-3 py-2 border border-[var(--we-sand)] rounded-lg bg-white focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-[var(--we-sand)] rounded-lg bg-white focus:ring-2 focus:ring-forest focus:border-transparent"
                   placeholder="Enter a descriptive title"
                 />
               </div>
@@ -177,7 +177,7 @@ export default function MediaGalleryPage() {
                 <textarea
                   name="description"
                   rows={3}
-                  className="w-full px-3 py-2 border border-[var(--we-sand)] rounded-lg bg-white focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-[var(--we-sand)] rounded-lg bg-white focus:ring-2 focus:ring-forest focus:border-transparent"
                   placeholder="Describe this media item"
                 />
               </div>
@@ -190,7 +190,7 @@ export default function MediaGalleryPage() {
                 <input
                   type="text"
                   name="alt_text"
-                  className="w-full px-3 py-2 border border-[var(--we-sand)] rounded-lg bg-white focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-[var(--we-sand)] rounded-lg bg-white focus:ring-2 focus:ring-forest focus:border-transparent"
                   placeholder="Describe the image for screen readers"
                 />
               </div>
@@ -203,7 +203,7 @@ export default function MediaGalleryPage() {
                 <input
                   type="text"
                   name="credit"
-                  className="w-full px-3 py-2 border border-[var(--we-sand)] rounded-lg bg-white focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-[var(--we-sand)] rounded-lg bg-white focus:ring-2 focus:ring-forest focus:border-transparent"
                   placeholder="Photo by..."
                 />
               </div>
@@ -216,7 +216,7 @@ export default function MediaGalleryPage() {
                 <input
                   type="text"
                   name="manual_tags"
-                  className="w-full px-3 py-2 border border-[var(--we-sand)] rounded-lg bg-white focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-[var(--we-sand)] rounded-lg bg-white focus:ring-2 focus:ring-forest focus:border-transparent"
                   placeholder="farming, community, workshop"
                 />
               </div>
@@ -229,7 +229,7 @@ export default function MediaGalleryPage() {
                 <input
                   type="text"
                   name="impact_themes"
-                  className="w-full px-3 py-2 border border-[var(--we-sand)] rounded-lg bg-white focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-[var(--we-sand)] rounded-lg bg-white focus:ring-2 focus:ring-forest focus:border-transparent"
                   placeholder="environmental, social, economic"
                 />
               </div>
@@ -242,7 +242,7 @@ export default function MediaGalleryPage() {
                 <input
                   type="text"
                   name="project_slugs"
-                  className="w-full px-3 py-2 border border-[var(--we-sand)] rounded-lg bg-white focus:ring-2 focus:ring-[#4CAF50] focus:border-transparent"
+                  className="w-full px-3 py-2 border border-[var(--we-sand)] rounded-lg bg-white focus:ring-2 focus:ring-forest focus:border-transparent"
                   placeholder="justicehub, the-harvest, empathy-ledger"
                 />
               </div>
@@ -253,7 +253,7 @@ export default function MediaGalleryPage() {
                   type="checkbox"
                   name="is_hero_image"
                   id="is_hero_image"
-                  className="h-4 w-4 text-[#4CAF50] focus:ring-[#4CAF50] border-[var(--we-sand)] rounded"
+                  className="h-4 w-4 text-forest focus:ring-forest border-[var(--we-sand)] rounded"
                 />
                 <label htmlFor="is_hero_image" className="ml-2 block text-sm text-[var(--we-olive)]">
                   Mark as hero image
@@ -265,7 +265,7 @@ export default function MediaGalleryPage() {
                 <button
                   type="submit"
                   disabled={uploading}
-                  className="rounded-full bg-[#4CAF50] px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white hover:bg-[#45a049] transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
+                  className="rounded-full bg-forest px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white hover:bg-[#45a049] transition-colors disabled:bg-gray-400 disabled:cursor-not-allowed"
                 >
                   {uploading ? 'Uploading...' : 'Upload'}
                 </button>
@@ -345,7 +345,7 @@ export default function MediaGalleryPage() {
                       {selectedMedia.project_slugs.map((slug: string) => (
                         <span
                           key={slug}
-                          className="px-3 py-1 rounded-full bg-[#4CAF50]/10 text-sm text-[var(--we-olive)] border border-[#4CAF50]/20"
+                          className="px-3 py-1 rounded-full bg-forest/10 text-sm text-[var(--we-olive)] border border-forest/20"
                         >
                           {slug}
                         </span>
@@ -359,7 +359,7 @@ export default function MediaGalleryPage() {
                     href={selectedMedia.file_url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-[#4CAF50] hover:underline text-sm break-all block mt-1"
+                    className="text-forest hover:underline text-sm break-all block mt-1"
                   >
                     {selectedMedia.file_url}
                   </a>

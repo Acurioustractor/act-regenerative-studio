@@ -195,7 +195,7 @@ export default async function JusticeHubPage() {
                 { title: "For policymakers", body: "Evidence dashboards, cost calculators, and system maps that make the economic case for diversion from detention to community.", icon: "Evidence tools" },
               ].map((item) => (
                 <HairlineCell key={item.title} padding="breathing">
-                  <p className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--site-clay)]">{item.icon}</p>
+                  <p className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.2em] text-clay-text">{item.icon}</p>
                   <h3 className="mt-3 font-[var(--font-display)] text-xl font-semibold text-[var(--site-ink)]">{item.title}</h3>
                   <p className="mt-4 font-[var(--font-body)] text-[15px] leading-[1.8] text-[var(--site-muted)]">{item.body}</p>
                 </HairlineCell>
@@ -273,7 +273,7 @@ export default async function JusticeHubPage() {
                 { place: "Confit Pathways, Sydney", stat: "60%", label: "reduction in recidivism", desc: "Diversionary program with wraparound support. Demonstrating that community models scale across urban and regional contexts." },
               ].map((item) => (
                 <div key={item.place} className="rounded-[var(--site-radius)] border border-[var(--site-line)] p-8">
-                  <p className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--site-clay)]">{item.place}</p>
+                  <p className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.2em] text-clay-text">{item.place}</p>
                   <p className="mt-4 font-[var(--font-display)] text-3xl font-bold text-[var(--site-ink)]">{item.stat}</p>
                   <p className="mt-1 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.1em] text-[var(--site-muted)]">{item.label}</p>
                   <p className="mt-4 font-[var(--font-body)] text-[14px] leading-[1.7] text-[var(--site-muted)]">{item.desc}</p>

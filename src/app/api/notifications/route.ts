@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { getSupabaseServerClient } from '@/lib/supabase/server';
+import { requireInternal } from "@/lib/auth/require-internal";
 
 export const dynamic = 'force-dynamic';
 
@@ -68,6 +69,8 @@ export async function GET(request: NextRequest) {
  * Mark notification(s) as read
  */
 export async function POST(request: NextRequest) {
+  const denied = requireInternal(request);
+  if (denied) return denied;
   try {
     const supabase = getSupabaseServerClient();
     if (!supabase) {

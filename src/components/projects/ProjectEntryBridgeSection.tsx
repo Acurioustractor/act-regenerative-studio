@@ -69,21 +69,21 @@ export function ProjectEntryBridgeSection({
                   href={project.projectWebsiteUrl}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="rounded-full bg-[#4CAF50] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#3E9845]"
+                  className="rounded-full bg-forest px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#3E9845]"
                 >
                   Visit {project.title}
                 </a>
               ) : (
                 <Link
                   href={canonicalFieldPath}
-                  className="rounded-full bg-[#4CAF50] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#3E9845]"
+                  className="rounded-full bg-forest px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#3E9845]"
                 >
                   Read more
                 </Link>
               )}
               <Link
                 href={`/wiki/${project.slug}`}
-                className="rounded-full border border-[#4CAF50] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:bg-[#E5F4E4]"
+                className="rounded-full border border-forest px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:bg-forest-soft"
               >
                 Background &amp; method
               </Link>
@@ -251,7 +251,7 @@ export function ProjectEntryBridgeSection({
                         </div>
                         <div className="space-y-2 p-4">
                           {item.sourceTitle ? (
-                            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-[#7A9B76]">
+                            <p className="text-[11px] font-semibold uppercase tracking-[0.18em] text-forest-sage">
                               {item.sourceTitle}
                             </p>
                           ) : null}

@@ -214,7 +214,7 @@ export default function PrinciplesPage() {
               className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-6 space-y-3"
             >
               <div className="flex items-center gap-3">
-                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-[#4CAF50] text-sm font-bold text-white">
+                <span className="flex h-8 w-8 items-center justify-center rounded-full bg-forest text-sm font-bold text-white">
                   {principle.number}
                 </span>
                 <h3 className="text-lg font-semibold text-[var(--we-olive)] font-[var(--font-display)]">

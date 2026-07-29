@@ -101,7 +101,7 @@ export default async function PeoplePage() {
                     <Link
                       key={projectSlug}
                       href={href}
-                      className="rounded-full bg-[#EDF6EC] px-2.5 py-1 text-[10px] font-medium text-[var(--we-olive)] transition hover:bg-[#d9ead7]"
+                      className="rounded-full bg-forest-soft px-2.5 py-1 text-[10px] font-medium text-[var(--we-olive)] transition hover:bg-[#d9ead7]"
                     >
                       {projectNames[projectSlug] || projectSlug}
                     </Link>

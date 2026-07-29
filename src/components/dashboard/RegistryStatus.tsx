@@ -54,7 +54,7 @@ export function RegistryStatus() {
   const getStatusIcon = (status: RegistrySync["status"]) => {
     switch (status) {
       case "success":
-        return <CheckCircle className="w-5 h-5 text-[#4CAF50]" />;
+        return <CheckCircle className="w-5 h-5 text-forest" />;
       case "error":
         return <XCircle className="w-5 h-5 text-[#F44336]" />;
       case "pending":
@@ -77,7 +77,7 @@ export function RegistryStatus() {
         <button
           onClick={triggerSync}
           disabled={syncing}
-          className="flex items-center gap-2 px-4 py-2 rounded-full bg-[#4CAF50] text-white text-sm font-semibold hover:bg-[#45a049] disabled:opacity-50 transition-colors"
+          className="flex items-center gap-2 px-4 py-2 rounded-full bg-forest text-white text-sm font-semibold hover:bg-[#45a049] disabled:opacity-50 transition-colors"
         >
           <RefreshCw className={`w-4 h-4 ${syncing ? "animate-spin" : ""}`} />
           {syncing ? "Syncing..." : "Sync Now"}

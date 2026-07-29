@@ -178,7 +178,7 @@ export default function PartnersPage() {
               key={partnership.name}
               className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-4"
             >
-              <div className="inline-block rounded-full bg-[#E5F4E4] px-3 py-1 text-xs font-medium text-[var(--we-olive)]">
+              <div className="inline-block rounded-full bg-forest-soft px-3 py-1 text-xs font-medium text-[var(--we-olive)]">
                 {partnership.type}
               </div>
               <h3 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
@@ -244,7 +244,7 @@ export default function PartnersPage() {
         <div className="text-center">
           <Link
             href="/contact?type=project-partnership&source=partners-page&context=partner-conversation"
-            className="inline-flex rounded-full bg-[#4CAF50] px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-[#3D9143]"
+            className="inline-flex rounded-full bg-forest px-8 py-3 text-sm font-semibold uppercase tracking-[0.2em] text-white transition hover:bg-forest-deep"
           >
             Get in touch
           </Link>
@@ -261,7 +261,7 @@ export default function PartnersPage() {
           </p>
           <Link
             href="/contact?type=project-partnership&source=partners-page&context=funding-partnership"
-            className="inline-flex items-center gap-2 text-sm font-semibold text-[#4CAF50] hover:gap-3 transition"
+            className="inline-flex items-center gap-2 text-sm font-semibold text-forest hover:gap-3 transition"
           >
             <span>Discuss funding partnership</span>
             <span aria-hidden="true">&rarr;</span>

@@ -19,7 +19,9 @@ export default function robots(): MetadataRoute.Robots {
       {
         userAgent: "*",
         allow: "/",
-        disallow: ["/admin/", "/api/", "/image-picker/"],
+        // /admin and /prototypes are also gated by src/middleware.ts. This is
+        // the polite signal to crawlers; the middleware is the actual control.
+        disallow: ["/admin/", "/prototypes/", "/api/", "/image-picker/"],
       },
     ],
     sitemap: `${siteUrl}/sitemap.xml`,

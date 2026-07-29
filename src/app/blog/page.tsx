@@ -63,7 +63,7 @@ export default async function BlogPage() {
           <Link
             key={post.id}
             href={`/blog/${post.slug}`}
-            className="group flex h-full flex-col overflow-hidden rounded-3xl border border-[#E1D3BA] bg-white/70 transition hover:-translate-y-1 hover:border-[#4CAF50] hover:shadow-[0_18px_45px_rgba(50,42,31,0.12)]"
+            className="group flex h-full flex-col overflow-hidden rounded-3xl border border-[#E1D3BA] bg-white/70 transition hover:-translate-y-1 hover:border-forest hover:shadow-[0_18px_45px_rgba(50,42,31,0.12)]"
           >
             <div className="relative aspect-[4/3] w-full bg-[#F7F2E8]">
               {post.featuredImageUrl ? (
@@ -97,7 +97,7 @@ export default async function BlogPage() {
                 </div>
               )}
               {post.relatedProjectSlugs.length > 0 && (
-                <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.24em] text-[#4CAF50]">
+                <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.24em] text-forest">
                   {post.relatedProjectSlugs.slice(0, 2).map((slug) => (
                     <span
                       key={slug}
@@ -119,7 +119,7 @@ export default async function BlogPage() {
                   <span>{post.authorName}</span>
                 </div>
               ) : null}
-              <span className="mt-auto inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-[#4CAF50]">
+              <span className="mt-auto inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.3em] text-forest">
                 Read more
                 <span aria-hidden="true">-&gt;</span>
               </span>

@@ -198,7 +198,7 @@ export default async function SourceBridgesPage() {
                       <Link
                         key={bridge.stem}
                         href={`/wiki/${bridge.stem}`}
-                        className="rounded-full border border-[#D8C6A7] bg-[#FBF7F0] px-3 py-2 text-xs font-semibold text-[var(--we-brown)] transition hover:border-[#4CAF50] hover:bg-[#E5F4E4] hover:text-[var(--we-olive)]"
+                        className="rounded-full border border-[#D8C6A7] bg-[#FBF7F0] px-3 py-2 text-xs font-semibold text-[var(--we-brown)] transition hover:border-forest hover:bg-forest-soft hover:text-[var(--we-olive)]"
                       >
                         {bridge.title}
                       </Link>
@@ -224,7 +224,7 @@ export default async function SourceBridgesPage() {
                           href={pack.implementation.primaryRepo.githubUrl}
                           target="_blank"
                           rel="noopener noreferrer"
-                          className="mt-3 inline-flex text-sm font-semibold text-[#4CAF50]"
+                          className="mt-3 inline-flex text-sm font-semibold text-forest"
                         >
                           Open repo →
                         </a>

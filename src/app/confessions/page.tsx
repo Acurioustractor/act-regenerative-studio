@@ -146,7 +146,7 @@ export default function ConfessionsPage() {
           </div>
 
           <div className="pointer-events-auto mt-14 flex flex-col items-center gap-3">
-            <p className="font-[var(--font-sans)] text-[11px] uppercase tracking-[0.3em] text-[#7C7060]">
+            <p className="font-[var(--font-sans)] text-[11px] uppercase tracking-[0.3em] text-sand-lift">
               {confessions.length} messages on the line
             </p>
             <Link
@@ -218,7 +218,7 @@ export default function ConfessionsPage() {
               <div key={h.word} className="bg-[#1E160D] p-7 md:flex md:gap-8 md:p-8">
                 <dt className="md:w-56 md:shrink-0">
                   <span className="font-[var(--font-display)] text-2xl text-[#CFA16B]">{h.word}</span>
-                  <span className="mt-1 block font-[var(--font-sans)] text-[11px] uppercase tracking-[0.2em] text-[#7C7060]">
+                  <span className="mt-1 block font-[var(--font-sans)] text-[11px] uppercase tracking-[0.2em] text-sand-lift">
                     {h.gloss}
                   </span>
                 </dt>
@@ -287,7 +287,7 @@ export default function ConfessionsPage() {
               ever funded, and we never told <Redact w="w-16" /> why. I still think about the ones we
               said no to.”
             </blockquote>
-            <figcaption className="mt-4 text-center font-[var(--font-sans)] text-[11px] uppercase tracking-[0.2em] text-[#7C7060]">
+            <figcaption className="mt-4 text-center font-[var(--font-sans)] text-[11px] uppercase tracking-[0.2em] text-sand-lift">
               Illustration only. This is how a confession looks when we share it back.
             </figcaption>
           </figure>
@@ -423,7 +423,7 @@ export default function ConfessionsPage() {
                       : 'border-[#2E2215] bg-[#15100A] hover:border-[#5A4A30]'
                   }`}
                 >
-                  <span className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[#7C7060]">
+                  <span className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-sand-lift">
                     {w.year}
                     {w.current && <span className="ml-2 text-[#CFA16B]">the current call</span>}
                   </span>
@@ -460,7 +460,7 @@ export default function ConfessionsPage() {
               Anonymous messages welcome
             </p>
           </div>
-          <p className="mt-12 font-[var(--font-body)] text-sm text-[#7C7060]">
+          <p className="mt-12 font-[var(--font-body)] text-sm text-sand-lift">
             A gold phone from{' '}
             <Link href="/art" className="text-[#CFA16B] underline-offset-4 hover:underline">
               the ACT art program

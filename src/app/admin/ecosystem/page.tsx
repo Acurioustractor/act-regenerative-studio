@@ -89,7 +89,7 @@ export default async function EcosystemPage() {
             href="https://github.com/users/Acurioustractor/projects/1"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full bg-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white hover:bg-[#45a049]"
+            className="rounded-full bg-forest px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white hover:bg-[#45a049]"
           >
             GitHub Projects Board
           </a>
@@ -97,7 +97,7 @@ export default async function EcosystemPage() {
             href="https://github.com/Acurioustractor"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)] hover:bg-[#4CAF50]/10"
+            className="rounded-full border border-forest px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)] hover:bg-forest/10"
           >
             GitHub Organization
           </a>
@@ -105,7 +105,7 @@ export default async function EcosystemPage() {
             href="https://vercel.com/acurioustractor"
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)] hover:bg-[#4CAF50]/10"
+            className="rounded-full border border-forest px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)] hover:bg-forest/10"
           >
             Vercel Dashboard
           </a>

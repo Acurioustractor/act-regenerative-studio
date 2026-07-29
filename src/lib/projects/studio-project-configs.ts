@@ -1,10 +1,23 @@
 import type { CuratedProjectCardConfig } from "@/lib/projects/build-curated-project-cards";
 
+/**
+ * Curated cards for the studio surfaces and the site footer.
+ *
+ * `href` must point at a route that returns 200. The old per-project hubs
+ * (/justicehub, /goods, /empathy-ledger, /farm) are now 307s into the field
+ * pages and /about, so linking to them sent visitors through a redirect and
+ * showed crawlers a wall of soft-404s. Verify with `node scripts/sweep-routes.mjs`
+ * before changing any href here.
+ *
+ * Black Cockatoo Valley has no field page of its own; its story lives in the
+ * history section of /about.
+ */
+
 export const studioProjectConfigs: CuratedProjectCardConfig[] = [
   {
     slug: "justicehub",
     eyebrow: "Justice",
-    href: "/justicehub",
+    href: "/fields/justice",
     fallbackTitle: "JusticeHub",
     fallbackTagline: "Youth justice and community support",
     fallbackDescription:
@@ -13,7 +26,7 @@ export const studioProjectConfigs: CuratedProjectCardConfig[] = [
   {
     slug: "goods",
     eyebrow: "Goods",
-    href: "/goods",
+    href: "/fields/goods",
     fallbackTitle: "Goods on Country",
     fallbackTagline: "Circular economy for remote communities",
     fallbackDescription:
@@ -31,7 +44,7 @@ export const studioProjectConfigs: CuratedProjectCardConfig[] = [
   {
     slug: "empathy-ledger",
     eyebrow: "Stories",
-    href: "/empathy-ledger",
+    href: "/fields/empathy",
     fallbackTitle: "Empathy Ledger",
     fallbackTagline: "Ethical storytelling platform",
     fallbackDescription:
@@ -40,7 +53,7 @@ export const studioProjectConfigs: CuratedProjectCardConfig[] = [
   {
     slug: "black-cockatoo-valley",
     eyebrow: "Land",
-    href: "/farm",
+    href: "/about#history",
     fallbackTitle: "Black Cockatoo Valley",
     fallbackTagline: "Regenerative residencies on Jinibara Country",
     fallbackDescription:

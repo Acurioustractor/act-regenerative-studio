@@ -242,7 +242,7 @@ export default async function StorytellerPage({ params }: PageProps) {
         <div className="mt-5 flex flex-wrap gap-3">
           <Link
             href="/contact?type=share-your-story&source=storyteller-profile"
-            className="rounded-full bg-[#4CAF50] px-5 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#3E9845]"
+            className="rounded-full bg-forest px-5 py-2 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#3E9845]"
           >
             Start the conversation
           </Link>

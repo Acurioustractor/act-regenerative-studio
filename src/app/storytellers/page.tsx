@@ -64,7 +64,7 @@ export default function StorytellersIndexPage() {
                   </div>
                 )}
                 <div className="min-w-0">
-                  <h3 className="truncate font-[var(--font-display)] text-lg font-semibold text-[var(--we-olive)] group-hover:text-[#7A9B76]">
+                  <h3 className="truncate font-[var(--font-display)] text-lg font-semibold text-[var(--we-olive)] group-hover:text-forest-sage">
                     {s.displayName}
                   </h3>
                   {s.location ? (

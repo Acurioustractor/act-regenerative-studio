@@ -80,7 +80,7 @@ export function ResidencyForm({
     }
   };
 
-  const inputClass = "w-full rounded border border-[#E4D7BF] bg-white px-4 py-3 text-[var(--we-olive)] placeholder:text-[#B8A88A] focus:border-[#4CAF50] focus:outline-none disabled:opacity-50";
+  const inputClass = "w-full rounded border border-[#E4D7BF] bg-white px-4 py-3 text-[var(--we-olive)] placeholder:text-[#B8A88A] focus:border-forest focus:outline-none disabled:opacity-50";
   const labelClass = "block text-sm font-medium text-[var(--we-brown-deep)] mb-1";
 
   return (
@@ -262,7 +262,7 @@ export function ResidencyForm({
         <button
           type="submit"
           disabled={status === 'loading'}
-          className="w-full rounded bg-[#4CAF50] px-6 py-3 text-base font-semibold text-white transition hover:bg-[#3D9143] disabled:opacity-50 md:w-auto"
+          className="w-full rounded bg-forest px-6 py-3 text-base font-semibold text-white transition hover:bg-forest-deep disabled:opacity-50 md:w-auto"
         >
           {status === 'loading' ? 'Submitting...' : 'Submit application'}
         </button>

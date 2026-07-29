@@ -12,8 +12,14 @@ export default function manifest(): MetadataRoute.Manifest {
     theme_color: "#4F6C3A",
     icons: [
       {
-        src: "/branding/act-logo-square.png",
-        sizes: "any",
+        src: "/branding/act/act-mark-192.png",
+        sizes: "192x192",
+        type: "image/png",
+        purpose: "any",
+      },
+      {
+        src: "/branding/act/act-mark-512.png",
+        sizes: "512x512",
         type: "image/png",
         purpose: "any",
       },

@@ -103,7 +103,7 @@ export default async function WikiHomepage() {
                 {item.title}
               </h2>
               <p className="mt-3 text-sm leading-7 text-[var(--we-brown)]">{item.description}</p>
-              <span className="mt-4 inline-flex text-xs font-semibold uppercase tracking-[0.18em] text-[#4CAF50]">
+              <span className="mt-4 inline-flex text-xs font-semibold uppercase tracking-[0.18em] text-forest">
                 {item.cta} <span aria-hidden="true">&rarr;</span>
               </span>
             </Link>
@@ -115,7 +115,7 @@ export default async function WikiHomepage() {
         <div className="mb-6 flex items-center justify-end">
           <Link
             href="/projects"
-            className="rounded-full border border-[#4CAF50] px-4 py-2 text-sm font-medium text-[var(--we-olive)] transition hover:bg-[#E5F4E4]"
+            className="rounded-full border border-forest px-4 py-2 text-sm font-medium text-[var(--we-olive)] transition hover:bg-forest-soft"
           >
             Explore projects
           </Link>

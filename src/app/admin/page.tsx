@@ -12,7 +12,7 @@ export default function AdminHomePage() {
       <div className="mt-6 flex flex-wrap gap-3">
         <Link
           href="/admin/ecosystem"
-          className="rounded-full bg-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white"
+          className="rounded-full bg-forest px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white"
         >
           Ecosystem Dashboard
         </Link>
@@ -30,19 +30,19 @@ export default function AdminHomePage() {
         </Link>
         <Link
           href="/admin/content"
-          className="rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)]"
+          className="rounded-full border border-forest px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)]"
         >
           Manage content
         </Link>
         <Link
           href="/admin/media"
-          className="rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)]"
+          className="rounded-full border border-forest px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)]"
         >
           Media library
         </Link>
         <Link
           href="/admin/media-lab"
-          className="rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)]"
+          className="rounded-full border border-forest px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)]"
         >
           Media lab
         </Link>

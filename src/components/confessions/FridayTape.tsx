@@ -101,7 +101,7 @@ export function FridayTape() {
             </>
           )}
         </button>
-        <p className="mt-4 font-[var(--font-sans)] text-[11px] uppercase tracking-[0.3em] text-[#7C7060]">
+        <p className="mt-4 font-[var(--font-sans)] text-[11px] uppercase tracking-[0.3em] text-sand-lift">
           {TAPE.length} messages, in sequence
         </p>
       </div>

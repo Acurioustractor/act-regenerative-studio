@@ -41,7 +41,7 @@ export function ProjectHealthCards() {
   const getStatusIcon = (status: Project["status"]) => {
     switch (status) {
       case "healthy":
-        return <CheckCircle className="w-5 h-5 text-[#4CAF50]" />;
+        return <CheckCircle className="w-5 h-5 text-forest" />;
       case "degraded":
         return <Clock className="w-5 h-5 text-[#FF9800]" />;
       case "down":
@@ -53,7 +53,7 @@ export function ProjectHealthCards() {
 
   const getRegistryBadge = (status: Project["registryStatus"]) => {
     const badges = {
-      active: "bg-[#4CAF50]/20 text-[#4CAF50]",
+      active: "bg-forest/20 text-forest",
       stale: "bg-[#FF9800]/20 text-[#FF9800]",
       error: "bg-[#F44336]/20 text-[#F44336]",
       none: "bg-[#9E9E9E]/20 text-[#9E9E9E]",

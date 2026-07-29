@@ -98,7 +98,7 @@ export function WikiSearch({ pages, sections }: WikiSearchProps) {
           onClick={() => setSectionId(ALL_SECTIONS)}
           className={`rounded-full border px-3 py-1.5 text-xs font-medium transition ${
             sectionId === ALL_SECTIONS
-              ? 'border-[#4CAF50] bg-[#E5F4E4] text-[#2F5233]'
+              ? 'border-forest bg-forest-soft text-[#2F5233]'
               : 'border-[var(--we-sand)] bg-white text-[var(--we-brown)] hover:border-[#7A9B76]'
           }`}
         >
@@ -113,7 +113,7 @@ export function WikiSearch({ pages, sections }: WikiSearchProps) {
               onClick={() => setSectionId(section.id)}
               className={`rounded-full border px-3 py-1.5 text-xs font-medium transition ${
                 active
-                  ? 'border-[#4CAF50] bg-[#E5F4E4] text-[#2F5233]'
+                  ? 'border-forest bg-forest-soft text-[#2F5233]'
                   : 'border-[var(--we-sand)] bg-white text-[var(--we-brown)] hover:border-[#7A9B76]'
               }`}
             >
@@ -162,7 +162,7 @@ export function WikiSearch({ pages, sections }: WikiSearchProps) {
               setQuery('');
               setSectionId(ALL_SECTIONS);
             }}
-            className="mt-6 inline-flex rounded-full bg-[#4CAF50] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#3E9845]"
+            className="mt-6 inline-flex rounded-full bg-forest px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#3E9845]"
           >
             Reset filters
           </button>
@@ -191,7 +191,7 @@ export function WikiSearch({ pages, sections }: WikiSearchProps) {
               </p>
               <div className="mt-5 flex min-w-0 items-center justify-between gap-3 text-xs text-[#7A6A55]">
                 <span className="min-w-0 truncate pr-2">{page.sectionTitle} source</span>
-                <span className="font-medium text-[#4CAF50]">Open →</span>
+                <span className="font-medium text-forest">Open →</span>
               </div>
             </Link>
           ))}

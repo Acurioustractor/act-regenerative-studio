@@ -84,7 +84,7 @@ export function ProjectHealthCard({ project }: { project: Project }) {
   }, [project.repo]);
 
   const statusColors = {
-    healthy: 'bg-[#4CAF50]',
+    healthy: 'bg-forest',
     warning: 'bg-yellow-500',
     error: 'bg-red-500',
     loading: 'bg-gray-300',
@@ -149,7 +149,7 @@ export function ProjectHealthCard({ project }: { project: Project }) {
           {project.url && (
             <div className="flex justify-between">
               <span>Deployment:</span>
-              <span className="font-medium text-[#4CAF50]">Live</span>
+              <span className="font-medium text-forest">Live</span>
             </div>
           )}
           <div className="flex justify-between">
@@ -165,7 +165,7 @@ export function ProjectHealthCard({ project }: { project: Project }) {
           href={`https://github.com/${project.repo}`}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full border border-[#4CAF50] px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-[var(--we-olive)] hover:bg-[#4CAF50]/10"
+          className="rounded-full border border-forest px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-[var(--we-olive)] hover:bg-forest/10"
         >
           GitHub
         </a>
@@ -174,7 +174,7 @@ export function ProjectHealthCard({ project }: { project: Project }) {
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-full border border-[#4CAF50] px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-[var(--we-olive)] hover:bg-[#4CAF50]/10"
+            className="rounded-full border border-forest px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-[var(--we-olive)] hover:bg-forest/10"
           >
             Site
           </a>
@@ -183,7 +183,7 @@ export function ProjectHealthCard({ project }: { project: Project }) {
           href={`https://github.com/${project.repo}/issues`}
           target="_blank"
           rel="noopener noreferrer"
-          className="rounded-full border border-[#4CAF50] px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-[var(--we-olive)] hover:bg-[#4CAF50]/10"
+          className="rounded-full border border-forest px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-[var(--we-olive)] hover:bg-forest/10"
         >
           Issues
         </a>

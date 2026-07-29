@@ -272,7 +272,7 @@ export default function ContentEditorPage({
         <p className="text-sm text-[var(--we-brown)]">Content not found.</p>
         <Link
           href="/admin/content"
-          className="mt-4 inline-flex rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)]"
+          className="mt-4 inline-flex rounded-full border border-forest px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)]"
         >
           Back to content
         </Link>
@@ -294,7 +294,7 @@ export default function ContentEditorPage({
           </div>
           <Link
             href="/admin/content"
-            className="rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)]"
+            className="rounded-full border border-forest px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)]"
           >
             Back to library
           </Link>
@@ -371,7 +371,7 @@ export default function ContentEditorPage({
             type="button"
             onClick={handleSave}
             disabled={saving}
-            className="rounded-full bg-[#4CAF50] px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white"
+            className="rounded-full bg-forest px-6 py-3 text-xs font-semibold uppercase tracking-[0.3em] text-white"
           >
             {saving ? "Saving..." : "Save content"}
           </button>
@@ -500,7 +500,7 @@ export default function ContentEditorPage({
                 <button
                   type="button"
                   onClick={() => handleSaveBlock(block.id)}
-                  className="rounded-full bg-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white"
+                  className="rounded-full bg-forest px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-white"
                 >
                   Save block
                 </button>
@@ -523,7 +523,7 @@ export default function ContentEditorPage({
           <button
             type="button"
             onClick={() => router.push(publicPath)}
-            className="rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)]"
+            className="rounded-full border border-forest px-4 py-2 text-xs font-semibold uppercase tracking-[0.3em] text-[var(--we-olive)]"
           >
             View public page
           </button>

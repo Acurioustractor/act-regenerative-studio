@@ -45,7 +45,7 @@ export function DashboardMetrics() {
       label: "Active Projects",
       value: metrics.totalProjects,
       icon: Globe,
-      color: "text-[#4CAF50]",
+      color: "text-forest",
     },
     {
       label: "Registry Sync",

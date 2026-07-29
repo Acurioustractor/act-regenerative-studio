@@ -405,7 +405,7 @@ function CaptionBlock({
         <>
           <p className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.32em] text-[#E0B068]">
             {active.cleared ? (isPlaying ? 'Now playing' : 'Tap the light again to play') : 'Shared as words'}
-            <span className="mx-2 text-[#7C7060]">·</span>
+            <span className="mx-2 text-sand-lift">·</span>
             {active.themeLabel}
           </p>
           <p

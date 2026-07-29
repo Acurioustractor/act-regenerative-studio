@@ -152,7 +152,7 @@ export async function EcosystemLinks({
             href={project.url}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-2 rounded-full bg-[#4CAF50] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[#3D9143]"
+            className="inline-flex items-center gap-2 rounded-full bg-forest px-4 py-2 text-sm font-semibold text-white transition hover:bg-forest-deep"
           >
             <span>{project.name}</span>
             <svg
@@ -191,10 +191,10 @@ export async function EcosystemLinks({
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="group flex items-center justify-between rounded-lg px-3 py-2 transition hover:bg-[#4CAF50]/10"
+              className="group flex items-center justify-between rounded-lg px-3 py-2 transition hover:bg-forest/10"
             >
               <div>
-                <div className="text-sm font-medium text-[var(--we-olive)] group-hover:text-[#4CAF50]">
+                <div className="text-sm font-medium text-[var(--we-olive)] group-hover:text-forest">
                   {project.name}
                 </div>
                 <div className="text-xs text-[var(--we-warm-brown)]">{project.tagline}</div>
@@ -209,7 +209,7 @@ export async function EcosystemLinks({
                 strokeWidth="2"
                 strokeLinecap="round"
                 strokeLinejoin="round"
-                className="text-[var(--we-warm-brown)] group-hover:text-[#4CAF50]"
+                className="text-[var(--we-warm-brown)] group-hover:text-forest"
               >
                 <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                 <polyline points="15 3 21 3 21 9" />
@@ -246,7 +246,7 @@ export async function EcosystemLinks({
                 href={project.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full bg-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white transition hover:bg-[#3D9143]"
+                className="inline-flex items-center gap-1.5 rounded-full bg-forest px-4 py-2 text-xs font-semibold uppercase tracking-wider text-white transition hover:bg-forest-deep"
               >
                 Visit Site
                 <svg
@@ -269,7 +269,7 @@ export async function EcosystemLinks({
                 href={`https://github.com/${project.repo}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1.5 rounded-full border border-[#4CAF50] px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[var(--we-olive)] transition hover:bg-[#4CAF50]/10"
+                className="inline-flex items-center gap-1.5 rounded-full border border-forest px-4 py-2 text-xs font-semibold uppercase tracking-wider text-[var(--we-olive)] transition hover:bg-forest/10"
               >
                 GitHub
               </a>
@@ -309,7 +309,7 @@ export function VisitSiteButton({
       href={project.url}
       target="_blank"
       rel="noopener noreferrer"
-      className={`inline-flex items-center gap-2 rounded-full bg-[#4CAF50] font-semibold text-white transition hover:bg-[#3D9143] ${sizes[size]} ${className}`}
+      className={`inline-flex items-center gap-2 rounded-full bg-forest font-semibold text-white transition hover:bg-forest-deep ${sizes[size]} ${className}`}
     >
       Visit {project.name}
       <svg

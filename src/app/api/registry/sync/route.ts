@@ -1,9 +1,13 @@
-import { NextResponse } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
 import { syncAllRegistries } from "@/lib/registry-sync";
+import { requireInternal } from "@/lib/auth/require-internal";
 
 export const dynamic = "force-dynamic";
 
-export async function POST() {
+export async function POST(request: NextRequest) {
+  const denied = requireInternal(request);
+  if (denied) return denied;
+
   try {
     const results = await syncAllRegistries();
 

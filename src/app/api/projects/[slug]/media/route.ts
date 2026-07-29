@@ -7,6 +7,7 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { getProjectMedia, createMediaLink } from '@/lib/media/client';
+import { requireInternal } from "@/lib/auth/require-internal";
 
 export async function GET(
   request: NextRequest,
@@ -45,6 +46,8 @@ export async function POST(
   request: NextRequest,
   { params }: { params: Promise<{ slug: string }> }
 ) {
+  const denied = requireInternal(request);
+  if (denied) return denied;
   try {
     const { slug } = await params;
     const body = await request.json();

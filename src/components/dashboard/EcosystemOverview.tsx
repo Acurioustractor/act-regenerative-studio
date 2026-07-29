@@ -104,7 +104,7 @@ export function EcosystemOverview({ projects }: { projects: Project[] }) {
       <div className="mt-4 grid grid-cols-2 gap-4 md:grid-cols-4">
         {/* Total Projects */}
         <div className="rounded-2xl border border-[var(--we-sand)] bg-white p-4">
-          <div className="text-2xl font-bold text-[#4CAF50]">{stats.totalProjects}</div>
+          <div className="text-2xl font-bold text-forest">{stats.totalProjects}</div>
           <div className="mt-1 text-xs text-[var(--we-brown)] uppercase tracking-wider">
             Projects
           </div>
@@ -112,7 +112,7 @@ export function EcosystemOverview({ projects }: { projects: Project[] }) {
 
         {/* Healthy Projects */}
         <div className="rounded-2xl border border-[var(--we-sand)] bg-white p-4">
-          <div className="text-2xl font-bold text-[#4CAF50]">
+          <div className="text-2xl font-bold text-forest">
             {stats.healthyProjects}
             <span className="text-sm text-[var(--we-brown)]"> / {stats.totalProjects}</span>
           </div>

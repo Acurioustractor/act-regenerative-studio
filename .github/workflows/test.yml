@@ -71,11 +71,25 @@ jobs:
           path: .next/
           retention-days: 7
 
-  # Job 3: Tests (if they exist)
+  # Job 3: Tests
+  #
+  # The API contract tests are integration tests: they assert that /admin
+  # answers 404 and that twelve mutating endpoints answer 401 without a token.
+  # That can only be checked against a running server, so this job builds the
+  # app and starts one. Running `npm test` with nothing listening fails with
+  # "No server responding", which is what happened on the first green-gate run.
+  #
+  # The token is generated per run rather than stored as a secret. The tests
+  # only need the server and the suite to agree on a value; no production
+  # credential belongs in CI.
   test:
     name: 🧪 Run Tests
     runs-on: ubuntu-latest
     needs: lint-and-typecheck
+
+    env:
+      ACT_INTERNAL_TOKEN: ci-${{ github.run_id }}-${{ github.run_attempt }}
+      TEST_BASE_URL: http://localhost:3001
 
     steps:
       - name: 📥 Checkout code
@@ -90,11 +104,32 @@ jobs:
       - name: 📦 Install dependencies
         run: npm ci
 
+      - name: 🏗️ Build for the integration tests
+        run: npm run build
+        env:
+          NEXT_PUBLIC_SUPABASE_URL: ${{ secrets.NEXT_PUBLIC_SUPABASE_URL || secrets.SUPABASE_URL }}
+          NEXT_PUBLIC_SUPABASE_ANON_KEY: ${{ secrets.NEXT_PUBLIC_SUPABASE_ANON_KEY || secrets.SUPABASE_ANON_KEY }}
+
+      - name: 🚀 Start the server
+        run: |
+          npx next start -p 3001 &
+          echo $! > /tmp/next.pid
+          for i in $(seq 1 60); do
+            curl -sf -o /dev/null http://localhost:3001/ && exit 0
+            sleep 2
+          done
+          echo "server never became ready"
+          exit 1
+
       # Was: `npm test || echo "no tests"` with continue-on-error, which
       # reported green having run nothing. There is a real suite now.
       - name: 🧪 Run tests
         run: npm test
         continue-on-error: false
+
+      - name: 🛑 Stop the server
+        if: always()
+        run: kill "$(cat /tmp/next.pid)" 2>/dev/null || true
 
   # Job 4: Security Audit
   security-audit:

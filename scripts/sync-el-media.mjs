@@ -91,6 +91,22 @@ function createEmptySnapshot() {
   };
 }
 
+/**
+ * The storytellers tagged in a media asset, reduced to what a page needs to
+ * credit them and link to them. Empathy Ledger is the only place that knows
+ * who is in a photograph, so anything this drops is unrecoverable downstream.
+ */
+function normalisePeople(taggedStorytellers) {
+  if (!Array.isArray(taggedStorytellers)) return [];
+  return taggedStorytellers
+    .map((person) => ({
+      id: person?.id || null,
+      slug: person?.slug || null,
+      name: person?.displayName || null,
+    }))
+    .filter((person) => person.id && person.name);
+}
+
 async function writeSnapshot(snapshot) {
   await fs.writeFile(OUTPUT_PATH, `${JSON.stringify(snapshot, null, 2)}\n`);
 }
@@ -284,6 +300,12 @@ function buildFeaturedResponse(projectSlug, wikiRecord, payload) {
       alt: item.altText || item.title || null,
       caption: item.description || null,
       credit: item.attributionText || null,
+      // Who is in the photograph. Empathy Ledger has always emitted this on
+      // taggedStorytellers and this sync used to drop it, which is why 2,031
+      // images shipped to this site with no person attached to any of them. A
+      // photo that cannot name its subject cannot be shown to them, and cannot
+      // be taken down by them.
+      people: normalisePeople(item.taggedStorytellers),
       is_hero: isHero,
       is_featured: isHero,
       source: 'content-hub',
@@ -361,6 +383,7 @@ async function fetchOrganizationMedia(org) {
         alt: item.altText || item.title || null,
         caption: item.description || null,
         credit: item.attributionText || null,
+        people: normalisePeople(item.taggedStorytellers),
         is_hero: Boolean(item.isHero),
         is_featured: Boolean(item.isHero),
         source: 'content-hub',

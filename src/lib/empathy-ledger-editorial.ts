@@ -2,6 +2,7 @@ import 'server-only';
 
 import { cache } from 'react';
 
+import { fetchEmpathyLedgerJson } from '@/lib/empathy-ledger-runtime';
 import editorialSnapshot from '@/data/empathy-ledger-editorial.generated.json';
 
 export interface EditorialArticle {
@@ -95,6 +96,45 @@ interface EditorialSnapshot {
 
 const SNAPSHOT = editorialSnapshot as unknown as EditorialSnapshot;
 
+const SITE_SLUG = process.env.EMPATHY_LEDGER_SITE_SLUG || 'act-regenerative-studio';
+
+/**
+ * Editorial read live from Empathy Ledger, falling back to the copy baked at
+ * build time.
+ *
+ * This module used to serve the baked copy and nothing else, which meant a
+ * storyteller who withdrew consent stayed published here until somebody
+ * rebuilt, with no upper bound on how long that took. Reading live puts a number
+ * on it, and the number is the revalidate window.
+ *
+ * The baked snapshot stays as the fallback rather than being deleted. If
+ * Empathy Ledger is unreachable the site keeps working on yesterday's content,
+ * which is the right failure: a site that goes blank helps nobody, and the
+ * withdrawal it might be missing is exactly the case the fallback is bounded
+ * for.
+ */
+async function fetchEditorialLive(): Promise<EditorialSnapshot | null> {
+  const [manifest, articles] = await Promise.all([
+    fetchEmpathyLedgerJson<Partial<EditorialSnapshot>>(
+      `/api/v1/content-hub/editorial?site=${encodeURIComponent(SITE_SLUG)}`,
+      { revalidate: 300 }
+    ),
+    fetchEmpathyLedgerJson<{ articles?: EditorialArticle[] }>(
+      `/api/v1/content-hub/articles?destination=${encodeURIComponent(SITE_SLUG)}&limit=100`,
+      { revalidate: 300 }
+    ),
+  ]);
+
+  if (!manifest || !Array.isArray(articles?.articles)) return null;
+
+  return {
+    ...SNAPSHOT,
+    ...manifest,
+    articles: articles.articles,
+    articleCount: articles.articles.length,
+  } as EditorialSnapshot;
+}
+
 function isEditorialArticle(
   article: EditorialArticle | undefined
 ): article is EditorialArticle {
@@ -115,18 +155,34 @@ function sortByPublishedDateDesc<T extends { publishedAt: string | null; updated
   });
 }
 
-export const getEditorialSnapshot = cache(() => SNAPSHOT);
+/**
+ * The copy baked at build time, read synchronously.
+ *
+ * Some consumers want the whole corpus without making every caller async, and
+ * that is a legitimate need: the field graph and the static-params list are
+ * build-time facts. They must use this rather than the live read, so that
+ * "which pages exist" stays a property of the build while "what is on them"
+ * comes from the request.
+ */
+export function getBakedEditorialSnapshot(): EditorialSnapshot {
+  return SNAPSHOT;
+}
+
+export const getEditorialSnapshot = cache(async (): Promise<EditorialSnapshot> => {
+  const live = await fetchEditorialLive();
+  return live ?? SNAPSHOT;
+});
 
 export const getSiteEditorialArticles = cache(
   async (limit = 60): Promise<EditorialArticle[]> => {
-    const snapshot = getEditorialSnapshot();
+    const snapshot = await getEditorialSnapshot();
     return sortByPublishedDateDesc(snapshot.articles).slice(0, limit);
   }
 );
 
 export const getProjectEditorialArticles = cache(
   async (projectSlug: string, limit = 6): Promise<EditorialArticle[]> => {
-    const snapshot = getEditorialSnapshot();
+    const snapshot = await getEditorialSnapshot();
     const manifest = snapshot.projectEditorial?.[projectSlug];
     const articles = snapshot.articles.filter((article) =>
       article.relatedProjectSlugs.includes(projectSlug)
@@ -149,11 +205,17 @@ export const getProjectEditorialArticles = cache(
 
 export const getEditorialArticleBySlug = cache(
   async (slug: string): Promise<EditorialArticle | null> => {
-    const snapshot = getEditorialSnapshot();
+    const snapshot = await getEditorialSnapshot();
     return snapshot.articles.find((article) => article.slug === slug) || null;
   }
 );
 
+/**
+ * Deliberately the baked copy, not the live read. This feeds generateStaticParams
+ * at build time, where a live fetch would make the set of pre-rendered routes
+ * depend on whatever the API happened to return during the build. Which pages
+ * exist is a build-time fact; what is on them is a request-time one.
+ */
 export function getEditorialArticleStaticSlugs(): string[] {
   return SNAPSHOT.articles.map((article) => article.slug);
 }
@@ -164,7 +226,7 @@ export function getEditorialProjectArticleCount(projectSlug: string): number {
 
 export const getProjectEditorialManifest = cache(
   async (projectSlug: string): Promise<ProjectEditorialManifest | null> => {
-    const snapshot = getEditorialSnapshot();
+    const snapshot = await getEditorialSnapshot();
     return snapshot.projectEditorial?.[projectSlug] || null;
   }
 );
@@ -177,7 +239,7 @@ export const getProjectEditorialFeature = cache(
     leadArticle: EditorialArticle | null;
     supportingArticles: EditorialArticle[];
   }> => {
-    const snapshot = getEditorialSnapshot();
+    const snapshot = await getEditorialSnapshot();
     const manifest = snapshot.projectEditorial?.[projectSlug] || null;
 
     if (!manifest) {
@@ -212,7 +274,7 @@ export const getHomeEditorialFeature = cache(
     featuredMediaProjectSlugs: string[];
     featuredProjectMediaOverrides: Record<string, EditorialMediaOverride>;
   }> => {
-    const snapshot = getEditorialSnapshot();
+    const snapshot = await getEditorialSnapshot();
     const featuredSlugs = Array.isArray(snapshot.featuredHomeArticleSlugs)
       ? snapshot.featuredHomeArticleSlugs
       : [];

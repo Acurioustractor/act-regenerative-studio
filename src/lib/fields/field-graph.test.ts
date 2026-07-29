@@ -11,7 +11,7 @@ import {
   relatedArticles,
   unmappedReferences,
 } from "./field-graph";
-import { getEditorialSnapshot } from "@/lib/empathy-ledger-editorial";
+import { getBakedEditorialSnapshot } from "@/lib/empathy-ledger-editorial";
 
 /**
  * The first test is the one that matters. Everything else here is ordinary
@@ -45,7 +45,7 @@ describe("field graph guard", () => {
 
 describe("lookups", () => {
   it("assigns articles to the field their project belongs to", () => {
-    const articles = getEditorialSnapshot().articles;
+    const articles = getBakedEditorialSnapshot().articles;
     const justice = articles.find((a) =>
       (a.relatedProjectSlugs ?? []).includes("justicehub"),
     );
@@ -65,14 +65,14 @@ describe("lookups", () => {
   });
 
   it("never returns an article as its own related article", () => {
-    for (const article of getEditorialSnapshot().articles.slice(0, 10)) {
+    for (const article of getBakedEditorialSnapshot().articles.slice(0, 10)) {
       const related = relatedArticles(article);
       expect(related.map((r) => r.slug)).not.toContain(article.slug);
     }
   });
 
   it("respects the related-article limit", () => {
-    for (const article of getEditorialSnapshot().articles.slice(0, 10)) {
+    for (const article of getBakedEditorialSnapshot().articles.slice(0, 10)) {
       expect(relatedArticles(article, 2).length).toBeLessThanOrEqual(2);
     }
   });
@@ -84,7 +84,7 @@ describe("lookups", () => {
   });
 
   it("adds curated fields without removing derived ones", () => {
-    const contained = getEditorialSnapshot().articles.find(
+    const contained = getBakedEditorialSnapshot().articles.find(
       (a) => a.slug === "contained-where-policy-meets-flesh",
     );
     expect(contained).toBeDefined();
@@ -107,7 +107,7 @@ describe("lookups", () => {
    * says what to do, which is the only way the caveat resolves itself.
    */
   it("still has degenerate publishedAt values, so dates stay hidden", () => {
-    const articles = getEditorialSnapshot().articles;
+    const articles = getBakedEditorialSnapshot().articles;
     const distinct = new Set(articles.map((a) => a.publishedAt)).size;
     const ratio = distinct / articles.length;
 

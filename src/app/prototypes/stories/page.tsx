@@ -5,7 +5,7 @@ import {
 } from "@/components/prototypes/EditorialHeader";
 import {
   getSiteEditorialArticles,
-  getEditorialSnapshot,
+  getBakedEditorialSnapshot,
 } from "@/lib/empathy-ledger-editorial";
 import { StoriesStream } from "./stories-stream";
 import styles from "./stories.module.css";
@@ -22,7 +22,7 @@ export async function StoriesExperience({
   production?: boolean;
 }) {
   const stories = await getSiteEditorialArticles(100).catch(() => []);
-  const snapshot = getEditorialSnapshot();
+  const snapshot = getBakedEditorialSnapshot();
   const projectCount = new Set(
     stories.flatMap((story) => story.relatedProjectSlugs),
   ).size;

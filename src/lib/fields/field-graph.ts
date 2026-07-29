@@ -1,5 +1,5 @@
 import {
-  getEditorialSnapshot,
+  getBakedEditorialSnapshot,
   type EditorialArticle,
 } from "@/lib/empathy-ledger-editorial";
 import { fieldQuestions, type FieldQuestion } from "@/data/field-questions";
@@ -89,7 +89,7 @@ function isFieldId(value: string | null): value is LivingFieldId {
  * snapshot directly.
  */
 function allArticles(): EditorialArticle[] {
-  return getEditorialSnapshot().articles;
+  return getBakedEditorialSnapshot().articles;
 }
 
 /**

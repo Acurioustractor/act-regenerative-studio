@@ -112,15 +112,16 @@ business/
 finance/
 brand/
 
-# Empty skill scaffolds
-.claude/skills/marketing-copy-editing/
-.claude/skills/marketing-copywriting/
-.claude/skills/marketing-email-sequence/
-.claude/skills/marketing-launch-strategy/
-.claude/skills/marketing-page-cro/
-.claude/skills/marketing-seo-audit/
-.claude/skills/marketing-social-content/
+# Marketing skills. These are symlinks into .claude/marketingskills, which is
+# an unregistered clone of an external repo, so a trailing-slash directory
+# pattern never matched them.
+.claude/skills/marketing-*
 .claude/marketingskills/
 
 # Dependencies vendored beside a sub-script
 compendium/scripts/node_modules/
+
+# Field videos live in Supabase Storage (bucket: site-media), reached via the
+# /media/field-videos/:file redirect in next.config.js. 226 MB of mp4 does not
+# belong in git history. Re-upload with scripts/upload-field-videos.mjs.
+public/media/field-videos/

@@ -106,6 +106,24 @@ async function main() {
   const rows = [];
 
   for (const route of routes) {
+    // A dynamic segment cannot be fetched as its literal "[slug]" path; doing so
+    // reported five routes as broken every run, which trains the reader to
+    // ignore the broken count. They are exercised with real params instead.
+    if (/\[.+\]/.test(route)) {
+      rows.push({
+        route,
+        status: null,
+        dynamic: true,
+        title: "",
+        h1s: [],
+        words: 0,
+        links: [],
+        drift: driftFor(route),
+        inSitemap: inSitemap.has(route),
+      });
+      continue;
+    }
+
     let status = 0;
     let redirectedTo = null;
     let info = { title: "", h1s: [], words: 0, links: [] };
@@ -151,7 +169,7 @@ async function main() {
   const line = (r) =>
     [
       r.route.padEnd(38),
-      String(r.status).padEnd(4),
+      String(r.dynamic ? "dyn" : r.status).padEnd(4),
       String(r.words).padStart(5),
       String(r.inbound).padStart(3),
       r.inSitemap ? "map" : "   ",
@@ -168,6 +186,7 @@ async function main() {
   console.log(`\n--- ${admin.length} admin/prototype routes (not for launch) ---`);
   for (const r of admin) console.log(line(r));
 
+  const dynamic = pub.filter((r) => r.dynamic);
   const thin = pub.filter((r) => r.status === 200 && r.words < 150);
   const orphan = pub.filter(
     (r) => r.status === 200 && r.inbound === 0 && r.route !== "/",
@@ -182,6 +201,9 @@ async function main() {
   console.log(`  live (200)       ${pub.filter((r) => r.status === 200).length}`);
   console.log(`  held (3xx)       ${held.length}  ${held.map((r) => r.route).join(" ")}`);
   console.log(`  broken (4xx/5xx) ${broken.length}  ${broken.map((r) => r.route).join(" ")}`);
+  console.log(
+    `  dynamic (skipped)${dynamic.length}  ${dynamic.map((r) => r.route).join(" ")}`,
+  );
   console.log(`  thin (<150 words)${thin.length}  ${thin.map((r) => r.route).join(" ")}`);
   console.log(`  orphan (0 inbound)${orphan.length}  ${orphan.map((r) => r.route).join(" ")}`);
   console.log(`  not in sitemap   ${unmapped.length}`);

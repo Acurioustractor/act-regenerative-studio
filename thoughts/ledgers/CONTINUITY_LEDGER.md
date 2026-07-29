@@ -1,14 +1,26 @@
 # ACT Regenerative Studio - Continuity Ledger
 
-> Last Updated: 2025-01-18
-> Session: Initial Setup
+> Last Updated: 2026-07-29
+> Session: launch hardening, field graph, repo cleanup
+> Full handoff: `thoughts/shared/handoffs/2026-07-29-launch-hardening-and-field-graph.md`
 
 ## Active Context
 
 ### Current Goals
-- [ ] Complete Continuous Claude v3 integration
-- [ ] Set up persistent memory system
-- [ ] Configure lifecycle hooks
+- [ ] Editorial work against the Empathy Ledger API — the field graph is the spine,
+      the content is what is thin. See the handoff's last section.
+- [ ] Decide whether EL's taxonomy should be able to express "art AND justice", or
+      whether `src/data/field-assignments.ts` stays the permanent home for that
+      judgement. EL has no art project, so Art can only be populated locally.
+- [ ] Seven articles still attach to no field; reasons recorded in
+      `DELIBERATELY_UNASSIGNED`. Art has 3 pieces and opens the homepage.
+- [ ] `primaryProject` and `themes` are empty on all 29 articles despite existing in
+      the schema; `publishedAt` is a migration artifact (21 of 29 share one timestamp).
+
+### Recently Shipped (2026-07-29)
+Site is live and verified: 25 launch routes at 200, admin and prototypes gated behind
+`ACT_INTERNAL_TOKEN` (404/401), 0 WCAG AA contrast violations, every link resolving,
+field videos on Supabase, 53 tests green in CI against a real server.
 
 ### Key Patterns Discovered
 - This project uses **Supabase** with pgvector for storage
@@ -40,17 +52,19 @@ cd $CLAUDE_PROJECT_DIR/opc && PYTHONPATH=. uv run python scripts/core/store_lear
 ```
 
 ## Blocked Items
-None currently.
+None. The editorial gaps above are decisions rather than blockers.
 
-## Completed This Session
-- Created database migration for Continuous Claude tables
-- Set up opc/ Python package with core scripts
-- Created thoughts/ directory structure
-- Set up memory recall/store system
+## Traps
+- **Tests need a running server.** Port 3001 is often occupied by another session; a
+  run against the wrong one produces failures that read as "the middleware is broken".
+  Use `TEST_BASE_URL`. The suite has a preflight that says so.
+- **`npm run build` runs eight sync scripts** that hit Empathy Ledger and Notion and
+  rewrite generated JSON. Use `npx next build` to check compilation only.
+- **Generated data files are rewritten on every build.** Never edit
+  `src/data/*.generated.json` by hand; use the overlay pattern in
+  `src/data/field-assignments.ts`.
+- **The shell is zsh**, which does not word-split unquoted variables.
 
 ## Handoff Notes
-For the next session:
-1. Run database migration to create tables
-2. Configure hooks in `.claude/settings.json`
-3. Test memory system with sample learnings
-4. Set up status line integration
+Read `thoughts/shared/handoffs/2026-07-29-launch-hardening-and-field-graph.md` first.
+It carries the reasoning, not just the outcome.

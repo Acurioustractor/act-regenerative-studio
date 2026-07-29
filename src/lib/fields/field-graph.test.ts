@@ -93,6 +93,33 @@ describe("lookups", () => {
     expect(fields).toContain("justice"); // derived from its project slug
   });
 
+  /**
+   * An inverted guard: it asserts the data is still broken.
+   *
+   * `publishedAt` in the editorial feed is a migration artifact, not an
+   * editorial date. 21 of the 29 articles carry one identical timestamp to the
+   * millisecond, and createdAt and updatedAt each hold a single value across the
+   * whole corpus. FieldWriting renders no date because of it, since printing
+   * "10 January 2026" under every headline would state something false.
+   *
+   * A comment saying so decays: nobody re-checks it, and the day the feed gains
+   * real dates, the site quietly goes on hiding them. This fails on that day and
+   * says what to do, which is the only way the caveat resolves itself.
+   */
+  it("still has degenerate publishedAt values, so dates stay hidden", () => {
+    const articles = getEditorialSnapshot().articles;
+    const distinct = new Set(articles.map((a) => a.publishedAt)).size;
+    const ratio = distinct / articles.length;
+
+    expect(
+      ratio,
+      `publishedAt now has ${distinct} distinct values across ${articles.length} ` +
+        "articles, which no longer looks like a migration artifact. The feed may " +
+        "be carrying real dates. Re-enable the date in " +
+        "src/components/fields/FieldWriting.tsx and delete this test.",
+    ).toBeLessThan(0.5);
+  });
+
   it("reports coverage for all five fields", () => {
     const coverage = fieldCoverage();
     expect(coverage).toHaveLength(5);

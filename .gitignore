@@ -93,3 +93,34 @@ confessions-band.png
 confessions-film-modal.png
 confessions-wall-*.png
 home-viewport.png
+
+# Working material and vendored tooling, 2026-07-29
+# Kept out of the repo because it is either generated, personal, or a tool that
+# has its own home. None of it is referenced by the site.
+
+# Continuous Claude, vendored (2599 files, 42MB). Documented in CLAUDE.md and
+# installed per-machine rather than carried here.
+opc/
+
+# Generated renders from grantscope and friends
+output/
+
+# Drafts, decks, working docs
+04_Visuals/
+Writing/
+business/
+finance/
+brand/
+
+# Empty skill scaffolds
+.claude/skills/marketing-copy-editing/
+.claude/skills/marketing-copywriting/
+.claude/skills/marketing-email-sequence/
+.claude/skills/marketing-launch-strategy/
+.claude/skills/marketing-page-cro/
+.claude/skills/marketing-seo-audit/
+.claude/skills/marketing-social-content/
+.claude/marketingskills/
+
+# Dependencies vendored beside a sub-script
+compendium/scripts/node_modules/

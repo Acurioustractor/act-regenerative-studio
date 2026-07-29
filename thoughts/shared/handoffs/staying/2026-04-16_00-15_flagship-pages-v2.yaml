@@ -1,0 +1,95 @@
+---
+session: staying
+date: 2026-04-16
+status: partial
+outcome: PARTIAL_PLUS
+---
+
+goal: Flagship pages v2 — depth content, photo management, visual polish across 5 pages
+now: Fix remaining visual issues (full-bleed CSS, image quality audit), then commit + deploy
+
+done_this_session:
+  - task: Verified AnimatedStat count-up fix (no more doubled numbers)
+    files: [src/components/flagship/AnimatedStat.tsx]
+  - task: Applied Goods-depth treatment to all 4 other flagship pages from wiki content
+    files: [src/app/justicehub/page.tsx, src/app/harvest/page.tsx, src/app/empathy-ledger/page.tsx, src/app/farm/page.tsx]
+  - task: JusticeHub depth — economic case ($1.3M vs $14K cards), ALMA section, 3 proof points, capital routing vision, portrait people
+    files: [src/app/justicehub/page.tsx]
+  - task: Harvest depth — seasonal kitchen story, garden centre with Green Harvest lineage, Barry Rodgerig + Shaun Fisher inheritance, CSA section
+    files: [src/app/harvest/page.tsx]
+  - task: EL depth — five consent types grid, stats (412/251/588K/20), PICC + Oonchiumpa implementations, Third Reality connective tissue
+    files: [src/app/empathy-ledger/page.tsx]
+  - task: BCV depth — site detail grid (6 elements), conservation philosophy (6 commitments), ecosystem connections (5 projects)
+    files: [src/app/farm/page.tsx]
+  - task: Built EditableImage photo picker with multi-project browsing (tabs for all EL projects)
+    files: [src/components/flagship/EditableImage.tsx]
+  - task: Built PhotoStrip component — 3-col/4-col image grids with lightbox, no stretching
+    files: [src/components/flagship/PhotoStrip.tsx]
+  - task: Added photo strips to all 5 pages as visual breaks between text sections
+    files: [src/app/goods/page.tsx, src/app/justicehub/page.tsx, src/app/harvest/page.tsx, src/app/empathy-ledger/page.tsx, src/app/farm/page.tsx]
+  - task: Fixed full-bleed CSS to work inside ScrollReveal wrappers (main > div > .full-bleed)
+    files: [src/app/globals.css]
+  - task: Fixed EditableImage wrapper from relative h-full w-full to absolute inset-0
+    files: [src/components/flagship/EditableImage.tsx]
+  - task: Curated 18 image overrides in image-overrides.json (removed wrong-project and low-res images)
+    files: [src/data/image-overrides.json]
+  - task: Stats sections centered (grid-cols-4 text-center instead of flex-wrap)
+    files: [src/app/goods/page.tsx, src/app/justicehub/page.tsx, src/app/empathy-ledger/page.tsx]
+  - task: Set all EditableImages to unoptimized (bypass Next.js re-compression of CDN images)
+    files: [src/components/flagship/EditableImage.tsx]
+  - task: Removed low-res (800px) full-bleed photo breaks — only kept 2000px+ sources
+    files: [src/app/goods/page.tsx, src/app/harvest/page.tsx, src/app/farm/page.tsx]
+
+blockers: []
+
+questions:
+  - Some compendium photos are only 800px — need higher-res originals uploaded to EL for full-bleed use
+  - Should editorial images be stored in a separate high-res bucket vs the auto-generated compendium thumbnails?
+
+decisions:
+  - full_bleed_threshold: Only use full-bleed photo breaks with images >= 2000px wide. Below that, use PhotoStrip grids at 33vw/25vw where 800px is fine.
+  - unoptimized_images: All EditableImages skip Next.js optimization (unoptimized prop) since they load from Supabase CDN
+  - object_top: Full-bleed photos use object-top to avoid cutting off heads/faces
+  - no_cross_project_images: Each page only uses photos from its own project context (user was very clear about this)
+  - photo_strip_pattern: 3-col landscape or 4-col square grids between text sections as lightweight visual breaks
+
+findings:
+  - compendium_resolution: Compendium photos (photos/compendium-2026/) are mostly 800x533px thumbnails. Only "designing the weave bed" is 2000px. Gallery-uploaded photos (galleries/ and story-media/) are full DSLR resolution (2000-4000px, 1-3MB).
+  - full_bleed_css: The full-bleed CSS selector (main > .full-bleed) breaks when ScrollReveal wraps sections in a div. Fixed with main > div > .full-bleed and main > div:has(> .full-bleed).
+  - editable_image_fill: Next.js fill Image needs positioned parent. EditableImage wrapper changed from relative h-full w-full to absolute inset-0 to properly fill aspect-ratio containers.
+  - image_picker_api: /api/image-picker returns all projects with images. Many projects have 24 images but most are the same bf17d0a9 placeholder. Real images exist for: empathy-ledger (20), justicehub (8), picc-photo-kiosk (24), picc-elders-hull-river (24), picc-annual-report (24), bg-fit (24 mixed mp3/jpg).
+  - high_res_sources: JusticeHub gallery has 8 images at 2000px+. Quandamooka gallery has 20+ images at 2000-3000px. PICC galleries have 48 real community photos. EL compendium has 20 images but mostly 800px.
+
+worked:
+  - PhotoStrip component at 33vw/25vw makes 800px images look sharp
+  - EditableImage with absolute inset-0 wrapper fills containers properly
+  - Multi-project picker tabs let user browse all EL galleries
+  - object-top prevents face cropping on landscape full-bleeds
+
+failed:
+  - Full-bleed breaks with 800px compendium photos looked grainy/stretched — had to remove them
+  - aspect-ratio containers (aspect-[2/1]) didn't constrain EditableImage properly — switched to explicit h-[50vh]
+  - Initial image overrides used cross-project photos (PICC on Goods page) — user rejected this
+  - Next.js image optimization at quality 75 made CDN images look worse — fixed with unoptimized
+
+next:
+  - Commit all changes to act-regenerative-studio and deploy to Vercel
+  - Upload high-res editorial photos for Harvest and BCV (currently zero full-bleed-quality images)
+  - Consider a photo upload workflow — drag-and-drop to Supabase storage with automatic size validation
+  - CEO review sections 1-11 still not completed from prior session
+  - Wire the inline EditableImage overrides to persist beyond dev (currently saves to local JSON file)
+  - Test all 5 pages on mobile responsive layouts
+  - Add more storyteller portrait sections where data exists (JH has 4 with photos)
+
+files:
+  created:
+    - src/components/flagship/PhotoStrip.tsx
+  modified:
+    - src/app/globals.css
+    - src/app/goods/page.tsx
+    - src/app/justicehub/page.tsx
+    - src/app/harvest/page.tsx
+    - src/app/empathy-ledger/page.tsx
+    - src/app/farm/page.tsx
+    - src/components/flagship/EditableImage.tsx
+    - src/data/image-overrides.json

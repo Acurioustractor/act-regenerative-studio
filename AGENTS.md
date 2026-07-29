@@ -1,0 +1,478 @@
+# ACT Regenerative Studio - Codex Context
+
+> **Quick Reference for Codex**
+> This document provides essential context about this codebase for AI-assisted development.
+
+---
+
+## 🔼 Current work (handover, 2026-05-30)
+
+**Active thread:** the **Confessions to Philanthropy** campaign + **The Payout Wall**
+(`/confessions/*`). If you are picking up that work, read the full handover first:
+**`thoughts/shared/handoffs/2026-05-30-confessions-campaign-codex-handover.md`** — it
+covers what shipped, the IA, key files, how to run/verify, and the gotchas (auto-deploy
+from `main`, curated commits, gitignored caller-PII recordings, consent-first audio).
+
+---
+
+## 🎯 Project Overview
+
+**Name**: ACT Regenerative Studio
+**Purpose**: Unified platform for A Curious Tractor's regenerative innovation ecosystem
+**Tech Stack**: Next.js 15, React 19, TypeScript, Supabase (PostgreSQL + pgvector), Tailwind CSS
+**Primary Focus**: Living Wiki knowledge base + Multi-project operations hub
+
+---
+
+## 🚀 Quick Start
+
+### Essential Commands
+```bash
+# Start development server
+npm run dev        # Port 3001
+
+# Database operations
+npm run db:types   # Regenerate TypeScript types from Supabase
+
+# Skills management
+./.Codex/skills-menu.sh   # Interactive skill launcher
+```
+
+### Key Files to Read First
+1. [README.md](./README.md) - Project setup and overview
+2. [docs/quick-starts/quick-start.md](./docs/quick-starts/quick-start.md) - Getting started
+3. [docs/architecture/complete-system.md](./docs/architecture/complete-system.md) - System architecture
+4. [.Codex/SKILLS_GUIDE.md](./.Codex/SKILLS_GUIDE.md) - Available Codex skills
+
+---
+
+## 📁 Codebase Structure
+
+### Root Directories
+```
+/
+├── src/                    # Next.js application code
+│   ├── app/               # App router pages and API routes
+│   ├── components/        # React components
+│   ├── lib/               # Utilities, database clients, integrations
+│   └── types/             # TypeScript type definitions
+├── docs/                  # Organized documentation (see below)
+├── scripts/               # Build, deployment, and utility scripts
+├── supabase/             # Database migrations and config
+├── .Codex/              # Codex skills and configuration
+├── opc/                   # Continuous Codex Python scripts
+├── thoughts/              # Continuity ledgers and handoffs
+└── public/               # Static assets
+```
+
+### Documentation Organization (`/docs/`)
+
+**Essential Categories:**
+- **quick-starts/** - Getting started guides, OAuth setup, deployment
+- **architecture/** - System design, database schema, integration patterns
+- **features/** - Knowledge base, dashboard, media gallery, project enrichment
+- **integrations/** - GHL, Notion, Gmail, OpenAI, Supabase, Empathy Ledger
+- **projects/** - All ACT ecosystem projects (Empathy Ledger, JusticeHub, etc.)
+- **strategy/** - Roadmaps, master plan, vision
+- **operations/** - Multi-repo management, deployment, monitoring
+- **development/** - Dev environment setup, best practices, env management
+- **standards/** - Coding standards, naming conventions, unified project standards
+- **brand/** - Voice, tone, messaging, content drafts
+- **archive/** - Historical snapshots and deprecated docs
+
+---
+
+## 🔧 Core Features
+
+### 1. Living Wiki Knowledge Base
+**What**: Auto-extract knowledge from Gmail, Notion, Calendar → Review queue → Published wiki
+**Key Files**:
+- `src/lib/knowledge/gmail-scanner.ts` - Gmail knowledge extraction
+- `src/lib/knowledge/notion-scanner.ts` - Notion knowledge extraction
+- `src/app/admin/wiki/page.tsx` - Wiki admin interface
+- `src/app/api/knowledge/` - Knowledge API endpoints
+
+**Docs**: [docs/features/knowledge-base/](./docs/features/knowledge-base/)
+
+### 2. Multi-Project Dashboard
+**What**: Unified operations hub for all ACT projects
+**Key Files**:
+- `src/app/page.tsx` - Main dashboard
+- `src/components/dashboard/` - Dashboard components
+
+**Docs**: [docs/features/dashboard/](./docs/features/dashboard/)
+
+### 3. GoHighLevel Integration
+**What**: CRM automation for The Harvest, Empathy Ledger, JusticeHub, BCV
+**Key Files**:
+- `src/lib/ghl/` - GHL client and utilities
+- `src/app/api/webhooks/ghl/` - GHL webhook handlers
+
+**Docs**: [docs/integrations/ghl/](./docs/integrations/ghl/)
+
+### 4. Empathy Ledger Integration
+**What**: Ethical storytelling platform integration
+**Key Files**:
+- `src/lib/empathy-ledger/` - Empathy Ledger client
+- `src/app/api/empathy-ledger/` - Integration endpoints
+
+**Docs**: [docs/integrations/empathy-ledger/](./docs/integrations/empathy-ledger/)
+
+---
+
+## 🤖 Codex Skills
+
+This project has specialized skills to help with common tasks. Invoke with `/skill-name`.
+
+### Available Skills
+
+**1. `/act-brand-alignment`** - Brand voice and content
+- Use for: Writing web pages, marketing copy, grant applications
+- Use for: Reviewing content for ACT voice/tone consistency
+- Reference: [.Codex/skills/act-brand-alignment/SKILL.md](./.Codex/skills/act-brand-alignment/SKILL.md)
+
+**2. `/ghl-crm-advisor`** - GoHighLevel CRM strategy
+- Use for: Designing pipelines, workflows, email sequences
+- Use for: Troubleshooting GHL integrations
+- Reference: [.Codex/skills/ghl-crm-advisor/SKILL.md](./.Codex/skills/ghl-crm-advisor/SKILL.md)
+
+**3. `act-knowledge-base`** - Knowledge extraction system
+- Status: In development
+- Use for: Living Wiki improvements, knowledge extraction workflows
+- Reference: [.Codex/skills/act-knowledge-base/skill.md](./.Codex/skills/act-knowledge-base/skill.md)
+
+### Skill Discovery
+
+Run interactive menu to explore skills:
+```bash
+./.Codex/skills-menu.sh
+```
+
+Or see comprehensive guide: [.Codex/SKILLS_GUIDE.md](./.Codex/SKILLS_GUIDE.md)
+
+---
+
+## 🗄️ Database Schema
+
+**Platform**: Supabase (PostgreSQL + pgvector)
+**Key Tables**:
+- `wiki_pages` - Published knowledge base articles
+- `knowledge_extraction_queue` - Pending knowledge items for review
+- `knowledge_sources` - Source tracking (Gmail, Notion, Calendar)
+- `ghl_*` - GoHighLevel integration tables
+- `empathy_ledger_*` - Empathy Ledger integration tables
+- `media_*` - Media gallery and asset management
+
+**Regenerate Types**:
+```bash
+npm run db:types
+```
+
+**Schema Docs**: [docs/architecture/knowledge-system.md](./docs/architecture/knowledge-system.md)
+
+---
+
+## 🔐 Environment Variables
+
+**Required**:
+```bash
+# Supabase
+NEXT_PUBLIC_SUPABASE_URL=https://tednluwflfhxyucgwigh.supabase.co
+NEXT_PUBLIC_SUPABASE_ANON_KEY=...
+SUPABASE_SERVICE_ROLE_KEY=...
+
+# OpenAI (for embeddings)
+OPENAI_API_KEY=...
+
+# Gmail OAuth (for knowledge extraction)
+GOOGLE_CLIENT_ID=...
+GOOGLE_CLIENT_SECRET=...
+GOOGLE_OAUTH_REDIRECT_URI=http://localhost:3001/api/auth/gmail/callback
+
+# Notion (for knowledge extraction)
+NOTION_TOKEN=...
+NOTION_WORKSPACE_ID=...
+
+# GoHighLevel
+GHL_API_KEY=...
+GHL_LOCATION_ID=...
+```
+
+**Setup Guide**: [docs/quick-starts/env-setup.md](./docs/quick-starts/env-setup.md)
+
+---
+
+## 🏗️ ACT Ecosystem Projects
+
+This codebase serves 6+ ACT projects:
+
+1. **Empathy Ledger** - Ethical storytelling platform, consent-first, OCAP® principles
+2. **JusticeHub** - Open-source justice network, forkable program models
+3. **The Harvest** - Community hub, therapeutic horticulture, heritage preservation
+4. **Black Cockatoo Valley** - ~138-acre (~55.8 ha) regeneration estate on Jinibara Country, conservation-first
+5. **Goods on Country** - Circular economy, waste-to-wealth manufacturing
+6. **Art Program** - Revolution through creativity, installations and residencies
+
+**Project Docs**: [docs/projects/](./docs/projects/)
+**Ecosystem Overview**: [docs/projects/act-ecosystem.md](./docs/projects/act-ecosystem.md)
+
+---
+
+## 🎨 Brand Voice & Methodology
+
+### LCAA Method
+**Listen** → **Curiosity** → **Action** → **Art**
+
+Frame all solutions through this lens:
+- **Listen**: Deep listening to place, people, history, community voice
+- **Curiosity**: Think deeply, prototype boldly, test rigorously
+- **Action**: Build tangible solutions alongside communities
+- **Art**: Translate change into culture, challenge status quo
+
+### Voice Characteristics
+- **Grounded yet Visionary** - Plant seeds today for forests tomorrow
+- **Humble yet Confident** - We don't have all answers, but we're cultivating solutions
+- **Warm yet Challenging** - Let's get our hands dirty with hard truths
+- **Poetic yet Clear** - Use metaphor to illuminate, not obscure
+
+### Avoid
+- Savior narratives, paternalistic framing, luxury positioning
+- Corporate jargon, glossy marketing speak, overclaiming
+
+**Brand Docs**: [docs/brand/](./docs/brand/)
+
+---
+
+## 🛠️ Development Workflows
+
+### Adding a New Feature
+1. Read relevant architecture docs in `docs/architecture/`
+2. Check existing patterns in `src/lib/` and `src/components/`
+3. Update database schema in `supabase/migrations/` if needed
+4. Run `npm run db:types` to regenerate TypeScript types
+5. Write feature code following existing patterns
+6. Test locally on port 3001
+7. Document in appropriate `docs/features/` file
+
+### Working with Knowledge Base
+1. Review: [docs/architecture/knowledge-system.md](./docs/architecture/knowledge-system.md)
+2. Gmail scanner: `src/lib/knowledge/gmail-scanner.ts`
+3. Notion scanner: `src/lib/knowledge/notion-scanner.ts`
+4. Admin interface: `src/app/admin/wiki/page.tsx`
+5. See Phase 3 roadmap: [docs/strategy/next-steps-roadmap.md](./docs/strategy/next-steps-roadmap.md)
+
+### Working with GHL Integration
+1. Review: [docs/integrations/ghl/setup-guide.md](./docs/integrations/ghl/setup-guide.md)
+2. Client lib: `src/lib/ghl/client.ts`
+3. Webhook handlers: `src/app/api/webhooks/ghl/`
+4. Use `/ghl-crm-advisor` skill for strategy questions
+
+---
+
+## 📚 Finding Documentation
+
+### By Task
+- **Getting started?** → `docs/quick-starts/`
+- **Understanding architecture?** → `docs/architecture/`
+- **Setting up integration?** → `docs/integrations/`
+- **Learning about features?** → `docs/features/`
+- **Strategic planning?** → `docs/strategy/`
+- **Multi-repo operations?** → `docs/operations/`
+
+### By Project
+- **Empathy Ledger** → `docs/integrations/empathy-ledger/` + `docs/projects/empathy-ledger/`
+- **JusticeHub** → `docs/projects/justicehub/`
+- **The Harvest** → `docs/projects/harvest/`
+- **GHL CRM** → `docs/integrations/ghl/`
+
+### Navigation Aids
+- [docs/README.md](./docs/README.md) - Documentation index (if exists)
+- [.Codex/SKILLS_MAP.md](./.Codex/SKILLS_MAP.md) - Visual skill selection guide
+- This file (AGENTS.md) - You are here!
+
+---
+
+## 🔄 Multi-Codebase Context
+
+This project is part of a larger ACT ecosystem with multiple codebases:
+
+- **ACT Studio** (`/Users/benknight/Code/ACT Farm and Regenerative Innovation Studio/`) - This repo
+- **Empathy Ledger** (`/Users/benknight/Code/Empathy Ledger v.02/`) - GitHub: `empathy-ledger-v2`
+- **JusticeHub** (`/Users/benknight/Code/JusticeHub/`) - GitHub: `justicehub-platform`
+- **The Harvest** (`/Users/benknight/Code/The Harvest Website/`) - GitHub: `harvest-community-hub`
+- **Goods** (`/Users/benknight/Code/Goods Asset Register/`) - GitHub: `goods-asset-tracker`
+- **ACT Farm** (`/Users/benknight/Code/ACT Farm/act-farm/`) - GitHub: `act-farm`
+
+**Multi-Codebase Skills Architecture**: [docs/architecture/multi-codebase-skills.md](./docs/architecture/multi-codebase-skills.md)
+
+**Planned**: Global skills repository at `~/act-global-skills/` with symlinks to project-specific `.Codex/skills/global/`
+
+---
+
+## 🚦 Common Tasks Reference
+
+### Task: "Help me write homepage copy"
+**Skill**: `/act-brand-alignment`
+**Docs**: `docs/brand/`, `docs/projects/`
+**Pattern**: Use LCAA method, ACT voice, avoid savior narratives
+
+### Task: "Set up Gmail OAuth for knowledge scanner"
+**Docs**: `docs/quick-starts/gmail-oauth-setup.md`
+**Code**: `src/lib/gmail/auth.ts`, `src/lib/knowledge/gmail-scanner.ts`
+**Troubleshooting**: `docs/quick-starts/fix-gmail-auth.md`
+
+### Task: "Design new GHL pipeline"
+**Skill**: `/ghl-crm-advisor`
+**Docs**: `docs/integrations/ghl/pipeline-strategy.md`
+**Code**: `src/lib/ghl/`
+
+### Task: "Add new wiki page type"
+**Docs**: `docs/architecture/knowledge-system.md`
+**Code**: `src/types/wiki.ts`, `supabase/migrations/`
+**Process**: Update schema → Run `npm run db:types` → Update UI
+
+### Task: "Deploy to production"
+**Docs**: `docs/quick-starts/deploy-now.md`
+**Platform**: Vercel (inferred from Next.js stack)
+
+---
+
+## 📖 Additional Resources
+
+- **Project README**: [README.md](./README.md)
+- **Skills Guide**: [.Codex/SKILLS_GUIDE.md](./.Codex/SKILLS_GUIDE.md)
+- **Architecture Overview**: [docs/architecture/complete-system.md](./docs/architecture/complete-system.md)
+- **Master Plan**: [docs/strategy/master-plan.md](./docs/strategy/master-plan.md)
+- **Multi-Repo Management**: [docs/operations/multi-repo-management.md](./docs/operations/multi-repo-management.md)
+
+---
+
+## 🧠 Continuous Codex Integration
+
+This project uses [Continuous Codex v3](https://github.com/parcadei/Continuous-Codex-v3) for persistent context and learning.
+
+### Memory System
+
+**Recall learnings** before implementation:
+```bash
+cd opc && PYTHONPATH=. uv run python scripts/core/recall_learnings.py --query "your search" --k 5
+```
+
+**Store learnings** after discovery:
+```bash
+cd opc && PYTHONPATH=. uv run python scripts/core/store_learning.py \
+  --type WORKING_SOLUTION \
+  --content "what you learned" \
+  --context "what it relates to" \
+  --tags "tag1,tag2" \
+  --confidence high
+```
+
+### Continuity Ledger
+
+Track project state in `thoughts/ledgers/CONTINUITY_LEDGER.md`:
+- Current goals
+- Key patterns discovered
+- Blocked items
+- Session completion notes
+
+### Database Tables (cc_*)
+
+- `cc_sessions` - Active Codex sessions
+- `cc_file_claims` - Prevent concurrent edit conflicts
+- `cc_archival_memory` - Persistent learnings with semantic search
+- `cc_handoffs` - Session state transfer documents
+
+### Setup
+
+```bash
+cd opc && uv run python -m scripts.setup.wizard
+```
+
+See full documentation: [opc/README.md](./opc/README.md)
+
+---
+
+## 💡 Tips for AI-Assisted Development
+
+1. **Always check docs first** - Documentation is organized by category in `docs/`
+2. **Use skills for domain expertise** - Brand, CRM, and knowledge extraction skills available
+3. **Follow existing patterns** - Check similar features before creating new patterns
+4. **Respect brand voice** - Use `/act-brand-alignment` for any user-facing content
+5. **Update types after schema changes** - Run `npm run db:types`
+6. **Test knowledge extractors carefully** - Gmail and Notion scanners affect real data
+7. **Document as you go** - Add to appropriate `docs/` category
+8. **Check memory first** - Recall learnings before implementing new features
+9. **Store learnings** - After solving problems, save them for future sessions
+
+---
+
+**Last Updated**: 2025-01-18
+**Maintained By**: Ben Knight + Codex AI
+**Questions?** Check `.Codex/SKILLS_GUIDE.md` or ask for help!
+
+---
+
+<!-- BEGIN ACT-CONTEXT (auto-generated by sync-act-context.mjs — do not edit) -->
+
+## ACT Context (auto-synced from `act-global-infrastructure/wiki/decisions/act-core-facts.md`)
+
+> Source upstream of this file: `act-global-infrastructure/wiki/concepts/soul.md`. The two humans and the why behind everything below.
+
+> Last synced: 2026-05-09. **Do not edit this section directly.** Edit the upstream file and run `node scripts/sync-act-context.mjs --apply`. Downstream edits get overwritten.
+
+### Entities (as of 2026-04-25)
+- **A Curious Tractor Pty Ltd** (ACN 697 347 676; ABN PENDING). Registered 2026-04-24. Primary trading entity from 1 July 2026. Shareholders: Knight Family Trust 50 + Marchesi Family Trust 50. Directors: Ben Knight + Nicholas Marchesi. Bank: NAB. Accountant: Standard Ledger.
+- **Nicholas Marchesi sole trader** (ABN 21 591 780 066). Currently trading; hard cutover to Pty 30 June 2026.
+- **A Kind Tractor Ltd** (ACN 669 029 341, ABN 73 669 029 341). Charitable CLG, ACNC-registered, **NOT DGR**, dormant.
+- **Harvest entity** + **Farm entity**. Being designed pending Standard Ledger advice.
+
+**Do NOT** use "ACT Foundation" or "ACT Ventures" as legal entity names. They are conceptual labels in older docs, not real entities.
+
+### Why this structure
+
+Three trading entities, one charity, one winding-down sole trader. The point is not bureaucracy. Each project earns the right to grow on its own revenue. The Harvest's money funds The Harvest's growth. Farm money funds Farm growth. A Curious Tractor Pty Ltd is the holding muscle that carries the founder relationship and the cross-cutting work.
+
+If we ran a single Pty Ltd with three project codes, the financial story would mash. Founders would have no clean way to see whether each project pays its way. The structure costs more in compliance and saves more in legibility. Legibility is what makes the soul able to read its own body.
+
+For how money flows through these entities into the four lanes (To Us, To Down, To Grow, To Others), see `act-global-infrastructure/wiki/concepts/four-lanes.md`.
+
+### Cutover (30 June 2026)
+- **Rule 1.** Pre-cutover invoices stay with sole trader (no re-issue, no inter-entity loan). Novation letters say "existing invoices pay as normal; new tranches from 1 July to Pty".
+- **Rule 2.** Honest-delay fallback: if Pty not invoice-ready 1 July, sole trader continues trading until Pty is genuinely live (no retroactive invoicing, no silent mis-attribution).
+- **Rule 3.** Rotary INV-0222 ($82.5K, 380d) is a recovery problem, not a novation one.
+- **Rule 4.** Shareholders Agreement is Week 1-2 (drafted by Standard Ledger's lawyer), not Week 4-5.
+
+### Active receivables on sole trader (~$507K total)
+Snow $132K · Centrecorp DRAFT $84.7K · Rotary $82.5K · PICC $113.3K · Regional Arts $33K · Just Reinvest $27.5K · BG Fit $15.4K · Aleisha Keating $11.7K · Homeland $5K · SMART Recovery $2.2K
+
+### Naming + voice
+- "Australian Living Map of Alternatives" (never bare "ALMA")
+- "Listen · Curiosity · Action · Art" (never bare "LCAA")
+- Indigenous place names always; colonial in brackets
+- No em-dashes in any ACT-facing writing
+- For ANY public-facing copy, load `act-global-infrastructure/.Codex/skills/act-brand-alignment/references/writing-voice.md`
+
+### Cross-repo sources
+- **Entity facts (source-of-truth)**: `act-global-infrastructure/wiki/decisions/act-core-facts.md`
+- **Brand alignment map (READ BEFORE DESIGNING ANYTHING)**: `act-global-infrastructure/wiki/decisions/act-brand-alignment-map.md`
+- **Parent brand identity**: `act-global-infrastructure/.Codex/skills/act-brand-alignment/references/brand-core.md`
+- **Parent writing voice (Curtis method, AI-tells blocklist)**: `act-global-infrastructure/.Codex/skills/act-brand-alignment/references/writing-voice.md`
+- **Migration plan**: `act-global-infrastructure/thoughts/shared/plans/act-entity-migration-checklist-2026-06-30.md`
+- **Alignment Loop syntheses (weekly drift signal)**: `act-global-infrastructure/wiki/synthesis/`
+- **CEO daily cockpit**: `act-global-infrastructure/wiki/cockpit/today.md` (refreshed daily 07:00 Brisbane)
+- **Project codes (72 codes, all canonical)**: `act-global-infrastructure/config/project-codes.json`
+- **Funder ledger**: `act-global-infrastructure/wiki/narrative/funders.json`
+
+### Visual family (before designing anything in this repo)
+This repo's cluster: see brand alignment map. The map says:
+- **Editorial Warmth** parent: act-regenerative-studio (Fraunces + forest green + warm white)
+- **Editorial Warmth** subfamily: JusticeHub (STAY journal heritage), empathy-ledger-v2 (multi-tenant earth-tone)
+- **Civic Bauhaus**: CivicGraph / grantscope (Satoshi + black + signal red, intentional break)
+- **Unscoped (need decision)**: goods, act-farm, The Harvest Website
+
+**Rule**: read the map before designing. Update the map BEFORE shipping a new design. Never re-decide what's already decided.
+
+<!-- END ACT-CONTEXT -->
+
+## Imported Claude Cowork project instructions

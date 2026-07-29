@@ -11,6 +11,12 @@ import {
   type EditorialArticle,
 } from "../../../lib/empathy-ledger-editorial";
 import { articleJsonLd, breadcrumbJsonLd, pageMetadata } from "@/lib/seo/site";
+import {
+  fieldsForArticle,
+  projectSlugDestination,
+  relatedArticles,
+} from "@/lib/fields/field-graph";
+import { livingFieldsById } from "@/data/living-field";
 
 export const revalidate = 60;
 
@@ -90,22 +96,54 @@ export default async function BlogPostPage({
   const dateLabel = publishedDateLabel(post.publishedAt);
   const hasHero = !!post.featuredImageUrl;
 
+  // Related project slugs resolved to the field pages that absorbed them.
+  // Deduplicated, since several projects can land on the same field.
+  // Every field the article belongs to, not just the ones its project slugs
+  // imply: fieldsForArticle also picks up the curated assignments, so a piece
+  // tagged justicehub upstream and art by hand shows both.
+  const connectedFields = [
+    ...new Map(
+      [
+        ...fieldsForArticle(post).map((fieldId) => ({
+          href: `/fields/${fieldId}`,
+          label: livingFieldsById[fieldId].name,
+        })),
+        ...post.relatedProjectSlugs
+          .map(projectSlugDestination)
+          .filter((d): d is { href: string; label: string } => Boolean(d)),
+      ].map((destination) => [destination.href, destination]),
+    ).values(),
+  ];
+
   // Gallery photos = everything from EL media except the featured image (which
   // already runs at the top as the hero) and duplicates.
   const gallery = (post.media?.photoPreviews || [])
     .filter((photo) => !!photo.url && photo.url !== post.featuredImageUrl)
     .slice(0, 8);
 
-  // Suggested reading: 3 most recent other articles that have a featured image
-  // so the cards render well. Falls back to just recent if not enough with images.
+  // Suggested reading, related first.
+  //
+  // This used to be "the 3 most recent articles that have a featured image",
+  // which meant every article on the site recommended the same three pieces
+  // regardless of subject. relatedArticles ranks by shared field first and
+  // shared storyteller second, so a justice piece now leads to justice pieces.
+  //
+  // Recent articles still top the list up to three when a piece has few or no
+  // relations, because an empty grid here would be a worse page than a loosely
+  // relevant one. Images are preferred within each group so the cards render.
   const allArticles: EditorialArticle[] = await getSiteEditorialArticles(40).catch(
     () => [] as EditorialArticle[]
   );
-  const others = allArticles.filter((a) => a.slug !== post.slug);
-  const suggested = [
-    ...others.filter((a) => !!a.featuredImageUrl),
-    ...others.filter((a) => !a.featuredImageUrl),
-  ].slice(0, 3);
+  const withImagesFirst = (list: EditorialArticle[]) => [
+    ...list.filter((a) => !!a.featuredImageUrl),
+    ...list.filter((a) => !a.featuredImageUrl),
+  ];
+  const related = withImagesFirst(relatedArticles(post, 6));
+  const relatedSlugs = new Set(related.map((a) => a.slug));
+  const filler = withImagesFirst(
+    allArticles.filter((a) => a.slug !== post.slug && !relatedSlugs.has(a.slug))
+  );
+  const suggested = [...related, ...filler].slice(0, 3);
 
   return (
     <>
@@ -124,7 +162,7 @@ export default async function BlogPostPage({
         id={`blog-${post.slug}-breadcrumb-jsonld`}
         data={breadcrumbJsonLd([
           { name: 'Home', path: '/' },
-          { name: 'Blog', path: '/blog' },
+          { name: 'Stories', path: '/stories' },
           { name: post.title, path: `/blog/${post.slug}` },
         ])}
       />
@@ -143,10 +181,10 @@ export default async function BlogPostPage({
         <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/45 to-black/80" />
         <div className="relative z-10 mx-auto flex min-h-[60vh] max-w-[1000px] flex-col justify-end px-6 pb-16 pt-32 md:min-h-[75vh] md:px-10 md:pb-24 md:pt-40">
           <Link
-            href="/blog"
+            href="/stories"
             className="inline-flex items-center gap-2 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[#CFA16B] transition-all hover:gap-3 hover:text-[#E0B680]"
           >
-            <span aria-hidden="true">&larr;</span> Blog archive
+            <span aria-hidden="true">&larr;</span> All stories
           </Link>
           <h1 className="mt-6 font-[var(--font-display)] text-[clamp(2.2rem,5vw,4.2rem)] font-semibold leading-[1.05] text-[#F3EBDD]">
             {post.title}
@@ -281,21 +319,24 @@ export default async function BlogPostPage({
             </div>
           ) : null}
 
-          {post.relatedProjectSlugs.length > 0 ? (
+          {/* These chips linked to /projects/<slug>, which has been a 308 since
+              the site collapse; seventeen of the twenty-nine articles render at
+              least one. projectSlugDestination resolves each slug to the field
+              page that absorbed it, and drops any slug it does not recognise
+              rather than emitting a link that goes nowhere. */}
+          {connectedFields.length > 0 ? (
             <div>
               <p className="font-[var(--font-sans)] text-[10px] uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
-                Connected projects
+                Connected fields
               </p>
               <div className="mt-3 flex flex-wrap gap-2">
-                {post.relatedProjectSlugs.map((projectSlug) => (
+                {connectedFields.map((destination) => (
                   <Link
-                    key={projectSlug}
-                    href={`/projects/${projectSlug}`}
+                    key={destination.href}
+                    href={destination.href}
                     className="rounded-full border border-[var(--we-sand)] bg-white/80 px-4 py-2 font-[var(--font-sans)] text-[12px] text-[var(--we-olive)] transition hover:-translate-y-0.5 hover:border-forest hover:bg-white hover:shadow-sm"
                   >
-                    {projectSlug
-                      .replace(/-/g, " ")
-                      .replace(/\b\w/g, (c) => c.toUpperCase())}
+                    {destination.label}
                   </Link>
                 ))}
               </div>
@@ -352,10 +393,10 @@ export default async function BlogPostPage({
                 </h2>
               </div>
               <Link
-                href="/blog"
+                href="/stories"
                 className="inline-flex items-center gap-2 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--we-olive)] transition-all hover:gap-3"
               >
-                Blog archive <span aria-hidden="true">&rarr;</span>
+                All stories <span aria-hidden="true">&rarr;</span>
               </Link>
             </div>
 

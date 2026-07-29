@@ -143,7 +143,7 @@ export default function ImpactPage() {
                     {REAL_EVIDENCE.map((ev, i) => (
                         <div key={i} className="flex flex-col md:flex-row gap-4 p-6 bg-white rounded-xl border border-[#E1D3BA]">
                             <div className="md:w-1/4">
-                                <span className="inline-block px-3 py-1 bg-[#E8F5E9] text-[#2E7D32] rounded-full text-xs font-semibold mb-2">
+                                <span className="inline-block px-3 py-1 bg-forest-soft text-forest rounded-full text-xs font-semibold mb-2">
                                     {ev.evidence_type}
                                 </span>
                                 <h4 className="font-semibold text-lg">{ev.title}</h4>

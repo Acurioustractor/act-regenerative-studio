@@ -93,6 +93,30 @@ function allArticles(): EditorialArticle[] {
 }
 
 /**
+ * Where a project slug should actually send a reader.
+ *
+ * Article pages render a "connected projects" chip per related project slug,
+ * and were linking to /projects/<slug>, which has been a 308 since the site
+ * collapse. Seventeen of the twenty-nine articles ship at least one of those.
+ *
+ * Slugs that belong to a field go to that field's page. The two that map to no
+ * field are land rather than a field of practice, and their story is the history
+ * section of /about.
+ */
+export function projectSlugDestination(
+  slug: string,
+): { href: string; label: string } | null {
+  const fieldId = PROJECT_SLUG_TO_FIELD[slug];
+  if (fieldId === undefined) return null; // unknown slug, caller should skip it
+
+  if (fieldId === null) {
+    return { href: "/about#history", label: "Black Cockatoo Valley" };
+  }
+  const field = livingFields.find((entry) => entry.id === fieldId);
+  return field ? { href: `/fields/${field.id}`, label: field.name } : null;
+}
+
+/**
  * Every field an article touches.
  *
  * Two sources, unioned. The project slugs cover four fields structurally; the

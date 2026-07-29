@@ -127,7 +127,7 @@ function ArtProjectBlock({
                 {project.tags.slice(0, 3).map((tag) => (
                   <span
                     key={tag}
-                    className="text-[11px] tracking-wide text-[#9F927F]"
+                    className="text-[11px] tracking-wide text-muted-deep"
                   >
                     #{tag}
                   </span>
@@ -359,7 +359,7 @@ export default async function ArtPage() {
               <p className="mt-1 text-xs leading-5 text-[var(--we-brown)]">
                 {slice.sub}
               </p>
-              <span className="mt-3 inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#CFA16B] transition group-hover:gap-2">
+              <span className="mt-3 inline-flex items-center gap-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-clay-text transition group-hover:gap-2">
                 Open <span aria-hidden="true">&rarr;</span>
               </span>
             </Link>

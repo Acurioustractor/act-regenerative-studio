@@ -30,9 +30,16 @@
 
   /* Contrast-adjusted clay for small uppercase eyebrow labels. Raw --site-clay
      is 2.95:1 on bg and 2.60:1 on sage, both failing WCAG AA for body text.
-     This passes on bg (5.33), sage (4.69) and surface (4.77). Use --site-clay
-     only for rules, borders and large decorative type. */
-  --site-clay-text: #945A32;
+
+     This value clears 4.5:1 on every light surface the labels actually sit on:
+     bg 6.76, sand 5.52, sand-2 5.12, sage-sand 5.10, sage 5.95, surface 6.05.
+     An earlier, lighter #945A32 passed the first two and sat at 4.02 on the
+     sand bands, which is where the remaining violations were coming from.
+
+     Two surfaces it does NOT cover, by arithmetic rather than by choice:
+       the clay band (--site-clay-light)  no clay reads on clay, use ink (7.37)
+       dark sections (--site-dark)        use raw --site-clay there (5.42) */
+  --site-clay-text: #7F4C2B;
 
   /* --site-muted (#6B6B6B) passes on bg at 5.10 but not comfortably on the
      sage and surface bands. Use this where a muted tone sits on either. */

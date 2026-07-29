@@ -102,6 +102,51 @@ Tokens live as CSS variables in `src/app/globals.css:5-21`. Always reference var
 - Micro/tagline: `#FAFAF7/50`
 - **Rule:** Never use `/65`, `/70`, `/75` for dark-section body. Use `/60` for body, `/50` for micro. Consistency over nuance.
 
+### Colour follows the surface, not the brand
+
+The single rule worth internalising. **No accent works on both light and dark.**
+Measured across the live routes, every field's accent failed WCAG AA on one side
+or the other, and goods failed on both:
+
+| accent | on light | on dark |
+|---|---|---|
+| clay `#C4845C` | 2.95 | 5.42 |
+| forest `#2D5A3D` | 7.60 | 2.11 |
+| gold `#B8943F` | 2.73 | 5.85 |
+| goods `#A66A45` | 4.21 | 3.80 |
+
+So the palette carries pairs, and the undifferentiated token is for decoration
+only — rules, borders, focus outlines, the ghost numerals — where contrast does
+not apply.
+
+| Text sits on | Use | Not |
+|---|---|---|
+| warm white, sage, surface, sand bands | `text-clay-text` `#7F4C2B` | `--site-clay` (2.60–2.95) |
+| `--site-dark` sections | `text-clay` `#C4845C` | `clay-text` (2.37) |
+| the clay band `--site-clay-light` | `text-ink` | any clay; no clay reads on clay, the best case is 3.85 |
+| dark, needing green | `text-forest-lift` `#8FB88A` | `forest` (2.11) |
+| near-white, needing sage-green | `text-forest-sage` `#55744F` | `#7A9B76` (3.00) |
+
+Field pages read `accentOnLight` / `accentOnDark` from `src/data/living-field.ts`.
+Adding a field means supplying both, not one.
+
+### The contrast gate
+
+`npm run check:contrast` walks the 25 live routes with a real browser and fails
+on any AA violation. It runs blocking; it is not advisory.
+
+**It skips ~657 elements per run, and that is deliberate.** Text over a
+photograph or on a translucent background cannot be judged from computed style,
+and guessing produces false failures that teach people to ignore the gate. Those
+are counted and reported separately, never silently dropped. So "zero
+violations" means zero *decidable* violations — a caption over a hero image is
+still your eye's job, not the gate's.
+
+If you add a surface colour, add it to the table above and re-run the gate. If
+you find yourself reaching for a hex literal, the ESLint rule will stop the
+Material greens but nothing stops a new one; the tokens exist so you don't have
+to.
+
 ## Spacing
 - **Base unit:** 8px
 - **Density:** Comfortable body, generous between sections
@@ -409,7 +454,7 @@ Core palette lives as CSS vars in `src/app/globals.css:22-28`. Always reference 
 - **Deep tan — `#D7C4A2`** — gradient end stop
 - **Sage blob — `#d9ead7`** — decorative hero blob (30% opacity, blurred)
 - **Amber blob — `#d3a24f`** — decorative hero blob (15% opacity, blurred)
-- **Hover green — `#4CAF50`** — card hover border accent
+- **Hover green — `border-forest`** — card hover border accent. Was `#4CAF50`, a Material Design green that is not an ACT colour; 210 uses were replaced and an ESLint rule blocks the family.
 
 ### Shape
 - **Card radius:** `rounded-3xl` (24px) — soft, generous
@@ -440,7 +485,7 @@ Located in `src/components/` (NOT `src/components/design-system/`).
 **`CardGrid`** — `src/components/CardGrid.tsx`
 - Pass `cards: [{title, description?, eyebrow?, href?, ctaLabel?}]`
 - Renders `rounded-3xl border border-[#E1D3BA] bg-white/70 p-6` cards
-- Green hover border `#4CAF50`
+- Green hover border `border-forest` (was `#4CAF50`, a Material green that is not an ACT colour; an ESLint rule now blocks it)
 - Use for lists of projects, method steps, identity cards, etc.
 
 **`LivingSystemStrip`** — `src/components/LivingSystemStrip.tsx`
@@ -494,8 +539,13 @@ If you only have (1) or (2), stay in Warm Editorial.
 | 2026-04-18 | Section padding rhythm: `py-32 md:py-44` standard | Universal across shipped pages. Named it. |
 | 2026-04-18 | Content-width tokens: 640/800/1100/1200 | Ratified what's shipping for prose, dark-prose, form grid, and standard section. |
 | 2026-04-20 | Two design languages declared: Bold Documentary + Warm Editorial | Audit of the 33 non-flagship pages revealed they use a fundamentally different aesthetic (warm tan/olive palette, rounded-3xl, LivingSystemStrip) — not just different components. Rather than forcing a site-wide redesign, recognized this as intentional visual hierarchy: flagship projects get cinematic treatment, supporting content gets quiet editorial treatment. Both are valid; picking the right one is the key design decision per page. |
-| 2026-04-20 | Warm Editorial palette codified | Previously hardcoded across 33 pages with no central reference. Documented the palette (#2F3E2E olive, #4D3F33 brown, #6B5A45 warm-brown, #E3D4BA sand, #F6F1E7 / #E7DDC7 / #D7C4A2 gradient, #4CAF50 hover) and the three core shared components (PageHero, SectionHeading, CardGrid, LivingSystemStrip) so future additions don't drift. |
+| 2026-04-20 | Warm Editorial palette codified | Previously hardcoded across 33 pages with no central reference. Documented the palette (#2F3E2E olive, #4D3F33 brown, #6B5A45 warm-brown, #E3D4BA sand, #F6F1E7 / #E7DDC7 / #D7C4A2 gradient, #4CAF50 hover — the hover green was later replaced by `border-forest`, see 2026-07-29) and the three core shared components (PageHero, SectionHeading, CardGrid, LivingSystemStrip) so future additions don't drift. |
 | 2026-04-20 | Routing rule added: which language per page | Encoded decision rule as a table. Prevents future confusion about which hero/header to reach for. Flagship project narratives get Bold Documentary; everything else (meta, legal, directories, sub-pages) gets Warm Editorial. Don't mix them on one page — that's a signal the page is doing too much. |
 | 2026-04-20 | Homepage migrated to Bold Documentary components | `src/app/page.tsx` was 100% hand-rolled after the 4ce63c6 rebuild. Now uses `DocHero` (extended with `fullHeight` + `statsAfter` slot + `gradientStrength="strong"` for bright-video heroes) + `SectionHeader` (extended with `align="center"` for LCAA-style centered blocks) + `EditorialSplit` + `DarkCTA`. Bespoke patterns (flagship field image-overlay cards, 3-up art grid, invitation path cards) retained — no reuse precedent. |
 | 2026-04-20 | Warm Editorial palette extracted to CSS vars | Six core tokens (`--we-olive`, `--we-olive-deep`, `--we-brown`, `--we-brown-deep`, `--we-warm-brown`, `--we-sand`) now live in `globals.css`. 85 files swept hex → var (pure token swap, zero visual change). Future palette adjustments happen in one place. Decorative page-scoped tones (gradient stops, blob tints) stay literal. |
 | 2026-04-20 | `<WarmCard>` primitive introduced | Replaces the identical `rounded-3xl + sand border + olive heading` pattern duplicated across terms (4×), privacy (4×), and scattered elsewhere. Lives in `src/components/warm-editorial/`. `<WarmSection>` and `<WarmDualPanel>` were considered but rejected — the former is a 1-class wrapper, the latter has a single caller (about page). |
+| 2026-07-29 | Colour follows the surface, not the brand | 19 WCAG AA violations across the 25 live routes traced to one cause: no accent works on both light and dark. Every field's accent failed on one side, goods on both. Fields now carry `accentOnLight` / `accentOnDark`; the plain accent is decoration only. `--site-clay-text` moved #945A32 → #7F4C2B to clear the sand bands, which sat at 4.02. Two cases are forced by arithmetic and handled explicitly: no clay reads on the clay band, so those labels take ink; and clay-text is unreadable on dark, so dark blocks use raw clay. |
+| 2026-07-29 | Contrast gate is blocking, and skips what it cannot decide | `npm run check:contrast` walks the live routes in a real browser and fails the build on any AA violation. It skips ~657 elements per run — text over photographs or on translucent backgrounds — because contrast there cannot be resolved from computed style and a guess produces false failures that teach people to ignore the gate. Skips are counted and reported, never dropped silently. "Zero violations" means zero decidable violations. |
+| 2026-07-29 | Tokens reachable as Tailwind utilities | `tailwind.config.ts` was `theme.extend = {}`, so brand colours were unreachable and the codebase had drifted to 341 hex literals and a third palette. Tokens were measured off the rendered homepage rather than transcribed. Named `forest`, not `green`: overriding `green` would shadow Tailwind's default scale that 120 call sites still use. |
+| 2026-07-29 | Field videos served from Supabase, not git | 226 MB across 35 files, 22 of which were never committed, so production 404'd the hero video on several field pages. Now in the `site-media` bucket behind a `/media/field-videos/:file` redirect. A redirect rather than rewriting paths in source, because two of the seventeen referencing files are generated by `sync:el-*` and would lose edits on the next build. A redirect rather than a Next rewrite, because a rewrite bills the bandwidth twice. |
+

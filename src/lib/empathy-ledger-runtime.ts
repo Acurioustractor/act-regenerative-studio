@@ -71,6 +71,19 @@ function resolveUrl(pathOrUrl: string): string {
   return `${EMPATHY_LEDGER_URL}${pathOrUrl.startsWith("/") ? pathOrUrl : `/${pathOrUrl}`}`;
 }
 
+/**
+ * One cache tag for everything read from Empathy Ledger.
+ *
+ * Every read goes through fetchEmpathyLedgerJson below, so tagging here means a
+ * single revalidateTag() drops all of it at once. That is what the webhook at
+ * /api/webhooks/empathy-ledger uses when somebody withdraws consent.
+ *
+ * Before this, the only bound on a withdrawal reaching this site was the 300
+ * second revalidate window. Five minutes is not long, but it is five minutes of
+ * showing a story after the person said stop, and it is avoidable.
+ */
+export const EMPATHY_LEDGER_CACHE_TAG = "empathy-ledger";
+
 export function isEmpathyLedgerFetchEnabled(): boolean {
   return empathyLedgerState !== "disabled";
 }
@@ -91,7 +104,12 @@ export async function fetchEmpathyLedgerJson<T>(
   try {
     const response = await fetch(url, {
       headers: buildEmpathyLedgerHeaders(),
-      next: { revalidate: options.revalidate ?? 300 },
+      next: {
+        revalidate: options.revalidate ?? 300,
+        // Tagged so a withdrawal can drop this immediately instead of waiting out
+        // the window. See EMPATHY_LEDGER_CACHE_TAG above.
+        tags: [EMPATHY_LEDGER_CACHE_TAG],
+      },
       signal: AbortSignal.timeout(options.timeoutMs ?? DEFAULT_TIMEOUT_MS),
     });
 

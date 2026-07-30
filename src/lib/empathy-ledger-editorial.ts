@@ -130,9 +130,91 @@ async function fetchEditorialLive(): Promise<EditorialSnapshot | null> {
   return {
     ...SNAPSHOT,
     ...manifest,
-    articles: articles.articles,
+    articles: articles.articles.map(normaliseLiveArticle),
     articleCount: articles.articles.length,
+    projectEditorial: normaliseProjectEditorial(manifest.projectEditorial),
   } as EditorialSnapshot;
+}
+
+/**
+ * Same problem as normaliseLiveArticle, one level up.
+ *
+ * `ProjectEditorialManifest` declares supportingArticleSlugs and
+ * featuredArticleSlugs as non-optional string[], and the live manifest does not
+ * always carry them. /projects/empathy-ledger was the page that proved it: it
+ * crashed the build on `manifest.supportingArticleSlugs.map` of undefined.
+ *
+ * Guarding the one call site would have fixed today's crash and left the next
+ * consumer to find the next one. The arrays are filled here instead, where live
+ * data enters.
+ */
+function normaliseProjectEditorial(
+  projectEditorial: EditorialSnapshot['projectEditorial'] | undefined
+): EditorialSnapshot['projectEditorial'] {
+  if (!projectEditorial) return SNAPSHOT.projectEditorial;
+  return Object.fromEntries(
+    Object.entries(projectEditorial).map(([slug, manifest]) => [
+      slug,
+      {
+        ...manifest,
+        supportingArticleSlugs: manifest?.supportingArticleSlugs ?? [],
+        featuredArticleSlugs: manifest?.featuredArticleSlugs ?? [],
+      },
+    ])
+  ) as EditorialSnapshot['projectEditorial'];
+}
+
+/**
+ * Give a live article the same shape as a baked one.
+ *
+ * The content-hub endpoint returns a SUBSET of EditorialArticle. Measured
+ * 2026-07-30, it omits nine fields the baked snapshot carries, including
+ * `relatedProjectSlugs`, `relatedProjects`, `localPath`, `content`, `authorBio`,
+ * `canonicalUrl`, `createdAt` and `updatedAt`.
+ *
+ * The old code passed the response straight through with `as EditorialSnapshot`,
+ * a type assertion claiming a shape the API does not provide. So the moment this
+ * site actually read live — which it started doing in 01091b9 — every page calling
+ * `article.relatedProjectSlugs.includes(...)` or `article.localPath` crashed on
+ * undefined, and the whole production build failed at prerender. Eight pages, and
+ * it had been failing on every build since.
+ *
+ * The assertion was the bug. A cast tells the compiler to stop checking; it does
+ * not make the data arrive. So the fields are filled here, at the one place live
+ * data enters, rather than guarded at each of the dozens of places they are read.
+ *
+ * Defaults match what the generator produces for the same article, so a page
+ * cannot tell whether it is rendering live or baked. `localPath` is derived the
+ * same way the sync script derives it, because a URL on this site is this site's
+ * concern and not something Empathy Ledger should be asked to know.
+ */
+function normaliseLiveArticle(article: Partial<EditorialArticle> & { slug: string }): EditorialArticle {
+  return {
+    ...article,
+    localPath: article.localPath ?? `/blog/${article.slug}`,
+    // Arrays default to empty, never undefined: every consumer of these calls
+    // .includes, .length, .map or .slice on them without checking.
+    relatedProjectSlugs: article.relatedProjectSlugs ?? [],
+    relatedProjects: article.relatedProjects ?? [],
+    tags: article.tags ?? [],
+    themes: article.themes ?? [],
+    ctas: article.ctas ?? [],
+    syndicationDestinations: article.syndicationDestinations ?? [],
+    // Nullable scalars: absent and empty are different, and null is what the
+    // generator writes when it has nothing.
+    content: article.content ?? null,
+    authorBio: article.authorBio ?? null,
+    authorName: article.authorName ?? '',
+    canonicalUrl: article.canonicalUrl ?? null,
+    createdAt: article.createdAt ?? null,
+    updatedAt: article.updatedAt ?? null,
+    subtitle: article.subtitle ?? null,
+    excerpt: article.excerpt ?? null,
+    primaryProject: article.primaryProject ?? null,
+    articleType: article.articleType ?? null,
+    featuredImageUrl: article.featuredImageUrl ?? null,
+    featuredImageAlt: article.featuredImageAlt ?? null,
+  } as EditorialArticle;
 }
 
 function isEditorialArticle(

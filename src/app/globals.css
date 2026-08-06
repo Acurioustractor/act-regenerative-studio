@@ -195,22 +195,58 @@ background-image: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBo
 background-repeat: repeat;
 }
 
+/* ------------------------------------------------------------------ */
+/* Article body (.rich-text) — the long-form reading experience.       */
+/*                                                                     */
+/* The corpus is exported HTML from two ancestries (Webflow richtext   */
+/* figures, Storipress data-type divs), so these rules style the       */
+/* markup those exporters actually emit — including full-bleed figure  */
+/* breakouts from a 720px column and intrinsic-ratio video figures.    */
+/* prepareArticleHtml() in src/lib/editorial/article-html.ts strips    */
+/* scripts / stray h1s / junk alts before this CSS ever sees it.       */
+/* ------------------------------------------------------------------ */
+
 .rich-text {
-  line-height: 1.8;
+  font-family: var(--font-body);
+  font-size: 1.0625rem;
+  line-height: 1.85;
+  color: var(--we-brown);
+}
+
+@media (min-width: 768px) {
+  .rich-text {
+    font-size: 1.125rem;
+  }
 }
 
 .rich-text h2,
-.rich-text h3 {
-  margin-top: 2rem;
-  margin-bottom: 0.75rem;
+.rich-text h3,
+.rich-text h4 {
   font-family: var(--font-display);
-  color: var(--site-ink);
+  font-weight: 600;
+  line-height: 1.2;
+  color: var(--we-olive);
+}
+
+.rich-text h2 {
+  margin: 2.75rem 0 1rem;
+  font-size: clamp(1.5rem, 2.6vw, 1.9rem);
+}
+
+.rich-text h3 {
+  margin: 2.25rem 0 0.85rem;
+  font-size: clamp(1.25rem, 2.1vw, 1.45rem);
+}
+
+.rich-text h4 {
+  margin: 2rem 0 0.75rem;
+  font-size: 1.125rem;
 }
 
 .rich-text p,
 .rich-text ul,
 .rich-text ol {
-  margin: 1rem 0;
+  margin: 1.15rem 0;
 }
 
 .rich-text ul {
@@ -223,9 +259,139 @@ background-repeat: repeat;
   padding-left: 1.5rem;
 }
 
+.rich-text li::marker {
+  color: var(--site-clay-text);
+}
+
 .rich-text a {
   color: var(--site-green);
   text-decoration: underline;
+  text-decoration-color: color-mix(in srgb, var(--site-green) 40%, transparent);
+  text-underline-offset: 3px;
+  transition: text-decoration-color 150ms ease;
+}
+
+.rich-text a:hover {
+  text-decoration-color: var(--site-green);
+}
+
+.rich-text strong {
+  color: var(--we-olive);
+}
+
+.rich-text sup {
+  font-size: 0.7em;
+}
+
+.rich-text blockquote {
+  margin: 2.25rem 0;
+  padding: 1rem 1.5rem;
+  border-left: 3px solid var(--site-clay);
+  background: rgba(227, 212, 186, 0.35);
+  border-radius: 0 16px 16px 0;
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.2em;
+  line-height: 1.55;
+  color: var(--we-olive);
+}
+
+.rich-text blockquote p {
+  margin: 0.5rem 0;
+}
+
+.rich-text hr {
+  border: none;
+  width: 64px;
+  height: 2px;
+  margin: 3rem auto;
+  background: var(--site-clay);
+  opacity: 0.55;
+}
+
+/* --- Figures and images ------------------------------------------- */
+
+.rich-text figure {
+  margin: 2.5rem 0;
+}
+
+.rich-text img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+}
+
+.rich-text figcaption,
+.rich-text .caption-text {
+  margin-top: 0.65rem;
+  font-family: var(--font-sans);
+  font-size: 0.8125rem;
+  font-weight: 400;
+  line-height: 1.5;
+  letter-spacing: 0.01em;
+  color: var(--we-warm-brown);
+}
+
+.rich-text figcaption:empty {
+  display: none;
+}
+
+/* Webflow's fullwidth figures break out of the 720px measure. The figure's
+   containing block is the article column, so margin-left:50% lands its left
+   edge on the column centre (= page centre, the column is mx-auto) and the
+   translate pulls it back by half its own width. Capped below the 1200px
+   section container so a breakout never collides with the page frame. */
+.rich-text figure.w-richtext-align-fullwidth {
+  width: min(calc(100vw - 3rem), 1100px);
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+
+.rich-text figure.w-richtext-align-fullwidth img {
+  border-radius: 24px;
+}
+
+.rich-text figure.w-richtext-align-fullwidth figcaption,
+.rich-text figure.w-richtext-align-fullwidth .caption-text {
+  text-align: center;
+}
+
+.rich-text figure.w-richtext-align-center {
+  margin-inline: auto;
+  max-width: 100%;
+}
+
+/* Webflow video figures carry their ratio as inline padding-bottom on the
+   figure and a bare iframe inside; without these rules they collapse to
+   zero height. The inline padding percentage resolves against the 720px
+   column even when the figure breaks out to 1100px, which letterboxes the
+   video — so it is overridden with a real aspect-ratio. (Storipress/
+   Descript embeds ship their own inline intrinsic-ratio wrappers and need
+   nothing.) */
+.rich-text figure[class*="w-richtext-figure-type-video"] {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  padding-bottom: 0 !important;
+  overflow: hidden;
+  border-radius: 20px;
+}
+
+.rich-text figure[class*="w-richtext-figure-type-video"] iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+.rich-text iframe {
+  max-width: 100%;
+}
+
+.rich-text div[data-type="embed"],
+.rich-text div[data-rt-embed-type] {
+  margin: 2.5rem 0;
 }
 
 .site-shell {

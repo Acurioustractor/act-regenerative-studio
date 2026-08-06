@@ -53,6 +53,12 @@ const nextConfig = {
         protocol: "https",
         hostname: "www.empathyledger.com",
       },
+      {
+        // The 2026-08 media sync emits apex-domain URLs; both hosts serve
+        // the same Empathy Ledger media API.
+        protocol: "https",
+        hostname: "empathyledger.com",
+      },
     ],
   },
   eslint: {

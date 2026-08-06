@@ -1,9 +1,10 @@
-import { NextResponse } from "next/server";
+import { NextResponse, type NextRequest } from "next/server";
 import {
   fetchRegistryFromSources,
   listRegistryFromSupabase,
   syncRegistryToSupabase,
 } from "../../../lib/registry/registry";
+import { requireInternal } from "@/lib/auth/require-internal";
 
 const parseNumber = (value: string | null) => {
   if (!value) return undefined;
@@ -19,7 +20,9 @@ const resolveStatus = (value: string | null) => {
 const requireSyncToken = (request: Request) => {
   const expectedToken = process.env.REGISTRY_SYNC_TOKEN;
   if (!expectedToken) {
-    return null;
+    // No sync token configured: this must not mean "open to everyone".
+    // The caller falls back to the internal gate instead.
+    return "Sync token not configured.";
   }
 
   const authHeader = request.headers.get("authorization") ?? "";
@@ -82,10 +85,15 @@ export async function GET(request: Request) {
   }
 }
 
-export async function POST(request: Request) {
+export async function POST(request: NextRequest) {
+  // Two ways in: a configured REGISTRY_SYNC_TOKEN (external sync callers) or
+  // the internal token/cookie (admin tooling). Anonymous callers get neither.
   const authError = requireSyncToken(request);
   if (authError) {
-    return NextResponse.json({ error: authError }, { status: 401 });
+    const denied = requireInternal(request);
+    if (denied) {
+      return NextResponse.json({ error: authError }, { status: 401 });
+    }
   }
 
   try {

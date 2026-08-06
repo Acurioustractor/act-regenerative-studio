@@ -12,6 +12,7 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
+import { requireInternal } from '@/lib/auth/require-internal';
 
 const EXTRACTION_PROMPT = `You are analyzing content from ACT's daily tools to extract actionable knowledge for their Living Wiki.
 
@@ -54,6 +55,9 @@ IMPORTANT:
 - If confidence < 0.5, set isKnowledge to false`;
 
 export async function POST(request: NextRequest) {
+  const denied = requireInternal(request);
+  if (denied) return denied;
+
   try {
     const body = await request.json();
     const { queueId, sourceTitle, content } = body;
@@ -237,6 +241,9 @@ function parseAIResponse(aiResponse: string): any {
  * GET endpoint to check extraction queue status
  */
 export async function GET(request: NextRequest) {
+  const denied = requireInternal(request);
+  if (denied) return denied;
+
   try {
     const { createClient } = await import('@supabase/supabase-js');
     const supabase = createClient(

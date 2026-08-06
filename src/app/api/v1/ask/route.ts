@@ -12,6 +12,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { unifiedRAG } from '@/lib/ai-intelligence/unified-rag-service';
 import type { AnalysisTier } from '@/lib/ai-intelligence/multi-provider-ai';
+import { requireInternal } from '@/lib/auth/require-internal';
 
 // CORS headers for cross-origin requests (if needed)
 const corsHeaders = {
@@ -27,6 +28,12 @@ export async function OPTIONS() {
 
 // Main query handler
 export async function POST(req: NextRequest) {
+  // The public /ask page is held pending a cost/safety/injection review
+  // (config/launch-redirects.cjs); the API stays internal until that review
+  // passes, since every call spends real money on embeddings + generation.
+  const denied = requireInternal(req);
+  if (denied) return denied;
+
   try {
     // Parse request body
     const body = await req.json();

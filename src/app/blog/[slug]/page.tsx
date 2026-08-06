@@ -12,6 +12,12 @@ import {
 } from "../../../lib/empathy-ledger-editorial";
 import { articleJsonLd, breadcrumbJsonLd, pageMetadata } from "@/lib/seo/site";
 import {
+  cleanAltText,
+  prepareArticleHtml,
+  readingTimeMinutes,
+} from "@/lib/editorial/article-html";
+import { ReadingProgress } from "@/components/editorial/ReadingProgress";
+import {
   fieldsForArticle,
   projectSlugDestination,
   relatedArticles,
@@ -92,6 +98,8 @@ export default async function BlogPostPage({
 
   const content = post.content || "";
   const looksLikeHtml = /<\/?[a-z][\s\S]*>/i.test(content);
+  const preparedHtml = looksLikeHtml ? prepareArticleHtml(content) : null;
+  const readingMinutes = readingTimeMinutes(content);
   const lede = shortLede(post.excerpt);
   const dateLabel = publishedDateLabel(post.publishedAt);
   const hasHero = !!post.featuredImageUrl;
@@ -116,10 +124,18 @@ export default async function BlogPostPage({
   ];
 
   // Gallery photos = everything from EL media except the featured image (which
-  // already runs at the top as the hero) and duplicates.
+  // already runs at the top as the hero) and duplicates. The sync writes alt
+  // text under alt_text (older shapes used alt), and most of it is Webflow
+  // filename junk — cleanAltText decides whether any of it is a real
+  // description.
   const gallery = (post.media?.photoPreviews || [])
     .filter((photo) => !!photo.url && photo.url !== post.featuredImageUrl)
-    .slice(0, 8);
+    .slice(0, 8)
+    .map((photo) => ({
+      url: photo.url,
+      alt: cleanAltText(photo.alt ?? photo.alt_text ?? photo.title),
+      caption: photo.caption ?? null,
+    }));
 
   // Suggested reading, related first.
   //
@@ -166,7 +182,10 @@ export default async function BlogPostPage({
           { name: post.title, path: `/blog/${post.slug}` },
         ])}
       />
-      {/* , , ,  HERO: full-bleed image with title + meta overlay , , ,  */}
+      <ReadingProgress />
+      {/* HERO: full-bleed image with title + meta overlay. Articles without a
+          featured image get a typographic cover — deep olive field with a low
+          clay glow — instead of a bare black rectangle. */}
       <section className="full-bleed relative min-h-[60vh] w-full overflow-hidden bg-[#11110F] md:min-h-[75vh]">
         {hasHero ? (
           <Image
@@ -177,8 +196,22 @@ export default async function BlogPostPage({
             className="object-cover"
             priority
           />
-        ) : null}
-        <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/45 to-black/80" />
+        ) : (
+          <div
+            aria-hidden="true"
+            className="absolute inset-0 bg-[linear-gradient(150deg,#33402F_0%,#222B21_55%,#161B15_100%)]"
+          >
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_18%_88%,rgba(196,132,92,0.28),transparent_70%)]" />
+            <span className="absolute -bottom-24 right-[-4%] select-none font-[var(--font-display)] text-[38vw] font-light italic leading-none text-[#F3EBDD]/[0.05] md:text-[26vw]">
+              {post.title.charAt(0)}
+            </span>
+          </div>
+        )}
+        {hasHero ? (
+          <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/45 to-black/80" />
+        ) : (
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40" />
+        )}
         <div className="relative z-10 mx-auto flex min-h-[60vh] max-w-[1000px] flex-col justify-end px-6 pb-16 pt-32 md:min-h-[75vh] md:px-10 md:pb-24 md:pt-40">
           <Link
             href="/stories"
@@ -186,7 +219,7 @@ export default async function BlogPostPage({
           >
             <span aria-hidden="true">&larr;</span> All stories
           </Link>
-          <h1 className="mt-6 font-[var(--font-display)] text-[clamp(2.2rem,5vw,4.2rem)] font-semibold leading-[1.05] text-[#F3EBDD]">
+          <h1 className="mt-6 font-[var(--font-display)] text-[clamp(2.2rem,5vw,4.2rem)] font-light leading-[1.08] text-[#F3EBDD]">
             {post.title}
           </h1>
           {lede ? (
@@ -208,17 +241,23 @@ export default async function BlogPostPage({
                 <span>{post.articleType}</span>
               </>
             ) : null}
+            {readingMinutes ? (
+              <>
+                <span aria-hidden="true" className="text-[#CFA16B]/40">·</span>
+                <span>{readingMinutes} min read</span>
+              </>
+            ) : null}
           </div>
         </div>
       </section>
 
-      {/* , , ,  BODY: long-form article in a readable measure , , ,  */}
+      {/* BODY: long-form article in a readable measure */}
       <section className="bg-[#FBF6EC] px-6 py-20 md:px-10 md:py-28">
         <article className="mx-auto max-w-[720px]">
           {content ? (
-            <div className="rich-text prose prose-lg max-w-none prose-headings:font-[var(--font-display)] prose-headings:text-[var(--we-olive)] prose-p:text-[17px] prose-p:leading-[1.8] prose-p:text-[var(--we-brown)] prose-a:text-forest prose-a:no-underline hover:prose-a:underline prose-strong:text-[var(--we-olive)] prose-blockquote:border-l-[3px] prose-blockquote:border-[#CFA16B] prose-blockquote:bg-[#F3EBDD]/50 prose-blockquote:py-1 prose-blockquote:italic prose-img:rounded-[20px]">
-              {looksLikeHtml ? (
-                <div dangerouslySetInnerHTML={{ __html: content }} />
+            <div className="rich-text">
+              {preparedHtml ? (
+                <div dangerouslySetInnerHTML={{ __html: preparedHtml }} />
               ) : (
                 <ReactMarkdown>{content}</ReactMarkdown>
               )}
@@ -232,7 +271,7 @@ export default async function BlogPostPage({
         </article>
       </section>
 
-      {/* , , ,  GALLERY: nice big photos from the field , , ,  */}
+      {/* GALLERY: field photographs */}
       {gallery.length > 0 && (
         <section className="full-bleed bg-[#F6F1E7] px-6 py-20 md:px-10 md:py-28">
           <div className="mx-auto max-w-[1300px]">
@@ -287,7 +326,7 @@ export default async function BlogPostPage({
         </section>
       )}
 
-      {/* , , ,  AUTHOR + RELATED PROJECTS , , ,  */}
+      {/* AUTHOR + CONNECTED FIELDS */}
       <section className="bg-[#FBF6EC] px-6 py-16 md:px-10 md:py-20">
         <div className="mx-auto max-w-[720px] space-y-8">
           {post.authorName ? (
@@ -345,7 +384,7 @@ export default async function BlogPostPage({
         </div>
       </section>
 
-      {/* , , ,  CTAS , , ,  */}
+      {/* CTAS */}
       <section className="full-bleed bg-[var(--we-olive)] px-6 py-16 md:px-10 md:py-24">
         <div className="mx-auto flex max-w-[820px] flex-col items-center gap-6 text-center">
           <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-[#CFA16B]">
@@ -379,7 +418,7 @@ export default async function BlogPostPage({
         </div>
       </section>
 
-      {/* , , ,  SUGGESTED READING , , ,  */}
+      {/* SUGGESTED READING */}
       {suggested.length > 0 && (
         <section className="full-bleed bg-[#FBF6EC] px-6 py-20 md:px-10 md:py-28">
           <div className="mx-auto max-w-[1200px]">

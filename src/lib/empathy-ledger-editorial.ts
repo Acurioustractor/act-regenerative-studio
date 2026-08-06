@@ -4,6 +4,7 @@ import { cache } from 'react';
 
 import { fetchEmpathyLedgerJson } from '@/lib/empathy-ledger-runtime';
 import editorialSnapshot from '@/data/empathy-ledger-editorial.generated.json';
+import withdrawnTombstone from '../../config/withdrawn-editorial.json';
 
 export interface EditorialArticle {
   id: string;
@@ -34,10 +35,15 @@ export interface EditorialArticle {
   media: {
     photoCount: number;
     videoCount: number;
+    // The sync emits { url, title, alt_text }; older shapes carried
+    // { url, alt, caption }. Declare the union of what actually arrives so
+    // consumers stop reading fields that are never there.
     photoPreviews: Array<{
       url: string;
-      alt: string | null;
-      caption: string | null;
+      alt?: string | null;
+      alt_text?: string | null;
+      title?: string | null;
+      caption?: string | null;
     }>;
     videoPreviews: Array<{
       url: string;
@@ -94,9 +100,57 @@ interface EditorialSnapshot {
   articles: EditorialArticle[];
 }
 
-const SNAPSHOT = editorialSnapshot as unknown as EditorialSnapshot;
-
 const SITE_SLUG = process.env.EMPATHY_LEDGER_SITE_SLUG || 'act-regenerative-studio';
+
+/**
+ * Consent gate, applied to BOTH the baked snapshot and the live read.
+ *
+ * The sync script enforces the withdrawal tombstone, the attribution rule and
+ * visibility when it bakes the snapshot — but since 01091b9 the live read wins
+ * over the baked copy, so a rule enforced only at build time is a rule the
+ * production site does not have. Everything the sync withholds must be
+ * withheld again here, at the one place both paths converge.
+ */
+const WITHDRAWN = {
+  slugs: new Set<string>(Array.isArray(withdrawnTombstone.slugs) ? withdrawnTombstone.slugs : []),
+  storytellerIds: new Set<string>(
+    Array.isArray(withdrawnTombstone.storytellerIds) ? withdrawnTombstone.storytellerIds : []
+  ),
+};
+
+function passesConsentGate(article: EditorialArticle): boolean {
+  if (WITHDRAWN.slugs.has(article.slug)) return false;
+  const storytellerId = article.storyteller?.id;
+  if (storytellerId && WITHDRAWN.storytellerIds.has(storytellerId)) return false;
+
+  // A person-voiced piece (one with a storyteller) must never ship without a
+  // resolvable name: publishing it under a blank or generic byline erases the
+  // storyteller. Same rule as scripts/sync-el-editorial.mjs.
+  const resolvedAuthor = article.authorName || article.storyteller?.displayName || '';
+  if (article.storyteller && !resolvedAuthor) return false;
+
+  // The live content-hub response may omit visibility entirely; absent is not
+  // the same as restricted, so only an explicit non-public value withholds.
+  if (article.visibility && article.visibility !== 'public') return false;
+
+  return true;
+}
+
+function applyConsentGate(snapshot: EditorialSnapshot): EditorialSnapshot {
+  const articles = snapshot.articles.filter(passesConsentGate);
+  if (articles.length === snapshot.articles.length) return snapshot;
+  const projectArticleCounts: Record<string, number> = {};
+  for (const article of articles) {
+    for (const slug of article.relatedProjectSlugs || []) {
+      projectArticleCounts[slug] = (projectArticleCounts[slug] || 0) + 1;
+    }
+  }
+  return { ...snapshot, articles, articleCount: articles.length, projectArticleCounts };
+}
+
+const SNAPSHOT = applyConsentGate(editorialSnapshot as unknown as EditorialSnapshot);
+
+const BAKED_BY_SLUG = new Map(SNAPSHOT.articles.map((article) => [article.slug, article]));
 
 /**
  * Editorial read live from Empathy Ledger, falling back to the copy baked at
@@ -183,12 +237,24 @@ function normaliseProjectEditorial(
  * not make the data arrive. So the fields are filled here, at the one place live
  * data enters, rather than guarded at each of the dozens of places they are read.
  *
- * Defaults match what the generator produces for the same article, so a page
- * cannot tell whether it is rendering live or baked. `localPath` is derived the
- * same way the sync script derives it, because a URL on this site is this site's
- * concern and not something Empathy Ledger should be asked to know.
+ * Missing fields fall back to the BAKED copy of the same article first, and
+ * only then to empty defaults. Nulling them out was itself a serving bug: the
+ * live list omits `content`, so whenever the live read succeeded every article
+ * page rendered "this story has no public body yet" while the full body sat in
+ * the snapshot. Live wins field-by-field where it actually sends a value; the
+ * baked article fills the rest. An article withdrawn at the source cannot leak
+ * back in through this merge, because it is absent from the live list entirely
+ * and this function never runs for it.
+ *
+ * `localPath` is derived the same way the sync script derives it, because a URL
+ * on this site is this site's concern and not something Empathy Ledger should
+ * be asked to know.
  */
-function normaliseLiveArticle(article: Partial<EditorialArticle> & { slug: string }): EditorialArticle {
+function normaliseLiveArticle(liveArticle: Partial<EditorialArticle> & { slug: string }): EditorialArticle {
+  const baked = BAKED_BY_SLUG.get(liveArticle.slug);
+  // JSON.parse never produces undefined values, so spreading the live article
+  // last overrides exactly the fields the API actually sent.
+  const article = { ...baked, ...liveArticle };
   return {
     ...article,
     localPath: article.localPath ?? `/blog/${article.slug}`,
@@ -252,7 +318,9 @@ export function getBakedEditorialSnapshot(): EditorialSnapshot {
 
 export const getEditorialSnapshot = cache(async (): Promise<EditorialSnapshot> => {
   const live = await fetchEditorialLive();
-  return live ?? SNAPSHOT;
+  // The gate runs on the live result too: a withdrawal recorded locally must
+  // hold even when the source is still serving the article.
+  return live ? applyConsentGate(live) : SNAPSHOT;
 });
 
 export const getSiteEditorialArticles = cache(

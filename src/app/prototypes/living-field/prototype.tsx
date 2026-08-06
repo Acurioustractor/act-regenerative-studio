@@ -34,6 +34,7 @@ export function LivingFieldPrototype({ production = false }: { production?: bool
   }, []);
 
   useEffect(() => {
+    if (production) return;
     const refreshHeroChoices = () => {
       void fetch("/api/prototypes/media-review/selections", { cache: "no-store" })
         .then((response) => response.ok ? response.json() : Promise.reject())
@@ -45,7 +46,7 @@ export function LivingFieldPrototype({ production = false }: { production?: bool
     refreshHeroChoices();
     window.addEventListener("focus", refreshHeroChoices);
     return () => window.removeEventListener("focus", refreshHeroChoices);
-  }, []);
+  }, [production]);
 
   useEffect(() => {
     const resumeVisibleVideos = () => {

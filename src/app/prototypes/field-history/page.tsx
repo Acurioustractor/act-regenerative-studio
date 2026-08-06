@@ -172,9 +172,9 @@ export default function FieldHistoryPrototype() {
             dignity of being met without a counter between you.
           </p>
           <p>
-            Ben arrived by another road: Muswellbrook, travel, youth work,
-            remote community programs, prisons, young people in care and
-            photography. The camera opened rooms, but it also carried a problem
+            Ben arrived by another road: Muswellbrook on Wanaruah Country,
+            travel, youth work, remote community programs, prisons, young
+            people in care and photography. The camera opened rooms, but it also carried a problem
             that would shape the next decade. An image can witness a person, and
             it can take from them. The difference is the relationship around it.
           </p>
@@ -235,8 +235,8 @@ export default function FieldHistoryPrototype() {
           title="We could feel the coherence before we could explain it."
         >
           <p>
-            Beds assembled in the Centre. Photo kiosks on Palm Island
-            (Bwgcolman). Story circles. A ledger for consent. JusticeHub demos.
+            Beds assembled in the Centre. Photo kiosks on Bwgcolman (Palm
+            Island). Story circles. A ledger for consent. JusticeHub demos.
             Public artworks. Farm workshops. Gardens, data maps, caravans and
             shipping containers cut open and rebuilt.
           </p>
@@ -303,7 +303,7 @@ export default function FieldHistoryPrototype() {
         <section className={styles.dualMedia}>
           <Image
             src="/media/field-stills/palm-island-coastline.jpg"
-            alt="Palm Island (Bwgcolman) coastline"
+            alt="Bwgcolman (Palm Island) coastline"
             fill
             sizes="50vw"
           />
@@ -326,7 +326,7 @@ export default function FieldHistoryPrototype() {
             returns to the person whose life made it valuable?
           </p>
           <p>
-            On Palm Island (Bwgcolman), a photo kiosk and locally held server
+            On Bwgcolman (Palm Island), a photo kiosk and locally held server
             began to make a different relationship physical. Empathy Ledger
             extended the question into infrastructure. Consent could remain
             alive, specific to each use, capable of being changed and capable of

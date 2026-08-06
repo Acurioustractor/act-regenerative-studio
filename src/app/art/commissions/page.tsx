@@ -77,7 +77,7 @@ export default async function ArtCommissionsPage() {
         <SectionHeading
           eyebrow="Relevant case studies"
           title="Current works that show the commission logic"
-          description="Three works that trace the arc of how a commission can take shape at ACT — from the question that starts it, through the making, to the public life it takes on afterwards."
+          description="Three works that trace the arc of how a commission can take shape at ACT: from the question that starts it, through the making, to the public life it takes on afterwards."
         />
         <div className="grid gap-6 lg:grid-cols-3">
           {works.map((work) => (

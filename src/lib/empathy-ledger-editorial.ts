@@ -118,6 +118,34 @@ const WITHDRAWN = {
   ),
 };
 
+/**
+ * Excerpts arrive from Empathy Ledger as whatever the editor stored — sometimes
+ * plain text, sometimes a truncated HTML fragment ("<p><em>There is a version…
+ * </p><h"). Every consumer renders the excerpt as text (list ledes, meta
+ * descriptions), so reduce it to plain text once, at this boundary, for both
+ * the baked and the live path.
+ */
+function plainTextExcerpt(excerpt: string | null | undefined): string | null {
+  if (!excerpt) return null;
+  if (!excerpt.includes('<') && !excerpt.includes('&')) return excerpt;
+  const text = excerpt
+    .replace(/<[^>]*$/, ' ') // truncation can cut mid-tag; drop the stub
+    .replace(/<[^>]*>/g, ' ')
+    .replace(/&nbsp;/g, ' ')
+    .replace(/&lt;/g, '<')
+    .replace(/&gt;/g, '>')
+    .replace(/&#0?39;|&apos;|&#8217;/g, '’')
+    .replace(/&quot;/g, '"')
+    .replace(/&amp;/g, '&')
+    .replace(/\s+/g, ' ')
+    .trim();
+  return text || null;
+}
+
+function withPlainExcerpt(article: EditorialArticle): EditorialArticle {
+  return { ...article, excerpt: plainTextExcerpt(article.excerpt) };
+}
+
 function passesConsentGate(article: EditorialArticle): boolean {
   if (WITHDRAWN.slugs.has(article.slug)) return false;
   const storytellerId = article.storyteller?.id;
@@ -137,8 +165,7 @@ function passesConsentGate(article: EditorialArticle): boolean {
 }
 
 function applyConsentGate(snapshot: EditorialSnapshot): EditorialSnapshot {
-  const articles = snapshot.articles.filter(passesConsentGate);
-  if (articles.length === snapshot.articles.length) return snapshot;
+  const articles = snapshot.articles.filter(passesConsentGate).map(withPlainExcerpt);
   const projectArticleCounts: Record<string, number> = {};
   for (const article of articles) {
     for (const slug of article.relatedProjectSlugs || []) {
@@ -275,7 +302,7 @@ function normaliseLiveArticle(liveArticle: Partial<EditorialArticle> & { slug: s
     createdAt: article.createdAt ?? null,
     updatedAt: article.updatedAt ?? null,
     subtitle: article.subtitle ?? null,
-    excerpt: article.excerpt ?? null,
+    excerpt: plainTextExcerpt(article.excerpt),
     primaryProject: article.primaryProject ?? null,
     articleType: article.articleType ?? null,
     featuredImageUrl: article.featuredImageUrl ?? null,

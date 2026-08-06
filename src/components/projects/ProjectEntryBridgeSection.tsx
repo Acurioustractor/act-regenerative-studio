@@ -24,14 +24,17 @@ export function ProjectEntryBridgeSection({
   const flagshipPack = project.flagshipPack;
   const fieldMedia = getProjectFieldMedia(project);
   const previewImages = fieldMedia.images.slice(0, 3);
-  const flagshipSummary =
+  const rawSummary =
     flagshipPack?.summary ||
     flagshipPack?.whatItIs ||
     flagshipPack?.overview ||
     null;
+  // The tagline and the pack summary are often the same sentence; printing it
+  // twice back-to-back reads as a glitch.
+  const heading = project.tagline || project.title;
+  const flagshipSummary =
+    rawSummary && rawSummary.trim() !== heading.trim() ? rawSummary : null;
   const canonicalFieldPath = `/projects/${project.slug}`;
-  const sourceCodeUrl =
-    flagshipPack?.implementation.primaryRepo?.githubUrl || project.projectRepoUrl || null;
   const leadPeople = (flagshipPack?.keyPeople || [])
     .slice(0, 3)
     .map((person: ACTFlagshipPackPerson) => person.title)
@@ -49,8 +52,11 @@ export function ProjectEntryBridgeSection({
 
   return (
     <section className="space-y-6">
+      {/* Registry chrome (status/tier/code chips, stat tiles, wiki and
+          source-code links) deliberately removed 2026-08-07: this section
+          renders on public pages, and those labels are internal workings. */}
       <div className="rounded-3xl border border-[#D9C9A9] bg-[#F6F1E7]/80 p-6 md:p-8">
-        <div className="grid gap-8 lg:grid-cols-[1.1fr_0.9fr]">
+        <div className="space-y-4">
           <div className="space-y-4">
             <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-brown-deep)]">
               About this project
@@ -81,79 +87,7 @@ export function ProjectEntryBridgeSection({
                   Read more
                 </Link>
               )}
-              <Link
-                href={`/wiki/${project.slug}`}
-                className="rounded-full border border-forest px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:bg-forest-soft"
-              >
-                Background &amp; method
-              </Link>
-              {sourceCodeUrl ? (
-                <a
-                  href={sourceCodeUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full border border-[#D9C9A9] bg-white/70 px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:bg-white"
-                >
-                  Source code
-                </a>
-              ) : null}
             </div>
-          </div>
-
-          <div className="space-y-4">
-            <div className="flex flex-wrap gap-2">
-              {flagshipPack?.status || project.wikiData?.status ? (
-                <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]">
-                  Status: {flagshipPack?.status || project.wikiData?.status}
-                </span>
-              ) : null}
-              {project.wikiData?.tier ? (
-                <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]">
-                  Tier: {project.wikiData.tier}
-                </span>
-              ) : null}
-              {flagshipPack?.canonicalCode || project.wikiData?.code ? (
-                <span className="rounded-full bg-white px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]">
-                  Code: {flagshipPack?.canonicalCode || project.wikiData?.code}
-                </span>
-              ) : null}
-            </div>
-
-            <div className="grid gap-3 sm:grid-cols-2">
-              <div className="rounded-2xl bg-white/70 px-4 py-4">
-                <p className="text-lg font-semibold text-[var(--we-olive)]">
-                  {liveMeta?.storyteller_count || 0}
-                </p>
-                <p className="text-xs uppercase tracking-[0.18em] text-[var(--we-warm-brown)]">
-                  Voices
-                </p>
-              </div>
-              <div className="rounded-2xl bg-white/70 px-4 py-4">
-                <p className="text-lg font-semibold text-[var(--we-olive)]">
-                  {liveMeta?.story_count || 0}
-                </p>
-                <p className="text-xs uppercase tracking-[0.18em] text-[var(--we-warm-brown)]">
-                  Stories
-                </p>
-              </div>
-              <div className="rounded-2xl bg-white/70 px-4 py-4">
-                <p className="text-lg font-semibold text-[var(--we-olive)]">
-                  {liveMeta?.media_count || 0}
-                </p>
-                <p className="text-xs uppercase tracking-[0.18em] text-[var(--we-warm-brown)]">
-                  Media items
-                </p>
-              </div>
-              <div className="rounded-2xl bg-white/70 px-4 py-4">
-                <p className="text-lg font-semibold text-[var(--we-olive)]">
-                  {relatedWorks.length}
-                </p>
-                <p className="text-xs uppercase tracking-[0.18em] text-[var(--we-warm-brown)]">
-                  Related works
-                </p>
-              </div>
-            </div>
-
             {flagshipPack && leadPeople.length > 0 ? (
               <div className="rounded-2xl border border-[var(--we-sand)] bg-white/70 px-4 py-4">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--we-warm-brown)]">

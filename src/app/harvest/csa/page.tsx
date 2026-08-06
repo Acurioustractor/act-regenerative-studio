@@ -22,7 +22,7 @@ const shareTypes = [
   {
     title: "Community share",
     description:
-      "Sponsored boxes for neighbors and partners in the region.",
+      "Sponsored boxes for neighbours and partners in the region.",
   },
 ];
 

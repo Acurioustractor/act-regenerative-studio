@@ -65,7 +65,7 @@ export default async function ArtResidenciesPage() {
             Residency focus
           </p>
           <p>
-            We prioritize projects that honor Country, community governance, and
+            We prioritise projects that honour Country, community governance, and
             regenerative practice.
           </p>
         </div>

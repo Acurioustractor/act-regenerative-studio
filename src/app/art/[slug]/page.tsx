@@ -183,7 +183,11 @@ export default async function ArtWorkPage({
                 poster={project.heroVideo.posterUrl}
                 title={project.heroVideo.alt || project.title}
                 preload="metadata"
-                className="absolute inset-0 h-full w-full object-cover"
+                className={
+                  project.heroVideo.fit === "contain"
+                    ? "absolute inset-0 h-full w-full bg-black object-contain"
+                    : "absolute inset-0 h-full w-full object-cover"
+                }
               />
             ) : null}
             <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />

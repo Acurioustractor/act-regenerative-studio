@@ -6,6 +6,7 @@ import UnifiedFooter from "../components/UnifiedFooter";
 import { MobileMenu } from "../components/MobileMenu";
 import { JsonLd } from "@/components/seo/JsonLd";
 import { SiteChromeGate } from "@/components/SiteChromeGate";
+import { EditorialLegalFooter } from "@/components/EditorialLegalFooter";
 import { organizationJsonLd, siteUrl, websiteJsonLd } from "@/lib/seo/site";
 import "./globals.css";
 
@@ -169,6 +170,7 @@ export default function RootLayout({
             contactEmail="hi@act.place"
           />
         </div></SiteChromeGate>
+        <EditorialLegalFooter />
       </body>
     </html>
   );

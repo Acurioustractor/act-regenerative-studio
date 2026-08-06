@@ -102,12 +102,12 @@ export default async function ArtworksPage() {
                   </span>
                   {work.live.storyCount > 0 ? (
                     <span className="rounded-full bg-forest-soft px-3 py-1 text-xs font-medium text-[var(--we-olive)]">
-                      {work.live.storyCount} approved stories
+                      {work.live.storyCount} {work.live.storyCount === 1 ? "story" : "stories"}
                     </span>
                   ) : null}
                   {work.live.mediaCount > 0 ? (
                     <span className="rounded-full bg-forest-soft px-3 py-1 text-xs font-medium text-[var(--we-olive)]">
-                      {work.live.mediaCount} media items
+                      {work.live.mediaCount} photos and films
                     </span>
                   ) : null}
                 </div>

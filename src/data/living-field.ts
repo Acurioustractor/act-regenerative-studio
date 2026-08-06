@@ -55,7 +55,9 @@ export const livingFields: LivingField[] = [
     invitation: "Cross the threshold",
     destinationLabel: "Experience CONTAINED",
     image: "/media/field-stills/contained-aerial.jpg",
-    secondImage: "/media/field-stills/confessions-to-philanthropy.jpg",
+    // Not the Confessions phone still: its burned-in caption clips mid-word in
+    // this page's cropped frame. The cell interior is caption-free.
+    secondImage: "/media/field-stills/contained-cell.jpg",
     video: "/media/field-videos/contained-aerial.mp4",
     localHref: "/fields/art",
     overviewHref: "/prototypes/living-field/art",

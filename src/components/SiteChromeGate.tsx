@@ -13,12 +13,16 @@ const editorialRoots = [
   "/contact",
 ];
 
-export function SiteChromeGate({ children }: { children: React.ReactNode }) {
-  const pathname = usePathname();
-  const hidden =
+export function isEditorialRoute(pathname: string): boolean {
+  return (
     pathname === "/" ||
     editorialRoots.some(
       (root) => pathname === root || pathname.startsWith(`${root}/`),
-    );
-  return hidden ? null : children;
+    )
+  );
+}
+
+export function SiteChromeGate({ children }: { children: React.ReactNode }) {
+  const pathname = usePathname();
+  return isEditorialRoute(pathname) ? null : children;
 }

@@ -34,7 +34,7 @@ const practices = [
   {
     title: "Community harvests",
     description:
-      "Harvest days invite neighbors and partners into the field and kitchen.",
+      "Harvest days invite neighbours and partners into the field and kitchen.",
   },
 ];
 

@@ -29,24 +29,16 @@ import type { LivingFieldId } from "@/data/living-field";
  */
 export const FIELD_ASSIGNMENTS: Record<string, LivingFieldId[]> = {
   // CONTAINED is the art work: a shipping container built to the dimensions of
-  // a cell. Both of these are about the piece itself, not the policy research
-  // it draws on, so both belong to art. The second keeps justice from its
-  // project tag as well.
-  "from-bolivia-to-brisbane": ["art"],
+  // a cell. This is about the piece itself, not the policy research it draws
+  // on, so it belongs to art while keeping justice from its project tag.
+  // "from-bolivia-to-brisbane" and "the-act-comic" were assigned here too until
+  // the 2026-08-07 launch review withdrew them (config/withdrawn-editorial.json).
   "contained-where-policy-meets-flesh": ["art"],
-
-  // A comic drawn to explain the studio. Art as the way an idea is made
-  // legible, which is the field's whole claim.
-  "the-act-comic": ["art"],
 
   // Jimmy Frank Jupurrurla crafts boomerangs and leads the housing work. The
   // Wilya Janta housing article is already tagged goods-on-country upstream;
   // this is the same work seen through the person leading it.
   "naidoc-with-jimmy": ["goods"],
-
-  // Cabramatta, addiction, crime and a way back out. Structurally the same
-  // piece as "Beyond Bars: Joe Kwon's Journey", which carries justicehub.
-  "a-heros-journey-from-addiction-to-inspiration-the-life-of-vireak": ["justice"],
 
   // Richard Cassidy on Palm Island, the same partnership as "At the Speed of
   // Ceremony". Nearer to mentorship than to the making work, but it is the same
@@ -76,11 +68,12 @@ export const FIELD_ASSIGNMENTS: Record<string, LivingFieldId[]> = {
 export const DELIBERATELY_UNASSIGNED: Record<string, string> = {
   "its-overwhelming-isnt-it": "Personal essay addressed to the reader.",
   "the-raucous-revolution": "Studio origin piece, about A Curious Tractor as a whole.",
-  "nhats-story-finding-belonging-and-purpose-at-the-hope-centre": "Hope Centre, Vietnam; outside the five fields.",
   "life-is-hard-but-its-not": "Personal reflection.",
   "the-weight-of-silence-and-the-audacity-to-imagine-reflections-on-fear-hope-and-the-long-game-of-human-liberation": "Series opener on fear and hope; thematic rather than field work.",
   "naidoc-with-jimmy": "Time with Jimmy Frank Jupurrurla; relationship piece.",
   "between-waters-and-worlds-a-day-on-quandamooka-country": "Quandamooka Country day; knowledge-sharing rather than a field.",
-  "a-heros-journey-from-addiction-to-inspiration-the-life-of-vireak": "Vireak's life; outside the five fields.",
   "conversation-camp": "Tagged black-cockatoo-valley upstream, which is land rather than a field of practice.",
+  // "nhats-story-finding-belonging-and-purpose-at-the-hope-centre" and
+  // "a-heros-journey-from-addiction-to-inspiration-the-life-of-vireak" sat here
+  // until the 2026-08 feed regen stopped carrying them.
 };

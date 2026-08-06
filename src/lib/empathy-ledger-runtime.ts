@@ -40,20 +40,25 @@ function logUnavailableOnce(message: string) {
 }
 
 function isConnectionFailure(error: unknown): boolean {
-  if (error instanceof DOMException) {
-    return error.name === "AbortError" || error.name === "TimeoutError";
+  // Duck-typed on purpose. The 2026-08-06 production build died on a
+  // TimeoutError that failed BOTH instanceof checks below: by the time it
+  // surfaced it was a prototype-stripped plain object (DOMExceptions lose
+  // their prototype crossing undici/build-worker boundaries), so a
+  // recognised timeout fell through to the throw path and one slow Empathy
+  // Ledger response killed the whole deploy.
+  const name = (error as { name?: unknown } | null)?.name;
+  if (name === "AbortError" || name === "TimeoutError") {
+    return true;
   }
 
-  if (!(error instanceof Error)) {
-    return false;
-  }
-
-  const message = error.message.toLowerCase();
+  const message = String(
+    (error as { message?: unknown } | null)?.message ?? ""
+  ).toLowerCase();
 
   return (
-    error.name === "AbortError" ||
     message.includes("timeout") ||
     message.includes("timed out") ||
+    message.includes("aborted") ||
     message.includes("fetch failed") ||
     message.includes("econnrefused") ||
     message.includes("etimedout") ||
@@ -132,7 +137,11 @@ export async function fetchEmpathyLedgerJson<T>(
       return null;
     }
 
-    throw error;
+    // Never rethrow: every consumer treats null as "fall back to the baked
+    // snapshot", and no Empathy Ledger failure — however unrecognised — is
+    // worth failing a build or a request over. Logged loudly instead.
+    console.error(`[ACT Studio] Empathy Ledger read failed for ${url}:`, error);
+    return null;
   }
 }
 
@@ -183,6 +192,8 @@ export async function requestEmpathyLedgerJson<T>(
       return null;
     }
 
-    throw error;
+    // Same rule as fetchEmpathyLedgerJson: null, never a thrown error.
+    console.error(`[ACT Studio] Empathy Ledger request failed for ${url}:`, error);
+    return null;
   }
 }

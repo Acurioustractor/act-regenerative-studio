@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:v="urn:schemas-microsoft-com:vml">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <title>Render test — not a real issue</title>
+  <!--
+    ACT ecosystem newsletter master (Editorial Warmth, email-safe).
+    Web fonts do not render in most email clients, so the DESIGN.md faces map
+    to their closest system stacks: Fraunces -> Georgia, Source Serif 4 ->
+    Georgia, Work Sans -> Helvetica/Arial. Colors are the real tokens.
+    Placeholders: Render test — not a real issue Template render check. Test <p>Hi {{contact.first_name}},</p>
+<p>This is a render test of the ACT newsletter master. Real issues get written with the voice skill and grounded before anyone sees them.</p>
+<h2 style="margin:28px 0 8px;font-family:Georgia,serif;font-weight:400;font-size:22px;color:#2D5A3D;">A section heading</h2>
+<p>Body text at reading size, serif, warm white behind it.</p>
+<blockquote style="margin:24px 0;padding:4px 0 4px 20px;border-left:3px solid #C4845C;font-style:italic;">A pull quote sits on a clay border.</blockquote>
+
+    GHL merge tags pass through untouched (e.g. {{contact.first_name}}).
+  -->
+  <style>
+    body, table, td { margin: 0; padding: 0; }
+    img { border: 0; display: block; max-width: 100%; }
+    @media only screen and (max-width: 640px) {
+      .container { width: 100% !important; }
+      .px { padding-left: 24px !important; padding-right: 24px !important; }
+    }
+  </style>
+</head>
+<body style="background-color:#FAFAF7;">
+  <div style="display:none;max-height:0;overflow:hidden;mso-hide:all;">Template render check.</div>
+  <table role="presentation" width="100%" cellpadding="0" cellspacing="0" style="background-color:#FAFAF7;">
+    <tr><td align="center" style="padding:32px 16px;">
+      <table role="presentation" class="container" width="600" cellpadding="0" cellspacing="0" style="width:600px;max-width:600px;">
+
+        <!-- masthead -->
+        <tr><td class="px" style="padding:24px 40px 20px;border-bottom:2px solid #2D5A3D;">
+          <span style="font-family:Helvetica,Arial,sans-serif;font-size:12px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#2D5A3D;">A Curious Tractor</span>
+        </td></tr>
+
+        <!-- eyebrow + title -->
+        <tr><td class="px" style="padding:36px 40px 0;">
+          <span style="font-family:Helvetica,Arial,sans-serif;font-size:11px;font-weight:600;letter-spacing:3px;text-transform:uppercase;color:#7F4C2B;">Test</span>
+        </td></tr>
+        <tr><td class="px" style="padding:10px 40px 0;">
+          <h1 style="margin:0;font-family:Georgia,'Times New Roman',serif;font-weight:400;font-size:32px;line-height:1.2;color:#1A1F1A;">Render test — not a real issue</h1>
+        </td></tr>
+
+        <!-- body content: h2 / p / blockquote fragments -->
+        <tr><td class="px" style="padding:24px 40px 8px;font-family:Georgia,'Times New Roman',serif;font-size:17px;line-height:1.65;color:#1A1F1A;">
+{{CONTENT}}
+        </td></tr>
+
+        <!-- footer -->
+        <tr><td class="px" style="padding:32px 40px 40px;">
+          <table role="presentation" width="100%" cellpadding="0" cellspacing="0">
+            <tr><td style="border-top:1px solid #C4845C;padding-top:24px;font-family:Helvetica,Arial,sans-serif;font-size:12px;line-height:1.7;color:#55744F;">
+              A Curious Tractor &middot; regenerative innovation from Jinibara Country<br>
+              You are receiving this because you asked to hear from us at act.place.<br>
+              <a href="{{unsubscribe_link}}" style="color:#7F4C2B;">Unsubscribe</a>
+            </td></tr>
+          </table>
+        </td></tr>
+
+      </table>
+    </td></tr>
+  </table>
+</body>
+</html>

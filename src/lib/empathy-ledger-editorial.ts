@@ -35,10 +35,15 @@ export interface EditorialArticle {
   media: {
     photoCount: number;
     videoCount: number;
+    // The sync emits { url, title, alt_text }; older shapes carried
+    // { url, alt, caption }. Declare the union of what actually arrives so
+    // consumers stop reading fields that are never there.
     photoPreviews: Array<{
       url: string;
-      alt: string | null;
-      caption: string | null;
+      alt?: string | null;
+      alt_text?: string | null;
+      title?: string | null;
+      caption?: string | null;
     }>;
     videoPreviews: Array<{
       url: string;
@@ -145,6 +150,8 @@ function applyConsentGate(snapshot: EditorialSnapshot): EditorialSnapshot {
 
 const SNAPSHOT = applyConsentGate(editorialSnapshot as unknown as EditorialSnapshot);
 
+const BAKED_BY_SLUG = new Map(SNAPSHOT.articles.map((article) => [article.slug, article]));
+
 /**
  * Editorial read live from Empathy Ledger, falling back to the copy baked at
  * build time.
@@ -230,12 +237,24 @@ function normaliseProjectEditorial(
  * not make the data arrive. So the fields are filled here, at the one place live
  * data enters, rather than guarded at each of the dozens of places they are read.
  *
- * Defaults match what the generator produces for the same article, so a page
- * cannot tell whether it is rendering live or baked. `localPath` is derived the
- * same way the sync script derives it, because a URL on this site is this site's
- * concern and not something Empathy Ledger should be asked to know.
+ * Missing fields fall back to the BAKED copy of the same article first, and
+ * only then to empty defaults. Nulling them out was itself a serving bug: the
+ * live list omits `content`, so whenever the live read succeeded every article
+ * page rendered "this story has no public body yet" while the full body sat in
+ * the snapshot. Live wins field-by-field where it actually sends a value; the
+ * baked article fills the rest. An article withdrawn at the source cannot leak
+ * back in through this merge, because it is absent from the live list entirely
+ * and this function never runs for it.
+ *
+ * `localPath` is derived the same way the sync script derives it, because a URL
+ * on this site is this site's concern and not something Empathy Ledger should
+ * be asked to know.
  */
-function normaliseLiveArticle(article: Partial<EditorialArticle> & { slug: string }): EditorialArticle {
+function normaliseLiveArticle(liveArticle: Partial<EditorialArticle> & { slug: string }): EditorialArticle {
+  const baked = BAKED_BY_SLUG.get(liveArticle.slug);
+  // JSON.parse never produces undefined values, so spreading the live article
+  // last overrides exactly the fields the API actually sent.
+  const article = { ...baked, ...liveArticle };
   return {
     ...article,
     localPath: article.localPath ?? `/blog/${article.slug}`,

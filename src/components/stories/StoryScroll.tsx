@@ -133,12 +133,6 @@ function getSnapshotMedia(sourceProjectSlug: string, kind: 'image' | 'video', li
     .slice(0, limit);
 }
 
-function tagLabel(block: Extract<StoryBlock, { kind: 'el-gallery' | 'el-video-gallery' }>) {
-  const all = block.tagQuery.all || [];
-  const any = block.tagQuery.any || [];
-  return [...all, ...any].slice(0, 5).join(' / ');
-}
-
 function BlockView({
   block,
   story,
@@ -323,9 +317,6 @@ function BlockView({
                 {block.description}
               </p>
             ) : null}
-            <p className="mt-4 font-mono text-xs text-[var(--site-muted)]">
-              EL query tags: {tagLabel(block)}
-            </p>
             <div className="mt-10 grid gap-4 md:grid-cols-3">
               {items.map((item) => {
                 const src = mediaImageSource(item);
@@ -375,9 +366,6 @@ function BlockView({
                 {block.description}
               </p>
             ) : null}
-            <p className="mt-4 font-mono text-xs text-[#FAFAF7]/45">
-              EL query tags: {tagLabel(block)}
-            </p>
             <div className="mt-10 grid gap-5 md:grid-cols-2">
               {items.map((item) => (
                 <a

@@ -40,20 +40,25 @@ function logUnavailableOnce(message: string) {
 }
 
 function isConnectionFailure(error: unknown): boolean {
-  if (error instanceof DOMException) {
-    return error.name === "AbortError" || error.name === "TimeoutError";
+  // Duck-typed on purpose. The 2026-08-06 production build died on a
+  // TimeoutError that failed BOTH instanceof checks below: by the time it
+  // surfaced it was a prototype-stripped plain object (DOMExceptions lose
+  // their prototype crossing undici/build-worker boundaries), so a
+  // recognised timeout fell through to the throw path and one slow Empathy
+  // Ledger response killed the whole deploy.
+  const name = (error as { name?: unknown } | null)?.name;
+  if (name === "AbortError" || name === "TimeoutError") {
+    return true;
   }
 
-  if (!(error instanceof Error)) {
-    return false;
-  }
-
-  const message = error.message.toLowerCase();
+  const message = String(
+    (error as { message?: unknown } | null)?.message ?? ""
+  ).toLowerCase();
 
   return (
-    error.name === "AbortError" ||
     message.includes("timeout") ||
     message.includes("timed out") ||
+    message.includes("aborted") ||
     message.includes("fetch failed") ||
     message.includes("econnrefused") ||
     message.includes("etimedout") ||
@@ -88,6 +93,79 @@ export function isEmpathyLedgerFetchEnabled(): boolean {
   return empathyLedgerState !== "disabled";
 }
 
+const TIMED_OUT = Symbol("empathy-ledger-timed-out");
+
+/**
+ * Shared fetch core. Two hard rules, both learned from failed deploys on
+ * 2026-08-06:
+ *
+ * 1. NEVER pass an AbortSignal to this fetch. Next's patched fetch writes the
+ *    response into its data cache in the background; aborting makes that
+ *    cache write reject outside any try/catch here, and during prerender an
+ *    unhandled rejection fails the page and exits the build. The timeout is a
+ *    race instead: on expiry the request is ABANDONED, not cancelled — it
+ *    finishes silently (undici's own ~300s limits bound a truly dead server)
+ *    and its late outcome is ignored.
+ *
+ * 2. NEVER throw. Every consumer treats null as "fall back to the baked
+ *    snapshot", and no Empathy Ledger failure — however unrecognised — is
+ *    worth failing a build or a request over. Unexpected failures log loudly.
+ */
+async function performEmpathyLedgerFetch<T>(
+  url: string,
+  init: RequestInit & { next?: { revalidate?: number; tags?: string[] } },
+  timeoutMs: number
+): Promise<T | null> {
+  const fetchPromise = (async () => {
+    const response = await fetch(url, init);
+
+    if (response.status === 404 || response.status === 401 || response.status === 403) {
+      return null;
+    }
+
+    if (!response.ok) {
+      throw new Error(`Empathy Ledger API error: ${response.status}`);
+    }
+
+    empathyLedgerState = "available";
+    return (await response.json()) as T;
+  })();
+
+  let timer: ReturnType<typeof setTimeout> | undefined;
+  const timeoutPromise = new Promise<typeof TIMED_OUT>((resolve) => {
+    timer = setTimeout(() => resolve(TIMED_OUT), timeoutMs);
+  });
+
+  try {
+    const result = await Promise.race([fetchPromise, timeoutPromise]);
+
+    if (result === TIMED_OUT) {
+      // Swallow whatever the abandoned request eventually does.
+      fetchPromise.catch(() => {});
+      empathyLedgerState = "unavailable";
+      logUnavailableOnce(
+        `[ACT Studio] Empathy Ledger is unreachable at ${EMPATHY_LEDGER_URL}. Using wiki/static fallbacks for the rest of this build.`
+      );
+      return null;
+    }
+
+    return result;
+  } catch (error) {
+    if (isConnectionFailure(error)) {
+      empathyLedgerState = "unavailable";
+      logUnavailableOnce(
+        `[ACT Studio] Empathy Ledger is unreachable at ${EMPATHY_LEDGER_URL}. Using wiki/static fallbacks for the rest of this build.`
+      );
+      return null;
+    }
+
+    console.error(`[ACT Studio] Empathy Ledger read failed for ${url}:`, error);
+    return null;
+  } finally {
+    clearTimeout(timer);
+  }
+}
+
 export async function fetchEmpathyLedgerJson<T>(
   pathOrUrl: string,
   options: {
@@ -99,10 +177,9 @@ export async function fetchEmpathyLedgerJson<T>(
     return null;
   }
 
-  const url = resolveUrl(pathOrUrl);
-
-  try {
-    const response = await fetch(url, {
+  return performEmpathyLedgerFetch<T>(
+    resolveUrl(pathOrUrl),
+    {
       headers: buildEmpathyLedgerHeaders(),
       next: {
         revalidate: options.revalidate ?? 300,
@@ -110,30 +187,9 @@ export async function fetchEmpathyLedgerJson<T>(
         // the window. See EMPATHY_LEDGER_CACHE_TAG above.
         tags: [EMPATHY_LEDGER_CACHE_TAG],
       },
-      signal: AbortSignal.timeout(options.timeoutMs ?? DEFAULT_TIMEOUT_MS),
-    });
-
-    if (response.status === 404 || response.status === 401 || response.status === 403) {
-      return null;
-    }
-
-    if (!response.ok) {
-      throw new Error(`Empathy Ledger API error: ${response.status}`);
-    }
-
-    empathyLedgerState = "available";
-    return response.json();
-  } catch (error) {
-    if (isConnectionFailure(error)) {
-      empathyLedgerState = "unavailable";
-      logUnavailableOnce(
-        `[ACT Studio] Empathy Ledger is unreachable at ${EMPATHY_LEDGER_URL}. Using wiki/static fallbacks for the rest of this build.`
-      );
-      return null;
-    }
-
-    throw error;
-  }
+    },
+    options.timeoutMs ?? DEFAULT_TIMEOUT_MS
+  );
 }
 
 export async function requestEmpathyLedgerJson<T>(
@@ -150,10 +206,9 @@ export async function requestEmpathyLedgerJson<T>(
     return null;
   }
 
-  const url = resolveUrl(pathOrUrl);
-
-  try {
-    const response = await fetch(url, {
+  return performEmpathyLedgerFetch<T>(
+    resolveUrl(pathOrUrl),
+    {
       method: options.method || "GET",
       headers: {
         ...buildEmpathyLedgerHeaders(),
@@ -161,28 +216,7 @@ export async function requestEmpathyLedgerJson<T>(
       },
       body: options.body,
       next: { revalidate: options.revalidate ?? 300 },
-      signal: AbortSignal.timeout(options.timeoutMs ?? DEFAULT_TIMEOUT_MS),
-    });
-
-    if (response.status === 404 || response.status === 401 || response.status === 403) {
-      return null;
-    }
-
-    if (!response.ok) {
-      throw new Error(`Empathy Ledger API error: ${response.status}`);
-    }
-
-    empathyLedgerState = "available";
-    return response.json();
-  } catch (error) {
-    if (isConnectionFailure(error)) {
-      empathyLedgerState = "unavailable";
-      logUnavailableOnce(
-        `[ACT Studio] Empathy Ledger is unreachable at ${EMPATHY_LEDGER_URL}. Using wiki/static fallbacks for the rest of this build.`
-      );
-      return null;
-    }
-
-    throw error;
-  }
+    },
+    options.timeoutMs ?? DEFAULT_TIMEOUT_MS
+  );
 }

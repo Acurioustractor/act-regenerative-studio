@@ -4,6 +4,7 @@ import { cache } from 'react';
 
 import { fetchEmpathyLedgerJson } from '@/lib/empathy-ledger-runtime';
 import editorialSnapshot from '@/data/empathy-ledger-editorial.generated.json';
+import withdrawnTombstone from '../../config/withdrawn-editorial.json';
 
 export interface EditorialArticle {
   id: string;
@@ -94,9 +95,55 @@ interface EditorialSnapshot {
   articles: EditorialArticle[];
 }
 
-const SNAPSHOT = editorialSnapshot as unknown as EditorialSnapshot;
-
 const SITE_SLUG = process.env.EMPATHY_LEDGER_SITE_SLUG || 'act-regenerative-studio';
+
+/**
+ * Consent gate, applied to BOTH the baked snapshot and the live read.
+ *
+ * The sync script enforces the withdrawal tombstone, the attribution rule and
+ * visibility when it bakes the snapshot — but since 01091b9 the live read wins
+ * over the baked copy, so a rule enforced only at build time is a rule the
+ * production site does not have. Everything the sync withholds must be
+ * withheld again here, at the one place both paths converge.
+ */
+const WITHDRAWN = {
+  slugs: new Set<string>(Array.isArray(withdrawnTombstone.slugs) ? withdrawnTombstone.slugs : []),
+  storytellerIds: new Set<string>(
+    Array.isArray(withdrawnTombstone.storytellerIds) ? withdrawnTombstone.storytellerIds : []
+  ),
+};
+
+function passesConsentGate(article: EditorialArticle): boolean {
+  if (WITHDRAWN.slugs.has(article.slug)) return false;
+  const storytellerId = article.storyteller?.id;
+  if (storytellerId && WITHDRAWN.storytellerIds.has(storytellerId)) return false;
+
+  // A person-voiced piece (one with a storyteller) must never ship without a
+  // resolvable name: publishing it under a blank or generic byline erases the
+  // storyteller. Same rule as scripts/sync-el-editorial.mjs.
+  const resolvedAuthor = article.authorName || article.storyteller?.displayName || '';
+  if (article.storyteller && !resolvedAuthor) return false;
+
+  // The live content-hub response may omit visibility entirely; absent is not
+  // the same as restricted, so only an explicit non-public value withholds.
+  if (article.visibility && article.visibility !== 'public') return false;
+
+  return true;
+}
+
+function applyConsentGate(snapshot: EditorialSnapshot): EditorialSnapshot {
+  const articles = snapshot.articles.filter(passesConsentGate);
+  if (articles.length === snapshot.articles.length) return snapshot;
+  const projectArticleCounts: Record<string, number> = {};
+  for (const article of articles) {
+    for (const slug of article.relatedProjectSlugs || []) {
+      projectArticleCounts[slug] = (projectArticleCounts[slug] || 0) + 1;
+    }
+  }
+  return { ...snapshot, articles, articleCount: articles.length, projectArticleCounts };
+}
+
+const SNAPSHOT = applyConsentGate(editorialSnapshot as unknown as EditorialSnapshot);
 
 /**
  * Editorial read live from Empathy Ledger, falling back to the copy baked at
@@ -252,7 +299,9 @@ export function getBakedEditorialSnapshot(): EditorialSnapshot {
 
 export const getEditorialSnapshot = cache(async (): Promise<EditorialSnapshot> => {
   const live = await fetchEditorialLive();
-  return live ?? SNAPSHOT;
+  // The gate runs on the live result too: a withdrawal recorded locally must
+  // hold even when the source is still serving the article.
+  return live ? applyConsentGate(live) : SNAPSHOT;
 });
 
 export const getSiteEditorialArticles = cache(

@@ -14,16 +14,14 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { NotionScanner } from '@/lib/knowledge/notion-scanner';
+import { requireInternal } from '@/lib/auth/require-internal';
 
 export async function POST(request: NextRequest) {
+  const denied = requireInternal(request);
+  if (denied) return denied;
+
   try {
     console.log('🚀 Starting Notion scan...');
-
-    // Optional: Check authentication
-    // const session = await getServerSession();
-    // if (!session) {
-    //   return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
-    // }
 
     // Create scanner
     const scanner = new NotionScanner();
@@ -75,6 +73,9 @@ export async function POST(request: NextRequest) {
  * GET endpoint to check scan status
  */
 export async function GET(request: NextRequest) {
+  const denied = requireInternal(request);
+  if (denied) return denied;
+
   try {
     const { createClient } = await import('@supabase/supabase-js');
     const supabase = createClient(

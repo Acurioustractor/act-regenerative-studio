@@ -8,11 +8,15 @@
 
 import { NextRequest, NextResponse } from 'next/server';
 import { getSupabaseServerClient } from '@/lib/supabase/server';
+import { requireInternal } from '@/lib/auth/require-internal';
 
 export async function GET(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  const denied = requireInternal(request);
+  if (denied) return denied;
+
   try {
     const { id } = await params;
 
@@ -55,6 +59,9 @@ export async function PATCH(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  const denied = requireInternal(request);
+  if (denied) return denied;
+
   try {
     const { id } = await params;
     const body = await request.json();
@@ -115,6 +122,9 @@ export async function DELETE(
   request: NextRequest,
   { params }: { params: Promise<{ id: string }> }
 ) {
+  const denied = requireInternal(request);
+  if (denied) return denied;
+
   try {
     const { id } = await params;
 

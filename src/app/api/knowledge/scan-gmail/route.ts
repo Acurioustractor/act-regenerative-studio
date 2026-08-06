@@ -6,10 +6,14 @@
 import { NextRequest, NextResponse } from 'next/server';
 import { runGmailScan } from '@/lib/knowledge/gmail-scanner';
 import { getSupabaseServerClient } from '@/lib/supabase/server';
+import { requireInternal } from '@/lib/auth/require-internal';
 
 export const dynamic = 'force-dynamic';
 
 export async function POST(request: NextRequest) {
+  const denied = requireInternal(request);
+  if (denied) return denied;
+
   try {
     const body = await request.json();
     const { userEmail } = body;
@@ -44,7 +48,10 @@ export async function POST(request: NextRequest) {
 /**
  * GET /api/knowledge/scan-gmail - Get info about Gmail scanner
  */
-export async function GET() {
+export async function GET(request: NextRequest) {
+  const denied = requireInternal(request);
+  if (denied) return denied;
+
   const supabase = getSupabaseServerClient();
 
   if (!supabase) {

@@ -6,11 +6,15 @@
  */
 
 import { NextRequest, NextResponse } from 'next/server';
+import { requireInternal } from '@/lib/auth/require-internal';
 
 const ACT_PLACEMAT_API_URL = process.env.ACT_PLACEMAT_API_URL || 'http://localhost:3002';
 const ACT_PLACEMAT_API_KEY = process.env.ACT_PLACEMAT_API_KEY;
 
 export async function POST(request: NextRequest) {
+  const denied = requireInternal(request);
+  if (denied) return denied;
+
   try {
     // Extract query parameters and body
     const { searchParams } = new URL(request.url);

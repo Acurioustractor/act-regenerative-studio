@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-30T14:06:33.030Z",
+  "generatedAt": "2026-08-07T13:29:51.659Z",
   "sourceUrl": "https://empathy-ledger-v2.vercel.app",
   "siteSlug": "act-regenerative-studio",
   "editorialDestination": "act_el",
@@ -54,32 +54,32 @@
       "alt": "Black Cockatoo Valley aerial moving through fog above the canopy"
     }
   },
-  "articleCount": 26,
+  "articleCount": 21,
   "projectArticleCounts": {
     "goods-on-country": 5,
-    "justicehub": 8,
-    "empathy-ledger": 4,
-    "the-harvest": 3,
-    "black-cockatoo-valley": 4,
-    "act-farm": 1
+    "justicehub": 7,
+    "empathy-ledger": 3,
+    "black-cockatoo-valley": 2,
+    "act-farm": 1,
+    "the-harvest": 1
   },
   "projectEditorial": {
     "justicehub": {
       "sectionEyebrow": "Field writing",
       "sectionTitle": "Writing connected to this project",
       "sectionDescription": "JusticeHub writing should surface the strongest public argument, the clearest proof points, and the pieces that move from policy language into lived consequence.",
-      "articleCount": 8,
+      "articleCount": 7,
       "leadArticleSlug": "justicehub-a-platform-for-community-led-justice-solutions",
       "supportingArticleSlugs": [
-        "spain-diagrama-trip-reflection",
         "contained-where-policy-meets-flesh",
-        "beyond-bars-joe-kwons-journey-to-reshape-society"
+        "beyond-bars-joe-kwons-journey-to-reshape-society",
+        "the-kids-are-not-alright-how-queensland-is-failing-its-most-vulnerable-young-people-and-what-we-can-do-about-it"
       ],
       "featuredArticleSlugs": [
         "justicehub-a-platform-for-community-led-justice-solutions",
-        "spain-diagrama-trip-reflection",
         "contained-where-policy-meets-flesh",
-        "beyond-bars-joe-kwons-journey-to-reshape-society"
+        "beyond-bars-joe-kwons-journey-to-reshape-society",
+        "the-kids-are-not-alright-how-queensland-is-failing-its-most-vulnerable-young-people-and-what-we-can-do-about-it"
       ]
     },
     "goods-on-country": {
@@ -104,52 +104,41 @@
       "sectionEyebrow": "Field writing",
       "sectionTitle": "Writing connected to this project",
       "sectionDescription": "Harvest writing should feel seasonal, local, and close to the social life of the place rather than like generic food or venue marketing.",
-      "articleCount": 3,
-      "leadArticleSlug": "edition-1-sowing-seeds-of-connection-2",
-      "supportingArticleSlugs": [
-        "building-the-act-ecosystem-a-vision-for-community-centered-technology",
-        "powering-change-a-curious-tractors-journey"
-      ],
+      "articleCount": 1,
+      "leadArticleSlug": "building-the-act-ecosystem-a-vision-for-community-centered-technology",
+      "supportingArticleSlugs": [],
       "featuredArticleSlugs": [
-        "edition-1-sowing-seeds-of-connection-2",
-        "building-the-act-ecosystem-a-vision-for-community-centered-technology",
-        "powering-change-a-curious-tractors-journey"
+        "building-the-act-ecosystem-a-vision-for-community-centered-technology"
       ]
     },
     "empathy-ledger": {
       "sectionEyebrow": "Field writing",
       "sectionTitle": "Writing connected to this project",
       "sectionDescription": "Empathy Ledger writing should foreground consent, narrative sovereignty, and the deeper question of who gets to hold and move a story.",
-      "articleCount": 4,
+      "articleCount": 3,
       "leadArticleSlug": "the-power-of-indigenous-storytelling-a-community-perspective",
       "supportingArticleSlugs": [
         "building-the-act-ecosystem-a-vision-for-community-centered-technology",
-        "oonchiumpa-what-happens-when-community-leads",
-        "powering-change-a-curious-tractors-journey"
+        "oonchiumpa-what-happens-when-community-leads"
       ],
       "featuredArticleSlugs": [
         "the-power-of-indigenous-storytelling-a-community-perspective",
         "building-the-act-ecosystem-a-vision-for-community-centered-technology",
-        "oonchiumpa-what-happens-when-community-leads",
-        "powering-change-a-curious-tractors-journey"
+        "oonchiumpa-what-happens-when-community-leads"
       ]
     },
     "black-cockatoo-valley": {
       "sectionEyebrow": "Field writing",
       "sectionTitle": "Writing connected to this project",
       "sectionDescription": "Black Cockatoo Valley writing should stay grounded in place, slower practice, and the wider field this land base makes possible.",
-      "articleCount": 4,
-      "leadArticleSlug": "edition-1-sowing-seeds-of-connection-2",
+      "articleCount": 2,
+      "leadArticleSlug": "conversation-camp",
       "supportingArticleSlugs": [
-        "conversation-camp",
-        "building-the-act-ecosystem-a-vision-for-community-centered-technology",
-        "powering-change-a-curious-tractors-journey"
+        "building-the-act-ecosystem-a-vision-for-community-centered-technology"
       ],
       "featuredArticleSlugs": [
-        "edition-1-sowing-seeds-of-connection-2",
         "conversation-camp",
-        "building-the-act-ecosystem-a-vision-for-community-centered-technology",
-        "powering-change-a-curious-tractors-journey"
+        "building-the-act-ecosystem-a-vision-for-community-centered-technology"
       ]
     }
   },
@@ -172,13 +161,13 @@
       "updatedAt": null,
       "tags": [],
       "themes": [],
-      "featuredImageUrl": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-spirit-must-be-strong/31dd019fafafb05f.jpg",
+      "featuredImageUrl": "https://empathyledger.com/api/media/b915ea80-ff34-43db-b3a6-25431ab6083a/file",
       "featuredImageAlt": null,
       "storyteller": {
         "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
         "slug": "benjamin-knight",
         "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
+        "avatarUrl": "https://empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
         "bio": null
       },
       "media": {
@@ -186,27 +175,27 @@
         "videoCount": 0,
         "photoPreviews": [
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-spirit-must-be-strong/31dd019fafafb05f.jpg",
+            "url": "https://empathyledger.com/api/media/b915ea80-ff34-43db-b3a6-25431ab6083a/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-spirit-must-be-strong/e8505978a75aab4f.jpg",
+            "url": "https://empathyledger.com/api/media/239aaf32-6b45-4a10-8d2a-fb7b50eb7747/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-spirit-must-be-strong/84ef0497a971221d.jpg",
+            "url": "https://empathyledger.com/api/media/49aed131-9bad-480c-be08-7fcaf8a60520/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-spirit-must-be-strong/4942ec4913d7299f.jpg",
+            "url": "https://empathyledger.com/api/media/c9eb82c5-eead-4c49-9641-b77280cc1cf5/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-spirit-must-be-strong/893dcd9bff17b168.jpg",
+            "url": "https://empathyledger.com/api/media/94bee575-ca10-4bd6-a158-a4b90eab928b/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           }
@@ -216,7 +205,7 @@
       "ctas": [],
       "visibility": "public",
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/the-spirit-must-be-strong",
-      "localPath": "/blog/the-spirit-must-be-strong",
+      "localPath": "/stories/the-spirit-must-be-strong",
       "syndicationDestinations": [
         "act_el"
       ]
@@ -241,13 +230,13 @@
       "updatedAt": null,
       "tags": [],
       "themes": [],
-      "featuredImageUrl": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/wilya-janta-a-paradigm-shift-in-housing-for-remote-aboriginal-communities/4cbb98ecf4b0c896.jpg",
+      "featuredImageUrl": "https://empathyledger.com/api/media/19afc35a-1253-42e1-99e6-94dd88a6b56e/file",
       "featuredImageAlt": null,
       "storyteller": {
         "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
         "slug": "benjamin-knight",
         "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
+        "avatarUrl": "https://empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
         "bio": null
       },
       "media": {
@@ -255,42 +244,42 @@
         "videoCount": 0,
         "photoPreviews": [
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/wilya-janta-a-paradigm-shift-in-housing-for-remote-aboriginal-communities/4cbb98ecf4b0c896.jpg",
+            "url": "https://empathyledger.com/api/media/19afc35a-1253-42e1-99e6-94dd88a6b56e/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/wilya-janta-a-paradigm-shift-in-housing-for-remote-aboriginal-communities/f0a5719bf5fe1bd8.jpg",
+            "url": "https://empathyledger.com/api/media/03c4ac7d-45dc-4097-9d4c-5fcc14d76ae0/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/wilya-janta-a-paradigm-shift-in-housing-for-remote-aboriginal-communities/cd78519743c5398e.jpg",
+            "url": "https://empathyledger.com/api/media/215c27da-4baf-4e71-a4b5-7da202a5a235/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/wilya-janta-a-paradigm-shift-in-housing-for-remote-aboriginal-communities/409e378f43225325.jpg",
+            "url": "https://empathyledger.com/api/media/ead665cd-7378-4ccc-bc77-290f6e1a72a0/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/wilya-janta-a-paradigm-shift-in-housing-for-remote-aboriginal-communities/62be7534a986ea86.png",
+            "url": "https://empathyledger.com/api/media/a2f1cdd4-ef8c-4113-ac65-c046e0950ef5/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/wilya-janta-a-paradigm-shift-in-housing-for-remote-aboriginal-communities/17fbf8fca81823a5.png",
+            "url": "https://empathyledger.com/api/media/e8c983b0-4fda-47ad-9f90-9b62b66d49d2/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/wilya-janta-a-paradigm-shift-in-housing-for-remote-aboriginal-communities/c90b42d842d47077.jpg",
+            "url": "https://empathyledger.com/api/media/4a92caf8-a503-45cc-acbd-46363aa8a44a/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/wilya-janta-a-paradigm-shift-in-housing-for-remote-aboriginal-communities/9ca8514396f46e7d.jpg",
+            "url": "https://empathyledger.com/api/media/55ccb492-c804-4ebe-9e1d-857ba411ba57/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           }
@@ -300,7 +289,7 @@
       "ctas": [],
       "visibility": "public",
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/wilya-janta-a-paradigm-shift-in-housing-for-remote-aboriginal-communities",
-      "localPath": "/blog/wilya-janta-a-paradigm-shift-in-housing-for-remote-aboriginal-communities",
+      "localPath": "/stories/wilya-janta-a-paradigm-shift-in-housing-for-remote-aboriginal-communities",
       "syndicationDestinations": [
         "act_el"
       ]
@@ -323,13 +312,13 @@
       "updatedAt": null,
       "tags": [],
       "themes": [],
-      "featuredImageUrl": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/seeds-of-change-walking-with-elders-and-youth-on-kalkadoon-country/9da27da1a8f98141.jpg",
+      "featuredImageUrl": "https://empathyledger.com/api/media/fce99944-d994-4ef1-b017-b5d6368ead3f/file",
       "featuredImageAlt": null,
       "storyteller": {
         "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
         "slug": "benjamin-knight",
         "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
+        "avatarUrl": "https://empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
         "bio": null
       },
       "media": {
@@ -337,42 +326,42 @@
         "videoCount": 0,
         "photoPreviews": [
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/seeds-of-change-walking-with-elders-and-youth-on-kalkadoon-country/9da27da1a8f98141.jpg",
+            "url": "https://empathyledger.com/api/media/fce99944-d994-4ef1-b017-b5d6368ead3f/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/seeds-of-change-walking-with-elders-and-youth-on-kalkadoon-country/de87b1ca8c41130c.jpg",
+            "url": "https://empathyledger.com/api/media/641a2d37-f05f-4cc6-9337-a2afe68f96f5/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/seeds-of-change-walking-with-elders-and-youth-on-kalkadoon-country/b4e6ff7624c3c91f.jpg",
+            "url": "https://empathyledger.com/api/media/1df65fac-f5da-4dcf-b524-3441f7e39c92/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/seeds-of-change-walking-with-elders-and-youth-on-kalkadoon-country/1751acf543eca205.jpg",
+            "url": "https://empathyledger.com/api/media/f4848cdc-9189-4cd0-9284-a6606d070b64/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/seeds-of-change-walking-with-elders-and-youth-on-kalkadoon-country/612144f9c2491db1.jpg",
+            "url": "https://empathyledger.com/api/media/91cd3ebd-308e-4cce-ae2d-32c280ec59bc/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/seeds-of-change-walking-with-elders-and-youth-on-kalkadoon-country/6c370dc764454abc.jpg",
+            "url": "https://empathyledger.com/api/media/e0066498-0364-4b60-a5a0-3d2fe0b29a18/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/seeds-of-change-walking-with-elders-and-youth-on-kalkadoon-country/afe5bbe95c0a2460.jpg",
+            "url": "https://empathyledger.com/api/media/96c3cff0-0fa1-4ead-8038-8cf0e823e410/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/seeds-of-change-walking-with-elders-and-youth-on-kalkadoon-country/81d218f214be2e4e.jpg",
+            "url": "https://empathyledger.com/api/media/3d7a5b74-7073-4745-ad56-99f6d6198241/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           }
@@ -382,7 +371,7 @@
       "ctas": [],
       "visibility": "public",
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/seeds-of-change-walking-with-elders-and-youth-on-kalkadoon-country",
-      "localPath": "/blog/seeds-of-change-walking-with-elders-and-youth-on-kalkadoon-country",
+      "localPath": "/stories/seeds-of-change-walking-with-elders-and-youth-on-kalkadoon-country",
       "syndicationDestinations": [
         "act_el"
       ]
@@ -407,13 +396,13 @@
       "updatedAt": null,
       "tags": [],
       "themes": [],
-      "featuredImageUrl": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/historys-wounds-and-tomorrows-possibilities/660c93e753391e77.jpg",
+      "featuredImageUrl": "https://empathyledger.com/api/media/a50c81af-7f59-4c49-901e-fd5bb7527a59/file",
       "featuredImageAlt": null,
       "storyteller": {
         "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
         "slug": "benjamin-knight",
         "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
+        "avatarUrl": "https://empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
         "bio": null
       },
       "media": {
@@ -421,42 +410,42 @@
         "videoCount": 2,
         "photoPreviews": [
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/historys-wounds-and-tomorrows-possibilities/660c93e753391e77.jpg",
+            "url": "https://empathyledger.com/api/media/a50c81af-7f59-4c49-901e-fd5bb7527a59/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/historys-wounds-and-tomorrows-possibilities/16c449b95909e062.jpg",
+            "url": "https://empathyledger.com/api/media/b09eaac8-04b7-4a68-906d-d22071fd2b07/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/historys-wounds-and-tomorrows-possibilities/80278fc1465546df.jpg",
+            "url": "https://empathyledger.com/api/media/3f3c655e-fdd7-4239-b496-4c56c3a7dc6c/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/historys-wounds-and-tomorrows-possibilities/8dc29a4524f1be3a.jpg",
+            "url": "https://empathyledger.com/api/media/7e0b30cb-00bc-430b-9eaa-89c43d842ddf/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/historys-wounds-and-tomorrows-possibilities/8ea2864da57c1edb.jpg",
+            "url": "https://empathyledger.com/api/media/7ee02cbc-f885-44be-b7e7-e06400ea87f5/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/historys-wounds-and-tomorrows-possibilities/fc3b9813b22f5f92.jpg",
+            "url": "https://empathyledger.com/api/media/a101eda4-46b9-44b6-be47-2b8ad0b9d1c2/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/historys-wounds-and-tomorrows-possibilities/711e5b793611780b.jpg",
+            "url": "https://empathyledger.com/api/media/72adbc79-afbc-466a-95f0-f4c845856e9b/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/historys-wounds-and-tomorrows-possibilities/f3165da83f0d9b3f.jpg",
+            "url": "https://empathyledger.com/api/media/92dbe119-2e8a-49a2-bd96-1199d9779414/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           }
@@ -477,7 +466,7 @@
       "ctas": [],
       "visibility": "public",
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/historys-wounds-and-tomorrows-possibilities",
-      "localPath": "/blog/historys-wounds-and-tomorrows-possibilities",
+      "localPath": "/stories/historys-wounds-and-tomorrows-possibilities",
       "syndicationDestinations": [
         "act_el"
       ]
@@ -508,7 +497,7 @@
         "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
         "slug": "benjamin-knight",
         "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
+        "avatarUrl": "https://empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
         "bio": null
       },
       "media": {
@@ -520,7 +509,7 @@
       "ctas": [],
       "visibility": "public",
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/the-reintegration-puzzle-story-portal",
-      "localPath": "/blog/the-reintegration-puzzle-story-portal",
+      "localPath": "/stories/the-reintegration-puzzle-story-portal",
       "syndicationDestinations": [
         "act_el"
       ]
@@ -546,13 +535,13 @@
       "updatedAt": null,
       "tags": [],
       "themes": [],
-      "featuredImageUrl": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/c53077e1-98de-4216-9149-6268891ff62e/website-photos/17741793073N_IMG_9698.jpg",
+      "featuredImageUrl": "https://empathyledger.com/api/media/67564673-a671-41a4-9f0c-be161489dd0f/file",
       "featuredImageAlt": null,
       "storyteller": {
         "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
         "slug": "benjamin-knight",
         "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
+        "avatarUrl": "https://empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
         "bio": null
       },
       "media": {
@@ -560,42 +549,42 @@
         "videoCount": 0,
         "photoPreviews": [
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/c53077e1-98de-4216-9149-6268891ff62e/website-photos/17741793073N_IMG_9698.jpg",
+            "url": "https://empathyledger.com/api/media/67564673-a671-41a4-9f0c-be161489dd0f/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1759640548743_IMG_3190.jpg",
+            "url": "https://empathyledger.com/api/media/15f96ab0-b8ee-4bdd-810e-73d9c55e2dba/file",
             "title": null,
             "alt_text": "IMG_3190.jpg"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1759640607856_IMG_3459.jpg",
+            "url": "https://empathyledger.com/api/media/04117401-31b1-492d-becb-ee5b7dba2bb3/file",
             "title": null,
             "alt_text": "IMG_3459.jpg"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774403287237-1E5A8375.jpg",
+            "url": "https://empathyledger.com/api/media/747f8f52-2f89-4706-b6a8-0f80d4b1e442/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774403311419-1E5A8405.jpg",
+            "url": "https://empathyledger.com/api/media/c25062c3-8261-4868-b8a3-f321d3f37140/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774178027815_1E5A2170.jpg",
+            "url": "https://empathyledger.com/api/media/6504f272-6aa4-452b-ba34-0893b5d690cf/file",
             "title": null,
             "alt_text": "1E5A2170.jpg"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774178047804_1E5A2229.jpg",
+            "url": "https://empathyledger.com/api/media/1c3cf2a2-7d67-4f1f-a2c2-8b7c43a9e37b/file",
             "title": null,
             "alt_text": "1E5A2229.jpg"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/bf17d0a9-2b12-4e4a-982e-09a8b1952ec6/d0a162d2-282e-4653-9d12-aa934c9dfa4e/1774403661093-20251212-1E5A8504.jpg",
+            "url": "https://empathyledger.com/api/media/7cfe3601-774a-49d9-a6f7-9be39ee6264b/file",
             "title": null,
             "alt_text": null
           }
@@ -605,7 +594,7 @@
       "ctas": [],
       "visibility": "public",
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/oonchiumpa-what-happens-when-community-leads",
-      "localPath": "/blog/oonchiumpa-what-happens-when-community-leads",
+      "localPath": "/stories/oonchiumpa-what-happens-when-community-leads",
       "syndicationDestinations": [
         "act_el",
         "act_oo"
@@ -637,7 +626,7 @@
         "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
         "slug": "benjamin-knight",
         "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
+        "avatarUrl": "https://empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
         "bio": null
       },
       "media": {
@@ -649,7 +638,7 @@
       "ctas": [],
       "visibility": "public",
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/the-weight-of-silence-and-the-audacity-to-imagine-reflections-on-fear-hope-and-the-long-game-of-human-liberation",
-      "localPath": "/blog/the-weight-of-silence-and-the-audacity-to-imagine-reflections-on-fear-hope-and-the-long-game-of-human-liberation",
+      "localPath": "/stories/the-weight-of-silence-and-the-audacity-to-imagine-reflections-on-fear-hope-and-the-long-game-of-human-liberation",
       "syndicationDestinations": [
         "act_el"
       ]
@@ -674,13 +663,13 @@
       "updatedAt": null,
       "tags": [],
       "themes": [],
-      "featuredImageUrl": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/naidoc-with-jimmy/8e14d26b53f5100a.jpg",
+      "featuredImageUrl": "https://empathyledger.com/api/media/7c292764-7039-45f5-adac-0151aeb6711b/file",
       "featuredImageAlt": null,
       "storyteller": {
         "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
         "slug": "benjamin-knight",
         "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
+        "avatarUrl": "https://empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
         "bio": null
       },
       "media": {
@@ -688,22 +677,22 @@
         "videoCount": 0,
         "photoPreviews": [
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/naidoc-with-jimmy/8e14d26b53f5100a.jpg",
+            "url": "https://empathyledger.com/api/media/7c292764-7039-45f5-adac-0151aeb6711b/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/naidoc-with-jimmy/db49f904df81e2ae.jpg",
+            "url": "https://empathyledger.com/api/media/7facf60c-9324-41c9-825a-2540d43ebb25/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/naidoc-with-jimmy/2833e5ee9e781210.jpg",
+            "url": "https://empathyledger.com/api/media/a35531d1-65d1-452e-825e-c8719489b40a/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/naidoc-with-jimmy/f2e68268d038ab96.jpg",
+            "url": "https://empathyledger.com/api/media/a36ec2dd-2eb2-4a19-a49d-44ea91c39ae0/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           }
@@ -713,157 +702,7 @@
       "ctas": [],
       "visibility": "public",
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/naidoc-with-jimmy",
-      "localPath": "/blog/naidoc-with-jimmy",
-      "syndicationDestinations": [
-        "act_el"
-      ]
-    },
-    {
-      "id": "056ff86d-f98a-4e34-9ff0-dfa8e10d089f",
-      "title": "Spain Diagrama Trip Reflection ",
-      "slug": "spain-diagrama-trip-reflection",
-      "subtitle": null,
-      "excerpt": "We owe it to our young people, our communities, and our society as a whole to do better. The time for change is now, and the Diagrama model shows us that a brighter, more hopeful future is within reach. Together, we can create a youth justice system that reflects our values, honors the potential of every young person, and helps to build a stronger, more resilient, and more equitable society for all.",
-      "content": "<figure class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:1200px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"1200px\"><div><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/spain-diagrama-trip-reflection/ee6ec2124b7c8659.jpg\" loading=\"lazy\" alt=\"__wf_reserved_inherit\"></div></figure><p id=\"\">As I reflect on my 5-day experience visiting the Diagrama youth detention centers in Spain, guided by David, the CEO of Diagrama, I am filled with a mixture of emotions and a strong sense of conviction. The stark contrast between what I witnessed in these centers and what I have experienced in Australian youth detention centers is both eye-opening and deeply troubling.</p><p id=\"\">In Australia, every visit to a youth detention center leaves me feeling depleted and haunted by the experiences of the young people there. The oppressive atmosphere, the lack of compassion and engagement between guards, educators, and young people, and the overall punitive approach all contribute to a sense of hopelessness and despair. It's clear that the current system, built on an English legacy and influenced by the US model of punishment over support and understanding, is failing our young people and our society as a whole.</p><figure class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:1200px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"1200px\"><div><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/spain-diagrama-trip-reflection/467f4aecbadc5d89.jpg\" loading=\"lazy\" alt=\"__wf_reserved_inherit\"></div></figure><p id=\"\">However, my experience in Spain has shown me that there is another way. From the moment I stepped into each Diagrama center, I was struck by the positive energy, the laughter, and the strong relationships between the young people and their educators. It was evident that the young people were not just being punished, but were being given the opportunity to build resilience, develop new skills, and work towards a brighter future. The Diagrama staff had high expectations for these young people and treated them with respect, compassion, and a genuine belief in their potential.</p><p id=\"\">One of the most powerful moments of my visit was sitting down and talking with the young people themselves. As we discussed the conditions in Australian youth detention centers, they struggled to understand how such a punitive and dehumanizing approach could be considered acceptable or effective. They spoke about their own hopes and dreams, and the trust they had in their educators to support them on their journey. It was clear that they viewed their time in detention not as a punishment, but as an opportunity for growth and transformation.</p><p id=\"\">The interviews and analysis of the Diagrama model only reinforce my belief that this approach can and must be implemented in Australia. The quantitative data, such as the significantly lower recidivism rates in Diagrama centers compared to Australian youth detention centers, provide compelling evidence of the model's effectiveness. The stories and experiences shared by the young people, educators, and staff offer powerful examples of how this approach can transform lives and communities.</p><figure class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:1200px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"1200px\"><div><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/spain-diagrama-trip-reflection/edb5c26301ead556.jpg\" loading=\"lazy\" alt=\"__wf_reserved_inherit\"></div></figure><p id=\"\">Implementing the Diagrama model in Australia will undoubtedly require a significant shift in mindset, policy, and practice. It will require us to confront and challenge the deeply ingrained beliefs and systems that have perpetuated the current harmful approach to youth justice. However, the potential benefits are too great to ignore. By embracing a model that prioritizes education, rehabilitation, and positive relationships, we can create a youth justice system that not only reduces recidivism and enhances community safety but also helps young people to heal, grow, and thrive.</p><p id=\"\">As I reflect on my experience in Spain, I am filled with a sense of hope and determination. I know that change is possible, and that the Diagrama model offers a roadmap for how we can achieve it. By sharing my experiences and the insights gained from this visit, I hope to inspire others to join me in advocating for a more compassionate, effective, and just approach to youth justice in Australia.</p><p id=\"\">We owe it to our young people, our communities, and our society as a whole to do better. The time for change is now, and the Diagrama model shows us that a brighter, more hopeful future is within reach. Together, we can create a youth justice system that reflects our values, honours the potential of every young person, and helps to build a stronger, more resilient, and more equitable society for all.</p><figure class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:1200px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"1200px\"><div><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/spain-diagrama-trip-reflection/8f2154237b0de2cf.jpg\" loading=\"lazy\" alt=\"__wf_reserved_inherit\"></div></figure><p id=\"\">‍</p>",
-      "authorName": "Benjamin Knight",
-      "authorBio": null,
-      "articleType": "editorial",
-      "primaryProject": "act-main",
-      "relatedProjects": [
-        "act-main"
-      ],
-      "relatedProjectSlugs": [
-        "justicehub"
-      ],
-      "publishedAt": "2026-01-09T23:40:59.476+00:00",
-      "createdAt": null,
-      "updatedAt": null,
-      "tags": [],
-      "themes": [],
-      "featuredImageUrl": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/spain-diagrama-trip-reflection/ee6ec2124b7c8659.jpg",
-      "featuredImageAlt": null,
-      "storyteller": {
-        "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
-        "slug": "benjamin-knight",
-        "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
-        "bio": null
-      },
-      "media": {
-        "photoCount": 4,
-        "videoCount": 0,
-        "photoPreviews": [
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/spain-diagrama-trip-reflection/ee6ec2124b7c8659.jpg",
-            "title": null,
-            "alt_text": null
-          },
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/spain-diagrama-trip-reflection/467f4aecbadc5d89.jpg",
-            "title": null,
-            "alt_text": "__wf_reserved_inherit"
-          },
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/spain-diagrama-trip-reflection/edb5c26301ead556.jpg",
-            "title": null,
-            "alt_text": "__wf_reserved_inherit"
-          },
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/spain-diagrama-trip-reflection/8f2154237b0de2cf.jpg",
-            "title": null,
-            "alt_text": "__wf_reserved_inherit"
-          }
-        ],
-        "videoPreviews": []
-      },
-      "ctas": [],
-      "visibility": "public",
-      "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/spain-diagrama-trip-reflection",
-      "localPath": "/blog/spain-diagrama-trip-reflection",
-      "syndicationDestinations": [
-        "act_el"
-      ]
-    },
-    {
-      "id": "e22f37b1-b15c-406f-97c1-9c3aa36e454f",
-      "title": "The ACT comic",
-      "slug": "the-act-comic",
-      "subtitle": null,
-      "excerpt": "Playing with Chat GPT this morning building an A Curious Tractor comic",
-      "content": "<p id=\"\">At A Curious Tractor, we believe in the power of storytelling to cultivate change and foster connections. Our latest endeavour brings this belief to life through a vibrant comic strip series, illustrating the unique areas of our farm. Each scene is a visual representation of the core concepts and values that drive our mission. From the rich knowledge network of The Soil to the innovative hub of The Lab, we've created a dynamic, engaging way to share our journey with you.</p><p>‍</p><p>It is not perfect just yet but keen to keep playing and see how this speed to creation can help us to tell great stories in a different medium.</p><p>‍</p><figure class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:1792px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"1792px\"><div><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/dad80d3fd586f987.webp\" loading=\"lazy\" alt=\"__wf_reserved_inherit\"></div></figure><figure class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:1792px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"1792px\"><div><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/094e0601131449b8.webp\" loading=\"lazy\" alt=\"__wf_reserved_inherit\"></div></figure><figure class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:1792px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"1792px\"><div><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/d4586941fc93014b.webp\" loading=\"lazy\" alt=\"__wf_reserved_inherit\"></div></figure><figure class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:1792px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"1792px\"><div><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/784d860634e68fec.webp\" loading=\"lazy\" alt=\"__wf_reserved_inherit\"></div></figure><figure class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:1792px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"1792px\"><div><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/9c0fa4402f868bee.webp\" loading=\"lazy\" alt=\"__wf_reserved_inherit\"></div></figure><figure class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:1792px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"1792px\"><div><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/9467d6ea18d0b368.webp\" loading=\"lazy\" alt=\"__wf_reserved_inherit\"></div></figure><figure class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:1792px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"1792px\"><div><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/56bc11865faffbd8.webp\" loading=\"lazy\" alt=\"__wf_reserved_inherit\"></div></figure><figure class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:1792px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"1792px\"><div><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/877cf15df0da2be3.webp\" loading=\"lazy\" alt=\"__wf_reserved_inherit\"></div></figure><figure class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:1792px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"1792px\"><div><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/3068db861aa7429a.webp\" loading=\"lazy\" alt=\"__wf_reserved_inherit\"></div></figure><figure class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:1792px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"1792px\"><div><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/02aec32eaf32e9be.webp\" loading=\"lazy\" alt=\"__wf_reserved_inherit\"></div></figure><figure class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:1792px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"1792px\"><div><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/d959f2d8fe104472.webp\" loading=\"lazy\" alt=\"__wf_reserved_inherit\"></div></figure><figure class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:1792px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"1792px\"><div><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/dd0b116fcd38ad0d.webp\" loading=\"lazy\" alt=\"__wf_reserved_inherit\"></div></figure><figure class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:1792px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"1792px\"><div><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/4dc4805813634ffc.webp\" loading=\"lazy\" alt=\"__wf_reserved_inherit\"></div></figure><figure class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:1792px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"1792px\"><div><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/89e1dbaee607da7d.webp\" loading=\"lazy\" alt=\"__wf_reserved_inherit\"></div></figure><figure class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:1792px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"1792px\"><div><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/bcfac5c1550d48f3.webp\" loading=\"lazy\" alt=\"__wf_reserved_inherit\"></div></figure><figure class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:1792px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"1792px\"><div><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/39538738d9d6d294.webp\" loading=\"lazy\" alt=\"__wf_reserved_inherit\"></div></figure><figure class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:1792px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"1792px\"><div><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/ab68fffdbcac8af6.webp\" loading=\"lazy\" alt=\"__wf_reserved_inherit\"></div></figure><figure class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:1792px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"1792px\"><div><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/16326df94d593b0f.webp\" loading=\"lazy\" alt=\"__wf_reserved_inherit\"></div></figure>",
-      "authorName": "Benjamin Knight",
-      "authorBio": null,
-      "articleType": "editorial",
-      "primaryProject": "act-main",
-      "relatedProjects": [
-        "act-main"
-      ],
-      "relatedProjectSlugs": [],
-      "publishedAt": "2026-01-09T23:40:59.476+00:00",
-      "createdAt": null,
-      "updatedAt": null,
-      "tags": [],
-      "themes": [],
-      "featuredImageUrl": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/dad80d3fd586f987.webp",
-      "featuredImageAlt": null,
-      "storyteller": {
-        "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
-        "slug": "benjamin-knight",
-        "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
-        "bio": null
-      },
-      "media": {
-        "photoCount": 18,
-        "videoCount": 0,
-        "photoPreviews": [
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/dad80d3fd586f987.webp",
-            "title": null,
-            "alt_text": null
-          },
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/094e0601131449b8.webp",
-            "title": null,
-            "alt_text": "__wf_reserved_inherit"
-          },
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/d4586941fc93014b.webp",
-            "title": null,
-            "alt_text": "__wf_reserved_inherit"
-          },
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/784d860634e68fec.webp",
-            "title": null,
-            "alt_text": "__wf_reserved_inherit"
-          },
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/9c0fa4402f868bee.webp",
-            "title": null,
-            "alt_text": "__wf_reserved_inherit"
-          },
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/9467d6ea18d0b368.webp",
-            "title": null,
-            "alt_text": "__wf_reserved_inherit"
-          },
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/56bc11865faffbd8.webp",
-            "title": null,
-            "alt_text": "__wf_reserved_inherit"
-          },
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-act-comic/877cf15df0da2be3.webp",
-            "title": null,
-            "alt_text": "__wf_reserved_inherit"
-          }
-        ],
-        "videoPreviews": []
-      },
-      "ctas": [],
-      "visibility": "public",
-      "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/the-act-comic",
-      "localPath": "/blog/the-act-comic",
+      "localPath": "/stories/naidoc-with-jimmy",
       "syndicationDestinations": [
         "act_el"
       ]
@@ -888,13 +727,13 @@
       "updatedAt": null,
       "tags": [],
       "themes": [],
-      "featuredImageUrl": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/life-is-hard-but-its-not/d19e93ababca7a85.jpg",
+      "featuredImageUrl": "https://empathyledger.com/api/media/02c78d66-1f3d-4e64-892d-e64220db1a0e/file",
       "featuredImageAlt": null,
       "storyteller": {
         "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
         "slug": "benjamin-knight",
         "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
+        "avatarUrl": "https://empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
         "bio": null
       },
       "media": {
@@ -902,32 +741,32 @@
         "videoCount": 0,
         "photoPreviews": [
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/life-is-hard-but-its-not/d19e93ababca7a85.jpg",
+            "url": "https://empathyledger.com/api/media/02c78d66-1f3d-4e64-892d-e64220db1a0e/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/life-is-hard-but-its-not/e33766219cbcff1f.jpg",
+            "url": "https://empathyledger.com/api/media/d89c44dd-d5db-4f41-84b8-4e4bd71ceca2/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/life-is-hard-but-its-not/0eec1347fe3cb223.jpg",
+            "url": "https://empathyledger.com/api/media/d607fb05-e990-4cb6-99f1-342f43b344bb/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/life-is-hard-but-its-not/4e6f4428586edddc.jpg",
+            "url": "https://empathyledger.com/api/media/58cde275-ada1-45ff-9326-6beefdd74148/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/life-is-hard-but-its-not/2347525f47077ae0.jpg",
+            "url": "https://empathyledger.com/api/media/eb5903b0-1b57-43d2-892e-e3f7554c95e6/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/life-is-hard-but-its-not/b4c850094322cdef.jpg",
+            "url": "https://empathyledger.com/api/media/0d767f26-92be-4f98-b225-83f7c32179eb/file",
             "title": null,
             "alt_text": null
           }
@@ -937,7 +776,7 @@
       "ctas": [],
       "visibility": "public",
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/life-is-hard-but-its-not",
-      "localPath": "/blog/life-is-hard-but-its-not",
+      "localPath": "/stories/life-is-hard-but-its-not",
       "syndicationDestinations": [
         "act_el"
       ]
@@ -964,13 +803,13 @@
       "updatedAt": null,
       "tags": [],
       "themes": [],
-      "featuredImageUrl": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/contained-where-policy-meets-flesh/0dfd1f311802ba3b.jpg",
+      "featuredImageUrl": "https://empathyledger.com/api/media/9d001a37-f487-4731-9674-76e320da8c53/file",
       "featuredImageAlt": null,
       "storyteller": {
         "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
         "slug": "benjamin-knight",
         "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
+        "avatarUrl": "https://empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
         "bio": null
       },
       "media": {
@@ -978,32 +817,32 @@
         "videoCount": 0,
         "photoPreviews": [
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/contained-where-policy-meets-flesh/0dfd1f311802ba3b.jpg",
+            "url": "https://empathyledger.com/api/media/9d001a37-f487-4731-9674-76e320da8c53/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/contained-where-policy-meets-flesh/f774d7310ed9f3d1.png",
+            "url": "https://empathyledger.com/api/media/b5f66c96-df28-4b5f-bb82-b181315bea2e/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/contained-where-policy-meets-flesh/b005e1dc9d65bce4.png",
+            "url": "https://empathyledger.com/api/media/3d8ee7c9-0c00-4b48-97e6-82a11e77f2ae/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/contained-where-policy-meets-flesh/3ca33e2ccd25e55b.jpg",
+            "url": "https://empathyledger.com/api/media/e9191057-d535-4cad-9401-573676cf87bf/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/contained-where-policy-meets-flesh/e0b577a98e2f8a94.jpg",
+            "url": "https://empathyledger.com/api/media/a71035b8-bf41-4150-83bf-40fe122e4dcd/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/contained-where-policy-meets-flesh/e1605948cfaf0790.png",
+            "url": "https://empathyledger.com/api/media/6440b010-fdbd-4b0c-baab-bf006d96e074/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           }
@@ -1013,7 +852,7 @@
       "ctas": [],
       "visibility": "public",
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/contained-where-policy-meets-flesh",
-      "localPath": "/blog/contained-where-policy-meets-flesh",
+      "localPath": "/stories/contained-where-policy-meets-flesh",
       "syndicationDestinations": [
         "act_el"
       ]
@@ -1040,13 +879,13 @@
       "updatedAt": null,
       "tags": [],
       "themes": [],
-      "featuredImageUrl": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/at-the-speed-of-ceremony-learning-partnership-on-palm-island/47cb1fedd0743199.jpg",
+      "featuredImageUrl": "https://empathyledger.com/api/media/8c9860bb-4a0b-4706-8516-a6903dc81968/file",
       "featuredImageAlt": null,
       "storyteller": {
         "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
         "slug": "benjamin-knight",
         "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
+        "avatarUrl": "https://empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
         "bio": null
       },
       "media": {
@@ -1054,42 +893,42 @@
         "videoCount": 0,
         "photoPreviews": [
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/at-the-speed-of-ceremony-learning-partnership-on-palm-island/47cb1fedd0743199.jpg",
+            "url": "https://empathyledger.com/api/media/8c9860bb-4a0b-4706-8516-a6903dc81968/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/at-the-speed-of-ceremony-learning-partnership-on-palm-island/fd5ae8e1d071ef31.png",
+            "url": "https://empathyledger.com/api/media/01b87716-ffbf-43e6-a2cc-e78150f1bee1/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/at-the-speed-of-ceremony-learning-partnership-on-palm-island/c29588b7a018625a.png",
+            "url": "https://empathyledger.com/api/media/8ea5d93b-e148-4945-a154-a4d4573e940f/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/at-the-speed-of-ceremony-learning-partnership-on-palm-island/07d2dd0c57c73c24.jpg",
+            "url": "https://empathyledger.com/api/media/05c54742-b3a1-4186-b89b-e853877558b5/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/at-the-speed-of-ceremony-learning-partnership-on-palm-island/ad9c63c68c821a1f.jpg",
+            "url": "https://empathyledger.com/api/media/eb9bf84f-085c-4e11-977d-aa3606ddd8a6/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/at-the-speed-of-ceremony-learning-partnership-on-palm-island/b16087b42360fe69.jpg",
+            "url": "https://empathyledger.com/api/media/31b62b69-0ff8-44eb-9cd9-5039d1e7ec34/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/at-the-speed-of-ceremony-learning-partnership-on-palm-island/50f563e1b0526bc1.jpg",
+            "url": "https://empathyledger.com/api/media/38a0ba7f-a422-479d-972e-11181dc485e4/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/at-the-speed-of-ceremony-learning-partnership-on-palm-island/a9d7b8d8dc397fea.jpg",
+            "url": "https://empathyledger.com/api/media/b764ccb9-22de-4374-908b-66b3ab51e540/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           }
@@ -1099,54 +938,7 @@
       "ctas": [],
       "visibility": "public",
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/at-the-speed-of-ceremony-learning-partnership-on-palm-island",
-      "localPath": "/blog/at-the-speed-of-ceremony-learning-partnership-on-palm-island",
-      "syndicationDestinations": [
-        "act_el"
-      ]
-    },
-    {
-      "id": "73f6ed8f-77d0-4dde-a110-61ed63a8c5db",
-      "title": "Powering Change: A Curious Tractor's Journey",
-      "slug": "powering-change-a-curious-tractors-journey",
-      "subtitle": null,
-      "excerpt": "At A Curious Tractor, we believe in the power of action to transform uncertainty into possibility. Our innovative PTO (Power Take-Off) approach allows us to channel our energy, resources, and knowledge into diverse initiatives, from youth justice to healthcare worker support. While we may not always know where we're heading, we're committed to making our journey impactful and far from boring. We invite curious minds to join us in cultivating meaningful change, powered by empathy and innovation.",
-      "content": "<h1 id=\"\">Powering Change: A Curious Tractor's Journey</h1><p id=\"\">In the landscape of social change, where hope and challenge intertwine, we at A Curious Tractor find ourselves not as passive observers, but as active cultivators of transformation. We're guided by the spirit of innovation, embodied in the words: \"I don't know where I'm going from here, but I promise it won't be boring.\" (David Bowie)</p><h2 id=\"\">The Power of Action</h2><p id=\"\">When uncertainty looms and doubts creep in, we've discovered a fundamental truth: action is the key that unlocks possibility. It's not always about grand gestures or revolutionary breakthroughs. Often, it's the simple act of reaching out – a thoughtful message to a community member, jotting down a nascent idea, or engaging in a conversation that bridges diverse perspectives.</p><p id=\"\">At other times, it's about embracing boldness – challenging conventions, questioning assumptions, and daring to implement audacious ideas. We dig deep into the core of our mission, reassess our approaches, and plant seeds of meaningful change.</p><h2 id=\"\">The PTO: Our Engine of Impact</h2><p id=\"\">In this journey of action and innovation, we've developed a powerful tool – the PTO (Power Take-Off). More than just a mechanical concept, it's become our philosophy for driving change. Like a tractor's PTO that transfers power to various implements, our approach channels our energy, resources, and knowledge into diverse initiatives.</p><p id=\"\">Imagine a tractor not just tilling fields, but powering a wide array of change-making tools. That's our PTO – a dynamic system for amplifying impact, taking the raw power of our curiosity and transforming it into tangible, multi-faceted change.</p><h2 id=\"\">A Constellation of Initiatives</h2><p id=\"\">We're learning to harness this power effectively. One day, we're driving a youth justice initiative, amplifying unheard voices. The next, we're nurturing June's Patch, a healing garden for healthcare workers. Our energy flows into digital storytelling, community engagement, and ideas still taking shape.</p><p id=\"\">Some of these projects will have far-reaching impacts. Others might be smaller in scale but no less important. Each initiative, regardless of its size, moves us forward in our mission to cultivate meaningful change.</p><h2 id=\"\">An Invitation to Curious Minds</h2><p id=\"\">So here we are, curious change-makers in a field of infinite possibility. We may not have all the answers, but we have our PTO, our commitment to action, and a promise that our journey will be anything but ordinary.</p><p id=\"\">To those who've been part of our journey – thank you. Your insights and support fuel our efforts and light our path.</p><p id=\"\">And to those yet to join – there's a place for you in this endeavor. Together, let's power a revolution of empathy, nurture seeds of change, and create a future that inspires and transforms.</p><p id=\"\">After all, while we may not know exactly where we're going, we're committed to making the journey meaningful, impactful, and far from boring.</p><p id=\"\">Onward, fellow curious souls!</p><p id=\"\">‍</p>",
-      "authorName": "Benjamin Knight",
-      "authorBio": null,
-      "articleType": "editorial",
-      "primaryProject": "act-main",
-      "relatedProjects": [
-        "act-main"
-      ],
-      "relatedProjectSlugs": [
-        "the-harvest",
-        "empathy-ledger",
-        "black-cockatoo-valley"
-      ],
-      "publishedAt": "2026-01-09T23:40:59.476+00:00",
-      "createdAt": null,
-      "updatedAt": null,
-      "tags": [],
-      "themes": [],
-      "featuredImageUrl": null,
-      "featuredImageAlt": null,
-      "storyteller": {
-        "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
-        "slug": "benjamin-knight",
-        "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
-        "bio": null
-      },
-      "media": {
-        "photoCount": 0,
-        "videoCount": 0,
-        "photoPreviews": [],
-        "videoPreviews": []
-      },
-      "ctas": [],
-      "visibility": "public",
-      "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/powering-change-a-curious-tractors-journey",
-      "localPath": "/blog/powering-change-a-curious-tractors-journey",
+      "localPath": "/stories/at-the-speed-of-ceremony-learning-partnership-on-palm-island",
       "syndicationDestinations": [
         "act_el"
       ]
@@ -1173,13 +965,13 @@
       "updatedAt": null,
       "tags": [],
       "themes": [],
-      "featuredImageUrl": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/beyond-bars-joe-kwons-journey-to-reshape-society/b871be70f1c22bb7.jpg",
+      "featuredImageUrl": "https://empathyledger.com/api/media/b0093574-52ed-4a33-bc07-5244bf247560/file",
       "featuredImageAlt": null,
       "storyteller": {
         "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
         "slug": "benjamin-knight",
         "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
+        "avatarUrl": "https://empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
         "bio": null
       },
       "media": {
@@ -1187,17 +979,17 @@
         "videoCount": 2,
         "photoPreviews": [
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/beyond-bars-joe-kwons-journey-to-reshape-society/b871be70f1c22bb7.jpg",
+            "url": "https://empathyledger.com/api/media/b0093574-52ed-4a33-bc07-5244bf247560/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/beyond-bars-joe-kwons-journey-to-reshape-society/7ceea9f02db91247.png",
+            "url": "https://empathyledger.com/api/media/f962ce1c-7833-4465-9f22-11e36b2d7160/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/beyond-bars-joe-kwons-journey-to-reshape-society/1406fe08100a84ab.jpg",
+            "url": "https://empathyledger.com/api/media/c0ed60dd-7510-419f-be85-2f2a1e922c54/file",
             "title": null,
             "alt_text": null
           }
@@ -1218,7 +1010,7 @@
       "ctas": [],
       "visibility": "public",
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/beyond-bars-joe-kwons-journey-to-reshape-society",
-      "localPath": "/blog/beyond-bars-joe-kwons-journey-to-reshape-society",
+      "localPath": "/stories/beyond-bars-joe-kwons-journey-to-reshape-society",
       "syndicationDestinations": [
         "act_el"
       ]
@@ -1251,7 +1043,7 @@
         "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
         "slug": "benjamin-knight",
         "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
+        "avatarUrl": "https://empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
         "bio": null
       },
       "media": {
@@ -1263,7 +1055,7 @@
       "ctas": [],
       "visibility": "public",
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/justicehub-a-platform-for-community-led-justice-solutions",
-      "localPath": "/blog/justicehub-a-platform-for-community-led-justice-solutions",
+      "localPath": "/stories/justicehub-a-platform-for-community-led-justice-solutions",
       "syndicationDestinations": [
         "act_el"
       ]
@@ -1294,7 +1086,7 @@
         "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
         "slug": "benjamin-knight",
         "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
+        "avatarUrl": "https://empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
         "bio": null
       },
       "media": {
@@ -1302,7 +1094,7 @@
         "videoCount": 0,
         "photoPreviews": [
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/its-overwhelming-isnt-it/6c4ffc588d690eae.jpg",
+            "url": "https://empathyledger.com/api/media/11350935-82c9-4789-9bc6-a0cf15e82605/file",
             "title": null,
             "alt_text": null
           }
@@ -1312,7 +1104,7 @@
       "ctas": [],
       "visibility": "public",
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/its-overwhelming-isnt-it",
-      "localPath": "/blog/its-overwhelming-isnt-it",
+      "localPath": "/stories/its-overwhelming-isnt-it",
       "syndicationDestinations": [
         "act_el"
       ]
@@ -1339,13 +1131,13 @@
       "updatedAt": null,
       "tags": [],
       "themes": [],
-      "featuredImageUrl": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/conversation-camp/2abc4773a20d3641.jpg",
+      "featuredImageUrl": "https://empathyledger.com/api/media/09c9eb1d-d461-4d9e-9ae0-66094bfd1922/file",
       "featuredImageAlt": null,
       "storyteller": {
         "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
         "slug": "benjamin-knight",
         "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
+        "avatarUrl": "https://empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
         "bio": null
       },
       "media": {
@@ -1353,42 +1145,42 @@
         "videoCount": 0,
         "photoPreviews": [
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/conversation-camp/2abc4773a20d3641.jpg",
+            "url": "https://empathyledger.com/api/media/09c9eb1d-d461-4d9e-9ae0-66094bfd1922/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/conversation-camp/c7887204b7ac69a7.jpg",
+            "url": "https://empathyledger.com/api/media/059e21d5-32b4-4d2c-b4d3-c5b78f28781e/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/conversation-camp/9c473088427500c7.jpg",
+            "url": "https://empathyledger.com/api/media/a2df1e9d-91bc-4439-bb11-3e2eda7ad3b5/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/conversation-camp/55d9883428a99265.jpg",
+            "url": "https://empathyledger.com/api/media/9304cddb-a752-44b6-97fa-8c89d89a03e3/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/conversation-camp/87d525f5eab564cd.jpg",
+            "url": "https://empathyledger.com/api/media/3dc29b7d-4393-4e32-8404-924726a61c01/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/conversation-camp/529e7e288fd31afa.jpg",
+            "url": "https://empathyledger.com/api/media/02925285-0eaf-4188-a4e8-d61b0b24ead9/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/conversation-camp/591850d41d0a2a43.jpg",
+            "url": "https://empathyledger.com/api/media/80662dce-5e7a-499a-9c52-04c3137e3252/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/conversation-camp/975db516346e17fa.jpg",
+            "url": "https://empathyledger.com/api/media/87db60e5-ceb3-40e2-a2e3-0a3a29cc6241/file",
             "title": null,
             "alt_text": null
           }
@@ -1398,81 +1190,7 @@
       "ctas": [],
       "visibility": "public",
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/conversation-camp",
-      "localPath": "/blog/conversation-camp",
-      "syndicationDestinations": [
-        "act_el"
-      ]
-    },
-    {
-      "id": "9ca53114-463e-418f-b274-f9b778408d96",
-      "title": "From Bolivia to Brisbane: How CONTAINED Became Inevitable",
-      "slug": "from-bolivia-to-brisbane",
-      "subtitle": null,
-      "excerpt": "I'm going to help you trace the authentic thread, but first I need to ask: when I stood in that Bolivian prison and saw families living inside, inmates running restaurants, children playing in courtyards...how did that feel...what is punishment all about.",
-      "content": "<p id=\"\">‍<strong id=\"\">The prison that broke my brain</strong></p><p id=\"\">I was in my mid-twenties, teaching English and wandering through South America with more curiosity than sense, when I walked into a Bolivian prison. Not for work - just because you could. Pay a few bolivianos, walk through the gates, and suddenly you're in this... parallel universe.</p><p id=\"\">Families lived inside. Not visiting - <em id=\"\">living</em>. Kids playing in courtyards. Inmates running restaurants, shops, even a hotel where tourists could stay overnight. I bought cocaine from a guy in the prison courtyard (I was young and stupid), ate lunch in a prisoner-run cafeteria, watched children kick a football against prison walls while their fathers watched.</p><p id=\"\">It was chaotic. Problematic. Definitely not something to romanticise. The wealthy prisoners had decent cells; the poor ones slept in squalor. Violence happened. Corruption was baked in.</p><p id=\"\">But here's what cracked open in my brain: justice didn't have to equal isolation. Punishment didn't require removing someone from all human contact and possibility. The system we built in Australia - concrete boxes, extraction, the elimination of variables that might become weapons or hope - wasn't inevitable. It was <em id=\"\">chosen</em>.</p><p id=\"\">I didn't know what to do with that realisation. But it lodged in me like a splinter.</p><figure id=\"\" class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:635px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"635px\"><div id=\"\"><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/from-bolivia-to-brisbane/94d0cdf3a9307df9.webp\" loading=\"lazy\" alt=\"__wf_reserved_inherit\" width=\"auto\" height=\"auto\" id=\"\"></div></figure><p id=\"\"><strong id=\"\">Learning what extraction actually does</strong></p><p id=\"\">Before I&nbsp;left Australia to travel the world, I fell into 24-hour youth work in Armidale and Newcastle (2004-2006). Residential care, crisis accommodation, the full catastrophe. I was barely older than some of the kids, and I was supposed to be the stable one.</p><p id=\"\">What I learned: every young person who cycled through was there because multiple systems had already failed them. School had suspended them. Family had fractured. Housing had disappeared. And our response? Wait until crisis, then intervene with more extraction.</p><p id=\"\">Take them out of their environment. Put them somewhere \"safe.\" Wonder why they keep returning to the only thing that feels real.</p><p id=\"\">I started noticing: every intervention increased distance between the young person and their community. We called it protection. But it looked a lot like practice for prison.</p><p id=\"\"><strong id=\"\">Queensland: Where reintegration revealed itself as theatre</strong></p><p id=\"\">By 2010, I was working with Queensland Corrective Services, running programs in remote communities and watching young people try to return from detention. Everyone used the word \"reintegration\" - it was in every policy document, every funding application.</p><p id=\"\">But you can't reintegrate someone into something they were never integrated with in the first place.</p><p id=\"\">We'd extracted them from communities already fractured by colonisation, poverty, and systemic disadvantage. Put them in detention where they learned the specific frequency of institutional despair. Then dumped them back with a case plan and called it support.</p><p id=\"\">I spent three years facilitating programs, developing the Positive Futures initiative, creating films for people transitioning out. Over 300 people completed the programs. Some made it. Many didn't. Not because they lacked motivation, but because we'd designed a system where failure was the most probable outcome.</p><p id=\"\">In the Gulf communities - Doomadgee, Mornington Island, Normanton - I saw reintegration trying to happen. Young people wanting to change. Communities ready to support them. But the system architecture worked against every good intention.</p><p id=\"\">The Bolivia question kept returning: <em id=\"\">Is any of this extraction necessary?</em></p><figure id=\"\" class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:1594px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"1594px\"><div id=\"\"><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/from-bolivia-to-brisbane/4c55e5ec2a2f4a84.png\" loading=\"lazy\" alt=\"__wf_reserved_inherit\" width=\"auto\" height=\"auto\" id=\"\"></div></figure><p id=\"\"><strong id=\"\">Spain: Proof that transformation isn't theoretical</strong></p><p id=\"\">Fast forward to 2024. Nicholas and I traveled to Spain to visit Diagrama Foundation facilities. We'd read about them, studied the outcomes, but nothing prepared me for walking through those doors.</p><p id=\"\">Maria's room had sunset-coloured walls. A pillow on her bed said \"A Mi Hija\" - tomy daughter. Family photos covered one wall. A cordless phone sat on her desk - she could call her grandmother anytime. Her case worker talked to her about architecture school, about what she wanted to build when she got out in three months.</p><p id=\"\">This was classified as Level 4 maximum security. Maria had committed what Queensland would call serious violent offence. In Australia, she'd be in solitary, medicated, counting down years.</p><p id=\"\">Here, she was learning AutoCAD.</p><p id=\"\">When I showed her photos of Brisbane Youth Detention Centre - the concrete platforms, the mesh, the steel fixtures - she went quiet for thirty seconds. Then asked if I was showing her an adult prison.</p><p id=\"\">\"No,\" I told her. \"That's for kids your age.\"</p><p id=\"\">She almost started crying. Not for herself - for them. For Australian kids she'd never meet, living in conditions she couldn't comprehend even after doing what she'd done.</p><p id=\"\">\"But how do they learn?\" she asked. \"How do they become different people?\"</p><p id=\"\">I stood there trying to explain that we spend $859,589 annually per child to ensure they <em id=\"\">don't</em> become different people. That recidivism is a feature, not a bug. That trauma is the curriculum.</p><p id=\"\">She listened like I was telling a ghost story. Then said: \"That's not justice. That's just revenge that costs a lot of money.\"</p><p id=\"\">Out of the mouths of Spanish teenagers in maximum security facilities.</p><p id=\"\">I walked through five Diagrama centres over two weeks. Every one felt like Wonderland - not perfect, but <em id=\"\">possible</em>. Staff talked about futures like they existed. Young people learned trades, completed education, maintained family connections. Hope wasn't an aspiration; it was operational.</p><p id=\"\">Then I'd fly back to Australia, visit detention centres in Brisbane and Canberra, and feel the hope drain out of the air the moment I walked through the gates.</p><p id=\"\">The gap wasn't resources. It was imagination about what humans can become.</p><figure id=\"\" class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:2000px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"2000px\"><div id=\"\"><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/from-bolivia-to-brisbane/ca46aeafc3bbf3e6.jpg\" loading=\"lazy\" alt=\"__wf_reserved_inherit\" width=\"auto\" height=\"auto\" id=\"\"></div></figure><p id=\"\"><strong id=\"\">Tennant Creek: The moment I decided to be braver</strong></p><p id=\"\">Nicholas and I drove to Tennant Creek in May, 2025 to build beds with community. We'd been doing this work for months - traveling to remote communities, building furniture with Elders and young people, listening more than talking.</p><p id=\"\">On the drive back, exhausted and covered in sawdust, something broke open.</p><p id=\"\">I told Nicholas: \"I need to be braver. I'm writing articles, sharing statistics, having meetings. But the gap between what I'm saying and what I'm <em id=\"\">seeing</em> feels cowardly.\"</p><p id=\"\">The Bolivia prison showed me justice could be radically different. Twenty years of youth work showed me extraction doesn't work. Spain proved transformation is operational, not theoretical. And here I was, still being reasonable. Still using policy language. Still playing the game.</p><p id=\"\">\"I need to use art,\" I said. \"I need to own something so I can dedicate myself to a vision.\"</p><p id=\"\">The idea arrived fully formed: buy a shipping container. Give people 10 minutes to <em id=\"\">feel</em> what Brisbane detention actually feels like. Then 10 minutes in Diagrama. Then 10 minutes with grassroots programs showing what's already working.</p><p id=\"\">Not a report. Not a presentation. Thirty minutes where policy meets flesh and blood.</p><p id=\"\">I wanted people to sit in it together, then make sense of it together. Because that's when conversations hit different - when you've felt the same fluorescent hum, touched the same revenge furniture, then walked into proof that none of it is necessary.</p><figure id=\"\" class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:2000px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"2000px\"><div id=\"\"><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/from-bolivia-to-brisbane/aa8d8a28bacbb03e.jpg\" loading=\"lazy\" alt=\"__wf_reserved_inherit\" width=\"auto\" height=\"auto\" id=\"\"></div></figure><p id=\"\"><strong id=\"\">Building it with my daughters watching</strong></p><p id=\"\">We bought a shipping container and hauled it to the farm in Witta. Nicholas and I started building. Wiring the electronics. Painting walls that specific shade of institutional grey. Installing mesh so fine it pixelates hope.</p><p id=\"\">My daughters were there, they held the nail guns, they painted walls, they supported what this needed to be. I wanted them to see: when something matters enough, you don't wait for permission. You buy the containers. You learn to wire lights. You get your hands dirty.</p><p id=\"\">I chose the exact frequency of fluorescent lights (120 Hz - the one that seeps into your molars). The precise colour of concrete. The specific grade of steel mesh. Not to be dramatic, but to be <em id=\"\">accurate</em>. Because if people don't feel it in their nervous system, they won't understand why we need to blow the whole thing up and start over.</p><p id=\"\"><strong id=\"\">Young people as architects, not subjects</strong></p><p id=\"\">Then we brought in young people through Interlace Advisory - Kate Bjur and G Rangiawha connecting us with Isaiah and others who'd survived the system. They were joined by the incredible Christine Thomas who brought incredible grounding and trauma informed conversation to the mix.</p><p id=\"\">They didn't consult. They designed.</p><p id=\"\">When Isaiah walked into Room 1, his shoulders shifted. That specific muscular contraction of someone whose spine remembers surveillance cameras like a second skeleton. He picked up something sharp and started scratching the walls - not vandalism, but archaeology in reverse. Leaving evidence of the future in marks that mirror the past.</p><p id=\"\">Two of them had been in rooms identical to Room 1. They knew the fluorescent frequency because it lived in their skeletal memory. Their philosophy became the project's: \"You can't unknow what you know, but you can choose what you build next.\"</p><figure id=\"\" class=\"w-richtext-figure-type-image w-richtext-align-center\" data-rt-type=\"image\" data-rt-align=\"center\"><div id=\"\"><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/from-bolivia-to-brisbane/846fa214ad0aad3c.jpg\" loading=\"lazy\" alt=\"__wf_reserved_inherit\" width=\"auto\" height=\"auto\" id=\"\"></div></figure><p id=\"\"><strong id=\"\">What CONTAINED actually is</strong></p><p id=\"\">It's a 47-minute answer to the Bolivia question.</p><p id=\"\">I can't make politicians visit a Bolivian prison or spend three months in Spain. But I can compress the essential experience:</p><ul id=\"\"><li id=\"\">Room 1: Feel what we're currently doing (Brisbane detention reality)</li><li id=\"\">Room 2: Feel what's actually possible (Diagrama's proof)</li><li id=\"\">Room 3: Here's how we build it (CON|X infrastructure + grassroots programs)</li></ul><p id=\"\">I'm not trying to reform the youth detention system. I'm trying to make it obsolete.</p><p id=\"\">Like mobile phones made landlines irrelevant - not by criticising them, but by being undeniably better.</p><p id=\"\"><strong id=\"\">What I want people to carry</strong></p><p id=\"\">48 hours after walking through CONTAINED, I want them carrying a question they can't shake:</p><p id=\"\">\"If Spain can do this with young people who committed serious violence... if Indigenous healing circles in Alaska hit 97% success... if community programs work at 1/10th the cost with better outcomes... <em id=\"\">what the f%$# are we actually doing?</em>\"</p><p id=\"\">Not guilt. Not shame. Just: <em id=\"\">What are we actually doing, and do we have the courage to choose differently?</em></p><p id=\"\"><strong id=\"\">A Curious Tractor's role</strong></p><p id=\"\">This is what Nicholas and I built A Curious Tractor to do. We don't write more reports. We create experiences that shift perception at the nervous system level, then provide practical infrastructure for communities to act on that shift.</p><p id=\"\">We built CONTAINED because someone had to. Now it belongs to anyone ready to feel it, then do something about what they felt.</p><p id=\"\">From Bolivia to Brisbane, it took twenty years for this to become clear. But once you see it, you can't unsee it. Once you feel it, you can't unfeel it.</p><p id=\"\">The door opens when you're ready.</p><figure id=\"\" class=\"w-richtext-figure-type-image w-richtext-align-fullwidth\" style=\"max-width:2000px\" data-rt-type=\"image\" data-rt-align=\"fullwidth\" data-rt-max-width=\"2000px\"><div id=\"\"><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/from-bolivia-to-brisbane/e1d6337ea9517324.png\" loading=\"lazy\" alt=\"__wf_reserved_inherit\" width=\"auto\" height=\"auto\" id=\"\"></div></figure>",
-      "authorName": "Benjamin Knight",
-      "authorBio": null,
-      "articleType": "editorial",
-      "primaryProject": "act-main",
-      "relatedProjects": [
-        "act-main"
-      ],
-      "relatedProjectSlugs": [],
-      "publishedAt": "2026-01-09T23:40:59.476+00:00",
-      "createdAt": null,
-      "updatedAt": null,
-      "tags": [],
-      "themes": [],
-      "featuredImageUrl": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/from-bolivia-to-brisbane/94d0cdf3a9307df9.webp",
-      "featuredImageAlt": null,
-      "storyteller": {
-        "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
-        "slug": "benjamin-knight",
-        "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
-        "bio": null
-      },
-      "media": {
-        "photoCount": 6,
-        "videoCount": 0,
-        "photoPreviews": [
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/from-bolivia-to-brisbane/94d0cdf3a9307df9.webp",
-            "title": null,
-            "alt_text": null
-          },
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/from-bolivia-to-brisbane/4c55e5ec2a2f4a84.png",
-            "title": null,
-            "alt_text": "__wf_reserved_inherit"
-          },
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/from-bolivia-to-brisbane/ca46aeafc3bbf3e6.jpg",
-            "title": null,
-            "alt_text": "__wf_reserved_inherit"
-          },
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/from-bolivia-to-brisbane/aa8d8a28bacbb03e.jpg",
-            "title": null,
-            "alt_text": "__wf_reserved_inherit"
-          },
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/from-bolivia-to-brisbane/846fa214ad0aad3c.jpg",
-            "title": null,
-            "alt_text": "__wf_reserved_inherit"
-          },
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/from-bolivia-to-brisbane/e1d6337ea9517324.png",
-            "title": null,
-            "alt_text": "__wf_reserved_inherit"
-          }
-        ],
-        "videoPreviews": []
-      },
-      "ctas": [],
-      "visibility": "public",
-      "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/from-bolivia-to-brisbane",
-      "localPath": "/blog/from-bolivia-to-brisbane",
+      "localPath": "/stories/conversation-camp",
       "syndicationDestinations": [
         "act_el"
       ]
@@ -1497,13 +1215,13 @@
       "updatedAt": null,
       "tags": [],
       "themes": [],
-      "featuredImageUrl": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-raucous-revolution/a4b8eb9b6ba4fd61.png",
+      "featuredImageUrl": "https://empathyledger.com/api/media/d7dd9c4f-bbdd-483f-9fc6-1848ec454c82/file",
       "featuredImageAlt": null,
       "storyteller": {
         "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
         "slug": "benjamin-knight",
         "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
+        "avatarUrl": "https://empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
         "bio": null
       },
       "media": {
@@ -1511,12 +1229,12 @@
         "videoCount": 0,
         "photoPreviews": [
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-raucous-revolution/a4b8eb9b6ba4fd61.png",
+            "url": "https://empathyledger.com/api/media/d7dd9c4f-bbdd-483f-9fc6-1848ec454c82/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-raucous-revolution/feb0f72f5ab11216.jpg",
+            "url": "https://empathyledger.com/api/media/e723c54f-cc2b-4bb1-ac13-f8c5d5b9062c/file",
             "title": null,
             "alt_text": null
           }
@@ -1526,7 +1244,7 @@
       "ctas": [],
       "visibility": "public",
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/the-raucous-revolution",
-      "localPath": "/blog/the-raucous-revolution",
+      "localPath": "/stories/the-raucous-revolution",
       "syndicationDestinations": [
         "act_el"
       ]
@@ -1551,13 +1269,13 @@
       "updatedAt": null,
       "tags": [],
       "themes": [],
-      "featuredImageUrl": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/between-waters-and-worlds-a-day-on-quandamooka-country/c5b46721e57fa93f.jpg",
+      "featuredImageUrl": "https://empathyledger.com/api/media/2c9a476c-8ac4-40d7-98ee-4617304d09c8/file",
       "featuredImageAlt": null,
       "storyteller": {
         "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
         "slug": "benjamin-knight",
         "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
+        "avatarUrl": "https://empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
         "bio": null
       },
       "media": {
@@ -1565,27 +1283,27 @@
         "videoCount": 0,
         "photoPreviews": [
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/between-waters-and-worlds-a-day-on-quandamooka-country/c5b46721e57fa93f.jpg",
+            "url": "https://empathyledger.com/api/media/2c9a476c-8ac4-40d7-98ee-4617304d09c8/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/between-waters-and-worlds-a-day-on-quandamooka-country/372ba7553965d7b8.jpg",
+            "url": "https://empathyledger.com/api/media/05e21ca8-78d8-4e31-bf72-29b1097d881d/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/between-waters-and-worlds-a-day-on-quandamooka-country/725e1bc89010a1ac.jpg",
+            "url": "https://empathyledger.com/api/media/ec19edf7-bc2f-4b43-80e3-691a22d02a5d/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/between-waters-and-worlds-a-day-on-quandamooka-country/8b9b4d68b3d7d2fc.jpg",
+            "url": "https://empathyledger.com/api/media/3e15870f-9d1d-49f4-b8af-c3621d1b7bf2/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/between-waters-and-worlds-a-day-on-quandamooka-country/aa59a6640a4f58c5.jpg",
+            "url": "https://empathyledger.com/api/media/dafca401-3d38-4048-be14-f7c426b12a6d/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           }
@@ -1595,120 +1313,7 @@
       "ctas": [],
       "visibility": "public",
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/between-waters-and-worlds-a-day-on-quandamooka-country",
-      "localPath": "/blog/between-waters-and-worlds-a-day-on-quandamooka-country",
-      "syndicationDestinations": [
-        "act_el"
-      ]
-    },
-    {
-      "id": "17abeb7c-3abf-48a4-92e5-4b19e8f23f5a",
-      "title": "Edition #1: \"Sowing Seeds of Connection\"",
-      "slug": "edition-1-sowing-seeds-of-connection-2",
-      "subtitle": null,
-      "excerpt": "Welcome to the A Curious Tractor Community newsletter where once a fortnight you can get all the news from the farm.",
-      "content": "<p data-sp-article=\"PP4KPPDEZ.19\" id=\"f5e43d76-7c94-4109-831e-0c8bf20e3529\">Dear fellow farmers of change,</p><p id=\"a797787e-411f-4edf-b558-a072bc7382cd\">Welcome to the vibrant, fertile fields of A Curious Tractor! </p><p id=\"16934615-a594-40fb-a0c0-cdec00cd6822\">We're thrilled to have you join our community of changemakers, creative thinkers, and compassionate souls. This newsletter is our way of cultivating connections, sharing stories, and growing together as we work towards a more just, regenerative world.</p><p id=\"3da091c5-0fb8-49f4-bc6c-6e66cc06cf5a\">We firmly believe in the power of community. </p><p id=\"1dcac763-73bc-4407-96d3-61567fecc7f7\">Just as a single seed can give rise to a bountiful harvest, we know that when we come together, our collective actions have the potential to create transformative change. </p><p id=\"0470f3c8-125c-4e72-a332-2a4638d16626\">This newsletter is an invitation to be part of that change – to plant your own seeds of ideas, to nurture the growth of others, and to celebrate the fruits of our shared labor.</p><p id=\"5e7519f6-cb6c-4aba-9575-6a9ed455b04d\">Like a warm gathering around a campfire, we want this space to feel welcoming, inclusive, and alive with the spirit of connection. You'll find stories that inspire, ideas that provoke, and opportunities to get your hands dirty in the work of positive change. </p><p id=\"c37e1bd4-be06-47e1-bcb9-af324645e12b\">Whether you're a seasoned activist or just beginning to explore your role in creating a better world, there's a place for you here.</p><p id=\"49ce4ea4-c930-421f-9c7e-4e369d364b37\">Come and pull up a seat. Share your stories, your dreams, your triumphs, and your challenges. Listen deeply to the experiences of others, and allow yourself to be transformed by the power of empathy and understanding. </p><p id=\"860a960b-37af-4e66-aebf-0d433fb5cade\">Together, we'll cultivate a community rooted in compassion, resilience, and the unwavering belief that a better world is not only possible, but already taking shape through our collective efforts.</p><p id=\"10269b59-5aee-424e-9116-c11710946448\">With each edition of this newsletter, we'll explore different aspects of our work and our community. You'll have the chance to learn about our current projects, contribute your own ideas and feedback, and connect with like-minded individuals who share your passion for positive change. And just as a farmer tends to their land with patience, persistence, and care, we'll be here to support and nurture this community every step of the way.</p><p id=\"11ec0f93-8858-4c62-ba25-19ba5c1ccda6\">So, once again, welcome to A Curious Tractor. We're so grateful to have you as part of this ecosystem of change, and we can't wait to see what we'll grow together.</p><p id=\"da8798a4-7828-49f8-a0a3-d4482f56ac54\">With gratitude and excitement,</p><p id=\"85549664-d11b-4ef0-967f-cde4043570aa\">Benjamin and Nic</p><p id=\"6a7adca1-3f49-4542-8a4c-f44705ecbad2\">Your fellow farmers in the fields of change</p><div data-type=\"regular\" data-title=\"\" data-source=\"[]\" data-link=\"\" data-style=\"\" data-alt=\"\" data-src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/3ec41d9c00076dbe.webp\" data-format=\"image\" id=\"8c364fa0-61d5-4ec5-9299-c8b4e4995ee2\" class=\"clear-both mx-auto\"><figure><picture><img type=\"regular\" link=\"\" title=\"\" alt=\"\" id=\"8c364fa0-61d5-4ec5-9299-c8b4e4995ee2\" source=\"\" src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/3ec41d9c00076dbe.webp\"></picture><figcaption class=\"pt-2 block caption-text\"></figcaption></figure></div><hr><h2 id=\"519581a3-a300-427e-965b-6c7c02117267\"><strong>🫚 The Soil: Nurturing Our Roots</strong></h2><p id=\"32b74fd4-54b0-4685-a423-b8f4663fff0b\">We're excited to share with you the work we are part of in the field of youth justice, particularly through our project at The Food Connect Shed in the south of Brisbane. This project, a key component of our broader mission to support at-risk individuals and those transitioning out of the justice system.</p><p id=\"1a630311-27c1-4a43-ba8a-8a083eacd4c2\">It's all about creating a holistic network of resources and opportunities that empower young people to thrive.</p><p id=\"3c91ee5e-03ee-4209-ac88-6258f1221cc7\">At the heart of our approach is a deep commitment to amplifying the voices of those who are experts in these areas – especially the young people who are directly impacted by the challenges we're seeking to address. We believe that by listening to their stories, their insights, and their aspirations, we can co-create solutions that are more effective, more relevant, and more sustainable.</p><p id=\"1678feb7-aad8-474b-8424-ffa10f041cd3\">Over the next 6-12 months, we'll be experimenting with a wide range of ideas born from art, creativity, and the lived experiences of the young people we serve. We're committed to investing our efforts in the most promising initiatives – those that have the potential to make a real, tangible difference in the lives of young people and their communities. From innovative employment programs and culturally grounded mentorship to holistic wellness support and beyond, our aim is to create pathways for more young people to feel welcomed, valued, and empowered within their communities.</p><p id=\"9e471462-0c78-471e-b563-96a6aa7973ac\">As we nurture these seeds of change, we invite you to join us in tending to the soil of youth justice reform. Whether you're an expert in the field, a passionate advocate for social change, or simply someone who believes in the power of community, there's a place for you in this work. Together, we can cultivate a more just, more compassionate, and more connected world – one where every young person has the opportunity to thrive.</p><p id=\"c62efbef-ffff-4631-86f6-7c9967b4c26f\">We encourage you to reflect on your own connection to this vital work. What experiences, insights, or skills do you bring to the table? How might you contribute to nurturing the roots of change in your own community?</p><p id=\"c11c6ce0-0b1f-4b58-ac67-cbf0656f8571\">Stay tuned for more updates from The Shed Youth Justice Project, and please don't hesitate to reach out if you'd like to get involved.</p><hr><h2 id=\"2676d78e-b267-489b-9734-d597dd469723\">🌾 Seeds of Change: Spotlight on Current Projects</h2><p id=\"3d343a51-177d-47ad-b9aa-6e156a9a7691\">In the vibrant garden of change that we're cultivating at A Curious Tractor (ACT), there's always room for new growth and inspiring collaborations. Today, we're excited to share one of our latest projects: \"SMART Stories,\" a partnership with SMART Recovery Australia.</p><p id=\"a926ad2e-7848-421f-aaa9-a028d23a86f5\">SMART Recovery is a global community of mutual-support groups, empowering individuals to overcome addiction and lead fulfilling lives in recovery through a science-based approach. Their work aligns deeply with our own mission to drive positive change through innovation, empathy, and collaboration.</p><div data-type=\"normal\" data-title=\"\" data-source=\"[]\" data-link=\"\" data-style=\"\" data-alt=\"SMART Recovery: Life Beyond Addiction is the Highest Goal | Journey Magazine\" data-src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/5c9325a6d9182138.png\" data-format=\"image\" id=\"bd5132e3-6fc9-4e5d-b161-d6a25aac3425\" class=\"clear-both mx-auto\"><figure><picture><img type=\"normal\" link=\"\" title=\"\" alt=\"SMART Recovery: Life Beyond Addiction is the Highest Goal | Journey Magazine\" id=\"bd5132e3-6fc9-4e5d-b161-d6a25aac3425\" source=\"\" src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/5c9325a6d9182138.png\"></picture><figcaption class=\"pt-2 block caption-text\"></figcaption></figure></div><p id=\"205ec5dd-ef08-408e-b886-ae0664855f3f\">Through \"SMART Stories,\" we aim to amplify the voices and experiences of those who have found hope, healing, and renewed purpose through SMART Recovery's programs. Our goal is to compile 365 moments of insight into brave recovery journeys that have never been captured before, creating an exhibition and story of bravery, hope, and connection to inspire the next 1,000 meetings over the next five years.</p><p id=\"ede85f52-20ee-4157-a09d-8436799ce41c\">As part of this project, we're connecting with SMART Recovery's board members, ambassadors, facilitators, and participants to understand how they want their stories told. We're exploring innovative storytelling mediums to capture the essence of these journeys authentically and powerfully, while ensuring a safe and supportive environment for all involved.</p><p id=\"0a93351b-dad3-4e97-b0c2-65946bd8cf4b\">\"SMART Stories\" isn't just about raising awareness; it's about shifting the narrative around addiction and recovery from one of stigma and isolation to one of compassion, connection, and shared humanity. By showcasing the transformative power of community-based support, we hope to inspire more people to seek help and more communities to embrace SMART Recovery's approach.</p><p id=\"c10b88e4-1b00-4ddf-b208-4b22f6af9439\">If this project resonates with you, we invite you to get involved. Share the stories we'll be releasing, start a conversation in your community, or consider supporting SMART Recovery directly. Every action, no matter how small, is a seed of change that can contribute to a more understanding and supportive world for those in recovery.</p><p id=\"fb17c892-7e21-4708-b6f3-82da4e0339ef\">Together, we can cultivate a future where every person struggling with addiction knows they are not alone and has access to the support and resources they need to thrive.</p><p id=\"87e8e386-6130-4135-8088-2c69d0566eba\">P.S. If you or someone you know is struggling with addiction, know that help is available. Visit <a href=\"http://www.smartrecovery.org\" rel=\"noopener noreferrer\" target=\"_blank\">www.smartrecovery.org</a> to find a meeting near you or access online resources and support.</p><div data-type=\"normal\" data-title=\"\" data-source=\"[]\" data-link=\"\" data-style=\"\" data-alt=\"What is SMART Recovery & How Does it Work?\" data-src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/22045bcd0482ceac.png\" data-format=\"image\" id=\"f47e5582-8fd3-4e78-8bd9-f999009dc95b\" class=\"clear-both mx-auto\"><figure><picture><img type=\"normal\" link=\"\" title=\"\" alt=\"What is SMART Recovery & How Does it Work?\" id=\"f47e5582-8fd3-4e78-8bd9-f999009dc95b\" source=\"\" src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/22045bcd0482ceac.png\"></picture><figcaption class=\"pt-2 block caption-text\"></figcaption></figure></div><hr><h2 id=\"29ae8b77-3c7e-4adc-9f80-29c22460b6cc\">🔥 The Campfire</h2><h2 id=\"f3774b48-33d7-4da8-90b7-72b666681013\">Upcoming Events and Opportunities</h2><p id=\"bea414c9-6b79-4f55-9220-22055249ff14\">There's something magical about gathering around a campfire. In the flickering glow of the flames, stories are shared, bonds are forged, and the warmth of community can be felt in the very air. At A Curious Tractor, we believe in the power of these gatherings to spark connection, inspire creativity, and fuel the flames of positive change.</p><p id=\"d2b86a7f-a09a-4a2c-8a12-dbe90a15f945\">We are busy working up some ideas and opportunities to connect so make sure you stay tuned to our fortnightly updates through email.</p><p id=\"bd8ff8c6-5dad-4101-abec-81b3d1ba1574\">Whether you join us for a virtual workshop, share your story in the storytelling circle, or plant some seeds of change in your local community, know that your presence and participation are what make this community so warm, vibrant, and alive</p><div data-type=\"regular\" data-title=\"\" data-source=\"[]\" data-link=\"\" data-style=\"\" data-alt=\"\" data-src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/a4eb04bf6df1f24e.webp\" data-format=\"image\" id=\"9a6d315e-db87-4ae2-b5c0-1cae7d7b450d\" class=\"clear-both mx-auto\"><figure><picture><img type=\"regular\" link=\"\" title=\"\" alt=\"\" id=\"9a6d315e-db87-4ae2-b5c0-1cae7d7b450d\" source=\"\" src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/a4eb04bf6df1f24e.webp\"></picture><figcaption class=\"pt-2 block caption-text\"></figcaption></figure></div><p id=\"d2e19ea6-8d98-458a-9bbf-b7e64f1affcf\">Have an idea for a gathering or initiative you'd like to see in the future? Hit reply and let us know! We're always looking for new ways to stoke the flames of connection and collaboration.</p><hr><h2 id=\"3fe5a4a6-8054-49f9-9bac-3ca9bb76fce5\">🎉 Harvest Stories</h2><h2 id=\"efb87324-b03c-418f-8443-8dc0e0ece5cc\">Celebrating Our Community's Impact</h2><div data-type=\"embed\" data-meta=\"{&quot;title&quot;:&quot;Dad.Lab - An Experiment from A Curious Tractor&quot;,&quot;description&quot;:&quot;Dad.Lab emerged from a simple yet powerful idea: to bring fathers from across Australia together, each with their unique experiences, to connect, learn, and grow. Through a blend of silence, nature walks, and innovative exercises, we embarked on a transformative two-day journey designed to deepen our understanding of fatherhood and the challenges and opportunities it presents.\\n\\nSee more at - https://www.act.place/project/dad-lab&quot;,&quot;author&quot;:&quot;A Curious Tractor&quot;,&quot;icon&quot;:&quot;https://www.youtube.com/s/desktop/751c6312/img/favicon_32x32.png&quot;,&quot;publisher&quot;:&quot;YouTube&quot;,&quot;url&quot;:&quot;https://www.youtube.com/watch?v=7W_N8yvjX_4&quot;,&quot;thumbnail&quot;:&quot;https://i.ytimg.com/vi/7W_N8yvjX_4/maxresdefault.jpg&quot;,&quot;html&quot;:&quot;<div><div style=\\&quot;left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;\\&quot;><iframe data-iframely-url=\\&quot;https://cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fyoutu.be%2F7W_N8yvjX_4%3Fsi%3Dzxge1HoFE2SJYLiU&key=6d002d15348823942403bf5e779d2cca\\&quot; data-img style=\\&quot;top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;\\&quot; allowfullscreen scrolling=\\&quot;no\\&quot; allow=\\&quot;autoplay *; accelerometer *; clipboard-write *; encrypted-media *; gyroscope *; picture-in-picture *; web-share *;\\&quot;></iframe></div></div>&quot;,&quot;iframe0&quot;:&quot;<div style=\\&quot;left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;\\&quot;><iframe src=\\&quot;https://www.youtube.com/embed/7W_N8yvjX_4?rel=0\\&quot; style=\\&quot;top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;\\&quot; allowfullscreen scrolling=\\&quot;no\\&quot; allow=\\&quot;accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;\\&quot;></iframe></div>&quot;,&quot;aspectRadio&quot;:1}\" data-url=\"https://youtu.be/7W_N8yvjX_4?si=zxge1HoFE2SJYLiU\" data-format=\"resource\" id=\"5eab50e1-b24f-4f9f-a07c-bb939c66532a\" class=\"clear-both opacity-100 relative\"><figure><div><div style=\"left: 0; width: 100%; height: 0; position: relative; padding-bottom: 56.25%;\"><iframe allow=\"accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share;\" scrolling=\"no\" allowfullscreen style=\"top: 0; left: 0; width: 100%; height: 100%; position: absolute; border: 0;\" src=\"https://www.youtube.com/embed/7W_N8yvjX_4?rel=0\"></iframe></div></div><figcaption class=\"text-center\"></figcaption></figure></div><p id=\"5396b490-e547-4e0b-af45-78614ef48e4d\">We're excited to introduce Dad.Lab!</p><p id=\"9df0f183-f2f1-468f-a5b0-4db7b2e7d998\">A living experiment that aligns with our mission to drive positive change through innovation and empathy. The first offical Dad.Lab brought together fathers from diverse backgrounds to connect, learn, and grow as a community while applying an innovative mindset to the challenges and opportunities of fatherhood.</p><p id=\"b6cc8b49-5379-427f-a1ba-43dd7b06a739\">Recently, the first group of Dad.Lab participants spent a few days at Black Cockatoo Valley for a transformative two-day experience. Through activities like nature walks, creating Dad bios and posters, and building \"soil networks\" on living tables, the fathers discovered the power of connection and collaboration.</p><p id=\"b408ce2a-a9e4-483d-af19-16a1be30eef1\">Chris, a Dad.Lab participant, shared a realisation: \"Beyond practical, actionable insights, a profound realisation has been the sense of belonging. I've encountered what it means to feel seen as a Dad, a sensation previously foreign to me.\"</p><p id=\"f4a2ae6f-5115-42d8-86c3-8450eaba694a\">As Dad.Lab grows, we envision a future where these seeds of change inspire a wider movement of fathers supporting fathers. By embracing open sharing and collaboration, we believe we can cultivate a world where fathers are empowered, connected, and thriving.</p><p id=\"4ce42b99-2a53-4428-a134-d05b4ed4ebab\">Stay tuned for updates on Dad.Lab's progress and opportunities to get involved. Together, we can plant the seeds of change and nurture a brighter future for fathers everywhere.</p><div data-ver=\"2\" data-format=\"gallery\" data-title=\"\" id=\"fece2ab7-2467-42c4-a224-a20100fd26d7\" class=\"box-border\"><div class=\"gallery-row gallery-card\"><div style=\"flex: 1.5 1 0%\" class=\"gallery-image\"><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/fb7ea62bcfc9f353.webp\"></div><div style=\"flex: 1.5 1 0%\" class=\"gallery-image\"><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/6ad3a8e233bb93bf.webp\"></div><div style=\"flex: 1.5 1 0%\" class=\"gallery-image\"><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/2ed4c121d255f3cc.webp\"></div></div><div class=\"gallery-row gallery-card\"><div style=\"flex: 1.5 1 0%\" class=\"gallery-image\"><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/61adb055834e80d6.webp\"></div><div style=\"flex: 1.5 1 0%\" class=\"gallery-image\"><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/00365638132d5996.webp\"></div></div><div class=\"gallery-row gallery-card\"><div style=\"flex: 1.5 1 0%\" class=\"gallery-image\"><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/146a2c72cba76bc9.webp\"></div><div style=\"flex: 1.5 1 0%\" class=\"gallery-image\"><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/389172b4aebdefe6.webp\"></div></div></div><p id=\"4fc0ddc8-154d-4d40-bfe5-832f8862c782\">To learn more about Dad.Lab and ACT's mission, <a href=\"https://act.place\" rel=\"noopener noreferrer\" target=\"_blank\">visit our website</a> or reach out. We'd love to hear your thoughts and ideas on how we can continue to drive positive change in the lives of fathers and their families.</p><h2 id=\"e3327c7d-f3af-4e63-877e-ff31374e4143\">🎨 Creative Corner: Art and Expression</h2><p id=\"58987998-0565-423b-a9cf-8fd4ab8a7c62\">At A Curious Tractor, we believe that art has the power to illuminate, to inspire, and to ignite the soul. It's a universal language that allows us to express the inexpressible, to connect across differences, and to envision new possibilities for our world.</p><p id=\"46fc8856-f011-46f2-a028-86f00b077252\">In this edition of the Creative Corner, we're thrilled to showcase a project that embodies this transformative power of art: The Confessional.</p><div data-type=\"regular\" data-title=\"\" data-source=\"[]\" data-link=\"\" data-style=\"\" data-alt=\"\" data-src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/0447137f65500ce2.webp\" data-format=\"image\" id=\"17ed3cea-051b-4fd5-8c6d-45429af841b4\" class=\"clear-both mx-auto\"><figure><picture><img type=\"regular\" link=\"\" title=\"\" alt=\"\" id=\"17ed3cea-051b-4fd5-8c6d-45429af841b4\" source=\"\" src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/0447137f65500ce2.webp\"></picture><figcaption class=\"pt-2 block caption-text\"></figcaption></figure></div><p id=\"fee6f3b6-0c4c-4fdf-9eea-b655a5f29e5f\">The Confessional is Nic's brainchild.</p><p id=\"8b302fef-a609-4e0d-8160-a82a0630cf5b\">He has been pouring his heart and soul into this project for the past several months. It all began with a vision: to create a safe, sacred space where people could come to share their stories, their secrets, and their deepest truths.</p><p id=\"b8f2397b-9cc8-44e4-b38b-05ffc94e2887\">To bring this vision to life, he started with an unexpected canvas: a horse trailer. Over countless hours, he worked to transform this humble vehicle into a work of art. He painted the exterior with vibrant, swirling colours that seem to dance and come alive in the sunlight. Each brushstroke is a testament to the care, the creativity, and the passion that he has poured into this project.</p><p id=\"28d297f8-dd6d-4dd1-ab4b-e4f6435ef98a\">But The Confessional is more than just a beautiful object. It's an invitation to connection, to vulnerability, and to the power of shared storytelling. When you step inside, you're enveloped in a space that feels at once intimate and expansive. It's a place where the walls seem to whisper with the echoes of all the stories that have been shared within them.</p><p id=\"ac61e2d0-af69-4281-9e10-4535b0840c70\">Through The Confessional, Nic is creating a space for our community to engage in the profound, transformative act of authentic expression. He's reminding us that when we have the courage to share our truths, we open the door to empathy, to healing, and to the realisation that we are not alone in our struggles and our triumphs.</p><p id=\"3b9fb533-91a8-488d-bc32-562f34ec94e1\">As you look at the images of The Confessional, we invite you to reflect on your own relationship with art and expression. How has creativity helped you to process, to heal, to connect with others and with yourself? What stories or truths are you longing to express?</p><p id=\"04517b03-ac2d-43a8-8a2a-032c5727490b\">We believe that every member of our community has a unique creative voice, and we want to celebrate and amplify those voices. So, we invite you to share your own artwork, poetry, music, or any other form of creative expression with us. Send us your creations, and we'll feature a selection in future editions of the Creative Corner.</p><p id=\"9ef2be9d-6f76-4073-af30-e29f903bc63c\">Together, let's continue to harness the power of art to create a more connected, compassionate, and colourful world.</p><div data-ver=\"2\" data-format=\"gallery\" data-title=\"\" id=\"1abc3a37-b96b-4687-9d13-fd1a1e6e9f83\" class=\"box-border\"><div class=\"gallery-row gallery-card\"><div style=\"flex: 1.5 1 0%\" class=\"gallery-image\"><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/37700fd767981ab1.webp\"></div><div style=\"flex: 1.5 1 0%\" class=\"gallery-image\"><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/a66600e0e15ede00.webp\"></div><div style=\"flex: 1.5 1 0%\" class=\"gallery-image\"><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/1021cdca3865d917.webp\"></div></div><div class=\"gallery-row gallery-card\"><div style=\"flex: 1.5 1 0%\" class=\"gallery-image\"><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/72f1c8e95dceacf8.webp\"></div><div style=\"flex: 1.5 1 0%\" class=\"gallery-image\"><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/d7767bfbc793c76b.webp\"></div><div style=\"flex: 0.6666666666666666 1 0%\" class=\"gallery-image\"><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/10ccaba4cdbfd42f.webp\"></div></div><div class=\"gallery-row gallery-card\"><div style=\"flex: 1.5 1 0%\" class=\"gallery-image\"><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/0bcf343fab6afb82.webp\"></div><div style=\"flex: 1.5 1 0%\" class=\"gallery-image\"><img src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/b1e808dc46bde250.webp\"></div></div></div><p id=\"a1af3fe1-85d0-4f90-9b09-b2520ff56f79\">P.S. If you'd like to experience The Confessional for yourself, keep an eye out for upcoming events and opportunities. We'll be bringing this mobile art installation to communities across the country, creating spaces for storytelling, connection, and the power of shared truths.</p><hr><h2 id=\"18003949-a8c3-4ad5-8298-4d705591040f\">🧑🏼‍🌾 Parting Thoughts: A Message from the Farmers</h2><p id=\"c49d19c4-7d28-4ab2-9cf5-8994fa62dba8\">Dear friends,</p><p id=\"2e181851-4ac2-46aa-9ac1-4f2b1c69e9a0\">As we come to the close of this first edition of our newsletter, we find ourselves filled with a profound sense of gratitude and hope. When we set out to create this space, we knew that we were embarking on a journey to cultivate connection, to nurture growth, and to sow the seeds of positive change. What we couldn't have anticipated was the incredible outpouring of support, engagement, and inspiration that we would receive from all of you.</p><p id=\"a5562bdd-6c46-4665-9775-158d179a6e2c\">Over the past few weeks, as we've been crafting this newsletter and tending to the various projects and initiatives it highlights, we've been constantly reminded of the power of community. We've seen it in the stories people have shared, in the ideas contributed, and in the enthusiasm shown for the work we're doing together.</p><p id=\"9f3fa551-f934-40b1-a9ca-b770b9f7e509\">We've been moved by the way people have come together to support one another, to lift up each other's voices, and to collaborate towards a shared vision of a more just, compassionate, and sustainable world. In a time when it's easy to feel isolated and disconnected, we have been shown incredible resilience and vitality that can comes from nurturing our roots and tending to our collective soil.</p><p id=\"1c1c1834-66c7-44c2-8266-ba2c6dd01243\">As farmers, we know that the work of cultivating change is an ongoing process. There will be seasons of planting and seasons of harvest, moments of abundance and moments of scarcity. But through it all, the strength of our community will be the nourishing, sustaining force that allows us to weather any storm and to keep growing towards the light.</p><p id=\"cc40e6fc-036e-42a3-bf90-d66156eb4a15\">So, as we close this edition of the newsletter, we want to express our deepest gratitude to all of you. Thank you for being a part of this community, for sharing your stories and your wisdom, and for believing in the power of connection and collaboration to create meaningful change.</p><p id=\"d80bb9ee-b448-41f0-8d28-efc3b9abc27e\">As we move forward, we invite you to continue sowing these seeds of connection with us. Keep sharing your ideas, your experiences, and your visions for the future. Keep reaching out to one another, offering support and encouragement, and celebrating each other's growth. And most of all, keep believing in the incredible power of this community to cultivate a more verdant, vibrant, and nourishing world for all.</p><p id=\"0d6b5f95-2a41-4ff7-8442-7bda1db26549\">With deepest gratitude and hope,</p><p id=\"552b3e49-bee2-4bd0-a734-f6aef95b61c7\">Benjamin and Nic</p><div data-type=\"regular\" data-title=\"\" data-source=\"[]\" data-link=\"\" data-style=\"\" data-alt=\"\" data-src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/765c27c3642a84b4.webp\" data-format=\"image\" id=\"e966b83a-f04c-4d38-ae3a-75a2c4d991b9\" class=\"clear-both mx-auto\"><figure><picture><img type=\"regular\" link=\"\" title=\"\" alt=\"\" id=\"e966b83a-f04c-4d38-ae3a-75a2c4d991b9\" source=\"\" src=\"https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/765c27c3642a84b4.webp\"></picture><figcaption class=\"pt-2 block caption-text\"></figcaption></figure></div><p data-sp-article-end=\"PP4KPPDEZ.19\" id=\"447f2f4d-6546-4c57-ae23-a6808a5651df\"></p>\n<script async type=\"module\" src=\"https://script-providers.storipress.workers.dev/storipress.mjs?client=PP4KPPDEZ&platform=webflow\"></script>",
-      "authorName": "Benjamin Knight",
-      "authorBio": null,
-      "articleType": "editorial",
-      "primaryProject": "act-main",
-      "relatedProjects": [
-        "act-main"
-      ],
-      "relatedProjectSlugs": [
-        "the-harvest",
-        "black-cockatoo-valley"
-      ],
-      "publishedAt": "2026-01-09T23:40:59.476+00:00",
-      "createdAt": null,
-      "updatedAt": null,
-      "tags": [],
-      "themes": [],
-      "featuredImageUrl": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/3ec41d9c00076dbe.webp",
-      "featuredImageAlt": null,
-      "storyteller": {
-        "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
-        "slug": "benjamin-knight",
-        "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
-        "bio": null
-      },
-      "media": {
-        "photoCount": 21,
-        "videoCount": 5,
-        "photoPreviews": [
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/3ec41d9c00076dbe.webp",
-            "title": null,
-            "alt_text": null
-          },
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/5c9325a6d9182138.png",
-            "title": null,
-            "alt_text": "SMART Recovery: Life Beyond Addiction is the Highest Goal | Journey Magazine"
-          },
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/22045bcd0482ceac.png",
-            "title": null,
-            "alt_text": "What is SMART Recovery & How Does it Work?"
-          },
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/a4eb04bf6df1f24e.webp",
-            "title": null,
-            "alt_text": null
-          },
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/fb7ea62bcfc9f353.webp",
-            "title": null,
-            "alt_text": null
-          },
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/6ad3a8e233bb93bf.webp",
-            "title": null,
-            "alt_text": null
-          },
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/2ed4c121d255f3cc.webp",
-            "title": null,
-            "alt_text": null
-          },
-          {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/edition-1-sowing-seeds-of-connection-2/61adb055834e80d6.webp",
-            "title": null,
-            "alt_text": null
-          }
-        ],
-        "videoPreviews": [
-          {
-            "url": "https://www.youtube.com/embed/7W_N8yvjX_4?rel=0",
-            "title": null,
-            "thumbnail_url": "https://img.youtube.com/vi/7W_N8yvjX_4/hqdefault.jpg"
-          },
-          {
-            "url": "https://www.youtube.com/s/desktop/751c6312/img/favicon_32x32.png&quot;,&quot;publisher&quot;:&quot;YouTube&quot;,&quot;url&quot;:&quot;https://www.youtube.com/watch?v=7W_N8yvjX_4&quot;,&quot;thumbnail&quot;:&quot;https://i.ytimg.com/vi/7W_N8yvjX_4/maxresdefault.jpg&quot;,&quot;html&quot;:&quot;",
-            "title": null,
-            "thumbnail_url": "https://img.youtube.com/vi/7W_N8yvjX_4/hqdefault.jpg"
-          },
-          {
-            "url": "https://cdn.iframe.ly/api/iframe?url=https%3A%2F%2Fyoutu.be%2F7W_N8yvjX_4%3Fsi%3Dzxge1HoFE2SJYLiU&key=6d002d15348823942403bf5e779d2cca\\&quot;",
-            "title": null,
-            "thumbnail_url": null
-          },
-          {
-            "url": "https://www.youtube.com/embed/7W_N8yvjX_4?rel=0\\&quot;",
-            "title": null,
-            "thumbnail_url": "https://img.youtube.com/vi/7W_N8yvjX_4/hqdefault.jpg"
-          },
-          {
-            "url": "https://youtu.be/7W_N8yvjX_4?si=zxge1HoFE2SJYLiU",
-            "title": null,
-            "thumbnail_url": "https://img.youtube.com/vi/7W_N8yvjX_4/hqdefault.jpg"
-          }
-        ]
-      },
-      "ctas": [],
-      "visibility": "public",
-      "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/edition-1-sowing-seeds-of-connection-2",
-      "localPath": "/blog/edition-1-sowing-seeds-of-connection-2",
+      "localPath": "/stories/between-waters-and-worlds-a-day-on-quandamooka-country",
       "syndicationDestinations": [
         "act_el"
       ]
@@ -1741,7 +1346,7 @@
         "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
         "slug": "benjamin-knight",
         "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
+        "avatarUrl": "https://empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
         "bio": null
       },
       "media": {
@@ -1753,7 +1358,7 @@
       "ctas": [],
       "visibility": "public",
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/the-kids-are-not-alright-how-queensland-is-failing-its-most-vulnerable-young-people-and-what-we-can-do-about-it",
-      "localPath": "/blog/the-kids-are-not-alright-how-queensland-is-failing-its-most-vulnerable-young-people-and-what-we-can-do-about-it",
+      "localPath": "/stories/the-kids-are-not-alright-how-queensland-is-failing-its-most-vulnerable-young-people-and-what-we-can-do-about-it",
       "syndicationDestinations": [
         "act_el"
       ]
@@ -1780,13 +1385,13 @@
       "updatedAt": null,
       "tags": [],
       "themes": [],
-      "featuredImageUrl": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-tapestry-of-dignity-witnessing-the-birth-of-the-global-laundry-alliance/1c9c1a239c149bb1.jpg",
+      "featuredImageUrl": "https://empathyledger.com/api/media/2e7bba52-f468-4382-bdb5-0d9e9de158be/file",
       "featuredImageAlt": null,
       "storyteller": {
         "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
         "slug": "benjamin-knight",
         "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
+        "avatarUrl": "https://empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
         "bio": null
       },
       "media": {
@@ -1794,42 +1399,42 @@
         "videoCount": 0,
         "photoPreviews": [
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-tapestry-of-dignity-witnessing-the-birth-of-the-global-laundry-alliance/1c9c1a239c149bb1.jpg",
+            "url": "https://empathyledger.com/api/media/2e7bba52-f468-4382-bdb5-0d9e9de158be/file",
             "title": null,
             "alt_text": null
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-tapestry-of-dignity-witnessing-the-birth-of-the-global-laundry-alliance/1c34fab04e0295df.jpg",
+            "url": "https://empathyledger.com/api/media/42150cee-e831-4592-af83-ec824ff4e654/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-tapestry-of-dignity-witnessing-the-birth-of-the-global-laundry-alliance/3b66c5244d3a2f28.jpg",
+            "url": "https://empathyledger.com/api/media/8e9e2ac8-d80e-4600-9a7e-c9cccc80ae32/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-tapestry-of-dignity-witnessing-the-birth-of-the-global-laundry-alliance/40ff11bd445b1839.jpg",
+            "url": "https://empathyledger.com/api/media/8945a553-0f32-4afd-b40d-25d147b6c7ca/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-tapestry-of-dignity-witnessing-the-birth-of-the-global-laundry-alliance/1abd8febee75b0d8.jpg",
+            "url": "https://empathyledger.com/api/media/2ebfa632-c2b4-4c4b-8462-3471c8c745ec/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-tapestry-of-dignity-witnessing-the-birth-of-the-global-laundry-alliance/df0fda1b89a66d44.jpg",
+            "url": "https://empathyledger.com/api/media/c42e3f71-e97a-4035-9bc5-19d37dbeaac3/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-tapestry-of-dignity-witnessing-the-birth-of-the-global-laundry-alliance/14e5fb2f9bd9166e.jpg",
+            "url": "https://empathyledger.com/api/media/ad385431-7d20-40ee-b153-f22aa164c5b0/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           },
           {
-            "url": "https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/photos/articles/the-tapestry-of-dignity-witnessing-the-birth-of-the-global-laundry-alliance/b01ea4d1338d65a9.jpg",
+            "url": "https://empathyledger.com/api/media/ebe5cc9b-7cfc-4db2-a126-3368b7fa4fa7/file",
             "title": null,
             "alt_text": "__wf_reserved_inherit"
           }
@@ -1839,7 +1444,7 @@
       "ctas": [],
       "visibility": "public",
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/the-tapestry-of-dignity-witnessing-the-birth-of-the-global-laundry-alliance",
-      "localPath": "/blog/the-tapestry-of-dignity-witnessing-the-birth-of-the-global-laundry-alliance",
+      "localPath": "/stories/the-tapestry-of-dignity-witnessing-the-birth-of-the-global-laundry-alliance",
       "syndicationDestinations": [
         "act_el"
       ]
@@ -1875,7 +1480,7 @@
         "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
         "slug": "benjamin-knight",
         "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
+        "avatarUrl": "https://empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
         "bio": null
       },
       "media": {
@@ -1910,7 +1515,7 @@
       ],
       "visibility": "public",
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/the-power-of-indigenous-storytelling-a-community-perspective",
-      "localPath": "/blog/the-power-of-indigenous-storytelling-a-community-perspective",
+      "localPath": "/stories/the-power-of-indigenous-storytelling-a-community-perspective",
       "syndicationDestinations": [
         "act_el"
       ]
@@ -1956,7 +1561,7 @@
         "id": "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
         "slug": "benjamin-knight",
         "displayName": "Benjamin Knight",
-        "avatarUrl": "https://www.empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
+        "avatarUrl": "https://empathyledger.com/api/media/ddcacf10-8ffa-4948-9cc0-5b33eb34594d/file",
         "bio": null
       },
       "media": {
@@ -2002,7 +1607,7 @@
       ],
       "visibility": "public",
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/articles/building-the-act-ecosystem-a-vision-for-community-centered-technology",
-      "localPath": "/blog/building-the-act-ecosystem-a-vision-for-community-centered-technology",
+      "localPath": "/stories/building-the-act-ecosystem-a-vision-for-community-centered-technology",
       "syndicationDestinations": [
         "act_el"
       ]

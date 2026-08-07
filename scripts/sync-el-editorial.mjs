@@ -522,15 +522,40 @@ async function main() {
               updatedAt: article.updatedAt || null,
               tags: Array.isArray(detail.tags) ? detail.tags : [],
               themes: Array.isArray(detail.themes) ? detail.themes : [],
-              featuredImageUrl: detail.featuredImageUrl || null,
-              featuredImageAlt: detail.featuredImageAlt || null,
+              // Photographs come from the LIST response, not the detail one.
+              //
+              // Empathy Ledger gates media behind /api/media/<id>/file, which
+              // mints a signed URL, so a person who withdraws consent can
+              // actually take their photograph down. The gate is applied by
+              // resolveAssetUrl, and only when it is handed the
+              // gatedByStoragePath map that the list route builds.
+              //
+              // /api/v1/content-hub/articles/[slug] never builds that map and
+              // calls resolveAssetUrl without it, so it returns raw
+              // /storage/v1/object/public/media/ URLs. Measured 2026-08-07 on
+              // conversation-camp: the list route returns 8 of 8 photographs
+              // gated, the detail route 0 of 8. Because detail won this merge,
+              // every photograph in our snapshot was the ungated form, pointing
+              // at a bucket that is now private and answers 400.
+              //
+              // So the ungated URLs were both broken and, when they worked,
+              // uncancellable. Preferring the list fixes both. Detail remains
+              // the fallback, and is still the only source of `content`, which
+              // the list response does not carry at all.
+              //
+              // Reversible once the [slug] route passes the map: at that point
+              // the two agree and this preference stops mattering.
+              featuredImageUrl: article.featuredImageUrl || detail.featuredImageUrl || null,
+              featuredImageAlt: detail.featuredImageAlt || article.featuredImageAlt || null,
               storyteller: detail.storyteller || null,
-              media: detail.media || {
-                photoCount: 0,
-                videoCount: 0,
-                photoPreviews: [],
-                videoPreviews: [],
-              },
+              media: (article.media?.photoPreviews?.length || article.media?.videoPreviews?.length)
+                ? article.media
+                : detail.media || {
+                    photoCount: 0,
+                    videoCount: 0,
+                    photoPreviews: [],
+                    videoPreviews: [],
+                  },
               ctas: Array.isArray(detail.ctas) ? detail.ctas : [],
               visibility: detail.visibility || 'public',
               canonicalUrl: `${EMPATHY_LEDGER_URL}/articles/${detail.slug || article.slug}`,

@@ -24,11 +24,11 @@ const launchRedirects = [
     permanent: true,
   },
 
-  // Legacy public-site routes. /seeds and /action stay pointed at /projects,
-  // their durable home, and ride its temporary closure redirect; see the note
-  // on the deleted-entries block below.
-  { source: "/seeds", destination: "/projects", permanent: true },
-  { source: "/action", destination: "/projects", permanent: true },
+  // Legacy public-site routes. /seeds and /action used to point at /projects and
+  // ride its closure redirect, which cost every visitor a second hop. The closure
+  // is permanent (2026-08-07), so they go straight to where the work now lives.
+  { source: "/seeds", destination: "/#fields", permanent: true },
+  { source: "/action", destination: "/#fields", permanent: true },
   { source: "/germinating", destination: "/stories", permanent: true },
   { source: "/news", destination: "/stories", permanent: true },
   { source: "/journal", destination: "/stories", permanent: true },
@@ -38,54 +38,56 @@ const launchRedirects = [
   // Canonical slug renames, 2026-04-23.
   {
     source: "/projects/diagrama-spain",
-    destination: "/projects/diagrama",
+    destination: "/#fields",
     permanent: true,
   },
   {
     source: "/projects/bg-fit-mount-isa",
-    destination: "/projects/bg-fit",
+    destination: "/#fields",
     permanent: true,
   },
   {
     source: "/projects/smart-hcp-gp-uplift",
-    destination: "/projects/smart-hcp-uplift",
+    destination: "/#fields",
     permanent: true,
   },
   {
     source: "/projects/pakkinjalki-kari",
-    destination: "/projects/pakkimjalki-kari",
+    destination: "/#fields",
     permanent: true,
   },
   {
     source: "/projects/goods-on-country",
-    destination: "/goods",
+    destination: "/fields/goods",
     permanent: true,
   },
-  { source: "/goods-on-country", destination: "/goods", permanent: true },
+  { source: "/goods-on-country", destination: "/fields/goods", permanent: true },
   { source: "/projects/the-harvest", destination: "/harvest", permanent: true },
   {
     source: "/projects/empathy-ledger",
-    destination: "/empathy-ledger",
+    destination: "/fields/empathy",
     permanent: true,
   },
   {
     source: "/projects/justicehub",
-    destination: "/justicehub",
+    destination: "/fields/justice",
     permanent: true,
   },
-  { source: "/projects/goods", destination: "/goods", permanent: true },
+  { source: "/projects/goods", destination: "/fields/goods", permanent: true },
   {
     source: "/projects/black-cockatoo-valley",
-    destination: "/farm",
+    destination: "/about#history",
     permanent: true,
   },
 
-  // Editorial-site closure, 2026-07-23. The old public information architecture
-  // remains in the repository for source material, but visitors should only move
-  // through the Living Field routes. Keep admin, API, webhook, Confessions, art
-  // detail, Harvest detail and story-article routes intact.
-  { source: "/projects", destination: "/#fields", permanent: false },
-  { source: "/projects/:slug*", destination: "/#fields", permanent: false },
+  // Editorial-site closure, 2026-07-23, made permanent 2026-08-07. The Living
+  // Field is the information architecture; /projects and /events are not coming
+  // back. 308 rather than 307, because a temporary code tells a crawler to keep
+  // the old URL indexed and check again, which is no longer true. The old page
+  // code remains in the repository as source material. Keep admin, API, webhook,
+  // Confessions, art detail, Harvest detail and story-article routes intact.
+  { source: "/projects", destination: "/#fields", permanent: true },
+  { source: "/projects/:slug*", destination: "/#fields", permanent: true },
   { source: "/goods", destination: "/fields/goods", permanent: false },
   {
     source: "/empathy-ledger",
@@ -113,7 +115,7 @@ const launchRedirects = [
   { source: "/studio", destination: "/about", permanent: false },
   { source: "/impact", destination: "/stories", permanent: false },
   { source: "/partners", destination: "/contact", permanent: false },
-  { source: "/events", destination: "/harvest", permanent: false },
+  { source: "/events", destination: "/harvest", permanent: true },
   { source: "/media", destination: "/stories", permanent: false },
   // Route unification, 2026-08-07: editorial articles moved from /blog/[slug]
   // to /stories/[slug] so one slug space serves packets and articles. 308s,
@@ -126,11 +128,12 @@ const launchRedirects = [
 
   // Deleted or demoted entries redirect to parent context.
   //
-  // While the editorial-site closure holds, the /projects/:slug* rule above
-  // matches first and sends all of these to /#fields in one hop (redirects are
-  // first-match-wins). The destinations here record where each retired URL
-  // belongs if /projects and /events ever return; do not "flatten" them to
-  // /#fields, which would bake the temporary closure into permanent redirects.
+  // The /projects/:slug* rule above matches first and sends all of these to
+  // /#fields in one hop (redirects are first-match-wins), so they are dormant and
+  // the redirect check reports them as such. Their destinations were flattened on
+  // 2026-08-07: they used to point at /projects and /events, which are themselves
+  // closed, so each held URL would have cost two hops the moment it went live.
+  // The earlier warning against flattening assumed the closure was temporary.
   {
     source: "/projects/green-harvest-witta",
     destination: "/harvest",
@@ -138,48 +141,48 @@ const launchRedirects = [
   },
   {
     source: "/projects/project-her-self",
-    destination: "/projects",
+    destination: "/#fields",
     permanent: true,
   },
   {
     source: "/projects/act-monthly-dinners",
-    destination: "/events",
+    destination: "/harvest",
     permanent: true,
   },
   {
     source: "/projects/10x10-retreat",
-    destination: "/events",
+    destination: "/harvest",
     permanent: true,
   },
   {
     source: "/projects/westpac-summit-2025",
-    destination: "/events",
+    destination: "/harvest",
     permanent: true,
   },
   {
     source: "/projects/bupa-tfn-pitch",
-    destination: "/events",
+    destination: "/harvest",
     permanent: true,
   },
   {
     source: "/projects/naidoc-week-mount-isa",
-    destination: "/events",
+    destination: "/harvest",
     permanent: true,
   },
-  { source: "/projects/dad-lab-25", destination: "/events", permanent: true },
+  { source: "/projects/dad-lab-25", destination: "/harvest", permanent: true },
   {
     source: "/projects/anat-spectra-2025",
-    destination: "/events",
+    destination: "/harvest",
     permanent: true,
   },
   {
     source: "/projects/cars-and-microcontrollers",
-    destination: "/events",
+    destination: "/harvest",
     permanent: true,
   },
   {
     source: "/projects/global-laundry-alliance",
-    destination: "/events",
+    destination: "/harvest",
     permanent: true,
   },
 
@@ -208,42 +211,42 @@ const launchRedirects = [
   // homepage mosaic, and related-projects (see heldProjectSlugs in public-projects).
   {
     source: "/projects/act-infrastructure",
-    destination: "/projects",
+    destination: "/#fields",
     permanent: false,
   },
   {
     source: "/projects/custodian-first-economy",
-    destination: "/projects",
+    destination: "/#fields",
     permanent: false,
   },
   {
     source: "/projects/facilitation",
-    destination: "/projects",
+    destination: "/#fields",
     permanent: false,
   },
   {
     source: "/projects/grantscope",
-    destination: "/projects",
+    destination: "/#fields",
     permanent: false,
   },
   {
     source: "/projects/minderoo-pitch-package",
-    destination: "/projects",
+    destination: "/#fields",
     permanent: false,
   },
   {
     source: "/projects/three-circles",
-    destination: "/projects",
+    destination: "/#fields",
     permanent: false,
   },
   {
     source: "/projects/the-full-idea",
-    destination: "/projects",
+    destination: "/#fields",
     permanent: false,
   },
   {
     source: "/projects/annual-field-service",
-    destination: "/projects",
+    destination: "/#fields",
     permanent: false,
   },
 

@@ -51,6 +51,30 @@ const routes = [
 ];
 
 /**
+ * One story article, resolved at run time rather than hard-coded.
+ *
+ * /stories/[slug] was never in this list, so the reading experience, which is
+ * the longest page on the site and the only one that lays text over an
+ * arbitrary photograph, went unchecked. Article slugs come from Empathy Ledger
+ * and change without notice, so naming one here would make the gate fail on an
+ * upstream edit rather than on a real regression.
+ *
+ * Text over the hero photograph is still skipped by the collector, as all
+ * text over media is; it cannot be judged from computed style. That part is
+ * measured by sampling rendered pixels instead, which is how the clay-gold
+ * "All stories" link was found failing at 1.58:1 and moved off the photograph.
+ */
+async function resolveStoryRoute(page) {
+  const response = await page.goto(`${baseUrl}/stories`, { waitUntil: "load", timeout: 60_000 });
+  if (!response || response.status() !== 200) return null;
+  const slug = await page.evaluate(() => {
+    const link = document.querySelector('a[href^="/stories/"]');
+    return link ? link.getAttribute("href") : null;
+  });
+  return slug;
+}
+
+/**
  * Runs inside the page. Walks every leaf text node, resolves the nearest
  * opaque ancestor background, and applies the WCAG 2.1 contrast formula.
  *
@@ -168,6 +192,10 @@ async function main() {
   const page = await browser.newPage({ viewport: { width: 1440, height: 900 } });
   const all = [];
   let totalSkipped = 0;
+
+  const storyRoute = await resolveStoryRoute(page);
+  if (storyRoute) routes.push(storyRoute);
+  else console.log("  note: no story article found to check; /stories may be empty");
 
   for (const route of routes) {
     // "load", not "networkidle": the dev server holds an HMR websocket open,

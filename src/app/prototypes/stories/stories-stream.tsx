@@ -10,14 +10,21 @@ const publicText = (value: string) => value.replace(/[—–]/g, ",");
 
 export function StoriesStream({ stories }: { stories: EditorialArticle[] }) {
   const [project, setProject] = useState("all");
+  // Every featured image resolves today, but 81 of the 114 gallery photographs
+  // behind these same articles return HTTP 400 from Empathy Ledger's storage
+  // (measured 2026-08-07). A card whose image dies should fall back to the tile
+  // this grid already has for an article with no image, rather than leaving a
+  // browser's broken-image glyph in an editorial grid.
+  const [deadImages, setDeadImages] = useState<string[]>([]);
   const projects = useMemo(() => Array.from(new Set(stories.flatMap((story) => story.relatedProjectSlugs))).sort(), [stories]);
   const visible = project === "all" ? stories : stories.filter((story) => story.relatedProjectSlugs.includes(project));
   return <section className={styles.stream} aria-labelledby="stories-stream-title">
     <div className={styles.streamHead}><div><p className={styles.eyebrow}>The living stream</p><h2 id="stories-stream-title">Follow what is moving.</h2></div><div className={styles.filters} aria-label="Filter stories by project"><button type="button" aria-pressed={project === "all"} onClick={() => setProject("all")}>All</button>{projects.map((slug) => <button type="button" key={slug} aria-pressed={project === slug} onClick={() => setProject(slug)}>{projectNames[slug] || slug.replaceAll("-", " ")}</button>)}</div></div>
     <div className={styles.grid}>{visible.map((story, index) => {
       const video = story.media?.videoPreviews?.[0];
+      const image = story.featuredImageUrl && !deadImages.includes(story.featuredImageUrl) ? story.featuredImageUrl : null;
       return <article key={story.id} className={index === 0 && project === "all" ? styles.lead : ""}><Link href={story.localPath}>
-        <div className={styles.media}>{video?.url ? <video muted loop playsInline preload="metadata" poster={video.thumbnailUrl || story.featuredImageUrl || undefined} onMouseEnter={(event) => { void event.currentTarget.play().catch((error: unknown) => { if (!(error instanceof DOMException && error.name === "AbortError")) console.error("Story preview could not play", error); }); }} onMouseLeave={(event) => { event.currentTarget.pause(); event.currentTarget.currentTime = 0; }}><source src={video.url} /></video> : story.featuredImageUrl ? <img src={story.featuredImageUrl} alt={story.featuredImageAlt || ""} /> : <span>Story<br />waiting for an image</span>}{video?.url ? <b>Film</b> : null}</div>
+        <div className={styles.media}>{video?.url ? <video muted loop playsInline preload="metadata" poster={video.thumbnailUrl || image || undefined} onMouseEnter={(event) => { void event.currentTarget.play().catch((error: unknown) => { if (!(error instanceof DOMException && error.name === "AbortError")) console.error("Story preview could not play", error); }); }} onMouseLeave={(event) => { event.currentTarget.pause(); event.currentTarget.currentTime = 0; }}><source src={video.url} /></video> : image ? <img src={image} alt={story.featuredImageAlt || ""} onError={() => setDeadImages((current) => current.includes(image) ? current : [...current, image])} /> : <span>Story<br />waiting for an image</span>}{video?.url ? <b>Film</b> : null}</div>
         <div className={styles.copy}><p>{story.relatedProjectSlugs.map((slug) => projectNames[slug] || slug.replaceAll("-", " ")).join(" · ") || "Across ACT"}</p><h3>{publicText(story.title)}</h3>{story.excerpt ? <span>{publicText(story.excerpt)}</span> : null}<footer><em>{publicText(story.authorName || "A Curious Tractor")}</em><b>Read →</b></footer></div>
       </Link></article>;
     })}</div>

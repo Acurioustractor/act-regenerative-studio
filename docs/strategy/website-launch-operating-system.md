@@ -1,6 +1,9 @@
 # ACT Website Launch Operating System
 
 > Status: working launch plan. Last reviewed locally on 2026-05-24.
+> The domain cutover checklist, launch-hold un-block criteria and Empathy
+> Ledger data asks live in [website-launch-cutover-plan.md](./website-launch-cutover-plan.md)
+> (Phase 3 of the 2026-08-07 launch review).
 
 ## Purpose
 
@@ -64,7 +67,7 @@ unlinked future routes can keep developing behind the scenes.
 | `/farm` | Black Cockatoo Valley, Jinibara Country, visit/residency path. |
 | `/harvest` | Community hub, food, gatherings, local pathway. |
 | `/art` | The work lands in culture, not just service delivery. |
-| `/blog` or `/stories` | Only publish approved, image-led stories. |
+| `/stories` | Only publish approved, image-led stories. Decided 2026-08-07: one slug space at `/stories/[slug]` for packets and editorial articles; `/blog` is a 308. |
 | `/wiki` | Useful as living knowledge, but not promoted as a finished public archive unless article quality is ready. |
 | `/contact` | Clear routes into GHL with source/context tags. |
 

@@ -15,7 +15,6 @@ export function LivingFieldPrototype({ production = false }: { production?: bool
   const activeFieldHero = selectedMedia.fields[activeField.id];
   const [scrollProgress, setScrollProgress] = useState(0);
   const [shareStatus, setShareStatus] = useState("");
-  const artworkRef = useRef<HTMLDivElement>(null);
 
   // The hero hands over to the fields: ACT states its position in the fixed h1,
   // then each field speaks its own line over its own footage, in turn. The lines
@@ -100,21 +99,6 @@ export function LivingFieldPrototype({ production = false }: { production?: bool
     };
   }, []);
 
-  function moveArtwork(event: React.PointerEvent<HTMLDivElement>) {
-    const node = artworkRef.current;
-    if (!node) return;
-    const rect = node.getBoundingClientRect();
-    const x = (event.clientX - rect.left) / rect.width - 0.5;
-    const y = (event.clientY - rect.top) / rect.height - 0.5;
-    node.style.setProperty("--tilt-x", `${x * 1.5}deg`);
-    node.style.setProperty("--tilt-y", `${y * -1.5}deg`);
-  }
-
-  function resetArtwork() {
-    artworkRef.current?.style.setProperty("--tilt-x", "0deg");
-    artworkRef.current?.style.setProperty("--tilt-y", "0deg");
-  }
-
   async function shareField() {
     const shareData = { title: "A Curious Tractor · Living Field", text: "Come into the art, then follow it into the field.", url: window.location.href };
     try {
@@ -142,22 +126,43 @@ export function LivingFieldPrototype({ production = false }: { production?: bool
 
       <main id="prototype-content">
         <section className={styles.hero} aria-labelledby="hero-title">
+          {/* The footage is the hero, not an illustration beside it. It sits under
+              a scrim on a solid ink base: the base is what gives the text a real
+              background to be legible against, in the contrast gate as well as to
+              the eye, since neither can judge type against moving video. */}
+          <div className={styles.heroMedia} aria-hidden="true">
+            <video
+              key={`shot-${heroShot.videoUrl}`}
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster={heroEncode?.posterUrl ?? heroShot.posterUrl}
+            >
+              <source src={heroEncode?.videoUrl ?? heroShot.videoUrl} type="video/mp4" />
+            </video>
+            <div className={styles.heroScrim} />
+          </div>
+
           <div className={styles.heroCopy}>
             <p className={styles.eyebrow}>Art moves first</p>
             <h1 id="hero-title"><span>Make the</span><span>system felt.</span></h1>
             <p>We use art to open hard questions. Then we work with communities to build practical alternatives.</p>
+          </div>
 
+          <div className={styles.heroFoot}>
             {/* The field's own voice. aria-live stays off because this rotates on a
                 timer and would otherwise interrupt a screen reader every 6.5s; the
-                seeds below are the accessible way to move through it. */}
+                named field buttons are the accessible way to move through it. */}
             <p className={styles.heroVoice} aria-live="off">
               <span key={`name-${heroField.id}`} className={styles.heroVoiceField}>{heroField.name}</span>
               <span key={`line-${heroField.id}`} className={styles.heroVoiceLine}>{heroField.line}</span>
             </p>
 
-            <div
-              className={styles.heroSeeds}
-              role="group"
+            {/* Named, not dotted. A row of dots is someone else's slideshow; the
+                field names say what you would be choosing. */}
+            <nav
+              className={styles.heroFields}
               aria-label="Choose which field the hero is showing"
               onPointerEnter={() => setHeroHeld(true)}
               onPointerLeave={() => setHeroHeld(false)}
@@ -168,48 +173,15 @@ export function LivingFieldPrototype({ production = false }: { production?: bool
                 <button
                   key={entry.field.id}
                   type="button"
-                  aria-pressed={index === heroIndex % heroSequence.length}
+                  aria-current={index === heroIndex % heroSequence.length ? "true" : undefined}
                   onClick={() => setHeroIndex(index)}
                 >
-                  <span className={styles.seed} aria-hidden="true" />
-                  <span className={styles.visuallyHidden}>{entry.field.name}</span>
+                  {entry.field.name}
                 </button>
               ))}
-            </div>
+            </nav>
 
             <a className={styles.textLink} href="#fields">Follow it into the field <span>↓</span></a>
-          </div>
-
-          <div className={styles.heroArtworkCell}>
-            {/* Keyed on the field so it remounts and redraws itself on each change:
-                the mark performs the return rather than sitting there as decoration. */}
-            <svg key={`mark-${heroField.id}`} className={styles.returnMark} viewBox="0 0 180 180" aria-hidden="true">
-              <path d="M145 145C116 171 65 169 35 137C7 106 10 57 40 28C67 2 113 6 143 33C164 52 174 84 165 111" />
-              <circle cx="165" cy="111" r="6" />
-            </svg>
-            <div
-              ref={artworkRef}
-              className={styles.heroArtwork}
-              onPointerMove={moveArtwork}
-              onPointerEnter={() => setHeroHeld(true)}
-              onPointerLeave={() => { setHeroHeld(false); resetArtwork(); }}
-            >
-              <video
-                key={`shot-${heroShot.videoUrl}`}
-                autoPlay
-                muted
-                loop
-                playsInline
-                poster={heroEncode?.posterUrl ?? heroShot.posterUrl}
-              >
-                <source src={heroEncode?.videoUrl ?? heroShot.videoUrl} type="video/mp4" />
-              </video>
-              <div key={`note-${heroShot.videoUrl}`} className={styles.artworkNote}>
-                <span>{heroShot.title}</span>
-                <span>{heroShot.field}</span>
-              </div>
-              <p>{heroHeld ? "Held" : "Move near it"}</p>
-            </div>
           </div>
         </section>
 

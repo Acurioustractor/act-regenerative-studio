@@ -50,11 +50,30 @@
    537px and cannot wrap (nowrap below), so the type overran its column and
    painted across the artwork. Escaping the clamp buys the width instead of
    shrinking the type. */
-.hero { max-width: none; margin-inline: 0; min-height: 100svh; display: grid; grid-template-columns: minmax(0, .92fr) minmax(23rem, 1.08fr); align-items: center; gap: clamp(2rem, 5vw, 6rem); padding: clamp(6.5rem, 13vh, 8rem) clamp(1.5rem, 6vw, 7rem) clamp(2.5rem, 6vh, 4rem); }
+/* Full-bleed: the footage is the hero, not an illustration beside it. The solid
+   ink base matters twice over. It is what the type is legible against once the
+   scrim sits on it, and it is the background the contrast gate resolves, since
+   neither a checker nor an eye can judge type against moving video. */
+.hero { position: relative; isolation: isolate; max-width: none; margin-inline: 0; min-height: 100svh; display: grid; grid-template-rows: 1fr auto; gap: 2rem; padding: clamp(7rem, 14vh, 9rem) clamp(1.5rem, 6vw, 7rem) clamp(2.5rem, 6vh, 4rem); background: var(--ink); color: var(--paper); }
+.heroMedia { position: absolute; z-index: -1; inset: 0; overflow: hidden; }
+.heroMedia video { display: block; width: 100%; height: 100%; object-fit: cover; filter: saturate(.72) contrast(1.02); animation: heroShotIn 1.1s ease both; }
+/* Heaviest where the words are, so the footage stays open on the other side. */
+.heroScrim { position: absolute; inset: 0; background:
+  linear-gradient(to right, rgba(26,31,26,.9) 0%, rgba(26,31,26,.72) 42%, rgba(26,31,26,.34) 100%),
+  linear-gradient(to top, rgba(26,31,26,.82) 0%, rgba(26,31,26,0) 48%); }
 .eyebrow { margin: 0 0 1.2rem; color:var(--clay-text); font: 650 .68rem/1.3 var(--font-sans); letter-spacing: .22em; text-transform: uppercase; }
 .hero h1 { margin: 0; font-family: var(--font-display); font-size: clamp(4rem, min(7.1vw, 12vh), 7.35rem); font-weight: 300; line-height: .88; letter-spacing: -.045em; }
 .hero h1 span { display: block; white-space: nowrap; }
-.heroCopy > p:not(.eyebrow) { max-width: 31rem; margin: clamp(1.35rem, 3vh, 2.2rem) 0 clamp(1.5rem, 3.4vh, 2.35rem); color: var(--green); font: 400 clamp(1.2rem, 1.7vw, 1.65rem)/1.38 var(--font-body); }
+.heroCopy > p:not(.eyebrow) { max-width: 31rem; margin: clamp(1.35rem, 3vh, 2.2rem) 0 0; color: rgba(250,250,247,.88); font: 400 clamp(1.2rem, 1.7vw, 1.65rem)/1.38 var(--font-body); }
+
+/* Dark context. The clay used on paper (--clay-text) is a dark tone and would
+   disappear here, so accents take the lighter clay the ink Harvest section
+   already uses. */
+.heroCopy { position: relative; align-self: center; max-width: min(48rem, 100%); }
+.hero h1 { color: var(--paper); }
+.hero .eyebrow { color: #d89a74; }
+.heroFoot { position: relative; align-self: end; }
+.heroFoot .textLink { color: var(--paper); }
 .textLink { display: inline-flex; gap: 1rem; font: 650 .68rem/1 var(--font-sans); letter-spacing: .18em; text-transform: uppercase; }
 .textLink span { animation: driftDown 2.4s ease-in-out infinite; }
 
@@ -88,9 +107,23 @@
 @keyframes returnDot { from { opacity: 0; transform: scale(.2); transform-origin: 165px 111px; } to { opacity: 1; transform: scale(1); transform-origin: 165px 111px; } }
 
 /* The field's own voice, paired with its own footage. */
-.heroVoice { display: grid; gap: .5rem; margin: 0 0 1.6rem; padding-left: 1.1rem; border-left: 2px solid var(--clay); }
-.heroVoiceField { color: var(--clay-text); font: 650 .62rem/1 var(--font-sans); letter-spacing: .2em; text-transform: uppercase; animation: heroShotIn .7s ease both; }
-.heroVoiceLine { max-width: 26rem; color: var(--green); font: italic 400 clamp(1.15rem, 1.6vw, 1.45rem)/1.4 var(--font-body); animation: heroShotIn .7s ease .08s both; }
+.heroVoice { display: grid; gap: .5rem; margin: 0 0 1.1rem; padding-left: 1.1rem; border-left: 2px solid #d89a74; }
+.heroVoiceField { color: #d89a74; font: 650 .62rem/1 var(--font-sans); letter-spacing: .2em; text-transform: uppercase; animation: heroShotIn .7s ease both; }
+.heroVoiceLine { max-width: 30rem; color: var(--paper); font: italic 400 clamp(1.15rem, 1.6vw, 1.45rem)/1.4 var(--font-body); animation: heroShotIn .7s ease .08s both; }
+
+/* Named, not dotted: the field names say what you would be choosing, where a row
+   of dots says only that this is a carousel. */
+.heroFields { display: flex; flex-wrap: wrap; align-items: center; gap: 0 clamp(1rem, 2.4vw, 2.2rem); margin: 0 0 .9rem; }
+.heroFields button { min-height: 44px; padding: 0; border: 0; background: transparent; color: rgba(250,250,247,.7); font: 650 .64rem/1 var(--font-sans); letter-spacing: .16em; text-transform: uppercase; cursor: pointer; transition: color .3s ease; }
+.heroFields button:hover { color: var(--paper); }
+.heroFields button[aria-current] { color: var(--paper); }
+.heroFields button[aria-current]::after { content: ""; display: block; height: 1px; margin-top: .45rem; background: #d89a74; transform-origin: left; animation: fieldUnderline .55s ease both; }
+.heroFields button:focus-visible { outline: 2px solid #d89a74; outline-offset: 4px; }
+@keyframes fieldUnderline { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .heroMedia video, .heroFields button[aria-current]::after { animation: none; }
+}
 
 /* Seeds double as the way in: same shape as the field buttons below, so the hero
    prefigures that choice instead of inventing new furniture. */

@@ -31,7 +31,16 @@ const PUBLIC = path.join(root, "public");
 const ASPECT = 1.04;
 const MAX_WIDTH = 1120;
 const SECONDS = 6;
-const CRF = 28;
+// A byte ceiling rather than one fixed quality. Calm footage hits it at the first
+// step and keeps its detail (a static clip lands at 59KB); busy footage needs
+// more compression to reach the same weight. The drone aerial is the case that
+// forced this: at crf 28 it came out 1591KB, three to five times every other
+// clip, because constant motion defeats inter-frame prediction. Dropping frame
+// rate does not help, since fewer frames means more motion between each pair and
+// the per-frame cost rises to match; resolution does not help either, as the
+// source crop is already narrower than MAX_WIDTH. Quality is the only lever.
+const MAX_KB = 520;
+const CRF_STEPS = [28, 31, 34, 36, 38];
 // Skip the opening moment: cuts often start on a fade, a slate or a camera settle.
 const START = 2;
 
@@ -62,16 +71,22 @@ async function encode(sourceUrl) {
   const videoOut = path.join(PUBLIC, videoUrl.replace(/^\//, ""));
   const posterOut = path.join(PUBLIC, posterUrl.replace(/^\//, ""));
 
+  let chosenCrf = null;
   if (await isStale(source, videoOut)) {
-    await run("ffmpeg", [
-      "-y", "-v", "error",
-      "-ss", String(START), "-t", String(SECONDS), "-i", source,
-      "-vf", VIDEO_FILTER,
-      "-an",
-      "-c:v", "libx264", "-crf", String(CRF), "-preset", "slow",
-      "-pix_fmt", "yuv420p", "-movflags", "+faststart",
-      videoOut,
-    ]);
+    for (const crf of CRF_STEPS) {
+      await run("ffmpeg", [
+        "-y", "-v", "error",
+        "-ss", String(START), "-t", String(SECONDS), "-i", source,
+        "-vf", VIDEO_FILTER,
+        "-an",
+        "-c:v", "libx264", "-crf", String(crf), "-preset", "slow",
+        "-pix_fmt", "yuv420p", "-movflags", "+faststart",
+        videoOut,
+      ]);
+      chosenCrf = crf;
+      const { size } = await fs.stat(videoOut);
+      if (size / 1024 <= MAX_KB) break;
+    }
     // The poster has to match the encode's crop, or the video jumps on first frame.
     await run("ffmpeg", [
       "-y", "-v", "error",
@@ -83,7 +98,11 @@ async function encode(sourceUrl) {
 
   const [before, after] = await Promise.all([fs.stat(source), fs.stat(videoOut)]);
   const kb = (bytes) => Math.round(bytes / 1024);
-  console.log(`  ${base}: ${kb(before.size)}KB -> ${kb(after.size)}KB`);
+  const note = chosenCrf === null
+    ? " (cached)"
+    : `${chosenCrf === CRF_STEPS[0] ? "" : ` (crf ${chosenCrf} to meet the ${MAX_KB}KB ceiling)`}`;
+  const over = kb(after.size) > MAX_KB ? `  OVER the ${MAX_KB}KB ceiling even at crf ${chosenCrf}` : "";
+  console.log(`  ${base}: ${kb(before.size)}KB -> ${kb(after.size)}KB${note}${over}`);
   return { videoUrl, posterUrl, sourceKb: kb(before.size), encodedKb: kb(after.size) };
 }
 
@@ -93,7 +112,10 @@ const shots = [selections.homepage, ...Object.values(selections.fields ?? {})].f
 );
 const unique = [...new Set(shots.map((shot) => shot.videoUrl))];
 
-console.log(`Encoding ${unique.length} hero clips (${SECONDS}s, crf ${CRF}, <=${MAX_WIDTH}px)`);
+console.log(
+  `Encoding ${unique.length} hero clips (${SECONDS}s, <=${MAX_WIDTH}px, ` +
+    `quality stepped from crf ${CRF_STEPS[0]} until each is under ${MAX_KB}KB)`,
+);
 
 const manifest = {};
 let sourceTotal = 0;
@@ -117,14 +139,17 @@ const READ_BASE = `${SUPABASE_URL}/storage/v1/object/public/${BUCKET}`;
 const WRITE_BASE = `${SUPABASE_URL}/storage/v1/object/${BUCKET}`;
 const objectPath = (url) => url.replace(/^\/media\//, "");
 
-async function isPublished(url) {
+async function publishedSize(url) {
   try {
     const response = await fetch(`${READ_BASE}/${objectPath(url)}`, { method: "HEAD" });
-    return response.ok;
+    if (!response.ok) return null;
+    return Number(response.headers.get("content-length") ?? 0);
   } catch {
-    return false;
+    return null;
   }
 }
+
+const isPublished = async (url) => (await publishedSize(url)) !== null;
 
 async function publish(url, contentType) {
   const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
@@ -134,15 +159,18 @@ async function publish(url, contentType) {
     );
   }
   const body = await fs.readFile(path.join(PUBLIC, url.replace(/^\//, "")));
-  // POST creates and fails if the object already exists. Never PUT here: this
-  // script adds new derivatives and must not be able to overwrite footage that
-  // is already published.
+  // Upsert is confined to derivatives this script generates: every path it can
+  // address is `<name>-hero.mp4` or `<name>-hero.jpg`, built from the source
+  // filename, so it structurally cannot address original footage. That is what
+  // makes overwriting safe here, and it is needed because re-encoding a clip to
+  // meet the byte ceiling has to replace the copy already in the bucket.
   const response = await fetch(`${WRITE_BASE}/${objectPath(url)}`, {
     method: "POST",
     headers: {
       authorization: `Bearer ${serviceKey}`,
       "content-type": contentType,
       "cache-control": "public, max-age=31536000, immutable",
+      "x-upsert": "true",
     },
     body,
   });
@@ -155,13 +183,15 @@ if (process.argv.includes("--publish")) {
   console.log(`\nPublishing to the ${BUCKET} bucket`);
   for (const entry of Object.values(manifest)) {
     for (const [url, type] of [[entry.videoUrl, "video/mp4"], [entry.posterUrl, "image/jpeg"]]) {
-      if (await isPublished(url)) {
-        console.log(`  already there, left alone: ${objectPath(url)}`);
+      const local = (await fs.stat(path.join(PUBLIC, url.replace(/^\//, "")))).size;
+      const remote = await publishedSize(url);
+      if (remote === local) {
+        console.log(`  unchanged: ${objectPath(url)}`);
         continue;
       }
       try {
         await publish(url, type);
-        console.log(`  uploaded: ${objectPath(url)}`);
+        console.log(`  ${remote === null ? "uploaded" : "replaced"}: ${objectPath(url)}`);
       } catch (error) {
         console.warn(`  FAILED  ${objectPath(url)}: ${error.message}`);
       }

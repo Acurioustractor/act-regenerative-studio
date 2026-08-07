@@ -111,8 +111,22 @@ with the hold.
 | --- | --- | --- |
 | `/storytellers` | Only one consented profile syndicates | More than one consented storyteller profile flows from Empathy Ledger |
 | `/ask` | Public AI Q&A unreviewed | Cost, safety and prompt-injection review done; rate limiting and moderation decided; explicit go |
-| `/wiki` | Sync leaked internal R&D and finance content | `sync-canonical-wiki-pages.mjs` glob exclusions fixed; finance/decisions visibility decided; article quality pass per the operating system's wiki standard |
+| `/wiki` | **Not a hold pending fixes any more. Decided 2026-08-07: the wiki is internal.** It stays in the repository and stays useful to us; it does not go out to the public | Only if that decision is reversed, and then the original blockers still apply: `sync-canonical-wiki-pages.mjs` glob exclusions fixed, finance and decisions visibility decided, article quality pass per the operating system's wiki standard |
 | `/people` | Internal research notes leaked into public bios | EL bio source sanitised; re-audit of every published bio before reversal |
+
+### The wiki stays internal
+
+Checked on production on 2026-08-07, because "held" and "not reachable" are not
+the same claim. `src/lib/projects/get-project-data.ts` reads the generated wiki
+data and is imported by live public routes (`/harvest`, `/empathy-ledger`,
+`/art/residencies`, `/farm/*`), so the internal material could have travelled
+without `/wiki` being reachable at all. It has not: a scan of those pages for
+revenue figures, funder scores, Xero invoice numbers and political contacts came
+back clean. The single hit is the `ACT-HV` project code on `/harvest`, carried as
+a form-tagging prop rather than shown as copy.
+
+Worth re-running that scan whenever the wiki sync regenerates, since the leak
+would arrive through the data rather than through the route.
 
 ## Empathy Ledger data asks
 

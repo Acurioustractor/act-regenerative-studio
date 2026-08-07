@@ -131,21 +131,30 @@ would arrive through the data rather than through the route.
 ## Empathy Ledger data asks
 
 These cap editorial quality on the site and are upstream fixes, not site work.
-Raised with the EL side; timeline unconfirmed.
+The sendable version, ranked rather than listed as five equal requests, is
+[docs/integrations/empathy-ledger/data-asks.md](../integrations/empathy-ledger/data-asks.md).
 
-- **Real publish dates.** 21 of 29 articles share one timestamp to the
-  millisecond. Field pages deliberately render no dates because printing the
-  migration artifact would state something false. Dates return to the pages
-  when the feed carries real ones (a guard test in `field-graph.test.ts`
-  flips when they arrive).
-- **Media captions.** 0 of 114 photos carry captions.
-- **Featured-image alt text.** 0 of 26 featured images carry alts; the site
-  strips Webflow filename junk and falls back to the article title.
-- **Per-article authors.** Every article currently attributes to one person;
-  person-voiced pieces need their real storyteller bylines.
-- **Destination-key alignment.** The sync uses the `act_el` destination key,
-  the live read filters by site slug; the two paths can return different
-  corpora. Needs one key.
+Figures re-verified against `empathy-ledger-editorial.generated.json` on
+2026-08-07. The earlier numbers here were stale, having been carried from a
+larger corpus, and are corrected below.
+
+- **Real publish dates.** 26 articles carry 5 distinct timestamps between them;
+  18 share `2026-01-09T23:40:59.476+00:00` to the millisecond. Field pages
+  deliberately render no dates, because printing that migration artifact would
+  state something false. A guard test in `field-graph.test.ts` flips when real
+  dates arrive.
+- **Destination-key alignment.** The sync writes `editorialDestination:
+  "act_el"`; the runtime reads `/api/v2/sites/act-regenerative-studio/`. Two
+  identifiers for one site, and nothing on this side can tell whether they
+  select the same corpus. If they diverge, the snapshot and the live read
+  disagree silently.
+- **Featured-image alt text.** 0 of the 18 articles that have a featured image
+  carry alt text; the site strips Webflow filename junk and falls back to the
+  article title.
+- **Media captions.** 0 of 123 media items carry a caption, and none carry alt
+  text either.
+- **Per-article authors.** All 26 attribute to one person; person-voiced pieces
+  need their real storyteller bylines.
 
 ## Ready to cut over
 

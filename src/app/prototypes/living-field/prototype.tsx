@@ -145,9 +145,15 @@ export function LivingFieldPrototype({ production = false }: { production?: bool
           </div>
 
           <div className={styles.heroCopy}>
-            <p className={styles.eyebrow}>Art moves first</p>
-            <h1 id="hero-title"><span>Make the</span><span>system felt.</span></h1>
-            <p>We use art to open hard questions. Then we work with communities to build practical alternatives.</p>
+            {/* From "What the Road Corrects" (Field Notes 01). The page used to
+                lead with "Make the system felt", which is the insufficiency that
+                essay names: a person can walk through CONTAINED, feel shaken and
+                still leave the system exactly as they found it. The test the road
+                taught replaces it, and the lead is the essay's reason for ACT
+                existing at all. */}
+            <p className={styles.eyebrow}>What the road corrects</p>
+            <h1 id="hero-title"><span>What stays</span><span>after we leave.</span></h1>
+            <p>Useful work often arrives without the relationship needed to change it. Good relationships are left without the machinery, money or memory to continue. We work in the space between them.</p>
           </div>
 
           <div className={styles.heroFoot}>
@@ -190,7 +196,11 @@ export function LivingFieldPrototype({ production = false }: { production?: bool
           <span>Curiosity</span><i aria-hidden="true" />
           <span>Action</span><i aria-hidden="true" />
           <strong>Art</strong>
-          <p>The work moves in every direction.</p>
+          {/* The four stay, the sequence does not. "The road has made a mess of
+              the sequence": listening does not finish before curiosity begins,
+              it starts again after the prototype fails and after a person
+              withdraws permission. */}
+          <p>Listening does not finish before curiosity begins.</p>
         </aside>
 
         <section id="fields" className={styles.fieldSection} aria-labelledby="fields-title">

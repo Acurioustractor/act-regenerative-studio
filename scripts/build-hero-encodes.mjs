@@ -111,17 +111,61 @@ for (const videoUrl of unique) {
 // (see next.config.js), so a file sitting on this machine is never the file the
 // browser fetches. Only list an encode the bucket can actually serve, or the hero
 // points every clip at a 400 and silently shows nothing.
-const PUBLIC_MEDIA_BASE = `${
-  process.env.NEXT_PUBLIC_SUPABASE_URL || "https://tednluwflfhxyucgwigh.supabase.co"
-}/storage/v1/object/public/site-media`;
+const SUPABASE_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || "https://tednluwflfhxyucgwigh.supabase.co";
+const BUCKET = "site-media";
+const READ_BASE = `${SUPABASE_URL}/storage/v1/object/public/${BUCKET}`;
+const WRITE_BASE = `${SUPABASE_URL}/storage/v1/object/${BUCKET}`;
+const objectPath = (url) => url.replace(/^\/media\//, "");
 
-async function isPublished(videoUrl) {
-  const remote = `${PUBLIC_MEDIA_BASE}${videoUrl.replace(/^\/media/, "")}`;
+async function isPublished(url) {
   try {
-    const response = await fetch(remote, { method: "HEAD" });
+    const response = await fetch(`${READ_BASE}/${objectPath(url)}`, { method: "HEAD" });
     return response.ok;
   } catch {
     return false;
+  }
+}
+
+async function publish(url, contentType) {
+  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  if (!serviceKey) {
+    throw new Error(
+      "SUPABASE_SERVICE_ROLE_KEY is not set. Run: node --env-file=.env.local scripts/build-hero-encodes.mjs --publish",
+    );
+  }
+  const body = await fs.readFile(path.join(PUBLIC, url.replace(/^\//, "")));
+  // POST creates and fails if the object already exists. Never PUT here: this
+  // script adds new derivatives and must not be able to overwrite footage that
+  // is already published.
+  const response = await fetch(`${WRITE_BASE}/${objectPath(url)}`, {
+    method: "POST",
+    headers: {
+      authorization: `Bearer ${serviceKey}`,
+      "content-type": contentType,
+      "cache-control": "public, max-age=31536000, immutable",
+    },
+    body,
+  });
+  if (!response.ok) {
+    throw new Error(`${response.status} ${(await response.text()).slice(0, 180)}`);
+  }
+}
+
+if (process.argv.includes("--publish")) {
+  console.log(`\nPublishing to the ${BUCKET} bucket`);
+  for (const entry of Object.values(manifest)) {
+    for (const [url, type] of [[entry.videoUrl, "video/mp4"], [entry.posterUrl, "image/jpeg"]]) {
+      if (await isPublished(url)) {
+        console.log(`  already there, left alone: ${objectPath(url)}`);
+        continue;
+      }
+      try {
+        await publish(url, type);
+        console.log(`  uploaded: ${objectPath(url)}`);
+      } catch (error) {
+        console.warn(`  FAILED  ${objectPath(url)}: ${error.message}`);
+      }
+    }
   }
 }
 

@@ -1,1 +1,26 @@
-{}
+{
+  "/media/field-videos/goods-stretch-bed-community.mp4": {
+    "videoUrl": "/media/field-videos/goods-stretch-bed-community-hero.mp4",
+    "posterUrl": "/media/field-videos/goods-stretch-bed-community-hero.jpg"
+  },
+  "/media/field-videos/confessions-to-philanthropy.mp4": {
+    "videoUrl": "/media/field-videos/confessions-to-philanthropy-hero.mp4",
+    "posterUrl": "/media/field-videos/confessions-to-philanthropy-hero.jpg"
+  },
+  "/media/field-videos/empathy-ledger-elder-trip.mp4": {
+    "videoUrl": "/media/field-videos/empathy-ledger-elder-trip-hero.mp4",
+    "posterUrl": "/media/field-videos/empathy-ledger-elder-trip-hero.jpg"
+  },
+  "/media/field-videos/justicehub-container.mp4": {
+    "videoUrl": "/media/field-videos/justicehub-container-hero.mp4",
+    "posterUrl": "/media/field-videos/justicehub-container-hero.jpg"
+  },
+  "/media/field-videos/goods-community-build.mp4": {
+    "videoUrl": "/media/field-videos/goods-community-build-hero.mp4",
+    "posterUrl": "/media/field-videos/goods-community-build-hero.jpg"
+  },
+  "/media/field-videos/harvest-field-notes-dji-0021.mp4": {
+    "videoUrl": "/media/field-videos/harvest-field-notes-dji-0021-hero.mp4",
+    "posterUrl": "/media/field-videos/harvest-field-notes-dji-0021-hero.jpg"
+  }
+}

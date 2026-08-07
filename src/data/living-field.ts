@@ -45,10 +45,10 @@ export const livingFields: LivingField[] = [
     name: "Art",
     number: "01",
     eyebrow: "Art belongs in the method",
-    title: "Make the system impossible to ignore.",
+    title: "Art begins early and arrives late.",
     line: "Art makes us care enough to return.",
     opening:
-      "Art is not the decoration added when the work is finished. It is how a hidden system becomes visible, physical and difficult to forget.",
+      "Art is not the decoration added when the work is finished. It begins early, in how we notice, and arrives late, after everyone represented in it has had the chance to disagree.",
     question: "What changes when evidence becomes an encounter?",
     answer:
       "CONTAINED takes the architecture of confinement out of the report and puts it in the room. It belongs to the Art field and grows through JusticeHub. The categories overlap because the work does.",

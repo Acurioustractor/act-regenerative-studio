@@ -19,7 +19,11 @@ export function FieldStoryPrototype({
   story: LivingField;
   production?: boolean;
 }) {
-  const selectedHero = heroMedia.fields[story.id];
+  // The art selection is the Confessions phone video, whose burned-in captions
+  // run wall-to-wall; this portrait hero crops the 16:9 frame and cuts every
+  // caption line mid-word. Fall back to the field's own caption-free assets
+  // here — the home card is wide enough to keep the phone video.
+  const selectedHero = story.id === "art" ? undefined : heroMedia.fields[story.id];
 
   useEffect(() => {
     const chrome = Array.from(

@@ -76,7 +76,11 @@ function ArtProjectBlock({
                     src={project.heroVideo.url}
                     poster={project.heroVideo.posterUrl}
                     title={project.heroVideo.alt || project.title}
-                    className="absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                    className={
+                      project.heroVideo.fit === "contain"
+                        ? "absolute inset-0 h-full w-full bg-black object-contain"
+                        : "absolute inset-0 h-full w-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+                    }
                   />
                 ) : null}
                 <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent lg:bg-none" />

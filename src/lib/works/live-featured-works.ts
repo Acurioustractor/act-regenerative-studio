@@ -399,7 +399,7 @@ export function getFeaturedWorkCollaborators(
           150
         ) ||
         summarizeText(story?.excerpt, 150) ||
-        `${name} is currently surfaced through the live story layer for ${work.title}.`;
+        `${name}'s voice is part of ${work.title}.`;
 
       const existing = collaborators.get(key);
       if (existing) {
@@ -426,7 +426,7 @@ export function getFeaturedWorkCollaborators(
       key,
       name: work.collaborators,
       role: work.medium,
-      description: `${work.collaborators} are the current named collaborators for ${work.title} in the public ACT works layer.`,
+      description: `${work.collaborators} are the collaborators behind ${work.title}.`,
       href: work.href,
       relatedWorks: [work.title],
       avatarUrl: null,

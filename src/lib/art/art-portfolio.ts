@@ -63,7 +63,12 @@ export interface ArtProjectConfig {
    * Local looping hero video for video-led works that have no Empathy Ledger
    * photo media. Used as the card thumbnail and the detail-page hero.
    */
-  heroVideo?: { url: string; posterUrl?: string; alt?: string };
+  /**
+   * fit: 'contain' letterboxes the video instead of cropping it. Use for film
+   * with burned-in captions, which object-cover cuts mid-word in the 4/3 card
+   * and 21/9 hero frames.
+   */
+  heroVideo?: { url: string; posterUrl?: string; alt?: string; fit?: 'cover' | 'contain' };
   /**
    * Direct Empathy Ledger link for this art piece. Use when the art work
    * doesn't map cleanly to a parent ACT project slug. Takes precedence over
@@ -165,6 +170,7 @@ const ART_PROJECTS: ArtProjectConfig[] = [
       url: '/media/field-videos/confessions-to-philanthropy.mp4',
       posterUrl: '/media/field-stills/confessions-to-philanthropy.jpg',
       alt: 'Confessions to Philanthropy, the gold phone film',
+      fit: 'contain',
     },
     connectedProject: 'Confessions to Philanthropy',
     connectedProjectHref: '/confessions',

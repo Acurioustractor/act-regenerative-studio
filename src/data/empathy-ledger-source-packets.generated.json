@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-23T07:24:27.398Z",
-  "sourceUrl": "https://www.empathyledger.com",
+  "generatedAt": "2026-07-30T14:06:34.704Z",
+  "sourceUrl": "https://empathy-ledger-v2.vercel.app",
   "siteSlug": "act-regenerative-studio",
   "destination": "act_el",
   "packetCount": 5,
@@ -23,7 +23,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "flagship_project_pack",
           "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
-          "captured_at": "2026-07-23T07:24:23.091Z",
+          "captured_at": "2026-07-30T14:06:34.053Z",
           "verification_status": "verified",
           "notes": "Flagship pack exists for this project slug."
         },
@@ -32,7 +32,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "site_editorial_manifest",
           "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
-          "captured_at": "2026-07-23T07:24:23.091Z",
+          "captured_at": "2026-07-30T14:06:34.053Z",
           "verification_status": "verified",
           "notes": "Editorial manifest found for act-regenerative-studio."
         }
@@ -169,10 +169,10 @@
         }
       ],
       "provenance": {
-        "generated_at": "2026-07-23T07:24:23.091Z",
+        "generated_at": "2026-07-30T14:06:34.053Z",
         "generated_by": "content-hub-source-packet-builder",
         "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
-        "notes": "storyIds=0, storytellerIds=4, mediaIds=8"
+        "notes": "storyIds=0, storytellerIds=3, mediaIds=8"
       },
       "packet_context": {
         "site_slug": "act-regenerative-studio",
@@ -182,7 +182,6 @@
         "storyteller_ids": [
           "dcbdaa70-1871-46e5-b77b-9dad0d0a8894",
           "13742d49-901e-4c08-94b2-a864d1a9a8e9",
-          "7a0cd28a-ad12-4f70-b900-d869b42c9f88",
           "8dab91aa-3a1f-4128-b41d-b89e532be1fa"
         ],
         "media_asset_ids": [
@@ -226,7 +225,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "flagship_project_pack",
           "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
-          "captured_at": "2026-07-23T07:24:22.373Z",
+          "captured_at": "2026-07-30T14:06:33.862Z",
           "verification_status": "unverified",
           "notes": "No flagship pack found."
         },
@@ -235,16 +234,19 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "site_editorial_manifest",
           "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
-          "captured_at": "2026-07-23T07:24:22.373Z",
+          "captured_at": "2026-07-30T14:06:33.862Z",
           "verification_status": "verified",
           "notes": "Editorial manifest found for act-regenerative-studio."
         }
       ],
       "narrative": {
         "headline": "Goods on Country",
-        "summary": "Dianne Stokes, a traditional owner in Tennant Creek, has spent twenty-four years transforming bare country into a home, starting with nothing but her car for shelter.",
-        "body_markdown": "- Where the Country Calls Me Home — Dianne Stokes, a traditional owner in Tennant Creek, has spent twenty-four years transforming bare country into a home, starting with nothing but her car for shelter.\n- Pakkimjalki Kari: Beds, Washing Machines, and the Blessings We Share — When a brand-new washing machine arrives at Alba Camp in Tennant Creek, Dianne Stokes can't contain her joy. This is the story of beds, washing machines, and what happens when a community decides that the most basic goods — the ones most Australians take for granted — are blessings worth sharing.",
+        "summary": "Risilda Hogan, a mother of five in Tennant Creek, shares her journey from living in a tin shed to securing stable housing through employment and support from Stronger Families program. She describes the harsh conditions of her previous living situation and the profound difference stable housing has made for her family. Currently sleeping on mattresses on the floor, she's receiving beds through a community initiative. Risilda works to support her family, ensures her children attend school daily, and expresses strong commitment to maintaining housing stability. She acknowledges community challenges with substance use while demonstrating resilience and determination to provide for her family.",
+        "body_markdown": "- Risilda Hogan's Story — Risilda Hogan, a mother of five in Tennant Creek, shares her journey from living in a tin shed to securing stable housing through employment and support from Stronger Families program. She describes the harsh conditions of her previous living situation and the profound difference stable housing has made for her family. Currently sleeping on mattresses on the floor, she's receiving beds through a community initiative. Risilda works to support her family, ensures her children attend school daily, and expresses strong commitment to maintaining housing stability. She acknowledges community challenges with substance use while demonstrating resilience and determination to provide for her family.\n- Where the Country Calls Me Home — Dianne Stokes, a traditional owner in Tennant Creek, has spent twenty-four years transforming bare country into a home, starting with nothing but her car for shelter.\n- Pakkimjalki Kari: Beds, Washing Machines, and the Blessings We Share — When a brand-new washing machine arrives at Alba Camp in Tennant Creek, Dianne Stokes can't contain her joy. This is the story of beds, washing machines, and what happens when a community decides that the most basic goods — the ones most Australians take for granted — are blessings worth sharing.",
         "themes": [
+          "housing_sovereignty",
+          "community_resilience",
+          "intergenerational_knowledge_transmission",
           "Connection to Country",
           "Cultural Preservation",
           "Youth Empowerment",
@@ -261,67 +263,67 @@
       },
       "media_assets": [
         {
-          "asset_id": "5a192347-d609-40db-ab29-15cd56f3b951",
+          "asset_id": "c56c6e30-ef00-4346-b824-a64bb01e5024",
           "kind": "image",
-          "uri_or_path": "https://www.empathyledger.com/api/media/5a192347-d609-40db-ab29-15cd56f3b951/file",
+          "uri_or_path": "https://www.empathyledger.com/api/media/c56c6e30-ef00-4346-b824-a64bb01e5024/file",
           "caption": null,
-          "alt_text": "20251213-1E5A8857",
+          "alt_text": "A man standing in the yard in front of the workshop shed.",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "452647d6-4a98-4b34-a418-7c4ad770d269",
+          "asset_id": "6505d292-dd60-484e-8da7-8b1bc67302c4",
           "kind": "image",
-          "uri_or_path": "https://www.empathyledger.com/api/media/452647d6-4a98-4b34-a418-7c4ad770d269/file",
+          "uri_or_path": "https://www.empathyledger.com/api/media/6505d292-dd60-484e-8da7-8b1bc67302c4/file",
           "caption": null,
-          "alt_text": "20251213-1E5A8851",
+          "alt_text": "The containerised production line from the far end, workshop bays open to the yard.",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "c4458a30-923d-474c-9660-1c7503d55c54",
+          "asset_id": "e4297139-c2a4-4edd-9db3-df3e680e61ac",
           "kind": "image",
-          "uri_or_path": "https://www.empathyledger.com/api/media/c4458a30-923d-474c-9660-1c7503d55c54/file",
+          "uri_or_path": "https://www.empathyledger.com/api/media/e4297139-c2a4-4edd-9db3-df3e680e61ac/file",
           "caption": null,
-          "alt_text": "20251213-1E5A8836",
+          "alt_text": "The row of production containers seen from the yard, doors open along the line.",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "251a5737-903f-4102-962c-182797640a6a",
+          "asset_id": "87dc0c7e-4060-46e0-970c-4b56c829be17",
           "kind": "image",
-          "uri_or_path": "https://www.empathyledger.com/api/media/251a5737-903f-4102-962c-182797640a6a/file",
+          "uri_or_path": "https://www.empathyledger.com/api/media/87dc0c7e-4060-46e0-970c-4b56c829be17/file",
           "caption": null,
-          "alt_text": "20251213-1E5A8818",
+          "alt_text": "Extruded recycled-plastic profiles laid out in a tray on the ground.",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "26ec660b-0c14-4d84-8957-2dbf653f8461",
+          "asset_id": "818b77e2-c3c5-4a77-8460-6cb4afab2455",
           "kind": "image",
-          "uri_or_path": "https://www.empathyledger.com/api/media/26ec660b-0c14-4d84-8957-2dbf653f8461/file",
+          "uri_or_path": "https://www.empathyledger.com/api/media/818b77e2-c3c5-4a77-8460-6cb4afab2455/file",
           "caption": null,
-          "alt_text": "20251213-1E5A8807",
+          "alt_text": "A storage bin of shredded plastic feedstock, colour-sorted, beside the machinery.",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "fb671a07-0d45-42a8-96ae-3aa95100509a",
+          "asset_id": "9095cafb-1570-4ccf-af97-af86bfc2e038",
           "kind": "image",
-          "uri_or_path": "https://www.empathyledger.com/api/media/fb671a07-0d45-42a8-96ae-3aa95100509a/file",
+          "uri_or_path": "https://www.empathyledger.com/api/media/9095cafb-1570-4ccf-af97-af86bfc2e038/file",
           "caption": null,
-          "alt_text": "20251213-1E5A8773",
+          "alt_text": "Detail of the granulator feed throat with shredded plastic below.",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "34155a64-1d36-48d5-a4bc-dba596d1432f",
+          "asset_id": "72327163-31c0-4279-97d6-b314cebf062f",
           "kind": "image",
-          "uri_or_path": "https://www.empathyledger.com/api/media/34155a64-1d36-48d5-a4bc-dba596d1432f/file",
+          "uri_or_path": "https://www.empathyledger.com/api/media/72327163-31c0-4279-97d6-b314cebf062f/file",
           "caption": null,
-          "alt_text": "20251213-1E5A8753",
+          "alt_text": "Pressed sheets and mould plates stacked in a corner of the container.",
           "usage_rights": "approved"
         },
         {
-          "asset_id": "5cd01f4f-92ae-4cff-bf4f-317a7d4bba27",
+          "asset_id": "7d960662-77a0-4747-8ab6-1d24607ce491",
           "kind": "image",
-          "uri_or_path": "https://www.empathyledger.com/api/media/5cd01f4f-92ae-4cff-bf4f-317a7d4bba27/file",
+          "uri_or_path": "https://www.empathyledger.com/api/media/7d960662-77a0-4747-8ab6-1d24607ce491/file",
           "caption": null,
-          "alt_text": "20251213-1E5A8739",
+          "alt_text": "Shelving racked with pressed recycled-plastic blanks sorted by colour batch.",
           "usage_rights": "approved"
         }
       ],
@@ -382,36 +384,37 @@
         }
       ],
       "provenance": {
-        "generated_at": "2026-07-23T07:24:22.373Z",
+        "generated_at": "2026-07-30T14:06:33.862Z",
         "generated_by": "content-hub-source-packet-builder",
         "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
-        "notes": "storyIds=2, storytellerIds=6, mediaIds=8"
+        "notes": "storyIds=3, storytellerIds=6, mediaIds=8"
       },
       "packet_context": {
         "site_slug": "act-regenerative-studio",
         "destination": "act_el",
         "project_name": "Goods on Country",
         "story_ids": [
+          "f1e2c237-4ff9-430d-8f35-141686fa9edd",
           "28cb405e-78de-43e3-849c-5c87cbde3760",
           "e94f98ed-00f3-42ff-b97c-2430ee4655ab"
         ],
         "storyteller_ids": [
-          "5c3911f8-bf43-4101-be4a-d48c38536dda",
           "e1679978-f251-4074-8873-d3f5baa80950",
           "69db1d7e-c3f5-4926-b4d4-2d098c040952",
           "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
           "433f5fbc-2c8d-46c1-916d-d558c179e701",
-          "00d67731-1bd1-41b8-ab0e-4a3aa07848fa"
+          "00d67731-1bd1-41b8-ab0e-4a3aa07848fa",
+          "8a78ec27-7d1e-4eee-9026-945b4809c723"
         ],
         "media_asset_ids": [
-          "5a192347-d609-40db-ab29-15cd56f3b951",
-          "452647d6-4a98-4b34-a418-7c4ad770d269",
-          "c4458a30-923d-474c-9660-1c7503d55c54",
-          "251a5737-903f-4102-962c-182797640a6a",
-          "26ec660b-0c14-4d84-8957-2dbf653f8461",
-          "fb671a07-0d45-42a8-96ae-3aa95100509a",
-          "34155a64-1d36-48d5-a4bc-dba596d1432f",
-          "5cd01f4f-92ae-4cff-bf4f-317a7d4bba27"
+          "c56c6e30-ef00-4346-b824-a64bb01e5024",
+          "6505d292-dd60-484e-8da7-8b1bc67302c4",
+          "e4297139-c2a4-4edd-9db3-df3e680e61ac",
+          "87dc0c7e-4060-46e0-970c-4b56c829be17",
+          "818b77e2-c3c5-4a77-8460-6cb4afab2455",
+          "9095cafb-1570-4ccf-af97-af86bfc2e038",
+          "72327163-31c0-4279-97d6-b314cebf062f",
+          "7d960662-77a0-4747-8ab6-1d24607ce491"
         ],
         "featured_article_slugs": []
       }
@@ -434,7 +437,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "flagship_project_pack",
           "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
-          "captured_at": "2026-07-23T07:24:25.859Z",
+          "captured_at": "2026-07-30T14:06:34.486Z",
           "verification_status": "verified",
           "notes": "Flagship pack exists for this project slug."
         },
@@ -443,7 +446,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "site_editorial_manifest",
           "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
-          "captured_at": "2026-07-23T07:24:25.859Z",
+          "captured_at": "2026-07-30T14:06:34.486Z",
           "verification_status": "verified",
           "notes": "Editorial manifest found for act-regenerative-studio."
         }
@@ -584,10 +587,10 @@
         }
       ],
       "provenance": {
-        "generated_at": "2026-07-23T07:24:25.859Z",
+        "generated_at": "2026-07-30T14:06:34.486Z",
         "generated_by": "content-hub-source-packet-builder",
         "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
-        "notes": "storyIds=1, storytellerIds=4, mediaIds=8"
+        "notes": "storyIds=1, storytellerIds=3, mediaIds=8"
       },
       "packet_context": {
         "site_slug": "act-regenerative-studio",
@@ -599,8 +602,7 @@
         "storyteller_ids": [
           "99e753e0-07d6-439a-ab2a-f203bb657efa",
           "8b5f3aa0-5955-43ac-8442-37e48e7fc810",
-          "9ad1702d-01a4-4b50-a60a-7d498517f682",
-          "c2ba535c-aa50-42c3-af18-ed61d3330716"
+          "9ad1702d-01a4-4b50-a60a-7d498517f682"
         ],
         "media_asset_ids": [
           "4493c460-6fb6-4020-a4ae-f5dcd3c26833",
@@ -637,7 +639,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "flagship_project_pack",
           "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
-          "captured_at": "2026-07-23T07:24:25.325Z",
+          "captured_at": "2026-07-30T14:06:34.392Z",
           "verification_status": "verified",
           "notes": "Flagship pack exists for this project slug."
         },
@@ -646,7 +648,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "site_editorial_manifest",
           "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
-          "captured_at": "2026-07-23T07:24:25.325Z",
+          "captured_at": "2026-07-30T14:06:34.392Z",
           "verification_status": "verified",
           "notes": "Editorial manifest found for act-regenerative-studio."
         }
@@ -783,7 +785,7 @@
         }
       ],
       "provenance": {
-        "generated_at": "2026-07-23T07:24:25.325Z",
+        "generated_at": "2026-07-30T14:06:34.392Z",
         "generated_by": "content-hub-source-packet-builder",
         "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
         "notes": "storyIds=1, storytellerIds=1, mediaIds=8"
@@ -834,7 +836,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "flagship_project_pack",
           "uri_or_path": "src/data/editorial/flagship-project-packs.generated.json",
-          "captured_at": "2026-07-23T07:24:27.461Z",
+          "captured_at": "2026-07-30T14:06:34.737Z",
           "verification_status": "verified",
           "notes": "Flagship pack exists for this project slug."
         },
@@ -843,7 +845,7 @@
           "source_system": "empathy-ledger-v2",
           "source_kind": "site_editorial_manifest",
           "uri_or_path": "src/data/editorial/site-editorial-manifests.ts",
-          "captured_at": "2026-07-23T07:24:27.461Z",
+          "captured_at": "2026-07-30T14:06:34.737Z",
           "verification_status": "verified",
           "notes": "Editorial manifest found for act-regenerative-studio."
         }
@@ -981,7 +983,7 @@
         }
       ],
       "provenance": {
-        "generated_at": "2026-07-23T07:24:27.461Z",
+        "generated_at": "2026-07-30T14:06:34.737Z",
         "generated_by": "content-hub-source-packet-builder",
         "provenance_note_path": "thoughts/shared/templates/provenance-template.md",
         "notes": "storyIds=0, storytellerIds=0, mediaIds=8"

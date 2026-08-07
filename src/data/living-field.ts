@@ -44,9 +44,9 @@ export const livingFields: LivingField[] = [
     id: "art",
     name: "Art",
     number: "01",
-    eyebrow: "Art moves first",
+    eyebrow: "Art belongs in the method",
     title: "Make the system impossible to ignore.",
-    line: "Systems become felt.",
+    line: "Art makes us care enough to return.",
     opening:
       "Art is not the decoration added when the work is finished. It is how a hidden system becomes visible, physical and difficult to forget.",
     question: "What changes when evidence becomes an encounter?",

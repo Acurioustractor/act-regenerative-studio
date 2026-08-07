@@ -306,7 +306,11 @@ export function LivingFieldPrototype({ production = false }: { production?: bool
         <section className={styles.return} aria-labelledby="return-title">
           <h2 id="return-title">What question<br />is following you?</h2>
           <div>
-            <p>ACT is co-designed with people who will hold the work. We build toward the moment we can hand over the keys. Send a question from your work, your street, your kitchen table or the paddock.</p>
+            {/* The essay is explicit that the invitation is not a general one, and
+                that what it asks for is not a proposal. A general invitation
+                gathers polished briefs from people with time to write them. */}
+            <p>This is an invitation, though not a general one. We are looking for people already holding real work: a community organisation with the authority to tell us no, a buyer who can place a real order, a funder who knows the difference between plant, people and proof.</p>
+            <p>Do not send a polished brief. Tell us what is happening, who is already carrying it, what must not be taken, and what would need to remain after we leave.</p>
             <Link href="/contact?type=general&source=living-field&context=field-question">Ask a question →</Link>
             <button type="button" className={styles.shareButton} onClick={shareField}>Share this field ↗</button>
             <p className={styles.shareStatus} aria-live="polite">{shareStatus}</p>

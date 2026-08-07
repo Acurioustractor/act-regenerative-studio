@@ -89,14 +89,27 @@ approved, the medium of consent, whether it is current, whether every personal
 and place name is verified, and whether any youth or vulnerable voice is
 involved. An incomplete or unverified trail is RED.
 
-The audit trail is in act-global-infrastructure/wiki/decisions:
-  2026-04-18-*-story-approval.md      per-org approvals
-  2026-04-18-picc-selective-youth-voice.md
-  ../concepts/glossary.md             canonical names and place names
+READ THE DATABASE FIRST, NOT THE WIKI. Empathy Ledger is the system of record.
+Per-article, per-destination consent lives in its syndication_consent table,
+scoped to the site row with slug 'act-regenerative-studio'. On 2026-08-08 every
+live article had an approved row there. The wiki decision records
+(act-global-infrastructure/wiki/decisions/2026-04-18-*-story-approval.md) say
+public-internet publication is NOT approved, which contradicts the database and
+is the older half of the record. Reading only the wiki produced a false alarm
+once already.
 
-Known open question as of 2026-08-08: the org-level approvals exclude
-public-internet publication, and content is live on the public site. See
-thoughts/shared/handoffs/2026-08-08-story-photographs-and-a-consent-red.md
+  select a.slug, sc.status, sc.elder_approved, sc.revoked_at
+  from articles a
+  left join syndication_consent sc on sc.article_id = a.id
+   and sc.site_id = (select id from syndication_sites
+                     where slug = 'act-regenerative-studio')
+  where a.syndication_enabled and a.status = 'published';
+
+Genuinely open as of 2026-08-08: elder approval is unset on all 40 consent rows
+(requires_elder_approval false, cultural_permission_level null) while 14 live
+articles use Elder, Country or Traditional Owner. And the content-hub read
+routes do not consult syndication_consent at all; they gate on article-level
+booleans. See thoughts/shared/handoffs/2026-08-08-story-photographs-and-a-consent-red.md
 
 Once the gate has been run and the answer recorded:
 

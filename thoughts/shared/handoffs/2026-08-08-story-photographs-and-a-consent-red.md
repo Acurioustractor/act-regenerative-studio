@@ -6,9 +6,45 @@
 
 ---
 
-## The thing to deal with first
+## CORRECTION, 2026-08-08 — the RED below was half-right and is superseded
 
-`consent-check` was run at the end of this session, against content that is already live. It comes back **RED**, on the skill's own stop conditions. Nothing here was published by this session, but this session materially increased what is visible on those pages, so it is ours to surface.
+The section that follows was written after reading only the wiki decision
+records, because that is where `consent-check` says to look. Empathy Ledger was
+then queried directly and tells a different story. **Read this correction, not
+the section under it, for the consent position.**
+
+**Every live article has an approved, per-destination consent row in Empathy
+Ledger.** The `syndication_consent` table holds 40 rows scoped to the
+`act-regenerative-studio` site, 37 approved, 38 article-scoped, and not one of
+the 21 live articles is missing one. Empathy Ledger is the system of record for
+consent; the wiki decision records are the older half and contradict it. The
+alarm below, that no approval covers public-web publication, was wrong.
+
+Two things from it do stand, and both are real:
+
+1. **Elder approval is unset everywhere.** All 40 rows have
+   `requires_elder_approval = false`, `elder_approved = false`, and
+   `cultural_permission_level = null`, while 14 live articles use Elder,
+   Country, Traditional Owner, custodian, ceremony or sorry business. The schema
+   has the columns; nothing populates them.
+
+2. **The read APIs do not enforce the consent rows that exist.**
+   `/api/v1/content-hub/articles` and `/articles/[slug]` filter on
+   `status`, `syndication_enabled`, `visibility` and destination. They never
+   join `syndication_consent`. Only `/api/v1/content-hub/syndicate` consults it.
+   So a row moving to `revoked` in the admin UI would not stop the article being
+   served to this site.
+
+**And the wiki records need to defer to the database rather than restate it.**
+Two systems holding the same decision in different words is what produced a
+false alarm; the decision records should point at `syndication_consent` and stop
+carrying a second copy of the answer.
+
+---
+
+## The original finding, superseded — kept for the audit trail
+
+`consent-check` was run at the end of this session, against content that is already live. It came back **RED** on the skill's own stop conditions, on the basis of the wiki records alone. Nothing here was published by this session, but this session materially increased what is visible on those pages, so it was ours to surface.
 
 **The contradiction.** Two records disagree about whether storyteller content may be on the public internet.
 

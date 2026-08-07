@@ -34,12 +34,25 @@
 const DEFAULT_BASE = "https://act-regenerative-studio.vercel.app";
 
 /**
- * Dead images measured on production, 2026-08-07: 107 across 21 story pages.
- * The baseline exists so this fails on *new* rot rather than on damage already
- * known and raised with Empathy Ledger. Lower it as photographs are restored;
- * never raise it without saying why in the commit message.
+ * Dead images allowed on production. Zero.
+ *
+ * The count was 107 across 18 of 21 story pages when first measured on
+ * 2026-08-07, then 39 across 4, and is now 0 across 0. Two changes closed it:
+ * the article bodies in Empathy Ledger were rewritten off the retired
+ * public-bucket URLs onto the gated /api/media/<id>/file route, and this
+ * repository's sync stopped taking photographs from the content-hub detail
+ * route, which does not apply the consent gate, in favour of the list route,
+ * which does.
+ *
+ * 201 photographs across the story pages, every one of them resolving, checked
+ * twice. Holding the baseline at zero is the point: the renderers now hide a
+ * photograph that fails, so nothing about a broken feed is visible to a reader
+ * any more, and this is the only thing that will say so.
+ *
+ * Raising it is not a fix. If this fails, a photograph a community trusted us
+ * with has stopped resolving, and the answer is upstream in Empathy Ledger.
  */
-const DEAD_BASELINE = 107;
+const DEAD_BASELINE = 0;
 
 const args = process.argv.slice(2);
 const reportOnly = args.includes("--report");

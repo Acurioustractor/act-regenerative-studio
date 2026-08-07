@@ -45,7 +45,12 @@
 .header nav a:first-child { color: var(--green); }
 .menuButton { display: none; }
 
-.hero { min-height: 100svh; display: grid; grid-template-columns: minmax(0, .92fr) minmax(23rem, 1.08fr); align-items: center; gap: clamp(2rem, 5vw, 6rem); padding: clamp(6.5rem, 13vh, 8rem) clamp(1.5rem, 6vw, 7rem) clamp(2.5rem, 6vh, 4rem); }
+/* A 100svh hero has to own the viewport. Clamped to the globals.css 1200px
+   container it left the headline column at 405px while "system felt." needs
+   537px and cannot wrap (nowrap below), so the type overran its column and
+   painted across the artwork. Escaping the clamp buys the width instead of
+   shrinking the type. */
+.hero { max-width: none; margin-inline: 0; min-height: 100svh; display: grid; grid-template-columns: minmax(0, .92fr) minmax(23rem, 1.08fr); align-items: center; gap: clamp(2rem, 5vw, 6rem); padding: clamp(6.5rem, 13vh, 8rem) clamp(1.5rem, 6vw, 7rem) clamp(2.5rem, 6vh, 4rem); }
 .eyebrow { margin: 0 0 1.2rem; color:var(--clay-text); font: 650 .68rem/1.3 var(--font-sans); letter-spacing: .22em; text-transform: uppercase; }
 .hero h1 { margin: 0; font-family: var(--font-display); font-size: clamp(4rem, min(7.1vw, 12vh), 7.35rem); font-weight: 300; line-height: .88; letter-spacing: -.045em; }
 .hero h1 span { display: block; white-space: nowrap; }
@@ -67,7 +72,11 @@
 .methodRibbon strong { color:var(--clay-text); }
 .methodRibbon p { justify-self: end; margin: 0; color: var(--site-muted-deep); font: italic 400 .9rem/1.3 var(--font-body); letter-spacing: 0; text-transform: none; }
 
-.fieldSection { padding: clamp(5rem, 9vw, 9rem) clamp(1.5rem, 5vw, 5rem); background: var(--field); }
+/* Bands that paint a background must reach both edges. globals.css clamps
+   `main > section` to 1200px and centres it, which left this one floating in
+   the page colour while the method ribbon above it (an <aside>, so the rule
+   misses it) ran edge to edge. Same escape as .harvest and .return below. */
+.fieldSection { max-width: none; margin-inline: 0; padding: clamp(5rem, 9vw, 9rem) clamp(1.5rem, 5vw, 5rem); background: var(--field); }
 .sectionHeading { max-width: 72rem; margin: auto; }
 .sectionHeading h2 { margin: 0; font: 300 clamp(2.8rem, 5vw, 5rem)/1 var(--font-display); letter-spacing: -.035em; }
 .sectionHeading > p:last-child { font-size: 1.15rem; }
@@ -101,7 +110,10 @@
 .fieldReveal .fieldPaths a:hover { padding-left: .4rem; }
 .fieldReveal .fieldPaths span { font-size: 1rem; }
 
-.crossStory { position:relative; display:grid; grid-template-columns:.8fr 1.2fr; gap:1rem 8vw; overflow:hidden; padding:clamp(6rem,11vw,11rem) clamp(1.5rem,9vw,10rem); background:var(--paper); }
+/* Also a background-painting band. Its colour currently matches the page, so
+   the same clamp was invisible rather than wrong; it escapes too, so the band
+   does not start floating the moment that colour changes. */
+.crossStory { max-width:none; margin-inline:0; position:relative; display:grid; grid-template-columns:.8fr 1.2fr; gap:1rem 8vw; overflow:hidden; padding:clamp(6rem,11vw,11rem) clamp(1.5rem,9vw,10rem); background:var(--paper); }
 .crossStory::after { content:""; position:absolute; right:-4rem; top:54%; width:34rem; height:8rem; border-top:1px solid rgba(45,90,61,.18); border-radius:50%; transform:rotate(-8deg); }
 .crossStory .eyebrow { grid-column:1; align-self:start; }
 .crossStory h2 { grid-column:2; margin:0; max-width:8ch; font:300 clamp(4rem,8vw,8.5rem)/.85 var(--font-display); letter-spacing:-.05em; }

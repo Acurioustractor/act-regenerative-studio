@@ -105,6 +105,20 @@ function isOffSiteHref(href) {
   }
 }
 
+// The stale-reference scan below must not fire on the site's own address.
+// Canonical and og:url tags emit the site host on every page, so once the site
+// lives at act.place — the domain the launch cuts over to, whose old routes
+// config/launch-redirects.cjs already maps — every page would fail a rule meant
+// to catch links back to the *old* site. Strip the site's own origin first.
+// The other form of the domain still fails: if the site is the apex, a
+// www.act.place link survives this and trips the pattern, which is right,
+// because that is an avoidable redirect hop.
+function withoutSelfOrigin(html) {
+  if (!siteHost) return html;
+  const escaped = siteHost.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return html.replace(new RegExp(`https?://${escaped}(?![\\w-])`, "gi"), "");
+}
+
 function failIf(condition, failures, route, message) {
   if (condition) failures.push(`${route}: ${message}`);
 }
@@ -165,15 +179,18 @@ async function checkRoute(route) {
     `og:url points to ${ogUrl}, expected ${expectedPath}`,
   );
 
+  // Host patterns end at a hostname boundary so act.placeholder.com and the
+  // like cannot masquerade as the old site.
   const stalePatterns = [
-    /www\.act\.place/i,
-    /https?:\/\/act\.place/i,
+    /www\.act\.place(?![\w-])/i,
+    /https?:\/\/act\.place(?![\w-])/i,
     /2025[- ]review/i,
     /year[- ]in[- ]review/i,
   ];
+  const staleScope = withoutSelfOrigin(visibleHtml);
   for (const pattern of stalePatterns) {
     failIf(
-      pattern.test(visibleHtml),
+      pattern.test(staleScope),
       failures,
       route,
       `stale launch reference matched ${pattern}`,

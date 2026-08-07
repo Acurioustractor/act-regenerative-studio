@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
 import { EditorialHeader } from "@/components/prototypes/EditorialHeader";
+import heroEncodes from "@/data/hero-encodes.json";
 import heroMedia from "@/data/hero-media-selections.json";
 import { livingFields } from "@/data/living-field";
 import styles from "./prototype.module.css";
@@ -14,7 +15,38 @@ export function LivingFieldPrototype({ production = false }: { production?: bool
   const activeFieldHero = selectedMedia.fields[activeField.id];
   const [scrollProgress, setScrollProgress] = useState(0);
   const [shareStatus, setShareStatus] = useState("");
-  const artworkRef = useRef<HTMLDivElement>(null);
+
+  // The hero hands over to the fields: ACT states its position in the fixed h1,
+  // then each field speaks its own line over its own footage, in turn. The lines
+  // are the fields' own (data/living-field.ts), the same ones the section below
+  // repeats, so the hero prefigures the choice rather than decorating it.
+  //
+  // Every frame is a field, which is why the sequence is the five fields and not
+  // the screening room's homepage slot: that slot has no voice to speak. Pick the
+  // hero footage per field there instead; the homepage slot is now only the
+  // fallback for a field with no media of its own.
+  const heroSequence = livingFields
+    .map((field) => ({ field, shot: selectedMedia.fields[field.id] ?? selectedMedia.homepage }))
+    .filter((entry) => Boolean(entry.shot?.videoUrl));
+  const [heroIndex, setHeroIndex] = useState(0);
+  const [heroHeld, setHeroHeld] = useState(false);
+  const heroEntry = heroSequence[heroIndex % heroSequence.length];
+  const heroShot = heroEntry?.shot ?? selectedMedia.homepage;
+  const heroField = heroEntry?.field ?? livingFields[0];
+  // Fall back to the original clip when an encode has not been built for it, so a
+  // missing encode degrades to a heavy video rather than a broken one.
+  const heroEncode = (heroEncodes as Record<string, { videoUrl: string; posterUrl: string }>)[heroShot.videoUrl];
+
+  useEffect(() => {
+    if (heroSequence.length < 2 || heroHeld) return;
+    // Someone who has asked for less motion gets the opening frame and no cycle.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = window.setInterval(() => {
+      if (document.hidden) return;
+      setHeroIndex((current) => (current + 1) % heroSequence.length);
+    }, 6500);
+    return () => window.clearInterval(timer);
+  }, [heroSequence.length, heroHeld]);
 
   useEffect(() => {
     const chrome = Array.from(document.querySelectorAll<HTMLElement>("[data-site-chrome]"));
@@ -67,21 +99,6 @@ export function LivingFieldPrototype({ production = false }: { production?: bool
     };
   }, []);
 
-  function moveArtwork(event: React.PointerEvent<HTMLDivElement>) {
-    const node = artworkRef.current;
-    if (!node) return;
-    const rect = node.getBoundingClientRect();
-    const x = (event.clientX - rect.left) / rect.width - 0.5;
-    const y = (event.clientY - rect.top) / rect.height - 0.5;
-    node.style.setProperty("--tilt-x", `${x * 1.5}deg`);
-    node.style.setProperty("--tilt-y", `${y * -1.5}deg`);
-  }
-
-  function resetArtwork() {
-    artworkRef.current?.style.setProperty("--tilt-x", "0deg");
-    artworkRef.current?.style.setProperty("--tilt-y", "0deg");
-  }
-
   async function shareField() {
     const shareData = { title: "A Curious Tractor · Living Field", text: "Come into the art, then follow it into the field.", url: window.location.href };
     try {
@@ -109,31 +126,68 @@ export function LivingFieldPrototype({ production = false }: { production?: bool
 
       <main id="prototype-content">
         <section className={styles.hero} aria-labelledby="hero-title">
-          <div className={styles.heroCopy}>
-            <p className={styles.eyebrow}>Art moves first</p>
-            <h1 id="hero-title"><span>Make the</span><span>system felt.</span></h1>
-            <p>We use art to open hard questions. Then we work with communities to build practical alternatives.</p>
-            <a className={styles.textLink} href="#fields">Follow it into the field <span>↓</span></a>
+          {/* The footage is the hero, not an illustration beside it. It sits under
+              a scrim on a solid ink base: the base is what gives the text a real
+              background to be legible against, in the contrast gate as well as to
+              the eye, since neither can judge type against moving video. */}
+          <div className={styles.heroMedia} aria-hidden="true">
+            <video
+              key={`shot-${heroShot.videoUrl}`}
+              autoPlay
+              muted
+              loop
+              playsInline
+              poster={heroEncode?.posterUrl ?? heroShot.posterUrl}
+            >
+              <source src={heroEncode?.videoUrl ?? heroShot.videoUrl} type="video/mp4" />
+            </video>
+            <div className={styles.heroScrim} />
           </div>
 
-          <div
-            ref={artworkRef}
-            className={styles.heroArtwork}
-            onPointerMove={moveArtwork}
-            onPointerLeave={resetArtwork}
-          >
-            <video key={selectedMedia.homepage.videoUrl} autoPlay muted loop playsInline poster={selectedMedia.homepage.posterUrl}>
-              <source src={selectedMedia.homepage.videoUrl} type="video/mp4" />
-            </video>
-            <svg className={styles.returnMark} viewBox="0 0 180 180" aria-hidden="true">
-              <path d="M145 145C116 171 65 169 35 137C7 106 10 57 40 28C67 2 113 6 143 33C164 52 174 84 165 111" />
-              <circle cx="165" cy="111" r="6" />
-            </svg>
-            <div className={styles.artworkNote}>
-              <span>{selectedMedia.homepage.title}</span>
-              <span>{selectedMedia.homepage.field}</span>
-            </div>
-            <p>Move near it</p>
+          <div className={styles.heroCopy}>
+            {/* From "What the Road Corrects" (Field Notes 01). The page used to
+                lead with "Make the system felt", which is the insufficiency that
+                essay names: a person can walk through CONTAINED, feel shaken and
+                still leave the system exactly as they found it. The test the road
+                taught replaces it, and the lead is the essay's reason for ACT
+                existing at all. */}
+            <p className={styles.eyebrow}>What the road corrects</p>
+            <h1 id="hero-title"><span>What stays</span><span>after we leave.</span></h1>
+            <p>Useful work often arrives without the relationship needed to change it. Good relationships are left without the machinery, money or memory to continue. We work in the space between them.</p>
+          </div>
+
+          <div className={styles.heroFoot}>
+            {/* The field's own voice. aria-live stays off because this rotates on a
+                timer and would otherwise interrupt a screen reader every 6.5s; the
+                named field buttons are the accessible way to move through it. */}
+            <p className={styles.heroVoice} aria-live="off">
+              <span key={`name-${heroField.id}`} className={styles.heroVoiceField}>{heroField.name}</span>
+              <span key={`line-${heroField.id}`} className={styles.heroVoiceLine}>{heroField.line}</span>
+            </p>
+
+            {/* Named, not dotted. A row of dots is someone else's slideshow; the
+                field names say what you would be choosing. */}
+            <nav
+              className={styles.heroFields}
+              aria-label="Choose which field the hero is showing"
+              onPointerEnter={() => setHeroHeld(true)}
+              onPointerLeave={() => setHeroHeld(false)}
+              onFocusCapture={() => setHeroHeld(true)}
+              onBlurCapture={() => setHeroHeld(false)}
+            >
+              {heroSequence.map((entry, index) => (
+                <button
+                  key={entry.field.id}
+                  type="button"
+                  aria-current={index === heroIndex % heroSequence.length ? "true" : undefined}
+                  onClick={() => setHeroIndex(index)}
+                >
+                  {entry.field.name}
+                </button>
+              ))}
+            </nav>
+
+            <a className={styles.textLink} href="#fields">Follow it into the field <span>↓</span></a>
           </div>
         </section>
 
@@ -142,7 +196,11 @@ export function LivingFieldPrototype({ production = false }: { production?: bool
           <span>Curiosity</span><i aria-hidden="true" />
           <span>Action</span><i aria-hidden="true" />
           <strong>Art</strong>
-          <p>The work moves in every direction.</p>
+          {/* The four stay, the sequence does not. "The road has made a mess of
+              the sequence": listening does not finish before curiosity begins,
+              it starts again after the prototype fails and after a person
+              withdraws permission. */}
+          <p>Listening does not finish before curiosity begins.</p>
         </aside>
 
         <section id="fields" className={styles.fieldSection} aria-labelledby="fields-title">
@@ -248,7 +306,11 @@ export function LivingFieldPrototype({ production = false }: { production?: bool
         <section className={styles.return} aria-labelledby="return-title">
           <h2 id="return-title">What question<br />is following you?</h2>
           <div>
-            <p>ACT is co-designed with people who will hold the work. We build toward the moment we can hand over the keys. Send a question from your work, your street, your kitchen table or the paddock.</p>
+            {/* The essay is explicit that the invitation is not a general one, and
+                that what it asks for is not a proposal. A general invitation
+                gathers polished briefs from people with time to write them. */}
+            <p>This is an invitation, though not a general one. We are looking for people already holding real work: a community organisation with the authority to tell us no, a buyer who can place a real order, a funder who knows the difference between plant, people and proof.</p>
+            <p>Do not send a polished brief. Tell us what is happening, who is already carrying it, what must not be taken, and what would need to remain after we leave.</p>
             <Link href="/contact?type=general&source=living-field&context=field-question">Ask a question →</Link>
             <button type="button" className={styles.shareButton} onClick={shareField}>Share this field ↗</button>
             <p className={styles.shareStatus} aria-live="polite">{shareStatus}</p>

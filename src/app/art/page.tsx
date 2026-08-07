@@ -276,7 +276,7 @@ export default async function ArtPage() {
       <section className="relative grid min-h-[100svh] overflow-hidden bg-[var(--site-bg)] pt-24 text-[var(--site-ink)] lg:grid-cols-[.9fr_1.1fr] lg:pt-0">
         <div className="flex flex-col justify-center px-8 py-20 lg:px-[8vw]">
           <p className="text-[11px] font-semibold uppercase tracking-[0.4em] text-clay-text">
-            Art moves first
+            Art belongs in the method
           </p>
           <h1 className="mt-7 max-w-[8ch] font-[var(--font-display)] text-[clamp(4rem,8vw,8rem)] font-light leading-[.9] tracking-[-0.045em]">
             Come into the art.

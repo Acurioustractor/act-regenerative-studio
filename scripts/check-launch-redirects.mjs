@@ -23,9 +23,42 @@ function normalizePath(value) {
   }
 }
 
-for (const redirect of launchRedirects) {
+// Next matches redirects in declaration order, first match wins. The config
+// leans on that: while the editorial-site closure holds, `/projects/:slug*`
+// covers the retired `/projects/*` entries declared below it, and those entries
+// exist to record where each URL belongs if `/projects` and `/events` return
+// (see the note in config/launch-redirects.cjs, which warns against flattening
+// them). Asserting a covered rule against the live site tests the closure, not
+// the rule, so those are reported as dormant rather than failed.
+function sourceMatcher(source) {
+  const pattern = source
+    .replace(/[.+?^${}()|[\]\\]/g, '\\$&')
+    .replace(/\/:[A-Za-z_]\w*\*/g, '(?:/.*)?')
+    .replace(/\/:[A-Za-z_]\w*\+/g, '/.+')
+    .replace(/:[A-Za-z_]\w*/g, '[^/]+');
+  return new RegExp(`^${pattern}$`);
+}
+
+const matchers = launchRedirects.map((entry) => (entry.source ? sourceMatcher(entry.source) : null));
+const dormant = [];
+
+function coveredBy(index) {
+  const { source } = launchRedirects[index];
+  for (let i = 0; i < index; i += 1) {
+    if (matchers[i]?.test(source)) return launchRedirects[i];
+  }
+  return null;
+}
+
+for (const [index, redirect] of launchRedirects.entries()) {
   if (!redirect.source || !redirect.destination) {
     failures.push(`redirect entry is missing source or destination: ${JSON.stringify(redirect)}`);
+    continue;
+  }
+
+  const cover = coveredBy(index);
+  if (cover) {
+    dormant.push(`${redirect.source} -> ${redirect.destination} (covered by ${cover.source} -> ${cover.destination})`);
     continue;
   }
 
@@ -65,3 +98,11 @@ if (failures.length > 0) {
 
 console.log(`Launch redirect check passed against ${baseUrl}`);
 console.log(`Checked ${launchRedirects.length} configured redirects.`);
+if (dormant.length > 0) {
+  console.log(
+    `${dormant.length} dormant: an earlier rule covers them today, and they hold the destination for when it lifts.`,
+  );
+  for (const entry of dormant) {
+    console.log(`- ${entry}`);
+  }
+}

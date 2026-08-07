@@ -57,7 +57,7 @@ export function JusticeFieldExperience() {
       <section className={styles.hero}>
         <p className={styles.eyebrow}>Justice does not move in one direction</p>
         <h1>Feel it.<br />Place it.<br />Connect it.</h1>
-        <p>Art makes the system impossible to ignore. Community authority shows what change looks like here. Evidence helps strategy travel without flattening place.</p>
+        <p>Art makes us care enough to return. Community authority shows what change looks like here. Evidence helps strategy travel without flattening place.</p>
         <a href="#three-rooms">Enter the three rooms <span>↓</span></a>
         <div className={styles.signal} aria-hidden="true"><i /><i /><i /></div>
       </section>

@@ -29,7 +29,9 @@ const staticRoutes: Array<{
   { path: "/confessions", changeFrequency: "weekly", priority: 0.9 },
   { path: "/confessions/listen", changeFrequency: "weekly", priority: 0.8 },
   { path: "/confessions/friday", changeFrequency: "weekly", priority: 0.8 },
-  { path: "/confessions/wall", changeFrequency: "weekly", priority: 0.8 },
+  // /confessions/wall is not listed: the Payout Wall was retired from the
+  // campaign and the route 307s to /confessions/listen. The redirect stays for
+  // shared links, but a URL that redirects must not be advertised in a sitemap.
   { path: "/confessions/method", changeFrequency: "monthly", priority: 0.5 },
   { path: "/stories", changeFrequency: "weekly", priority: 0.8 },
   { path: "/questions", changeFrequency: "weekly", priority: 0.7 },

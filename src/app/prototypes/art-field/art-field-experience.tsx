@@ -59,7 +59,7 @@ export function ArtFieldExperience() {
       <section className={styles.hero}>
         <video autoPlay muted loop playsInline poster="/media/field-stills/contained-aerial.jpg"><source src="/media/field-videos/contained-aerial.mp4" type="video/mp4" /></video>
         <div className={styles.shade} />
-        <div className={styles.heroCopy}><p>Art moves first</p><h1>Step inside what we are choosing to fund.</h1><a href="#threshold">Enter the work <span>↓</span></a></div>
+        <div className={styles.heroCopy}><p>Art belongs in the method</p><h1>Step inside what we are choosing to fund.</h1><a href="#threshold">Enter the work <span>↓</span></a></div>
         <div className={styles.measure}><span>3 rooms</span><span>30 minutes</span><span>1 encounter</span></div>
       </section>
 

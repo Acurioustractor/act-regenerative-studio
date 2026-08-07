@@ -8,21 +8,58 @@
 > definition of "ready to cut over".
 
 Production on `act-regenerative-studio.vercel.app` is staging-in-place. The
-real launch is a cutover to a new domain, and the point of this plan is that
+real launch is a cutover to `act.place`, and the point of this plan is that
 the cutover is a config change, not a scramble.
 
-## The one open decision
+## Decisions (2026-08-07, with Ben)
 
-**Which domain.** Everything below is written against `<domain>`. Nothing in
-the codebase hardcodes the current host on a public page; the launch gate
-fails on any visible `act.place` or stale-host reference, so the cutover is
-environment and third-party config only.
+**The domain is `act.place`.** It is the address the old ACT site occupies, and
+`config/launch-redirects.cjs` already maps that site's routes (`/seeds`,
+`/action`, `/germinating`, `/news`, `/journal`, `/year-in-review`) into this
+one. The cutover is a replacement in place, not a move to a new address, and
+the redirect map is the migration.
+
+**`hi@act.place` stays.** No code change. It is the public address on the
+contact page, the footer, the JusticeHub, Empathy Ledger, Goods and Farm
+flagship pages, and the Payout Wall right-of-reply. It appears in 11 source
+files, not the five an earlier draft of this plan claimed: moving it later is
+still a grep, just a wider one.
+
+**`www.act.place` redirects to the apex.** With `act.place` as the target this
+stops being a legacy-domain question and becomes the ordinary www-to-apex
+redirect Vercel configures with the domain. `NEXT_PUBLIC_SITE_URL` is the apex.
+
+### Choosing act.place broke two launch gates. Both are fixed.
+
+**The site gate flagged the site's own address as stale.**
+`scripts/check-launch-site.mjs` treats `https://act.place` on a page as a link
+back to the old site. Canonical and `og:url` tags emit the site's own host on
+every page, and the gate's HTML stripping removes only `<script>` and
+`<style>`, so the head survives the scan. Verified against live production
+markup: the host appears four times per page. All 28 routes would have failed
+at checklist step 9 the moment the domain went live. The gate now removes the
+site's own origin before the stale scan, so a self-reference passes while a
+link to the other form of the domain still fails, that being an avoidable
+redirect hop. The host patterns also gained a hostname boundary, so
+`act.placeholder.com` and similar cannot trip them.
+
+**The redirect gate was already red, and nothing was watching.**
+`npm run check:redirects` failed 30 assertions against production. Every one
+came from the 19 retired `/projects/*` entries that the editorial-site
+closure's `/projects/:slug*` rule covers. Redirects are first-match-wins, so
+those entries are dormant by design, and the config explicitly warns against
+flattening them into `/#fields`. The checker had no notion of precedence and
+asserted every rule against the live site, so it was testing the closure
+rather than the rules. It now resolves coverage in declaration order and
+reports dormant rules instead of failing them: 75 checked, 19 dormant, green.
+This gate is not wired into CI, which is why a red gate went unnoticed. It
+needs a running server, so it stays a manual step below.
 
 ## Cutover checklist (in order)
 
-1. **Vercel: add `<domain>` to the project** and set it as the production
+1. **Vercel: add `act.place` to the project** and set it as the production
    domain. DNS per Vercel's instructions (apex + www).
-2. **Vercel env, Production scope: `NEXT_PUBLIC_SITE_URL=https://<domain>`.**
+2. **Vercel env, Production scope: `NEXT_PUBLIC_SITE_URL=https://act.place`.**
    This is read at build time by `src/app/robots.ts` (host + sitemap URL),
    `src/app/sitemap.ts` (every `<loc>`), `src/lib/seo/site.ts` (canonicals and
    og:url) and the admin login panel. All four fall back to
@@ -32,29 +69,30 @@ environment and third-party config only.
 3. **Redeploy** (any push to main, or a manual redeploy). Env vars apply at
    build time; nothing changes until a build runs with the new value.
 4. **Empathy Ledger side:** repoint the webhook destination for the
-   `act-regenerative-studio` site to `https://<domain>/api/webhooks/empathy-ledger`.
+   `act-regenerative-studio` site to `https://act.place/api/webhooks/empathy-ledger`.
    The vercel.app URL keeps resolving, so this is about one canonical
    destination rather than avoiding breakage. The EL site slug
    (`EMPATHY_LEDGER_SITE_SLUG=act-regenerative-studio`) is an identity, not a
    URL; it does not change.
 5. **GoHighLevel side:** sweep workflows and email templates for links to the
    site and update hosts; repoint any webhook that targets
-   `https://<domain>/api/webhooks/ghl`. Form submissions themselves need no
+   `https://act.place/api/webhooks/ghl`. Form submissions themselves need no
    change: source tags are route-based (`source:website-*`, `source:page:*`),
    and the GHL client reads `GHL_API_KEY` / `GHL_LOCATION_ID`, none of which
    are domain-dependent.
-6. **Email address call:** the site's public address is `hi@act.place`
-   (contact page, JusticeHub and Empathy Ledger flagship pages, Payout Wall
-   right-of-reply, footer). Decide whether it stays or moves to the new
-   domain; if it moves, the addresses live in five files and the change is a
-   grep away. The mailboxes are independent of the web cutover either way.
-7. **Legacy domain:** decide whether `www.act.place` redirects to `<domain>`
-   (301 at the DNS or old host level). `config/launch-redirects.cjs` already
-   maps the old site's routes; `npm run check:redirects` verifies the map.
-8. **Search Console:** add the `<domain>` property and submit
-   `https://<domain>/sitemap.xml`.
+6. **Email: nothing to do.** `hi@act.place` stays (decided above), and the
+   mailboxes are independent of the web cutover. Confirm the mail records
+   survive the DNS change when the domain is pointed at Vercel: the apex needs
+   its MX records carried across, and that is the one way this cutover can
+   break email.
+7. **`www.act.place` to the apex.** Vercel configures this when both are added
+   in step 1; confirm it resolves in one hop. The old site's routes are already
+   mapped in `config/launch-redirects.cjs`, so a visitor arriving on any legacy
+   URL lands on its new home.
+8. **Search Console:** add the `act.place` property and submit
+   `https://act.place/sitemap.xml`.
 9. **Post-cutover gates**, in this order:
-   - `LAUNCH_CHECK_BASE_URL=https://<domain> node scripts/check-launch-site.mjs`
+   - `LAUNCH_CHECK_BASE_URL=https://act.place node scripts/check-launch-site.mjs`
    - `npm run check:redirects` against the new host
    - Spot-check robots.txt host, sitemap `<loc>` hosts, and a canonical tag on
      one static page and one `/stories/[slug]` article (article canonicals
@@ -97,14 +135,23 @@ Raised with the EL side; timeline unconfirmed.
 
 ## Ready to cut over
 
-- [ ] Domain chosen; DNS access in hand
-- [ ] PR #58 (route unification) merged and verified on production
-- [ ] Launch gate green against production (`LAUNCH_CHECK_BASE_URL=https://act-regenerative-studio.vercel.app`)
-- [ ] Redirect gate green (`npm run check:redirects`)
-- [ ] Holds confirmed held, or reversed deliberately via the lockstep rule
+Ticked items were verified on 2026-08-07 against
+`https://act-regenerative-studio.vercel.app`.
+
+- [x] Domain chosen: `act.place`
+- [ ] DNS access for `act.place` in hand, and the current MX records recorded
+      before anything is repointed
+- [x] PR #58 (route unification) merged as `c83f4ff` and verified on
+      production: `/stories/the-spirit-must-be-strong` serves 200, `/blog`,
+      `/blog/[slug]` and `/news` each 308 in one hop
+- [x] Launch gate green against production, 28 routes
+- [x] Redirect gate green against production, 75 checked and 19 dormant
+- [x] Holds confirmed held (all four, decided 2026-08-07; criteria in the table
+      above)
+- [x] Email address decision made: `hi@act.place` stays, no code change
+- [x] `www.act.place` decision made: redirects to the apex
 - [ ] `NEXT_PUBLIC_SITE_URL` set in Vercel Production and a build shipped with it
-- [ ] robots.txt, sitemap hosts and canonicals show `<domain>`
+- [ ] robots.txt, sitemap hosts and canonicals show `act.place`
 - [ ] EL webhook destination repointed; GHL links and webhooks swept
-- [ ] Email address decision made (and applied, if moving)
 - [ ] Search Console property live, sitemap submitted
-- [ ] Legacy `www.act.place` redirect decision made
+- [ ] Both gates re-run green against `https://act.place` after the cutover

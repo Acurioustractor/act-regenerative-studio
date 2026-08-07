@@ -89,16 +89,26 @@ function imageUrls(html) {
  * packet. A refusal that survives three attempts is treated as real.
  */
 async function probe(url, attempt = 0) {
+  const retry = async () => {
+    await new Promise((resolve) => setTimeout(resolve, 500 * (attempt + 1)));
+    return probe(url, attempt + 1);
+  };
+
   try {
     const response = await fetch(url);
     const contentType = response.headers.get("content-type") || "";
     await response.arrayBuffer();
-    return { url, status: response.status, live: response.ok && contentType.startsWith("image/") };
+    const live = response.ok && contentType.startsWith("image/");
+    // Anything that is not an image gets retried before it counts. The gated
+    // route 302s to a signed URL, so a photograph's delivery crosses two hosts
+    // and can pick up a 429 or a 5xx from either; the first run at baseline 0
+    // reported one dead photograph that a re-run showed live. A genuinely
+    // retired URL answers 400 every time and still fails all three attempts.
+    if (!live && attempt < 2) return retry();
+    return { url, status: response.status, live };
   } catch (error) {
-    if (attempt < 2) {
-      await new Promise((resolve) => setTimeout(resolve, 400 * (attempt + 1)));
-      return probe(url, attempt + 1);
-    }
+    // A thrown fetch is a transport failure rather than an answer.
+    if (attempt < 2) return retry();
     return { url, status: 0, live: false, error: String(error).slice(0, 120) };
   }
 }

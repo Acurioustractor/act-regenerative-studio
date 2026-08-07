@@ -18,6 +18,7 @@ import { ReadingProgress } from "@/components/editorial/ReadingProgress";
 import { ArticleGallery } from "@/components/editorial/ArticleGallery";
 import { RichTextMedia } from "@/components/editorial/RichTextMedia";
 import { ArticleHeroMedia } from "@/components/editorial/ArticleHeroMedia";
+import { SuggestedCardImage } from "@/components/editorial/SuggestedCardImage";
 import {
   fieldsForArticle,
   projectSlugDestination,
@@ -379,21 +380,10 @@ export async function EditorialArticleReader({
                   className="group flex flex-col overflow-hidden rounded-[24px] border border-[var(--we-sand)] bg-white/80 transition-all hover:-translate-y-1 hover:border-forest hover:shadow-[0_20px_50px_-20px_rgba(47,62,46,0.18)]"
                 >
                   <div className="relative aspect-[16/10] overflow-hidden bg-[#F5F0E8]">
-                    {other.featuredImageUrl ? (
-                      <Image
-                        src={other.featuredImageUrl}
-                        alt={other.featuredImageAlt ?? other.title}
-                        fill
-                        sizes="(min-width: 768px) 33vw, 100vw"
-                        className="object-cover transition-transform duration-[6s] ease-out group-hover:scale-[1.04]"
-                      />
-                    ) : (
-                      <div className="flex h-full items-center justify-center">
-                        <span className="font-[var(--font-sans)] text-[10px] uppercase tracking-[0.3em] text-[var(--we-warm-brown)]/40">
-                          Editorial
-                        </span>
-                      </div>
-                    )}
+                    <SuggestedCardImage
+                      src={other.featuredImageUrl ?? null}
+                      alt={other.featuredImageAlt ?? other.title}
+                    />
                   </div>
                   <div className="flex flex-1 flex-col space-y-3 p-6">
                     <p className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">

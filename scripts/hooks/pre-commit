@@ -1,0 +1,12 @@
+#!/bin/sh
+# Versioned pre-commit hook. Install with `npm run hooks:install`.
+#
+# The pre-commit hook on this machine was untracked, so it protected one
+# checkout and nothing else: a fresh clone, another worktree, or an agent
+# working somewhere else got no gate at all. This file is the hook; the
+# installer points git at it.
+
+set -e
+
+node scripts/check-public-copy.mjs --staged
+node scripts/check-consent-surfaces.mjs --staged

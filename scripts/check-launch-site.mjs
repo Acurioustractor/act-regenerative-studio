@@ -14,7 +14,6 @@ const launchRoutes = [
   "/",
   "/confessions",
   "/confessions/listen",
-  "/confessions/wall",
   "/confessions/friday",
   "/confessions/method",
   "/stories",
@@ -157,6 +156,20 @@ async function checkRoute(route) {
   const ogUrl = getOgUrl(html);
   const finalPath = response.url ? new URL(response.url).pathname : route;
   const expectedPath = finalPath === "/" ? "/" : finalPath.replace(/\/$/, "");
+
+  // fetch follows redirects, and everything below is then judged against wherever
+  // it landed: a route that quietly became a redirect passed with the
+  // destination's h1, canonical and og:url standing in for its own. These routes
+  // are the launch set, so each must answer for itself. /confessions/wall reached
+  // production this way, 307ing to /confessions/listen while still sitting in
+  // this list and in the sitemap.
+  const requestedPath = route === "/" ? "/" : route.replace(/\/$/, "");
+  failIf(
+    expectedPath !== requestedPath,
+    failures,
+    route,
+    `expected to serve its own page, redirected to ${expectedPath}`,
+  );
   const canonicalPath = pathFromHref(canonicalHref);
   const ogPath = pathFromHref(ogUrl);
 

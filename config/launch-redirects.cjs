@@ -251,9 +251,12 @@ const launchRedirects = [
   // under /confessions so the whole Confessions to Philanthropy campaign lives in
   // one place. 308 permanent so the /art entry, the Friday tape link, and any
   // shared links keep resolving.
+  // Flattened 2026-08-07: /confessions/wall now 307s on to /confessions/listen
+  // because the Payout Wall was retired from the campaign, so pointing here sent
+  // shared /art links through two hops. Straight to the page that answers.
   {
     source: "/art/the-payout-wall",
-    destination: "/confessions/wall",
+    destination: "/confessions/listen",
     permanent: true,
   },
   {

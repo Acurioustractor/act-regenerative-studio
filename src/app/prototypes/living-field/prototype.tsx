@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useEffect, useRef, useState } from "react";
 import { NewsletterForm } from "@/components/forms/NewsletterForm";
 import { EditorialHeader } from "@/components/prototypes/EditorialHeader";
+import heroEncodes from "@/data/hero-encodes.json";
 import heroMedia from "@/data/hero-media-selections.json";
 import { livingFields } from "@/data/living-field";
 import styles from "./prototype.module.css";
@@ -16,17 +17,26 @@ export function LivingFieldPrototype({ production = false }: { production?: bool
   const [shareStatus, setShareStatus] = useState("");
   const artworkRef = useRef<HTMLDivElement>(null);
 
-  // The hero travels the fields rather than sitting on one clip: the ribbon
-  // under it says the work moves in every direction, and the section below it
-  // asks you to choose a way in. The screening room's homepage pick still leads
-  // the sequence, so that control keeps meaning something; a field repeating
-  // that same clip is dropped rather than shown twice.
-  const heroSequence = [selectedMedia.homepage, ...livingFields.map((field) => selectedMedia.fields[field.id])]
-    .filter((shot): shot is typeof selectedMedia.homepage => Boolean(shot?.videoUrl))
-    .filter((shot, index, all) => all.findIndex((other) => other.videoUrl === shot.videoUrl) === index);
+  // The hero hands over to the fields: ACT states its position in the fixed h1,
+  // then each field speaks its own line over its own footage, in turn. The lines
+  // are the fields' own (data/living-field.ts), the same ones the section below
+  // repeats, so the hero prefigures the choice rather than decorating it.
+  //
+  // Every frame is a field, which is why the sequence is the five fields and not
+  // the screening room's homepage slot: that slot has no voice to speak. Pick the
+  // hero footage per field there instead; the homepage slot is now only the
+  // fallback for a field with no media of its own.
+  const heroSequence = livingFields
+    .map((field) => ({ field, shot: selectedMedia.fields[field.id] ?? selectedMedia.homepage }))
+    .filter((entry) => Boolean(entry.shot?.videoUrl));
   const [heroIndex, setHeroIndex] = useState(0);
   const [heroHeld, setHeroHeld] = useState(false);
-  const heroShot = heroSequence[heroIndex % heroSequence.length] ?? selectedMedia.homepage;
+  const heroEntry = heroSequence[heroIndex % heroSequence.length];
+  const heroShot = heroEntry?.shot ?? selectedMedia.homepage;
+  const heroField = heroEntry?.field ?? livingFields[0];
+  // Fall back to the original clip when an encode has not been built for it, so a
+  // missing encode degrades to a heavy video rather than a broken one.
+  const heroEncode = (heroEncodes as Record<string, { videoUrl: string; posterUrl: string }>)[heroShot.videoUrl];
 
   useEffect(() => {
     if (heroSequence.length < 2 || heroHeld) return;
@@ -136,11 +146,44 @@ export function LivingFieldPrototype({ production = false }: { production?: bool
             <p className={styles.eyebrow}>Art moves first</p>
             <h1 id="hero-title"><span>Make the</span><span>system felt.</span></h1>
             <p>We use art to open hard questions. Then we work with communities to build practical alternatives.</p>
+
+            {/* The field's own voice. aria-live stays off because this rotates on a
+                timer and would otherwise interrupt a screen reader every 6.5s; the
+                seeds below are the accessible way to move through it. */}
+            <p className={styles.heroVoice} aria-live="off">
+              <span key={`name-${heroField.id}`} className={styles.heroVoiceField}>{heroField.name}</span>
+              <span key={`line-${heroField.id}`} className={styles.heroVoiceLine}>{heroField.line}</span>
+            </p>
+
+            <div
+              className={styles.heroSeeds}
+              role="group"
+              aria-label="Choose which field the hero is showing"
+              onPointerEnter={() => setHeroHeld(true)}
+              onPointerLeave={() => setHeroHeld(false)}
+              onFocusCapture={() => setHeroHeld(true)}
+              onBlurCapture={() => setHeroHeld(false)}
+            >
+              {heroSequence.map((entry, index) => (
+                <button
+                  key={entry.field.id}
+                  type="button"
+                  aria-pressed={index === heroIndex % heroSequence.length}
+                  onClick={() => setHeroIndex(index)}
+                >
+                  <span className={styles.seed} aria-hidden="true" />
+                  <span className={styles.visuallyHidden}>{entry.field.name}</span>
+                </button>
+              ))}
+            </div>
+
             <a className={styles.textLink} href="#fields">Follow it into the field <span>↓</span></a>
           </div>
 
           <div className={styles.heroArtworkCell}>
-            <svg className={styles.returnMark} viewBox="0 0 180 180" aria-hidden="true">
+            {/* Keyed on the field so it remounts and redraws itself on each change:
+                the mark performs the return rather than sitting there as decoration. */}
+            <svg key={`mark-${heroField.id}`} className={styles.returnMark} viewBox="0 0 180 180" aria-hidden="true">
               <path d="M145 145C116 171 65 169 35 137C7 106 10 57 40 28C67 2 113 6 143 33C164 52 174 84 165 111" />
               <circle cx="165" cy="111" r="6" />
             </svg>
@@ -151,8 +194,15 @@ export function LivingFieldPrototype({ production = false }: { production?: bool
               onPointerEnter={() => setHeroHeld(true)}
               onPointerLeave={() => { setHeroHeld(false); resetArtwork(); }}
             >
-              <video key={`shot-${heroShot.videoUrl}`} autoPlay muted loop playsInline poster={heroShot.posterUrl}>
-                <source src={heroShot.videoUrl} type="video/mp4" />
+              <video
+                key={`shot-${heroShot.videoUrl}`}
+                autoPlay
+                muted
+                loop
+                playsInline
+                poster={heroEncode?.posterUrl ?? heroShot.posterUrl}
+              >
+                <source src={heroEncode?.videoUrl ?? heroShot.videoUrl} type="video/mp4" />
               </video>
               <div key={`note-${heroShot.videoUrl}`} className={styles.artworkNote}>
                 <span>{heroShot.title}</span>

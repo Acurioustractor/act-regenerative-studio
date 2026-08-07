@@ -179,13 +179,16 @@ export async function EditorialArticleReader({
           initial={post.title.charAt(0)}
         />
         <div className="relative z-10 mx-auto flex min-h-[60vh] max-w-[1000px] flex-col justify-end px-6 pb-16 pt-32 md:min-h-[75vh] md:px-10 md:pb-24 md:pt-40">
-          <Link
-            href="/stories"
-            className="inline-flex items-center gap-2 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[#CFA16B] transition-all hover:gap-3 hover:text-[#E0B680]"
-          >
-            <span aria-hidden="true">&larr;</span> All stories
-          </Link>
-          <h1 className="mt-6 font-[var(--font-display)] text-[clamp(2.2rem,5vw,4.2rem)] font-light leading-[1.08] text-[#F3EBDD]">
+          {/* The "All stories" link used to sit here, above the title. It was
+              the topmost text in the hero and so the least covered by the
+              scrim, and it measured 1.58 to 4.18 against a photograph where
+              small text needs 4.5 (five heroes sampled by rendered pixel,
+              2026-08-07). No scrim opacity fixes it: the label is clay-gold,
+              a mid tone, so it needs a backdrop near solid black to clear AA,
+              and that is a slab over the photograph rather than a scrim.
+              It now sits below the hero on a solid surface, where the contrast
+              is deterministic and the existing gate can actually see it. */}
+          <h1 className="font-[var(--font-display)] text-[clamp(2.2rem,5vw,4.2rem)] font-light leading-[1.08] text-[#F3EBDD]">
             {post.title}
           </h1>
           {lede ? (
@@ -210,6 +213,21 @@ export async function EditorialArticleReader({
           </div>
         </div>
       </section>
+
+      {/* Return path, on the body's solid surface rather than over the
+          photograph. Forest green on #FBF6EC, the pairing the rest of the site
+          uses for links, rather than the clay-gold that only worked on dark. */}
+      <nav
+        aria-label="Breadcrumb"
+        className="border-b border-[var(--we-sand)] bg-[#FBF6EC] px-6 pt-8 md:px-10"
+      >
+        <Link
+          href="/stories"
+          className="mx-auto flex max-w-[720px] items-center gap-2 pb-8 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-forest transition-all hover:gap-3"
+        >
+          <span aria-hidden="true">&larr;</span> All stories
+        </Link>
+      </nav>
 
       {/* BODY: long-form article in a readable measure */}
       <section className="bg-[#FBF6EC] px-6 py-20 md:px-10 md:py-28">

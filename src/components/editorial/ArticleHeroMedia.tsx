@@ -64,7 +64,7 @@ export function ArticleHeroMedia({
       <div
         className={
           showingPhotograph
-            ? "absolute inset-0 bg-gradient-to-b from-black/25 via-black/45 to-black/80"
+            ? "absolute inset-0 bg-gradient-to-b from-black/30 via-black/60 to-black/85"
             : "absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40"
         }
       />

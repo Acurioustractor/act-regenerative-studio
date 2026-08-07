@@ -1,15 +1,13 @@
 import Image from "next/image";
 import Link from "next/link";
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
 import ReactMarkdown from "react-markdown";
 import { JsonLd } from "@/components/seo/JsonLd";
+import { EditorialHeader } from "@/components/prototypes/EditorialHeader";
 import {
-  getEditorialArticleBySlug,
-  getEditorialArticleStaticSlugs,
   getSiteEditorialArticles,
   type EditorialArticle,
-} from "../../../lib/empathy-ledger-editorial";
+} from "@/lib/empathy-ledger-editorial";
 import { articleJsonLd, breadcrumbJsonLd, pageMetadata } from "@/lib/seo/site";
 import {
   cleanAltText,
@@ -24,35 +22,24 @@ import {
 } from "@/lib/fields/field-graph";
 import { livingFieldsById } from "@/data/living-field";
 
-export const revalidate = 60;
+/**
+ * The editorial article reader, served at /stories/[slug] since the route
+ * unification (2026-08-07; previously /blog/[slug]). The page decides whether
+ * a slug is an authored story packet or an editorial article; this component
+ * only ever renders the article branch, so it carries the EditorialHeader the
+ * old /blog layout provided.
+ */
 
-export async function generateStaticParams() {
-  try {
-    return getEditorialArticleStaticSlugs().map((slug) => ({ slug }));
-  } catch (error) {
-    console.error("Failed to generate static params for blog posts:", error);
-    return [];
-  }
-}
-
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}): Promise<Metadata> {
-  const { slug } = await params;
-  const post = await getEditorialArticleBySlug(slug);
-
-  if (!post) return {};
-
+export function editorialArticleMetadata(post: EditorialArticle): Metadata {
   return pageMetadata({
     title: post.title,
-    description: post.excerpt || 'ACT blog writing carried with consent through Empathy Ledger.',
-    path: `/blog/${post.slug}`,
-    type: 'article',
+    description:
+      post.excerpt || "ACT writing carried with consent through Empathy Ledger.",
+    path: `/stories/${post.slug}`,
+    type: "article",
     // These articles are syndicated from Empathy Ledger, which holds the master
     // copy. Point the canonical at the source so search engines attribute it
-    // there instead of treating /blog as duplicate content.
+    // there instead of treating /stories as duplicate content.
     canonicalUrl: post.canonicalUrl,
     image: post.featuredImageUrl
       ? {
@@ -84,18 +71,11 @@ function publishedDateLabel(iso: string | null): string | null {
   }
 }
 
-export default async function BlogPostPage({
-  params,
+export async function EditorialArticleReader({
+  post,
 }: {
-  params: Promise<{ slug: string }>;
+  post: EditorialArticle;
 }) {
-  const { slug } = await params;
-  const post = await getEditorialArticleBySlug(slug);
-
-  if (!post) {
-    notFound();
-  }
-
   const content = post.content || "";
   const looksLikeHtml = /<\/?[a-z][\s\S]*>/i.test(content);
   const preparedHtml = looksLikeHtml ? prepareArticleHtml(content) : null;
@@ -163,23 +143,24 @@ export default async function BlogPostPage({
 
   return (
     <>
+      <EditorialHeader />
       <JsonLd
-        id={`blog-${post.slug}-article-jsonld`}
+        id={`editorial-${post.slug}-article-jsonld`}
         data={articleJsonLd({
           title: post.title,
-          description: post.excerpt || 'ACT blog writing carried with consent through Empathy Ledger.',
-          path: `/blog/${post.slug}`,
+          description: post.excerpt || 'ACT writing carried with consent through Empathy Ledger.',
+          path: `/stories/${post.slug}`,
           image: post.featuredImageUrl,
           authorName: post.authorName,
           publishedAt: post.publishedAt,
         })}
       />
       <JsonLd
-        id={`blog-${post.slug}-breadcrumb-jsonld`}
+        id={`editorial-${post.slug}-breadcrumb-jsonld`}
         data={breadcrumbJsonLd([
           { name: 'Home', path: '/' },
           { name: 'Stories', path: '/stories' },
-          { name: post.title, path: `/blog/${post.slug}` },
+          { name: post.title, path: `/stories/${post.slug}` },
         ])}
       />
       <ReadingProgress />
@@ -443,7 +424,7 @@ export default async function BlogPostPage({
               {suggested.map((other) => (
                 <Link
                   key={other.slug}
-                  href={`/blog/${other.slug}`}
+                  href={`/stories/${other.slug}`}
                   className="group flex flex-col overflow-hidden rounded-[24px] border border-[var(--we-sand)] bg-white/80 transition-all hover:-translate-y-1 hover:border-forest hover:shadow-[0_20px_50px_-20px_rgba(47,62,46,0.18)]"
                 >
                   <div className="relative aspect-[16/10] overflow-hidden bg-[#F5F0E8]">

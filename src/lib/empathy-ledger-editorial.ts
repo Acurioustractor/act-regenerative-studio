@@ -146,6 +146,21 @@ function withPlainExcerpt(article: EditorialArticle): EditorialArticle {
   return { ...article, excerpt: plainTextExcerpt(article.excerpt) };
 }
 
+/**
+ * Articles read at /stories/[slug] since the route unification (2026-08-07),
+ * but baked snapshots regenerated before it carry /blog/ paths. Rewritten here
+ * at the serving boundary so every consumer (field pages, story stream,
+ * sitemap, admin previews) links the same way regardless of snapshot age.
+ */
+function sitePath(localPath: string | null | undefined, slug: string): string {
+  if (!localPath) return `/stories/${slug}`;
+  return localPath.replace(/^\/blog\//, '/stories/');
+}
+
+function withSitePath(article: EditorialArticle): EditorialArticle {
+  return { ...article, localPath: sitePath(article.localPath, article.slug) };
+}
+
 function passesConsentGate(article: EditorialArticle): boolean {
   if (WITHDRAWN.slugs.has(article.slug)) return false;
   const storytellerId = article.storyteller?.id;
@@ -165,7 +180,10 @@ function passesConsentGate(article: EditorialArticle): boolean {
 }
 
 function applyConsentGate(snapshot: EditorialSnapshot): EditorialSnapshot {
-  const articles = snapshot.articles.filter(passesConsentGate).map(withPlainExcerpt);
+  const articles = snapshot.articles
+    .filter(passesConsentGate)
+    .map(withPlainExcerpt)
+    .map(withSitePath);
   const projectArticleCounts: Record<string, number> = {};
   for (const article of articles) {
     for (const slug of article.relatedProjectSlugs || []) {
@@ -284,7 +302,7 @@ function normaliseLiveArticle(liveArticle: Partial<EditorialArticle> & { slug: s
   const article = { ...baked, ...liveArticle };
   return {
     ...article,
-    localPath: article.localPath ?? `/blog/${article.slug}`,
+    localPath: sitePath(article.localPath, article.slug),
     // Arrays default to empty, never undefined: every consumer of these calls
     // .includes, .length, .map or .slice on them without checking.
     relatedProjectSlugs: article.relatedProjectSlugs ?? [],

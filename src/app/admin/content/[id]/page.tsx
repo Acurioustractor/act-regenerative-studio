@@ -53,7 +53,7 @@ export default function ContentEditorPage({
       : item.type === "page"
         ? `/${item.slug}`
         : item.type === "post"
-          ? `/blog/${item.slug}`
+          ? `/stories/${item.slug}`
           : `/${item.type}/${item.slug}`
     : "/";
 

@@ -22,7 +22,7 @@ const DESTINATIONS = [
   "/vision",
   "/principles",
   "/method",
-  "/blog/seeds-of-change-walking-with-elders-and-youth-on-kalkadoon-country",
+  "/stories/seeds-of-change-walking-with-elders-and-youth-on-kalkadoon-country",
 ] as const;
 
 export default function SurprisePage() {

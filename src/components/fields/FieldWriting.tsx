@@ -24,9 +24,9 @@ import type { LivingFieldId } from "@/data/living-field";
  * Labels use clay-text rather than clay, which fails WCAG AA at this size.
  */
 
-/** Articles link to /blog/[slug]; /stories is the index that points at them. */
+/** Articles read at /stories/[slug]; /stories is the index that points at them. */
 function articleHref(localPath: string | null | undefined, slug: string) {
-  return localPath || `/blog/${slug}`;
+  return localPath || `/stories/${slug}`;
 }
 
 /*

@@ -1,6 +1,11 @@
 const launchRedirects = [
-  { source: "/lcaa", destination: "/method", permanent: true },
-  { source: "/wiki/new", destination: "/wiki", permanent: true },
+  // Flattened 2026-08-07: /method itself redirects into /about#convictions, so
+  // pointing /lcaa at it chained a 308 into a second hop. /method's own rule
+  // stays below for anything that cached the old destination.
+  { source: "/lcaa", destination: "/about#convictions", permanent: true },
+  // /wiki/new is caught by the /wiki/:slug* hold below (2026-08-07; it used to
+  // 308 into the held /wiki, a three-hop chain). Restore a permanent rule to
+  // the wiki when the /wiki hold reverses.
   { source: "/engine", destination: "/admin/engine", permanent: true },
   {
     source: "/image-picker",
@@ -19,12 +24,14 @@ const launchRedirects = [
     permanent: true,
   },
 
-  // Legacy public-site routes.
+  // Legacy public-site routes. /seeds and /action stay pointed at /projects,
+  // their durable home, and ride its temporary closure redirect; see the note
+  // on the deleted-entries block below.
   { source: "/seeds", destination: "/projects", permanent: true },
   { source: "/action", destination: "/projects", permanent: true },
   { source: "/germinating", destination: "/stories", permanent: true },
-  { source: "/news", destination: "/blog", permanent: true },
-  { source: "/journal", destination: "/blog", permanent: true },
+  { source: "/news", destination: "/stories", permanent: true },
+  { source: "/journal", destination: "/stories", permanent: true },
   { source: "/year-in-review", destination: "/stories", permanent: true },
   { source: "/2025-review", destination: "/stories", permanent: true },
 
@@ -108,12 +115,22 @@ const launchRedirects = [
   { source: "/partners", destination: "/contact", permanent: false },
   { source: "/events", destination: "/harvest", permanent: false },
   { source: "/media", destination: "/stories", permanent: false },
-  { source: "/blog", destination: "/stories", permanent: false },
+  // Route unification, 2026-08-07: editorial articles moved from /blog/[slug]
+  // to /stories/[slug] so one slug space serves packets and articles. 308s,
+  // because the naming decision is final.
+  { source: "/blog", destination: "/stories", permanent: true },
+  { source: "/blog/:slug*", destination: "/stories/:slug*", permanent: true },
   { source: "/economy", destination: "/fields/goods", permanent: false },
   { source: "/visit", destination: "/harvest", permanent: false },
   { source: "/surprise", destination: "/stories", permanent: false },
 
   // Deleted or demoted entries redirect to parent context.
+  //
+  // While the editorial-site closure holds, the /projects/:slug* rule above
+  // matches first and sends all of these to /#fields in one hop (redirects are
+  // first-match-wins). The destinations here record where each retired URL
+  // belongs if /projects and /events ever return; do not "flatten" them to
+  // /#fields, which would bake the temporary closure into permanent redirects.
   {
     source: "/projects/green-harvest-witta",
     destination: "/harvest",
@@ -175,11 +192,13 @@ const launchRedirects = [
   // - /wiki: living wiki is a longer build; held until it is ready.
   // - /people: held 2026-05-29 (internal research notes were leaking into public
   //   bios from the Empathy Ledger data); sanitize the bio source before reopening.
+  // Hold destinations flattened 2026-08-07: /ask and /wiki pointed at
+  // /projects, which itself redirects, so every held URL cost two hops.
   { source: "/storytellers", destination: "/stories", permanent: false },
   { source: "/storytellers/:slug*", destination: "/stories", permanent: false },
-  { source: "/ask", destination: "/projects", permanent: false },
-  { source: "/wiki", destination: "/projects", permanent: false },
-  { source: "/wiki/:slug*", destination: "/projects", permanent: false },
+  { source: "/ask", destination: "/questions", permanent: false },
+  { source: "/wiki", destination: "/#fields", permanent: false },
+  { source: "/wiki/:slug*", destination: "/#fields", permanent: false },
   { source: "/people", destination: "/about", permanent: false },
 
   // Project holds (2026-05-27) — not-ready / internal pages held off the public

@@ -25,6 +25,7 @@ const launchRoutes = [
   "/fields/goods",
   "/fields/harvest",
   "/stories/utopia-may-2026",
+  "/stories/the-spirit-must-be-strong",
   "/art",
   "/harvest",
   "/about",
@@ -77,6 +78,33 @@ function pathFromHref(href) {
   }
 }
 
+// Syndicated editorial articles point canonical and og:url at Empathy Ledger,
+// the master copy, on purpose. The path-equality checks below only apply to
+// same-host metadata; an off-site canonical is the syndication design, not
+// drift. "The site's host" cannot be baseUrl's host — the gate runs against
+// localhost while pages emit their production host — so it is read once from
+// the homepage's own canonical, which always points at the site itself.
+let siteHost = null;
+async function resolveSiteHost() {
+  try {
+    const response = await fetch(`${baseUrl}/`);
+    const canonical = getCanonicalHref(await response.text());
+    if (canonical) return new URL(canonical, baseUrl).host;
+  } catch {
+    // fall through to baseUrl's host
+  }
+  return new URL(baseUrl).host;
+}
+
+function isOffSiteHref(href) {
+  if (!href) return false;
+  try {
+    return new URL(href, baseUrl).host !== siteHost;
+  } catch {
+    return false;
+  }
+}
+
 function failIf(condition, failures, route, message) {
   if (condition) failures.push(`${route}: ${message}`);
 }
@@ -121,14 +149,17 @@ async function checkRoute(route) {
   failIf(!canonicalHref, failures, route, "missing canonical metadata");
   failIf(!ogUrl, failures, route, "missing og:url metadata");
   failIf(
-    canonicalPath &&
+    !isOffSiteHref(canonicalHref) &&
+      canonicalPath &&
       canonicalPath.replace(/\/$/, "") !== expectedPath.replace(/\/$/, ""),
     failures,
     route,
     `canonical points to ${canonicalHref}, expected ${expectedPath}`,
   );
   failIf(
-    ogPath && ogPath.replace(/\/$/, "") !== expectedPath.replace(/\/$/, ""),
+    !isOffSiteHref(ogUrl) &&
+      ogPath &&
+      ogPath.replace(/\/$/, "") !== expectedPath.replace(/\/$/, ""),
     failures,
     route,
     `og:url points to ${ogUrl}, expected ${expectedPath}`,
@@ -240,6 +271,8 @@ async function checkSitemapCoverage(covered) {
 }
 
 const failures = [];
+
+siteHost = await resolveSiteHost();
 
 for (const route of launchRoutes) {
   failures.push(...(await checkRoute(route)));

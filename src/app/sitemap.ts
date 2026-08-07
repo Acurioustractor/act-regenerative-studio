@@ -3,6 +3,7 @@ import type { MetadataRoute } from "next";
 import { fieldQuestions } from "@/data/field-questions";
 import { getAllArtSlugs } from "@/lib/art/art-portfolio";
 import { getSiteEditorialArticles } from "@/lib/empathy-ledger-editorial";
+import { storyPackets } from "@/lib/stories/story-packets";
 
 const siteUrl = (() => {
   // Reject dev URLs so we never ship a sitemap pointing at localhost.
@@ -28,6 +29,8 @@ const staticRoutes: Array<{
   { path: "/confessions", changeFrequency: "weekly", priority: 0.9 },
   { path: "/confessions/listen", changeFrequency: "weekly", priority: 0.8 },
   { path: "/confessions/friday", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/confessions/wall", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/confessions/method", changeFrequency: "monthly", priority: 0.5 },
   { path: "/stories", changeFrequency: "weekly", priority: 0.8 },
   { path: "/questions", changeFrequency: "weekly", priority: 0.7 },
   { path: "/fields/art", changeFrequency: "monthly", priority: 0.7 },
@@ -80,19 +83,37 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: 0.6,
   }));
 
+  // Authored story packets share the /stories/[slug] space with editorial
+  // articles (route unification, 2026-08-07). Only published packets are
+  // indexed; public-preview and internal ones render noindex, and listing a
+  // noindex page in the sitemap would contradict it.
+  const packetEntries: MetadataRoute.Sitemap = storyPackets
+    .filter((story) => story.status === "published")
+    .map((story) => ({
+      url: `${siteUrl}/stories/${story.slug}`,
+      lastModified: now,
+      changeFrequency: "monthly" as const,
+      priority: 0.6,
+    }));
+  const packetUrls = new Set(packetEntries.map((entry) => entry.url));
+
   const editorialEntries: MetadataRoute.Sitemap = editorial
     .filter((article) => article.slug)
     .map((article) => ({
-      url: `${siteUrl}/blog/${article.slug}`,
+      url: `${siteUrl}/stories/${article.slug}`,
       lastModified: article.publishedAt ? new Date(article.publishedAt) : now,
-      changeFrequency: "monthly",
+      changeFrequency: "monthly" as const,
       priority: 0.5,
-    }));
+    }))
+    // A slug collision resolves to the packet on the page; keep the sitemap
+    // consistent with that.
+    .filter((entry) => !packetUrls.has(entry.url));
 
   return [
     ...staticEntries,
     ...questionEntries,
     ...artEntries,
+    ...packetEntries,
     ...editorialEntries,
   ];
 }

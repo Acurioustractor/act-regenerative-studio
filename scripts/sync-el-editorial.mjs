@@ -534,7 +534,7 @@ async function main() {
               ctas: Array.isArray(detail.ctas) ? detail.ctas : [],
               visibility: detail.visibility || 'public',
               canonicalUrl: `${EMPATHY_LEDGER_URL}/articles/${detail.slug || article.slug}`,
-              localPath: `/blog/${detail.slug || article.slug}`,
+              localPath: `/stories/${detail.slug || article.slug}`,
               syndicationDestinations: Array.isArray(article.syndicationDestinations)
                 ? article.syndicationDestinations
                 : [],
@@ -576,7 +576,7 @@ async function main() {
               ctas: [],
               visibility: 'public',
               canonicalUrl: `${EMPATHY_LEDGER_URL}/articles/${article.slug}`,
-              localPath: `/blog/${article.slug}`,
+              localPath: `/stories/${article.slug}`,
               syndicationDestinations: Array.isArray(article.syndicationDestinations)
                 ? article.syndicationDestinations
                 : [],

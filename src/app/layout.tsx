@@ -155,8 +155,9 @@ export default function RootLayout({
           <UnifiedFooter
             currentProject="A Curious Tractor"
             showProjects={true}
-            /* Live routes only. /projects, /blog and /farm are 307s since the
-               site collapse; see scripts/sweep-routes.mjs for the current set. */
+            /* Live routes only. /projects and /farm are 307s since the site
+               collapse, /blog a 308 since the /stories unification; see
+               scripts/sweep-routes.mjs for the current set. */
             customLinks={[
               { label: "Fields", href: "/#fields" },
               { label: "Stories", href: "/stories" },

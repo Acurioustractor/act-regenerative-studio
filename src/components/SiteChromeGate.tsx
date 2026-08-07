@@ -4,7 +4,6 @@ import { usePathname } from "next/navigation";
 
 const editorialRoots = [
   "/stories",
-  "/blog",
   "/questions",
   "/fields",
   "/art",

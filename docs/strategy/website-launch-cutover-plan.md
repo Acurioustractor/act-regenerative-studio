@@ -114,6 +114,22 @@ with the hold.
 | `/wiki` | **Not a hold pending fixes any more. Decided 2026-08-07: the wiki is internal.** It stays in the repository and stays useful to us; it does not go out to the public | Only if that decision is reversed, and then the original blockers still apply: `sync-canonical-wiki-pages.mjs` glob exclusions fixed, finance and decisions visibility decided, article quality pass per the operating system's wiki standard |
 | `/people` | Internal research notes leaked into public bios | EL bio source sanitised; re-audit of every published bio before reversal |
 
+### This site does not sell. The destinations do.
+
+Decided 2026-08-07, closing a question raised by the route walk. Every path here
+ends at a contact form, and the essay asks for buyers who can place real orders
+because a promise of demand does not pay a wage. The answer is that ordering
+belongs on the destination sites, JusticeHub, Goods on Country, Empathy Ledger
+and The Harvest, not on the hub.
+
+That matches how the site is already built. Every field page hands off twice,
+sideways to another field and outward to the real thing, so the hub is a doorway
+rather than a shop. Worth writing down so it is not rediscovered as a gap: the
+absence is the design.
+
+The Harvest is the exception and stays one, because the place is the product:
+`/harvest/csa` takes members and `/harvest/produce` says what is in season.
+
 ### The wiki stays internal
 
 Checked on production on 2026-08-07, because "held" and "not reachable" are not

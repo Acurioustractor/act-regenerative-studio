@@ -16,6 +16,29 @@ export function LivingFieldPrototype({ production = false }: { production?: bool
   const [shareStatus, setShareStatus] = useState("");
   const artworkRef = useRef<HTMLDivElement>(null);
 
+  // The hero travels the fields rather than sitting on one clip: the ribbon
+  // under it says the work moves in every direction, and the section below it
+  // asks you to choose a way in. The screening room's homepage pick still leads
+  // the sequence, so that control keeps meaning something; a field repeating
+  // that same clip is dropped rather than shown twice.
+  const heroSequence = [selectedMedia.homepage, ...livingFields.map((field) => selectedMedia.fields[field.id])]
+    .filter((shot): shot is typeof selectedMedia.homepage => Boolean(shot?.videoUrl))
+    .filter((shot, index, all) => all.findIndex((other) => other.videoUrl === shot.videoUrl) === index);
+  const [heroIndex, setHeroIndex] = useState(0);
+  const [heroHeld, setHeroHeld] = useState(false);
+  const heroShot = heroSequence[heroIndex % heroSequence.length] ?? selectedMedia.homepage;
+
+  useEffect(() => {
+    if (heroSequence.length < 2 || heroHeld) return;
+    // Someone who has asked for less motion gets the opening frame and no cycle.
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    const timer = window.setInterval(() => {
+      if (document.hidden) return;
+      setHeroIndex((current) => (current + 1) % heroSequence.length);
+    }, 6500);
+    return () => window.clearInterval(timer);
+  }, [heroSequence.length, heroHeld]);
+
   useEffect(() => {
     const chrome = Array.from(document.querySelectorAll<HTMLElement>("[data-site-chrome]"));
     chrome.forEach((node) => { node.hidden = true; });
@@ -116,24 +139,27 @@ export function LivingFieldPrototype({ production = false }: { production?: bool
             <a className={styles.textLink} href="#fields">Follow it into the field <span>↓</span></a>
           </div>
 
-          <div
-            ref={artworkRef}
-            className={styles.heroArtwork}
-            onPointerMove={moveArtwork}
-            onPointerLeave={resetArtwork}
-          >
-            <video key={selectedMedia.homepage.videoUrl} autoPlay muted loop playsInline poster={selectedMedia.homepage.posterUrl}>
-              <source src={selectedMedia.homepage.videoUrl} type="video/mp4" />
-            </video>
+          <div className={styles.heroArtworkCell}>
             <svg className={styles.returnMark} viewBox="0 0 180 180" aria-hidden="true">
               <path d="M145 145C116 171 65 169 35 137C7 106 10 57 40 28C67 2 113 6 143 33C164 52 174 84 165 111" />
               <circle cx="165" cy="111" r="6" />
             </svg>
-            <div className={styles.artworkNote}>
-              <span>{selectedMedia.homepage.title}</span>
-              <span>{selectedMedia.homepage.field}</span>
+            <div
+              ref={artworkRef}
+              className={styles.heroArtwork}
+              onPointerMove={moveArtwork}
+              onPointerEnter={() => setHeroHeld(true)}
+              onPointerLeave={() => { setHeroHeld(false); resetArtwork(); }}
+            >
+              <video key={`shot-${heroShot.videoUrl}`} autoPlay muted loop playsInline poster={heroShot.posterUrl}>
+                <source src={heroShot.videoUrl} type="video/mp4" />
+              </video>
+              <div key={`note-${heroShot.videoUrl}`} className={styles.artworkNote}>
+                <span>{heroShot.title}</span>
+                <span>{heroShot.field}</span>
+              </div>
+              <p>{heroHeld ? "Held" : "Move near it"}</p>
             </div>
-            <p>Move near it</p>
           </div>
         </section>
 

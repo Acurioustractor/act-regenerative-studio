@@ -15,6 +15,9 @@ import {
   readingTimeMinutes,
 } from "@/lib/editorial/article-html";
 import { ReadingProgress } from "@/components/editorial/ReadingProgress";
+import { ArticleGallery } from "@/components/editorial/ArticleGallery";
+import { RichTextMedia } from "@/components/editorial/RichTextMedia";
+import { ArticleHeroMedia } from "@/components/editorial/ArticleHeroMedia";
 import {
   fieldsForArticle,
   projectSlugDestination,
@@ -59,17 +62,21 @@ function shortLede(raw: string | null): string | null {
   return firstSentence.slice(0, 180).replace(/[,\s]+\S*$/, "") + "…";
 }
 
-function publishedDateLabel(iso: string | null): string | null {
-  if (!iso) return null;
-  try {
-    return new Date(iso).toLocaleDateString("en-AU", {
-      year: "numeric",
-      month: "long",
-    });
-  } catch {
-    return null;
-  }
-}
+/*
+ * No date is rendered, deliberately, and the reason is the same one recorded in
+ * FieldWriting: `publishedAt` in the editorial feed is a migration artifact
+ * rather than an editorial date. Twenty-one of the articles share one timestamp
+ * to the millisecond (2026-01-09T23:40:59.476Z) and five more share another
+ * (2026-03-25T22:45:19.558574Z); createdAt and updatedAt each hold a single
+ * value across the whole corpus.
+ *
+ * Until 2026-08-07 this reader printed that timestamp as "January 2026" under
+ * five unrelated headlines. The field pages had already stopped doing so. A
+ * date is a claim about when something happened, and this one is a claim about
+ * when a database row was written.
+ *
+ * Restore the label here, and in FieldWriting, once the feed carries real ones.
+ */
 
 export async function EditorialArticleReader({
   post,
@@ -81,8 +88,6 @@ export async function EditorialArticleReader({
   const preparedHtml = looksLikeHtml ? prepareArticleHtml(content) : null;
   const readingMinutes = readingTimeMinutes(content);
   const lede = shortLede(post.excerpt);
-  const dateLabel = publishedDateLabel(post.publishedAt);
-  const hasHero = !!post.featuredImageUrl;
 
   // Related project slugs resolved to the field pages that absorbed them.
   // Deduplicated, since several projects can land on the same field.
@@ -164,35 +169,15 @@ export async function EditorialArticleReader({
         ])}
       />
       <ReadingProgress />
-      {/* HERO: full-bleed image with title + meta overlay. Articles without a
-          featured image get a typographic cover — deep olive field with a low
-          clay glow — instead of a bare black rectangle. */}
+      {/* HERO: full-bleed image with title + meta overlay. The typographic
+          cover behind it carries any article whose photograph is absent or
+          dead; see ArticleHeroMedia. */}
       <section className="full-bleed relative min-h-[60vh] w-full overflow-hidden bg-[#11110F] md:min-h-[75vh]">
-        {hasHero ? (
-          <Image
-            src={post.featuredImageUrl!}
-            alt={post.featuredImageAlt ?? post.title}
-            fill
-            sizes="100vw"
-            className="object-cover"
-            priority
-          />
-        ) : (
-          <div
-            aria-hidden="true"
-            className="absolute inset-0 bg-[linear-gradient(150deg,#33402F_0%,#222B21_55%,#161B15_100%)]"
-          >
-            <div className="absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_18%_88%,rgba(196,132,92,0.28),transparent_70%)]" />
-            <span className="absolute -bottom-24 right-[-4%] select-none font-[var(--font-display)] text-[38vw] font-light italic leading-none text-[#F3EBDD]/[0.05] md:text-[26vw]">
-              {post.title.charAt(0)}
-            </span>
-          </div>
-        )}
-        {hasHero ? (
-          <div className="absolute inset-0 bg-gradient-to-b from-black/25 via-black/45 to-black/80" />
-        ) : (
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-transparent to-black/40" />
-        )}
+        <ArticleHeroMedia
+          imageUrl={post.featuredImageUrl ?? null}
+          alt={post.featuredImageAlt ?? post.title}
+          initial={post.title.charAt(0)}
+        />
         <div className="relative z-10 mx-auto flex min-h-[60vh] max-w-[1000px] flex-col justify-end px-6 pb-16 pt-32 md:min-h-[75vh] md:px-10 md:pb-24 md:pt-40">
           <Link
             href="/stories"
@@ -210,12 +195,6 @@ export async function EditorialArticleReader({
           ) : null}
           <div className="mt-8 flex flex-wrap items-center gap-5 font-[var(--font-sans)] text-[11px] uppercase tracking-[0.22em] text-[#CFA16B]/90">
             {post.authorName ? <span>{post.authorName}</span> : null}
-            {dateLabel ? (
-              <>
-                <span aria-hidden="true" className="text-[#CFA16B]/40">·</span>
-                <span>{dateLabel}</span>
-              </>
-            ) : null}
             {post.articleType ? (
               <>
                 <span aria-hidden="true" className="text-[#CFA16B]/40">·</span>
@@ -236,13 +215,17 @@ export async function EditorialArticleReader({
       <section className="bg-[#FBF6EC] px-6 py-20 md:px-10 md:py-28">
         <article className="mx-auto max-w-[720px]">
           {content ? (
-            <div className="rich-text">
-              {preparedHtml ? (
-                <div dangerouslySetInnerHTML={{ __html: preparedHtml }} />
-              ) : (
+            preparedHtml ? (
+              // Most of the corpus is exported HTML, and most of the dead
+              // photographs live inside it. RichTextMedia carries the .rich-text
+              // class the CSS keys off, so the wrapper div that used to sit
+              // outside it would now be a second, redundant .rich-text.
+              <RichTextMedia html={preparedHtml} />
+            ) : (
+              <div className="rich-text">
                 <ReactMarkdown>{content}</ReactMarkdown>
-              )}
-            </div>
+              </div>
+            )
           ) : (
             <p className="font-[var(--font-body)] italic text-[var(--we-warm-brown)]">
               This story has no public body yet. Its media, project links, and
@@ -252,60 +235,10 @@ export async function EditorialArticleReader({
         </article>
       </section>
 
-      {/* GALLERY: field photographs */}
-      {gallery.length > 0 && (
-        <section className="full-bleed bg-[#F6F1E7] px-6 py-20 md:px-10 md:py-28">
-          <div className="mx-auto max-w-[1300px]">
-            <p className="mb-8 text-center font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-[var(--we-warm-brown)] md:mb-12">
-              Field photographs
-            </p>
-            <div
-              className={`grid gap-3 md:gap-4 ${
-                gallery.length === 1
-                  ? "mx-auto max-w-[900px] grid-cols-1"
-                  : gallery.length === 2
-                    ? "md:grid-cols-2"
-                    : "md:grid-cols-2 lg:grid-cols-3"
-              }`}
-            >
-              {gallery.map((photo, i) => {
-                const isBentoLead = i === 0 && gallery.length >= 3;
-                return (
-                  <div
-                    key={photo.url + i}
-                    className={`relative overflow-hidden rounded-[20px] bg-[#1B1A16] ${
-                      isBentoLead
-                        ? "aspect-[16/10] lg:col-span-2 lg:row-span-2 lg:aspect-[16/11]"
-                        : gallery.length === 1
-                          ? "aspect-[16/10]"
-                          : "aspect-[4/3]"
-                    }`}
-                  >
-                    <Image
-                      src={photo.url}
-                      alt={photo.alt || `Field photograph from ${post.title}`}
-                      fill
-                      sizes={isBentoLead
-                        ? "(min-width: 1024px) 66vw, (min-width: 768px) 100vw, 100vw"
-                        : gallery.length === 1
-                          ? "(min-width: 900px) 900px, 100vw"
-                          : "(min-width: 1024px) 33vw, (min-width: 768px) 50vw, 100vw"}
-                      className="object-cover transition-transform duration-[6s] ease-out hover:scale-[1.03]"
-                    />
-                    {photo.caption ? (
-                      <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-4 md:p-5">
-                        <p className="font-[var(--font-body)] text-[13px] italic leading-snug text-[#F3EBDD] md:text-base md:leading-normal">
-                          {photo.caption}
-                        </p>
-                      </div>
-                    ) : null}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </section>
-      )}
+      {/* GALLERY: field photographs. Most of these URLs are dead upstream, so
+          the component drops what fails and hides itself when nothing loads. */}
+      <ArticleGallery photos={gallery} articleTitle={post.title} />
+
 
       {/* AUTHOR + CONNECTED FIELDS */}
       <section className="bg-[#FBF6EC] px-6 py-16 md:px-10 md:py-20">

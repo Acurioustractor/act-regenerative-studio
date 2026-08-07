@@ -21,6 +21,8 @@
     "check:copy": "node scripts/check-public-copy.mjs",
     "check:copy:data": "node scripts/check-public-copy.mjs --data",
     "check:forms": "node scripts/check-form-payloads.mjs",
+    "check:media": "node scripts/check-editorial-media.mjs",
+    "check:media:report": "node scripts/check-editorial-media.mjs --report",
     "check:launch": "node scripts/check-launch-site.mjs",
     "check:launch-ready": "node scripts/check-launch-ready.mjs",
     "check:launch-ready:build": "node scripts/check-launch-ready.mjs --with-build",

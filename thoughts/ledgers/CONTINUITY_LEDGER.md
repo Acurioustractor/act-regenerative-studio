@@ -6,23 +6,30 @@
 
 ## Active Context
 
-### DO THIS FIRST — one migration is loaded and not run
+### DO THIS FIRST — the migration was run, broke the site, and is reverted
 `docs/integrations/empathy-ledger/host-relative-media-urls-2026-08-08.sql`
 
-244 URLs across 40 articles, rewriting stored bodies to host-relative. Its
-prerequisite is **met**: PR #501 is merged and deployed, confirmed on the wire
-(production returns 5 absolute `/api/media` URLs, 0 host-relative).
+Run 2026-08-08. **It took the hero off 13 of 21 ACT story pages.** Reverted
+immediately; data is byte-identical to before and `check:media` is back to
+200 live / 0 dead.
 
-**Code first, data second — not the reverse.** Migrating before the read path
-absolutizes would emit host-relative URLs to every partner, which resolve
-against the partner's own domain and 404. That is the JusticeHub
-eight-broken-images bug recorded in `src/lib/media/serve-absolutize.test.ts`.
+**Do not run it again until EL PR #504 is merged AND deployed.** #501
+absolutized the body after `extractFirstImage` had already read the stored form,
+so the hero came out `/api/media/...` and `resolveAssetUrl` resolved it against
+the article's original source site — a valid URL to a host that never had the
+file. #504 resolves the body before anything reads it, in both routes, and gives
+`resolveAssetUrl` an explicit `/api/media/` branch.
 
-After: confirm consumers still receive absolute URLs, then `npm run check:media`
-(baseline 0 dead across 21 story pages).
+**Then retry as a canary**: one article, load its story page, confirm the hero,
+then the rest, then `npm run check:media`.
+
+**Verification lesson worth keeping.** #501 was checked by confirming the DETAIL
+route's `content` byte-matched production. The site reads the **LIST** route and
+what broke was the **hero**. Content-field parity is not surface parity —
+measure the rendered page.
 
 ### Current Goals
-- [ ] Run the migration above.
+- [ ] Merge + deploy EL #504, then retry the migration as a canary.
 - [ ] **Elder review for eleven weighted articles across four communities.** Kristy
       Bloomfield's is recorded for Oonchiumpa. Jimmy Frank is in the system and one
       block away; Palm Island, Quandamooka and Kalkadoon have no approver identity.

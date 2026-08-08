@@ -7,29 +7,48 @@ session worked down.
 
 ---
 
-## Read this first: the one thing left loaded
+## Read this first: the migration was run, it broke the site, and it is reverted
 
 `docs/integrations/empathy-ledger/host-relative-media-urls-2026-08-08.sql`
-is **written, verified safe, and NOT run**.
+was run on 2026-08-08. **It took the hero image off 13 of 21 ACT story pages
+within minutes.** It was reverted immediately and the data is byte-identical to
+before (0 host-relative, 39 absolute). `check:media` is back to 200 live / 0
+dead.
 
-Its prerequisite is now met: PR #501 is merged AND deployed to production,
-confirmed on the wire (production returns 5 absolute `/api/media` URLs and 0
-host-relative, content length 6668 unchanged). So the migration can be run.
+**Do not run it again until PR #504 is merged AND deployed.**
 
-**The order is not optional and is the opposite of the backfill below.**
+### What went wrong, because the shape of it matters
+
+#501 absolutized article bodies on the way out, but computed that value AFTER
+`extractFirstImage` had already read the stored form. So with bodies stored
+host-relative:
+
+1. `extractFirstImage` returns `/api/media/<id>/file` as the hero
+2. `resolveAssetUrl` had no branch for our own serve route
+3. so it fell to `startsWith('/') && sourceUrl` and resolved the path against
+   **the article's original source site**
+
+The output was not a broken-looking URL. It was a valid absolute URL to a host
+that never had the file. Only 13 broke because the other 8 had a featured image
+from `media_assets` or `import_metadata` and never reached the content fallback.
+
+**The verification lesson.** #501 was checked by confirming the DETAIL route's
+`content` field byte-matched production. The ACT site reads the **LIST** route,
+and what broke was the **hero**, which neither check looked at. Content-field
+parity is not surface parity. Measure the rendered page.
+
+### When #504 is deployed, retry as a canary
+
+Not all 39 at once. Migrate ONE article, load its story page, confirm the hero
+resolves, then do the rest and re-run `npm run check:media`.
+
+The ordering rule still holds and is the opposite of the backfill below:
 
 ```
 code first, then data -> consumers keep receiving absolute URLs throughout
 data first, then code -> every partner gets `/api/media/...`, resolves it
                          against its OWN domain, and 404s
 ```
-
-That second line is not hypothetical. It is the JusticeHub eight-broken-images
-bug, already recorded at the top of `src/lib/media/serve-absolutize.test.ts`.
-
-After running it: confirm on the wire that consumers still receive **absolute**
-URLs, then `npm run check:media` in this repo (baseline 0 dead across 21 story
-pages).
 
 ---
 

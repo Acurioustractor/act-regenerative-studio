@@ -111,27 +111,66 @@ with the hold.
 | --- | --- | --- |
 | `/storytellers` | Only one consented profile syndicates | More than one consented storyteller profile flows from Empathy Ledger |
 | `/ask` | Public AI Q&A unreviewed | Cost, safety and prompt-injection review done; rate limiting and moderation decided; explicit go |
-| `/wiki` | Sync leaked internal R&D and finance content | `sync-canonical-wiki-pages.mjs` glob exclusions fixed; finance/decisions visibility decided; article quality pass per the operating system's wiki standard |
+| `/wiki` | **Not a hold pending fixes any more. Decided 2026-08-07: the wiki is internal.** It stays in the repository and stays useful to us; it does not go out to the public | Only if that decision is reversed, and then the original blockers still apply: `sync-canonical-wiki-pages.mjs` glob exclusions fixed, finance and decisions visibility decided, article quality pass per the operating system's wiki standard |
 | `/people` | Internal research notes leaked into public bios | EL bio source sanitised; re-audit of every published bio before reversal |
+
+### This site does not sell. The destinations do.
+
+Decided 2026-08-07, closing a question raised by the route walk. Every path here
+ends at a contact form, and the essay asks for buyers who can place real orders
+because a promise of demand does not pay a wage. The answer is that ordering
+belongs on the destination sites, JusticeHub, Goods on Country, Empathy Ledger
+and The Harvest, not on the hub.
+
+That matches how the site is already built. Every field page hands off twice,
+sideways to another field and outward to the real thing, so the hub is a doorway
+rather than a shop. Worth writing down so it is not rediscovered as a gap: the
+absence is the design.
+
+The Harvest is the exception and stays one, because the place is the product:
+`/harvest/csa` takes members and `/harvest/produce` says what is in season.
+
+### The wiki stays internal
+
+Checked on production on 2026-08-07, because "held" and "not reachable" are not
+the same claim. `src/lib/projects/get-project-data.ts` reads the generated wiki
+data and is imported by live public routes (`/harvest`, `/empathy-ledger`,
+`/art/residencies`, `/farm/*`), so the internal material could have travelled
+without `/wiki` being reachable at all. It has not: a scan of those pages for
+revenue figures, funder scores, Xero invoice numbers and political contacts came
+back clean. The single hit is the `ACT-HV` project code on `/harvest`, carried as
+a form-tagging prop rather than shown as copy.
+
+Worth re-running that scan whenever the wiki sync regenerates, since the leak
+would arrive through the data rather than through the route.
 
 ## Empathy Ledger data asks
 
 These cap editorial quality on the site and are upstream fixes, not site work.
-Raised with the EL side; timeline unconfirmed.
+The sendable version, ranked rather than listed as five equal requests, is
+[docs/integrations/empathy-ledger/data-asks.md](../integrations/empathy-ledger/data-asks.md).
 
-- **Real publish dates.** 21 of 29 articles share one timestamp to the
-  millisecond. Field pages deliberately render no dates because printing the
-  migration artifact would state something false. Dates return to the pages
-  when the feed carries real ones (a guard test in `field-graph.test.ts`
-  flips when they arrive).
-- **Media captions.** 0 of 114 photos carry captions.
-- **Featured-image alt text.** 0 of 26 featured images carry alts; the site
-  strips Webflow filename junk and falls back to the article title.
-- **Per-article authors.** Every article currently attributes to one person;
-  person-voiced pieces need their real storyteller bylines.
-- **Destination-key alignment.** The sync uses the `act_el` destination key,
-  the live read filters by site slug; the two paths can return different
-  corpora. Needs one key.
+Figures re-verified against `empathy-ledger-editorial.generated.json` on
+2026-08-07. The earlier numbers here were stale, having been carried from a
+larger corpus, and are corrected below.
+
+- **Real publish dates.** 26 articles carry 5 distinct timestamps between them;
+  18 share `2026-01-09T23:40:59.476+00:00` to the millisecond. Field pages
+  deliberately render no dates, because printing that migration artifact would
+  state something false. A guard test in `field-graph.test.ts` flips when real
+  dates arrive.
+- **Destination-key alignment.** The sync writes `editorialDestination:
+  "act_el"`; the runtime reads `/api/v2/sites/act-regenerative-studio/`. Two
+  identifiers for one site, and nothing on this side can tell whether they
+  select the same corpus. If they diverge, the snapshot and the live read
+  disagree silently.
+- **Featured-image alt text.** 0 of the 18 articles that have a featured image
+  carry alt text; the site strips Webflow filename junk and falls back to the
+  article title.
+- **Media captions.** 0 of 123 media items carry a caption, and none carry alt
+  text either.
+- **Per-article authors.** All 26 attribute to one person; person-voiced pieces
+  need their real storyteller bylines.
 
 ## Ready to cut over
 

@@ -50,10 +50,28 @@ function coveredBy(index) {
   return null;
 }
 
+// A rule whose destination is itself redirected costs the visitor a second hop and
+// splits the link equity across two URLs, and this check could not see it: it
+// asserts one hop at a time, so /projects/justicehub -> /justicehub passed while
+// the browser went on to /fields/justice. Thirty rules had drifted into chains
+// behind the editorial-site closure before anyone noticed.
+function chainedDestination(destination) {
+  const target = destination.split("#")[0];
+  const hit = launchRedirects.find((entry) => entry.source && matchers[launchRedirects.indexOf(entry)]?.test(target));
+  return hit && hit.destination !== destination ? hit.destination : null;
+}
+
 for (const [index, redirect] of launchRedirects.entries()) {
   if (!redirect.source || !redirect.destination) {
     failures.push(`redirect entry is missing source or destination: ${JSON.stringify(redirect)}`);
     continue;
+  }
+
+  const onward = chainedDestination(redirect.destination);
+  if (onward) {
+    failures.push(
+      `${redirect.source}: destination ${redirect.destination} redirects on to ${onward}; point it at the final page`,
+    );
   }
 
   const cover = coveredBy(index);

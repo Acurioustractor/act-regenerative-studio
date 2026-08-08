@@ -80,23 +80,69 @@ order by a.slug;
 -- Mparntwe and Oonchiumpa operates on her Country, so her approval is elder
 -- review in the OCAP sense for Oonchiumpa material.
 -- ---------------------------------------------------------------------------
--- \set approver_id 'b59a1f4c-94fd-4805-a2c5-cac0922133e0'
--- \set approved_on '2026-__-__'
--- \set channel     'verbal in conversation, witnessed by Ben Knight'
+-- READY TO RUN as of 2026-08-08. Ben confirmed Kristy has given approval.
+--
+-- Scope is one article. Two further live articles mention Oonchiumpa
+-- (historys-wounds-and-tomorrows-possibilities and
+-- justicehub-a-platform-for-community-led-justice-solutions) but they are
+-- ACT-authored pieces about ACT's work rather than Oonchiumpa stories, and are
+-- deliberately excluded. Mentioning a community is not the same as the story
+-- belonging to them. If Kristy's approval is meant to cover them, add them
+-- explicitly rather than widening the rule.
+--
+-- elder_approved_at is set to now(), which is the date this was RECORDED, not
+-- the date the approval was given. The conversation date was not specified. The
+-- audit row says so in as many words. Correct both if the real date is known.
 
-/*
+-- EXECUTED 2026-08-08 03:04 UTC. Kept as the record of what ran.
+--
+-- Two corrections were forced by the schema and are worth carrying forward:
+--
+--   cultural_permission_level is NOT set. Its check constraint allows only
+--   public / community / restricted / sacred, which describe the material's
+--   sensitivity tier rather than who approved it. An elder-review approval does
+--   not state a tier, so inferring one would be inventing a fact. Left null.
+--
+--   event_type has no elder-review value. The audit log allows consent_granted,
+--   consent_revoked, content_accessed, content_shared, profile_viewed,
+--   story_clicked, profile_synced, token_created, token_revoked, and nothing
+--   else. consent_granted is the nearest true value; the metadata carries
+--   consent_kind so the record is not ambiguous. Adding an elder_review_recorded
+--   event type would be the better fix.
+
 update syndication_consent sc
-   set requires_elder_approval  = true,
-       elder_approved           = true,
-       elder_approved_by        = 'b59a1f4c-94fd-4805-a2c5-cac0922133e0'::uuid,
-       elder_approved_at        = 'YYYY-MM-DD'::timestamptz,
-       cultural_permission_level = 'community-approved',
-       updated_at               = now()
+   set requires_elder_approval = true,
+       elder_approved          = true,
+       elder_approved_by       = 'b59a1f4c-94fd-4805-a2c5-cac0922133e0'::uuid,  -- Kristy Bloomfield
+       elder_approved_at       = now(),
+       updated_at              = now()
   from articles a
  where sc.article_id = a.id
    and sc.site_id = (select id from syndication_sites where slug = 'act-regenerative-studio')
-   and a.slug in ('oonchiumpa-what-happens-when-community-leads');
-*/
+   and a.slug = 'oonchiumpa-what-happens-when-community-leads';
+
+insert into syndication_audit_log (tenant_id, site_id, event_type, event_source, metadata, created_at)
+values (
+  '8891e1a9-92ae-423f-928b-cec602660011'::uuid,
+  (select id from syndication_sites where slug = 'act-regenerative-studio'),
+  'consent_granted',
+  'elder review, recorded on Ben Knight''s statement',
+  jsonb_build_object(
+    'consent_kind',       'ELDER REVIEW. The event_type vocabulary has no elder-review term; consent_granted is the nearest permitted value.',
+    'community',          'Arrernte / Mparntwe (Oonchiumpa)',
+    'approver',           'Kristy Bloomfield',
+    'approver_id',        'b59a1f4c-94fd-4805-a2c5-cac0922133e0',
+    'approver_authority', 'Central Arrernte, Eastern Arrernte, Alyawarra Traditional Owner of Mparntwe; Oonchiumpa co-director',
+    'basis',              'Traditional Owner authority for the Country the story is from satisfies elder review, per wiki/decisions/2026-04-18-oonchiumpa-story-approval.md',
+    'channel',            'verbal, relayed by Ben Knight',
+    'relayed_on',         '2026-08-08',
+    'conversation_date',  'NOT SPECIFIED. elder_approved_at holds the date this was recorded, not the date approval was given.',
+    'witnessed_by',       'Ben Knight',
+    'scope',              'oonchiumpa-what-happens-when-community-leads only; two further articles mentioning Oonchiumpa were deliberately excluded as ACT-authored',
+    'articles',           jsonb_build_array('oonchiumpa-what-happens-when-community-leads')
+  ),
+  now()
+);
 
 
 -- ---------------------------------------------------------------------------

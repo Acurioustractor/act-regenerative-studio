@@ -32,8 +32,26 @@ export const dynamic = "force-dynamic";
  * we act on unverified claims about what a person decided.
  */
 
-/** Events that change what may be shown. Anything else is acknowledged, not acted on. */
+/**
+ * Events that change what may be shown. Anything else is acknowledged, not acted on.
+ *
+ * Two vocabularies on purpose. The dotted names were written against an earlier
+ * draft; the underscored ones are what Empathy Ledger actually sends, per its
+ * published contract (docs/syndication/partner-webhook-receiver.md in that repo).
+ *
+ * Verified 2026-08-08 by running the first end-to-end withdrawal drill: a real
+ * revocation arrives as `content_revoked`, which was NOT in this set, so this
+ * receiver would have verified the signature, matched nothing, and returned 202.
+ * The sender counts any 2xx as delivered — so the storyteller would have been
+ * told the withdrawal landed while this site's cache kept serving the story.
+ */
 const CACHE_AFFECTING_EVENTS = new Set([
+  // What Empathy Ledger sends today.
+  "content_revoked",
+  "content_updated",
+  "consent_approved",
+  "consent_denied",
+  // Earlier draft's names, kept so nothing that used to work stops.
   "consent.revoked",
   "consent.granted",
   "content.updated",
@@ -46,9 +64,21 @@ const CACHE_AFFECTING_EVENTS = new Set([
   "webhook.test",
 ]);
 
+/**
+ * Accept the signature in either shape.
+ *
+ * Empathy Ledger sends a bare lowercase hex digest. This receiver was written
+ * expecting a `sha256=` prefix, which is the GitHub convention but not theirs.
+ * Both are the same HMAC over the same raw bytes, so accepting either is not a
+ * weakening — it is the same proof, written two ways.
+ */
 function signatureMatches(raw: string, header: string, secret: string): boolean {
-  const expected = `sha256=${createHmac("sha256", secret).update(raw).digest("hex")}`;
-  const a = Buffer.from(header);
+  const digest = createHmac("sha256", secret).update(raw).digest("hex");
+  return equals(header, digest) || equals(header, `sha256=${digest}`);
+}
+
+function equals(provided: string, expected: string): boolean {
+  const a = Buffer.from(provided);
   const b = Buffer.from(expected);
   // timingSafeEqual throws on length mismatch, so compare lengths first.
   return a.length === b.length && timingSafeEqual(a, b);
@@ -68,7 +98,12 @@ export async function POST(request: NextRequest) {
   }
 
   const raw = await request.text();
-  const provided = request.headers.get("x-webhook-signature");
+  // Empathy Ledger's canonical header is X-Empathy-Ledger-Signature; it also
+  // sends X-Webhook-Signature as a temporary alias precisely because this
+  // receiver read only the latter. Read both so the alias can be retired.
+  const provided =
+    request.headers.get("x-empathy-ledger-signature") ??
+    request.headers.get("x-webhook-signature");
 
   if (!provided) {
     return NextResponse.json({ error: "Missing signature" }, { status: 401 });

@@ -1,26 +1,39 @@
 # ACT Regenerative Studio - Continuity Ledger
 
-> Last Updated: 2026-07-29
-> Session: launch hardening, field graph, repo cleanup
-> Full handoff: `thoughts/shared/handoffs/2026-07-29-launch-hardening-and-field-graph.md`
+> Last Updated: 2026-08-08
+> Session: photographs restored, first elder review recorded, tooling trimmed
+> Full handoff: `thoughts/shared/handoffs/2026-08-08-photographs-consent-and-tooling.md`
 
 ## Active Context
 
 ### Current Goals
-- [ ] Editorial work against the Empathy Ledger API — the field graph is the spine,
-      the content is what is thin. See the handoff's last section.
-- [ ] Decide whether EL's taxonomy should be able to express "art AND justice", or
-      whether `src/data/field-assignments.ts` stays the permanent home for that
-      judgement. EL has no art project, so Art can only be populated locally.
-- [ ] Seven articles still attach to no field; reasons recorded in
-      `DELIBERATELY_UNASSIGNED`. Art has 3 pieces and opens the homepage.
-- [ ] `primaryProject` and `themes` are empty on all 29 articles despite existing in
-      the schema; `publishedAt` is a migration artifact (21 of 29 share one timestamp).
+- [ ] **Elder review for eleven weighted articles across four communities.** Kristy
+      Bloomfield's is recorded for Oonchiumpa. Jimmy Frank is in the system and one
+      block away; Palm Island, Quandamooka and Kalkadoon have no approver identity.
+      Run blocks from `docs/integrations/empathy-ledger/record-elder-review.sql`.
+- [ ] **Two builds in Empathy Ledger for consent to be end to end**: an article-level
+      elder review queue (the fields exist, no UI writes them), and consent
+      enforcement on `/api/v1/content-hub/articles/[slug]` (the list route does it,
+      the detail route does not, so a revoke does not stop it serving).
+- [ ] Conversation date for Kristy's approval — `elder_approved_at` currently holds
+      the recording time, and the audit row says so.
+- [ ] 2,164 project photographs: 118 captioned, 0 credited. Unpublishable until that
+      changes. Not a design backlog.
+- [ ] `primaryProject` and `themes` still empty across the corpus; `publishedAt` is
+      still a migration artifact. No date is printed anywhere as a result.
 
-### Recently Shipped (2026-07-29)
-Site is live and verified: 25 launch routes at 200, admin and prototypes gated behind
-`ACT_INTERNAL_TOKEN` (404/401), 0 WCAG AA contrast violations, every link resolving,
-field videos on Supabase, 53 tests green in CI against a real server.
+### CORRECTION carried forward
+An earlier pass raised a consent RED claiming no approval covered public-web
+publication. It was wrong — it read the wiki decision records rather than the
+database. **Empathy Ledger is the system of record; query `syndication_consent`
+first.** The wiki records contradict it and should be made to defer to it.
+
+### Recently Shipped (2026-08-08)
+107 dead photographs → 0 across all 21 live story pages, verified twice. First real
+elder review recorded in Empathy Ledger with provenance. Two false public claims
+removed from /stories. Hero text measurably AA-compliant. CLAUDE.md 20.5K → 9.4K with
+three false facts corrected. Nine skills made findable, three synced. Ten PRs merged
+across two repos; zero open here.
 
 ### Key Patterns Discovered
 - This project uses **Supabase** with pgvector for storage

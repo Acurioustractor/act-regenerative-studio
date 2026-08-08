@@ -62,3 +62,73 @@ exist and are empty. The fifth is a question about which key is authoritative.
 The dates. Everything else degrades gracefully, and a reader can live without a
 caption. A body of work with no dates reads as abandoned, and the site currently
 chooses silence over stating something untrue.
+
+---
+
+# Added 2026-08-08, after a day inside the data
+
+Everything above still holds. What follows was found while restoring 107 dead
+photographs, and it changes the priority order: **the consent asks now outrank
+the dates.** Each figure below was measured directly against the Empathy Ledger
+database on 2026-08-08, not inferred.
+
+## 6. Elder review is recorded nowhere, on material that plainly needs it
+
+`syndication_consent` holds 40 rows for the `act-regenerative-studio` site: 37
+approved, 38 article-scoped, and every live article covered. That part is in
+good order and better than the wiki suggests.
+
+But across all 40 rows, `requires_elder_approval` is false, `elder_approved` is
+false, and `cultural_permission_level` is null. Meanwhile **14 of the live
+articles use the words Elder, Country, Traditional Owner, custodian, ceremony or
+sorry business**, with titles including "walking with Elders on Kalkadoon
+Country" and "a day on Quandamooka Country".
+
+The schema has the columns. Nothing populates them, and `/admin/elder-review`
+reviews photographs rather than articles, so there is no path to set them.
+
+**What we need:** a way to flag an article as requiring elder review, and to
+record who gave it and when. The org-level approval pattern already treats a
+Traditional Owner's approval as satisfying elder review; the article-level
+fields should be able to record the same thing.
+
+## 7. The wiki and the database disagree about public-web permission
+
+The org-level story approvals in `act-global-infrastructure/wiki/decisions/`
+each name public-internet publication under "What is NOT approved". The database
+says the opposite: approved, unrevoked consent rows exist for this site,
+including for the story those records name by title.
+
+Two systems holding the same decision in different words produced a false alarm
+on 2026-08-08, and would have produced a wrong takedown had it been acted on.
+
+**What we need:** the decision records to defer to `syndication_consent` rather
+than restate it. Empathy Ledger is the system of record; the wiki should point
+at it.
+
+## 8. The media gate fails open
+
+`resolveAssetUrl` ends `return gated ?? url`. A storage path absent from the map,
+because the lookup errored or the asset is not registered, ships the raw
+public-storage URL. That is the ungated form the gate exists to stop emitting.
+
+For a consent gate, failing closed is the safer default: withholding a
+photograph is recoverable, shipping an unrevocable one is not.
+
+**What we need:** a decision on the default, applied to both content-hub routes
+together.
+
+## 9. Captions, restated at the real scale
+
+The 123 figure above counts article media. The wider project library is larger
+and in worse shape: **2,164 images, 118 with a caption, 0 with a credit**, 75
+with named people, 447 with a description that is not a filename.
+
+This is why the site publishes none of it. It is not a design backlog; it is the
+reason a photographic surface cannot honestly exist yet.
+
+## Revised: if only one thing gets done
+
+Not the dates any more. **Elder review**, because it is the only item on this
+list where being wrong harms somebody rather than merely reading poorly. The
+dates remain the best thing to do second.

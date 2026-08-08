@@ -6,49 +6,63 @@
 
 ## Active Context
 
-### DO THIS FIRST — the migration was run, broke the site, and is reverted
-`docs/integrations/empathy-ledger/host-relative-media-urls-2026-08-08.sql`
+### NEXT SESSION IS A DIFFERENT JOB — UI/UX review, then a launch piece
+Launch is **tomorrow**. Two things, in order:
 
-Run 2026-08-08. **It took the hero off 13 of 21 ACT story pages.** Reverted
-immediately; data is byte-identical to before and `check:media` is back to
-200 live / 0 dead.
+1. **UI/UX review of the site, launch-ready.** Nothing below blocks it. The
+   consent, media and photograph layers are all done and verified; treat the site
+   as functionally sound and review it as a reader would.
+2. **The first large newsletter / blog post for launch.** Load the `act-voice`
+   skill BEFORE drafting, not after. No em-dashes. The essay the homepage speaks
+   in is now tracked at `compendium/04-story/what-the-road-corrects.md` — it is
+   the register to write in, and Field Notes 01 implies a series.
 
-**Do not run it again until EL PR #504 is merged AND deployed.** #501
-absolutized the body after `extractFirstImage` had already read the stored form,
-so the hero came out `/api/media/...` and `resolveAssetUrl` resolved it against
-the article's original source site — a valid URL to a host that never had the
-file. #504 resolves the body before anything reads it, in both routes, and gives
-`resolveAssetUrl` an explicit `/api/media/` branch.
+Useful for the launch piece: seven articles now carry recorded elder review, the
+photographs all resolve, and consent is enforced end to end. That is a real story
+about how the work is held, if it is wanted.
 
-**Then retry as a canary**: one article, load its story page, confirm the hero,
-then the rest, then `npm run check:media`.
-
-**Verification lesson worth keeping.** #501 was checked by confirming the DETAIL
-route's `content` byte-matched production. The site reads the **LIST** route and
-what broke was the **hero**. Content-field parity is not surface parity —
-measure the rendered page.
+### Everything from the 2026-08-08 evening run is DONE
+- **Media URL migration: COMPLETE.** 39 articles now stored host-relative, 0
+  absolute. It broke 13 heroes on the first attempt, was reverted, fixed by EL
+  #504, then retried as a canary (one article, verified at API AND rendered page,
+  then the rest). Final: `check:media` 200 live / 0 dead.
+- **Elder review: 7 articles recorded**, up from 1. Kristy Bloomfield
+  (Oonchiumpa), Jimmy Frank (Warumungu, 2), Uncle Allan Palm Island (Bwgcolman,
+  2), Shaun Fisher (Quandamooka), Brodie Germaine (Kalkadoon).
 
 ### Current Goals
-- [ ] Merge + deploy EL #504, then retry the migration as a canary.
-- [ ] **Elder review for eleven weighted articles across four communities.** Kristy
-      Bloomfield's is recorded for Oonchiumpa. Jimmy Frank is in the system and one
-      block away; Palm Island, Quandamooka and Kalkadoon have no approver identity.
-      Run blocks from `docs/integrations/empathy-ledger/record-elder-review.sql`.
-      **This needs people, not code — it is the real blocker.**
-- [ ] **Article-level elder review queue in Empathy Ledger** — the fields exist, no
-      UI writes them, so every approval arrives as hand-written SQL. This is what
-      actually unblocks the item above. Another session was committing to that repo
-      hourly on 2026-08-08; **coordinate before starting**.
-- [ ] Conversation date for Kristy's approval — `elder_approved_at` currently holds
-      the recording time, and the audit row says so.
+- [ ] UI/UX review, launch-ready (see above).
+- [ ] First large newsletter / blog post for launch.
+- [ ] **`the-power-of-indigenous-storytelling-a-community-perspective` is live and
+      probably should not be.** 1,123 characters, the shortest of the 21 by a wide
+      margin, subtitled "a community perspective", speaking for Indigenous
+      communities across Australia with no named community and no named person in
+      it. Reads as placeholder or generated filler. This is a publish/unpublish
+      call, not a consent one. **Worth settling before launch.**
+- [ ] **`elder_approved_by` has a FK to `auth.users`**, so it can only name someone
+      with a platform login. Six of the seven approvals could not use it — Jimmy
+      Frank, Uncle Allan, Shaun Fisher and Brodie Germaine are storytellers, not
+      users. Attribution lives in `syndication_audit_log` metadata instead, with
+      the reason stated on each row. The real fix is pointing that FK at
+      `storytellers`, or adding `elder_approved_by_storyteller_id`.
+- [ ] Whether **Richard Cassidy** has agreed to his own words being published in
+      `the-spirit-must-be-strong`. Uncle Allan's approval covers elder authority
+      for Country; it does not establish this, and the audit row says so.
+- [ ] Jimmy Frank would like to see his `/me` page with his content aligned. Not
+      looked at yet.
+- [ ] **Article-level elder review queue in Empathy Ledger** — every approval still
+      arrives as hand-written SQL. Another session was committing to that repo
+      hourly; coordinate before starting.
+- [ ] Conversation dates for all seven approvals — `elder_approved_at` holds the
+      recording time, and every audit row says so explicitly.
 - [ ] 6 rows in `stories` carry a hardcoded `empathyledger.com` host on
       `/api/v1/content-hub/stories/[id]`. Deliberately out of scope for #501.
-- [ ] 2,164 project photographs: 118 captioned, 0 credited. Unpublishable until that
-      changes. Not a design backlog.
+- [ ] 2,164 project photographs: 118 captioned, 0 credited. Not a design backlog.
 - [ ] `primaryProject` and `themes` still empty across the corpus; `publishedAt` is
-      still a migration artifact. No date is printed anywhere as a result.
-- [ ] Cleanup (deletions, left for Ben): remote branch `fix/host-relative-media-urls`
-      and worktree `~/Code/el-wt-hosturl`.
+      still a migration artifact.
+- [ ] Cleanup (deletions): branches `fix/host-relative-media-urls`,
+      `fix/absolutize-before-first-image`; worktrees `~/Code/el-wt-hosturl`,
+      `~/Code/el-wt-firstimg`. All merged; safe to delete.
 
 ### CORRECTIONS carried forward
 1. **Query `syndication_consent` before believing the wiki.** Empathy Ledger is the

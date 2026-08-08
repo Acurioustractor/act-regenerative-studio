@@ -7,7 +7,36 @@ session worked down.
 
 ---
 
-## Read this first: the migration was run, it broke the site, and it is reverted
+## FINAL STATE (appended after the run completed)
+
+Everything below is now DONE. Read it for the reasoning, not for instructions.
+
+- **Migration COMPLETE.** 39 articles stored host-relative, 0 absolute.
+  `check:media` 200 live / 0 dead.
+- **EL #504 merged and deployed** — the fix for what broke below.
+- **Elder review: 7 articles**, up from 1. Kristy Bloomfield (Oonchiumpa), Jimmy
+  Frank (Warumungu ×2), Uncle Allan Palm Island (Bwgcolman ×2), Shaun Fisher
+  (Quandamooka), Brodie Germaine (Kalkadoon).
+- **`the-spirit-must-be-strong` was reclassified out of Block F** into Bwgcolman.
+  It opens on Richard Cassidy's words about Palm Island and mentions Palm Island
+  three times. The earlier "not tied to one community" grouping was wrong.
+
+**Next session is a different job: UI/UX review for launch, then the first large
+newsletter / blog post. Launch is tomorrow.** See the ledger.
+
+Two things left open that touch launch:
+
+1. `the-power-of-indigenous-storytelling-a-community-perspective` is live and
+   probably should not be. 1,123 characters, subtitled "a community
+   perspective", speaking for Indigenous communities with no named community or
+   person in it. A publish/unpublish call. **Settle before launch.**
+2. `elder_approved_by` has a FK to `auth.users`, so six of seven approvals could
+   not name their approver in the field built for it. Attribution is in
+   `syndication_audit_log` metadata with the reason on each row.
+
+---
+
+## What follows is the record of how the migration went wrong the first time
 
 `docs/integrations/empathy-ledger/host-relative-media-urls-2026-08-08.sql`
 was run on 2026-08-08. **It took the hero image off 13 of 21 ACT story pages

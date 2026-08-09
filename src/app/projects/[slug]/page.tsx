@@ -17,6 +17,7 @@ import {
   getProjectEditorialArticles,
   getProjectEditorialFeature,
 } from '@/lib/empathy-ledger-editorial';
+import { formatArticleType } from '@/lib/editorial/article-type';
 import { getProjectFieldMedia } from '@/lib/projects/get-project-field-media';
 import {
   getFeaturedWorkConfigBySlug,
@@ -696,9 +697,9 @@ export default async function ProjectPage({
                 )}
                 <div className="space-y-4 p-6">
                   <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.24em] text-[#D9B786]">
-                    {projectEditorial.leadArticle.articleType ? (
+                    {formatArticleType(projectEditorial.leadArticle.articleType) ? (
                       <span className="rounded-full border border-[var(--we-warm-brown)] bg-white/5 px-3 py-1 text-[#F4ECDE]">
-                        {projectEditorial.leadArticle.articleType.replace(/_/g, ' ')}
+                        {formatArticleType(projectEditorial.leadArticle.articleType)}
                       </span>
                     ) : null}
                     {projectEditorial.leadArticle.publishedAt ? (
@@ -760,9 +761,9 @@ export default async function ProjectPage({
                   )}
                   <div className="space-y-3 p-5">
                     <div className="flex flex-wrap items-center gap-2 text-[10px] uppercase tracking-[0.24em] text-forest">
-                      {article.articleType ? (
+                      {formatArticleType(article.articleType) ? (
                         <span className="rounded-full bg-[#E8F3E6] px-3 py-1 text-[var(--we-olive)]">
-                          {article.articleType.replace(/_/g, ' ')}
+                          {formatArticleType(article.articleType)}
                         </span>
                       ) : null}
                       {article.publishedAt ? (

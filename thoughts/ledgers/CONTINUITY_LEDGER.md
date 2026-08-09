@@ -1,25 +1,64 @@
 # ACT Regenerative Studio - Continuity Ledger
 
 > Last Updated: 2026-08-09
-> Session: consent enforcement closed on the detail route, media URLs made host-neutral
-> Full handoff: `thoughts/shared/handoffs/2026-08-09-consent-enforcement-and-media-urls.md`
+> Session: launch UI review, the "community perspective" story taken down, Field Notes 02 drafted
+> Full handoff: `thoughts/shared/handoffs/2026-08-09-launch-review-and-the-story-taken-down.md`
 
 ## Active Context
 
-### NEXT SESSION IS A DIFFERENT JOB — UI/UX review, then a launch piece
-Launch is **tomorrow**. Two things, in order:
+### NEXT SESSION: FINAL CHECKING FOR LAUNCH
+The code side is done and has been since 2026-08-07. What is left is Ben's, and
+most of it is outside this repo. Nothing in this repo blocks the launch.
 
-1. **UI/UX review of the site, launch-ready.** Nothing below blocks it. The
-   consent, media and photograph layers are all done and verified; treat the site
-   as functionally sound and review it as a reader would.
-2. **The first large newsletter / blog post for launch.** Load the `act-voice`
-   skill BEFORE drafting, not after. No em-dashes. The essay the homepage speaks
-   in is now tracked at `compendium/04-story/what-the-road-corrects.md` — it is
-   the register to write in, and Field Notes 01 implies a series.
+**Do not start new work. Verify, then stop.**
 
-Useful for the launch piece: seven articles now carry recorded elder review, the
-photographs all resolve, and consent is enforced end to end. That is a real story
-about how the work is held, if it is wanted.
+1. **Ben's cutover, his to do, not ours.** Point act.place DNS, **with the
+   current MX records recorded first: that is the one way this breaks his
+   email.** Then `NEXT_PUBLIC_SITE_URL=https://act.place` in Vercel Production,
+   ship a build, repoint the EL webhook, sweep GHL, add Search Console.
+2. **The moment Ben says act.place is pointed**, run all three gates against it
+   and spot-check robots host, sitemap `<loc>` hosts, and a canonical on one
+   static page plus one `/stories/[slug]`:
+   - `LAUNCH_CHECK_BASE_URL=https://act.place node scripts/check-launch-site.mjs`
+   - `REDIRECT_CHECK_BASE_URL=https://act.place node scripts/check-launch-redirects.mjs`
+   - `CONTRAST_BASE_URL=https://act.place node scripts/check-contrast.mjs`
+3. **The launch piece is drafted and must not ship yet.**
+   `compendium/04-story/what-the-site-refuses.md` (Field Notes 02, 1,213 words,
+   written in the `what-the-road-corrects.md` register with `act-voice` loaded).
+   Three decisions are Ben's and are listed at the foot of the draft: the
+   40,469-character disclosure, whether any Elder is named (none are, on
+   purpose), and the domain. **Do not send it until those are settled.**
+
+**One number in that draft is not verified.** `40,469` is carried from the
+2026-08-08 handoff and was not re-queried. Confirm before it goes to print.
+
+**Do not report 848 as this site's corpus.** The consent gate's own suggested
+query is not scoped by destination and returns the whole EL corpus. The
+site-scoped number is 20.
+
+### Everything from the 2026-08-08 evening run is DONE
+- **Media URL migration: COMPLETE.** 39 articles now stored host-relative, 0
+  absolute. It broke 13 heroes on the first attempt, was reverted, fixed by EL
+  #504, then retried as a canary (one article, verified at API AND rendered page,
+  then the rest). Final: `check:media` 200 live / 0 dead.
+- **Elder review: 7 articles recorded**, up from 1. Kristy Bloomfield
+  (Oonchiumpa), Jimmy Frank (Warumungu, 2), Uncle Allan Palm Island (Bwgcolman,
+  2), Shaun Fisher (Quandamooka), Brodie Germaine (Kalkadoon).
+  **These names stay in the ledger and out of public copy** unless the person
+  has been asked. Recording an approval and citing it as proof of good practice
+  are different acts.
+
+### Traps found 2026-08-09
+- **The long-running dev server on :3001 serves stale code.** It runs from this
+  working tree but rendered a byline that does not exist in the source. It reads
+  exactly like a fix having failed. Use a fresh server on a free port, or
+  restart :3001 first.
+- **Vercel preview deployments are behind SSO.** Curling one returns Vercel's
+  login page with a 200, so a "bad string is absent" grep passes and means
+  nothing. Only Ben can check a preview.
+- **The pre-commit consent gate fires on `editorial-article.tsx`.** Correct
+  behaviour. Answer it from the database and pass the answer through
+  `CONSENT_CHECKED=`. Never write that line to get past it.
 
 ### Everything from the 2026-08-08 evening run is DONE
 - **Media URL migration: COMPLETE.** 39 articles now stored host-relative, 0
@@ -36,9 +75,21 @@ about how the work is held, if it is wanted.
       0 console errors, no horizontal overflow at 390px, hero rotation correct
       (video + field name + line change together), /stories count live and honest.
       Four findings, none blocking, in the handoff. The one worth fixing before
-      launch is the raw `STORY_FEATURE` token in story bylines
-      (`src/app/stories/[slug]/editorial-article.tsx:205` and `:390`).
-- [ ] First large newsletter / blog post for launch.
+      launch, the raw `STORY_FEATURE` token in story bylines, is **FIXED and
+      live**: PR #78, merged `555473f`, new formatter at
+      `src/lib/editorial/article-type.ts` with 5 tests, all four call sites
+      converted, 20 story pages swept on prod with 0 raw tokens remaining.
+      Three findings left unfixed on purpose, all in PR #78: burned-in text in
+      the Confessions hero clip colliding with the hero's own text layer;
+      standalone mobile CTAs at ~13px tall; hover on a field seed holding the
+      current field rather than previewing the hovered one.
+- [~] First large newsletter / blog post for launch. **DRAFTED, NOT SENT** at
+      `compendium/04-story/what-the-site-refuses.md`. Field Notes 02, 1,213
+      words, `act-voice` loaded before drafting, em-dash and AI-vocab and
+      `check:copy` all clean. Opens on the story taken down rather than on what
+      was built. Three decisions at the foot of the draft are Ben's and block
+      sending: the 40,469-character disclosure, naming any Elder (none named, on
+      purpose), and the domain.
 - [x] **`the-power-of-indigenous-storytelling-a-community-perspective`:
       UNPUBLISHED 2026-08-09** on Ben's call. Was `status=published,
       visibility=public` since 2026-01-08; now `status=draft, visibility=private`

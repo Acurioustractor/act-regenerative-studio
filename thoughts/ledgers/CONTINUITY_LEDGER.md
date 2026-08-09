@@ -31,14 +31,28 @@ about how the work is held, if it is wanted.
   2), Shaun Fisher (Quandamooka), Brodie Germaine (Kalkadoon).
 
 ### Current Goals
-- [ ] UI/UX review, launch-ready (see above).
+- [x] UI/UX review, launch-ready. Done 2026-08-09 against prod. Site is sound:
+      all 65 sitemap routes 200, contrast gate 0 violations across 26 routes,
+      0 console errors, no horizontal overflow at 390px, hero rotation correct
+      (video + field name + line change together), /stories count live and honest.
+      Four findings, none blocking, in the handoff. The one worth fixing before
+      launch is the raw `STORY_FEATURE` token in story bylines
+      (`src/app/stories/[slug]/editorial-article.tsx:205` and `:390`).
 - [ ] First large newsletter / blog post for launch.
-- [ ] **`the-power-of-indigenous-storytelling-a-community-perspective` is live and
-      probably should not be.** 1,123 characters, the shortest of the 21 by a wide
-      margin, subtitled "a community perspective", speaking for Indigenous
-      communities across Australia with no named community and no named person in
-      it. Reads as placeholder or generated filler. This is a publish/unpublish
-      call, not a consent one. **Worth settling before launch.**
+- [x] **`the-power-of-indigenous-storytelling-a-community-perspective`:
+      UNPUBLISHED 2026-08-09** on Ben's call. Was `status=published,
+      visibility=public` since 2026-01-08; now `status=draft, visibility=private`
+      (article id `b21fafab-255d-4c62-b989-9f165213063b`, project
+      `yvnuayzslukamizrlhwb`). Reason recorded on an `article_reviews` row
+      (`review_type=editor`, `decision=reject`, reviewer_name "Ben Knight"), not in
+      `syndication_audit_log`: this was an editorial call, and filing it as a
+      consent event would have falsely recorded that a community withdrew.
+      Verified: live page 404s, sitemap dropped 66 to 65 entries, /stories count
+      decremented 21 to 20, control story still 200.
+      Restore by reversing status/visibility on that id.
+      **Note for the elder-approval FK gap below: `article_reviews.reviewer_id`
+      already FKs to `storytellers`, and `reviewer_name` is free text.** That may
+      be the existing mechanism the fix wants, rather than a new column.
 - [ ] **`elder_approved_by` has a FK to `auth.users`**, so it can only name someone
       with a platform login. Six of the seven approvals could not use it — Jimmy
       Frank, Uncle Allan, Shaun Fisher and Brodie Germaine are storytellers, not

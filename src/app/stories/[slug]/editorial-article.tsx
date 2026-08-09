@@ -14,6 +14,7 @@ import {
   prepareArticleHtml,
   readingTimeMinutes,
 } from "@/lib/editorial/article-html";
+import { formatArticleType } from "@/lib/editorial/article-type";
 import { ReadingProgress } from "@/components/editorial/ReadingProgress";
 import { ArticleGallery } from "@/components/editorial/ArticleGallery";
 import { RichTextMedia } from "@/components/editorial/RichTextMedia";
@@ -199,10 +200,10 @@ export async function EditorialArticleReader({
           ) : null}
           <div className="mt-8 flex flex-wrap items-center gap-5 font-[var(--font-sans)] text-[11px] uppercase tracking-[0.22em] text-[#CFA16B]/90">
             {post.authorName ? <span>{post.authorName}</span> : null}
-            {post.articleType ? (
+            {formatArticleType(post.articleType) ? (
               <>
                 <span aria-hidden="true" className="text-[#CFA16B]/40">·</span>
-                <span>{post.articleType}</span>
+                <span>{formatArticleType(post.articleType)}</span>
               </>
             ) : null}
             {readingMinutes ? (
@@ -387,7 +388,7 @@ export async function EditorialArticleReader({
                   </div>
                   <div className="flex flex-1 flex-col space-y-3 p-6">
                     <p className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
-                      {other.articleType || "Editorial"}
+                      {formatArticleType(other.articleType) ?? "Editorial"}
                     </p>
                     <h3 className="font-[var(--font-display)] text-xl font-semibold leading-tight text-[var(--we-olive)] transition-colors group-hover:text-forest">
                       {other.title}

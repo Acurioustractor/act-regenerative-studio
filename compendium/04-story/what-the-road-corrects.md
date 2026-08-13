@@ -91,6 +91,8 @@ We have often been too quick to make a system from a beautiful moment.
 
 The bed went out on the road. The relationship had been travelling for years.
 
+![A CNC router cutting a green speckled sheet of recycled plastic, with a brush guard and plastic chips on the bed](https://empathyledger.com/api/media/3b5b212c-95db-4289-bc93-793b39293d29/file)
+
 ●
 
 Beds later moved from Alice Springs toward Utopia Homelands with Oonchiumpa. Local people opened the route. They knew the families. They knew where the road changed and how to approach a house without making the arrival feel like an inspection.
@@ -169,7 +171,11 @@ ACT lives inside that argument.
 
 The Harvest at Witta has made the argument physical. A garden needs attention after the workshop ends. Food must be ordered, cooked and cleaned away. Rain changes the day. A guest becomes a host. The romantic account of a gathering leaves before the plates are washed. The place remains.
 
+![Aerial view of sheds, gardens, paddocks and a hall beside a road at Witta](https://empathyledger.com/api/media/62a92920-3fa6-4f4a-97e8-8fa0828c18d0/file)
+
 Black Cockatoo Valley, the farm beneath it, does not permit us to live entirely in ideas. Fences fail. Weeds return. A place remembers whether you came back to care for it. It has taught us that hosting is work and that belonging is made through repeated acts, not declared in a project description.
+
+![Aerial view of dense forest canopy with low cloud moving across it](https://empathyledger.com/api/media/c31f0fa9-e457-469d-a2d2-bb2f6d9ac491/file)
 
 We once spoke about ACT as Listen, Curiosity, Action and Art, a sequence that could move an idea toward change. The road has made a mess of the sequence.
 
@@ -254,6 +260,8 @@ If that is you, do not send us a polished brief. Tell us what is happening. Tell
 That is enough to begin.
 
 The map is still open. The route line is bright and certain. It passes through places that are not empty space between our appointments. Every road is already inside somebody's Country, memory and ordinary day.
+
+![Aerial view of a straight red dirt road running to the horizon through scrub under a clear blue sky](https://empathyledger.com/api/media/f445ce5e-f62d-4a03-b1f0-08ea3364cf76/file)
 
 We will get some things wrong.
 

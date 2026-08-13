@@ -39,6 +39,8 @@ I left the sentence as it was.
 
 We packed the car.
 
+![Dawn sky over silhouetted trees, a fence line and a shed, with a warm horizon behind](https://empathyledger.com/api/media/a8e5a8dd-17e3-4b7a-b2d3-9c2d01073f3f/file)
+
 ●
 
 We began A Curious Tractor by putting the wrong thing first.
@@ -135,6 +137,8 @@ Wanting this did not make it true. The promise has to survive staff changes, bro
 
 The road remembers every return we said we would make.
 
+![Aerial view of a forested coastline with a settlement, jetty and boats on calm water](https://empathyledger.com/api/media/d55aacad-c553-495e-bbe3-32ddcbd355f7/file)
+
 ●
 
 JusticeHub grew from the same unease. Across youth justice, I kept meeting people who had built working answers in places treated only as evidence of failure. Their knowledge stayed local while policy travelled nationally. A program could change a life and still disappear because it was not visible to the right institution at the right time.
@@ -146,6 +150,8 @@ I still think it can. I am less certain about the posture of the platform.
 A map is seductive. Once every project appears as a point, the person who owns the map can begin to feel they understand the Country beneath it. Evidence can behave the same way. It gathers in the centre. Communities are asked to explain themselves again. Their experience becomes a case study, then a category, then a number that returns wearing somebody else's logo.
 
 JusticeHub must connect without becoming the place from which justice appears to come. Empathy Ledger must let a story travel without carrying its authority away. CONTAINED, our artwork built from a shipping container, must do more than give an audience a strong feeling about prisons. A person can walk through an exhibition, feel shaken and still leave the system exactly as they found it.
+
+![Overhead drone view of a shipping container installation with shade sails and a skate ramp, an Aboriginal flag laid out in red and black mulch beside it](https://empathyledger.com/api/media/dd6bf667-4e06-49db-8711-20d82fc7f40e/file)
 
 These projects sound different when they are presented separately. On the road they keep meeting the same question: what moves, what stays, and who decides?
 

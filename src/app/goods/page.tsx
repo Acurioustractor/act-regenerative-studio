@@ -229,13 +229,16 @@ export default async function GoodsPage() {
               eyebrow="The vision"
               title="Containerised factories on Country"
               onDark
-              lede="The scale vision is not a central factory that ships to communities. It is containerised manufacturing infrastructure that communities own and operate. Each facility is self-contained in shipping containers, produces 1,000 to 1,500 goods annually, and employs 4 to 6 local workers processing locally-sourced recycled plastic."
+              lede="The scale vision is not a central factory that ships to communities. It is containerised manufacturing designed so that the work, the jobs and the ownership pathway can sit locally where a community chooses that. Each facility is self-contained in shipping containers, is designed to produce 1,000 to 1,500 goods annually, and to employ 4 to 6 local workers processing locally-sourced recycled plastic. What ownership looks like in each place is a decision for that community, made in writing, not a model we arrive with."
             />
-            <div className="mt-16 grid gap-8 md:grid-cols-3">
+            <p className="mt-10 font-[var(--font-sans)] text-[12px] uppercase tracking-[0.15em] text-[#FAFAF7]/40">
+              Planned, not yet built. Targets below are our current intent, not committed capacity.
+            </p>
+            <div className="mt-8 grid gap-8 md:grid-cols-3">
               {[
-                { year: "2026", label: "First facility", desc: "Jinibara Country, QLD. 1,500 beds, 6 workers." },
-                { year: "2027", label: "Second facility", desc: "Oonchiumpa partnership, Alice Springs. Combined 3,500 units." },
-                { year: "2028", label: "Third facility", desc: "Top End or Torres Strait. 5,000+ units/year, 18 workers." },
+                { year: "2026", label: "First facility", desc: "Planned. Jinibara Country, QLD. Target 1,500 beds, 6 workers." },
+                { year: "2027", label: "Second facility", desc: "Proposed. Oonchiumpa partnership, Alice Springs. Combined target 3,500 units." },
+                { year: "2028", label: "Third facility", desc: "Exploratory. Top End or Torres Strait. Target 5,000+ units/year, 18 workers." },
               ].map((item) => (
                 <div key={item.year} className="border-l-2 border-[var(--site-clay)]/30 pl-6">
                   <p className="font-[var(--font-display)] text-3xl font-bold text-[#FAFAF7]">{item.year}</p>
@@ -270,6 +273,35 @@ export default async function GoodsPage() {
                 </div>
               ))}
             </div>
+          </div>
+        </section>
+      </ScrollReveal>
+
+      {/* , , ,  WHO WE ARE, AND WHO WE ARE NOT , , ,  */}
+      <ScrollReveal>
+        <section className="px-8 pb-32 md:pb-44">
+          <div className="mx-auto max-w-[800px] rounded-[var(--site-radius)] border border-[var(--site-line)] p-10 md:p-14">
+            <SectionHeader
+              eyebrow="Where we stand"
+              eyebrowColor="muted"
+              title="Who we are, and who we are not"
+            />
+            <p className="mt-6 font-[var(--font-body)] text-[15px] leading-[1.8] text-[var(--site-muted)]">
+              A Curious Tractor is not an Aboriginal or Torres Strait Islander
+              organisation. We design and manufacture products, and we do that
+              alongside Elders, Traditional Owners and community organisations who
+              hold the authority over what happens on their Country. Where a
+              product carries a name in language, or a design decision came from a
+              community, that authority is theirs and is named.
+            </p>
+            <p className="mt-5 font-[var(--font-body)] text-[15px] leading-[1.8] text-[var(--site-muted)]">
+              Goods on Country is commercial work. Products are bought and sold, and
+              that trade sits inside A Curious Tractor Pty Ltd. The charitable side of
+              this work, including funded participation and community governance, is
+              held by The Butterfly Movement Ltd, an independent registered charity
+              with its own board that we do not own. Tax-deductible gifts go there.
+              We keep the two apart on purpose.
+            </p>
           </div>
         </section>
       </ScrollReveal>

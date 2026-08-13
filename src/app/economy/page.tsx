@@ -67,7 +67,7 @@ export default function EconomyPage() {
         title="The Four Lanes"
         description="ACT earns money through services, contracts, and grants. This page tells you where it goes, and why we built our economy this way. It is not a P&L. It is the story our money tells."
         actions={[
-          { label: "About ACT", href: "/about" },
+          { label: "Read the history", href: "/about" },
           { label: "How we work", href: "/how-we-work", variant: "outline" },
         ]}
       />
@@ -104,10 +104,10 @@ export default function EconomyPage() {
               Structure
             </p>
             <h2 className="font-[var(--font-display)] text-3xl font-semibold text-[var(--we-olive)] md:text-4xl">
-              Why three Pty Ltds and a charity, not one company
+              Why separate ledgers, not one company
             </h2>
             <p className="text-sm leading-7 text-[var(--we-brown)]">
-              A Curious Tractor Pty Ltd is the trade muscle. Harvest Pty Ltd and Farm Pty Ltd hold their own ledgers for The Harvest and ACT Farm. A Kind Tractor Ltd is the charity, currently dormant, ready to activate when the time comes.
+              A Curious Tractor Pty Ltd is the trade muscle. The place and land ledgers for The Harvest and ACT Farm are being designed with our accountant and are not yet separate companies, so we track them as their own ledgers in the meantime. The charitable work has its own independent home in The Butterfly Movement Ltd, which we do not own.
             </p>
             <p className="text-sm leading-7 text-[var(--we-brown)]">
               The structure costs more in compliance. It saves more in legibility. Each project's economic story stays its own. We can see whether each one pays its way, where each is growing, where each needs help. A single ledger would have hidden all of that.
@@ -127,27 +127,27 @@ export default function EconomyPage() {
               <p className="text-xs uppercase tracking-[0.22em] text-[var(--we-warm-brown)]">
                 Place ledger
               </p>
-              <h3 className="mt-2 font-semibold text-[var(--we-olive)]">Harvest Pty Ltd</h3>
+              <h3 className="mt-2 font-semibold text-[var(--we-olive)]">The Harvest</h3>
               <p className="mt-2 text-sm text-[var(--we-brown)]">
-                Standalone P&L for The Harvest. Earns its own. Grows its own.
+                Its own P&L for the Witta place work. The entity that will hold it is still being designed.
               </p>
             </div>
             <div className="rounded-3xl border border-[#D8C7A5] bg-white/75 p-6">
               <p className="text-xs uppercase tracking-[0.22em] text-[var(--we-warm-brown)]">
                 Land ledger
               </p>
-              <h3 className="mt-2 font-semibold text-[var(--we-olive)]">Farm Pty Ltd</h3>
+              <h3 className="mt-2 font-semibold text-[var(--we-olive)]">ACT Farm</h3>
               <p className="mt-2 text-sm text-[var(--we-brown)]">
-                Standalone P&L for ACT Farm. Conservation, land practice, residencies, BCV.
+                Its own P&L for conservation, land practice, residencies and BCV. Land is kept separate from trading risk.
               </p>
             </div>
             <div className="rounded-3xl border border-[#D8C7A5] bg-white/75 p-6">
               <p className="text-xs uppercase tracking-[0.22em] text-[var(--we-warm-brown)]">
-                Public-good cap
+                Charitable home
               </p>
-              <h3 className="mt-2 font-semibold text-[var(--we-olive)]">A Kind Tractor Ltd</h3>
+              <h3 className="mt-2 font-semibold text-[var(--we-olive)]">The Butterfly Movement Ltd</h3>
               <p className="mt-2 text-sm text-[var(--we-brown)]">
-                Company Limited by Guarantee. Currently dormant, ready to activate when the time comes.
+                An independent ACNC-registered charity with DGR status and its own board. Tax-deductible gifts go here, not to any company we own.
               </p>
             </div>
           </div>
@@ -197,7 +197,7 @@ export default function EconomyPage() {
             Same discipline as everything else we do. We are not building a financial empire. We are building a system that, if the founders stepped away, could still run.
           </p>
           <p className="text-sm leading-7 text-[var(--we-brown)]">
-            Standalone P&Ls so each project's economy is portable. Documentation good enough that someone else could read the books. A charity arm ready to absorb the public-good work when the time comes. We are not building this to be inherited by family. We are building it to be handed back to the work itself.
+            Standalone P&Ls so each project's economy is portable. Documentation good enough that someone else could read the books. Charitable work held by a charity we do not own, so the public-good money never depends on us staying. We are not building this to be inherited by family. We are building it to be handed back to the work itself.
           </p>
         </div>
       </section>

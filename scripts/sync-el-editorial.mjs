@@ -618,6 +618,19 @@ async function main() {
       sortByPublishedDateDesc(hydrated),
       withdrawn
     );
+
+    // The featured list comes straight from the Empathy Ledger admin manifest
+    // and was never filtered against the tombstone, so a withdrawn slug could
+    // sit in it. Today that is masked by the curated home picks in
+    // empathy-ledger-editorial.ts, which win over this list, but a withdrawal
+    // must not depend on an override in another file continuing to exist.
+    featuredHomeArticleSlugs = featuredHomeArticleSlugs.filter((slug) => {
+      if (!withdrawn.slugs.has(slug)) return true;
+      console.log(
+        `[sync:el-editorial] consent withdrawn: dropping ${slug} from featuredHomeArticleSlugs`
+      );
+      return false;
+    });
     const projectArticleCounts = {};
 
     for (const article of articles) {

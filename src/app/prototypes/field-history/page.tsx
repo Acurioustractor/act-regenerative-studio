@@ -24,7 +24,7 @@ const bearings = [
     "Two people, one curious tractor. Ideas, action, pride and an early promise to return the work.",
   ],
   [
-    "2023–24",
+    "2023-24",
     "The field widens",
     "Goods, justice, story, place and public art reveal connected questions about ownership and power.",
   ],
@@ -142,6 +142,15 @@ export default function FieldHistoryPrototype() {
             Some parts of this history belong in public. Some remain inside
             relationships, permissions and cultural authority. This page will
             keep that boundary visible.
+          </p>
+          <p>
+            A Curious Tractor is not a First Nations organisation and does not
+            speak as one. When we are invited into work with First Nations
+            communities, our responsibility is to follow community authority, be
+            clear about what we hold, and accept correction, refusal and silence
+            as part of the work. A relationship is not consent in perpetuity. A
+            good history together does not turn the next visit into an
+            entitlement.
           </p>
         </div>
       </section>

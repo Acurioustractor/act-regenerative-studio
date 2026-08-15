@@ -35,6 +35,12 @@ export const FIELD_ASSIGNMENTS: Record<string, LivingFieldId[]> = {
   // the 2026-08-07 launch review withdrew them (config/withdrawn-editorial.json).
   "contained-where-policy-meets-flesh": ["art"],
 
+  // Field Notes 01. The essay argues about CONTAINED directly, that an audience
+  // can walk through it, feel shaken, and leave the system exactly as they found
+  // it. Its project tags carry justice, goods, empathy and harvest; art is the
+  // one it cannot inherit, for the reason at the top of this file.
+  "what-the-road-corrects": ["art"],
+
   // Jimmy Frank Jupurrurla crafts boomerangs and leads the housing work. The
   // Wilya Janta housing article is already tagged goods-on-country upstream;
   // this is the same work seen through the person leading it.

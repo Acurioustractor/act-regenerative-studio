@@ -30,13 +30,20 @@ const routes = [
   "/prototypes/field-notes/when-should-the-work-no-longer-need-us",
   "/prototypes/stories",
   "/art",
-  "/blog",
+  // /blog was folded into /stories in the 2026-08-07 route unification and now
+  // 308s. /stories is already checked at the top of this list.
   "/contact",
 ];
 
 const requiredHomepageText = [
-  "Make the",
-  "system felt",
+  // The hero led with "Make the system felt" until "What the Road Corrects"
+  // (Field Notes 01) named that as the insufficiency: a person can walk through
+  // CONTAINED, feel shaken, and leave the system exactly as they found it. The
+  // essay's own reason for ACT existing replaced it. Asserted here so the
+  // homepage cannot drift back to the line the writing retired.
+  "What stays",
+  "after we leave",
+  "the space between them",
   "Choose a way into the work",
   "Enter the field story",
   "Receive the next field letter",

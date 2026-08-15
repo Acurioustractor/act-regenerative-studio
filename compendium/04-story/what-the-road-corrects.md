@@ -39,6 +39,8 @@ I left the sentence as it was.
 
 We packed the car.
 
+![Dawn sky over silhouetted trees, a fence line and a shed, with a warm horizon behind](https://empathyledger.com/api/media/a8e5a8dd-17e3-4b7a-b2d3-9c2d01073f3f/file)
+
 ●
 
 We began A Curious Tractor by putting the wrong thing first.
@@ -91,6 +93,8 @@ We have often been too quick to make a system from a beautiful moment.
 
 The bed went out on the road. The relationship had been travelling for years.
 
+![A CNC router cutting a green speckled sheet of recycled plastic, with a brush guard and plastic chips on the bed](https://empathyledger.com/api/media/3b5b212c-95db-4289-bc93-793b39293d29/file)
+
 ●
 
 Beds later moved from Alice Springs toward Utopia Homelands with Oonchiumpa. Local people opened the route. They knew the families. They knew where the road changed and how to approach a house without making the arrival feel like an inspection.
@@ -133,6 +137,8 @@ Wanting this did not make it true. The promise has to survive staff changes, bro
 
 The road remembers every return we said we would make.
 
+![Aerial view of a forested coastline with a settlement, jetty and boats on calm water](https://empathyledger.com/api/media/d55aacad-c553-495e-bbe3-32ddcbd355f7/file)
+
 ●
 
 JusticeHub grew from the same unease. Across youth justice, I kept meeting people who had built working answers in places treated only as evidence of failure. Their knowledge stayed local while policy travelled nationally. A program could change a life and still disappear because it was not visible to the right institution at the right time.
@@ -144,6 +150,8 @@ I still think it can. I am less certain about the posture of the platform.
 A map is seductive. Once every project appears as a point, the person who owns the map can begin to feel they understand the Country beneath it. Evidence can behave the same way. It gathers in the centre. Communities are asked to explain themselves again. Their experience becomes a case study, then a category, then a number that returns wearing somebody else's logo.
 
 JusticeHub must connect without becoming the place from which justice appears to come. Empathy Ledger must let a story travel without carrying its authority away. CONTAINED, our artwork built from a shipping container, must do more than give an audience a strong feeling about prisons. A person can walk through an exhibition, feel shaken and still leave the system exactly as they found it.
+
+![Overhead drone view of a shipping container installation with shade sails and a skate ramp, an Aboriginal flag laid out in red and black mulch beside it](https://empathyledger.com/api/media/dd6bf667-4e06-49db-8711-20d82fc7f40e/file)
 
 These projects sound different when they are presented separately. On the road they keep meeting the same question: what moves, what stays, and who decides?
 
@@ -169,7 +177,11 @@ ACT lives inside that argument.
 
 The Harvest at Witta has made the argument physical. A garden needs attention after the workshop ends. Food must be ordered, cooked and cleaned away. Rain changes the day. A guest becomes a host. The romantic account of a gathering leaves before the plates are washed. The place remains.
 
+![Aerial view of sheds, gardens, paddocks and a hall beside a road at Witta](https://empathyledger.com/api/media/62a92920-3fa6-4f4a-97e8-8fa0828c18d0/file)
+
 Black Cockatoo Valley, the farm beneath it, does not permit us to live entirely in ideas. Fences fail. Weeds return. A place remembers whether you came back to care for it. It has taught us that hosting is work and that belonging is made through repeated acts, not declared in a project description.
+
+![Aerial view of dense forest canopy with low cloud moving across it](https://empathyledger.com/api/media/c31f0fa9-e457-469d-a2d2-bb2f6d9ac491/file)
 
 We once spoke about ACT as Listen, Curiosity, Action and Art, a sequence that could move an idea toward change. The road has made a mess of the sequence.
 
@@ -254,6 +266,8 @@ If that is you, do not send us a polished brief. Tell us what is happening. Tell
 That is enough to begin.
 
 The map is still open. The route line is bright and certain. It passes through places that are not empty space between our appointments. Every road is already inside somebody's Country, memory and ordinary day.
+
+![Aerial view of a straight red dirt road running to the horizon through scrub under a clear blue sky](https://empathyledger.com/api/media/f445ce5e-f62d-4a03-b1f0-08ea3364cf76/file)
 
 We will get some things wrong.
 

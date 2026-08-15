@@ -1,11 +1,16 @@
 {
   "_doc": "Consent-withdrawal tombstone for /blog (Empathy Ledger editorial). Add an article slug to `slugs`, or an Empathy Ledger storyteller id to `storytellerIds`, to permanently withhold that content from the site. Enforced by scripts/sync-el-editorial.mjs on every build, including when Empathy Ledger is unreachable and the previous snapshot is kept. This is the positive local signal that honors a withdrawal during an outage, rather than waiting to re-learn it from the source.",
+  "_consentRevoked": "The three slugs at the end of the list are not editorial withdrawals. Their syndication_consent row for this site was revoked in Empathy Ledger on 2026-07-29. Empathy Ledger already excludes them from /api/v1/content-hub/articles?destination=act_el, so they were never reaching the site, but that exclusion depended on Empathy Ledger being reachable. Listed here on 2026-08-14 so a revocation survives an outage, which is what this file is for.",
   "slugs": [
     "the-act-comic",
     "edition-1-sowing-seeds-of-connection-2",
     "from-bolivia-to-brisbane",
     "powering-change-a-curious-tractors-journey",
-    "spain-diagrama-trip-reflection"
+    "spain-diagrama-trip-reflection",
+    "the-power-of-indigenous-storytelling-a-community-perspective",
+    "a-heros-journey-from-addiction-to-inspiration-the-life-of-vireak",
+    "a-story-of-resilience-and-advocacy",
+    "nhats-story-finding-belonging-and-purpose-at-the-hope-centre"
   ],
   "storytellerIds": []
 }

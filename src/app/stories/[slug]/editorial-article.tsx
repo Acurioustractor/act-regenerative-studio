@@ -231,8 +231,12 @@ export async function EditorialArticleReader({
         </Link>
       </nav>
 
-      {/* BODY: long-form article in a readable measure */}
-      <section className="bg-[#FBF6EC] px-6 py-20 md:px-10 md:py-28">
+      {/* BODY: long-form article in a readable measure.
+          full-bleed because main > section is capped at 1200px and centred, so
+          without it the reading surface paints #FBF6EC inside that cap and the
+          body's #FAFAF7 shows as a pale band down both edges. The measure is
+          held by the inner max-w-[720px], not by the section width. */}
+      <section className="full-bleed bg-[#FBF6EC] px-6 py-20 md:px-10 md:py-28">
         <article className="mx-auto max-w-[720px]">
           {content ? (
             preparedHtml ? (
@@ -260,8 +264,8 @@ export async function EditorialArticleReader({
       <ArticleGallery photos={gallery} articleTitle={post.title} />
 
 
-      {/* AUTHOR + CONNECTED FIELDS */}
-      <section className="bg-[#FBF6EC] px-6 py-16 md:px-10 md:py-20">
+      {/* AUTHOR + CONNECTED FIELDS. full-bleed for the same reason as the body. */}
+      <section className="full-bleed bg-[#FBF6EC] px-6 py-16 md:px-10 md:py-20">
         <div className="mx-auto max-w-[720px] space-y-8">
           {post.authorName ? (
             <div className="flex items-center gap-4 border-t border-[var(--we-sand)] pt-8">

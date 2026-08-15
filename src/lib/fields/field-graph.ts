@@ -44,6 +44,11 @@ import {
 export const PROJECT_SLUG_TO_FIELD: Record<string, LivingFieldId | null> = {
   justicehub: "justice",
   "goods-on-country": "goods",
+  // The resolver normalises an article's related projects against the project
+  // code registry, which carries the Goods project as "goods" rather than the
+  // Empathy Ledger taxonomy slug above. Both reach the same field. This arrived
+  // with Field Notes 01, the first article to set related_projects explicitly.
+  goods: "goods",
   "empathy-ledger": "empathy",
   "the-harvest": "harvest",
   "black-cockatoo-valley": null,

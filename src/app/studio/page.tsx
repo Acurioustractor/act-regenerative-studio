@@ -383,36 +383,36 @@ export default async function StudioPage() {
         <SectionHeading
           eyebrow="Structure"
           title="How we're organized"
-          description="A dual-entity structure that protects community interests while enabling sustainable operations."
+          description="Trading work and charitable work are kept in separate hands, so neither can quietly subsidise the other."
         />
         <div className="grid gap-8 lg:grid-cols-2">
           <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-4">
-            <div className="inline-block rounded-full bg-forest-soft px-4 py-1 text-xs font-medium text-[var(--we-olive)]">
-              Not-for-profit
+            <div className="inline-block rounded-full bg-[#FEF3C7] px-4 py-1 text-xs font-medium text-[#92400E]">
+              Trading
             </div>
             <h3 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
-              ACT Foundation (CLG)
+              A Curious Tractor Pty Ltd
             </h3>
             <ul className="space-y-2 text-sm text-[var(--we-brown)]">
-              <li>• Charitable status for grants and donations</li>
-              <li>• Mission-locked governance</li>
-              <li>• Owns majority of ventures</li>
-              <li>• Protects community interests</li>
+              <li>• Contracts, product sales and technology work</li>
+              <li>• Founder pay, shared services and R&D</li>
+              <li>• Owned equally by the two founders&rsquo; family trusts</li>
+              <li>• Each project carries its own ledger</li>
             </ul>
           </div>
 
           <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-4">
-            <div className="inline-block rounded-full bg-[#FEF3C7] px-4 py-1 text-xs font-medium text-[#92400E]">
-              Social Enterprise
+            <div className="inline-block rounded-full bg-forest-soft px-4 py-1 text-xs font-medium text-[var(--we-olive)]">
+              Charitable
             </div>
             <h3 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
-              ACT Ventures (Trading)
+              The Butterfly Movement Ltd
             </h3>
             <ul className="space-y-2 text-sm text-[var(--we-brown)]">
-              <li>• Generates sustainable revenue</li>
-              <li>• Circulates surplus back to communities</li>
-              <li>• Attracts impact investment</li>
-              <li>• Creates jobs and opportunities</li>
+              <li>• ACNC-registered charity with DGR status</li>
+              <li>• The correct recipient for tax-deductible gifts</li>
+              <li>• Its own board, independent of the trading company</li>
+              <li>• We do not own it and cannot direct its funds</li>
             </ul>
           </div>
         </div>

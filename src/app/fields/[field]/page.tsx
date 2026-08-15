@@ -1,6 +1,7 @@
 import { notFound } from "next/navigation";
 import { FieldStoryPrototype } from "@/app/prototypes/living-field/field-story";
 import { FieldWriting } from "@/components/fields/FieldWriting";
+import { FieldAuthorityNote } from "@/components/fields/FieldAuthorityNote";
 import { livingFields, livingFieldsById } from "@/data/living-field";
 import { pageMetadata } from "@/lib/seo/site";
 
@@ -18,6 +19,11 @@ export default async function FieldPage({params}:{params:Promise<{field:string}>
           "use client" and shared with /prototypes/living-field, while this reads
           the server-only editorial snapshot. */}
       <FieldWriting fieldId={story.id} fieldName={story.name}/>
+      {/* Every field page describes work alongside Elders and communities, so
+          every field page says whose organisation this is. /goods carried this
+          and 307s to /fields/goods in production, which left it unsaid where it
+          is actually read. */}
+      <FieldAuthorityNote/>
     </>
   );
 }

@@ -1,8 +1,59 @@
 # Entity truth, the essay into Empathy Ledger, and a revocation that held by luck
 
-**Session:** 2026-08-14
-**Branch:** `launch/entity-truth-and-boundaries`, 5 commits ahead of `d7d8d47`. Two unpushed: `9b99dda`, `217220a`.
-**Next job:** Ben reads and edits the essay, then publishes it in Empathy Ledger.
+**Session:** 2026-08-14, continued into 2026-08-15
+**Branch:** `launch/entity-truth-and-boundaries`, 8 commits ahead of `d7d8d47`. Four unpushed: `9b99dda`, `217220a`, `b221728`, `c914cef`, `373b589`.
+**Next job:** unblock Empathy Ledger's content-hub feed. Nothing else moves until that does.
+
+---
+
+## Update, 2026-08-15: the essay is published and the site still cannot see it
+
+The essay went from draft to published. Consent row
+`e80d15e2-f6df-4d63-bf45-2dccef9b3c44`: person basis, approved 2026-08-14,
+expires 2027-08-14, Ben as author and sole named subject, Nic's agreement
+recorded in the reason text. An individual consent, not a bulk attestation.
+
+It also gained **seven photographs**, placed at section breaks, plus the hero.
+Every candidate image was opened and looked at rather than trusted by filename.
+Four were excluded and the reasons are worth keeping: identifiable people with
+no consent record, a group including children, an `EZVIZ` CCTV watermark on the
+CONTAINED cell frame. Two earlier exclusions were reversed after checking:
+`palm-island-coastline.jpg` is ACT's own catalogued image, already public on
+`/about`, and my "does not match Palm Island" was unfamiliarity, not evidence.
+
+`/stories/what-the-road-corrects` renders correctly: one header, seven figures,
+hero, field links to empathy, goods, harvest and justice.
+
+**But production cannot serve it**, and this is the blocker.
+
+`GET /api/v1/content-hub/articles?destination=act_el` returns a different set
+depending on whether the request carries `X-API-Key`. Authenticated omits the
+essay and still carries `b21fafab-255d-4c62-b989-9f165213063b`, the story
+unpublished on 2026-08-09. Anonymous returns the opposite, matching the
+database. The site sends that key in both `sync-el-editorial.mjs` and at
+runtime, so it reads the wrong set in both paths. The committed snapshot was
+generated anonymously because that is the response telling the truth.
+
+**Do not chase this as a cache.** I diagnosed it as a stale body and was wrong;
+the Empathy Ledger session disproved it. Both responses carry a `generatedAt`
+under a second old, `x-vercel-cache: MISS`, and adding no-store headers changed
+nothing. The full record, including a proof that the observed result is
+impossible against one database running the repo's code, is in
+`empathy-ledger-v2/thoughts/shared/2026-08-14-content-hub-authed-list-is-stale.md`.
+
+**Two consequences for this repo.** `config/withdrawn-editorial.json` is
+currently the only thing keeping a withdrawn story off the site, so treat it as
+load-bearing. And `field-graph.ts` gained a `goods` mapping: the resolver
+normalises related projects to the registry slug rather than the Empathy Ledger
+one, which Field Notes 01 surfaced by being the first article to set
+`related_projects` explicitly.
+
+**Deliberately not done, and why.** The `art` field assignment is still absent:
+the guard asserts every assigned slug exists in the feed, and a re-sync carrying
+the API key drops the essay and turns the suite red. The preview route at
+`/prototypes/road-corrects` is still in place and uncommitted, because it is
+currently the only way to read the piece as a reader would. Both become safe the
+moment an authenticated fetch returns the essay.
 
 ---
 

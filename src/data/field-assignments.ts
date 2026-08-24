@@ -46,14 +46,6 @@ export const FIELD_ASSIGNMENTS: Record<string, LivingFieldId[]> = {
   // this is the same work seen through the person leading it.
   "naidoc-with-jimmy": ["goods"],
 
-  // Richard Cassidy on Palm Island, the same partnership as "At the Speed of
-  // Ceremony". Nearer to mentorship than to the making work, but it is the same
-  // place and the same relationship.
-  "the-spirit-must-be-strong": ["goods"],
-
-  // Elders and youth on Kalkadoon Country. Reads partly as trip reflection, and
-  // the youth-and-Elders work is what the justice field is for.
-  "seeds-of-change-walking-with-elders-and-youth-on-kalkadoon-country": ["justice"],
 };
 
 /**
@@ -77,7 +69,6 @@ export const DELIBERATELY_UNASSIGNED: Record<string, string> = {
   "life-is-hard-but-its-not": "Personal reflection.",
   "the-weight-of-silence-and-the-audacity-to-imagine-reflections-on-fear-hope-and-the-long-game-of-human-liberation": "Series opener on fear and hope; thematic rather than field work.",
   "naidoc-with-jimmy": "Time with Jimmy Frank Jupurrurla; relationship piece.",
-  "between-waters-and-worlds-a-day-on-quandamooka-country": "Quandamooka Country day; knowledge-sharing rather than a field.",
   "conversation-camp": "Tagged black-cockatoo-valley upstream, which is land rather than a field of practice.",
   // "nhats-story-finding-belonging-and-purpose-at-the-hope-centre" and
   // "a-heros-journey-from-addiction-to-inspiration-the-life-of-vireak" sat here

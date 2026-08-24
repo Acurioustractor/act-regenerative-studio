@@ -285,7 +285,11 @@ async function fetchAllSiteArticles() {
     url.searchParams.set('limit', '100');
     url.searchParams.set('destination', EMPATHY_LEDGER_EDITORIAL_DESTINATION);
 
-    const payload = await fetchJson(url.toString());
+    // ACT publishes this snapshot to the open web, so it must consume the
+    // anonymous public feed. An integration API key may legitimately see
+    // community-scoped records, but that access must never promote them into
+    // ACT's public static build.
+    const payload = await fetchJson(url.toString(), false);
     const pageItems = Array.isArray(payload.articles) ? payload.articles : [];
     articles.push(...pageItems);
 
@@ -298,7 +302,7 @@ async function fetchAllSiteArticles() {
 
 async function fetchArticleDetail(slug) {
   const url = new URL(`/api/v1/content-hub/articles/${slug}`, EMPATHY_LEDGER_URL);
-  return fetchJson(url.toString());
+  return fetchJson(url.toString(), false);
 }
 
 function resolveProjectSlugs(detail, article, projectLookup, projectEditorialRecipes) {
@@ -474,10 +478,17 @@ async function main() {
         ? buildProjectSlugLookup(projectCodeRegistry)
         : buildProjectLookup(Array.from(mergedRecords.values()));
     const siteArticles = await fetchAllSiteArticles();
+    const publiclyPublishedArticles = siteArticles.filter((article) => {
+      if (article.visibility === 'public') return true;
+      console.warn(
+        `[sync:el-editorial] withholding ${article.slug}: destination approval does not override article visibility (${article.visibility || 'unset'})`
+      );
+      return false;
+    });
 
     const limit = pLimit(6);
     const detailedArticles = await Promise.all(
-      siteArticles.map((article) =>
+      publiclyPublishedArticles.map((article) =>
         limit(async () => {
           try {
             const detail = await fetchArticleDetail(article.slug);

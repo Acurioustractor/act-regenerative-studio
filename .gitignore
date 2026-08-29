@@ -129,3 +129,11 @@ public/media/field-videos/
 # Webflow form export: real names, emails, phones and messages from 445
 # submissions. This repo is public. Never commit it.
 .webflow-export/
+# GHL intake research and session handoffs. THIS REPO IS PUBLIC.
+# These hold real correspondence — 44 people's names, addresses and messages in the
+# reply queue, including an Elder writing about her bed and someone writing about their
+# health — plus GHL contact ids, Supabase project refs and the location of a live
+# credential. None of it belongs on the open internet. Kept local until it has a private
+# home; see act-ecosystem/docs/security/ for the pattern.
+thoughts/shared/ghl/
+thoughts/shared/handoffs/intake-spine/

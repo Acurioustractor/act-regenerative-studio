@@ -54,7 +54,8 @@
     "check:contrast": "node scripts/check-contrast.mjs",
     "check:consent": "node scripts/check-consent-surfaces.mjs --staged",
     "check:consent:list": "node scripts/check-consent-surfaces.mjs --list",
-    "hooks:install": "git config core.hooksPath scripts/hooks && echo \"hooks installed\""
+    "hooks:install": "git config core.hooksPath scripts/hooks && echo \"hooks installed\"",
+    "check:secrets": "node scripts/check-committed-secrets.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.2",

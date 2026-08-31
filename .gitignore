@@ -125,3 +125,7 @@ compendium/scripts/node_modules/
 # /media/field-videos/:file redirect in next.config.js. 226 MB of mp4 does not
 # belong in git history. Re-upload with scripts/upload-field-videos.mjs.
 public/media/field-videos/
+
+# Webflow form export: real names, emails, phones and messages from 445
+# submissions. This repo is public. Never commit it.
+.webflow-export/

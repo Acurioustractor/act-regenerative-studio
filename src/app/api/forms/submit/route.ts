@@ -1,6 +1,14 @@
-import { NextRequest, NextResponse } from 'next/server';
+import { NextRequest, NextResponse, after } from 'next/server';
+import { mirrorToIntake } from '@/lib/intake/spine';
 
 export const dynamic = 'force-dynamic';
+
+/**
+ * This property's slug on the intake spine. Pairs with the ACT_INTAKE_KEY_<SLUG>
+ * secret on the edge function, where SLUG is this string uppercased with - and .
+ * replaced by _ (so: ACT_INTAKE_KEY_ACT_REGENERATIVE_STUDIO).
+ */
+const INTAKE_SITE_SLUG = 'act-regenerative-studio';
 
 type FormFields = Record<string, unknown>;
 
@@ -131,6 +139,27 @@ export async function POST(request: NextRequest) {
       submission,
     });
   }
+
+  // Mirror to the intake spine, which is the one place that computes the lane and
+  // tells a human. Deliberately additive: this route's existing Command Center and
+  // GHL-fallback paths are untouched, so the spine cannot cost a submission while it
+  // is being proven. `after` runs it once the response is already sent, so it adds no
+  // latency, and mirrorToIntake makes no network call at all until the env is set.
+  // Delete the old path only after the spine has carried this site's real traffic.
+  after(async () => {
+    const outcome = await mirrorToIntake({
+      site: INTAKE_SITE_SLUG,
+      projectCode: submission.projectCode || 'ACT-IN',
+      formType: submission.formType || 'general',
+      fields: submission.fields,
+      additionalTags: submission.additionalTags,
+    });
+    // `not-configured` is the normal state before switch-on and stays quiet. Anything
+    // else means the spine was asked and did not take it, which someone needs to see.
+    if (!outcome.delivered && outcome.reason !== 'not-configured') {
+      console.error(`Intake spine mirror failed (${outcome.reason}):`, outcome.detail ?? '');
+    }
+  });
 
   try {
     // Forward to act-ecosystem Command Center API

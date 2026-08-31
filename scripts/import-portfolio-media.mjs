@@ -14,11 +14,31 @@ dotenv.config({ path: '.env.local' });
 
 // Source database (webflow-portfolio uses yvnuayzslukamizrlhwb - storyteller Supabase)
 const SOURCE_URL = 'https://yvnuayzslukamizrlhwb.supabase.co';
-const SOURCE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Inl2bnVheXpzbHVrYW1penJsaHdiIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1NjI0NDg1MCwiZXhwIjoyMDcxODIwODUwfQ.natmxpGJM9oZNnCAeMKo_D3fvkBz9spwwzhw7vbkT0k';
+// Credentials come from the environment. They were hardcoded here as literal
+// service_role JWTs in a PUBLIC repository until 2026-08-31. Both are now dead,
+// because Supabase disabled legacy keys on these projects, and that was verified
+// rather than assumed: a valid sb_secret_ key returns 200 on the same tables where
+// both the committed key and a nonsense key return 401. They are removed anyway.
+// A disabled key is one dashboard toggle from being live again, and git history
+// keeps them regardless, so treat both as burned and never re-enable legacy keys.
+//
+// No fallback literal. A missing variable must stop the script, not silently reach
+// for a credential nobody meant to ship.
+const SOURCE_KEY = process.env.EL_SUPABASE_SERVICE_ROLE_KEY;
 
 // Target database (Innovation Studio uses tednluwflfhxyucgwigh)
 const TARGET_URL = process.env.NEXT_PUBLIC_SUPABASE_URL || 'https://tednluwflfhxyucgwigh.supabase.co';
-const TARGET_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY || 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRlZG5sdXdmbGZoeHl1Y2d3aWdoIiwicm9sZSI6InNlcnZpY2Vfcm9sZSIsImlhdCI6MTc1MjM0NjIyOSwiZXhwIjoyMDY3OTIyMjI5fQ.wyizbOWRxMULUp6WBojJPfey1ta8-Al1OlZqDDIPIHo';
+const TARGET_KEY = process.env.SUPABASE_SERVICE_ROLE_KEY;
+
+if (!SOURCE_KEY) {
+  console.error('EL_SUPABASE_SERVICE_ROLE_KEY is not set. Export it before running this script.');
+  process.exit(1);
+}
+
+if (!TARGET_KEY) {
+  console.error('SUPABASE_SERVICE_ROLE_KEY is not set. Export it before running this script.');
+  process.exit(1);
+}
 
 if (!SOURCE_KEY || !TARGET_URL || !TARGET_KEY) {
   console.error('❌ Missing Supabase credentials in .env.local');

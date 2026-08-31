@@ -8,5 +8,6 @@
 
 set -e
 
+node scripts/check-committed-secrets.mjs
 node scripts/check-public-copy.mjs --staged
 node scripts/check-consent-surfaces.mjs --staged

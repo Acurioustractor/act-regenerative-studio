@@ -5,6 +5,7 @@ import {
   questionsForField,
 } from "@/lib/fields/field-graph";
 import type { LivingFieldId } from "@/data/living-field";
+import { articleDateTime, formatArticleDate } from "@/lib/editorial/format-date";
 
 /**
  * What has been written from a field, rendered under its story.
@@ -30,15 +31,12 @@ function articleHref(localPath: string | null | undefined, slug: string) {
 }
 
 /*
- * No date is rendered, deliberately.
- *
- * `publishedAt` in the editorial feed is a migration artifact rather than an
- * editorial date: 21 of the 29 articles share one timestamp to the millisecond
- * (2026-01-09T23:40:59.476Z), and createdAt and updatedAt each hold a single
- * value across the whole corpus. Printing that as "10 January 2026" under every
- * headline would state something false on a public page.
- *
- * Restore a date here once the feed carries real ones.
+ * The date is real now. Until 2026-09-05 the feed carried the import day as
+ * every article's publishedAt and nothing was printed here, because "10 January
+ * 2026" under a piece written in 2023 states something false on a public page.
+ * The real dates were written back into Empathy Ledger from the import
+ * metadata that day, and the guard in field-graph.test.ts fails if they ever
+ * collapse again.
  */
 
 export function FieldWriting({
@@ -80,6 +78,14 @@ export function FieldWriting({
                   href={articleHref(article.localPath, article.slug)}
                   className="group block py-7"
                 >
+                  {formatArticleDate(article.publishedAt) && (
+                    <time
+                      dateTime={articleDateTime(article.publishedAt) ?? undefined}
+                      className="mb-3 block font-sans text-eyebrow uppercase text-clay-text"
+                    >
+                      {formatArticleDate(article.publishedAt)}
+                    </time>
+                  )}
                   <h3 className="font-display text-2xl font-light text-ink transition-colors group-hover:text-forest md:text-3xl">
                     {article.title}
                   </h3>

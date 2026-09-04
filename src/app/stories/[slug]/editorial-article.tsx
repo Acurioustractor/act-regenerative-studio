@@ -15,6 +15,7 @@ import {
   readingTimeMinutes,
 } from "@/lib/editorial/article-html";
 import { formatArticleType } from "@/lib/editorial/article-type";
+import { articleDateTime, formatArticleDate } from "@/lib/editorial/format-date";
 import { ReadingProgress } from "@/components/editorial/ReadingProgress";
 import { ArticleGallery } from "@/components/editorial/ArticleGallery";
 import { RichTextMedia } from "@/components/editorial/RichTextMedia";
@@ -65,19 +66,12 @@ function shortLede(raw: string | null): string | null {
 }
 
 /*
- * No date is rendered, deliberately, and the reason is the same one recorded in
- * FieldWriting: `publishedAt` in the editorial feed is a migration artifact
- * rather than an editorial date. Twenty-one of the articles share one timestamp
- * to the millisecond (2026-01-09T23:40:59.476Z) and five more share another
- * (2026-03-25T22:45:19.558574Z); createdAt and updatedAt each hold a single
- * value across the whole corpus.
- *
- * Until 2026-08-07 this reader printed that timestamp as "January 2026" under
- * five unrelated headlines. The field pages had already stopped doing so. A
- * date is a claim about when something happened, and this one is a claim about
- * when a database row was written.
- *
- * Restore the label here, and in FieldWriting, once the feed carries real ones.
+ * The date in the meta line is real. Until 2026-09-05 nothing was printed
+ * here, for the reason recorded in FieldWriting: the feed carried the import
+ * day as every article's publishedAt, and until 2026-08-07 this reader had put
+ * that timestamp under five unrelated headlines as "January 2026". The real
+ * dates were written back into Empathy Ledger from the import metadata on
+ * 2026-09-05, and field-graph.test.ts now fails if they ever collapse again.
  */
 
 export async function EditorialArticleReader({
@@ -204,6 +198,14 @@ export async function EditorialArticleReader({
               <>
                 <span aria-hidden="true" className="text-[#CFA16B]/40">·</span>
                 <span>{formatArticleType(post.articleType)}</span>
+              </>
+            ) : null}
+            {formatArticleDate(post.publishedAt) ? (
+              <>
+                <span aria-hidden="true" className="text-[#CFA16B]/40">·</span>
+                <time dateTime={articleDateTime(post.publishedAt) ?? undefined}>
+                  {formatArticleDate(post.publishedAt)}
+                </time>
               </>
             ) : null}
             {readingMinutes ? (

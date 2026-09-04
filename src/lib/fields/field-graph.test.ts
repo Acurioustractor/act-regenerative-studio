@@ -94,30 +94,33 @@ describe("lookups", () => {
   });
 
   /**
-   * An inverted guard: it asserts the data is still broken.
+   * The inverse of a guard that lived here until 2026-09-05.
    *
-   * `publishedAt` in the editorial feed is a migration artifact, not an
-   * editorial date. 21 of the 29 articles carry one identical timestamp to the
-   * millisecond, and createdAt and updatedAt each hold a single value across the
-   * whole corpus. FieldWriting renders no date because of it, since printing
-   * "10 January 2026" under every headline would state something false.
+   * For eight months `publishedAt` in the editorial feed was a migration
+   * artifact: 21 of 29 articles shared one timestamp to the millisecond, and
+   * the site hid every date rather than print "10 January 2026" under headlines
+   * written in 2023. A test here asserted the data was still broken, so the day
+   * it improved would announce itself instead of leaving the dates quietly
+   * hidden. That day was 2026-09-05, when the real publish dates were written
+   * back into Empathy Ledger from the import metadata
+   * (docs/integrations/empathy-ledger/backfill-article-fields-2026-09-05.sql).
    *
-   * A comment saying so decays: nobody re-checks it, and the day the feed gains
-   * real dates, the site quietly goes on hiding them. This fails on that day and
-   * says what to do, which is the only way the caveat resolves itself.
+   * So this now guards the other direction. If the feed ever collapses back to
+   * a handful of shared timestamps, the dates FieldWriting and the article page
+   * print become false again, and this says so before a deploy does.
    */
-  it("still has degenerate publishedAt values, so dates stay hidden", () => {
+  it("carries real publish dates, so dates render", () => {
     const articles = getBakedEditorialSnapshot().articles;
     const distinct = new Set(articles.map((a) => a.publishedAt)).size;
     const ratio = distinct / articles.length;
 
     expect(
       ratio,
-      `publishedAt now has ${distinct} distinct values across ${articles.length} ` +
-        "articles, which no longer looks like a migration artifact. The feed may " +
-        "be carrying real dates. Re-enable the date in " +
-        "src/components/fields/FieldWriting.tsx and delete this test.",
-    ).toBeLessThan(0.5);
+      `publishedAt has only ${distinct} distinct values across ${articles.length} ` +
+        "articles, which looks like import timestamps again. Check the feed, and if " +
+        "it has regressed, hide the date in src/components/fields/FieldWriting.tsx " +
+        "and src/app/stories/[slug]/editorial-article.tsx until it is fixed.",
+    ).toBeGreaterThanOrEqual(0.5);
   });
 
   it("reports coverage for all five fields", () => {

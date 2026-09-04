@@ -8,6 +8,7 @@ import { JsonLd } from "@/components/seo/JsonLd";
 import { SiteChromeGate } from "@/components/SiteChromeGate";
 import { EditorialLegalFooter } from "@/components/EditorialLegalFooter";
 import { organizationJsonLd, siteUrl, websiteJsonLd } from "@/lib/seo/site";
+import { Analytics } from "@vercel/analytics/next";
 import "./globals.css";
 
 const displayFont = Fraunces({
@@ -172,6 +173,7 @@ export default function RootLayout({
           />
         </div></SiteChromeGate>
         <EditorialLegalFooter />
+        <Analytics />
       </body>
     </html>
   );

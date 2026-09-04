@@ -7,6 +7,8 @@
  * - LCAA themes and ALMA programs
  *
  * Data sources:
+ * - Bundled: src/data/project-code-registry.generated.json, the one registry
+ *   every ACT site is meant to share (production URLs included)
  * - Local: Reads from act-ecosystem/config/*.json
  * - API: Can connect to Command Center at localhost:3456
  * - Supabase: Shared database for live data
@@ -15,7 +17,6 @@
 import { promises as fs } from 'fs';
 import path from 'path';
 import projectCodeRegistry from '@/data/project-code-registry.generated.json';
-import { ecosystemProjects as websiteEcosystemProjects } from '@/data/ecosystem';
 
 // Path to act-ecosystem repository (sibling directory)
 const ECOSYSTEM_PATH = process.env.ACT_ECOSYSTEM_PATH ||
@@ -90,31 +91,17 @@ function buildGeneratedEcosystemData(): EcosystemData {
   const projects: Record<string, EcosystemProject> = {};
 
   for (const project of PROJECT_CODE_REGISTRY.projects) {
-    const websiteProject =
-      websiteEcosystemProjects.find((candidate) => {
-        const lookupValues = [
-          candidate.slug,
-          candidate.projectCode,
-          candidate.name,
-        ].map((value) => value.toLowerCase());
-
-        return [project.canonicalSlug, project.staticSlug, project.wikiSlug, ...(project.aliases || [])]
-          .filter(Boolean)
-          .map((value) => String(value).toLowerCase())
-          .some((value) => lookupValues.includes(value));
-      }) || null;
 
     projects[project.code] = {
       name: project.name,
       code: project.code,
       category: project.category,
       status: project.status,
-      description: websiteProject?.description || project.name,
+      description: project.name,
       notion_pages: project.notionPages,
       ghl_tags: project.ghlTags,
       xero_tracking: project.xeroTracking || undefined,
-      production_url: project.productionUrl || websiteProject?.url,
-      github_repo: websiteProject?.repo,
+      production_url: project.productionUrl || undefined,
     };
   }
 

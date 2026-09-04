@@ -27,6 +27,7 @@
     "check:launch-ready": "node scripts/check-launch-ready.mjs",
     "check:launch-ready:build": "node scripts/check-launch-ready.mjs --with-build",
     "check:redirects": "node scripts/check-launch-redirects.mjs",
+    "check:platforms": "node scripts/check-platform-links.mjs",
     "sync:notion": "node scripts/sync-notion-projects.mjs",
     "sync:project-codes": "node scripts/sync-project-code-registry.mjs",
     "sync:el-media": "node scripts/sync-el-media.mjs",

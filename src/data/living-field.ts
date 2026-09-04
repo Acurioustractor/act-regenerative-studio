@@ -19,6 +19,14 @@ export type LivingField = {
   overviewHref: string;
   experienceHref: string;
   destinationHref: string;
+  /**
+   * Project code of the platform this field hands the reader to. The guard in
+   * living-field.test.ts holds destinationHref to that code's production_url
+   * in the project-code registry, so a door here cannot quietly drift from the
+   * one source every ACT site is meant to share. Art rides ACT-JH because
+   * CONTAINED lives on JusticeHub and has no site of its own.
+   */
+  platformCode: "ACT-EL" | "ACT-JH" | "ACT-GD" | "ACT-HV";
   destinationAction?: string;
   projectHref: string;
   projectLabel: string;
@@ -62,7 +70,8 @@ export const livingFields: LivingField[] = [
     localHref: "/fields/art",
     overviewHref: "/prototypes/living-field/art",
     experienceHref: "/prototypes/art-field",
-    destinationHref: "https://www.justicehub.com.au/contained",
+    destinationHref: "https://justicehub.com.au/contained",
+    platformCode: "ACT-JH",
     projectHref: "/art",
     projectLabel: "Explore the art",
     next: { label: "Empathy Ledger", href: "/prototypes/living-field/empathy" },
@@ -90,9 +99,10 @@ export const livingFields: LivingField[] = [
     localHref: "/fields/empathy",
     overviewHref: "/prototypes/living-field/empathy",
     experienceHref: "/prototypes/story-remains",
-    destinationHref: "https://www.empathyledger.com",
+    destinationHref: "https://empathyledger.com",
+    platformCode: "ACT-EL",
     destinationAction: "Publish, listen and manage consent",
-    projectHref: "https://www.empathyledger.com",
+    projectHref: "https://empathyledger.com",
     projectLabel: "Enter Empathy Ledger",
     next: { label: "JusticeHub", href: "/prototypes/living-field/justice" },
     accent: "#2d5a3d",
@@ -119,9 +129,10 @@ export const livingFields: LivingField[] = [
     localHref: "/fields/justice",
     overviewHref: "/prototypes/living-field/justice",
     experienceHref: "/prototypes/justice-field",
-    destinationHref: "https://www.justicehub.com.au",
+    destinationHref: "https://justicehub.com.au",
+    platformCode: "ACT-JH",
     destinationAction: "Move from encounter to place and evidence",
-    projectHref: "https://www.justicehub.com.au",
+    projectHref: "https://justicehub.com.au",
     projectLabel: "Search JusticeHub",
     next: { label: "Goods on Country", href: "/prototypes/living-field/goods" },
     accent: "#b8943f",
@@ -149,6 +160,7 @@ export const livingFields: LivingField[] = [
     overviewHref: "/prototypes/living-field/goods",
     experienceHref: "/prototypes/goods-field",
     destinationHref: "https://www.goodsoncountry.com",
+    platformCode: "ACT-GD",
     destinationAction: "Follow the object, support and ownership journey",
     projectHref: "https://www.goodsoncountry.com",
     projectLabel: "Visit Goods on Country",
@@ -177,9 +189,10 @@ export const livingFields: LivingField[] = [
     localHref: "/fields/harvest",
     overviewHref: "/prototypes/living-field/harvest",
     experienceHref: "/prototypes/harvest-field",
-    destinationHref: "https://theharvestwitta.com.au",
+    destinationHref: "https://www.theharvestwitta.com.au",
+    platformCode: "ACT-HV",
     destinationAction: "Build, grow, gather and come to the table",
-    projectHref: "https://theharvestwitta.com.au",
+    projectHref: "https://www.theharvestwitta.com.au",
     projectLabel: "Visit The Harvest",
     next: { label: "Return to Art", href: "/prototypes/living-field/art" },
     accent: "#2d5a3d",

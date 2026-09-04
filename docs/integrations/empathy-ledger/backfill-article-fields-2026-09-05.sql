@@ -2,7 +2,13 @@
 -- site carries.
 --
 -- Run against the Empathy Ledger Enhanced project (yvnuayzslukamizrlhwb).
--- Proposed 2026-09-05. Nothing here publishes, unpublishes, or touches
+-- Proposed and APPLIED 2026-09-05 (Ben: "apply"). Backup table:
+-- articles_editorial_backup_20260905, 30 rows, every article tagged act_el
+-- whatever its status. Step 1 changed 18 rows (15 public, 3 private), step 2
+-- changed 18. Verified on the live content-hub feed afterwards, not on the
+-- row counts alone.
+--
+-- Nothing here publishes, unpublishes, or touches
 -- consent. It sets four editorial columns on the 22 articles tagged for this
 -- site (act_el in syndication_destinations): published_at, primary_project,
 -- related_projects, and the themes and tags facets.
@@ -10,12 +16,12 @@
 --
 -- WHY
 --
--- Eighteen of the 22 came in from the old Webflow blog on 2026-01-10 and were
+-- Twenty of the 22 came in from the old Webflow blog on 2026-01-10 and were
 -- given the import day as their publish date. The site therefore shows no
 -- date on any of them and cannot order the stories index by when a piece was
 -- written. The real dates survived the import: import_metadata carries
 -- original_publish_date for every one, from 2023-03-22 to 2025-11-09.
--- Sixteen were live on Webflow (was_published = true). Two, History's wounds
+-- Eighteen were live on Webflow (was_published = true). Two, History's wounds
 -- and Wilya Janta, were unpublished drafts there and first met a reader here
 -- on 2026-03-25, so that date stands for those two and step 1 leaves them.
 --
@@ -109,7 +115,7 @@ where a.slug = p.slug
   and a.visibility = 'public'
   and a.slug <> 'what-the-road-corrects';
 
--- Expect: 16 rows from step 1 (13 public + 3 private), 18 rows from step 2.
+-- Applied 2026-09-05: 18 rows from step 1 (15 public + 3 private), 18 from step 2.
 commit;
 
 

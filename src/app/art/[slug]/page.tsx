@@ -202,6 +202,21 @@ export default async function ArtWorkPage({
                   Part of {project.connectedProject} &rarr;
                 </Link>
               )}
+              {/*
+                A work with its own public site links to it from the top of the
+                page. Describing a live exhibition and giving the reader no way
+                to open it is a review of something they cannot go and see.
+              */}
+              {project.externalSite && (
+                <a
+                  href={project.externalSite.url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="rounded-full border border-white/40 bg-white/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-white backdrop-blur-sm transition hover:bg-white/25"
+                >
+                  {project.externalSite.label} &rarr;
+                </a>
+              )}
               {project.mediums.map((medium) => (
                 <span
                   key={medium}
@@ -231,6 +246,16 @@ export default async function ArtWorkPage({
               >
                 Part of {project.connectedProject} &rarr;
               </Link>
+            )}
+            {project.externalSite && (
+              <a
+                href={project.externalSite.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="rounded-full border border-[#245c43] bg-[#245c43] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-[#1d4b37]"
+              >
+                {project.externalSite.label} &rarr;
+              </a>
             )}
             {project.mediums.map((medium) => (
               <span

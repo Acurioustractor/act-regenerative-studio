@@ -57,6 +57,14 @@ export interface ArtProjectConfig {
   storytellerCount: number;
   connectedProject?: string;
   connectedProjectHref?: string;
+  /**
+   * The work's own public site, when it has one. Distinct from
+   * `connectedProjectHref`, which says what ACT project this art sits inside
+   * and renders as "Part of X". A work with its own wall or exhibition site is
+   * not part of that site; the site IS the work, and a page describing it that
+   * does not link to it is a review of something the reader cannot go and see.
+   */
+  externalSite?: { label: string; url: string };
   philosophy?: string;
   impact?: string;
   /**
@@ -297,18 +305,29 @@ const ART_PROJECTS: ArtProjectConfig[] = [
     slug: 'caring-for-those-who-care',
     elSlugs: ['caring-for-those-who-care'],
     title: 'Caring for Those Who Care',
-    quote: 'Holding up the people who hold others',
-    description: 'Carers are the infrastructure beneath every other kind of work, yet the emotional, physical and economic cost they absorb stays largely unseen. This exhibition and performance work centres carers not as subjects to be studied but as the foundation everything depends on, and asks what would change if we genuinely valued them.',
-    mediums: ['exhibition', 'performance'],
+    // Corrected 2026-08-21. The entry here described unpaid care work: carers as
+    // the infrastructure beneath every other kind of work. That is a different
+    // project. This one is about the founders and chief executives of small
+    // not-for-profits, and what it costs them to keep telling their own worst
+    // day on stage so the funding continues. Every figure below is read off the
+    // live wall payload (7 people, 7 portraits, 5 further photographs), and the
+    // subject matter off the interim report and the seven transcripts.
+    quote: 'The people who hold everyone else, and who holds them',
+    description: 'Seven people built not-for-profits out of the hardest thing that ever happened to them, and the sector then asked each of them to keep telling that story, on stage and on demand, for as long as the support keeps coming. This work sits down with them, photographs them, and puts what the telling costs into their own words on a public wall and in an exhibition. It runs alongside a pilot study into the wellbeing of not-for-profit leaders and social entrepreneurs in Australia.',
+    mediums: ['photography', 'exhibition', 'performance'],
     tags: ['social-practice', 'community-portrait'],
     status: 'active',
     lcaaStages: ['Listen', 'Art'],
-    location: 'Community and gallery contexts',
-    year: 'In development',
-    photoCount: 0,
-    storytellerCount: 1,
+    location: 'Sunshine Coast, Mount Isa, Sydney, Gold Coast and the Atherton Tablelands',
+    year: '2025 to 2026',
+    photoCount: 12,
+    storytellerCount: 7,
+    externalSite: {
+      label: 'The wall',
+      url: 'https://caring-for-those-who-care.vercel.app',
+    },
     philosophy:
-      'Care work is the infrastructure beneath every other kind of work. This project does not treat carers as subjects to be studied. It treats them as the foundation that everything else depends on.',
+      'A founder is not their worst day. The sector meets these seven mid-performance and keeps rewarding them for staying there. The work is to let them be met as people first, with every word their own, and every word removable by them at any time.',
   },
   {
     slug: 'regional-arts-fellowship',

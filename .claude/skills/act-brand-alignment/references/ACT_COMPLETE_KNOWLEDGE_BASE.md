@@ -34,7 +34,7 @@
 "Regenerative innovation ecosystem transferring power to communities designing their own futures."
 
 **Full Mission Statement:**
-"A Curious Tractor is a regenerative innovation ecosystem partnering with marginalized—especially First Nations—communities to dismantle extractive systems. Like a tractor's power take-off (PTO), we transfer resources, knowledge, and capacity to community-led initiatives. We cultivate seeds of justice, art, and shared governance from our working farm on Jinibara Country. Through deep listening, radical curiosity, tangible action, and transformative art, we're growing a world where communities own their narratives, land, and economic futures—while we design for our own obsolescence."
+"A Curious Tractor is a regenerative innovation ecosystem partnering with marginalized, especially First Nations, communities to dismantle extractive systems. Like a tractor's power take-off (PTO), we transfer resources, knowledge, and capacity to community-led initiatives. We cultivate seeds of justice, art, and shared governance from our working farm on Jinibara Country. Through deep listening, radical curiosity, tangible action, and transformative art, we're growing a world where communities own their narratives, land, and economic futures, while we design for our own obsolescence."
 
 ### Vision (North Star)
 
@@ -260,14 +260,14 @@ Social, cultural, environmental, and economic value flows back to communities.
 
 ### Overview
 
-LCAA (Listen, Curiosity, Action, Art) is ACT's core methodology applied across all projects. It's not linear—each phase informs the others in ongoing cycles.
+LCAA (Listen, Curiosity, Action, Art) is ACT's core methodology applied across all projects. It's not linear, each phase informs the others in ongoing cycles.
 
 ### L - LISTEN
 
 **"We sit in silence to take in knowledge"**
 
 **What It Means:**
-Deep, patient listening to place, people, history, and community voice—especially those systemically ignored. Listening as a radical act of respect and learning.
+Deep, patient listening to place, people, history, and community voice, especially those systemically ignored. Listening as a radical act of respect and learning.
 
 **Who/What We Listen To:**
 - **Country:** Land teaches systems if we slow down to learn
@@ -346,7 +346,7 @@ Curiosity asked: "Can waste become community wealth?" This led to exploring circ
 **"We are makers who play and take chances"**
 
 **What It Means:**
-Building tangible solutions alongside communities—not for them. Combining innovative technologies, compelling stories, and immersive art. Partnering to deliver, then iterating based on real-world feedback.
+Building tangible solutions alongside communities, not for them. Combining innovative technologies, compelling stories, and immersive art. Partnering to deliver, then iterating based on real-world feedback.
 
 **What We Build:**
 - **Platforms:** Digital tools for sovereignty (Empathy Ledger, JusticeHub)
@@ -378,7 +378,7 @@ Building tangible solutions alongside communities—not for them. Combining inno
 - Learning shared openly
 
 **Example - JusticeHub:**
-Action meant building actual platform where communities could share and fork justice programs. Not just documenting models—creating infrastructure for replication and adaptation. Open-source code allows any community to host independently.
+Action meant building actual platform where communities could share and fork justice programs. Not just documenting models, creating infrastructure for replication and adaptation. Open-source code allows any community to host independently.
 
 ### A - ART
 
@@ -1113,7 +1113,7 @@ Honor heritage while building future. Therapeutic horticulture creates wellbeing
 Artworks, exhibitions, residencies, and commissions using creativity as tool for systems change and cultural transformation.
 
 **Philosophy:**
-Art isn't decoration—it's the first form of revolution. Before policy changes, consciousness must shift. Art makes invisible visible, questions assumed realities, and imagines futures not yet possible.
+Art isn't decoration, it's the first form of revolution. Before policy changes, consciousness must shift. Art makes invisible visible, questions assumed realities, and imagines futures not yet possible.
 
 **Key Artworks & Installations:**
 
@@ -1268,7 +1268,7 @@ Art isn't decoration—it's the first form of revolution. Before policy changes,
 **Examples:**
 
 ✅ Good:
-"We don't claim to have the solution to youth justice—no single organization does. But we've learned from 15+ communities that when young people design their own accountability systems, recidivism drops by 58%. We're confident community-led justice works. We're still learning how to support it best."
+"We don't claim to have the solution to youth justice, no single organization does. But we've learned from 15+ communities that when young people design their own accountability systems, recidivism drops by 58%. We're confident community-led justice works. We're still learning how to support it best."
 
 ❌ Avoid:
 "Our proven methodology solves youth justice." (Overclaiming, arrogant)
@@ -1295,7 +1295,7 @@ Art isn't decoration—it's the first form of revolution. Before policy changes,
 **Examples:**
 
 ✅ Good:
-"Join us at Black Cockatoo Valley for a working bee—we'll pull weeds, plant natives, share a meal, and honest conversations about what land care really means. Fair warning: this work confronts our collective complicity in land degradation. But it's also joyful, connecting, and transformative."
+"Join us at Black Cockatoo Valley for a working bee, we'll pull weeds, plant natives, share a meal, and honest conversations about what land care really means. Fair warning: this work confronts our collective complicity in land degradation. But it's also joyful, connecting, and transformative."
 
 ❌ Avoid:
 "Come enjoy a lovely nature experience!" (Warm but unchallenging)
@@ -1337,24 +1337,24 @@ Art isn't decoration—it's the first form of revolution. Before policy changes,
 **For Mission/About:**
 Start with metaphor, then ground it
 
-"Like a tractor's power take-off, A Curious Tractor transfers capacity to communities driving their own futures. Concretely, this means: open-source tools you can fork, 40% of profits flowing to community ownership, and sunset clauses ensuring we eventually make ourselves obsolete. We partner with marginalized—especially First Nations—communities to dismantle extractive systems and cultivate regenerative alternatives."
+"Like a tractor's power take-off, A Curious Tractor transfers capacity to communities driving their own futures. Concretely, this means: open-source tools you can fork, 40% of profits flowing to community ownership, and sunset clauses ensuring we eventually make ourselves obsolete. We partner with marginalized, especially First Nations, communities to dismantle extractive systems and cultivate regenerative alternatives."
 
 **For Project Pages:**
 Start with the problem from community perspective
 
-"Youth justice systems aren't working. 58% recidivism. Billions spent on detention that traumatizes instead of heals. Meanwhile, community-led programs show drastically better outcomes—but they're fragmented, underfunded, invisible. JusticeHub exists to change that: an open-source network where communities can fork proven justice models, adapt them to local context, and co-create their own governance systems."
+"Youth justice systems aren't working. 58% recidivism. Billions spent on detention that traumatizes instead of heals. Meanwhile, community-led programs show drastically better outcomes, but they're fragmented, underfunded, invisible. JusticeHub exists to change that: an open-source network where communities can fork proven justice models, adapt them to local context, and co-create their own governance systems."
 
 **For Stories:**
 Start with a specific scene or voice
 
-"Brodie Germaine knows these streets intimately. The housing commission at 77 George Street. The house with soft drinks in the back fridge that became a regular target. These aren't stories of shame—they're waypoints on a journey that would lead to something profound."
+"Brodie Germaine knows these streets intimately. The housing commission at 77 George Street. The house with soft drinks in the back fridge that became a regular target. These aren't stories of shame, they're waypoints on a journey that would lead to something profound."
 
 #### Middles (How to Develop)
 
 **LCAA Structure:**
 Use the methodology as narrative arc
 
-"We listened first—sitting with youth who'd been through the system, elders who remembered different ways, communities experimenting with alternatives. Their stories revealed a truth: punishment doesn't heal trauma.
+"We listened first, sitting with youth who'd been through the system, elders who remembered different ways, communities experimenting with alternatives. Their stories revealed a truth: punishment doesn't heal trauma.
 
 That listening sparked curiosity: What if young people designed their own accountability? What if communities governed justice locally? Could we create infrastructure for these experiments to connect and learn from each other?
 
@@ -1371,7 +1371,7 @@ For more straightforward content
 
 **Call to Action with Vision:**
 
-"Join us. Get your hands dirty pulling weeds at Black Cockatoo Valley, share your story on Empathy Ledger, fork a justice program on JusticeHub. Each small action is a seed. Together, we're cultivating a world where communities own their narratives, land, and economic futures—and we're designing our way out of a job."
+"Join us. Get your hands dirty pulling weeds at Black Cockatoo Valley, share your story on Empathy Ledger, fork a justice program on JusticeHub. Each small action is a seed. Together, we're cultivating a world where communities own their narratives, land, and economic futures, and we're designing our way out of a job."
 
 **Return to Metaphor:**
 

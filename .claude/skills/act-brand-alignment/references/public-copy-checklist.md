@@ -5,7 +5,7 @@ Use this with the `act-brand-alignment` skill before any text ships.
 
 ## Audience
 
-External — partners, funders, philanthropy, community organisations, press,
+External, partners, funders, philanthropy, community organisations, press,
 the curious public. **Not** other ACT contributors.
 
 ## Patterns to avoid
@@ -36,11 +36,11 @@ These have all leaked into production at least once and were rewritten:
 
 If a CTA links to `/wiki/{slug}`, label it for the reader: "Background &
 method", "Read the full project page", "How this works". Never "Open wiki
-entry" — the wiki is internal-feeling for an external reader.
+entry", the wiki is internal-feeling for an external reader.
 
 ## Cards and click-throughs
 
-- Image and video cards must click through to a real destination — never a
+- Image and video cards must click through to a real destination, never a
   raw `.jpg` or `.mp4` URL. Default fallback chain: external project site
   (`empathyledger.com`, etc.) → local `/storytellers` → if neither exists,
   consider not making it a link at all.
@@ -51,7 +51,7 @@ entry" — the wiki is internal-feeling for an external reader.
 
 When pulling content from external platforms (Empathy Ledger):
 - Strip captions matching `^Imported from`, `^Image:\s`, `curated-2025`,
-  `placemat`, "Compendium 2026" etc. — these are import provenance, not
+  `placemat`, "Compendium 2026" etc., these are import provenance, not
   captions.
 - The boundary is `mapEmpathyLedgerMediaToGallery()` in
   `src/lib/projects/get-project-data.ts`. Add new patterns there.

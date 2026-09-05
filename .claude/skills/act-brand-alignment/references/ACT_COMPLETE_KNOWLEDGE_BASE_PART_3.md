@@ -2296,7 +2296,7 @@ Clear next step aligned with LCAA methodology (Listen first)
 **Example 1: Empathy Ledger**
 
 ```
-What if your story stayed yours—forever?
+What if your story stayed yours, forever?
 
 Most storytelling platforms extract value from your narratives.
 Empathy Ledger is different: like a tractor's power take-off, we
@@ -2305,7 +2305,7 @@ sees it, when, and how it's used. 40% of any value created flows
 back to you.
 
 "For the first time, I control my story. Not an algorithm, not a
-corporation—me." - Storyteller, Empathy Ledger
+corporation, me." - Storyteller, Empathy Ledger
 
 → Start your story (with consent you control)
 ```
@@ -2313,7 +2313,7 @@ corporation—me." - Storyteller, Empathy Ledger
 **Example 2: JusticeHub**
 
 ```
-What if justice programs were forkable—like open-source code?
+What if justice programs were forkable, like open-source code?
 
 Too many communities reinvent the same justice innovations.
 JusticeHub works like a tractor's power take-off: we provide
@@ -2331,7 +2331,7 @@ Communities that fork JusticeHub models reduce recidivism by
 ```
 What if food connected you to Country?
 
-The Harvest isn't just a CSA—it's regenerative agriculture on
+The Harvest isn't just a CSA, it's regenerative agriculture on
 Jinibara Country paired with community gatherings. Like a power
 take-off on a tractor, we provide the infrastructure (land, tools,
 knowledge). You harvest the produce, relationships, and belonging.
@@ -2352,7 +2352,7 @@ on Jinibara Country. Instead of waiting for grants, we're creating
 a regenerative model: eco-cottages and artist residencies fund
 biodiversity credits and Indigenous land-care jobs.
 
-Residents don't just visit—they participate in restoration, learn
+Residents don't just visit, they participate in restoration, learn
 from Country, and return with changed perspectives.
 
 → Book a conservation residency
@@ -2412,7 +2412,7 @@ Before publishing, check your hero copy against ACT voice:
 
 ```
 THE PROBLEM:
-Communities—especially First Nations people—have had their stories
+Communities, especially First Nations people, have had their stories
 extracted, commodified, and controlled by institutions for centuries.
 Storytelling platforms extract value through advertising, data mining,
 and algorithmic amplification that serves corporate interests, not
@@ -2421,7 +2421,7 @@ to own, control, and benefit from their stories.
 
 OUR APPROACH:
 After listening to storytellers frustrated by platform extraction, we
-asked: What if stories had consent built in—like FPIC (Free, Prior,
+asked: What if stories had consent built in, like FPIC (Free, Prior,
 and Informed Consent) applies to land? We prototyped Empathy Ledger
 with consent frameworks that let storytellers control exactly who
 sees their story, when, and how it's used. Like a tractor's power
@@ -2433,8 +2433,8 @@ IMPACT:
 Empathy Ledger now hosts 200+ stories from 15 communities, with 100%
 storyteller retention (nobody's left because they lost control).
 "For the first time, I control my story. Not an algorithm, not a
-corporation—me," says one storyteller. Within 5 years, communities
-will own and operate Empathy Ledger independently—we'll hand over
+corporation, me," says one storyteller. Within 5 years, communities
+will own and operate Empathy Ledger independently, we'll hand over
 the code, the data, and the keys.
 ```
 
@@ -2517,7 +2517,7 @@ Open-source models for community-led justice innovation
 
 In 2023, we sat with youth justice workers across three
 communities: Redfern, Inala, and Fitzroy. All three were running
-grassroots programs with incredible impact—mentoring young people,
+grassroots programs with incredible impact, mentoring young people,
 reducing recidivism, building trust. But all three were exhausted,
 under-resourced, and reinventing solutions others had already
 proven.
@@ -2533,7 +2533,7 @@ forkable. Every community reinvents the wheel.
 
 ## Curiosity
 
-We asked: What if justice programs were open-source—like code?
+We asked: What if justice programs were open-source, like code?
 
 What if a community in Redfern could "fork" a proven mentoring
 model from Fitzroy, adapt it to local context, and share learnings
@@ -2550,7 +2550,7 @@ Early experiments: We documented one mentoring program as a
 "forkable model" (step-by-step guide + budget + lessons learned).
 Then we asked another community: Can you adapt this?
 
-They could. Within 8 weeks, they launched a local version—modified
+They could. Within 8 weeks, they launched a local version, modified
 for their context but based on proven foundations.
 
 ## Action
@@ -2567,7 +2567,7 @@ to fork, how to adapt them, and what insights to share.
 Technical details: JusticeHub runs on Supabase (open-source backend),
 Next.js (forkable frontend), and uses differential privacy for data
 insights (communities can see patterns without exposing individuals).
-All code is MIT-licensed—communities can fork the entire platform
+All code is MIT-licensed, communities can fork the entire platform
 if they want independence.
 
 Current status: Beta launch with 8 communities. 15 justice models
@@ -2580,7 +2580,7 @@ justice model includes video interviews with community workers, photo
 essays of programs in action, and honest reflections on what worked
 and what didn't.
 
-"Forking isn't copying—it's learning and adapting with respect,"
+"Forking isn't copying, it's learning and adapting with respect,"
 says one community worker. "I forked a mentoring model, but I changed
 it to honor our cultural protocols. JusticeHub gave me permission to
 adapt, not just replicate."
@@ -2594,7 +2594,7 @@ share what they want, and benefit from collective learning.
 
 **What worked**: Communities love the "forkable model" concept. It
 gives them permission to adapt (not just copy). Documentation in
-plain language (not academic) is critical—if it's not accessible,
+plain language (not academic) is critical, if it's not accessible,
 it's not forkable.
 
 **What didn't work**: Our first data dashboard was too complex.
@@ -2613,10 +2613,10 @@ community-led, not ACT-controlled?
 
 Communities are taking JusticeHub in unexpected directions: one wants
 to fork it for disability services, another for environmental justice.
-We're saying yes—the platform is theirs to adapt.
+We're saying yes, the platform is theirs to adapt.
 
 By Year 3, we'll hand over governance to a community-majority board.
-By Year 5, communities will own JusticeHub entirely—we'll transfer
+By Year 5, communities will own JusticeHub entirely, we'll transfer
 the code, the data, the decision-making. Beautiful obsolescence.
 
 Open question we're sitting with: How do we ensure sustainability
@@ -2752,7 +2752,7 @@ NOTES:
 
 ### 14.5 Partnership Proposal Template
 
-**Purpose**: Initial outreach to potential community partners—respectful, specific, low-commitment.
+**Purpose**: Initial outreach to potential community partners, respectful, specific, low-commitment.
 
 #### Email Template
 
@@ -2809,9 +2809,9 @@ how you're centering Aboriginal young people's voices in program
 design. The cultural protocols you've built around mentoring
 relationships are exactly what other communities need to learn from.
 
-I'm with A Curious Tractor (ACT)—we're a regenerative innovation
+I'm with A Curious Tractor (ACT), we're a regenerative innovation
 studio on Jinibara Country. We're exploring a question: What if
-proven justice models like REDWatch's were "forkable"—documented
+proven justice models like REDWatch's were "forkable", documented
 so other communities could adapt them while honoring cultural
 protocols? Like a tractor's power take-off, we'd provide
 infrastructure (documentation, tech platform) but communities like
@@ -2824,7 +2824,7 @@ for other communities, and share back any data insights. You'd
 retain full IP ownership, approve how it's shared, and receive 40%
 of any value created from forks. No cost to you.
 
-Would you be open to a coffee to explore this? No pressure—just
+Would you be open to a coffee to explore this? No pressure, just
 curious if it aligns with REDWatch's vision.
 
 Looking forward to learning more.
@@ -2965,7 +2965,7 @@ $4,800 went directly to community partners.
 Not as "charity." As co-ownership. Because value
 created together should be shared together.
 
-"It's not about the money—it's about being recognized
+"It's not about the money, it's about being recognized
 as partners, not beneficiaries." - Harvest Member
 
 We're still learning what equitable value-sharing
@@ -3004,7 +3004,7 @@ Most platforms extract stories. Empathy Ledger protects them.
 **Examples**:
 
 ```
-"Forking isn't copying—it's learning and adapting with respect."
+"Forking isn't copying, it's learning and adapting with respect."
 
 - Community justice worker using JusticeHub to adapt a
   mentoring model for their local context

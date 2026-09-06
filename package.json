@@ -62,7 +62,9 @@
     "sync:art-pieces": "node scripts/sync-art-pieces.mjs",
     "check:art-record": "node scripts/check-art-record.mjs",
     "test:scripts": "node --test scripts/tests/*.test.mjs",
-    "check:palette": "node scripts/check-palette.mjs"
+    "check:palette": "node scripts/check-palette.mjs",
+    "check:skills": "node scripts/sync-brand-skill.mjs",
+    "sync:skills": "node scripts/sync-brand-skill.mjs --apply"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.2",

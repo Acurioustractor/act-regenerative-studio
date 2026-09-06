@@ -1,5 +1,6 @@
 import fs from 'node:fs/promises';
 import path from 'node:path';
+import { pathToFileURL } from 'node:url';
 
 import {
   PROJECT_CODE_REGISTRY_OUTPUT_PATH,
@@ -178,6 +179,29 @@ async function keepExistingSnapshot(reason) {
   }
 }
 
+/**
+ * Load the registry through @act/projects when the infra checkout is beside this
+ * repo. The package parses config/project-codes.json with its schema and guards,
+ * so a malformed file fails here instead of producing a half-built snapshot.
+ * Falls back to the raw JSON (no guards) when the package is absent, e.g. on
+ * Vercel, where the build keeps the committed snapshot anyway.
+ */
+async function loadConfig(configPath) {
+  const packageEntry = path.resolve(path.dirname(configPath), '../packages/act-projects/src/index.mjs');
+  try {
+    await fs.access(packageEntry);
+  } catch {
+    console.warn(`@act/projects not found at ${packageEntry}; reading project-codes.json without guards`);
+    return { config: await readJsonIfExists(configPath, null), guarded: false };
+  }
+  const mod = await import(pathToFileURL(packageEntry).href);
+  const { projects, gaps } = mod.loadProjects({ path: configPath });
+  if (gaps.length) {
+    console.warn(`@act/projects reports ${gaps.length} gap(s); run pnpm projects:check in the infra repo`);
+  }
+  return { config: { projects }, guarded: true };
+}
+
 async function main() {
   const configPath = await resolveConfigPath();
 
@@ -186,7 +210,7 @@ async function main() {
     return;
   }
 
-  const config = await readJsonIfExists(configPath, null);
+  const { config, guarded } = await loadConfig(configPath);
   if (!config?.projects || typeof config.projects !== 'object') {
     await keepExistingSnapshot(`project codes config unreadable at ${configPath}`);
     return;
@@ -260,8 +284,30 @@ async function main() {
       notionPages: Array.isArray(project.notion_pages) ? project.notion_pages : [],
       ghlTags: Array.isArray(project.ghl_tags) ? project.ghl_tags : [],
       xeroTracking: project.xero_tracking || null,
-      productionUrl: project.production_url || null,
-      syndicationSlug: project.syndication_slug || null,
+      productionUrl: project.production_url || project.sites?.find((s) => s.role === 'primary')?.production_url || null,
+      syndicationSlug: project.syndication_slug || project.empathy_ledger?.syndication_slug || null,
+      // Typed blocks from @act/projects (PR infra#235..#238). Absent when the
+      // file was read without the package.
+      internal: Boolean(project.internal),
+      parentProject: project.parent_project || null,
+      wikiPath: project.wiki_path || null,
+      sites: (project.sites || []).map((s) => ({
+        role: s.role || 'primary',
+        productionUrl: s.production_url || null,
+        vercelProjectId: s.vercel_project_id || null,
+        vercelProjectName: s.vercel_project_name || null,
+        githubRepo: s.github_repo || null,
+      })),
+      notion: { pageId: project.notion?.page_id || project.notion_page_id || null },
+      empathyLedger: {
+        tracked: project.empathy_ledger?.tracked !== false,
+        projectId: project.empathy_ledger?.project_id || null,
+        projectKey: project.empathy_ledger?.project_key || null,
+        partnerCodes: project.empathy_ledger?.partner_codes || [],
+      },
+      art: project.art
+        ? { media: project.art.media || [], tags: project.art.tags || [], pieceSlug: project.art.piece_slug }
+        : null,
     };
   });
 
@@ -276,19 +322,16 @@ async function main() {
   const snapshot = {
     generatedAt: new Date().toISOString(),
     sourceConfigPath: configPath,
+    guarded,
     projectCount: projects.length,
     unresolvedWikiProjectSlugs,
     projects: projects.sort((left, right) => left.name.localeCompare(right.name)),
   };
 
-  await fs.writeFile(
-    PROJECT_CODE_REGISTRY_OUTPUT_PATH,
-    `${JSON.stringify(snapshot, null, 2)}\n`
-  );
+  const outputPath = process.env.PROJECT_CODE_REGISTRY_OUTPUT || PROJECT_CODE_REGISTRY_OUTPUT_PATH;
+  await fs.writeFile(outputPath, `${JSON.stringify(snapshot, null, 2)}\n`);
 
-  console.log(
-    `synced ${projects.length} canonical project codes to ${PROJECT_CODE_REGISTRY_OUTPUT_PATH}`
-  );
+  console.log(`synced ${projects.length} canonical project codes to ${outputPath}${guarded ? '' : ' (unguarded)'}`);
   console.log(
     `resolved wiki slugs for ${wikiRecords.length - unresolvedWikiProjectSlugs.length}/${wikiRecords.length} wiki projects`
   );

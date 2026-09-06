@@ -59,7 +59,7 @@ export function ArticleGallery({
         : "md:grid-cols-2 lg:grid-cols-3";
 
   return (
-    <section className="full-bleed bg-[#F6F1E7] px-6 py-20 md:px-10 md:py-28">
+    <section className="full-bleed bg-[var(--warm-paper)] px-6 py-20 md:px-10 md:py-28">
       <div className="mx-auto max-w-[1300px]">
         <p className="mb-8 text-center font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-[var(--we-warm-brown)] md:mb-12">
           Field photographs
@@ -98,7 +98,7 @@ export function ArticleGallery({
                 />
                 {photo.caption ? (
                   <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent p-4 md:p-5">
-                    <p className="font-[var(--font-body)] text-[13px] italic leading-snug text-[#F3EBDD] md:text-base md:leading-normal">
+                    <p className="font-[var(--font-body)] text-[13px] italic leading-snug text-[var(--warm-cream)] md:text-base md:leading-normal">
                       {photo.caption}
                     </p>
                   </div>

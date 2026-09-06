@@ -31,8 +31,8 @@ export function NewsletterCTA({
     <section
       className={
         dark
-          ? 'rounded-[28px] border border-[#4A3B2E] bg-[#171612] p-7 text-[#F3EBDD] md:p-9'
-          : 'rounded-[28px] border border-[var(--we-sand)] bg-[#FDFBF7] p-7 md:p-9'
+          ? 'rounded-[28px] border border-[#4A3B2E] bg-[#171612] p-7 text-[var(--warm-cream)] md:p-9'
+          : 'rounded-[28px] border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] p-7 md:p-9'
       }
     >
       <div className="grid gap-6 lg:grid-cols-[1fr_0.86fr] lg:items-end">
@@ -40,7 +40,7 @@ export function NewsletterCTA({
           <p
             className={
               dark
-                ? 'font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[#CFA16B]'
+                ? 'font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--warm-gold)]'
                 : 'font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--we-warm-brown)]'
             }
           >
@@ -49,7 +49,7 @@ export function NewsletterCTA({
           <h2
             className={
               dark
-                ? 'mt-3 font-[var(--font-display)] text-2xl font-semibold leading-tight text-[#F3EBDD] md:text-3xl'
+                ? 'mt-3 font-[var(--font-display)] text-2xl font-semibold leading-tight text-[var(--warm-cream)] md:text-3xl'
                 : 'mt-3 font-[var(--font-display)] text-2xl font-semibold leading-tight text-[var(--we-olive)] md:text-3xl'
             }
           >

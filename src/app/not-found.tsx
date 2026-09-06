@@ -8,7 +8,7 @@ export const metadata = {
 
 export default function NotFound() {
   return (
-    <div className="min-h-[70vh] bg-gradient-to-b from-[#F6F1E7] via-[#F5F1E8] to-white">
+    <div className="min-h-[70vh] bg-gradient-to-b from-[var(--warm-paper)] via-[#F5F1E8] to-white">
       <section className="mx-auto max-w-3xl px-4 py-24 md:py-32">
         <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
           404 · Not found
@@ -24,7 +24,7 @@ export default function NotFound() {
         <div className="mt-10 grid gap-4 md:grid-cols-2">
           <Link
             href="/"
-            className="rounded-[24px] border border-[var(--we-sand)] bg-white/90 p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-[#7A9B76] hover:shadow-lg"
+            className="rounded-[24px] border border-[var(--we-sand)] bg-white/90 p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--warm-sage)] hover:shadow-lg"
           >
             <p className="text-xs uppercase tracking-[0.24em] text-[#7A6A55]">
               Start over
@@ -39,7 +39,7 @@ export default function NotFound() {
 
           <Link
             href="/projects"
-            className="rounded-[24px] border border-[var(--we-sand)] bg-white/90 p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-[#7A9B76] hover:shadow-lg"
+            className="rounded-[24px] border border-[var(--we-sand)] bg-white/90 p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--warm-sage)] hover:shadow-lg"
           >
             <p className="text-xs uppercase tracking-[0.24em] text-[#7A6A55]">
               The work
@@ -54,7 +54,7 @@ export default function NotFound() {
 
           <Link
             href="/contact"
-            className="rounded-[24px] border border-[var(--we-sand)] bg-white/90 p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-[#7A9B76] hover:shadow-lg"
+            className="rounded-[24px] border border-[var(--we-sand)] bg-white/90 p-6 shadow-sm transition hover:-translate-y-0.5 hover:border-[var(--warm-sage)] hover:shadow-lg"
           >
             <p className="text-xs uppercase tracking-[0.24em] text-[#7A6A55]">
               Get in touch

@@ -393,7 +393,7 @@ export function PayoutWall({ minimal = false, message, messageHint }: { minimal?
 
       {!minimal && (
         <div className="mx-auto mb-5 max-w-2xl text-center">
-          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-[#CFA16B]">
+          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-[var(--warm-gold)]">
             The wall is the system. The phone is the people.
           </p>
           <p className="mt-3 font-[var(--font-body)] text-base leading-7 text-[#E4D8C4]">
@@ -404,7 +404,7 @@ export function PayoutWall({ minimal = false, message, messageHint }: { minimal?
       )}
 
       <div className="relative w-full">
-        <div className="relative w-full overflow-hidden rounded-2xl border border-[#3A2C18] bg-[#0E0A05]">
+        <div className="relative w-full overflow-hidden rounded-2xl border border-[var(--warm-bark-deep)] bg-[#0E0A05]">
           <canvas
             ref={canvasRef}
             className="block h-[46vh] min-h-[320px] w-full cursor-crosshair"
@@ -413,7 +413,7 @@ export function PayoutWall({ minimal = false, message, messageHint }: { minimal?
             onPointerLeave={onPointerLeave}
           />
           {/* legend */}
-          <div className={`pointer-events-none absolute left-3 top-3 flex flex-col gap-1.5 rounded-md border border-[#3A2C18] bg-black/85 px-3.5 py-2.5 font-[var(--font-sans)] text-[11px] uppercase tracking-[0.14em] text-[#EFE6D2] backdrop-blur-[2px] transition-opacity ${activeReceipt ? 'opacity-0' : 'opacity-100'}`}>
+          <div className={`pointer-events-none absolute left-3 top-3 flex flex-col gap-1.5 rounded-md border border-[var(--warm-bark-deep)] bg-black/85 px-3.5 py-2.5 font-[var(--font-sans)] text-[11px] uppercase tracking-[0.14em] text-[#EFE6D2] backdrop-blur-[2px] transition-opacity ${activeReceipt ? 'opacity-0' : 'opacity-100'}`}>
             <span className="flex items-center gap-2"><span className="inline-block h-2 w-2 rounded-full bg-[#FFE4AA] shadow-[0_0_8px_2px_rgba(224,176,104,0.8)]" /> {s ? s.openCount : '~104'} with a public door</span>
             <span className="flex items-center gap-2"><span className="inline-block h-2 w-2 rounded-[1px] bg-[#6b4f2a]" /> {s ? s.nGivers.toLocaleString() : '10,141'} that give, no way in</span>
           </div>
@@ -435,11 +435,11 @@ export function PayoutWall({ minimal = false, message, messageHint }: { minimal?
               className="pointer-events-none absolute inset-x-0 top-7 z-10 flex flex-col items-center px-6 text-center"
               style={{ animation: 'rcptIn .55s ease-out both' }}
             >
-              <span className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.4em] text-[#E0B068]">The receipt</span>
+              <span className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.4em] text-[var(--warm-gold-bright)]">The receipt</span>
               <span className="mt-1 font-[var(--font-display)] text-[clamp(3rem,9vw,5.5rem)] font-bold leading-[0.95] text-[#FFE9C2]" style={{ textShadow: '0 0 40px rgba(224,176,104,0.45)' }}>
                 {resolved.big}
               </span>
-              <span className="mt-1 font-[var(--font-body)] text-[clamp(1rem,2.4vw,1.4rem)] text-[#F3EBDD]">{resolved.label}</span>
+              <span className="mt-1 font-[var(--font-body)] text-[clamp(1rem,2.4vw,1.4rem)] text-[var(--warm-cream)]">{resolved.label}</span>
               <span className="mt-1 font-[var(--font-sans)] text-[11px] uppercase tracking-[0.2em] text-[#9C8E78]">{resolved.sub}</span>
             </div>
           )}
@@ -448,7 +448,7 @@ export function PayoutWall({ minimal = false, message, messageHint }: { minimal?
           {activeReceipt && (
             <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/92 via-black/60 to-transparent px-6 pb-8 pt-24">
               <div className="mx-auto max-w-2xl text-center">
-                <span className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.3em] text-[#E0B068]">
+                <span className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.3em] text-[var(--warm-gold-bright)]">
                   {activeReceipt.tag}{activeReceipt.words ? ' · shared as words' : ''}
                 </span>
                 <p className="mt-2 font-[var(--font-body)] text-[clamp(1.15rem,2.7vw,1.7rem)] italic leading-snug text-[#F8F1E3]">
@@ -468,7 +468,7 @@ export function PayoutWall({ minimal = false, message, messageHint }: { minimal?
                 {hover.name ?? (hover.kind === 'dead' ? 'A foundation that moved nothing' : 'An undisclosed foundation')}
               </p>
               {hover.kind !== 'dead' && (
-                <p className="mt-1 font-[var(--font-display)] text-lg font-bold leading-none text-[#E0B068]">
+                <p className="mt-1 font-[var(--font-display)] text-lg font-bold leading-none text-[var(--warm-gold-bright)]">
                   {fmtMoney(hover.giving)}<span className="ml-1.5 font-[var(--font-sans)] text-[10px] font-normal uppercase tracking-[0.12em] text-[#9C8E78]">given last year</span>
                 </p>
               )}
@@ -484,10 +484,10 @@ export function PayoutWall({ minimal = false, message, messageHint }: { minimal?
       {(message || messageHint) && (
         <div className="mx-auto mt-9 max-w-2xl text-center">
           {message && (
-            <p className="font-[var(--font-body)] text-[clamp(1.1rem,2.5vw,1.5rem)] leading-[1.5] text-[#F3EBDD]">{message}</p>
+            <p className="font-[var(--font-body)] text-[clamp(1.1rem,2.5vw,1.5rem)] leading-[1.5] text-[var(--warm-cream)]">{message}</p>
           )}
           {messageHint && (
-            <p className="mt-3 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[#CFA16B]">{messageHint}</p>
+            <p className="mt-3 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--warm-gold)]">{messageHint}</p>
           )}
         </div>
       )}
@@ -503,10 +503,10 @@ export function PayoutWall({ minimal = false, message, messageHint }: { minimal?
               aria-pressed={playing}
               aria-label={playing ? 'Stop this confession' : 'Play this confession and light its receipt'}
               className={`flex items-start gap-3 rounded-xl border p-4 text-left transition ${
-                playing ? 'border-[#CFA16B] bg-[#CFA16B]/10' : 'border-[#3A2C18] bg-[#1A130B] hover:border-[#5A4A30]'
+                playing ? 'border-[var(--warm-gold)] bg-[#CFA16B]/10' : 'border-[var(--warm-bark-deep)] bg-[#1A130B] hover:border-[#5A4A30]'
               }`}
             >
-              <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border" style={{ borderColor: 'rgba(224,176,104,0.5)', color: '#E0B068', background: 'rgba(224,176,104,0.08)' }}>
+              <span className="mt-0.5 flex h-9 w-9 shrink-0 items-center justify-center rounded-full border" style={{ borderColor: 'rgba(224,176,104,0.5)', color: 'var(--warm-gold-bright)', background: 'rgba(224,176,104,0.08)' }}>
                 {playing ? (
                   <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1" /><rect x="14" y="5" width="4" height="14" rx="1" /></svg>
                 ) : v.words ? (
@@ -516,7 +516,7 @@ export function PayoutWall({ minimal = false, message, messageHint }: { minimal?
                 )}
               </span>
               <span className="min-w-0">
-                <span className="font-[var(--font-sans)] text-[10px] uppercase tracking-[0.2em] text-[#CFA16B]">{v.tag}{v.words ? ' · words' : ''}</span>
+                <span className="font-[var(--font-sans)] text-[10px] uppercase tracking-[0.2em] text-[var(--warm-gold)]">{v.tag}{v.words ? ' · words' : ''}</span>
                 <span className="mt-1 block font-[var(--font-body)] text-[15px] italic leading-[1.5] text-[#E4D8C4]">&ldquo;{v.line}&rdquo;</span>
               </span>
             </button>
@@ -535,7 +535,7 @@ export function PayoutWall({ minimal = false, message, messageHint }: { minimal?
               value={query}
               onChange={(e) => setQuery(e.target.value)}
               placeholder="Search any foundation by name…"
-              className="w-full rounded-lg border border-[#3A2C18] bg-[#1A130B] px-3.5 py-2.5 font-[var(--font-body)] text-sm text-[#F3EBDD] placeholder:text-sand-lift focus:border-[#CFA16B] focus:outline-none"
+              className="w-full rounded-lg border border-[var(--warm-bark-deep)] bg-[#1A130B] px-3.5 py-2.5 font-[var(--font-body)] text-sm text-[var(--warm-cream)] placeholder:text-sand-lift focus:border-[var(--warm-gold)] focus:outline-none"
             />
           </label>
           <div className="flex items-center gap-4 text-[12px]">
@@ -543,7 +543,7 @@ export function PayoutWall({ minimal = false, message, messageHint }: { minimal?
               onClick={() => setOpenOnly((v) => !v)}
               aria-pressed={openOnly}
               className={`rounded-full border px-3 py-1.5 font-[var(--font-sans)] uppercase tracking-[0.16em] transition ${
-                openOnly ? 'border-[#CFA16B] bg-[#CFA16B]/15 text-[#FFE4AA]' : 'border-[#3A2C18] text-[#B0A48E] hover:border-[#5A4A30]'
+                openOnly ? 'border-[var(--warm-gold)] bg-[#CFA16B]/15 text-[#FFE4AA]' : 'border-[var(--warm-bark-deep)] text-[#B0A48E] hover:border-[#5A4A30]'
               }`}
             >
               Open doors only
@@ -554,7 +554,7 @@ export function PayoutWall({ minimal = false, message, messageHint }: { minimal?
           </div>
         </div>
 
-        <ul className="mt-3 max-h-[360px] divide-y divide-[#241a10] overflow-y-auto rounded-xl border border-[#3A2C18] bg-[#120D07]">
+        <ul className="mt-3 max-h-[360px] divide-y divide-[#241a10] overflow-y-auto rounded-xl border border-[var(--warm-bark-deep)] bg-[#120D07]">
           {shown.map((e) => (
             <li key={e.i} className="flex items-center justify-between gap-3 px-4 py-2.5">
               <span className="flex min-w-0 items-center gap-2.5">

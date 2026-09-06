@@ -40,7 +40,7 @@ export default async function ArtworksPage() {
             <Link
               key={work.slug}
               href={work.href}
-              className="group overflow-hidden rounded-[28px] border border-[#E1D3BA] bg-white/80 transition hover:-translate-y-1 hover:border-forest hover:shadow-[0_20px_50px_rgba(50,42,31,0.12)]"
+              className="group overflow-hidden rounded-[28px] border border-[var(--warm-sand-line)] bg-white/80 transition hover:-translate-y-1 hover:border-forest hover:shadow-[0_20px_50px_rgba(50,42,31,0.12)]"
             >
               {work.previewMedia ? (
                 work.previewMedia.kind === "image" ? (
@@ -73,7 +73,7 @@ export default async function ArtworksPage() {
                   </div>
                 )
               ) : (
-                <div className="flex h-64 items-end bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-6">
+                <div className="flex h-64 items-end bg-gradient-to-br from-[var(--warm-paper)] via-[#E7DDC7] to-[var(--warm-sand-deep)] p-6">
                   <p className="text-sm uppercase tracking-[0.24em] text-[var(--we-warm-brown)]">
                     Images to come
                   </p>
@@ -97,7 +97,7 @@ export default async function ArtworksPage() {
                 </div>
 
                 <div className="flex flex-wrap gap-2">
-                  <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]">
+                  <span className="rounded-full bg-[var(--warm-paper)] px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]">
                     {work.collaborators}
                   </span>
                   {work.live.storyCount > 0 ? (
@@ -112,7 +112,7 @@ export default async function ArtworksPage() {
                   ) : null}
                 </div>
 
-                <p className="border-l border-[#D8C7A5] pl-4 text-sm italic text-[#5A4A3A]">
+                <p className="border-l border-[#D8C7A5] pl-4 text-sm italic text-[var(--warm-bark)]">
                   {work.quote}
                 </p>
 
@@ -121,7 +121,7 @@ export default async function ArtworksPage() {
                     {work.supportingMedia.map((item) => (
                       <div
                         key={item.url}
-                        className="overflow-hidden rounded-[18px] border border-[var(--we-sand)] bg-[#FDFBF7]"
+                        className="overflow-hidden rounded-[18px] border border-[var(--we-sand)] bg-[var(--warm-paper-bright)]"
                       >
                         <div className="relative aspect-[4/3] overflow-hidden">
                           <img

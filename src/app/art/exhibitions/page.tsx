@@ -56,7 +56,7 @@ export default async function ExhibitionsPage() {
           {exhibitionPatterns.map((pattern) => (
             <div
               key={pattern.title}
-              className="rounded-3xl border border-[#E1D3BA] bg-white/75 p-8"
+              className="rounded-3xl border border-[var(--warm-sand-line)] bg-white/75 p-8"
             >
               <h3 className="font-[var(--font-display)] text-xl font-semibold text-[var(--we-olive)]">
                 {pattern.title}
@@ -80,7 +80,7 @@ export default async function ExhibitionsPage() {
             <Link
               key={work.slug}
               href={work.href}
-              className="group overflow-hidden rounded-[28px] border border-[#E1D3BA] bg-white/80 transition hover:-translate-y-1 hover:border-forest hover:shadow-[0_20px_50px_rgba(50,42,31,0.12)]"
+              className="group overflow-hidden rounded-[28px] border border-[var(--warm-sand-line)] bg-white/80 transition hover:-translate-y-1 hover:border-forest hover:shadow-[0_20px_50px_rgba(50,42,31,0.12)]"
             >
               {work.previewMedia ? (
                 work.previewMedia.kind === "image" ? (
@@ -120,12 +120,12 @@ export default async function ExhibitionsPage() {
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {work.live.storyCount > 0 ? (
-                    <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]">
+                    <span className="rounded-full bg-[var(--warm-paper)] px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]">
                       {work.live.storyCount} stories
                     </span>
                   ) : null}
                   {work.live.mediaCount > 0 ? (
-                    <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]">
+                    <span className="rounded-full bg-[var(--warm-paper)] px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]">
                       {work.live.mediaCount} media
                     </span>
                   ) : null}

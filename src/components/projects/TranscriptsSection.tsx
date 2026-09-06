@@ -135,7 +135,7 @@ export function TranscriptsSection({
                     {t.themes.slice(0, 6).map((theme) => (
                       <span
                         key={theme}
-                        className="rounded-full border border-[var(--we-sand)] bg-[#F6F1E7] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-[var(--we-olive)]"
+                        className="rounded-full border border-[var(--we-sand)] bg-[var(--warm-paper)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-[var(--we-olive)]"
                       >
                         {theme}
                       </span>
@@ -169,7 +169,7 @@ export function TranscriptsSection({
                 ) : null}
 
                 {t.segments.length > 0 ? (
-                  <details className="group rounded-2xl border border-[var(--we-sand)] bg-[#FDFBF7] p-4">
+                  <details className="group rounded-2xl border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] p-4">
                     <summary className="cursor-pointer text-xs uppercase tracking-[0.22em] text-[var(--we-brown-deep)]">
                       Full transcript ({t.segments.length} segments)
                     </summary>
@@ -187,7 +187,7 @@ export function TranscriptsSection({
                     </div>
                   </details>
                 ) : t.content ? (
-                  <details className="group rounded-2xl border border-[var(--we-sand)] bg-[#FDFBF7] p-4">
+                  <details className="group rounded-2xl border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] p-4">
                     <summary className="cursor-pointer text-xs uppercase tracking-[0.22em] text-[var(--we-brown-deep)]">
                       Full transcript
                     </summary>

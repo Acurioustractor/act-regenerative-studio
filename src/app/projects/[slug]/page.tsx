@@ -622,7 +622,7 @@ export default async function ProjectPage({
 
       {/* Related work, editorially-curated wiki backlinks */}
       {project.wikiBacklinks.length > 0 && (
-        <section className="rounded-[28px] border border-[var(--we-sand)] bg-[#FDFBF7] p-6 md:p-10">
+        <section className="rounded-[28px] border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] p-6 md:p-10">
           <div className="space-y-3">
             <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-brown-deep)]">
               Related work
@@ -640,7 +640,7 @@ export default async function ProjectPage({
               <li key={link.slug}>
                 <Link
                   href={`/wiki/${link.slug}`}
-                  className="inline-flex items-center rounded-full border border-[var(--we-sand)] bg-white px-4 py-2 text-sm text-[var(--we-olive)] transition hover:border-[#7A9B76] hover:text-forest-sage"
+                  className="inline-flex items-center rounded-full border border-[var(--we-sand)] bg-white px-4 py-2 text-sm text-[var(--we-olive)] transition hover:border-[var(--warm-sage)] hover:text-forest-sage"
                 >
                   {link.name}
                 </Link>
@@ -674,7 +674,7 @@ export default async function ProjectPage({
             {projectEditorial.leadArticle ? (
               <Link
                 href={projectEditorial.leadArticle.localPath}
-                className="group overflow-hidden rounded-[28px] border border-[#D8C6A7] bg-[#11110F] text-[#F4ECDE] transition-all hover:border-[#CFA16B] hover:shadow-[0_18px_45px_rgba(39,30,20,0.22)]"
+                className="group overflow-hidden rounded-[28px] border border-[#D8C6A7] bg-[var(--warm-night)] text-[#F4ECDE] transition-all hover:border-[var(--warm-gold)] hover:shadow-[0_18px_45px_rgba(39,30,20,0.22)]"
               >
                 {projectEditorial.leadArticle.featuredImageUrl ? (
                   <div className="relative h-72 overflow-hidden">
@@ -742,7 +742,7 @@ export default async function ProjectPage({
                 <Link
                   key={article.slug}
                   href={article.localPath}
-                  className="group overflow-hidden rounded-[24px] border border-[var(--we-sand)] bg-white transition-all hover:border-[#7A9B76] hover:shadow-lg"
+                  className="group overflow-hidden rounded-[24px] border border-[var(--we-sand)] bg-white transition-all hover:border-[var(--warm-sage)] hover:shadow-lg"
                 >
                   {article.featuredImageUrl ? (
                     <div className="relative h-40 overflow-hidden">
@@ -753,7 +753,7 @@ export default async function ProjectPage({
                       />
                     </div>
                   ) : (
-                    <div className="flex h-40 items-end bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-5">
+                    <div className="flex h-40 items-end bg-gradient-to-br from-[var(--warm-paper)] via-[#E7DDC7] to-[var(--warm-sand-deep)] p-5">
                       <p className="text-xs uppercase tracking-[0.24em] text-[var(--we-warm-brown)]">
                         Editorial note
                       </p>
@@ -849,7 +849,7 @@ export default async function ProjectPage({
                     </div>
                   </>
                 ) : item.type.startsWith('audio') || item.type === 'audio' ? (
-                  <div className="flex h-full w-full flex-col justify-between bg-gradient-to-br from-[var(--we-olive)] via-[var(--we-brown-deep)] to-[#7A9B76] p-4 text-white">
+                  <div className="flex h-full w-full flex-col justify-between bg-gradient-to-br from-[var(--we-olive)] via-[var(--we-brown-deep)] to-[var(--warm-sage)] p-4 text-white">
                     <div className="rounded-full bg-white/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90">
                       Audio
                     </div>
@@ -906,7 +906,7 @@ export default async function ProjectPage({
             return (
               <div
                 key={`${action.label}-${action.href}`}
-                className="rounded-2xl border border-[var(--we-sand)] bg-[#FDFBF7] p-5"
+                className="rounded-2xl border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] p-5"
               >
                 <h3 className="text-base font-semibold text-[var(--we-olive)]">
                   {action.label}
@@ -958,7 +958,7 @@ export default async function ProjectPage({
                 <Link
                   key={related.slug}
                   href={`/projects/${related.slug}`}
-                  className="group rounded-[24px] border border-[var(--we-sand)] bg-white overflow-hidden transition-all hover:shadow-lg hover:border-[#7A9B76]"
+                  className="group rounded-[24px] border border-[var(--we-sand)] bg-white overflow-hidden transition-all hover:shadow-lg hover:border-[var(--warm-sage)]"
                 >
                   {related.heroImage && (
                     <div className="relative h-40 overflow-hidden">
@@ -1008,7 +1008,7 @@ export default async function ProjectPage({
               <Link
                 key={work.slug}
                 href={work.href}
-                className="group overflow-hidden rounded-[24px] border border-[#2F2A25] bg-[#171612] transition-all hover:border-[#CFA16B] hover:shadow-lg"
+                className="group overflow-hidden rounded-[24px] border border-[#2F2A25] bg-[#171612] transition-all hover:border-[var(--warm-gold)] hover:shadow-lg"
               >
                 {work.previewMedia ? (
                   work.previewMedia.kind === 'image' ? (
@@ -1018,7 +1018,7 @@ export default async function ProjectPage({
                       className="h-40 w-full object-cover transition-transform group-hover:scale-105"
                     />
                   ) : (
-                    <div className="relative h-40 overflow-hidden bg-[#11110F]">
+                    <div className="relative h-40 overflow-hidden bg-[var(--warm-night)]">
                       {work.previewMedia.thumbnailUrl ? (
                         <img
                           src={work.previewMedia.thumbnailUrl}
@@ -1034,16 +1034,16 @@ export default async function ProjectPage({
                   )
                 ) : null}
                 <div className="space-y-3 p-5">
-                  <div className="flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-[#CFA16B]">
+                  <div className="flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-[var(--warm-gold)]">
                     <span>{work.medium}</span>
                     <span className="text-[#6E6257]">•</span>
                     <span>{work.connectedTo}</span>
                   </div>
-                  <h3 className="font-[var(--font-display)] text-lg font-semibold text-[#F3EBDD] group-hover:text-white">
+                  <h3 className="font-[var(--font-display)] text-lg font-semibold text-[var(--warm-cream)] group-hover:text-white">
                     {work.title}
                   </h3>
                   <p className="text-sm text-[#D7C8B2] line-clamp-3">{work.description}</p>
-                  <div className="inline-flex items-center gap-2 text-sm font-semibold text-[#F3EBDD] transition group-hover:gap-3">
+                  <div className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--warm-cream)] transition group-hover:gap-3">
                     <span>View work</span>
                     <span aria-hidden="true">&rarr;</span>
                   </div>
@@ -1055,11 +1055,11 @@ export default async function ProjectPage({
       )}
 
       {/* Story and wiki follow-through */}
-      <section className="rounded-3xl border border-[var(--we-sand)] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 text-center md:p-12">
+      <section className="rounded-3xl border border-[var(--we-sand)] bg-gradient-to-br from-[var(--warm-paper)] via-[#E7DDC7] to-[var(--warm-sand-deep)] p-8 text-center md:p-12">
         <h3 className="mb-3 font-[var(--font-display)] text-xl font-semibold text-[var(--we-olive)] md:text-2xl">
           Keep following {project.title}
         </h3>
-        <p className="mx-auto mb-6 max-w-2xl text-sm text-[#5A4A3A]">
+        <p className="mx-auto mb-6 max-w-2xl text-sm text-[var(--warm-bark)]">
           Stories, source notes, media, and partner pathways should keep pointing
           back to the same public record as this project changes.
         </p>

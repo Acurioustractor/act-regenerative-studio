@@ -68,7 +68,7 @@ export default function ImpactPage() {
                     title="From listening to action, across the current set of initiatives"
                     description="A map of how our current work connects listening, communities, authority, and evidence. Useful for pattern-reading, not a real-time audit."
                 />
-                <div className="w-full h-[500px] bg-[#F6F1E7] border border-[#E1D3BA] rounded-3xl overflow-hidden p-8 shadow-sm">
+                <div className="w-full h-[500px] bg-[var(--warm-paper)] border border-[var(--warm-sand-line)] rounded-3xl overflow-hidden p-8 shadow-sm">
                     <div className="flex justify-between items-center mb-6 border-b border-[#E1D3BA]/50 pb-2">
                         <h3 className="text-sm font-bold uppercase tracking-widest text-[var(--we-warm-brown)]">How the work flows</h3>
                         <span className="text-xs text-[#8B4513] bg-[#F0EAE0] px-2 py-1 rounded-full">Current working set</span>
@@ -77,19 +77,19 @@ export default function ImpactPage() {
                 </div>
 
                 <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                    <div className="p-6 bg-white/60 rounded-2xl border border-[#E1D3BA] text-center">
+                    <div className="p-6 bg-white/60 rounded-2xl border border-[var(--warm-sand-line)] text-center">
                         <div className="text-4xl font-[var(--font-display)] text-[var(--we-warm-brown)]">{totalInitiatives}</div>
                         <div className="text-xs uppercase tracking-widest mt-2 text-[var(--we-warm-brown)]">Current initiatives</div>
                     </div>
-                    <div className="p-6 bg-white/60 rounded-2xl border border-[#E1D3BA] text-center">
+                    <div className="p-6 bg-white/60 rounded-2xl border border-[var(--warm-sand-line)] text-center">
                         <div className="text-4xl font-[var(--font-display)] text-[var(--we-warm-brown)]">{totalContexts}</div>
                         <div className="text-xs uppercase tracking-widest mt-2 text-[var(--we-warm-brown)]">Contexts in view</div>
                     </div>
-                    <div className="p-6 bg-white/60 rounded-2xl border border-[#E1D3BA] text-center">
+                    <div className="p-6 bg-white/60 rounded-2xl border border-[var(--warm-sand-line)] text-center">
                         <div className="text-4xl font-[var(--font-display)] text-[var(--we-warm-brown)]">{communityLedCount}</div>
                         <div className="text-xs uppercase tracking-widest mt-2 text-[var(--we-warm-brown)]">High authority</div>
                     </div>
-                    <div className="p-6 bg-white/60 rounded-2xl border border-[#E1D3BA] text-center">
+                    <div className="p-6 bg-white/60 rounded-2xl border border-[var(--warm-sand-line)] text-center">
                         <div className="text-4xl font-[var(--font-display)] text-[var(--we-warm-brown)]">{highEvidenceCount}</div>
                         <div className="text-xs uppercase tracking-widest mt-2 text-[var(--we-warm-brown)]">High evidence</div>
                     </div>
@@ -110,7 +110,7 @@ export default function ImpactPage() {
                         theme: init.status === 'active' ? 'Active' : 'Concept',
                         meta: (
                             <div className="mt-4 flex gap-6">
-                                <SignalBars label="Evidence" level={init.evidence_strength} color="#2D5A3D" />
+                                <SignalBars label="Evidence" level={init.evidence_strength} color="var(--site-green)" />
                                 <SignalBars label="Authority" level={init.community_authority} color="#D87D4A" />
                             </div>
                         )
@@ -141,7 +141,7 @@ export default function ImpactPage() {
                 />
                 <div className="space-y-4">
                     {REAL_EVIDENCE.map((ev, i) => (
-                        <div key={i} className="flex flex-col md:flex-row gap-4 p-6 bg-white rounded-xl border border-[#E1D3BA]">
+                        <div key={i} className="flex flex-col md:flex-row gap-4 p-6 bg-white rounded-xl border border-[var(--warm-sand-line)]">
                             <div className="md:w-1/4">
                                 <span className="inline-block px-3 py-1 bg-forest-soft text-forest rounded-full text-xs font-semibold mb-2">
                                     {ev.evidence_type}
@@ -157,9 +157,9 @@ export default function ImpactPage() {
                 </div>
             </section>
 
-            <section className="rounded-3xl border border-[#2F2A25] bg-[#11110F] p-8 text-[#F3EBDD] md:p-12">
+            <section className="rounded-3xl border border-[#2F2A25] bg-[var(--warm-night)] p-8 text-[var(--warm-cream)] md:p-12">
                 <div className="space-y-4">
-                    <p className="text-xs uppercase tracking-[0.3em] text-[#CFA16B]">
+                    <p className="text-xs uppercase tracking-[0.3em] text-[var(--warm-gold)]">
                         Interpretation note
                     </p>
                     <h2 className="font-[var(--font-display)] text-2xl font-semibold md:text-3xl">

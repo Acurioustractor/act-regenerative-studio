@@ -70,7 +70,7 @@ export default async function VisionPage() {
                     title="Find themes inside the vision"
                     description="Use search if you are looking for a specific thread, project, or phrase inside the seasonal map."
                 />
-                <div className="rounded-3xl border border-[#E1D3BA] bg-white/80 p-8">
+                <div className="rounded-3xl border border-[var(--warm-sand-line)] bg-white/80 p-8">
                     <VisionSearch />
                 </div>
             </section>
@@ -86,10 +86,10 @@ export default async function VisionPage() {
                 </div>
             </section>
 
-            <section className="rounded-3xl border border-[#2F2A25] bg-[#11110F] p-8 text-[#F3EBDD] md:p-12">
+            <section className="rounded-3xl border border-[#2F2A25] bg-[var(--warm-night)] p-8 text-[var(--warm-cream)] md:p-12">
                 <div className="grid gap-6 lg:grid-cols-[1fr_auto] lg:items-end">
                     <div className="space-y-3">
-                        <p className="text-xs uppercase tracking-[0.3em] text-[#CFA16B]">
+                        <p className="text-xs uppercase tracking-[0.3em] text-[var(--warm-gold)]">
                             Next move
                         </p>
                         <h2 className="font-[var(--font-display)] text-2xl font-semibold">
@@ -102,7 +102,7 @@ export default async function VisionPage() {
                     <div className="flex flex-wrap gap-3">
                         <Link
                             href="/projects"
-                            className="rounded-full bg-[#CFA16B] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#11110F] transition hover:bg-[#E0B680]"
+                            className="rounded-full bg-[var(--warm-gold)] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--warm-night)] transition hover:bg-[#E0B680]"
                         >
                             Open projects
                         </Link>

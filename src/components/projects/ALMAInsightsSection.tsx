@@ -43,7 +43,7 @@ function SignalBar({ value, max = 5 }: { value: number; max?: number }) {
   return (
     <div className="h-2 w-full rounded-full bg-[var(--we-sand)]/50">
       <div
-        className="h-2 rounded-full bg-gradient-to-r from-[#7A9B76] to-forest transition-all duration-500"
+        className="h-2 rounded-full bg-gradient-to-r from-[var(--warm-sage)] to-forest transition-all duration-500"
         style={{ width: `${percentage}%` }}
       />
     </div>
@@ -232,7 +232,7 @@ export function ALMAInsightsSection({
       </div>
 
       {/* ALMA Methodology Note */}
-      <div className="rounded-2xl border border-[var(--we-sand)] bg-[#F6F1E7] p-6 text-center">
+      <div className="rounded-2xl border border-[var(--we-sand)] bg-[var(--warm-paper)] p-6 text-center">
         <p className="text-sm text-[var(--we-olive-deep)]">
           <span className="font-medium">What is the Australian Living Map of Alternatives?</span> It
           keeps evidence, alternatives, and local authority connected so insights are community-verified, ethically gathered, and actionable.

@@ -177,7 +177,7 @@ export function EditableImage({
           onClick={() => setPicking(false)}
         >
           <div
-            className="flex max-h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-t-2xl bg-[#1a1a1a] sm:rounded-2xl"
+            className="flex max-h-[90vh] w-full max-w-4xl flex-col overflow-hidden rounded-t-2xl bg-[var(--site-ink)] sm:rounded-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
@@ -206,7 +206,7 @@ export function EditableImage({
                 onClick={() => setActiveSegment("projects")}
                 className={`rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-wide transition ${
                   activeSegment === "projects"
-                    ? "bg-white text-[#1a1a1a]"
+                    ? "bg-white text-[var(--site-ink)]"
                     : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white"
                 }`}
               >
@@ -217,7 +217,7 @@ export function EditableImage({
                 onClick={() => setActiveSegment("orgs")}
                 className={`rounded-full px-4 py-1.5 text-xs font-semibold uppercase tracking-wide transition ${
                   activeSegment === "orgs"
-                    ? "bg-white text-[#1a1a1a]"
+                    ? "bg-white text-[var(--site-ink)]"
                     : "bg-white/5 text-white/60 hover:bg-white/10 hover:text-white"
                 }`}
               >
@@ -276,7 +276,7 @@ export function EditableImage({
                         onClick={() => pickImage(img.url)}
                         className={`group relative aspect-square overflow-hidden rounded-lg transition ${
                           isActive
-                            ? "ring-2 ring-green-500 ring-offset-2 ring-offset-[#1a1a1a]"
+                            ? "ring-2 ring-green-500 ring-offset-2 ring-offset-[var(--site-ink)]"
                             : "hover:ring-1 hover:ring-white/30"
                         }`}
                       >

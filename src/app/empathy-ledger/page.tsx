@@ -265,7 +265,7 @@ export default async function EmpathyLedgerPage() {
                 { title: "Impact reporting", body: "Evidence that respects dignity while demonstrating outcomes to funders and policymakers." },
               ].map((item) => (
                 <div key={item.title}>
-                  <h3 className="font-[var(--font-display)] text-xl font-semibold text-[#FAFAF7]">{item.title}</h3>
+                  <h3 className="font-[var(--font-display)] text-xl font-semibold text-[var(--site-bg)]">{item.title}</h3>
                   <p className="mt-3 font-[var(--font-body)] text-[15px] leading-[1.8] text-[#FAFAF7]/60">{item.body}</p>
                 </div>
               ))}
@@ -339,7 +339,7 @@ export default async function EmpathyLedgerPage() {
       <ScrollReveal>
         <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[800px] text-center">
-            <h2 className="font-[var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-light leading-[1.1] text-[#FAFAF7]">
+            <h2 className="font-[var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-light leading-[1.1] text-[var(--site-bg)]">
               Every story matters. When we preserve our voices, we preserve our culture.
             </h2>
             <p className="mx-auto mt-8 max-w-lg font-[var(--font-body)] text-lg leading-[1.8] text-[#FAFAF7]/60">

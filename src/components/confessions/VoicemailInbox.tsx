@@ -139,8 +139,8 @@ export function VoicemailInbox({ confessions }: { confessions: Confession[] }) {
           onClick={() => setFilter('all')}
           className={`rounded-full border px-4 py-1.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.16em] transition-colors ${
             filter === 'all'
-              ? 'border-[#CFA16B] bg-[#CFA16B]/10 text-[#EFE6D2]'
-              : 'border-[#3A2C18] text-[#9A8C73] hover:border-[#5A4A30]'
+              ? 'border-[var(--warm-gold)] bg-[#CFA16B]/10 text-[#EFE6D2]'
+              : 'border-[var(--warm-bark-deep)] text-[#9A8C73] hover:border-[#5A4A30]'
           }`}
         >
           All <span className="font-mono">{confessions.length}</span>
@@ -153,7 +153,7 @@ export function VoicemailInbox({ confessions }: { confessions: Confession[] }) {
               onClick={() => setFilter(t)}
               className="rounded-full border px-4 py-1.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.16em] transition-colors"
               style={{
-                borderColor: active ? `rgb(${themeMeta[t].rgb})` : '#3A2C18',
+                borderColor: active ? `rgb(${themeMeta[t].rgb})` : 'var(--warm-bark-deep)',
                 color: active ? '#EFE6D2' : '#9A8C73',
                 background: active ? `rgba(${themeMeta[t].rgb},0.1)` : 'transparent',
               }}
@@ -165,7 +165,7 @@ export function VoicemailInbox({ confessions }: { confessions: Confession[] }) {
       </div>
 
       {/* The inbox. */}
-      <ul className="mt-10 overflow-hidden rounded-2xl border border-[#3A2C18] bg-[#1A130B]">
+      <ul className="mt-10 overflow-hidden rounded-2xl border border-[var(--warm-bark-deep)] bg-[#1A130B]">
         {shown.map((c) => {
           const playing = playingId === c.id;
           const cleared = isCleared(c);
@@ -182,7 +182,7 @@ export function VoicemailInbox({ confessions }: { confessions: Confession[] }) {
           return (
             <li
               key={c.id}
-              className="border-b border-[#2E2215] p-6 last:border-b-0 md:p-7"
+              className="border-b border-[var(--warm-earth)] p-6 last:border-b-0 md:p-7"
               style={playing ? { background: `rgba(${t.rgb},0.05)` } : undefined}
             >
               {cleared ? (

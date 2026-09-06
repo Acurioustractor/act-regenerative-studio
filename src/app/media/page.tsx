@@ -174,13 +174,13 @@ export default async function MediaPage() {
           <div className="flex flex-wrap gap-3 lg:justify-end">
             <Link
               href="/empathy-ledger"
-              className="site-glow-link rounded-full bg-[#245c43] px-7 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#1c4935]"
+              className="site-glow-link rounded-full bg-[var(--warm-forest)] px-7 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#1c4935]"
             >
               About Empathy Ledger
             </Link>
             <Link
               href="/people"
-              className="site-glow-link rounded-full border border-[#245c43] px-7 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#1f2b21] transition hover:bg-white/75"
+              className="site-glow-link rounded-full border border-[var(--warm-forest)] px-7 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#1f2b21] transition hover:bg-white/75"
             >
               Meet the people
             </Link>

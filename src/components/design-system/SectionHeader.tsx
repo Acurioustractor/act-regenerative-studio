@@ -19,7 +19,7 @@ export function SectionHeader({
   ledeMaxWidth,
   align = "left",
 }: SectionHeaderProps) {
-  const titleColor = onDark ? "text-[#FAFAF7]" : "text-[var(--site-ink)]";
+  const titleColor = onDark ? "text-[var(--site-bg)]" : "text-[var(--site-ink)]";
   const ledeColor = onDark ? "text-[#FAFAF7]/60" : "text-[var(--site-muted)]";
   // Clay has to switch by surface. clay-text is tuned for the light surfaces
   // and drops to 2.37:1 on --site-dark; the raw brand clay reads at 5.42:1

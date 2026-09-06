@@ -53,7 +53,7 @@ export function CommunityVoicesSection({
               const hasProfile = Boolean(getStorytellerById(storyteller.storyteller_id));
               const cardClass =
                 'rounded-[24px] border border-[var(--we-sand)] bg-white p-6 transition-shadow hover:shadow-lg' +
-                (hasProfile ? ' hover:border-[#7A9B76]' : '');
+                (hasProfile ? ' hover:border-[var(--warm-sage)]' : '');
               const inner = (
                 <>
                   {storyteller.profile_image_url && (
@@ -130,7 +130,7 @@ export function CommunityVoicesSection({
                 href={story.story_url || `${process.env.NEXT_PUBLIC_EMPATHY_LEDGER_URL}/stories/${story.story_id}`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group rounded-[24px] border border-[var(--we-sand)] bg-white overflow-hidden transition-all hover:shadow-lg hover:border-[#7A9B76]"
+                className="group rounded-[24px] border border-[var(--we-sand)] bg-white overflow-hidden transition-all hover:shadow-lg hover:border-[var(--warm-sage)]"
               >
                 {story.featured_image_url && (
                   <div className="relative h-48 w-full overflow-hidden">
@@ -163,7 +163,7 @@ export function CommunityVoicesSection({
                       {story.themes.slice(0, 3).map((theme) => (
                         <span
                           key={theme}
-                          className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs text-[var(--we-brown-deep)]"
+                          className="rounded-full bg-[var(--warm-paper)] px-3 py-1 text-xs text-[var(--we-brown-deep)]"
                         >
                           {theme}
                         </span>
@@ -181,7 +181,7 @@ export function CommunityVoicesSection({
       )}
 
       {/* Link to Empathy Ledger */}
-      <div className="text-center rounded-[24px] border border-[var(--we-sand)] bg-gradient-to-br from-[#F6F1E7] to-[#E7DDC7] p-8">
+      <div className="text-center rounded-[24px] border border-[var(--we-sand)] bg-gradient-to-br from-[var(--warm-paper)] to-[#E7DDC7] p-8">
         <p className="text-sm text-[var(--we-brown-deep)]">
           These stories are powered by{' '}
           <a

@@ -108,7 +108,7 @@ export default async function StorytellerPage({ params }: PageProps) {
               {storyteller.culturalBackground.map((cb) => (
                 <span
                   key={cb}
-                  className="rounded-full border border-[var(--we-sand)] bg-[#F6F1E7] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-[var(--we-olive)]"
+                  className="rounded-full border border-[var(--we-sand)] bg-[var(--warm-paper)] px-3 py-1 text-[11px] uppercase tracking-[0.18em] text-[var(--we-olive)]"
                 >
                   {cb}
                 </span>
@@ -119,7 +119,7 @@ export default async function StorytellerPage({ params }: PageProps) {
       </header>
 
       {storyteller.analysis ? (
-        <section className="grid gap-8 rounded-[28px] border border-[var(--we-sand)] bg-[#FDFBF7] p-6 md:grid-cols-3 md:p-10">
+        <section className="grid gap-8 rounded-[28px] border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] p-6 md:grid-cols-3 md:p-10">
           <div className="space-y-3">
             <p className="text-xs uppercase tracking-[0.22em] text-[var(--we-brown-deep)]">
               Work at a glance
@@ -211,7 +211,7 @@ export default async function StorytellerPage({ params }: PageProps) {
               <Link
                 key={slug}
                 href={`/projects/${slug}`}
-                className="rounded-full border border-[var(--we-sand)] bg-white px-4 py-2 text-sm text-[var(--we-olive)] transition hover:border-[#7A9B76]"
+                className="rounded-full border border-[var(--we-sand)] bg-white px-4 py-2 text-sm text-[var(--we-olive)] transition hover:border-[var(--warm-sage)]"
               >
                 {title}
               </Link>

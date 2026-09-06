@@ -43,9 +43,9 @@ export default async function ArtistsPage() {
             <Link
               key={collaborator.key}
               href={collaborator.href}
-              className="group overflow-hidden rounded-3xl border border-[#E1D3BA] bg-white/80 transition hover:-translate-y-1 hover:border-forest hover:shadow-[0_18px_45px_rgba(50,42,31,0.1)]"
+              className="group overflow-hidden rounded-3xl border border-[var(--warm-sand-line)] bg-white/80 transition hover:-translate-y-1 hover:border-forest hover:shadow-[0_18px_45px_rgba(50,42,31,0.1)]"
             >
-              <div className="flex min-h-[120px] items-end bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-6">
+              <div className="flex min-h-[120px] items-end bg-gradient-to-br from-[var(--warm-paper)] via-[#E7DDC7] to-[var(--warm-sand-deep)] p-6">
                 <div className="space-y-1">
                   <p className="text-xs uppercase tracking-[0.22em] text-[var(--we-warm-brown)]">
                     {collaborator.source === "storyteller"
@@ -68,7 +68,7 @@ export default async function ArtistsPage() {
                   {collaborator.relatedWorks.map((work) => (
                     <span
                       key={`${collaborator.key}-${work}`}
-                      className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]"
+                      className="rounded-full bg-[var(--warm-paper)] px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]"
                     >
                       {work}
                     </span>
@@ -84,7 +84,7 @@ export default async function ArtistsPage() {
         </div>
       </section>
 
-      <section className="rounded-3xl border border-[var(--we-sand)] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12">
+      <section className="rounded-3xl border border-[var(--we-sand)] bg-gradient-to-br from-[var(--warm-paper)] via-[#E7DDC7] to-[var(--warm-sand-deep)] p-8 md:p-12">
         <div className="grid gap-6 md:grid-cols-3">
           <div className="rounded-2xl border border-[#D8C7A5] bg-white/75 p-6">
             <h3 className="font-semibold text-[var(--we-olive)]">Residency collaborators</h3>

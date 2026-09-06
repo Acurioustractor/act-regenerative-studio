@@ -58,7 +58,7 @@ export default async function FarmStayPage() {
           { label: "Request dates", href: "#register" },
           { label: "Back to farm", href: "/farm", variant: "outline" },
         ]}
-        gradientClass="from-[#F7F2E8] via-[#EADFCB] to-[#D7C4A2]"
+        gradientClass="from-[#F7F2E8] via-[#EADFCB] to-[var(--warm-sand-deep)]"
       >
         <div className="space-y-3">
           <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">

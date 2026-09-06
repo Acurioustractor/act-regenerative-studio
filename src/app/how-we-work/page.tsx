@@ -166,7 +166,7 @@ export default async function HowWeWorkPage() {
           {workStyles.map((style) => (
             <div
               key={style.title}
-              className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-3"
+              className="rounded-3xl border border-[var(--warm-sand-line)] bg-white/70 p-8 space-y-3"
             >
               <h3 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
                 {style.title}
@@ -177,7 +177,7 @@ export default async function HowWeWorkPage() {
         </div>
       </section>
 
-      <section className="rounded-3xl border border-[var(--we-sand)] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12 space-y-8">
+      <section className="rounded-3xl border border-[var(--we-sand)] bg-gradient-to-br from-[var(--warm-paper)] via-[#E7DDC7] to-[var(--warm-sand-deep)] p-8 md:p-12 space-y-8">
         <SectionHeading
           eyebrow="Rhythms"
           title="How we stay accountable"
@@ -213,7 +213,7 @@ export default async function HowWeWorkPage() {
           {collaborationTypes.map((collab) => (
             <div
               key={collab.title}
-              className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-4"
+              className="rounded-3xl border border-[var(--warm-sand-line)] bg-white/70 p-8 space-y-4"
             >
               <h3 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
                 {collab.title}
@@ -254,7 +254,7 @@ export default async function HowWeWorkPage() {
               return (
                 <div
                   key={service.id}
-                  className="overflow-hidden rounded-3xl border border-[#E1D3BA] bg-white/80"
+                  className="overflow-hidden rounded-3xl border border-[var(--warm-sand-line)] bg-white/80"
                 >
                   {preview?.kind === "image" && (preview.previewUrl || preview.thumbnailUrl || preview.url) ? (
                     <img
@@ -263,7 +263,7 @@ export default async function HowWeWorkPage() {
                       className="h-44 w-full object-cover"
                     />
                   ) : preview ? (
-                    <div className="flex h-44 items-end bg-gradient-to-br from-[var(--we-olive)] via-[var(--we-brown-deep)] to-[#7A9B76] p-5 text-white">
+                    <div className="flex h-44 items-end bg-gradient-to-br from-[var(--we-olive)] via-[var(--we-brown-deep)] to-[var(--warm-sage)] p-5 text-white">
                       <div>
                         <p className="rounded-full bg-white/15 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.2em] text-white/90">
                           {preview.kind}
@@ -297,7 +297,7 @@ export default async function HowWeWorkPage() {
                       {service.detail.serviceTags.slice(0, 3).map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]"
+                          className="rounded-full bg-[var(--warm-paper)] px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]"
                         >
                           {tag}
                         </span>
@@ -365,7 +365,7 @@ export default async function HowWeWorkPage() {
           title="What the system is designed to hold"
           description="Not a stack diagram. This is the kind of infrastructure ACT keeps building so projects can stay grounded, consentful, and transferable."
         />
-        <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8">
+        <div className="rounded-3xl border border-[var(--warm-sand-line)] bg-white/70 p-8">
           <div className="grid gap-8 lg:grid-cols-3">
             <div className="space-y-4">
               <h3 className="font-semibold text-[var(--we-olive)]">Knowledge that compounds</h3>
@@ -405,37 +405,37 @@ export default async function HowWeWorkPage() {
           description="We use farm imagery to describe our work and approach."
         />
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
-          <div className="rounded-2xl border border-[#E1D3BA] bg-white/70 p-6 space-y-2">
+          <div className="rounded-2xl border border-[var(--warm-sand-line)] bg-white/70 p-6 space-y-2">
             <h4 className="font-semibold text-[var(--we-olive)]">Seeds</h4>
             <p className="text-sm text-[var(--we-brown)]">
               Active projects that need time, water, and attention
             </p>
           </div>
-          <div className="rounded-2xl border border-[#E1D3BA] bg-white/70 p-6 space-y-2">
+          <div className="rounded-2xl border border-[var(--warm-sand-line)] bg-white/70 p-6 space-y-2">
             <h4 className="font-semibold text-[var(--we-olive)]">Soil</h4>
             <p className="text-sm text-[var(--we-brown)]">
               Our knowledge network and community wisdom
             </p>
           </div>
-          <div className="rounded-2xl border border-[#E1D3BA] bg-white/70 p-6 space-y-2">
+          <div className="rounded-2xl border border-[var(--warm-sand-line)] bg-white/70 p-6 space-y-2">
             <h4 className="font-semibold text-[var(--we-olive)]">Seasons</h4>
             <p className="text-sm text-[var(--we-brown)]">
               Natural cycles of growth, harvest, and rest
             </p>
           </div>
-          <div className="rounded-2xl border border-[#E1D3BA] bg-white/70 p-6 space-y-2">
+          <div className="rounded-2xl border border-[var(--warm-sand-line)] bg-white/70 p-6 space-y-2">
             <h4 className="font-semibold text-[var(--we-olive)]">Harvest</h4>
             <p className="text-sm text-[var(--we-brown)]">
               Shared value that feeds the community
             </p>
           </div>
-          <div className="rounded-2xl border border-[#E1D3BA] bg-white/70 p-6 space-y-2">
+          <div className="rounded-2xl border border-[var(--warm-sand-line)] bg-white/70 p-6 space-y-2">
             <h4 className="font-semibold text-[var(--we-olive)]">Fields</h4>
             <p className="text-sm text-[var(--we-brown)]">
               Domains where we cultivate change
             </p>
           </div>
-          <div className="rounded-2xl border border-[#E1D3BA] bg-white/70 p-6 space-y-2">
+          <div className="rounded-2xl border border-[var(--warm-sand-line)] bg-white/70 p-6 space-y-2">
             <h4 className="font-semibold text-[var(--we-olive)]">Tractor/PTO</h4>
             <p className="text-sm text-[var(--we-brown)]">
               We provide capacity, then communities drive forward

@@ -171,7 +171,7 @@ export default function PrinciplesPage() {
           {coreValues.map((value) => (
             <div
               key={value.title}
-              className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-3"
+              className="rounded-3xl border border-[var(--warm-sand-line)] bg-white/70 p-8 space-y-3"
             >
               <h3 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
                 {value.title}
@@ -182,7 +182,7 @@ export default function PrinciplesPage() {
         </div>
       </section>
 
-      <section className="rounded-3xl border border-[var(--we-sand)] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12 space-y-8">
+      <section className="rounded-3xl border border-[var(--we-sand)] bg-gradient-to-br from-[var(--warm-paper)] via-[#E7DDC7] to-[var(--warm-sand-deep)] p-8 md:p-12 space-y-8">
         <SectionHeading
           eyebrow="Commitments"
           title="Our promise"
@@ -211,7 +211,7 @@ export default function PrinciplesPage() {
           {operationalPrinciples.map((principle) => (
             <div
               key={principle.number}
-              className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-6 space-y-3"
+              className="rounded-3xl border border-[var(--warm-sand-line)] bg-white/70 p-6 space-y-3"
             >
               <div className="flex items-center gap-3">
                 <span className="flex h-8 w-8 items-center justify-center rounded-full bg-forest text-sm font-bold text-white">
@@ -236,7 +236,7 @@ export default function PrinciplesPage() {
         <div className="prose prose-stone max-w-none">
           <div className="grid gap-8 lg:grid-cols-2">
             <div className="space-y-6">
-              <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-4">
+              <div className="rounded-3xl border border-[var(--warm-sand-line)] bg-white/70 p-8 space-y-4">
                 <h3 className="text-lg font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
                   The Power Take-Off Metaphor
                 </h3>
@@ -248,7 +248,7 @@ export default function PrinciplesPage() {
                 </p>
               </div>
 
-              <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-4">
+              <div className="rounded-3xl border border-[var(--warm-sand-line)] bg-white/70 p-8 space-y-4">
                 <h3 className="text-lg font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
                   Beautiful Obsolescence
                 </h3>
@@ -262,7 +262,7 @@ export default function PrinciplesPage() {
             </div>
 
             <div className="space-y-6">
-              <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-4">
+              <div className="rounded-3xl border border-[var(--warm-sand-line)] bg-white/70 p-8 space-y-4">
                 <h3 className="text-lg font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
                   Conservation First
                 </h3>
@@ -274,7 +274,7 @@ export default function PrinciplesPage() {
                 </p>
               </div>
 
-              <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-4">
+              <div className="rounded-3xl border border-[var(--warm-sand-line)] bg-white/70 p-8 space-y-4">
                 <h3 className="text-lg font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
                   Dual-Entity Structure
                 </h3>
@@ -298,25 +298,25 @@ export default function PrinciplesPage() {
           description="The tone and approach that guides our storytelling."
         />
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-          <div className="rounded-2xl border border-[#E1D3BA] bg-white/70 p-6 space-y-2">
+          <div className="rounded-2xl border border-[var(--warm-sand-line)] bg-white/70 p-6 space-y-2">
             <h4 className="font-semibold text-[var(--we-olive)]">Grounded yet Visionary</h4>
             <p className="text-xs text-[var(--we-brown)]">
               Plant seeds today for forests tomorrow
             </p>
           </div>
-          <div className="rounded-2xl border border-[#E1D3BA] bg-white/70 p-6 space-y-2">
+          <div className="rounded-2xl border border-[var(--warm-sand-line)] bg-white/70 p-6 space-y-2">
             <h4 className="font-semibold text-[var(--we-olive)]">Humble yet Confident</h4>
             <p className="text-xs text-[var(--we-brown)]">
               We don't have all the answers, but we're cultivating solutions
             </p>
           </div>
-          <div className="rounded-2xl border border-[#E1D3BA] bg-white/70 p-6 space-y-2">
+          <div className="rounded-2xl border border-[var(--warm-sand-line)] bg-white/70 p-6 space-y-2">
             <h4 className="font-semibold text-[var(--we-olive)]">Warm yet Challenging</h4>
             <p className="text-xs text-[var(--we-brown)]">
               Let's get our hands dirty with hard truths
             </p>
           </div>
-          <div className="rounded-2xl border border-[#E1D3BA] bg-white/70 p-6 space-y-2">
+          <div className="rounded-2xl border border-[var(--warm-sand-line)] bg-white/70 p-6 space-y-2">
             <h4 className="font-semibold text-[var(--we-olive)]">Poetic yet Clear</h4>
             <p className="text-xs text-[var(--we-brown)]">
               Every story is a seed that can grow into change

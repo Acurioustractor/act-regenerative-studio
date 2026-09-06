@@ -74,7 +74,7 @@ export function AnimatedStat({ value, label }: AnimatedStatProps) {
 
   return (
     <div ref={ref}>
-      <p className="font-[var(--font-display)] text-5xl font-bold text-[#FAFAF7]">
+      <p className="font-[var(--font-display)] text-5xl font-bold text-[var(--site-bg)]">
         {display}
       </p>
       <p className="mt-2 font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.3em] text-[#FAFAF7]/40">

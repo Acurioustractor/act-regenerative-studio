@@ -174,7 +174,7 @@ export async function EditorialArticleReader({
       {/* HERO: full-bleed image with title + meta overlay. The typographic
           cover behind it carries any article whose photograph is absent or
           dead; see ArticleHeroMedia. */}
-      <section className="full-bleed relative min-h-[60vh] w-full overflow-hidden bg-[#11110F] md:min-h-[75vh]">
+      <section className="full-bleed relative min-h-[60vh] w-full overflow-hidden bg-[var(--warm-night)] md:min-h-[75vh]">
         <ArticleHeroMedia
           imageUrl={post.featuredImageUrl ?? null}
           alt={post.featuredImageAlt ?? post.title}
@@ -190,7 +190,7 @@ export async function EditorialArticleReader({
               and that is a slab over the photograph rather than a scrim.
               It now sits below the hero on a solid surface, where the contrast
               is deterministic and the existing gate can actually see it. */}
-          <h1 className="font-[var(--font-display)] text-[clamp(2.2rem,5vw,4.2rem)] font-light leading-[1.08] text-[#F3EBDD]">
+          <h1 className="font-[var(--font-display)] text-[clamp(2.2rem,5vw,4.2rem)] font-light leading-[1.08] text-[var(--warm-cream)]">
             {post.title}
           </h1>
           {lede ? (
@@ -325,10 +325,10 @@ export async function EditorialArticleReader({
       {/* CTAS */}
       <section className="full-bleed bg-[var(--we-olive)] px-6 py-16 md:px-10 md:py-24">
         <div className="mx-auto flex max-w-[820px] flex-col items-center gap-6 text-center">
-          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-[#CFA16B]">
+          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-[var(--warm-gold)]">
             Keep moving
           </p>
-          <h2 className="font-[var(--font-display)] text-[clamp(1.6rem,2.8vw,2.2rem)] font-semibold leading-[1.2] text-[#F3EBDD]">
+          <h2 className="font-[var(--font-display)] text-[clamp(1.6rem,2.8vw,2.2rem)] font-semibold leading-[1.2] text-[var(--warm-cream)]">
             This story lives in the Empathy Ledger, carried with consent. Keep reading, or get in touch.
           </h2>
           <div className="mt-4 flex flex-wrap items-center justify-center gap-4">
@@ -336,19 +336,19 @@ export async function EditorialArticleReader({
               href={post.canonicalUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-[#CFA16B]/60 bg-[#CFA16B]/5 px-7 py-3.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#F3EBDD] transition-all hover:-translate-y-0.5 hover:border-[#CFA16B] hover:bg-[#CFA16B]/15 hover:gap-3 md:text-sm"
+              className="inline-flex items-center gap-2 rounded-full border border-[#CFA16B]/60 bg-[#CFA16B]/5 px-7 py-3.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--warm-cream)] transition-all hover:-translate-y-0.5 hover:border-[var(--warm-gold)] hover:bg-[#CFA16B]/15 hover:gap-3 md:text-sm"
             >
               Open source record <span aria-hidden="true">&rarr;</span>
             </a>
             <Link
               href="/stories"
-              className="inline-flex items-center gap-2 rounded-full border border-transparent px-6 py-3.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#CFA16B] transition-all hover:gap-3 hover:text-[#E0B680] md:text-sm"
+              className="inline-flex items-center gap-2 rounded-full border border-transparent px-6 py-3.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--warm-gold)] transition-all hover:gap-3 hover:text-[#E0B680] md:text-sm"
             >
               Read stories <span aria-hidden="true">&rarr;</span>
             </Link>
             <Link
               href="/contact"
-              className="inline-flex items-center gap-2 rounded-full bg-[#CFA16B] px-6 py-3.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[#11110F] transition-all hover:-translate-y-0.5 hover:bg-[#E0B680] hover:gap-3 md:text-sm"
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--warm-gold)] px-6 py-3.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--warm-night)] transition-all hover:-translate-y-0.5 hover:bg-[#E0B680] hover:gap-3 md:text-sm"
             >
               Start a conversation <span aria-hidden="true">&rarr;</span>
             </Link>

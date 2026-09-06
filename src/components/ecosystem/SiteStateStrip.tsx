@@ -3,7 +3,7 @@ import { describeStatus, relativeTime, type SiteState } from "@/lib/sites/site-s
 
 const TONE_DOT: Record<ReturnType<typeof describeStatus>["tone"], string> = {
   good: "bg-forest",
-  warn: "bg-[#CFA16B]",
+  warn: "bg-[var(--warm-gold)]",
   bad: "bg-[#B4462F]",
   muted: "bg-[#B9AE9C]",
 };
@@ -44,7 +44,7 @@ export function SiteStateStrip({ sites }: { sites: SiteState[] }) {
             </>
           );
           return (
-            <li key={site.slug} className="rounded-2xl border border-[#E1D3BA] bg-white/80 px-4 py-3 text-sm">
+            <li key={site.slug} className="rounded-2xl border border-[var(--warm-sand-line)] bg-white/80 px-4 py-3 text-sm">
               {site.url ? (
                 <a href={site.url} className="block transition hover:text-forest" rel="noopener noreferrer">
                   {inner}

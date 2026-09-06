@@ -216,7 +216,7 @@ export function Murmuration({ confessions }: { confessions: Confession[] }) {
 
   return (
     <div>
-      <div className="relative overflow-hidden rounded-3xl border border-[#3A2C18] bg-[#15100A]">
+      <div className="relative overflow-hidden rounded-3xl border border-[var(--warm-bark-deep)] bg-[#15100A]">
         <canvas ref={canvasRef} className="block h-[460px] w-full touch-none md:h-[560px]" aria-hidden="true" />
       </div>
       <div className="mt-8">

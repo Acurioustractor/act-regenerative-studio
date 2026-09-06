@@ -150,7 +150,7 @@ export default async function StudioPage() {
               return (
                 <div
                   key={service.id}
-                  className="overflow-hidden rounded-3xl border border-[#E1D3BA] bg-white/80"
+                  className="overflow-hidden rounded-3xl border border-[var(--warm-sand-line)] bg-white/80"
                 >
                   {preview ? (
                     preview.kind === "image" ? (
@@ -206,7 +206,7 @@ export default async function StudioPage() {
                       {service.detail.serviceTags.slice(0, 4).map((tag) => (
                         <span
                           key={tag}
-                          className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]"
+                          className="rounded-full bg-[var(--warm-paper)] px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]"
                         >
                           {tag}
                         </span>
@@ -242,7 +242,7 @@ export default async function StudioPage() {
                     ) : null}
 
                     <div className="grid gap-3 sm:grid-cols-3">
-                      <div className="rounded-2xl bg-[#F6F1E7] px-4 py-3">
+                      <div className="rounded-2xl bg-[var(--warm-paper)] px-4 py-3">
                         <p className="text-lg font-semibold text-[var(--we-olive)]">
                           {service.storytellerCount}
                         </p>
@@ -250,7 +250,7 @@ export default async function StudioPage() {
                           Voices
                         </p>
                       </div>
-                      <div className="rounded-2xl bg-[#F6F1E7] px-4 py-3">
+                      <div className="rounded-2xl bg-[var(--warm-paper)] px-4 py-3">
                         <p className="text-lg font-semibold text-[var(--we-olive)]">
                           {service.linkedStoryCount}
                         </p>
@@ -258,7 +258,7 @@ export default async function StudioPage() {
                           Stories
                         </p>
                       </div>
-                      <div className="rounded-2xl bg-[#F6F1E7] px-4 py-3">
+                      <div className="rounded-2xl bg-[var(--warm-paper)] px-4 py-3">
                         <p className="text-lg font-semibold text-[var(--we-olive)]">
                           {service.relatedProjects.length}
                         </p>
@@ -269,11 +269,11 @@ export default async function StudioPage() {
                     </div>
 
                     {service.detail.testimonial.quote ? (
-                      <p className="border-l border-[#D8C7A5] pl-4 text-sm italic text-[#5A4A3A]">
+                      <p className="border-l border-[#D8C7A5] pl-4 text-sm italic text-[var(--warm-bark)]">
                         {service.detail.testimonial.quote}
                       </p>
                     ) : service.linkedStories[0]?.excerpt ? (
-                      <p className="border-l border-[#D8C7A5] pl-4 text-sm italic text-[#5A4A3A]">
+                      <p className="border-l border-[#D8C7A5] pl-4 text-sm italic text-[var(--warm-bark)]">
                         {service.linkedStories[0].excerpt}
                       </p>
                     ) : null}
@@ -307,7 +307,7 @@ export default async function StudioPage() {
             {fallbackStudioCapabilities.map((capability) => (
               <div
                 key={capability.title}
-                className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-3"
+                className="rounded-3xl border border-[var(--warm-sand-line)] bg-white/70 p-8 space-y-3"
               >
                 <h3 className="text-xl font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
                   {capability.title}
@@ -319,7 +319,7 @@ export default async function StudioPage() {
         )}
       </section>
 
-      <section className="rounded-3xl border border-[var(--we-sand)] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12 space-y-8">
+      <section className="rounded-3xl border border-[var(--we-sand)] bg-gradient-to-br from-[var(--warm-paper)] via-[#E7DDC7] to-[var(--warm-sand-deep)] p-8 md:p-12 space-y-8">
         <SectionHeading
           eyebrow="Fields of practice"
           title="Where the work is already taking root"
@@ -359,12 +359,12 @@ export default async function StudioPage() {
                     </span>
                   ) : null}
                   {project.liveSignals.storyCount > 0 ? (
-                    <span className="rounded-full bg-[#F6F1E7] px-2.5 py-1 text-[10px] font-medium text-[var(--we-brown-deep)]">
+                    <span className="rounded-full bg-[var(--warm-paper)] px-2.5 py-1 text-[10px] font-medium text-[var(--we-brown-deep)]">
                       {project.liveSignals.storyCount} stories
                     </span>
                   ) : null}
                   {project.liveSignals.mediaCount > 0 ? (
-                    <span className="rounded-full bg-[#F6F1E7] px-2.5 py-1 text-[10px] font-medium text-[var(--we-brown-deep)]">
+                    <span className="rounded-full bg-[var(--warm-paper)] px-2.5 py-1 text-[10px] font-medium text-[var(--we-brown-deep)]">
                       {project.liveSignals.mediaCount} media
                     </span>
                   ) : null}
@@ -386,7 +386,7 @@ export default async function StudioPage() {
           description="Trading work and charitable work are kept in separate hands, so neither can quietly subsidise the other."
         />
         <div className="grid gap-8 lg:grid-cols-2">
-          <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-4">
+          <div className="rounded-3xl border border-[var(--warm-sand-line)] bg-white/70 p-8 space-y-4">
             <div className="inline-block rounded-full bg-[#FEF3C7] px-4 py-1 text-xs font-medium text-[#92400E]">
               Trading
             </div>
@@ -401,7 +401,7 @@ export default async function StudioPage() {
             </ul>
           </div>
 
-          <div className="rounded-3xl border border-[#E1D3BA] bg-white/70 p-8 space-y-4">
+          <div className="rounded-3xl border border-[var(--warm-sand-line)] bg-white/70 p-8 space-y-4">
             <div className="inline-block rounded-full bg-forest-soft px-4 py-1 text-xs font-medium text-[var(--we-olive)]">
               Charitable
             </div>

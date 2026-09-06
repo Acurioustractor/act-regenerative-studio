@@ -16,7 +16,7 @@ export function PrinciplesList({
   onDark = false,
   variant = "titled",
 }: PrinciplesListProps) {
-  const titleColor = onDark ? "text-[#FAFAF7]" : "text-[var(--site-ink)]";
+  const titleColor = onDark ? "text-[var(--site-bg)]" : "text-[var(--site-ink)]";
   const bodyColor = onDark ? "text-[#FAFAF7]/60" : "text-[var(--site-muted)]";
 
   if (variant === "plain") {

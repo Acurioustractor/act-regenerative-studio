@@ -60,7 +60,7 @@ export default async function ArtCommissionsPage() {
           {commissionModes.map((mode) => (
             <div
               key={mode.title}
-              className="rounded-3xl border border-[#E1D3BA] bg-white/75 p-8"
+              className="rounded-3xl border border-[var(--warm-sand-line)] bg-white/75 p-8"
             >
               <h3 className="font-[var(--font-display)] text-xl font-semibold text-[var(--we-olive)]">
                 {mode.title}
@@ -84,7 +84,7 @@ export default async function ArtCommissionsPage() {
             <Link
               key={work.slug}
               href={work.href}
-              className="group overflow-hidden rounded-3xl border border-[#E1D3BA] bg-white/80 transition hover:-translate-y-1 hover:border-forest hover:shadow-[0_18px_45px_rgba(50,42,31,0.1)]"
+              className="group overflow-hidden rounded-3xl border border-[var(--warm-sand-line)] bg-white/80 transition hover:-translate-y-1 hover:border-forest hover:shadow-[0_18px_45px_rgba(50,42,31,0.1)]"
             >
               {work.previewMedia?.kind === "image" ? (
                 <img
@@ -113,12 +113,12 @@ export default async function ArtCommissionsPage() {
                 </p>
                 <div className="flex flex-wrap gap-2">
                   {work.live.storyCount > 0 ? (
-                    <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]">
+                    <span className="rounded-full bg-[var(--warm-paper)] px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]">
                       {work.live.storyCount} stories
                     </span>
                   ) : null}
                   {work.live.mediaCount > 0 ? (
-                    <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]">
+                    <span className="rounded-full bg-[var(--warm-paper)] px-3 py-1 text-xs font-medium text-[var(--we-brown-deep)]">
                       {work.live.mediaCount} media
                     </span>
                   ) : null}

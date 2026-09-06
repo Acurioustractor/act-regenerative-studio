@@ -97,7 +97,7 @@ export default function EconomyPage() {
         <CardGrid cards={lanes} className="grid gap-6 md:grid-cols-2" />
       </section>
 
-      <section className="rounded-3xl border border-[var(--we-sand)] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12">
+      <section className="rounded-3xl border border-[var(--we-sand)] bg-gradient-to-br from-[var(--warm-paper)] via-[#E7DDC7] to-[var(--warm-sand-deep)] p-8 md:p-12">
         <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr]">
           <div className="space-y-4">
             <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">

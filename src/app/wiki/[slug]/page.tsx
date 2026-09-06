@@ -64,7 +64,7 @@ export default async function WikiPageViewer({
   const nextMove = projectBacklinks[0] || null;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#F6F1E7] via-[#F5F1E8] to-white">
+    <div className="min-h-screen bg-gradient-to-b from-[var(--warm-paper)] via-[#F5F1E8] to-white">
       <JsonLd
         id={`wiki-${slug}-breadcrumb-jsonld`}
         data={breadcrumbJsonLd([
@@ -77,14 +77,14 @@ export default async function WikiPageViewer({
         <div className="mx-auto max-w-5xl px-4 py-10">
           <Link
             href="/wiki"
-            className="inline-flex items-center gap-2 text-sm text-[#5A4A3A] transition hover:text-[var(--we-olive)]"
+            className="inline-flex items-center gap-2 text-sm text-[var(--warm-bark)] transition hover:text-[var(--we-olive)]"
           >
             <ArrowLeft className="h-4 w-4" />
             Back to the wiki
           </Link>
 
           <div className="mt-6 flex flex-wrap items-center gap-3">
-            <span className="rounded-full bg-[#F5F1E8] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#5A4A3A]">
+            <span className="rounded-full bg-[#F5F1E8] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--warm-bark)]">
               {page.sectionTitle}
             </span>
             {page.modifiedAt && (

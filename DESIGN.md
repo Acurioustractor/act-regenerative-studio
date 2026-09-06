@@ -19,9 +19,7 @@ The big cinematic treatment. Full-bleed dark video heroes, Fraunces light displa
 
 **Use when:** The page tells a single project's story with hero media, stats, lead voices, and a clear CTA. This is the headline treatment — use it sparingly.
 
-**Currently applied to:**
-- Homepage (`/`)
-- Flagship project pages: `/empathy-ledger`, `/farm`, `/goods`, `/harvest`, `/justicehub`
+**Currently applied to:** the routes `src/lib/design/design-language.ts` marks `documentary`. That file is the rule; `npm run check:palette` enforces it.
 
 **Components:** `src/components/design-system/` — `DocHero`, `SectionHeader`, `HairlineGrid`, `LeadVoice`, `PrinciplesList`, `DarkCTA`
 

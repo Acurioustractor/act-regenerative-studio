@@ -277,7 +277,7 @@ export function EcosystemConstellation({ nodes }: { nodes: ConstellationNode[] }
                       <button
                         type="button"
                         onClick={() => setActive(p.slug)}
-                        className="rounded-full border border-[var(--we-sand)] bg-[#FDFBF7] px-3 py-1 text-xs text-[var(--we-olive)] transition hover:border-[#7A9B76]"
+                        className="rounded-full border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] px-3 py-1 text-xs text-[var(--we-olive)] transition hover:border-[var(--warm-sage)]"
                       >
                         {p.title}
                       </button>
@@ -297,7 +297,7 @@ export function EcosystemConstellation({ nodes }: { nodes: ConstellationNode[] }
                     <li key={a.href}>
                       <Link
                         href={a.href}
-                        className="rounded-full border border-[#2F2A25] bg-[#171612] px-3 py-1 text-xs text-[#F3EBDD] transition hover:border-[#CFA16B]"
+                        className="rounded-full border border-[#2F2A25] bg-[#171612] px-3 py-1 text-xs text-[var(--warm-cream)] transition hover:border-[var(--warm-gold)]"
                       >
                         {a.title}
                       </Link>

@@ -28,11 +28,11 @@ const MOVEMENTS = [
 
 export default function FridayTapePage() {
   return (
-    <div className="relative min-h-screen bg-[#15100A] text-[#F3EBDD]">
+    <div className="relative min-h-screen bg-[#15100A] text-[var(--warm-cream)]">
       {/* COLD OPEN */}
-      <section className="full-bleed border-b border-[#2E2215] px-6 pb-14 pt-10 text-center md:pt-14">
+      <section className="full-bleed border-b border-[var(--warm-earth)] px-6 pb-14 pt-10 text-center md:pt-14">
         <div className="mx-auto max-w-2xl">
-          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
+          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[var(--warm-gold)]">
             Friday
           </p>
           <h1 className="mt-7 font-[var(--font-display)] text-[clamp(2.4rem,6vw,4.4rem)] font-semibold leading-[1.04]">
@@ -52,21 +52,21 @@ export default function FridayTapePage() {
       </section>
 
       {/* WHAT IT SAID — the three movements */}
-      <section className="border-t border-[#2E2215] bg-[#1A130B] px-6 py-20 md:py-28">
+      <section className="border-t border-[var(--warm-earth)] bg-[#1A130B] px-6 py-20 md:py-28">
         <div className="mx-auto max-w-2xl">
-          <p className="text-center font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
+          <p className="text-center font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[var(--warm-gold)]">
             What it said
           </p>
           <div className="mt-12 space-y-12">
             {MOVEMENTS.map((m) => (
               <div key={m.tag}>
-                <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[#E0B068]">{m.tag}</h2>
+                <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[var(--warm-gold-bright)]">{m.tag}</h2>
                 <p className="mt-4 font-[var(--font-body)] text-[17px] leading-8 text-[#D8CBB6]">{m.body}</p>
               </div>
             ))}
           </div>
 
-          <p className="mx-auto mt-16 max-w-xl text-center font-[var(--font-display)] text-[clamp(1.4rem,3.5vw,2rem)] italic leading-[1.3] text-[#F3EBDD]">
+          <p className="mx-auto mt-16 max-w-xl text-center font-[var(--font-display)] text-[clamp(1.4rem,3.5vw,2rem)] italic leading-[1.3] text-[var(--warm-cream)]">
             That is the honest version. Be more human. Trust the people closest to the work. And keep
             going, while quietly hoping for the day the work is done.
           </p>
@@ -74,14 +74,14 @@ export default function FridayTapePage() {
       </section>
 
       {/* THE RECEIPTS BRIDGE */}
-      <section className="border-t border-[#2E2215] px-6 py-16 text-center md:py-20">
+      <section className="border-t border-[var(--warm-earth)] px-6 py-16 text-center md:py-20">
         <div className="mx-auto max-w-xl">
           <p className="font-[var(--font-body)] text-lg leading-8 text-[#C7B9A4]">
             The voices told us how it feels. The data shows how it is built.
           </p>
           <Link
             href="/confessions/listen"
-            className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#CFA16B]/40 px-5 py-2.5 text-sm font-semibold text-[#CFA16B] transition hover:border-[#CFA16B] hover:bg-[#CFA16B]/10"
+            className="mt-6 inline-flex items-center gap-2 rounded-full border border-[#CFA16B]/40 px-5 py-2.5 text-sm font-semibold text-[var(--warm-gold)] transition hover:border-[var(--warm-gold)] hover:bg-[#CFA16B]/10"
           >
             Listen to the voices <span aria-hidden="true">&rarr;</span>
           </Link>
@@ -89,7 +89,7 @@ export default function FridayTapePage() {
       </section>
 
       {/* PASS IT ON */}
-      <section className="border-t border-[#2E2215] bg-[#1A130B] px-6 py-24 text-center md:py-32">
+      <section className="border-t border-[var(--warm-earth)] bg-[#1A130B] px-6 py-24 text-center md:py-32">
         <div className="mx-auto max-w-2xl">
           <h2 className="font-[var(--font-display)] text-[clamp(1.9rem,5vw,3rem)] font-semibold leading-tight">
             The line is still open.

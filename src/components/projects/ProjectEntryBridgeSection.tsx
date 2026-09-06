@@ -115,7 +115,7 @@ export function ProjectEntryBridgeSection({
                     href={fieldMedia.video.href || fieldMedia.video.url}
                     target={(fieldMedia.video.href || fieldMedia.video.url).startsWith('http') ? '_blank' : undefined}
                     rel={(fieldMedia.video.href || fieldMedia.video.url).startsWith('http') ? 'noopener noreferrer' : undefined}
-                    className="group relative block overflow-hidden rounded-[28px] border border-[#2F2A25] bg-[#171612] text-[#F3EBDD]"
+                    className="group relative block overflow-hidden rounded-[28px] border border-[#2F2A25] bg-[#171612] text-[var(--warm-cream)]"
                   >
                     <div className="absolute inset-0">
                       {canInlineVideo ? (
@@ -138,7 +138,7 @@ export function ProjectEntryBridgeSection({
                     <div className="relative flex min-h-[240px] flex-col justify-between p-5 md:min-h-[280px]">
                       <div className="flex items-start justify-between gap-4">
                         <div className="space-y-2">
-                          <span className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#F3EBDD] backdrop-blur-sm">
+                          <span className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--warm-cream)] backdrop-blur-sm">
                             {fieldMedia.video.eyebrow}
                           </span>
                           {fieldMedia.video.sourceTitle ? (
@@ -170,7 +170,7 @@ export function ProjectEntryBridgeSection({
                         href={item.href}
                         target={item.href.startsWith("http") ? "_blank" : undefined}
                         rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
-                        className="group overflow-hidden rounded-[24px] border border-[var(--we-sand)] bg-[#FDFBF7]"
+                        className="group overflow-hidden rounded-[24px] border border-[var(--we-sand)] bg-[var(--warm-paper-bright)]"
                       >
                         <div className="relative aspect-[4/3] overflow-hidden">
                           <img
@@ -202,8 +202,8 @@ export function ProjectEntryBridgeSection({
           ) : null}
 
           {relatedWorks.length > 0 ? (
-            <div className="rounded-3xl border border-[#2F2A25] bg-[#171612] p-5 text-[#F3EBDD]">
-              <p className="text-xs uppercase tracking-[0.3em] text-[#CFA16B]">
+            <div className="rounded-3xl border border-[#2F2A25] bg-[#171612] p-5 text-[var(--warm-cream)]">
+              <p className="text-xs uppercase tracking-[0.3em] text-[var(--warm-gold)]">
                 Related work
               </p>
               <h3 className="mt-2 font-[var(--font-display)] text-xl font-semibold">
@@ -214,14 +214,14 @@ export function ProjectEntryBridgeSection({
                   <Link
                     key={work.slug}
                     href={work.href}
-                    className="block rounded-2xl border border-[#4A3B2E] bg-[#11110F] px-4 py-4 transition hover:border-[#CFA16B]"
+                    className="block rounded-2xl border border-[#4A3B2E] bg-[var(--warm-night)] px-4 py-4 transition hover:border-[var(--warm-gold)]"
                   >
-                    <div className="flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-[#CFA16B]">
+                    <div className="flex flex-wrap items-center gap-2 text-[11px] uppercase tracking-[0.18em] text-[var(--warm-gold)]">
                       <span>{work.medium}</span>
                       <span className="text-[#6E6257]">•</span>
                       <span>{work.connectedTo}</span>
                     </div>
-                    <p className="mt-2 font-semibold text-[#F3EBDD]">{work.title}</p>
+                    <p className="mt-2 font-semibold text-[var(--warm-cream)]">{work.title}</p>
                     <p className="mt-1 line-clamp-2 text-sm text-[#D7C8B2]">
                       {work.description}
                     </p>

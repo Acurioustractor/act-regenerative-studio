@@ -62,7 +62,7 @@ export function ConfessionWall({ confessions }: { confessions: Confession[] }) {
         <figure
           key={c.id}
           style={{ transitionDelay: `${Math.min(i * 70, 900)}ms` }}
-          className={`break-inside-avoid rounded-2xl border border-[#3A2C18] bg-[#1E160D] p-6 transition-all duration-700 ease-out ${
+          className={`break-inside-avoid rounded-2xl border border-[var(--warm-bark-deep)] bg-[#1E160D] p-6 transition-all duration-700 ease-out ${
             revealed ? 'translate-y-0 opacity-100' : 'translate-y-4 opacity-0'
           }`}
         >
@@ -71,7 +71,7 @@ export function ConfessionWall({ confessions }: { confessions: Confession[] }) {
             {renderTranscript(c.text)}
           </blockquote>
           <figcaption className="mt-5 flex items-center justify-between font-[var(--font-sans)] text-[11px] uppercase tracking-[0.18em]">
-            <span className="text-[#CFA16B]">{c.theme}</span>
+            <span className="text-[var(--warm-gold)]">{c.theme}</span>
             <span className="inline-flex items-center gap-1.5 text-sand-lift">
               <span aria-hidden="true">▸</span> {formatDuration(c.durationSeconds)}
             </span>

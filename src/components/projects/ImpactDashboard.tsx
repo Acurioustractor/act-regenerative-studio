@@ -203,22 +203,22 @@ export function ImpactDashboard({
               </a>
             </div>
             {storytellerCount && (
-              <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs text-[var(--we-brown-deep)]">
+              <span className="rounded-full bg-[var(--warm-paper)] px-3 py-1 text-xs text-[var(--we-brown-deep)]">
                 {storytellerCount} storyteller{storytellerCount !== 1 ? 's' : ''}
               </span>
             )}
             {storyCount && (
-              <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs text-[var(--we-brown-deep)]">
+              <span className="rounded-full bg-[var(--warm-paper)] px-3 py-1 text-xs text-[var(--we-brown-deep)]">
                 {storyCount} {storyCount !== 1 ? 'stories' : 'story'}
               </span>
             )}
             {mediaCount && (
-              <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs text-[var(--we-brown-deep)]">
+              <span className="rounded-full bg-[var(--warm-paper)] px-3 py-1 text-xs text-[var(--we-brown-deep)]">
                 {mediaCount} media assets
               </span>
             )}
             {galleryCount && (
-              <span className="rounded-full bg-[#F6F1E7] px-3 py-1 text-xs text-[var(--we-brown-deep)]">
+              <span className="rounded-full bg-[var(--warm-paper)] px-3 py-1 text-xs text-[var(--we-brown-deep)]">
                 {galleryCount} {galleryCount !== 1 ? 'galleries' : 'gallery'}
               </span>
             )}

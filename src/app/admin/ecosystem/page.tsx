@@ -1,6 +1,10 @@
 import { ProjectHealthCard } from '@/components/dashboard/ProjectHealthCard';
 import { EcosystemOverview } from '@/components/dashboard/EcosystemOverview';
 import { ActivityFeed } from '@/components/dashboard/ActivityFeed';
+import { SiteStateTable } from '@/components/ecosystem/SiteStateTable';
+import { getSiteStates } from '@/lib/sites/site-state';
+
+export const dynamic = 'force-dynamic';
 
 // ACT Ecosystem projects
 const ACT_PROJECTS = [
@@ -49,6 +53,7 @@ const ACT_PROJECTS = [
 ];
 
 export default async function EcosystemPage() {
+  const siteStates = await getSiteStates();
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -60,6 +65,17 @@ export default async function EcosystemPage() {
           Unified view of all ACT projects, deployments, and progress
         </p>
       </div>
+
+      {/* Live site state: one row per ACT site from ecosystem_sites, written by
+          the infra Vercel sync and kept current by the Vercel webhook. */}
+      <section className="rounded-3xl border border-[var(--we-sand)] bg-white/70 p-6">
+        <h2 className="text-lg font-semibold text-[var(--we-olive)] font-[var(--font-display)]">
+          Sites right now
+        </h2>
+        <div className="mt-4">
+          <SiteStateTable sites={siteStates} />
+        </div>
+      </section>
 
       {/* Overview Stats */}
       <EcosystemOverview projects={ACT_PROJECTS} />

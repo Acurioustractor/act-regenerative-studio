@@ -137,3 +137,10 @@ public/media/field-videos/
 # home; see act-ecosystem/docs/security/ for the pattern.
 thoughts/shared/ghl/
 thoughts/shared/handoffs/intake-spine/
+
+# Backups of env files carry the same secrets as the originals. This repo is public.
+.env*.bak*
+.env*.backup*
+
+# Supabase CLI link state. Records which project this checkout is linked to; not source.
+supabase/.temp/

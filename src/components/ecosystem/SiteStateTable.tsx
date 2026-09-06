@@ -19,7 +19,7 @@ export function SiteStateTable({ sites }: { sites: SiteState[] }) {
       </p>
     );
   }
-  const order: Record<SiteState["status"], number> = { broken: 0, building: 1, unknown: 2, canceled: 3, live: 4, external: 5 };
+  const order: Record<SiteState["status"], number> = { broken: 0, building: 1, unknown: 2, canceled: 3, live: 4, external: 5, archived: 6 };
   const rows = [...sites].sort((a, b) => order[a.status] - order[b.status] || a.name.localeCompare(b.name));
   const checked = rows.map((r) => r.lastCheckAt).filter(Boolean).sort().at(-1) ?? null;
 

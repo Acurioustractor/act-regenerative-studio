@@ -6,6 +6,7 @@ describe("site state", () => {
     expect(describeStatus("live").label).toBe("Online");
     expect(describeStatus("broken")).toEqual({ label: "Needs attention", tone: "bad" });
     expect(describeStatus("external").tone).toBe("muted");
+    expect(describeStatus("archived")).toEqual({ label: "Retired", tone: "muted" });
   });
 
   // Control: an unexpected value must never read as Online.

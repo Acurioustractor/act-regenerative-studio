@@ -13,7 +13,7 @@
   },
   "scripts": {
     "dev": "next dev -p 3001",
-    "build": "npm run sync:canon && npm run sync:wiki && npm run sync:project-codes && npm run sync:el-media && npm run sync:el-editorial && npm run sync:el-packets && npm run sync:el-storytellers && npm run sync:el-transcripts && next build",
+    "build": "npm run sync:canon && npm run sync:wiki && npm run sync:project-codes && npm run sync:art-pieces && npm run sync:el-media && npm run sync:el-editorial && npm run sync:el-packets && npm run sync:el-storytellers && npm run sync:el-transcripts && next build",
     "sync:canon": "node scripts/sync-living-ecosystem-canon.mjs",
     "start": "next start -p 3001",
     "lint": "next lint",
@@ -58,7 +58,10 @@
     "check:secrets": "node scripts/check-committed-secrets.mjs",
     "sync:brand-skill": "node scripts/sync-brand-skill.mjs --apply",
     "check:brand-skill": "node scripts/sync-brand-skill.mjs",
-    "check:project-record": "node scripts/check-project-record.mjs"
+    "check:project-record": "node scripts/check-project-record.mjs",
+    "sync:art-pieces": "node scripts/sync-art-pieces.mjs",
+    "check:art-record": "node scripts/check-art-record.mjs",
+    "test:scripts": "node --test scripts/tests/*.test.mjs"
   },
   "dependencies": {
     "@anthropic-ai/sdk": "^0.71.2",

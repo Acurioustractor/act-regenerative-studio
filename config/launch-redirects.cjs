@@ -199,6 +199,8 @@ const launchRedirects = [
   // /projects, which itself redirects, so every held URL cost two hops.
   { source: "/storytellers", destination: "/stories", permanent: false },
   { source: "/storytellers/:slug*", destination: "/stories", permanent: false },
+  // ANAT SPECTRA 2025 was an event, not a studio-line work; retired from /art (art-from-the-record step 3).
+  { source: "/art/anat-spectra-2025", destination: "/art", permanent: false },
   { source: "/ask", destination: "/questions", permanent: false },
   { source: "/wiki", destination: "/#fields", permanent: false },
   { source: "/wiki/:slug*", destination: "/#fields", permanent: false },

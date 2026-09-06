@@ -1,0 +1,470 @@
+{
+  "generatedAt": "2026-09-06T10:06:45.407Z",
+  "sourceConfigPath": "/Users/benknight/Code/act-global-infrastructure/config/project-codes.json",
+  "pieceCount": 14,
+  "pieces": [
+    {
+      "code": "ACT-CA",
+      "slug": "caring-for-those-who-care",
+      "aliases": [],
+      "title": "Caring for Those Who Care",
+      "quote": "The people who hold everyone else, and who holds them",
+      "description": "Seven people built not-for-profits out of the hardest thing that ever happened to them, and the sector then asked each of them to keep telling that story, on stage and on demand, for as long as the support keeps coming. This work sits down with them, photographs them, and puts what the telling costs into their own words on a public wall and in an exhibition. It runs alongside a pilot study into the wellbeing of not-for-profit leaders and social entrepreneurs in Australia.",
+      "philosophy": "A founder is not their worst day. The sector meets these seven mid-performance and keeps rewarding them for staying there. The work is to let them be met as people first, with every word their own, and every word removable by them at any time.",
+      "impact": null,
+      "mediums": [
+        "exhibition",
+        "performance"
+      ],
+      "tags": [
+        "social-practice",
+        "community-portrait"
+      ],
+      "status": "active",
+      "lcaaStages": [
+        "Listen",
+        "Art"
+      ],
+      "year": "2025 to 2026",
+      "location": "Sunshine Coast, Mount Isa, Sydney, Gold Coast and the Atherton Tablelands",
+      "connectedProject": null,
+      "connectedProjectCode": null,
+      "connectedProjectHref": null,
+      "elSlugs": [
+        "caring-for-those-who-care"
+      ],
+      "elTracked": true,
+      "wikiPath": "wiki/projects/caring-for-those-who-care.md"
+    },
+    {
+      "code": "ACT-MC",
+      "slug": "cars-and-microcontrollers",
+      "aliases": [],
+      "title": "Cars and Microcontrollers",
+      "quote": "Engines, wires and the dignity of real tools",
+      "description": "For young people who learn by doing, making something real with their hands can be the first time their intelligence is recognised. This program uses car repair and microcontroller projects as the way in: no classrooms, no coding bootcamps, just engines, soldering irons and the trust that comes with real tools. It honours a kind of intelligence that school systems routinely miss.",
+      "philosophy": "Intelligence shows up in many forms. Some people think best with their hands. This program does not \"engage youth\", it recognises a kind of intelligence that school systems routinely miss.",
+      "impact": null,
+      "mediums": [
+        "interactive",
+        "making"
+      ],
+      "tags": [
+        "digital",
+        "participatory"
+      ],
+      "status": "concept",
+      "lcaaStages": [
+        "Action"
+      ],
+      "year": "In development",
+      "location": "Regional Queensland",
+      "connectedProject": null,
+      "connectedProjectCode": null,
+      "connectedProjectHref": null,
+      "elSlugs": [
+        "cars-and-microcontrollers"
+      ],
+      "elTracked": true,
+      "wikiPath": "wiki/projects/act-studio/cars-and-microcontrollers.md"
+    },
+    {
+      "code": "ACT-CTP",
+      "slug": "confessions-to-philanthropy",
+      "aliases": [],
+      "title": "Confessions to Philanthropy",
+      "quote": "Say the quiet bit out loud",
+      "description": "Confessions to Philanthropy is a gold phone and an anonymous voicemail for the sector that funds change. Callers leave unscripted messages about giving and power, the awkward and hopeful and unsaid, and the inbox becomes a public record you can listen to. It is not anti-philanthropy. It is a place to say the quiet bit out loud.",
+      "philosophy": "The word philanthropy first described Prometheus, who stole fire from the gods and gave it to people. It began as defiance of power, not a tool of it. The gold phone returns philanthropy to honesty: anonymous, unscripted, and unafraid of the quiet bit.",
+      "impact": null,
+      "mediums": [
+        "interactive",
+        "performance"
+      ],
+      "tags": [
+        "participatory",
+        "social-practice",
+        "public-art"
+      ],
+      "status": "active",
+      "lcaaStages": [
+        "Listen",
+        "Art"
+      ],
+      "year": "2026",
+      "location": "Distributed / digital",
+      "connectedProject": "Civic Scope",
+      "connectedProjectCode": "ACT-CS",
+      "connectedProjectHref": "https://civicgraph.app",
+      "elSlugs": [
+        "confessions-to-philanthropy"
+      ],
+      "elTracked": false,
+      "wikiPath": "wiki/art/confessions-to-philanthropy.md"
+    },
+    {
+      "code": "ACT-CN",
+      "slug": "contained",
+      "aliases": [],
+      "title": "CONTAINED",
+      "quote": "Step inside what we are choosing to fund",
+      "description": "CONTAINED is an immersive installation that places visitors inside a simulated youth detention environment, not to shock but to ask how this system feels from the inside and what we choose when we fund it. Shaped with two people who have lived experience of detention, it has been shown alongside justice reform campaigns and advocacy work.",
+      "philosophy": "Policy documents flatten human experience into statistics. CONTAINED works in the opposite direction: it uses sensory experience to restore the weight of what a system does to a person. When a visitor walks out, the abstraction of \"youth detention\" is harder to sustain.",
+      "impact": "Exhibited in justice reform contexts. 2 storytellers contributed lived experience. Connected to JusticeHub evidence platform. Cited in advocacy submissions.",
+      "mediums": [
+        "installation"
+      ],
+      "tags": [
+        "immersive",
+        "justice-art",
+        "public-art"
+      ],
+      "status": "active",
+      "lcaaStages": [
+        "Art"
+      ],
+      "year": "2022–present",
+      "location": "Justice and public-space contexts",
+      "connectedProject": "JusticeHub",
+      "connectedProjectCode": "ACT-JH",
+      "connectedProjectHref": "/fields/justice",
+      "elSlugs": [
+        "contained"
+      ],
+      "elTracked": true,
+      "wikiPath": "wiki/projects/contained.md"
+    },
+    {
+      "code": "ACT-GP",
+      "slug": "gold-phone",
+      "aliases": [],
+      "title": "Gold.Phone",
+      "quote": "Two strangers, one phone, whatever they choose to say",
+      "description": "Gold.Phone is a sculptural phone booth that connects strangers through unscripted, anonymous voice calls. No screens, no filters, no swiping: just two people and whatever they choose to say to each other. Placed in public space, it treats voice as the simplest technology we have for being present to one another.",
+      "philosophy": "Social isolation is a design failure, not a personal one. Gold.Phone treats voice as the simplest technology for connection. Two strangers. No screens. No filters. Just presence.",
+      "impact": "Prototype deployed. Voice connection platform built. Partnering with councils and public space curators for permanent installations.",
+      "mediums": [
+        "interactive",
+        "installation"
+      ],
+      "tags": [
+        "participatory",
+        "public-art",
+        "social-practice"
+      ],
+      "status": "active",
+      "lcaaStages": [
+        "Listen",
+        "Art"
+      ],
+      "year": "2024–present",
+      "location": "Distributed / digital",
+      "connectedProject": "Empathy Ledger",
+      "connectedProjectCode": "ACT-EL",
+      "connectedProjectHref": "/fields/empathy",
+      "elSlugs": [
+        "goldphone",
+        "gold-phone"
+      ],
+      "elTracked": true,
+      "wikiPath": "wiki/projects/act-studio/gold-phone.md"
+    },
+    {
+      "code": "ACT-PS",
+      "slug": "picc-on-country-photo-studio",
+      "aliases": [],
+      "title": "PICC On Country Photo Studio",
+      "quote": "A portrait studio that travels to Palm Island, run on community terms",
+      "description": "Mobile photo studio for Palm Island community storytelling",
+      "philosophy": null,
+      "impact": null,
+      "mediums": [
+        "photography",
+        "installation"
+      ],
+      "tags": [
+        "community-portrait",
+        "cultural-preservation",
+        "participatory"
+      ],
+      "status": "active",
+      "lcaaStages": [
+        "Action",
+        "Art"
+      ],
+      "year": null,
+      "location": null,
+      "connectedProject": "PICC",
+      "connectedProjectCode": "ACT-PI",
+      "connectedProjectHref": "https://picc.studio",
+      "elSlugs": [
+        "picc-photo",
+        "picc-on-country-photo-studio"
+      ],
+      "elTracked": true,
+      "wikiPath": "wiki/projects/picc/picc-on-country-photo-studio.md"
+    },
+    {
+      "code": "ACT-PK",
+      "slug": "picc-photo-kiosk",
+      "aliases": [],
+      "title": "PICC Photo Kiosk",
+      "quote": "The shutter belongs to the subject",
+      "description": "On Palm Island (Bwgcolman), a self-service photo station at the Palm Island Community Company shifted who holds the camera. Families, elders, young people and visitors documented their own stories on their own terms, and more than 2,491 photographs now live in a community-owned archive that no outsider can open without consent.",
+      "philosophy": "Cameras have a long, difficult history in First Nations communities. The kiosk inverts that dynamic. It sits in a trusted space. The shutter belongs to the subject. The archive belongs to community.",
+      "impact": "2,491 self-directed portraits captured. 32 storytellers documented. Community-owned visual archive established. No external access without community consent.",
+      "mediums": [
+        "photography",
+        "installation"
+      ],
+      "tags": [
+        "community-portrait",
+        "cultural-preservation",
+        "participatory"
+      ],
+      "status": "active",
+      "lcaaStages": [
+        "Action",
+        "Art"
+      ],
+      "year": "2023–2025",
+      "location": "Palm Island, Queensland",
+      "connectedProject": "PICC",
+      "connectedProjectCode": "ACT-PI",
+      "connectedProjectHref": "https://picc.studio",
+      "elSlugs": [
+        "picc-photo-kiosk",
+        "PICC-CV"
+      ],
+      "elTracked": true,
+      "wikiPath": "wiki/projects/picc/picc-photo-kiosk.md"
+    },
+    {
+      "code": "ACT-RT",
+      "slug": "redtape",
+      "aliases": [],
+      "title": "Redtape",
+      "quote": "Making the weight of paperwork impossible to ignore",
+      "description": "Forms, compliance demands and reporting requirements fall hardest on the people least equipped to absorb them. Redtape turns that invisible administrative burden into sculpture you cannot walk past, asking who carries the cost of red tape and why. Twenty-nine documentary photographs trace the work, shown alongside community sector practitioners who live it.",
+      "philosophy": "Every form is a power relationship. Every compliance framework carries an assumption about who is trustworthy and who must prove themselves. Redtape makes that architecture visible, not as metaphor, but as material.",
+      "impact": "29 documentary photographs. Exhibited alongside community sector practitioners. Opened conversation about administrative burden as a justice issue.",
+      "mediums": [
+        "installation",
+        "sculpture"
+      ],
+      "tags": [
+        "justice-art",
+        "public-art",
+        "social-practice"
+      ],
+      "status": "active",
+      "lcaaStages": [
+        "Art"
+      ],
+      "year": "2023",
+      "location": "Gallery and public contexts",
+      "connectedProject": null,
+      "connectedProjectCode": null,
+      "connectedProjectHref": null,
+      "elSlugs": [
+        "redtape"
+      ],
+      "elTracked": true,
+      "wikiPath": "wiki/projects/act-studio/redtape.md"
+    },
+    {
+      "code": "ACT-RA",
+      "slug": "regional-arts-fellowship",
+      "aliases": [],
+      "title": "Regional Arts Fellowship",
+      "quote": "Where art, technology and land meet in the regions",
+      "description": "Across regional Australia, practitioners are doing extraordinary work at the edges of art, technology and agriculture, where the most urgent problems refuse to stay inside one field. This fellowship gives them residency time, mentorship and exhibition pathways so cross-disciplinary work can be seen, resourced and connected. Developed in connection with Black Cockatoo Valley.",
+      "philosophy": "Regional Australia is full of practitioners doing extraordinary work at the edges of art, technology, and land. This fellowship creates a frame for that work to be seen, resourced, and connected.",
+      "impact": null,
+      "mediums": [
+        "residency"
+      ],
+      "tags": [
+        "social-practice"
+      ],
+      "status": "concept",
+      "lcaaStages": [
+        "Listen",
+        "Curiosity"
+      ],
+      "year": "In development",
+      "location": "Regional Australia",
+      "connectedProject": "The Farm",
+      "connectedProjectCode": "ACT-FM",
+      "connectedProjectHref": null,
+      "elSlugs": [
+        "regional-arts-fellowship"
+      ],
+      "elTracked": true,
+      "wikiPath": "wiki/projects/act-studio/regional-arts-fellowship.md"
+    },
+    {
+      "code": "ACT-CVN",
+      "slug": "the-caravan",
+      "aliases": [],
+      "title": "The Caravan",
+      "quote": "A room with wheels that goes to the conversation",
+      "description": "Born at the 10x10 Community Capital Leadership Retreat, The Caravan is a hand-built room on wheels that travels between communities for leadership gatherings, listening sessions and on-Country conversations. The table is always set, the kettle is always on, and the meeting comes to the people rather than asking the people to come to it.",
+      "philosophy": "The most important spaces are the ones that show up when and where they are needed. The Caravan is a room with wheels. It goes to the conversation rather than asking the conversation to come to it.",
+      "impact": null,
+      "mediums": [
+        "installation",
+        "making"
+      ],
+      "tags": [
+        "community-portrait",
+        "public-art",
+        "social-practice"
+      ],
+      "status": "active",
+      "lcaaStages": [
+        "Action",
+        "Art"
+      ],
+      "year": "2024–present",
+      "location": "Mobile, Australia",
+      "connectedProject": "Community Capital",
+      "connectedProjectCode": "ACT-CP",
+      "connectedProjectHref": null,
+      "elSlugs": [
+        "the-caravan",
+        "ACT-CVN"
+      ],
+      "elTracked": true,
+      "wikiPath": "wiki/projects/act-studio/the-caravan.md"
+    },
+    {
+      "code": "ACT-CF",
+      "slug": "the-confessional",
+      "aliases": [],
+      "title": "The Confessional",
+      "quote": "A portable room where honesty becomes possible",
+      "description": "A decommissioned horse trailer, rebuilt into a mobile space for anonymous truth-telling. The Confessional sets up at festivals, community events and institutional foyers, creating a temporary room where people can say what systems teach them to hide. It is not therapy and not art for art's sake; it is a pressure valve that travels.",
+      "philosophy": "Some truths only emerge when the architecture of a space grants permission. The Confessional is not therapy. It is not art for art's sake. It is a pressure valve, a portable room where honesty becomes possible.",
+      "impact": "Deployed at multiple events and community gatherings. Stories captured under consent protocols. Demonstrated model for mobile truth-telling infrastructure.",
+      "mediums": [
+        "installation",
+        "performance"
+      ],
+      "tags": [
+        "immersive",
+        "participatory",
+        "social-practice"
+      ],
+      "status": "active",
+      "lcaaStages": [
+        "Listen"
+      ],
+      "year": "2023–present",
+      "location": "Mobile / touring",
+      "connectedProject": null,
+      "connectedProjectCode": null,
+      "connectedProjectHref": null,
+      "elSlugs": [
+        "the-confessional"
+      ],
+      "elTracked": true,
+      "wikiPath": "wiki/projects/act-studio/the-confessional.md"
+    },
+    {
+      "code": "ACT-TV",
+      "slug": "the-vagina",
+      "aliases": [],
+      "title": "The Vagina",
+      "quote": "A work has a home before it has a finished form",
+      "description": "An ACT Studio piece in early development. The working title is public, but its question, materials, collaborators and exhibition context are not yet documented. This page holds its place without pretending the work is finished.",
+      "philosophy": "An emerging work should be visible as emerging. Its public record can grow as the question, authority, collaborators and material become clear.",
+      "impact": null,
+      "mediums": [
+        "installation"
+      ],
+      "tags": [
+        "social-practice"
+      ],
+      "status": "concept",
+      "lcaaStages": [
+        "Art"
+      ],
+      "year": "In development",
+      "location": "TBC",
+      "connectedProject": null,
+      "connectedProjectCode": null,
+      "connectedProjectHref": null,
+      "elSlugs": [
+        "the-vagina"
+      ],
+      "elTracked": false,
+      "wikiPath": "wiki/projects/act-studio/the-vagina.md"
+    },
+    {
+      "code": "ACT-TR",
+      "slug": "treacher",
+      "aliases": [],
+      "title": "Treacher",
+      "quote": "What remains when a tree leaves its ground",
+      "description": "A tree pulled from its ground still carries the voice of where it came from. Treacher works with found objects and natural materials to sit with displacement: of trees, of languages, of the feeling of a place. The work holds what survives after removal, the root structure and the soil memory of something that was here.",
+      "philosophy": "Displacement is not just a political event. It happens to trees, to languages, to the feeling of a place. Treacher sits with what remains after removal, the root structure, the soil memory, the ghost of something that was here.",
+      "impact": null,
+      "mediums": [
+        "film"
+      ],
+      "tags": [
+        "documentary",
+        "justice-art"
+      ],
+      "status": "ideation",
+      "lcaaStages": [
+        "Listen"
+      ],
+      "year": "In development",
+      "location": "TBC",
+      "connectedProject": null,
+      "connectedProjectCode": null,
+      "connectedProjectHref": null,
+      "elSlugs": [
+        "treacher"
+      ],
+      "elTracked": true,
+      "wikiPath": "wiki/projects/act-studio/treacher.md"
+    },
+    {
+      "code": "ACT-UA",
+      "slug": "uncle-allan-palm-island-art",
+      "aliases": [
+        "uncle-allan"
+      ],
+      "title": "Uncle Allan Palm Island Art",
+      "quote": "Reef life and Dreaming, painted on Bwgcolman",
+      "description": "Uncle Allan paints reef ecology and Dreaming stories on Palm Island (Bwgcolman), a practice that long predates any partnership with ACT. Creative authority stays entirely with him; ACT contributes materials, documentation and pathways to market that respect cultural sovereignty. Seventeen works are documented so the knowledge held in them travels on the artist's terms.",
+      "philosophy": "Supporting an artist is not the same as commissioning one. Uncle Allan's practice existed before ACT. What ACT provides is infrastructure: materials, documentation, exhibition pathways, and economic channels that respect cultural authority.",
+      "impact": "17 works documented. 1 storyteller. Cultural knowledge preserved through art practice. Economic pathway established for artist.",
+      "mediums": [
+        "painting"
+      ],
+      "tags": [
+        "cultural-preservation",
+        "documentary"
+      ],
+      "status": "active",
+      "lcaaStages": [
+        "Art"
+      ],
+      "year": "2023–present",
+      "location": "Palm Island, Queensland",
+      "connectedProject": null,
+      "connectedProjectCode": null,
+      "connectedProjectHref": null,
+      "elSlugs": [
+        "uncle-allan",
+        "uncle-allan-palm-island-art"
+      ],
+      "elTracked": true,
+      "wikiPath": "wiki/projects/act-studio/uncle-allan-palm-island-art.md"
+    }
+  ]
+}

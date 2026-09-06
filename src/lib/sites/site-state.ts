@@ -7,7 +7,7 @@
  * page renders without the strip rather than failing the build.
  */
 
-export type SiteStatus = "live" | "building" | "broken" | "canceled" | "unknown" | "external";
+export type SiteStatus = "live" | "building" | "broken" | "canceled" | "unknown" | "external" | "archived";
 
 export interface SiteState {
   slug: string;
@@ -29,7 +29,7 @@ interface SiteRow {
   last_check_at: string | null;
 }
 
-const STATUSES: SiteStatus[] = ["live", "building", "broken", "canceled", "unknown", "external"];
+const STATUSES: SiteStatus[] = ["live", "building", "broken", "canceled", "unknown", "external", "archived"];
 
 export function normalizeStatus(value: string | null | undefined): SiteStatus {
   return STATUSES.includes(value as SiteStatus) ? (value as SiteStatus) : "unknown";
@@ -48,6 +48,8 @@ export function describeStatus(status: SiteStatus): { label: string; tone: "good
       return { label: "Paused", tone: "muted" };
     case "external":
       return { label: "Hosted elsewhere", tone: "muted" };
+    case "archived":
+      return { label: "Retired", tone: "muted" };
     default:
       return { label: "Unknown", tone: "muted" };
   }

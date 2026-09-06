@@ -51,7 +51,7 @@ export function ProjectKeyPeopleSection({
           return (
             <li
               key={`${person.name}-${i}`}
-              className="rounded-[20px] border border-[var(--we-sand)] bg-white p-5 transition hover:border-[#7A9B76]"
+              className="rounded-[20px] border border-[var(--we-sand)] bg-white p-5 transition hover:border-[var(--warm-sage)]"
             >
               {storyteller ? (
                 <Link
@@ -60,7 +60,7 @@ export function ProjectKeyPeopleSection({
                 >
                   {body}
                   <span className="mt-3 inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-[var(--we-brown-deep)] group-hover:text-[var(--we-olive)]">
-                    <span className="rounded-full border border-[var(--we-sand)] bg-[#F6F1E7] px-2 py-0.5 text-[10px] tracking-[0.18em] text-[var(--we-olive)]">
+                    <span className="rounded-full border border-[var(--we-sand)] bg-[var(--warm-paper)] px-2 py-0.5 text-[10px] tracking-[0.18em] text-[var(--we-olive)]">
                       Storyteller profile
                     </span>
                     <span>View story →</span>

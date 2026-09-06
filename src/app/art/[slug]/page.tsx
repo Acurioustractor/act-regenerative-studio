@@ -74,7 +74,7 @@ function RelatedWorkCard({ project }: { project: HydratedArtProject }) {
   return (
     <Link
       href={`/art/${project.slug}`}
-      className="group overflow-hidden rounded-[24px] border border-[var(--we-sand)] bg-[#FDFBF7] transition-all hover:border-[#CFA16B] hover:shadow-[0_16px_40px_rgba(50,42,31,0.08)]"
+      className="group overflow-hidden rounded-[24px] border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] transition-all hover:border-[var(--warm-gold)] hover:shadow-[0_16px_40px_rgba(50,42,31,0.08)]"
     >
       {heroUrl ? (
         <div className="relative aspect-[16/10] overflow-hidden">
@@ -93,21 +93,21 @@ function RelatedWorkCard({ project }: { project: HydratedArtProject }) {
           </div>
         </div>
       ) : (
-        <div className="flex aspect-[16/10] items-end bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-5">
+        <div className="flex aspect-[16/10] items-end bg-gradient-to-br from-[var(--warm-paper)] via-[#E7DDC7] to-[var(--warm-sand-deep)] p-5">
           <h3 className="font-[var(--font-display)] text-xl font-semibold text-[#241c15]">
             {project.title}
           </h3>
         </div>
       )}
       <div className="p-5">
-        <p className="text-sm italic leading-6 text-[#5A4A3A] line-clamp-2">
+        <p className="text-sm italic leading-6 text-[var(--warm-bark)] line-clamp-2">
           "{project.quote}"
         </p>
         <div className="mt-3 flex flex-wrap gap-2">
           {project.mediums.map((medium) => (
             <span
               key={medium}
-              className="rounded-full border border-[#D7C4A2] bg-[#F6F1E7] px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--we-warm-brown)]"
+              className="rounded-full border border-[var(--warm-sand-deep)] bg-[var(--warm-paper)] px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--we-warm-brown)]"
             >
               {formatMedium(medium)}
             </span>
@@ -242,7 +242,7 @@ export default async function ArtWorkPage({
             {project.connectedProject && project.connectedProjectHref && (
               <Link
                 href={project.connectedProjectHref}
-                className="rounded-full border border-[#245c43] bg-[#245c43] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-[#1d4b37]"
+                className="rounded-full border border-[var(--warm-forest)] bg-[var(--warm-forest)] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-[#1d4b37]"
               >
                 Part of {project.connectedProject} &rarr;
               </Link>
@@ -252,7 +252,7 @@ export default async function ArtWorkPage({
                 href={project.externalSite.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-[#245c43] bg-[#245c43] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-[#1d4b37]"
+                className="rounded-full border border-[var(--warm-forest)] bg-[var(--warm-forest)] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-[#1d4b37]"
               >
                 {project.externalSite.label} &rarr;
               </a>
@@ -260,7 +260,7 @@ export default async function ArtWorkPage({
             {project.mediums.map((medium) => (
               <span
                 key={medium}
-                className="rounded-full border border-[#D7C4A2] bg-white/50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)]"
+                className="rounded-full border border-[var(--warm-sand-deep)] bg-white/50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)]"
               >
                 {formatMedium(medium)}
               </span>
@@ -279,7 +279,7 @@ export default async function ArtWorkPage({
 
       {/* Quote + Philosophy */}
       <section className="mx-auto max-w-3xl space-y-8">
-        <blockquote className="border-l-2 border-[#CFA16B] pl-6 text-xl italic leading-8 text-[var(--we-brown)] md:text-2xl md:leading-10">
+        <blockquote className="border-l-2 border-[var(--warm-gold)] pl-6 text-xl italic leading-8 text-[var(--we-brown)] md:text-2xl md:leading-10">
           "{project.quote}"
         </blockquote>
 
@@ -288,7 +288,7 @@ export default async function ArtWorkPage({
         </p>
 
         {project.philosophy && (
-          <div className="rounded-[24px] border border-[var(--we-sand)] bg-[#FDFBF7] p-6 md:p-8">
+          <div className="rounded-[24px] border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] p-6 md:p-8">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)] mb-3">
               Philosophy
             </p>
@@ -342,8 +342,8 @@ export default async function ArtWorkPage({
                     />
                   </div>
                   {item.caption && (
-                    <div className="bg-[#FDFBF7] px-4 py-3">
-                      <p className="text-xs leading-5 text-[#5A4A3A]">
+                    <div className="bg-[var(--warm-paper-bright)] px-4 py-3">
+                      <p className="text-xs leading-5 text-[var(--warm-bark)]">
                         {item.caption}
                       </p>
                     </div>
@@ -358,7 +358,7 @@ export default async function ArtWorkPage({
       {/* Details */}
       <section className="mx-auto max-w-3xl">
         <div className="grid gap-8 md:grid-cols-[1fr_1fr]">
-          <div className="rounded-[24px] border border-[var(--we-sand)] bg-[#FDFBF7] p-6">
+          <div className="rounded-[24px] border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] p-6">
             <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)] mb-4">
               Details
             </p>
@@ -406,7 +406,7 @@ export default async function ArtWorkPage({
 
           <div className="space-y-6">
             {project.tags.length > 0 && (
-              <div className="rounded-[24px] border border-[var(--we-sand)] bg-[#FDFBF7] p-6">
+              <div className="rounded-[24px] border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] p-6">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)] mb-4">
                   Art tags
                 </p>
@@ -414,7 +414,7 @@ export default async function ArtWorkPage({
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full border border-[#D7C4A2] bg-[#F6F1E7] px-3 py-1.5 text-xs text-[#5A4A3A]"
+                      className="rounded-full border border-[var(--warm-sand-deep)] bg-[var(--warm-paper)] px-3 py-1.5 text-xs text-[var(--warm-bark)]"
                     >
                       {tag}
                     </span>
@@ -424,13 +424,13 @@ export default async function ArtWorkPage({
             )}
 
             {project.connectedProject && (
-              <div className="rounded-[24px] border border-[var(--we-sand)] bg-[#FDFBF7] p-6">
+              <div className="rounded-[24px] border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] p-6">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)] mb-3">
                   Connected to
                 </p>
                 <Link
                   href={project.connectedProjectHref || '/projects'}
-                  className="group inline-flex items-center gap-2 text-sm font-semibold text-[#245c43] transition hover:gap-3"
+                  className="group inline-flex items-center gap-2 text-sm font-semibold text-[var(--warm-forest)] transition hover:gap-3"
                 >
                   {project.connectedProject}{' '}
                   <span aria-hidden="true">&rarr;</span>
@@ -441,7 +441,7 @@ export default async function ArtWorkPage({
             {/* Storytellers */}
             {/* Launch hold (2026-05-27): hidden while /storytellers is held. See @/lib/launch-flags. */}
             {STORYTELLERS_PUBLIC && project.storytellers.length > 0 && (
-              <div className="rounded-[24px] border border-[var(--we-sand)] bg-[#FDFBF7] p-6">
+              <div className="rounded-[24px] border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] p-6">
                 <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)] mb-4">
                   Storytellers
                 </p>
@@ -486,7 +486,7 @@ export default async function ArtWorkPage({
       {project.impact && (
         <section className="mx-auto max-w-3xl">
           <div className="rounded-[24px] border border-[#244c39] bg-[#15261d] p-6 md:p-8 text-[#f5ecde]">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#CFA16B] mb-3">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--warm-gold)] mb-3">
               What it did
             </p>
             <p className="text-[0.95rem] leading-7 text-[#d7c8b2]">
@@ -517,7 +517,7 @@ export default async function ArtWorkPage({
       <div className="flex justify-center">
         <Link
           href="/art"
-          className="rounded-full border border-[var(--we-sand)] px-8 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:border-[#245c43] hover:bg-forest-soft"
+          className="rounded-full border border-[var(--we-sand)] px-8 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:border-[var(--warm-forest)] hover:bg-forest-soft"
         >
           Back to art portfolio
         </Link>

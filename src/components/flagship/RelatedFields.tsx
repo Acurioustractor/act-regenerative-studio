@@ -77,7 +77,7 @@ export function RelatedFields({ currentSlug }: { currentSlug: string }) {
                   <p className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.3em] text-[#FAFAF7]/60">
                     {field.eyebrow}
                   </p>
-                  <h3 className="mt-1 font-[var(--font-display)] text-lg font-semibold text-[#FAFAF7]">
+                  <h3 className="mt-1 font-[var(--font-display)] text-lg font-semibold text-[var(--site-bg)]">
                     {field.title}
                   </h3>
                 </div>

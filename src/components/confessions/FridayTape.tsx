@@ -87,7 +87,7 @@ export function FridayTape() {
         <button
           onClick={toggleAll}
           aria-pressed={idx !== null}
-          className="inline-flex items-center gap-3 rounded-full bg-[#CFA16B] px-7 py-3.5 font-[var(--font-sans)] text-sm font-semibold uppercase tracking-[0.18em] text-[#1A130B] transition hover:bg-[#E0B985]"
+          className="inline-flex items-center gap-3 rounded-full bg-[var(--warm-gold)] px-7 py-3.5 font-[var(--font-sans)] text-sm font-semibold uppercase tracking-[0.18em] text-[#1A130B] transition hover:bg-[#E0B985]"
         >
           {idx !== null ? (
             <>
@@ -106,14 +106,14 @@ export function FridayTape() {
         </p>
       </div>
 
-      <ol className="mt-12 space-y-px overflow-hidden rounded-2xl border border-[#3A2C18] bg-[#1A130B]">
+      <ol className="mt-12 space-y-px overflow-hidden rounded-2xl border border-[var(--warm-bark-deep)] bg-[#1A130B]">
         {TAPE.map((c, i) => {
           const playing = idx === i;
           const t = themeMeta[c.theme];
           return (
             <li
               key={c.id}
-              className="border-b border-[#2E2215] p-6 last:border-b-0 md:p-7"
+              className="border-b border-[var(--warm-earth)] p-6 last:border-b-0 md:p-7"
               style={playing ? { background: `rgba(${t.rgb},0.06)` } : undefined}
             >
               <div className="flex items-start gap-5">

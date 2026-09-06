@@ -78,7 +78,7 @@ export function SisterProjectsSection({
           <li key={project.slug}>
             <Link
               href={`/projects/${project.slug}`}
-              className="group block h-full rounded-[20px] border border-[var(--we-sand)] bg-white p-5 transition hover:border-[#7A9B76] hover:shadow-lg"
+              className="group block h-full rounded-[20px] border border-[var(--we-sand)] bg-white p-5 transition hover:border-[var(--warm-sage)] hover:shadow-lg"
             >
               <h3 className="font-[var(--font-display)] text-lg font-semibold text-[var(--we-olive)] group-hover:text-forest-sage">
                 {project.name}

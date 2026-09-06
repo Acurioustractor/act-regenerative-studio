@@ -344,7 +344,7 @@ export function ConfessionField({
             <li key={v.id}>
               <button
                 onClick={() => pickUp(v)}
-                className="rounded-full border border-[rgba(224,176,104,0.4)] px-3 py-1.5 text-[0.72rem] uppercase tracking-[0.16em] text-[rgba(224,176,104,0.8)] transition hover:border-[rgba(224,176,104,0.8)] hover:text-[#F3EBDD]"
+                className="rounded-full border border-[rgba(224,176,104,0.4)] px-3 py-1.5 text-[0.72rem] uppercase tracking-[0.16em] text-[rgba(224,176,104,0.8)] transition hover:border-[rgba(224,176,104,0.8)] hover:text-[var(--warm-cream)]"
               >
                 {v.cleared ? '▸ ' : '✎ '}
                 {v.themeLabel}
@@ -403,7 +403,7 @@ function CaptionBlock({
     >
       {active && (
         <>
-          <p className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.32em] text-[#E0B068]">
+          <p className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.32em] text-[var(--warm-gold-bright)]">
             {active.cleared ? (isPlaying ? 'Now playing' : 'Tap the light again to play') : 'Shared as words'}
             <span className="mx-2 text-sand-lift">·</span>
             {active.themeLabel}
@@ -417,12 +417,12 @@ function CaptionBlock({
           {active.cleared && isPlaying && (
             <button
               onClick={onStop}
-              className="pointer-events-auto mt-4 inline-flex items-center gap-2 rounded-full border border-[rgba(224,176,104,0.4)] px-3.5 py-1.5 font-[var(--font-sans)] text-[11px] uppercase tracking-[0.2em] text-[rgba(224,176,104,0.85)] transition hover:border-[rgba(224,176,104,0.8)] hover:text-[#F3EBDD]"
+              className="pointer-events-auto mt-4 inline-flex items-center gap-2 rounded-full border border-[rgba(224,176,104,0.4)] px-3.5 py-1.5 font-[var(--font-sans)] text-[11px] uppercase tracking-[0.2em] text-[rgba(224,176,104,0.85)] transition hover:border-[rgba(224,176,104,0.8)] hover:text-[var(--warm-cream)]"
             >
               <span className="flex gap-0.5" aria-hidden="true">
-                <span className="h-3 w-[3px] animate-pulse rounded-full bg-[#E0B068]" />
-                <span className="h-3 w-[3px] animate-pulse rounded-full bg-[#E0B068] [animation-delay:150ms]" />
-                <span className="h-3 w-[3px] animate-pulse rounded-full bg-[#E0B068] [animation-delay:300ms]" />
+                <span className="h-3 w-[3px] animate-pulse rounded-full bg-[var(--warm-gold-bright)]" />
+                <span className="h-3 w-[3px] animate-pulse rounded-full bg-[var(--warm-gold-bright)] [animation-delay:150ms]" />
+                <span className="h-3 w-[3px] animate-pulse rounded-full bg-[var(--warm-gold-bright)] [animation-delay:300ms]" />
               </span>
               Stop
             </button>

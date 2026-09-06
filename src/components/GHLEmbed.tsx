@@ -18,10 +18,10 @@ export default function GHLEmbed({
           {title}
         </h3>
         {description ? (
-          <p className="mt-1 text-sm text-[#5A4A3A]">{description}</p>
+          <p className="mt-1 text-sm text-[var(--warm-bark)]">{description}</p>
         ) : null}
       </div>
-      <div className="overflow-hidden rounded-xl border border-[#E7DBC6] bg-[#F6F1E7]">
+      <div className="overflow-hidden rounded-xl border border-[#E7DBC6] bg-[var(--warm-paper)]">
         <iframe
           title={title}
           src={src}

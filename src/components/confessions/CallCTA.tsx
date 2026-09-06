@@ -9,7 +9,7 @@ export function CallCTA({ size = 'lg' }: { size?: 'lg' | 'sm' }) {
   return (
     <a
       href={TEL}
-      className={`group inline-flex items-center gap-3 rounded-full bg-[#CFA16B] font-semibold text-[#1A130B] transition-all hover:gap-4 hover:bg-[#E0B985] ${
+      className={`group inline-flex items-center gap-3 rounded-full bg-[var(--warm-gold)] font-semibold text-[#1A130B] transition-all hover:gap-4 hover:bg-[#E0B985] ${
         size === 'lg' ? 'px-7 py-4 text-base' : 'px-5 py-3 text-sm'
       }`}
     >

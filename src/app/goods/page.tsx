@@ -241,7 +241,7 @@ export default async function GoodsPage() {
                 { year: "2028", label: "Third facility", desc: "Exploratory. Top End or Torres Strait. Target 5,000+ units/year, 18 workers." },
               ].map((item) => (
                 <div key={item.year} className="border-l-2 border-[var(--site-clay)]/30 pl-6">
-                  <p className="font-[var(--font-display)] text-3xl font-bold text-[#FAFAF7]">{item.year}</p>
+                  <p className="font-[var(--font-display)] text-3xl font-bold text-[var(--site-bg)]">{item.year}</p>
                   <p className="mt-2 font-[var(--font-sans)] text-[12px] font-semibold uppercase tracking-[0.1em] text-clay-text">{item.label}</p>
                   <p className="mt-2 font-[var(--font-body)] text-[14px] leading-[1.7] text-[#FAFAF7]/50">{item.desc}</p>
                 </div>
@@ -327,7 +327,7 @@ export default async function GoodsPage() {
                         <Image src={person.profile_image_url!} alt={name} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                         <div className="absolute bottom-0 left-0 right-0 p-8">
-                          <p className="font-[var(--font-display)] text-xl font-semibold text-[#FAFAF7]">{name}</p>
+                          <p className="font-[var(--font-display)] text-xl font-semibold text-[var(--site-bg)]">{name}</p>
                           {person.custom_tagline && (
                             <p className="mt-1 font-[var(--font-sans)] text-[11px] uppercase tracking-[0.15em] text-[#FAFAF7]/60">{person.custom_tagline}</p>
                           )}
@@ -392,7 +392,7 @@ export default async function GoodsPage() {
       <ScrollReveal>
         <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[800px] text-center">
-            <h2 className="font-[var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-light leading-[1.1] text-[#FAFAF7]">
+            <h2 className="font-[var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-light leading-[1.1] text-[var(--site-bg)]">
               A good bed can prevent heart disease.
             </h2>
             <p className="mx-auto mt-8 max-w-lg font-[var(--font-body)] text-lg leading-[1.8] text-[#FAFAF7]/60">

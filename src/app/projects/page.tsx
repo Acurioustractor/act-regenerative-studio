@@ -117,8 +117,8 @@ const HIDDEN_PROJECT_SLUGS = new Set(['act-public-voice']);
 
 const DOMAIN_BADGE_STYLES: Record<string, string> = {
   Active: 'border-[#8CB58B] bg-forest-soft text-[#2F5233]',
-  Ideation: 'border-[#D7C4A2] bg-[#FFF7E9] text-[#8B6914]',
-  Ecosystem: 'border-[#D9C9A9] bg-[#F5F1E8] text-[#5A4A3A]',
+  Ideation: 'border-[var(--warm-sand-deep)] bg-[#FFF7E9] text-[#8B6914]',
+  Ecosystem: 'border-[#D9C9A9] bg-[#F5F1E8] text-[var(--warm-bark)]',
   Place: 'border-[#A2C5A2] bg-[#EEF7EE] text-[#2F5233]',
   Satellite: 'border-[#C7D3E8] bg-[#EFF4FB] text-[#385780]',
   Studio: 'border-[#E1C8E8] bg-[#F7EFFA] text-[#6B4D6B]',
@@ -354,13 +354,13 @@ export default async function ProjectsPage() {
             <div className="flex flex-wrap gap-4">
               <Link
                 href="#flagship-projects"
-                className="site-glow-link rounded-full bg-[#245c43] px-7 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-white shadow-[0_16px_36px_rgba(36,92,67,0.2)] transition hover:bg-[#1c4935]"
+                className="site-glow-link rounded-full bg-[var(--warm-forest)] px-7 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-white shadow-[0_16px_36px_rgba(36,92,67,0.2)] transition hover:bg-[#1c4935]"
               >
                 See flagship projects
               </Link>
               <Link
                 href="/stories"
-                className="site-glow-link rounded-full border border-[#245c43] bg-white/45 px-7 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#1f2b21] transition hover:bg-forest-soft"
+                className="site-glow-link rounded-full border border-[var(--warm-forest)] bg-white/45 px-7 py-3 text-sm font-semibold uppercase tracking-[0.22em] text-[#1f2b21] transition hover:bg-forest-soft"
               >
                 Read field notes
               </Link>
@@ -383,7 +383,7 @@ export default async function ProjectsPage() {
               </p>
             </div>
             <div className="rounded-[28px] border border-[#244c39] bg-[#15261d] p-6 text-[#f5ecde] shadow-[0_24px_60px_rgba(43,31,18,0.2)] sm:col-span-2">
-              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-[#cfa16b]">
+              <p className="text-[0.68rem] font-semibold uppercase tracking-[0.28em] text-[var(--warm-gold)]">
                 Start here
               </p>
               <p className="mt-4 font-[var(--font-display)] text-[2rem] font-semibold leading-tight">
@@ -400,7 +400,7 @@ export default async function ProjectsPage() {
               <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[#6f5c49]">
                 Flagship set
               </p>
-              <p className="mt-3 text-3xl font-semibold text-[#245c43]">
+              <p className="mt-3 text-3xl font-semibold text-[var(--warm-forest)]">
                 {FEATURED_OUTPUTS.length}
               </p>
               <p className="mt-2 text-sm leading-6 text-[#514235]">
@@ -411,7 +411,7 @@ export default async function ProjectsPage() {
               <p className="text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-[#6f5c49]">
                 Wider set
               </p>
-              <p className="mt-3 text-3xl font-semibold text-[#245c43]">
+              <p className="mt-3 text-3xl font-semibold text-[var(--warm-forest)]">
                 {projectIndex.length}
               </p>
               <p className="mt-2 text-sm leading-6 text-[#514235]">
@@ -437,21 +437,21 @@ export default async function ProjectsPage() {
           <div className="mt-6 flex flex-wrap gap-3">
             <Link
               href="#flagship-projects"
-              className="site-glow-link rounded-full bg-[#245c43] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#1c4935]"
+              className="site-glow-link rounded-full bg-[var(--warm-forest)] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#1c4935]"
             >
               Flagship projects
             </Link>
             <Link
               href="/stories"
-              className="site-glow-link rounded-full border border-[#245c43] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#1f2b21] transition hover:bg-forest-soft"
+              className="site-glow-link rounded-full border border-[var(--warm-forest)] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#1f2b21] transition hover:bg-forest-soft"
             >
               Follow field writing
             </Link>
           </div>
         </div>
 
-        <div className="rounded-[34px] border border-[#2F2A25] bg-[#11110F] p-7 text-[#F3EBDD] shadow-[0_24px_60px_rgba(0,0,0,0.18)]">
-          <p className="site-eyebrow text-[#cfa16b] before:bg-[#71553b]">Proof already moving</p>
+        <div className="rounded-[34px] border border-[#2F2A25] bg-[var(--warm-night)] p-7 text-[var(--warm-cream)] shadow-[0_24px_60px_rgba(0,0,0,0.18)]">
+          <p className="site-eyebrow text-[var(--warm-gold)] before:bg-[#71553b]">Proof already moving</p>
           <h2 className="mt-4 font-[var(--font-display)] text-[2.2rem] font-semibold leading-tight">
             Visible signs that the work is already in motion.
           </h2>
@@ -466,7 +466,7 @@ export default async function ProjectsPage() {
                 key={card.label}
                 className="rounded-[22px] border border-[#4A3B2E] bg-[#171612] px-5 py-4"
               >
-                <p className="text-2xl font-semibold text-[#F3EBDD]">
+                <p className="text-2xl font-semibold text-[var(--warm-cream)]">
                   {card.value}
                 </p>
                 <p className="mt-1 text-xs uppercase tracking-[0.2em] text-[#BDAE98]">
@@ -506,7 +506,7 @@ export default async function ProjectsPage() {
             the wider project set a visible place to live.
           </p>
           <div className="mt-6 grid gap-3 sm:grid-cols-3">
-            <div className="rounded-[22px] border border-[var(--we-sand)] bg-[#FDFBF7] px-4 py-4">
+            <div className="rounded-[22px] border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] px-4 py-4">
               <p className="text-2xl font-semibold text-[#2d6a4f]">
                 {archivePreview.length}
               </p>
@@ -514,7 +514,7 @@ export default async function ProjectsPage() {
                 Seed set shown
               </p>
             </div>
-            <div className="rounded-[22px] border border-[var(--we-sand)] bg-[#FDFBF7] px-4 py-4">
+            <div className="rounded-[22px] border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] px-4 py-4">
               <p className="text-2xl font-semibold text-[#2d6a4f]">
                 {archiveProjectsWithSites}
               </p>
@@ -522,7 +522,7 @@ export default async function ProjectsPage() {
                 With public sites
               </p>
             </div>
-            <div className="rounded-[22px] border border-[var(--we-sand)] bg-[#FDFBF7] px-4 py-4">
+            <div className="rounded-[22px] border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] px-4 py-4">
               <p className="text-2xl font-semibold text-[#2d6a4f]">
                 {archiveProjectsWithRepos}
               </p>
@@ -536,13 +536,13 @@ export default async function ProjectsPage() {
               const statusStyle =
                 DOMAIN_BADGE_STYLES[project.status || ''] ||
                 DOMAIN_BADGE_STYLES[project.tier || ''] ||
-                'border-[var(--we-sand)] bg-[#FDFBF7] text-[#5A4A3A]';
+                'border-[var(--we-sand)] bg-[var(--warm-paper-bright)] text-[var(--warm-bark)]';
               const liveSignals = signalPayload.bySlug[project.slug];
 
               return (
                 <article
                   key={project.relativePath}
-                  className="min-w-0 rounded-[24px] border border-[var(--we-sand)] bg-[#FDFBF7] p-5 transition-all hover:border-[#2d6a4f] hover:shadow-[0_18px_45px_rgba(50,42,31,0.08)]"
+                  className="min-w-0 rounded-[24px] border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] p-5 transition-all hover:border-[#2d6a4f] hover:shadow-[0_18px_45px_rgba(50,42,31,0.08)]"
                 >
                   <Link href={`/projects/${project.slug}`} className="group block min-w-0">
                     <div className="mb-3 flex items-start justify-between gap-3">
@@ -557,7 +557,7 @@ export default async function ProjectsPage() {
                         </span>
                       )}
                     </div>
-                    <p className="text-sm leading-7 text-[#5A4A3A]">
+                    <p className="text-sm leading-7 text-[var(--warm-bark)]">
                       {cleanPublicBrandText(project.summary || project.overview) ||
                         'Open the project page to read the ACT wiki framing.'}
                     </p>
@@ -580,12 +580,12 @@ export default async function ProjectsPage() {
                           </span>
                         ) : null}
                         {liveSignals.storyCount > 0 ? (
-                          <span className="rounded-full bg-[#F6F1E7] px-2.5 py-1 text-[10px] font-medium text-[var(--we-brown-deep)]">
+                          <span className="rounded-full bg-[var(--warm-paper)] px-2.5 py-1 text-[10px] font-medium text-[var(--we-brown-deep)]">
                             {liveSignals.storyCount} stories
                           </span>
                         ) : null}
                         {liveSignals.mediaCount > 0 ? (
-                          <span className="rounded-full bg-[#F6F1E7] px-2.5 py-1 text-[10px] font-medium text-[var(--we-brown-deep)]">
+                          <span className="rounded-full bg-[var(--warm-paper)] px-2.5 py-1 text-[10px] font-medium text-[var(--we-brown-deep)]">
                             {liveSignals.mediaCount} media
                           </span>
                         ) : null}
@@ -617,7 +617,7 @@ export default async function ProjectsPage() {
                         href={project.repoUrl}
                         target="_blank"
                         rel="noopener noreferrer"
-                        className="site-glow-link rounded-full border border-[#D9C9A9] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#5A4A3A] transition hover:bg-[#F5F1E8]"
+                        className="site-glow-link rounded-full border border-[#D9C9A9] px-3 py-2 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--warm-bark)] transition hover:bg-[#F5F1E8]"
                       >
                         GitHub
                       </a>
@@ -634,14 +634,14 @@ export default async function ProjectsPage() {
                   ? `${hiddenArchiveCount} more projects remain in the living archive.`
                   : 'This view is currently showing the full non-flagship archive.'}
               </p>
-              <p className="text-xs leading-6 text-[#5A4A3A]">
+              <p className="text-xs leading-6 text-[var(--warm-bark)]">
                 Go deeper when you want the wider graph, older proofs, and related strands beyond this front-facing seed set.
               </p>
             </div>
             <div className="flex flex-wrap gap-3">
               <Link
                 href="/contact"
-                className="site-glow-link rounded-full border border-[#245c43] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#1f2b21] transition hover:bg-forest-soft"
+                className="site-glow-link rounded-full border border-[var(--warm-forest)] px-4 py-2.5 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#1f2b21] transition hover:bg-forest-soft"
               >
                 Bring a strand in
               </Link>
@@ -684,7 +684,7 @@ export default async function ProjectsPage() {
           <div className="flex flex-wrap gap-3 lg:justify-end">
             <Link
               href="/contact"
-              className="site-glow-link rounded-full bg-[#245c43] px-7 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#1c4935]"
+              className="site-glow-link rounded-full bg-[var(--warm-forest)] px-7 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#1c4935]"
             >
               Get in touch
             </Link>

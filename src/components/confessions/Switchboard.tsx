@@ -182,7 +182,7 @@ export function Switchboard({ confessions }: { confessions: Confession[] }) {
 
   return (
     <div>
-      <div className="relative overflow-hidden rounded-3xl border border-[#3A2C18] bg-[#15100A]">
+      <div className="relative overflow-hidden rounded-3xl border border-[var(--warm-bark-deep)] bg-[#15100A]">
         <canvas ref={canvasRef} className="block h-[440px] w-full touch-none md:h-[540px]" aria-hidden="true" />
         <span className="pointer-events-none absolute bottom-3 left-1/2 -translate-x-1/2 font-[var(--font-sans)] text-[10px] uppercase tracking-[0.35em] text-sand-lift">
           operator

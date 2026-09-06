@@ -35,7 +35,7 @@ export default function StorytellersIndexPage() {
       </header>
 
       {storytellers.length === 0 ? (
-        <section className="rounded-[28px] border border-[var(--we-sand)] bg-[#FDFBF7] p-8">
+        <section className="rounded-[28px] border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] p-8">
           <h2 className="font-[var(--font-display)] text-xl font-semibold text-[var(--we-olive)]">
             Storyteller profiles open as consent clears.
           </h2>
@@ -49,7 +49,7 @@ export default function StorytellersIndexPage() {
             <Link
               key={s.id}
               href={`/storytellers/${encodeURIComponent(s.id)}`}
-              className="group rounded-[24px] border border-[var(--we-sand)] bg-white p-6 transition-all hover:border-[#7A9B76] hover:shadow-lg"
+              className="group rounded-[24px] border border-[var(--we-sand)] bg-white p-6 transition-all hover:border-[var(--warm-sage)] hover:shadow-lg"
             >
               <div className="flex items-start gap-4">
                 {s.avatarUrl ? (
@@ -89,7 +89,7 @@ export default function StorytellersIndexPage() {
                   {s.culturalBackground.slice(0, 3).map((cb) => (
                     <span
                       key={cb}
-                      className="rounded-full border border-[var(--we-sand)] bg-[#F6F1E7] px-2 py-[2px] text-[10px] uppercase tracking-[0.18em] text-[var(--we-olive)]"
+                      className="rounded-full border border-[var(--we-sand)] bg-[var(--warm-paper)] px-2 py-[2px] text-[10px] uppercase tracking-[0.18em] text-[var(--we-olive)]"
                     >
                       {cb}
                     </span>

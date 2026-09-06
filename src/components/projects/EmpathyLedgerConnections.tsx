@@ -141,7 +141,7 @@ export function EmpathyLedgerConnections({
           onClick={() => setOpen(false)}
         >
           <aside
-            className="flex h-full w-full max-w-md flex-col overflow-hidden bg-[#1a1a1a] text-white shadow-2xl"
+            className="flex h-full w-full max-w-md flex-col overflow-hidden bg-[var(--site-ink)] text-white shadow-2xl"
             onClick={(e) => e.stopPropagation()}
           >
             {/* Header */}
@@ -255,7 +255,7 @@ export function EmpathyLedgerConnections({
                   onClick={() => setTab(t.key)}
                   className={`rounded-full px-3 py-1.5 text-xs font-medium transition ${
                     tab === t.key
-                      ? "bg-white text-[#1a1a1a]"
+                      ? "bg-white text-[var(--site-ink)]"
                       : "text-white/60 hover:bg-white/10 hover:text-white"
                   }`}
                 >
@@ -326,7 +326,7 @@ export function EmpathyLedgerConnections({
                                 unoptimized
                               />
                               <div className="absolute inset-0 flex items-center justify-center bg-black/25 transition group-hover:bg-black/10">
-                                <div className="grid h-12 w-12 place-items-center rounded-full bg-white/95 text-[#1a1a1a] shadow-lg">
+                                <div className="grid h-12 w-12 place-items-center rounded-full bg-white/95 text-[var(--site-ink)] shadow-lg">
                                   <svg
                                     width="18"
                                     height="18"
@@ -354,7 +354,7 @@ export function EmpathyLedgerConnections({
                               className="group relative block aspect-video overflow-hidden bg-gradient-to-br from-[#2a2a2a] to-[#111]"
                             >
                               <div className="absolute inset-0 flex items-center justify-center">
-                                <div className="grid h-12 w-12 place-items-center rounded-full bg-white/90 text-[#1a1a1a] shadow-lg transition group-hover:scale-105">
+                                <div className="grid h-12 w-12 place-items-center rounded-full bg-white/90 text-[var(--site-ink)] shadow-lg transition group-hover:scale-105">
                                   <svg
                                     width="18"
                                     height="18"

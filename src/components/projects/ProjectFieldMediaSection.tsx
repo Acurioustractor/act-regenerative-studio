@@ -33,7 +33,7 @@ export function ProjectFieldMediaSection({
           href={leadImage.href}
           target={leadImage.href.startsWith('http') ? '_blank' : undefined}
           rel={leadImage.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-          className="group relative overflow-hidden rounded-[34px] border border-[#D9C9A9] bg-[#11110F]"
+          className="group relative overflow-hidden rounded-[34px] border border-[#D9C9A9] bg-[var(--warm-night)]"
         >
           <div className="absolute inset-0">
             <img
@@ -76,7 +76,7 @@ export function ProjectFieldMediaSection({
             href={media.video.href || media.video.url}
             target={(media.video.href || media.video.url).startsWith('http') ? '_blank' : undefined}
             rel={(media.video.href || media.video.url).startsWith('http') ? 'noopener noreferrer' : undefined}
-            className="group relative block overflow-hidden rounded-[30px] border border-[#2F2A25] bg-[#171612] text-[#F3EBDD]"
+            className="group relative block overflow-hidden rounded-[30px] border border-[#2F2A25] bg-[#171612] text-[var(--warm-cream)]"
           >
             <div className="absolute inset-0">
               {canInlineVideo ? (
@@ -99,7 +99,7 @@ export function ProjectFieldMediaSection({
             <div className="relative flex min-h-[250px] flex-col justify-between p-6">
               <div className="flex items-start justify-between gap-4">
                 <div className="space-y-2">
-                  <span className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-[#F3EBDD] backdrop-blur-sm">
+                  <span className="rounded-full bg-white/10 px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--warm-cream)] backdrop-blur-sm">
                     {media.video.eyebrow}
                   </span>
                   {media.video.sourceTitle ? (
@@ -136,7 +136,7 @@ export function ProjectFieldMediaSection({
                 href={item.href}
                 target={item.href.startsWith('http') ? '_blank' : undefined}
                 rel={item.href.startsWith('http') ? 'noopener noreferrer' : undefined}
-                className="group overflow-hidden rounded-[26px] border border-[var(--we-sand)] bg-[#FDFBF7]"
+                className="group overflow-hidden rounded-[26px] border border-[var(--we-sand)] bg-[var(--warm-paper-bright)]"
               >
                 <div className="relative aspect-[4/3] overflow-hidden">
                   <img

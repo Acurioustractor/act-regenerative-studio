@@ -38,10 +38,10 @@ const SECTIONS = [
 
 export default function PayoutWallMethodPage() {
   return (
-    <div className="relative min-h-screen bg-[#15100A] text-[#F3EBDD]">
-      <section className="full-bleed border-b border-[#2E2215] px-6 pb-12 pt-10 md:pt-14">
+    <div className="relative min-h-screen bg-[#15100A] text-[var(--warm-cream)]">
+      <section className="full-bleed border-b border-[var(--warm-earth)] px-6 pb-12 pt-10 md:pt-14">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
+          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[var(--warm-gold)]">
             Method and right of reply
           </p>
           <h1 className="mt-7 font-[var(--font-display)] text-[clamp(2rem,5vw,3.4rem)] font-semibold leading-[1.06]">
@@ -58,24 +58,24 @@ export default function PayoutWallMethodPage() {
         <div className="mx-auto max-w-2xl space-y-12">
           {SECTIONS.map((s) => (
             <div key={s.h}>
-              <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[#E0B068]">{s.h}</h2>
+              <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[var(--warm-gold-bright)]">{s.h}</h2>
               <p className="mt-4 font-[var(--font-body)] text-[16px] leading-8 text-[#D8CBB6]">{s.body}</p>
             </div>
           ))}
 
-          <div className="rounded-3xl border border-[#3A2C18] bg-[#1A130B] p-8 text-center">
+          <div className="rounded-3xl border border-[var(--warm-bark-deep)] bg-[#1A130B] p-8 text-center">
             <p className="font-[var(--font-body)] leading-8 text-[#C7B9A4]">
               Think we have read your foundation wrong, or want to add a door?
             </p>
             <a
               href="mailto:hi@act.place?subject=The%20Payout%20Wall%20%E2%80%94%20right%20of%20reply"
-              className="mt-4 inline-block font-[var(--font-display)] text-xl text-[#E0B068] underline-offset-4 hover:underline"
+              className="mt-4 inline-block font-[var(--font-display)] text-xl text-[var(--warm-gold-bright)] underline-offset-4 hover:underline"
             >
               hi@act.place
             </a>
           </div>
 
-          <div className="border-t border-[#2E2215] pt-8 text-center">
+          <div className="border-t border-[var(--warm-earth)] pt-8 text-center">
             <Link
               href="/confessions/listen"
               className="font-[var(--font-sans)] text-xs uppercase tracking-[0.3em] text-[rgba(224,176,104,0.85)] underline-offset-4 hover:underline"

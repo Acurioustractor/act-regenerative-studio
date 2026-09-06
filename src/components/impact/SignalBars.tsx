@@ -18,7 +18,7 @@ const LEVEL_MAP: Record<SignalLevel, number> = {
     'None': 0
 };
 
-export default function SignalBars({ label, level, color = '#2D5A3D', showLabel = true }: SignalBarsProps) {
+export default function SignalBars({ label, level, color = 'var(--site-green)', showLabel = true }: SignalBarsProps) {
     const strength = LEVEL_MAP[level] || 0;
     const maxFunction = 4;
 
@@ -36,7 +36,7 @@ export default function SignalBars({ label, level, color = '#2D5A3D', showLabel 
                         key={barIndex}
                         className={`flex-1 rounded-sm transition-all duration-500`}
                         style={{
-                            backgroundColor: barIndex <= strength ? color : '#E1D3BA',
+                            backgroundColor: barIndex <= strength ? color : 'var(--warm-sand-line)',
                             opacity: barIndex <= strength ? 1 : 0.3
                         }}
                     />

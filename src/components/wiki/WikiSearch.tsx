@@ -68,7 +68,7 @@ export function WikiSearch({ pages, sections }: WikiSearchProps) {
               value={query}
               onChange={(event) => setQuery(event.target.value)}
               placeholder="Search the ACT wiki by title, topic, or section..."
-              className="w-full rounded-2xl border border-[#D7C4A2] bg-[#FDFBF7] py-3 pl-12 pr-4 text-sm text-[var(--we-olive)] outline-none ring-0 transition focus:border-[#7A9B76]"
+              className="w-full rounded-2xl border border-[var(--warm-sand-deep)] bg-[var(--warm-paper-bright)] py-3 pl-12 pr-4 text-sm text-[var(--we-olive)] outline-none ring-0 transition focus:border-[var(--warm-sage)]"
               aria-label="Search the ACT wiki"
             />
           </label>
@@ -78,7 +78,7 @@ export function WikiSearch({ pages, sections }: WikiSearchProps) {
             <select
               value={sectionId}
               onChange={(event) => setSectionId(event.target.value)}
-              className="w-full rounded-2xl border border-[#D7C4A2] bg-[#FDFBF7] px-4 py-3 text-sm text-[var(--we-olive)] outline-none transition focus:border-[#7A9B76]"
+              className="w-full rounded-2xl border border-[var(--warm-sand-deep)] bg-[var(--warm-paper-bright)] px-4 py-3 text-sm text-[var(--we-olive)] outline-none transition focus:border-[var(--warm-sage)]"
               aria-label="Filter by section"
             >
               <option value={ALL_SECTIONS}>All sections ({pages.length})</option>
@@ -99,7 +99,7 @@ export function WikiSearch({ pages, sections }: WikiSearchProps) {
           className={`rounded-full border px-3 py-1.5 text-xs font-medium transition ${
             sectionId === ALL_SECTIONS
               ? 'border-forest bg-forest-soft text-[#2F5233]'
-              : 'border-[var(--we-sand)] bg-white text-[var(--we-brown)] hover:border-[#7A9B76]'
+              : 'border-[var(--we-sand)] bg-white text-[var(--we-brown)] hover:border-[var(--warm-sage)]'
           }`}
         >
           All ({pages.length})
@@ -114,7 +114,7 @@ export function WikiSearch({ pages, sections }: WikiSearchProps) {
               className={`rounded-full border px-3 py-1.5 text-xs font-medium transition ${
                 active
                   ? 'border-forest bg-forest-soft text-[#2F5233]'
-                  : 'border-[var(--we-sand)] bg-white text-[var(--we-brown)] hover:border-[#7A9B76]'
+                  : 'border-[var(--we-sand)] bg-white text-[var(--we-brown)] hover:border-[var(--warm-sage)]'
               }`}
             >
               {section.title} ({section.count})
@@ -139,7 +139,7 @@ export function WikiSearch({ pages, sections }: WikiSearchProps) {
               setQuery('');
               setSectionId(ALL_SECTIONS);
             }}
-            className="rounded-full border border-[#D8C6A7] bg-white px-4 py-2 text-xs font-medium text-[var(--we-brown)] transition hover:border-[#7A9B76]"
+            className="rounded-full border border-[#D8C6A7] bg-white px-4 py-2 text-xs font-medium text-[var(--we-brown)] transition hover:border-[var(--warm-sage)]"
           >
             Clear filters
           </button>
@@ -147,7 +147,7 @@ export function WikiSearch({ pages, sections }: WikiSearchProps) {
       </div>
 
       {filtered.length === 0 ? (
-        <div className="rounded-[28px] border border-dashed border-[#D7C4A2] bg-white/80 px-6 py-14 text-center">
+        <div className="rounded-[28px] border border-dashed border-[var(--warm-sand-deep)] bg-white/80 px-6 py-14 text-center">
           <BookOpen className="mx-auto h-10 w-10 text-[#7A6A55]" />
           <h3 className="mt-4 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
             No canonical pages matched this view
@@ -173,10 +173,10 @@ export function WikiSearch({ pages, sections }: WikiSearchProps) {
             <Link
               key={page.path}
               href={`/wiki/${page.stem}`}
-              className="group min-w-0 overflow-hidden rounded-[28px] border border-[var(--we-sand)] bg-white/90 p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#7A9B76] hover:shadow-lg"
+              className="group min-w-0 overflow-hidden rounded-[28px] border border-[var(--we-sand)] bg-white/90 p-6 shadow-sm transition hover:-translate-y-1 hover:border-[var(--warm-sage)] hover:shadow-lg"
             >
               <div className="flex min-w-0 items-center justify-between gap-3">
-                <span className="min-w-0 rounded-full bg-[#F5F1E8] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[#5A4A3A]">
+                <span className="min-w-0 rounded-full bg-[#F5F1E8] px-3 py-1 text-[11px] font-semibold uppercase tracking-[0.18em] text-[var(--warm-bark)]">
                   {page.sectionTitle}
                 </span>
                 <span className="min-w-0 truncate text-[11px] uppercase tracking-[0.18em] text-[#8A7A65]">

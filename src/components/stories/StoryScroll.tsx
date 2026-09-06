@@ -228,7 +228,7 @@ function BlockView({
                 {block.eyebrow}
               </p>
             ) : null}
-            <h2 className="mt-4 max-w-[14ch] font-[var(--font-display)] text-[clamp(2.8rem,6vw,5.2rem)] font-light leading-[1.05] text-[#FAFAF7]">
+            <h2 className="mt-4 max-w-[14ch] font-[var(--font-display)] text-[clamp(2.8rem,6vw,5.2rem)] font-light leading-[1.05] text-[var(--site-bg)]">
               {block.title}
             </h2>
             {block.body ? (
@@ -249,7 +249,7 @@ function BlockView({
                 {block.consentLabel}
               </p>
             ) : null}
-            <blockquote className="font-[var(--font-display)] text-[clamp(1.8rem,4vw,3.2rem)] font-light italic leading-[1.25] text-[#FAFAF7]">
+            <blockquote className="font-[var(--font-display)] text-[clamp(1.8rem,4vw,3.2rem)] font-light italic leading-[1.25] text-[var(--site-bg)]">
               {block.quote}
             </blockquote>
             {block.attribution ? (
@@ -304,7 +304,7 @@ function BlockView({
     case 'el-gallery': {
       const items = getSnapshotMedia(block.sourceProjectSlug, 'image', block.limit || 6);
       return (
-        <section className="bg-[#F6F1E7] px-6 py-20 md:px-10 md:py-28">
+        <section className="bg-[var(--warm-paper)] px-6 py-20 md:px-10 md:py-28">
           <div className="mx-auto max-w-[1220px]">
             <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-clay-text">
               Empathy Ledger media
@@ -325,7 +325,7 @@ function BlockView({
                 return (
                   <figure
                     key={item.id}
-                    className="overflow-hidden rounded-[var(--site-radius)] bg-[#11110F]"
+                    className="overflow-hidden rounded-[var(--site-radius)] bg-[var(--warm-night)]"
                   >
                     <div className="relative aspect-[4/3]">
                       <Image
@@ -353,7 +353,7 @@ function BlockView({
     case 'el-video-gallery': {
       const items = getSnapshotMedia(block.sourceProjectSlug, 'video', block.limit || 3);
       return (
-        <section className="bg-[var(--site-dark)] px-6 py-20 text-[#FAFAF7] md:px-10 md:py-28">
+        <section className="bg-[var(--site-dark)] px-6 py-20 text-[var(--site-bg)] md:px-10 md:py-28">
           <div className="mx-auto max-w-[1120px]">
             <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-clay-text">
               Empathy Ledger video
@@ -375,7 +375,7 @@ function BlockView({
                   rel="noopener noreferrer"
                   className="group overflow-hidden rounded-[var(--site-radius)] border border-[#4A3B2E] bg-[#171612]"
                 >
-                  <div className="relative aspect-video bg-[#11110F]">
+                  <div className="relative aspect-video bg-[var(--warm-night)]">
                     {mediaImageSource(item) ? (
                       <Image
                         src={mediaImageSource(item) || ''}
@@ -391,7 +391,7 @@ function BlockView({
                     </span>
                   </div>
                   <div className="p-5">
-                    <p className="font-[var(--font-display)] text-xl font-semibold text-[#F3EBDD]">
+                    <p className="font-[var(--font-display)] text-xl font-semibold text-[var(--warm-cream)]">
                       {item.title || 'Empathy Ledger video'}
                     </p>
                   </div>
@@ -502,7 +502,7 @@ function BlockView({
           <StoryMediaFrame media={block.media} fill className="h-full w-full object-cover opacity-70" />
           <div className="absolute inset-0 bg-gradient-to-t from-[var(--site-dark)] via-[var(--site-dark)]/60 to-[var(--site-dark)]/15" />
           <div className="relative z-10 mx-auto flex min-h-[78vh] max-w-[1120px] flex-col justify-end px-8 pb-20 pt-40">
-            <h2 className="max-w-[18ch] font-[var(--font-display)] text-[clamp(2.4rem,5vw,4.6rem)] font-light leading-[1.05] text-[#FAFAF7]">
+            <h2 className="max-w-[18ch] font-[var(--font-display)] text-[clamp(2.4rem,5vw,4.6rem)] font-light leading-[1.05] text-[var(--site-bg)]">
               {block.title}
             </h2>
             {block.description ? (
@@ -516,7 +516,7 @@ function BlockView({
                   <Link
                     key={link.href}
                     href={link.href}
-                    className="rounded-[var(--site-radius)] border border-[#FAFAF7]/30 px-6 py-3 font-[var(--font-sans)] text-[12px] font-semibold uppercase tracking-[0.18em] text-[#FAFAF7] transition hover:border-[#FAFAF7]/70"
+                    className="rounded-[var(--site-radius)] border border-[#FAFAF7]/30 px-6 py-3 font-[var(--font-sans)] text-[12px] font-semibold uppercase tracking-[0.18em] text-[var(--site-bg)] transition hover:border-[#FAFAF7]/70"
                   >
                     {link.label}
                   </Link>
@@ -555,7 +555,7 @@ export function StoryScroll({ story, internalPreview = false }: StoryScrollProps
           <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-clay-text">
             {story.hero.eyebrow}
           </p>
-          <h1 className="mt-4 max-w-[13ch] font-[var(--font-display)] text-[clamp(3rem,7vw,5.5rem)] font-light leading-[1.05] text-[#FAFAF7]">
+          <h1 className="mt-4 max-w-[13ch] font-[var(--font-display)] text-[clamp(3rem,7vw,5.5rem)] font-light leading-[1.05] text-[var(--site-bg)]">
             {story.hero.title}
           </h1>
           <p className="mt-6 max-w-xl font-[var(--font-body)] text-lg leading-[1.8] text-[#FAFAF7]/75">
@@ -578,8 +578,8 @@ export function StoryScroll({ story, internalPreview = false }: StoryScrollProps
       </section>
 
       {story.status !== 'published' ? (
-        <section className="bg-[#F6F1E7] px-6 py-6 md:px-10">
-          <div className="mx-auto max-w-[1120px] rounded-[var(--site-radius)] border border-[#D7C4A2] bg-[#FFF8EA] p-5 text-sm leading-7 text-[#5A4A3A]">
+        <section className="bg-[var(--warm-paper)] px-6 py-6 md:px-10">
+          <div className="mx-auto max-w-[1120px] rounded-[var(--site-radius)] border border-[var(--warm-sand-deep)] bg-[#FFF8EA] p-5 text-sm leading-7 text-[var(--warm-bark)]">
             This is a consent-safe public preview. Names, faces, and voice clips
             that still need review are hidden from the public route.
           </div>

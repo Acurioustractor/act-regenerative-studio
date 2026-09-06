@@ -52,7 +52,7 @@ export default async function WikiHomepage() {
   const sourceNotConfigured = allPages.length === 0;
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-[#F6F1E7] via-[#F5F1E8] to-white">
+    <div className="min-h-screen bg-gradient-to-b from-[var(--warm-paper)] via-[#F5F1E8] to-white">
       <section className="border-b border-[var(--we-sand)] bg-[var(--we-olive)] text-white">
         <div className="mx-auto max-w-6xl px-4 py-16">
           <div className="max-w-4xl">
@@ -96,7 +96,7 @@ export default async function WikiHomepage() {
             <Link
               key={item.title}
               href={item.href}
-              className="rounded-[28px] border border-[var(--we-sand)] bg-white/90 p-6 shadow-sm transition hover:-translate-y-1 hover:border-[#7A9B76] hover:shadow-lg"
+              className="rounded-[28px] border border-[var(--we-sand)] bg-white/90 p-6 shadow-sm transition hover:-translate-y-1 hover:border-[var(--warm-sage)] hover:shadow-lg"
             >
               <p className="text-xs uppercase tracking-[0.24em] text-[#7A6A55]">{item.stat}</p>
               <h2 className="mt-3 font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
@@ -122,7 +122,7 @@ export default async function WikiHomepage() {
         </div>
 
         {sourceNotConfigured ? (
-          <div className="rounded-[28px] border border-dashed border-[#D7C4A2] bg-white/80 px-6 py-14 text-center">
+          <div className="rounded-[28px] border border-dashed border-[var(--warm-sand-deep)] bg-white/80 px-6 py-14 text-center">
             <h2 className="font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
               The wiki is still coming online
             </h2>

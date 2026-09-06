@@ -352,7 +352,7 @@ export default async function JusticeHubPage() {
                         <Image src={person.profile_image_url!} alt={name} fill sizes="(min-width: 768px) 33vw, 100vw" className="object-cover" />
                         <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
                         <div className="absolute bottom-0 left-0 right-0 p-8">
-                          <p className="font-[var(--font-display)] text-xl font-semibold text-[#FAFAF7]">{name}</p>
+                          <p className="font-[var(--font-display)] text-xl font-semibold text-[var(--site-bg)]">{name}</p>
                           {person.custom_tagline && (
                             <p className="mt-1 font-[var(--font-sans)] text-[11px] uppercase tracking-[0.15em] text-[#FAFAF7]/60">{person.custom_tagline}</p>
                           )}
@@ -416,7 +416,7 @@ export default async function JusticeHubPage() {
       <ScrollReveal>
         <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
           <div className="mx-auto max-w-[800px] text-center">
-            <h2 className="font-[var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-light leading-[1.1] text-[#FAFAF7]">
+            <h2 className="font-[var(--font-display)] text-[clamp(2rem,5vw,3.5rem)] font-light leading-[1.1] text-[var(--site-bg)]">
               JusticeHub needs $500K to scale nationally.
             </h2>
             <p className="mx-auto mt-8 max-w-lg font-[var(--font-body)] text-lg leading-[1.8] text-[#FAFAF7]/60">

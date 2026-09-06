@@ -68,6 +68,22 @@
   --we-brown-deep: #4A4035;   /* contrast-adjusted brown for small body text */
   --we-warm-brown: #6B5A45;   /* muted supporting text on sand backgrounds */
   --we-sand: #E3D4BA;         /* card borders, chip backgrounds */
+  /* Warm shared tokens, allowed in both design languages. Named 2026-09-07 from the values the catalogue, listings and confessions pages already used
+     as raw hex (scripts/check-palette.mjs ratchets raw hex to zero). Same
+     values, so nothing moved on screen. */
+  --warm-gold: #CFA16B;         /* eyebrows and accents on dark and sand */
+  --warm-gold-bright: #E0B068;  /* gold on the darkest sections */
+  --warm-paper: #F6F1E7;        /* card and chip fills */
+  --warm-paper-bright: #FDFBF7; /* page backgrounds behind cards */
+  --warm-cream: #F3EBDD;        /* soft panels */
+  --warm-sand-line: #E1D3BA;    /* hairlines and borders (was a near-twin of --we-sand) */
+  --warm-sand-deep: #D7C4A2;    /* dividers on cream */
+  --warm-bark: #5A4A3A;         /* secondary body text */
+  --warm-bark-deep: #3A2C18;    /* headings on cream */
+  --warm-earth: #2E2215;        /* darkest editorial ground */
+  --warm-night: #11110F;        /* the dark band on /art and /ecosystem */
+  --warm-sage: #7A9B76;         /* quiet green accent */
+  --warm-forest: #245C43;       /* editorial green for buttons and links */
 }
 
 * {

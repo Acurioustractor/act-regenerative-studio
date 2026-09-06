@@ -1,0 +1,455 @@
+{
+  "updated": "2026-09-06",
+  "hexTotal": 886,
+  "foreignTotal": 160,
+  "files": {
+    "src/app/art/[slug]/page.tsx": {
+      "hex": 16,
+      "foreign": 2
+    },
+    "src/app/art/artists/page.tsx": {
+      "hex": 8,
+      "foreign": 2
+    },
+    "src/app/art/artworks/page.tsx": {
+      "hex": 6,
+      "foreign": 3
+    },
+    "src/app/art/commissions/page.tsx": {
+      "hex": 6,
+      "foreign": 3
+    },
+    "src/app/art/exhibitions/page.tsx": {
+      "hex": 4,
+      "foreign": 2
+    },
+    "src/app/art/page.tsx": {
+      "hex": 7,
+      "foreign": 32
+    },
+    "src/app/art/residencies/page.tsx": {
+      "hex": 3,
+      "foreign": 0
+    },
+    "src/app/confessions/friday/page.tsx": {
+      "hex": 9,
+      "foreign": 0
+    },
+    "src/app/confessions/listen/page.tsx": {
+      "hex": 4,
+      "foreign": 0
+    },
+    "src/app/confessions/method/page.tsx": {
+      "hex": 5,
+      "foreign": 0
+    },
+    "src/app/confessions/page.tsx": {
+      "hex": 49,
+      "foreign": 0
+    },
+    "src/app/contact/contact.module.css": {
+      "hex": 7,
+      "foreign": 0
+    },
+    "src/app/economy/page.tsx": {
+      "hex": 5,
+      "foreign": 0
+    },
+    "src/app/ecosystem/page.tsx": {
+      "hex": 16,
+      "foreign": 6
+    },
+    "src/app/empathy-ledger/page.tsx": {
+      "hex": 2,
+      "foreign": 0
+    },
+    "src/app/events/page.tsx": {
+      "hex": 1,
+      "foreign": 2
+    },
+    "src/app/farm/page.tsx": {
+      "hex": 1,
+      "foreign": 3
+    },
+    "src/app/farm/retreats/page.tsx": {
+      "hex": 3,
+      "foreign": 1
+    },
+    "src/app/farm/stay/page.tsx": {
+      "hex": 2,
+      "foreign": 1
+    },
+    "src/app/farm/workshops/page.tsx": {
+      "hex": 3,
+      "foreign": 1
+    },
+    "src/app/goods/page.tsx": {
+      "hex": 4,
+      "foreign": 0
+    },
+    "src/app/governance/page.tsx": {
+      "hex": 5,
+      "foreign": 0
+    },
+    "src/app/harvest/csa/page.tsx": {
+      "hex": 3,
+      "foreign": 1
+    },
+    "src/app/harvest/page.tsx": {
+      "hex": 2,
+      "foreign": 3
+    },
+    "src/app/harvest/produce/page.tsx": {
+      "hex": 3,
+      "foreign": 1
+    },
+    "src/app/how-we-work/page.tsx": {
+      "hex": 3,
+      "foreign": 6
+    },
+    "src/app/impact/page.tsx": {
+      "hex": 8,
+      "foreign": 14
+    },
+    "src/app/justicehub/page.tsx": {
+      "hex": 3,
+      "foreign": 0
+    },
+    "src/app/layout.tsx": {
+      "hex": 0,
+      "foreign": 1
+    },
+    "src/app/manifest.ts": {
+      "hex": 2,
+      "foreign": 0
+    },
+    "src/app/media/page.tsx": {
+      "hex": 18,
+      "foreign": 0
+    },
+    "src/app/method/page.tsx": {
+      "hex": 2,
+      "foreign": 1
+    },
+    "src/app/not-found.tsx": {
+      "hex": 4,
+      "foreign": 12
+    },
+    "src/app/partners/page.tsx": {
+      "hex": 4,
+      "foreign": 4
+    },
+    "src/app/people/page.tsx": {
+      "hex": 26,
+      "foreign": 1
+    },
+    "src/app/principles/page.tsx": {
+      "hex": 2,
+      "foreign": 1
+    },
+    "src/app/projects/[slug]/page.tsx": {
+      "hex": 18,
+      "foreign": 10
+    },
+    "src/app/projects/page.tsx": {
+      "hex": 81,
+      "foreign": 7
+    },
+    "src/app/stories/[slug]/editorial-article.tsx": {
+      "hex": 17,
+      "foreign": 18
+    },
+    "src/app/storytellers/[id]/page.tsx": {
+      "hex": 7,
+      "foreign": 1
+    },
+    "src/app/storytellers/page.tsx": {
+      "hex": 2,
+      "foreign": 1
+    },
+    "src/app/studio/page.tsx": {
+      "hex": 11,
+      "foreign": 13
+    },
+    "src/app/vision/page.tsx": {
+      "hex": 3,
+      "foreign": 0
+    },
+    "src/app/wiki/[slug]/page.tsx": {
+      "hex": 12,
+      "foreign": 4
+    },
+    "src/app/wiki/page.tsx": {
+      "hex": 4,
+      "foreign": 3
+    },
+    "src/components/EcosystemLinks.tsx": {
+      "hex": 1,
+      "foreign": 0
+    },
+    "src/components/EditorialLegalFooter.tsx": {
+      "hex": 1,
+      "foreign": 0
+    },
+    "src/components/GHLEmbed.tsx": {
+      "hex": 3,
+      "foreign": 0
+    },
+    "src/components/HeroImageManager.tsx": {
+      "hex": 2,
+      "foreign": 0
+    },
+    "src/components/LivingSystemStrip.tsx": {
+      "hex": 4,
+      "foreign": 0
+    },
+    "src/components/MobileMenu.tsx": {
+      "hex": 3,
+      "foreign": 0
+    },
+    "src/components/PageHero.tsx": {
+      "hex": 3,
+      "foreign": 0
+    },
+    "src/components/UnifiedFooter.tsx": {
+      "hex": 22,
+      "foreign": 0
+    },
+    "src/components/confessions/CallCTA.tsx": {
+      "hex": 2,
+      "foreign": 0
+    },
+    "src/components/confessions/CampaignNav.tsx": {
+      "hex": 7,
+      "foreign": 0
+    },
+    "src/components/confessions/ConfessionDetail.tsx": {
+      "hex": 3,
+      "foreign": 0
+    },
+    "src/components/confessions/ConfessionField.tsx": {
+      "hex": 1,
+      "foreign": 0
+    },
+    "src/components/confessions/ConfessionWall.tsx": {
+      "hex": 3,
+      "foreign": 0
+    },
+    "src/components/confessions/FoundationContestForm.tsx": {
+      "hex": 10,
+      "foreign": 0
+    },
+    "src/components/confessions/FridayTape.tsx": {
+      "hex": 4,
+      "foreign": 0
+    },
+    "src/components/confessions/ListenTheatre.tsx": {
+      "hex": 19,
+      "foreign": 0
+    },
+    "src/components/confessions/Murmuration.tsx": {
+      "hex": 1,
+      "foreign": 0
+    },
+    "src/components/confessions/PayoutWall.tsx": {
+      "hex": 35,
+      "foreign": 0
+    },
+    "src/components/confessions/Switchboard.tsx": {
+      "hex": 1,
+      "foreign": 0
+    },
+    "src/components/confessions/VoicemailInbox.tsx": {
+      "hex": 10,
+      "foreign": 0
+    },
+    "src/components/confessions/WallOfFeeling.tsx": {
+      "hex": 6,
+      "foreign": 0
+    },
+    "src/components/confessions/Waveform.tsx": {
+      "hex": 3,
+      "foreign": 0
+    },
+    "src/components/confessions/transcript.tsx": {
+      "hex": 1,
+      "foreign": 0
+    },
+    "src/components/dashboard/ActivityFeed.tsx": {
+      "hex": 2,
+      "foreign": 0
+    },
+    "src/components/dashboard/DashboardMetrics.tsx": {
+      "hex": 3,
+      "foreign": 0
+    },
+    "src/components/dashboard/DeploymentHistory.tsx": {
+      "hex": 8,
+      "foreign": 0
+    },
+    "src/components/dashboard/GHLFormActivity.tsx": {
+      "hex": 6,
+      "foreign": 0
+    },
+    "src/components/dashboard/ProjectHealthCards.tsx": {
+      "hex": 9,
+      "foreign": 0
+    },
+    "src/components/dashboard/RegistryStatus.tsx": {
+      "hex": 7,
+      "foreign": 0
+    },
+    "src/components/design-system/DarkCTA.tsx": {
+      "hex": 3,
+      "foreign": 0
+    },
+    "src/components/design-system/DocHero.tsx": {
+      "hex": 5,
+      "foreign": 0
+    },
+    "src/components/design-system/LeadVoice.tsx": {
+      "hex": 1,
+      "foreign": 0
+    },
+    "src/components/design-system/PrinciplesList.tsx": {
+      "hex": 1,
+      "foreign": 0
+    },
+    "src/components/design-system/SectionHeader.tsx": {
+      "hex": 2,
+      "foreign": 0
+    },
+    "src/components/ecosystem/EcosystemConstellation.tsx": {
+      "hex": 14,
+      "foreign": 0
+    },
+    "src/components/ecosystem/ExternalHandoffCard.tsx": {
+      "hex": 1,
+      "foreign": 0
+    },
+    "src/components/ecosystem/SiteStateStrip.tsx": {
+      "hex": 2,
+      "foreign": 0
+    },
+    "src/components/ecosystem/SiteStateTable.tsx": {
+      "hex": 2,
+      "foreign": 0
+    },
+    "src/components/editorial/ArticleGallery.tsx": {
+      "hex": 1,
+      "foreign": 0
+    },
+    "src/components/editorial/ArticleHeroMedia.tsx": {
+      "hex": 1,
+      "foreign": 0
+    },
+    "src/components/flagship/AnimatedStat.tsx": {
+      "hex": 1,
+      "foreign": 0
+    },
+    "src/components/flagship/RelatedFields.tsx": {
+      "hex": 1,
+      "foreign": 0
+    },
+    "src/components/forms/CSAInterestForm.tsx": {
+      "hex": 2,
+      "foreign": 0
+    },
+    "src/components/forms/EnquiryExpectations.tsx": {
+      "hex": 4,
+      "foreign": 0
+    },
+    "src/components/forms/FarmStayForm.tsx": {
+      "hex": 2,
+      "foreign": 0
+    },
+    "src/components/forms/NewsletterCTA.tsx": {
+      "hex": 3,
+      "foreign": 0
+    },
+    "src/components/forms/NewsletterForm.tsx": {
+      "hex": 2,
+      "foreign": 0
+    },
+    "src/components/forms/ResidencyForm.tsx": {
+      "hex": 2,
+      "foreign": 0
+    },
+    "src/components/forms/contact-form.module.css": {
+      "hex": 15,
+      "foreign": 0
+    },
+    "src/components/impact/ImpactSankey.tsx": {
+      "hex": 2,
+      "foreign": 0
+    },
+    "src/components/projects/ALMAInsightsSection.tsx": {
+      "hex": 3,
+      "foreign": 0
+    },
+    "src/components/projects/CommunityVoicesSection.tsx": {
+      "hex": 3,
+      "foreign": 0
+    },
+    "src/components/projects/EmpathyLedgerConnections.tsx": {
+      "hex": 2,
+      "foreign": 0
+    },
+    "src/components/projects/GoldPhoneVoicesSection.tsx": {
+      "hex": 43,
+      "foreign": 0
+    },
+    "src/components/projects/ImpactDashboard.tsx": {
+      "hex": 4,
+      "foreign": 0
+    },
+    "src/components/projects/KnowledgeLinksSection.tsx": {
+      "hex": 10,
+      "foreign": 0
+    },
+    "src/components/projects/LCAAJourney.tsx": {
+      "hex": 5,
+      "foreign": 0
+    },
+    "src/components/projects/ProjectEntryBridgeSection.tsx": {
+      "hex": 12,
+      "foreign": 0
+    },
+    "src/components/projects/ProjectFieldMediaSection.tsx": {
+      "hex": 6,
+      "foreign": 0
+    },
+    "src/components/projects/ProjectHero.tsx": {
+      "hex": 15,
+      "foreign": 0
+    },
+    "src/components/projects/StoryVignettesSection.tsx": {
+      "hex": 1,
+      "foreign": 0
+    },
+    "src/components/projects/StudioWorkSection.tsx": {
+      "hex": 19,
+      "foreign": 0
+    },
+    "src/components/projects/TranscriptsSection.tsx": {
+      "hex": 1,
+      "foreign": 0
+    },
+    "src/components/showcase/ProjectShowcaseCard.tsx": {
+      "hex": 83,
+      "foreign": 0
+    },
+    "src/components/showcase/RoadmapTimeline.tsx": {
+      "hex": 1,
+      "foreign": 0
+    },
+    "src/components/stories/StoryScroll.tsx": {
+      "hex": 19,
+      "foreign": 0
+    },
+    "src/components/wiki/WikiSearch.tsx": {
+      "hex": 11,
+      "foreign": 0
+    }
+  }
+}

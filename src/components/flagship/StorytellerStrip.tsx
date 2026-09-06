@@ -97,8 +97,8 @@ export function StorytellerStrip({
 
   if (items.length === 0) return null;
 
-  const ink = dark ? "#FAFAF7" : "var(--site-ink)";
-  const muted = dark ? "#FAFAF7" : "var(--site-muted)";
+  const ink = dark ? "var(--site-bg)" : "var(--site-ink)";
+  const muted = dark ? "var(--site-bg)" : "var(--site-muted)";
   const mutedAlpha = dark ? "rgba(250,250,247,0.5)" : undefined;
 
   return (

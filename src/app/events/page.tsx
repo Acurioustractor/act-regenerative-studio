@@ -65,7 +65,7 @@ export default function EventsPage() {
           { label: "Start a conversation", href: "/contact" },
           { label: "Visit the farm", href: "/farm", variant: "outline" },
         ]}
-        gradientClass="from-[#F6F1E7] via-[#EADFCC] to-[#D7C4A2]"
+        gradientClass="from-[var(--warm-paper)] via-[#EADFCC] to-[var(--warm-sand-deep)]"
       >
         <div className="space-y-3">
           <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
@@ -116,7 +116,7 @@ export default function EventsPage() {
             <Link
               key={pathway.title}
               href={pathway.href}
-              className="group rounded-3xl border border-[#E1D3BA] bg-white/75 p-7 transition hover:-translate-y-1 hover:border-forest hover:shadow-[0_18px_45px_rgba(50,42,31,0.1)]"
+              className="group rounded-3xl border border-[var(--warm-sand-line)] bg-white/75 p-7 transition hover:-translate-y-1 hover:border-forest hover:shadow-[0_18px_45px_rgba(50,42,31,0.1)]"
             >
               <h3 className="font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
                 {pathway.title}

@@ -51,7 +51,7 @@ export function StudioWorkSection({
 
   return (
     <section className="grid gap-6 lg:grid-cols-[1.04fr_0.96fr]">
-      <div className="overflow-hidden rounded-[34px] border border-[#C7AF86] bg-[#11110F] text-[#F5ECDD] shadow-[0_28px_70px_rgba(26,20,14,0.18)]">
+      <div className="overflow-hidden rounded-[34px] border border-[#C7AF86] bg-[var(--warm-night)] text-[#F5ECDD] shadow-[0_28px_70px_rgba(26,20,14,0.18)]">
         {(leadArticle?.featuredImageUrl || firstStill) && (
           <div className="relative h-64 overflow-hidden md:h-72">
             <img
@@ -155,7 +155,7 @@ export function StudioWorkSection({
           </div>
         ))}
 
-        <div className="rounded-[26px] border border-[#D4BC97] bg-[#2B241F] p-5 text-[#F3EBDD]">
+        <div className="rounded-[26px] border border-[#D4BC97] bg-[#2B241F] p-5 text-[var(--warm-cream)]">
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[#D7B47B]">
             Connected field
           </p>

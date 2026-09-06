@@ -84,7 +84,7 @@ function PhaseCard({
             className={`flex h-9 w-9 shrink-0 items-center justify-center rounded-full border text-xs font-semibold tracking-[0.18em] ${
               hasContent
                 ? `${style.badge} border-transparent`
-                : 'border-[#D7C4A2] text-[#A0A0A0]'
+                : 'border-[var(--warm-sand-deep)] text-[#A0A0A0]'
             }`}
           >
             {String(index + 1).padStart(2, '0')}

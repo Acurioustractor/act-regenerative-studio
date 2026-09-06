@@ -56,7 +56,7 @@ export default async function PeoplePage() {
           {storytellers.map((person) => (
             <article
               key={person.id}
-              className="group rounded-[24px] border border-[var(--we-sand)] bg-[#FDFBF7] p-5 transition-all hover:border-[#2d6a4f] hover:shadow-[0_18px_45px_rgba(50,42,31,0.08)]"
+              className="group rounded-[24px] border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] p-5 transition-all hover:border-[#2d6a4f] hover:shadow-[0_18px_45px_rgba(50,42,31,0.08)]"
             >
               <div className="flex items-start gap-4">
                 {person.imageUrl ? (
@@ -89,7 +89,7 @@ export default async function PeoplePage() {
                 </div>
               </div>
               {person.bio && (
-                <p className="mt-3 text-sm leading-6 text-[#5A4A3A] line-clamp-3">
+                <p className="mt-3 text-sm leading-6 text-[var(--warm-bark)] line-clamp-3">
                   {person.bio}
                 </p>
               )}
@@ -135,13 +135,13 @@ export default async function PeoplePage() {
           <div className="flex flex-wrap gap-3 lg:justify-end">
             <Link
               href="/empathy-ledger"
-              className="site-glow-link rounded-full bg-[#245c43] px-7 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#1c4935]"
+              className="site-glow-link rounded-full bg-[var(--warm-forest)] px-7 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-white transition hover:bg-[#1c4935]"
             >
               About Empathy Ledger
             </Link>
             <Link
               href="/contact"
-              className="site-glow-link rounded-full border border-[#245c43] px-7 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#1f2b21] transition hover:bg-white/75"
+              className="site-glow-link rounded-full border border-[var(--warm-forest)] px-7 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[#1f2b21] transition hover:bg-white/75"
             >
               Share your story
             </Link>

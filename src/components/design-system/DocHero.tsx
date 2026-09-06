@@ -32,9 +32,9 @@ function CtaButton({ cta, variant }: { cta: HeroCta; variant: "primary" | "ghost
   const base =
     "rounded-[var(--site-radius)] px-10 py-5 font-[var(--font-sans)] text-[14px] font-semibold uppercase tracking-[0.12em] transition";
   const primary =
-    "bg-[#FAFAF7] text-[var(--site-dark)] hover:-translate-y-0.5 hover:shadow-[0_8px_40px_rgba(250,250,247,0.15)]";
+    "bg-[var(--site-bg)] text-[var(--site-dark)] hover:-translate-y-0.5 hover:shadow-[0_8px_40px_rgba(250,250,247,0.15)]";
   const ghost =
-    "border-2 border-[#FAFAF7]/30 text-[#FAFAF7]/90 hover:border-[#FAFAF7]/60 hover:text-[#FAFAF7]";
+    "border-2 border-[#FAFAF7]/30 text-[#FAFAF7]/90 hover:border-[#FAFAF7]/60 hover:text-[var(--site-bg)]";
   const className = `${base} ${variant === "primary" ? primary : ghost}`;
 
   if (cta.external) {
@@ -102,7 +102,7 @@ export function DocHero({
           </p>
         ) : null}
         <h1
-          className="mt-4 font-[var(--font-display)] text-[clamp(3rem,7vw,5.5rem)] font-light leading-[1.05] tracking-[-0.02em] text-[#FAFAF7]"
+          className="mt-4 font-[var(--font-display)] text-[clamp(3rem,7vw,5.5rem)] font-light leading-[1.05] tracking-[-0.02em] text-[var(--site-bg)]"
           style={{ maxWidth: `${titleMaxChars}ch` }}
         >
           {title}

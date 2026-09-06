@@ -117,7 +117,7 @@ function ArtProjectBlock({
                 {project.title}
               </h2>
 
-              <blockquote className="mt-5 border-l-2 border-[#CFA16B] pl-5 text-[0.95rem] italic leading-7 text-[#5A4A3A]">
+              <blockquote className="mt-5 border-l-2 border-[var(--warm-gold)] pl-5 text-[0.95rem] italic leading-7 text-[var(--warm-bark)]">
                 {quote}
               </blockquote>
 
@@ -162,7 +162,7 @@ function ArtProjectBlock({
                 {project.mediums.map((medium) => (
                   <span
                     key={medium}
-                    className="border-b border-[#D7C4A2] pb-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)]"
+                    className="border-b border-[var(--warm-sand-deep)] pb-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)]"
                   >
                     {formatMedium(medium)}
                   </span>
@@ -173,7 +173,7 @@ function ArtProjectBlock({
                 {project.title}
               </h2>
 
-              <blockquote className="mt-5 border-l-2 border-[#CFA16B] pl-5 text-[0.95rem] italic leading-7 text-[#5A4A3A]">
+              <blockquote className="mt-5 border-l-2 border-[var(--warm-gold)] pl-5 text-[0.95rem] italic leading-7 text-[var(--warm-bark)]">
                 {quote}
               </blockquote>
 
@@ -229,7 +229,7 @@ function EmergingWorkCard({ project }: { project: HydratedArtProject }) {
         {project.mediums.map((medium) => (
           <span
             key={medium}
-            className="border-b border-[#D7C4A2] pb-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--we-warm-brown)]"
+            className="border-b border-[var(--warm-sand-deep)] pb-1 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--we-warm-brown)]"
           >
             {formatMedium(medium)}
           </span>
@@ -243,7 +243,7 @@ function EmergingWorkCard({ project }: { project: HydratedArtProject }) {
         {project.title}
       </h3>
 
-      <blockquote className="mt-3 text-sm italic leading-6 text-[#5A4A3A]">
+      <blockquote className="mt-3 text-sm italic leading-6 text-[var(--warm-bark)]">
         "{quote}"
       </blockquote>
 
@@ -424,7 +424,7 @@ export default async function ArtPage() {
               },
             ].map((item) => (
               <div key={item.stage} className="bg-[var(--site-surface)] p-6">
-                <p className="font-[var(--font-display)] text-lg font-semibold text-[#245c43]">
+                <p className="font-[var(--font-display)] text-lg font-semibold text-[var(--warm-forest)]">
                   {item.stage}
                 </p>
                 <p className="mt-2 text-sm leading-6 text-[var(--we-brown)]">
@@ -436,7 +436,7 @@ export default async function ArtPage() {
           <div className="pt-4">
             <Link
               href="/about#convictions"
-              className="inline-flex items-center gap-2 text-sm font-semibold text-[#245c43] transition hover:gap-3"
+              className="inline-flex items-center gap-2 text-sm font-semibold text-[var(--warm-forest)] transition hover:gap-3"
             >
               Read about the full method <span aria-hidden="true">&rarr;</span>
             </Link>
@@ -461,10 +461,10 @@ export default async function ArtPage() {
       )}
 
       {/* CTA */}
-      <section className="bg-[var(--site-dark)] px-8 py-24 text-[#F3EBDD] md:px-12 md:py-32">
+      <section className="bg-[var(--site-dark)] px-8 py-24 text-[var(--warm-cream)] md:px-12 md:py-32">
         <div className="mx-auto grid max-w-[1200px] gap-8 lg:grid-cols-2 lg:items-center">
           <div className="space-y-4">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
+            <p className="text-[11px] font-semibold uppercase tracking-[0.4em] text-[var(--warm-gold)]">
               Work with us
             </p>
             <h2 className="font-[var(--font-display)] text-3xl font-semibold md:text-4xl">
@@ -480,13 +480,13 @@ export default async function ArtPage() {
           <div className="flex flex-wrap gap-4 lg:justify-end">
             <Link
               href="/contact"
-              className="border-b border-[#CFA16B] pb-2 text-sm font-semibold uppercase tracking-[0.2em] text-[#F3EBDD] transition hover:text-[#CFA16B]"
+              className="border-b border-[var(--warm-gold)] pb-2 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--warm-cream)] transition hover:text-[var(--warm-gold)]"
             >
               Get in touch
             </Link>
             <Link
               href="/art/residencies"
-              className="border-b border-[#CFA16B]/40 pb-2 text-sm font-semibold uppercase tracking-[0.2em] text-[#F3EBDD] transition hover:border-[#CFA16B]"
+              className="border-b border-[#CFA16B]/40 pb-2 text-sm font-semibold uppercase tracking-[0.2em] text-[var(--warm-cream)] transition hover:border-[var(--warm-gold)]"
             >
               Explore residencies
             </Link>

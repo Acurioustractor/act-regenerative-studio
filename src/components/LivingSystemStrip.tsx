@@ -105,7 +105,7 @@ export default function LivingSystemStrip({
                 href={site.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="rounded-full border border-[#CFA16B] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:bg-[#F8E8D6]"
+                className="rounded-full border border-[var(--warm-gold)] px-5 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:bg-[#F8E8D6]"
               >
                 {site.label || "Visit project website"}
               </a>

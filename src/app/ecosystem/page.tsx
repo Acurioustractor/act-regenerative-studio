@@ -59,7 +59,7 @@ export default async function EcosystemPage() {
             <Link
               key={project.slug}
               href={project.href}
-              className="group rounded-2xl border border-[#E1D3BA] bg-white/80 p-6 transition hover:-translate-y-1 hover:border-forest hover:shadow-lg"
+              className="group rounded-2xl border border-[var(--warm-sand-line)] bg-white/80 p-6 transition hover:-translate-y-1 hover:border-forest hover:shadow-lg"
             >
               <p className="text-[11px] uppercase tracking-[0.2em] text-[var(--we-warm-brown)]">
                 {project.eyebrow}
@@ -91,12 +91,12 @@ export default async function EcosystemPage() {
                     </span>
                   ) : null}
                   {project.liveSignals.storyCount > 0 ? (
-                    <span className="rounded-full bg-[#F6F1E7] px-2.5 py-1 text-[10px] font-medium text-[var(--we-brown-deep)]">
+                    <span className="rounded-full bg-[var(--warm-paper)] px-2.5 py-1 text-[10px] font-medium text-[var(--we-brown-deep)]">
                       {project.liveSignals.storyCount} stories
                     </span>
                   ) : null}
                   {project.liveSignals.mediaCount > 0 ? (
-                    <span className="rounded-full bg-[#F6F1E7] px-2.5 py-1 text-[10px] font-medium text-[var(--we-brown-deep)]">
+                    <span className="rounded-full bg-[var(--warm-paper)] px-2.5 py-1 text-[10px] font-medium text-[var(--we-brown-deep)]">
                       {project.liveSignals.mediaCount} media
                     </span>
                   ) : null}
@@ -114,10 +114,10 @@ export default async function EcosystemPage() {
 
       <SiteStateStrip sites={siteStates} />
 
-      <section className="rounded-3xl border border-[#2F2A25] bg-[#11110F] p-8 text-[#F3EBDD] md:p-12">
+      <section className="rounded-3xl border border-[#2F2A25] bg-[var(--warm-night)] p-8 text-[var(--warm-cream)] md:p-12">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="space-y-4">
-            <p className="text-xs uppercase tracking-[0.3em] text-[#CFA16B]">
+            <p className="text-xs uppercase tracking-[0.3em] text-[var(--warm-gold)]">
               On the ground
             </p>
             <h2 className="font-[var(--font-display)] text-2xl font-semibold md:text-3xl">
@@ -131,7 +131,7 @@ export default async function EcosystemPage() {
           <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
             {signalPayload.summary.activeServiceCount > 0 && (
               <div className="rounded-2xl border border-[#4A3B2E] bg-[#171612] px-5 py-4">
-                <p className="text-2xl font-semibold text-[#F3EBDD]">
+                <p className="text-2xl font-semibold text-[var(--warm-cream)]">
                   {signalPayload.summary.activeServiceCount}
                 </p>
                 <p className="mt-1 text-xs uppercase tracking-[0.2em] text-[#BDAE98]">
@@ -140,7 +140,7 @@ export default async function EcosystemPage() {
               </div>
             )}
             <div className="rounded-2xl border border-[#4A3B2E] bg-[#171612] px-5 py-4">
-              <p className="text-2xl font-semibold text-[#F3EBDD]">
+              <p className="text-2xl font-semibold text-[var(--warm-cream)]">
                 {signalPayload.summary.featuredWorkCount}
               </p>
               <p className="mt-1 text-xs uppercase tracking-[0.2em] text-[#BDAE98]">
@@ -148,7 +148,7 @@ export default async function EcosystemPage() {
               </p>
             </div>
             <div className="rounded-2xl border border-[#4A3B2E] bg-[#171612] px-5 py-4">
-              <p className="text-2xl font-semibold text-[#F3EBDD]">
+              <p className="text-2xl font-semibold text-[var(--warm-cream)]">
                 {signalPayload.summary.totalStorySignals}
               </p>
               <p className="mt-1 text-xs uppercase tracking-[0.2em] text-[#BDAE98]">
@@ -156,7 +156,7 @@ export default async function EcosystemPage() {
               </p>
             </div>
             <div className="rounded-2xl border border-[#4A3B2E] bg-[#171612] px-5 py-4">
-              <p className="text-2xl font-semibold text-[#F3EBDD]">
+              <p className="text-2xl font-semibold text-[var(--warm-cream)]">
                 {signalPayload.summary.totalMediaSignals}
               </p>
               <p className="mt-1 text-xs uppercase tracking-[0.2em] text-[#BDAE98]">
@@ -200,7 +200,7 @@ export default async function EcosystemPage() {
             <Link
               key={pathway.title}
               href={pathway.href}
-              className="rounded-2xl border border-[#E1D3BA] bg-white/75 p-6 transition hover:-translate-y-1 hover:border-forest hover:shadow-md"
+              className="rounded-2xl border border-[var(--warm-sand-line)] bg-white/75 p-6 transition hover:-translate-y-1 hover:border-forest hover:shadow-md"
             >
               <h3 className="font-[var(--font-display)] text-xl font-semibold text-[var(--we-olive)]">
                 {pathway.title}

@@ -109,9 +109,9 @@ export default function GovernancePage() {
         <CardGrid cards={governancePractices} className="grid gap-6 md:grid-cols-3" />
       </section>
 
-      <section className="rounded-3xl border border-[#2F2A25] bg-[#11110F] p-8 text-[#F3EBDD] md:p-12">
+      <section className="rounded-3xl border border-[#2F2A25] bg-[var(--warm-night)] p-8 text-[var(--warm-cream)] md:p-12">
         <div className="space-y-4">
-          <p className="text-xs uppercase tracking-[0.3em] text-[#CFA16B]">
+          <p className="text-xs uppercase tracking-[0.3em] text-[var(--warm-gold)]">
             Why this matters
           </p>
           <h2 className="font-[var(--font-display)] text-2xl font-semibold md:text-3xl">

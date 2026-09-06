@@ -71,7 +71,7 @@ export function FoundationContestForm() {
   };
 
   const input =
-    'w-full rounded-lg border border-[#3A2C18] bg-[#1A130B] px-3.5 py-2.5 font-[var(--font-body)] text-sm text-[#F3EBDD] placeholder:text-sand-lift focus:border-[#CFA16B] focus:outline-none disabled:opacity-50';
+    'w-full rounded-lg border border-[var(--warm-bark-deep)] bg-[#1A130B] px-3.5 py-2.5 font-[var(--font-body)] text-sm text-[var(--warm-cream)] placeholder:text-sand-lift focus:border-[var(--warm-gold)] focus:outline-none disabled:opacity-50';
   const label = 'mb-1.5 block font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.18em] text-[#9C8E78]';
   const loading = status === 'loading';
 
@@ -85,7 +85,7 @@ export function FoundationContestForm() {
   }
 
   return (
-    <form onSubmit={onSubmit} className="rounded-2xl border border-[#3A2C18] bg-[#15100A] p-6 md:p-8">
+    <form onSubmit={onSubmit} className="rounded-2xl border border-[var(--warm-bark-deep)] bg-[#15100A] p-6 md:p-8">
       <div className="grid gap-4 md:grid-cols-2">
         <div className="md:col-span-2">
           <label htmlFor="foundation" className={label}>Foundation or organisation *</label>
@@ -112,7 +112,7 @@ export function FoundationContestForm() {
         <button
           type="submit"
           disabled={loading}
-          className="rounded-full border border-[#CFA16B] bg-[#CFA16B] px-6 py-2.5 font-[var(--font-sans)] text-xs font-bold uppercase tracking-[0.22em] text-[#15100A] transition hover:bg-[#E0B068] disabled:opacity-50"
+          className="rounded-full border border-[var(--warm-gold)] bg-[var(--warm-gold)] px-6 py-2.5 font-[var(--font-sans)] text-xs font-bold uppercase tracking-[0.22em] text-[#15100A] transition hover:bg-[var(--warm-gold-bright)] disabled:opacity-50"
         >
           {loading ? 'Sending…' : 'Send a correction'}
         </button>

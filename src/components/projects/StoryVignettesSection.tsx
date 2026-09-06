@@ -28,7 +28,7 @@ function VignetteCard({ vignette, theme }: { vignette: ProjectVignette; theme: P
   }
 
   return (
-    <div className="group rounded-[24px] border border-[var(--we-sand)] bg-white p-6 transition-all hover:shadow-lg hover:border-[#7A9B76]">
+    <div className="group rounded-[24px] border border-[var(--we-sand)] bg-white p-6 transition-all hover:shadow-lg hover:border-[var(--warm-sage)]">
       {/* Header with voice owner and role */}
       <div className="mb-4 flex items-start justify-between">
         <div>

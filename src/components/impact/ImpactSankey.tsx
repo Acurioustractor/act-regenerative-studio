@@ -36,7 +36,7 @@ interface Link {
 const COLORS = {
     context: 'var(--we-warm-brown)',
     type: '#D87D4A',
-    evidence: '#2D5A3D'
+    evidence: 'var(--site-green)'
 };
 
 export default function ImpactSankey() {
@@ -153,7 +153,7 @@ export default function ImpactSankey() {
     }, []);
 
     return (
-        <svg width="100%" height={HEIGHT} viewBox={`0 0 ${WIDTH} ${HEIGHT}`} className="w-full h-full bg-[#F6F1E7]/50 rounded-xl border border-[#E1D3BA]">
+        <svg width="100%" height={HEIGHT} viewBox={`0 0 ${WIDTH} ${HEIGHT}`} className="w-full h-full bg-[#F6F1E7]/50 rounded-xl border border-[var(--warm-sand-line)]">
             {/* Links */}
             {links.map((link, i) => {
                 if (!link.sourceNode || !link.targetNode) return null;

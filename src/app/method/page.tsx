@@ -139,7 +139,7 @@ export default function MethodPage() {
           {lcaaSteps.map((step) => (
             <div
               key={step.title}
-              className="rounded-3xl border border-[#E1D3BA] bg-white/75 p-7"
+              className="rounded-3xl border border-[var(--warm-sand-line)] bg-white/75 p-7"
             >
               <h3 className="font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
                 {step.title}
@@ -185,7 +185,7 @@ export default function MethodPage() {
         </div>
       </section>
 
-      <section className="rounded-3xl border border-[var(--we-sand)] bg-gradient-to-br from-[#F6F1E7] via-[#E7DDC7] to-[#D7C4A2] p-8 md:p-12">
+      <section className="rounded-3xl border border-[var(--we-sand)] bg-gradient-to-br from-[var(--warm-paper)] via-[#E7DDC7] to-[var(--warm-sand-deep)] p-8 md:p-12">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">
           <div className="space-y-4">
             <p className="text-xs uppercase tracking-[0.3em] text-[var(--we-warm-brown)]">
@@ -225,7 +225,7 @@ export default function MethodPage() {
             <Link
               key={page.title}
               href={page.href}
-              className="group rounded-3xl border border-[#E1D3BA] bg-white/75 p-7 transition hover:-translate-y-1 hover:border-forest hover:shadow-[0_18px_45px_rgba(50,42,31,0.1)]"
+              className="group rounded-3xl border border-[var(--warm-sand-line)] bg-white/75 p-7 transition hover:-translate-y-1 hover:border-forest hover:shadow-[0_18px_45px_rgba(50,42,31,0.1)]"
             >
               <h3 className="font-[var(--font-display)] text-2xl font-semibold text-[var(--we-olive)]">
                 {page.title}

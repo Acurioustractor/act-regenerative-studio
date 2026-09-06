@@ -17,7 +17,7 @@ export function LeadVoice({
     <section className="full-bleed bg-[var(--site-dark)] px-8 py-32 md:py-44">
       <div className="mx-auto max-w-[800px]">
         <blockquote className="border-l-4 border-[var(--site-clay)] pl-10 md:pl-14">
-          <p className="font-[var(--font-display)] text-[clamp(1.4rem,3vw,2.2rem)] font-light italic leading-[1.5] text-[#FAFAF7]">
+          <p className="font-[var(--font-display)] text-[clamp(1.4rem,3vw,2.2rem)] font-light italic leading-[1.5] text-[var(--site-bg)]">
             &ldquo;{quote}&rdquo;
           </p>
           <footer className="mt-10 flex items-center gap-5">
@@ -33,7 +33,7 @@ export function LeadVoice({
               </div>
             ) : null}
             <div>
-              <p className="font-[var(--font-sans)] text-[15px] font-semibold text-[#FAFAF7]">
+              <p className="font-[var(--font-sans)] text-[15px] font-semibold text-[var(--site-bg)]">
                 {authorName}
               </p>
               {authorTagline ? (

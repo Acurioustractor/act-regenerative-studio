@@ -65,7 +65,7 @@ const toneBySlug: Record<
     tagline: 'text-[#8c4d28]',
     body: 'text-[#514235]',
     muted: 'text-[#735d49]',
-    softPill: 'bg-[#f5efe5] text-[#5a4a3a]',
+    softPill: 'bg-[#f5efe5] text-[var(--warm-bark)]',
     strongAction: 'bg-[#a24a2e] text-white hover:bg-[#8b3f28]',
     outlineAction: 'border-[#c08f66] text-[#3b2f28] hover:bg-white/70',
     status: 'bg-[#a24a2e] text-white',
@@ -76,7 +76,7 @@ const toneBySlug: Record<
     tagline: 'text-[#a35e25]',
     body: 'text-[#514235]',
     muted: 'text-[#735d49]',
-    softPill: 'bg-white/70 text-[#5a4a3a]',
+    softPill: 'bg-white/70 text-[var(--warm-bark)]',
     strongAction: 'bg-[#b15b20] text-white hover:bg-[#964d1b]',
     outlineAction: 'border-[#caa173] text-[#3c2e24] hover:bg-white/75',
     status: 'bg-[#b15b20] text-white',
@@ -84,7 +84,7 @@ const toneBySlug: Record<
   'empathy-ledger': {
     card: 'border-[#5a4b3d] bg-gradient-to-br from-[#181614] via-[#211c18] to-[#30291f] text-[#f4ecde]',
     title: 'text-[#fff7ee]',
-    tagline: 'text-[#cfa16b]',
+    tagline: 'text-[var(--warm-gold)]',
     body: 'text-[#d7c8b2]',
     muted: 'text-[#b6a894]',
     softPill: 'bg-[#322a22] text-[#f0dfc6]',
@@ -162,12 +162,12 @@ export function ProjectShowcaseCard({ project }: { project: Project }) {
             <div className="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-black/60 to-transparent" />
             <div className="absolute bottom-4 left-4 flex flex-wrap gap-2">
               {project.mediaEmphasis ? (
-                <span className="rounded-full border border-white/15 bg-black/35 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.24em] text-[#f3ebdd]">
+                <span className="rounded-full border border-white/15 bg-black/35 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.24em] text-[var(--warm-cream)]">
                   Field media
                 </span>
               ) : null}
               {project.previewMedia.kind === 'video' ? (
-                <span className="rounded-full border border-white/15 bg-black/35 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.24em] text-[#f3ebdd]">
+                <span className="rounded-full border border-white/15 bg-black/35 px-3 py-1 text-[0.62rem] font-semibold uppercase tracking-[0.24em] text-[var(--warm-cream)]">
                   Video
                 </span>
               ) : null}
@@ -188,7 +188,7 @@ export function ProjectShowcaseCard({ project }: { project: Project }) {
                     />
                     <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-black/55 to-transparent" />
                     {item.eyebrow ? (
-                      <div className="absolute left-3 top-3 rounded-full border border-white/15 bg-black/35 px-2.5 py-1 text-[0.58rem] font-semibold uppercase tracking-[0.2em] text-[#f3ebdd]">
+                      <div className="absolute left-3 top-3 rounded-full border border-white/15 bg-black/35 px-2.5 py-1 text-[0.58rem] font-semibold uppercase tracking-[0.2em] text-[var(--warm-cream)]">
                         {item.eyebrow}
                       </div>
                     ) : null}

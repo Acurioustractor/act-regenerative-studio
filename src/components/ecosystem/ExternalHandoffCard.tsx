@@ -23,7 +23,7 @@ export function ExternalHandoffCard({
 }: ExternalHandoffCardProps) {
   return (
     <section className="mx-auto max-w-[1100px] px-6 py-6">
-      <div className="rounded-[20px] border border-[var(--we-sand)] bg-[#FDFBF7] px-6 py-5 md:flex md:items-center md:justify-between md:gap-8 md:px-8">
+      <div className="rounded-[20px] border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] px-6 py-5 md:flex md:items-center md:justify-between md:gap-8 md:px-8">
         <div className="space-y-2 md:flex-1">
           <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)]">
             Where to go for what

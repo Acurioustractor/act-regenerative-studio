@@ -112,7 +112,7 @@ function Redact({ w = 'w-20' }: { w?: string }) {
 
 export default function ConfessionsPage() {
   return (
-    <div className="relative bg-[#15100A] text-[#F3EBDD]">
+    <div className="relative bg-[#15100A] text-[var(--warm-cream)]">
       {/* HERO, immersive. `full-bleed` (see globals.css) makes this first child
           break the default 1200px container so the dark page runs edge to edge
           and sits flush behind the fixed nav, like the homepage hero. */}
@@ -151,7 +151,7 @@ export default function ConfessionsPage() {
             </p>
             <Link
               href="/confessions/listen"
-              className="inline-flex items-center gap-2 rounded-full border border-[#CFA16B]/50 px-5 py-2.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.24em] text-[rgba(224,176,104,0.9)] transition hover:border-[#CFA16B] hover:text-[#F3EBDD]"
+              className="inline-flex items-center gap-2 rounded-full border border-[#CFA16B]/50 px-5 py-2.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.24em] text-[rgba(224,176,104,0.9)] transition hover:border-[var(--warm-gold)] hover:text-[var(--warm-cream)]"
             >
               Listen to the messages
               <span aria-hidden="true">→</span>
@@ -161,9 +161,9 @@ export default function ConfessionsPage() {
       </section>
 
       {/* INVITATION */}
-      <section className="border-t border-[#2E2215] px-6 py-24 md:py-32">
+      <section className="border-t border-[var(--warm-earth)] px-6 py-24 md:py-32">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
+          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[var(--warm-gold)]">
             Anti-pretending
           </p>
           <p className="mt-7 font-[var(--font-display)] text-[clamp(1.7rem,4vw,2.6rem)] font-medium leading-[1.2]">
@@ -178,7 +178,7 @@ export default function ConfessionsPage() {
             {QUESTIONS.map((q) => (
               <p
                 key={q}
-                className="font-[var(--font-display)] text-xl italic leading-8 text-[#F3EBDD] md:text-2xl"
+                className="font-[var(--font-display)] text-xl italic leading-8 text-[var(--warm-cream)] md:text-2xl"
               >
                 {q}
               </p>
@@ -199,9 +199,9 @@ export default function ConfessionsPage() {
       </section>
 
       {/* WHAT WAS THE GIFT FOR — the history spine */}
-      <section className="border-t border-[#2E2215] bg-[#1A130B] px-6 py-24 md:py-32">
+      <section className="border-t border-[var(--warm-earth)] bg-[#1A130B] px-6 py-24 md:py-32">
         <div className="mx-auto max-w-3xl">
-          <p className="text-center font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
+          <p className="text-center font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[var(--warm-gold)]">
             Before the foundation
           </p>
           <h2 className="mt-7 text-center font-[var(--font-display)] text-[clamp(1.9rem,4.5vw,3rem)] font-semibold leading-[1.1]">
@@ -213,11 +213,11 @@ export default function ConfessionsPage() {
             relationship. Four words still remember it.
           </p>
 
-          <dl className="mt-14 space-y-px overflow-hidden rounded-3xl border border-[#3A2C18]">
+          <dl className="mt-14 space-y-px overflow-hidden rounded-3xl border border-[var(--warm-bark-deep)]">
             {HISTORY.map((h) => (
               <div key={h.word} className="bg-[#1E160D] p-7 md:flex md:gap-8 md:p-8">
                 <dt className="md:w-56 md:shrink-0">
-                  <span className="font-[var(--font-display)] text-2xl text-[#CFA16B]">{h.word}</span>
+                  <span className="font-[var(--font-display)] text-2xl text-[var(--warm-gold)]">{h.word}</span>
                   <span className="mt-1 block font-[var(--font-sans)] text-[11px] uppercase tracking-[0.2em] text-sand-lift">
                     {h.gloss}
                   </span>
@@ -229,7 +229,7 @@ export default function ConfessionsPage() {
             ))}
           </dl>
 
-          <p className="mx-auto mt-14 max-w-2xl text-center font-[var(--font-display)] text-[clamp(1.4rem,3vw,2rem)] italic leading-[1.3] text-[#F3EBDD]">
+          <p className="mx-auto mt-14 max-w-2xl text-center font-[var(--font-display)] text-[clamp(1.4rem,3vw,2rem)] italic leading-[1.3] text-[var(--warm-cream)]">
             Before the endowment, before the deduction, before the name went on the wall, what was the
             gift for?
           </p>
@@ -240,15 +240,15 @@ export default function ConfessionsPage() {
       </section>
 
       {/* HOW IT WORKS */}
-      <section className="border-t border-[#2E2215] px-6 py-24 md:py-32">
+      <section className="border-t border-[var(--warm-earth)] px-6 py-24 md:py-32">
         <div className="mx-auto max-w-4xl">
           <h2 className="text-center font-[var(--font-display)] text-[clamp(1.8rem,4vw,2.6rem)] font-semibold">
             How it works
           </h2>
           <div className="mt-14 grid gap-8 md:grid-cols-3">
             {STEPS.map((step) => (
-              <div key={step.n} className="rounded-3xl border border-[#3A2C18] bg-[#1E160D] p-7">
-                <span className="font-[var(--font-display)] text-3xl text-[#CFA16B]">{step.n}</span>
+              <div key={step.n} className="rounded-3xl border border-[var(--warm-bark-deep)] bg-[#1E160D] p-7">
+                <span className="font-[var(--font-display)] text-3xl text-[var(--warm-gold)]">{step.n}</span>
                 <p className="mt-4 font-[var(--font-display)] text-xl">{step.label}</p>
                 <p className="mt-3 font-[var(--font-body)] text-[0.95rem] leading-7 text-[#A99B86]">
                   {step.sub}
@@ -268,9 +268,9 @@ export default function ConfessionsPage() {
       </section>
 
       {/* HOW WE SHARE IT BACK — redaction, the one rule */}
-      <section className="border-t border-[#2E2215] bg-[#1A130B] px-6 py-24 md:py-32">
+      <section className="border-t border-[var(--warm-earth)] bg-[#1A130B] px-6 py-24 md:py-32">
         <div className="mx-auto max-w-2xl">
-          <p className="text-center font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
+          <p className="text-center font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[var(--warm-gold)]">
             How we share it back
           </p>
           <h2 className="mt-7 text-center font-[var(--font-display)] text-[clamp(1.7rem,4vw,2.4rem)] font-semibold leading-tight">
@@ -282,7 +282,7 @@ export default function ConfessionsPage() {
           </p>
 
           <figure className="mt-12">
-            <blockquote className="rounded-3xl border border-[#3A2C18] bg-[#15100A] p-8 font-[var(--font-body)] text-lg leading-9 text-[#D8CBB6] md:p-10">
+            <blockquote className="rounded-3xl border border-[var(--warm-bark-deep)] bg-[#15100A] p-8 font-[var(--font-body)] text-lg leading-9 text-[#D8CBB6] md:p-10">
               “I worked at <Redact w="w-24" /> for six years. We declined more good people than we
               ever funded, and we never told <Redact w="w-16" /> why. I still think about the ones we
               said no to.”
@@ -295,10 +295,10 @@ export default function ConfessionsPage() {
       </section>
 
       {/* THE INBOX — an elegant voicemail list; play, scrub, filter by theme */}
-      <section className="border-t border-[#2E2215] px-6 py-24 md:py-32">
+      <section className="border-t border-[var(--warm-earth)] px-6 py-24 md:py-32">
         <div className="mx-auto max-w-6xl">
           <div className="text-center">
-            <p className="inline-flex items-center gap-2.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
+            <p className="inline-flex items-center gap-2.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[var(--warm-gold)]">
               <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-[rgba(224,176,104,0.9)]" />
               The line is open
             </p>
@@ -328,12 +328,12 @@ export default function ConfessionsPage() {
       </section>
 
       {/* THE GREETING, styled like an answering machine transcript */}
-      <section className="border-t border-[#2E2215] px-6 py-24 md:py-32">
+      <section className="border-t border-[var(--warm-earth)] px-6 py-24 md:py-32">
         <div className="mx-auto max-w-2xl">
-          <p className="text-center font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
+          <p className="text-center font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[var(--warm-gold)]">
             What you will hear
           </p>
-          <blockquote className="mt-8 rounded-3xl border border-[#3A2C18] bg-[#1A130B] p-8 font-[var(--font-body)] text-lg leading-9 text-[#D8CBB6] md:p-10">
+          <blockquote className="mt-8 rounded-3xl border border-[var(--warm-bark-deep)] bg-[#1A130B] p-8 font-[var(--font-body)] text-lg leading-9 text-[#D8CBB6] md:p-10">
             <p>Hello. You’ve reached Confessions to Philanthropy.</p>
             <p className="mt-4">No one is available to take your call right now.</p>
             <p className="mt-4 text-[#A99B86]">
@@ -341,7 +341,7 @@ export default function ConfessionsPage() {
               a simple idea very complicated.
             </p>
             <p className="mt-4">After the tone, please leave your confession.</p>
-            <p className="mt-4 font-[var(--font-display)] italic text-[#F3EBDD]">
+            <p className="mt-4 font-[var(--font-display)] italic text-[var(--warm-cream)]">
               You can be anonymous. Say the thing. Leave a message at the tone.
             </p>
           </blockquote>
@@ -349,9 +349,9 @@ export default function ConfessionsPage() {
       </section>
 
       {/* THE WEEK — guest chair rhythm */}
-      <section className="border-t border-[#2E2215] bg-[#1A130B] px-6 py-24 md:py-28">
+      <section className="border-t border-[var(--warm-earth)] bg-[#1A130B] px-6 py-24 md:py-28">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
+          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[var(--warm-gold)]">
             All week, the operator’s chair
           </p>
           <h2 className="mt-7 font-[var(--font-display)] text-[clamp(1.7rem,4vw,2.4rem)] font-semibold leading-tight">
@@ -370,9 +370,9 @@ export default function ConfessionsPage() {
       </section>
 
       {/* THE FRIDAY INBOX — findings teaser */}
-      <section className="border-t border-[#2E2215] px-6 py-24 md:py-28">
+      <section className="border-t border-[var(--warm-earth)] px-6 py-24 md:py-28">
         <div className="mx-auto max-w-2xl text-center">
-          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
+          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[var(--warm-gold)]">
             Friday
           </p>
           <p className="mt-7 font-[var(--font-sans)] text-sm uppercase tracking-[0.3em] text-[rgba(224,176,104,0.7)]">
@@ -388,7 +388,7 @@ export default function ConfessionsPage() {
           <p className="mt-9">
             <Link
               href="/confessions/listen"
-              className="inline-flex items-center gap-2 rounded-full border border-[#CFA16B]/40 px-5 py-2.5 text-sm font-semibold text-[#CFA16B] transition hover:border-[#CFA16B] hover:bg-[#CFA16B]/10"
+              className="inline-flex items-center gap-2 rounded-full border border-[#CFA16B]/40 px-5 py-2.5 text-sm font-semibold text-[var(--warm-gold)] transition hover:border-[var(--warm-gold)] hover:bg-[#CFA16B]/10"
             >
               Listen to the voices <span aria-hidden="true">&rarr;</span>
             </Link>
@@ -397,10 +397,10 @@ export default function ConfessionsPage() {
       </section>
 
       {/* THE LINE OF WORK, lineage of the phones we have built */}
-      <section className="border-t border-[#2E2215] bg-[#1A130B] px-6 py-24 md:py-28">
+      <section className="border-t border-[var(--warm-earth)] bg-[#1A130B] px-6 py-24 md:py-28">
         <div className="mx-auto max-w-5xl">
           <div className="text-center">
-            <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
+            <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[var(--warm-gold)]">
               A line of work
             </p>
             <h2 className="mx-auto mt-7 max-w-2xl font-[var(--font-display)] text-[clamp(1.7rem,4vw,2.4rem)] font-semibold leading-tight">
@@ -420,20 +420,20 @@ export default function ConfessionsPage() {
                   className={`group flex h-full flex-col rounded-3xl border p-8 transition ${
                     w.current
                       ? 'border-[#CFA16B]/60 bg-[#15100A] shadow-[0_0_36px_-14px_rgba(207,161,107,0.55)]'
-                      : 'border-[#2E2215] bg-[#15100A] hover:border-[#5A4A30]'
+                      : 'border-[var(--warm-earth)] bg-[#15100A] hover:border-[#5A4A30]'
                   }`}
                 >
                   <span className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-sand-lift">
                     {w.year}
-                    {w.current && <span className="ml-2 text-[#CFA16B]">the current call</span>}
+                    {w.current && <span className="ml-2 text-[var(--warm-gold)]">the current call</span>}
                   </span>
-                  <span className="mt-3 font-[var(--font-display)] text-xl font-semibold text-[#E0B068]">
+                  <span className="mt-3 font-[var(--font-display)] text-xl font-semibold text-[var(--warm-gold-bright)]">
                     {w.title}
                   </span>
                   <span className="mt-3 flex-1 font-[var(--font-body)] text-[15px] leading-7 text-[#C7B9A4]">
                     {w.line}
                   </span>
-                  <span className="mt-6 inline-flex items-center gap-1.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.2em] text-[rgba(224,176,104,0.85)] group-hover:text-[#CFA16B]">
+                  <span className="mt-6 inline-flex items-center gap-1.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.2em] text-[rgba(224,176,104,0.85)] group-hover:text-[var(--warm-gold)]">
                     See the work <span aria-hidden="true">&rarr;</span>
                   </span>
                 </Link>
@@ -449,7 +449,7 @@ export default function ConfessionsPage() {
       </section>
 
       {/* CLOSING CTA */}
-      <section className="border-t border-[#2E2215] bg-[#1A130B] px-6 py-24 text-center md:py-32">
+      <section className="border-t border-[var(--warm-earth)] bg-[#1A130B] px-6 py-24 text-center md:py-32">
         <div className="mx-auto max-w-2xl">
           <h2 className="font-[var(--font-display)] text-[clamp(2rem,5vw,3.2rem)] font-semibold leading-tight">
             Pick up the phone. Say the thing.
@@ -462,7 +462,7 @@ export default function ConfessionsPage() {
           </div>
           <p className="mt-12 font-[var(--font-body)] text-sm text-sand-lift">
             A gold phone from{' '}
-            <Link href="/art" className="text-[#CFA16B] underline-offset-4 hover:underline">
+            <Link href="/art" className="text-[var(--warm-gold)] underline-offset-4 hover:underline">
               the ACT art program
             </Link>
             . Not anti-philanthropy. Anti-pretending.
@@ -471,9 +471,9 @@ export default function ConfessionsPage() {
       </section>
 
       {/* PASS IT ON, share kit */}
-      <section className="border-t border-[#2E2215] bg-[#15100A] px-6 py-20 text-center md:py-28">
+      <section className="border-t border-[var(--warm-earth)] bg-[#15100A] px-6 py-20 text-center md:py-28">
         <div className="mx-auto max-w-3xl">
-          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-[#CFA16B]">
+          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.35em] text-[var(--warm-gold)]">
             Pass it on
           </p>
           <h2 className="mt-5 font-[var(--font-display)] text-[clamp(1.8rem,4.5vw,2.6rem)] font-semibold leading-tight">
@@ -488,7 +488,7 @@ export default function ConfessionsPage() {
               href={SHARE_X}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-[#CFA16B] px-5 py-2.5 text-sm font-semibold text-[#1A130B] transition hover:bg-[#E0B985]"
+              className="inline-flex items-center gap-2 rounded-full bg-[var(--warm-gold)] px-5 py-2.5 text-sm font-semibold text-[#1A130B] transition hover:bg-[#E0B985]"
             >
               Share on X
             </a>
@@ -496,7 +496,7 @@ export default function ConfessionsPage() {
               href={SHARE_LINKEDIN}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full border border-[#CFA16B]/40 px-5 py-2.5 text-sm font-semibold text-[#CFA16B] transition hover:border-[#CFA16B] hover:bg-[#CFA16B]/10"
+              className="inline-flex items-center gap-2 rounded-full border border-[#CFA16B]/40 px-5 py-2.5 text-sm font-semibold text-[var(--warm-gold)] transition hover:border-[var(--warm-gold)] hover:bg-[#CFA16B]/10"
             >
               Share on LinkedIn
             </a>

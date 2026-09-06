@@ -132,7 +132,7 @@ export function KnowledgeLinksSection({
             <LinkComponent
               key={link.href}
               {...linkProps}
-              className="group flex items-start gap-4 rounded-2xl border border-[var(--we-sand)] bg-white p-5 transition-all hover:border-[#7A9B76] hover:shadow-md"
+              className="group flex items-start gap-4 rounded-2xl border border-[var(--we-sand)] bg-white p-5 transition-all hover:border-[var(--warm-sage)] hover:shadow-md"
             >
               <div className="flex-1">
                 <h3 className="font-semibold text-[var(--we-olive)] group-hover:text-forest-sage">
@@ -164,7 +164,7 @@ export function KnowledgeLinksSection({
       {ecosystemData && (
         <div className="flex flex-wrap items-center justify-center gap-3 py-4 border-t border-[var(--we-sand)]">
           {ecosystemData.code && (
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#F6F1E7] px-3 py-1.5 text-xs font-medium text-[var(--we-brown-deep)]">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--warm-paper)] px-3 py-1.5 text-xs font-medium text-[var(--we-brown-deep)]">
               <span className="opacity-60">Code:</span>
               <span className="font-semibold">{ecosystemData.code}</span>
             </span>
@@ -184,7 +184,7 @@ export function KnowledgeLinksSection({
             </span>
           )}
           {ecosystemData.location && (
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-[#F6F1E7] px-3 py-1.5 text-xs text-[var(--we-brown-deep)]">
+            <span className="inline-flex items-center gap-1.5 rounded-full bg-[var(--warm-paper)] px-3 py-1.5 text-xs text-[var(--we-brown-deep)]">
               {ecosystemData.location}
             </span>
           )}

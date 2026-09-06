@@ -17,11 +17,11 @@ const feelingsPresent = feelingOrder.filter((f) => confessions.some((c) => feeli
 
 export default function ListenPage() {
   return (
-    <div className="relative min-h-screen bg-[#15100A] text-[#F3EBDD]">
+    <div className="relative min-h-screen bg-[#15100A] text-[var(--warm-cream)]">
       {/* THE MESSAGE */}
       <section className="full-bleed px-6 pt-12 text-center md:pt-16">
         <div className="mx-auto max-w-3xl">
-          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[#CFA16B]">
+          <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.4em] text-[var(--warm-gold)]">
             Confessions to philanthropy
           </p>
           <h1 className="mt-7 font-[var(--font-display)] text-[clamp(2.3rem,6vw,4.2rem)] font-semibold leading-[1.05]">
@@ -47,7 +47,7 @@ export default function ListenPage() {
             ))}
           </div>
 
-          <div className="relative mt-6 h-[60vh] min-h-[440px] w-full overflow-hidden rounded-3xl border border-[#2E2215]">
+          <div className="relative mt-6 h-[60vh] min-h-[440px] w-full overflow-hidden rounded-3xl border border-[var(--warm-earth)]">
             <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_44%,#241910_0%,#15100A_66%)]" />
             <ConfessionField confessions={confessions} interactive />
             <p className="pointer-events-none absolute inset-x-0 top-5 text-center font-[var(--font-sans)] text-[11px] uppercase tracking-[0.3em] text-sand-lift">
@@ -66,7 +66,7 @@ export default function ListenPage() {
       </section>
 
       {/* LEAVE ONE */}
-      <section className="border-t border-[#2E2215] bg-[#1A130B] px-6 py-24 text-center md:py-28">
+      <section className="border-t border-[var(--warm-earth)] bg-[#1A130B] px-6 py-24 text-center md:py-28">
         <div className="mx-auto max-w-2xl">
           <h2 className="font-[var(--font-display)] text-[clamp(1.7rem,4vw,2.6rem)] font-semibold leading-tight">
             However it feels, the line is open.

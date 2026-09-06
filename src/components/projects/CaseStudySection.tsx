@@ -118,7 +118,7 @@ export function CaseStudySection({
             </a>
           </div>
 
-          <div className="rounded-2xl border border-[var(--we-sand)] bg-[#F6F1E7] px-5 py-4 text-sm text-[var(--we-brown-deep)]">
+          <div className="rounded-2xl border border-[var(--we-sand)] bg-[var(--warm-paper)] px-5 py-4 text-sm text-[var(--we-brown-deep)]">
             <p className="text-xs uppercase tracking-[0.2em] text-[var(--we-warm-brown)]">
               Live story layer
             </p>

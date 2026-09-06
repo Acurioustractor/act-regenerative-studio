@@ -26,7 +26,7 @@ export default function CardGrid({
     className ?? "grid gap-6 md:grid-cols-2 lg:grid-cols-3";
   const baseCardClass =
     cardClassName ??
-    "group flex h-full flex-col justify-between rounded-3xl border border-[#E1D3BA] bg-white/70 p-6 transition hover:-translate-y-1 hover:border-forest hover:shadow-[0_18px_45px_rgba(50,42,31,0.12)]";
+    "group flex h-full flex-col justify-between rounded-3xl border border-[var(--warm-sand-line)] bg-white/70 p-6 transition hover:-translate-y-1 hover:border-forest hover:shadow-[0_18px_45px_rgba(50,42,31,0.12)]";
 
   return (
     <div className={gridClass}>
@@ -46,7 +46,7 @@ export default function CardGrid({
             <div className="flex flex-col justify-between p-6 flex-1">
               <div className="space-y-2">
                 {card.theme && (
-                  <span className="inline-block rounded-full bg-[#F6F1E7] px-3 py-1 text-xs font-medium text-[var(--we-warm-brown)]">
+                  <span className="inline-block rounded-full bg-[var(--warm-paper)] px-3 py-1 text-xs font-medium text-[var(--we-warm-brown)]">
                     {card.theme}
                   </span>
                 )}
@@ -96,7 +96,7 @@ export default function CardGrid({
         );
 
         const cardClass = card.image
-          ? "group flex h-full flex-col overflow-hidden rounded-3xl border border-[#E1D3BA] bg-white transition hover:-translate-y-1 hover:border-forest hover:shadow-[0_18px_45px_rgba(50,42,31,0.12)]"
+          ? "group flex h-full flex-col overflow-hidden rounded-3xl border border-[var(--warm-sand-line)] bg-white transition hover:-translate-y-1 hover:border-forest hover:shadow-[0_18px_45px_rgba(50,42,31,0.12)]"
           : baseCardClass;
 
         return card.href ? (

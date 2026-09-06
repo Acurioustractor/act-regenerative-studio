@@ -85,7 +85,7 @@ export function WallOfFeeling({ confessions }: { confessions: Confession[] }) {
         className="flex flex-col justify-between rounded-2xl border bg-[#1C1409]/70 p-6 transition-colors"
         style={{ borderColor: playing ? `rgb(${rgb})` : `rgba(${rgb},0.22)`, background: playing ? `rgba(${rgb},0.07)` : undefined }}
       >
-        <blockquote className="font-[var(--font-display)] text-[clamp(1.05rem,1.6vw,1.35rem)] italic leading-[1.55] text-[#F3EBDD]">
+        <blockquote className="font-[var(--font-display)] text-[clamp(1.05rem,1.6vw,1.35rem)] italic leading-[1.55] text-[var(--warm-cream)]">
           {renderTranscript(c.text)}
         </blockquote>
         <div className="mt-5 flex items-center gap-3">

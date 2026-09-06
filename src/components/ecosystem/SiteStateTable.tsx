@@ -1,4 +1,4 @@
-import { describeStatus, relativeTime, type SiteState } from "@/lib/sites/site-state";
+import { describeStatus, relativeTime, storyState, type SiteState } from "@/lib/sites/site-state";
 
 const TONE_TEXT: Record<ReturnType<typeof describeStatus>["tone"], string> = {
   good: "text-forest",
@@ -36,6 +36,7 @@ export function SiteStateTable({ sites }: { sites: SiteState[] }) {
               <th className="px-4 py-3">Code</th>
               <th className="px-4 py-3">Status</th>
               <th className="px-4 py-3">Last deploy</th>
+              <th className="px-4 py-3">Stories</th>
             </tr>
           </thead>
           <tbody>
@@ -60,6 +61,9 @@ export function SiteStateTable({ sites }: { sites: SiteState[] }) {
                       <span className="ml-2 text-xs opacity-70">{site.lastDeploymentAt.slice(0, 10)}</span>
                     ) : null}
                   </td>
+                  {(() => { const st = storyState(site); return (
+                    <td className={`px-4 py-3 text-xs ${TONE_TEXT[st.tone]}`}>{st.label}</td>
+                  ); })()}
                 </tr>
               );
             })}

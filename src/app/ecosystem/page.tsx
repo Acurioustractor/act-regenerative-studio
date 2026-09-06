@@ -3,6 +3,8 @@ import Link from "next/link";
 import PageHero from "@/components/PageHero";
 import SectionHeading from "@/components/SectionHeading";
 import { EmpathyLedgerConnections } from "@/components/projects/EmpathyLedgerConnections";
+import { SiteStateStrip } from "@/components/ecosystem/SiteStateStrip";
+import { getSiteStates } from "@/lib/sites/site-state";
 import { buildProjectIndexSignals } from "@/lib/projects/build-project-index-signals";
 import { buildCuratedProjectCards } from "@/lib/projects/build-curated-project-cards";
 import { studioProjectConfigs } from "@/lib/projects/studio-project-configs";
@@ -17,9 +19,10 @@ export const metadata = pageMetadata({
 });
 
 export default async function EcosystemPage() {
-  const [signalPayload, curatedProjects] = await Promise.all([
+  const [signalPayload, curatedProjects, siteStates] = await Promise.all([
     buildProjectIndexSignals(),
     buildCuratedProjectCards(studioProjectConfigs),
+    getSiteStates(),
   ]);
 
   return (
@@ -108,6 +111,8 @@ export default async function EcosystemPage() {
           ))}
         </div>
       </section>
+
+      <SiteStateStrip sites={siteStates} />
 
       <section className="rounded-3xl border border-[#2F2A25] bg-[#11110F] p-8 text-[#F3EBDD] md:p-12">
         <div className="grid gap-8 lg:grid-cols-[0.9fr_1.1fr]">

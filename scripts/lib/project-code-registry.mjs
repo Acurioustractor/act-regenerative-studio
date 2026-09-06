@@ -41,6 +41,7 @@ export function createEmptyProjectCodeRegistry() {
   return {
     generatedAt: new Date().toISOString(),
     sourceConfigPath: null,
+    guarded: false,
     projectCount: 0,
     unresolvedWikiProjectSlugs: [],
     projects: [],

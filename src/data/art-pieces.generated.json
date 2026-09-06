@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-06T10:06:45.407Z",
+  "generatedAt": "2026-09-06T19:02:33.297Z",
   "sourceConfigPath": "/Users/benknight/Code/act-global-infrastructure/config/project-codes.json",
   "pieceCount": 14,
   "pieces": [
@@ -175,8 +175,8 @@
       "aliases": [],
       "title": "PICC On Country Photo Studio",
       "quote": "A portrait studio that travels to Palm Island, run on community terms",
-      "description": "Mobile photo studio for Palm Island community storytelling",
-      "philosophy": null,
+      "description": "A mobile portrait and documentary studio for Bwgcolman (Palm Island). It sets up where people already are and makes formal photographs the way a town studio once did: lit, considered, printed, handed over. The first sittings in September 2025 produced 501 photographs, held in Empathy Ledger and published only when the people in them say yes.",
+      "philosophy": "Photographs of Palm Island have mostly been taken by people passing through, for uses the community did not choose. The studio inverts that. Community members sit for a portrait because they want one, the file belongs to them, and consent is a decision they make per image, revocable and recorded.",
       "impact": null,
       "mediums": [
         "photography",
@@ -192,8 +192,8 @@
         "Action",
         "Art"
       ],
-      "year": null,
-      "location": null,
+      "year": "2025 to present",
+      "location": "Bwgcolman (Palm Island), Queensland",
       "connectedProject": "PICC",
       "connectedProjectCode": "ACT-PI",
       "connectedProjectHref": "https://picc.studio",

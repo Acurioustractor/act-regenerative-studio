@@ -17,6 +17,12 @@ export interface SiteState {
   status: SiteStatus;
   lastDeploymentAt: string | null;
   lastCheckAt: string | null;
+  /** Empathy Ledger syndication site this site reads stories as; null when it has none. */
+  elSiteSlug: string | null;
+  /** Articles + stories consented to this site in Empathy Ledger at the last sync. */
+  storiesConsented: number | null;
+  /** Last time the site pulled from Empathy Ledger; null means never. */
+  storiesLastPullAt: string | null;
 }
 
 interface SiteRow {
@@ -27,6 +33,9 @@ interface SiteRow {
   status: string | null;
   last_deployment_at: string | null;
   last_check_at: string | null;
+  el_site_slug?: string | null;
+  stories_consented?: number | null;
+  stories_last_pull_at?: string | null;
 }
 
 const STATUSES: SiteStatus[] = ["live", "building", "broken", "canceled", "unknown", "external", "archived"];
@@ -64,7 +73,22 @@ export function rowToSiteState(row: SiteRow): SiteState {
     status: normalizeStatus(row.status),
     lastDeploymentAt: row.last_deployment_at,
     lastCheckAt: row.last_check_at,
+    elSiteSlug: row.el_site_slug ?? null,
+    storiesConsented: row.stories_consented ?? null,
+    storiesLastPullAt: row.stories_last_pull_at ?? null,
   };
+}
+
+/**
+ * The one thing this column exists to catch: stories consented to a site that
+ * the site has never asked for. Consent without consumption is silent drift.
+ */
+export function storyState(site: Pick<SiteState, "elSiteSlug" | "storiesConsented" | "storiesLastPullAt">): { label: string; tone: "good" | "warn" | "muted" } {
+  if (!site.elSiteSlug) return { label: "No story feed", tone: "muted" };
+  const n = site.storiesConsented ?? 0;
+  if (n === 0) return { label: "Nothing consented yet", tone: "muted" };
+  if (!site.storiesLastPullAt) return { label: `${n} consented, never pulled`, tone: "warn" };
+  return { label: `${n} consented, pulled ${relativeTime(site.storiesLastPullAt) ?? site.storiesLastPullAt.slice(0, 10)}`, tone: "good" };
 }
 
 /** "3 days ago" style, coarse on purpose. */
@@ -82,13 +106,26 @@ export function relativeTime(iso: string | null, now: Date = new Date()): string
   return `${years} year${years === 1 ? "" : "s"} ago`;
 }
 
+const PUBLIC_COLUMNS = "slug,name,url,project_code,status,last_deployment_at,last_check_at";
+const TELEMETRY_COLUMNS = "el_site_slug,stories_consented,stories_last_pull_at";
+
+/**
+ * Reads ecosystem_sites. On the server with the service role key it reads
+ * everything, including the story telemetry columns, which the public key
+ * cannot see (grantscope 20260907005847 grants anon only the public columns).
+ * With only the public key it reads the public columns and the story state
+ * shows as "no feed". Empty array, never a throw.
+ */
 export async function getSiteStates(): Promise<SiteState[]> {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const url = process.env.SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const key = serviceKey || anonKey;
   if (!url || !key) return [];
+  const select = serviceKey ? `${PUBLIC_COLUMNS},${TELEMETRY_COLUMNS}` : PUBLIC_COLUMNS;
   try {
     const res = await fetch(
-      `${url}/rest/v1/ecosystem_sites?select=slug,name,url,project_code,status,last_deployment_at,last_check_at&project_code=not.is.null&order=name.asc`,
+      `${url}/rest/v1/ecosystem_sites?select=${select}&project_code=not.is.null&order=name.asc`,
       { headers: { apikey: key, Authorization: `Bearer ${key}` }, cache: "no-store" },
     );
     if (!res.ok) return [];

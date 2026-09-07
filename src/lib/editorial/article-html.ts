@@ -72,3 +72,68 @@ export function readingTimeMinutes(html: string): number | null {
   if (words < 220) return null;
   return Math.ceil(words / 220);
 }
+
+/**
+ * Give every figure a caption a reader can see.
+ *
+ * Empathy Ledger's exported HTML carries `<figure><img alt="…"></figure>` with
+ * no figcaption, so a reader of "What the Road Corrects" scrolled past seven
+ * photographs without once being told where they were (review 2026-09-07).
+ * The ledger does know: each media asset has a title ("Palm Island coastline",
+ * "Mist over Black Cockatoo Valley"), carried into the page as photoPreviews.
+ *
+ * Match by media id in the URL, then by exact URL. Caption wins over title,
+ * title over a real alt. A figure that already has a figcaption is left alone.
+ */
+export interface FigureCaptionSource {
+  url: string;
+  caption?: string | null;
+  title?: string | null;
+  alt?: string | null;
+  alt_text?: string | null;
+}
+
+const FIGURE = /<figure\b([^>]*)>([\s\S]*?)<\/figure>/gi;
+const IMG_SRC = /<img\b[^>]*\bsrc=(["'])(.*?)\1/i;
+const IMG_ALT = /<img\b[^>]*\balt=(["'])(.*?)\1/i;
+const MEDIA_ID = /media\/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/i;
+
+function escapeHtml(value: string): string {
+  return value.replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+}
+
+export function mediaIdFromUrl(url: string | null | undefined): string | null {
+  const m = url ? MEDIA_ID.exec(url) : null;
+  return m ? m[1].toLowerCase() : null;
+}
+
+export function captionFigures(html: string, sources: FigureCaptionSource[]): string {
+  const byId = new Map<string, FigureCaptionSource>();
+  const byUrl = new Map<string, FigureCaptionSource>();
+  for (const s of sources) {
+    if (!s.url) continue;
+    byUrl.set(s.url, s);
+    const id = mediaIdFromUrl(s.url);
+    if (id && !byId.has(id)) byId.set(id, s);
+  }
+  return html.replace(FIGURE, (whole, attrs: string, inner: string) => {
+    if (/<figcaption\b/i.test(inner)) return whole;
+    const src = IMG_SRC.exec(inner)?.[2] ?? null;
+    if (!src) return whole;
+    const source = byUrl.get(src) ?? (mediaIdFromUrl(src) ? byId.get(mediaIdFromUrl(src) as string) : undefined);
+    const embeddedAlt = cleanAltText(IMG_ALT.exec(inner)?.[2]?.replace(/&quot;/g, '"').replace(/&amp;/g, "&"));
+    // The ledger's alt for the same asset outranks the exported <img> alt, which
+    // is often Webflow's placeholder or empty (review finding, 2026-09-07).
+    const sourceAlt = cleanAltText(source?.alt ?? source?.alt_text);
+    const text = (source?.caption || source?.title || sourceAlt || embeddedAlt || "").trim();
+    if (!text) return whole;
+    return `<figure${attrs}>${inner}<figcaption>${escapeHtml(text)}</figcaption></figure>`;
+  });
+}
+
+/** True when the article body already shows this photograph. */
+export function htmlContainsMedia(html: string, url: string): boolean {
+  if (html.includes(url)) return true;
+  const id = mediaIdFromUrl(url);
+  return id ? html.toLowerCase().includes(id) : false;
+}

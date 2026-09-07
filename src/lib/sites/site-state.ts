@@ -106,13 +106,26 @@ export function relativeTime(iso: string | null, now: Date = new Date()): string
   return `${years} year${years === 1 ? "" : "s"} ago`;
 }
 
+const PUBLIC_COLUMNS = "slug,name,url,project_code,status,last_deployment_at,last_check_at";
+const TELEMETRY_COLUMNS = "el_site_slug,stories_consented,stories_last_pull_at";
+
+/**
+ * Reads ecosystem_sites. On the server with the service role key it reads
+ * everything, including the story telemetry columns, which the public key
+ * cannot see (grantscope 20260907005847 grants anon only the public columns).
+ * With only the public key it reads the public columns and the story state
+ * shows as "no feed". Empty array, never a throw.
+ */
 export async function getSiteStates(): Promise<SiteState[]> {
-  const url = process.env.NEXT_PUBLIC_SUPABASE_URL;
-  const key = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const url = process.env.SUPABASE_URL ?? process.env.NEXT_PUBLIC_SUPABASE_URL;
+  const serviceKey = process.env.SUPABASE_SERVICE_ROLE_KEY;
+  const anonKey = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY;
+  const key = serviceKey || anonKey;
   if (!url || !key) return [];
+  const select = serviceKey ? `${PUBLIC_COLUMNS},${TELEMETRY_COLUMNS}` : PUBLIC_COLUMNS;
   try {
     const res = await fetch(
-      `${url}/rest/v1/ecosystem_sites?select=slug,name,url,project_code,status,last_deployment_at,last_check_at,el_site_slug,stories_consented,stories_last_pull_at&project_code=not.is.null&order=name.asc`,
+      `${url}/rest/v1/ecosystem_sites?select=${select}&project_code=not.is.null&order=name.asc`,
       { headers: { apikey: key, Authorization: `Bearer ${key}` }, cache: "no-store" },
     );
     if (!res.ok) return [];

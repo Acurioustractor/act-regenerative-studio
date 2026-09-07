@@ -13,6 +13,10 @@ describe("captionFigures", () => {
     expect(captionFigures(fig, [{ url, caption: "Bwgcolman <Palm Island>", title: "x" }])).toContain("Bwgcolman &lt;Palm Island&gt;");
     expect(captionFigures(fig, [])).toContain("<figcaption>Aerial view of a forested coastline</figcaption>");
   });
+  it("uses the ledger's alt for the asset when the exported img alt is a placeholder", () => {
+    const junk = `<figure><img src="${url}" alt="__wf_reserved_inherit" /></figure>`;
+    expect(captionFigures(junk, [{ url, alt_text: "Bwgcolman from the water" }])).toContain("<figcaption>Bwgcolman from the water</figcaption>");
+  });
   it("leaves a figure that already has a caption, junk alt with no source, and non-figure images alone", () => {
     const captioned = `<figure><img src="${url}" alt="x" /><figcaption>Kept</figcaption></figure>`;
     expect(captionFigures(captioned, [{ url, title: "New" }])).toBe(captioned);

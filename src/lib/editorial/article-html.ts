@@ -121,8 +121,11 @@ export function captionFigures(html: string, sources: FigureCaptionSource[]): st
     const src = IMG_SRC.exec(inner)?.[2] ?? null;
     if (!src) return whole;
     const source = byUrl.get(src) ?? (mediaIdFromUrl(src) ? byId.get(mediaIdFromUrl(src) as string) : undefined);
-    const alt = cleanAltText(IMG_ALT.exec(inner)?.[2]?.replace(/&quot;/g, '"').replace(/&amp;/g, "&"));
-    const text = (source?.caption || source?.title || alt || "").trim();
+    const embeddedAlt = cleanAltText(IMG_ALT.exec(inner)?.[2]?.replace(/&quot;/g, '"').replace(/&amp;/g, "&"));
+    // The ledger's alt for the same asset outranks the exported <img> alt, which
+    // is often Webflow's placeholder or empty (review finding, 2026-09-07).
+    const sourceAlt = cleanAltText(source?.alt ?? source?.alt_text);
+    const text = (source?.caption || source?.title || sourceAlt || embeddedAlt || "").trim();
     if (!text) return whole;
     return `<figure${attrs}>${inner}<figcaption>${escapeHtml(text)}</figcaption></figure>`;
   });

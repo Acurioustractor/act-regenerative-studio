@@ -12,6 +12,8 @@ import { articleJsonLd, breadcrumbJsonLd, pageMetadata } from "@/lib/seo/site";
 import {
   cleanAltText,
   prepareArticleHtml,
+  captionFigures,
+  htmlContainsMedia,
   readingTimeMinutes,
 } from "@/lib/editorial/article-html";
 import { formatArticleType } from "@/lib/editorial/article-type";
@@ -87,7 +89,9 @@ export async function EditorialArticleReader({
 }) {
   const content = post.content || "";
   const looksLikeHtml = /<\/?[a-z][\s\S]*>/i.test(content);
-  const preparedHtml = looksLikeHtml ? prepareArticleHtml(content) : null;
+  const preparedHtml = looksLikeHtml
+    ? captionFigures(prepareArticleHtml(content), post.media?.photoPreviews || [])
+    : null;
   const readingMinutes = readingTimeMinutes(content);
   const lede = shortLede(post.excerpt);
 
@@ -115,8 +119,11 @@ export async function EditorialArticleReader({
   // text under alt_text (older shapes used alt), and most of it is Webflow
   // filename junk — cleanAltText decides whether any of it is a real
   // description.
+  // A photograph the reader has already met in the prose does not run again
+  // at the foot of the page; the gallery is for what the body could not hold.
   const gallery = (post.media?.photoPreviews || [])
     .filter((photo) => !!photo.url && photo.url !== post.featuredImageUrl)
+    .filter((photo) => !(preparedHtml && htmlContainsMedia(preparedHtml, photo.url)))
     .slice(0, 8)
     .map((photo) => ({
       url: photo.url,

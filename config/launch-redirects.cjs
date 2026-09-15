@@ -117,6 +117,142 @@ const launchRedirects = [
   { source: "/partners", destination: "/contact", permanent: false },
   { source: "/events", destination: "/harvest", permanent: true },
   { source: "/media", destination: "/stories", permanent: false },
+  // The Webflow site's own routes, mapped 2026-09-16 ahead of the cutover.
+  //
+  // act.place still serves Webflow, and 45 of the 81 URLs in its sitemap had no
+  // home here, measured by fetching every one of them against production. The
+  // domain has been live for years, so those URLs sit in search results, other
+  // people's posts, grant applications and printed material, and the day DNS
+  // moves they all become 404s. Each rule below sends one to the page that holds
+  // that work now.
+  //
+  // What is deliberately NOT mapped, and should keep 404ing: /checkout,
+  // /paypal-checkout and /order-confirmation (a Webflow shop whose only product
+  // page reads "Lorem ipsum" at $0.00), /template/*, /relume-*,
+  // /career-single-no-cms, /place-page, /goods-analysis and /goods-product-page
+  // (unfinished scaffolding, one of them twelve words long). A redirect for a
+  // page nobody meant to publish only teaches a crawler that it still exists.
+  //
+  // This block sits above the /blog rules because the misspelt slug below has to
+  // match before /blog/:slug* claims it.
+  {
+    // The Webflow slug carries three dashes where the Empathy Ledger slug has
+    // one. The target is in review upstream today; when it is published again,
+    // this rule is what keeps the old link working.
+    source:
+      "/blog/the-kids-are-not-alright-how-queensland-is-failing-its-most-vulnerable-young-people---and-what-we-can-do-about-it",
+    destination:
+      "/stories/the-kids-are-not-alright-how-queensland-is-failing-its-most-vulnerable-young-people-and-what-we-can-do-about-it",
+    permanent: true,
+  },
+
+  // Art works that began life as a Webflow project or seed page.
+  { source: "/the-gold-phone", destination: "/art/gold-phone", permanent: true },
+  { source: "/seeds/con-phone", destination: "/art/gold-phone", permanent: true },
+  { source: "/seeds/the-treacher", destination: "/art/treacher", permanent: true },
+  {
+    source: "/project/the-confessional",
+    destination: "/art/the-confessional",
+    permanent: true,
+  },
+  {
+    source: "/project/contained",
+    destination: "/art/contained",
+    permanent: true,
+  },
+  { source: "/be-contained", destination: "/art/contained", permanent: true },
+
+  // Flagships. The old site gave each its own page; the field is the home now.
+  {
+    source: "/project/justicehub",
+    destination: "/fields/justice",
+    permanent: true,
+  },
+  {
+    source: "/act-projects/justicehub",
+    destination: "/fields/justice",
+    permanent: true,
+  },
+  {
+    source: "/project/con-nected",
+    destination: "/fields/justice",
+    permanent: true,
+  },
+  {
+    source: "/project/confit-pathways-digital-mentoring",
+    destination: "/fields/justice",
+    permanent: true,
+  },
+  {
+    source: "/seeds/yj-your-justice",
+    destination: "/fields/justice",
+    permanent: true,
+  },
+  { source: "/seeds/the-fixers", destination: "/fields/justice", permanent: true },
+  {
+    source: "/project/empathy-ledger",
+    destination: "/fields/empathy",
+    permanent: true,
+  },
+  {
+    source: "/act-projects/empathy-ledger",
+    destination: "/fields/empathy",
+    permanent: true,
+  },
+  { source: "/project/goods", destination: "/fields/goods", permanent: true },
+  { source: "/project/dad-lab", destination: "/harvest", permanent: true },
+
+  // Goods sells and this site does not (cutover plan, 2026-08-07), so a product
+  // page goes to the product's own site rather than to a field page that cannot
+  // take an order.
+  {
+    source: "/weave-bed",
+    destination: "https://www.goodsoncountry.com/beds",
+    permanent: true,
+  },
+  {
+    source: "/pakkimjalki-kari-indestructible-washing-machine",
+    destination: "https://www.goodsoncountry.com/shop/washing-machine",
+    permanent: true,
+  },
+  {
+    source: "/goods-shop-page",
+    destination: "https://www.goodsoncountry.com/beds",
+    permanent: true,
+  },
+  {
+    source: "/greate-beds---faqs",
+    destination: "https://www.goodsoncountry.com/beds",
+    permanent: true,
+  },
+  {
+    source: "/product/:slug*",
+    destination: "https://www.goodsoncountry.com/beds",
+    permanent: true,
+  },
+  {
+    source: "/goods-storytellers",
+    destination: "https://www.goodsoncountry.com/storytellers",
+    permanent: true,
+  },
+
+  // Who we are. Both bios ran to 7,000 words, of which 311 sentences were the
+  // same boilerplate on each, so there is nothing in them /about does not say
+  // better.
+  { source: "/bens-bio", destination: "/about", permanent: true },
+  { source: "/nics-bio", destination: "/about", permanent: true },
+  { source: "/who-we-are", destination: "/about", permanent: true },
+  { source: "/about-new", destination: "/about", permanent: true },
+  { source: "/2024-in-review", destination: "/about#history", permanent: true },
+  { source: "/act-homework", destination: "/contact", permanent: true },
+
+  // Everything else the old site filed under a project or a seed. The specific
+  // rules above match first; these catch the remainder, including anything
+  // unpublished before its sitemap was read.
+  { source: "/seeds/:slug*", destination: "/#fields", permanent: true },
+  { source: "/project/:slug*", destination: "/#fields", permanent: true },
+  { source: "/act-projects/:slug*", destination: "/#fields", permanent: true },
+
   // Route unification, 2026-08-07: editorial articles moved from /blog/[slug]
   // to /stories/[slug] so one slug space serves packets and articles. 308s,
   // because the naming decision is final.

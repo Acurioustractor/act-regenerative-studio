@@ -24,7 +24,13 @@ const launchRoutes = [
   "/fields/goods",
   "/fields/harvest",
   "/stories/utopia-may-2026",
-  "/stories/the-spirit-must-be-strong",
+  // One live Empathy Ledger article, as the sample that proves syndicated
+  // writing renders. It was /stories/the-spirit-must-be-strong until 2026-09-16,
+  // when that article went back to in_review upstream and started 404ing, which
+  // made this whole gate red for a reason that had nothing to do with the site.
+  // A sample has to be an article the ledger is actually publishing today; if
+  // this one goes into review too, move the line rather than deleting it.
+  "/stories/what-the-road-corrects",
   "/art",
   "/harvest",
   "/about",

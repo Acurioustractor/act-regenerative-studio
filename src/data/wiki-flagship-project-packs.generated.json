@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-30T14:06:05.385Z",
-  "sourceRoot": "/Users/benknight/Code/act-global-infrastructure/wiki",
+  "generatedAt": "2026-09-24T22:54:45.161Z",
+  "sourceRoot": "/home/runner/work/act-regenerative-studio/act-regenerative-studio/_canonical-wiki/wiki",
   "packCount": 5,
   "packs": [
     {
@@ -23,7 +23,7 @@
       "sourcePage": {
         "relativePath": "projects/justicehub/justicehub.md",
         "wikiPath": "projects/justicehub",
-        "modifiedAt": "2026-06-07T04:06:15.029Z"
+        "modifiedAt": "2026-09-24T22:54:22.342Z"
       },
       "downstream": {
         "website": {
@@ -179,7 +179,7 @@
       "sourcePage": {
         "relativePath": "projects/goods.md",
         "wikiPath": "projects/goods",
-        "modifiedAt": "2026-06-07T04:06:15.027Z"
+        "modifiedAt": "2026-09-24T22:54:22.341Z"
       },
       "downstream": {
         "website": {
@@ -329,7 +329,7 @@
       "sourcePage": {
         "relativePath": "projects/the-harvest/the-harvest.md",
         "wikiPath": "projects/the-harvest",
-        "modifiedAt": "2026-06-07T04:06:15.033Z"
+        "modifiedAt": "2026-09-24T22:54:22.344Z"
       },
       "downstream": {
         "website": {
@@ -470,7 +470,7 @@
       "sourcePage": {
         "relativePath": "projects/empathy-ledger.md",
         "wikiPath": "projects/empathy-ledger",
-        "modifiedAt": "2026-06-07T04:06:15.025Z"
+        "modifiedAt": "2026-09-24T22:54:22.340Z"
       },
       "downstream": {
         "website": {
@@ -612,14 +612,14 @@
       "empathyLedgerKey": "black-cockatoo-valley",
       "websiteSlug": "black-cockatoo-valley",
       "summary": "Conservation-first. We work with Country, not on it. The land sets the pace; we do not scale beyond what the land and community can carry.",
-      "overview": "Black Cockatoo Valley is a 150-acre property on Jinibara Country near Witta, Queensland. It is the land holding that grounds ACT's entire physical practice — the site where residencies, R&D, habitat restoration, and community programs take place. Together with The Harvest (the former nursery in Witta town), Black Cockatoo Valley forms ACT's \"Place\" cluster — the land base that makes all the digital and social enterprise work legible.",
-      "whatItIs": "Black Cockatoo Valley is a 150-acre property on Jinibara Country near Witta, Queensland. It is the land holding that grounds ACT's entire physical practice — the site where residencies, R&D, habitat restoration, and community programs take place. Together with The Harvest (the former nursery in Witta town), Black Cockatoo Valley forms ACT's \"Place\" cluster — the land base that makes all the digital and social enterprise work legible.",
+      "overview": "Black Cockatoo Valley is a 138-acre property on Jinibara Country near Witta, Queensland. It is the land holding that grounds ACT's entire physical practice — the site where residencies, R&D, habitat restoration, and community programs take place. Together with The Harvest (the former nursery in Witta town), Black Cockatoo Valley forms ACT's \"Place\" cluster — the land base that makes all the digital and social enterprise work legible.",
+      "whatItIs": "Black Cockatoo Valley is a 138-acre property on Jinibara Country near Witta, Queensland. It is the land holding that grounds ACT's entire physical practice — the site where residencies, R&D, habitat restoration, and community programs take place. Together with The Harvest (the former nursery in Witta town), Black Cockatoo Valley forms ACT's \"Place\" cluster — the land base that makes all the digital and social enterprise work legible.",
       "clusterContext": null,
       "systemPosition": "Black Cockatoo Valley is the place anchor for the whole ACT field: - the wiki holds the durable land practice, stewardship logic, and conservation boundaries - Empathy Ledger should hold the live field photos, video, and place stories - the websites should compose that into the ACT hub and farm-facing public surfaces without turning either one into the canonical memory This matters because the land layer is not backdrop. It is part of the same operating system described in Living Website Operating System, and it is part of the same Studio business logic described in Studio Business Model.",
       "sourcePage": {
         "relativePath": "projects/act-farm/black-cockatoo-valley.md",
         "wikiPath": "projects/act-farm/black-cockatoo-valley",
-        "modifiedAt": "2026-04-20T03:41:09.698Z"
+        "modifiedAt": "2026-09-24T22:54:22.337Z"
       },
       "downstream": {
         "website": {
@@ -671,7 +671,7 @@
         {
           "id": "what-it-is",
           "title": "What It Is",
-          "body": "Black Cockatoo Valley is a 150-acre property on Jinibara Country near Witta, Queensland. It is the land holding that grounds ACT's entire physical practice — the site where residencies, R&D, habitat restoration, and community programs take place. Together with The Harvest (the former nursery in Witta town), Black Cockatoo Valley forms ACT's \"Place\" cluster — the land base that makes all the digital and social enterprise work legible."
+          "body": "Black Cockatoo Valley is a 138-acre property on Jinibara Country near Witta, Queensland. It is the land holding that grounds ACT's entire physical practice — the site where residencies, R&D, habitat restoration, and community programs take place. Together with The Harvest (the former nursery in Witta town), Black Cockatoo Valley forms ACT's \"Place\" cluster — the land base that makes all the digital and social enterprise work legible."
         },
         {
           "id": "system-position",
@@ -696,7 +696,7 @@
         {
           "id": "lcaa-phase",
           "title": "LCAA Phase",
-          "body": "In the LCAA Method, Black Cockatoo Valley sits primarily in the Listen phase — the 150 acres on Jinibara Country are the land that grounds ACT's entire physical practice, and the conservation-first principle is the land sets the pace. Listening to Country is not metaphor here; capacity is a land decision before it is a calendar decision. LCAA arc for Black Cockatoo Valley: - Listen — \"The creek tells us more than the calendar.\" When the creek is low or the grass is tired, work slows; activities are scaled to land capacity and community readiness, not to demand - Curiosity — regenerative grazing, food forest, native corridor restoration, water catchment systems treated as continuous R&D in regenerative practice - Action — residencies, workshops, restoration, R&D, and community programs running through the seasons; revenue from residencies and workshops reinvested into restoration, weed management, and monitoring - Art — the visible artefacts of stewardship — studio and gathering buildings, the field, the corridor; the place-memory that other ACT projects (Goods, Empathy Ledger, JusticeHub stories) carry into their own work The long-term shape is community co-stewardship and beautiful obsolescence — preparing the governance to hand the land back when the relationships and capability are ready."
+          "body": "In the LCAA Method, Black Cockatoo Valley sits primarily in the Listen phase — the 138 acres on Jinibara Country are the land that grounds ACT's entire physical practice, and the conservation-first principle is the land sets the pace. Listening to Country is not metaphor here; capacity is a land decision before it is a calendar decision. LCAA arc for Black Cockatoo Valley: - Listen — \"The creek tells us more than the calendar.\" When the creek is low or the grass is tired, work slows; activities are scaled to land capacity and community readiness, not to demand - Curiosity — regenerative grazing, food forest, native corridor restoration, water catchment systems treated as continuous R&D in regenerative practice - Action — residencies, workshops, restoration, R&D, and community programs running through the seasons; revenue from residencies and workshops reinvested into restoration, weed management, and monitoring - Art — the visible artefacts of stewardship — studio and gathering buildings, the field, the corridor; the place-memory that other ACT projects (Goods, Empathy Ledger, JusticeHub stories) carry into their own work The long-term shape is community co-stewardship and beautiful obsolescence — preparing the governance to hand the land back when the relationships and capability are ready."
         }
       ]
     }

@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-07-30T14:06:05.175Z",
-  "sourceRoot": "/Users/benknight/Code/act-global-infrastructure/wiki",
-  "projectCount": 80,
+  "generatedAt": "2026-09-24T22:54:45.111Z",
+  "sourceRoot": "/home/runner/work/act-regenerative-studio/act-regenerative-studio/_canonical-wiki/wiki",
+  "projectCount": 81,
   "projects": [
     {
       "slug": "act-farm",
@@ -27,7 +27,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-13T11:40:42.620Z"
+      "modifiedAt": "2026-09-24T22:54:22.337Z"
     },
     {
       "slug": "act-infrastructure",
@@ -53,7 +53,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.019Z"
+      "modifiedAt": "2026-09-24T22:54:22.338Z"
     },
     {
       "slug": "act-monthly-dinners",
@@ -79,7 +79,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.019Z"
+      "modifiedAt": "2026-09-24T22:54:22.338Z"
     },
     {
       "slug": "act-studio",
@@ -105,7 +105,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.019Z"
+      "modifiedAt": "2026-09-24T22:54:22.339Z"
     },
     {
       "slug": "artist-residency",
@@ -131,7 +131,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.700Z"
+      "modifiedAt": "2026-09-24T22:54:22.338Z"
     },
     {
       "slug": "barkly-backbone",
@@ -156,8 +156,8 @@
       "publicSiteUrl": null,
       "canonicalUrl": null,
       "repoUrl": "https://github.com/Acurioustractor/barkly-research-platform",
-      "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.020Z"
+      "deployUrl": "https://barkly-research-platform-benjamin-knights-projects.vercel.app/",
+      "modifiedAt": "2026-09-24T22:54:22.339Z"
     },
     {
       "slug": "bg-fit",
@@ -183,12 +183,12 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.020Z"
+      "modifiedAt": "2026-09-24T22:54:22.339Z"
     },
     {
       "slug": "black-cockatoo-valley",
       "title": "Black Cockatoo Valley",
-      "summary": "A 150-acre property on Jinibara Country near Witta, Queensland. Conservation-first. The land sets the pace, not the calendar.",
+      "summary": "A 138-acre property on Jinibara Country near Witta, Queensland. Conservation-first. The land sets the pace, not the calendar.",
       "overview": "Black Cockatoo Valley (BCV) is ACT's land-practice site. The work begins from a single rule: the land is the teacher and the limiter. Conservation-first is the baseline, always. When the creek is low or the grass is tired, the calendar yields. Capacity is a land decision before it is a business decision. BCV is the quiet anchor of the ACT ecosystem. It is where residencies, workshops, regenerative R&D, and habitat restoration happen in a rhythm the property itself permits. Revenue from residencies and workshops is reinvested in restoration, weed management, and monitoring. No extractive tourism. Limited-volume operations. Long-term stewardship in community.",
       "status": "active",
       "code": null,
@@ -209,7 +209,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.020Z"
+      "modifiedAt": "2026-09-24T22:54:22.339Z"
     },
     {
       "slug": "campfire",
@@ -234,8 +234,8 @@
       "publicSiteUrl": null,
       "canonicalUrl": "https://campfire-website-amber.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/Campfire-Website",
-      "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.021Z"
+      "deployUrl": "https://campfire-website-amber.vercel.app/",
+      "modifiedAt": "2026-09-24T22:54:22.339Z"
     },
     {
       "slug": "caring-for-those-who-care",
@@ -261,7 +261,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.021Z"
+      "modifiedAt": "2026-09-24T22:54:22.339Z"
     },
     {
       "slug": "cars-and-microcontrollers",
@@ -287,7 +287,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.734Z"
+      "modifiedAt": "2026-09-24T22:54:22.339Z"
     },
     {
       "slug": "civicgraph",
@@ -313,7 +313,7 @@
       "canonicalUrl": "https://civicgraph.app/",
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.021Z"
+      "modifiedAt": "2026-09-24T22:54:22.339Z"
     },
     {
       "slug": "community-capital",
@@ -339,7 +339,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.022Z"
+      "modifiedAt": "2026-09-24T22:54:22.340Z"
     },
     {
       "slug": "community-capital-bowral-2025",
@@ -365,7 +365,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-14T01:52:41.495Z"
+      "modifiedAt": "2026-09-24T22:54:22.337Z"
     },
     {
       "slug": "community-capital-at-bcv",
@@ -391,7 +391,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-14T01:52:41.493Z"
+      "modifiedAt": "2026-09-24T22:54:22.337Z"
     },
     {
       "slug": "confit-pathways",
@@ -417,7 +417,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.023Z"
+      "modifiedAt": "2026-09-24T22:54:22.340Z"
     },
     {
       "slug": "contained",
@@ -443,7 +443,7 @@
       "canonicalUrl": null,
       "repoUrl": "https://github.com/Acurioustractor/contained-campaign-site",
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.023Z"
+      "modifiedAt": "2026-09-24T22:54:22.340Z"
     },
     {
       "slug": "corporate-innovation-retreats",
@@ -469,7 +469,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.703Z"
+      "modifiedAt": "2026-09-24T22:54:22.338Z"
     },
     {
       "slug": "custodian-first-economy",
@@ -495,7 +495,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.024Z"
+      "modifiedAt": "2026-09-24T22:54:22.340Z"
     },
     {
       "slug": "dad-lab-bcv-2025",
@@ -521,7 +521,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-14T01:52:41.496Z"
+      "modifiedAt": "2026-09-24T22:54:22.337Z"
     },
     {
       "slug": "dad-lab-at-bcv",
@@ -547,7 +547,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.705Z"
+      "modifiedAt": "2026-09-24T22:54:22.338Z"
     },
     {
       "slug": "dad-lab-25",
@@ -573,7 +573,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.024Z"
+      "modifiedAt": "2026-09-24T22:54:22.340Z"
     },
     {
       "slug": "deadlylabs",
@@ -599,7 +599,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.024Z"
+      "modifiedAt": "2026-09-24T22:54:22.340Z"
     },
     {
       "slug": "designing-for-obsolescence",
@@ -625,7 +625,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.024Z"
+      "modifiedAt": "2026-09-24T22:54:22.340Z"
     },
     {
       "slug": "diagrama",
@@ -647,11 +647,11 @@
       "projectPagePath": "/projects/diagrama",
       "publicSurface": "project",
       "empathyLedgerKey": "diagrama",
-      "publicSiteUrl": null,
+      "publicSiteUrl": "https://diagramaaustralia.org/",
       "canonicalUrl": null,
       "repoUrl": "https://github.com/Acurioustractor/diagrama-australia",
-      "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.025Z"
+      "deployUrl": "https://diagramaaustralia.org/",
+      "modifiedAt": "2026-09-24T22:54:22.340Z"
     },
     {
       "slug": "empathy-ledger",
@@ -673,11 +673,11 @@
       "projectPagePath": "/projects/empathy-ledger",
       "publicSurface": "project",
       "empathyLedgerKey": "empathy-ledger",
-      "publicSiteUrl": null,
+      "publicSiteUrl": "https://www.empathyledger.com/",
       "canonicalUrl": "https://empathy-ledger-v2.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/empathy-ledger-v2",
-      "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.025Z"
+      "deployUrl": "https://www.empathyledger.com/",
+      "modifiedAt": "2026-09-24T22:54:22.340Z"
     },
     {
       "slug": "annual-field-service",
@@ -703,7 +703,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.764Z"
+      "modifiedAt": "2026-09-24T22:54:22.340Z"
     },
     {
       "slug": "empathy-ledger-storytelling-residency",
@@ -729,7 +729,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.707Z"
+      "modifiedAt": "2026-09-24T22:54:22.338Z"
     },
     {
       "slug": "facilitation",
@@ -755,7 +755,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.709Z"
+      "modifiedAt": "2026-09-24T22:54:22.338Z"
     },
     {
       "slug": "feel-good-project",
@@ -781,7 +781,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.026Z"
+      "modifiedAt": "2026-09-24T22:54:22.341Z"
     },
     {
       "slug": "fishers-oysters",
@@ -803,11 +803,11 @@
       "projectPagePath": "/projects/fishers-oysters",
       "publicSurface": "project",
       "empathyLedgerKey": "fishers-oysters",
-      "publicSiteUrl": null,
+      "publicSiteUrl": "https://www.fishersoysters.com/",
       "canonicalUrl": "https://fishers-oysters.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/fishers-oysters",
-      "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.026Z"
+      "deployUrl": "https://www.fishersoysters.com/",
+      "modifiedAt": "2026-09-24T22:54:22.341Z"
     },
     {
       "slug": "global-laundry-alliance",
@@ -833,7 +833,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.027Z"
+      "modifiedAt": "2026-09-24T22:54:22.341Z"
     },
     {
       "slug": "gold-phone",
@@ -859,7 +859,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.787Z"
+      "modifiedAt": "2026-09-24T22:54:22.339Z"
     },
     {
       "slug": "goods",
@@ -885,7 +885,7 @@
       "canonicalUrl": "https://v2-rho-ochre.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/goods-asset-tracker",
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.027Z"
+      "modifiedAt": "2026-09-24T22:54:22.341Z"
     },
     {
       "slug": "makers-weekend",
@@ -911,7 +911,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.724Z"
+      "modifiedAt": "2026-09-24T22:54:22.338Z"
     },
     {
       "slug": "grantscope",
@@ -933,11 +933,11 @@
       "projectPagePath": "/projects/grantscope",
       "publicSurface": "project",
       "empathyLedgerKey": "grantscope",
-      "publicSiteUrl": null,
+      "publicSiteUrl": "https://civicgraph.app/",
       "canonicalUrl": "https://grantscope.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/grantscope",
-      "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.028Z"
+      "deployUrl": "https://civicgraph.app/",
+      "modifiedAt": "2026-09-24T22:54:22.341Z"
     },
     {
       "slug": "green-harvest-witta",
@@ -963,7 +963,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.803Z"
+      "modifiedAt": "2026-09-24T22:54:22.344Z"
     },
     {
       "slug": "harvest-pairings",
@@ -989,7 +989,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.711Z"
+      "modifiedAt": "2026-09-24T22:54:22.338Z"
     },
     {
       "slug": "industry-residency-at-the-harvest",
@@ -1015,7 +1015,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.716Z"
+      "modifiedAt": "2026-09-24T22:54:22.338Z"
     },
     {
       "slug": "innovation-sessions",
@@ -1041,7 +1041,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.719Z"
+      "modifiedAt": "2026-09-24T22:54:22.338Z"
     },
     {
       "slug": "judges-on-country",
@@ -1067,7 +1067,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.779Z"
+      "modifiedAt": "2026-09-24T22:54:22.342Z"
     },
     {
       "slug": "junes-patch",
@@ -1093,7 +1093,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.029Z"
+      "modifiedAt": "2026-09-24T22:54:22.341Z"
     },
     {
       "slug": "junes-patch-healthcare-retreat",
@@ -1119,7 +1119,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.722Z"
+      "modifiedAt": "2026-09-24T22:54:22.338Z"
     },
     {
       "slug": "junes-patch-year-one-2025",
@@ -1145,7 +1145,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-14T02:26:27.162Z"
+      "modifiedAt": "2026-09-24T22:54:22.337Z"
     },
     {
       "slug": "justicehub",
@@ -1171,7 +1171,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.029Z"
+      "modifiedAt": "2026-09-24T22:54:22.342Z"
     },
     {
       "slug": "justicehub-centre-of-excellence",
@@ -1197,7 +1197,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.781Z"
+      "modifiedAt": "2026-09-24T22:54:22.342Z"
     },
     {
       "slug": "marriage-celebrant",
@@ -1223,7 +1223,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.031Z"
+      "modifiedAt": "2026-09-24T22:54:22.342Z"
     },
     {
       "slug": "minderoo-pitch-package",
@@ -1249,7 +1249,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-24T03:46:10.280Z"
+      "modifiedAt": "2026-09-24T22:54:22.342Z"
     },
     {
       "slug": "mounty-yarns",
@@ -1275,7 +1275,7 @@
       "canonicalUrl": "https://mounty-yarns.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/mounty-yarns",
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.031Z"
+      "modifiedAt": "2026-09-24T22:54:22.342Z"
     },
     {
       "slug": "oonchiumpa",
@@ -1301,7 +1301,7 @@
       "canonicalUrl": "https://oonchiumpa.vercel.app/",
       "repoUrl": "https://github.com/Acurioustractor/Oonchiumpa",
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.032Z"
+      "modifiedAt": "2026-09-24T22:54:22.342Z"
     },
     {
       "slug": "picc",
@@ -1327,7 +1327,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.032Z"
+      "modifiedAt": "2026-09-24T22:54:22.343Z"
     },
     {
       "slug": "picc-annual-report",
@@ -1353,7 +1353,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.799Z"
+      "modifiedAt": "2026-09-24T22:54:22.343Z"
     },
     {
       "slug": "picc-centre-precinct",
@@ -1379,7 +1379,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.795Z"
+      "modifiedAt": "2026-09-24T22:54:22.343Z"
     },
     {
       "slug": "picc-elders-hull-river",
@@ -1405,7 +1405,33 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.800Z"
+      "modifiedAt": "2026-09-24T22:54:22.343Z"
+    },
+    {
+      "slug": "picc-on-country-photo-studio",
+      "title": "PICC On Country Photo Studio",
+      "summary": "A portrait studio that travels to Palm Island, run on community terms. The photographs stay with the people in them.",
+      "overview": null,
+      "status": "Active",
+      "code": null,
+      "tier": null,
+      "canonicalSlug": "picc-on-country-photo-studio",
+      "canonicalCode": "ACT-PS",
+      "entityType": "sub-project",
+      "taggingMode": "own-code",
+      "cluster": "picc",
+      "parentProject": "picc",
+      "websiteSlug": "picc-on-country-photo-studio",
+      "relativePath": "projects/picc/picc-on-country-photo-studio.md",
+      "websitePath": "/art/picc-on-country-photo-studio",
+      "projectPagePath": "/projects/picc-on-country-photo-studio",
+      "publicSurface": "art",
+      "empathyLedgerKey": "picc-photo",
+      "publicSiteUrl": null,
+      "canonicalUrl": null,
+      "repoUrl": null,
+      "deployUrl": null,
+      "modifiedAt": "2026-09-24T22:54:22.343Z"
     },
     {
       "slug": "picc-photo-kiosk",
@@ -1431,7 +1457,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.800Z"
+      "modifiedAt": "2026-09-24T22:54:22.343Z"
     },
     {
       "slug": "place-based-policy-lab",
@@ -1457,7 +1483,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.032Z"
+      "modifiedAt": "2026-09-24T22:54:22.343Z"
     },
     {
       "slug": "quandamooka-justice-strategy",
@@ -1483,7 +1509,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.033Z"
+      "modifiedAt": "2026-09-24T22:54:22.343Z"
     },
     {
       "slug": "radical-scoops-at-the-harvest",
@@ -1509,7 +1535,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-14T02:21:22.513Z"
+      "modifiedAt": "2026-09-24T22:54:22.337Z"
     },
     {
       "slug": "redtape",
@@ -1535,7 +1561,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.737Z"
+      "modifiedAt": "2026-09-24T22:54:22.339Z"
     },
     {
       "slug": "regional-arts-fellowship",
@@ -1561,7 +1587,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.787Z"
+      "modifiedAt": "2026-09-24T22:54:22.339Z"
     },
     {
       "slug": "resoleution",
@@ -1587,7 +1613,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.033Z"
+      "modifiedAt": "2026-09-24T22:54:22.343Z"
     },
     {
       "slug": "smart-connect",
@@ -1613,7 +1639,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.801Z"
+      "modifiedAt": "2026-09-24T22:54:22.344Z"
     },
     {
       "slug": "smart-hcp-gp-uplift",
@@ -1639,7 +1665,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.801Z"
+      "modifiedAt": "2026-09-24T22:54:22.344Z"
     },
     {
       "slug": "smart-recovery",
@@ -1665,7 +1691,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.801Z"
+      "modifiedAt": "2026-09-24T22:54:22.344Z"
     },
     {
       "slug": "smart-recovery-gp-kits",
@@ -1691,7 +1717,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.801Z"
+      "modifiedAt": "2026-09-24T22:54:22.344Z"
     },
     {
       "slug": "staying",
@@ -1717,12 +1743,12 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-14T20:40:37.234Z"
+      "modifiedAt": "2026-09-24T22:54:22.342Z"
     },
     {
       "slug": "stays",
       "title": "Stays at Black Cockatoo Valley",
-      "summary": "Two cabins, 150 acres of Jinibara Country, and room to be quiet. The Pink Cabin and the Train Carriage are bookable directly. This is the self-guided end of the farm — you're on the land, we're light-touch hosts.",
+      "summary": "Two cabins, 138 acres of Jinibara Country, and room to be quiet. The Pink Cabin and the Train Carriage are bookable directly. This is the self-guided end of the farm — you're on the land, we're light-touch hosts.",
       "overview": null,
       "status": "Active",
       "code": "ACT-FM-EXP-stays",
@@ -1743,7 +1769,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.726Z"
+      "modifiedAt": "2026-09-24T22:54:22.338Z"
     },
     {
       "slug": "the-brave-ones",
@@ -1769,7 +1795,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-05-14T20:40:37.234Z"
+      "modifiedAt": "2026-09-24T22:54:22.342Z"
     },
     {
       "slug": "the-caravan",
@@ -1795,7 +1821,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.739Z"
+      "modifiedAt": "2026-09-24T22:54:22.339Z"
     },
     {
       "slug": "the-caravan-at-bcv",
@@ -1821,7 +1847,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-14T01:52:41.498Z"
+      "modifiedAt": "2026-09-24T22:54:22.337Z"
     },
     {
       "slug": "the-confessional",
@@ -1847,7 +1873,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-13T13:17:49.591Z"
+      "modifiedAt": "2026-09-24T22:54:22.339Z"
     },
     {
       "slug": "the-full-idea",
@@ -1873,7 +1899,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.030Z"
+      "modifiedAt": "2026-09-24T22:54:22.342Z"
     },
     {
       "slug": "the-harvest",
@@ -1899,7 +1925,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.033Z"
+      "modifiedAt": "2026-09-24T22:54:22.344Z"
     },
     {
       "slug": "the-space-at-bcv",
@@ -1925,7 +1951,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.728Z"
+      "modifiedAt": "2026-09-24T22:54:22.338Z"
     },
     {
       "slug": "three-circles",
@@ -1951,7 +1977,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.031Z"
+      "modifiedAt": "2026-09-24T22:54:22.342Z"
     },
     {
       "slug": "the-vagina",
@@ -1977,7 +2003,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.741Z"
+      "modifiedAt": "2026-09-24T22:54:22.339Z"
     },
     {
       "slug": "tomnet",
@@ -2003,7 +2029,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-06-07T04:06:15.034Z"
+      "modifiedAt": "2026-09-24T22:54:22.344Z"
     },
     {
       "slug": "treacher",
@@ -2029,7 +2055,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.743Z"
+      "modifiedAt": "2026-09-24T22:54:22.339Z"
     },
     {
       "slug": "uncle-allan-palm-island-art",
@@ -2055,7 +2081,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-12T20:50:21.788Z"
+      "modifiedAt": "2026-09-24T22:54:22.339Z"
     },
     {
       "slug": "workshops-at-bcv",
@@ -2081,7 +2107,7 @@
       "canonicalUrl": null,
       "repoUrl": null,
       "deployUrl": null,
-      "modifiedAt": "2026-04-20T03:41:09.730Z"
+      "modifiedAt": "2026-09-24T22:54:22.338Z"
     }
   ]
 }

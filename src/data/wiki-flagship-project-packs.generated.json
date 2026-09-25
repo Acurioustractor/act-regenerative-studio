@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T22:54:45.161Z",
+  "generatedAt": "2026-09-25T00:33:15.348Z",
   "sourceRoot": "/home/runner/work/act-regenerative-studio/act-regenerative-studio/_canonical-wiki/wiki",
   "packCount": 5,
   "packs": [
@@ -23,7 +23,7 @@
       "sourcePage": {
         "relativePath": "projects/justicehub/justicehub.md",
         "wikiPath": "projects/justicehub",
-        "modifiedAt": "2026-09-24T22:54:22.342Z"
+        "modifiedAt": "2026-09-25T00:32:55.507Z"
       },
       "downstream": {
         "website": {
@@ -37,22 +37,22 @@
       "implementation": {
         "primaryRepo": {
           "name": "JusticeHub",
-          "localPath": "/Users/benknight/Code/JusticeHub",
+          "localPath": "~/Code/JusticeHub",
           "github": "Acurioustractor/justicehub-platform",
           "githubUrl": "https://github.com/Acurioustractor/justicehub-platform",
-          "description": "Youth justice and community services",
-          "stack": "Next.js 14, Supabase, Tailwind",
+          "description": null,
+          "stack": null,
           "deployment": "Vercel",
           "role": "Primary public product surface and evidence platform codebase."
         },
         "supportingRepos": [
           {
-            "name": "GrantScope",
-            "localPath": "/Users/benknight/Code/grantscope",
+            "name": "CivicGraph (GrantScope)",
+            "localPath": "~/Code/grantscope",
             "github": "Acurioustractor/grantscope",
             "githubUrl": "https://github.com/Acurioustractor/grantscope",
-            "description": "CivicGraph, grants intelligence, and procurement discovery substrate",
-            "stack": "Next.js, Supabase, MCP, Tailwind",
+            "description": null,
+            "stack": null,
             "deployment": "Vercel",
             "role": "CivicGraph, procurement, and capital-intelligence substrate feeding JusticeHub discovery and scoring."
           }
@@ -179,7 +179,7 @@
       "sourcePage": {
         "relativePath": "projects/goods.md",
         "wikiPath": "projects/goods",
-        "modifiedAt": "2026-09-24T22:54:22.341Z"
+        "modifiedAt": "2026-09-25T00:32:55.506Z"
       },
       "downstream": {
         "website": {
@@ -192,33 +192,33 @@
       },
       "implementation": {
         "primaryRepo": {
-          "name": "Goods",
-          "localPath": "/Users/benknight/Code/Goods Asset Register",
+          "name": "Goods on Country",
+          "localPath": "~/Code/Goods Asset Register",
           "github": "Acurioustractor/goods-asset-tracker",
           "githubUrl": "https://github.com/Acurioustractor/goods-asset-tracker",
-          "description": "Circular economy asset management",
-          "stack": "Next.js, Supabase, Tailwind",
+          "description": null,
+          "stack": null,
           "deployment": "Vercel",
           "role": "Asset register, delivery workflow, and operational product infrastructure."
         },
         "supportingRepos": [
           {
-            "name": "GrantScope",
-            "localPath": "/Users/benknight/Code/grantscope",
+            "name": "CivicGraph (GrantScope)",
+            "localPath": "~/Code/grantscope",
             "github": "Acurioustractor/grantscope",
             "githubUrl": "https://github.com/Acurioustractor/grantscope",
-            "description": "CivicGraph, grants intelligence, and procurement discovery substrate",
-            "stack": "Next.js, Supabase, MCP, Tailwind",
+            "description": null,
+            "stack": null,
             "deployment": "Vercel",
             "role": "Goods Workspace procurement and capital discovery layer."
           },
           {
-            "name": "Palm Island Repository",
-            "localPath": "/Users/benknight/Code/Palm Island Reposistory",
+            "name": "Palm Island Repository (PICC)",
+            "localPath": "~/Code/Palm Island Reposistory",
             "github": "Acurioustractor/palm-island-repository",
             "githubUrl": "https://github.com/Acurioustractor/palm-island-repository",
-            "description": "PICC-linked community archive, reporting, and web-platform workspace",
-            "stack": "Mixed repo (web-platform, templates, research, scripts)",
+            "description": null,
+            "stack": null,
             "deployment": "Vercel",
             "role": "Community deployment, reporting, and media archive connected to Palm Island delivery proof."
           }
@@ -329,7 +329,7 @@
       "sourcePage": {
         "relativePath": "projects/the-harvest/the-harvest.md",
         "wikiPath": "projects/the-harvest",
-        "modifiedAt": "2026-09-24T22:54:22.344Z"
+        "modifiedAt": "2026-09-25T00:32:55.509Z"
       },
       "downstream": {
         "website": {
@@ -343,22 +343,22 @@
       "implementation": {
         "primaryRepo": {
           "name": "The Harvest",
-          "localPath": "/Users/benknight/Code/The Harvest Website",
+          "localPath": "~/Code/The Harvest Website",
           "github": "Acurioustractor/theharvest",
           "githubUrl": "https://github.com/Acurioustractor/theharvest",
-          "description": "Community hub and CSA programs",
-          "stack": "Next.js, Supabase, Tailwind",
+          "description": null,
+          "stack": null,
           "deployment": "Vercel",
           "role": "Primary public community hub surface and local program website."
         },
         "supportingRepos": [
           {
-            "name": "ACT Farm",
-            "localPath": "/Users/benknight/Code/act-farm",
+            "name": "Black Cockatoo Valley (ACT Farm)",
+            "localPath": "~/Code/act-farm",
             "github": "Acurioustractor/act-farm",
             "githubUrl": "https://github.com/Acurioustractor/act-farm",
-            "description": "Black Cockatoo Valley regeneration estate",
-            "stack": "Next.js, Supabase, Tailwind",
+            "description": null,
+            "stack": null,
             "deployment": "Vercel",
             "role": "Sibling place and land-practice surface connected to Harvest and Black Cockatoo Valley."
           }
@@ -470,7 +470,7 @@
       "sourcePage": {
         "relativePath": "projects/empathy-ledger.md",
         "wikiPath": "projects/empathy-ledger",
-        "modifiedAt": "2026-09-24T22:54:22.340Z"
+        "modifiedAt": "2026-09-25T00:32:55.505Z"
       },
       "downstream": {
         "website": {
@@ -484,11 +484,11 @@
       "implementation": {
         "primaryRepo": {
           "name": "Empathy Ledger",
-          "localPath": "/Users/benknight/Code/empathy-ledger-v2",
+          "localPath": "~/Code/empathy-ledger-v2",
           "github": "Acurioustractor/empathy-ledger-v2",
           "githubUrl": "https://github.com/Acurioustractor/empathy-ledger-v2",
-          "description": "Ethical storytelling platform",
-          "stack": "Next.js 14, Supabase, Tailwind",
+          "description": null,
+          "stack": null,
           "deployment": "Vercel",
           "role": "Story, media, consent, and editorial platform."
         },
@@ -619,7 +619,7 @@
       "sourcePage": {
         "relativePath": "projects/act-farm/black-cockatoo-valley.md",
         "wikiPath": "projects/act-farm/black-cockatoo-valley",
-        "modifiedAt": "2026-09-24T22:54:22.337Z"
+        "modifiedAt": "2026-09-25T00:32:55.502Z"
       },
       "downstream": {
         "website": {
@@ -632,12 +632,12 @@
       },
       "implementation": {
         "primaryRepo": {
-          "name": "ACT Farm",
-          "localPath": "/Users/benknight/Code/act-farm",
+          "name": "Black Cockatoo Valley (ACT Farm)",
+          "localPath": "~/Code/act-farm",
           "github": "Acurioustractor/act-farm",
           "githubUrl": "https://github.com/Acurioustractor/act-farm",
-          "description": "Black Cockatoo Valley regeneration estate",
-          "stack": "Next.js, Supabase, Tailwind",
+          "description": null,
+          "stack": null,
           "deployment": "Vercel",
           "role": "Primary place, land practice, and Black Cockatoo Valley public surface."
         },

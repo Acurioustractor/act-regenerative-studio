@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-25T00:33:15.348Z",
+  "generatedAt": "2026-09-25T04:51:26.005Z",
   "sourceRoot": "/home/runner/work/act-regenerative-studio/act-regenerative-studio/_canonical-wiki/wiki",
   "packCount": 5,
   "packs": [
@@ -23,7 +23,7 @@
       "sourcePage": {
         "relativePath": "projects/justicehub/justicehub.md",
         "wikiPath": "projects/justicehub",
-        "modifiedAt": "2026-09-25T00:32:55.507Z"
+        "modifiedAt": "2026-09-25T04:51:06.356Z"
       },
       "downstream": {
         "website": {
@@ -179,7 +179,7 @@
       "sourcePage": {
         "relativePath": "projects/goods.md",
         "wikiPath": "projects/goods",
-        "modifiedAt": "2026-09-25T00:32:55.506Z"
+        "modifiedAt": "2026-09-25T04:51:06.355Z"
       },
       "downstream": {
         "website": {
@@ -329,7 +329,7 @@
       "sourcePage": {
         "relativePath": "projects/the-harvest/the-harvest.md",
         "wikiPath": "projects/the-harvest",
-        "modifiedAt": "2026-09-25T00:32:55.509Z"
+        "modifiedAt": "2026-09-25T04:51:06.358Z"
       },
       "downstream": {
         "website": {
@@ -470,7 +470,7 @@
       "sourcePage": {
         "relativePath": "projects/empathy-ledger.md",
         "wikiPath": "projects/empathy-ledger",
-        "modifiedAt": "2026-09-25T00:32:55.505Z"
+        "modifiedAt": "2026-09-25T04:51:06.354Z"
       },
       "downstream": {
         "website": {
@@ -619,7 +619,7 @@
       "sourcePage": {
         "relativePath": "projects/act-farm/black-cockatoo-valley.md",
         "wikiPath": "projects/act-farm/black-cockatoo-valley",
-        "modifiedAt": "2026-09-25T00:32:55.502Z"
+        "modifiedAt": "2026-09-25T04:51:06.351Z"
       },
       "downstream": {
         "website": {

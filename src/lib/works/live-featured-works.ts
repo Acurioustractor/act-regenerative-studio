@@ -5,19 +5,10 @@ import {
   type EnrichedProject,
 } from "@/lib/projects/get-project-data";
 import { getProjectFieldMedia } from "@/lib/projects/get-project-field-media";
+import { featuredWorks, type FeaturedWords } from "@/content";
 
-export interface FeaturedWorkConfig {
-  slug: string;
-  title: string;
-  href: string;
-  medium: string;
-  place: string;
-  collaborators: string;
-  connectedTo: string;
-  connectedHref?: string;
-  fallbackDescription: string;
-  fallbackQuote: string;
-}
+/** A featured work's words live with the works, in src/content/works.ts. */
+export type FeaturedWorkConfig = FeaturedWords & { slug: string };
 
 export interface FeaturedWorkPreviewMedia {
   kind: "image" | "video" | "audio" | "other";
@@ -73,62 +64,10 @@ export interface FeaturedWorkCollaborator {
   source: "storyteller" | "work-config";
 }
 
-export const featuredWorkConfigs: FeaturedWorkConfig[] = [
-  {
-    slug: "gold-phone",
-    title: "Gold.Phone",
-    href: "/projects/gold-phone",
-    medium: "Interactive voice work",
-    place: "Distributed / digital",
-    collaborators: "Empathy Ledger / ACT Studio",
-    connectedTo: "Empathy Ledger",
-    connectedHref: "/projects/empathy-ledger",
-    fallbackDescription:
-      "A participatory work where voice arrives as encounter rather than content, allowing testimony to move through space slowly and with tension.",
-    fallbackQuote: "Move your cursor over a voice particle to hear it.",
-  },
-  {
-    slug: "contained",
-    title: "Contained",
-    href: "/projects/contained",
-    medium: "Experiential installation",
-    place: "Justice and public-space contexts",
-    collaborators: "JusticeHub / ACT Studio",
-    connectedTo: "JusticeHub",
-    connectedHref: "/projects/justicehub",
-    fallbackDescription:
-      "An installation exploring detention, alternatives, and the emotional architecture of confinement.",
-    fallbackQuote:
-      "Some systems can only be understood once they are felt in the body.",
-  },
-  {
-    slug: "uncle-allan-palm-island-art",
-    title: "Uncle Allan Palm Island Art",
-    href: "/projects/uncle-allan-palm-island-art",
-    medium: "Art practice and cultural knowledge sharing",
-    place: "Palm Island",
-    collaborators: "Uncle Allan / ACT",
-    connectedTo: "Works",
-    connectedHref: "/art",
-    fallbackDescription:
-      "A body of work grounded in cultural memory, authority, and the passing on of story through image and material practice.",
-    fallbackQuote: "Art is one of the ways story stays in community hands.",
-  },
-  {
-    slug: "the-confessional",
-    title: "The Confessional",
-    href: "/projects/the-confessional",
-    medium: "Storytelling installation",
-    place: "Public and event contexts",
-    collaborators: "ACT Studio",
-    connectedTo: "Works",
-    connectedHref: "/art",
-    fallbackDescription:
-      "A work for anonymous truth-telling, pressure release, and the public handling of what systems teach people to hide.",
-    fallbackQuote:
-      "Some truths only come out when anonymity creates enough safety to speak.",
-  },
-];
+export const featuredWorkConfigs: FeaturedWorkConfig[] = featuredWorks.map(({ slug, featured }) => ({
+  slug,
+  ...featured,
+}));
 
 export function getFeaturedWorkConfigBySlug(
   slug: string

@@ -3,7 +3,17 @@
 import { readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { fields, fieldsById, projects, questions, questionsBySlug, works, type FieldId } from "./index";
+import {
+  FEATURED_WORDS,
+  featuredWorks,
+  fields,
+  fieldsById,
+  projects,
+  questions,
+  questionsBySlug,
+  works,
+  type FieldId,
+} from "./index";
 
 const isField = (id: string): id is FieldId => id in fieldsById;
 
@@ -118,6 +128,14 @@ describe("the works", () => {
 
   it("CONTAINED is part of JusticeHub first, and a work in Art", () => {
     expect(works.find((w) => w.slug === "contained")?.partOf).toEqual(["justice", "art"]);
+  });
+
+  it("the featured ones are works, in the order they are written", () => {
+    expect(featuredWorks.map((w) => w.slug)).toEqual(Object.keys(FEATURED_WORDS));
+  });
+
+  it("the featured words have no second copy outside src/content", () => {
+    expect(copiesOf(featuredWorks.map((w) => w.featured.fallbackDescription))).toEqual([]);
   });
 
   it("are read from src/content, not from the snapshot directly", () => {

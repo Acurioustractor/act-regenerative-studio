@@ -1,0 +1,474 @@
+/* Pencil: Page 09 · Stories (GPOEr): Opening U3a1o, Strip g68sK, Stream ECwwj (Head pkZoi, Lead card m7lLj), Publishing model Fgpuw.
+   Phone from Phone · 09 Stories (nh9b4). No tablet board: the opening and the model stack, the grid runs two across. */
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+/* Opening */
+.opening {
+  display: flex;
+  align-items: flex-end;
+  gap: 80px;
+  padding: 96px 96px 64px;
+}
+
+.openingWords {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 104px;
+  font-weight: var(--weight-statement);
+  line-height: 0.95;
+  letter-spacing: -2.1px;
+}
+
+.openingRight {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: 28px;
+  width: 480px;
+}
+
+.lede {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.55;
+}
+
+.counts {
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 16px 0 0;
+  border-top: 2px solid var(--fg);
+}
+
+.count {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 4px;
+}
+
+.count dt {
+  color: var(--fg-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.count dd {
+  margin: 0;
+  font-size: 56px;
+  font-weight: var(--weight-statement);
+  line-height: 1;
+}
+
+/* Strip */
+.strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  margin: 0;
+  padding: 18px 96px;
+  list-style: none;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.strip li {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* A rust square between the three. */
+.strip li + li::before {
+  content: "";
+  flex: none;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+}
+
+/* Stream */
+.stream {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 96px;
+}
+
+.head {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+}
+
+/* The heading stays on one line beside the pills while there is room, and the pills drop under it when there is not. */
+.headWords {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: 10px;
+  max-width: 100%;
+}
+
+.heading {
+  max-width: 700px;
+  margin: 0;
+  font-size: 56px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -1.12px;
+}
+
+.pillsWrap {
+  display: flex;
+  flex: 1 1 380px;
+  justify-content: flex-end;
+  min-width: 0;
+}
+
+/* Pencil sets the pills against the right edge. If they need a second row it hangs from the right too. */
+.pillsWrap > * { justify-content: flex-end; }
+
+.cards {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.leadWrap { display: block; }
+
+.lead {
+  display: flex;
+  align-items: flex-end;
+  gap: 40px;
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.lead:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* 760 by 460 at 1440, where the words take the 408 that is left. */
+.leadImage {
+  flex: 1.7 1 0;
+  min-width: 0;
+  aspect-ratio: 760 / 460;
+}
+
+.leadText {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.leadLabel {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  line-height: 1.5;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.leadTitle {
+  margin: 0;
+  font-size: 52px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -1.04px;
+}
+
+.leadExcerpt {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+/* Pencil draws the 1px rule inside its 12 of padding. */
+.leadFoot {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding-top: 11px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.leadAuthor { color: var(--fg-muted); }
+
+.leadRead {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 0.75em;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 40px 32px;
+  align-items: start;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.grid > li { min-width: 0; }
+
+.more {
+  display: none;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75em;
+  padding: 15px 17px;
+  border: 1px solid var(--fg);
+  border-radius: 0;
+  background: none;
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+/* Publishing model */
+.model {
+  display: flex;
+  gap: 80px;
+  padding: 96px;
+  border-top: 2px solid var(--fg);
+}
+
+.modelLeft {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: 16px;
+  width: 520px;
+}
+
+.modelHeading {
+  margin: 0;
+  font-size: 56px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -1.12px;
+}
+
+.modelRight {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.modelRight p {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+.modelLinks {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 8px 24px;
+  padding-top: 11px;
+  border-top: 1px solid var(--line);
+}
+
+.enter {
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.enter:hover { color: var(--accent); }
+
+.enter:focus-visible,
+.more:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.snapshot {
+  color: var(--fg-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1079px) {
+  .opening,
+  .model {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    padding: 64px 48px;
+  }
+
+  .title { font-size: 80px; letter-spacing: -1.6px; }
+  .openingRight { width: auto; max-width: 560px; }
+  .strip { padding: 18px 48px; }
+  .stream { padding: 64px 48px; }
+
+  .head {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+  }
+
+  .pillsWrap {
+    flex: none;
+    justify-content: flex-start;
+  }
+
+  .pillsWrap > * { justify-content: flex-start; }
+
+  .lead {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 20px;
+  }
+
+  .leadImage {
+    flex: none;
+    width: 100%;
+  }
+
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .modelLeft { width: auto; }
+  .modelRight { width: 100%; max-width: 640px; }
+}
+
+@media (max-width: 759px) {
+  .opening {
+    gap: 16px;
+    padding: 40px 20px 28px;
+  }
+
+  .openingWords { gap: 16px; }
+  .eyebrow { font-size: 11px; letter-spacing: 1.5px; }
+  .title { font-size: 58px; line-height: 0.98; letter-spacing: -1.16px; }
+  .openingRight { gap: 16px; }
+  .lede { font-size: 17px; line-height: 1.6; }
+
+  .counts {
+    gap: 32px;
+    padding-top: 14px;
+  }
+
+  .count dt {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .count dd { font-size: 44px; }
+
+  .strip {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    padding: 16px 20px;
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .strip li { gap: 10px; }
+
+  /* On a phone the square leads each line rather than sitting between them. */
+  .strip li::before {
+    content: "";
+    flex: none;
+    width: 7px;
+    height: 7px;
+    background: var(--accent);
+  }
+
+  .stream {
+    gap: 28px;
+    padding: 40px 20px;
+  }
+
+  .heading { font-size: 36px; line-height: 1.06; letter-spacing: -0.72px; }
+  .head { align-items: stretch; gap: 28px; }
+  .headWords { gap: 10px; }
+  .pillsWrap { justify-content: flex-start; }
+
+  .cards { gap: 28px; }
+
+  /* The lead reads as any other card here: a 220 photograph, then the words. */
+  .lead { gap: 12px; }
+  .leadImage { aspect-ratio: auto; height: 220px; }
+  .leadText { gap: 12px; }
+  .leadTitle { font-size: 26px; letter-spacing: -0.468px; line-height: 1.08; }
+  .leadExcerpt { font-size: 16px; }
+
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 28px;
+  }
+
+  .beyond { display: none; }
+  .cards[data-open] .beyond { display: block; }
+  .more { display: flex; }
+
+  .model {
+    gap: 16px;
+    padding: 44px 20px;
+  }
+
+  .modelLeft { gap: 16px; }
+  .modelHeading { font-size: 34px; line-height: 1.06; letter-spacing: -0.68px; }
+  .modelRight { gap: 16px; }
+  .modelRight p { font-size: 17px; line-height: 1.6; }
+  .modelLinks { flex-direction: column; gap: 10px; border-top: 0; padding-top: 0; }
+  .enter { font-size: 11px; letter-spacing: 1.5px; }
+  .snapshot { font-size: 10px; letter-spacing: 1.5px; }
+}

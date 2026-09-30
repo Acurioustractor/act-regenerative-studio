@@ -13,12 +13,16 @@ import {
   EditorialArticleReader,
   editorialArticleMetadata,
 } from './editorial-article';
+import { StoryReturned, returnedMetadata } from './returned';
+import { isReturnedSlug, isWithdrawnSlug } from './withdrawn';
 
 /**
  * One slug space for everything a reader opens from /stories (route
- * unification, 2026-08-07). Authored story packets resolve first, then
- * editorial articles syndicated from Empathy Ledger; packets win a slug
- * collision because they are curated by hand in this repository.
+ * unification, 2026-08-07). A withdrawn slug (config/withdrawn-editorial.json)
+ * answers 404 before anything is read, unless its storyteller took it back
+ * (isReturnedSlug), when it gets the "story returned" page instead. Authored story packets resolve next, then editorial articles
+ * syndicated from Empathy Ledger; packets win a slug collision because they
+ * are curated by hand in this repository.
  * /blog/[slug] 308s here via config/launch-redirects.cjs.
  */
 
@@ -46,6 +50,8 @@ export async function generateMetadata({
   params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
   const { slug } = await params;
+  if (isReturnedSlug(slug)) return returnedMetadata(slug);
+  if (isWithdrawnSlug(slug)) return {};
   const story = getStoryPacket(slug);
 
   if (story) {
@@ -71,6 +77,8 @@ export async function generateMetadata({
 
 export default async function StoryPage({ params, searchParams }: StoryPageProps) {
   const { slug } = await params;
+  if (isReturnedSlug(slug)) return <StoryReturned />;
+  if (isWithdrawnSlug(slug)) notFound();
   const query = await searchParams;
   const story = getStoryPacket(slug);
 

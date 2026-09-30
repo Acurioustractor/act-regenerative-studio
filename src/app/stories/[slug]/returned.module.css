@@ -1,0 +1,106 @@
+/* Pencil: Page 10b · A story returned to its owner (m3JFv): Returned e3ZUW, Ground ISnbk. No phone board: the words
+   step down in size and the ground keeps its proportions. */
+.returned {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-height: 620px;
+  padding: 112px 96px 0;
+}
+
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.title {
+  max-width: 1000px;
+  margin: 0;
+  font-size: 88px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -1.76px;
+}
+
+.words {
+  max-width: 760px;
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 22px;
+  line-height: 1.55;
+}
+
+.words a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.words a:hover { color: var(--accent); }
+
+.words a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* The story, a rust body on two wheels, standing on the ground line. Pencil draws it 220 by 36 with 26 wheels, 180 in
+   from the right edge, the line 130 down a 140 tall band. */
+.ground {
+  position: relative;
+  height: 140px;
+}
+
+.line {
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 130px;
+  height: 2px;
+  background: var(--fg);
+}
+
+.story {
+  position: absolute;
+  right: 180px;
+  top: 84px;
+  width: 220px;
+  height: 36px;
+  background: var(--accent);
+}
+
+.wheel {
+  position: absolute;
+  top: 22px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+.wheel:nth-child(1) { left: 24px; }
+.wheel:nth-child(2) { left: 170px; }
+
+@media (max-width: 1079px) {
+  .returned {
+    min-height: 0;
+    padding: 80px 48px 64px;
+  }
+
+  .title { font-size: 72px; letter-spacing: -1.44px; }
+  .story { right: 48px; }
+}
+
+@media (max-width: 759px) {
+  .returned { padding: 48px 20px 40px; }
+  .eyebrow { font-size: 11px; letter-spacing: 1.5px; }
+  .title { font-size: 46px; letter-spacing: -0.92px; }
+  .words { font-size: 19px; }
+  .story { right: 20px; }
+}

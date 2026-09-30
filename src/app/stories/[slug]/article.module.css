@@ -1,0 +1,192 @@
+/* Pencil: Page 10 · Article (nq1e6): Back oHHDZ, Part of A8Cjl, Field photographs theGf, Byline row TPvgX. Phone from
+   Phone · 10 Article (iAFgB). The words themselves are the ArticleBody pieces; this file holds what sits around them. */
+
+.contents { display: contents; }
+
+/* The rows that sit in the words' column: 680 wide and centred at 1440, the same grid ArticleBody uses. */
+.trail,
+.bylineRow {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(48px, 1fr)
+    [wide-start] minmax(0, 160px)
+    [text-start] minmax(0, 680px)
+    [text-end] minmax(0, 160px)
+    [wide-end] minmax(48px, 1fr)
+    [full-end];
+}
+
+.trail > *,
+.bylineRow > * {
+  grid-column: text;
+  min-width: 0;
+}
+
+.trail {
+  row-gap: 16px;
+  padding-top: 8px;
+}
+
+.partOf {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+/* One "Part of" for the row, then the fields as bare chips (Pencil: the article page's Part of labels). */
+.partOfLabel {
+  margin-right: 4px;
+  color: var(--fg-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+/* Byline: Pencil gives the row 24 above and 80 below. */
+.bylineRow { padding: 24px 0 80px; }
+
+/* A story in Markdown or HTML: links, emphasis and the like inside the pieces' own paragraphs. */
+.content a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: var(--accent);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 3px;
+}
+
+.content a:hover { color: var(--accent); }
+
+.content a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.content strong { font-weight: var(--weight-statement); }
+.content sup,
+.content sub { font-size: 0.7em; }
+
+.list {
+  margin: 0;
+  padding-left: 1.4em;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.list li + li { margin-top: 10px; }
+.list li::marker { color: var(--accent); }
+
+/* A film or a player in the wide column. Empathy Ledger's embeds are all sixteen by nine. */
+.embed { margin: 0; }
+
+/* Sized by the ledger: centred in the column, never wider than the column. */
+.sized {
+  width: 100%;
+  margin: 16px auto;
+}
+
+.frame {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: var(--bg-shade);
+}
+
+.frame iframe,
+.frame video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+/* Field photographs: 72 above, 56 below, the eyebrow, then four across at 220 tall with 16 between. */
+.gallery {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 72px 96px 56px;
+}
+
+.galleryEyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.galleryGrid {
+  display: grid;
+  grid-template-columns: repeat(var(--across, 4), minmax(0, 1fr));
+  gap: 16px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.galleryGrid > li { min-width: 0; }
+
+.galleryFigure {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+}
+
+.galleryPhoto {
+  height: 220px;
+  overflow: hidden;
+  background: var(--bg-shade);
+}
+
+.galleryPhoto img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.galleryCaption {
+  color: var(--fg-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  line-height: 1.5;
+  letter-spacing: 0.6px;
+}
+
+@media (max-width: 1079px) {
+  .gallery { padding: 64px 48px 48px; }
+  .galleryGrid { grid-template-columns: repeat(min(var(--across, 4), 3), minmax(0, 1fr)); }
+}
+
+@media (max-width: 759px) {
+  .trail {
+    grid-template-columns: [full-start] 20px [wide-start text-start] minmax(0, 1fr) [text-end wide-end] 20px [full-end];
+    padding-top: 6px;
+  }
+
+  .bylineRow {
+    grid-template-columns: [full-start] 20px [wide-start text-start] minmax(0, 1fr) [text-end wide-end] 20px [full-end];
+    padding: 8px 0 40px;
+  }
+
+  .list { font-size: 18px; }
+
+  .gallery {
+    gap: 10px;
+    padding: 32px 20px;
+  }
+
+  .galleryGrid {
+    grid-template-columns: repeat(min(var(--across, 4), 2), minmax(0, 1fr));
+    gap: 10px;
+  }
+
+  .galleryPhoto { height: 120px; }
+}

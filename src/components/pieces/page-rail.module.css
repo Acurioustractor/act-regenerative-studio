@@ -15,7 +15,7 @@
   white-space: nowrap;
 }
 
-.label { color: var(--accent); }
+.label { color: var(--fg); }
 
 .link {
   color: var(--fg);

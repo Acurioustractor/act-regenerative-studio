@@ -2,7 +2,7 @@
    Phone · 03 Contact (FZX6b): Invitation ZxFBE, Form XvoXX, Ways in nouh2, What happens next ZLIjt. */
 .eyebrow {
   margin: 0;
-  color: var(--accent);
+  color: var(--fg);
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: var(--weight-label);
@@ -190,7 +190,7 @@
   flex: none;
   width: 360px;
   margin: 0;
-  color: var(--accent);
+  color: var(--fg);
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: var(--weight-label);

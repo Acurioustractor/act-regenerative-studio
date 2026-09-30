@@ -3,7 +3,7 @@
    The Harvest band (n6C7j), Return (wDoSD). */
 .eyebrow {
   margin: 0;
-  color: var(--accent);
+  color: var(--fg);
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: var(--weight-label);
@@ -469,7 +469,7 @@
     display: inline-flex;
     align-items: center;
     gap: 0.75em;
-    color: var(--accent);
+    color: var(--fg);
   }
 
   .follow { display: none; }

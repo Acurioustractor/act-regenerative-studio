@@ -53,8 +53,8 @@
   transition: background-color 250ms ease, transform 350ms var(--ease-arrive);
 }
 
-/* Where you are, and where you point: the part turns rust and lifts. */
-.door[aria-current="page"] .label { color: var(--accent); }
+/* Where you are, and where you point: the part turns rust and lifts. The words stay ink: rust is too faint as small
+   text (Ben, 1 Oct 2026). */
 .door[aria-current="page"] .part,
 .door:hover .part,
 .door:focus-visible .part { color: var(--accent); }
@@ -63,7 +63,6 @@
 .door:focus-visible .part > i { transform: scale(1.5); }
 
 /* Pointing at another door hands the rust over. */
-.doors:hover .door[aria-current="page"]:not(:hover) .label { color: var(--fg); }
 .doors:hover .door[aria-current="page"]:not(:hover) .part { color: var(--line); }
 .doors:hover .door[aria-current="page"]:not(:hover) .part > i { transform: none; }
 
@@ -222,7 +221,7 @@
 }
 
 .menu .menuEmail {
-  color: var(--accent);
+  color: var(--fg);
   font-family: var(--font-mono);
   font-size: 11px;
   font-weight: var(--weight-label);

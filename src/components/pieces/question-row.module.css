@@ -14,7 +14,7 @@
 .number {
   flex: none;
   width: 40px;
-  color: var(--accent);
+  color: var(--fg);
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: var(--weight-label);

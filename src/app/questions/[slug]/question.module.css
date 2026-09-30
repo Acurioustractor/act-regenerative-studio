@@ -18,7 +18,7 @@
 .status,
 .eyebrow {
   margin: 0;
-  color: var(--accent);
+  color: var(--fg);
   font-family: var(--font-mono);
   font-size: 12px;
   font-weight: var(--weight-label);

@@ -11,8 +11,12 @@
   text-decoration: none;
 }
 
-.accent { color: var(--accent); }
+/* A link's words are ink, never rust: rust is too faint as small text (Ben, 1 Oct 2026). "accent" keeps its rust
+   in the wheel, which is a part, not text; "fg" leaves the wheel ink until it is pointed at. */
+.accent,
 .fg { color: var(--fg); }
+
+.accent .wheel { background: var(--accent); }
 
 .wheel {
   position: relative;

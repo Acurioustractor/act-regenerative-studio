@@ -15,6 +15,7 @@
     "inkLine": "#11111133"
   },
   "accent": "rust",
+  "_accentNote": "Rust is too faint as small text (4.05:1 on paper, 3.67:1 on shaded paper, 4.06:1 on ink; small text needs 4.5:1). So small labels and links are ink, and rust is for the parts, the wheels, the rust square, large type (24px and up) and what you point at (Ben, 1 Oct 2026). Guarded in src/brand/brand.test.ts.",
   "surfaces": {
     "paper": {
       "bg": "#F2EFE8",

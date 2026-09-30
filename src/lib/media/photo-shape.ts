@@ -91,12 +91,21 @@ export async function photoShape(src: string): Promise<PhotoShape | null> {
   }
 }
 
-/** Shapes for every gated photograph in a piece of HTML, keyed by its src as written. */
+/**
+ * Shapes for every gated photograph in a piece of HTML, keyed by its src as written.
+ *
+ * Since 1 Oct 2026 Empathy Ledger's feed writes each released photograph's own
+ * width and height onto its <img>, so those are left alone and never asked for;
+ * only a photograph that arrives without a size (an older snapshot, a row with
+ * no size yet) is measured.
+ */
 export async function photoShapesIn(html: string): Promise<Map<string, PhotoShape>> {
   const sources = new Set<string>();
-  for (const match of html.matchAll(/<img\b[^>]*\bsrc=(["'])(.*?)\1/gi)) {
-    const src = match[2].replace(/&amp;/g, "&");
-    if (isEmpathyLedgerMedia(src)) sources.add(src);
+  for (const match of html.matchAll(/<img\b[^>]*>/gi)) {
+    const tag = match[0];
+    if (/\bwidth=(["'])\d+\1/i.test(tag) && /\bheight=(["'])\d+\1/i.test(tag)) continue;
+    const src = /\bsrc=(["'])(.*?)\1/i.exec(tag)?.[2]?.replace(/&amp;/g, "&");
+    if (src && isEmpathyLedgerMedia(src)) sources.add(src);
   }
   const entries = await Promise.all([...sources].map(async (src) => [src, await photoShape(src)] as const));
   return new Map(entries.filter((entry): entry is readonly [string, PhotoShape] => entry[1] !== null));

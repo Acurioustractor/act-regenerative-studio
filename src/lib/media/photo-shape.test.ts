@@ -1,6 +1,6 @@
-import { describe, expect, it } from "vitest";
+import { describe, expect, it, vi } from "vitest";
 
-import { imageDimensions, photoShape } from "./photo-shape";
+import { imageDimensions, photoShape, photoShapesIn } from "./photo-shape";
 
 const bytes = (...parts: (number[] | string)[]) =>
   new Uint8Array(parts.flatMap((p) => (typeof p === "string" ? [...p].map((c) => c.charCodeAt(0)) : p)));
@@ -39,5 +39,19 @@ describe("photoShape", () => {
   it("asks nothing for a photograph that is not behind Empathy Ledger's gate", async () => {
     expect(await photoShape("https://yvnuayzslukamizrlhwb.supabase.co/storage/v1/object/public/media/x.jpg")).toBeNull();
     expect(await photoShape("/media/field-stills/a.jpg")).toBeNull();
+  });
+});
+
+describe("photoShapesIn", () => {
+  it("never asks for a photograph Empathy Ledger already sized", async () => {
+    const fetchSpy = vi.fn(() => { throw new Error("should not be asked"); });
+    vi.stubGlobal("fetch", fetchSpy);
+    try {
+      const html = '<img width="4032" height="3024" src="https://empathyledger.com/api/media/8c9860bb-4a0b-4706-8516-a6903dc81968/file" alt="">';
+      expect((await photoShapesIn(html)).size).toBe(0);
+      expect(fetchSpy).not.toHaveBeenCalled();
+    } finally {
+      vi.unstubAllGlobals();
+    }
   });
 });

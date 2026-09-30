@@ -32,7 +32,7 @@ Current storytelling platforms extract value from communities:
 Community-owned platform with:
 - Consent-gated sharing
 - Cultural protocol enforcement
-- Blockchain-based ownership
+- ~~Blockchain-based ownership~~ No blockchain: Empathy Ledger has never used one (retired 30 September 2026)
 - Value-sharing for storytellers
 - OCAP® principles (Ownership, Control, Access, Possession) baked into architecture
 
@@ -55,7 +55,7 @@ Community-owned platform with:
 - Granular consent management (story, media, usage levels)
 - Cultural protocol enforcement (gender restrictions, sacred content)
 - Elder review workflows
-- Blockchain provenance tracking
+- ~~Blockchain provenance tracking~~ Provenance is kept in the database, not on a blockchain (retired 30 September 2026)
 - Value-sharing mechanisms
 - Data sovereignty guarantees
 - Export and portability
@@ -83,7 +83,7 @@ Browse consented stories → Request additional access → Compensate storytelle
 | Auth | Supabase Auth (JWT-based) |
 | Storage | Supabase Storage |
 | AI | With community consent only |
-| Blockchain | Story ownership provenance |
+| ~~Blockchain~~ | None. Empathy Ledger has never used one (retired 30 September 2026) |
 
 ### Multi-Tenant Architecture
 - Shared database with Row Level Security (RLS)
@@ -136,7 +136,7 @@ Browse consented stories → Request additional access → Compensate storytelle
 - Built multi-tenant platform with RLS
 - Implemented consent-gating at every level
 - Created elder review workflows
-- Integrated blockchain provenance
+- ~~Integrated blockchain provenance~~ Never built (retired 30 September 2026)
 - Developed fair compensation model
 
 **Art:**

@@ -24,7 +24,7 @@ Community authority comes first. Consent, cultural protocols, and local authorit
 - Communities own their cultural knowledge and stories
 - Ownership cannot be transferred to ACT or third parties
 - Legal structures reflect community ownership
-- Blockchain provenance tracking (where appropriate)
+- ~~Blockchain provenance tracking (where appropriate)~~ Empathy Ledger has no blockchain (retired 30 September 2026)
 - Exit = full data portability
 
 ### Control

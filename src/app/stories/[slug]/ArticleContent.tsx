@@ -2,6 +2,7 @@ import type { ReactNode } from "react";
 import ReactMarkdown, { type Components } from "react-markdown";
 import { ArticleBody, BodyHeading, Divider, Figure, Paragraph, PullQuote } from "@/components/pieces/ArticleBody";
 import { PieceLink } from "@/components/pieces/PieceLink";
+import type { PhotoShape } from "@/lib/media/photo-shape";
 import type { Block, Inline } from "./article-blocks";
 import styles from "./article.module.css";
 
@@ -52,7 +53,7 @@ function Embed({ maxWidth, children }: { maxWidth?: number; children: ReactNode 
   );
 }
 
-function BlockView({ block }: { block: Block }) {
+function BlockView({ block, shapes }: { block: Block; shapes?: Map<string, PhotoShape> }) {
   switch (block.kind) {
     case "paragraph":
       return <Paragraph>{renderInline(block.inline)}</Paragraph>;
@@ -67,7 +68,15 @@ function BlockView({ block }: { block: Block }) {
         </BodyList>
       );
     case "figure":
-      return <Figure src={block.src} alt={block.alt} caption={block.caption} />;
+      return (
+        <Figure
+          src={block.src}
+          alt={block.alt}
+          caption={block.caption}
+          width={shapes?.get(block.src)?.width}
+          height={shapes?.get(block.src)?.height}
+        />
+      );
     case "quote":
       // Word for word from the piece. It is not attributed: the feed does not say whose words a block quote holds.
       return <PullQuote quote={block.text} />;
@@ -92,11 +101,11 @@ function BlockView({ block }: { block: Block }) {
   }
 }
 
-export function ArticleContent({ blocks }: { blocks: Block[] }) {
+export function ArticleContent({ blocks, shapes }: { blocks: Block[]; shapes?: Map<string, PhotoShape> }) {
   return (
     <ArticleBody>
       {blocks.map((block, index) => (
-        <BlockView key={index} block={block} />
+        <BlockView key={index} block={block} shapes={shapes} />
       ))}
     </ArticleBody>
   );

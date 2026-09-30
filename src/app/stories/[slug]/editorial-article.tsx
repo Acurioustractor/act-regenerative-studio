@@ -25,6 +25,7 @@ import { articleJsonLd, breadcrumbJsonLd, pageMetadata } from "@/lib/seo/site";
 import { waysOn } from "@/lib/ways-on";
 import { GROUP_NAMES, groupsFor } from "../stories-model";
 import { articleBlocks } from "./article-blocks";
+import { photoShapesIn } from "@/lib/media/photo-shape";
 import { ArticleContent, MarkdownContent } from "./ArticleContent";
 import { FieldPhotographs, HideBrokenFigures, OpeningGuard } from "./guards";
 import styles from "./article.module.css";
@@ -113,6 +114,9 @@ export async function EditorialArticleReader({ post }: { post: EditorialArticle 
     : null;
   const readingMinutes = readingTimeMinutes(content);
   const blocks = preparedHtml ? articleBlocks(preparedHtml) : [];
+  // Each gated photograph's true proportions, read from a small copy through the gate and kept for a week (main's
+  // photo-shape), so its figure holds its place and shows it whole.
+  const shapes = preparedHtml ? await photoShapesIn(preparedHtml) : undefined;
   const subtitle = post.subtitle || shortLede(post.excerpt) || undefined;
 
   // Every field the article belongs to, not just the ones its project slugs imply: fieldsForArticle also picks up
@@ -226,7 +230,7 @@ export async function EditorialArticleReader({ post }: { post: EditorialArticle 
 
         <HideBrokenFigures className={styles.content}>
           {blocks.length > 0 ? (
-            <ArticleContent blocks={blocks} />
+            <ArticleContent blocks={blocks} shapes={shapes} />
           ) : content && !looksLikeHtml ? (
             <MarkdownContent markdown={content} />
           ) : (

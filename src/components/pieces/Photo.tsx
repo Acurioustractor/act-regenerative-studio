@@ -1,6 +1,7 @@
 "use client";
 
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useState } from "react";
+import { GatedImg } from "./GatedImg";
 import { Wheel } from "./Onward";
 import styles from "./photo.module.css";
 
@@ -11,13 +12,15 @@ type State = "still" | "loading" | "loaded" | "failed";
  * No spinner: the big wheel turns until the picture arrives, then the picture comes up over it. If it never arrives the
  * wheel stops and the slot says so in words; nothing is faked in its place. It fills the box its parent gives it, so
  * the parent sets the height or the ratio. `tone="duotone"` is Pencil's Photo treatment (ink and paper only).
- * Without script the picture simply shows.
+ * Without script the picture simply shows. The picture comes through GatedImg: Empathy Ledger's gate, at the size it is
+ * shown (`sizes`), with the original as a floor.
  */
 export function Photo({
   src,
   alt,
   tone = "colour",
   priority = false,
+  sizes = "100vw",
   className,
 }: {
   src: string;
@@ -26,33 +29,28 @@ export function Photo({
   tone?: "colour" | "duotone";
   /** Load now rather than when it scrolls near: for the photograph at the top of a page. */
   priority?: boolean;
+  /** How wide it is shown, as an `<img sizes>`, so the optimiser sends no more than that. */
+  sizes?: string;
   className?: string;
 }) {
-  const image = useRef<HTMLImageElement>(null);
+  // "still" until script runs, so the picture shows without it; then loading until it arrives or GatedImg gives up.
+  // GatedImg reports a picture that arrived before script did, and its report runs first.
   const [state, setState] = useState<State>("still");
-
-  useEffect(() => {
-    const img = image.current;
-    if (!img) return;
-    // It may have arrived (or failed) before this script did.
-    setState(img.complete ? (img.naturalWidth > 0 ? "loaded" : "failed") : "loading");
-  }, [src]);
+  useEffect(() => setState((now) => (now === "still" ? "loading" : now)), []);
 
   const classes = [styles.photo, tone === "duotone" ? styles.duotone : "", className].filter(Boolean).join(" ");
 
   return (
     <div className={classes} data-state={state}>
-      {/* eslint-disable-next-line @next/next/no-img-element */}
-      <img
-        ref={image}
+      <GatedImg
+        key={src}
         src={src}
         alt={alt}
+        sizes={sizes}
         className={styles.image}
-        loading={priority ? "eager" : "lazy"}
-        decoding="async"
-        fetchPriority={priority ? "high" : undefined}
+        priority={priority}
         onLoad={() => setState("loaded")}
-        onError={() => setState("failed")}
+        onGiveUp={() => setState("failed")}
       />
       {(state === "loading" || state === "failed") && (
         <>

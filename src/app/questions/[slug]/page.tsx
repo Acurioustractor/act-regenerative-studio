@@ -61,7 +61,7 @@ export default async function QuestionPage({ params }: { params: Promise<{ slug:
           <h1 className={styles.question}>{q.question}</h1>
           <p className={styles.invitation}>{q.invitation}</p>
         </div>
-        <Photo src={q.image} alt="" priority className={styles.photo} />
+        <Photo src={q.image} alt="" priority className={styles.photo} sizes="(max-width: 1079px) 100vw, 520px" />
       </section>
 
       <dl className={styles.provenance}>

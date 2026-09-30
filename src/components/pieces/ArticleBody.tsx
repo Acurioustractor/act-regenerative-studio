@@ -50,10 +50,28 @@ export function PullQuote({ quote, from }: { quote: string; from?: string }) {
  * A photograph in the story (Pencil: Figure hGi4g). A caption is the words of the people in it, or nothing: without
  * `caption` no caption is drawn.
  */
-export function Figure({ src, alt, caption }: { src: string; alt: string; caption?: string }) {
+export function Figure({
+  src,
+  alt,
+  caption,
+  width,
+  height,
+}: {
+  src: string;
+  alt: string;
+  caption?: string;
+  /** The photograph's own proportions, when known, so the words do not jump when it arrives. */
+  width?: number;
+  height?: number;
+}) {
+  // With its own proportions the photograph is shown whole, not cropped to Pencil's 1000 by 560, and the frame still
+  // holds its place before it arrives. Without them, Pencil's frame.
+  const shape = width && height ? { aspectRatio: `${width} / ${height}` } : undefined;
   return (
     <figure data-lane="wide" className={styles.figure}>
-      <Photo src={src} alt={alt} className={styles.image} />
+      <div className={styles.image} style={shape}>
+        <Photo src={src} alt={alt} className={styles.fill} sizes="(max-width: 759px) 100vw, 1000px" />
+      </div>
       {caption && <figcaption className={styles.caption}>{caption}</figcaption>}
     </figure>
   );

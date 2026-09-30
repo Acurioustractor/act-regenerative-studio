@@ -95,7 +95,15 @@
   margin: 0;
 }
 
-.image { aspect-ratio: 1000 / 560; }
+.image {
+  aspect-ratio: 1000 / 560;
+  max-height: 85vh;
+}
+
+.fill {
+  width: 100%;
+  height: 100%;
+}
 
 .caption {
   color: var(--fg-muted);

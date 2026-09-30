@@ -35,7 +35,7 @@ export function StoryCard({
   return (
     <PieceLink href={href} className={`${styles.card} ${rolls}`} aria-labelledby={titleId}>
       {photo ? (
-        <Photo src={photo.src} alt={photo.alt} className={styles.image} />
+        <Photo src={photo.src} alt={photo.alt} className={styles.image} sizes="(max-width: 759px) 100vw, 420px" />
       ) : (
         <div className={styles.tile}>{tileWords && <p className={styles.tileWords}>{tileWords}</p>}</div>
       )}

@@ -50,16 +50,6 @@
   padding: 8px max(48px, calc((100% - 680px) / 2)) 0;
 }
 
-.back {
-  color: var(--fg);
-  font-family: var(--font-mono);
-  font-size: 12px;
-  font-weight: var(--weight-label);
-  letter-spacing: 1.6px;
-  text-transform: uppercase;
-  text-decoration: none;
-}
-
 .bylineRow { padding-top: 24px; }
 
 .rows { max-width: 900px; padding: 0 24px; }

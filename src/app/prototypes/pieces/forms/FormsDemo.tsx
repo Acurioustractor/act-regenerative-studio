@@ -54,7 +54,7 @@ export function ErrorsDemo() {
       <Input label="Your email" name="email" type="email" defaultValue="hello@" error="That email needs an @ and a domain." />
       <Choice label="What brings you here?" name="inquiryType" prompt="Choose the closest fit" options={kinds} error="Choose the closest fit." />
       <Message label="What is happening?" name="message" error="A line or two is enough, but we need something." />
-      <SendButton disabled>Sending</SendButton>
+      <SendButton pending>Sending</SendButton>
     </FormSet>
   );
 }

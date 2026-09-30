@@ -56,7 +56,7 @@ export function Newsletter({
           aria-invalid={error ? true : undefined}
           aria-describedby={error ? errorId : undefined}
         />
-        <SendButton className={styles.button} disabled={pending} aria-busy={pending || undefined}>
+        <SendButton className={styles.button} pending={pending}>
           {button}
         </SendButton>
       </div>

@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { ArticleBody, BodyHeading, Divider, Figure, Paragraph, PullQuote } from "@/components/pieces/ArticleBody";
 import { ArticleOpening } from "@/components/pieces/ArticleOpening";
 import { Byline } from "@/components/pieces/Byline";
 import { CallToAction } from "@/components/pieces/CallToAction";
 import { FilterPills } from "@/components/pieces/FilterPills";
 import { Photo } from "@/components/pieces/Photo";
+import { Onward } from "@/components/pieces/Onward";
 import { ReadingTractor } from "@/components/pieces/ReadingTractor";
 import { StoryCard } from "@/components/pieces/StoryCard";
 import { StoryRow } from "@/components/pieces/StoryRow";
@@ -149,6 +149,7 @@ export default function StoriesPiecesPage() {
       <h2 className={styles.group}>Put together</h2>
       <Specimen node="nq1e6" name="An article, opening to call to action (Pencil: Page 10, without the chrome)" width={1440}>
         <article id="composed-article">
+          <ReadingTractor target="composed-article" />
           <ArticleOpening
             photo={road}
             kicker="Editorial · Across ACT"
@@ -158,9 +159,9 @@ export default function StoriesPiecesPage() {
             readingMinutes={8}
           />
           <div className={local.articleGap}>
-            <Link href="/prototypes/pieces/stories" className={local.back}>
+            <Onward href="/prototypes/pieces/stories" tone="fg" back>
               All stories
-            </Link>
+            </Onward>
           </div>
           <ArticleBody>
             <Paragraph>{para(1)}</Paragraph>

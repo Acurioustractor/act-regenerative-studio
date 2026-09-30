@@ -42,6 +42,11 @@
   background: var(--accent);
 }
 
+.back.rolls:hover .wheel,
+.back.rolls:focus-visible .wheel {
+  transform: translateX(-1.5em) rotate(-180deg);
+}
+
 .rolls:focus-visible {
   outline: 2px solid var(--accent);
   outline-offset: 4px;
@@ -50,5 +55,7 @@
 @media (prefers-reduced-motion: reduce) {
   .wheel { transition: background-color 300ms ease; }
   .rolls:hover .wheel,
-  .rolls:focus-visible .wheel { transform: none; }
+  .rolls:focus-visible .wheel,
+  .back.rolls:hover .wheel,
+  .back.rolls:focus-visible .wheel { transform: none; }
 }

@@ -9,7 +9,7 @@ import styles from "./part-of.module.css";
  */
 export function PartOf({ name, href, bare = false }: { name: string; href: string; bare?: boolean }) {
   return (
-    <Link href={href} className={`${styles.partOf} ${rolls}`}>
+    <Link href={href} className={`${styles.partOf} ${rolls}`} data-part-of="">
       <RustSquare size={7} />
       <span>{bare ? name : `Part of ${name}`}</span>
       <Wheel />

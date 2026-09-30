@@ -42,7 +42,7 @@ export function FourWaysOn({
   const ways: Record<string, Way> = { Listen: listen, Curiosity: curiosity, Action: action, Art: art };
 
   return (
-    <section className={styles.fourWaysOn} aria-labelledby="four-ways-on">
+    <section className={styles.fourWaysOn} aria-labelledby="four-ways-on" data-four-ways-on="">
       <p className={styles.eyebrow}>Keep going</p>
       <h2 id="four-ways-on" className={styles.heading}>
         Four ways on from here
@@ -57,6 +57,7 @@ export function FourWaysOn({
               href={way.href}
               className={`${styles.way} ${rolls}`}
               style={{ "--i": i } as CSSProperties}
+              data-way={door.meaning.toLowerCase()}
             >
               <span className={styles.part}>
                 <PartGlyph part={door.part} size="way" />
@@ -75,7 +76,7 @@ export function FourWaysOn({
         })}
       </Arrive>
 
-      <div className={styles.yourQuestion}>
+      <div className={styles.yourQuestion} data-way-closing="">
         <p className={styles.question}>{closing.words}</p>
         <Onward href={closing.href}>{closing.label}</Onward>
       </div>

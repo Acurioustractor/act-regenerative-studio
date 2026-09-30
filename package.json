@@ -51,6 +51,7 @@
     "test": "vitest run",
     "test:watch": "vitest",
     "test:api": "vitest run tests/api-contract.test.ts",
+    "test:brand": "vitest run tests/brand-rules.test.ts",
     "sweep:routes": "node scripts/sweep-routes.mjs",
     "check:contrast": "node scripts/check-contrast.mjs",
     "check:consent": "node scripts/check-consent-surfaces.mjs --staged",

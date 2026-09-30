@@ -138,7 +138,7 @@ export default async function ArtWorkPage({ params }: { params: Promise<{ slug: 
       <section className={styles.title}>
         <div className={styles.chips}>
           {chips.map((chip, i) => (
-            <PieceLink key={chip.href} href={chip.href} className={`${styles.chip} ${i === 0 ? styles.filled : ""} ${rolls}`}>
+            <PieceLink key={chip.href} href={chip.href} className={`${styles.chip} ${i === 0 ? styles.filled : ""} ${rolls}`} data-part-of="">
               <span>Part of {chip.label}</span>
               <Wheel />
             </PieceLink>

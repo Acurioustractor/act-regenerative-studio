@@ -25,11 +25,11 @@ export function StatTile({
   if (!canShowStat(figure, source)) return null;
 
   return (
-    <Item className={styles.item}>
+    <Item className={styles.item} data-figure="">
       <div className={styles.tile}>
         <p className={styles.figure}>{figure}</p>
         <p className={styles.counts}>{counts}</p>
-        <p className={styles.source}>
+        <p className={styles.source} data-source="">
           Source ·{" "}
           {isText(source.href) ? (
             <a href={source.href} target="_blank" rel="noreferrer">

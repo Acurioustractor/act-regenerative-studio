@@ -104,6 +104,11 @@ jobs:
       - name: 📦 Install dependencies
         run: npm ci
 
+      # tests/brand-rules.test.ts opens every page in Chromium to read back the
+      # photographs it shows (a photo swapped in after load never reaches the HTML).
+      - name: 🌐 Install Chromium for the brand rules
+        run: npx playwright install --with-deps chromium
+
       - name: 🏗️ Build for the integration tests
         run: npm run build
         env:

@@ -10,7 +10,7 @@ import styles from "./footer.module.css";
  */
 export function Footer() {
   return (
-    <Surface as="footer" tone="ink" className={styles.footer}>
+    <Surface as="footer" tone="ink" className={styles.footer} data-site-footer="">
       <div className={styles.left}>
         <p className={styles.oneLine}>{site.oneLine}</p>
         <p className={styles.acknowledgement}>{site.acknowledgement}</p>

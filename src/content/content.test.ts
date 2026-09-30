@@ -4,6 +4,7 @@ import { readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
 import {
+  confessionsEditions,
   FEATURED_WORDS,
   featuredWorks,
   fields,
@@ -144,12 +145,29 @@ describe("the works", () => {
   });
 });
 
+describe("the Confessions editions", () => {
+  it("are numbered in order, and only a named edition is live", () => {
+    expect(confessionsEditions.map((e) => e.number)).toEqual(["01", "02", "03"]);
+    for (const e of confessionsEditions) expect(e.status === "live", e.number).toBe(e.to !== null);
+  });
+
+  for (const e of confessionsEditions) {
+    it(`${e.number} is part of fields that exist, and a named edition is a work`, () => {
+      expect(e.partOf.length).toBeGreaterThan(0);
+      for (const id of e.partOf) expect(isField(id), id).toBe(true);
+      if (e.to === null) expect(e.work).toBeNull();
+      else expect(works.find((w) => w.slug === e.work)?.title).toBe(`Confessions to ${e.to}`);
+    });
+  }
+});
+
 describe("figures", () => {
   it("carry a source, or are the known unsourced ones", () => {
     const found = [
       ...fields.flatMap((f) => figuresIn(`field ${f.id}`, f)),
       ...questions.flatMap((q) => figuresIn(`question ${q.slug}`, q)),
       ...works.flatMap((w) => figuresIn(`work ${w.slug}`, w)),
+      ...confessionsEditions.flatMap((e) => figuresIn(`edition ${e.number}`, e)),
     ];
     expect(
       found,

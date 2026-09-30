@@ -1,6 +1,7 @@
 "use client";
 
 import { FallbackImage } from "@/components/media/FallbackImage";
+import { objectPosition, type FocalPoint } from "@/lib/media/focal";
 import { useState } from "react";
 
 /**
@@ -29,10 +30,13 @@ export function ArticleHeroMedia({
   imageUrl,
   alt,
   initial,
+  focal,
 }: {
   imageUrl: string | null;
   alt: string;
   initial: string;
+  /** Chosen in Empathy Ledger; the hero crops around it instead of the centre. */
+  focal?: FocalPoint | null;
 }) {
   const [failed, setFailed] = useState(false);
   const showingPhotograph = Boolean(imageUrl) && !failed;
@@ -56,6 +60,7 @@ export function ArticleHeroMedia({
           fill
           sizes="100vw"
           className="object-cover"
+          style={{ objectPosition: objectPosition(focal) }}
           priority
           onGiveUp={() => setFailed(true)}
         />

@@ -36,7 +36,7 @@ export function FallbackImage({
 
   if (attempt === "original" && !isOptimisable(canonical)) {
     // next/image throws on a host outside next.config.js; a plain img does not.
-    const { alt, className, sizes, priority, fill } = props;
+    const { alt, className, sizes, priority, fill, style } = props;
     return (
       // eslint-disable-next-line @next/next/no-img-element
       <img
@@ -46,7 +46,7 @@ export function FallbackImage({
         sizes={typeof sizes === "string" ? sizes : undefined}
         loading={priority ? "eager" : "lazy"}
         decoding="async"
-        style={fill ? { position: "absolute", inset: 0, width: "100%", height: "100%" } : undefined}
+        style={fill ? { position: "absolute", inset: 0, width: "100%", height: "100%", ...style } : style}
         onError={onError}
       />
     );

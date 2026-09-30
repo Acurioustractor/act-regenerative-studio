@@ -5,6 +5,7 @@ import { cache } from 'react';
 import { fetchEmpathyLedgerJson } from '@/lib/empathy-ledger-runtime';
 import editorialSnapshot from '@/data/empathy-ledger-editorial.generated.json';
 import withdrawnTombstone from '../../config/withdrawn-editorial.json';
+import { readFocal, type FocalPoint } from "@/lib/media/focal";
 
 export interface EditorialArticle {
   id: string;
@@ -26,6 +27,8 @@ export interface EditorialArticle {
   themes: string[];
   featuredImageUrl: string | null;
   featuredImageAlt: string | null;
+  /** Where the featured image's important part sits, chosen in Empathy Ledger; null crops from the centre. */
+  featuredImageFocal?: FocalPoint | null;
   storyteller: {
     id: string;
     displayName: string;
@@ -325,6 +328,7 @@ function normaliseLiveArticle(liveArticle: Partial<EditorialArticle> & { slug: s
     articleType: article.articleType ?? null,
     featuredImageUrl: article.featuredImageUrl ?? null,
     featuredImageAlt: article.featuredImageAlt ?? null,
+    featuredImageFocal: readFocal(article.featuredImageFocal),
   } as EditorialArticle;
 }
 

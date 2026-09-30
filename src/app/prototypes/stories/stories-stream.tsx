@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { EditorialArticle } from "@/lib/empathy-ledger-editorial";
 import { canonicalMediaSrc, isEmpathyLedgerMedia, optimisedImageUrl } from "@/lib/media/optimised-image";
+import { objectPosition } from "@/lib/media/focal";
 import styles from "./stories.module.css";
 import { FallbackImage } from "@/components/media/FallbackImage";
 
@@ -34,7 +35,7 @@ export function StoriesStream({ stories }: { stories: EditorialArticle[] }) {
       const markDead = () => { if (image) setDeadImages((current) => current.includes(image) ? current : [...current, image]); };
       const poster = video?.thumbnailUrl || (isEmpathyLedgerMedia(image) ? optimisedImageUrl(canonicalMediaSrc(image), 1200) : image) || undefined;
       return <article key={story.id} className={lead ? styles.lead : ""}><Link href={story.localPath}>
-        <div className={styles.media}>{video?.url ? <video muted loop playsInline preload="metadata" poster={poster} onMouseEnter={(event) => { void event.currentTarget.play().catch((error: unknown) => { if (!(error instanceof DOMException && error.name === "AbortError")) console.error("Story preview could not play", error); }); }} onMouseLeave={(event) => { event.currentTarget.pause(); event.currentTarget.currentTime = 0; }}><source src={video.url} /></video> : image ? <FallbackImage src={image} alt={story.featuredImageAlt || ""} fill sizes={lead ? LEAD_SIZES : CARD_SIZES} onGiveUp={markDead} /> : <span>Story<br />waiting for an image</span>}{video?.url ? <b>Film</b> : null}</div>
+        <div className={styles.media}>{video?.url ? <video muted loop playsInline preload="metadata" poster={poster} onMouseEnter={(event) => { void event.currentTarget.play().catch((error: unknown) => { if (!(error instanceof DOMException && error.name === "AbortError")) console.error("Story preview could not play", error); }); }} onMouseLeave={(event) => { event.currentTarget.pause(); event.currentTarget.currentTime = 0; }}><source src={video.url} /></video> : image ? <FallbackImage src={image} alt={story.featuredImageAlt || ""} fill sizes={lead ? LEAD_SIZES : CARD_SIZES} style={{ objectPosition: objectPosition(story.featuredImageFocal) }} onGiveUp={markDead} /> : <span>Story<br />waiting for an image</span>}{video?.url ? <b>Film</b> : null}</div>
         <div className={styles.copy}><p>{story.relatedProjectSlugs.map((slug) => projectNames[slug] || slug.replaceAll("-", " ")).join(" · ") || "Across ACT"}</p><h3>{publicText(story.title)}</h3>{story.excerpt ? <span>{publicText(story.excerpt)}</span> : null}<footer><em>{publicText(story.authorName || "A Curious Tractor")}</em><b>Read →</b></footer></div>
       </Link></article>;
     })}</div>

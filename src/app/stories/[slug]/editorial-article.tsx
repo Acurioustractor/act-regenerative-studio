@@ -192,6 +192,7 @@ export async function EditorialArticleReader({
           imageUrl={post.featuredImageUrl ?? null}
           alt={post.featuredImageAlt ?? post.title}
           initial={post.title.charAt(0)}
+          focal={post.featuredImageFocal ?? null}
         />
         <div className="relative z-10 mx-auto flex min-h-[60vh] max-w-[1000px] flex-col justify-end px-6 pb-16 pt-32 md:min-h-[75vh] md:px-10 md:pb-24 md:pt-40">
           {/* The "All stories" link used to sit here, above the title. It was

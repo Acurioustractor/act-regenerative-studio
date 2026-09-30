@@ -9,10 +9,12 @@
 
 import { useCallback, useEffect, useRef, useState } from 'react';
 
+import { Wheel } from '@/components/pieces/Onward';
 import type { Confession } from '@/data/confessions-mock';
 import { themeMeta } from '@/data/confessions-mock';
 
 import { ConfessionField } from './ConfessionField';
+import styles from './listen-theatre.module.css';
 import { formatDuration } from './transcript';
 import { Waveform } from './Waveform';
 
@@ -164,11 +166,8 @@ export function ListenTheatre({ confessions }: { confessions: Confession[] }) {
 
   return (
     <>
-      <button
-        onClick={openTheatre}
-        className="inline-flex items-center gap-2 rounded-full border border-[var(--warm-bark-deep)] bg-[#1A130B] px-5 py-2.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.24em] text-[rgba(224,176,104,0.9)] transition hover:border-[var(--warm-gold)] hover:text-[var(--warm-cream)]"
-      >
-        <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <button type="button" onClick={openTheatre} className={styles.open}>
+        <svg viewBox="0 0 24 24" className={styles.icon} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
           <path d="M8 3H5a2 2 0 0 0-2 2v3M16 3h3a2 2 0 0 1 2 2v3M8 21H5a2 2 0 0 1-2-2v-3M16 21h3a2 2 0 0 0 2-2v-3" />
         </svg>
         Full screen
@@ -180,23 +179,19 @@ export function ListenTheatre({ confessions }: { confessions: Confession[] }) {
           role="dialog"
           aria-modal="true"
           aria-label="Listen to the messages, full screen"
-          className="fixed inset-0 z-[100] flex flex-col bg-[#0E0A05] text-[var(--warm-cream)] md:flex-row"
+          className={styles.theatre}
         >
           {/* ambient backdrop: slowed lights, low presence so the UI leads */}
-          <div className="pointer-events-none absolute inset-0 opacity-50">
-            <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_45%,#241910_0%,#0E0A05_70%)]" />
+          <div className={styles.backdrop}>
             <ConfessionField confessions={order} interactive={false} />
           </div>
 
-          {/* SIDEBAR — every message, click to play */}
-          <aside className="relative z-10 flex max-h-[38vh] shrink-0 flex-col border-b border-[#241a10] bg-black/55 backdrop-blur-sm md:max-h-none md:w-[340px] md:border-b-0 md:border-r">
-            <div className="flex items-center justify-between px-5 pb-3 pt-5">
-              <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.3em] text-[var(--warm-gold)]">
-                The messages
-              </p>
-              <span className="font-mono text-[11px] text-sand-lift">{order.length}</span>
+          {/* SIDEBAR: every message, click to play */}
+          <aside className={styles.sidebar}>
+            <div className={styles.sideHead}>
+              <p className={styles.label}>The messages</p>
             </div>
-            <ul className="flex-1 overflow-y-auto px-2.5 pb-4">
+            <ul className={styles.list}>
               {order.map((c, i) => {
                 const t = themeMeta[c.theme];
                 const activeRow = i === activeIndex;
@@ -204,29 +199,22 @@ export function ListenTheatre({ confessions }: { confessions: Confession[] }) {
                 return (
                   <li key={c.id}>
                     <button
+                      type="button"
                       onClick={() => selectOne(i)}
                       aria-current={activeRow ? 'true' : undefined}
-                      className={`mb-1.5 flex w-full items-start gap-3 rounded-lg border px-3 py-2.5 text-left transition ${
-                        activeRow ? 'border-[#CFA16B]/60 bg-[#CFA16B]/10' : 'border-transparent hover:bg-white/5'
-                      }`}
+                      className={`${styles.row} ${activeRow ? styles.rowOn : ''}`}
                     >
                       <span
                         aria-hidden="true"
-                        className="mt-1 h-2 w-2 shrink-0 rounded-full"
+                        className={styles.dot}
                         style={{ background: `rgb(${t.rgb})`, boxShadow: activeRow ? `0 0 8px 1px rgba(${t.rgb},0.8)` : 'none' }}
                       />
-                      <span className="min-w-0 flex-1">
-                        <span className="flex items-center justify-between gap-2">
-                          <span className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.18em]" style={{ color: `rgb(${t.rgb})` }}>
-                            {t.label}
-                          </span>
-                          <span className="font-mono text-[10px] text-sand-lift">
-                            {cleared ? `▸ ${formatDuration(c.durationSeconds)}` : '✎ words'}
-                          </span>
+                      <span className={styles.rowBody}>
+                        <span className={styles.rowTop}>
+                          <span className={styles.rowTheme}>{t.label}</span>
+                          <span className={styles.rowKind}>{cleared ? `Voice ${formatDuration(c.durationSeconds)}` : 'Words'}</span>
                         </span>
-                        <span className="mt-1 block truncate font-[var(--font-body)] text-[13px] text-[#C7B9A4]">
-                          {c.text}
-                        </span>
+                        <span className={styles.rowText}>{c.text}</span>
                       </span>
                     </button>
                   </li>
@@ -235,69 +223,55 @@ export function ListenTheatre({ confessions }: { confessions: Confession[] }) {
             </ul>
           </aside>
 
-          {/* MAIN — now playing + transport */}
-          <div className="relative z-10 flex min-h-0 flex-1 flex-col">
-            <div className="flex items-center justify-between px-6 pt-5">
-              <p className="font-[var(--font-sans)] text-[11px] uppercase tracking-[0.3em] text-sand-lift">
-                Confessions to philanthropy
-              </p>
-              <button
-                onClick={closeTheatre}
-                aria-label="Close full screen"
-                className="inline-flex items-center gap-2 rounded-full border border-[var(--warm-bark-deep)] px-3.5 py-1.5 font-[var(--font-sans)] text-[11px] uppercase tracking-[0.2em] text-[#B0A48E] transition hover:border-[#5A4A30] hover:text-[var(--warm-cream)]"
-              >
+          {/* MAIN: now playing + transport */}
+          <div className={styles.main}>
+            <div className={styles.mainHead}>
+              <p className={styles.label}>Confessions to philanthropy</p>
+              <button type="button" onClick={closeTheatre} aria-label="Close full screen" className={styles.close}>
                 Close
-                <svg viewBox="0 0 24 24" className="h-3.5 w-3.5" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" /></svg>
+                <svg viewBox="0 0 24 24" className={styles.icon} fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12" /></svg>
               </button>
             </div>
 
-            <div className="flex min-h-0 flex-1 flex-col items-center justify-center px-6 py-6 text-center">
+            <div className={styles.stage}>
               {active ? (
-                <div className="mx-auto max-w-2xl">
-                  <p className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.32em]" style={{ color: `rgb(${themeMeta[active.theme].rgb})` }}>
+                <div className={styles.now}>
+                  <p className={styles.nowState}>
                     {activeCleared ? (isPlaying ? 'Now playing' : 'Paused') : 'Shared as words'}
-                    <span className="mx-2 text-sand-lift">·</span>
+                    <span aria-hidden="true"> · </span>
                     {themeMeta[active.theme].label}
                   </p>
                   {activeCleared && (
-                    <div className="mx-auto mt-5 max-w-md">
+                    <div className={styles.wave}>
                       <Waveform seed={active.id + active.text.slice(0, 12)} bars={64} progress={isPlaying ? progress : null} />
                     </div>
                   )}
-                  <p className="mt-6 max-h-[42vh] overflow-y-auto font-[var(--font-display)] text-[clamp(1.2rem,3vw,2rem)] italic leading-[1.5] text-[#F8F1E3]" style={{ textShadow: '0 0 30px rgba(224,176,104,0.25)' }}>
-                    &ldquo;{active.text}&rdquo;
-                  </p>
-                  {active.consentNote && (
-                    <p className="mt-4 font-[var(--font-sans)] text-[10px] uppercase tracking-[0.2em] text-sand-lift">{active.consentNote}</p>
-                  )}
+                  <p className={styles.nowWords}>&ldquo;{active.text}&rdquo;</p>
+                  {active.consentNote && <p className={styles.note}>{active.consentNote}</p>}
                 </div>
               ) : (
-                <p className="font-[var(--font-body)] text-lg text-[#C7B9A4]">Press Play all, or pick a message.</p>
+                <p className={styles.prompt}>Press Play all, or pick a message.</p>
               )}
             </div>
 
             {/* transport */}
-            <div className="relative z-10 flex items-center justify-center gap-3 border-t border-[#241a10] bg-black/45 px-6 py-5 backdrop-blur-sm">
-              <button onClick={() => step(-1)} aria-label="Previous message" className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--warm-bark-deep)] text-[var(--warm-gold)] transition hover:border-[#5A4A30] hover:text-[var(--warm-cream)]">
-                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M7 5h2v14H7zM20 5.5v13a1 1 0 0 1-1.5.87l-10-6.5a1 1 0 0 1 0-1.74l10-6.5A1 1 0 0 1 20 5.5Z" /></svg>
+            <div className={styles.transport}>
+              <button type="button" onClick={() => step(-1)} aria-label="Previous message" className={styles.round}>
+                <svg viewBox="0 0 24 24" className={styles.icon} fill="currentColor" aria-hidden="true"><path d="M7 5h2v14H7zM20 5.5v13a1 1 0 0 1-1.5.87l-10-6.5a1 1 0 0 1 0-1.74l10-6.5A1 1 0 0 1 20 5.5Z" /></svg>
               </button>
-              <button onClick={togglePlayPause} aria-label={isPlaying ? 'Pause' : 'Play'} className="flex h-14 w-14 items-center justify-center rounded-full border border-[var(--warm-gold)] bg-[#CFA16B]/15 text-[#FFE4AA] transition hover:bg-[#CFA16B]/25">
+              <button type="button" onClick={togglePlayPause} aria-label={isPlaying ? 'Pause' : 'Play'} className={`${styles.round} ${styles.big}`}>
                 {isPlaying ? (
-                  <svg viewBox="0 0 24 24" className="h-5 w-5" fill="currentColor" aria-hidden="true"><rect x="6" y="5" width="4" height="14" rx="1" /><rect x="14" y="5" width="4" height="14" rx="1" /></svg>
+                  <span aria-hidden="true" className={styles.turning}>
+                    <Wheel />
+                  </span>
                 ) : (
-                  <svg viewBox="0 0 24 24" className="h-5 w-5 translate-x-[1px]" fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.87l11-6.5a1 1 0 0 0 0-1.74l-11-6.5A1 1 0 0 0 8 5.5Z" /></svg>
+                  <svg viewBox="0 0 24 24" className={styles.icon} fill="currentColor" aria-hidden="true"><path d="M8 5.5v13a1 1 0 0 0 1.5.87l11-6.5a1 1 0 0 0 0-1.74l-11-6.5A1 1 0 0 0 8 5.5Z" /></svg>
                 )}
               </button>
-              <button onClick={() => step(1)} aria-label="Next message" className="flex h-11 w-11 items-center justify-center rounded-full border border-[var(--warm-bark-deep)] text-[var(--warm-gold)] transition hover:border-[#5A4A30] hover:text-[var(--warm-cream)]">
-                <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor" aria-hidden="true"><path d="M15 5h2v14h-2zM4 5.5v13a1 1 0 0 0 1.5.87l10-6.5a1 1 0 0 0 0-1.74l-10-6.5A1 1 0 0 0 4 5.5Z" /></svg>
+              <button type="button" onClick={() => step(1)} aria-label="Next message" className={styles.round}>
+                <svg viewBox="0 0 24 24" className={styles.icon} fill="currentColor" aria-hidden="true"><path d="M15 5h2v14h-2zM4 5.5v13a1 1 0 0 0 1.5.87l10-6.5a1 1 0 0 0 0-1.74l-10-6.5A1 1 0 0 0 4 5.5Z" /></svg>
               </button>
-              <button
-                onClick={togglePlayAll}
-                aria-pressed={playAll}
-                className={`ml-3 inline-flex items-center gap-2 rounded-full border px-5 py-2.5 font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.2em] transition ${
-                  playAll ? 'border-[var(--warm-gold)] bg-[#CFA16B]/15 text-[#FFE4AA]' : 'border-[var(--warm-bark-deep)] text-[var(--warm-gold)] hover:border-[#5A4A30] hover:text-[var(--warm-cream)]'
-                }`}
-              >
+              <button type="button" onClick={togglePlayAll} aria-pressed={playAll} className={`${styles.all} ${playAll ? styles.allOn : ''}`}>
                 {playAll ? 'Stop' : 'Play all'}
               </button>
             </div>

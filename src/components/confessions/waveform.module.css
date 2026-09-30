@@ -1,0 +1,17 @@
+/* A voicemail waveform in the Confessions gold (look.module.css): idle, playing up to the playhead, and the part still to come. */
+.wave {
+  display: flex;
+  align-items: center;
+  gap: 2px;
+  height: 28px;
+}
+
+.bar {
+  flex: 1;
+  border-radius: 99px;
+  transition: background-color 150ms ease;
+}
+
+.idle { background: var(--cf-gold-dim); }
+.played { background: var(--cf-gold); }
+.rest { background: var(--cf-gold-hair); }

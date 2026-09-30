@@ -1,0 +1,64 @@
+/* Pencil: A line of work (q6Uu0V on Page 14: padding 88 by 96; Is3Mu on Page 14b: padding 80 by 96, a gold hairline over it). */
+.line {
+  display: flex;
+  align-items: flex-end;
+  gap: 80px;
+  padding: 88px 96px;
+}
+
+.border {
+  padding: 80px 96px;
+  border-top: 1px solid var(--cf-gold-hair);
+}
+
+.left {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.heading {
+  margin: 0;
+  font-size: 52px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -1.04px;
+}
+
+.right {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: min(480px, 34vw);
+}
+
+.words {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+@media (max-width: 1079px) {
+  .line,
+  .border {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    padding: 64px 48px;
+  }
+
+  .right { width: auto; max-width: 560px; }
+}
+
+@media (max-width: 759px) {
+  .line,
+  .border { padding: 48px 20px; }
+
+  .heading { font-size: 36px; letter-spacing: -0.72px; }
+  .words { font-size: 17px; }
+}

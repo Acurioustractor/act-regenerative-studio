@@ -9,6 +9,9 @@ import { useEffect, useRef, useState } from 'react';
 
 import type { Confession } from '@/data/confessions-mock';
 import { realConfessions, themeMeta } from '@/data/confessions-mock';
+import { Wheel } from '@/components/pieces/Onward';
+
+import styles from './friday-tape.module.css';
 import { renderTranscript } from './transcript';
 
 const THEME_SEQ = ['money', 'power', 'the forms', 'shame', 'hope', 'breakthrough', 'the weird'];
@@ -82,65 +85,50 @@ export function FridayTape() {
   };
 
   return (
-    <div className="mx-auto max-w-2xl">
-      <div className="text-center">
-        <button
-          onClick={toggleAll}
-          aria-pressed={idx !== null}
-          className="inline-flex items-center gap-3 rounded-full bg-[var(--warm-gold)] px-7 py-3.5 font-[var(--font-sans)] text-sm font-semibold uppercase tracking-[0.18em] text-[#1A130B] transition hover:bg-[#E0B985]"
-        >
+    <div className={styles.tape}>
+      <div className={styles.controls}>
+        <button type="button" onClick={toggleAll} aria-pressed={idx !== null} className={styles.playAll}>
           {idx !== null ? (
             <>
-              <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1" /><rect x="14" y="5" width="4" height="14" rx="1" /></svg>
+              <span aria-hidden="true" className={styles.turning}>
+                <Wheel />
+              </span>
               Stop the tape
             </>
           ) : (
             <>
-              <svg viewBox="0 0 24 24" className="h-4 w-4 translate-x-[1px]" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.87l11-6.5a1 1 0 0 0 0-1.74l-11-6.5A1 1 0 0 0 8 5.5Z" /></svg>
+              <span aria-hidden="true" className={styles.triangle} />
               Play the week back
             </>
           )}
         </button>
-        <p className="mt-4 font-[var(--font-sans)] text-[11px] uppercase tracking-[0.3em] text-sand-lift">
-          {TAPE.length} messages, in sequence
-        </p>
+        <p className={styles.note}>Messages, in sequence</p>
       </div>
 
-      <ol className="mt-12 space-y-px overflow-hidden rounded-2xl border border-[var(--warm-bark-deep)] bg-[#1A130B]">
+      <ol className={styles.tracks}>
         {TAPE.map((c, i) => {
           const playing = idx === i;
           const t = themeMeta[c.theme];
           return (
-            <li
-              key={c.id}
-              className="border-b border-[var(--warm-earth)] p-6 last:border-b-0 md:p-7"
-              style={playing ? { background: `rgba(${t.rgb},0.06)` } : undefined}
-            >
-              <div className="flex items-start gap-5">
-                <button
-                  onClick={() => toggleOne(i)}
-                  aria-label={playing ? 'Pause this message' : 'Play this message'}
-                  aria-pressed={playing}
-                  className="mt-0.5 flex h-11 w-11 shrink-0 items-center justify-center rounded-full border transition-transform hover:scale-105"
-                  style={{ borderColor: `rgba(${t.rgb},0.5)`, color: `rgb(${t.rgb})`, background: `rgba(${t.rgb},0.08)` }}
-                >
-                  {playing ? (
-                    <svg viewBox="0 0 24 24" className="h-4 w-4" fill="currentColor"><rect x="6" y="5" width="4" height="14" rx="1" /><rect x="14" y="5" width="4" height="14" rx="1" /></svg>
-                  ) : (
-                    <svg viewBox="0 0 24 24" className="h-4 w-4 translate-x-[1px]" fill="currentColor"><path d="M8 5.5v13a1 1 0 0 0 1.5.87l11-6.5a1 1 0 0 0 0-1.74l-11-6.5A1 1 0 0 0 8 5.5Z" /></svg>
-                  )}
-                </button>
-                <div className="min-w-0 flex-1">
-                  <span
-                    className="font-[var(--font-sans)] text-[11px] font-semibold uppercase tracking-[0.2em]"
-                    style={{ color: `rgb(${t.rgb})` }}
-                  >
-                    {t.label}
+            <li key={c.id} className={`${styles.track} ${playing ? styles.playing : ''}`}>
+              <button
+                type="button"
+                onClick={() => toggleOne(i)}
+                aria-label={playing ? 'Pause this message' : 'Play this message'}
+                aria-pressed={playing}
+                className={styles.trackPlay}
+              >
+                {playing ? (
+                  <span aria-hidden="true" className={styles.turning}>
+                    <Wheel />
                   </span>
-                  <blockquote className="mt-3 font-[var(--font-body)] text-[17px] italic leading-[1.7] text-[#E4D8C4]">
-                    &ldquo;{renderTranscript(c.text)}&rdquo;
-                  </blockquote>
-                </div>
+                ) : (
+                  <span aria-hidden="true" className={styles.triangle} />
+                )}
+              </button>
+              <div className={styles.trackWords}>
+                <span className={styles.theme}>{t.label}</span>
+                <blockquote className={styles.quote}>&ldquo;{renderTranscript(c.text)}&rdquo;</blockquote>
               </div>
             </li>
           );

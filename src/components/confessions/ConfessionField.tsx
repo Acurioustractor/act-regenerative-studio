@@ -2,8 +2,11 @@
 
 import { useEffect, useRef, useState } from 'react';
 
+import { Wheel } from '@/components/pieces/Onward';
 import type { Confession } from '@/data/confessions-mock';
 import { feelingMeta, feelingOf } from '@/data/confessions-mock';
+
+import styles from './confession-field.module.css';
 
 // The hero field IS the voicemail line. Each light is one real message left on
 // the gold phone. Pick one up (tap / click) to play it: the four cleared voices
@@ -338,15 +341,12 @@ export function ConfessionField({
   // Reduced motion (interactive): the voices as a plain, playable list.
   if (reducedMotion) {
     return (
-      <div className="absolute inset-0 flex items-center justify-center px-6">
-        <ul className="flex max-w-2xl flex-wrap items-center justify-center gap-2">
+      <div className={styles.plain}>
+        <ul className={styles.voiceList}>
           {voices.map((v) => (
             <li key={v.id}>
-              <button
-                onClick={() => pickUp(v)}
-                className="rounded-full border border-[rgba(224,176,104,0.4)] px-3 py-1.5 text-[0.72rem] uppercase tracking-[0.16em] text-[rgba(224,176,104,0.8)] transition hover:border-[rgba(224,176,104,0.8)] hover:text-[var(--warm-cream)]"
-              >
-                {v.cleared ? '▸ ' : '✎ '}
+              <button type="button" onClick={() => pickUp(v)} className={styles.voiceButton}>
+                {v.cleared ? 'Voice · ' : 'Words · '}
                 {v.themeLabel}
               </button>
             </li>
@@ -359,19 +359,15 @@ export function ConfessionField({
 
   return (
     <>
-      <canvas
-        ref={canvasRef}
-        aria-hidden="true"
-        className="absolute inset-0 h-full w-full"
-      />
+      <canvas ref={canvasRef} aria-hidden="true" className={styles.canvas} />
       {interactive && (
         <>
           <CaptionBlock active={active} isPlaying={isPlaying} onStop={() => active && pickUp(active)} />
           {/* Keyboard / screen-reader access to every voice. */}
-          <ul className="sr-only">
+          <ul className={styles.sr}>
             {voices.map((v) => (
               <li key={v.id}>
-                <button onClick={() => pickUp(v)}>
+                <button type="button" onClick={() => pickUp(v)}>
                   Play the {v.themeLabel} message{v.cleared ? '' : ' (shared as words)'}: {v.text}
                 </button>
               </li>
@@ -395,34 +391,19 @@ function CaptionBlock({
   onStop: () => void;
 }) {
   return (
-    <div
-      aria-live="polite"
-      className={`pointer-events-none absolute inset-x-0 bottom-8 z-20 mx-auto max-w-2xl px-6 text-center transition-opacity duration-500 ${
-        active ? 'opacity-100' : 'opacity-0'
-      }`}
-    >
+    <div aria-live="polite" className={`${styles.caption} ${active ? styles.captionOn : ''}`}>
       {active && (
         <>
-          <p className="font-[var(--font-sans)] text-[10px] font-semibold uppercase tracking-[0.32em] text-[var(--warm-gold-bright)]">
+          <p className={styles.state}>
             {active.cleared ? (isPlaying ? 'Now playing' : 'Tap the light again to play') : 'Shared as words'}
-            <span className="mx-2 text-sand-lift">·</span>
+            <span aria-hidden="true"> · </span>
             {active.themeLabel}
           </p>
-          <p
-            className="mt-3 font-[var(--font-display)] text-[clamp(1.05rem,2.4vw,1.5rem)] italic leading-snug text-[#F8F1E3]"
-            style={{ textShadow: '0 0 24px rgba(224,176,104,0.3)' }}
-          >
-            &ldquo;{active.text}&rdquo;
-          </p>
+          <p className={styles.words}>&ldquo;{active.text}&rdquo;</p>
           {active.cleared && isPlaying && (
-            <button
-              onClick={onStop}
-              className="pointer-events-auto mt-4 inline-flex items-center gap-2 rounded-full border border-[rgba(224,176,104,0.4)] px-3.5 py-1.5 font-[var(--font-sans)] text-[11px] uppercase tracking-[0.2em] text-[rgba(224,176,104,0.85)] transition hover:border-[rgba(224,176,104,0.8)] hover:text-[var(--warm-cream)]"
-            >
-              <span className="flex gap-0.5" aria-hidden="true">
-                <span className="h-3 w-[3px] animate-pulse rounded-full bg-[var(--warm-gold-bright)]" />
-                <span className="h-3 w-[3px] animate-pulse rounded-full bg-[var(--warm-gold-bright)] [animation-delay:150ms]" />
-                <span className="h-3 w-[3px] animate-pulse rounded-full bg-[var(--warm-gold-bright)] [animation-delay:300ms]" />
+            <button type="button" onClick={onStop} className={styles.stop}>
+              <span aria-hidden="true" className={styles.turning}>
+                <Wheel />
               </span>
               Stop
             </button>

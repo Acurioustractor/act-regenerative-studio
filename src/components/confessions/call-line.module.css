@@ -1,0 +1,41 @@
+/* Pencil: Call (DOvAn): gold, padding 20 by 28, gap 6, label mono 11 (1.6) over the number in display 34. Call (nohWw) has the number alone, padding 20 by 32. */
+.call {
+  display: inline-flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 20px 28px;
+  background: var(--cf-gold);
+  color: var(--cf-espresso);
+  text-decoration: none;
+  transition: background-color 250ms ease;
+}
+
+.call:hover { background: var(--cf-cream); }
+
+.call:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.number {
+  font-size: 34px;
+  font-weight: var(--weight-statement);
+  white-space: nowrap;
+}
+
+/* With no label the number stands alone, a little wider (Pencil nohWw). */
+.alone { padding: 20px 32px; }
+
+@media (max-width: 759px) {
+  .call,
+  .alone { padding: 16px 20px; }
+  .number { font-size: 26px; }
+}

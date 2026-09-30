@@ -1,0 +1,44 @@
+/* Pencil: ACT strip (oLYJ2 on Page 14, XLM2m on Page 14b): paper, 10 by 96 padding, mono 11 with letter-spacing 1.5. */
+.strip {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4px 24px;
+  padding: 10px 96px;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.words { margin: 0; }
+
+.home {
+  color: inherit;
+  text-decoration: none;
+}
+
+.home:hover { text-decoration: underline; text-underline-offset: 3px; }
+
+.home:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* The link is the Onward piece, set at the strip's 11 and 1.5 rather than the link's 12 and 2. */
+.back.back {
+  font-size: 11px;
+  letter-spacing: 1.5px;
+}
+
+@media (max-width: 1079px) {
+  .strip { padding: 10px 48px; }
+}
+
+@media (max-width: 759px) {
+  .strip { padding: 10px 20px; }
+}

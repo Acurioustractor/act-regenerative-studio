@@ -13,9 +13,9 @@ const repoRoot = process.cwd();
 const launchRoutes = [
   "/",
   "/confessions",
-  "/confessions/listen",
-  "/confessions/friday",
-  "/confessions/method",
+  "/confessions/philanthropy",
+  "/confessions/philanthropy/listen",
+  "/confessions/philanthropy/friday",
   "/stories",
   "/questions",
   "/fields/art",

@@ -27,12 +27,12 @@ const staticRoutes: Array<{
 }> = [
   { path: "/", changeFrequency: "weekly", priority: 1.0 },
   { path: "/confessions", changeFrequency: "weekly", priority: 0.9 },
-  { path: "/confessions/listen", changeFrequency: "weekly", priority: 0.8 },
-  { path: "/confessions/friday", changeFrequency: "weekly", priority: 0.8 },
-  // /confessions/wall is not listed: the Payout Wall was retired from the
-  // campaign and the route 307s to /confessions/listen. The redirect stays for
-  // shared links, but a URL that redirects must not be advertised in a sitemap.
-  { path: "/confessions/method", changeFrequency: "monthly", priority: 0.5 },
+  { path: "/confessions/philanthropy", changeFrequency: "weekly", priority: 0.9 },
+  { path: "/confessions/philanthropy/listen", changeFrequency: "weekly", priority: 0.8 },
+  { path: "/confessions/philanthropy/friday", changeFrequency: "weekly", priority: 0.8 },
+  // /confessions/listen, /friday, /method, /wall and /feeling are not listed: they
+  // redirect to the edition's pages (or the series), and a URL that redirects
+  // must not be advertised in a sitemap.
   { path: "/stories", changeFrequency: "weekly", priority: 0.8 },
   { path: "/questions", changeFrequency: "weekly", priority: 0.7 },
   { path: "/work", changeFrequency: "monthly", priority: 0.8 },

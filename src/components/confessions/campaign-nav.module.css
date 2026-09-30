@@ -1,0 +1,44 @@
+/* Pencil: Campaign nav (o9lk6o): a gold hairline under it, padding 20 by 96, gap 32, mono 12 (1.6) in gold. */
+.nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 32px;
+  padding: 20px 96px;
+  border-bottom: 1px solid var(--cf-gold-hair);
+}
+
+.link {
+  color: var(--cf-gold);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: color 250ms ease;
+}
+
+.link:hover { color: var(--cf-cream); }
+
+/* Where you are: cream, with the gold rule under it. */
+.link[aria-current="page"] {
+  color: var(--cf-cream);
+  text-decoration: underline;
+  text-decoration-color: var(--cf-gold);
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+}
+
+.link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@media (max-width: 1079px) {
+  .nav { padding: 18px 48px; }
+}
+
+@media (max-width: 759px) {
+  .nav { gap: 8px 24px; padding: 16px 20px; }
+  .link { font-size: 11px; letter-spacing: 1.5px; }
+}

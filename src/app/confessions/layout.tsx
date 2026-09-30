@@ -1,19 +1,8 @@
-import type { ReactNode } from 'react';
+import type { ReactNode } from "react";
 
-import { CampaignNav } from '@/components/confessions/CampaignNav';
-
-// Wraps the whole Confessions to Philanthropy campaign (/confessions and its
-// children: /wall, /friday, /method, /share) with persistent wayfinding. The nav
-// hides itself on the /share card routes (see CampaignNav).
+// Every Confessions page draws its own frame (src/components/confessions/ConfessionsFrame.tsx): ACT's strip, the work's
+// dark and gold look, ACT's footer. The old layout here hid the site chrome and put the campaign nav over every page;
+// the frame does the first, and the edition's own nav (CampaignNav) the second.
 export default function ConfessionsLayout({ children }: { children: ReactNode }) {
-  return (
-    <>
-      {/* Run /confessions as its own contained site: hide the global ACT header +
-          footer (marked data-site-chrome in the root layout). Server-rendered, so
-          there is no flash of the global chrome. */}
-      <style>{`[data-site-chrome]{display:none !important;}`}</style>
-      <CampaignNav />
-      {children}
-    </>
-  );
+  return children;
 }

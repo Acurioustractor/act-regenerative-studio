@@ -1,3 +1,5 @@
+import styles from './waveform.module.css';
+
 // A deterministic voicemail waveform. Seeded from the message id so it is
 // stable across server and client (no hydration mismatch) and each confession
 // gets its own shape. Purely decorative: it says "this is a voice".
@@ -30,18 +32,11 @@ export function Waveform({
 }) {
   const heights = seededHeights(seed, bars);
   return (
-    <div className="flex h-7 items-center gap-[2px]" aria-hidden="true">
+    <div className={styles.wave} aria-hidden="true">
       {heights.map((v, i) => {
         const played = progress != null && i / Math.max(bars - 1, 1) <= progress;
-        const cls =
-          progress == null ? 'bg-[#CFA16B]/40' : played ? 'bg-[#E0B068]/90' : 'bg-[#CFA16B]/18';
-        return (
-          <span
-            key={i}
-            className={`flex-1 rounded-full transition-colors duration-150 ${cls}`}
-            style={{ height: `${Math.round(v * 100)}%` }}
-          />
-        );
+        const tone = progress == null ? styles.idle : played ? styles.played : styles.rest;
+        return <span key={i} className={`${styles.bar} ${tone}`} style={{ height: `${Math.round(v * 100)}%` }} />;
       })}
     </div>
   );

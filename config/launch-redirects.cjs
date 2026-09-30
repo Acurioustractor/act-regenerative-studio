@@ -400,14 +400,24 @@ const launchRedirects = [
   // shared /art links through two hops. Straight to the page that answers.
   {
     source: "/art/the-payout-wall",
-    destination: "/confessions/listen",
+    destination: "/confessions/philanthropy/listen",
     permanent: true,
   },
   {
     source: "/art/the-payout-wall/method",
-    destination: "/confessions/method",
+    destination: "/confessions",
     permanent: true,
   },
+
+  // Brand v1 (2026-09-30): Confessions is a series, "Confessions to ___", and
+  // philanthropy is edition 01, so the campaign's pages move under
+  // /confessions/philanthropy. The method page retires. Temporary while the
+  // route shape is a proposal: a permanent redirect is cached by browsers.
+  { source: "/confessions/method", destination: "/confessions", permanent: false },
+  { source: "/confessions/listen", destination: "/confessions/philanthropy/listen", permanent: false },
+  { source: "/confessions/friday", destination: "/confessions/philanthropy/friday", permanent: false },
+  { source: "/confessions/wall", destination: "/confessions/philanthropy/listen", permanent: false },
+  { source: "/confessions/feeling", destination: "/confessions/philanthropy/listen", permanent: false },
 ];
 
 module.exports = { launchRedirects };

@@ -1,0 +1,134 @@
+/* The Friday Tape of edition 01, in the same look and sizes as Page 14b (E5hyfE): padding 88 by 96, display type, gold mono labels. */
+.opening {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 88px 96px 56px;
+}
+
+.title {
+  max-width: 1000px;
+  margin: 0;
+  font-size: 84px;
+  font-weight: var(--weight-statement);
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+}
+
+.lede {
+  max-width: 720px;
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 21px;
+  line-height: 1.6;
+}
+
+.tape { padding: 0 96px 88px; }
+
+.said {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 88px 96px;
+  background: var(--cf-raised);
+}
+
+.said > h2 { margin: 0; }
+
+.said > a { align-self: flex-start; }
+
+.movements {
+  display: flex;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.movement {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  padding: 20px 0;
+  border-top: 2px solid var(--cf-gold);
+}
+
+.movementTitle {
+  margin: 0;
+  font-size: 32px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -0.64px;
+}
+
+.movementBody {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+.closing {
+  max-width: 900px;
+  margin: 0;
+  font-size: 40px;
+  font-weight: var(--weight-statement);
+  line-height: 1.12;
+  letter-spacing: -0.8px;
+}
+
+.open {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 96px;
+  text-align: center;
+}
+
+.openHeading {
+  margin: 0;
+  font-size: 80px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -1.6px;
+}
+
+.openText {
+  max-width: 560px;
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+@media (max-width: 1079px) {
+  .opening { padding: 64px 48px 40px; }
+  .title { font-size: 64px; }
+  .tape { padding: 0 48px 64px; }
+  .said { padding: 64px 48px; }
+  .movements { flex-direction: column; gap: 32px; }
+  .closing { font-size: 32px; letter-spacing: -0.64px; }
+  .open { padding: 64px 48px; }
+  .openHeading { font-size: 56px; letter-spacing: -1.12px; }
+}
+
+@media (max-width: 759px) {
+  .opening {
+    gap: 20px;
+    padding: 40px 20px 32px;
+  }
+
+  .title { font-size: 40px; letter-spacing: -0.8px; }
+  .lede { font-size: 18px; }
+  .tape { padding: 0 20px 48px; }
+  .said { padding: 48px 20px; gap: 32px; }
+  .movementTitle { font-size: 26px; letter-spacing: -0.52px; }
+  .movementBody { font-size: 16px; }
+  .closing { font-size: 26px; letter-spacing: -0.52px; }
+  .open { padding: 48px 20px; }
+  .openHeading { font-size: 40px; letter-spacing: -0.8px; }
+  .openText { font-size: 17px; }
+}

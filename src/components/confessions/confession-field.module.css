@@ -1,0 +1,138 @@
+/* The field of lights on the Listen page: each light is one message. The canvas fills the box its parent gives it. */
+.canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Reduced motion: no field, the voices as a list you can press. */
+.plain {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 24px;
+}
+
+.voiceList {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  max-width: 672px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.voiceButton {
+  padding: 8px 13px;
+  border: 1px solid var(--cf-gold);
+  border-radius: 0;
+  background: none;
+  color: var(--cf-gold);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+.voiceButton:hover {
+  background: var(--cf-gold);
+  color: var(--cf-espresso);
+}
+
+.voiceButton:focus-visible,
+.stop:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* The picked-up voice, over the field: its words as a subtitle. */
+.caption {
+  position: absolute;
+  right: 0;
+  bottom: 32px;
+  left: 0;
+  z-index: 20;
+  max-width: 672px;
+  margin: 0 auto;
+  padding: 0 24px;
+  text-align: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 500ms ease;
+}
+
+.captionOn { opacity: 1; }
+
+.state {
+  margin: 0;
+  color: var(--cf-gold);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+/* A long message scrolls in its own box, so the top of it is never cut off by the edge of the field. */
+.words {
+  max-height: 240px;
+  margin: 12px 0 0;
+  overflow-y: auto;
+  font-size: clamp(17px, 1.9vw, 22px);
+  line-height: 1.4;
+  pointer-events: auto;
+}
+
+.stop {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 16px;
+  padding: 6px 12px;
+  border: 0;
+  border-radius: 0;
+  /* The wheel's notch takes the button's colour. */
+  --bg: var(--cf-gold);
+  background: var(--cf-gold);
+  color: var(--cf-espresso);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  text-transform: uppercase;
+  cursor: pointer;
+  pointer-events: auto;
+}
+
+.turning {
+  display: flex;
+  font-size: 11px;
+  animation: turn var(--spin-ms) linear infinite;
+}
+
+@keyframes turn { to { transform: rotate(360deg); } }
+
+@media (prefers-reduced-motion: reduce) {
+  .caption { transition: none; }
+  .turning { animation: none; }
+}

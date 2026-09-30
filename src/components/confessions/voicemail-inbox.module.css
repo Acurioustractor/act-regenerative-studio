@@ -1,0 +1,128 @@
+/* Pencil: The inbox (mFUvx) on Page 14b: three Message cards across (QdtGX, nvoir, S5xSN4): a gold-line border, padding 28, gap 16; the theme in mono 11 (1.6) gold; a gold Play chip (O7Zhq0) or "Words only" at 50% cream; the words in display 17 at 1.6. */
+.filter {
+  margin-bottom: 8px;
+  /* FilterPills read --fg and --bg: here they are gold on the raised band, and a pill that is on fills gold. */
+  --bg: var(--cf-raised);
+  --fg: var(--cf-gold);
+  --bg-shade: var(--cf-gold-hair);
+}
+
+.messages {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 20px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.message {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 28px;
+  border: 1px solid var(--cf-gold-line);
+  transition: border-color 250ms ease;
+}
+
+.playing { border-color: var(--cf-gold); }
+
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+}
+
+.theme,
+.wordsOnly {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.theme { color: var(--cf-gold); }
+.wordsOnly { color: var(--cf-cream-faint); }
+
+.play {
+  /* The small wheel's notch takes the chip's colour, so it shows against the wheel. */
+  --bg: var(--cf-gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  padding: 6px 12px;
+  border: 0;
+  border-radius: 0;
+  background: var(--cf-gold);
+  color: var(--cf-espresso);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 250ms ease;
+}
+
+.play:hover { background: var(--cf-cream); }
+
+.play:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* A play triangle, drawn rather than typed. */
+.triangle {
+  display: block;
+  width: 8px;
+  height: 10px;
+  background: currentColor;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.turning {
+  display: flex;
+  font-size: 11px;
+  animation: turn var(--spin-ms) linear infinite;
+}
+
+@keyframes turn { to { transform: rotate(360deg); } }
+
+.quote {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.6;
+}
+
+/* How far the voice has played. */
+.progress {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: -1px;
+  height: 3px;
+  background: var(--cf-gold);
+  transform: scaleX(0);
+  transform-origin: left;
+}
+
+@media (max-width: 1079px) {
+  .messages { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 759px) {
+  .messages {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 16px;
+  }
+
+  .message { padding: 22px 20px; }
+  .quote { font-size: 16px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .turning { animation: none; }
+}

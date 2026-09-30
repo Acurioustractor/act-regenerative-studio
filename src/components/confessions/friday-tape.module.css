@@ -1,0 +1,142 @@
+/* The Friday tape: the week's cleared voices in a row, one button to play them through. Gold on espresso (look.module.css). */
+.tape {
+  max-width: 900px;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 16px 24px;
+}
+
+.playAll {
+  /* The wheel's notch takes the button's colour. */
+  --bg: var(--cf-gold);
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  padding: 16px 22px;
+  border: 0;
+  border-radius: 0;
+  background: var(--cf-gold);
+  color: var(--cf-espresso);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 250ms ease;
+}
+
+.playAll:hover { background: var(--cf-cream); }
+
+.playAll:focus-visible,
+.trackPlay:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.note {
+  margin: 0;
+  color: var(--cf-cream-faint);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.tracks {
+  display: flex;
+  flex-direction: column;
+  margin: 40px 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.track {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+  padding: 28px 0;
+  border-top: 1px solid var(--cf-gold-line);
+  transition: background-color 250ms ease;
+}
+
+.playing { background: var(--cf-gold-hair); }
+
+.trackPlay {
+  /* The wheel's notch takes the button's colour, as it turns. */
+  --bg: var(--cf-gold);
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--cf-gold);
+  border-radius: 0;
+  background: none;
+  color: var(--cf-gold);
+  cursor: pointer;
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+.trackPlay:hover,
+.playing .trackPlay {
+  background: var(--cf-gold);
+  color: var(--cf-espresso);
+}
+
+.trackWords {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.theme {
+  color: var(--cf-gold);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.quote {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+/* A play triangle, drawn rather than typed. */
+.triangle {
+  display: block;
+  width: 10px;
+  height: 12px;
+  background: currentColor;
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+}
+
+.turning {
+  display: flex;
+  font-size: 16px;
+  animation: turn var(--spin-ms) linear infinite;
+}
+
+@keyframes turn { to { transform: rotate(360deg); } }
+
+@media (max-width: 759px) {
+  .track { gap: 14px; padding: 22px 0; }
+  .trackPlay { width: 40px; height: 40px; }
+  .quote { font-size: 17px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .turning { animation: none; }
+}

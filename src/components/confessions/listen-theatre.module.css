@@ -1,0 +1,332 @@
+/* The full-screen way to listen: the messages fill the room. Gold on espresso, the Confessions look (look.module.css). */
+.open {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border: 1px solid var(--cf-gold);
+  border-radius: 0;
+  background: none;
+  color: var(--cf-gold);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+.open:hover {
+  background: var(--cf-gold);
+  color: var(--cf-espresso);
+}
+
+.open:focus-visible,
+.close:focus-visible,
+.round:focus-visible,
+.all:focus-visible,
+.row:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+.icon {
+  display: block;
+  width: 14px;
+  height: 14px;
+}
+
+.theatre {
+  position: fixed;
+  inset: 0;
+  z-index: 100;
+  display: flex;
+  flex-direction: row;
+  background: var(--cf-espresso);
+  color: var(--cf-cream);
+}
+
+.backdrop {
+  position: absolute;
+  inset: 0;
+  opacity: 0.5;
+  pointer-events: none;
+  background: radial-gradient(circle at 50% 45%, var(--cf-raised) 0%, var(--cf-espresso) 70%);
+}
+
+.sidebar {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  width: 340px;
+  border-right: 1px solid var(--cf-gold-line);
+  background: var(--cf-espresso);
+}
+
+.sideHead { padding: 20px 20px 12px; }
+
+.label {
+  margin: 0;
+  color: var(--cf-gold);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.list {
+  flex: 1;
+  margin: 0;
+  padding: 0 10px 16px;
+  overflow-y: auto;
+  list-style: none;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  width: 100%;
+  margin-bottom: 6px;
+  padding: 10px 12px;
+  border: 1px solid transparent;
+  border-radius: 0;
+  background: none;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 250ms ease, border-color 250ms ease;
+}
+
+.row:hover { background: var(--cf-gold-hair); }
+.rowOn { border-color: var(--cf-gold); background: var(--cf-gold-hair); }
+
+.dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  margin-top: 6px;
+  border-radius: 50%;
+}
+
+.rowBody {
+  display: block;
+  flex: 1;
+  min-width: 0;
+}
+
+.rowTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.rowTheme,
+.rowKind {
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.rowTheme { color: var(--cf-gold); }
+.rowKind { color: var(--cf-cream-faint); }
+
+.rowText {
+  display: block;
+  margin-top: 4px;
+  overflow: hidden;
+  color: var(--cf-cream-muted);
+  font-size: 14px;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.main {
+  position: relative;
+  z-index: 10;
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+  min-height: 0;
+}
+
+.mainHead {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 24px 0;
+}
+
+.close {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 14px;
+  border: 1px solid var(--cf-gold-line);
+  border-radius: 0;
+  background: none;
+  color: var(--cf-gold);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.close:hover { border-color: var(--cf-gold); }
+
+.stage {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 0;
+  padding: 24px;
+  text-align: center;
+}
+
+.now {
+  max-width: 672px;
+  margin: 0 auto;
+}
+
+.nowState {
+  margin: 0;
+  color: var(--cf-gold);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.wave {
+  max-width: 448px;
+  margin: 20px auto 0;
+}
+
+.nowWords {
+  max-height: 42vh;
+  margin: 24px 0 0;
+  overflow-y: auto;
+  font-size: clamp(20px, 3vw, 32px);
+  line-height: 1.4;
+}
+
+.note {
+  margin: 16px 0 0;
+  color: var(--cf-cream-faint);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.prompt {
+  margin: 0;
+  color: var(--cf-cream-muted);
+  font-size: 19px;
+}
+
+.transport {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 20px 24px;
+  border-top: 1px solid var(--cf-gold-line);
+  background: var(--cf-espresso);
+}
+
+.round {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 44px;
+  height: 44px;
+  border: 1px solid var(--cf-gold-line);
+  border-radius: 50%;
+  background: none;
+  color: var(--cf-gold);
+  cursor: pointer;
+  transition: background-color 250ms ease, color 250ms ease, border-color 250ms ease;
+}
+
+.round:hover {
+  border-color: var(--cf-gold);
+  color: var(--cf-cream);
+}
+
+.big {
+  width: 56px;
+  height: 56px;
+  /* The wheel's notch takes the button's colour. */
+  --bg: var(--cf-gold);
+  border-color: var(--cf-gold);
+  background: var(--cf-gold);
+  color: var(--cf-espresso);
+}
+
+.big:hover { background: var(--cf-cream); color: var(--cf-espresso); }
+
+.big .icon { width: 20px; height: 20px; }
+
+.turning {
+  display: flex;
+  font-size: 20px;
+  animation: turn var(--spin-ms) linear infinite;
+}
+
+@keyframes turn { to { transform: rotate(360deg); } }
+
+.all {
+  margin-left: 12px;
+  padding: 12px 20px;
+  border: 1px solid var(--cf-gold);
+  border-radius: 0;
+  background: none;
+  color: var(--cf-gold);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+.all:hover,
+.allOn {
+  background: var(--cf-gold);
+  color: var(--cf-espresso);
+}
+
+@media (max-width: 759px) {
+  .theatre { flex-direction: column; }
+
+  .sidebar {
+    width: auto;
+    max-height: 38vh;
+    border-right: 0;
+    border-bottom: 1px solid var(--cf-gold-line);
+  }
+
+  .transport { padding: 16px 12px; gap: 8px; }
+  .all { margin-left: 4px; padding: 12px 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .turning { animation: none; }
+}

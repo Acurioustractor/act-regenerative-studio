@@ -1,0 +1,393 @@
+/* Pencil: Page 14b · Confessions to Philanthropy, edition 01 (E5hyfE): Hero fThuQ, Anti-pretending E6ZP9D, How it works q42fvX, The inbox mFUvx, Friday Q2maZq, Pick up the phone U1aPH. The colours are the scope's, in look.module.css. */
+.hero {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  padding: 88px 96px;
+}
+
+.heroWords {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  min-width: 0;
+}
+
+/* Pencil sets this at 104, which breaks "philanthropy." mid-word in the width beside the photo. 92 keeps it whole, and
+   from 1440 down the size follows the width the words have. */
+.title {
+  margin: 0;
+  font-size: clamp(56px, calc((61.1vw - 256px) / 6.75), 92px);
+  font-weight: var(--weight-statement);
+  line-height: 0.96;
+  letter-spacing: -0.02em;
+}
+
+.lede {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 21px;
+  line-height: 1.6;
+}
+
+.photo {
+  flex: none;
+  width: clamp(320px, 38.9vw, 560px);
+  aspect-ratio: 1;
+}
+
+.anti {
+  display: flex;
+  gap: 80px;
+  padding: 96px;
+  border-top: 1px solid var(--cf-gold-hair);
+}
+
+.antiWords {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.antiHeading {
+  margin: 0;
+  font-size: 52px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -1.04px;
+}
+
+.antiText {
+  flex: none;
+  width: min(480px, 34vw);
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 21px;
+  line-height: 1.6;
+}
+
+.how {
+  display: flex;
+  gap: 48px;
+  padding: 80px 96px;
+}
+
+.step {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+  padding: 24px 0;
+  border-top: 2px solid var(--cf-gold);
+}
+
+.step > h2 { margin: 0; }
+
+.stepTitle {
+  margin: 0;
+  font-size: 36px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -0.72px;
+}
+
+.stepText {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+.inbox {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 88px 96px;
+  background: var(--cf-raised);
+}
+
+.inbox > p:first-child { margin: 0; }
+
+.inboxHeading {
+  max-width: 900px;
+  margin: 0;
+  font-size: 60px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -1.2px;
+}
+
+.inboxText {
+  max-width: 900px;
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+.friday {
+  display: flex;
+  align-items: flex-end;
+  gap: 80px;
+  padding: 96px;
+}
+
+.fridayWords {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.fridayHeading {
+  margin: 0;
+  font-size: 64px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -1.28px;
+}
+
+.fridayRight {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  width: min(480px, 34vw);
+}
+
+.fridayText {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.pickUp {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  padding: 112px 96px;
+  text-align: center;
+}
+
+.pickUpHeading {
+  margin: 0;
+  font-size: 80px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -1.6px;
+}
+
+.pickUpLine {
+  margin: 0;
+  color: var(--fg-muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+/* Pass it on: the share kit of the old page, kept. Pencil does not draw it; it is set in the same look. */
+.share {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 80px 96px;
+  border-top: 1px solid var(--cf-gold-hair);
+}
+
+.shareTop {
+  display: flex;
+  align-items: flex-end;
+  gap: 80px;
+}
+
+.shareWords {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.shareHeading {
+  margin: 0;
+  font-size: 52px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -1.04px;
+}
+
+.shareRight {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: min(480px, 34vw);
+}
+
+.shareText {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+.shareLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.shareLink {
+  padding: 12px 18px;
+  border: 1px solid var(--cf-gold);
+  color: var(--cf-gold);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+.shareLink:hover {
+  background: var(--cf-gold);
+  color: var(--cf-espresso);
+}
+
+.shareLink:focus-visible,
+.card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  display: block;
+  border: 1px solid var(--cf-gold-line);
+  color: inherit;
+  text-decoration: none;
+  transition: border-color 250ms ease;
+}
+
+.card:hover { border-color: var(--cf-gold); }
+
+.cardImage {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 1200 / 630;
+  object-fit: cover;
+}
+
+.cardLabel {
+  display: block;
+  padding: 10px 14px;
+  border-top: 1px solid var(--cf-gold-line);
+  color: var(--cf-gold);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 1079px) {
+  .hero {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 64px 48px;
+  }
+
+  .title { font-size: 88px; }
+  .photo { width: 100%; max-width: 560px; }
+
+  .anti,
+  .friday,
+  .shareTop {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+  }
+
+  .anti { padding: 64px 48px; }
+  .antiText,
+  .fridayRight,
+  .shareRight { width: auto; max-width: 560px; }
+
+  .how {
+    flex-direction: column;
+    gap: 32px;
+    padding: 64px 48px;
+  }
+
+  .inbox { padding: 64px 48px; }
+  .friday { padding: 64px 48px; }
+  .pickUp { padding: 80px 48px; }
+  .pickUpHeading { font-size: 64px; letter-spacing: -1.28px; }
+  .share { padding: 64px 48px; }
+  .cards { gap: 16px; }
+}
+
+@media (max-width: 759px) {
+  .hero {
+    gap: 32px;
+    padding: 40px 20px 48px;
+  }
+
+  .heroWords { gap: 20px; }
+  .title { font-size: 48px; }
+  .lede { font-size: 19px; }
+
+  .anti,
+  .how,
+  .inbox,
+  .friday,
+  .share { padding: 48px 20px; }
+
+  .anti { gap: 24px; }
+  .antiHeading { font-size: 34px; letter-spacing: -0.68px; }
+  .antiText { font-size: 18px; }
+
+  .how { gap: 24px; }
+  .stepTitle { font-size: 28px; letter-spacing: -0.56px; }
+  .stepText { font-size: 17px; }
+
+  .inbox { gap: 20px; }
+  .inboxHeading { font-size: 38px; letter-spacing: -0.76px; }
+  .inboxText { font-size: 17px; }
+
+  .friday { gap: 24px; }
+  .fridayHeading { font-size: 40px; letter-spacing: -0.8px; }
+  .fridayText { font-size: 18px; }
+
+  .pickUp { padding: 56px 20px; }
+  .pickUpHeading { font-size: 40px; letter-spacing: -0.8px; }
+  .pickUpLine { font-size: 11px; letter-spacing: 1.5px; }
+
+  .share { gap: 28px; }
+  .shareHeading { font-size: 34px; letter-spacing: -0.68px; }
+  .shareText { font-size: 17px; }
+  .cards { grid-template-columns: minmax(0, 1fr); }
+}

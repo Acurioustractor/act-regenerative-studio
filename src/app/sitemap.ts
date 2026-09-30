@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-import { fieldQuestions } from "@/data/field-questions";
+import { questions } from "@/content";
 import { getAllArtSlugs } from "@/lib/art/art-portfolio";
 import { getSiteEditorialArticles } from "@/lib/empathy-ledger-editorial";
 import { storyPackets } from "@/lib/stories/story-packets";
@@ -69,7 +69,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     priority: route.priority,
   }));
 
-  const questionEntries: MetadataRoute.Sitemap = fieldQuestions.map(
+  const questionEntries: MetadataRoute.Sitemap = questions.map(
     (question) => ({
       url: `${siteUrl}/questions/${question.slug}`,
       lastModified: now,

@@ -1,6 +1,10 @@
+// The questions: act.place's own words, moved here unchanged from src/data/field-questions.ts. Each is part of the
+// fields its tags name.
+import type { FieldId } from "./fields";
+
 export type QuestionStatus = "Answered for now" | "Still open" | "Growing";
 
-export type FieldQuestion = {
+export type Question = {
   slug: string;
   question: string;
   invitation: string;
@@ -8,14 +12,42 @@ export type FieldQuestion = {
   askedBy: string;
   responseBy: string;
   status: QuestionStatus;
+  /** Free-text tags, shown on the page as written. QUESTION_TAG_TO_FIELD turns them into `partOf`. */
   fields: string[];
   image: string;
   response: string[];
   pullQuote?: string;
   nextSlug: string;
+  /** The fields this question is part of, derived from its tags. */
+  partOf: FieldId[];
 };
 
-export const fieldQuestions: FieldQuestion[] = [
+/**
+ * Question tag to field.
+ *
+ * The tags are editorial rather than structural, and several are broader than
+ * any single field ("Public imagination", "Practice"). Those map to null: a
+ * question can be about the work without belonging to one field, and forcing
+ * it into one would misrepresent it.
+ */
+export const QUESTION_TAG_TO_FIELD: Record<string, FieldId | null> = {
+  Art: "art",
+  Justice: "justice",
+  Goods: "goods",
+  Story: "empathy",
+  Consent: "empathy",
+  Land: "harvest",
+  Place: "harvest",
+  Gathering: "harvest",
+  Making: "goods",
+  Evidence: "justice",
+  Community: "justice",
+  Technology: "empathy",
+  "Public imagination": null,
+  Practice: null,
+};
+
+const written: Array<Omit<Question, "partOf">> = [
   {
     slug: "when-should-the-work-no-longer-need-us",
     question: "How do we know when the work should no longer need us?",
@@ -117,4 +149,15 @@ export const fieldQuestions: FieldQuestion[] = [
   },
 ];
 
-export const fieldQuestionsBySlug = Object.fromEntries(fieldQuestions.map((item) => [item.slug, item]));
+export const questions: Question[] = written.map((question) => ({
+  ...question,
+  partOf: [
+    ...new Set(
+      question.fields
+        .map((tag) => QUESTION_TAG_TO_FIELD[tag])
+        .filter((id): id is FieldId => id != null),
+    ),
+  ],
+}));
+
+export const questionsBySlug = Object.fromEntries(questions.map((item) => [item.slug, item]));

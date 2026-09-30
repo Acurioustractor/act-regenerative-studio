@@ -3,7 +3,9 @@
 import { readdirSync, readFileSync } from "node:fs";
 import path from "node:path";
 import { describe, expect, it } from "vitest";
-import { fields, fieldsById, projects } from "./index";
+import { fields, fieldsById, projects, questions, questionsBySlug, type FieldId } from "./index";
+
+const isField = (id: string): id is FieldId => id in fieldsById;
 
 const SRC = path.resolve(__dirname, "..");
 const HOME = path.resolve(__dirname);
@@ -44,5 +46,21 @@ describe("the fields", () => {
 
   it("have no second copy outside src/content", () => {
     expect(copiesOf(fields.map((f) => f.opening))).toEqual([]);
+  });
+});
+
+describe("the questions", () => {
+  for (const q of questions) {
+    it(`${q.slug} is part of at least one field, and every one exists`, () => {
+      expect(q.partOf.length).toBeGreaterThan(0);
+      for (const id of q.partOf) expect(isField(id), id).toBe(true);
+    });
+    it(`${q.slug} hands on to a question that exists`, () => {
+      expect(questionsBySlug[q.nextSlug]).toBeDefined();
+    });
+  }
+
+  it("have no second copy outside src/content", () => {
+    expect(copiesOf(questions.map((q) => q.invitation))).toEqual([]);
   });
 });

@@ -2,15 +2,15 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { FieldBrand } from "@/components/prototypes/FieldBrand";
-import { fieldQuestions, fieldQuestionsBySlug } from "@/data/field-questions";
+import { questions, questionsBySlug } from "@/content";
 import styles from "./response.module.css";
 
 export const dynamicParams = false;
-export function generateStaticParams(){ return fieldQuestions.map(({ slug }) => ({ slug })); }
-export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> { const {slug}=await params; const note=fieldQuestionsBySlug[slug]; return { title: note ? `${note.question} | A Curious Tractor` : "Field note", robots:{index:false,follow:false} }; }
+export function generateStaticParams(){ return questions.map(({ slug }) => ({ slug })); }
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> { const {slug}=await params; const note=questionsBySlug[slug]; return { title: note ? `${note.question} | A Curious Tractor` : "Field note", robots:{index:false,follow:false} }; }
 
 export function QuestionExperience({ slug, production = false }: { slug: string; production?: boolean }) {
-  const note = fieldQuestionsBySlug[slug]; if (!note) notFound(); const next = fieldQuestionsBySlug[note.nextSlug]; const basePath=production?"/questions":"/prototypes/field-notes";
+  const note = questionsBySlug[slug]; if (!note) notFound(); const next = questionsBySlug[note.nextSlug]; const basePath=production?"/questions":"/prototypes/field-notes";
   return <div className={styles.page}>
     <header className={styles.header}><FieldBrand href={production?"/":"/prototypes/living-field"}/><Link href={basePath}>All questions</Link></header>
     <main>

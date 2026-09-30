@@ -2,8 +2,7 @@ import {
   getBakedEditorialSnapshot,
   type EditorialArticle,
 } from "@/lib/empathy-ledger-editorial";
-import { fieldQuestions, type FieldQuestion } from "@/data/field-questions";
-import { fields, type FieldId } from "@/content";
+import { fields, questions, QUESTION_TAG_TO_FIELD, type FieldId, type Question } from "@/content";
 import {
   DELIBERATELY_UNASSIGNED,
   FIELD_ASSIGNMENTS,
@@ -19,15 +18,16 @@ import {
  *                      goods | harvest
  *   editorial articles 29 pieces tagged with `relatedProjectSlugs`, which use
  *                      project names ("goods-on-country") rather than field ids
- *   field-questions.ts six questions tagged with free-text `fields` strings
+ *   questions          six questions tagged with free-text `fields` strings
  *                      ("Public imagination", "Consent", "Making")
  *
  * This module is the vocabulary that reconciles them, so a field page can ask
  * "what has been written here?" and a story can ask "which field am I in?".
  *
  * The important property is the guard. Every project slug and every question
- * tag must appear in the maps below, including the ones that deliberately
- * belong to no field. A slug that is simply absent would silently vanish from
+ * tag must appear in PROJECT_SLUG_TO_FIELD below or QUESTION_TAG_TO_FIELD in
+ * src/content/questions.ts, including the ones that deliberately belong to no
+ * field. A slug that is simply absent would silently vanish from
  * the graph, and the page would look finished while quietly showing less than
  * it should. field-graph.test.ts fails when a new slug or tag appears, which
  * turns that silent gap into a failing build.
@@ -55,30 +55,6 @@ export const PROJECT_SLUG_TO_FIELD: Record<string, FieldId | null> = {
   "act-farm": null,
 };
 
-/**
- * Question tag to field.
- *
- * The tags are editorial rather than structural, and several are broader than
- * any single field ("Public imagination", "Practice"). Those map to null: a
- * question can be about the work without belonging to one field, and forcing
- * it into one would misrepresent it.
- */
-export const QUESTION_TAG_TO_FIELD: Record<string, FieldId | null> = {
-  Art: "art",
-  Justice: "justice",
-  Goods: "goods",
-  Story: "empathy",
-  Consent: "empathy",
-  Land: "harvest",
-  Place: "harvest",
-  Gathering: "harvest",
-  Making: "goods",
-  Evidence: "justice",
-  Community: "justice",
-  Technology: "empathy",
-  "Public imagination": null,
-  Practice: null,
-};
 
 export const FIELD_IDS: FieldId[] = fields.map((field) => field.id);
 
@@ -136,10 +112,9 @@ export function fieldsForArticle(article: EditorialArticle): FieldId[] {
   return [...new Set([...derived, ...curated].filter(isFieldId))];
 }
 
-/** Every field a question touches, derived from its free-text tags. */
-export function fieldsForQuestion(question: FieldQuestion): FieldId[] {
-  const mapped = question.fields.map((tag) => QUESTION_TAG_TO_FIELD[tag] ?? null);
-  return [...new Set(mapped.filter(isFieldId))];
+/** Every field a question touches: its partOf, derived from its free-text tags in src/content. */
+export function fieldsForQuestion(question: Question): FieldId[] {
+  return question.partOf;
 }
 
 /**
@@ -157,8 +132,8 @@ export function articlesForField(fieldId: FieldId): EditorialArticle[] {
 }
 
 /** Questions belonging to a field. */
-export function questionsForField(fieldId: FieldId): FieldQuestion[] {
-  return fieldQuestions.filter((question) =>
+export function questionsForField(fieldId: FieldId): Question[] {
+  return questions.filter((question) =>
     fieldsForQuestion(question).includes(fieldId),
   );
 }
@@ -223,7 +198,7 @@ export function unmappedReferences(): {
     }
   }
   const tags = new Set<string>();
-  for (const question of fieldQuestions) {
+  for (const question of questions) {
     for (const tag of question.fields) {
       if (!(tag in QUESTION_TAG_TO_FIELD)) tags.add(tag);
     }

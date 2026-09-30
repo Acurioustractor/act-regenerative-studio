@@ -3,7 +3,6 @@ import { describe, expect, it } from "vitest";
 import {
   FIELD_IDS,
   PROJECT_SLUG_TO_FIELD,
-  QUESTION_TAG_TO_FIELD,
   articlesForField,
   fieldCoverage,
   fieldsForArticle,
@@ -11,6 +10,7 @@ import {
   relatedArticles,
   unmappedReferences,
 } from "./field-graph";
+import { QUESTION_TAG_TO_FIELD } from "@/content";
 import { getBakedEditorialSnapshot } from "@/lib/empathy-ledger-editorial";
 
 /**

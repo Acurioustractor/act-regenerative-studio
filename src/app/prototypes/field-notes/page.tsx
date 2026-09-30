@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FieldBrand } from "@/components/prototypes/FieldBrand";
-import { fieldQuestions } from "@/data/field-questions";
+import { questions } from "@/content";
 import { QuestionShuffle } from "./question-shuffle";
 import styles from "./questions.module.css";
 
@@ -21,8 +21,8 @@ export function FieldNotesExperience({ production = false }: { production?: bool
         <span>01 · Ask honestly</span><span>02 · Name who is speaking</span><span>03 · Leave room for change</span>
       </section>
       <section className={styles.questions} aria-labelledby="questions-title">
-        <div className={styles.sectionHead}><div><p className={styles.eyebrow}>Begin anywhere</p><QuestionShuffle basePath={basePath} slugs={fieldQuestions.map(({ slug }) => slug)} /></div><h2 id="questions-title">What is pulling at you?</h2></div>
-        <div className={styles.list}>{fieldQuestions.map((item, index) => <article key={item.slug}>
+        <div className={styles.sectionHead}><div><p className={styles.eyebrow}>Begin anywhere</p><QuestionShuffle basePath={basePath} slugs={questions.map(({ slug }) => slug)} /></div><h2 id="questions-title">What is pulling at you?</h2></div>
+        <div className={styles.list}>{questions.map((item, index) => <article key={item.slug}>
           <Link href={`${basePath}/${item.slug}`}>
             <span className={styles.number}>{String(index + 1).padStart(2, "0")}</span>
             <div><p>{item.status} · {item.fields.join(" · ")}</p><h3>{item.question}</h3><span>{item.invitation}</span></div>

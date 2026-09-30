@@ -1,0 +1,138 @@
+/* Pencil: Page 13 · Question (i8FMhQ): Opening Ifd50, Provenance ZvY79, Response upDjk. */
+.opening {
+  display: flex;
+  align-items: flex-end;
+  gap: 64px;
+  padding: 80px 96px;
+}
+
+.words {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  min-width: 0;
+}
+
+.status,
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.partOf {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.question {
+  margin: 0;
+  font-size: 80px;
+  font-weight: var(--weight-statement);
+  line-height: 1;
+  letter-spacing: -1.6px;
+}
+
+.invitation {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 22px;
+  line-height: 1.55;
+}
+
+.photo {
+  flex: none;
+  width: 520px;
+  height: 560px;
+}
+
+.provenance {
+  display: flex;
+  margin: 0 96px;
+  border: 1px solid var(--fg);
+}
+
+.provenance > div {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px 20px;
+}
+
+.provenance > div + div { border-left: 1px solid var(--line); }
+
+.provenance dt {
+  color: var(--fg-muted);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.provenance dd {
+  margin: 0;
+  font-size: 17px;
+  line-height: 1.35;
+}
+
+.response {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 22px;
+  max-width: 680px;
+  margin: 0 auto;
+  padding: 80px 0;
+}
+
+.response > * { align-self: stretch; }
+.response > a { align-self: flex-start; }
+
+.coda {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 18px;
+  line-height: 1.55;
+}
+
+@media (max-width: 1079px) {
+  .opening {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 40px;
+    padding: 64px 48px;
+  }
+
+  .question { font-size: 64px; letter-spacing: -1.3px; }
+  .photo { width: 100%; height: 480px; }
+  .provenance { margin: 0 48px; }
+  .response { padding: 64px 48px; }
+}
+
+@media (max-width: 759px) {
+  .opening { padding: 48px 20px; }
+  .question { font-size: 44px; letter-spacing: -0.9px; }
+  .invitation { font-size: 19px; }
+  .photo { height: 360px; }
+
+  .provenance {
+    flex-direction: column;
+    margin: 0 20px;
+  }
+
+  .provenance > div + div {
+    border-top: 1px solid var(--line);
+    border-left: 0;
+  }
+
+  .response { padding: 48px 20px; }
+}

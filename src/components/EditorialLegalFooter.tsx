@@ -2,7 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { isEditorialRoute } from "@/components/SiteChromeGate";
+import { isBrandRoute, isEditorialRoute } from "@/components/SiteChromeGate";
 
 /**
  * Quiet legal line for the editorial routes, where SiteChromeGate hides the
@@ -12,7 +12,8 @@ import { isEditorialRoute } from "@/components/SiteChromeGate";
  */
 export function EditorialLegalFooter() {
   const pathname = usePathname();
-  if (!isEditorialRoute(pathname)) return null;
+  // Brand v1 pages carry Privacy and Terms in their own footer.
+  if (!isEditorialRoute(pathname) || isBrandRoute(pathname)) return null;
   return (
     <footer className="border-t border-black/10 bg-[#faf7f2] px-6 py-6 text-center text-xs tracking-wide text-black/55 md:px-8">
       <p>

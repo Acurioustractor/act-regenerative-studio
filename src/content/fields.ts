@@ -159,3 +159,10 @@ export const fieldsById = Object.fromEntries(fields.map((field) => [field.id, fi
 
 /** Empathy Ledger, JusticeHub, Goods on Country, The Harvest. */
 export const projects = fields.filter((field) => field.kind === "project");
+
+/** Where a field lives on the site. Art and The Harvest have pages of their own; the other three have field pages. */
+export function fieldHref(id: FieldId): string {
+  if (id === "art") return "/art";
+  if (id === "harvest") return "/harvest";
+  return `/fields/${id}`;
+}

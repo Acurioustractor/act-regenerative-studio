@@ -1,0 +1,209 @@
+/* Pencil: Page 12 · Questions (hN7R0): Opening vdaIf, Three steps v2uRX, List I5fC0W (Head Q3hFP), Ask gXSpB. */
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.opening {
+  display: flex;
+  align-items: flex-end;
+  gap: 80px;
+  padding: 96px 96px 72px;
+}
+
+.openingWords {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 104px;
+  font-weight: var(--weight-statement);
+  line-height: 0.96;
+  letter-spacing: -2.08px;
+}
+
+.lede {
+  flex: none;
+  width: 440px;
+  margin: 0;
+  font-size: 21px;
+  line-height: 1.55;
+}
+
+.steps {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 24px;
+  margin: 0;
+  padding: 18px 96px;
+  list-style: none;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.steps li {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+/* A rust square between the steps. */
+.steps li + li::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+}
+
+.list {
+  padding: 80px 96px;
+}
+
+.head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 24px;
+  padding-bottom: 32px;
+}
+
+.headWords {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.heading {
+  max-width: 800px;
+  margin: 0;
+  font-size: 56px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -1.12px;
+}
+
+.shuffle {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 20px;
+  border: 1px solid var(--fg);
+  background: none;
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.shuffle:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.rows {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.ask {
+  display: flex;
+  align-items: flex-end;
+  gap: 80px;
+  padding: 96px;
+}
+
+.askWords {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.askHeading {
+  margin: 0;
+  font-size: 64px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -1.28px;
+}
+
+.askRight {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 24px;
+  width: 460px;
+}
+
+.askText {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 19px;
+  line-height: 1.55;
+}
+
+@media (max-width: 1079px) {
+  .opening,
+  .ask {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    padding: 64px 48px;
+  }
+
+  .title { font-size: 80px; letter-spacing: -1.6px; }
+  .lede,
+  .askRight { width: auto; max-width: 560px; }
+  .steps { padding: 18px 48px; }
+  .list { padding: 64px 48px; }
+}
+
+@media (max-width: 759px) {
+  .opening,
+  .ask { padding: 48px 20px; }
+
+  .title { font-size: 56px; letter-spacing: -1.1px; }
+  .lede { font-size: 19px; }
+
+  .steps {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 16px 20px;
+  }
+
+  .steps li + li::before { display: none; }
+
+  .list { padding: 48px 20px; }
+
+  .head {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .heading { font-size: 40px; letter-spacing: -0.8px; }
+  .askHeading { font-size: 40px; letter-spacing: -0.8px; }
+}

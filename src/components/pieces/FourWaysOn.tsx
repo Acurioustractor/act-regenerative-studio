@@ -6,7 +6,12 @@ import { Onward, Wheel, rolls } from "./Onward";
 import { PartGlyph } from "./PartGlyph";
 import styles from "./four-ways-on.module.css";
 
-type Way = { title: string; href: string };
+export type Way = {
+  title: string;
+  href: string;
+  /** Words after the part's meaning, where a page says it its own way ("Listen · All the stories"). */
+  invite?: string;
+};
 
 /**
  * The end of every page: the tractor taken apart into four next steps, a story, a question, the work and the art,
@@ -49,7 +54,7 @@ export function FourWaysOn({
               </span>
               <span className={styles.words}>
                 <span className={styles.label}>
-                  {door.meaning} · {door.invite}
+                  {door.meaning} · {way.invite ?? door.invite}
                 </span>
                 <span className={styles.title}>{way.title}</span>
               </span>

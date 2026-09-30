@@ -112,6 +112,14 @@ main > div {
   padding-right: clamp(1.5rem, 4vw, 3rem);
 }
 
+/* Brand v1 pages (src/components/pieces/Page.tsx) carry their own layout and header, so the container above and the
+   nav clearance below do not apply to them. The id outranks main > div:first-child. */
+#main-content > [data-brand-page] {
+  max-width: none;
+  margin: 0;
+  padding: 0;
+}
+
 /* Clear the fixed floating nav on interior pages. Full-bleed heroes (home, etc.)
    intentionally sit behind the nav and opt out below. */
 main > section:first-child,

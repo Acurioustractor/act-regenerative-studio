@@ -120,6 +120,12 @@ main > div {
   padding: 0;
 }
 
+/* And where the route list cannot know the page (a 404 renders at any address), a Brand v1 page still sends the old
+   chrome away. */
+body:has([data-brand-page]) [data-site-chrome] {
+  display: none;
+}
+
 /* Clear the fixed floating nav on interior pages. Full-bleed heroes (home, etc.)
    intentionally sit behind the nav and opt out below. */
 main > section:first-child,

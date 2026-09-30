@@ -15,7 +15,7 @@ export function EditorialLegalFooter() {
   // Brand v1 pages carry Privacy and Terms in their own footer.
   if (!isEditorialRoute(pathname) || isBrandRoute(pathname)) return null;
   return (
-    <footer className="border-t border-black/10 bg-[#faf7f2] px-6 py-6 text-center text-xs tracking-wide text-black/55 md:px-8">
+    <footer data-site-chrome className="border-t border-black/10 bg-[#faf7f2] px-6 py-6 text-center text-xs tracking-wide text-black/55 md:px-8">
       <p>
         © {new Date().getFullYear()} A Curious Tractor
         <span aria-hidden="true" className="mx-3">·</span>

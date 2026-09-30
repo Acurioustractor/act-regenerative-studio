@@ -1,0 +1,35 @@
+/* Pencil: Send button (G9eS6): ink fill, padding 18 26, mono 12 on 1.6 in paper. Newsletter's Button (aY7Rl) is the same at 56 high. */
+.send {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  margin: 0;
+  padding: 18px 26px;
+  border: 0;
+  border-radius: var(--radius);
+  background: var(--fg);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.send:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+/* Pencil's arrow is one character wide, so the wheel is drawn a little under the label size to take the same room. */
+.wheel {
+  display: flex;
+  font-size: 10px;
+}
+
+/* The wheel is paper on an ink button, so its notch is ink. */
+.send .wheel i::after {
+  background: var(--fg);
+}

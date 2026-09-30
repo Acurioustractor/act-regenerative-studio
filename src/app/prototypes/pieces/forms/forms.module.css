@@ -1,0 +1,51 @@
+/* Preview-only framing for the forms group: the contact panel as Pencil draws it (Form, aIKWf at 1440; XvoXX on a phone). */
+.panel {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  padding: 36px;
+  background: var(--bg-shade);
+}
+
+.panel h3,
+.panel p { margin: 0; }
+
+.eyebrow {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.panel h3 {
+  font-size: 36px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -0.72px;
+}
+
+.lead {
+  color: var(--fg-muted);
+  font-size: 17px;
+  line-height: 1.55;
+}
+
+@media (max-width: 759px) {
+  .panel {
+    gap: 16px;
+    padding: 28px 20px;
+  }
+
+  .panel h3 {
+    font-size: 28px;
+    line-height: 1.06;
+    letter-spacing: -0.56px;
+  }
+
+  .lead {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}

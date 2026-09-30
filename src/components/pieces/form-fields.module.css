@@ -1,0 +1,123 @@
+/* Pencil: Input (jSQEz), Choice (ffNkC), Message (WKcpA), Form set (G3qo9T). Label 11 mono, box 52 high, 17 display. */
+.formSet {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  align-items: flex-start;
+}
+
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  align-self: stretch;
+  min-width: 0;
+}
+
+.label {
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+/* The box. Input, select and textarea share it; the value is 17 display on 1.6, the prompt in the muted colour. */
+.control {
+  display: block;
+  width: 100%;
+  height: 52px;
+  margin: 0;
+  padding: 0 16px;
+  border: 1px solid var(--fg);
+  border-radius: var(--radius);
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-display);
+  font-size: 17px;
+  font-weight: var(--weight-reading);
+  line-height: 1.6;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.control::placeholder {
+  color: var(--fg-muted);
+  opacity: 1;
+}
+
+.control:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+.control:disabled {
+  opacity: 0.55;
+  cursor: wait;
+}
+
+.control[aria-invalid="true"] {
+  border-color: var(--accent);
+  box-shadow: inset 0 0 0 1px var(--accent);
+}
+
+/* Phone: Pencil's phone form runs 16 between fields. */
+@media (max-width: 759px) {
+  .formSet { gap: 16px; }
+}
+
+/* Choice: the small caret sits where Pencil's down caret is, 16 in from the right. Drawn, so it does not depend on a glyph. */
+.choice {
+  position: relative;
+}
+
+.select {
+  padding-right: 44px;
+  cursor: pointer;
+}
+
+.choice::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  right: 18px;
+  width: 5px;
+  height: 4px;
+  margin-top: -4px;
+  background: var(--fg);
+  clip-path: polygon(0 0, 100% 0, 50% 100%);
+  pointer-events: none;
+}
+
+/* Until something is chosen the prompt reads as a placeholder. */
+.select:has(option[value=""]:checked) {
+  color: var(--fg-muted);
+}
+
+.select option {
+  color: var(--fg);
+}
+
+/* Message: 150 high, and the reader can pull it taller. */
+.message {
+  height: 150px;
+  min-height: 150px;
+  padding: 14px 16px;
+  resize: vertical;
+}
+
+/* The error is a rust square and plain words in the ink colour: rust text on paper is too pale to read at this size. */
+.error {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/* Centres the square on the first line of the words. */
+.error > :first-child {
+  margin-top: 7px;
+}

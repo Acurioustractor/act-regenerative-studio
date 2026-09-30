@@ -35,6 +35,24 @@ const ACKNOWLEDGEMENT = "Traditional Custodians of the land on which we work and
 const UNGATED_PHOTO = /(yvnuayzslukamizrlhwb|uaxhjzqrdotoahjnxmbj)\.supabase\.co\/storage\/v1\/object\/public/;
 const UNGATED_ENCODED = /(yvnuayzslukamizrlhwb|uaxhjzqrdotoahjnxmbj)\.supabase\.co%2Fstorage%2Fv1%2Fobject%2Fpublic/i;
 
+/**
+ * The addresses rebuilt on Brand v1 (pages.json in the act-global-infrastructure handoff). Rules 1 to 3 read a page's
+ * Brand v1 marks, so a page that drops the Page piece would fall out of them silently; this list makes it fail by
+ * name instead. The 404 is checked too.
+ */
+const BRAND_V1 = [
+  /^\/$/,
+  /^\/(about|contact|work|art|harvest|stories|questions|confessions|privacy|terms)$/,
+  /^\/fields\/(empathy|justice|goods)$/,
+  /^\/(art|stories|questions)\/[^/]+$/,
+  /^\/confessions\/philanthropy(\/(listen|friday))?$/,
+];
+
+/** Addresses under a Brand v1 route that are deliberately not on it yet, each with its reason. */
+const NOT_ON_BRAND_V1_YET: Record<string, string> = {
+  "/stories/utopia-may-2026": "a story packet, held noindex until its four figures have a named source",
+};
+
 /** A page that is one thing inside something else says what it is part of. */
 const BELONGS = /^\/(stories|questions|art)\/[^/]+$/;
 
@@ -99,6 +117,17 @@ describe("the site answers", () => {
   it("serves every address in its own sitemap", () => {
     expect(pages.length).toBeGreaterThan(20);
     expect(pages.filter((p) => p.status !== 200).map((p) => `${p.path} ${p.status}`)).toEqual([]);
+  });
+});
+
+describe("every Brand v1 page is on Brand v1", () => {
+  it("carries the Brand v1 marks on every address rebuilt on it, the 404 included", () => {
+    const fallen = [...pages, notFound]
+      .filter((p) => p === notFound || BRAND_V1.some((re) => re.test(p.path)))
+      .filter((p) => !(p.path in NOT_ON_BRAND_V1_YET))
+      .filter((p) => !isBrand(p.html))
+      .map((p) => p.path);
+    expect(fallen, "rebuilt on Brand v1 but not drawn with the Page piece").toEqual([]);
   });
 });
 
@@ -217,14 +246,20 @@ describe("4. consent is read, never assumed", () => {
       const found = await inBatches([...pages.map((p) => p.path), notFound.path], 4, async (path) => {
         const page = await context.newPage();
         try {
-          await page.goto(baseUrl + path, { waitUntil: "networkidle", timeout: 60_000 });
+          // "load", not "networkidle": a page with a film or a slow request may never go quiet, and that should not
+          // time the whole check out. Scroll to wake lazy pictures, let them settle briefly, then read what is there.
+          try {
+            await page.goto(baseUrl + path, { waitUntil: "load", timeout: 60_000 });
+          } catch (error) {
+            return [`${path}: did not load (${String(error).split("\n")[0]})`];
+          }
           await page.evaluate(async () => {
             for (let y = 0; y < document.documentElement.scrollHeight; y += 700) {
               window.scrollTo(0, y);
               await new Promise((r) => setTimeout(r, 80));
             }
           });
-          await page.waitForLoadState("networkidle");
+          await page.waitForLoadState("networkidle", { timeout: 5_000 }).catch(() => undefined);
           const sources: string[] = await page.evaluate(() => {
             const out: string[] = [];
             const add = (v?: string | null) => v && out.push(v);

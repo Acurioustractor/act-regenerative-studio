@@ -22,6 +22,7 @@ import { ReadingProgress } from "@/components/editorial/ReadingProgress";
 import { ArticleGallery } from "@/components/editorial/ArticleGallery";
 import { RichTextMedia } from "@/components/editorial/RichTextMedia";
 import { ArticleHeroMedia } from "@/components/editorial/ArticleHeroMedia";
+import { photoShapesIn } from "@/lib/media/photo-shape";
 import { SuggestedCardImage } from "@/components/editorial/SuggestedCardImage";
 import {
   fieldsForArticle,
@@ -95,7 +96,8 @@ export async function EditorialArticleReader({
     : null;
   // Rendered HTML only: the gallery below matches photographs against their
   // Empathy Ledger addresses, which the optimiser rewrite encodes.
-  const preparedHtml = captionedHtml ? optimiseArticleImages(captionedHtml) : null;
+  const shapes = captionedHtml ? await photoShapesIn(captionedHtml) : undefined;
+  const preparedHtml = captionedHtml ? optimiseArticleImages(captionedHtml, shapes) : null;
   const readingMinutes = readingTimeMinutes(content);
   const lede = shortLede(post.excerpt);
 

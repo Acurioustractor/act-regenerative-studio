@@ -28,6 +28,7 @@ import {
   optimisedImageUrl,
   optimisedSrcSet,
 } from "@/lib/media/optimised-image";
+import type { PhotoShape } from "@/lib/media/photo-shape";
 
 const SCRIPT_TAG = /<script\b[^>]*>[\s\S]*?<\/script>/gi;
 const BODY_H1_OPEN = /<h1(\s[^>]*)?>/gi;
@@ -151,11 +152,12 @@ export function captionFigures(html: string, sources: FigureCaptionSource[]): st
  * Runs after captionFigures, which matches photographs by their Empathy Ledger
  * address. Any other host is left exactly as it arrived.
  *
- * No space is held for them in CSS, on purpose. `aspect-ratio: auto 3 / 2` on
- * .rich-text img was tried and raised the layout shift on "History's Wounds"
- * from 0.08 to 3.2 (desktop, 30 Sep 2026). Sized photographs arrive before they
- * scroll into view, which is what took the shift from 1.6 on the live site to
- * 0.08; the originals took long enough to grow while being read.
+ * No guessed space is held for them in CSS, on purpose. `aspect-ratio: auto
+ * 3 / 2` on .rich-text img was tried and raised the layout shift on "History's
+ * Wounds" from 0.08 to 3.2 (desktop, 30 Sep 2026). The true proportions, from
+ * photoShapesIn, go on as width and height attributes instead: on a first visit
+ * after a deploy the optimiser is slow enough that "At the Speed of Ceremony"
+ * still shifted 2.0 on desktop without them.
  */
 const IMG_TAG = /<img\b[^>]*>/gi;
 const SRC_ATTR = /\bsrc=(["'])(.*?)\1/i;
@@ -163,7 +165,7 @@ const FULLWIDTH_FIGURE = /<figure\b[^>]*\bw-richtext-align-fullwidth\b[^>]*>[\s\
 const COLUMN_SIZES = "(max-width: 768px) 100vw, 720px";
 const FULLWIDTH_SIZES = "(max-width: 1148px) calc(100vw - 3rem), 1100px";
 
-function optimiseImgTag(tag: string, sizes: string): string {
+function optimiseImgTag(tag: string, sizes: string, shapes?: Map<string, PhotoShape>): string {
   if (/\bsrcset=/i.test(tag)) return tag;
   const match = SRC_ATTR.exec(tag);
   if (!match) return tag;
@@ -172,14 +174,20 @@ function optimiseImgTag(tag: string, sizes: string): string {
   const src = canonicalMediaSrc(original);
   const attrs = `src="${escapeHtml(optimisedImageUrl(src, 1200))}" srcset="${escapeHtml(optimisedSrcSet(src))}" sizes="${sizes}"`;
   let out = tag.replace(match[0], () => attrs).replace(/\s(?:width|height)=(["'])auto\1/gi, "");
+  // The true proportions, when known, so the browser holds the right space
+  // before the photograph arrives (the CSS keeps it 100% wide, height auto).
+  const shape = shapes?.get(original);
+  if (shape && !/\s(?:width|height)=/i.test(out)) {
+    out = out.replace(/^<img\b/i, `<img width="1200" height="${Math.round((1200 * shape.height) / shape.width)}"`);
+  }
   if (!/\bdecoding=/i.test(out)) out = out.replace(/^<img\b/i, '<img decoding="async"');
   return out;
 }
 
-export function optimiseArticleImages(html: string): string {
+export function optimiseArticleImages(html: string, shapes?: Map<string, PhotoShape>): string {
   return html
-    .replace(FULLWIDTH_FIGURE, (figure) => figure.replace(IMG_TAG, (tag) => optimiseImgTag(tag, FULLWIDTH_SIZES)))
-    .replace(IMG_TAG, (tag) => optimiseImgTag(tag, COLUMN_SIZES));
+    .replace(FULLWIDTH_FIGURE, (figure) => figure.replace(IMG_TAG, (tag) => optimiseImgTag(tag, FULLWIDTH_SIZES, shapes)))
+    .replace(IMG_TAG, (tag) => optimiseImgTag(tag, COLUMN_SIZES, shapes));
 }
 
 /** True when the article body already shows this photograph. */

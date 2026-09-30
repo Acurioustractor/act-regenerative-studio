@@ -75,4 +75,13 @@ describe("optimiseArticleImages", () => {
     expect(out).toContain("<figcaption>Palm Island coastline</figcaption>");
     expect(htmlContainsMedia(out, url)).toBe(true);
   });
+
+  it("puts the true proportions on a photograph whose shape is known", () => {
+    const shapes = new Map([[url, { width: 4000, height: 3000 }]]);
+    const out = optimiseArticleImages(exported, shapes);
+    expect(out).toContain('width="1200" height="900"');
+    // Unknown shape: no size is guessed.
+    expect(optimiseArticleImages(exported)).not.toMatch(/\b(width|height)="\d/);
+  });
 });
+

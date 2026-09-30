@@ -27,10 +27,9 @@ export interface GeneratedArtPiece {
 
 /**
  * How a work is shown where the side pages of /art lead with it. act.place's own words, moved unchanged from
- * src/lib/works/live-featured-works.ts.
+ * src/lib/works/live-featured-works.ts. The title is the work's own, from the record.
  */
 export type FeaturedWords = {
-  title: string;
   href: string;
   medium: string;
   place: string;
@@ -44,7 +43,6 @@ export type FeaturedWords = {
 /** The four works those pages lead with, in the order they show. Each must be one of the works. */
 export const FEATURED_WORDS: Record<string, FeaturedWords> = {
   "gold-phone": {
-    title: "Gold.Phone",
     href: "/projects/gold-phone",
     medium: "Interactive voice work",
     place: "Distributed / digital",
@@ -56,7 +54,6 @@ export const FEATURED_WORDS: Record<string, FeaturedWords> = {
     fallbackQuote: "Move your cursor over a voice particle to hear it.",
   },
   contained: {
-    title: "Contained",
     href: "/projects/contained",
     medium: "Experiential installation",
     place: "Justice and public-space contexts",
@@ -69,7 +66,6 @@ export const FEATURED_WORDS: Record<string, FeaturedWords> = {
       "Some systems can only be understood once they are felt in the body.",
   },
   "uncle-allan-palm-island-art": {
-    title: "Uncle Allan Palm Island Art",
     href: "/projects/uncle-allan-palm-island-art",
     medium: "Art practice and cultural knowledge sharing",
     place: "Palm Island",
@@ -81,7 +77,6 @@ export const FEATURED_WORDS: Record<string, FeaturedWords> = {
     fallbackQuote: "Art is one of the ways story stays in community hands.",
   },
   "the-confessional": {
-    title: "The Confessional",
     href: "/projects/the-confessional",
     medium: "Storytelling installation",
     place: "Public and event contexts",

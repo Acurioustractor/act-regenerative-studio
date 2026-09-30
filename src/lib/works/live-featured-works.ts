@@ -8,7 +8,7 @@ import { getProjectFieldMedia } from "@/lib/projects/get-project-field-media";
 import { featuredWorks, type FeaturedWords } from "@/content";
 
 /** A featured work's words live with the works, in src/content/works.ts. */
-export type FeaturedWorkConfig = FeaturedWords & { slug: string };
+export type FeaturedWorkConfig = FeaturedWords & { slug: string; title: string };
 
 export interface FeaturedWorkPreviewMedia {
   kind: "image" | "video" | "audio" | "other";
@@ -64,8 +64,9 @@ export interface FeaturedWorkCollaborator {
   source: "storyteller" | "work-config";
 }
 
-export const featuredWorkConfigs: FeaturedWorkConfig[] = featuredWorks.map(({ slug, featured }) => ({
+export const featuredWorkConfigs: FeaturedWorkConfig[] = featuredWorks.map(({ slug, title, featured }) => ({
   slug,
+  title,
   ...featured,
 }));
 

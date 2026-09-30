@@ -96,6 +96,13 @@ describe("the fields", () => {
   it("have no second copy outside src/content", () => {
     expect(copiesOf(fields.map((f) => f.opening))).toEqual([]);
   });
+
+  it("read their question from its page when it has one", () => {
+    for (const f of fields) {
+      if (f.questionSlug) expect(questionsBySlug[f.questionSlug]?.question, f.id).toBe(f.question);
+      else expect(questions.map((q) => q.question), f.id).not.toContain(f.question);
+    }
+  });
 });
 
 describe("the questions", () => {

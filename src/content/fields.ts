@@ -1,6 +1,7 @@
 // The five fields: Art, and ACT's four projects. Every other item in src/content says which of these it is part of.
 // The words are act.place's own, moved here unchanged from src/data/living-field.ts, which now keeps only how the
 // prototype pages present them.
+import { questionsBySlug } from "./questions";
 
 export type FieldId = "art" | "empathy" | "justice" | "goods" | "harvest";
 
@@ -14,7 +15,10 @@ export type Field = {
   title: string;
   line: string;
   opening: string;
+  /** The question underneath the field. Read from its question page when it has one. */
   question: string;
+  /** That question page, so the field can hand on to it. Goods on Country's question has none yet. */
+  questionSlug: string | null;
   answer: string;
   invitation: string;
   /** Where it hands on: the field's own home beyond act.place. */
@@ -26,7 +30,11 @@ export type Field = {
   video?: string;
 };
 
-export const fields: Field[] = [
+/** A field as written: its question is either its own words or a question page's, never both. */
+type WrittenField = Omit<Field, "question" | "questionSlug"> &
+  ({ question: string; questionSlug?: never } | { questionSlug: string; question?: never });
+
+const written: WrittenField[] = [
   {
     id: "art",
     kind: "art",
@@ -37,7 +45,7 @@ export const fields: Field[] = [
     line: "Art makes us care enough to return.",
     opening:
       "Art is not the decoration added when the work is finished. It begins early, in how we notice, and arrives late, after everyone represented in it has had the chance to disagree.",
-    question: "What changes when evidence becomes an encounter?",
+    questionSlug: "what-does-evidence-feel-like",
     answer:
       "CONTAINED takes the architecture of confinement out of the report and puts it in the room. It belongs to the Art field and grows through JusticeHub. The categories overlap because the work does.",
     invitation: "Cross the threshold",
@@ -59,7 +67,7 @@ export const fields: Field[] = [
     line: "Stories remain with their owners.",
     opening:
       "People are asked to share the hardest parts of their lives. The story leaves the room. The storyteller often loses sight of where it went, who used it and what value it created.",
-    question: "Who holds the story after it has been told?",
+    questionSlug: "who-holds-the-story",
     answer:
       "Empathy Ledger makes consent ongoing and visible. Storytellers can decide how they are named, where a story travels and when permission ends. The technology matters. The relationship matters more.",
     invitation: "Hear a voice",
@@ -80,7 +88,7 @@ export const fields: Field[] = [
     line: "Local knowledge finds local action.",
     opening:
       "The justice system keeps funding containment while community programs quietly do the work that keeps young people connected to culture, family and possibility.",
-    question: "What if the alternatives were easier to find than detention?",
+    questionSlug: "what-if-alternatives-were-easier-to-find",
     answer:
       "JusticeHub connects community practice, lived experience and evidence. ACT holds the origin story here. The live platform is where people search programs, follow the evidence and contribute what works.",
     invitation: "Find an alternative",
@@ -122,7 +130,7 @@ export const fields: Field[] = [
     line: "The gate is open. The rhythm is not settled.",
     opening:
       "The Harvest is where the wider ACT field becomes physical. Food, making, art and conversation share the same ground while the place is still becoming itself.",
-    question: "Can a place hold work that a website cannot?",
+    questionSlug: "can-a-place-hold-work",
     answer:
       "The Harvest is an old nursery waking up in Witta, on Jinibara Country. ACT carries the connecting story here. Its own site carries the changing works, current dates and practical ways to take part.",
     invitation: "Come to the table",
@@ -134,6 +142,18 @@ export const fields: Field[] = [
     video: "/media/field-videos/harvest-witta-aerial.mp4",
   },
 ];
+
+function questionOf(field: WrittenField): string {
+  if (field.questionSlug) return questionsBySlug[field.questionSlug].question;
+  if (field.question) return field.question;
+  throw new Error(`The ${field.name} field has no question`);
+}
+
+export const fields: Field[] = written.map((field) => ({
+  ...field,
+  question: questionOf(field),
+  questionSlug: field.questionSlug ?? null,
+}));
 
 export const fieldsById = Object.fromEntries(fields.map((field) => [field.id, field])) as Record<FieldId, Field>;
 

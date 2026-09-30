@@ -48,7 +48,10 @@ export function cleanAltText(value: string | null | undefined, fallback = ""): s
     .trim();
   if (!cleaned) return fallback;
   if (/^__wf_reserved/i.test(cleaned)) return fallback;
-  if (/^[\w().\-\s]+?\.(jpe?g|png|webp|gif|mp4|mov|webm)$/i.test(cleaned)) return fallback;
+  // A file name, with or without its folder ("stories/IMG_9698.jpg" was a live title, 1 Oct 2026).
+  if (/^[\w().\-\s/]+?\.(jpe?g|png|webp|gif|heic|mp4|mov|webm)$/i.test(cleaned)) return fallback;
+  // Empathy Ledger's own placeholder for a photograph nobody has described yet.
+  if (/^undescribed image$/i.test(cleaned)) return fallback;
   if (/^(img|image|video|file|photo)[-_ ]?\d+/i.test(cleaned)) return fallback;
   return cleaned;
 }
@@ -103,7 +106,6 @@ export interface FigureCaptionSource {
 
 const FIGURE = /<figure\b([^>]*)>([\s\S]*?)<\/figure>/gi;
 const IMG_SRC = /<img\b[^>]*\bsrc=(["'])(.*?)\1/i;
-const IMG_ALT = /<img\b[^>]*\balt=(["'])(.*?)\1/i;
 const MEDIA_ID = /media\/([0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12})/i;
 
 function escapeHtml(value: string): string {
@@ -129,11 +131,10 @@ export function captionFigures(html: string, sources: FigureCaptionSource[]): st
     const src = IMG_SRC.exec(inner)?.[2] ?? null;
     if (!src) return whole;
     const source = byUrl.get(src) ?? (mediaIdFromUrl(src) ? byId.get(mediaIdFromUrl(src) as string) : undefined);
-    const embeddedAlt = cleanAltText(IMG_ALT.exec(inner)?.[2]?.replace(/&quot;/g, '"').replace(/&amp;/g, "&"));
-    // The ledger's alt for the same asset outranks the exported <img> alt, which
-    // is often Webflow's placeholder or empty (review finding, 2026-09-07).
-    const sourceAlt = cleanAltText(source?.alt ?? source?.alt_text);
-    const text = (source?.caption || source?.title || sourceAlt || embeddedAlt || "").trim();
+    // Words under a photograph are the ledger's caption, or a title a person wrote. Never the alt text: that
+    // describes the picture for someone who cannot see it, runs to a paragraph, and a screen reader would read it
+    // twice (Empathy Ledger, 1 Oct 2026; this reversed the alt fallback from the 2026-09-07 review).
+    const text = (source?.caption || cleanAltText(source?.title) || "").trim();
     if (!text) return whole;
     return `<figure${attrs}>${inner}<figcaption>${escapeHtml(text)}</figcaption></figure>`;
   });

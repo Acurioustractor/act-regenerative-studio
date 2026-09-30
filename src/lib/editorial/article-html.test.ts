@@ -9,14 +9,21 @@ describe("captionFigures", () => {
     const out = captionFigures(fig, [{ url: `${url}?w=1200`, title: "Palm Island coastline" }]);
     expect(out).toContain("<figcaption>Palm Island coastline</figcaption>");
   });
-  it("prefers caption over title over alt, and escapes", () => {
+  it("prefers caption over title, and escapes", () => {
     expect(captionFigures(fig, [{ url, caption: "Bwgcolman <Palm Island>", title: "x" }])).toContain("Bwgcolman &lt;Palm Island&gt;");
-    expect(captionFigures(fig, [])).toContain("<figcaption>Aerial view of a forested coastline</figcaption>");
   });
-  it("uses the ledger's alt for the asset when the exported img alt is a placeholder", () => {
-    const junk = `<figure><img src="${url}" alt="__wf_reserved_inherit" /></figure>`;
-    expect(captionFigures(junk, [{ url, alt_text: "Bwgcolman from the water" }])).toContain("<figcaption>Bwgcolman from the water</figcaption>");
+  it("never makes a caption from alt text, the ledger's or the page's", () => {
+    // Alt text describes the picture for a screen reader; as a caption it would be read twice.
+    expect(captionFigures(fig, [])).toBe(fig);
+    expect(captionFigures(fig, [{ url, alt_text: "Bwgcolman from the water" }])).toBe(fig);
   });
+
+  it("never makes a caption from a file name or the ledger's placeholder", () => {
+    for (const title of ["stories/IMG_9698.jpg", "IMG_3190.jpg", "1E5A2170.jpg", "Undescribed image"]) {
+      expect(captionFigures(fig, [{ url, title }])).toBe(fig);
+    }
+  });
+
   it("leaves a figure that already has a caption, junk alt with no source, and non-figure images alone", () => {
     const captioned = `<figure><img src="${url}" alt="x" /><figcaption>Kept</figcaption></figure>`;
     expect(captionFigures(captioned, [{ url, title: "New" }])).toBe(captioned);

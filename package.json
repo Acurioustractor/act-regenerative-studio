@@ -47,6 +47,7 @@
     "start:ecosystem": "node scripts/dev-servers.mjs",
     "db:seed:alma": "npx ts-node scripts/seed_alma_real_initiatives.ts && npx ts-node scripts/seed_alma_contexts.ts && npx ts-node scripts/seed_alma_evidence.ts",
     "type-check": "tsc --noEmit",
+    "brand:css": "node scripts/brand-css.mjs",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:api": "vitest run tests/api-contract.test.ts",

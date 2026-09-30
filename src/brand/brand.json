@@ -1,0 +1,694 @@
+{
+  "_about": "A Curious Tractor, Brand v1 (The Gap). The one home for the brand in code: the site, the video kit (~/.claude/skills/video-cut/brands/act/sync.py) and print read this file. Designed in ~/Documents/ACT_manifesto.pen (board 01 Tokens, 03 Parts, 12 Play). Not yet agreed with Nic. Change it here and run npm run brand:css.",
+  "name": "A Curious Tractor",
+  "site": "act.place",
+  "place": "Witta / Jinibara Country",
+  "oneLine": "A Curious Tractor makes useful things with people, and builds so they need us less each year.",
+  "line": "Made with people · left with them",
+  "colors": {
+    "paper": "#F2EFE8",
+    "ink": "#111111",
+    "rust": "#C4501F",
+    "paperShade": "#E9E4D9",
+    "paperMuted": "#F2EFE8A3",
+    "inkMuted": "#111111A3",
+    "inkLine": "#11111133"
+  },
+  "accent": "rust",
+  "surfaces": {
+    "paper": {
+      "bg": "#F2EFE8",
+      "fg": "#111111",
+      "fg-muted": "#111111A3",
+      "line": "#11111133",
+      "bg-shade": "#E9E4D9"
+    },
+    "ink": {
+      "bg": "#111111",
+      "fg": "#F2EFE8",
+      "fg-muted": "#F2EFE8A3",
+      "line": "#F2EFE840",
+      "bg-shade": "#1E1E1C"
+    }
+  },
+  "fonts": {
+    "display": "Fraunces",
+    "mono": "IBM Plex Mono",
+    "loud": "Big Shoulders"
+  },
+  "weights": {
+    "statement": 700,
+    "reading": 400,
+    "label": 600
+  },
+  "sizes": {
+    "display-xl": 120,
+    "display-l": 84,
+    "display-m": 56,
+    "display-s": 34,
+    "lead": 24,
+    "body": 18,
+    "small": 15,
+    "label": 11,
+    "loud-xl": 160,
+    "loud-l": 110
+  },
+  "space": [
+    4,
+    8,
+    12,
+    16,
+    24,
+    32,
+    48,
+    64,
+    96,
+    128
+  ],
+  "radius": 0,
+  "parts": {
+    "big": [
+      0,
+      62,
+      80,
+      80
+    ],
+    "cab": [
+      44,
+      30,
+      58,
+      58
+    ],
+    "bonnet": [
+      100,
+      52,
+      82,
+      30
+    ],
+    "small": [
+      128,
+      92,
+      50,
+      50
+    ],
+    "rust": "big"
+  },
+  "partMeanings": {
+    "big": "Listen",
+    "small": "Curiosity",
+    "cab": "Action",
+    "bonnet": "Art"
+  },
+  "doors": [
+    {
+      "label": "Stories",
+      "part": "big"
+    },
+    {
+      "label": "Questions",
+      "part": "small"
+    },
+    {
+      "label": "The work",
+      "part": "cab"
+    },
+    {
+      "label": "Art",
+      "part": "bonnet"
+    },
+    {
+      "label": "About",
+      "part": null
+    },
+    {
+      "label": "Contact",
+      "part": null
+    }
+  ],
+  "arrangements": {
+    "tractor": {
+      "stands_for": "A Curious Tractor",
+      "parts": [
+        {
+          "role": "cab",
+          "shape": "rect",
+          "x": 44,
+          "y": 30,
+          "w": 58,
+          "h": 58,
+          "colour": "ink"
+        },
+        {
+          "role": "bonnet",
+          "shape": "rect",
+          "x": 100,
+          "y": 52,
+          "w": 82,
+          "h": 30,
+          "colour": "ink"
+        },
+        {
+          "role": "big",
+          "shape": "round",
+          "x": 0,
+          "y": 62,
+          "w": 80,
+          "h": 80,
+          "colour": "accent"
+        },
+        {
+          "role": "small",
+          "shape": "round",
+          "x": 128,
+          "y": 92,
+          "w": 50,
+          "h": 50,
+          "colour": "ink"
+        }
+      ]
+    },
+    "scattered": {
+      "stands_for": "the parts before they are put together",
+      "parts": [
+        {
+          "role": "big",
+          "shape": "round",
+          "x": 40,
+          "y": 120,
+          "w": 80,
+          "h": 80,
+          "colour": "accent"
+        },
+        {
+          "role": "cab",
+          "shape": "rect",
+          "x": 170,
+          "y": 130,
+          "w": 58,
+          "h": 58,
+          "colour": "ink",
+          "rotate": 14
+        },
+        {
+          "role": "bonnet",
+          "shape": "rect",
+          "x": 230,
+          "y": 50,
+          "w": 82,
+          "h": 30,
+          "colour": "ink",
+          "rotate": -12
+        },
+        {
+          "role": "small",
+          "shape": "round",
+          "x": 300,
+          "y": 120,
+          "w": 50,
+          "h": 50,
+          "colour": "ink"
+        }
+      ]
+    },
+    "bed": {
+      "stands_for": "Goods on Country",
+      "parts": [
+        {
+          "role": "bonnet",
+          "shape": "rect",
+          "x": 70,
+          "y": 110,
+          "w": 250,
+          "h": 26,
+          "colour": "accent"
+        },
+        {
+          "role": "cab",
+          "shape": "rect",
+          "x": 82,
+          "y": 70,
+          "w": 40,
+          "h": 40,
+          "colour": "ink"
+        },
+        {
+          "role": "big",
+          "shape": "round",
+          "x": 84,
+          "y": 134,
+          "w": 34,
+          "h": 34,
+          "colour": "ink"
+        },
+        {
+          "role": "small",
+          "shape": "round",
+          "x": 270,
+          "y": 134,
+          "w": 34,
+          "h": 34,
+          "colour": "ink"
+        }
+      ]
+    },
+    "washing machine": {
+      "stands_for": "Orange Sky, where Nic started",
+      "parts": [
+        {
+          "role": "cab",
+          "shape": "rect",
+          "x": 110,
+          "y": 62,
+          "w": 150,
+          "h": 158,
+          "colour": "ink"
+        },
+        {
+          "role": "bonnet",
+          "shape": "rect",
+          "x": 110,
+          "y": 40,
+          "w": 150,
+          "h": 22,
+          "colour": "accent"
+        },
+        {
+          "role": "big",
+          "shape": "round",
+          "x": 135,
+          "y": 95,
+          "w": 100,
+          "h": 100,
+          "colour": "paper"
+        },
+        {
+          "role": "small",
+          "shape": "round",
+          "x": 228,
+          "y": 44,
+          "w": 16,
+          "h": 16,
+          "colour": "paper"
+        }
+      ]
+    },
+    "camera": {
+      "stands_for": "the photographs, and the PICC Photo Kiosk",
+      "parts": [
+        {
+          "role": "cab",
+          "shape": "rect",
+          "x": 90,
+          "y": 80,
+          "w": 200,
+          "h": 130,
+          "colour": "ink"
+        },
+        {
+          "role": "bonnet",
+          "shape": "rect",
+          "x": 120,
+          "y": 60,
+          "w": 90,
+          "h": 24,
+          "colour": "ink"
+        },
+        {
+          "role": "big",
+          "shape": "round",
+          "x": 140,
+          "y": 95,
+          "w": 100,
+          "h": 100,
+          "colour": "accent"
+        },
+        {
+          "role": "small",
+          "shape": "round",
+          "x": 250,
+          "y": 92,
+          "w": 22,
+          "h": 22,
+          "colour": "paper"
+        }
+      ]
+    },
+    "container": {
+      "stands_for": "CONTAINED, within JusticeHub",
+      "parts": [
+        {
+          "role": "big",
+          "shape": "round",
+          "x": 280,
+          "y": 24,
+          "w": 70,
+          "h": 70,
+          "colour": "ink"
+        },
+        {
+          "role": "bonnet",
+          "shape": "rect",
+          "x": 40,
+          "y": 90,
+          "w": 220,
+          "h": 100,
+          "colour": "ink"
+        },
+        {
+          "role": "cab",
+          "shape": "rect",
+          "x": 262,
+          "y": 98,
+          "w": 56,
+          "h": 84,
+          "colour": "accent",
+          "rotate": -8
+        },
+        {
+          "role": "small",
+          "shape": "round",
+          "x": 70,
+          "y": 120,
+          "w": 14,
+          "h": 14,
+          "colour": "paper"
+        }
+      ]
+    },
+    "table": {
+      "stands_for": "The Harvest",
+      "parts": [
+        {
+          "role": "big",
+          "shape": "round",
+          "x": 250,
+          "y": 24,
+          "w": 80,
+          "h": 80,
+          "colour": "accent"
+        },
+        {
+          "role": "bonnet",
+          "shape": "rect",
+          "x": 50,
+          "y": 140,
+          "w": 230,
+          "h": 16,
+          "colour": "ink"
+        },
+        {
+          "role": "cab",
+          "shape": "rect",
+          "x": 70,
+          "y": 156,
+          "w": 56,
+          "h": 56,
+          "colour": "ink"
+        },
+        {
+          "role": "small",
+          "shape": "round",
+          "x": 228,
+          "y": 100,
+          "w": 40,
+          "h": 40,
+          "colour": "ink"
+        }
+      ]
+    },
+    "shed": {
+      "stands_for": "the farm",
+      "parts": [
+        {
+          "role": "cab",
+          "shape": "rect",
+          "x": 70,
+          "y": 90,
+          "w": 110,
+          "h": 100,
+          "colour": "ink"
+        },
+        {
+          "role": "bonnet",
+          "shape": "rect",
+          "x": 58,
+          "y": 74,
+          "w": 134,
+          "h": 20,
+          "colour": "accent"
+        },
+        {
+          "role": "big",
+          "shape": "round",
+          "x": 200,
+          "y": 110,
+          "w": 80,
+          "h": 80,
+          "colour": "ink"
+        },
+        {
+          "role": "small",
+          "shape": "round",
+          "x": 300,
+          "y": 30,
+          "w": 40,
+          "h": 40,
+          "colour": "ink"
+        }
+      ]
+    },
+    "page and voice": {
+      "stands_for": "Empathy Ledger",
+      "parts": [
+        {
+          "role": "cab",
+          "shape": "rect",
+          "x": 50,
+          "y": 50,
+          "w": 120,
+          "h": 150,
+          "colour": "accent"
+        },
+        {
+          "role": "bonnet",
+          "shape": "rect",
+          "x": 68,
+          "y": 80,
+          "w": 84,
+          "h": 10,
+          "colour": "paper"
+        },
+        {
+          "role": "big",
+          "shape": "round",
+          "x": 205,
+          "y": 34,
+          "w": 100,
+          "h": 100,
+          "colour": "ink"
+        },
+        {
+          "role": "small",
+          "shape": "round",
+          "x": 210,
+          "y": 124,
+          "w": 26,
+          "h": 26,
+          "colour": "ink"
+        }
+      ]
+    },
+    "printer": {
+      "stands_for": "the road trip's printer",
+      "parts": [
+        {
+          "role": "cab",
+          "shape": "rect",
+          "x": 100,
+          "y": 100,
+          "w": 180,
+          "h": 110,
+          "colour": "ink"
+        },
+        {
+          "role": "bonnet",
+          "shape": "rect",
+          "x": 130,
+          "y": 36,
+          "w": 120,
+          "h": 84,
+          "colour": "accent"
+        },
+        {
+          "role": "small",
+          "shape": "round",
+          "x": 250,
+          "y": 160,
+          "w": 20,
+          "h": 20,
+          "colour": "paper"
+        },
+        {
+          "role": "big",
+          "shape": "round",
+          "x": 116,
+          "y": 160,
+          "w": 20,
+          "h": 20,
+          "colour": "paper"
+        }
+      ]
+    },
+    "caravan": {
+      "stands_for": "The Caravan",
+      "parts": [
+        {
+          "role": "bonnet",
+          "shape": "rect",
+          "x": 70,
+          "y": 70,
+          "w": 230,
+          "h": 120,
+          "colour": "ink"
+        },
+        {
+          "role": "cab",
+          "shape": "rect",
+          "x": 100,
+          "y": 94,
+          "w": 64,
+          "h": 50,
+          "colour": "accent"
+        },
+        {
+          "role": "big",
+          "shape": "round",
+          "x": 190,
+          "y": 160,
+          "w": 64,
+          "h": 64,
+          "colour": "ink"
+        },
+        {
+          "role": "small",
+          "shape": "round",
+          "x": 296,
+          "y": 164,
+          "w": 20,
+          "h": 20,
+          "colour": "ink"
+        }
+      ]
+    },
+    "phone": {
+      "stands_for": "Gold.Phone",
+      "parts": [
+        {
+          "role": "cab",
+          "shape": "rect",
+          "x": 90,
+          "y": 110,
+          "w": 200,
+          "h": 100,
+          "colour": "ink"
+        },
+        {
+          "role": "bonnet",
+          "shape": "rect",
+          "x": 80,
+          "y": 72,
+          "w": 220,
+          "h": 36,
+          "colour": "accent"
+        },
+        {
+          "role": "big",
+          "shape": "round",
+          "x": 145,
+          "y": 115,
+          "w": 90,
+          "h": 90,
+          "colour": "paper"
+        },
+        {
+          "role": "small",
+          "shape": "round",
+          "x": 178,
+          "y": 148,
+          "w": 24,
+          "h": 24,
+          "colour": "ink"
+        }
+      ]
+    }
+  },
+  "scenes": {
+    "unhitched": {
+      "about": "the tractor leaves and the rust part stays",
+      "trailer": [
+        {
+          "role": "trailer",
+          "shape": "rect",
+          "x": 0,
+          "y": 88,
+          "w": 130,
+          "h": 34,
+          "colour": "accent"
+        },
+        {
+          "role": "wheel",
+          "shape": "round",
+          "x": 14,
+          "y": 118,
+          "w": 22,
+          "h": 22,
+          "colour": "accent"
+        },
+        {
+          "role": "wheel",
+          "shape": "round",
+          "x": 94,
+          "y": 118,
+          "w": 22,
+          "h": 22,
+          "colour": "accent"
+        }
+      ],
+      "tractorOffsetX": 180
+    }
+  },
+  "rule": "If it needs a fifth part, it belongs to someone else.",
+  "motion": {
+    "_about": "Three moves only. Reference implementation (vanilla JS/CSS): ~/Documents/ACT_manifesto_assets/play/act-play.html. Respect prefers-reduced-motion everywhere.",
+    "arrive": {
+      "when": "something begins: first page of a visit (once per visit), end of every page, video end card",
+      "ease": "cubic-bezier(.34,1.56,.64,1)",
+      "durationMs": 700,
+      "staggerMs": 120
+    },
+    "roll": {
+      "when": "something moves: links (the arrow is the small wheel), reading progress (a small tractor), photos loading (the big wheel turns)",
+      "linkMs": 600,
+      "loadingSpinMs": 900
+    },
+    "unhitch": {
+      "when": "something is handed on: a message sent, a story returned to its owner",
+      "driveOffMs": 1400,
+      "ease": "cubic-bezier(.55,0,.8,.2)"
+    },
+    "ease": "cubic-bezier(.65,0,.35,1)"
+  },
+  "record": [
+    "Where",
+    "Made with",
+    "Since",
+    "Held by"
+  ],
+  "unknown": [
+    "to confirm",
+    "to confirm",
+    "to confirm",
+    "to be agreed"
+  ],
+  "_recordNote": "record and unknown feed the video kit's record strip. \"Held by\" is an open decision (Ben found it confusing on 30 Sep); no page uses it."
+}

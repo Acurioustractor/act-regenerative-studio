@@ -1,5 +1,5 @@
 # Dependencies
-node_modules/
+node_modules
 .pnp
 .pnp.js
 
@@ -110,7 +110,7 @@ output/
 Writing/
 business/
 finance/
-brand/
+/brand/
 
 # Marketing skills. These are symlinks into .claude/marketingskills, which is
 # an unregistered clone of an external repo, so a trailing-slash directory

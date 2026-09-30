@@ -1,0 +1,33 @@
+/* Pencil: Page 01 Home, Return (wDoSD), Buttons (kKnwY) gap 16; Phone · 01 Home Return (KyP2x): the pair stacked, full width. */
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.status {
+  margin: 0;
+  color: var(--fg-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.status:empty { display: none; }
+
+@media (max-width: 759px) {
+  .buttons {
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .buttons > * { width: 100%; }
+}

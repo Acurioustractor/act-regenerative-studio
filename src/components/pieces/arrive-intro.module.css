@@ -1,0 +1,84 @@
+/* The move "arrive" from act-play.html (d-arrive), at the demo's scale of 1.5 (1.15 on a phone). Nothing here shows until the
+   page marks the veil data-play, so a return visit, reduced motion and no script all see no veil. Timings are the brand's:
+   --arrive-ms 700 on --ease-arrive, --arrive-stagger-ms 120 between parts. */
+.veil {
+  --k: 1.5;
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  background: var(--bg);
+  pointer-events: none;
+}
+
+.veil[data-play] {
+  display: flex;
+  /* Held while the parts settle (the last one lands at 1060ms), then lifts. */
+  animation: lift 320ms var(--ease) 1500ms both;
+}
+
+.stage {
+  position: relative;
+  width: calc(var(--w) * var(--k) * 1px);
+  height: calc(var(--h) * var(--k) * 1px);
+}
+
+.part {
+  position: absolute;
+  left: calc(var(--x) * var(--k) * 1px);
+  top: calc(var(--y) * var(--k) * 1px);
+  width: calc(var(--pw) * var(--k) * 1px);
+  height: calc(var(--ph) * var(--k) * 1px);
+  background: var(--fg);
+}
+
+.rust { background: var(--accent); }
+
+.round { border-radius: 50%; }
+
+/* The notch that shows a wheel turning (the same one the small wheel has). */
+.round::after {
+  content: "";
+  position: absolute;
+  left: 44%;
+  top: 10%;
+  width: 12%;
+  height: 30%;
+  background: var(--bg);
+  border-radius: 99px;
+  opacity: 0.9;
+}
+
+.veil[data-play] .part {
+  animation:
+    drop var(--arrive-ms) var(--ease-arrive) both,
+    turn var(--arrive-ms) var(--ease) both;
+  animation-delay: calc(var(--i) * var(--arrive-stagger-ms));
+}
+
+/* Each part starts above the top of the page, a little to one side and tilted, and lands where the tractor keeps it. */
+@keyframes drop {
+  from { translate: var(--dx) calc(-50vh - var(--drop)); }
+  to { translate: 0 0; }
+}
+
+@keyframes turn {
+  from { rotate: var(--r); }
+  to { rotate: 0deg; }
+}
+
+@keyframes lift {
+  from { opacity: 1; visibility: visible; }
+  to { opacity: 0; visibility: hidden; }
+}
+
+@media (max-width: 759px) {
+  .veil { --k: 1.15; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .veil,
+  .veil[data-play] { display: none; }
+}

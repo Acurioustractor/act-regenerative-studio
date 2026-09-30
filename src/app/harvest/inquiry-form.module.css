@@ -1,0 +1,40 @@
+/* What stands where the enquiry form was once it has gone, and the line that says a send did not (the same rust square
+   and plain words as the fields' own errors). */
+.thanks {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 24px 0;
+  border-top: 2px solid var(--fg);
+}
+
+.thanksHeading {
+  margin: 0;
+  font-size: 34px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -0.68px;
+}
+
+.thanksHeading:focus { outline: none; }
+
+.thanksText {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+.error {
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+  margin: 0;
+  font-size: 15px;
+  line-height: 1.4;
+}
+
+/* Centres the square on the first line of the words, as the fields' own errors do. */
+.error > :first-child {
+  margin-top: 7px;
+}

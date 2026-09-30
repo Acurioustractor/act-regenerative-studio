@@ -1,0 +1,13 @@
+/* What stands where the sign-up was once it has gone: the same heavy rule over a line of the page's own thanks. */
+.thanks {
+  padding: 24px 0;
+  border-top: 2px solid var(--fg);
+}
+
+.thanks p {
+  margin: 0;
+  font-size: 28px;
+  font-weight: var(--weight-statement);
+  line-height: 1.1;
+  letter-spacing: -0.56px;
+}

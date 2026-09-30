@@ -1,0 +1,531 @@
+/* Pencil: Page 01 Home (n3PJGp) at 1440, Phone · 01 Home (zH7Jr) at 390. Sections: Under the hero (RfiDk), Method ribbon
+   (gaRAK), Choose a way in (rWnqL; its Chooser is in field-chooser.module.css), One question (Dvt1d), Field letter (O8dyw),
+   The Harvest band (n6C7j), Return (wDoSD). */
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+/* Under the hero: what the road corrects, and the five fields as buttons. */
+.under {
+  display: flex;
+  align-items: flex-end;
+  gap: 64px;
+  padding: 48px 96px;
+  border-bottom: 1px solid var(--line);
+}
+
+.intro {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: 14px;
+  width: 560px;
+}
+
+.introText {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.five {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+}
+
+.fiveList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.fiveLink {
+  display: block;
+  padding: 9px 12px;
+  border: 1px solid var(--fg);
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+.fiveLink:hover,
+.fiveLink:focus-visible {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.fiveLink:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* The number and the wheel are the phone's; on a wide page the button is just the name. */
+.fiveNumber { display: none; }
+
+.follow {
+  align-self: flex-start;
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.follow:hover,
+.follow:focus-visible { color: var(--accent); }
+
+.follow:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* The method ribbon: the four parts, each with its own part rust, and the line that keeps the order honest. */
+.ribbon {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 28px 96px;
+}
+
+.four {
+  display: flex;
+  flex: none;
+  align-items: center;
+  gap: 40px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.method {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.glyph {
+  flex: none;
+  width: 52px;
+  height: 30px;
+}
+
+.methodName {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.ribbonLine {
+  flex: 1;
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 18px;
+  line-height: 1.6;
+}
+
+/* Choose a way in. */
+.choose {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 112px 96px;
+}
+
+.chooseHead {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  width: 900px;
+  max-width: 100%;
+}
+
+.chooseTitle {
+  margin: 0;
+  font-size: 64px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -1.28px;
+}
+
+.chooseText {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+/* One question moves across the field. */
+.oneQuestion {
+  display: flex;
+  align-items: flex-end;
+  gap: 80px;
+  padding: 96px;
+  background: var(--bg-shade);
+}
+
+.oneLeft {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 14px;
+  min-width: 0;
+}
+
+.oneTitle {
+  margin: 0;
+  font-size: 56px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -1.12px;
+}
+
+.oneRight {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 20px;
+  width: 520px;
+}
+
+.oneText {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+/* Field letter #001. */
+.letter {
+  display: flex;
+  gap: 80px;
+  padding: 112px 96px;
+}
+
+.letterLeft {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: 16px;
+  width: 520px;
+}
+
+.letterTitle {
+  margin: 0;
+  font-size: 48px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -0.96px;
+}
+
+.byline {
+  margin: 0;
+  color: var(--fg-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.panel {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 18px;
+  align-self: flex-start;
+  min-width: 0;
+  padding: 40px;
+  background: var(--bg-shade);
+}
+
+.salutation {
+  margin: 0;
+  font-size: 28px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -0.56px;
+}
+
+.letterText {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+/* The pull quote piece is 36 by itself; the letter sets it at 28. */
+.panel blockquote p {
+  font-size: 28px;
+  line-height: 1.15;
+  letter-spacing: -0.5px;
+}
+
+.letterLinks {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 28px;
+}
+
+/* The Harvest band: a photograph, and the invitation on ink. */
+.band {
+  display: flex;
+}
+
+.bandPhoto {
+  position: relative;
+  flex: none;
+  width: 720px;
+  height: 640px;
+  overflow: hidden;
+  background: var(--bg-shade);
+}
+
+.bandFilm {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bandText {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 20px;
+  min-width: 0;
+  height: 640px;
+  padding: 72px 80px;
+}
+
+.bandTitle {
+  margin: 0;
+  font-size: 64px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -1.28px;
+}
+
+.bandLine {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+.chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+  padding: 10px 14px;
+  border: 1px solid var(--accent);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.dot {
+  flex: none;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--accent);
+}
+
+/* Return: what question is following you. */
+.return {
+  display: flex;
+  gap: 80px;
+  padding: 112px 96px;
+}
+
+.returnLeft {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.returnTitle {
+  margin: 0;
+  font-size: 72px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -1.44px;
+}
+
+.returnText {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+.returnRight {
+  flex: none;
+  width: 480px;
+}
+
+/* Tablet. */
+@media (max-width: 1079px) {
+  .under {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 32px;
+    padding: 40px 48px;
+  }
+
+  .intro { width: auto; max-width: 620px; }
+  .five { align-self: stretch; }
+
+  .ribbon {
+    flex-wrap: wrap;
+    padding: 28px 48px;
+  }
+
+  .ribbonLine { flex-basis: 100%; }
+
+  .choose { padding: 64px 48px; }
+  .chooseTitle { font-size: 52px; letter-spacing: -1.04px; }
+
+  .oneQuestion,
+  .letter,
+  .return {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+    padding: 64px 48px;
+  }
+
+  .oneRight,
+  .letterLeft,
+  .returnRight { width: auto; max-width: 620px; }
+
+  .panel { align-self: stretch; }
+
+  .band { flex-direction: column; }
+  .bandPhoto { width: auto; height: 420px; }
+  .bandText { height: auto; padding: 56px 48px; }
+}
+
+/* Phone. */
+@media (max-width: 759px) {
+  .eyebrow { font-size: 11px; letter-spacing: 1.5px; }
+
+  .under { gap: 16px; padding: 28px 20px; border-bottom: 0; }
+  .intro { gap: 16px; }
+  .introText { font-size: 18px; }
+
+  .five { gap: 0; }
+
+  .fiveList {
+    flex-direction: column;
+    flex-wrap: nowrap;
+    gap: 0;
+  }
+
+  .fiveLink {
+    display: flex;
+    justify-content: space-between;
+    padding: 11px 0 12px;
+    border: 0;
+    border-top: 1px solid var(--line);
+    letter-spacing: 1.5px;
+  }
+
+  .fiveLink:hover,
+  .fiveLink:focus-visible {
+    background: none;
+    color: var(--fg);
+  }
+
+  .fiveNumber {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.75em;
+    color: var(--accent);
+  }
+
+  .follow { display: none; }
+
+  .ribbon {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    padding: 24px 20px;
+  }
+
+  .four { gap: 10px; }
+
+  .method {
+    flex: 1;
+    flex-direction: column;
+    gap: 6px;
+  }
+
+  .glyph { width: 60px; height: 34px; }
+  .methodName { font-size: 9px; letter-spacing: 1.5px; }
+  .ribbonLine { flex: none; font-size: 16px; }
+
+  .choose { gap: 18px; padding: 48px 20px; }
+  .chooseHead { gap: 18px; }
+  .chooseTitle { font-size: 38px; line-height: 1.06; letter-spacing: -0.76px; }
+  .chooseText { font-size: 17px; }
+
+  .oneQuestion { gap: 16px; padding: 48px 20px; }
+  .oneRight { gap: 16px; }
+  .oneTitle { font-size: 34px; line-height: 1.06; letter-spacing: -0.68px; }
+  .oneText { font-size: 17px; }
+
+  .letter { gap: 16px; padding: 48px 20px; }
+  .letterLeft { gap: 16px; }
+  .letterTitle { font-size: 32px; line-height: 1.06; letter-spacing: -0.64px; }
+  .byline { font-size: 10px; letter-spacing: 1.5px; }
+  .panel { gap: 16px; padding: 0; background: none; }
+  .salutation { font-size: 24px; line-height: 1.06; letter-spacing: -0.48px; }
+  .letterText { font-size: 17px; }
+  .panel blockquote p { font-size: 24px; letter-spacing: -0.48px; }
+  .letterLinks { flex-direction: column; gap: 16px; }
+
+  .bandPhoto { height: 280px; }
+  .bandText { gap: 16px; padding: 36px 20px 44px; }
+  .bandTitle { font-size: 40px; line-height: 1.06; letter-spacing: -0.8px; }
+  .bandLine { font-size: 17px; }
+  .chip { font-size: 10px; letter-spacing: 1.5px; }
+
+  .return { gap: 18px; padding: 48px 20px; }
+  .returnLeft { gap: 18px; }
+  .returnTitle { font-size: 40px; line-height: 1.06; letter-spacing: -0.8px; }
+  .returnText { font-size: 17px; }
+  .wide { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fiveLink { transition: none; }
+}

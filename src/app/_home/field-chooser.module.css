@@ -1,0 +1,233 @@
+/* Pencil: Page 01 Home (n3PJGp), Chooser (m1de1): Five fields (mXr5O) 420 wide, gap 56, Reveal (dpspt). Phone · 01 Home
+   (zH7Jr): the open field (photo 220) first, then "The other four" (NgIo1) under it. */
+.chooser {
+  display: flex;
+  align-items: flex-start;
+  gap: 56px;
+}
+
+.list {
+  flex: none;
+  width: 420px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 18px;
+  width: 100%;
+  margin: 0;
+  padding: 15px 14px 16px;
+  border: 0;
+  border-top: 1px solid var(--line);
+  border-radius: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+  transition: background-color 250ms ease;
+}
+
+/* The open field: a shade, and a rust bar down its left edge (drawn inside, so nothing shifts). */
+.row[aria-pressed="true"] {
+  border-top-color: var(--accent);
+  background: var(--bg-shade);
+  box-shadow: inset 4px 0 0 var(--accent);
+}
+
+.row:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: -2px;
+}
+
+.number {
+  flex: none;
+  width: 30px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+}
+
+.words {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 4px;
+  min-width: 0;
+}
+
+.name {
+  font-size: 26px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -0.52px;
+}
+
+.line {
+  color: var(--fg-muted);
+  font-size: 16px;
+  font-weight: var(--weight-reading);
+  line-height: 1.4;
+}
+
+.reveal {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 18px;
+  min-width: 0;
+}
+
+.photo {
+  position: relative;
+  height: 420px;
+  overflow: hidden;
+  background: var(--bg-shade);
+}
+
+.film {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kicker {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  font-size: 56px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -1.12px;
+}
+
+.description {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 18px 28px;
+}
+
+/* A link out of act.place: the same words as Onward, and the arrow that says it leaves. */
+.external {
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 2px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.external:hover,
+.external:focus-visible { color: var(--accent); }
+
+.external:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* Tablet: the open field on top, the five under it. */
+@media (max-width: 1079px) {
+  .chooser {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+  }
+
+  .list { width: auto; }
+  .reveal { order: -1; }
+  .photo { height: 360px; }
+}
+
+/* Phone: the other four only, in the small size. */
+@media (max-width: 759px) {
+  .chooser { gap: 18px; }
+
+  .list { padding-top: 12px; }
+  .list li:has(> [aria-pressed="true"]) { display: none; }
+
+  .row {
+    gap: 14px;
+    padding: 13px 0 14px;
+    background: none;
+  }
+
+  .row[aria-pressed="true"] { box-shadow: none; }
+
+  .number {
+    width: 26px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .words { gap: 2px; }
+
+  .name {
+    font-size: 22px;
+    line-height: 1.06;
+    letter-spacing: -0.44px;
+  }
+
+  .line {
+    font-size: 15px;
+    line-height: 1.4;
+  }
+
+  .photo { height: 220px; }
+
+  .kicker {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .title {
+    font-size: 40px;
+    line-height: 1.06;
+    letter-spacing: -0.8px;
+  }
+
+  .description {
+    font-size: 18px;
+    line-height: 1.6;
+  }
+
+  .links {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 18px;
+  }
+
+  .external {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .row { transition: none; }
+}

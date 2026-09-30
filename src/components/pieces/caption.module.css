@@ -1,0 +1,22 @@
+/* Pencil: Caption (gzAFI): a dark strip over a photograph, the words set in the reading face, centred. Verbatim words or nothing. The strip is the ink at 88% opacity (Pencil's E0 alpha). */
+.caption {
+  display: inline-flex;
+  max-width: 100%;
+  padding: var(--space-3) var(--space-5);
+  background: color-mix(in srgb, var(--ink) 88%, transparent);
+}
+
+.words {
+  width: 480px;
+  max-width: 100%;
+  margin: 0;
+  color: var(--paper);
+  font-size: 24px;
+  font-weight: var(--weight-reading);
+  line-height: 1.3;
+  text-align: center;
+}
+
+@media (max-width: 759px) {
+  .words { font-size: 20px; }
+}

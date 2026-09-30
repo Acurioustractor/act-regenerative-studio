@@ -1,0 +1,74 @@
+/* Pencil: Work card (XLWbP), 440 wide in Site pieces (Gkwl0). Decided 30 Sep: no record strip and no "Held by". The feature size is how The work page (AJNp3) sets it: photo 400, title 44. No phone board: photo and title come down. */
+.item { display: block; }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  background: var(--bg);
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.photo {
+  height: 280px;
+  overflow: hidden;
+}
+
+.feature .photo { height: 400px; }
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.kicker {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  font-size: 34px;
+  font-weight: var(--weight-statement);
+  line-height: 1.05;
+  letter-spacing: -0.6px;
+}
+
+.feature .title { font-size: 44px; }
+
+.sentence {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 18px;
+  font-weight: var(--weight-reading);
+  line-height: 1.5;
+}
+
+.link {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  gap: 0.75em;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+@media (max-width: 759px) {
+  .photo,
+  .feature .photo { height: 220px; }
+
+  .title,
+  .feature .title { font-size: 30px; }
+
+  .sentence { font-size: 16px; }
+}

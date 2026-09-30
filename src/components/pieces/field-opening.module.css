@@ -1,0 +1,123 @@
+/* Pencil: Field opening (ALEwz) at 1440. Phone from the Opening (v71Ps) and Photo (Kzhni) frames on Phone · 04 Field · JusticeHub (w3ZpTK). No tablet board: the photo shrinks. */
+.opening {
+  display: flex;
+  align-items: flex-end;
+  gap: 64px;
+  padding: 72px 96px;
+  background: var(--bg);
+}
+
+.text {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 24px;
+  min-width: 0;
+}
+
+.number {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-loud);
+  font-size: 160px;
+  font-weight: 800;
+  line-height: 0.85;
+}
+
+.kicker {
+  margin: 0;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  font-size: 72px;
+  font-weight: var(--weight-statement);
+  line-height: 1;
+  letter-spacing: -1.296px;
+}
+
+.lede {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 22px;
+  font-weight: var(--weight-reading);
+  line-height: 1.55;
+}
+
+.photo {
+  flex: none;
+  width: 560px;
+  height: 640px;
+  overflow: hidden;
+}
+
+.photo img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+@media (max-width: 1079px) {
+  .opening {
+    gap: 40px;
+    padding: 56px 48px;
+  }
+
+  .number { font-size: 120px; }
+
+  .title {
+    font-size: 56px;
+    letter-spacing: -1.008px;
+  }
+
+  .lede { font-size: 20px; }
+
+  .photo {
+    width: 340px;
+    height: 460px;
+  }
+}
+
+@media (max-width: 759px) {
+  .opening {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    padding: 0;
+  }
+
+  .text {
+    flex: none;
+    gap: 14px;
+    padding: 36px 20px 28px;
+  }
+
+  .number { font-size: 110px; }
+
+  .kicker {
+    font-size: 10px;
+    line-height: 1.5;
+    letter-spacing: 1.5px;
+  }
+
+  .title {
+    font-size: 44px;
+    letter-spacing: -0.88px;
+  }
+
+  .lede {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  .photo {
+    width: 100%;
+    height: 300px;
+  }
+}

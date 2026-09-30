@@ -1,0 +1,90 @@
+/* Pencil: Question row (zNR0b), 900 wide. No phone board (the Field page's phone lists bare questions, a smaller thing): number, question and invitation stay, the status line and arrow tighten. */
+.item { display: block; }
+
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: 28px;
+  padding: 24px 0;
+  border-top: 1px solid var(--line);
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.number {
+  flex: none;
+  width: 40px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+}
+
+.body {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 10px;
+  min-width: 0;
+}
+
+.status {
+  color: var(--fg-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.question {
+  margin: 0;
+  font-size: 32px;
+  font-weight: var(--weight-statement);
+  line-height: 1.08;
+  letter-spacing: -0.576px;
+}
+
+.invitation {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 17px;
+  font-weight: var(--weight-reading);
+  line-height: 1.55;
+}
+
+/* Where Pencil draws an 18px arrow. The wheel is smaller, and sits at the arrow's height. */
+.arrow {
+  display: flex;
+  flex: none;
+  padding-top: 6px;
+  font-size: 11px;
+}
+
+@media (max-width: 759px) {
+  .row {
+    gap: 14px;
+    padding: 18px 0;
+  }
+
+  .number { width: 26px; }
+
+  .body { gap: 8px; }
+
+  .status {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+
+  .question {
+    font-size: 24px;
+    line-height: 1.12;
+    letter-spacing: -0.48px;
+  }
+
+  .invitation {
+    font-size: 15px;
+    line-height: 1.5;
+  }
+}

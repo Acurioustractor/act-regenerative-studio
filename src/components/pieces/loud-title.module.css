@@ -1,0 +1,39 @@
+/* Pencil: Loud title (WwOiE), 620 by 400: ink, the words in the loud face, a rust block under the last two lines. Every length is Pencil's px value over its 118px type size, in em, so it scales as one drawing; on a phone it is drawn at 72px. */
+.loud {
+  position: relative;
+  width: calc(620em / 118);
+  max-width: 100%;
+  min-height: calc(400em / 118);
+  background: var(--ink);
+  font-size: 118px;
+  overflow: hidden;
+}
+
+.block {
+  position: absolute;
+  left: calc(40em / 118);
+  top: calc(210em / 118);
+  width: calc(400em / 118);
+  height: calc(90em / 118);
+  background: var(--accent);
+}
+
+.words {
+  position: relative;
+  margin: 0;
+  padding: calc(24em / 118) calc(16em / 118) calc(24em / 118) calc(24em / 118);
+  color: var(--paper);
+  font-family: var(--font-loud);
+  font-size: 1em;
+  font-weight: 800;
+  line-height: 0.9;
+  letter-spacing: calc(-0.5em / 118);
+  text-transform: uppercase;
+}
+
+@media (max-width: 759px) {
+  .loud {
+    width: 100%;
+    font-size: 72px;
+  }
+}

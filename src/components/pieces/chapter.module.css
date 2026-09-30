@@ -1,0 +1,91 @@
+/* Pencil: Chapter (u6VSho), 1100 wide: the number and a kicker in a 200 margin, heading and prose beside it. No phone board: the margin becomes a line above the heading. */
+.chapter {
+  display: flex;
+  gap: 48px;
+  padding: 40px 0;
+  border-top: 1px solid var(--line);
+}
+
+.margin {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: 8px;
+  width: 200px;
+}
+
+.number {
+  margin: 0;
+  color: var(--accent);
+  font-size: 48px;
+  font-weight: var(--weight-statement);
+}
+
+.kicker {
+  margin: 0;
+  color: var(--fg-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.body {
+  display: flex;
+  flex: 1 1 0;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.heading {
+  margin: 0;
+  font-size: 40px;
+  font-weight: var(--weight-statement);
+  line-height: 1.08;
+  letter-spacing: -0.72px;
+}
+
+.text {
+  font-size: 20px;
+  font-weight: var(--weight-reading);
+  line-height: 1.55;
+}
+
+.text > * { margin: 0; }
+.text > * + * { margin-top: 1em; }
+
+@media (max-width: 1079px) {
+  .chapter { gap: 32px; }
+  .margin { width: 140px; }
+}
+
+@media (max-width: 759px) {
+  .chapter {
+    flex-direction: column;
+    gap: 16px;
+    padding: 32px 0;
+  }
+
+  .margin {
+    flex-direction: row;
+    align-items: baseline;
+    gap: 12px;
+    width: auto;
+  }
+
+  .number { font-size: 32px; }
+
+  .kicker { font-size: 10px; }
+
+  .body { gap: 12px; }
+
+  .heading {
+    font-size: 30px;
+    line-height: 1.1;
+    letter-spacing: -0.54px;
+  }
+
+  .text { font-size: 18px; }
+}

@@ -1,0 +1,42 @@
+/* Pencil: Numbered card (L1GHII), 380 wide: the doors, the convictions. Already one column on a phone. */
+.item { display: block; }
+
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 0;
+  border-top: 2px solid var(--fg);
+}
+
+.number {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: var(--weight-statement);
+  line-height: 1.08;
+  letter-spacing: -0.504px;
+}
+
+.text {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 17px;
+  font-weight: var(--weight-reading);
+  line-height: 1.55;
+}
+
+@media (max-width: 759px) {
+  .title {
+    font-size: 24px;
+    letter-spacing: -0.432px;
+  }
+}

@@ -1,0 +1,6 @@
+/* Fills its box; the drawing is fitted and centred inside, as parts.js fits it in Pencil. */
+.parts {
+  display: block;
+  width: 100%;
+  height: 100%;
+}

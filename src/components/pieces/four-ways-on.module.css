@@ -1,0 +1,199 @@
+/* Pencil: Four ways on (x5WoQq) at 1440, Four ways on · phone (aWeTk) at 390. Motion from act-play.html's d-four. */
+.fourWaysOn {
+  display: flex;
+  flex-direction: column;
+  padding: 80px 96px;
+  background: var(--bg);
+  border-top: 2px solid var(--fg);
+}
+
+.eyebrow {
+  margin: 0 0 10px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.heading {
+  max-width: 800px;
+  margin: 0 0 32px;
+  font-size: 48px;
+  font-weight: var(--weight-statement);
+  line-height: 1.1;
+  letter-spacing: -0.72px;
+}
+
+.four {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 24px;
+  margin-bottom: 32px;
+}
+
+.way {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+  color: var(--fg);
+  text-decoration: none;
+  transition: opacity 250ms ease;
+}
+
+.four:hover .way:not(:hover) { opacity: 0.45; }
+
+.way:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.part {
+  display: flex;
+  align-items: center;
+  width: 28px;
+  height: 22px;
+}
+
+.part > i {
+  transition: transform 350ms var(--ease-arrive), background-color 250ms ease;
+}
+
+.way:hover .part,
+.way:focus-visible .part { color: var(--accent); }
+
+.way:hover .part > i,
+.way:focus-visible .part > i { transform: translateY(-6px) scale(1.25); }
+
+.words {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.title {
+  font-size: 24px;
+  font-weight: var(--weight-statement);
+  line-height: 1.1;
+  letter-spacing: -0.36px;
+}
+
+/* The small wheel stands where Pencil draws a 16px arrow; at the label's size it weighs about the same. */
+.wheel {
+  display: flex;
+  font-size: 12px;
+}
+
+.yourQuestion {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 24px;
+  padding-top: 20px;
+  border-top: 1px solid var(--line);
+}
+
+.question {
+  margin: 0;
+  font-size: 26px;
+  font-weight: var(--weight-statement);
+}
+
+/* Arriving: the four parts drop in and settle, one after another. */
+.four[data-arrive="waiting"] .part { opacity: 0; transform: translateY(-24px); }
+.four[data-arrive="in"] .part {
+  animation: arrive var(--arrive-ms) var(--ease-arrive) both;
+  animation-delay: calc(var(--i) * var(--arrive-stagger-ms));
+}
+
+@keyframes arrive {
+  from { opacity: 0; transform: translateY(-24px); }
+  to { opacity: 1; transform: none; }
+}
+
+@media (max-width: 1079px) {
+  .fourWaysOn { padding: 64px 48px; }
+  .four { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 759px) {
+  .fourWaysOn { padding: 40px 20px; }
+
+  .eyebrow {
+    margin-bottom: 0;
+    font-size: 11px;
+  }
+
+  .heading {
+    margin-bottom: 16px;
+    font-size: 30px;
+    line-height: 1.06;
+    letter-spacing: -0.6px;
+  }
+
+  .four {
+    display: flex;
+    flex-direction: column;
+    gap: 0;
+    margin-bottom: 0;
+  }
+
+  .way {
+    flex-direction: row;
+    gap: 14px;
+    padding: 14px 0;
+  }
+
+  .part { flex: none; }
+
+  .words {
+    flex: 1;
+    gap: 4px;
+    min-width: 0;
+  }
+
+  .label { font-size: 10px; }
+
+  .title {
+    font-size: 20px;
+    line-height: 1.15;
+    letter-spacing: -0.4px;
+  }
+
+  .wheel {
+    align-self: center;
+    font-size: 11px;
+  }
+
+  .yourQuestion {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 6px;
+    padding-top: 16px;
+  }
+
+  .question {
+    font-size: 18px;
+    line-height: 1.25;
+    letter-spacing: -0.36px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .way,
+  .part > i { transition: none; }
+  .way:hover .part > i,
+  .way:focus-visible .part > i { transform: none; }
+  .four[data-arrive] .part { opacity: 1; transform: none; animation: none; }
+}

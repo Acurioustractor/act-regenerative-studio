@@ -1,0 +1,15 @@
+.surface {
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-display);
+  font-weight: var(--weight-reading);
+  /* Pencil text with no line height set uses the face's own; pieces set theirs where the design does. */
+  line-height: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+.surface *,
+.surface *::before,
+.surface *::after {
+  box-sizing: border-box;
+}

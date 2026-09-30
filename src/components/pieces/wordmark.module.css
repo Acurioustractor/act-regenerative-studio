@@ -1,0 +1,32 @@
+/* From Pencil's Wordmark (JKaTU) at 46px: letter-spacing -1, word space 12, wheel 22 standing 10 above the foot. */
+.wordmark {
+  display: inline-flex;
+  font-size: 46px;
+  color: var(--fg);
+}
+
+.letters {
+  display: inline-flex;
+  align-items: flex-end;
+  font-family: var(--font-display);
+  font-weight: var(--weight-statement);
+  /* Pencil sets Fraunces at 46px in a 57px line. */
+  line-height: 1.24;
+  letter-spacing: -0.0217em;
+  white-space: nowrap;
+}
+
+.space {
+  display: inline-block;
+  width: 0.26em;
+}
+
+.wheel {
+  display: inline-block;
+  flex: none;
+  width: 0.478em;
+  height: 0.478em;
+  margin: 0 0.0435em 0.217em;
+  border-radius: 50%;
+  background: var(--accent);
+}

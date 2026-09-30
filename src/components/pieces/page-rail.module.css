@@ -1,0 +1,37 @@
+/* Pencil: Page rail (vPjBL). No phone board; on a phone it scrolls sideways. */
+.rail {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  padding: 14px 96px;
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+
+.label { color: var(--accent); }
+
+.link {
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.link:hover { color: var(--accent); }
+
+.link:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 759px) {
+  .rail {
+    gap: 24px;
+    padding: 14px 20px;
+  }
+}

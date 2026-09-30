@@ -1,0 +1,28 @@
+/* From Pencil's Full stop (Ax1RV) at 56px: letter-spacing -1.2, gap 6, a 40 x 31 tractor standing 12 above the foot. */
+.fullStop {
+  display: inline-flex;
+  font-size: 56px;
+  color: var(--fg);
+}
+
+.letters {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 0.107em;
+  font-family: var(--font-display);
+  font-weight: var(--weight-statement);
+  line-height: 1.24;
+  letter-spacing: -0.0214em;
+  white-space: nowrap;
+}
+
+.dot {
+  display: inline-flex;
+  padding: 0 0.036em 0.214em;
+}
+
+.dot .tractor {
+  display: block;
+  width: 0.714em;
+  height: 0.554em;
+}

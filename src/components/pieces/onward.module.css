@@ -1,0 +1,54 @@
+/* Pencil's Link (x0bCrf): mono 12, weight 600, letter-spacing 2, rust. The wheel is from act-play.html's roll-link. */
+.onward {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75em;
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.accent { color: var(--accent); }
+.fg { color: var(--fg); }
+
+.wheel {
+  position: relative;
+  display: inline-block;
+  flex: none;
+  width: 1.1em;
+  height: 1.1em;
+  border-radius: 50%;
+  background: currentColor;
+  transition: transform var(--roll-ms) var(--ease), background-color 300ms ease;
+}
+
+/* The notch that shows it turning. */
+.wheel::after {
+  content: "";
+  position: absolute;
+  left: 44%;
+  top: 12%;
+  width: 12%;
+  height: 32%;
+  background: var(--bg);
+}
+
+.rolls:hover .wheel,
+.rolls:focus-visible .wheel {
+  transform: translateX(1.5em) rotate(180deg);
+  background: var(--accent);
+}
+
+.rolls:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wheel { transition: background-color 300ms ease; }
+  .rolls:hover .wheel,
+  .rolls:focus-visible .wheel { transform: none; }
+}

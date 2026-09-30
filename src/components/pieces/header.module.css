@@ -1,0 +1,247 @@
+/* Pencil: Header (hAT8r) at 1440, Header · phone (g3LT4) and Menu · phone open (EUjDC) at 390. */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-5) var(--space-8);
+  background: var(--bg);
+  border-bottom: 1px solid var(--fg);
+}
+
+.home {
+  display: flex;
+  color: inherit;
+  text-decoration: none;
+}
+
+.mark { font-size: 46px; }
+
+.doors {
+  display: flex;
+  align-items: flex-end;
+  gap: 28px;
+}
+
+.door {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.label {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.8px;
+  text-transform: uppercase;
+  transition: color 250ms ease;
+}
+
+.part {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 18px;
+  height: 12px;
+  color: var(--line);
+}
+
+.part > i {
+  transition: background-color 250ms ease, transform 350ms var(--ease-arrive);
+}
+
+/* Where you are, and where you point: the part turns rust and lifts. */
+.door[aria-current="page"] .label { color: var(--accent); }
+.door[aria-current="page"] .part,
+.door:hover .part,
+.door:focus-visible .part { color: var(--accent); }
+.door[aria-current="page"] .part > i,
+.door:hover .part > i,
+.door:focus-visible .part > i { transform: scale(1.5); }
+
+/* Pointing at another door hands the rust over. */
+.doors:hover .door[aria-current="page"]:not(:hover) .label { color: var(--fg); }
+.doors:hover .door[aria-current="page"]:not(:hover) .part { color: var(--line); }
+.doors:hover .door[aria-current="page"]:not(:hover) .part > i { transform: none; }
+
+.door:focus-visible,
+.home:focus-visible,
+.menuButton:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 6px;
+}
+
+.menuButton {
+  display: none;
+  flex-direction: column;
+  gap: 6px;
+  width: 28px;
+  padding: 2px 0;
+  border: 0;
+  background: none;
+  cursor: pointer;
+}
+
+.bar {
+  display: block;
+  width: 28px;
+  height: 3px;
+  background: var(--fg);
+}
+
+.hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+/* The six doors need about 1080px beside the wordmark; below that they fold into the menu. */
+@media (max-width: 1079px) {
+  .header { padding: 16px 20px; }
+  .mark { font-size: 24px; }
+  .doors { display: none; }
+  .menuButton { display: flex; }
+}
+
+/* The menu, open on a phone: ink, the four doors with their parts, About and Contact, and the way to reach us. */
+.menu {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.menu a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.menuTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 20px;
+  border-bottom: 1px solid var(--line);
+}
+
+.menuMark { font-size: 24px; }
+
+.close {
+  padding: 0;
+  border: 0;
+  background: none;
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.menuDoors {
+  display: flex;
+  flex-direction: column;
+  padding: 8px 20px;
+}
+
+.menuDoor {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 18px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.menuPart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 30px;
+  height: 24px;
+  flex: none;
+  color: var(--fg);
+}
+
+.menuWords {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.menuName {
+  font-size: 40px;
+  font-weight: var(--weight-statement);
+  line-height: 1.06;
+  letter-spacing: -0.8px;
+}
+
+.menuInvite {
+  color: var(--fg-muted);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.menuDoor[aria-current="page"] .menuPart,
+.menuDoor[aria-current="page"] .menuName { color: var(--accent); }
+
+.menuPlain {
+  display: flex;
+  gap: 32px;
+  padding: 20px 0;
+  font-size: 26px;
+  font-weight: var(--weight-statement);
+  line-height: 1.06;
+  letter-spacing: -0.52px;
+}
+
+.menuBottom {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: auto;
+  padding: 20px 20px 28px;
+  border-top: 1px solid var(--line);
+}
+
+.menuInvitation {
+  margin: 0;
+  font-size: 20px;
+  font-weight: var(--weight-statement);
+  line-height: 1.2;
+  letter-spacing: -0.4px;
+}
+
+.menu .menuEmail {
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+}
+
+.menuAck {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 12px;
+  line-height: 1.5;
+}
+
+@media (min-width: 1080px) {
+  .menu { display: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .part > i,
+  .label { transition: none; }
+}

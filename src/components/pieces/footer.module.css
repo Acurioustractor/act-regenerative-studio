@@ -1,0 +1,89 @@
+/* Pencil: Footer (NTYwd) at 1440, Footer · phone (TaSOe) at 390. */
+.footer {
+  display: flex;
+  gap: var(--space-8);
+  padding: var(--space-8);
+}
+
+.left {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: var(--space-4);
+  min-width: 0;
+}
+
+.oneLine {
+  margin: 0;
+  font-size: 26px;
+  font-weight: var(--weight-statement);
+  line-height: 1.2;
+}
+
+.acknowledgement {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.right {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: var(--space-3);
+  width: 420px;
+}
+
+.fullStop { font-size: 56px; }
+
+.small {
+  margin: 0;
+  color: var(--fg-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.small a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.small:hover,
+.small a:hover { color: var(--fg); }
+
+.small:focus-visible,
+.small a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+@media (max-width: 759px) {
+  .footer {
+    flex-direction: column;
+    gap: 20px;
+    padding: 40px 20px 32px;
+  }
+
+  .left { gap: 20px; }
+  .oneLine { font-size: 24px; }
+  .acknowledgement { font-size: 14px; }
+
+  .right {
+    align-items: flex-start;
+    gap: 6px;
+    width: auto;
+  }
+
+  .fullStop { margin-bottom: 14px; }
+
+  .small {
+    font-size: 10px;
+    letter-spacing: 1.5px;
+  }
+}

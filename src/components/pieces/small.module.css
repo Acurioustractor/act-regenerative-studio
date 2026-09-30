@@ -1,0 +1,22 @@
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+
+.rule {
+  display: block;
+  width: 64px;
+  height: 5px;
+  background: var(--accent);
+}
+
+.square {
+  display: block;
+  flex: none;
+  background: var(--accent);
+}

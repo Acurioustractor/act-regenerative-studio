@@ -49,6 +49,8 @@ export interface Brand {
   motion: Record<string, unknown>;
   record: string[];
   unknown: string[];
+  /** A sub-brand's own colours, generated into tokens.css under [data-look="<name>"] as --<prefix>-<colour>. */
+  looks?: Record<string, { prefix: string; colors: Record<string, string> }>;
 }
 
 export const brand = raw as Brand;

@@ -690,5 +690,17 @@
     "to confirm",
     "to be agreed"
   ],
-  "_recordNote": "record and unknown feed the video kit's record strip. \"Held by\" is an open decision (Ben found it confusing on 30 Sep); no page uses it."
+  "_recordNote": "record and unknown feed the video kit's record strip. \"Held by\" is an open decision (Ben found it confusing on 30 Sep); no page uses it.",
+  "looks": {
+    "confessions": {
+      "_about": "Confessions to ___: each edition keeps its own dark and gold, inside ACT's strip and footer (Pencil n0MhK, E5hyfE). Scoped to [data-look=\"confessions\"]; translucent versions are color-mix of these.",
+      "prefix": "cf",
+      "colors": {
+        "espresso": "#15100A",
+        "raised": "#1E1710",
+        "gold": "#CFA16B",
+        "cream": "#F2EFE8"
+      }
+    }
+  }
 }

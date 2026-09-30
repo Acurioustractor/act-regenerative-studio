@@ -59,3 +59,10 @@
   --line: #F2EFE840;
   --bg-shade: #1E1E1C;
 }
+
+[data-look="confessions"] {
+  --cf-espresso: #15100A;
+  --cf-raised: #1E1710;
+  --cf-gold: #CFA16B;
+  --cf-cream: #F2EFE8;
+}

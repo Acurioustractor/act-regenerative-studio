@@ -46,6 +46,13 @@ export function render(brand) {
   lines.push('[data-surface="ink"] {');
   for (const [k, v] of Object.entries(brand.surfaces.ink)) lines.push(`  --${k}: ${v};`);
   lines.push("}");
+  // A look is a sub-brand's own colours (Confessions' dark and gold), scoped to [data-look].
+  for (const [name, look] of Object.entries(brand.looks ?? {})) {
+    lines.push("");
+    lines.push(`[data-look="${name}"] {`);
+    for (const [k, v] of Object.entries(look.colors)) lines.push(`  --${look.prefix}-${kebab(k)}: ${v};`);
+    lines.push("}");
+  }
   return lines.join("\n") + "\n";
 }
 

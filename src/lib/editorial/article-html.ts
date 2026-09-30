@@ -22,6 +22,13 @@
  * an article.
  */
 
+import {
+  canonicalMediaSrc,
+  isEmpathyLedgerMedia,
+  optimisedImageUrl,
+  optimisedSrcSet,
+} from "@/lib/media/optimised-image";
+
 const SCRIPT_TAG = /<script\b[^>]*>[\s\S]*?<\/script>/gi;
 const BODY_H1_OPEN = /<h1(\s[^>]*)?>/gi;
 const BODY_H1_CLOSE = /<\/h1>/gi;
@@ -129,6 +136,50 @@ export function captionFigures(html: string, sources: FigureCaptionSource[]): st
     if (!text) return whole;
     return `<figure${attrs}>${inner}<figcaption>${escapeHtml(text)}</figcaption></figure>`;
   });
+}
+
+/**
+ * Body photographs at the width they are shown.
+ *
+ * Empathy Ledger exports each one as the full original behind its gated route,
+ * marked `width="auto" height="auto"`: 17 photographs and 31.3 MB on "At the
+ * Speed of Ceremony", 1.86 MB once sized (measured 30 Sep 2026). This points
+ * each gated photograph at Next's optimiser with a srcset, sized for the 720px
+ * column or for a full-width figure, and drops the two "auto" attributes,
+ * which are not valid values. The optimiser still fetches through the gate.
+ *
+ * Runs after captionFigures, which matches photographs by their Empathy Ledger
+ * address. Any other host is left exactly as it arrived.
+ *
+ * No space is held for them in CSS, on purpose. `aspect-ratio: auto 3 / 2` on
+ * .rich-text img was tried and raised the layout shift on "History's Wounds"
+ * from 0.08 to 3.2 (desktop, 30 Sep 2026). Sized photographs arrive before they
+ * scroll into view, which is what took the shift from 1.6 on the live site to
+ * 0.08; the originals took long enough to grow while being read.
+ */
+const IMG_TAG = /<img\b[^>]*>/gi;
+const SRC_ATTR = /\bsrc=(["'])(.*?)\1/i;
+const FULLWIDTH_FIGURE = /<figure\b[^>]*\bw-richtext-align-fullwidth\b[^>]*>[\s\S]*?<\/figure>/gi;
+const COLUMN_SIZES = "(max-width: 768px) 100vw, 720px";
+const FULLWIDTH_SIZES = "(max-width: 1148px) calc(100vw - 3rem), 1100px";
+
+function optimiseImgTag(tag: string, sizes: string): string {
+  if (/\bsrcset=/i.test(tag)) return tag;
+  const match = SRC_ATTR.exec(tag);
+  if (!match) return tag;
+  const original = match[2].replace(/&amp;/g, "&");
+  if (!isEmpathyLedgerMedia(original)) return tag;
+  const src = canonicalMediaSrc(original);
+  const attrs = `src="${escapeHtml(optimisedImageUrl(src, 1200))}" srcset="${escapeHtml(optimisedSrcSet(src))}" sizes="${sizes}"`;
+  let out = tag.replace(match[0], () => attrs).replace(/\s(?:width|height)=(["'])auto\1/gi, "");
+  if (!/\bdecoding=/i.test(out)) out = out.replace(/^<img\b/i, '<img decoding="async"');
+  return out;
+}
+
+export function optimiseArticleImages(html: string): string {
+  return html
+    .replace(FULLWIDTH_FIGURE, (figure) => figure.replace(IMG_TAG, (tag) => optimiseImgTag(tag, FULLWIDTH_SIZES)))
+    .replace(IMG_TAG, (tag) => optimiseImgTag(tag, COLUMN_SIZES));
 }
 
 /** True when the article body already shows this photograph. */

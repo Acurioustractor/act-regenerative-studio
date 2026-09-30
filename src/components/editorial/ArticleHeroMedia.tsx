@@ -1,6 +1,6 @@
 "use client";
 
-import Image from "next/image";
+import { FallbackImage } from "@/components/media/FallbackImage";
 import { useState } from "react";
 
 /**
@@ -50,14 +50,14 @@ export function ArticleHeroMedia({
       </div>
 
       {imageUrl && !failed ? (
-        <Image
+        <FallbackImage
           src={imageUrl}
           alt={alt}
           fill
           sizes="100vw"
           className="object-cover"
           priority
-          onError={() => setFailed(true)}
+          onGiveUp={() => setFailed(true)}
         />
       ) : null}
 

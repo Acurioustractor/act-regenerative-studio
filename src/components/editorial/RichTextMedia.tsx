@@ -28,6 +28,33 @@ import { useEffect, useRef } from "react";
  * scripts/check-editorial-media.mjs for the measurement that watches it.
  */
 
+/**
+ * Body photographs go through Next's optimiser (optimiseArticleImages), which
+ * gives up on a slow upstream. Before hiding one, ask for the original once,
+ * still through Empathy Ledger's gate: a refused photograph fails again and is
+ * hidden, a slow one arrives.
+ */
+function retryOriginal(image: HTMLImageElement): boolean {
+  if (image.dataset.retried) return false;
+  let original: string | null = null;
+  try {
+    const url = new URL(image.currentSrc || image.src, window.location.href);
+    if (url.pathname === "/_next/image") original = url.searchParams.get("url");
+  } catch {
+    return false;
+  }
+  if (!original) return false;
+  image.dataset.retried = "1";
+  image.removeAttribute("srcset");
+  image.removeAttribute("sizes");
+  image.src = original;
+  return true;
+}
+
+function giveUp(image: HTMLImageElement) {
+  if (!retryOriginal(image)) conceal(image);
+}
+
 function conceal(image: HTMLImageElement) {
   const target = image.closest("figure") ?? image;
   if (!(target instanceof HTMLElement)) return;
@@ -46,11 +73,11 @@ export function RichTextMedia({ html }: { html: string }) {
     // catch, so the already-broken ones are swept first. A complete image with
     // no intrinsic width is one the browser tried and could not decode.
     for (const image of node.querySelectorAll("img")) {
-      if (image.complete && image.naturalWidth === 0) conceal(image);
+      if (image.complete && image.naturalWidth === 0) giveUp(image);
     }
 
     const onError = (event: Event) => {
-      if (event.target instanceof HTMLImageElement) conceal(event.target);
+      if (event.target instanceof HTMLImageElement) giveUp(event.target);
     };
     node.addEventListener("error", onError, true);
     return () => node.removeEventListener("error", onError, true);

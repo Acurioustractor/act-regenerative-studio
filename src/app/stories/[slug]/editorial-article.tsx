@@ -14,6 +14,7 @@ import {
   prepareArticleHtml,
   captionFigures,
   htmlContainsMedia,
+  optimiseArticleImages,
   readingTimeMinutes,
 } from "@/lib/editorial/article-html";
 import { formatArticleType } from "@/lib/editorial/article-type";
@@ -89,9 +90,12 @@ export async function EditorialArticleReader({
 }) {
   const content = post.content || "";
   const looksLikeHtml = /<\/?[a-z][\s\S]*>/i.test(content);
-  const preparedHtml = looksLikeHtml
+  const captionedHtml = looksLikeHtml
     ? captionFigures(prepareArticleHtml(content), post.media?.photoPreviews || [])
     : null;
+  // Rendered HTML only: the gallery below matches photographs against their
+  // Empathy Ledger addresses, which the optimiser rewrite encodes.
+  const preparedHtml = captionedHtml ? optimiseArticleImages(captionedHtml) : null;
   const readingMinutes = readingTimeMinutes(content);
   const lede = shortLede(post.excerpt);
 
@@ -123,7 +127,7 @@ export async function EditorialArticleReader({
   // at the foot of the page; the gallery is for what the body could not hold.
   const gallery = (post.media?.photoPreviews || [])
     .filter((photo) => !!photo.url && photo.url !== post.featuredImageUrl)
-    .filter((photo) => !(preparedHtml && htmlContainsMedia(preparedHtml, photo.url)))
+    .filter((photo) => !(captionedHtml && htmlContainsMedia(captionedHtml, photo.url)))
     .slice(0, 8)
     .map((photo) => ({
       url: photo.url,

@@ -3,10 +3,17 @@
 import Link from "next/link";
 import { useMemo, useState } from "react";
 import type { EditorialArticle } from "@/lib/empathy-ledger-editorial";
+import { canonicalMediaSrc, isEmpathyLedgerMedia, optimisedImageUrl } from "@/lib/media/optimised-image";
 import styles from "./stories.module.css";
+import { FallbackImage } from "@/components/media/FallbackImage";
 
 const projectNames: Record<string,string> = { "justicehub":"JusticeHub", "goods-on-country":"Goods", "the-harvest":"The Harvest", "empathy-ledger":"Empathy Ledger", "black-cockatoo-valley":"Land", "art":"Art" };
 const publicText = (value: string) => value.replace(/[—–]/g, ",");
+// The grid is three columns above 900px (the lead card spans two), two up to
+// 700px, one below. Cards were full originals until 30 Sep 2026: 13.4 MB for
+// ten cards, one 8,192px wide for a 266px slot.
+const CARD_SIZES = "(max-width: 700px) 100vw, (max-width: 900px) 50vw, 33vw";
+const LEAD_SIZES = "(max-width: 900px) 100vw, 66vw";
 
 export function StoriesStream({ stories }: { stories: EditorialArticle[] }) {
   const [project, setProject] = useState("all");
@@ -23,8 +30,11 @@ export function StoriesStream({ stories }: { stories: EditorialArticle[] }) {
     <div className={styles.grid}>{visible.map((story, index) => {
       const video = story.media?.videoPreviews?.[0];
       const image = story.featuredImageUrl && !deadImages.includes(story.featuredImageUrl) ? story.featuredImageUrl : null;
-      return <article key={story.id} className={index === 0 && project === "all" ? styles.lead : ""}><Link href={story.localPath}>
-        <div className={styles.media}>{video?.url ? <video muted loop playsInline preload="metadata" poster={video.thumbnailUrl || image || undefined} onMouseEnter={(event) => { void event.currentTarget.play().catch((error: unknown) => { if (!(error instanceof DOMException && error.name === "AbortError")) console.error("Story preview could not play", error); }); }} onMouseLeave={(event) => { event.currentTarget.pause(); event.currentTarget.currentTime = 0; }}><source src={video.url} /></video> : image ? <img src={image} alt={story.featuredImageAlt || ""} onError={() => setDeadImages((current) => current.includes(image) ? current : [...current, image])} /> : <span>Story<br />waiting for an image</span>}{video?.url ? <b>Film</b> : null}</div>
+      const lead = index === 0 && project === "all";
+      const markDead = () => { if (image) setDeadImages((current) => current.includes(image) ? current : [...current, image]); };
+      const poster = video?.thumbnailUrl || (isEmpathyLedgerMedia(image) ? optimisedImageUrl(canonicalMediaSrc(image), 1200) : image) || undefined;
+      return <article key={story.id} className={lead ? styles.lead : ""}><Link href={story.localPath}>
+        <div className={styles.media}>{video?.url ? <video muted loop playsInline preload="metadata" poster={poster} onMouseEnter={(event) => { void event.currentTarget.play().catch((error: unknown) => { if (!(error instanceof DOMException && error.name === "AbortError")) console.error("Story preview could not play", error); }); }} onMouseLeave={(event) => { event.currentTarget.pause(); event.currentTarget.currentTime = 0; }}><source src={video.url} /></video> : image ? <FallbackImage src={image} alt={story.featuredImageAlt || ""} fill sizes={lead ? LEAD_SIZES : CARD_SIZES} onGiveUp={markDead} /> : <span>Story<br />waiting for an image</span>}{video?.url ? <b>Film</b> : null}</div>
         <div className={styles.copy}><p>{story.relatedProjectSlugs.map((slug) => projectNames[slug] || slug.replaceAll("-", " ")).join(" · ") || "Across ACT"}</p><h3>{publicText(story.title)}</h3>{story.excerpt ? <span>{publicText(story.excerpt)}</span> : null}<footer><em>{publicText(story.authorName || "A Curious Tractor")}</em><b>Read →</b></footer></div>
       </Link></article>;
     })}</div>

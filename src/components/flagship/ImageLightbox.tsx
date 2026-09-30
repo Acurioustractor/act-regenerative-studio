@@ -1,9 +1,10 @@
 "use client";
 
-import Image from "next/image";
 import { useState, useCallback, useEffect } from "react";
 
 import { cleanMediaAlt } from "@/lib/media/alt-text";
+import { isOptimisable } from "@/lib/media/optimised-image";
+import { FallbackImage } from "@/components/media/FallbackImage";
 
 interface GalleryImage {
   id: string;
@@ -62,8 +63,10 @@ export function ImageLightbox({ images }: { images: GalleryImage[] }) {
                 : "aspect-[16/10]"
             }`}
           >
-            <Image
-              src={img.thumbnailUrl || img.url}
+            <FallbackImage
+              // The thumbnail is 352px and this tile is up to 689px; the
+              // optimiser sizes the original instead when it can.
+              src={isOptimisable(img.url) ? img.url : img.thumbnailUrl || img.url}
               alt={getAlt(img)}
               fill
               sizes={
@@ -130,7 +133,8 @@ export function ImageLightbox({ images }: { images: GalleryImage[] }) {
             className="relative max-h-[85vh] max-w-[90vw]"
             onClick={(e) => e.stopPropagation()}
           >
-            <Image
+            <FallbackImage
+              key={images[selectedIndex].url}
               src={images[selectedIndex].url}
               alt={getAlt(images[selectedIndex])}
               width={1600}

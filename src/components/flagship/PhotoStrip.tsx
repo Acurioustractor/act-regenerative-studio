@@ -1,9 +1,9 @@
 "use client";
 
-import Image from "next/image";
 import { useState } from "react";
 
 import { cleanMediaAlt } from "@/lib/media/alt-text";
+import { FallbackImage } from "@/components/media/FallbackImage";
 
 interface MediaItem {
   url: string;
@@ -54,13 +54,16 @@ export function PhotoStrip({
             onClick={() => setLightboxIdx(i)}
             className={`relative ${aspect} overflow-hidden ${rounded ? "rounded-[var(--site-radius)]" : ""} group cursor-pointer`}
           >
-            <Image
+            <FallbackImage
               src={img.url}
               alt={getAlt(img)}
               fill
-              sizes={`${Math.round(100 / columns)}vw`}
+              sizes={
+                columns === 4
+                  ? "(min-width: 768px) 25vw, 50vw"
+                  : `${Math.round(100 / columns)}vw`
+              }
               className="object-cover transition duration-500 group-hover:scale-105"
-              unoptimized
             />
           </button>
         ))}
@@ -73,13 +76,13 @@ export function PhotoStrip({
           onClick={() => setLightboxIdx(null)}
         >
           <div className="relative max-h-[85vh] max-w-[90vw]">
-            <Image
+            <FallbackImage
+              key={images[lightboxIdx].url}
               src={images[lightboxIdx].url}
               alt={getAlt(images[lightboxIdx])}
               width={1200}
               height={800}
               className="max-h-[85vh] w-auto rounded-lg object-contain"
-              unoptimized
             />
           </div>
           <button

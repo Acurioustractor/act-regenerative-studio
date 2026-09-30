@@ -1,8 +1,12 @@
 "use client";
 
 import NextImage from "next/image";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { createPortal } from "react-dom";
+
+import savedOverrides from "@/data/image-overrides.json";
+import { FallbackImage } from "@/components/media/FallbackImage";
+import { isEmpathyLedgerMedia } from "@/lib/media/optimised-image";
 
 interface EditableImageProps {
   src: string;
@@ -41,8 +45,20 @@ type Segment = "projects" | "orgs";
 
 const imageUrlPattern = /\.(jpe?g|png|webp|gif)(\?|#|$)/i;
 
+// Empathy Ledger's gated route (/api/media/<id>/file) has no file extension,
+// and it is the only way to show one of its photographs without skipping the
+// consent gate, so it counts as an image address.
 function isImageUrl(url: string | null | undefined) {
-  return Boolean(url && imageUrlPattern.test(url));
+  return Boolean(url && (imageUrlPattern.test(url) || isEmpathyLedgerMedia(url)));
+}
+
+// Saving a swap writes src/data/image-overrides.json, which only a dev machine
+// can do; on the live site the button showed to every visitor and could not work.
+const CAN_SWAP = process.env.NODE_ENV === "development";
+
+function savedOverride(slot: string): string | null {
+  const url = (savedOverrides as Record<string, string>)[slot];
+  return isImageUrl(url) ? url : null;
 }
 
 function pickerImageSource(image: PickerImage) {
@@ -62,7 +78,9 @@ export function EditableImage({
   className,
   priority,
 }: EditableImageProps) {
-  const [currentSrc, setCurrentSrc] = useState(defaultSrc);
+  // Read at render, not fetched after mount: the fetch showed the default
+  // photograph first and swapped it a moment later, downloading both.
+  const [currentSrc, setCurrentSrc] = useState(() => savedOverride(slot) || defaultSrc);
   const [picking, setPicking] = useState(false);
   const [allOrgs, setAllOrgs] = useState<OrgGroup[]>([]);
   const [allProjects, setAllProjects] = useState<ProjectGroup[]>([]);
@@ -71,18 +89,6 @@ export function EditableImage({
   const [activeProjectSlug, setActiveProjectSlug] = useState<string>(projectSlug);
   const [loading, setLoading] = useState(false);
 
-  // Load override from saved config on mount
-  useEffect(() => {
-    fetch("/api/image-overrides")
-      .then((r) => r.json())
-      .then((data) => {
-        const override = data.overrides?.[slot];
-        if (isImageUrl(override)) {
-          setCurrentSrc(override);
-        }
-      })
-      .catch(() => {});
-  }, [slot]);
 
   function openPicker() {
     setPicking(true);
@@ -149,16 +155,16 @@ export function EditableImage({
   return (
     <>
       <div className="group/edit absolute inset-0">
-        <NextImage
+        <FallbackImage
+          key={currentSrc}
           src={currentSrc}
           alt={alt}
           fill={fill}
           sizes={sizes}
           className={className}
           priority={priority}
-          unoptimized
         />
-        <button
+        {CAN_SWAP && <button
           onClick={openPicker}
           className="absolute right-3 top-3 z-10 flex h-10 w-10 items-center justify-center rounded-full bg-black/50 text-white shadow-lg backdrop-blur transition-all hover:bg-black/80 hover:scale-110"
           title="Swap image"
@@ -167,7 +173,7 @@ export function EditableImage({
             <path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7" />
             <path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z" />
           </svg>
-        </button>
+        </button>}
       </div>
 
       {/* Picker modal — portalled to body to escape any parent stacking context */}

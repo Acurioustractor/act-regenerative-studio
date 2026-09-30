@@ -1,4 +1,4 @@
-import Image from "next/image";
+import { LeadVoicePortrait } from "./LeadVoicePortrait";
 
 type LeadVoiceProps = {
   quote: string;
@@ -21,17 +21,7 @@ export function LeadVoice({
             &ldquo;{quote}&rdquo;
           </p>
           <footer className="mt-10 flex items-center gap-5">
-            {authorImageUrl ? (
-              <div className="relative h-16 w-16 flex-shrink-0 overflow-hidden rounded-full ring-2 ring-[var(--site-clay)]/30">
-                <Image
-                  src={authorImageUrl}
-                  alt={authorName}
-                  fill
-                  sizes="64px"
-                  className="object-cover"
-                />
-              </div>
-            ) : null}
+            {authorImageUrl ? <LeadVoicePortrait src={authorImageUrl} name={authorName} /> : null}
             <div>
               <p className="font-[var(--font-sans)] text-[15px] font-semibold text-[var(--site-bg)]">
                 {authorName}

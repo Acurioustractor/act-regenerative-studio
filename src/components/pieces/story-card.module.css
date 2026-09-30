@@ -1,0 +1,87 @@
+/* Pencil: Story card (BUhG1), Story card · text tile (yk6Yr). On a phone, from Phone · 09 Stories (nh9b4): photo 220, tile 180, title 26. */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  background: var(--bg);
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.image,
+.tile { height: 260px; }
+
+.tile {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  background: var(--bg-shade);
+}
+
+.tileWords {
+  margin: 0;
+  font-size: 40px;
+  font-weight: var(--weight-statement);
+  line-height: 1;
+  white-space: pre-line;
+}
+
+.project {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.title {
+  margin: 0;
+  font-size: 28px;
+  font-weight: var(--weight-statement);
+  line-height: 1.08;
+  letter-spacing: -0.504px;
+}
+
+.excerpt {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 16px;
+  line-height: 1.55;
+}
+
+.foot {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  /* Pencil draws the 1px rule inside its 10 of padding. */
+  padding-top: 9px;
+  border-top: 1px solid var(--line);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.author { color: var(--fg-muted); }
+
+.read {
+  display: inline-flex;
+  flex: none;
+  align-items: center;
+  gap: 0.75em;
+}
+
+@media (max-width: 759px) {
+  .image { height: 220px; }
+  .tile { height: 180px; }
+  .title { font-size: 26px; letter-spacing: -0.468px; }
+}

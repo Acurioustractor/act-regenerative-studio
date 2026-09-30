@@ -1,0 +1,54 @@
+/* Not in the Pencil file: act-play.html's d-read. A 40px rail with an ink line under it, the tractor at 0.25 (46 wide) 4 up from the line. */
+.rail {
+  --progress: 0;
+  --turn: 0;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+  height: 40px;
+  overflow: hidden;
+  background: var(--bg);
+  border-bottom: 1px solid var(--fg);
+}
+
+.tractor {
+  position: absolute;
+  bottom: 4px;
+  left: calc(var(--progress) * (100% - 46px));
+  width: 46px;
+  aspect-ratio: 182 / 112;
+  /* Drives on from the left when the page opens. */
+  animation: drive-on var(--roll-ms) var(--ease) both;
+}
+
+@keyframes drive-on {
+  from { translate: -70px 0; }
+  to { translate: 0 0; }
+}
+
+/* A notch on each wheel, so the turning shows; the wheel itself is the drawing under it. */
+.wheel {
+  --k: 1;
+  position: absolute;
+  border-radius: 50%;
+  transform: rotate(calc(var(--turn) * var(--k) * 1deg));
+}
+
+.small { --k: 1.6; }
+
+.wheel::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 10%;
+  width: 12%;
+  height: 30%;
+  margin-left: -6%;
+  border-radius: 99px;
+  background: var(--bg);
+  opacity: 0.9;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tractor { animation: none; }
+}

@@ -1,0 +1,133 @@
+/*
+ * Pencil: Body column (page items D and E, article page nq1e6), Paragraph (R1wK5), Body heading (p4dfi), Divider (YPZDq),
+ * Figure (hGi4g), Pull quote (MF3w7). At 1440 the words are 680 wide (380 in each side) and a figure 1000 (220 in).
+ * Phone from Phone · 10 Article (iAFgB): 20 in each side, paragraph 18, pull quote 28, gap 18, figure full width at 240 tall.
+ */
+.body {
+  display: grid;
+  grid-template-columns:
+    [full-start] minmax(48px, 1fr)
+    [wide-start] minmax(0, 160px)
+    [text-start] minmax(0, 680px)
+    [text-end] minmax(0, 160px)
+    [wide-end] minmax(48px, 1fr)
+    [full-end];
+  row-gap: 22px;
+  padding: 56px 0 40px;
+}
+
+.body > * {
+  grid-column: text;
+  min-width: 0;
+}
+
+/* 22 of gap plus 34 is the 56 Pencil leaves above and below a figure row. */
+.body > [data-lane="wide"] {
+  grid-column: wide;
+  margin-block: 34px;
+}
+
+.paragraph {
+  margin: 0;
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+.heading {
+  margin: 0;
+  padding: 24px 0 4px;
+  font-size: 36px;
+  font-weight: var(--weight-statement);
+  line-height: 1.08;
+  letter-spacing: -0.648px;
+}
+
+.divider {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 40px;
+}
+
+/* Pencil: 24 above and below, then a 6 rust bar with the words 28 in from it. */
+.pullQuote {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin: 0;
+  padding: 28px 0 28px 28px;
+}
+
+.pullQuote::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 24px;
+  bottom: 24px;
+  width: 6px;
+  background: var(--accent);
+}
+
+.quote { margin: 0; }
+
+.quote p {
+  margin: 0;
+  font-size: 36px;
+  font-weight: var(--weight-statement);
+  line-height: 1.15;
+  letter-spacing: -0.648px;
+}
+
+.from {
+  color: var(--fg-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.figure {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 0;
+}
+
+.image { aspect-ratio: 1000 / 560; }
+
+.caption {
+  color: var(--fg-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  line-height: 1.5;
+  letter-spacing: 0.6px;
+}
+
+@media (max-width: 759px) {
+  .body {
+    grid-template-columns: [full-start] 20px [wide-start text-start] minmax(0, 1fr) [text-end wide-end] 20px [full-end];
+    row-gap: 18px;
+    padding: 24px 0;
+  }
+
+  .body > [data-lane="wide"] {
+    grid-column: full;
+    margin-block: 8px;
+  }
+
+  .paragraph { font-size: 18px; }
+
+  .heading {
+    font-size: 28px;
+    line-height: 1.1;
+    letter-spacing: -0.504px;
+  }
+
+  .quote p { font-size: 28px; }
+
+  .image { aspect-ratio: 390 / 240; }
+  .caption { padding: 0 20px; }
+}

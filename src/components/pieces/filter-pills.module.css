@@ -1,0 +1,54 @@
+/* Pencil: Filter pills (RbsRA). On a phone, from Phone · 09 Stories (nh9b4): "Filter pills (scrolls sideways)". */
+.pills {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+}
+
+.pill {
+  margin: 0;
+  /* Pencil draws the 1px stroke inside its 9 by 14 padding. */
+  padding: 8px 13px;
+  border: 1px solid var(--fg);
+  border-radius: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  cursor: pointer;
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+.pill:hover { background: var(--bg-shade); }
+
+.pill[aria-pressed="true"] {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.pill:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+
+@media (max-width: 759px) {
+  .pills {
+    flex-wrap: nowrap;
+    /* Room for the focus ring inside the scrolling row. */
+    margin: -4px;
+    padding: 4px;
+    overflow-x: auto;
+    scrollbar-width: none;
+  }
+
+  .pills::-webkit-scrollbar { display: none; }
+  .pill { flex: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .pill { transition: none; }
+}

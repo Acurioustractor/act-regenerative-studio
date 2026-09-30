@@ -1,0 +1,73 @@
+/* Pencil: Photo (E6GIv), the duotone treatment as tone="duotone". The wait is act-play.html's d-load: a 44px rust wheel, turning at --spin-ms. */
+.photo {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  background: var(--bg-shade);
+}
+
+.image {
+  position: absolute;
+  inset: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Hidden while the wheel turns; the fade belongs to the arriving state only, so hiding it is instant. */
+.photo[data-state="loading"] .image,
+.photo[data-state="failed"] .image { opacity: 0; }
+
+.photo[data-state="loaded"] .image { transition: opacity 700ms ease; }
+
+/* The big wheel: 44px (the wheel is 1.1em wide), in the middle of the slot. */
+.wheel {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  display: flex;
+  margin: -22px 0 0 -22px;
+  color: var(--accent);
+  font-size: 40px;
+}
+
+.photo[data-state="loading"] .wheel { animation: turn var(--spin-ms) linear infinite; }
+
+@keyframes turn { to { transform: rotate(360deg); } }
+
+.note {
+  position: absolute;
+  left: 16px;
+  bottom: 14px;
+  color: var(--fg-muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.7px;
+  text-transform: uppercase;
+}
+
+/* Duotone: the picture in greys, multiplied onto paper, so its darks are ink and its lights are paper. */
+.duotone { isolation: isolate; }
+
+.duotone .image {
+  mix-blend-mode: multiply;
+  filter: grayscale(1) contrast(1.4);
+}
+
+.duotone::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--bg);
+  opacity: 0;
+}
+
+.duotone[data-state="still"]::before,
+.duotone[data-state="loaded"]::before { opacity: 1; }
+
+@media (prefers-reduced-motion: reduce) {
+  .photo[data-state="loading"] .wheel { animation: none; }
+  .photo[data-state="loaded"] .image { transition: none; }
+}

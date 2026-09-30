@@ -1,0 +1,77 @@
+/* Pencil: Call to action (KdzlR), on the ink surface. On a phone, from Phone · 10 Article (iAFgB): 48 by 20, heading 30, the buttons stacked. */
+.cta {
+  display: flex;
+  flex-direction: column;
+  gap: 28px;
+  padding: 80px 96px;
+}
+
+.kicker {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.heading {
+  max-width: 1000px;
+  margin: 0;
+  font-size: 48px;
+  font-weight: var(--weight-statement);
+  line-height: 1.1;
+  letter-spacing: -0.864px;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75em;
+  padding: 16px 22px;
+  border: 1px solid var(--fg);
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+@media (max-width: 1079px) {
+  .cta { padding: 64px 48px; }
+}
+
+@media (max-width: 759px) {
+  .cta {
+    gap: 20px;
+    padding: 48px 20px;
+  }
+
+  .kicker,
+  .button {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .heading {
+    font-size: 30px;
+    line-height: 1.15;
+    letter-spacing: -0.6px;
+  }
+
+  .buttons {
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .button { padding: 16px 18px; }
+}

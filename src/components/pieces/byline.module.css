@@ -1,0 +1,50 @@
+/* Pencil: Byline (Q9FnS). Not drawn separately on a phone; the phone article (iAFgB) uses it as is. */
+.byline {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  /* Pencil draws the 2px rule inside its 20 of padding. */
+  padding: 18px 0 20px;
+  border-top: 2px solid var(--fg);
+}
+
+.label {
+  margin: 0;
+  color: var(--fg-muted);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.who {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.initial {
+  display: flex;
+  flex: none;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background: var(--fg);
+  color: var(--bg);
+  font-size: 24px;
+  font-weight: var(--weight-statement);
+}
+
+.name {
+  margin: 0;
+  font-size: 24px;
+  font-weight: var(--weight-statement);
+}
+
+.fields {
+  margin: 0;
+  font-size: 16px;
+  line-height: 1.55;
+}

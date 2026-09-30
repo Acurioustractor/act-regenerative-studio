@@ -1,0 +1,133 @@
+/* The preview's own composition, not pieces: how the stream and an article sit together, from GPOEr (Stories) and nq1e6 (Article). */
+.stream {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  padding: 96px;
+}
+
+.streamHead {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.streamWords {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.streamKicker {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.streamTitle {
+  margin: 0;
+  font-size: 48px;
+  font-weight: var(--weight-statement);
+  letter-spacing: -0.864px;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: start;
+  gap: 40px 32px;
+}
+
+.articleGap {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 8px max(48px, calc((100% - 680px) / 2)) 0;
+}
+
+.back {
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.bylineRow { padding-top: 24px; }
+
+.rows { max-width: 900px; padding: 0 24px; }
+
+.pair {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  gap: 48px;
+  padding: 0 24px;
+}
+
+.loadAgain {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+}
+
+.loadAgainPhoto { width: 560px; max-width: 100%; height: 340px; }
+
+.button {
+  padding: 12px 18px;
+  border: 1px solid var(--fg);
+  border-radius: 0;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.readerBody {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  max-width: 700px;
+  padding: 28px 32px 60px;
+}
+
+.readerBody p {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.65;
+}
+
+@media (max-width: 1079px) {
+  .stream { padding: 64px 48px; }
+  .streamHead { flex-direction: column; align-items: flex-start; }
+  .grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 759px) {
+  .stream {
+    gap: 28px;
+    padding: 40px 20px;
+  }
+
+  .streamHead { gap: 28px; }
+  .streamWords { gap: 28px; }
+  .articleGap { padding: 8px 20px 0; }
+  .streamKicker { font-size: 11px; letter-spacing: 1.5px; }
+  .streamTitle { font-size: 36px; line-height: 1.06; letter-spacing: -0.72px; }
+  .grid { grid-template-columns: minmax(0, 1fr); }
+  .rows { padding: 0 20px; }
+  .pair { padding: 0 20px; }
+  .loadAgainPhoto { height: 220px; }
+}

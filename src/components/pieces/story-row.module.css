@@ -1,0 +1,57 @@
+/* Pencil: Story row (eT6wu). Not drawn on a phone in the Pencil file: there the marker moves above the title. */
+.row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--space-6);
+  /* Pencil draws the 1px rule inside its 24 of padding. */
+  padding: var(--space-5) 0 23px;
+  border-bottom: 1px solid var(--line);
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.row:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.marker {
+  flex: none;
+  width: 160px;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.title {
+  flex: 1;
+  min-width: 0;
+  font-size: 30px;
+  font-weight: var(--weight-statement);
+  line-height: 1.1;
+  text-decoration: underline transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 6px;
+  transition: text-decoration-color 250ms ease;
+}
+
+.row:hover .title,
+.row:focus-visible .title { text-decoration-color: currentColor; }
+
+@media (max-width: 759px) {
+  .row {
+    flex-direction: column;
+    gap: 8px;
+    padding: var(--space-4) 0;
+  }
+
+  .marker { width: auto; font-size: 11px; }
+  .title { font-size: 24px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .title { transition: none; }
+}

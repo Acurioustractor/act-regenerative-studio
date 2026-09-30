@@ -1,0 +1,51 @@
+/* Pencil: the picture slot of a featured work on Page 05 · Art (WzDfe): Photo 640 by 400; Drawing (Q57ZaV): bg-shade, padding 48, the parts filling it; Tile (Kk2TJ): ink, padding 32, the name in the loud face at 80, line 0.88. */
+.fill {
+  width: 100%;
+  height: 100%;
+}
+
+/* A film's still with its own words burned in is shown whole, on ink, not cropped mid-word. */
+.fill.contain {
+  background: var(--ink);
+}
+
+.fill.contain > img {
+  object-fit: contain;
+}
+
+.drawing {
+  padding: 48px;
+  background: var(--bg-shade);
+}
+
+.name {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 32px;
+  background: var(--bg);
+  color: var(--fg);
+}
+
+.name span {
+  font-family: var(--font-loud);
+  font-size: 80px;
+  font-weight: 800;
+  line-height: 0.88;
+  text-transform: uppercase;
+  overflow-wrap: break-word;
+}
+
+/* Among cards (Page 06 · Artwork Connected work, 220 tall) the drawing has less room and the name is smaller. */
+.drawing.compact {
+  padding: 16px;
+  background: var(--bg);
+}
+.name.compact { padding: 20px; }
+.name.compact span { font-size: 44px; }
+
+@media (max-width: 759px) {
+  .drawing { padding: 24px; }
+  .name { padding: 20px; }
+  .name span { font-size: 44px; }
+}

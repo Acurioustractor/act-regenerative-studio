@@ -1,527 +1,307 @@
-import Image from 'next/image';
-import Link from 'next/link';
-import { notFound } from 'next/navigation';
-
-import { STORYTELLERS_PUBLIC } from '@/lib/launch-flags';
-import { SiteLoopVideo } from '@/components/media/SiteLoopVideo';
+import type { Metadata } from "next";
+import Link from "next/link";
+import { notFound } from "next/navigation";
+import { SiteLoopVideo } from "@/components/media/SiteLoopVideo";
+import { EmpathyLedgerConnections } from "@/components/projects/EmpathyLedgerConnections";
+import { FourWaysOn } from "@/components/pieces/FourWaysOn";
+import { Wheel, rolls } from "@/components/pieces/Onward";
+import { Page } from "@/components/pieces/Page";
+import { Photo } from "@/components/pieces/Photo";
+import { PieceLink } from "@/components/pieces/PieceLink";
+import { StatTile } from "@/components/pieces/StatTile";
+import { Surface } from "@/components/pieces/Surface";
+import { fieldsById } from "@/content";
+import { projects as actProjects } from "@/data/projects";
 import {
   getAllArtSlugs,
-  getArtProject,
   getAllArtProjects,
-  type HydratedArtProject,
-  type ArtMedium,
-} from '@/lib/art/art-portfolio';
-import { projects as actProjects } from '@/data/projects';
-import { EmpathyLedgerConnections } from '@/components/projects/EmpathyLedgerConnections';
+  getArtProject,
+  splitFeaturedAndEmerging,
+} from "@/lib/art/art-portfolio";
+import {
+  clean,
+  fieldsOf,
+  heroPhoto,
+  impactLines,
+  inPortfolioOrder,
+  mediumLabel,
+  partOfChips,
+  readYear,
+  relatedWorks,
+  sized,
+  statusLabel,
+  titleSize,
+  withoutFigures,
+} from "@/lib/art/art-page";
+import { arrangementFor } from "@/lib/art/become";
+import { pageMetadata } from "@/lib/seo/site";
+import { waysOn } from "@/lib/ways-on";
+import { WorkVisual } from "../WorkVisual";
+import { BecomeParts } from "./BecomeParts";
+import { Quiet } from "./Quiet";
+import styles from "./artwork.module.css";
 
 export function generateStaticParams() {
   return getAllArtSlugs().map((slug) => ({ slug }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params;
   const project = await getArtProject(slug);
-  if (!project) return { title: 'Work not found' };
+  if (!project) return { title: "Work not found" };
 
-  return {
+  // An old slug (uncle-allan) shows the work under the address it was published at; the canonical is the current one.
+  return pageMetadata({
     title: `${project.title} | ACT Art Portfolio`,
     description: project.quote,
-  };
+    path: `/art/${project.slug}`,
+  });
 }
 
-function formatMedium(medium: ArtMedium): string {
-  const labels: Record<ArtMedium, string> = {
-    photography: 'Photography',
-    installation: 'Installation',
-    interactive: 'Interactive',
-    performance: 'Performance',
-    sculpture: 'Sculpture',
-    painting: 'Painting',
-    exhibition: 'Exhibition',
-    residency: 'Residency',
-    making: 'Making',
-    film: 'Film',
-  };
-  return labels[medium] || medium;
+/** Photographs for the "From the field" wall: a wide one beside a narrow one, then one across, and again. */
+function wall<T>(items: T[]): T[][] {
+  const rows: T[][] = [];
+  for (let i = 0, wide = true; i < items.length; wide = !wide) {
+    const take = wide ? 2 : 1;
+    rows.push(items.slice(i, i + take));
+    i += take;
+  }
+  return rows;
 }
 
-function DetailRow({
-  label,
-  value,
-}: {
-  label: string;
-  value: string | undefined | null;
-}) {
-  if (!value) return null;
-  return (
-    <div className="flex items-start gap-4 border-b border-[var(--we-sand)] py-3 last:border-0">
-      <span className="w-28 shrink-0 text-[11px] font-semibold uppercase tracking-[0.2em] text-[var(--we-warm-brown)]">
-        {label}
-      </span>
-      <span className="text-sm leading-6 text-[var(--we-brown)]">{value}</span>
-    </div>
-  );
-}
-
-function RelatedWorkCard({ project }: { project: HydratedArtProject }) {
-  const heroUrl =
-    project.heroImage?.thumbnail_url || project.heroImage?.url;
-
-  return (
-    <Link
-      href={`/art/${project.slug}`}
-      className="group overflow-hidden rounded-[24px] border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] transition-all hover:border-[var(--warm-gold)] hover:shadow-[0_16px_40px_rgba(50,42,31,0.08)]"
-    >
-      {heroUrl ? (
-        <div className="relative aspect-[16/10] overflow-hidden">
-          <Image
-            src={heroUrl}
-            alt={project.heroImage?.alt || project.title}
-            fill
-            sizes="(max-width: 768px) 100vw, 33vw"
-            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
-          />
-          <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent" />
-          <div className="absolute bottom-4 left-4 right-4">
-            <h3 className="font-[var(--font-display)] text-xl font-semibold text-white">
-              {project.title}
-            </h3>
-          </div>
-        </div>
-      ) : (
-        <div className="flex aspect-[16/10] items-end bg-gradient-to-br from-[var(--warm-paper)] via-[#E7DDC7] to-[var(--warm-sand-deep)] p-5">
-          <h3 className="font-[var(--font-display)] text-xl font-semibold text-[#241c15]">
-            {project.title}
-          </h3>
-        </div>
-      )}
-      <div className="p-5">
-        <p className="text-sm italic leading-6 text-[var(--warm-bark)] line-clamp-2">
-          "{project.quote}"
-        </p>
-        <div className="mt-3 flex flex-wrap gap-2">
-          {project.mediums.map((medium) => (
-            <span
-              key={medium}
-              className="rounded-full border border-[var(--warm-sand-deep)] bg-[var(--warm-paper)] px-2.5 py-0.5 text-[10px] font-semibold uppercase tracking-[0.2em] text-[var(--we-warm-brown)]"
-            >
-              {formatMedium(medium)}
-            </span>
-          ))}
-        </div>
-      </div>
-    </Link>
-  );
-}
-
-export default async function ArtWorkPage({
-  params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+// Pencil: Page 06 · Artwork · CONTAINED (Y7TjeU), phone hTMzb.
+export default async function ArtWorkPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params;
   const project = await getArtProject(slug);
   if (!project) notFound();
 
-  const allProjects = await getAllArtProjects();
-  const relatedProjects = allProjects
-    .filter((p) => p.slug !== project.slug)
-    .slice(0, 3);
+  const all = await getAllArtProjects();
+  const related = relatedWorks(project, inPortfolioOrder(splitFeaturedAndEmerging(all).featured), 3);
 
-  const heroUrl = project.heroImage?.url;
-  const galleryItems = project.media.filter(
-    (item) => item.id !== project.heroImage?.id && item.kind === 'image'
-  );
+  const title = clean(project.title);
+  const photo = heroPhoto(project);
+  const video = photo ? null : project.heroVideo;
+  const chips = partOfChips(project);
+  const own = arrangementFor(project.title);
+  const lines = impactLines(project.impact);
+  const description = withoutFigures(project.description);
+  const philosophy = withoutFigures(project.philosophy);
+  const gallery = project.media.filter((item) => item.id !== project.heroImage?.id && item.kind === "image");
+  const year = readYear(project.year);
 
-  // Resolve EL mapping. Priority:
+  // Resolve the Empathy Ledger mapping. Priority:
   // 1. Direct empathyLedger field on the art piece
   // 2. ACT project whose slug matches the art slug
   // 3. ACT project whose slug or title matches connectedProject (case-insensitive)
-  const connected = project.connectedProject?.toLowerCase() || '';
+  const connected = project.connectedProject?.toLowerCase() || "";
   const linkedAct =
     actProjects.find((p) => p.slug === project.slug) ||
-    actProjects.find(
-      (p) =>
-        connected &&
-        (p.slug === connected || p.title.toLowerCase() === connected)
-    ) ||
+    actProjects.find((p) => connected && (p.slug === connected || p.title.toLowerCase() === connected)) ||
     null;
   const elMapping = project.empathyLedger || linkedAct?.empathyLedger;
   const elOwnerSlug = project.empathyLedger ? project.slug : linkedAct?.slug;
 
+  const details: Array<[string, string]> = (
+    [
+      ["Medium", project.mediums.map(mediumLabel).join(", ")],
+      ["Location", clean(project.location)],
+      ["Year", year],
+      ["Status", statusLabel(project.status)],
+      ["Method stage", project.lcaaStages?.join(", ") ?? ""],
+      ["Part of", chips.map((chip) => chip.label).join(", ")],
+    ] as Array<[string, string]>
+  ).filter(([, value]) => value);
+
+  const tags = project.tags.map((tag) => `#${tag}`);
+  const ways = waysOn(fieldsOf(project), { work: project.slug }, { art: { title: "All the art", href: "/art" } });
+
   return (
-    <div className="space-y-16">
-      {elMapping && elOwnerSlug && (
-        <EmpathyLedgerConnections
-          projectSlug={elOwnerSlug}
-          projectTitle={project.title}
-          orgSlug={elMapping.orgSlug}
-          elProjectSlugs={elMapping.elProjectSlugs}
-          notes={elMapping.notes}
-        />
-      )}
-      {/* Hero */}
-      {heroUrl || project.heroVideo ? (
-        <section className="relative overflow-hidden rounded-[36px]">
-          <div className="relative aspect-[21/9] min-h-[340px] md:min-h-[480px]">
-            {heroUrl ? (
-              <Image
-                src={heroUrl}
-                alt={project.heroImage?.alt || project.title}
-                fill
-                sizes="100vw"
-                className="object-cover"
-                priority
-              />
-            ) : project.heroVideo ? (
+    <Page door="Art">
+      {(photo || video) && (
+        <div className={styles.hero}>
+          {photo ? (
+            <Photo src={sized(photo.src, 1920)} alt={photo.alt} priority className={styles.heroPhoto} />
+          ) : (
+            video && (
               <SiteLoopVideo
-                src={project.heroVideo.url}
-                poster={project.heroVideo.posterUrl}
-                title={project.heroVideo.alt || project.title}
+                src={video.url}
+                poster={video.posterUrl}
+                title={video.alt || title}
                 preload="metadata"
-                className={
-                  project.heroVideo.fit === "contain"
-                    ? "absolute inset-0 h-full w-full bg-black object-contain"
-                    : "absolute inset-0 h-full w-full object-cover"
-                }
+                className={video.fit === "contain" ? styles.videoContain : styles.videoCover}
               />
-            ) : null}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/20 to-black/10" />
-          </div>
-          <div className="absolute inset-x-0 bottom-0 p-8 md:p-12">
-            <div className="flex flex-wrap gap-2 mb-4">
-              {project.connectedProject && project.connectedProjectHref && (
-                <Link
-                  href={project.connectedProjectHref}
-                  className="rounded-full border border-white/40 bg-white/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-white backdrop-blur-sm transition hover:bg-white/25"
-                >
-                  Part of {project.connectedProject} &rarr;
-                </Link>
-              )}
-              {/*
-                A work with its own public site links to it from the top of the
-                page. Describing a live exhibition and giving the reader no way
-                to open it is a review of something they cannot go and see.
-              */}
-              {project.externalSite && (
-                <a
-                  href={project.externalSite.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="rounded-full border border-white/40 bg-white/15 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-white backdrop-blur-sm transition hover:bg-white/25"
-                >
-                  {project.externalSite.label} &rarr;
-                </a>
-              )}
-              {project.mediums.map((medium) => (
-                <span
-                  key={medium}
-                  className="rounded-full border border-white/20 bg-black/40 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-white/90 backdrop-blur-sm"
-                >
-                  {formatMedium(medium)}
-                </span>
-              ))}
-              {project.location && (
-                <span className="rounded-full border border-white/20 bg-black/40 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-white/90 backdrop-blur-sm">
-                  {project.location}
-                </span>
-              )}
-            </div>
-            <h1 className="font-[var(--font-display)] text-[2.4rem] font-semibold leading-[0.95] text-white md:text-[4rem]">
-              {project.title}
-            </h1>
-          </div>
-        </section>
-      ) : (
-        <section className="rounded-[36px] bg-gradient-to-br from-[#f5efe5] via-[#e6dcc9] to-[#d4c2a2] p-8 md:p-14">
-          <div className="flex flex-wrap gap-2 mb-4">
-            {project.connectedProject && project.connectedProjectHref && (
-              <Link
-                href={project.connectedProjectHref}
-                className="rounded-full border border-[var(--warm-forest)] bg-[var(--warm-forest)] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-[#1d4b37]"
-              >
-                Part of {project.connectedProject} &rarr;
-              </Link>
-            )}
-            {project.externalSite && (
-              <a
-                href={project.externalSite.url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="rounded-full border border-[var(--warm-forest)] bg-[var(--warm-forest)] px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-white transition hover:bg-[#1d4b37]"
-              >
-                {project.externalSite.label} &rarr;
-              </a>
-            )}
-            {project.mediums.map((medium) => (
-              <span
-                key={medium}
-                className="rounded-full border border-[var(--warm-sand-deep)] bg-white/50 px-3 py-1 text-[10px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)]"
-              >
-                {formatMedium(medium)}
-              </span>
-            ))}
-          </div>
-          <h1 className="font-[var(--font-display)] text-[2.4rem] font-semibold leading-[0.95] text-[#241c15] md:text-[4rem]">
-            {project.title}
-          </h1>
-          {project.location && (
-            <p className="mt-4 text-sm uppercase tracking-[0.2em] text-[var(--we-warm-brown)]">
-              {project.location}
-            </p>
+            )
           )}
-        </section>
+        </div>
       )}
 
-      {/* Quote + Philosophy */}
-      <section className="mx-auto max-w-3xl space-y-8">
-        <blockquote className="border-l-2 border-[var(--warm-gold)] pl-6 text-xl italic leading-8 text-[var(--we-brown)] md:text-2xl md:leading-10">
-          "{project.quote}"
-        </blockquote>
-
-        <p className="text-[1.05rem] leading-8 text-[var(--we-brown)]">
-          {project.description}
-        </p>
-
-        {project.philosophy && (
-          <div className="rounded-[24px] border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] p-6 md:p-8">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)] mb-3">
-              Philosophy
-            </p>
-            <p className="text-[0.95rem] leading-7 text-[var(--we-brown)]">
-              {project.philosophy}
-            </p>
-          </div>
-        )}
+      <section className={styles.title}>
+        <div className={styles.chips}>
+          {chips.map((chip, i) => (
+            <PieceLink key={chip.href} href={chip.href} className={`${styles.chip} ${i === 0 ? styles.filled : ""} ${rolls}`}>
+              <span>Part of {chip.label}</span>
+              <Wheel />
+            </PieceLink>
+          ))}
+          {/*
+            A work with its own public site links to it from the top of the page. Describing a live exhibition and
+            giving the reader no way to open it is a review of something they cannot go and see.
+          */}
+          {project.externalSite && (
+            <a
+              href={project.externalSite.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${styles.chip} ${styles.filled} ${rolls}`}
+            >
+              <span>{project.externalSite.label}</span>
+              <Wheel />
+            </a>
+          )}
+          {project.mediums.map((medium) => (
+            <span key={medium} className={styles.chip}>
+              {mediumLabel(medium)}
+            </span>
+          ))}
+          {project.location && <span className={styles.chip}>{clean(project.location)}</span>}
+          {year && <span className={styles.chip}>{year}</span>}
+        </div>
+        <h1 className={styles.loud} data-size={titleSize(title)}>
+          {title}
+        </h1>
       </section>
 
-      {/* Gallery */}
-      {galleryItems.length > 0 && (
-        <section className="space-y-6">
-          <div className="mx-auto max-w-3xl">
-            <p className="site-eyebrow">Documentation</p>
-            <h2 className="mt-3 font-[var(--font-display)] text-[2rem] font-semibold leading-tight text-[#241c15]">
-              From the field
-            </h2>
-            <p className="mt-2 text-sm leading-6 text-[#5b4d3f]">
-              {project.media.length} images from community-consented documentation through Empathy Ledger.
-            </p>
-          </div>
-
-          {/* Editorial masonry-style grid */}
-          <div className="columns-1 gap-3 sm:columns-2 lg:columns-3">
-            {galleryItems.map((item, index) => {
-              // Vary aspect ratios for editorial feel
-              const aspectClass =
-                index % 5 === 0
-                  ? 'aspect-[3/4]'
-                  : index % 5 === 1
-                    ? 'aspect-[4/3]'
-                    : index % 5 === 2
-                      ? 'aspect-square'
-                      : index % 5 === 3
-                        ? 'aspect-[3/2]'
-                        : 'aspect-[2/3]';
-
-              return (
-                <div
-                  key={item.id}
-                  className="mb-3 break-inside-avoid overflow-hidden rounded-[20px] border border-[var(--we-sand)]"
-                >
-                  <div className={`relative ${aspectClass}`}>
-                    <Image
-                      src={item.thumbnail_url || item.url}
-                      alt={item.alt || `${project.title} documentation ${index + 1}`}
-                      fill
-                      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-                      className="object-cover"
-                    />
-                  </div>
-                  {item.caption && (
-                    <div className="bg-[var(--warm-paper-bright)] px-4 py-3">
-                      <p className="text-xs leading-5 text-[var(--warm-bark)]">
-                        {item.caption}
-                      </p>
-                    </div>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </section>
-      )}
-
-      {/* Details */}
-      <section className="mx-auto max-w-3xl">
-        <div className="grid gap-8 md:grid-cols-[1fr_1fr]">
-          <div className="rounded-[24px] border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] p-6">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)] mb-4">
-              Details
-            </p>
-            <DetailRow
-              label="Medium"
-              value={project.mediums.map(formatMedium).join(', ')}
-            />
-            <DetailRow label="Location" value={project.location} />
-            <DetailRow label="Year" value={project.year} />
-            <DetailRow
-              label="Status"
-              value={
-                project.status === 'exhibited'
-                  ? 'Exhibited'
-                  : project.status === 'active'
-                    ? 'Active'
-                    : project.status === 'ideation'
-                      ? 'In development'
-                      : 'Concept'
-              }
-            />
-            {project.lcaaStages && project.lcaaStages.length > 0 && (
-              <DetailRow
-                label="Method stage"
-                value={project.lcaaStages.join(', ')}
-              />
-            )}
-            <DetailRow
-              label="Photos"
-              value={
-                project.photoCount > 0
-                  ? `${project.photoCount} documented`
-                  : undefined
-              }
-            />
-            <DetailRow
-              label="Storytellers"
-              value={
-                project.storytellerCount > 0
-                  ? `${project.storytellerCount} contributor${project.storytellerCount === 1 ? '' : 's'}`
-                  : undefined
-              }
-            />
-          </div>
-
-          <div className="space-y-6">
-            {project.tags.length > 0 && (
-              <div className="rounded-[24px] border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] p-6">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)] mb-4">
-                  Art tags
-                </p>
-                <div className="flex flex-wrap gap-2">
-                  {project.tags.map((tag) => (
-                    <span
-                      key={tag}
-                      className="rounded-full border border-[var(--warm-sand-deep)] bg-[var(--warm-paper)] px-3 py-1.5 text-xs text-[var(--warm-bark)]"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            )}
-
-            {project.connectedProject && (
-              <div className="rounded-[24px] border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] p-6">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)] mb-3">
-                  Connected to
-                </p>
-                <Link
-                  href={project.connectedProjectHref || '/projects'}
-                  className="group inline-flex items-center gap-2 text-sm font-semibold text-[var(--warm-forest)] transition hover:gap-3"
-                >
-                  {project.connectedProject}{' '}
-                  <span aria-hidden="true">&rarr;</span>
-                </Link>
-              </div>
-            )}
-
-            {/* Storytellers */}
-            {/* Launch hold (2026-05-27): hidden while /storytellers is held. See @/lib/launch-flags. */}
-            {STORYTELLERS_PUBLIC && project.storytellers.length > 0 && (
-              <div className="rounded-[24px] border border-[var(--we-sand)] bg-[var(--warm-paper-bright)] p-6">
-                <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--we-warm-brown)] mb-4">
-                  Storytellers
-                </p>
-                <div className="space-y-3">
-                  {project.storytellers.slice(0, 5).map((storyteller) => (
-                    <div key={storyteller.storyteller_id} className="flex items-center gap-3">
-                      {storyteller.profile_image_url ? (
-                        <div className="relative h-8 w-8 shrink-0 overflow-hidden rounded-full">
-                          <Image
-                            src={storyteller.profile_image_url}
-                            alt={storyteller.display_name || 'Storyteller'}
-                            fill
-                            sizes="32px"
-                            className="object-cover"
-                          />
-                        </div>
-                      ) : (
-                        <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-forest-soft text-xs font-semibold text-[#2F5233]">
-                          {(storyteller.display_name || '?')[0]}
-                        </div>
-                      )}
-                      <div>
-                        <p className="text-sm font-medium text-[var(--we-olive)]">
-                          {storyteller.display_name || storyteller.full_name || 'Anonymous'}
-                        </p>
-                        {storyteller.custom_tagline && (
-                          <p className="text-xs text-[var(--we-warm-brown)]">
-                            {storyteller.custom_tagline}
-                          </p>
-                        )}
-                      </div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
+      <section className={styles.words}>
+        <p className={styles.quote}>{clean(project.quote)}</p>
+        <div className={styles.right}>
+          {description && <p className={styles.description}>{description}</p>}
+          {philosophy && (
+            <div className={styles.philosophy}>
+              <p className={styles.eyebrow}>Philosophy</p>
+              <p className={styles.philosophyText}>{philosophy}</p>
+            </div>
+          )}
         </div>
       </section>
 
-      {/* Impact */}
-      {project.impact && (
-        <section className="mx-auto max-w-3xl">
-          <div className="rounded-[24px] border border-[#244c39] bg-[#15261d] p-6 md:p-8 text-[#f5ecde]">
-            <p className="text-[11px] font-semibold uppercase tracking-[0.22em] text-[var(--warm-gold)] mb-3">
-              What it did
-            </p>
-            <p className="text-[0.95rem] leading-7 text-[#d7c8b2]">
-              {project.impact}
-            </p>
-          </div>
-        </section>
-      )}
+      <BecomeParts title={title} own={own} />
 
-      {/* Related works */}
-      {relatedProjects.length > 0 && (
-        <section className="space-y-8">
-          <div className="mx-auto max-w-3xl">
-            <p className="site-eyebrow">Other works</p>
-            <h2 className="mt-3 font-[var(--font-display)] text-[2rem] font-semibold leading-tight text-[#241c15]">
-              Connected work in the portfolio
+      {gallery.length > 0 && (
+        <section className={styles.field} aria-labelledby="field-title">
+          <div className={styles.head}>
+            <p className={styles.eyebrow}>Documentation</p>
+            <h2 id="field-title" className={styles.heading}>
+              From the field
             </h2>
           </div>
-          <div className="grid gap-5 md:grid-cols-3">
-            {relatedProjects.map((related) => (
-              <RelatedWorkCard key={related.slug} project={related} />
-            ))}
-          </div>
+          {wall(gallery).map((row, r) => (
+            <div key={row[0].id} className={styles.wallRow} data-count={row.length} data-flip={row.length === 2 && r % 4 === 2}>
+              {row.map((item, i) => (
+                <Photo
+                  key={item.id}
+                  src={sized(item.url, row.length === 1 ? 1920 : i === 0 ? 1200 : 750)}
+                  alt={item.alt || `${title} documentation`}
+                  className={styles.shot}
+                />
+              ))}
+            </div>
+          ))}
         </section>
       )}
 
-      {/* Back link */}
-      <div className="flex justify-center">
-        <Link
-          href="/art"
-          className="rounded-full border border-[var(--we-sand)] px-8 py-3 text-sm font-semibold uppercase tracking-[0.18em] text-[var(--we-olive)] transition hover:border-[var(--warm-forest)] hover:bg-forest-soft"
-        >
-          Back to art portfolio
-        </Link>
-      </div>
-    </div>
+      <section className={styles.details} aria-label="Details">
+        <div className={styles.detailsLeft}>
+          <dl className={styles.list}>
+            {details.map(([label, value]) => (
+              <div key={label} className={styles.item}>
+                <dt>{label}</dt>
+                <dd>{value}</dd>
+              </div>
+            ))}
+          </dl>
+          {(project.photoCount > 0 || project.storytellerCount > 0) && (
+            <ul className={styles.counts}>
+              {project.photoCount > 0 && (
+                <StatTile
+                  as="li"
+                  figure={String(project.photoCount)}
+                  counts={project.photoCount === 1 ? "photograph of this work" : "photographs of this work"}
+                  source={{ name: "Empathy Ledger", href: fieldsById.empathy.destinationHref }}
+                />
+              )}
+              {project.storytellerCount > 0 && (
+                <StatTile
+                  as="li"
+                  figure={String(project.storytellerCount)}
+                  counts={project.storytellerCount === 1 ? "storyteller linked to this work" : "storytellers linked to this work"}
+                  source={{ name: "Empathy Ledger", href: fieldsById.empathy.destinationHref }}
+                />
+              )}
+            </ul>
+          )}
+          {lines.length === 0 && tags.length > 0 && (
+            <p className={styles.tags}>
+              {tags.map((tag) => (
+                <span key={tag}>{tag}</span>
+              ))}
+            </p>
+          )}
+        </div>
+        {lines.length > 0 && (
+          <Surface as="section" tone="ink" className={styles.did} aria-labelledby="did-title">
+            <h2 id="did-title" className={styles.eyebrow}>
+              What it did
+            </h2>
+            <p className={styles.didText}>{lines.join(" ")}</p>
+            {tags.length > 0 && (
+              <p className={styles.tags}>
+                {tags.map((tag) => (
+                  <span key={tag}>{tag}</span>
+                ))}
+              </p>
+            )}
+          </Surface>
+        )}
+      </section>
+
+      {related.length > 0 && (
+        <section className={styles.connected} aria-labelledby="connected-title">
+          <h2 id="connected-title" className={styles.connectedHeading}>
+            Connected work in the portfolio
+          </h2>
+          <ul className={styles.cards}>
+            {related.map((other) => (
+              <li key={other.slug}>
+                <Link href={`/art/${other.slug}`} className={`${styles.card} ${rolls}`}>
+                  <span className={styles.cardVisual}>
+                    <WorkVisual project={other} compact decorative width={750} />
+                  </span>
+                  <h3 className={styles.cardTitle}>{clean(other.title)}</h3>
+                  <p className={styles.cardText}>{clean(other.quote)}</p>
+                  <span className={styles.cardLink}>
+                    View work
+                    <Wheel />
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
+        </section>
+      )}
+
+      <FourWaysOn {...ways} />
+
+      {elMapping && elOwnerSlug && (
+        <Quiet>
+          <EmpathyLedgerConnections
+            projectSlug={elOwnerSlug}
+            projectTitle={project.title}
+            orgSlug={elMapping.orgSlug}
+            elProjectSlugs={elMapping.elProjectSlugs}
+            notes={elMapping.notes}
+          />
+        </Quiet>
+      )}
+    </Page>
   );
 }

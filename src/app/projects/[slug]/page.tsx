@@ -128,7 +128,7 @@ function getEngagementConfig(
           label: 'Explore residencies',
           description:
             'For artists, researchers, and collaborators wanting to work with land, time, and slower forms of practice.',
-          href: '/art/residencies',
+          href: '/contact?type=residency-visit&source=art-residencies&context=art-residency',
           variant: 'secondary',
         },
       ],

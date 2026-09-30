@@ -30,6 +30,23 @@ const launchRedirects = [
   // Brand v1: one page per thing. The Art and Harvest fields are their own pages now.
   { source: "/fields/art", destination: "/art", permanent: true },
   { source: "/fields/harvest", destination: "/harvest", permanent: true },
+  // The art side pages fold into /art (Ben, 30 Sep). /art/artists also showed
+  // storytellers' names and bios that the artwork pages hide; it is not carried
+  // over. Commission and residency open Contact with their choice picked, and
+  // keep the source and context the folded pages sent.
+  { source: "/art/artists", destination: "/art", permanent: true },
+  { source: "/art/artworks", destination: "/art#featured-works", permanent: true },
+  { source: "/art/exhibitions", destination: "/art#featured-works", permanent: true },
+  {
+    source: "/art/commissions",
+    destination: "/contact?type=commission-cultural-work&source=art-commissions&context=works-commission",
+    permanent: true,
+  },
+  {
+    source: "/art/residencies",
+    destination: "/contact?type=residency-visit&source=art-residencies&context=art-residency",
+    permanent: true,
+  },
   { source: "/seeds", destination: "/work", permanent: true },
   { source: "/action", destination: "/work", permanent: true },
   { source: "/germinating", destination: "/stories", permanent: true },

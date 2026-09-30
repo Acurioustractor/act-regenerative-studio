@@ -49,7 +49,7 @@ const currentPathways = [
     title: "Residencies and works",
     description:
       "Artist residencies, showcases, and public cultural work connected to the broader studio practice.",
-    href: "/art/residencies",
+    href: "/contact?type=residency-visit&source=art-residencies&context=art-residency",
     cta: "See residencies",
   },
 ];

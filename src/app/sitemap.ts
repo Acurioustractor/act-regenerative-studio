@@ -45,11 +45,6 @@ const staticRoutes: Array<{
   { path: "/contact", changeFrequency: "monthly", priority: 0.8 },
   { path: "/harvest/csa", changeFrequency: "monthly", priority: 0.6 },
   { path: "/harvest/produce", changeFrequency: "monthly", priority: 0.6 },
-  { path: "/art/artists", changeFrequency: "monthly", priority: 0.6 },
-  { path: "/art/artworks", changeFrequency: "monthly", priority: 0.6 },
-  { path: "/art/commissions", changeFrequency: "monthly", priority: 0.6 },
-  { path: "/art/exhibitions", changeFrequency: "monthly", priority: 0.6 },
-  { path: "/art/residencies", changeFrequency: "monthly", priority: 0.6 },
   { path: "/privacy", changeFrequency: "yearly", priority: 0.2 },
   { path: "/terms", changeFrequency: "yearly", priority: 0.2 },
 ];

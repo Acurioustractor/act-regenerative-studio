@@ -1,0 +1,60 @@
+/* Pencil: the boxed buttons on Page 01 Home (NeBcT, TnBZu) and Page 08 The Harvest (KEoP3, mBfZt, pq7JW, QRZwy):
+   padding 16 22, mono 12 on 1.6, one hairline. On a phone Home's pair runs full width at 16 by 18 and 11. */
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75em;
+  margin: 0;
+  padding: 16px 22px;
+  border: 1px solid var(--fg);
+  border-radius: var(--radius);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  text-decoration: none;
+  cursor: pointer;
+  transition: background-color 250ms ease, color 250ms ease;
+}
+
+.solid {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+.outline {
+  background: transparent;
+  color: var(--fg);
+}
+
+/* Pointing at an outlined button fills it. */
+.outline:hover,
+.outline:focus-visible {
+  background: var(--fg);
+  color: var(--bg);
+}
+
+/* The wheel is the words' colour, so on a filled ground its notch is the ground. */
+.solid i::after,
+.outline:hover i::after,
+.outline:focus-visible i::after {
+  background: var(--fg);
+}
+
+.button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@media (max-width: 759px) {
+  .button {
+    padding: 16px 18px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .button { transition: none; }
+}

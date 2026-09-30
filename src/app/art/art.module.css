@@ -1,0 +1,453 @@
+/* Pencil: Page 05 · Art (WzDfe): Opening P3mu3J, How to read this page u4xXn8, Featured works xBx8L, Method band QTKdK, Works still forming OpHVd, The studio is open I6EpK. */
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.sr {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
+/* Opening: words on the left, a 640 wide photograph on the right, 720 tall. */
+.opening {
+  display: flex;
+  height: 720px;
+}
+
+.openingText {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  justify-content: flex-end;
+  gap: 24px;
+  min-width: 0;
+  padding: 96px 64px 72px 96px;
+}
+
+.title {
+  margin: 0;
+  font-size: 104px;
+  font-weight: var(--weight-statement);
+  line-height: 0.98;
+  letter-spacing: -2.08px;
+}
+
+.lede {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 24px;
+  font-weight: var(--weight-reading);
+  line-height: 1.55;
+}
+
+.links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 28px;
+}
+
+.panel {
+  position: relative;
+  flex: none;
+  width: 640px;
+  background: var(--bg);
+}
+
+.panel .panelPhoto {
+  position: absolute;
+  inset: 0;
+}
+
+.panelCaption {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 0;
+  padding: 16px 24px;
+  background: color-mix(in srgb, var(--ink) 60%, transparent);
+  color: var(--paper);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+/* How to read this page: a 2px rule, then three numbered cells. */
+.read {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  padding: 80px 96px;
+  border-top: 2px solid var(--fg);
+}
+
+.cells {
+  display: flex;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.cells > li { flex: 1; min-width: 0; }
+
+.head {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  max-width: 900px;
+}
+
+.heading {
+  margin: 0;
+  font-size: 56px;
+  font-weight: var(--weight-statement);
+  line-height: 1.06;
+  letter-spacing: -1.12px;
+}
+
+.headText {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 19px;
+  font-weight: var(--weight-reading);
+  line-height: 1.55;
+}
+
+/* Featured works: a row each, the photograph on alternate sides. */
+.featured {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+  padding: 96px;
+}
+
+.rows {
+  display: flex;
+  flex-direction: column;
+  gap: 72px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  gap: 56px;
+}
+
+.row:nth-child(even) { flex-direction: row-reverse; }
+
+.visual {
+  display: block;
+  flex: none;
+  width: 640px;
+  height: 400px;
+}
+
+.rowText {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  min-width: 0;
+}
+
+.kicker {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.workTitle {
+  margin: 0;
+  font-size: 48px;
+  font-weight: var(--weight-statement);
+  line-height: 1.06;
+  letter-spacing: -0.96px;
+}
+
+.tagline {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 24px;
+  font-weight: var(--weight-statement);
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+
+.description {
+  margin: 0;
+  font-size: 18px;
+  font-weight: var(--weight-reading);
+  line-height: 1.55;
+}
+
+.meta {
+  margin: 0;
+  color: var(--fg-muted);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  line-height: 1.5;
+  text-transform: uppercase;
+}
+
+/* Method band, on ink: the four parts, one rust each. */
+.method {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 36px;
+  padding: 96px;
+}
+
+.methodHeading {
+  margin: 0;
+  font-size: 64px;
+  font-weight: var(--weight-statement);
+  line-height: 1.06;
+  letter-spacing: -1.28px;
+}
+
+.methodText {
+  max-width: 900px;
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 20px;
+  font-weight: var(--weight-reading);
+  line-height: 1.55;
+}
+
+.four {
+  display: flex;
+  align-self: stretch;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.stage {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 12px;
+  min-width: 0;
+  padding: 20px 0;
+  border-top: 1px solid var(--line);
+}
+
+.glyph {
+  width: 110px;
+  height: 64px;
+}
+
+.stageTitle {
+  margin: 0;
+  font-size: 28px;
+  font-weight: var(--weight-statement);
+  line-height: 1.06;
+  letter-spacing: -0.56px;
+}
+
+.stageText {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 17px;
+  font-weight: var(--weight-reading);
+  line-height: 1.55;
+}
+
+/* Works still forming: a hairline card each, no photograph. */
+.forming {
+  display: flex;
+  flex-direction: column;
+  gap: 36px;
+  padding: 96px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(216px, 1fr));
+  gap: 24px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 12px;
+  height: 100%;
+  padding: 18px 0;
+  border-top: 2px solid var(--fg);
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.card:hover .cardTitle {
+  text-decoration: underline;
+  text-underline-offset: 6px;
+  text-decoration-thickness: 2px;
+}
+
+.card:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+.chip {
+  padding: 6px 10px;
+  border: 1px solid var(--fg);
+  font-family: var(--font-mono);
+  font-size: 10px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.cardTitle {
+  margin: 0;
+  font-size: 24px;
+  font-weight: var(--weight-statement);
+  line-height: 1.06;
+  letter-spacing: -0.48px;
+}
+
+.cardText {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 16px;
+  font-weight: var(--weight-reading);
+  line-height: 1.55;
+}
+
+/* The studio is open, on ink. */
+.studio {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 28px;
+  padding: 96px;
+}
+
+.studioHeading {
+  margin: 0;
+  font-size: 80px;
+  font-weight: var(--weight-statement);
+  line-height: 1.06;
+  letter-spacing: -1.6px;
+}
+
+.studioText {
+  max-width: 860px;
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 20px;
+  font-weight: var(--weight-reading);
+  line-height: 1.55;
+}
+
+.buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+@media (max-width: 1079px) {
+  .opening {
+    flex-direction: column;
+    height: auto;
+  }
+
+  .openingText { padding: 64px 48px 48px; }
+  .title { font-size: 80px; letter-spacing: -1.6px; }
+  .panel { width: 100%; height: 480px; }
+
+  .read,
+  .featured,
+  .method,
+  .forming,
+  .studio { padding: 64px 48px; }
+
+  .cells,
+  .four { flex-wrap: wrap; }
+
+  .cells > li { flex: 1 1 260px; }
+  .stage { flex: 1 1 calc(50% - 16px); }
+
+  .row,
+  .row:nth-child(even) {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 32px;
+  }
+
+  .visual { width: 100%; }
+  .rows { gap: 64px; }
+  .heading { font-size: 44px; letter-spacing: -0.88px; }
+  .methodHeading { font-size: 48px; letter-spacing: -0.96px; }
+  .studioHeading { font-size: 64px; letter-spacing: -1.28px; }
+}
+
+@media (max-width: 759px) {
+  .openingText {
+    gap: 20px;
+    padding: 48px 20px 40px;
+  }
+
+  .title { font-size: 56px; letter-spacing: -1.1px; }
+  .lede { font-size: 19px; }
+  .panel { height: 320px; }
+  .panelCaption { padding: 12px 20px; }
+
+  .read,
+  .featured,
+  .method,
+  .forming,
+  .studio { padding: 48px 20px; }
+
+  .featured,
+  .rows { gap: 48px; }
+
+  .cells { flex-direction: column; }
+  .cells > li { flex: none; }
+
+  .visual { height: 260px; }
+  .heading { font-size: 36px; letter-spacing: -0.72px; }
+  .headText { font-size: 17px; }
+  .workTitle { font-size: 36px; letter-spacing: -0.72px; }
+  .tagline { font-size: 20px; }
+  .description { font-size: 16px; }
+
+  .methodHeading { font-size: 36px; letter-spacing: -0.72px; }
+  .methodText { font-size: 17px; }
+  .four { flex-direction: column; }
+  .stage { flex: none; }
+
+  .studioHeading { font-size: 44px; letter-spacing: -0.88px; }
+  .studioText { font-size: 17px; }
+  .buttons { flex-direction: column; align-items: stretch; }
+}

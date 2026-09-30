@@ -13,24 +13,33 @@ export type Way = {
   invite?: string;
 };
 
+/** The line under the four ways: what it says, and where its link goes. */
+export type Closing = { words: string; label: string; href: string };
+
 /**
  * The end of every page: the tractor taken apart into four next steps, a story, a question, the work and the art,
  * then an invitation to bring us a question (Pencil: Four ways on x5WoQq, Four ways on · phone aWeTk). No dead ends.
- * The one you point at lifts and turns rust; the other three step back.
+ * The one you point at lifts and turns rust; the other three step back. `closing` replaces the invitation where a page
+ * says it its own way: Contact offers the address, Home hands on to the manifesto.
  */
 export function FourWaysOn({
   listen,
   curiosity,
   action,
   art,
+  closing = {
+    words: `Or ${site.invitation[0].toLowerCase()}${site.invitation.slice(1)}`,
+    label: "Contact",
+    href: "/contact",
+  },
 }: {
   listen: Way;
   curiosity: Way;
   action: Way;
   art: Way;
+  closing?: Closing;
 }) {
   const ways: Record<string, Way> = { Listen: listen, Curiosity: curiosity, Action: action, Art: art };
-  const invitation = `Or ${site.invitation[0].toLowerCase()}${site.invitation.slice(1)}`;
 
   return (
     <section className={styles.fourWaysOn} aria-labelledby="four-ways-on">
@@ -67,8 +76,8 @@ export function FourWaysOn({
       </Arrive>
 
       <div className={styles.yourQuestion}>
-        <p className={styles.question}>{invitation}</p>
-        <Onward href="/contact">Contact</Onward>
+        <p className={styles.question}>{closing.words}</p>
+        <Onward href={closing.href}>{closing.label}</Onward>
       </div>
     </section>
   );

@@ -39,3 +39,14 @@ export function waysOn(
     art: pick.art ?? (work ? { title: work.title, href: `/art/${work.slug}` } : { title: "Come into the art.", href: "/art" }),
   };
 }
+
+/**
+ * The four ways on for a page that belongs to no field (Contact, Privacy, Terms, the 404), in the words Pencil draws on
+ * those pages. Pages about a field use waysOn instead.
+ */
+export const generalWays: Ways = {
+  listen: { invite: "All the stories", title: "The writing so far.", href: "/stories" },
+  curiosity: { invite: "All the questions", title: "Curiosity before certainty.", href: "/questions" },
+  action: { title: "The work", href: "/work" },
+  art: { title: "Come into the art.", href: "/art" },
+};

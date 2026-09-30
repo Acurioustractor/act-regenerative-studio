@@ -1,0 +1,78 @@
+/* Pencil: Page 16 · Not found (came apart) (l5YI2X): Came apart TVHZ4, 720 high, Words CRdFK, Parts · scattered ossh6.
+   Phone · 16 Not found (QvIwF): Came apart A6xGBb, the words, then the parts at 260 high, then the line. */
+.cameApart {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  grid-template-areas:
+    "eyebrow parts"
+    "title parts"
+    "text parts";
+  align-content: center;
+  align-items: start;
+  column-gap: 40px;
+  row-gap: 20px;
+  min-height: 720px;
+  padding: 96px;
+}
+
+.eyebrow {
+  grid-area: eyebrow;
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.title {
+  grid-area: title;
+  margin: 0;
+  font-family: var(--font-loud);
+  font-size: 150px;
+  font-weight: 800;
+  line-height: 0.86;
+  text-transform: uppercase;
+}
+
+.parts { grid-area: parts; align-self: center; }
+
+.text {
+  grid-area: text;
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 22px;
+  line-height: 1.55;
+}
+
+.onPhone { display: none; }
+
+@media (max-width: 1079px) {
+  .cameApart {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-areas:
+      "eyebrow"
+      "title"
+      "parts"
+      "text";
+    row-gap: 24px;
+    min-height: 0;
+    padding: 64px 48px;
+  }
+
+  .title { font-size: 120px; }
+  .parts { align-self: stretch; }
+}
+
+@media (max-width: 759px) {
+  .cameApart {
+    row-gap: 16px;
+    padding: 40px 20px;
+  }
+
+  .title { font-size: 76px; }
+  .text { font-size: 17px; }
+  .onDesktop { display: none; }
+  .onPhone { display: inline; }
+}

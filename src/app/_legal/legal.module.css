@@ -1,0 +1,212 @@
+/* Pencil: Page 15 · Privacy (and Terms) (FCoht): Opening L2hJ2r (Left SgBED, What matters most fvckM), Sections c7GB5. One design for both pages.
+   Pencil has no phone board for it; the phone stacks the margin over the text and keeps the type quieter. */
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.opening {
+  display: flex;
+  align-items: flex-start;
+  gap: 80px;
+  padding: 96px 96px 72px;
+}
+
+.words {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+.title {
+  margin: 0;
+  font-size: 80px;
+  font-weight: var(--weight-statement);
+  line-height: 1;
+  letter-spacing: -1.6px;
+}
+
+.description {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 20px;
+  line-height: 1.6;
+}
+
+/* What matters most: three points on a shaded card, and the way to us. */
+.points {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 14px;
+  width: 440px;
+  padding: 32px;
+  background: var(--bg-shade);
+}
+
+.pointList {
+  align-self: stretch;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.point {
+  display: flex;
+  gap: 12px;
+  padding-top: 10px;
+  border-top: 1px solid var(--line);
+  font-size: 17px;
+  line-height: 1.45;
+}
+
+.point > span:last-child { flex: 1; min-width: 0; }
+
+/* Pencil's button: ink ground, paper words in mono capitals, the wheel where its arrow is. */
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 14px 20px;
+  background: var(--fg);
+  border-radius: var(--radius);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+  text-decoration: none;
+}
+
+.wheel {
+  display: flex;
+  font-size: 10px;
+}
+
+/* The wheel is paper on an ink button, so its notch is ink. */
+.button .wheel i::after { background: var(--fg); }
+
+.sections {
+  padding: 24px 96px 112px;
+}
+
+.section {
+  display: flex;
+  gap: 48px;
+  padding: 36px 0;
+  border-top: 1px solid var(--line);
+}
+
+.margin {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: 8px;
+  width: 360px;
+}
+
+.number {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+}
+
+.sectionTitle {
+  margin: 0;
+  font-size: 30px;
+  font-weight: var(--weight-statement);
+  line-height: 1.1;
+  letter-spacing: -0.6px;
+}
+
+.text {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.text p {
+  margin: 0;
+  font-size: 19px;
+  line-height: 1.6;
+}
+
+.inlineLink {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 4px;
+}
+
+.inlineLink:hover { text-decoration-thickness: 2px; }
+
+.inlineLink:focus-visible,
+.button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+@media (max-width: 1079px) {
+  .opening {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 40px;
+    padding: 64px 48px 48px;
+  }
+
+  .title { font-size: 64px; letter-spacing: -1.28px; }
+  .description { max-width: 640px; }
+  .points { width: 100%; max-width: 560px; }
+
+  .sections { padding: 16px 48px 80px; }
+  .section { gap: 32px; }
+  .margin { width: 240px; }
+}
+
+@media (max-width: 759px) {
+  .eyebrow,
+  .number { font-size: 11px; letter-spacing: 1.5px; }
+
+  .opening {
+    gap: 28px;
+    padding: 40px 20px 32px;
+  }
+
+  .words { gap: 16px; }
+  .title { font-size: 44px; letter-spacing: -0.88px; }
+  .description { font-size: 17px; }
+
+  .points {
+    max-width: none;
+    padding: 24px 20px;
+  }
+
+  .sections { padding: 8px 20px 56px; }
+
+  .section {
+    flex-direction: column;
+    gap: 16px;
+    padding: 28px 0;
+  }
+
+  .margin { width: auto; }
+  .sectionTitle { font-size: 26px; letter-spacing: -0.52px; }
+  .text p { font-size: 17px; }
+}

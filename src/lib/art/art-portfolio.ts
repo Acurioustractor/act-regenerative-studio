@@ -97,38 +97,19 @@ export interface HydratedArtProject extends ArtProjectConfig {
   elContent: FeaturedContentResponse | null;
 }
 
-import artPiecesSnapshot from '@/data/art-pieces.generated.json';
+import { works, type Work } from '@/content';
 import { ART_OVERRIDES } from './art-overrides';
 
 /**
- * Every piece on /art comes from src/data/art-pieces.generated.json, which
- * scripts/sync-art-pieces.mjs builds from the ACT project record (identity)
- * and each piece's wiki page (prose). Nothing about a piece is typed here;
- * src/lib/art/art-overrides.ts holds the few presentation extras.
+ * Every piece on /art is a work in src/content/works.ts, which reads
+ * src/data/art-pieces.generated.json: scripts/sync-art-pieces.mjs builds it
+ * from the ACT project record (identity) and each piece's wiki page (prose).
+ * Nothing about a piece is typed here; src/lib/art/art-overrides.ts holds the
+ * few presentation extras.
  *
  * photoCount and storytellerCount start at 0 and are filled from Empathy
  * Ledger when the piece is hydrated, so the numbers on the page are live.
  */
-interface GeneratedArtPiece {
-  code: string;
-  slug: string;
-  aliases: string[];
-  title: string;
-  quote: string;
-  description: string;
-  philosophy: string | null;
-  impact: string | null;
-  mediums: string[];
-  tags: string[];
-  status: string;
-  lcaaStages: string[];
-  year: string | null;
-  location: string | null;
-  connectedProject: string | null;
-  connectedProjectHref: string | null;
-  elSlugs: string[];
-}
-
 const ART_MEDIUMS: ReadonlySet<string> = new Set<ArtMedium>([
   'photography', 'installation', 'interactive', 'performance', 'sculpture',
   'painting', 'exhibition', 'residency', 'making', 'film',
@@ -139,7 +120,7 @@ const ART_TAGS: ReadonlySet<string> = new Set<ArtTag>([
 ]);
 const ART_STATUSES: ReadonlySet<string> = new Set<ArtStatus>(['exhibited', 'active', 'ideation', 'concept']);
 
-function toConfig(piece: GeneratedArtPiece): ArtProjectConfig {
+function toConfig(piece: Work): ArtProjectConfig {
   const override = ART_OVERRIDES[piece.slug] || {};
   return {
     slug: piece.slug,
@@ -165,15 +146,11 @@ function toConfig(piece: GeneratedArtPiece): ArtProjectConfig {
   };
 }
 
-const ART_PROJECTS: ArtProjectConfig[] = (
-  (artPiecesSnapshot as unknown as { pieces: GeneratedArtPiece[] }).pieces
-).map(toConfig);
+const ART_PROJECTS: ArtProjectConfig[] = works.map(toConfig);
 
 /** Old studio slugs still resolve to the piece they were published under. */
 const ART_SLUG_ALIASES: Record<string, string> = Object.fromEntries(
-  (artPiecesSnapshot as unknown as { pieces: GeneratedArtPiece[] }).pieces.flatMap((p) =>
-    p.aliases.map((alias) => [alias, p.slug] as const)
-  )
+  works.flatMap((p) => p.aliases.map((alias) => [alias, p.slug] as const))
 );
 
 export function getArtProjectConfigs(): ArtProjectConfig[] {

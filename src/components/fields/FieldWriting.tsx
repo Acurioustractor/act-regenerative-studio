@@ -4,7 +4,7 @@ import {
   articlesForField,
   questionsForField,
 } from "@/lib/fields/field-graph";
-import type { LivingFieldId } from "@/data/living-field";
+import type { FieldId } from "@/content";
 
 /**
  * What has been written from a field, rendered under its story.
@@ -45,7 +45,7 @@ export function FieldWriting({
   fieldId,
   fieldName,
 }: {
-  fieldId: LivingFieldId;
+  fieldId: FieldId;
   fieldName: string;
 }) {
   const articles = articlesForField(fieldId);

@@ -3,7 +3,7 @@ import {
   type EditorialArticle,
 } from "@/lib/empathy-ledger-editorial";
 import { fieldQuestions, type FieldQuestion } from "@/data/field-questions";
-import { livingFields, type LivingFieldId } from "@/data/living-field";
+import { fields, type FieldId } from "@/content";
 import {
   DELIBERATELY_UNASSIGNED,
   FIELD_ASSIGNMENTS,
@@ -15,7 +15,7 @@ import {
  * Three datasets already carry the edges, but each names things differently and
  * nothing reads across them:
  *
- *   living-field.ts    five canonical fields, keyed art | empathy | justice |
+ *   src/content        five canonical fields, keyed art | empathy | justice |
  *                      goods | harvest
  *   editorial articles 29 pieces tagged with `relatedProjectSlugs`, which use
  *                      project names ("goods-on-country") rather than field ids
@@ -41,7 +41,7 @@ import {
  * lives in the history section of /about. Keep them listed so the guard can
  * tell an intentional omission from a forgotten one.
  */
-export const PROJECT_SLUG_TO_FIELD: Record<string, LivingFieldId | null> = {
+export const PROJECT_SLUG_TO_FIELD: Record<string, FieldId | null> = {
   justicehub: "justice",
   "goods-on-country": "goods",
   // The resolver normalises an article's related projects against the project
@@ -63,7 +63,7 @@ export const PROJECT_SLUG_TO_FIELD: Record<string, LivingFieldId | null> = {
  * question can be about the work without belonging to one field, and forcing
  * it into one would misrepresent it.
  */
-export const QUESTION_TAG_TO_FIELD: Record<string, LivingFieldId | null> = {
+export const QUESTION_TAG_TO_FIELD: Record<string, FieldId | null> = {
   Art: "art",
   Justice: "justice",
   Goods: "goods",
@@ -80,9 +80,9 @@ export const QUESTION_TAG_TO_FIELD: Record<string, LivingFieldId | null> = {
   Practice: null,
 };
 
-export const FIELD_IDS: LivingFieldId[] = livingFields.map((field) => field.id);
+export const FIELD_IDS: FieldId[] = fields.map((field) => field.id);
 
-function isFieldId(value: string | null): value is LivingFieldId {
+function isFieldId(value: string | null): value is FieldId {
   return value !== null && (FIELD_IDS as string[]).includes(value);
 }
 
@@ -117,7 +117,7 @@ export function projectSlugDestination(
   if (fieldId === null) {
     return { href: "/about#history", label: "Black Cockatoo Valley" };
   }
-  const field = livingFields.find((entry) => entry.id === fieldId);
+  const field = fields.find((entry) => entry.id === fieldId);
   return field ? { href: `/fields/${field.id}`, label: field.name } : null;
 }
 
@@ -129,7 +129,7 @@ export function projectSlugDestination(
  * slug upstream and therefore cannot be derived. The overlay only ever adds, so
  * an article keeps the fields its project tags imply.
  */
-export function fieldsForArticle(article: EditorialArticle): LivingFieldId[] {
+export function fieldsForArticle(article: EditorialArticle): FieldId[] {
   const slugs = article.relatedProjectSlugs ?? [];
   const derived = slugs.map((slug) => PROJECT_SLUG_TO_FIELD[slug] ?? null);
   const curated = FIELD_ASSIGNMENTS[article.slug] ?? [];
@@ -137,7 +137,7 @@ export function fieldsForArticle(article: EditorialArticle): LivingFieldId[] {
 }
 
 /** Every field a question touches, derived from its free-text tags. */
-export function fieldsForQuestion(question: FieldQuestion): LivingFieldId[] {
+export function fieldsForQuestion(question: FieldQuestion): FieldId[] {
   const mapped = question.fields.map((tag) => QUESTION_TAG_TO_FIELD[tag] ?? null);
   return [...new Set(mapped.filter(isFieldId))];
 }
@@ -150,14 +150,14 @@ export function fieldsForQuestion(question: FieldQuestion): LivingFieldId[] {
  * the resulting order is effectively the feed's own. This will do what the sort
  * implies once real dates arrive.
  */
-export function articlesForField(fieldId: LivingFieldId): EditorialArticle[] {
+export function articlesForField(fieldId: FieldId): EditorialArticle[] {
   return allArticles()
     .filter((article) => fieldsForArticle(article).includes(fieldId))
     .sort((a, b) => (b.publishedAt ?? "").localeCompare(a.publishedAt ?? ""));
 }
 
 /** Questions belonging to a field. */
-export function questionsForField(fieldId: LivingFieldId): FieldQuestion[] {
+export function questionsForField(fieldId: FieldId): FieldQuestion[] {
   return fieldQuestions.filter((question) =>
     fieldsForQuestion(question).includes(fieldId),
   );
@@ -193,7 +193,7 @@ export function relatedArticles(
 
 /** Counts per field, for coverage checks and admin views. */
 export function fieldCoverage(): Array<{
-  fieldId: LivingFieldId;
+  fieldId: FieldId;
   articles: number;
   questions: number;
 }> {

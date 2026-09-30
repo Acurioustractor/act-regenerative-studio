@@ -61,13 +61,7 @@ const BELONGS = /^\/(stories|questions|art)\/[^/]+$/;
  * field, set in Empathy Ledger (its related projects) or in src/data/field-assignments.ts, and that is Ben's call.
  * Listed so a new one cannot arrive unnoticed; take a story off when it gains a field.
  */
-const IN_NO_FIELD_YET = [
-  "/stories/art-is-the-first-form-of-revolution",
-  "/stories/its-overwhelming-isnt-it",
-  "/stories/life-is-hard-but-its-not",
-  "/stories/the-raucous-revolution",
-  "/stories/the-weight-of-silence-and-the-audacity-to-imagine-reflections-on-fear-hope-and-the-long-game-of-human-liberation",
-];
+const IN_NO_FIELD_YET: string[] = [];
 
 /** `html` is the markup a reader gets, without the script payloads (React's page data repeats every attribute). */
 type Fetched = { path: string; status: number; html: string; raw: string };

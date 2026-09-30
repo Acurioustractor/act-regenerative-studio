@@ -127,6 +127,11 @@ export async function EditorialArticleReader({ post }: { post: EditorialArticle 
       .filter((destination) => destination.href.startsWith("/about"))
       .map((destination) => ({ key: destination.href, name: destination.label, href: destination.href })),
   ].filter((item, index, all) => all.findIndex((other) => other.href === item.href) === index);
+  // A story Empathy Ledger files across ACT (primary project act-main, or none) and no field claims is part of A
+  // Curious Tractor as a whole: the essays field-assignments.ts leaves deliberately unassigned (Ben, 1 Oct 2026).
+  if (partOf.length === 0 && (!post.primaryProject || post.primaryProject === "act-main")) {
+    partOf.push({ key: "act", name: "A Curious Tractor", href: "/about" });
+  }
 
   const groups = groupsFor(post);
   const kicker = [

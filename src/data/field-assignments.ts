@@ -46,6 +46,11 @@ export const FIELD_ASSIGNMENTS: Record<string, LivingFieldId[]> = {
   // this is the same work seen through the person leading it.
   "naidoc-with-jimmy": ["goods"],
 
+  // "Art is the first form of revolution: why ACT makes art". Empathy Ledger
+  // files it under no project; its subject is the Art field itself (Ben,
+  // 1 Oct 2026).
+  "art-is-the-first-form-of-revolution": ["art"],
+
 };
 
 /**

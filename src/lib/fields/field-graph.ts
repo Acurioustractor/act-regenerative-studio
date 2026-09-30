@@ -2,7 +2,7 @@ import {
   getBakedEditorialSnapshot,
   type EditorialArticle,
 } from "@/lib/empathy-ledger-editorial";
-import { fields, questions, QUESTION_TAG_TO_FIELD, type FieldId, type Question } from "@/content";
+import { fieldHref, fields, questions, QUESTION_TAG_TO_FIELD, type FieldId, type Question } from "@/content";
 import {
   DELIBERATELY_UNASSIGNED,
   FIELD_ASSIGNMENTS,
@@ -94,7 +94,7 @@ export function projectSlugDestination(
     return { href: "/about#history", label: "Black Cockatoo Valley" };
   }
   const field = fields.find((entry) => entry.id === fieldId);
-  return field ? { href: `/fields/${field.id}`, label: field.name } : null;
+  return field ? { href: fieldHref(field.id), label: field.name } : null;
 }
 
 /**

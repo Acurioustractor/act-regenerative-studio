@@ -1,0 +1,498 @@
+/* Pencil: Page 04 · Field page · JusticeHub (rzmZ2): The question underneath j8I9j, CONTAINED hDg27, Photo chapter S5MLUy, The work continues elsewhere mfuna, Next field y5UQgJ, Written from this field y8KA4H, Where we stand fqihT. Phone: Phone · 04 Field · JusticeHub (w3ZpTK). No tablet board: the two-column sections stack. */
+.eyebrow {
+  margin: 0;
+  color: var(--accent);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+/* The mono link in the text: an address elsewhere, so its arrow stays a character. */
+.textLink {
+  align-self: flex-start;
+  color: var(--fg);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.textLink:hover { color: var(--accent); }
+
+.textLink:focus-visible,
+.button:focus-visible,
+.questionLink:focus-visible,
+.next:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* The question underneath. */
+.question {
+  display: flex;
+  gap: 80px;
+  padding: 96px;
+  border-top: 2px solid var(--fg);
+}
+
+.questionWords {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.questionTitle {
+  margin: 0;
+  font-size: 60px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -1.2px;
+}
+
+.answer {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: 24px;
+  width: 520px;
+}
+
+.answerText {
+  margin: 0;
+  font-size: 20px;
+  font-weight: var(--weight-reading);
+  line-height: 1.55;
+}
+
+/* CONTAINED, the photo chapter and its sentence stand in one column so a phone can put the photograph first. */
+.chapter {
+  display: flex;
+  flex-direction: column;
+}
+
+.contained {
+  display: flex;
+  align-items: center;
+  gap: 64px;
+  padding: 0 96px 96px;
+}
+
+.containedPhoto {
+  flex: none;
+  width: 640px;
+  height: 420px;
+}
+
+.containedWords {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  min-width: 0;
+}
+
+.containedTitle {
+  margin: 0;
+  font-family: var(--font-loud);
+  font-size: 96px;
+  font-weight: 800;
+  line-height: 0.86;
+}
+
+.containedTagline {
+  margin: 0;
+  font-size: 30px;
+  font-weight: var(--weight-statement);
+  line-height: 1.15;
+  letter-spacing: -0.6px;
+}
+
+.containedText {
+  margin: 0;
+  color: var(--fg-muted);
+  font-size: 19px;
+  font-weight: var(--weight-reading);
+  line-height: 1.6;
+}
+
+.chapterPhoto {
+  width: 100%;
+  height: 640px;
+}
+
+.sentence { padding: 56px 96px; }
+
+.sentenceText {
+  max-width: 1100px;
+  margin: 0;
+  font-size: 40px;
+  font-weight: var(--weight-statement);
+  line-height: 1.15;
+  letter-spacing: -0.8px;
+}
+
+/* The work continues elsewhere. */
+.elsewhere {
+  display: flex;
+  align-items: flex-end;
+  gap: 60px;
+  padding: 96px;
+}
+
+.elsewhereWords {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  gap: 16px;
+  min-width: 0;
+}
+
+.elsewhereTitle {
+  margin: 0;
+  font-size: 60px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -1.2px;
+}
+
+.button {
+  flex: none;
+  padding: 20px 28px;
+  background: var(--fg);
+  color: var(--bg);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-decoration: none;
+  text-transform: uppercase;
+  transition: background-color 250ms ease;
+}
+
+.button:hover { background: var(--accent); }
+
+/* Next field: the whole row goes. */
+.next {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+  padding: 32px 96px;
+  border-top: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  color: var(--fg);
+  text-decoration: none;
+}
+
+.nextLabel {
+  color: var(--fg-muted);
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: var(--weight-label);
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+
+.nextTitle {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  font-size: 40px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -0.8px;
+}
+
+/* The wheel is drawn from its parent's type size; this keeps it small beside 40px words. */
+.nextWheel {
+  display: inline-flex;
+  font-size: 22px;
+}
+
+/* Written from this field, and what is still open here. */
+.written {
+  display: flex;
+  gap: 80px;
+  padding: 96px;
+}
+
+.writing {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.writingTitle {
+  margin: 0 0 24px;
+  font-size: 52px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -1.04px;
+}
+
+.stories,
+.questions {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* Pencil sets 16 between the question rows. */
+.questions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Pencil sets the titles on this page at 26. */
+.stories a > span:last-child { font-size: 26px; }
+
+.open {
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  gap: 16px;
+  width: 420px;
+}
+
+.questionLink {
+  display: block;
+  padding: 14px 0;
+  border-top: 1px solid var(--line);
+  color: var(--fg);
+  font-size: 22px;
+  font-weight: var(--weight-statement);
+  line-height: 1.2;
+  letter-spacing: -0.44px;
+  text-decoration: underline transparent;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 5px;
+  transition: text-decoration-color 250ms ease;
+}
+
+.questionLink:hover,
+.questionLink:focus-visible { text-decoration-color: currentColor; }
+
+/* Where we stand. */
+.stand {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 72px 96px 88px;
+  background: var(--bg-shade);
+}
+
+.standTitle {
+  max-width: 800px;
+  margin: 0;
+  font-size: 40px;
+  font-weight: var(--weight-statement);
+  line-height: 1.04;
+  letter-spacing: -0.8px;
+}
+
+.standText {
+  max-width: 800px;
+  margin: 0;
+  font-size: 19px;
+  font-weight: var(--weight-reading);
+  line-height: 1.55;
+}
+
+@media (max-width: 1079px) {
+  .question,
+  .elsewhere,
+  .written {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 40px;
+    padding: 64px 48px;
+  }
+
+  .questionTitle,
+  .elsewhereTitle { font-size: 48px; letter-spacing: -0.96px; }
+
+  .answer,
+  .open { width: auto; max-width: 560px; }
+
+  .contained {
+    gap: 40px;
+    padding: 0 48px 64px;
+  }
+
+  .containedPhoto { width: 340px; }
+  .containedTitle { font-size: 72px; }
+  .chapterPhoto { height: 480px; }
+  .sentence { padding: 48px; }
+  .sentenceText { font-size: 32px; letter-spacing: -0.64px; }
+  .next { padding: 28px 48px; }
+  .nextTitle { font-size: 32px; letter-spacing: -0.64px; }
+  .writingTitle { font-size: 44px; letter-spacing: -0.88px; }
+  .writing,
+  .open { align-self: stretch; }
+  .stand { padding: 56px 48px 64px; }
+}
+
+@media (max-width: 759px) {
+  .eyebrow,
+  .textLink,
+  .nextLabel {
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .question,
+  .elsewhere,
+  .written {
+    gap: 16px;
+    padding: 44px 20px;
+  }
+
+  .question { border-top: 0; }
+
+  .questionWords { gap: 16px; }
+
+  .questionTitle,
+  .elsewhereTitle {
+    font-size: 34px;
+    line-height: 1.06;
+    letter-spacing: -0.68px;
+  }
+
+  .answer { gap: 16px; }
+
+  .answerText {
+    font-size: 17px;
+    line-height: 1.6;
+  }
+
+  /* The photograph, then CONTAINED, then the sentence. */
+  .chapterPhoto {
+    order: 1;
+    height: 280px;
+  }
+
+  .contained {
+    order: 2;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 14px;
+    /* Pencil has no space above it, which leaves its photograph touching the chapter photograph; 20 keeps them apart. */
+    padding: 20px 20px 44px;
+  }
+
+  .sentence { order: 3; }
+
+  .containedPhoto {
+    width: 100%;
+    height: 220px;
+  }
+
+  .containedWords { gap: 14px; }
+  .containedTitle { font-size: 64px; }
+
+  .containedTagline {
+    font-size: 24px;
+    letter-spacing: -0.48px;
+  }
+
+  .containedText {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  .sentence { padding: 32px 20px; }
+
+  .sentenceText {
+    font-size: 24px;
+    line-height: 1.25;
+    letter-spacing: -0.48px;
+  }
+
+  .button {
+    align-self: stretch;
+    padding: 16px 18px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .next { padding: 24px 20px; }
+
+  .nextTitle {
+    font-size: 22px;
+    line-height: 1.06;
+    letter-spacing: -0.44px;
+  }
+
+  .nextWheel { font-size: 14px; }
+
+  .written { gap: 0; }
+
+  .writingTitle {
+    margin-bottom: 16px;
+    font-size: 32px;
+    line-height: 1.06;
+    letter-spacing: -0.64px;
+  }
+
+  /* Pencil's phone rows: the number beside the title, a rule above each, none below the last. */
+  .stories a {
+    flex-direction: row;
+    gap: 14px;
+    padding: 14px 0;
+    border-top: 1px solid var(--line);
+    border-bottom: 0;
+  }
+
+  .stories a > span:first-child {
+    width: 26px;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+  }
+
+  .stories a > span:last-child {
+    font-size: 19px;
+    line-height: 1.2;
+    letter-spacing: -0.38px;
+  }
+
+  .open {
+    gap: 0;
+    max-width: none;
+    padding-top: 28px;
+  }
+
+  .open .eyebrow { padding-bottom: 12px; }
+  .questions { gap: 0; }
+
+  .questionLink {
+    padding: 12px 0;
+    font-size: 18px;
+    line-height: 1.25;
+    letter-spacing: -0.36px;
+  }
+
+  .stand {
+    gap: 14px;
+    padding: 40px 20px 48px;
+  }
+
+  .standTitle {
+    font-size: 28px;
+    line-height: 1.06;
+    letter-spacing: -0.56px;
+  }
+
+  .standText {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+}

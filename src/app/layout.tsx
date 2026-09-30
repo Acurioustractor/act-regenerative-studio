@@ -36,7 +36,7 @@ const sansFont = Work_Sans({
  */
 const navItems = [
   { label: "About", href: "/about" },
-  { label: "Fields", href: "/#fields" },
+  { label: "The work", href: "/work" },
   { label: "Stories", href: "/stories" },
   { label: "Art", href: "/art" },
   { label: "Harvest", href: "/harvest" },
@@ -160,7 +160,7 @@ export default function RootLayout({
                collapse, /blog a 308 since the /stories unification; see
                scripts/sweep-routes.mjs for the current set. */
             customLinks={[
-              { label: "Fields", href: "/#fields" },
+              { label: "The work", href: "/work" },
               { label: "Stories", href: "/stories" },
               { label: "Questions", href: "/questions" },
               { label: "Art", href: "/art" },

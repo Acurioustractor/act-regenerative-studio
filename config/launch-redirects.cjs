@@ -27,8 +27,11 @@ const launchRedirects = [
   // Legacy public-site routes. /seeds and /action used to point at /projects and
   // ride its closure redirect, which cost every visitor a second hop. The closure
   // is permanent (2026-08-07), so they go straight to where the work now lives.
-  { source: "/seeds", destination: "/#fields", permanent: true },
-  { source: "/action", destination: "/#fields", permanent: true },
+  // Brand v1: one page per thing. The Art and Harvest fields are their own pages now.
+  { source: "/fields/art", destination: "/art", permanent: true },
+  { source: "/fields/harvest", destination: "/harvest", permanent: true },
+  { source: "/seeds", destination: "/work", permanent: true },
+  { source: "/action", destination: "/work", permanent: true },
   { source: "/germinating", destination: "/stories", permanent: true },
   { source: "/news", destination: "/stories", permanent: true },
   { source: "/journal", destination: "/stories", permanent: true },
@@ -38,22 +41,22 @@ const launchRedirects = [
   // Canonical slug renames, 2026-04-23.
   {
     source: "/projects/diagrama-spain",
-    destination: "/#fields",
+    destination: "/work",
     permanent: true,
   },
   {
     source: "/projects/bg-fit-mount-isa",
-    destination: "/#fields",
+    destination: "/work",
     permanent: true,
   },
   {
     source: "/projects/smart-hcp-gp-uplift",
-    destination: "/#fields",
+    destination: "/work",
     permanent: true,
   },
   {
     source: "/projects/pakkinjalki-kari",
-    destination: "/#fields",
+    destination: "/work",
     permanent: true,
   },
   {
@@ -86,8 +89,8 @@ const launchRedirects = [
   // the old URL indexed and check again, which is no longer true. The old page
   // code remains in the repository as source material. Keep admin, API, webhook,
   // Confessions, art detail, Harvest detail and story-article routes intact.
-  { source: "/projects", destination: "/#fields", permanent: true },
-  { source: "/projects/:slug*", destination: "/#fields", permanent: true },
+  { source: "/projects", destination: "/work", permanent: true },
+  { source: "/projects/:slug*", destination: "/work", permanent: true },
   { source: "/goods", destination: "/fields/goods", permanent: false },
   {
     source: "/empathy-ledger",
@@ -97,8 +100,8 @@ const launchRedirects = [
   { source: "/justicehub", destination: "/fields/justice", permanent: false },
   { source: "/farm", destination: "/about#history", permanent: false },
   { source: "/farm/:slug*", destination: "/about#history", permanent: false },
-  { source: "/ecosystem", destination: "/#fields", permanent: false },
-  { source: "/ecosystem/:slug*", destination: "/#fields", permanent: false },
+  { source: "/ecosystem", destination: "/work", permanent: false },
+  { source: "/ecosystem/:slug*", destination: "/work", permanent: false },
   { source: "/method", destination: "/about#convictions", permanent: false },
   { source: "/vision", destination: "/about#convictions", permanent: false },
   {
@@ -249,9 +252,9 @@ const launchRedirects = [
   // Everything else the old site filed under a project or a seed. The specific
   // rules above match first; these catch the remainder, including anything
   // unpublished before its sitemap was read.
-  { source: "/seeds/:slug*", destination: "/#fields", permanent: true },
-  { source: "/project/:slug*", destination: "/#fields", permanent: true },
-  { source: "/act-projects/:slug*", destination: "/#fields", permanent: true },
+  { source: "/seeds/:slug*", destination: "/work", permanent: true },
+  { source: "/project/:slug*", destination: "/work", permanent: true },
+  { source: "/act-projects/:slug*", destination: "/work", permanent: true },
 
   // Route unification, 2026-08-07: editorial articles moved from /blog/[slug]
   // to /stories/[slug] so one slug space serves packets and articles. 308s,
@@ -265,7 +268,7 @@ const launchRedirects = [
   // Deleted or demoted entries redirect to parent context.
   //
   // The /projects/:slug* rule above matches first and sends all of these to
-  // /#fields in one hop (redirects are first-match-wins), so they are dormant and
+  // /work in one hop (redirects are first-match-wins), so they are dormant and
   // the redirect check reports them as such. Their destinations were flattened on
   // 2026-08-07: they used to point at /projects and /events, which are themselves
   // closed, so each held URL would have cost two hops the moment it went live.
@@ -277,7 +280,7 @@ const launchRedirects = [
   },
   {
     source: "/projects/project-her-self",
-    destination: "/#fields",
+    destination: "/work",
     permanent: true,
   },
   {
@@ -338,8 +341,8 @@ const launchRedirects = [
   // ANAT SPECTRA 2025 was an event, not a studio-line work; retired from /art (art-from-the-record step 3).
   { source: "/art/anat-spectra-2025", destination: "/art", permanent: false },
   { source: "/ask", destination: "/questions", permanent: false },
-  { source: "/wiki", destination: "/#fields", permanent: false },
-  { source: "/wiki/:slug*", destination: "/#fields", permanent: false },
+  { source: "/wiki", destination: "/work", permanent: false },
+  { source: "/wiki/:slug*", destination: "/work", permanent: false },
   { source: "/people", destination: "/about", permanent: false },
 
   // Project holds (2026-05-27) — not-ready / internal pages held off the public
@@ -349,42 +352,42 @@ const launchRedirects = [
   // homepage mosaic, and related-projects (see heldProjectSlugs in public-projects).
   {
     source: "/projects/act-infrastructure",
-    destination: "/#fields",
+    destination: "/work",
     permanent: false,
   },
   {
     source: "/projects/custodian-first-economy",
-    destination: "/#fields",
+    destination: "/work",
     permanent: false,
   },
   {
     source: "/projects/facilitation",
-    destination: "/#fields",
+    destination: "/work",
     permanent: false,
   },
   {
     source: "/projects/grantscope",
-    destination: "/#fields",
+    destination: "/work",
     permanent: false,
   },
   {
     source: "/projects/minderoo-pitch-package",
-    destination: "/#fields",
+    destination: "/work",
     permanent: false,
   },
   {
     source: "/projects/three-circles",
-    destination: "/#fields",
+    destination: "/work",
     permanent: false,
   },
   {
     source: "/projects/the-full-idea",
-    destination: "/#fields",
+    destination: "/work",
     permanent: false,
   },
   {
     source: "/projects/annual-field-service",
-    destination: "/#fields",
+    destination: "/work",
     permanent: false,
   },
 

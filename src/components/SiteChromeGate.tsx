@@ -25,7 +25,7 @@ export function isEditorialRoute(pathname: string): boolean {
  * Routes rebuilt on Brand v1. Their pages draw their own header and footer (src/components/pieces/Page.tsx), so neither
  * the old chrome nor the editorial legal line renders on them. A route joins this list in the commit that rebuilds it.
  */
-const brandRoots: string[] = ["/questions"];
+const brandRoots: string[] = ["/questions", "/work", "/fields"];
 
 export function isBrandRoute(pathname: string): boolean {
   return brandRoots.some((root) =>

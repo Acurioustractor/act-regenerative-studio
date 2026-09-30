@@ -1,9 +1,7 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
 import { Wheel, rolls } from "./Onward";
+import { PieceLink } from "./PieceLink";
 import styles from "./work-card.module.css";
-
-const isExternal = (href: string) => /^(https?:|mailto:)/.test(href);
 
 /**
  * A project on The work page: photo, what it is called, its line, one sentence and one link (Pencil: Work card XLWbP).
@@ -49,15 +47,9 @@ export function WorkCard({
 
   return (
     <Item className={styles.item}>
-      {isExternal(link.href) ? (
-        <a href={link.href} className={classes}>
-          {inner}
-        </a>
-      ) : (
-        <Link href={link.href} className={classes}>
-          {inner}
-        </Link>
-      )}
+      <PieceLink href={link.href} className={classes}>
+        {inner}
+      </PieceLink>
     </Item>
   );
 }

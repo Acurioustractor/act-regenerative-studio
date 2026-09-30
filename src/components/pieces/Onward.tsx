@@ -1,5 +1,5 @@
-import Link from "next/link";
 import type { ReactNode } from "react";
+import { PieceLink } from "./PieceLink";
 import styles from "./onward.module.css";
 
 /**
@@ -12,8 +12,6 @@ export function Wheel() {
 
 /** The class that makes a Wheel inside roll on hover and focus. Put it on the link. */
 export const rolls = styles.rolls;
-
-const isExternal = (href: string) => /^(https?:|mailto:)/.test(href);
 
 /** A link that goes somewhere: its words in mono capitals, then the wheel. */
 export function Onward({
@@ -28,19 +26,10 @@ export function Onward({
   className?: string;
 }) {
   const classes = [styles.onward, styles.rolls, styles[tone], className].filter(Boolean).join(" ");
-  const inner = (
-    <>
+  return (
+    <PieceLink href={href} className={classes}>
       <span>{children}</span>
       <Wheel />
-    </>
-  );
-  return isExternal(href) ? (
-    <a href={href} className={classes}>
-      {inner}
-    </a>
-  ) : (
-    <Link href={href} className={classes}>
-      {inner}
-    </Link>
+    </PieceLink>
   );
 }
